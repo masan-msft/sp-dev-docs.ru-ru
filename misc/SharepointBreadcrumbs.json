@@ -1,0 +1,36 @@
+﻿{
+  "Cat": "SharePoint",
+  "parentLink": "/sharepoint",
+  "DropdownOptions": [
+    {
+      "Title": "Платформа SharePoint Framework",
+      "URL": "/sharepoint/docs/spfx/sharepoint-framework-overview",
+      "Index": "/sharepoint/docs"
+    },
+    {
+      "Title": "Справочник по SharePoint Framework",
+      "URL": "https://dev.office.com/sharepoint/reference/spfx/sharepoint-framework-reference-overview",
+      "Index": "external"
+    },
+    {
+      "Title": "Примеры кода SharePoint Framework",
+      "URL": "http://aka.ms/spfx-samples",
+      "Index": "external"
+    },      
+    {
+      "Title": "Надстройки SharePoint",
+      "URL": "https://msdn.microsoft.com/en-us/library/office/fp179930.aspx",
+      "Index": "external"
+    },
+    {
+      "Title": "Интерфейсы REST API для SharePoint",
+      "URL": "https://msdn.microsoft.com/en-us/library/office/jj860569.aspx",
+      "Index": "external"
+    },
+    {
+      "Title": "PnP (Patterns and Practices)",
+      "URL": "https://msdn.microsoft.com/en-us/pnp_articles/office-365-development-patterns-and-practices-solution-guidance",
+      "Index": "external"
+    }
+  ]
+}

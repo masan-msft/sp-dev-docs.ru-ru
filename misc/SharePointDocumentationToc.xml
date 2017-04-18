@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SupportedProduct="|SharePoint" SupportedVersion="|V1.0|">
+	<Item text="SharePoint Framework" url="spfx" SEODescription="">
+		<Item text="Обзор" url="spfx/sharepoint-framework-overview" SEODescription="Современная платформа SharePoint Framework идеально подходит для расширения возможностей SharePoint." />
+		<Item text="План" url="spfx/roadmap" SEODescription="План выпуска версий SharePoint Framework." />
+		<Item text="Инструменты и библиотеки" url="spfx/tools-and-libraries" SEODescription="Узнайте об инструментах и библиотеках, необходимых для создания решений SharePoint Framework." />
+		<Item text="Настройка клиента Office 365" url="spfx/set-up-your-developer-tenant" SEODescription="Настройте клиент Office 365, чтобы проверять и отлаживать клиентские веб-части SharePoint." />
+		<Item text="Настройка среды разработки" url="spfx/set-up-your-development-environment" SEODescription="Настройка среды разработки для создания клиентских веб-частей SharePoint" />
+		<Item text="Руководство для предприятий" url="spfx/enterprise-guidance" SEODescription="Руководство по архитектуре и разработке, касающееся SharePoint Framework, для предприятий." />
+		<Item text="Групповая разработка" url="spfx/team-based-development-on-sharepoint-framework" SEODescription="Групповая разработка на платформе SharePoint Framework." />
+		<Item text="Цепочка инструментов" url="spfx/toolchain/sharepoint-framework-toolchain" SEODescription="">
+			<Item text="Цепочка инструментов SharePoint Framework" url="spfx/toolchain/sharepoint-framework-toolchain" SEODescription="Цепочка инструментов SharePoint Framework — это набор инструментов сборки, пакетов платформы и других элементов, которые управляют созданием и развертыванием клиентских проектов." />
+			<Item text="Генератор yeoman для SharePoint" url="spfx/toolchain/scaffolding-projects-using-yeoman-sharepoint-generator" SEODescription="Создавайте проекты клиентских решений с помощью генератора yeoman для SharePoint." />
+			<Item text="Обновление пакетов SharePoint Framework" url="spfx/toolchain/update-latest-packages" SEODescription="Узнайте, как обновлять пакеты SharePoint Framework в своих решениях до последних версий." />
+			<Item text="Оптимизация сборок для рабочей среды" url="spfx/toolchain/optimize-builds-for-production" SEODescription="Оптимизация сборок SharePoint Framework для развертывания в рабочей среде." />
+			<Item text="Интеграция задач gulp в цепочку инструментов SharePoint Framework" url="spfx/toolchain/integrate-gulp-tasks-in-build-pipeline" SEODescription="Интегрируйте специальные задачи gulp в конвейер сборки, используемый в решениях SharePoint Framework." />
+			<Item text="Расширение возможностей webpack в цепочке инструментов SharePoint Framework" url="spfx/toolchain/extending-webpack-in-build-pipeline" SEODescription="Расширяйте возможности webpack для конвейера сборки, используемого в решениях SharePoint Framework." />
+			<Item text="Подготовка ресурсов SharePoint" url="spfx/toolchain/provision-sharepoint-assets" SEODescription="Цепочка инструментов SharePoint Framework позволяет упаковывать и развертывать поля, типы контента и экземпляры списков SharePoint с пакетом клиентского решения." />
+		</Item>
+		<Item text="Веб-части" url="spfx/web-parts" SEODescription="">
+			<Item text="Обзор" url="spfx/web-parts/overview-client-side-web-parts" SEODescription="Разрабатывайте клиентские веб-части SharePoint, чтобы улучшать и персонализировать работу в SharePoint." />
+			<Item text="Начало работы" url="spfx/web-parts/get-started">
+				<Item text="Создание первой веб-части" url="spfx/web-parts/get-started/build-a-hello-world-web-part" SEODescription="Создайте клиентскую веб-часть SharePoint hello world." />
+				<Item text="Подключение к SharePoint" url="spfx/web-parts/get-started/connect-to-sharepoint" SEODescription="Подключите клиентскую веб-часть SharePoint к SharePoint, используя контекст страницы." />
+				<Item text="Развертывание веб-части на странице SharePoint" url="spfx/web-parts/get-started/serve-your-web-part-in-a-sharepoint-page" SEODescription="Разверните клиентскую веб-часть SharePoint на странице SharePoint." />
+				<Item text="Развертывание в CDN" url="spfx/web-parts/get-started/deploy-web-part-to-cdn" SEODescription="Разверните ресурсы клиентской веб-части SharePoint не на локальном узле, а в CDN." />
+				<Item text="Добавление элемента Accordion jQueryUI" url="spfx/web-parts/get-started/add-jqueryui-accordion-to-web-part" SEODescription="Добавьте элемент Accordion jQueryUI в проект клиентской веб-части SharePoint." />
+				<Item text="Использование компонентов React Office UI Fabric" url="spfx/web-parts/get-started/use-fabric-react-components" SEODescription="Создайте клиентскую веб-часть SharePoint, использующую компонент Office UI Fabric DocumentCard." />
+				<Item text="Подготовка ресурсов из решения" url="spfx/web-parts/get-started/provision-sp-assets-from-package" SEODescription="Узнайте, как подготавливать ресурсы SharePoint на сайтах с помощью SharePoint Framework при установке решения." />
+			</Item>
+			<Item text="Основные сведения" url="spfx/web-parts/basics" SEODescription="">
+				<Item text="Рекомендации по разработке" url="spfx/web-parts/basics/design-considerations-for-web-parts" SEODescription="Разрабатывайте адаптивные клиентские веб-части SharePoint, использующие компоненты React Office UI Fabric и поддерживающие режимы публикации и изменения." />
+				<Item text="Добавление свойств на панель свойств" url="spfx/web-parts/basics/integrate-with-property-pane" SEODescription="Настройте свойства для клиентской веб-части SharePoint и управляйте ими в области свойств." />
+				<Item text="Добавление внешней библиотеки" url="spfx/web-parts/basics/add-an-external-library" SEODescription="Добавьте внешнюю библиотеку JavaScript в клиентскую веб-часть SharePoint, например небольшие библиотеки, модули, отличные от AMD, и локализованные ресурсы." />
+				<Item text="Работа с исходным __RequestDigest" url="spfx/web-parts/basics/working-with-requestdigest" SEODescription="Узнайте, как использовать поле формы __REQUESTDIGEST в веб-части SharePoint Framework" />
+				<Item text="Примечания по упаковке решений" url="spfx/web-parts/basics/notes-on-solution-packaging" SEODescription="Сведения об определении файлов для упаковки веб-частей в решениях с помощью SharePoint Framework" />				
+			</Item>
+			<Item text="Рекомендации" url="spfx/web-parts/guidance" SEODescription="">
+				<Item text="Рекомендации по управлению решениями SharePoint Framework" url="spfx/web-parts/guidance/governance-considerations" SEODescription="Платформа SharePoint Framework: рекомендации по управлению для организаций." />
+				<Item text="Использование существующих библиотек JavaScript" url="spfx/web-parts/guidance/use-existing-javascript-libraries" SEODescription="Рекомендации по использованию существующих библиотек JavaScript в клиентских веб-частях SharePoint." />
+				<Item text="Добавление ссылок на сторонние стили CSS" url="spfx/web-parts/guidance/reference-third-party-css-styles" SEODescription="Добавление ссылок на сторонние стили CSS в клиентских веб-частях SharePoint Framework." />
+				<Item text="Использование предварительно настроенных записей" url="spfx/web-parts/guidance/simplify-adding-web-parts-with-preconfigured-entries" SEODescription="Упрощенное добавление веб-частей с помощью предварительно настроенных записей." />
+				<Item text="Использование JSOM в веб-части" url="spfx/web-parts/guidance/connect-to-sharepoint-using-jsom" SEODescription="Подключение к SharePoint с помощью объектной модели JavaScript (JSOM)." />
+				<Item text="Проверка записей области свойств" url="spfx/web-parts/guidance/validate-web-part-property-values" SEODescription="Проверка записей области свойств от пользователей." />
+				<Item text="Использование каскадных раскрывающихся меню в области свойств" url="spfx/web-parts/guidance/use-cascading-dropdowns-in-web-part-properties" SEODescription="Использование каскадных раскрывающихся меню в области свойств клиентской веб-части SharePoint Framework." />
+				<Item text="Создание пользовательских элементов управления для области свойств" url="spfx/web-parts/guidance/build-custom-property-pane-controls" SEODescription="Создавайте пользовательские элементы управления, чтобы расширить функциональность области свойств для клиентской веб-части SharePoint Framework." />
+				<Item text="Совместное использование данных разными веб-частями" url="spfx/web-parts/guidance/share-data-between-web-parts" SEODescription="Способы обмена данными между несколькими веб-частями на одной странице." />
+				<Item text="Обмен данными между веб-частями (руководство)" url="spfx/web-parts/guidance/tutorial-share-data-between-web-parts-global-variable" SEODescription="Обмен данными между веб-частями с помощью глобальной переменной (руководство)." />
+				<Item text="Создание веб-частей с помощью SharePoint PnP JS" url="spfx/web-parts/guidance/use-sp-pnp-js-with-spfx-web-parts" SEODescription="Использование библиотеки SharePoint PnP JS в реализации клиентской веб-части SharePoint Framework." />
+				<Item text="Создание веб-частей с помощью Angular версии 1.x" url="spfx/web-parts/guidance/build-client-side-web-parts-with-angular-1-x" SEODescription="Создайте простую клиентскую веб-часть SharePoint Framework с помощью Angular 1.x." />
+				<Item text="Перенос приложений Angular" url="spfx/web-parts/guidance/migrate-angular-1-x-applications-to-sharepoint-framework" SEODescription="Перенос существующих приложений Angular 1.x в клиентские веб-части SharePoint Framework." />
+				<Item text="Локализация" url="spfx/web-parts/guidance/localize-web-parts" SEODescription="Локализуйте клиентские веб-части SharePoint Framework." />
+				<Item text="Вызов API Microsoft Graph" url="spfx/web-parts/guidance/call-microsoft-graph-from-your-web-part" SEODescription="Вызовите API Microsoft Graph из клиентской веб-части SharePoint Framework с помощью OAuth." />
+			</Item>
+		</Item>
+	</Item>
+	<Item text="API SharePoint" url="apis" SEODescription="">
+		<Item text="REST" url="apis/rest" SEODescription="">
+			<Item text="Служба REST в SharePoint" url="apis/rest/get-to-know-the-sharepoint-rest-service" SEODescription="Знакомство со службой REST в SharePoint." />
+			<Item text="Базовые операции" url="apis/rest/complete-basic-operations-using-sharepoint-rest-endpoints" SEODescription="Выполнение базовых операций с использованием конечных точек REST SharePoint." />
+			<Item text="Списки и элементы списков" url="apis/rest/working-with-lists-and-list-items-with-rest" SEODescription="Работа со списками и элементами списков в службе REST SharePoint." />
+			<Item text="Папки и файлы" url="apis/rest/working-with-folders-and-files-with-rest" SEODescription="Работа папками и файлами в службе REST SharePoint." />
+			<Item text="URI конечных точек REST" url="apis/rest/determine-sharepoint-rest-service-endpoint-uris" SEODescription="Определение URI для конечных точек службы REST в SharePoint." />
+			<Item text="Операции запросов OData" url="apis/rest/use-odata-query-operations-in-sharepoint-rest-requests" SEODescription="Использование операций запросов OData в запросах REST SharePoint." />
+			<Item text="Навигация по структуре данных" url="apis/rest/navigate-the-sharepoint-data-structure-represented-in-the-rest-service" SEODescription="Навигация по структуре данных SharePoint, представленной в службе REST." />
+			<Item text="Синхронизация элементов SharePoint" url="apis/rest/synchronize-sharepoint-items-using-the-rest-service" SEODescription="Синхронизация элементов SharePoint с помощью службы REST." />
+			<Item text="Отправка файла" url="apis/rest/upload-a-file-by-using-the-rest-api-and-jquery" SEODescription="Отправка файла с помощью REST API и jQuery." />
+			<Item text="Управление разрешениями" url="apis/rest/set-custom-permissions-on-a-list-by-using-the-rest-interface" SEODescription="Назначение настраиваемых разрешений для списка с помощью интерфейса REST." />
+			<Item text="Пакетные запросы" url="apis/rest/make-batch-requests-with-the-rest-apis" SEODescription="Отправка пакетных запросов с помощью REST API SharePoint." />					
+		</Item>
+		<Item text="Веб-перехватчики" url="apis/webhooks" SEODescription="">
+			<Item text="Обзор" url="apis/webhooks/overview-sharepoint-webhooks" SEODescription="Веб-перехватчики SharePoint позволяют разработчикам создавать интеграции служб, которые подписываются на уведомления об определенных событиях в SharePoint." />
+			<Item text="Начало работы" url="apis/webhooks/get-started-webhooks" SEODescription="Создайте собственное приложение, которое может добавлять и обрабатывать запросы веб-перехватчиков SharePoint." />
+			<Item text="Базовая реализация" url="apis/webhooks/webhooks-reference-implementation" SEODescription="Базовая реализация согласно SharePoint PnP, в которой показано, как использовать веб-перехватчики SharePoint вместе с различными компонентами Azure, такими как служба веб-заданий, служба очередей хранилища и SQL Server в Azure." />
+			<Item text="&quot;Функции Azure&quot; и веб-перехватчики SharePoint" url="apis/webhooks/sharepoint-webhooks-using-azure-functions" SEODescription="Сведения о том, как использовать решение &quot;Функции Azure&quot; для размещения веб-перехватчиков SharePoint." />
+			<Item text="Списки SharePoint" url="apis/webhooks/lists">
+				<Item text="Обзор" url="apis/webhooks/lists/overview-sharepoint-list-webhooks" SEODescription="Веб-перехватчики списков SharePoint уведомляют приложение о событиях, связанных с изменением элементов списка или библиотеки документов SharePoint." />
+				<Item text="Создание подписки" url="apis/webhooks/lists/create-subscription" SEODescription="Создайте подписку на веб-перехватчики SharePoint с помощью запроса HTTP POST." />
+				<Item text="Обновление подписки" url="apis/webhooks/lists/update-subscription" SEODescription="Обновите подписку на веб-перехватчики SharePoint с помощью запроса HTTP PATCH." />
+				<Item text="Удаление подписки" url="apis/webhooks/lists/delete-subscription" SEODescription="Удалите подписку на веб-перехватчики SharePoint с помощью запроса HTTP DELETE." />
+				<Item text="Получение подписок" url="apis/webhooks/lists/get-subscription" SEODescription="Получите одну или несколько подписок на веб-перехватчики SharePoint с помощью запроса HTTP GET." />
+			</Item>
+		</Item>
+	</Item>
+	<Item text="Дополнительные ресурсы по SharePoint" url="external" SEODescription="">
+		<Item text="Документация по надстройкам SharePoint" url="https://msdn.microsoft.com/en-us/library/office/fp179930.aspx" IsExternal="true" SEODescription="" />
+	</Item>
+	<Item text="Справочник по SharePoint Framework" url="https://dev.office.com/sharepoint/reference/spfx/sharepoint-framework-reference-overview" IsExternal="true" SEODescription="Справочник по API SharePoint Framework" />
+	<Item text="Примеры кода SharePoint Framework" url="http://aka.ms/spfx-samples" IsExternal="true" SEODescription="Примеры кода SharePoint Framework" />
+</Menu>
