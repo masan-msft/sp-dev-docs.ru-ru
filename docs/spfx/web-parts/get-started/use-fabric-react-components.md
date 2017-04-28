@@ -1,21 +1,25 @@
-# <a name="use-office-ui-fabric-react-components-in-your-sharepoint-client-side-web-part"></a>Используйте компоненты Office UI Fabric React в клиентской веб-части SharePoint
+# <a name="use-office-ui-fabric-react-components-in-your-sharepoint-client-side-web-part"></a>Использование компонентов Office UI Fabric React в клиентской веб-части SharePoint
 
-В этой статье описано, как создать простую веб-часть на базе компонента DocumentCard, доступного в [Office UI Fabric](https://github.com/OfficeDev/office-ui-fabric-react). Office UI Fabric React — это клиентская платформа, позволяющая создавать решения для Office и Office 365. Она включает продуманную коллекцию простых в использовании компонентов, ориентированных в первую очередь на мобильные устройства, благодаря которой вы с легкостью сможете создавать веб-части на базе языка дизайна Office.
+#### **Важно!** Для использования Office UI Fabric React необходимо обновить существующие проекты, чтобы они использовали @microsoft/sp-build-web@1.0.1 или более поздней версии. См. инструкции в конце этой статьи.
+
+В этой статье описано, как создать простую веб-часть на базе компонента DocumentCard, доступного в [Office UI Fabric React](https://github.com/OfficeDev/office-ui-fabric-react). Office UI Fabric React — это клиентская платформа, позволяющая создавать решения для Office и Office 365. Она включает большую коллекцию адаптивных компонентов для мобильных устройств, с помощью которых вы легко сможете создавать веб-части на языке дизайна Office.
 
 На приведенном ниже изображении показан компонент DocumentCard, созданный с помощью Office UI Fabric React.
 
 ![Изображение компонента DocumentCard Fabric в рабочей среде SharePoint](../../../../images/fabric-components-doc-card-view-ex.png)
 
-Указанные ниже действия также показаны в видео на [канале SharePoint PnP YouTube](https://www.youtube.com/watch?v=1N6kNvLxyg4&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq). 
+Указанные ниже действия также показаны в видео на [канале SharePoint PnP на YouTube](https://www.youtube.com/watch?v=1N6kNvLxyg4&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq). 
 
 <a href="https://www.youtube.com/watch?v=1N6kNvLxyg4&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
 <img src="../../../../images/spfx-youtube-tutorial6.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
 
-## <a name="create-a-new-web-part-project"></a>Создание нового проекта веб-части
+## <a name="creating-a-new-web-part-project"></a>Создание проекта веб-части
 
-Создайте каталог проекта в любом расположении:
+Убедитесь, что вы используете последнюю версию. Выполните команду `yo` и следуйте инструкциям на экране, чтобы создать скелет проекта.
+
+Создайте каталог проекта в удобном для вас расположении:
 
 ```
 md documentcardexample-webpart
@@ -27,7 +31,7 @@ md documentcardexample-webpart
 cd documentcardexample-webpart
 ```
 
-Создайте веб-часть, запустив генератор Yeoman для SharePoint:
+Убедитесь, что у вас установлена последняя версия `@microsoft/generator-sharepoint`, и создайте веб-часть, запустив генератор Yeoman для SharePoint:
 
 ```
 yo @microsoft/sharepoint
@@ -92,7 +96,7 @@ export default class DocumentCardExample extends React.Component<IDocumentCardEx
 }
 ```
 
-## <a name="add-an-office-ui-fabric-component"></a>Добавление компонента Office UI Fabric
+### <a name="add-an-office-ui-fabric-component"></a>Добавление компонента Office UI Fabric
 
 Для создания *новых современных элементов интерфейсах* в SharePoint используется Office UI Fabric и Office UI Fabric React как клиентская платформа по умолчанию. Поэтому SharePoint Framework поставляется с версией Office UI Fabric и Office UI Fabric React по умолчанию, которая соответствует версии, доступной в SharePoint. Благодаря этому в создаваемой веб-части используется правильная версия стилей и компонентов Fabric при развертывании в SharePoint. 
 
@@ -168,7 +172,7 @@ require('set-webpack-public-path!');
     
 Сохраните файл.
 
-## <a name="copy-the-image-assets"></a>Копирование изображений
+### <a name="copy-the-image-assets"></a>Копирование изображений
 
 Скопируйте следующие изображения в папку **src\webparts\documentCardExample**:
 
@@ -176,7 +180,7 @@ require('set-webpack-public-path!');
 * [icon-ppt.png](https://github.com/SharePoint/sp-dev-docs/tree/master/assets/icon-ppt.png);
 * [document-preview.png](https://github.com/SharePoint/sp-dev-docs/tree/master/assets/document-preview.png).
 
-## <a name="preview-the-web-part-in-workbench"></a>Просмотр веб-части в рабочей среде
+### <a name="preview-the-web-part-in-workbench"></a>Просмотр веб-части в рабочей среде
 
 В консоли введите следующий код, чтобы просмотреть свою веб-часть в рабочей среде:
     
@@ -186,5 +190,9 @@ gulp serve
     
 На панели элементов выберите веб-часть `DocumentCardExample` для добавления:
     
-![Изображение компонента DocumentCard Fabric в рабочей среде SharePoint](../../../../images/fabric-components-doc-card-view-ex.png)
+![Изображение компонента DocumentCard Fabric в рабочей области SharePoint](../../../../images/fabric-components-doc-card-view-ex.png)
 
+
+## <a name="updating-an-existing-project"></a>Обновление существующего проекта
+
+В файле `package.json` проекта обновите зависимость `@microsoft/sp-build-web` до версии 1.0.1 или выше, удалите каталог `node_modules` проекта и выполните команду `npm install`.

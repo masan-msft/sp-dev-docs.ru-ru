@@ -6,6 +6,7 @@
 		<Item text="Инструменты и библиотеки" url="spfx/tools-and-libraries" SEODescription="Узнайте об инструментах и библиотеках, необходимых для создания решений SharePoint Framework." />
 		<Item text="Настройка клиента Office 365" url="spfx/set-up-your-developer-tenant" SEODescription="Настройте клиент Office 365, чтобы проверять и отлаживать клиентские веб-части SharePoint." />
 		<Item text="Настройка среды разработки" url="spfx/set-up-your-development-environment" SEODescription="Настройка среды разработки для создания клиентских веб-частей SharePoint" />
+		<Item text="Отладка решений с помощью VS Code" url="spfx/debug-in-vscode" SEODescription="Отладка решений SharePoint Framework в Visual Studio Code" />
 		<Item text="Руководство для предприятий" url="spfx/enterprise-guidance" SEODescription="Руководство по архитектуре и разработке, касающееся SharePoint Framework, для предприятий." />
 		<Item text="Групповая разработка" url="spfx/team-based-development-on-sharepoint-framework" SEODescription="Групповая разработка на платформе SharePoint Framework." />
 		<Item text="Цепочка инструментов" url="spfx/toolchain/sharepoint-framework-toolchain" SEODescription="">
@@ -46,6 +47,8 @@
 				<Item text="Создание пользовательских элементов управления для области свойств" url="spfx/web-parts/guidance/build-custom-property-pane-controls" SEODescription="Создавайте пользовательские элементы управления, чтобы расширить функциональность области свойств для клиентской веб-части SharePoint Framework." />
 				<Item text="Совместное использование данных разными веб-частями" url="spfx/web-parts/guidance/share-data-between-web-parts" SEODescription="Способы обмена данными между несколькими веб-частями на одной странице." />
 				<Item text="Обмен данными между веб-частями (руководство)" url="spfx/web-parts/guidance/tutorial-share-data-between-web-parts-global-variable" SEODescription="Обмен данными между веб-частями с помощью глобальной переменной (руководство)." />
+				<Item text="Перенос настроек веб-части &quot;Редактор скриптов&quot;" url="spfx/web-parts/guidance/migrate-script-editor-web-part-customizations" SEODescription="Перенос настроек веб-части &quot;Редактор скриптов&quot; в SharePoint Framework." />
+				<Item text="Интеграция с Office UI Fabric" url="spfx/web-parts/guidance/office-ui-fabric-integration" SEODescription="Использование Office UI Fabric Core и Fabric React в клиентских веб-частях SPFx." />
 				<Item text="Создание веб-частей с помощью SharePoint PnP JS" url="spfx/web-parts/guidance/use-sp-pnp-js-with-spfx-web-parts" SEODescription="Использование библиотеки SharePoint PnP JS в реализации клиентской веб-части SharePoint Framework." />
 				<Item text="Создание веб-частей с помощью Angular версии 1.x" url="spfx/web-parts/guidance/build-client-side-web-parts-with-angular-1-x" SEODescription="Создайте простую клиентскую веб-часть SharePoint Framework с помощью Angular 1.x." />
 				<Item text="Перенос приложений Angular" url="spfx/web-parts/guidance/migrate-angular-1-x-applications-to-sharepoint-framework" SEODescription="Перенос существующих приложений Angular 1.x в клиентские веб-части SharePoint Framework." />
