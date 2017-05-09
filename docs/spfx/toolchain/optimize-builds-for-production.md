@@ -26,7 +26,7 @@
 
 ## <a name="verify-the-contents-of-your-bundle"></a>Проверка содержимого пакета
 
-При сборке проекта в режиме отладки SharePoint Framework предоставляет диаграмму [Webpack Visualizer](https://chrisbateman.github.io/webpack-visualizer/), на которой показаны различные сценарии, включенные в создаваемый пакет. Вы можете найти эту диаграмму в файле **./dist/[solution-name].stats.html**.
+При сборке проекта в режиме отладки SharePoint Framework предоставляет диаграмму [Webpack Visualizer](https://chrisbateman.github.io/webpack-visualizer/), на которой показаны различные сценарии, включенные в создаваемый пакет. Вы можете найти эту диаграмму в файле **./temp/stats/[solution-name].stats.html**.
 
 ![Диаграмма Webpack Visualizer, иллюстрирующая содержимое примера пакета SharePoint Framework](../../../images/guidance-productionbuilds-webpack-visualizer-angular.png)
 

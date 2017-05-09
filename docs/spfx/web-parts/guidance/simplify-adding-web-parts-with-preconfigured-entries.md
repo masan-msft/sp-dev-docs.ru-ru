@@ -1,7 +1,5 @@
 # <a name="simplify-adding-web-parts-with-preconfigured-entries"></a>Упрощенное добавление веб-частей с помощью предварительно настроенных записей
 
-> Примечание. Эта статья еще не была проверена на версии SPFx GA, поэтому у вас могут возникнуть трудности, например при использовании последней версии.
-
 Сложные клиентские веб-части на платформе SharePoint Framework часто содержат много свойств, которые необходимо настраивать пользователю. Вы можете помочь пользователям, добавив предварительно настроенные записи для определенных сценариев. Такая запись инициализирует веб-часть, используя предварительно заданные значения. Из этой статьи вы узнаете, как использовать предварительно настроенные записи в клиентской веб-части на платформе SharePoint Framework, чтобы предоставить пользователям уже настроенные версии этой веб-части.
 
 > **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки клиентских веб-частей для SharePoint](../../set-up-your-development-environment).
@@ -173,14 +171,9 @@ export default class GalleryWebPart extends BaseClientSideWebPart<IGalleryWebPar
 
 ```ts
 import * as React from 'react';
-import { css } from 'office-ui-fabric-react';
+import styles from './Gallery.module.scss';
+import { IGalleryProps } from './IGalleryProps';
 import { Placeholder } from '@microsoft/sp-webpart-base';
-
-import styles from '../Gallery.module.scss';
-import { IGalleryWebPartProps } from '../IGalleryWebPartProps';
-
-export interface IGalleryProps extends IGalleryWebPartProps {
-}
 
 export default class Gallery extends React.Component<IGalleryProps, {}> {
   public render(): JSX.Element {
@@ -192,27 +185,24 @@ export default class Gallery extends React.Component<IGalleryProps, {}> {
     }
     else {
       return (
-        <div className={styles.gallery}>
+        <div className={styles.helloWorld}>
           <div className={styles.container}>
-            <div className={css('ms-Grid-row ms-bgColor-themeDark ms-fontColor-white', styles.row)}>
+            <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
               <div className='ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1'>
-                <span className='ms-font-xl ms-fontColor-white'>
+                <span className="ms-font-xl ms-fontColor-white">
                   Welcome to SharePoint!
-              </span>
+                </span>
                 <p className='ms-font-l ms-fontColor-white'>
                   Customize SharePoint experiences using Web Parts.
-              </p>
+                </p>
                 <p className='ms-font-l ms-fontColor-white'>
                   List: {this.props.listName}<br />
                   Order: {this.props.order}<br />
                   Number of items: {this.props.numberOfItems}<br />
                   Style: {this.props.style}
                 </p>
-                <a
-                  className={css('ms-Button', styles.button)}
-                  href='https://github.com/SharePoint/sp-dev-docs/wiki'
-                  >
-                  <span className='ms-Button-label'>Learn more</span>
+                <a href="https://aka.ms/spfx" className={styles.button}>
+                  <span className={styles.label}>Learn more</span>
                 </a>
               </div>
             </div>
@@ -236,6 +226,15 @@ export default class Gallery extends React.Component<IGalleryProps, {}> {
 }
 ```
 
+Обновите интерфейс основного компонента React в соответствии со свойством веб-части Interface, так как мы обходим все свойства веб-части для этого компонента. Откройте в редакторе кода файл **./src/webparts/gallery/components/IGalleryProps.ts** и измените его код на следующий:
+
+```ts
+import { IGalleryWebPartProps } from '../IGalleryWebPartProps';
+
+export interface IGalleryProps extends IGalleryWebPartProps {
+}
+```
+
 ### <a name="render-web-part-properties-in-the-property-pane"></a>Отображение свойств веб-части в области свойств
 
 Чтобы пользователи могли настраивать веб-часть с помощью новых свойств, эти свойства должны отображаться в области свойств веб-части. Откройте в редакторе кода файл **./src/webparts/gallery/GalleryWebPart.ts**. В верхнем разделе файла измените оператор импорта **@microsoft/sp-webpart-base** на следующий:
@@ -243,8 +242,7 @@ export default class Gallery extends React.Component<IGalleryProps, {}> {
 ```ts
 import {
   BaseClientSideWebPart,
-  IPropertyPaneSettings,
-  IWebPartContext,
+  IPropertyPaneConfiguration,
   PropertyPaneDropdown,
   PropertyPaneSlider,
   PropertyPaneChoiceGroup
@@ -256,7 +254,7 @@ import {
 ```ts
 export default class GalleryWebPart extends BaseClientSideWebPart<IGalleryWebPartProps> {
   // ...
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {

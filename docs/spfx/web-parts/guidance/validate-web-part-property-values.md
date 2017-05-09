@@ -1,7 +1,5 @@
 # <a name="validate-web-part-property-values"></a>Проверка значений свойств веб-части
 
-> Примечание. Эта статья еще не была проверена на версии SPFx GA, поэтому у вас могут возникнуть трудности, например при использовании последней версии.
-
 Пользователи могут настраивать веб-части в соответствии со своими потребностями с помощью свойств. Проверяйте указанные значения конфигурации, чтобы пользователям было проще настроить веб-часть и удобнее с ней работать. Из этой статьи вы узнаете, как проверять значения свойств клиентских веб-частей в SharePoint Framework.
 
 > **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment) для создания решений на платформе SharePoint Framework.
@@ -26,13 +24,13 @@ cd react-listinfo
 yo @microsoft/sharepoint
 ```
 
-Введите следующие значения:
+Укажите следующее:
 
-- имя решения — **react-listinfo**
-- расположение файлов — **Use the current folder** (Использовать текущую папку)
-- имя веб-части — **List info** (Сведения списка)
-- описание веб-части — **Shows information about the selected list** (Показывает сведения о выбранном списке)
-- отправная точка создания веб-части — **React**
+- имя решения — **react-listinfo**;
+- расположение файлов — **Use the current folder** (Использовать текущую папку);
+- отправную точку создания веб-части — **React**;
+- имя веб-части — **List info** (Сведения списка);
+- описание веб-части — **Shows information about the selected list** (Показывает сведения о выбранном списке).
 
 ![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../../images/property-validation-yeoman-generator.png)
 
@@ -50,7 +48,7 @@ yo @microsoft/sharepoint
 
 На этом этапе вы убедитесь, что свойство веб-части Description указано и содержит не более 40 символов. Эта проверка выполняется непосредственно в коде.
 
-В редакторе кода откройте файл **./src/webparts/listInfo/ListInfoWebPart.ts**. Добавьте метод **validateDescription** в класс **ListInfo** с помощью следующего кода:
+В редакторе кода откройте файл **./src/webparts/listInfo/ListInfoWebPart.ts**. Добавьте метод **validateDescription** в класс **ListInfoWebPart** с помощью следующего кода:
 
 ```ts
 export default class ListInfoWebPart extends BaseClientSideWebPart<IListInfoWebPartProps> {

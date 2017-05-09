@@ -2,7 +2,7 @@
 
 Visual Studio Code — это популярный редактор кода, часто используемый для создания решений SharePoint Framework. Настроив отладку решения SharePoint Framework в Visual Studio Code, вы можете эффективнее пошагово выполнять код и исправлять ошибки. В этой статье описываются необходимые условия и действия по настройке Visual Studio Code для отладки решений SharePoint Framework.
 
-## <a name="prerequisites"></a>Необходимые условия
+## <a name="prerequisites"></a>Необходимые компоненты
 
 Настроить Visual Studio Code для отладки решений SharePoint Framework проще всего с помощью Google Chrome и расширения Debugger for Chrome.
 
@@ -56,7 +56,9 @@ Visual Studio Code — это популярный редактор кода, ч
             "webRoot": "${workspaceRoot}",
             "sourceMaps": true,
             "sourceMapPathOverrides": {
-                "webpack:///../../../../*": "${webRoot}/*"
+                "webpack:///../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../../src/*": "${webRoot}/src/*"
             },
             "runtimeArgs": [
                 "--remote-debugging-port=9222"
@@ -132,7 +134,9 @@ gulp serve --nobrowser
             "webRoot": "${workspaceRoot}",
             "sourceMaps": true,
             "sourceMapPathOverrides": {
-                "webpack:///../../../../*": "${webRoot}/*"
+                "webpack:///../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../../src/*": "${webRoot}/src/*"
             },
             "runtimeArgs": [
                 "--remote-debugging-port=9222"
@@ -146,7 +150,9 @@ gulp serve --nobrowser
             "webRoot": "${workspaceRoot}",
             "sourceMaps": true,
             "sourceMapPathOverrides": {
-                "webpack:///../../../../*": "${webRoot}/*"
+                "webpack:///../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../src/*": "${webRoot}/src/*",
+                "webpack:///../../../../../src/*": "${webRoot}/src/*"
             },
             "runtimeArgs": [
                 "--remote-debugging-port=9222"

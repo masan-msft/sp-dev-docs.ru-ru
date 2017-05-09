@@ -3,6 +3,7 @@
 	<Item text="SharePoint Framework" url="spfx" SEODescription="">
 		<Item text="Обзор" url="spfx/sharepoint-framework-overview" SEODescription="Современная платформа SharePoint Framework идеально подходит для расширения возможностей SharePoint." />
 		<Item text="План" url="spfx/roadmap" SEODescription="План выпуска версий SharePoint Framework." />
+		<Item text="Известные проблемы и часто задаваемые вопросы" url="spfx/known-issues-and-common-questions" SEODescription="SharePoint Framework: известные проблемы и часто задаваемые вопросы." />
 		<Item text="Инструменты и библиотеки" url="spfx/tools-and-libraries" SEODescription="Узнайте об инструментах и библиотеках, необходимых для создания решений SharePoint Framework." />
 		<Item text="Настройка клиента Office 365" url="spfx/set-up-your-developer-tenant" SEODescription="Настройте клиент Office 365, чтобы проверять и отлаживать клиентские веб-части SharePoint." />
 		<Item text="Настройка среды разработки" url="spfx/set-up-your-development-environment" SEODescription="Настройка среды разработки для создания клиентских веб-частей SharePoint" />
@@ -24,10 +25,11 @@
 				<Item text="Создание первой веб-части" url="spfx/web-parts/get-started/build-a-hello-world-web-part" SEODescription="Создайте клиентскую веб-часть SharePoint hello world." />
 				<Item text="Подключение к SharePoint" url="spfx/web-parts/get-started/connect-to-sharepoint" SEODescription="Подключите клиентскую веб-часть SharePoint к SharePoint, используя контекст страницы." />
 				<Item text="Развертывание веб-части на странице SharePoint" url="spfx/web-parts/get-started/serve-your-web-part-in-a-sharepoint-page" SEODescription="Разверните клиентскую веб-часть SharePoint на странице SharePoint." />
-				<Item text="Развертывание в CDN" url="spfx/web-parts/get-started/deploy-web-part-to-cdn" SEODescription="Разверните ресурсы клиентской веб-части SharePoint не на локальном узле, а в CDN." />
+				<Item text="Развертывание в сети доставки содержимого Azure" url="spfx/web-parts/get-started/deploy-web-part-to-cdn" SEODescription="Разверните ресурсы клиентской веб-части SharePoint не на локальном узле, а в CDN." />
 				<Item text="Добавление элемента Accordion jQueryUI" url="spfx/web-parts/get-started/add-jqueryui-accordion-to-web-part" SEODescription="Добавьте элемент Accordion jQueryUI в проект клиентской веб-части SharePoint." />
 				<Item text="Использование компонентов React Office UI Fabric" url="spfx/web-parts/get-started/use-fabric-react-components" SEODescription="Создайте клиентскую веб-часть SharePoint, использующую компонент Office UI Fabric DocumentCard." />
-				<Item text="Подготовка ресурсов из решения" url="spfx/web-parts/get-started/provision-sp-assets-from-package" SEODescription="Узнайте, как подготавливать ресурсы SharePoint на сайтах с помощью SharePoint Framework при установке решения." />
+				<Item text="Подготовка ресурсов из решения" url="spfx/web-parts/get-started/provision-sp-assets-from-package" SEODescription="Узнайте, как при установке решения подготавливать ресурсы SharePoint на сайтах с помощью SharePoint Framework." />
+				<Item text="Развертывание в сети доставки содержимого Office 365" url="spfx/web-parts/get-started/hosting-webpart-from-office-365-cdn" SEODescription="Как разместить клиентскую веб-часть SharePoint Framework в сети доставки содержимого Office 365." />
 			</Item>
 			<Item text="Основные сведения" url="spfx/web-parts/basics" SEODescription="">
 				<Item text="Рекомендации по разработке" url="spfx/web-parts/basics/design-considerations-for-web-parts" SEODescription="Разрабатывайте адаптивные клиентские веб-части SharePoint, использующие компоненты React Office UI Fabric и поддерживающие режимы публикации и изменения." />
