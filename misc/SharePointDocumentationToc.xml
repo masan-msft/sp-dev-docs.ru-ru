@@ -36,7 +36,7 @@
 				<Item text="Добавление свойств на панель свойств" url="spfx/web-parts/basics/integrate-with-property-pane" SEODescription="Настройте свойства для клиентской веб-части SharePoint и управляйте ими в области свойств." />
 				<Item text="Добавление внешней библиотеки" url="spfx/web-parts/basics/add-an-external-library" SEODescription="Добавьте внешнюю библиотеку JavaScript в клиентскую веб-часть SharePoint, например небольшие библиотеки, модули, отличные от AMD, и локализованные ресурсы." />
 				<Item text="Работа с исходным __RequestDigest" url="spfx/web-parts/basics/working-with-requestdigest" SEODescription="Узнайте, как использовать поле формы __REQUESTDIGEST в веб-части SharePoint Framework" />
-				<Item text="Примечания по упаковке решений" url="spfx/web-parts/basics/notes-on-solution-packaging" SEODescription="Сведения об определении файлов для упаковки веб-частей в решениях с помощью SharePoint Framework" />				
+				<Item text="Примечания по упаковке решений" url="spfx/web-parts/basics/notes-on-solution-packaging" SEODescription="Сведения об определении файлов для упаковки веб-частей в решениях с помощью SharePoint Framework" />
 			</Item>
 			<Item text="Рекомендации" url="spfx/web-parts/guidance" SEODescription="">
 				<Item text="Рекомендации по управлению решениями SharePoint Framework" url="spfx/web-parts/guidance/governance-considerations" SEODescription="Платформа SharePoint Framework: рекомендации по управлению для организаций." />
@@ -71,7 +71,7 @@
 			<Item text="Синхронизация элементов SharePoint" url="apis/rest/synchronize-sharepoint-items-using-the-rest-service" SEODescription="Синхронизация элементов SharePoint с помощью службы REST." />
 			<Item text="Отправка файла" url="apis/rest/upload-a-file-by-using-the-rest-api-and-jquery" SEODescription="Отправка файла с помощью REST API и jQuery." />
 			<Item text="Управление разрешениями" url="apis/rest/set-custom-permissions-on-a-list-by-using-the-rest-interface" SEODescription="Назначение настраиваемых разрешений для списка с помощью интерфейса REST." />
-			<Item text="Пакетные запросы" url="apis/rest/make-batch-requests-with-the-rest-apis" SEODescription="Отправка пакетных запросов с помощью REST API SharePoint." />					
+			<Item text="Пакетные запросы" url="apis/rest/make-batch-requests-with-the-rest-apis" SEODescription="Отправка пакетных запросов с помощью REST API SharePoint." />
 		</Item>
 		<Item text="Веб-перехватчики" url="apis/webhooks" SEODescription="">
 			<Item text="Обзор" url="apis/webhooks/overview-sharepoint-webhooks" SEODescription="Веб-перехватчики SharePoint позволяют разработчикам создавать интеграции служб, которые подписываются на уведомления об определенных событиях в SharePoint." />
@@ -92,4 +92,548 @@
 	</Item>
 	<Item text="Справочник по SharePoint Framework" url="https://dev.office.com/sharepoint/reference/spfx/sharepoint-framework-reference-overview" IsExternal="true" SEODescription="Справочник по API SharePoint Framework" />
 	<Item text="Примеры кода SharePoint Framework" url="http://aka.ms/spfx-samples" IsExternal="true" SEODescription="Примеры кода SharePoint Framework" />
+	<Item text="Обзор платформы разработки SharePoint" url="general-development/sharepoint-development-overview" SEODescription="">
+		<Item text="Новые возможности для разработчиков в SharePoint" url="general-development/what-s-new-for-developers-in-sharepoint" SEODescription="" />
+		<Item text="Ошибка обработчика протокола из-за устаревшего интерфейса SharePoint 2016" url="general-development/protocol-handler-error-due-to-deprecated-interface-in-sharepoint-2016" SEODescription="" />
+		<Item text="Модели программирования" url="general-development/programming-models-in-sharepoint" SEODescription="">
+			<Item text="Надстройки SharePoint в сравнении с решениями для SharePoint" url="general-development/sharepoint-add-ins-compared-with-sharepoint-solutions" SEODescription="" />
+			<Item text="Создание решений для фермы" url="general-development/build-farm-solutions-in-sharepoint" SEODescription="">
+				<Item text="Практическое руководство. Настройка типа поля с помощью клиентской обработки" url="general-development/how-to-customize-a-field-type-using-client-side-rendering" SEODescription="" />
+				<Item text="URL-адреса и токены в SharePoint" url="general-development/urls-and-tokens-in-sharepoint" SEODescription="" />
+				<Item text="Виртуальные каталоги решений для SharePoint" url="general-development/virtual-directories-in-sharepoint-solutions" SEODescription="" />
+			</Item>
+			<Item text="Доступ к SharePoint из мобильных приложений и собственных приложений устройств" url="general-development/access-sharepoint-from-mobile-and-native-device-apps" SEODescription="" />
+			<Item text="Создание приложений Windows Phone, обращающихся к SharePoint" url="general-development/build-windows-phone-apps-that-access-sharepoint" SEODescription="">
+				<Item text="Практическое руководство. Настройка среды для разработки мобильных приложений для SharePoint" url="general-development/how-to-set-up-an-environment-for-developing-mobile-apps-for-sharepoint" SEODescription="" />
+				<Item text="Обзор шаблонов приложений SharePoint для Windows Phone в Visual Studio" url="general-development/overview-of-windows-phone-sharepoint-application-templates-in-visual-studio" SEODescription="" />
+				<Item text="Архитектура шаблона приложения списка SharePoint для Windows Phone" url="general-development/architecture-of-the-windows-phone-sharepoint-list-application-template" SEODescription="" />
+				<Item text="Практическое руководство. Создание приложения списка SharePoint для Windows Phone" url="general-development/how-to-create-a-windows-phone-sharepoint-list-app" SEODescription="" />
+				<Item text="Практическое руководство. Хранение и извлечение элементов списка SharePoint в Windows Phone" url="general-development/how-to-store-and-retrieve-sharepoint-list-items-on-a-windows-phone" SEODescription="" />
+				<Item text="Практическое руководство. Внедрение проверки данных и бизнес-логики в приложении для SharePoint на устройстве с Windows Phone" url="general-development/how-to-implement-business-logic-and-data-validation-in-a-windows-phone-app-for-s" SEODescription="" />
+				<Item text="Практическое руководство. Поддержка и преобразование типов полей SharePoint для приложений Windows Phone" url="general-development/how-to-support-and-convert-sharepoint-field-types-for-windows-phone-apps" SEODescription="" />
+				<Item text="Практическое руководство. Настройка запросов на обработку элементов списков и фильтрация данных для приложений Windows Phone" url="general-development/how-to-customize-list-item-queries-and-filter-data-for-windows-phone-apps" SEODescription="" />
+				<Item text="Практическое руководство. Настройка пользовательского интерфейса для приложения списка SharePoint на устройстве с Windows Phone" url="general-development/how-to-customize-the-user-interface-of-a-sharepoint-list-app-for-windows-ph" SEODescription="" />
+				<Item text="Практическое руководство. Использование нескольких списков SharePoint в приложении Windows Phone" url="general-development/how-to-use-multiple-sharepoint-lists-in-a-windows-phone-app" SEODescription="" />
+				<Item text="Практическое руководство. Настройка и использование push-уведомлений в приложениях SharePoint для Windows Phone" url="general-development/how-to-configure-and-use-push-notifications-in-sharepoint-apps-for-windows" SEODescription="" />
+				<Item text="Практическое руководство. Создание в SharePoint мобильного приложения, содержащего данные из внешнего источника" url="general-development/how-to-create-a-mobile-app-in-sharepoint-that-contains-data-from-an-externa" SEODescription="" />
+				<Item text="Практическое руководство. Интеграция карт, приложений Windows Phone и списков SharePoint" url="general-development/how-to-integrate-maps-with-windows-phone-apps-and-sharepoint-lists" SEODescription="" />
+				<Item text="Практическое руководство. Создание мобильных приложений, ориентированных на поиск, с помощью интерфейсов навигации и ведения журнала событий REST" url="general-development/how-to-build-search-driven-mobile-apps-with-the-navigation-and-event-logging-res" SEODescription="" />
+				<Item text="Обзор объектной модели SharePoint для мобильных устройств" url="general-development/overview-of-the-sharepoint-mobile-object-model" SEODescription="" />
+				<Item text="Обзор объектной модели для проверки подлинности клиента SharePoint на мобильном устройстве" url="general-development/overview-of-the-sharepoint-mobile-client-authentication-object-model" SEODescription="" />
+				<Item text="Практическое руководство. Экспорт поля &quot;Имя&quot; из списка &quot;Библиотека документов&quot; в мобильное приложение" url="general-development/how-to-export-the-name-field-in-a-document-library-list-to-a-mobile-app" SEODescription="" />
+				<Item text="Создание локализованных приложений для Windows Phone на основе шаблонов SharePoint" url="general-development/build-localized-applications-for-windows-phone-based-on-the-sharepoint-templates" SEODescription="" />
+				<Item text="Поддержка языков для Windows Phone в SharePoint" url="general-development/language-support-for-windows-phone-in-sharepoint" SEODescription="" />
+				<Item text="Создание мобильных приложений для других платформ с помощью SharePoint" url="general-development/build-mobile-apps-for-other-platforms-using-sharepoint" SEODescription="" />
+			</Item>
+			<Item text="Создание повторно используемых компонентов для SharePoint" url="general-development/build-reusable-components-for-sharepoint" SEODescription="" />
+			<Item text="Создание сайтов для SharePoint" url="general-development/build-sites-for-sharepoint" SEODescription="">
+				<Item text="Новые возможности разработки сайтов в SharePoint" url="general-development/what-s-new-with-sharepoint-site-development" SEODescription="" />
+				<Item text="Разработка структуры сайта в SharePoint" url="general-development/develop-the-site-design-in-sharepoint" SEODescription="">
+					<Item text="Обзор компонента &quot;Дизайнер&quot;" url="general-development/overview-of-design-manager-in-sharepoint" SEODescription="" />
+					<Item text="Обзор модели страницы SharePoint" url="general-development/overview-of-the-sharepoint-page-model" SEODescription="" />
+					<Item text="Эталонные страницы, коллекция эталонных страниц и макеты страниц" url="general-development/master-pages-the-master-page-gallery-and-page-layouts-in-sharepoint" SEODescription="">
+						<Item text="Практическое руководство. Подключение сетевого диска к коллекции эталонных страниц" url="general-development/how-to-map-a-network-drive-to-the-sharepoint-master-page-gallery" SEODescription="" />
+						<Item text="Практическое руководство. Применение эталонной страницы на сайте" url="general-development/how-to-apply-a-master-page-to-a-site-in-sharepoint" SEODescription="" />
+						<Item text="Практическое руководство. Создание макета страницы" url="general-development/how-to-create-a-page-layout-in-sharepoint" SEODescription="" />
+						<Item text="Практическое руководство. Настройка макетов страниц для сайта на основе каталога" url="general-development/how-to-customize-page-layouts-for-a-catalog-based-site-in-sharepoint" SEODescription="" />
+						<Item text="Практическое руководство. Применение стилей к полям страницы" url="general-development/how-to-apply-styles-to-page-fields-in-sharepoint" SEODescription="" />
+						<Item text="Практическое руководство. Устранение ошибок и предупреждений при просмотре страницы" url="general-development/how-to-resolve-errors-and-warnings-when-previewing-a-page-in-sharepoint" SEODescription="" />
+						<Item text="Практическое руководство. Преобразование HTML-файла в эталонную страницу" url="general-development/how-to-convert-an-html-file-into-a-master-page-in-sharepoint" SEODescription="" />
+						<Item text="Практическое руководство. Создание минимальной эталонной страницы" url="general-development/how-to-create-a-minimal-master-page-in-sharepoint" SEODescription="" />
+						<Item text="Практическое руководство. Изменение страницы для просмотра в компоненте &quot;Дизайнер&quot;" url="general-development/how-to-change-the-preview-page-in-sharepoint-design-manager" SEODescription="" />
+						<Item text="Элемент управления навигацией по набору в SharePoint Online" url="general-development/sharepoint-online-suite-navigation-control" SEODescription="" />
+					</Item>
+					<Item text="Практическое руководство. Получение URL-адреса библиотеки страниц" url="general-development/how-to-retrieve-the-url-of-a-pages-library" SEODescription="" />
+					<Item text="Возможности разработки и использования фирменной символики" url="general-development/sharepoint-design-manager-branding-and-design-capabilities" SEODescription="">
+						<Item text="Пакеты элементов дизайна" url="general-development/sharepoint-design-manager-design-packages" SEODescription="" />
+						<Item text="Каналы устройств" url="general-development/sharepoint-design-manager-device-channels" SEODescription="" />
+						<Item text="Шаблоны отображения" url="general-development/sharepoint-design-manager-display-templates" SEODescription="" />
+						<Item text="Отрисовка изображений" url="general-development/sharepoint-design-manager-image-renditions" SEODescription="" />
+						<Item text="Фрагменты кода" url="general-development/sharepoint-design-manager-snippets" SEODescription="">
+							<Item text="Практическое руководство. Добавление фрагмента кода &quot;Панель канала устройства&quot;" url="general-development/how-to-add-a-device-channel-panel-snippet-in-sharepoint" SEODescription="" />
+							<Item text="Практическое руководство. Добавление фрагмента кода &quot;Панель режима изменения&quot;" url="general-development/how-to-add-an-edit-mode-panel-snippet-in-sharepoint" SEODescription="" />
+							<Item text="Практическое руководство. Добавление фрагмента кода зоны веб-частей" url="general-development/how-to-add-a-web-part-zone-snippet-in-sharepoint" SEODescription="" />
+							<Item text="Практическое руководство. Добавление фрагмента кода &quot;Фильтрация по ролям безопасности&quot;" url="general-development/how-to-add-a-security-trim-snippet-in-sharepoint" SEODescription="" />
+							<Item text="Практическое руководство. Применение фирменной символики к фрагментам кода с использованием CSS" url="general-development/how-to-brand-snippets-by-using-css-in-sharepoint" SEODescription="" />
+						</Item>
+						<Item text="Темы" url="general-development/themes-overview-for-sharepoint" SEODescription="">
+							<Item text="Практическое руководство. Создание файла просмотра для эталонной страницы" url="general-development/how-to-create-a-master-page-preview-file-in-sharepoint" SEODescription="" />
+							<Item text="Практическое руководство. Развертывание настраиваемой темы" url="general-development/how-to-deploy-a-custom-theme-in-sharepoint" SEODescription="" />
+							<Item text="Практическое руководство. Применение темы к специальным CSS-файлам" url="general-development/how-to-make-custom-css-files-themable-in-sharepoint" SEODescription="" />
+							<Item text="Обновление специальных тем и CSS" url="general-development/upgrade-custom-themes-and-css-to-sharepoint" SEODescription="" />
+							<Item text="Цветовые палитры и шрифты" url="general-development/color-palettes-and-fonts-in-sharepoint" SEODescription="" />
+						</Item>
+					</Item>
+				</Item>
+				<Item text="Управляемые метаданные и навигация в SharePoint" url="general-development/managed-metadata-and-navigation-in-sharepoint" SEODescription="">
+					<Item text="Управляемая навигация в SharePoint" url="general-development/managed-navigation-in-sharepoint" SEODescription="" />
+					<Item text="Веб-часть &quot;Поиск контента&quot; в SharePoint" url="general-development/content-search-web-part-in-sharepoint" SEODescription="" />
+					<Item text="Практическое руководство. Закрепление терминов в наборах терминов навигации в SharePoint с помощью кода" url="general-development/how-to-use-code-to-pin-terms-to-navigation-term-sets-in-sharepoint" SEODescription="" />
+				</Item>
+				<Item text="Публикация сайтов SharePoint" url="general-development/publish-sharepoint-sites" SEODescription="">
+					<Item text="Публикация на нескольких сайтах в SharePoint" url="general-development/cross-site-publishing-in-sharepoint" SEODescription="" />
+				</Item>
+				<Item text="Сегментация пользователей в SharePoint" url="general-development/user-segmentation-in-sharepoint" SEODescription="" />
+				<Item text="Обзор стратегии минимальной загрузки" url="general-development/minimal-download-strategy-overview" SEODescription="" />
+				<Item text="Изменение компонентов SharePoint для MDS" url="general-development/modify-sharepoint-components-for-mds" SEODescription="" />
+				<Item text="Оптимизация производительности страницы" url="general-development/optimize-page-performance-in-sharepoint" SEODescription="" />
+				<Item text="Оптимизация специальных возможностей сайта SharePoint" url="general-development/optimize-sharepoint-site-accessibility" SEODescription="" />
+			</Item>
+		</Item>
+		<Item text="Добавление возможностей SharePoint" url="general-development/add-sharepoint-capabilities" SEODescription="">
+			<Item text="Рабочие процессы" url="general-development/workflows-in-sharepoint" SEODescription="">
+				<Item text="Начало работы с рабочими процессами SharePoint" url="general-development/get-started-with-workflows-in-sharepoint" SEODescription="" />
+				<Item text="Основные сведения о рабочих процессах SharePoint" url="general-development/sharepoint-workflow-fundamentals" SEODescription="" />
+				<Item text="Новые возможности рабочих процессов для SharePoint" url="general-development/what-s-new-in-workflows-for-sharepoint" SEODescription="" />
+				<Item text="Подготовка к установке и настройке среды разработки рабочих процессов SharePoint" url="general-development/prepare-to-set-up-and-configure-a-sharepoint-workflow-development-environment" SEODescription="" />
+				<Item text="Практическое руководство. Настройка очереди MSMQ для рабочих процессов SharePoint" url="general-development/how-to-configure-msmq-for-sharepoint-workflows" SEODescription="" />
+				<Item text="Свойства настройки и запуска рабочих процессов" url="general-development/workflow-initiation-and-configuration-properties" SEODescription="" />
+				<Item text="Советы и рекомендации по разработке рабочих процессов SharePoint" url="general-development/sharepoint-workflow-development-best-practices" SEODescription="" />
+				<Item text="Отладка рабочих процессов SharePoint Server" url="general-development/debugging-sharepoint-server-workflows" SEODescription="" />
+				<Item text="Использование командлета связывания Register-SPWorkflowService" url="general-development/using-the-pairing-cmdlet-register-spworkflowservice" SEODescription="" />
+				<Item text="Примеры рабочих процессов SharePoint" url="general-development/sharepoint-workflow-samples" SEODescription="" />
+				<Item text="Разработка рабочих процессов SharePoint с помощью Visual Studio" url="general-development/develop-sharepoint-workflows-using-visual-studio" SEODescription="">
+					<Item text="Создание приложения службы рабочих процессов в SharePoint с помощью Visual Studio 2012" url="general-development/create-a-sharepoint-workflow-app-using-visual-studio-2012" SEODescription="" />
+					<Item text="Практическое руководство. Создание рабочих процессов SharePoint с помощью Visual Studio" url="general-development/how-to-create-sharepoint-workflows-using-visual-studio" SEODescription="" />
+					<Item text="Работа с клиентской объектной моделью для служб рабочих процессов SharePoint" url="general-development/working-with-the-sharepoint-workflow-services-client-side-object-model" SEODescription="" />
+					<Item text="Работа с веб-службами в рабочих процессах SharePoint с помощью Visual Studio 2012" url="general-development/working-with-web-services-in-sharepoint-workflows-using-visual-studio-2012" SEODescription="" />
+					<Item text="Работа с задачами в рабочих процессах SharePoint с помощью Visual Studio 2012" url="general-development/working-with-tasks-in-sharepoint-workflows-using-visual-studio-2012" SEODescription="" />
+					<Item text="Практическое руководство. Создание специальных форм рабочих процессов для SharePoint Server с помощью Visual Studio 2012" url="general-development/how-to-create-custom-sharepoint-server-workflow-forms-with-visual-studio-20" SEODescription="" />
+					<Item text="Практическое руководство. Создание и развертывание дополнительных действий рабочего процесса" url="general-development/how-to-build-and-deploy-workflow-custom-actions" SEODescription="" />
+					<Item text="Использование взаимодействия между рабочими процессами в SharePoint" url="general-development/use-workflow-interop-for-sharepoint" SEODescription="" />
+					<Item text="Распространенные сообщения об ошибках при разработке рабочих процессов SharePoint" url="general-development/common-error-messages-in-sharepoint-workflow-development" SEODescription="" />
+					<Item text="Объектная модель рабочих процессов SharePoint" url="general-development/sharepoint-workflow-object-model" SEODescription="" />
+				</Item>
+				<Item text="Разработка рабочих процессов в SharePoint Designer и Visio" url="general-development/workflow-development-in-sharepoint-designer-and-visio" SEODescription="">
+					<Item text="Изменения в SharePoint Designer" url="general-development/what-s-changed-in-sharepoint-designer" SEODescription="" />
+					<Item text="Создание рабочих процессов с помощью SharePoint Designer и платформы SharePoint Workflow" url="general-development/creating-a-workflow-by-using-sharepoint-designer-and-the-sharepoint-wo" SEODescription="" />
+					<Item text="Фигуры в шаблонах рабочих процессов SharePoint Server в Visio" url="general-development/shapes-in-the-sharepoint-server-workflow-template-in-visio" SEODescription="" />
+					<Item text="Устранение ошибок проверки рабочих процессов в SharePoint Server при использовании Visio" url="general-development/troubleshooting-sharepoint-server-workflow-validation-errors-in-visio" SEODescription="" />
+					<Item text="Базовые сведения о типе Dictionary в SharePoint Designer 2013, который применяется к действиям" url="general-development/understanding-dictionary-actions-in-sharepoint-designer" SEODescription="" />
+					<Item text="Базовые сведения о действиях в SharePoint Designer 2013, связанных с координацией" url="general-development/understanding-coordination-actions-in-sharepoint-designer" SEODescription="" />
+					<Item text="Базовые сведения о действиях в SharePoint Designer 2013, связанных с задачами" url="general-development/understanding-task-actions-in-sharepoint-designer" SEODescription="" />
+					<Item text="Базовые сведения о действиях в SharePoint Designer 2013, связанных с ожиданием событий" url="general-development/understanding-eventing-actions-in-sharepoint-designer" SEODescription="" />
+					<Item text="Ознакомление с визуальным конструктором для рабочих процессов в SharePoint Designer 2013" url="general-development/getting-familiar-with-visual-designer-for-workflow-in-sharepoint-designer" SEODescription="" />
+					<Item text="Работа с веб-службами в рабочих процессах SharePoint с помощью SharePoint Designer 2013" url="general-development/working-with-web-services-in-sharepoint-workflows-using-sharepoint-designer" SEODescription="" />
+					<Item text="Общие сведения об упаковке и развертывании рабочих процессов в SharePoint" url="general-development/understanding-how-to-package-and-deploy-workflow-in-sharepoint" SEODescription="" />
+					<Item text="Создание рабочего процесса с повышенным уровнем разрешений при помощи платформы SharePoint Workflow" url="general-development/create-a-workflow-with-elevated-permissions-by-using-the-sharepoint-workflo" SEODescription="" />
+					<Item text="Сопоставление версии SharePoint Designer с версией фермы" url="general-development/matching-the-sharepoint-designer-version-with-the-farm-version" SEODescription="" />
+					<Item text="Передача рабочих процессов между SharePoint Designer 2013 и Visio профессиональный 2013 (платформа рабочих процессов SharePoint 2010)" url="general-development/transfer-a-workflow-between-sharepoint-designer-and-visio-professional" SEODescription="" />
+				</Item>
+				<Item text="Руководство по действиям рабочих процессов" url="general-development/workflow-actions-and-activities-reference-for-sharepoint" SEODescription="">
+					<Item text="Классы действий рабочих процессов" url="general-development/workflow-activity-classes-in-sharepoint" SEODescription="" />
+					<Item text="Краткое руководство по действиям рабочих процессов (платформа SharePoint Workflow)" url="general-development/workflow-actions-quick-reference-sharepoint-workflow-platform" SEODescription="" />
+					<Item text="Действия рабочих процессов, доступные при использовании моста взаимодействия между рабочими процессами" url="general-development/workflow-actions-available-using-the-workflow-interop-bridge" SEODescription="" />
+					<Item text="Краткое руководство по условиям рабочих процессов (платформа рабочих процессов SharePoint 2010)" url="general-development/workflow-conditions-quick-reference-sharepoint-2010-workflow-platform" SEODescription="" />
+					<Item text="Краткое руководство по действиям рабочих процессов (платформа рабочих процессов SharePoint 2010)" url="general-development/workflow-actions-quick-reference-sharepoint-2010-workflow-platform" SEODescription="" />
+					<Item text="Фигуры Visio в SharePoint Designer 2013: краткое руководство (платформа рабочих процессов SharePoint 2010)" url="general-development/visio-shapes-in-sharepoint-designer-a-quick-reference-guide-sharepoint-2010" SEODescription="" />
+					<Item text="Проблемы при проверке в Visio (платформа рабочих процессов SharePoint 2010)" url="general-development/validation-issues-in-visio-sharepoint-2010-workflow-platform" SEODescription="" />
+				</Item>
+			</Item>
+			<Item text="Социальные медиа и совместная работа" url="general-development/social-and-collaboration-features-in-sharepoint" SEODescription="">
+				<Item text="Новые возможности для разработчиков, касающиеся обеспечения условий совместной работы и связи с социальными медиа" url="general-development/what-s-new-for-developers-in-social-and-collaboration-features-in-sharepoint-201" SEODescription="" />
+				<Item text="Разработка решений, включающих возможности связи с социальными медиа" url="general-development/get-started-developing-with-social-features-in-sharepoint" SEODescription="">
+					<Item text="Практическое руководство. Чтение и запись в социальных веб-каналах при помощи клиентской объектной модели .NET" url="general-development/how-to-learn-to-read-and-write-to-the-social-feed-by-using-the-net-client-object" SEODescription="" />
+					<Item text="Практическое руководство. Чтение и запись в социальных веб-каналах при помощи службы REST" url="general-development/how-to-learn-to-read-and-write-to-the-social-feed-by-using-the-rest-service-in-s" SEODescription="" />
+					<Item text="Руководство по REST API для веб-каналов социальных медиа" url="general-development/social-feed-rest-api-reference-for-sharepoint" SEODescription="" />
+					<Item text="Руководство по REST API для отслеживания пользователей и контента" url="general-development/following-people-and-content-rest-api-reference-for-sharepoint" SEODescription="" />
+				</Item>
+				<Item text="Работа с веб-каналами социальных медиа" url="general-development/work-with-social-feeds-in-sharepoint" SEODescription="">
+					<Item text="Практическое руководство. Создание и удаление записей, а также извлечение данных веб-каналов социальных медиа с помощью клиентской объектной модели .NET" url="general-development/how-to-create-and-delete-posts-and-retrieve-the-social-feed-by-using-the-net-cli" SEODescription="" />
+					<Item text="Практическое руководство. Создание и удаление записей, а также извлечение данных веб-каналов социальных медиа с помощью клиентской объектной модели JavaScript" url="general-development/how-to-create-and-delete-posts-and-retrieve-the-social-feed-by-using-the-javascr" SEODescription="" />
+					<Item text="Практическое руководство. Добавление в записи упоминаний, тегов и ссылок на сайты и документы" url="general-development/how-to-include-mentions-tags-and-links-to-sites-and-documents-in-posts-in-sharep" SEODescription="" />
+					<Item text="Практическое руководство. Внедрение в записи изображений, видео и документов" url="general-development/how-to-embed-images-videos-and-documents-in-posts-in-sharepoint-server" SEODescription="" />
+					<Item text="Справочные цепочки и дайджест-цепочки в веб-каналах социальных медиа" url="general-development/reference-threads-and-digest-threads-in-sharepoint-server-social-feeds" SEODescription="" />
+				</Item>
+				<Item text="Отслеживание пользователей" url="general-development/follow-people-in-sharepoint" SEODescription="">
+					<Item text="Практическое руководство. Отслеживание пользователей с помощью клиентской объектной модели .NET" url="general-development/how-to-follow-people-by-using-the-net-client-object-model-in-sharepoint" SEODescription="" />
+					<Item text="Практическое руководство. Отслеживание пользователей с помощью объектной модели JavaScript" url="general-development/how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint" SEODescription="" />
+				</Item>
+				<Item text="Отслеживание контента" url="general-development/follow-content-in-sharepoint" SEODescription="">
+					<Item text="Практическое руководство. Отслеживание документов и сайтов с помощью клиентской объектной модели .NET" url="general-development/how-to-follow-documents-and-sites-by-using-the-net-client-object-model-in-sharep" SEODescription="" />
+					<Item text="Практическое руководство. Отслеживание документов, сайтов и тегов с помощью службы REST" url="general-development/how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2" SEODescription="" />
+				</Item>
+				<Item text="Работа с профилями пользователей" url="general-development/work-with-user-profiles-in-sharepoint" SEODescription="">
+					<Item text="Практическое руководство. Получение свойств профиля пользователя с помощью клиентской объектной модели .NET" url="general-development/how-to-retrieve-user-profile-properties-by-using-the-net-client-object-model-in" SEODescription="" />
+					<Item text="Практическое руководство. Получение свойств профиля пользователя с помощью объектной модели JavaScript" url="general-development/how-to-retrieve-user-profile-properties-by-using-the-javascript-object-model-in" SEODescription="" />
+					<Item text="Практическое руководство. Работа с профилями пользователей при помощи серверной объектной модели" url="general-development/how-to-work-with-user-profiles-and-organization-profiles-by-using-the-server-obj" SEODescription="" />
+				</Item>
+			</Item>
+			<Item text="Интеграция функций расположения и карт" url="general-development/integrating-location-and-map-functionality-in-sharepoint" SEODescription="">
+				<Item text="Практическое руководство. Программный способ добавления столбца &quot;Географическое положение&quot; в список SharePoint" url="general-development/how-to-add-a-geolocation-column-to-a-list-programmatically-in-sharepoint" SEODescription="" />
+				<Item text="Создание представления карты для поля &quot;Географическое положение&quot; в SharePoint" url="general-development/create-a-map-view-for-the-geolocation-field-in-sharepoint" SEODescription="" />
+				<Item text="Практическое руководство. Настройка ключа службы &quot;Карты Bing&quot; в SharePoint на уровне фермы и веб-сайта" url="general-development/how-to-set-the-bing-maps-key-at-the-web-and-farm-level-in-sharepoint" SEODescription="" />
+				<Item text="Практическое руководство. Дополнение типа поля &quot;Географическое положение&quot; с использованием клиентской обработки" url="general-development/how-to-extend-the-geolocation-field-type-using-client-side-rendering" SEODescription="" />
+			</Item>
+			<Item text="Поиск в SharePoint" url="general-development/search-in-sharepoint" SEODescription="">
+				<Item text="Новые возможности поиска в SharePoint для разработчиков" url="general-development/what-s-new-in-sharepoint-search-for-developers" SEODescription="" />
+				<Item text="Поиск нового контента с помощью поиска SharePoint" url="general-development/searching-new-content-with-sharepoint-search" SEODescription="">
+					<Item text="Инфраструктура компонентов поиска" url="general-development/search-connector-framework-in-sharepoint" SEODescription="">
+						<Item text="Улучшение файла модели подключения к бизнес-данным для поиска" url="general-development/enhancing-the-bdc-model-file-for-search-in-sharepoint" SEODescription="" />
+						<Item text="Практическое руководство. Выполнение обхода связанных внешних типов контента" url="general-development/how-to-crawl-associated-external-content-types-in-sharepoint" SEODescription="" />
+						<Item text="Практическое руководство. Выполнение обхода больших двоичных объектов" url="general-development/how-to-crawl-binary-large-objects-blobs-in-sharepoint" SEODescription="" />
+						<Item text="Практическое руководство. Настройка безопасности на уровне элемента" url="general-development/how-to-configure-item-level-security-in-sharepoint" SEODescription="" />
+					</Item>
+				</Item>
+				<Item text="Настройка поиска в SharePoint" url="general-development/configure-search-in-sharepoint" SEODescription="">
+					<Item text="Специальные средства разбиения текста на слова в SharePoint Server" url="general-development/custom-word-breakers-in-sharepoint-server" SEODescription="" />
+					<Item text="Специальная обработка контента с помощью вызова веб-службы обогащения контента" url="general-development/custom-content-processing-with-the-content-enrichment-web-service-callout" SEODescription="">
+						<Item text="Практическое руководство. Использование вызова веб-службы обогащения контента для SharePoint Server" url="general-development/how-to-use-the-content-enrichment-web-service-callout-for-sharepoint-server" SEODescription="" />
+						<Item text="Синтаксис триггерных выражений" url="general-development/trigger-expressions-syntax-in-sharepoint" SEODescription="" />
+					</Item>
+				</Item>
+				<Item text="Создание поисковых запросов в SharePoint" url="general-development/building-search-queries-in-sharepoint" SEODescription="">
+					<Item text="Руководство по синтаксису языка запросов по ключевым словам (KQL)" url="general-development/keyword-query-language-kql-syntax-reference" SEODescription="" />
+					<Item text="Руководство по синтаксису языка запросов FAST (FQL)" url="general-development/fast-query-language-fql-syntax-reference" SEODescription="" />
+					<Item text="Использование API поисковых запросов SharePoint" url="general-development/using-the-sharepoint-search-query-apis" SEODescription="" />
+				</Item>
+				<Item text="Обзор REST API для поиска в SharePoint" url="general-development/sharepoint-search-rest-api-overview" SEODescription="">
+					<Item text="Получение предложений запроса с помощью службы поиска REST" url="general-development/retrieving-query-suggestions-using-the-search-rest-service" SEODescription="" />
+				</Item>
+				<Item text="Надстройки поиска в SharePoint" url="general-development/search-add-ins-in-sharepoint" SEODescription="" />
+				<Item text="Настройка результатов поиска в SharePoint" url="general-development/customizing-search-results-in-sharepoint" SEODescription="" />
+				<Item text="Сортировка результатов поиска в SharePoint" url="general-development/sorting-search-results-in-sharepoint" SEODescription="" />
+				<Item text="Настройка моделей ранжирования для улучшения релевантности" url="general-development/customizing-ranking-models-to-improve-relevance-in-sharepoint" SEODescription="" />
+				<Item text="Специальная фильтрация по ролям безопасности для поиска в SharePoint Server" url="general-development/custom-security-trimming-for-search-in-sharepoint-server" SEODescription="">
+					<Item text="Практическое руководство. Использование специальной фильтрации по ролям безопасности для результатов поиска в SharePoint Server" url="general-development/how-to-use-a-custom-security-trimmer-for-sharepoint-server-search-results" SEODescription="" />
+				</Item>
+				<Item text="Программный способ экспорта и импорта параметров конфигурации поиска" url="general-development/exporting-and-importing-search-configuration-settings-in-sharepoint" SEODescription="" />
+				<Item text="Уточнение запросов в SharePoint" url="general-development/query-refinement-in-sharepoint" SEODescription="" />
+			</Item>
+			<Item text="Business Connectivity Services" url="general-development/business-connectivity-services-in-sharepoint" SEODescription="">
+				<Item text="Новые возможности в Business Connectivity Services" url="general-development/what-s-new-in-business-connectivity-services-in-sharepoint" SEODescription="" />
+				<Item text="Начало работы с Business Connectivity Services" url="general-development/get-started-with-business-connectivity-services-in-sharepoint" SEODescription="">
+					<Item text="Настройка среды разработки для BCS" url="general-development/setting-up-a-development-environment-for-bcs-in-sharepoint" SEODescription="" />
+				</Item>
+				<Item text="Внешние типы контента" url="general-development/external-content-types-in-sharepoint" SEODescription="">
+					<Item text="Практическое руководство. Создание внешних типов контента для SQL Server" url="general-development/how-to-create-external-content-types-for-sql-server-in-sharepoint" SEODescription="" />
+					<Item text="Создание связей в SharePoint" url="general-development/create-associations-in-sharepoint" SEODescription="" />
+					<Item text="Внешние типы контента из области надстроек" url="general-development/add-in-scoped-external-content-types-in-sharepoint" SEODescription="">
+						<Item text="Практическое руководство. Создание внешнего типа контента из области надстроек" url="general-development/how-to-create-an-add-in-scoped-external-content-type-in-sharepoint" SEODescription="" />
+						<Item text="Практическое руководство. Преобразование внешнего типа контента из области надстроек в тип контента из области клиентов" url="general-development/how-to-convert-an-add-in-scoped-external-content-type-to-tenant-scoped" SEODescription="" />
+						<Item text="Практическое руководство. Обращение к внешним данным с помощью REST" url="general-development/how-to-access-external-data-with-rest-in-sharepoint" SEODescription="" />
+					</Item>
+				</Item>
+				<Item text="Использование источников OData со службами Business Connectivity Services" url="general-development/using-odata-sources-with-business-connectivity-services-in-sharepoint" SEODescription="">
+					<Item text="Практическое руководство. Создание внешнего типа контента с использованием источника OData" url="general-development/how-to-create-an-external-content-type-from-an-odata-source-in-sharepoint" SEODescription="" />
+					<Item text="Практическое руководство. Создание службы данных OData для использования в качестве внешней системы BCS" url="general-development/how-to-create-an-odata-data-service-for-use-as-a-bcs-external-system" SEODescription="" />
+					<Item text="Практическое руководство. Создание внешнего списка с помощью источника данных OData" url="general-development/how-to-create-an-external-list-using-an-odata-data-source-in-sharepoint" SEODescription="" />
+				</Item>
+				<Item text="Внешние события и оповещения" url="general-development/external-events-and-alerts-in-sharepoint" SEODescription="">
+					<Item text="Практическое руководство. Создание приемников внешних событий" url="general-development/how-to-create-external-event-receivers" SEODescription="" />
+				</Item>
+				<Item text="Использование клиентской объектной модели с внешними данными" url="general-development/get-started-using-the-client-object-model-with-external-data-in-sharepoint" SEODescription="">
+					<Item text="Практическое руководство. Доступ к внешним данным с помощью библиотеки клиентского кода" url="general-development/how-to-use-the-client-code-library-to-access-external-data-in-sharepoint" SEODescription="" />
+				</Item>
+				<Item text="Справочные материалы по Business Connectivity Services для программистов" url="general-development/business-connectivity-services-programmers-reference-for-sharepoint" SEODescription="">
+					<Item text="Справочные материалы по REST API для BCS" url="general-development/bcs-rest-api-reference-for-sharepoint" SEODescription="" />
+					<Item text="Справочные материалы по клиентской объектной модели BCS" url="general-development/bcs-client-object-model-reference-for-sharepoint" SEODescription="" />
+					<Item text="Изменения в схеме модели подключения к бизнес-данным для SharePoint" url="general-development/changes-in-the-bdc-model-schema-for-sharepoint" SEODescription="" />
+					<Item text="Справочные материалы по схеме модели подключения к бизнес-данным" url="general-development/bdc-model-schema-reference-for-sharepoint" SEODescription="" />
+				</Item>
+				<Item text="Создание приложений для SharePoint с возможностью гибридного подключения" url="general-development/create-hybrid-connectivity-apps-for-sharepoint" SEODescription="" />
+				<Item text="Разработка в Duet Enterprise 2.0" url="general-development/developing-with-duet-enterprise-2-0" SEODescription="">
+					<Item text="Практическое руководство. Использование рабочего процесса SAP в Duet Enterprise 2.0" url="general-development/how-to-use-sap-workflow-with-duet-enterprise-2-0" SEODescription="" />
+					<Item text="Практическое руководство. Использование отчетов SAP в Duet Enterprise 2.0" url="general-development/how-to-use-sap-reporting-with-duet-enterprise-2-0" SEODescription="" />
+				</Item>
+			</Item>
+			<Item text="Службы приложений SharePoint и Office" url="general-development/office-and-sharepoint-application-services" SEODescription="">
+				<Item text="Службы Excel в SharePoint" url="general-development/excel-services-in-sharepoint" SEODescription="">
+					<Item text="Начало работы со службами Excel" url="general-development/getting-started-with-excel-services" SEODescription="">
+						<Item text="Обзор служб Excel" url="general-development/excel-services-overview" SEODescription="" />
+						<Item text="Архитектура служб Excel" url="general-development/excel-services-architecture" SEODescription="" />
+						<Item text="Схема разработки решений, в которых используются службы Excel" url="general-development/excel-services-development-roadmap" SEODescription="" />
+						<Item text="Поддерживаемые и неподдерживаемые возможности" url="general-development/supported-and-unsupported-features" SEODescription="" />
+						<Item text="Блоги, форумы и ресурсы, посвященные службам Excel" url="general-development/excel-services-blogs-forums-and-resources" SEODescription="" />
+					</Item>
+					<Item text="Веб-службы Excel" url="general-development/excel-web-services" SEODescription="">
+						<Item text="Новые возможности веб-служб Excel" url="general-development/what-s-new-in-excel-web-services" SEODescription="" />
+						<Item text="Доступ к API SOAP" url="general-development/accessing-the-soap-api" SEODescription="" />
+						<Item text="Петлевые и вызовы с использованием SOAP и прямые вызовы" url="general-development/loop-back-soap-calls-and-direct-linking" SEODescription="" />
+						<Item text="Пошаговое руководство. Разработка настраиваемого приложения с помощью веб-служб Excel" url="general-development/walkthrough-developing-a-custom-application-using-excel-web-services" SEODescription="">
+							<Item text="Шаг 1. Создание проекта клиента веб-службы" url="general-development/step-1-creating-the-web-service-client-project" SEODescription="" />
+							<Item text="Шаг 2. Добавление веб-ссылки" url="general-development/step-2-adding-a-web-reference" SEODescription="" />
+							<Item text="Шаг 3. Получение доступа к веб-службе" url="general-development/step-3-accessing-the-web-service" SEODescription="" />
+							<Item text="Шаг 4. Создание и проверка приложения" url="general-development/step-4-building-and-testing-the-application" SEODescription="" />
+						</Item>
+						<Item text="Коды ошибок служб Excel" url="general-development/excel-services-error-codes" SEODescription="" />
+						<Item text="Практическое руководство. Получение значений из диапазонов" url="general-development/how-to-get-values-from-ranges" SEODescription="" />
+						<Item text="Практическое руководство. Настройка значений диапазонов" url="general-development/how-to-set-values-of-ranges" SEODescription="" />
+						<Item text="Практическое руководство. Указание адреса диапазона и имени листа" url="general-development/how-to-specify-a-range-address-and-sheet-name" SEODescription="" />
+						<Item text="Практическое руководство. Получение всей книги или моментального снимка" url="general-development/how-to-get-an-entire-workbook-or-a-snapshot" SEODescription="" />
+						<Item text="Практическое руководство. Асинхронный вызов метода CloseWorkbook" url="general-development/how-to-use-the-closeworkbook-method-call-asynchronously" SEODescription="" />
+						<Item text="Практическое руководство. Настройка различных учетных данных" url="general-development/how-to-set-various-credentials" SEODescription="" />
+						<Item text="Практическое руководство. Обновление данных" url="general-development/how-to-refresh-data" SEODescription="" />
+						<Item text="Практическое руководство. Использование свойства SubCode для определения кодов ошибок" url="general-development/how-to-use-the-subcode-property-to-capture-error-codes" SEODescription="" />
+					</Item>
+					<Item text="Пользовательские функции служб Excel (UDF)" url="general-development/excel-services-user-defined-functions" SEODescription="">
+						<Item text="Общие сведения о UDF служб Excel" url="general-development/understanding-excel-services-udfs" SEODescription="" />
+						<Item text="Пошаговое руководство. Разработка UDF с использованием управляемого кода" url="general-development/walkthrough-developing-a-managed-code-udf" SEODescription="">
+							<Item text="Шаг 1. Создание проекта и добавление ссылки на UDF" url="general-development/step-1-creating-a-project-and-adding-a-udf-reference" SEODescription="" />
+							<Item text="Шаг 2. Создание UDF с использованием управляемого кода" url="general-development/step-2-creating-a-managed-code-udf" SEODescription="" />
+							<Item text="Шаг 3. Развертывание и включение UDF" url="general-development/step-3-deploying-and-enabling-udfs" SEODescription="" />
+							<Item text="Шаг 4. Тестирование и вызов UDF с использованием ячеек" url="general-development/step-4-testing-and-calling-udfs-from-cells" SEODescription="" />
+						</Item>
+						<Item text="Вопросы и ответы о UDF служб Excel" url="general-development/frequently-asked-questions-about-excel-services-udfs" SEODescription="" />
+						<Item text="Практическое руководство. Включение UDF" url="general-development/how-to-enable-udfs" SEODescription="" />
+						<Item text="Практическое руководство. Создание пользовательской функции, которая вызывает веб-службу" url="general-development/how-to-create-a-udf-that-calls-a-web-service" SEODescription="" />
+						<Item text="Практическое руководство. Доступ к внешнему источнику данных из UDF" url="general-development/how-to-access-an-external-data-source-from-a-udf" SEODescription="" />
+						<Item text="Практическое руководство. Развертывание UDF с помощью решений SharePoint Foundation" url="general-development/how-to-deploy-udfs-using-sharepoint-foundation-solutions" SEODescription="" />
+						<Item text="Практическое руководство. Ограничение разрешений на управление доступом для кода UDF" url="general-development/how-to-restrict-udf-code-access-security-permissions" SEODescription="" />
+					</Item>
+					<Item text="Excel Web Access" url="general-development/excel-web-access" SEODescription="">
+						<Item text="Практическое руководство. Программный способ добавления веб-части Excel Web Access на страницу" url="general-development/how-to-programmatically-add-an-excel-web-access-web-part-to-a-page" SEODescription="" />
+						<Item text="Практическое руководство. Обнаружение и копирование Microsoft.Office.Excel.WebUI.dll и Microsoft.Office.Excel.WebUI.Internal.dll" url="general-development/how-to-locate-and-copy-microsoft-office-excel-webui-dll-and-microsoft-office-exc" SEODescription="" />
+					</Item>
+					<Item text="ECMAScript служб Excel (JavaScript, JScript)" url="general-development/excel-services-ecmascript-javascript-jscript" SEODescription="">
+						<Item text="Пошаговое руководство. Разработка с помощью веб-части редактора контента" url="general-development/walkthrough-developing-using-the-content-editor-web-part" SEODescription="">
+							<Item text="Шаг 1. Создание текстового файла ECMAScript" url="general-development/step-1-creating-a-ecmascript-text-file" SEODescription="" />
+							<Item text="Шаг 2. Добавление редактора контента и веб-частей служб Excel" url="general-development/step-2-adding-the-content-editor-and-excel-services-web-parts" SEODescription="" />
+						</Item>
+						<Item text="Обзор ECMAScript служб Excel" url="general-development/excel-services-ecmascript-overview" SEODescription="" />
+						<Item text="Обзор пользовательских функций JavaScript" url="general-development/javascript-user-defined-functions-overview" SEODescription="" />
+						<Item text="Работа с объектной моделью JavaScript служб Excel" url="general-development/working-with-the-excel-services-javascript-object-model" SEODescription="" />
+						<Item text="Практическое руководство. Создание гибридного веб-приложения, использующего встроенную книгу и службу &quot;Карты Bing&quot;" url="general-development/how-to-create-a-mashup-that-uses-an-embedded-workbook-and-bing-maps" SEODescription="" />
+					</Item>
+					<Item text="REST API для служб Excel" url="general-development/excel-services-rest-api" SEODescription="">
+						<Item text="Обзор REST API для служб Excel" url="general-development/excel-services-rest-api-overview" SEODescription="" />
+						<Item text="Базовая структура и путь URI" url="general-development/basic-uri-structure-and-path" SEODescription="" />
+						<Item text="Возможности обнаружения в REST API для служб Excel" url="general-development/discovery-in-excel-services-rest-api" SEODescription="" />
+						<Item text="URI ресурсов для REST API служб Excel" url="general-development/resources-uri-for-excel-services-rest-api" SEODescription="" />
+						<Item text="Получение диапазонов с помощью веб-канала Atom и фрагмента HTML" url="general-development/getting-ranges-using-atom-feed-and-html-fragment" SEODescription="" />
+						<Item text="Пример URI для REST API служб Excel" url="general-development/sample-uri-for-excel-services-rest-api" SEODescription="" />
+						<Item text="Доступ к схеме" url="general-development/accessing-a-schema" SEODescription="" />
+						<Item text="Неподдерживаемые возможности REST API для служб Excel" url="general-development/unsupported-features-in-excel-services-rest-api" SEODescription="" />
+						<Item text="Сложные сценарии и дополнительные примеры" url="general-development/advanced-scenarios-and-additional-samples" SEODescription="" />
+						<Item text="Использование OData с REST служб Excel в SharePoint" url="general-development/using-odata-with-excel-services-rest-in-sharepoint" SEODescription="" />
+						<Item text="Запрашивание данных книги Excel из SharePoint Server с помощью OData" url="general-development/requesting-excel-workbook-data-from-sharepoint-server-using-odata" SEODescription="" />
+					</Item>
+					<Item text="Общие рекомендации" url="general-development/general-guidelines" SEODescription="">
+						<Item text="Оповещения для служб Excel" url="general-development/excel-services-alerts" SEODescription="" />
+						<Item text="Известные проблемы и советы по службам Excel" url="general-development/excel-services-known-issues-and-tips" SEODescription="" />
+						<Item text="Советы и рекомендации по службам Excel" url="general-development/excel-services-best-practices" SEODescription="" />
+						<Item text="Практическое руководство. Назначение расположения в качестве доверенного" url="general-development/how-to-trust-a-location" SEODescription="" />
+						<Item text="Практическое руководство. Сохранение на сервере данных из клиента Excel" url="general-development/how-to-save-from-excel-client-to-the-server" SEODescription="" />
+						<Item text="Практическое руководство. Сохранение данных на сервере для подготовки к программному доступу" url="general-development/how-to-save-to-the-server-to-prepare-for-programmatic-access" SEODescription="" />
+						<Item text="Практическое руководство. Перехват исключений" url="general-development/how-to-catch-exceptions" SEODescription="" />
+					</Item>
+					<Item text="Удаление интерактивного представления Excel с веб-страницы" url="general-development/removing-excel-interactive-view-from-a-webpage" SEODescription="" />
+				</Item>
+				<Item text="Службы машинного перевода в SharePoint" url="general-development/machine-translation-services-in-sharepoint" SEODescription="" />
+				<Item text="PerformancePoint Services в SharePoint" url="general-development/performancepoint-services-in-sharepoint" SEODescription="">
+					<Item text="Практическое руководство. Создание обработчиков отчетов для PerformancePoint Services" url="general-development/how-to-create-report-renderers-for-performancepoint-services-in-sharepoint" SEODescription="" />
+					<Item text="Практическое руководство. Создание редакторов отчетов для PerformancePoint Services" url="general-development/how-to-create-report-editors-for-performancepoint-services-in-sharepoint" SEODescription="" />
+					<Item text="Практическое руководство. Создание поставщиков данных фильтров для PerformancePoint Services" url="general-development/how-to-create-filter-data-providers-for-performancepoint-services-in-sharepoint" SEODescription="" />
+					<Item text="Практическое руководство. Создание редакторов фильтров для PerformancePoint Services" url="general-development/how-to-create-filter-editors-for-performancepoint-services-in-sharepoint" SEODescription="" />
+					<Item text="Практическое руководство. Создание поставщиков источников табличных данных для PerformancePoint Services" url="general-development/how-to-create-tabular-data-source-providers-for-performancepoint-services-in-sha" SEODescription="" />
+					<Item text="Практическое руководство. Создание редакторов источников табличных данных для PerformancePoint Services" url="general-development/how-to-create-tabular-data-source-editors-for-performancepoint-services-in-share" SEODescription="" />
+					<Item text="Практическое руководство. Создание преобразований системы показателей для PerformancePoint Services" url="general-development/how-to-create-scorecard-transforms-for-performancepoint-services-in-sharepoint-2" SEODescription="" />
+				</Item>
+				<Item text="Службы автоматизации PowerPoint в SharePoint" url="general-development/powerpoint-automation-services-in-sharepoint" SEODescription="" />
+				<Item text="Разработка веб-приложений для Access" url="general-development/develop-access-web-apps" SEODescription="">
+					<Item text="Новые возможности в Access" url="general-development/what-s-new-in-access" SEODescription="" />
+				</Item>
+				<Item text="Службы Visio в SharePoint" url="general-development/visio-services-in-sharepoint" SEODescription="" />
+				<Item text="Новые возможности Word Automation Services для разработчиков" url="general-development/what-s-new-in-word-automation-services-for-developers" SEODescription="" />
+				<Item text="Расширение функции экспорта в фиксированном формате в Word Automation Services" url="general-development/extend-the-fixed-format-export-feature-in-word-automation-services" SEODescription="" />
+			</Item>
+			<Item text="Проверка подлинности, авторизация и безопасность в SharePoint" url="general-development/authentication-authorization-and-security-in-sharepoint" SEODescription="">
+				<Item text="Авторизация, пользователи, группы и объектные модели в SharePoint" url="general-development/authorization-users-groups-and-the-object-model-in-sharepoint" SEODescription="" />
+				<Item text="Роли, наследование, повышение прав и изменение пароля в SharePoint" url="general-development/role-inheritance-elevation-of-privilege-and-password-changes-in-sharepoint" SEODescription="" />
+				<Item text="Удостоверения, основанные на утверждениях, в SharePoint" url="general-development/claims-based-identity-in-sharepoint" SEODescription="">
+					<Item text="Входящие утверждения. Вход в SharePoint" url="general-development/incoming-claims-signing-into-sharepoint" SEODescription="" />
+					<Item text="Поставщик утверждений в SharePoint" url="general-development/claims-provider-in-sharepoint" SEODescription="" />
+					<Item text="Практическое руководство. Создание поставщика утверждений в SharePoint" url="general-development/how-to-create-a-claims-provider-in-sharepoint" SEODescription="" />
+					<Item text="Практическое руководство. Развертывание поставщика утверждений в SharePoint" url="general-development/how-to-deploy-a-claims-provider-in-sharepoint" SEODescription="" />
+				</Item>
+				<Item text="Концепции и удостоверения, основанные на утверждениях, в SharePoint" url="general-development/claims-based-identity-and-concepts-in-sharepoint" SEODescription="">
+					<Item text="Пример сценария делегирования, федерации и проверки подлинности в SharePoint" url="general-development/sample-delegation-federation-and-authentication-scenario-in-sharepoint" SEODescription="" />
+					<Item text="Определения терминов удостоверений, основанных на утверждениях" url="general-development/claims-based-identity-term-definitions" SEODescription="" />
+				</Item>
+				<Item text="Настройка, администрирование и ресурсы в SharePoint" url="general-development/configuration-administration-and-resources-in-sharepoint" SEODescription="" />
+			</Item>
+			<Item text="Обнаружение электронных данных" url="general-development/ediscovery-in-sharepoint" SEODescription="">
+				<Item text="Новые возможности обеспечения соответствия требованиям и обнаружения электронных данных в SharePoint" url="general-development/what-s-new-in-sharepoint-ediscovery-and-compliance" SEODescription="" />
+			</Item>
+			<Item text="CMIS в SharePoint" url="general-development/content-management-interoperability-services-cmis-in-sharepoint" SEODescription="" />
+			<Item text="Формат файла обмена XLIFF в SharePoint" url="general-development/the-xliff-interchange-file-format-in-sharepoint" SEODescription="" />
+		</Item>
+		<Item text="Создание решений для SharePoint без кода" url="general-development/create-sharepoint-no-code-solutions" SEODescription="">
+			<Item text="Руководство по решениям SharePoint Composite" url="general-development/sharepoint-composites-handbook" SEODescription="" />
+			<Item text="Сохранение, скачивание и передача сайта SharePoint в качестве шаблона" url="general-development/save-download-and-upload-a-sharepoint-site-as-a-template" SEODescription="" />
+		</Item>
+		<Item text="Обновление настроек сайта" url="general-development/upgrade-site-customizations-for-sharepoint" SEODescription="">
+			<Item text="Обновление веб-шаблонов" url="general-development/upgrade-web-templates-for-sharepoint" SEODescription="" />
+			<Item text="Использование обновления компонентов для применения новых эталонных страниц SharePoint при обновлении SharePoint 2010" url="general-development/use-feature-upgrade-to-apply-new-sharepoint-master-pages-when-upgrading-fro" SEODescription="" />
+		</Item>
+		<Item text="Настройка общей среды разработки для SharePoint" url="general-development/set-up-a-general-development-environment-for-sharepoint" SEODescription="" />
+		<Item text="Инструкции для SharePoint" url="general-development/how-tos-for-sharepoint" SEODescription="" />
+		<Item text="Примеры кода для SharePoint" url="general-development/code-samples-for-sharepoint" SEODescription="" />
+		<Item text="Выбор правильного набора API в SharePoint" url="general-development/choose-the-right-api-set-in-sharepoint" SEODescription="" />
+		<Item text="Установка и настройка диспетчера рабочих процессов SharePoint" url="general-development/set-up-and-configure-sharepoint-workflow-manager" SEODescription="" />
+		<Item text="Управление жизненным циклом приложений SharePoint Server" url="general-development/sharepoint-server-application-lifecycle-management" SEODescription="" />
+		<Item text="Специальные возможности в SharePoint" url="general-development/accessibility-in-sharepoint" SEODescription="" />
+		<Item text="Практическое руководство. Определение установленных SKU SharePoint" url="general-development/how-to-detect-the-installed-sku-of-sharepoint" SEODescription="" />
+		<Item text="Практическое руководство. Как избежать регулирования или блокировки в SharePoint Online" url="general-development/how-to-avoid-getting-throttled-or-blocked-in-sharepoint-online" SEODescription="" />
+		<Item text="Обзор SharePoint и службы теневого копирования томов" url="general-development/overview-of-sharepoint-and-the-volume-shadow-copy-service" SEODescription="">
+			<Item text="Модуль записи VSS SharePoint" url="general-development/sharepoint-vss-writer" SEODescription="" />
+			<Item text="Запрашивающие стороны VSS и SharePoint" url="general-development/vss-requestors-and-sharepoint" SEODescription="" />
+			<Item text="Практическое руководство. Создание запрашивающей стороны VSS для использования с SharePoint" url="general-development/how-to-create-a-vss-requestor-for-use-with-sharepoint" SEODescription="" />
+			<Item text="Практическое руководство. Резервное копирование и восстановление SharePoint с помощью запрашивающей стороны VSS" url="general-development/how-to-back-up-and-restore-sharepoint-using-a-vss-requestor" SEODescription="" />
+			<Item text="Практическое руководство. Резервное копирование и восстановление приложения службы поиска в SharePoint с помощью VSS" url="general-development/how-to-back-up-and-restore-a-search-service-application-in-sharepoint-using" SEODescription="" />
+		</Item>
+	</Item>
+	<Item text="Надстройки SharePoint" url="sp-add-ins/sharepoint-add-ins" SEODescription="">
+		<Item text="Новое название приложений для SharePoint" url="sp-add-ins/new-name-for-apps-for-sharepoint" SEODescription="" />
+		<Item text="Знакомство с созданием надстроек SharePoint с размещением в SharePoint" url="sp-add-ins/get-started-creating-sharepoint-hosted-sharepoint-add-ins" SEODescription="">
+			<Item text="1. Развертывание и установка размещенных в SharePoint надстроек SharePoint" url="sp-add-ins/deploy-and-install-a-sharepoint-hosted-sharepoint-add-in" SEODescription="" />
+			<Item text="2. Добавление настраиваемых столбцов в размещенные в SharePoint надстройки SharePoint" url="sp-add-ins/add-custom-columns-to-a-sharepoint-hostedsharepoint-add-in" SEODescription="" />
+			<Item text="3. Добавление настраиваемого типа контента в размещенные в SharePoint надстройки SharePoint" url="sp-add-ins/add-a-custom-content-type-to-a-sharepoint-hostedsharepoint-add-in" SEODescription="" />
+			<Item text="4. Добавление веб-части на страницу в размещенных в SharePoint надстройках SharePoint" url="sp-add-ins/add-a-web-part-to-a-page-in-a-sharepoint-hosted-sharepoint-add-in" SEODescription="" />
+			<Item text="5. Добавление рабочего процесса в размещенные в SharePoint надстройки SharePoint" url="sp-add-ins/add-a-workflow-to-a-sharepoint-hosted-sharepoint-add-in" SEODescription="" />
+			<Item text="6. Добавление настраиваемых страниц и стилей в размещенные в SharePoint надстройки SharePoint" url="sp-add-ins/add-a-custom-page-and-style-to-a-sharepoint-hosted-sharepoint-add-in" SEODescription="" />
+			<Item text="7. Добавление настраиваемой клиентской обработки в размещенные в SharePoint надстройки SharePoint" url="sp-add-ins/add-custom-client-side-rendering-to-a-sharepoint-hosted-sharepoint-add-in" SEODescription="" />
+			<Item text="8. Создание специальной кнопки ленты на хост-сайте надстройки SharePoint" url="sp-add-ins/create-a-custom-ribbon-button-in-the-host-web-of-a-sharepoint-add-in" SEODescription="" />
+			<Item text="9. Работа с данными SharePoint с помощью API JavaScript для SharePoint" url="sp-add-ins/use-the-sharepoint-javascript-apis-to-work-with-sharepoint-data" SEODescription="" />
+			<Item text="10. Работа с данными хост-сайта из JavaScript на сайте с надстройкой" url="sp-add-ins/work-with-host-web-data-from-javascript-in-the-add-in-web" SEODescription="" />
+		</Item>
+		<Item text="Знакомство с созданием надстроек SharePoint с размещением у поставщика" url="sp-add-ins/get-started-creating-provider-hosted-sharepoint-add-ins" SEODescription="">
+			<Item text="1. Настройка внешнего вида надстройки SharePoint, размещенной у поставщика" url="sp-add-ins/give-your-provider-hosted-add-in-the-sharepoint-look-and-feel" SEODescription="" />
+			<Item text="2. Включение специальных кнопок в надстройку, размещенную у поставщика" url="sp-add-ins/include-a-custom-button-in-the-provider-hosted-add-in" SEODescription="" />
+			<Item text="3. Краткий обзор объектной модели SharePoint" url="sp-add-ins/get-a-quick-overview-of-the-sharepoint-object-model" SEODescription="" />
+			<Item text="4. Добавление операций записи SharePoint в надстройку, размещенную у поставщика" url="sp-add-ins/add-sharepoint-write-operations-to-the-provider-hosted-add-in" SEODescription="" />
+			<Item text="5. Включение части надстройки в надстройку, размещенную у поставщика" url="sp-add-ins/include-an-add-in-part-in-the-provider-hosted-add-in" SEODescription="" />
+			<Item text="6. Обработка событий надстройки в надстройке, размещенной у поставщика" url="sp-add-ins/handle-add-in-events-in-the-provider-hosted-add-in" SEODescription="" />
+			<Item text="7. Добавление логики первого запуска в надстройку, размещенную у поставщика" url="sp-add-ins/add-first-run-logic-to-the-provider-hosted-add-in" SEODescription="" />
+			<Item text="8. Программное развертывание специальной кнопки в надстройке, размещенной у поставщика" url="sp-add-ins/programmatically-deploy-a-custom-button-in-the-provider-hosted-add-in" SEODescription="" />
+			<Item text="9. Обработка событий элементов списков в надстройке, размещенной у поставщика" url="sp-add-ins/handle-list-item-events-in-the-provider-hosted-add-in" SEODescription="" />
+		</Item>
+		<Item text="Проектирование" url="sp-add-ins/design-sharepoint-add-ins" SEODescription="">
+			<Item text="Что следует рассмотреть, прежде чем приступать к разработке надстроек SharePoint" url="sp-add-ins/three-ways-to-think-about-design-options-for-sharepoint-add-ins" SEODescription="" />
+			<Item text="Важные аспекты разработки и архитектуры для надстроек SharePoint" url="sp-add-ins/important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap" SEODescription="">
+				<Item text="Выбор шаблонов для разработки и размещения надстройки SharePoint" url="sp-add-ins/choose-patterns-for-developing-and-hosting-your-sharepoint-add-in" SEODescription="" />
+				<Item text="Хост-сайты, сайты надстроек и компоненты SharePoint" url="sp-add-ins/host-webs-add-in-webs-and-sharepoint-components-in-sharepoint" SEODescription="" />
+			</Item>
+			<Item text="Безопасный доступ к данным и клиентские объектные модели для надстроек SharePoint" url="sp-add-ins/secure-data-access-and-client-object-models-for-sharepoint-add-ins" SEODescription="" />
+			<Item text="Обеспечение взаимодействия с пользователем в надстройках SharePoint" url="sp-add-ins/ux-design-for-sharepoint-add-ins" SEODescription="">
+				<Item text="Рекомендации, касающиеся обеспечения взаимодействия с пользователем в надстройках SharePoint" url="sp-add-ins/sharepoint-add-ins-ux-design-guidelines" SEODescription="" />
+			</Item>
+		</Item>
+		<Item text="Разработка" url="sp-add-ins/develop-sharepoint-add-ins" SEODescription="">
+			<Item text="Изучение структуры манифеста приложения и пакета надстройки SharePoint" url="sp-add-ins/explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in" SEODescription="">
+				<Item text="Токены и строки URL-адресов в надстройках SharePoint" url="sp-add-ins/url-strings-and-tokens-in-sharepoint-add-ins" SEODescription="" />
+			</Item>
+			<Item text="Индекс REST API, сервер .NET, CSOM, JSOM для SharePoint" url="sp-add-ins/sharepoint-net-server-csom-jsom-and-rest-api-index" SEODescription="" />
+			<Item text="Выполнение базовых операций с использованием кода библиотеки клиента в SharePoint" url="sp-add-ins/complete-basic-operations-using-sharepoint-client-library-code" SEODescription="" />
+			<Item text="Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint" url="sp-add-ins/complete-basic-operations-using-javascript-library-code-in-sharepoint" SEODescription="" />
+			<Item text="Знакомство со службой REST в SharePoint" url="sp-add-ins/get-to-know-the-sharepoint-rest-service" SEODescription="">
+				<Item text="Выполнение базовых операций с использованием конечных точек REST SharePoint" url="sp-add-ins/complete-basic-operations-using-sharepoint-rest-endpoints" SEODescription="" />
+				<Item text="Работа со списками и элементами списков в службе REST" url="sp-add-ins/working-with-lists-and-list-items-with-rest" SEODescription="" />
+				<Item text="Работа с папками и файлами в службе REST" url="sp-add-ins/working-with-folders-and-files-with-rest" SEODescription="" />
+				<Item text="Определение URI конечных точек службы REST в SharePoint" url="sp-add-ins/determine-sharepoint-rest-service-endpoint-uris" SEODescription="" />
+				<Item text="Использование операций запросов OData в запросах REST SharePoint" url="sp-add-ins/use-odata-query-operations-in-sharepoint-rest-requests" SEODescription="" />
+				<Item text="Навигация по структуре данных SharePoint, представленной в службе REST" url="sp-add-ins/navigate-the-sharepoint-data-structure-represented-in-the-rest-service" SEODescription="" />
+				<Item text="Синхронизация элементов SharePoint с помощью службы REST" url="sp-add-ins/synchronize-sharepoint-items-using-the-rest-service" SEODescription="" />
+				<Item text="Отправка файла с помощью API REST и jQuery" url="sp-add-ins/upload-a-file-by-using-the-rest-api-and-jquery" SEODescription="" />
+				<Item text="Назначение настраиваемых разрешений для списка с помощью интерфейса REST" url="sp-add-ins/set-custom-permissions-on-a-list-by-using-the-rest-interface" SEODescription="" />
+				<Item text="Отправка пакетных запросов с помощью REST API" url="sp-add-ins/make-batch-requests-with-the-rest-apis" SEODescription="" />
+			</Item>
+			<Item text="Создание компонентов взаимодействия с пользователем в SharePoint" url="sp-add-ins/create-ux-components-in-sharepoint" SEODescription="">
+				<Item text="Использование таблицы стилей сайта SharePoint в надстройках" url="sp-add-ins/use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins" SEODescription="" />
+				<Item text="Использование клиентского элемента управления хрома в надстройках" url="sp-add-ins/use-the-client-chrome-control-in-sharepoint-add-ins" SEODescription="" />
+				<Item text="Создание частей надстройки для установки совместно с надстройкой SharePoint" url="sp-add-ins/create-add-in-parts-to-install-with-your-sharepoint-add-in" SEODescription="" />
+				<Item text="Создание дополнительных действий для развертывания в надстройках SharePoint" url="sp-add-ins/create-custom-actions-to-deploy-with-sharepoint-add-ins" SEODescription="" />
+				<Item text="Настройка представления списка в надстройках SharePoint с использованием клиентской обработки" url="sp-add-ins/customize-a-list-view-in-sharepoint-add-ins-using-client-side-rendering" SEODescription="" />
+				<Item text="Использование клиентского элемента управления &quot;Выбор людей&quot; в надстройках SharePoint с размещением в SharePoint" url="sp-add-ins/use-the-client-side-people-picker-control-in-sharepoint-hosted-sharepoint-add-in" SEODescription="" />
+				<Item text="Выделение контента и расширение функций надстроек SharePoint с размещением в SharePoint при помощи элемента управления вызовом" url="sp-add-ins/highlight-content-and-enhance-the-functionality-of-sharepoint-hosted-sharepoint" SEODescription="" />
+				<Item text="Включение веб-части в страницу сайта с надстройкой" url="sp-add-ins/include-a-web-part-in-a-webpage-on-the-add-in-web" SEODescription="" />
+				<Item text="Обзор экспериментальных мини-приложений Office для веб-страниц" url="sp-add-ins/office-web-widgetsexperimental-overview" SEODescription="">
+					<Item text="Использование экспериментального мини-приложения People Picker в надстройках SharePoint" url="sp-add-ins/use-the-experimental-people-picker-widget-in-sharepoint-add-ins" SEODescription="" />
+					<Item text="Использование экспериментального мини-приложения Desktop List View в надстройках SharePoint" url="sp-add-ins/use-the-experimental-desktop-list-view-widget-in-sharepoint-add-ins" SEODescription="" />
+					<Item text="Условия лицензии на экспериментальные мини-приложения Office для веб-страниц" url="sp-add-ins/office-web-widgetsexperimental-license-terms" SEODescription="" />
+				</Item>
+			</Item>
+			<Item text="Работа с внешними данными в SharePoint" url="sp-add-ins/work-with-external-data-in-sharepoint" SEODescription="">
+				<Item text="Создание пользовательской прокси-страницы для междоменной библиотеки" url="sp-add-ins/create-a-custom-proxy-page-for-the-cross-domain-library-in-sharepoint" SEODescription="" />
+				<Item text="Отправка запросов удаленной службе с помощью веб-прокси" url="sp-add-ins/query-a-remote-service-using-the-web-proxy-in-sharepoint" SEODescription="" />
+			</Item>
+			<Item text="Обработка событий в надстройках SharePoint" url="sp-add-ins/handle-events-in-sharepoint-add-ins" SEODescription="">
+				<Item text="Создание приемника удаленных событий" url="sp-add-ins/create-a-remote-event-receiver-in-sharepoint-add-ins" SEODescription="" />
+				<Item text="Создание приемника событий надстройки" url="sp-add-ins/create-an-add-in-event-receiver-in-sharepoint-add-ins" SEODescription="" />
+				<Item text="Отладка и устранение неполадок приемника удаленных событий" url="sp-add-ins/debug-and-troubleshoot-a-remote-event-receiver-in-a-sharepoint-add-in" SEODescription="" />
+			</Item>
+			<Item text="Создание надстроек с размещением у поставщика, которые включают пользовательский список SharePoint и тип контента" url="sp-add-ins/create-a-provider-hosted-add-in-that-includes-a-custom-sharepoint-list-and-conte" SEODescription="" />
+			<Item text="Получение свойств и удостоверения пользователя в SharePoint" url="sp-add-ins/get-user-identity-and-properties-in-sharepoint" SEODescription="" />
+			<Item text="Локализация надстроек SharePoint" url="sp-add-ins/localize-sharepoint-add-ins" SEODescription="" />
+			<Item text="Авторизация и проверка подлинности в надстройках SharePoint" url="sp-add-ins/authorization-and-authentication-of-sharepoint-add-ins" SEODescription="">
+				<Item text="Разрешения для надстроек SharePoint" url="sp-add-ins/add-in-permissions-in-sharepoint" SEODescription="" />
+				<Item text="Регистрация надстроек SharePoint" url="sp-add-ins/register-sharepoint-add-ins" SEODescription="" />
+				<Item text="Типы политик авторизации надстройки в SharePoint" url="sp-add-ins/add-in-authorization-policy-types-in-sharepoint" SEODescription="" />
+				<Item text="Три системы авторизации надстроек SharePoint" url="sp-add-ins/three-authorization-systems-for-sharepoint-add-ins" SEODescription="">
+					<Item text="Создание надстроек SharePoint, использующих авторизацию с низким уровнем доверия" url="sp-add-ins/creating-sharepoint-add-ins-that-use-low-trust-authorization" SEODescription="">
+						<Item text="Поток контекста токена OAuth для надстроек SharePoint" url="sp-add-ins/context-token-oauth-flow-for-sharepoint-add-ins" SEODescription="" />
+						<Item text="Поток кода авторизации OAuth для надстроек SharePoint" url="sp-add-ins/authorization-code-oauth-flow-for-sharepoint-add-ins" SEODescription="" />
+						<Item text="Обработка маркеров безопасности в надстройках SharePoint с низким уровнем доверия, размещенных у поставщика" url="sp-add-ins/handle-security-tokens-in-provider-hosted-low-trust-sharepoint-add-ins" SEODescription="" />
+						<Item text="Использование сайта SharePoint Office 365 для авторизации размещенных у поставщика надстроек на локальном сайте SharePoint" url="sp-add-ins/use-an-office-365-sharepoint-site-to-authorize-provider-hosted-add-ins-on-an-on" SEODescription="" />
+						<Item text="Замена секрета клиента с истекающим сроком действия в надстройке SharePoint" url="sp-add-ins/replace-an-expiring-client-secret-in-a-sharepoint-add-in" SEODescription="" />
+					</Item>
+					<Item text="Создание надстроек SharePoint, использующих авторизацию с высоким уровнем доверия" url="sp-add-ins/creating-sharepoint-add-ins-that-use-high-trust-authorization" SEODescription="">
+						<Item text="Создание надстроек с высоким уровнем доверия" url="sp-add-ins/create-high-trust-sharepoint-add-ins" SEODescription="" />
+						<Item text="Создание и использование маркеров доступа в надстройках SharePoint с высоким уровнем доверия, размещенных у поставщика" url="sp-add-ins/create-and-use-access-tokens-in-provider-hosted-high-trust-sharepoint-add-ins" SEODescription="" />
+						<Item text="Устранение неполадок надстроек SharePoint с высоким уровнем доверия" url="sp-add-ins/troubleshooting-high-trust-sharepoint-add-ins" SEODescription="" />
+						<Item text="Упаковка и публикация надстроек SharePoint с высоким уровнем доверия" url="sp-add-ins/package-and-publish-high-trust-sharepoint-add-ins" SEODescription="">
+							<Item text="Скрипты настройки для SharePoint с высоким уровнем доверия" url="sp-add-ins/high-trust-configuration-scripts-for-sharepoint" SEODescription="" />
+						</Item>
+					</Item>
+					<Item text="Создание надстроек SharePoint, использующих междоменную библиотеку" url="sp-add-ins/creating-sharepoint-add-ins-that-use-the-cross-domain-library" SEODescription="">
+						<Item text="Обращение к данным SharePoint из надстроек с помощью междоменной библиотеки" url="sp-add-ins/access-sharepoint-data-from-add-ins-using-the-cross-domain-library" SEODescription="" />
+						<Item text="Работа с междоменной библиотекой в различных зонах безопасности Internet Explorer в надстройках SharePoint" url="sp-add-ins/work-with-the-cross-domain-library-across-different-internet-explorer-security-z" SEODescription="" />
+					</Item>
+				</Item>
+			</Item>
+			<Item text="Создание надстроек SharePoint, которые могут использовать анонимные пользователи" url="sp-add-ins/create-sharepoint-add-ins-that-can-be-used-by-anonymous-users" SEODescription="" />
+			<Item text="Преобразование надстройки SharePoint с автоматическим размещением в надстройку с размещением у поставщика" url="sp-add-ins/convert-an-autohosted-sharepoint-add-in-to-a-provider-hosted-add-in" SEODescription="" />
+			<Item text="Создание надстройки SharePoint для SAP Gateway for Microsoft" url="sp-add-ins/create-provider-hosted-sharepoint-add-ins-to-access-sap-data-by-using-the-sap-ga" SEODescription="" />
+			<Item text="Создание надстройки SharePoint, содержащей шаблон документов и надстройку области задач" url="sp-add-ins/create-a-sharepoint-add-in-that-contains-a-document-template-and-a-task-pane-add" SEODescription="" />
+		</Item>
+		<Item text="Публикация" url="sp-add-ins/publish-sharepoint-add-ins" SEODescription="">
+			<Item text="Развертывание и установка надстроек SharePoint: методы и параметры" url="sp-add-ins/deploying-and-installing-sharepoint-add-ins-methods-and-options" SEODescription="" />
+			<Item text="Области клиентов и области развертывания для надстроек SharePoint" url="sp-add-ins/tenancies-and-deployment-scopes-for-sharepoint-add-ins" SEODescription="" />
+			<Item text="Процесс обновления надстроек SharePoint" url="sp-add-ins/sharepoint-add-ins-update-process" SEODescription="">
+				<Item text="Обновление надстроек SharePoint" url="sp-add-ins/update-sharepoint-add-ins" SEODescription="">
+					<Item text="Обновление компонентов сайта с надстройкой в SharePoint" url="sp-add-ins/update-add-in-web-components-in-sharepoint" SEODescription="" />
+					<Item text="Обновление компонентов хост-сайта с надстройкой в SharePoint" url="sp-add-ins/update-host-web-components-in-sharepoint" SEODescription="" />
+					<Item text="Обновление удаленных компонентов в надстройках SharePoint" url="sp-add-ins/update-remote-components-in-sharepoint-add-ins" SEODescription="" />
+					<Item text="Создание обработчика событий обновления для надстроек SharePoint" url="sp-add-ins/create-a-handler-for-the-update-event-in-sharepoint-add-ins" SEODescription="" />
+				</Item>
+			</Item>
+			<Item text="Публикация надстроек SharePoint с помощью Visual Studio" url="sp-add-ins/publish-sharepoint-add-ins-by-using-visual-studio" SEODescription="" />
+		</Item>
+		<Item text="Средства" url="sp-add-ins/tools-and-environments-for-developing-sharepoint-add-ins" SEODescription="">
+			<Item text="Настройка среды разработки надстроек SharePoint в Office 365" url="sp-add-ins/set-up-a-development-environment-for-sharepoint-add-ins-on-office-365" SEODescription="" />
+			<Item text="Создание сайта разработчика с использованием актуальной подписки на Office 365" url="sp-add-ins/create-a-developer-site-on-an-existing-office-365-subscription" SEODescription="" />
+			<Item text="Настройка локальной среды разработки надстроек" url="sp-add-ins/set-up-an-on-premises-development-environment-for-sharepoint-add-ins" SEODescription="" />
+			<Item text="Создание надстроек SharePoint в Visual Studio" url="sp-add-ins/create-sharepoint-add-ins-in-visual-studio" SEODescription="" />
+			<Item text="Создание простой надстройки с размещением в SharePoint с помощью средств разработки Napa" url="sp-add-ins/create-a-basic-sharepoint-hosted-add-in-by-using-napa-office-365-development-too" SEODescription="" />
+			<Item text="Инструменты разработчика Office для Visual Studio 2013: новые возможности" url="sp-add-ins/what-s-new-in-office-developer-tools-for-visual-studio-2013" SEODescription="" />
+		</Item>
+		<Item text="Создание облачных бизнес-надстроек" url="sp-add-ins/create-cloud-business-add-ins" SEODescription="">
+			<Item text="Начало" url="sp-add-ins/get-started-developing-cloud-business-add-ins" SEODescription="">
+				<Item text="Диспетчер инцидентов. Руководство по созданию облачных бизнес-надстроек" url="sp-add-ins/incident-manager-a-cloud-business-add-in-tutorial" SEODescription="" />
+				<Item text="Создание облачных бизнес-надстроек с каналом новостей социальных медиа" url="sp-add-ins/create-a-cloud-business-add-in-with-a-social-newsfeed" SEODescription="" />
+			</Item>
+			<Item text="Разработка" url="sp-add-ins/develop-cloud-business-add-ins" SEODescription="">
+				<Item text="Создание облачной бизнес-надстройки" url="sp-add-ins/create-a-cloud-business-add-in" SEODescription="" />
+				<Item text="Сопоставление библиотеки документов с объектом" url="sp-add-ins/associate-a-document-library-with-an-entity" SEODescription="">
+					<Item text="Устранение неполадок библиотек документов" url="sp-add-ins/troubleshooting-document-libraries" SEODescription="" />
+				</Item>
+				<Item text="Включение канала новостей для облачной бизнес-надстройки" url="sp-add-ins/enable-a-newsfeed-for-a-cloud-business-add-in" SEODescription="" />
+				<Item text="Предоставление шаблона для библиотеки документов в облачной бизнес-надстройке" url="sp-add-ins/provide-a-template-for-a-document-library-in-a-cloud-business-add-in" SEODescription="" />
+				<Item text="Создание облачной бизнес-надстройки, использующей SAP Gateway" url="sp-add-ins/create-a-cloud-business-add-in-that-uses-the-sap-gateway" SEODescription="" />
+			</Item>
+			<Item text="Публикация" url="sp-add-ins/publish-cloud-business-add-ins" SEODescription="">
+				<Item text="Публикация облачной бизнес-надстройки в SharePoint" url="sp-add-ins/publish-a-cloud-business-add-in-to-sharepoint" SEODescription="" />
+			</Item>
+		</Item>
+	</Item>
 </Menu>

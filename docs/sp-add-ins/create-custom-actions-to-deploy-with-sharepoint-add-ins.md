@@ -2,7 +2,7 @@
 Learn how to create a custom action in SharePoint that deploys to the host web when you deploy a SharePoint Add-in.
  
 
- **Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
+ **Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
  
 
 When you are creating a SharePoint Add-in, custom actions let you interact with the lists and the ribbon in the host web. A custom action deploys to the host web when end users install your add-in. Custom actions can open a remote webpage and pass information through the query string. There are two types of custom actions available for add-ins: Ribbon andMenu Item custom actions.
@@ -11,7 +11,7 @@ When you are creating a SharePoint Add-in, custom actions let you interact with 
 ## Prerequisites for using the examples in this article
 <a name="SP15Createcustomactionsapps_Prereq"> </a>
 
-You need a development environment as explained in  [Get started creating provider-hosted SharePoint Add-ins](get-started-creating-provider-hosted-sharepoint-add-ins.md).
+You need a development environment as explained in  [Get started creating provider-hosted SharePoint Add-ins](get-started-creating-provider-hosted-sharepoint-add-ins).
  
 
  
@@ -28,9 +28,9 @@ The following table lists useful articles that can help you understand the conce
 
 |**Article**|**Description**|
 |:-----|:-----|
-| [SharePoint Add-ins](sharepoint-add-ins.md)|Learn about the new add-in model in SharePoint that enables you to create add-ins, which are small, easy-to-use solutions for end users.|
-| [UX design for SharePoint Add-ins](ux-design-for-sharepoint-add-ins.md)|Learn about the user experience (UX) options that you have when you are building SharePoint Add-ins.|
-| [Host webs, add-in webs, and SharePoint components in SharePoint 2013](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013.md)|Learn about the difference between host webs and add-in webs. Find out which SharePoint components can be included in a SharePoint Add-in, which components are deployed to the host web, which components are deployed to the add-in web, and how the add-in web is deployed in an isolated domain.|
+| [SharePoint Add-ins](sharepoint-add-ins)|Learn about the new add-in model in SharePoint that enables you to create add-ins, which are small, easy-to-use solutions for end users.|
+| [UX design for SharePoint Add-ins](ux-design-for-sharepoint-add-ins)|Learn about the user experience (UX) options that you have when you are building SharePoint Add-ins.|
+| [Host webs, add-in webs, and SharePoint components in SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013)|Learn about the difference between host webs and add-in webs. Find out which SharePoint components can be included in a SharePoint Add-in, which components are deployed to the host web, which components are deployed to the add-in web, and how the add-in web is deployed in an isolated domain.|
 
 ## Code example: Create a custom action in the host web document libraries
 <a name="SP15Createcustomactionsapps_Codeexample"> </a>
@@ -56,7 +56,7 @@ Follow these steps to create a custom action in the host web document libraries:
 1. Open Visual Studio as administrator. (To do this, right-click the Visual Studio icon on the  **Start** menu, and choose **Run as administrator**.)
     
  
-2. Create the provider-hosted SharePoint Add-in as explained in  [Get started creating provider-hosted SharePoint Add-ins](get-started-creating-provider-hosted-sharepoint-add-ins.md) and name itCustomActionsApp. 
+2. Create the provider-hosted SharePoint Add-in as explained in  [Get started creating provider-hosted SharePoint Add-ins](get-started-creating-provider-hosted-sharepoint-add-ins) and name itCustomActionsApp. 
     
  
 
@@ -80,7 +80,7 @@ Follow these steps to create a custom action in the host web document libraries:
 
      **Important**  The ItemURL and ItemID tokens only get passed when there is an item selected. In a production quality SharePoint Add-in, your code needs to handle situations where no item is selected. In this example the code alerts the user that no item has been selected. 
 
-  ```HTML
+```HTML
   <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Custom action target</title>
@@ -117,7 +117,7 @@ Follow these steps to create a custom action in the host web document libraries:
     </script>
 </body>
 </html>
-  ```
+```
 
 
 ### To add a menu item custom action to the SharePoint Add-in project
@@ -147,7 +147,7 @@ Follow these steps to create a custom action in the host web document libraries:
     
 
 
-  ```XML
+```XML
   <?xml version="1.0" encoding="utf-8"?>
 <Elements 
     xmlns="http://schemas.microsoft.com/sharepoint/">
@@ -170,7 +170,7 @@ Follow these steps to create a custom action in the host web document libraries:
   </CustomAction>
 </Elements>
 
-  ```
+```
 
 5. Add the following query parameters to the end of the  **Url** attribute of the **UrlAction** element:
     
@@ -210,7 +210,7 @@ Follow these steps to create a custom action in the host web document libraries:
 |Where does the custom action navigate to?|Choose the  **CustomActionAppWeb\CustomActionTarget.aspx** page.|
 4. Visual Studio generates the following markup in the elements.xml file of the Ribbon custom action feature:
     
-  ```XML
+```XML
   <?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <CustomAction Id="85691508-c076-4f43-93d4-96b4d5253a09.RibbonCustomAction1"
@@ -244,7 +244,7 @@ Follow these steps to create a custom action in the host web document libraries:
   </CustomAction>
 </Elements> 
 
-  ```
+```
 
 5. Add the following query parameters to the end of the  **CommandAction** attribute of the **CommandUIHandler** element:
     
@@ -286,7 +286,7 @@ Follow these steps to create a custom action in the host web document libraries:
 
  
 
-     ![Document library with callout for a document open, the menu that that the callout button on the callout opens, and the Advanced menu open.](../../images/477cecf5-03ff-46ff-9c25-a5f9a86d43f4.png)
+  ![Document library with callout for a document open, the menu that that the callout button on the callout opens, and the Advanced menu open.](../../images/477cecf5-03ff-46ff-9c25-a5f9a86d43f4.png)
  
 
  
@@ -307,7 +307,7 @@ Follow these steps to create a custom action in the host web document libraries:
 
  
 
-     ![Web page with parameters from a custom action](../../images/CustomActions_target.png)
+  ![Web page with parameters from a custom action](../../images/CustomActions_target.png)
  
 
  
@@ -319,7 +319,7 @@ Follow these steps to create a custom action in the host web document libraries:
 
  
 
-     ![A document library with a document selected, the File tab open on the ribbon, and the custom button on the ribbon.](../../images/b315cb68-ff6a-4770-a1dc-738696ab71d2.png)
+  ![A document library with a document selected, the File tab open on the ribbon, and the custom button on the ribbon.](../../images/b315cb68-ff6a-4770-a1dc-738696ab71d2.png)
  
 
  
@@ -360,13 +360,13 @@ This article demonstrated how to create a custom action in a SharePoint Add-in. 
 -  [Code sample: Use custom actions and the cross-domain library to order books](http://code.msdn.microsoft.com/SharePoint-2013-Open-a-36d1598d)
     
  
--  [Use a SharePoint website's style sheet in SharePoint Add-ins](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins.md)
+-  [Use a SharePoint website's style sheet in SharePoint Add-ins](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins)
     
  
--  [Use the client chrome control in SharePoint Add-ins](use-the-client-chrome-control-in-sharepoint-add-ins.md)
+-  [Use the client chrome control in SharePoint Add-ins](use-the-client-chrome-control-in-sharepoint-add-ins)
     
  
--  [Create add-in parts to install with your SharePoint Add-in](create-add-in-parts-to-install-with-your-sharepoint-add-in.md)
+-  [Create add-in parts to install with your SharePoint Add-in](create-add-in-parts-to-install-with-your-sharepoint-add-in)
     
  
 
@@ -374,22 +374,22 @@ This article demonstrated how to create a custom action in a SharePoint Add-in. 
 <a name="SP15Createcustomactionsapps_AddResources"> </a>
 
 
--  [Set up an on-premises development environment for SharePoint Add-ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md)
+-  [Set up an on-premises development environment for SharePoint Add-ins](set-up-an-on-premises-development-environment-for-sharepoint-add-ins)
     
  
--  [UX design for SharePoint Add-ins](ux-design-for-sharepoint-add-ins.md)
+-  [UX design for SharePoint Add-ins](ux-design-for-sharepoint-add-ins)
     
  
--  [SharePoint Add-ins UX design guidelines](sharepoint-add-ins-ux-design-guidelines.md)
+-  [SharePoint Add-ins UX design guidelines](sharepoint-add-ins-ux-design-guidelines)
     
  
--  [Create UX components in SharePoint 2013](create-ux-components-in-sharepoint-2013.md)
+-  [Create UX components in SharePoint](create-ux-components-in-sharepoint-2013)
     
  
--  [Three ways to think about design options for SharePoint Add-ins](three-ways-to-think-about-design-options-for-sharepoint-add-ins.md)
+-  [Three ways to think about design options for SharePoint Add-ins](three-ways-to-think-about-design-options-for-sharepoint-add-ins)
     
  
--  [Important aspects of the SharePoint Add-in architecture and development landscape](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape.md)
+-  [Important aspects of the SharePoint Add-in architecture and development landscape](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape)
     
  
 

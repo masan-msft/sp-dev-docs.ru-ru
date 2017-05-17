@@ -3,7 +3,7 @@
 Learn how to upload a local file to a SharePoint folder by using the REST API and jQuery AJAX requests.
  
 
- **Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
+ **Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
  
 
 The code examples in this article use the REST interface and jQuery AJAX requests to add a local file to the  **Documents** library and then change properties of the list item that represents the uploaded file.
@@ -44,7 +44,7 @@ To use the examples in this article, you'll need the following:
 
  
 
-- SharePoint Server 2013 or SharePoint Online
+- SharePoint Server or SharePoint Online
     
  
 -  **Write** permissions to the **Documents** library for the user running the code. If you're developing a SharePoint Add-in, you can specify **Write** add-in permissions at the **List** scope
@@ -55,17 +55,17 @@ To use the examples in this article, you'll need the following:
  
 - A reference to the jQuery library in your page markup. For example:
     
-  ```HTML
+```HTML
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>
-  ```
+```
 
 - The following controls in your page markup.
     
-  ```HTML
+```HTML
   <input id="getFile" type="file"/><br />
 <input id="displayName" type="text" value="Enter a unique name" /><br />
 <input id="addFileButton" type="button" value="Upload" onclick="uploadFile()"/>
-  ```
+```
 
 
 ## Code example 1: Upload a file across SharePoint domains by using the REST API and jQuery
@@ -75,14 +75,14 @@ The following code example uses the SharePoint REST API and jQuery AJAX requests
  
 
  
-You need to meet  [these requirements](upload-a-file-by-using-the-rest-api-and-jquery.md#RunTheExamples) to use this example.
+You need to meet  [these requirements](upload-a-file-by-using-the-rest-api-and-jquery#RunTheExamples) to use this example.
  
 
  
 
 
 
-```
+```javascript
 'use strict';
 
 var appWebUrl, hostWebUrl;
@@ -255,14 +255,14 @@ The following code example uses the SharePoint REST API and jQuery AJAX requests
  
 
  
-You need to meet  [these requirements](upload-a-file-by-using-the-rest-api-and-jquery.md#RunTheExamples) before you can run this example.
+You need to meet  [these requirements](upload-a-file-by-using-the-rest-api-and-jquery#RunTheExamples) before you can run this example.
  
 
  
 
 
 
-```
+```javascript
 'use strict';
 
 jQuery(document).ready(function () {
@@ -404,19 +404,19 @@ function onError(error) {
 <a name="bk_addresources"> </a>
 
 
--  [Get to know the SharePoint 2013 REST service](get-to-know-the-sharepoint-2013-rest-service.md)
+-  [Get to know the SharePoint REST service](get-to-know-the-sharepoint-2013-rest-service)
     
  
--  [Working with folders and files with REST](working-with-folders-and-files-with-rest.md)
+-  [Working with folders and files with REST](working-with-folders-and-files-with-rest)
     
  
--  [Working with lists and list items with REST](working-with-lists-and-list-items-with-rest.md)
+-  [Working with lists and list items with REST](working-with-lists-and-list-items-with-rest)
     
  
 -  [REST API reference and samples](http://msdn.microsoft.com/library/rest-api-reference-and-samples%28Office.15%29.aspx)
     
  
--  [Access SharePoint 2013 data from add-ins using the cross-domain library](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md)
+-  [Access SharePoint data from add-ins using the cross-domain library](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library)
     
  
 

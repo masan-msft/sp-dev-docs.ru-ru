@@ -3,34 +3,34 @@
 Learn how to programmatically register a custom ribbon button with a custom list in the same provider-hosted SharePoint Add-in.
  
 
- **Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
+ **Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
  
 
-This is the ninth in a series of articles about the basics of developing provider-hosted SharePoint Add-ins. You should first be familiar with  [SharePoint Add-ins](sharepoint-add-ins.md) and the previous articles in this series:
+This is the ninth in a series of articles about the basics of developing provider-hosted SharePoint Add-ins. You should first be familiar with  [SharePoint Add-ins](sharepoint-add-ins) and the previous articles in this series:
  
 
--  [Get started creating provider-hosted SharePoint Add-ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)
+-  [Get started creating provider-hosted SharePoint Add-ins](get-started-creating-provider-hosted-sharepoint-add-ins)
     
  
--  [Give your provider-hosted add-in the SharePoint look-and-feel](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md)
+-  [Give your provider-hosted add-in the SharePoint look-and-feel](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel)
     
  
--  [Include a custom button in the provider-hosted add-in](include-a-custom-button-in-the-provider-hosted-add-in.md)
+-  [Include a custom button in the provider-hosted add-in](include-a-custom-button-in-the-provider-hosted-add-in)
     
  
--  [Get a quick overview of the SharePoint object model](get-a-quick-overview-of-the-sharepoint-object-model.md)
+-  [Get a quick overview of the SharePoint object model](get-a-quick-overview-of-the-sharepoint-object-model)
     
  
--  [Add SharePoint write operations to the provider-hosted add-in](add-sharepoint-write-operations-to-the-provider-hosted-add-in.md)
+-  [Add SharePoint write operations to the provider-hosted add-in](add-sharepoint-write-operations-to-the-provider-hosted-add-in)
     
  
--  [Include an add-in part in the provider-hosted add-in](include-an-add-in-part-in-the-provider-hosted-add-in.md)
+-  [Include an add-in part in the provider-hosted add-in](include-an-add-in-part-in-the-provider-hosted-add-in)
     
  
--  [Handle add-in events in the provider-hosted add-in](handle-add-in-events-in-the-provider-hosted-add-in.md)
+-  [Handle add-in events in the provider-hosted add-in](handle-add-in-events-in-the-provider-hosted-add-in)
     
  
--  [Add first-run logic to the provider-hosted add-in](add-first-run-logic-to-the-provider-hosted-add-in.md)
+-  [Add first-run logic to the provider-hosted add-in](add-first-run-logic-to-the-provider-hosted-add-in)
     
  
 
@@ -53,7 +53,7 @@ In the previous article you removed the custom  **AddEmployeeToCorpDB** ribbon b
 
 1. In  **Solution Explorer**, press the  **Show All Files** button on the small toolbar at the top of **Solution Explorer**.
     
-     ![The Solution Explorer toolbar with a box drawn around the "Show All Files" button.](../../images/f6b035f5-1aa7-452a-8f59-9dd44b062d06.PNG)
+  ![The Solution Explorer toolbar with a box drawn around the "Show All Files" button.](../../images/f6b035f5-1aa7-452a-8f59-9dd44b062d06.PNG)
  
 
  
@@ -106,15 +106,15 @@ The following procedure shows how to implement this strategy.
 
 1. In the  **ChainStore** project, expand **AddEmployeeToCorpDB** and then open the elements.xml file, and then change the value of the **RegistrationId** attribute of the **CustomAction** element to "100". This is the ID of a type of list. Even if there are no instances of lists of this type on the website, the list *type*  is on every SharePoint website. The attribute should now look like the following.
     
-  ```XML
+```XML
   RegistrationId="100"
-  ```
+```
 
 2. In the file SharePointComponentDeployer.cs, add the following line to the  `DeployChainStoreComponentsToHostWeb` method, just below the line that calls `CreateLocalEmployeesList`. You will create this method in the next step.
     
-  ```C#
+```C#
   ChangeCustomActionRegistration();
-  ```
+```
 
 3. Add the following method to the  `SharePointComponentDeployer` class. Note the following about this code:
     
@@ -125,7 +125,7 @@ The following procedure shows how to implement this strategy.
     
      **Important**   **You must change the  `action.Name` value in the code below to match the value in your elements.xml file.** The GUID part of the name will be different. Note that there is a "." character between the GUID and the rest of the name. The following is an example of the line. `where action.Name == "4a926a42-3577-4e02-9d06-fef78586b1bc.AddEmployeeToCorpDB"`
 
-  ```C#
+```C#
   private static void ChangeCustomActionRegistration()
 {
     using (var clientContext = sPContext.CreateUserClientContextForSPHost())
@@ -151,7 +151,7 @@ The following procedure shows how to implement this strategy.
           clientContext.ExecuteQuery();
     }
 }
-  ```
+```
 
 4. Replace  `TODO8` with the following code.
     
@@ -159,7 +159,7 @@ The following procedure shows how to implement this strategy.
     
 
 
-  ```C#
+```C#
   var queryForList = from list in clientContext.Web.Lists
                    where list.Title == "Local Employees"
                    select list;
@@ -170,13 +170,13 @@ List employeeList = matchingLists.First();
 var listActions = employeeList.UserCustomActions;
 clientContext.Load(listActions);
 listActions.Clear();
-  ```
+```
 
 5. Replace  `TODO9` with the following line, which adds an undefined custom action to the **Local Employees** list.
     
-  ```C#
+```C#
   var listScopedEmployeeAction = listActions.Add();
-  ```
+```
 
 6. Replace  `TODO10` with the following code. Note the following about this code:
     
@@ -187,26 +187,26 @@ listActions.Clear();
     
  
 
-  ```C#
+```C#
   listScopedEmployeeAction.Title = webScopedEmployeeAction.Title;
 listScopedEmployeeAction.Location = webScopedEmployeeAction.Location;
 listScopedEmployeeAction.Sequence = webScopedEmployeeAction.Sequence;
 listScopedEmployeeAction.CommandUIExtension = webScopedEmployeeAction.CommandUIExtension;
 listScopedEmployeeAction.Update();
-  ```
+```
 
 7. Replace  `TODO11` with the following line, which deletes the original descriptively-defined button. If we did not have this line, every list on the website that uses list template "100" would have the custom button on it. Since the button's functionality is closely tied to the **Local Employees** list, it would make no sense to have the button on any other list. Also, without this line, the button would appear *twice*  on the **Local Employees** list, because that list uses template "100".
     
-  ```C#
+```C#
   webScopedEmployeeAction.DeleteObject();
-  ```
+```
 
 
     The entire method should now look like the following (except there should be a GUID in place of the placeholder).
     
 
 
-  ```C#
+```C#
   private static void ChangeCustomActionRegistration()
 {
     using (var clientContext = SPContext.CreateUserClientContextForSPHost())
@@ -243,7 +243,7 @@ listScopedEmployeeAction.Update();
         clientContext.ExecuteQuery();
     }
 }
-  ```
+```
 
 
 ## Request full control of the host web
@@ -281,7 +281,7 @@ Since the add-in is now adding adding and deleting web-scoped custom actions, we
  
 4. Navigate to the  **Site Contents** page. The **Local Employees** list is present because your first-run logic added it.
     
-     **Note**  If the list is not there or you have other indications that the first-run code is not executing, it may be that the  **Tenants** table is not being reverted to an empty state when you press F5. The most common cause of this is that the **ChainCorporateDB** project is no longer set as a startup project in Visual Studio. See the note near the top of this article for how to fix this. Also be sure that you've configured the database to be rebuilt as described in [Configure Visual Studio to rebuild the corporate database with each debugging session](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md#Rebuild).
+     **Note**  If the list is not there or you have other indications that the first-run code is not executing, it may be that the  **Tenants** table is not being reverted to an empty state when you press F5. The most common cause of this is that the **ChainCorporateDB** project is no longer set as a startup project in Visual Studio. See the note near the top of this article for how to fix this. Also be sure that you've configured the database to be rebuilt as described in [Configure Visual Studio to rebuild the corporate database with each debugging session](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel#Rebuild).
 5. Open the list and add an item.
     
  
@@ -307,7 +307,7 @@ Since the add-in is now adding adding and deleting web-scoped custom actions, we
 ## 
 <a name="Nextsteps"> </a>
 
- Events on lists and list items can also have custom handlers in SharePoint. You learn how to create one and deploy it in your first-run logic in the next article: [Handle list item events in the provider-hosted add-in](handle-list-item-events-in-the-provider-hosted-add-in.md)
+ Events on lists and list items can also have custom handlers in SharePoint. You learn how to create one and deploy it in your first-run logic in the next article: [Handle list item events in the provider-hosted add-in](handle-list-item-events-in-the-provider-hosted-add-in)
  
 
  

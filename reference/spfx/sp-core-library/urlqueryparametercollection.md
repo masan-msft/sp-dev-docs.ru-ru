@@ -27,12 +27,23 @@
 
 ## <a name="methods"></a>Методы
 
-| Метод       | Модификатор доступа | Возвращаемое значение  | Описание|
+| Метод       | Модификатор доступа | Что возвращается    | Описание|
 |:-------------|:----|:-------|:-----------|
 |[`getValue(param)`](getvalue-urlqueryparametercollection.md)     | `public` | `string` | Возвращает значение первого совпадающего параметра запроса или неопределенное значение, если ключ не существует. Примеры: this._queryParameterList = [ {key: TEST, value: done}, {key: DEBUG, value: false}, {key: TEST, value: notdone}] getValue('TEST') ---> 'done' getValue('debug') ---> 'false' getValue('lost') ---> неопределенное значение |
 |[`getValues(param)`](getvalues-urlqueryparametercollection.md)     | `public` | `string[]` | Возвращает значения всех совпадающих параметров запроса или неопределенное значение, если ключ не существует. Примеры: this._queryParameterList = [ {key: TEST, value: done}, {key: DEBUG, value: false}, {key: TEST, value: notdone}] getValues('TEST') ---> ['done', 'notdone'] getValues('debug') ---> ['false'] getValues('lost') ---> неопределенное значение |
 
+## <a name="sample"></a>Пример
 
+```ts
+import {
+  UrlQueryParameterCollection
+} from '@microsoft/sp-core-library';
+
+// ...
+let queryParameterCollection = new UrlQueryParameterCollection(document.URL);
+let idValue = queryParameterCollection.getValue("id");
+// ...
+```
 
 
 

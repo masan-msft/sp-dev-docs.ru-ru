@@ -2,37 +2,37 @@
 Learn how to handle list item events in a provider-hosted SharePoint Add-in.
  
 
- **Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
+ **Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
  
 
-This is the tenth in a series of articles about the basics of developing provider-hosted SharePoint Add-ins. You should first be familiar with  [SharePoint Add-ins](sharepoint-add-ins.md) and the previous articles in this series:
+This is the tenth in a series of articles about the basics of developing provider-hosted SharePoint Add-ins. You should first be familiar with  [SharePoint Add-ins](sharepoint-add-ins) and the previous articles in this series:
  
 
--  [Get started creating provider-hosted SharePoint Add-ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)
+-  [Get started creating provider-hosted SharePoint Add-ins](get-started-creating-provider-hosted-sharepoint-add-ins)
     
  
--  [Give your provider-hosted add-in the SharePoint look-and-feel](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md)
+-  [Give your provider-hosted add-in the SharePoint look-and-feel](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel)
     
  
--  [Include a custom button in the provider-hosted add-in](include-a-custom-button-in-the-provider-hosted-add-in.md)
+-  [Include a custom button in the provider-hosted add-in](include-a-custom-button-in-the-provider-hosted-add-in)
     
  
--  [Get a quick overview of the SharePoint object model](get-a-quick-overview-of-the-sharepoint-object-model.md)
+-  [Get a quick overview of the SharePoint object model](get-a-quick-overview-of-the-sharepoint-object-model)
     
  
--  [Add SharePoint write operations to the provider-hosted add-in](add-sharepoint-write-operations-to-the-provider-hosted-add-in.md)
+-  [Add SharePoint write operations to the provider-hosted add-in](add-sharepoint-write-operations-to-the-provider-hosted-add-in)
     
  
--  [Include an add-in part in the provider-hosted add-in](include-an-add-in-part-in-the-provider-hosted-add-in.md)
+-  [Include an add-in part in the provider-hosted add-in](include-an-add-in-part-in-the-provider-hosted-add-in)
     
  
--  [Handle add-in events in the provider-hosted add-in](handle-add-in-events-in-the-provider-hosted-add-in.md)
+-  [Handle add-in events in the provider-hosted add-in](handle-add-in-events-in-the-provider-hosted-add-in)
     
  
--  [Add first-run logic to the provider-hosted add-in](add-first-run-logic-to-the-provider-hosted-add-in.md)
+-  [Add first-run logic to the provider-hosted add-in](add-first-run-logic-to-the-provider-hosted-add-in)
     
  
--  [Programmatically deploy a custom button in the provider-hosted add-in](programmatically-deploy-a-custom-button-in-the-provider-hosted-add-in.md)
+-  [Programmatically deploy a custom button in the provider-hosted add-in](programmatically-deploy-a-custom-button-in-the-provider-hosted-add-in)
     
  
 
@@ -61,7 +61,7 @@ You saw in an earlier article in this series that when an order is placed, it is
     
  
 
-  ```C#
+```C#
   private static void CreateExpectedShipmentsList()
  {
     using (var clientContext = sPContext.CreateUserClientContextForSPHost())
@@ -111,22 +111,22 @@ You saw in an earlier article in this series that when an order is placed, it is
         }
      }
  }
-  ```
+```
 
 2. In the  `DeployChainStoreComponentsToHostWeb` method, add the following line, just above the line `RemoteTenantVersion = localTenantVersion`.
     
-  ```
+```
   CreateExpectedShipmentsList();
-  ```
+```
 
 
 ## Create the list item event receiver
 
 
- **Note**  If you have been working through this series of articles, then you have already configured your development environment for debugging remote event receivers. If you have not done that, see  [Configure the solution for event receiver debugging](handle-add-in-events-in-the-provider-hosted-add-in.md#RERDebug) before you go any further in this topic.
+ **Note**  If you have been working through this series of articles, then you have already configured your development environment for debugging remote event receivers. If you have not done that, see  [Configure the solution for event receiver debugging](handle-add-in-events-in-the-provider-hosted-add-in#RERDebug) before you go any further in this topic.
  
 
-The Office Developer Tools for Visual Studio include a  **Remote Event Receiver** item that can be added to a SharePoint Add-in solution. However, at the time this article was written, this project item assumes that the list (with which the receiver will be registered) is on the add-in web, and consequently the tools create an add-in web and some SharePoint artifacts in it. But the receiver for the Chain Store add-in is going to be registered (in a later step) with the **Expected Shipments** list on the host web, so the add-in does not need an add-in web. (For a reminder of the distinction between add-in webs and host webs, see [SharePoint Add-ins](sharepoint-add-ins.md).)
+The Office Developer Tools for Visual Studio include a  **Remote Event Receiver** item that can be added to a SharePoint Add-in solution. However, at the time this article was written, this project item assumes that the list (with which the receiver will be registered) is on the add-in web, and consequently the tools create an add-in web and some SharePoint artifacts in it. But the receiver for the Chain Store add-in is going to be registered (in a later step) with the **Expected Shipments** list on the host web, so the add-in does not need an add-in web. (For a reminder of the distinction between add-in webs and host webs, see [SharePoint Add-ins](sharepoint-add-ins).)
  
 
  
@@ -153,7 +153,7 @@ The Office Developer Tools for Visual Studio include a  **Remote Event Receiver*
     
  
 
-  ```C#
+```C#
   using System;
 using System.Collections.Generic;
 using Microsoft.SharePoint.Client;
@@ -188,11 +188,11 @@ namespace ChainStoreWeb.Services
         }
     }
 }
-  ```
+```
 
 5. Add the following code to the  `ProcessOneWayEvent` method. Note that the **ItemUpdated** event is the only one that this sample will handle, so we could have used a simple **if** structure instead of a **switch**. But event receivers typically handle multiple events, so we want you to see the pattern you'll most commonly be using in your event handlers as a SharePoint add-in developer.
     
-  ```C#
+```C#
   switch (properties.EventType)
 {
     case SPRemoteEventType.ItemUpdated:
@@ -201,11 +201,11 @@ namespace ChainStoreWeb.Services
                     
         break;
 }  
-  ```
+```
 
 6. Replace  `TODO12` with the following code. Again, here, we are using a **switch** structure when a simple **if** structure would do, because we want you to see the common pattern in SharePoint event receivers.
     
-  ```C#
+```C#
   switch (properties.ItemEventProperties.ListTitle)
 {
     case "Expected Shipments":
@@ -214,7 +214,7 @@ namespace ChainStoreWeb.Services
 
         break;
 }
-  ```
+```
 
 7. The code that responds to the arrival of a shipment should do two things:
     
@@ -229,20 +229,20 @@ namespace ChainStoreWeb.Services
     
 
 
-  ```C#
+```C#
   bool updateComplete = TryUpdateInventory(properties);
 if (updateComplete)
 {
     RecordInventoryUpdateLocally(properties);
 }
-  ```
+```
 
 
     The  `ProcessOneWayEvent` method should now look like the following:
     
 
 
-  ```C#
+```C#
   public void ProcessOneWayEvent(SPRemoteEventProperties properties)
 {
     switch (properties.EventType)
@@ -262,11 +262,11 @@ if (updateComplete)
             break;
     }          
 }
-  ```
+```
 
 8. Add the following method to the  `RemoteEventReceiver1` class.
     
-  ```C#
+```C#
   private bool TryUpdateInventory(SPRemoteEventProperties properties)
 {
     bool successFlag = false;
@@ -277,7 +277,7 @@ if (updateComplete)
 
     return successFlag;
 }
-  ```
+```
 
 9. There are five columns on the  **Expected Shipments** list, but we don't want to the handler to react to most kinds of updates to an item. For example, if a user corrects the spelling of a supplier's name, the item updated event is triggered, but our handler should do nothing. The handler should only act when the **Arrived** field has just been set to **Yes**. 
     
@@ -287,7 +287,7 @@ if (updateComplete)
     
 
 
-  ```C#
+```C#
   var arrived = Convert.ToBoolean(properties.ItemEventProperties.AfterProperties["Arrived"]);
 var addedToInventory = Convert.ToBoolean(properties.ItemEventProperties.AfterProperties["Added_x0020_to_x0020_Inventory"]);
 
@@ -298,7 +298,7 @@ if (arrived &amp;&amp; !addedToInventory)
 
     successFlag = true;
 }
-  ```
+```
 
 10. Replace  `TODO15` with the following code. This is mainly SQL and ASP.NET programming, so we don't discuss it in detail, but note:
     
@@ -312,7 +312,7 @@ if (arrived &amp;&amp; !addedToInventory)
     
  
 
-  ```C#
+```C#
   using (SqlConnection conn = SQLAzureUtilities.GetActiveSqlConnection())
 using (SqlCommand cmd = conn.CreateCommand())
 {
@@ -327,14 +327,14 @@ using (SqlCommand cmd = conn.CreateCommand())
     quantity.Value = Convert.ToUInt16(properties.ItemEventProperties.AfterProperties["Quantity"]);
     cmd.ExecuteNonQuery();
 }
-  ```
+```
 
 
     We are not finished with the  `TryUpdateInventory` method yet, but at this point it should look like the following.
     
 
 
-  ```C#
+```C#
   private bool TryUpdateInventory(SPRemoteEventProperties properties)
 {
     bool successFlag = false;
@@ -362,7 +362,7 @@ using (SqlCommand cmd = conn.CreateCommand())
     }  
     return successFlag;
 }
-  ```
+```
 
 11. When the  `TryUpdateInventory` method returns **true**, our handler will call a method (not yet written) that will update the same item in the  **Expected Shipments** list by setting the **Added to Inventory** field to **Yes**. This is itself a item update event, so the handler will be called again. (The fact that the  **Added to Inventory** field is now **Yes**, will prevent the handler from adding the same shipment to inventory a second time, but the handler is still called.) 
     
@@ -379,12 +379,12 @@ using (SqlCommand cmd = conn.CreateCommand())
  
 12. Add the following  **catch** block just below the **try** block.
     
-  ```C#
+```C#
   catch (KeyNotFoundException)
 {
     successFlag = false;
 }
-  ```
+```
 
 
      **Note**  The  **KeyNotFoundException** is also the reason why we have to leave the **Added to Inventory** field visible on the Edit Item form. SharePoint does not include fields that are hidden on the Edit Item form in **AfterProperties**.
@@ -393,7 +393,7 @@ using (SqlCommand cmd = conn.CreateCommand())
     
 
 
-  ```C#
+```C#
   private bool TryUpdateInventory(SPRemoteEventProperties properties)
 {
     bool successFlag = false;
@@ -428,11 +428,11 @@ using (SqlCommand cmd = conn.CreateCommand())
     }
     return successFlag;
 }
-  ```
+```
 
 13. Add the following method to the  `RemoteEventReceiver1` class. By now this pattern of code is familiar from earlier articles in this series. But note one difference. The code gets the **ClientContext** object by calling **TokenHelper.CreateRemoteEventReceiverClientContext** method, instead of the **SharePointContext.CreateUserClientContextForSPHost** method as we used in code that called into SharePoint from pages, such as the EmployeeAdder page. The primary reason for having different methods to get a **ClientContext** object is that SharePoint passes the information needed to create such objects differently to event receivers from how it passes it to pages. For event receivers, it passes a **SPRemoteEventProperties** object, but for pages it passes a special field, called a context token, in the body of the request that launches the add-in page.
     
-  ```C#
+```C#
   private void RecordInventoryUpdateLocally(SPRemoteEventProperties properties)
 {
     using (ClientContext clientContext = TokenHelper.CreateRemoteEventReceiverClientContext(properties))
@@ -444,7 +444,7 @@ using (SqlCommand cmd = conn.CreateCommand())
         clientContext.ExecuteQuery();
     }
 }
-  ```
+```
 
 14. Save and close the receiver code file.
     
@@ -459,13 +459,13 @@ The final task is to tell SharePoint that we have a custom receiver that we want
 
 1. Open the SharePointContentDeployer.cs file and add the following line to the  `DeployChainStoreComponentsToHostWeb` method just below the line that creates the **Expected Shipments** list. We'll add this method in the next step. Note that we are passing to the method the **HttpRequest** object that the add-in's start page passed to the `DeployChainStoreComponentsToHostWeb`method.
     
-  ```C#
+```C#
   RegisterExpectedShipmentsEventHandler(request);
-  ```
+```
 
 2. Add the following method to the  `SharePointComponentDeployer` class.
     
-  ```C#
+```C#
   private static void RegisterExpectedShipmentsEventHandler(HttpRequest request)
 {
     using (var clientContext = sPContext.CreateUserClientContextForSPHost())    
@@ -483,11 +483,11 @@ The final task is to tell SharePoint that we have a custom receiver that we want
         clientContext.ExecuteQuery();
     }
 }
-  ```
+```
 
 3. Replace  `TODO16` with the following lines. Note that there is a light weight ***CreationInformation** class for event receivers just as there is for lists and list items.
     
-  ```C#
+```C#
   EventReceiverDefinitionCreationInformation receiver = new EventReceiverDefinitionCreationInformation();
 receiver.ReceiverName = "ExpectedShipmentsItemUpdated";
 receiver.EventType = EventReceiverType.ItemUpdated;
@@ -496,7 +496,7 @@ receiver.EventType = EventReceiverType.ItemUpdated;
 
 expectedShipmentsList.EventReceivers.Add(receiver);
 
-  ```
+```
 
 4. Now you need to tell SharePoint the URL of the event receiver. In production, it's going to be at the same domain as the remote pages, with the path of /Services/RemoteEventReceiver1.svc. Since the handler is being registered in first-run logic from the add-in's start page, the domain is in the host header of the  **HttpRequest** object for the request that called the page. Our code has passed that object from the page to the `DeployChainStoreComponentsToHostWeb` method, which itself passed it to the `RegisterExpectedShipmentsEventHandler` method. So we can set the receiver's URL with the following code.
     
@@ -506,21 +506,21 @@ expectedShipmentsList.EventReceivers.Add(receiver);
     
 
 
-  ```C#
+```C#
   #if DEBUG
                     receiver.ReceiverUrl = WebConfigurationManager.AppSettings["RERdebuggingServiceBusUrl"].ToString();
 #else
                     receiver.ReceiverUrl = "https://" + request.Headers["Host"] + "/Services/RemoteEventReceiver1.svc"; 
 #endif
 
-  ```
+```
 
 
     The whole  `RegisterExpectedShipmentsEventHandler` method should now look like the following.
     
 
 
-  ```C#
+```C#
   private static void RegisterExpectedShipmentsEventHandler(HttpRequest request)
 {    
     using (var clientContext = sPContext.CreateUserClientContextForSPHost())
@@ -546,13 +546,13 @@ expectedShipmentsList.EventReceivers.Add(receiver);
         clientContext.ExecuteQuery();
     }
 }
-  ```
+```
 
 5. Add the following  **using** statement to the top of the file.
     
-  ```C#
+```C#
   using System.Web.Configuration;
-  ```
+```
 
 6. To ensure that  `DEBUG` is true if, and only if, the add-in is being debugged, carry out the following subprocedure:
     
@@ -564,15 +564,15 @@ expectedShipmentsList.EventReceivers.Add(receiver);
  
 3. Ensure that the  **Define DEBUG constant** box is checked. (It usually is by default.) The following screen shot shows the proper setting.
     
-     ![The Build sub-tab of the Properties tab in Visual Studio. The Configuration drop down is set to Debug. The check box for "Define DEBUG constant" is checked.](../../images/4f81174f-d875-4a9e-bff4-adea0f176f00.PNG)
+  ![The Build sub-tab of the Properties tab in Visual Studio. The Configuration drop down is set to Debug. The check box for "Define DEBUG constant" is checked.](../../images/4f81174f-d875-4a9e-bff4-adea0f176f00.PNG)
  
 
  
 
  
-4. Change the  **Configuration** drop down to **Release**, and then ensure that the  **Define DEBUG constant** box is ** *not* ** checked. (It usually is not by default.) The following screen shot shows the proper setting.
+4. Change the  **Configuration** drop down to **Release**, and then ensure that the  **Define DEBUG constant** box is ***not*** checked. (It usually is not by default.) The following screen shot shows the proper setting.
     
-     ![The Build sub-tab of the Properties tab. The Configuration drop down says Release. The check box for "Define DEBUG constant" is not checked.](../../images/7fd942de-a324-4f70-a750-f5304c993832.PNG)
+  ![The Build sub-tab of the Properties tab. The Configuration drop down says Release. The check box for "Define DEBUG constant" is not checked.](../../images/7fd942de-a324-4f70-a750-f5304c993832.PNG)
  
 
  
@@ -583,9 +583,9 @@ expectedShipmentsList.EventReceivers.Add(receiver);
  
 7. Open the web.config file, and add the following mark up as a child of the  **appSettings** element. We get the value of the setting in the next section.
     
-  ```XML
+```XML
   <add key="RERdebuggingServiceBusUrl" value="" />
-  ```
+```
 
 
 ## Get the receiver URL for debugging
@@ -600,9 +600,9 @@ The add-in event and list item event receivers are Windows Communication Service
  
 2. Add the following as the very first line in the  **ProcessEvent** method.
     
-  ```C#
+```C#
   string debugEndpoint = System.ServiceModel.OperationContext.Current.Channel.LocalAddress.Uri.ToString(); 
-  ```
+```
 
 3. Add a breakpoint to the very next line of the method.
     
@@ -612,7 +612,7 @@ The add-in event and list item event receivers are Windows Communication Service
  
 5. When the breakpoint is hit, hover the cursor over the  `debugEndpoint` variable. When the Visual Studio Data Tip appears, click the down arrow and select **Text Visualizer**.
     
-     ![A Visual Studio text visualizer with an Azure Service Bus URL in it.](../../images/494cf01e-3e17-4092-b239-9312ac4ab258.PNG)
+  ![A Visual Studio text visualizer with an Azure Service Bus URL in it.](../../images/494cf01e-3e17-4092-b239-9312ac4ab258.PNG)
  
 
  
@@ -685,21 +685,21 @@ The add-in event and list item event receivers are Windows Communication Service
 ## 
 <a name="Nextsteps"> </a>
 
-See  [Deploying and installing SharePoint Add-ins: methods and options](deploying-and-installing-sharepoint-add-ins-methods-and-options.md) to learn how to publish your add-in to a SharePoint site. Or go on to advanced work in SharePoint add-in development with these nodes of MSDN:
+See  [Deploying and installing SharePoint Add-ins: methods and options](deploying-and-installing-sharepoint-add-ins-methods-and-options) to learn how to publish your add-in to a SharePoint site. Or go on to advanced work in SharePoint add-in development with these nodes of MSDN:
  
 
  
 
--  [Design SharePoint Add-ins](design-sharepoint-add-ins.md)
+-  [Design SharePoint Add-ins](design-sharepoint-add-ins)
     
  
--  [Develop SharePoint Add-ins](develop-sharepoint-add-ins.md)
+-  [Develop SharePoint Add-ins](develop-sharepoint-add-ins)
     
  
--  [Publish SharePoint Add-ins](publish-sharepoint-add-ins.md)
+-  [Publish SharePoint Add-ins](publish-sharepoint-add-ins)
     
  
--  [Tools and environments for developing SharePoint Add-ins](tools-and-environments-for-developing-sharepoint-add-ins.md)
+-  [Tools and environments for developing SharePoint Add-ins](tools-and-environments-for-developing-sharepoint-add-ins)
     
  
 

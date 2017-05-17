@@ -2,14 +2,14 @@
 Create handlers for the SharePoint Add-in install and uninstall events in SharePoint Add-ins.
  
 
- **Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
+ **Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
  
 
 
 ## Prerequisites
 <a name="SP15appevent_prereq"> </a>
 
-This article presupposes that you have an understanding of provider-hosted SharePoint Add-ins, and that you have developed a few that go a least a little beyond the "Hello World" level. Also, you should be familiar with  [Handle events in SharePoint Add-ins](handle-events-in-sharepoint-add-ins.md). 
+This article presupposes that you have an understanding of provider-hosted SharePoint Add-ins, and that you have developed a few that go a least a little beyond the "Hello World" level. Also, you should be familiar with  [Handle events in SharePoint Add-ins](handle-events-in-sharepoint-add-ins). 
  
 
  
@@ -51,7 +51,7 @@ If you work through the continuing example in this article, you will have a fini
 
  
 
-     ![App events in the properties window](../../images/SP_VS_Properties_Window_AppEvents.PNG)
+  ![App events in the properties window](../../images/SP_VS_Properties_Window_AppEvents.PNG)
  
 
     The Office Developer Tools for Visual Studio will do the following:
@@ -67,7 +67,7 @@ If you work through the continuing example in this article, you will have a fini
   - If the SharePoint Add-in project doesn't already have a web project, the Office Developer Tools for Visual Studio create one. The tools also ensure that add-in manifest is configured for a provider-hosted add-in. They will also add pages, scripts, CSS files, and other artifacts. (If the only remote component that your add-in needs is the event-handling web service, you can delete these from the project. You also should ensure that the  **StartPage** element in the add-in manifest is not pointing to a page that you have deleted.)
     
  
-4. If your test SharePoint farm is not on the same computer that is running Visual Studio, configure the project for debugging using the Microsoft Azure Service Bus. For more information, see  [Debug and troubleshoot a remote event receiver in a SharePoint Add-in](debug-and-troubleshoot-a-remote-event-receiver-in-a-sharepoint-add-in.md). 
+4. If your test SharePoint farm is not on the same computer that is running Visual Studio, configure the project for debugging using the Microsoft Azure Service Bus. For more information, see  [Debug and troubleshoot a remote event receiver in a SharePoint Add-in](debug-and-troubleshoot-a-remote-event-receiver-in-a-sharepoint-add-in). 
     
  
 5. If there is a  `ProcessOneWayEvent` method in the AppEventReceiver.svc file, it's implementation should consist of just the line `throw new NotImplementedException();`, because this method cannot be used in an add-in event handler.  *Add-in event handlers have to return an object that tells SharePoint whether to finish or roll back the event and the  `ProcessOneWayEvent` method doesn't return anything.* 
@@ -91,18 +91,18 @@ If you work through the continuing example in this article, you will have a fini
 
 
 
-  ```C#
+```C#
   public SPRemoteEventResult ProcessEvent(SPRemoteEventProperties properties)
 {
     SPRemoteEventResult result = new SPRemoteEventResult();
 
     return result;
 }
-  ```
+```
 
 7. Immediately below the line that declares the  `result` variable, add the following switch structure to identify which event is being handled.
     
-  ```C#
+```C#
   switch (properties.EventType)
 {
     case SPRemoteEventType.AppInstalled:
@@ -112,13 +112,13 @@ If you work through the continuing example in this article, you will have a fini
     case SPRemoteEventType.AppUninstalling:
         break;
 }
-  ```
+```
 
 
      **Note**  The  **AppInstalled**,  **AppUpdated**, and  **AppInstalling** events, if you have handlers for them, will each get their own URL registered in the add-in manifest. So you *can*  have different endpoints for them; but this article (and the Office Developer Tools for Visual Studio) assume they have exactly the same endpoint; that's why the code needs to determine which event called it.
-8. As explained in  [Include rollback logic and "already done" logic in your add-in event handlers](handle-events-in-sharepoint-add-ins.md#Rollback), if anything goes wrong in your installation logic, you almost always want the add-in installation canceled, and you want SharePoint to roll back what it has done for the installation, and you want to roll back what your handler has done. One way to accomplish these goals is to add the following code inside the  **case** for the AppInstalled event.
+8. As explained in  [Include rollback logic and "already done" logic in your add-in event handlers](handle-events-in-sharepoint-add-ins#Rollback), if anything goes wrong in your installation logic, you almost always want the add-in installation canceled, and you want SharePoint to roll back what it has done for the installation, and you want to roll back what your handler has done. One way to accomplish these goals is to add the following code inside the  **case** for the AppInstalled event.
     
-  ```C#
+```C#
   case SPRemoteEventType.AppInstalled:
   try
   {
@@ -132,17 +132,17 @@ If you work through the continuing example in this article, you will have a fini
       // Rollback logic goes here.
   }
   break;
-  ```
+```
 
 
      **Note**  Move installation code that takes more than 30 seconds into the add-in itself. You can add it to "first run" logic that executes the first time the add-in runs. The add-in can display a message saying something like "We're getting things ready for you." Alternatively, the add-in can prompt the user to run the initialization code.If "first run" logic is not feasible for your add-in, another option is to have your event handler start a remote asynchronous process and then immediately return a  **SPRemoteEventResult** object with the **Status** set to **Continue**. A weakness of this strategy is that if the remote process fails, it has no way to tell SharePoint to roll back the add-in installation.
-9. As explained in  [Add-in event handler architecture strategies](handle-events-in-sharepoint-add-ins.md#Strategies), the handler delegation strategy is preferred, although not possible in every scenario. In the continuing example, we show you how to implement the handler delegation strategy when adding a list to the host web. (For information on how to create a similar AppInstalled event handler that does not use the handler delegation strategy, see the sample  [OfficeDev/PnP/Samples/Core.AppEvents](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.AppEvents).)
+9. As explained in  [Add-in event handler architecture strategies](handle-events-in-sharepoint-add-ins#Strategies), the handler delegation strategy is preferred, although not possible in every scenario. In the continuing example, we show you how to implement the handler delegation strategy when adding a list to the host web. (For information on how to create a similar AppInstalled event handler that does not use the handler delegation strategy, see the sample  [OfficeDev/PnP/Samples/Core.AppEvents](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.AppEvents).)
     
     The following is the new version of the AppInstalled  **case** block. Note that initialization logic that applies to all events goes above the **switch** block. Since the same list that is installed will be removed in the AppUninstalling handler, the list is identified there.
     
 
 
-  ```C#
+```C#
   SPRemoteEventResult result = new SPRemoteEventResult();
 String listTitle = "MyList";
 
@@ -170,11 +170,11 @@ switch (properties.EventType)
     case SPRemoteEventType.AppUninstalling:
        break;
 }                      
-  ```
+```
 
 10. Add the list creation method to the  **AppEventReceiver** class as a **private** method with the following code. Note that the `TokenHelper` class has a special method that is optimized for getting a client context for an add-in event. Passing **false** for the last parameter ensures that the context is for the host web.
     
-  ```C#
+```C#
   private string TryCreateList(String listTitle, SPRemoteEventProperties properties)
  {    
     string errorMessage = String.Empty;          
@@ -189,11 +189,11 @@ switch (properties.EventType)
     return errorMessage;
 }
 
-  ```
+```
 
 11. Rollback logic is basically exception handling logic and the SharePoint CSOM (Client-side object model) has a  **ExceptionHandlingScope** that enables your web service to delegate exception handling to the SharePoint server. (See also, [How to: Use Exception Handling Scope](http://msdn.microsoft.com/library/103619ef-1ba3-44e3-93e1-5e0685bc616e%28Office.15%29.aspx).) Add the following code to the  **if** block in the preceding snippet.
     
-  ```C#
+```C#
   ExceptionHandlingScope scope = new ExceptionHandlingScope(clientContext); 
 
 using (scope.StartScope()) 
@@ -217,11 +217,11 @@ if (scope.HasException)
         scope.ServerErrorDetails, scope.ServerErrorValue, 
         scope.ServerStackTrace, scope.ServerErrorCode);
 }
-  ```
+```
 
 12. There is only one call to SharePoint ( **ExecuteQuery**) in the preceding snippet, but unfortunately we can't quite do with only one. Every object that is going to be referenced in our exception scope has to first be loaded to the client. So add the following code  *above*  the constructor for the **ExceptionHandlingScope**.
     
-  ```C#
+```C#
   ListCollection allLists = clientContext.Web.Lists;
 IEnumerable<List> matchingLists =
     clientContext.LoadQuery(allLists.Where(list => list.Title == listTitle));
@@ -229,11 +229,11 @@ clientContext.ExecuteQuery();
 
 var foundList = matchingLists.FirstOrDefault();
  List createdList = null;
-  ```
+```
 
-13. The code to create a host web list will go into the  **StartTry** block, but the code must first check whether the list has already been added (as explained in [Include rollback logic and "already done" logic in your add-in event handlers](handle-events-in-sharepoint-add-ins.md#Rollback)). If-then-else logic can be delegated to the SharePoint server by using the  **ConditionalScope** class. (See also, [How to: Use Conditional Scope](http://msdn.microsoft.com/library/560112e9-c3ed-4b8f-9cd4-c8bc5d60d63c%28Office.15%29.aspx).) Add the following code inside the  **StartTry** block.
+13. The code to create a host web list will go into the  **StartTry** block, but the code must first check whether the list has already been added (as explained in [Include rollback logic and "already done" logic in your add-in event handlers](handle-events-in-sharepoint-add-ins#Rollback)). If-then-else logic can be delegated to the SharePoint server by using the  **ConditionalScope** class. (See also, [How to: Use Conditional Scope](http://msdn.microsoft.com/library/560112e9-c3ed-4b8f-9cd4-c8bc5d60d63c%28Office.15%29.aspx).) Add the following code inside the  **StartTry** block.
     
-  ```C#
+```C#
   ConditionalScope condScope = new ConditionalScope(clientContext, 
         () => foundList.ServerObjectIsNull.Value == true, true);
 using (condScope.StartScope())
@@ -244,18 +244,18 @@ using (condScope.StartScope())
     listInfo.Url = listTitle;
     createdList = clientContext.Web.Lists.Add(listInfo);                                
 }
-  ```
+```
 
 14. The  **StartCatch** block should undo the creation of the list, but it needs to first check that the list was created, because an exception might have been thrown in the **StartTry** block before it finished creating the list. Add the following code to the **StartCatch** block.
     
-  ```C#
+```C#
   ConditionalScope condScope = new ConditionalScope(clientContext, 
         () => createdList.ServerObjectIsNull.Value != true, true);
 using (condScope.StartScope())
 {
     createdList.DeleteObject();
 } 
-  ```
+```
 
 
      **Tip**   **TROUBLESHOOTING:** To test whether your **StartCatch** block is entered when it should be, you need a way to throw a runtime exception on the SharePoint server. Using a **throw** or dividing by zero won't work because they cause *client-side*  exceptions before the client runtime can even bundle up the code and send it to the server (with the **ExecuteQuery** method). Instead, add the following lines to the **StartTry** block. The client-side runtime accepts this, but it causes a server-side exception, which is what you want. `List fakeList = clientContext.Web.Lists.GetByTitle("NoSuchList");`
@@ -266,7 +266,7 @@ using (condScope.StartScope())
     
 
 
-  ```C#
+```C#
   private string TryCreateList(String listTitle, SPRemoteEventProperties properties)
 {    
     string errorMessage = String.Empty;  
@@ -327,7 +327,7 @@ using (condScope.StartScope())
     }
     return errorMessage;
 }
-  ```
+```
 
 
      **Tip**   **DEBUGGING:** Regardless of whether you are using the handler delegation strategy, when you are stepping through the code with the debugger, keep in mind that, in any scenario in which your handler returns a cancel status, SharePoint is going to call your handler again, up to three more times. So the debugger will cycle through the code up to four times.
@@ -349,7 +349,7 @@ using (condScope.StartScope())
     
 
 
-  ```C#
+```C#
   case SPRemoteEventType.AppUninstalling:
 
 try
@@ -367,7 +367,7 @@ catch (Exception e)
     result.Status = SPRemoteEventServiceStatus.CancelWithError;
 }
 break;
-  ```
+```
 
 3. Add the helper method for recycling the list. Note the following about this code:
     
@@ -381,7 +381,7 @@ break;
     
  
 
-  ```C#
+```C#
   private string TryRecycleList(String listTitle, SPRemoteEventProperties properties)
 {
     string errorMessage = String.Empty;
@@ -446,7 +446,7 @@ break;
     }
     return errorMessage;
 }
-  ```
+```
 
 
 ### To debug and test an add-in uninstalling event receiver
@@ -479,7 +479,7 @@ break;
 ## Create an add-in updated event receiver
 <a name="SP15appevent_prereq"> </a>
 
-For details about creating an add-in updated handler, see  [Create a handler for the update event in SharePoint Add-ins](create-a-handler-for-the-update-event-in-sharepoint-add-ins.md).
+For details about creating an add-in updated handler, see  [Create a handler for the update event in SharePoint Add-ins](create-a-handler-for-the-update-event-in-sharepoint-add-ins).
  
 
  
@@ -496,7 +496,7 @@ The add-in event receiver can be hosted in the cloud or in an on-premise server 
 <a name="SP15appevent_addlresources"> </a>
 
 
--  [Handle events in SharePoint Add-ins](handle-events-in-sharepoint-add-ins.md)
+-  [Handle events in SharePoint Add-ins](handle-events-in-sharepoint-add-ins)
     
  
 

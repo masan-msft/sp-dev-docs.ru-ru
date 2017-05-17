@@ -2,22 +2,22 @@
 Learn how to write data to SharePoint in a provider-hosted SharePoint Add-in.
  
 
- **Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
+ **Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
  
 
-This is the fifthin a series of articles about the basics of developing provider-hosted SharePoint Add-ins. You should first be familiar with  [SharePoint Add-ins](sharepoint-add-ins.md) and the previous articles in this series:
+This is the fifthin a series of articles about the basics of developing provider-hosted SharePoint Add-ins. You should first be familiar with  [SharePoint Add-ins](sharepoint-add-ins) and the previous articles in this series:
  
 
--  [Get started creating provider-hosted SharePoint Add-ins](get-started-creating-provider-hosted-sharepoint-add-ins.md)
+-  [Get started creating provider-hosted SharePoint Add-ins](get-started-creating-provider-hosted-sharepoint-add-ins)
     
  
--  [Give your provider-hosted add-in the SharePoint look-and-feel](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md)
+-  [Give your provider-hosted add-in the SharePoint look-and-feel](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel)
     
  
--  [Include a custom button in the provider-hosted add-in](include-a-custom-button-in-the-provider-hosted-add-in.md)
+-  [Include a custom button in the provider-hosted add-in](include-a-custom-button-in-the-provider-hosted-add-in)
     
  
--  [Get a quick overview of the SharePoint object model](get-a-quick-overview-of-the-sharepoint-object-model.md)
+-  [Get a quick overview of the SharePoint object model](get-a-quick-overview-of-the-sharepoint-object-model)
     
  
 
@@ -43,10 +43,10 @@ Our add-in has a custom ribbon button that adds an employee from the Hong Kong s
  
 2. Add the following line to the  **Page_Load** methodbetween the call of `AddLocalEmployeeToCorpDB` and the call of **Response.Redirect**. You will create the  `SetLocalEmployeeSyncStatus` method in the next step.
     
-  ```C#
+```C#
   // Write to SharePoint 
 SetLocalEmployeeSyncStatus();
-  ```
+```
 
 3. Add the following new method to the  `EmployeeAdder` class. Note the following about this code:
     
@@ -60,7 +60,7 @@ SetLocalEmployeeSyncStatus();
     
  
 
-  ```C#
+```C#
   private void SetLocalEmployeeSyncStatus()
 {
     using (var clientContext = spContext.CreateUserClientContextForSPHost())
@@ -72,7 +72,7 @@ SetLocalEmployeeSyncStatus();
         clientContext.ExecuteQuery();
     }
 }
-  ```
+```
 
 
 ## Request permission to write to the host web list
@@ -175,7 +175,7 @@ The next improvement to the Chain Store add-in is to create new items in a list,
  
 10. Click  **new item**. The item creation form should look exactly like the following, including the two asterisks that indicate required fields.:
     
-     ![The item creation form for the Expected Shipments list. With fields for Product, Supplier, Quantity, Arrived, and "Added to Inventory". Asterisks by the titles of Product and Quantity and default value of one for Quantity.](../../images/e552b5c9-8baa-4e53-9295-4d85a79d7734.PNG)
+  ![The item creation form for the Expected Shipments list. With fields for Product, Supplier, Quantity, Arrived, and "Added to Inventory". Asterisks by the titles of Product and Quantity and default value of one for Quantity.](../../images/e552b5c9-8baa-4e53-9295-4d85a79d7734.PNG)
  
 
  
@@ -200,9 +200,9 @@ Now you add a function to the add-in that creates an item in the  **Expected Shi
  
 3. In the  `btnCreateOrder_Click` method, add the following line just below the call to `CreateOrder`. You'll create the CreateExpectedShipment method in the next step.
     
-  ```C#
+```C#
   CreateExpectedShipment(txtBoxSupplier.Text, txtBoxItemName.Text, quantity);
-  ```
+```
 
 4. Add the following method to the  `OrderForm` class. Note the following about this code:
     
@@ -216,7 +216,7 @@ Now you add a function to the add-in that creates an item in the  **Expected Shi
     
  
 
-  ```
+```
   private void CreateExpectedShipment(string supplier, string product, UInt16 quantity)
 {
     using (var clientContext = spContext.CreateUserClientContextForSPHost())
@@ -231,7 +231,7 @@ Now you add a function to the add-in that creates an item in the  **Expected Shi
         clientContext.ExecuteQuery();
     }
 }
-  ```
+```
 
 
 ## Checking for deleted components
@@ -252,7 +252,7 @@ You might want the method to check the  `expectedShipmentsList` for nullity befo
  
 
  
-Instead, you need to use a special CSOM class called  **ConditionalScope**. The reasons for this are connected to CSOM's batching system, which was mentioned in the previous article in this series. (See  [Client-side runtime and batching](get-a-quick-overview-of-the-sharepoint-object-model.md#CSOMBatching)).  **ConditionalScope** and the batching system are advanced topics that are outside the scope of this getting started series, but you should see MSDN's documentation of them after you have completed this series of tutorials.
+Instead, you need to use a special CSOM class called  **ConditionalScope**. The reasons for this are connected to CSOM's batching system, which was mentioned in the previous article in this series. (See  [Client-side runtime and batching](get-a-quick-overview-of-the-sharepoint-object-model#CSOMBatching)).  **ConditionalScope** and the batching system are advanced topics that are outside the scope of this getting started series, but you should see MSDN's documentation of them after you have completed this series of tutorials.
  
 
  
@@ -327,7 +327,7 @@ Recall that when an add-in requests Read or Write permission with the scope of L
  
 5. From the home page of the Hong Kong store, navigate to  **Site Contents** and open the **Expected Shipments** list. There is now an item on the list corresponding to the order. The following screenshot is an example.
     
-     ![The Expected Shipments list with a single item. There Product and Supplier fields have names. The Quantity field has a number. The two Yes/No fields are both set to "No".](../../images/e4285084-d31e-4e79-a469-ddebbc7dfb18.PNG)
+  ![The Expected Shipments list with a single item. There Product and Supplier fields have names. The Quantity field has a number. The two Yes/No fields are both set to "No".](../../images/e4285084-d31e-4e79-a469-ddebbc7dfb18.PNG)
  
 
  
@@ -343,7 +343,7 @@ Recall that when an add-in requests Read or Write permission with the scope of L
 ## 
 <a name="Nextsteps"> </a>
 
- In the next article, you'll learn how to surface the remote Order Form as a Web Part in a SharePoint page: [Include an add-in part in the provider-hosted add-in](include-an-add-in-part-in-the-provider-hosted-add-in.md)
+ In the next article, you'll learn how to surface the remote Order Form as a Web Part in a SharePoint page: [Include an add-in part in the provider-hosted add-in](include-an-add-in-part-in-the-provider-hosted-add-in)
  
 
  

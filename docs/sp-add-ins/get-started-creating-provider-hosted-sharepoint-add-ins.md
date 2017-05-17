@@ -2,10 +2,10 @@
 Set up a development environment and create your first provider-hosted SharePoint Add-in.
  
 
- **Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
+ **Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
  
 
-Provider-hosted add-ins are one of the two major types of SharePoint Add-ins. For an overview of SharePoint Add-ins and the two different types, see  [SharePoint Add-ins](sharepoint-add-ins.md). Here's a summary of provider-hosted add-ins:
+Provider-hosted add-ins are one of the two major types of SharePoint Add-ins. For an overview of SharePoint Add-ins and the two different types, see  [SharePoint Add-ins](sharepoint-add-ins). Here's a summary of provider-hosted add-ins:
  
 
 - They include a web application, or service, or database that is hosted externally from the SharePoint farm or SharePoint Online subscription. They may also include SharePoint components. You can host the external components on any web-hosting stack, including the LAMP (Linux, Apache, MySQL, and PHP) stack.
@@ -14,11 +14,11 @@ Provider-hosted add-ins are one of the two major types of SharePoint Add-ins. Fo
 - The custom business logic in the add-in has to run on either the external components or in JavaScript on custom SharePoint pages.
     
  
-- [Step 1 - Set up your dev environment](get-started-creating-provider-hosted-sharepoint-add-ins.md#Setup) 
+- [Step 1 - Set up your dev environment](get-started-creating-provider-hosted-sharepoint-add-ins#Setup) 
 
-- [Step 2 - Create the app project](get-started-creating-provider-hosted-sharepoint-add-ins.md#Create) 
+- [Step 2 - Create the app project](get-started-creating-provider-hosted-sharepoint-add-ins#Create) 
 
-- [Step 3 - Code your app](get-started-creating-provider-hosted-sharepoint-add-ins.md#Code)
+- [Step 3 - Code your app](get-started-creating-provider-hosted-sharepoint-add-ins#Code)
  
 ## Set up your dev environment
 <a name="Setup"> </a>
@@ -42,7 +42,7 @@ There are many ways to set up a development environment for SharePoint Add-ins. 
 <a name="o365_signup"> </a>
 
 
- **Note**   You might already have access to an Office 365 Developer Site: **Are you an MSDN subscriber?** Visual Studio Ultimate and Visual Studio Premium with MSDN subscribers receive an Office 365 Developer Subscription as a benefit. [Redeem your benefit today.](https://msdn.microsoft.com/subscriptions/manage/default.aspx) **Do you have one of the following Office 365 subscription plans?** **If so, an administrator of the Office 365 subscription can create a Developer Site** by using the [Office 365 admin center](https://portal.microsoftonline.com/admin/default.aspx). For more info, see  [Create a developer site on an existing Office 365 subscription](create-a-developer-site-on-an-existing-office-365-subscription.md). 
+ **Note**   You might already have access to an Office 365 Developer Site: **Are you an MSDN subscriber?** Visual Studio Ultimate and Visual Studio Premium with MSDN subscribers receive an Office 365 Developer Subscription as a benefit. [Redeem your benefit today.](https://msdn.microsoft.com/subscriptions/manage/default.aspx) **Do you have one of the following Office 365 subscription plans?** **If so, an administrator of the Office 365 subscription can create a Developer Site** by using the [Office 365 admin center](https://portal.microsoftonline.com/admin/default.aspx). For more info, see  [Create a developer site on an existing Office 365 subscription](create-a-developer-site-on-an-existing-office-365-subscription). 
  
 
 There are three ways to get an Office 365 plan. 
@@ -185,7 +185,7 @@ After you finish the signup process, your browser opens the Office 365 installat
  
 2. Delete any markup inside the  **<body>** tag of the Pages/Default.aspx file of your web application, and then add the following HTML and ASP.NET controls inside the **<body>**. This sample uses the  [UpdatePanel](http://msdn2.microsoft.com/EN-US/library/bb359258) control to enable partial page rendering.
     
-  ```HTML
+```HTML
   <form id="form1" runat="server">
   <div>
     <asp:ScriptManager ID="ScriptManager1" runat="server"
@@ -227,21 +227,21 @@ After you finish the signup process, your browser opens the Office 365 installat
      </asp:UpdatePanel>
   </div>
 </form>
-  ```
+```
 
 3. Add the following declarations to the Default.aspx.cs file of your web application.
     
-  ```C#
+```C#
   using Microsoft.SharePoint.Client;
 using Microsoft.IdentityModel.S2S.Tokens;
 using System.Net;
 using System.IO;
 using System.Xml;
-  ```
+```
 
 4. In the Default.aspx.cs file of your web application, add these variables inside the  [Page](http://msdn2.microsoft.com/EN-US/library/dfbt9et1) class.
     
-  ```C#
+```C#
   SharePointContextToken contextToken;
 string accessToken;
 Uri sharepointUrl;
@@ -249,11 +249,11 @@ string siteName;
 string currentUser;
 List<string> listOfUsers = new List<string>();
 List<string> listOfLists = new List<string>();
-  ```
+```
 
 5. Add the  `RetrieveWithCSOM` method inside the [Page](http://msdn2.microsoft.com/EN-US/library/dfbt9et1) class. This method uses the SharePoint CSOM to retrieve information about your site and display it on the page.
     
-  ```C#
+```C#
   // This method retrieves information about the host web by using the CSOM.
 private void RetrieveWithCSOM(string accessToken)
 {
@@ -301,11 +301,11 @@ private void RetrieveWithCSOM(string accessToken)
         listOfLists.Add(list.Title);
     }
 }
-  ```
+```
 
 6. Add the  `CSOM_Click` method inside the [Page](http://msdn2.microsoft.com/EN-US/library/dfbt9et1) class. This method triggers the event that occurs when the user clicks the **Populate Data** link.
     
-  ```C#
+```C#
   protected void CSOM_Click(object sender, EventArgs e)
 {
     string commandAccessToken = ((LinkButton)sender).CommandArgument;
@@ -317,11 +317,11 @@ private void RetrieveWithCSOM(string accessToken)
     ListList.DataSource = listOfLists;
     ListList.DataBind();    
  }
-  ```
+```
 
 7. Replace the existing  `Page_Load` method with this one. The `Page_Load` method uses methods in the TokenHelper.cs file to retrieve the context from the `Request` object and get an access token from Microsoft Azure Access Control Service (ACS).
     
-  ```C#
+```C#
   // The Page_load method fetches the context token and the access token. 
 // The access token is used by all of the data retrieval methods.
 protected void Page_Load(object sender, EventArgs e)
@@ -348,11 +348,11 @@ protected void Page_Load(object sender, EventArgs e)
         return;
     }
 }
-  ```
+```
 
 8. The Default.aspx.cs file should look like this when you're done.
     
-  ```C#
+```C#
   using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -480,7 +480,7 @@ namespace SampleAddInWeb
         }
     }
 }
-  ```
+```
 
 9. Use the F5 key to deploy and run your add-in. If you see a  **Security Alert** window that asks you to trust the self-signed Localhost certificate, choose **Yes**.
     
@@ -491,7 +491,7 @@ namespace SampleAddInWeb
 
  
 
-     ![Basic self-hosted app launch page](../../images/SP15_basicself-hostedapp.gif)
+  ![Basic self-hosted app launch page](../../images/SP15_basicself-hostedapp.gif)
  
 
  
@@ -501,7 +501,7 @@ namespace SampleAddInWeb
 ## Next steps
 <a name="SP15createprovider_nextsteps"> </a>
 
-See  [Give your provider-hosted add-in the SharePoint look-and-feel](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md) to learn how to integrate an add-in into SharePoint's UI scheme.
+See  [Give your provider-hosted add-in the SharePoint look-and-feel](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel) to learn how to integrate an add-in into SharePoint's UI scheme.
  
 
  
@@ -510,7 +510,7 @@ See  [Give your provider-hosted add-in the SharePoint look-and-feel](give-your-p
 <a name="bk_addresources"> </a>
 
 
-- For other ways of setting up a development environment, such as an "all on-premise" environment, see the  [Tools](tools-and-environments-for-developing-sharepoint-add-ins.md) section in the SharePoint Add-ins table of contents.
+- For other ways of setting up a development environment, such as an "all on-premise" environment, see the  [Tools](tools-and-environments-for-developing-sharepoint-add-ins) section in the SharePoint Add-ins table of contents.
     
  
 

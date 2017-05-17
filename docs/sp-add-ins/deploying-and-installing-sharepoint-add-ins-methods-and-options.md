@@ -2,14 +2,14 @@
 Learn about the methods for publishing, installing, and uninstalling a SharePoint Add-in.
  
 
- **Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
+ **Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
  
 
 
 ## Publishing to the Office Store or an organization's add-in catalog
 <a name="MarketOrCatalog"> </a>
 
-You can upload your SharePoint Add-in to either the public Office Store or to an organization's private add-in catalog. A private add-in catalog is a dedicated site collection in a SharePoint 2013 web application (or a SharePoint Online tenancy) that hosts document libraries for SharePoint Add-ins and Office Add-ins. Putting the catalog into its own site collection makes it easier for the web application administrator or tenant administrator to limit permissions to the catalog. 
+You can upload your SharePoint Add-in to either the public Office Store or to an organization's private add-in catalog. A private add-in catalog is a dedicated site collection in a SharePoint web application (or a SharePoint Online tenancy) that hosts document libraries for SharePoint Add-ins and Office Add-ins. Putting the catalog into its own site collection makes it easier for the web application administrator or tenant administrator to limit permissions to the catalog. 
  
 
  
@@ -25,7 +25,7 @@ Uploading a SharePoint Add-in to an organization's add-in catalog is as easy as 
  
 
  
-Tenant administrators and SharePoint 2013 web application administrators can shop for SharePoint Add-ins on the Office Store. To open the Office Store, the administrator selects  **Add an Add-in** on the **Site Contents** page and then selects **SharePoint Store** in the **Your Add-ins** page. This opens a **SharePoint Store** page that the administrators can use to discover and learn about SharePoint Add-ins that vendors are offering. (They can also do this on office.com.) Add-ins that require a prerequisite that is not installed on the administrator's web application or tenancy appear dimmed and are unavailable in the add-in store. For example, if an add-in requires Search Services and this is not installed, the add-in appears dimmed. Administrators can sort, filter, and browse the list of add-ins, read about the add-ins, see add-in reviews, and purchase licenses for an add-in.
+Tenant administrators and SharePoint web application administrators can shop for SharePoint Add-ins on the Office Store. To open the Office Store, the administrator selects  **Add an Add-in** on the **Site Contents** page and then selects **SharePoint Store** in the **Your Add-ins** page. This opens a **SharePoint Store** page that the administrators can use to discover and learn about SharePoint Add-ins that vendors are offering. (They can also do this on office.com.) Add-ins that require a prerequisite that is not installed on the administrator's web application or tenancy appear dimmed and are unavailable in the add-in store. For example, if an add-in requires Search Services and this is not installed, the add-in appears dimmed. Administrators can sort, filter, and browse the list of add-ins, read about the add-ins, see add-in reviews, and purchase licenses for an add-in.
  
 
  
@@ -56,7 +56,7 @@ All the add-ins that the user can install immediately are listed, and with few e
 ## Installing SharePoint Add-ins
 <a name="Installing"> </a>
 
-Website owners install SharePoint Add-ins from the  **Your Add-ins** page as described earlier in this topic. Installation creates an instance of the add-in. For more information about installing add-ins, see [Add SharePoint Add-ins to a SharePoint 2013 site](https://technet.microsoft.com/en-us/library/fp161231.aspx). 
+Website owners install SharePoint Add-ins from the  **Your Add-ins** page as described earlier in this topic. Installation creates an instance of the add-in. For more information about installing add-ins, see [Add SharePoint Add-ins to a SharePoint site](https://technet.microsoft.com/en-us/library/fp161231.aspx). 
  
 
  
@@ -98,7 +98,7 @@ The add-in's permissions are also revoked when it is removed (recycled), accordi
 - If there is no other instance of the add-in in the site subscription (tenancy), tenant-scoped permissions are also revoked.
     
  
-The  [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx) web service, if one is registered in the add-in manifest of the add-in, executes at the beginning of the uninstallation process (which occurs when the add-in is removed from the second stage Recycle Bin). It is a best practice to have an [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx) web service if you have an [InstalledEventEndpoint](http://msdn.microsoft.com/library/af9f83d8-8325-3ede-d7b0-bb82c0445eb9%28Office.15%29.aspx) web service and to design the [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx) service to reverse anything done in your [InstalledEventEndpoint](http://msdn.microsoft.com/library/af9f83d8-8325-3ede-d7b0-bb82c0445eb9%28Office.15%29.aspx) service. For more information, see [Handle events in SharePoint Add-ins](handle-events-in-sharepoint-add-ins.md).
+The  [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx) web service, if one is registered in the add-in manifest of the add-in, executes at the beginning of the uninstallation process (which occurs when the add-in is removed from the second stage Recycle Bin). It is a best practice to have an [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx) web service if you have an [InstalledEventEndpoint](http://msdn.microsoft.com/library/af9f83d8-8325-3ede-d7b0-bb82c0445eb9%28Office.15%29.aspx) web service and to design the [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx) service to reverse anything done in your [InstalledEventEndpoint](http://msdn.microsoft.com/library/af9f83d8-8325-3ede-d7b0-bb82c0445eb9%28Office.15%29.aspx) service. For more information, see [Handle events in SharePoint Add-ins](handle-events-in-sharepoint-add-ins).
  
 
  
@@ -107,13 +107,13 @@ The  [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af
 <a name="SP15deployinstallapps_addlresources"> </a>
 
 
--  [Publish SharePoint Add-ins](publish-sharepoint-add-ins.md)
+-  [Publish SharePoint Add-ins](publish-sharepoint-add-ins)
     
  
--  [Important aspects of the SharePoint Add-in architecture and development landscape](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape.md)
+-  [Important aspects of the SharePoint Add-in architecture and development landscape](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape)
     
  
--  [SharePoint Add-ins update process](sharepoint-add-ins-update-process.md)
+-  [SharePoint Add-ins update process](sharepoint-add-ins-update-process)
     
  
 

@@ -2,10 +2,10 @@
 Set up a development environment and create your first SharePoint-hosted SharePoint Add-in.
  
 
- **Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
+ **Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
  
 
-SharePoint-hosted add-ins are one of the two major types of SharePoint Add-ins. For an overview of SharePoint Add-ins and the two different types, see  [SharePoint Add-ins](sharepoint-add-ins.md). Here's a summary of SharePoint-hosted add-ins:
+SharePoint-hosted add-ins are one of the two major types of SharePoint Add-ins. For an overview of SharePoint Add-ins and the two different types, see  [SharePoint Add-ins](sharepoint-add-ins). Here's a summary of SharePoint-hosted add-ins:
  
 
 - They contain SharePoint lists, Web Parts, workflows, custom pages, and other components, all of which are installed on a subweb, called the add-in web, of the SharePoint website where the add-in is installed.
@@ -14,11 +14,11 @@ SharePoint-hosted add-ins are one of the two major types of SharePoint Add-ins. 
 - The only code they have is JavaScript on custom SharePoint pages.
     
  
-- [Step 1 - Set up your dev environment](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md#Setup) 
+- [Step 1 - Set up your dev environment](get-started-creating-sharepoint-hosted-sharepoint-add-ins#Setup) 
 
-- [Step 2 - Create the app project](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md#Create) 
+- [Step 2 - Create the app project](get-started-creating-sharepoint-hosted-sharepoint-add-ins#Create) 
 
-- [Step 3 - Code your app](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md#Code)
+- [Step 3 - Code your app](get-started-creating-sharepoint-hosted-sharepoint-add-ins#Code)
  
 
 ## Set up your dev environment
@@ -43,7 +43,7 @@ There are many ways to set up a development environment for SharePoint Add-ins. 
 <a name="o365_signup"> </a>
 
 
- **Note**   You might already have access to an Office 365 Developer Site. **Are you an MSDN subscriber?** Visual Studio Ultimate and Visual Studio Premium with MSDN subscribers receive an Office 365 Developer Subscription as a benefit. [Redeem your benefit today.](https://msdn.microsoft.com/subscriptions/manage/default.aspx) **Do you have one of the following Office 365 subscription plans?** **If so, an administrator of the Office 365 subscription can create a Developer Site** by using the [Office 365 admin center](https://portal.microsoftonline.com/admin/default.aspx). For more info, see  [Create a developer site on an existing Office 365 subscription](create-a-developer-site-on-an-existing-office-365-subscription.md). 
+ **Note**   You might already have access to an Office 365 Developer Site. **Are you an MSDN subscriber?** Visual Studio Ultimate and Visual Studio Premium with MSDN subscribers receive an Office 365 Developer Subscription as a benefit. [Redeem your benefit today.](https://msdn.microsoft.com/subscriptions/manage/default.aspx) **Do you have one of the following Office 365 subscription plans?** **If so, an administrator of the Office 365 subscription can create a Developer Site** by using the [Office 365 admin center](https://portal.microsoftonline.com/admin/default.aspx). For more info, see  [Create a developer site on an existing Office 365 subscription](create-a-developer-site-on-an-existing-office-365-subscription). 
  
 
 There are three ways to get an Office 365 plan. 
@@ -159,11 +159,11 @@ After you finish the signup process, your browser opens the Office 365 installat
  
 7. After the project is created, open the file  **/Pages/Default.aspx** from the root of the project. Among other things, this generated file loads one or both of two scripts that are hosted on SharePoint: sp.runtime.js and sp.js. The markup for loading these files is in the **Content** control near the top of the file that has the ID **PlaceHolderAdditionalPageHead**. The markup varies depending on the version of  **Microsoft Office Developer Tools for Visual Studio** that you are using. This series of tutorials requires that both files be loaded and that they be loaded with ordinary HTML **<script>** tags, not **<SharePoint:ScriptLink>** tags. Ensure that the following lines are in the **PlaceHolderAdditionalPageHead** control, *just above*  the line `<meta name="WebPartPageExpansion" content="full" />`:
     
-  ```
+```
   <script type="text/javascript" src="/_layouts/15/sp.runtime.js"></script> 
 <script type="text/javascript" src="/_layouts/15/sp.js"></script> 
 
-  ```
+```
 
 
     Then search the file for any other markup that also loads one or the other of these files and remove the redundant markup. Save and close the file.
@@ -208,7 +208,7 @@ For your first SharePoint-hosted SharePoint Add-in, we'll include the classic Sh
 
  
 
-     ![List folder with child NewEmployeeOrientation template, which itself has three children; a NewEmployeeOrientationInstance, an elements.xml file, and a schema.xml file. The instance itself has a child named elements.xml.](../../images/10e5d116-d24b-4a44-bfff-cfbf2f971b1e.PNG)
+  ![List folder with child NewEmployeeOrientation template, which itself has three children; a NewEmployeeOrientationInstance, an elements.xml file, and a schema.xml file. The instance itself has a child named elements.xml.](../../images/10e5d116-d24b-4a44-bfff-cfbf2f971b1e.PNG)
  
 
     
@@ -259,19 +259,19 @@ For your first SharePoint-hosted SharePoint Add-in, we'll include the classic Sh
     
 
 
-  ```
+```
   <ViewFields>
   <FieldRef Name="Title" ID="{fa564e0f-0c70-4ab9-b863-0177e6ddd247}" DisplayName="Employee" />
  </ViewFields>
-  ```
+```
 
 20. Still in the schema.xml file, in the  **View** element whose **BaseViewID** value is "1", replace the existing **ViewFields** element with the following markup. (Use exactly this GUID for the **FieldRef** named `LinkTitle`.)
     
-  ```
+```
   <ViewFields>
   <FieldRef Name="LinkTitle" ID="{82642ec8-ef9b-478f-acf9-31f7d45fbc31}" DisplayName="Employee" />
 </ViewFields>
-  ```
+```
 
 21. Save and close the schema.xml file.
     
@@ -281,7 +281,7 @@ For your first SharePoint-hosted SharePoint Add-in, we'll include the classic Sh
  
 23. In this file, populate the list with some initial data. You do this by adding the following  **Data** element markup as a child element of the **ListInstance** element.
     
-  ```
+```
   <Data>
   <Rows>
     <Row>
@@ -298,7 +298,7 @@ For your first SharePoint-hosted SharePoint Add-in, we'll include the classic Sh
     </Row>
   </Rows>
 </Data>
-  ```
+```
 
 24. Save and close the file.
     
@@ -317,12 +317,12 @@ For your first SharePoint-hosted SharePoint Add-in, we'll include the classic Sh
  
 29. Find the ASP.NET  **Content** element with the ID **PlaceHolderMain**.  *Replace*  its contents with the following markup. The ` _spPageContextInfo` is a JavaScript object that SharePoint automatically includes in the page. It's `webAbsoluteUrl` property returns the URL of the add-in web.
     
-  ```XML
+```XML
     <p><asp:HyperLink runat="server" 
     NavigateUrl="JavaScript:window.location = _spPageContextInfo.webAbsoluteUrl + '/Lists/NewEmployeesInSeattle/AllItems.aspx';" 
     Text="New Employees in Seattle" /></p>
 
-  ```
+```
 
 
 ## Run the add-in and test the list
@@ -342,7 +342,7 @@ For your first SharePoint-hosted SharePoint Add-in, we'll include the classic Sh
 
  
 
-     ![The add-in's default page is shown with its title New Employees by Location. There is a link labeled New Employees in Seattle. An arrow from this link points to the list view page for the list. It is titled New Employees in Seattle, with the list below.](../../images/9dc5cefe-083a-4807-bee6-473001f23db9.png)
+  ![The add-in's default page is shown with its title New Employees by Location. There is a link labeled New Employees in Seattle. An arrow from this link points to the list view page for the list. It is titled New Employees in Seattle, with the list below.](../../images/9dc5cefe-083a-4807-bee6-473001f23db9.png)
  
 
     
@@ -361,7 +361,7 @@ For your first SharePoint-hosted SharePoint Add-in, we'll include the classic Sh
 ## 
 <a name="Nextsteps"> </a>
 
-So far, there isn't much orientation information in the list. We'll add some in later articles in this series. But first, take a brief break from coding to learn about deploying SharePoint Add-ins in  [Deploy and install a SharePoint-hosted SharePoint Add-in](deploy-and-install-a-sharepoint-hosted-sharepoint-add-in.md).
+So far, there isn't much orientation information in the list. We'll add some in later articles in this series. But first, take a brief break from coding to learn about deploying SharePoint Add-ins in  [Deploy and install a SharePoint-hosted SharePoint Add-in](deploy-and-install-a-sharepoint-hosted-sharepoint-add-in).
  
 
  

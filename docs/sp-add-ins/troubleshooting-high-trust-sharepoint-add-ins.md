@@ -3,7 +3,7 @@
 Get some help with problems developing high-trust SharePoint Add-ins.
  
 
- **Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
+ **Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
  
 
 This article describes the Fiddler tool and also provides some guidance for resolving some specific issues.
@@ -89,14 +89,14 @@ Your first step in troubleshooting the issue is to use the Visual Studio debugge
  
 - Your add-in does not have permission to the resource you are trying to access. Open the SharePoint Management Shell and run that the following Windows PowerShell cmdlet. The variable  `$web` is the SharePoint website you are trying to get access to and `$appPrincipal`) is the add-in ID. For more information, see  [Set-SPAppPrincipalPermission](http://technet.microsoft.com/en-us/library/jj219714%28v=office.15%29.aspx).
     
-  ```
+```
   Set-SPAppPrincipalPermission -Site $web -AppPrincipal $appPrincipal -Scope Site -Right FullControl
-  ```
+```
 
 - Your web application is accepting anonymous requests. This means there is not a real user identity in the access token. Ensure that anonymous access has been disabled in IIS for the root directory of your remote web application. You can also check this by debugging your remote web application, and checking the value of  **Request.LogonUserIdentity** in the default.aspx.cs (or .vb) file to ensure that it's not an anonymous user.
     
  
-- Your digital certificate was not added to the trusted certificate store. Be sure you have followed the procedures in  [Package and publish high-trust SharePoint Add-ins](package-and-publish-high-trust-sharepoint-add-ins.md).
+- Your digital certificate was not added to the trusted certificate store. Be sure you have followed the procedures in  [Package and publish high-trust SharePoint Add-ins](package-and-publish-high-trust-sharepoint-add-ins).
     
  
 

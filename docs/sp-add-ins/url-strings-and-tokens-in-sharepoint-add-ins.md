@@ -3,18 +3,18 @@
 Learn which URL tokens are available for use in SharePoint Add-ins.
  
 
- **Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
+ **Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
  
 
 
- **Important**  For general information about constructing URLs in SharePoint 2013 and the use of tokens in those URLs, see  [URLs and tokens in SharePoint 2013](http://msdn.microsoft.com/library/161418d7-8123-4c4e-91a1-97e43c17f0e6%28Office.15%29.aspx). This topic describes the tokens that are available in SharePoint Add-ins.
+ **Important**  For general information about constructing URLs in SharePoint and the use of tokens in those URLs, see  [URLs and tokens in SharePoint](http://msdn.microsoft.com/library/161418d7-8123-4c4e-91a1-97e43c17f0e6%28Office.15%29.aspx). This topic describes the tokens that are available in SharePoint Add-ins.
  
 
 
 ## 
 <a name="URLtokens"> </a>
 
-SharePoint 2013 supports the tokens listed in the following tables for use in SharePoint Add-ins.
+SharePoint supports the tokens listed in the following tables for use in SharePoint Add-ins.
  
 
  
