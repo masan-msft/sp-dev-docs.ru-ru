@@ -129,11 +129,10 @@ export interface IHelloWorldWebPartProps {
 }
 ```
 
-Добавьте следующие типы в импортированные элементы **@microsoft/sp-client-platform**:
+Добавьте следующие типы в импортированные элементы **@microsoft/sp-webpart-base**:
 
 ```ts
-IPropertyPaneFieldType,
-IOnCustomPropertyFieldChanged
+IPropertyPaneFieldType
 ```
 
 Добавьте следующий частный метод для отрисовки настраиваемого поля:
