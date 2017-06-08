@@ -62,7 +62,7 @@ let helloWorldTask = build.task('hello-world', helloWorldSubtask);
 
 >Примечание. Любые добавляемые специальные задачи необходимо определять до инициализации глобального экземпляра `gulp`, т. е. перед такой строкой кода: `build.initialize(gulp);`.
 
-Теперь можно выполнить специальную команду в командной строке следующим образом:
+Теперь можно выполнить специальную команду в командной строке:
 
 ```js
 gulp hello-world
@@ -79,17 +79,14 @@ gulp hello-world
 Задачи SharePoint Framework доступны на платформе сборки по умолчанию. Платформа сборки — это коллекция задач, определенных для конкретной цели. В нашем случае это создание клиентских пакетов. Доступ к платформе по умолчанию, а также к функциям выполнения до и после задачи можно получить с помощью объекта `build.rig`.
  
 ```js
+//execute before the typescript subtask
+build.rig.addPreBuildTask(helloWorldTask);
+
 // execute after TypeScript task
 build.rig.addPostTypescriptTask(helloWorldTask);
 
-//execute before TypeScript task
-build.rig.addBuildTasks(helloWorldTask);
-
 //execute after all tasks
 build.rig.addPostBuildTask(helloWorldTask);
-
-//execute before all tasks
-build.rig.addPreBuildTask(helloWorldTask);
 ```
 
 ## <a name="example-custom-image-resize-task"></a>Пример. Специальная задача по изменению размера изображения
