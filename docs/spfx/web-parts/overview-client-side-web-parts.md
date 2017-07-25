@@ -4,5 +4,5 @@
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Обзор платформы SharePoint Framework](../sharepoint-framework-overview)
-- [Средства разработки и библиотеки платформы SharePoint Framework](../tools-and-libraries)
+- [Обзор платформы SharePoint Framework](../sharepoint-framework-overview.md)
+- [Средства разработки и библиотеки платформы SharePoint Framework](../tools-and-libraries.md)

@@ -28,7 +28,7 @@ gulp --tasks
 
 При выполнении этой команды будет выведен список всех доступных задач.
 
-![Доступные задачи gulp](../../images/gulp-tasks-available.png)
+![Доступные задачи gulp](../../../images/gulp-tasks-available.png)
 
 ## <a name="custom-gulp-tasks"></a>Специальные задачи gulp
 Для добавления специальных задач нужно определить их в `gulpfile.js`. Откройте `gulpfile.js` в редакторе кода. Код по умолчанию инициализирует цепочку инструментов SharePoint Framework и глобальный экземпляр `gulp` для этой цепочки. Любые добавляемые специальные задачи необходимо определять до инициализации глобального экземпляра `gulp`.
@@ -138,11 +138,11 @@ let imageResizeTask = build.task('resize-images', imageResizeSubTask);
 gulp resize-images
 ```
 
-![image-resize-task](../../images/gulp-extend-image-resize-task.png)
+![image-resize-task](../../../images/gulp-extend-image-resize-task.png)
 
 Эта задача `resize-images` отобразится также в списке доступных задач проекта при выполнении `gulp --tasks`.
 
-![image-resize-task with available tasks](../../images/gulp-extend-image-resize-available-tasks.png)
+![image-resize-task with available tasks](../../../images/gulp-extend-image-resize-available-tasks.png)
 
 
 
