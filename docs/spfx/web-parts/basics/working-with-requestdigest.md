@@ -1,8 +1,4 @@
-# <a name="working-with-the-original-requestdigest"></a>Работа с исходным __RequestDigest
-
-Есть много программных кодов, созданных для работы с классическими страницами SharePoint, которые можно использовать с платформой SharePoint Framework, но иногда бывает, что не удается найти определенные компоненты или переменные. Например, поле формы __REQUESTDIGEST.  В идеале вам не нужно использовать глобальную переменную для доступа к дайджесту. Достаточно обновленного объекта **HttpRequest** для вызовов SharePoint, и он сам будет обрабатывать всю логику дайджеста и проверки подлинности (например, маркеры с истекшим сроком действия).  Из статьи [Подключение клиентской веб-части к SharePoint ("Здравствуй, мир!", часть 2)](https://github.com/SharePoint/sp-dev-docs/wiki/HelloWorld,-Talking-to-SharePoint) можно узнать, как это делать.
-
-Тем не менее, если в существующем коде использованы более старые конструкции, с помощью клиентского кода и работы с DOM их довольно легко добавить обратно на страницу.  Для этого нужно задействовать метод **onInit** в базовом классе веб-частей и запросить нужный элемент создания DOM.  Вот пример создания элемента формы __REQESTDIGEST.
+<span data-ttu-id="95b7d-p103">**Примечание.** Есть лучший способ получить текущее значение дайджеста, обрабатывающего все события кэширования, истечения времени, повторной выборки и т. д.  Попробуйте его.  Вам потребуется импортировать digestCacheServiceKey и IDigestCache из sp-client-base</span><span class="sxs-lookup"><span data-stu-id="95b7d-p103">**Note:** There is a better way to get the current digest value that will handle all of the caching / expiring / refetching / etc.  Give this a try.  You'll need to import digestCacheServiceKey and IDigestCache from sp-client-base</span></span>
 
 ```JavaScript
     public onInit<T>(): Promise<T>

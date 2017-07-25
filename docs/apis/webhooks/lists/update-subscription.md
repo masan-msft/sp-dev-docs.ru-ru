@@ -1,61 +1,11 @@
-# <a name="update-a-subscription"></a>Обновление подписки
-
-Обновляет подписку на веб-перехватчики для списка SharePoint.
-
-## <a name="permissions"></a>Разрешения
-
-У приложения должно быть разрешение на изменение списка SharePoint, в котором обновляется подписка.  
-
-**Если приложение является приложением Microsoft Azure Active Directory (AD)**:
-
-Приложению Azure AD необходимо предоставить разрешения, указанные в таблице ниже. Подписку можно обновить только из приложения Azure AD, в котором она создана.
-
-Приложение | Разрешение 
-------------|------------
-SharePoint Online в Office 365|Чтение и запись элементов и списков во всех семействах веб-сайтов. 
-
-**Для надстройки SharePoint**:
-
-Надстройке SharePoint необходимо предоставить по крайней мере указанные ниже разрешения. Подписку можно обновить только из надстройки SharePoint, в которой она создана.
-
-Область | Разрешения 
-------|------------
-Список|Управление
-
-## <a name="http-request"></a>HTTP-запрос
-
-```
-PATCH _api/web/lists('list-id')/subscriptions('id')
-```
-
-### <a name="example"></a>Пример
-
-```http
-PATCH _api/web/lists('5C77031A-9621-4DFC-BB5D-57803A94E91D')/subscriptions('6D77031A-2345-5GRT-BV3D-55234B56FR43')
-Content-Type: application/json
-
-{
-  "notificationUrl": "https://contoso.azurewebsites.net/api/v2/webhook-receiver",
-  "expirationDateTime": "2016-01-03T11:23:00.000Z"
-}
-```
-
-## <a name="request-body"></a>Тело запроса
-
-Включите в запрос указанные ниже свойства.
-
-Имя | Тип | Описание 
------|------|------------
-notificationUrl|строка|URL-адрес службы для отправки уведомлений.
-expirationDateTime|дата|Срок хранения уведомления.
-client-clientState|string|Необязательный. Непрозрачная строка, которая передается клиенту со всеми уведомлениями. Ее можно использовать для проверки уведомлений и маркировки различных подписок.
+<span data-ttu-id="35981-p103">Необязательный. Непрозрачная строка, которая передается клиенту со всеми уведомлениями. Ее можно использовать для проверки уведомлений и маркировки различных подписок.</span><span class="sxs-lookup"><span data-stu-id="35981-p103">Optional. Opaque string passed back to the client on all notifications. You can use this for validating notifications, or tagging different subscriptions.</span></span>|Необязательный. Непрозрачная строка, которая передается клиенту со всеми уведомлениями. Ее можно использовать для проверки уведомлений и маркировки различных подписок.
 
 
-## <a name="response"></a>Отклик
+## <a name="response"></a><span data-ttu-id="35981-137">Отклик</span><span class="sxs-lookup"><span data-stu-id="35981-137">Response</span></span>
 
-Если подписка найдена и обновление выполнено успешно, возвращается отклик `204 No Content`.
+<span data-ttu-id="35981-138">Если подписка найдена и обновление выполнено успешно, возвращается отклик `204 No Content`.</span><span class="sxs-lookup"><span data-stu-id="35981-138">If the subscription is found and successfully updated, then a `204 No Content` response is returned:</span></span>
 
-### <a name="example"></a>Пример
+### <a name="example"></a><span data-ttu-id="35981-139">Пример</span><span class="sxs-lookup"><span data-stu-id="35981-139">Example</span></span>
 
 ```http
 HTTP/1.1 204 No Content

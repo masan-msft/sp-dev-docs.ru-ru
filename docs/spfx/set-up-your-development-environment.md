@@ -1,76 +1,4 @@
-# <a name="set-up-your-sharepoint-client-side-web-part-development-environment"></a>Настройка среды разработки клиентских веб-частей SharePoint
-
-Для создания клиентских веб-частей SharePoint можно использовать Visual Studio или другую среду разработки. Вы можете использовать компьютер Mac либо компьютер под управлением Windows или Linux.
-
->**Примечание.** Прежде чем выполнять действия, указанные в этой статье, обязательно [настройте клиент Office 365](./set-up-your-developer-tenant).
-
-Эти действия также показаны в видео [канала YouTube, посвященного SharePoint PnP](https://www.youtube.com/watch?v=_fxYexlUhe0&t=5s&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=1). 
-
-<a href="https://www.youtube.com/watch?v=_fxYexlUhe0&t=5s&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
-    <img src="../../images/spfx-youtube-tutorial0.png" alt="Screenshot of the YouTube video player for this tutorial" />
-</a>
-
-
-## <a name="install-developer-tools"></a>Установка средств разработчика
-
-### <a name="nodejs"></a>NodeJS
-Установите [NodeJS](https://nodejs.org/en/) с долгосрочной поддержкой (LTS).
-
-* Если у вас уже установлена библиотека NodeJS, убедитесь, что установлена последняя версия, с помощью команды `node -v`. Она должна вернуть текущую [версию LTS](https://nodejs.org/en/download/). 
-* Если вы используете компьютер Mac, рекомендуем устанавливать библиотеку NodeJS и управлять ею с помощью [homebrew](http://brew.sh/). 
-
-Установив библиотеку node, убедитесь, что установлена последняя версия npm, выполнив следующую команду:
-    
-```
-npm install -g npm
-```
-
-В Ubuntu Linux представленная выше команда может привести к отказу в разрешении, поэтому ее следует выполнять в следующем формате: 
-
-```
-sudo npm install -g npm
-```
-
-### <a name="code-editors"></a>Редакторы кода
-Установите редактор кода. Для создания веб-частей можно использовать любой редактор кода или интерфейс IDE, поддерживающий клиентскую разработку, например:
-
-* [Visual Studio Code](https://code.visualstudio.com/);
-* [Atom](https://atom.io);
-* [Webstorm](https://www.jetbrains.com/webstorm). 
-
-В указаниях и примерах в этой статье используется [Visual Studio Code](https://code.visualstudio.com/), но вы можете использовать любой редактор. 
-
-### <a name="if-you-are-using-ubuntu"></a>Если используется Ubuntu
-
-Необходимо установить средства компиляции с помощью следующей команды:
-    
-```
-sudo apt-get install build-essential
-```
-
-### <a name="if-you-are-using-fedora"></a>Если используется Fedora
-
-Необходимо установить средства компиляции с помощью следующей команды:
-    
-```
-sudo yum install make automake gcc gcc-c++ kernel-devel
-```
-
-## <a name="install-yeoman-and-gulp"></a>Установка Yeoman и gulp
-
-[Yeoman](http://yeoman.io/) помогает запускать новые проекты, предоставляя рекомендации и инструменты, которые позволят сохранить эффективность работы. Средства клиентской разработки SharePoint включают генератор Yeoman для создания веб-частей. Генератор предоставляет общие средства сборки, стандартный код и общий веб-сайт для тестирования веб-частей.
-
-Чтобы установить Yeoman и gulp, введите следующую команду:
-    
-```
-npm install -g yo gulp
-```
-
-## <a name="install-yeoman-sharepoint-generator"></a>Установка генератора Yeoman для SharePoint
-
-С помощью генератора веб-частей Yeoman для SharePoint можно быстро создать проект клиентского решения SharePoint с правильной цепочкой инструментов и структурой проекта.
-
-Чтобы установить генератор yeoman для SharePoint, введите следующую команду:
+<span data-ttu-id="94bd9-p105">**Примечание.** Генератор yeoman для SharePoint должен развертываться глобально с первой общедоступной версией. Существуют известные проблемы при локальной установке в проекте, которые планируется устранить после выпуска общедоступной версии.</span><span class="sxs-lookup"><span data-stu-id="94bd9-p105">**Note:** Yeoman generator for SharePoint is targeted to get deployed globally with the initial General Availability (GA) version. There are some known issues if it's installed locally to the project, which are planned to be addressed post GA.</span></span>
     
 ```
 npm install -g @microsoft/generator-sharepoint 
@@ -78,16 +6,16 @@ npm install -g @microsoft/generator-sharepoint
 >**Примечание.** Генератор yeoman для SharePoint должен развертываться глобально с первой общедоступной версией. Существуют известные проблемы при локальной установке в проекте, которые планируется устранить после выпуска общедоступной версии.
 
 
-## <a name="optional-tools"></a>Дополнительные средства
+## <a name="optional-tools"></a><span data-ttu-id="94bd9-135">Дополнительные средства</span><span class="sxs-lookup"><span data-stu-id="94bd9-135">Optional tools</span></span>
 
-Вам также могут пригодиться следующие средства:
+<span data-ttu-id="94bd9-136">Вам также могут пригодиться следующие средства:</span><span class="sxs-lookup"><span data-stu-id="94bd9-136">Here are some tools that might come in handy as well:</span></span>
 
-* [Fiddler](http://www.telerik.com/fiddler)
-* [Подключаемый модуль Postman для Chrome](https://www.getpostman.com/docs/introduction)
-* [Cmder для Windows](http://cmder.net/)
-* [Oh My Zsh для Mac](http://ohmyz.sh/)
-* [Службы управления версиями Git](https://git-scm.com/)
+* [<span data-ttu-id="94bd9-137">Fiddler</span><span class="sxs-lookup"><span data-stu-id="94bd9-137">Fiddler</span></span>](http://www.telerik.com/fiddler)
+* [<span data-ttu-id="94bd9-138">Подключаемый модуль Postman для Chrome</span><span class="sxs-lookup"><span data-stu-id="94bd9-138">Postman plugin for Chrome</span></span>](https://www.getpostman.com/docs/introduction)
+* [<span data-ttu-id="94bd9-139">Cmder для Windows</span><span class="sxs-lookup"><span data-stu-id="94bd9-139">Cmder for Windows</span></span>](http://cmder.net/)
+* [<span data-ttu-id="94bd9-140">Oh My Zsh для Mac</span><span class="sxs-lookup"><span data-stu-id="94bd9-140">Oh My Zsh for Mac</span></span>](http://ohmyz.sh/)
+* [<span data-ttu-id="94bd9-141">Службы управления версиями Git</span><span class="sxs-lookup"><span data-stu-id="94bd9-141">Git source control tools</span></span>](https://git-scm.com/)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a><span data-ttu-id="94bd9-142">Дальнейшие действия</span><span class="sxs-lookup"><span data-stu-id="94bd9-142">Next steps</span></span>
 
-Теперь вы готовы [создать свою первую клиентскую веб-часть](web-parts/get-started/build-a-hello-world-web-part)!
+<span data-ttu-id="94bd9-143">Теперь вы готовы [создать свою первую клиентскую веб-часть](web-parts/get-started/build-a-hello-world-web-part)!</span><span class="sxs-lookup"><span data-stu-id="94bd9-143">You are now ready to [build your first client-side web part](web-parts/get-started/build-a-hello-world-web-part)!</span></span>

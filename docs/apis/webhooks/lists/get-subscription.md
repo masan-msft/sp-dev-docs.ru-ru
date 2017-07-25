@@ -1,71 +1,53 @@
-# <a name="get-subscriptions"></a>Получение подписок
-
-Возвращает одну или несколько подписок на веб-перехватчики в списке SharePoint.
-
-## <a name="permissions"></a>Разрешения
-
-### <a name="get-a-single-subscription"></a>Получение одной подписки
-
-У приложения должно быть разрешение на изменение списка SharePoint, из которого извлекается подписка.
-
-**Для приложения Microsoft Azure Active Directory (AD):**
-
-Приложению Azure AD необходимо предоставить разрешения, указанные в таблице ниже. Подписку можно получить только из создавшего ее приложения Azure AD. 
-
-Приложение | Разрешение 
-------------|------------
-SharePoint Online в Office 365|Чтение и запись элементов и списков во всех семействах веб-сайтов.
-
-**Для надстройки SharePoint**:
+<span data-ttu-id="f7c7b-p102">Надстройке SharePoint необходимо предоставить по крайней мере указанные ниже разрешения. Подписку можно получить только из создавшей ее надстройки SharePoint.</span><span class="sxs-lookup"><span data-stu-id="f7c7b-p102">You must grant the SharePoint add-in the following permission(s) or higher. A subscription can only be retrieved by the SharePoint add-in that created it.</span></span>
 
 Надстройке SharePoint необходимо предоставить по крайней мере указанные ниже разрешения. Подписку можно получить только из создавшей ее надстройки SharePoint. 
 
-Область | Разрешения 
+<span data-ttu-id="f7c7b-116">Область</span><span class="sxs-lookup"><span data-stu-id="f7c7b-116">Scope</span></span> | <span data-ttu-id="f7c7b-117">Разрешения</span><span class="sxs-lookup"><span data-stu-id="f7c7b-117">Permission Rights</span></span> 
 ------|------------
-Список|Управление
+<span data-ttu-id="f7c7b-118">Список</span><span class="sxs-lookup"><span data-stu-id="f7c7b-118">List</span></span>|<span data-ttu-id="f7c7b-119">Управление</span><span class="sxs-lookup"><span data-stu-id="f7c7b-119">Manage</span></span>
 
-### <a name="get-all-subscriptions"></a>Получение всех подписок
+### <a name="get-all-subscriptions"></a><span data-ttu-id="f7c7b-120">Получение всех подписок</span><span class="sxs-lookup"><span data-stu-id="f7c7b-120">Get all subscriptions</span></span>
 
-У приложения должны быть разрешения на управление списком SharePoint, из которого извлекается подписка.
+<span data-ttu-id="f7c7b-121">У приложения должны быть разрешения на управление списком SharePoint, из которого извлекается подписка.</span><span class="sxs-lookup"><span data-stu-id="f7c7b-121">The application must have manage list permissions to the SharePoint list where the subscription will be retrieved.</span></span>
 
-**Для приложения Microsoft Azure Active Directory (AD):**
+<span data-ttu-id="f7c7b-122">**Для приложения Microsoft Azure Active Directory (AD):**</span><span class="sxs-lookup"><span data-stu-id="f7c7b-122">**If your application is a Microsoft Azure Active Directory (AD) application:**</span></span>
 
-Приложению Azure AD необходимо предоставить разрешения, указанные в таблице ниже. 
+<span data-ttu-id="f7c7b-123">Приложению Azure AD необходимо предоставить разрешения, указанные в таблице ниже.</span><span class="sxs-lookup"><span data-stu-id="f7c7b-123">You must grant the Azure AD app the permissions specified in the following table.</span></span> 
 
-Приложение | Разрешение 
+<span data-ttu-id="f7c7b-124">Приложение</span><span class="sxs-lookup"><span data-stu-id="f7c7b-124">Application</span></span> | <span data-ttu-id="f7c7b-125">Разрешение</span><span class="sxs-lookup"><span data-stu-id="f7c7b-125">Permission</span></span> 
 ------------|------------
-SharePoint Online в Office 365|Полный доступ ко всем семействам веб-сайтов.
+<span data-ttu-id="f7c7b-126">SharePoint Online в Office 365</span><span class="sxs-lookup"><span data-stu-id="f7c7b-126">Office 365 SharePoint Online</span></span>|<span data-ttu-id="f7c7b-127">Полный доступ ко всем семействам веб-сайтов.</span><span class="sxs-lookup"><span data-stu-id="f7c7b-127">Have full control of all site collections.</span></span>
 
-**Для надстройки SharePoint**:
+<span data-ttu-id="f7c7b-128">**Для надстройки SharePoint**:</span><span class="sxs-lookup"><span data-stu-id="f7c7b-128">**If your application is a SharePoint add-in:**</span></span>
 
-Надстройке SharePoint необходимо предоставить по крайней мере указанные ниже разрешения. 
+<span data-ttu-id="f7c7b-129">Надстройке SharePoint необходимо предоставить по крайней мере указанные ниже разрешения.</span><span class="sxs-lookup"><span data-stu-id="f7c7b-129">You must grant the SharePoint add-in the following permission(s) or higher.</span></span> 
 
-Область | Разрешения 
+<span data-ttu-id="f7c7b-130">Область</span><span class="sxs-lookup"><span data-stu-id="f7c7b-130">Scope</span></span> | <span data-ttu-id="f7c7b-131">Разрешения</span><span class="sxs-lookup"><span data-stu-id="f7c7b-131">Permission Rights</span></span> 
 ------|------------
-Список|Полный доступ
+<span data-ttu-id="f7c7b-132">Список</span><span class="sxs-lookup"><span data-stu-id="f7c7b-132">List</span></span>|<span data-ttu-id="f7c7b-133">Полный доступ</span><span class="sxs-lookup"><span data-stu-id="f7c7b-133">Full control</span></span>
 
-## <a name="http-request"></a>HTTP-запрос
+## <a name="http-request"></a><span data-ttu-id="f7c7b-134">HTTP-запрос</span><span class="sxs-lookup"><span data-stu-id="f7c7b-134">HTTP request</span></span>
 
-### <a name="get-a-single-subscription"></a>Получение одной подписки
+### <a name="get-a-single-subscription"></a><span data-ttu-id="f7c7b-135">Получение одной подписки</span><span class="sxs-lookup"><span data-stu-id="f7c7b-135">Get a single subscription</span></span>
 
-#### <a name="list-webhook"></a>Веб-перехватчик списка
+#### <a name="list-webhook"></a><span data-ttu-id="f7c7b-136">Веб-перехватчик списка</span><span class="sxs-lookup"><span data-stu-id="f7c7b-136">List webhook</span></span>
 ```
 GET _api/web/lists('list-id')/subscriptions('id')
 ```
 
-##### <a name="example"></a>Пример
+##### <a name="example"></a><span data-ttu-id="f7c7b-137">Пример</span><span class="sxs-lookup"><span data-stu-id="f7c7b-137">Example</span></span>
 
 ```http
 GET _api/web/lists('5C77031A-9621-4DFC-BB5D-57803A94E91D')/subscriptions('6D77031A-2345-5GRT-BV3D-55234B56FR43')
 ```
 
-#### <a name="request-body"></a>Текст запроса
+#### <a name="request-body"></a><span data-ttu-id="f7c7b-138">Текст запроса</span><span class="sxs-lookup"><span data-stu-id="f7c7b-138">Request body</span></span>
 
-Не указывайте тело запроса для этого метода.
+<span data-ttu-id="f7c7b-139">Не указывайте тело запроса для этого метода.</span><span class="sxs-lookup"><span data-stu-id="f7c7b-139">Do not supply a request body for this method.</span></span>
 
-##### <a name="response"></a>Отклик
+##### <a name="response"></a><span data-ttu-id="f7c7b-140">Отклик</span><span class="sxs-lookup"><span data-stu-id="f7c7b-140">Response</span></span>
 
-Возвращает подписку, которую можно просмотреть в приложении, отправившем вызов.
+<span data-ttu-id="f7c7b-141">Возвращает подписку, которую можно просмотреть в приложении, отправившем вызов.</span><span class="sxs-lookup"><span data-stu-id="f7c7b-141">This returns the subscription viewable by the calling application.</span></span>
 
 ```http
 HTTP/1.1 200 OK
@@ -83,26 +65,26 @@ Content-Type: application/json
 }
 ```
 
-### <a name="get-all-subscriptions"></a>Получение всех подписок
+### <a name="get-all-subscriptions"></a><span data-ttu-id="f7c7b-142">Получение всех подписок</span><span class="sxs-lookup"><span data-stu-id="f7c7b-142">Get all subscriptions</span></span>
 
-#### <a name="list-webhook"></a>Веб-перехватчик списка
+#### <a name="list-webhook"></a><span data-ttu-id="f7c7b-143">Веб-перехватчик списка</span><span class="sxs-lookup"><span data-stu-id="f7c7b-143">List webhook</span></span>
 ```
 GET _api/web/lists('list-id')/subscriptions
 ```
 
-##### <a name="example"></a>Пример
+##### <a name="example"></a><span data-ttu-id="f7c7b-144">Пример</span><span class="sxs-lookup"><span data-stu-id="f7c7b-144">Example</span></span>
 
 ```http
 GET _api/web/lists('5C77031A-9621-4DFC-BB5D-57803A94E91D')/subscriptions
 ```
 
-#### <a name="request-body"></a>Текст запроса
+#### <a name="request-body"></a><span data-ttu-id="f7c7b-145">Текст запроса</span><span class="sxs-lookup"><span data-stu-id="f7c7b-145">Request body</span></span>
 
-Не указывайте тело запроса для этого метода.
+<span data-ttu-id="f7c7b-146">Не указывайте тело запроса для этого метода.</span><span class="sxs-lookup"><span data-stu-id="f7c7b-146">Do not supply a request body for this method.</span></span>
 
-##### <a name="response"></a>Отклик
+##### <a name="response"></a><span data-ttu-id="f7c7b-147">Отклик</span><span class="sxs-lookup"><span data-stu-id="f7c7b-147">Response</span></span>
 
-Возвращает коллекцию всех подписок в ресурсе SharePoint. 
+<span data-ttu-id="f7c7b-148">Возвращает коллекцию всех подписок в ресурсе SharePoint.</span><span class="sxs-lookup"><span data-stu-id="f7c7b-148">This returns a collection of all subscriptions on a SharePoint resource.</span></span> 
 
 ```http
 HTTP/1.1 200 OK

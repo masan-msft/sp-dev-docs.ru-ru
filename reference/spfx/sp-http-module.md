@@ -1,33 +1,18 @@
-# <a name="sp-http-module"></a>Модуль sp-http
-
-
-
-## <a name="classes"></a>Классы
-
-| Класс    |  Описание |
-|:-------------|:---------------|
-| [`HttpClient`](./sp-http/httpclient.md)     | В классе HttpClient реализован базовый набор функций для выполнения операций REST. Подкласс SPHttpClient расширяет этот базовый набор функций с помощью специальных расширений для SharePoint. |
-| [`HttpClientConfiguration`](./sp-http/httpclientconfiguration.md)     | Объект HttpClientConfiguration предоставляет набор параметров для включения или выключения различных возможностей класса HttpClient. Обычно эти параметры задаются (например, при вызове HttpClient.fetch()) путем предоставления одного из предопределенных значений по умолчанию из HttpClientConfigurations, но эти параметры можно также изменять с помощью метода HttpClientConfiguration.overrideWith(). |
-| [`HttpClientConfigurations`](./sp-http/httpclientconfigurations.md)     | Этот класс предоставляет стандартные предопределенные объекты HttpClientConfiguration для использования с классом HttpClient. Как правило, клиенты должны выбирать последний доступный номер версии, позволяющий использовать все параметры, рекомендованные для типичных сценариев. (Вместе с новыми параметрами будет введен новый номер версии, поэтому имеющийся код продолжит работать таким же образом, как и во время тестирования.) |
-| [`HttpClientResponse`](./sp-http/httpclientresponse.md)     | Подкласс Response, возвращаемый такими методами, как HttpClient.fetch(). |
-| [`ODataVersion`](./sp-http/odataversion.md)     | Представляет поддерживаемую версию заголовка OData-Version, входящего в стандарт Open Data Protocol. |
-| [`SPHttpClient`](./sp-http/sphttpclient.md)     | Класс SPHttpClient используется для выполнения вызовов REST к SharePoint. Он добавляет заголовки по умолчанию, управляет дайджестом, необходимым для записи, и собирает данные телеметрии, которые помогают службе отслеживать производительность приложения. Для связи со службами, не относящимися к SharePoint, используйте класс HttpClient. |
-| [`SPHttpClientCommonConfiguration`](./sp-http/sphttpclientcommonconfiguration.md)     | Общий базовый класс для SPHttpClientConfiguration и SPHttpClientBatchConfiguration. |
-| [`SPHttpClientConfiguration`](./sp-http/sphttpclientconfiguration.md)     | Объект SPHttpClientConfiguration предоставляет набор переключателей для включения и выключения различных функций класса SPHttpClient. Как правило, значения этих параметров задаются, например при вызове метода SPHttpClient.fetch(), путем предоставления одного из предопределенных значений по умолчанию из объекта SPHttpClientConfigurations, но их также можно изменять с помощью метода SPHttpClientConfiguration.overrideWith(). |
+<span data-ttu-id="f3581-p106">Этот класс предоставляет стандартные предопределенные объекты SPHttpClientConfiguration для использования с классом SPHttpClient. Как правило, клиенты должны выбирать последний доступный номер версии, позволяющий использовать все параметры, рекомендованные для типичных сценариев. (Вместе с новыми параметрами будет введен новый номер версии, поэтому имеющийся код продолжит работать таким же образом, как и во время тестирования.)</span><span class="sxs-lookup"><span data-stu-id="f3581-p106">This class provides standard predefined SPHttpClientConfiguration objects for use with the SPHttpClient class. In general, clients should choose the latest available version number, which enables all the switches that are recommended for typical scenarios. (If new switches are introduced in the future, a new version number will be introduced, which ensures that existing code will continue to function the way it did at the time when it was tested.)</span></span> |
 | [`SPHttpClientConfigurations`](./sp-http/sphttpclientconfigurations.md)     | Этот класс предоставляет стандартные предопределенные объекты SPHttpClientConfiguration для использования с классом SPHttpClient. Как правило, клиенты должны выбирать последний доступный номер версии, позволяющий использовать все параметры, рекомендованные для типичных сценариев. (Вместе с новыми параметрами будет введен новый номер версии, поэтому имеющийся код продолжит работать таким же образом, как и во время тестирования.) |
-| [`SPHttpClientResponse`](./sp-http/sphttpclientresponse.md)     | Подкласс Response, возвращаемый такими методами, как SPHttpClient.fetch(). |
+| [`SPHttpClientResponse`](./sp-http/sphttpclientresponse.md)     | <span data-ttu-id="f3581-123">Подкласс Response, возвращаемый такими методами, как SPHttpClient.fetch().</span><span class="sxs-lookup"><span data-stu-id="f3581-123">The Response subclass returned by methods such as SPHttpClient.fetch().</span></span> |
 
 
 
-## <a name="interfaces"></a>Интерфейсы
+## <a name="interfaces"></a><span data-ttu-id="f3581-124">Интерфейсы</span><span class="sxs-lookup"><span data-stu-id="f3581-124">Interfaces</span></span>
 
-| Интерфейс    |  Описание |
+| <span data-ttu-id="f3581-125">Интерфейс</span><span class="sxs-lookup"><span data-stu-id="f3581-125">Interface</span></span>    |  <span data-ttu-id="f3581-126">Описание</span><span class="sxs-lookup"><span data-stu-id="f3581-126">Description</span></span> |
 |:-------------|:---------------|
-| [`IHttpClientConfiguration`](./sp-http/ihttpclientconfiguration.md)   | Интерфейс флажков для HttpClientConfiguration.  |
-| [`IHttpClientOptions`](./sp-http/ihttpclientoptions.md)   | В этом интерфейсе определены параметры для таких операций HttpClient, как get(), post(), fetch(). Он основан на параметрах стандарта WHATWG для API, приведенных на сайте https://fetch.spec.whatwg.org.  |
-| [`ISPHttpClientCommonConfiguration`](./sp-http/isphttpclientcommonconfiguration.md)   | Интерфейс флажков для SPHttpClientCommonConfiguration  |
-| [`ISPHttpClientConfiguration`](./sp-http/isphttpclientconfiguration.md)   | Интерфейс флажков для SPHttpClientConfiguration.  |
-| [`ISPHttpClientOptions`](./sp-http/isphttpclientoptions.md)   | В этом интерфейсе определены параметры для таких операций класса SPHttpClient, как get(), post(), fetch() и т. д. Он основан на стандартных параметрах API WHATWG, описанных здесь: https://fetch.spec.whatwg.org/  |
+| [`IHttpClientConfiguration`](./sp-http/ihttpclientconfiguration.md)   | <span data-ttu-id="f3581-127">Интерфейс флажков для HttpClientConfiguration.</span><span class="sxs-lookup"><span data-stu-id="f3581-127">Flags interface for HttpClientConfiguration.</span></span>  |
+| [`IHttpClientOptions`](./sp-http/ihttpclientoptions.md)   | <span data-ttu-id="f3581-128">В этом интерфейсе определены параметры для таких операций HttpClient, как get(), post(), fetch(). Он основан на параметрах стандарта WHATWG для API, приведенных на сайте https://fetch.spec.whatwg.org.</span><span class="sxs-lookup"><span data-stu-id="f3581-128">This interface defines the options for the HttpClient operations such as get(), post(), fetch(), etc. It is based on the whatwg API standard parameters that are documented here: https://fetch.spec.whatwg.org/</span></span>  |
+| [`ISPHttpClientCommonConfiguration`](./sp-http/isphttpclientcommonconfiguration.md)   | <span data-ttu-id="f3581-129">Интерфейс флажков для SPHttpClientCommonConfiguration</span><span class="sxs-lookup"><span data-stu-id="f3581-129">Flags interface for SPHttpClientCommonConfiguration</span></span>  |
+| [`ISPHttpClientConfiguration`](./sp-http/isphttpclientconfiguration.md)   | <span data-ttu-id="f3581-130">Интерфейс флажков для SPHttpClientConfiguration.</span><span class="sxs-lookup"><span data-stu-id="f3581-130">Flags interface for SPHttpClientConfiguration.</span></span>  |
+| [`ISPHttpClientOptions`](./sp-http/isphttpclientoptions.md)   | <span data-ttu-id="f3581-131">В этом интерфейсе определены параметры для таких операций класса SPHttpClient, как get(), post(), fetch() и т. д. Он основан на стандартных параметрах API WHATWG, описанных здесь: https://fetch.spec.whatwg.org/</span><span class="sxs-lookup"><span data-stu-id="f3581-131">This interface defines the options for the SPHttpClient operations such as get(), post(), fetch(), etc. It is based on the WHATWG API standard parameters that are documented here: https://fetch.spec.whatwg.org/</span></span>  |
 
 
 

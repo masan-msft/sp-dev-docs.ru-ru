@@ -1,3 +1,3 @@
-# <a name="sharepoint-framework-reference"></a>Справочник по SharePoint Framework
+<span data-ttu-id="e85d0-p101">Объектная модель SharePoint Framework встроена в TypeScript. В этом разделе представлены дополнительные сведения о классах, методах и других типах, доступных для создания решений на платформе SharePoint Framework.</span><span class="sxs-lookup"><span data-stu-id="e85d0-p101">The SharePoint Framework object model is built in TypeScript. Use this section to learn more about the classes, methods, and other types available for building your SharePoint Framework solutions.</span></span>
 
 Объектная модель SharePoint Framework встроена в TypeScript. В этом разделе представлены дополнительные сведения о классах, методах и других типах, доступных для создания решений на платформе SharePoint Framework.

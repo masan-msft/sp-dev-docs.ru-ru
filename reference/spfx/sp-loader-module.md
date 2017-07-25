@@ -1,20 +1,4 @@
-# <a name="sp-loader-module"></a>Модуль sp-loader
-
-
-
-## <a name="classes"></a>Классы
-
-| Класс    |  Описание |
-|:-------------|:---------------|
-| [`SPComponentLoader`](./sp-loader/spcomponentloader.md)     | Загрузчик компонента. Необходима инициализация с помощью внедренного ISPComponentLoader. |
-
-
-
-## <a name="interfaces"></a>Интерфейсы
-
-| Интерфейс    |  Описание |
-|:-------------|:---------------|
-| [`ILoadScriptOptions`](./sp-loader/iloadscriptoptions.md)   | Параметры для метода loadScript() в ISPComponentLoader  |
+<span data-ttu-id="e661d-p102">Интерфейс для загрузчика модуля. Позволяет загружать модули и скрипты (через SystemJS) и CSS на странице. Кроме того, он разрешает доступ к манифестам на странице.</span><span class="sxs-lookup"><span data-stu-id="e661d-p102">Interface for the module loader. It allows to load modules and scripts (through SystemJS) and CSS on the page. Also allows access to the manifests that exist in the page.</span></span>  |
 | [`ISPComponentLoader`](./sp-loader/ispcomponentloader.md)   | Интерфейс для загрузчика модуля. Позволяет загружать модули и скрипты (через SystemJS) и CSS на странице. Кроме того, он разрешает доступ к манифестам на странице.  |
 
 

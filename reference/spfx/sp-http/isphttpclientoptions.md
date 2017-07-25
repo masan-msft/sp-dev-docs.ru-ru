@@ -1,0 +1,9 @@
+<span data-ttu-id="0ee02-p101">Для операции записи SPHttpClient автоматически добавит заголовок "X-RequestDigest", который иногда нужно получать с помощью отдельного запроса, например "https://example.com/sites/sample/_api/contextinfo". Обычно URL-адрес SPWeb (в данном примере "https://example.com/sites/sample") можно определить, посмотрев на такой зарезервированный сегмент URL-адреса, как "_api", в исходном запросе REST, но определенные конечные точки REST не содержат зарезервированного сегмента URL-адреса. В данном случае webUrl можно явно указать с помощью этого параметра.</span><span class="sxs-lookup"><span data-stu-id="0ee02-p101">For a write operation, SPHttpClient will automatically add the "X-RequestDigest" header, which may need to be fetched using a seperate request such as "https://example.com/sites/sample/_api/contextinfo". Typically the SPWeb URL ("https://example.com/sites/sample" in this example) can be guessed by looking for a reserved URL segment such as "_api" in the original REST query, however certain REST endpoints do not contain a reserved URL segment; in this case, the webUrl can be explicitly specified using this option.</span></span>|
+|:-------------|:-------|:-----------|
+|`webUrl`      | `string` | Для операции записи SPHttpClient автоматически добавит заголовок "X-RequestDigest", который иногда нужно получать с помощью отдельного запроса, например "https://example.com/sites/sample/_api/contextinfo". Обычно URL-адрес SPWeb (в данном примере "https://example.com/sites/sample") можно определить, посмотрев на такой зарезервированный сегмент URL-адреса, как "_api", в исходном запросе REST, но определенные конечные точки REST не содержат зарезервированного сегмента URL-адреса. В данном случае webUrl можно явно указать с помощью этого параметра. |
+
+
+
+
+
+

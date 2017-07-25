@@ -1,39 +1,8 @@
-# <a name="set-custom-permissions-on-a-list-by-using-the-rest-interface"></a>Назначение настраиваемых разрешений для списка с помощью интерфейса REST
-Узнайте, как определять детальные настраиваемые разрешения для списка SharePoint с помощью интерфейса REST и JavaScript.
-
-Сайты, списки и элементы списков SharePoint относятся к типу **SecurableObject**. По умолчанию защищаемый объект наследует разрешения от родительского объекта. Чтобы задать настраиваемые разрешения для объекта, необходимо прервать его наследование, чтобы он перестал наследовать разрешения от родительского объекта, а затем определить новые разрешения, добавив или удалив назначения ролей.
- 
- **Примечание.** В разделе [Дополнительные ресурсы](set-custom-permissions-on-a-list-by-using-the-rest-interface.md#bk_addresources) представлены ссылки на статьи, посвященные детальным разрешениям.
- 
-Пример кода в этой статье задает настраиваемые разрешения для списка, а затем меняет разрешения группы для него. В примере интерфейс REST используется в следующих целях.
- 
-
-- Чтобы получить идентификатор целевой группы. Пример использует его, чтобы получить текущие привязки ролей для группы в списке и чтобы добавить новую роль в список.
-
-- Получить идентификатор определения роли, задающего новые разрешения для группы. Этот идентификатор используется для добавления новой роли в список. Пример применяет существующее определение для новой роли, но при необходимости вы можете создать новое определение.
- 
-- Прервите наследование ролей для списка с помощью метода `BreakRoleInheritance`. В этом примере прерывается наследование ролей, но сохраняется их текущий набор. (Вы также можете не копировать назначения ролей и добавить для текущего пользователя уровень разрешений "Управление".)
- 
-- Чтобы удалить текущее назначение ролей группы в списке, отправив запрос DELETE конечной точки назначения роли. (Если вы решили не копировать назначения ролей, пропустите этот шаг.)
- 
-- Добавьте к списку назначение роли для группы с помощью метода `AddRoleAssignment`, который привязывает группу к определению роли и добавляет роль к списку.
-    
-## <a name="prerequisites-for-using-the-example-in-this-article"></a>Необходимые условия для использования примеров в этой статье
-<a name="SP15Accessdatafromremoteapp_Prereq"> </a> Для использования примеров, представленных в этой статье, вам потребуется следующее:
-
-- Среда разработки SharePoint (для локальных сценариев необходима изоляция приложений).
-- Visual Studio 2013 с Office Developer Tools или более поздней версии.
-    
-Вам также потребуется задать для надстройки разрешения **Полный доступ** в области **Интернет**. Запускать эту надстройку могут только те пользователи, у которых есть разрешения на изменение разрешений списка (например, владельцы сайта).
-
-## <a name="example-set-custom-permissions-on-a-list-by-using-the-rest-interface"></a>Пример: Назначение настраиваемых разрешений для списка с помощью интерфейса REST
-<a name="bk_example1"> </a>
-
-В приведенных ниже примерах представлено содержимое файла App.js в надстройке с размещением в SharePoint. В первом примере используется междоменная библиотека JavaScript для создания и отправки HTTP-запросов. Во втором примере используются запросы jQuery AJAX.
+<span data-ttu-id="82712-p109">Прежде чем запускать код, замените заполнители фактическими значениями. Если вы используете другой язык или другую среду, вам потребуется добавить или изменить некоторые компоненты запросов. Дополнительные сведения см. в статье [Отличия между запросами REST в разных средах](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md#bk_HowRequestsDiffer).</span><span class="sxs-lookup"><span data-stu-id="82712-p109">Before you run the code, replace the placeholder values with actual values. If you're using a different language or environment, you'll need to add or change some request components. See  [How REST requests differ by environment](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md#bk_HowRequestsDiffer) for more information.</span></span>
  
 Прежде чем запускать код, замените заполнители фактическими значениями. Если вы используете другой язык или другую среду, вам потребуется добавить или изменить некоторые компоненты запросов. Дополнительные сведения см. в статье [Отличия между запросами REST в разных средах](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md#bk_HowRequestsDiffer).
  
- **Пример 1. Запросы междоменной библиотеки**
+ <span data-ttu-id="82712-134">**Пример 1. Запросы междоменной библиотеки**</span><span class="sxs-lookup"><span data-stu-id="82712-134">**Example 1: Cross-domain library requests**</span></span>
  
 ```javascript
 'use strict';
@@ -162,7 +131,7 @@ function errorHandler(xhr, ajaxOptions, thrownError) {
 }
 ```
 
- **Пример 2. Запросы jQuery AJAX**
+ <span data-ttu-id="82712-135">**Пример 2. Запросы jQuery AJAX**</span><span class="sxs-lookup"><span data-stu-id="82712-135">**Example 2: jQuery AJAX requests**</span></span>
  
 ```javascript
 // Change placeholder values before you run this code.
@@ -257,26 +226,26 @@ function errorHandler(xhr, ajaxOptions, thrownError) {
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
-<a name="bk_addresources"> </a>
+## <a name="additional-resources"></a><span data-ttu-id="82712-136">Дополнительные ресурсы</span><span class="sxs-lookup"><span data-stu-id="82712-136">Additional resources</span></span>
+<span data-ttu-id="82712-137"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="82712-137"></span></span>
 
--  [Знакомство со службой REST в SharePoint](get-to-know-the-sharepoint-rest-service.md) 
--  [Выполнение базовых операций с использованием конечных точек SharePoint REST](complete-basic-operations-using-sharepoint-rest-endpoints.md)
--  [Работа со списками и элементами списков в интерфейсе REST](working-with-lists-and-list-items-with-rest.md)
+-  [<span data-ttu-id="82712-138">Знакомство со службой REST в SharePoint</span><span class="sxs-lookup"><span data-stu-id="82712-138">Get to know the SharePoint REST service</span></span>](get-to-know-the-sharepoint-rest-service.md) 
+-  [<span data-ttu-id="82712-139">Выполнение базовых операций с использованием конечных точек SharePoint REST</span><span class="sxs-lookup"><span data-stu-id="82712-139">Complete basic operations using SharePoint REST endpoints</span></span>](complete-basic-operations-using-sharepoint-rest-endpoints.md)
+-  [<span data-ttu-id="82712-140">Работа со списками и элементами списков в интерфейсе REST</span><span class="sxs-lookup"><span data-stu-id="82712-140">Working with lists and list items with REST</span></span>](working-with-lists-and-list-items-with-rest.md)
 
-- Ресурсы REST:
-     - [Ресурс GroupCollection](http://msdn.microsoft.com/library/c5e49290-78d4-4167-b4de-da32376bbf90%28Office.15%29.aspx#bk_GroupCollection)
-     - [Ресурс Group](http://msdn.microsoft.com/library/c5e49290-78d4-4167-b4de-da32376bbf90%28Office.15%29.aspx#bk_Group) 
-     - [Ресурс RoleAssignmentCollection](http://msdn.microsoft.com/library/c5e49290-78d4-4167-b4de-da32376bbf90%28Office.15%29.aspx#bk_RoleAssignmentCollection)
-     - [Ресурс RoleAssignment](http://msdn.microsoft.com/library/c5e49290-78d4-4167-b4de-da32376bbf90%28Office.15%29.aspx#bk_RoleAssignment)
-     - [Ресурс RoleDefinitionCollection](http://msdn.microsoft.com/library/c5e49290-78d4-4167-b4de-da32376bbf90%28Office.15%29.aspx#bk_RoleDefinitionCollection)
-     - [Ресурс RoleDefinition](http://msdn.microsoft.com/library/c5e49290-78d4-4167-b4de-da32376bbf90%28Office.15%29.aspx#bk_RoleDefinition)
+- <span data-ttu-id="82712-141">Ресурсы REST:</span><span class="sxs-lookup"><span data-stu-id="82712-141">REST resources:</span></span>
+     - [<span data-ttu-id="82712-142">Ресурс GroupCollection</span><span class="sxs-lookup"><span data-stu-id="82712-142">GroupCollection resource</span></span>](http://msdn.microsoft.com/library/c5e49290-78d4-4167-b4de-da32376bbf90%28Office.15%29.aspx#bk_GroupCollection)
+     - [<span data-ttu-id="82712-143">Ресурс Group</span><span class="sxs-lookup"><span data-stu-id="82712-143">Group resource</span></span>](http://msdn.microsoft.com/library/c5e49290-78d4-4167-b4de-da32376bbf90%28Office.15%29.aspx#bk_Group) 
+     - [<span data-ttu-id="82712-144">Ресурс RoleAssignmentCollection</span><span class="sxs-lookup"><span data-stu-id="82712-144">RoleAssignmentCollection resource</span></span>](http://msdn.microsoft.com/library/c5e49290-78d4-4167-b4de-da32376bbf90%28Office.15%29.aspx#bk_RoleAssignmentCollection)
+     - [<span data-ttu-id="82712-145">Ресурс RoleAssignment</span><span class="sxs-lookup"><span data-stu-id="82712-145">RoleAssignment resource</span></span>](http://msdn.microsoft.com/library/c5e49290-78d4-4167-b4de-da32376bbf90%28Office.15%29.aspx#bk_RoleAssignment)
+     - [<span data-ttu-id="82712-146">Ресурс RoleDefinitionCollection</span><span class="sxs-lookup"><span data-stu-id="82712-146">RoleDefinitionCollection resource</span></span>](http://msdn.microsoft.com/library/c5e49290-78d4-4167-b4de-da32376bbf90%28Office.15%29.aspx#bk_RoleDefinitionCollection)
+     - [<span data-ttu-id="82712-147">Ресурс RoleDefinition</span><span class="sxs-lookup"><span data-stu-id="82712-147">RoleDefinition resource</span></span>](http://msdn.microsoft.com/library/c5e49290-78d4-4167-b4de-da32376bbf90%28Office.15%29.aspx#bk_RoleDefinition)
     
  
-- Статьи TechNet:
-     - [Справочник по детальным разрешениям для SharePoint Server 2013](http://technet.microsoft.com/en-us/library/dn169567.aspx)
-     - [Рекомендации по использованию детальных разрешений в SharePoint Server 2013](http://technet.microsoft.com/en-us/library/gg128955.aspx)
-     - [Разрешения пользователей и уровни разрешений в SharePoint 2013](http://technet.microsoft.com/en-us/library/cc721640.aspx)
+- <span data-ttu-id="82712-148">Статьи TechNet:</span><span class="sxs-lookup"><span data-stu-id="82712-148">TechNet articles:</span></span>
+     - [<span data-ttu-id="82712-149">Справочник по детальным разрешениям для SharePoint Server 2013</span><span class="sxs-lookup"><span data-stu-id="82712-149">Fine-grained permission reference for SharePoint Server 2013</span></span>](http://technet.microsoft.com/en-us/library/dn169567.aspx)
+     - [<span data-ttu-id="82712-150">Рекомендации по использованию детальных разрешений в SharePoint Server 2013</span><span class="sxs-lookup"><span data-stu-id="82712-150">Best practices for using fine-grained permissions in SharePoint Server 2013</span></span>](http://technet.microsoft.com/en-us/library/gg128955.aspx)
+     - [<span data-ttu-id="82712-151">Разрешения пользователей и уровни разрешений в SharePoint 2013</span><span class="sxs-lookup"><span data-stu-id="82712-151">User permissions and permission levels in SharePoint 2013</span></span>](http://technet.microsoft.com/en-us/library/cc721640.aspx)
     
  
 

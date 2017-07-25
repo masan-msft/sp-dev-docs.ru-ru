@@ -1,18 +1,4 @@
-# <a name="sp-page-context-module"></a>Модуль sp-page-context
-
-
-
-## <a name="classes"></a>Классы
-
-| Класс    |  Описание |
-|:-------------|:---------------|
-| [`CultureInfo`](./sp-page-context/cultureinfo.md)     | Этот класс в основном используется с классом PageContext. Он предоставляет информацию о языке и региональных параметрах для текущего пользователя приложения. |
-| [`PageContext`](./sp-page-context/pagecontext.md)     | Контекст страницы предоставляет стандартные определения для общих объектов SharePoint, к которым нужно предоставить общий доступ для клиентского приложения, веб-частей и других компонентов. Обычно данные получают с помощью запросов REST при переходе к новой странице, но они также могут быть предварительно загружены веб-сервером или заполнены из кэша пользовательского приложения. |
-| [`SPList`](./sp-page-context/splist.md)     | Этот класс в основном используется с классом PageContext. Предоставляет контекстную информацию для списка SharePoint, в котором размещена страница. |
-| [`SPListItem`](./sp-page-context/splistitem.md)     | Этот класс в основном используется с классом PageContext. Предоставляет контекстную информацию для элемента списка SharePoint, в котором размещена страница. |
-| [`SPPermission`](./sp-page-context/sppermission.md)     | С помощью этого класса можно определить, есть ли у текущего пользователя запрашиваемый набор разрешений. Указывает встроенные разрешения, доступные в SharePoint Foundation. Производный от OneDriveWeb/ODBNext/odsp-shared https://msdn.microsoft.com/ru-ru/library/microsoft.sharepoint.spbasepermissions.aspx |
-| [`SPSite`](./sp-page-context/spsite.md)     | Этот класс в основном используется с классом PageContext. Предоставляет контекстную информацию для семейства веб-сайтов SharePoint (далее "сайт"), в котором размещена страница. |
-| [`SPUser`](./sp-page-context/spuser.md)     | Этот класс в основном используется с классом PageContext. Предоставляет контекстную информацию для пользователя SharePoint, получающего доступ к странице. |
+<span data-ttu-id="f037c-p108">Этот класс в основном используется с классом PageContext. Предоставляет контекстную информацию для сайта SharePoint (далее — "веб-сайт"), в котором размещена страница.</span><span class="sxs-lookup"><span data-stu-id="f037c-p108">This class is primarily used with the PageContext class. It provides contextual information for the SharePoint site ("web") that hosts the page.</span></span> |
 | [`SPWeb`](./sp-page-context/spweb.md)     | Этот класс в основном используется с классом PageContext. Предоставляет контекстную информацию для сайта SharePoint (далее — "веб-сайт"), в котором размещена страница. |
 
 
