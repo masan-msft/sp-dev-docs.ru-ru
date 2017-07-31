@@ -1,0 +1,8 @@
+<span data-ttu-id="e6b70-p111">Благодаря проекту [Office Dev Patterns and Practices / SharePoint Pattern and Practices (PnP)](http://aka.ms/officedevpnp) доступны примеры кодов, шаблоны и другие ресурсы, которые помогут преобразовать существующее решение в решение на базе SharePoint Framework. Обязательно ознакомьтесь с этими примерами кодов и рекомендациями.</span><span class="sxs-lookup"><span data-stu-id="e6b70-p111">The [Office Dev Patterns and Practices / SharePoint Pattern and Practices (PnP)](http://aka.ms/officedevpnp) initiative provides code samples, patterns, and other resources to help you transform your existing solution to the SharePoint Framework. Be sure to become familiar with the code samples and guidance that is available through the PnP effort.</span></span>
+
+Благодаря проекту [Office Dev Patterns and Practices / SharePoint Pattern and Practices (PnP)](http://aka.ms/officedevpnp) доступны примеры кодов, шаблоны и другие ресурсы, которые помогут преобразовать существующее решение в решение на базе SharePoint Framework. Обязательно ознакомьтесь с этими примерами кодов и рекомендациями.
+
+## <a name="additional-resources"></a><span data-ttu-id="e6b70-180">Дополнительные ресурсы</span><span class="sxs-lookup"><span data-stu-id="e6b70-180">Additional resources</span></span>
+
+* [<span data-ttu-id="e6b70-181">SharePoint Framework</span><span class="sxs-lookup"><span data-stu-id="e6b70-181">SharePoint Framework</span></span>](sharepoint-framework-overview)
+* [<span data-ttu-id="e6b70-182">Создание клиентской веб-части Hello World</span><span class="sxs-lookup"><span data-stu-id="e6b70-182">Build a Hello World client-side web part</span></span>](web-parts/get-started/build-a-hello-world-web-part)
