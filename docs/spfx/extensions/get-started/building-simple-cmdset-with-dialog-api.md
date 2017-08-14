@@ -42,11 +42,11 @@ yo @microsoft/sharepoint
 
 После этого Yeoman установит необходимые зависимости и сформирует файлы решения, а также расширение **HelloWorld**. Это может занять несколько минут. 
 
-После успешного формирования должно появиться следующее сообщение:
+После успешного скаффолдинга должно появиться следующее сообщение:
 
 !["Скаффолдинг клиентского решения SharePoint успешно выполнен".](../../../../images/ext-com-yeoman-complete.png)
 
-Сведения об устранении неполадок см. в статье [Известные проблемы](../basics/known-issues).
+Сведения об устранении неполадок см. в статье [Известные проблемы](../../web-parts/basics/known-issues).
 
 Завершив формирование решения, введите в консоли приведенную ниже команду, чтобы запустить Visual Studio Code.
 
@@ -284,7 +284,7 @@ gulp serve --nobrowser
     "features": [{
       "title": "ListView Command Set - Deployment of custom action.",
       "description": "Deploys a custom action with ClientSideComponentId association",
-      "id": "456da147-ced2-3036-b564-8dad5c1c2e34",
+      "id": "456da147-ced2-3036-b564-8dad5c1c2e35",
       "version": "1.0.0.0",
       "assets": {        
         "elementManifests": [

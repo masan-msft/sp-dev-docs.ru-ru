@@ -68,7 +68,7 @@ code .
 Введите в консоли следующий код, чтобы установить пакет npm jQuery:
 
 ```
-npm install --save jquery
+npm install --save jquery@2
 ```
 
  Теперь введите следующий код, чтобы установить пакет npm jQueryUI:
@@ -82,7 +82,7 @@ npm install --save jqueryui
 Откройте консоль и установите необходимые типы:
 
 ```
-npm install --save @types/jquery
+npm install --save @types/jquery@2
 npm install --save @types/jqueryui
 ```
 
