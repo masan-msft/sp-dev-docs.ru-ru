@@ -1,33 +1,352 @@
-<span data-ttu-id="ee669-p123">Добавьте определения типов для строк. В этом случае у вас есть файл **MyStrings.d.ts**:</span><span class="sxs-lookup"><span data-stu-id="ee669-p123">Add typings for your strings. In this case, you have a file **MyStrings.d.ts**:</span></span>
+# <a name="add-an-external-library-to-your-sharepoint-client-side-web-part"></a><span data-ttu-id="48af3-101">Добавление внешней библиотеки в клиентскую веб-часть SharePoint</span><span class="sxs-lookup"><span data-stu-id="48af3-101">Add an external library to your SharePoint client-side web part</span></span>
+
+<span data-ttu-id="48af3-p101">Вам может понадобиться добавить в веб-часть одну или несколько библиотек JavaScript. В этой статье описано, как добавить внешнюю библиотеку в пакет и использовать библиотеки в нескольких веб-частях.</span><span class="sxs-lookup"><span data-stu-id="48af3-p101">You might want to include one or more JavaScript libraries in your web part. This article shows you how to bundle an external library and share libraries.</span></span>
+
+
+## <a name="bundling-a-script"></a><span data-ttu-id="48af3-104">Добавление сценария в пакет</span><span class="sxs-lookup"><span data-stu-id="48af3-104">Bundling a script</span></span>
+
+<span data-ttu-id="48af3-p102">По умолчанию средство увязки веб-частей в пакеты автоматически добавляет те библиотеки, которые представляют собой зависимости для модуля веб-части. Это означает, что такие библиотеки будут развернуты в том же файле пакета JavaScript, что и веб-часть. Это удобно в случае небольших библиотек, которые не используются в нескольких веб-частях.</span><span class="sxs-lookup"><span data-stu-id="48af3-p102">By default, the web part bundler will automatically include any library that is a dependency of the web part module. This means that the library will be deployed in the same JavaScript bundle file as your web part. This is more useful for smaller libraries that are not used in multiple web parts.</span></span>
+
+### <a name="example"></a><span data-ttu-id="48af3-108">Пример</span><span class="sxs-lookup"><span data-stu-id="48af3-108">Example</span></span>
+
+<span data-ttu-id="48af3-109">Добавьте [библиотеку проверки](https://www.npmjs.com/package/validator) строк в веб-часть.</span><span class="sxs-lookup"><span data-stu-id="48af3-109">Include the string validating library [validator](https://www.npmjs.com/package/validator) package into a web part.</span></span>
+
+<span data-ttu-id="48af3-110">Скачайте пакет средств проверки, используя npm:</span><span class="sxs-lookup"><span data-stu-id="48af3-110">Download the validator package from npm:</span></span>
+    
+```
+npm install validator --save
+```
+    
+><span data-ttu-id="48af3-p103">**Примечание.** Так как вы используете TypeScript, для добавляемого пакета нужны определения типов. Это очень важно при написании кода, так как TypeScript — это просто расширенная версия JavaScript. При компиляции код TypeScript преобразуется в код JavaScript. Для поиска определений типов можно использовать пакет **tsd**, например: `tsd install {package} --save`.</span><span class="sxs-lookup"><span data-stu-id="48af3-p103">**Note:** Because you're using TypeScript, you need typings for the package you add. This is essential when you are writing code because TypeScript is just a superset of JavaScript. All the TypeScript code is still converted to JavaScript code when you compile. You can search  for and find typings by using **tsd** package, for example: `tsd install {package} --save`</span></span>
+    
+<span data-ttu-id="48af3-115">Создайте в папке веб-части файл с именем `validator.d.ts` и добавьте приведенный ниже код.</span><span class="sxs-lookup"><span data-stu-id="48af3-115">Create a file in the your web part's folder called `validator.d.ts` and add the following:</span></span>
+    
+><span data-ttu-id="48af3-p104">**Примечание.** У некоторых библиотек нет определений типов. Для библиотеки Validator есть [предоставленный сообществом файл определений типов](https://www.npmjs.com/package/@types/validator), но для данного сценария предположим, что это не так. В этом случае вам потребуется задать собственный файл определений типов `.d.ts` для библиотеки. Ниже представлен пример кода.</span><span class="sxs-lookup"><span data-stu-id="48af3-p104">**Note:** Some libraries do not have typings. While the Validator library does have a [community provided typings file](https://www.npmjs.com/package/@types/validator), for this scenario let's assume it does not. In this case you would want to define your own typings definition `.d.ts` file for the library. The following code shows an example.</span></span>
+    
+```typescript
+declare module "validator" {
+    export function isEmail(email: string): boolean;
+    export function isAscii(text: string): boolean;
+}
+```
+    
+<span data-ttu-id="48af3-120">Импортируйте определения типов в файле веб-части:</span><span class="sxs-lookup"><span data-stu-id="48af3-120">In your web part file, import the typings:</span></span>
+    
+```typescript
+import * as validator from 'validator';
+```
+    
+<span data-ttu-id="48af3-121">Укажите библиотеку проверки в коде веб-части:</span><span class="sxs-lookup"><span data-stu-id="48af3-121">Use the validator library in your web part code:</span></span>
+    
+```typescript
+validator.isEmail('someone@example.com');
+```
+
+## <a name="sharing-a-library-among-multiple-webparts"></a><span data-ttu-id="48af3-122">Использование библиотеки несколькими веб-частями</span><span class="sxs-lookup"><span data-stu-id="48af3-122">Sharing a library among multiple WebParts</span></span>
+
+<span data-ttu-id="48af3-p105">Клиентское решение может включать несколько веб-частей. Для них может потребоваться импортировать или использовать одну и ту же библиотеку. В таких случаях не добавляйте библиотеку в пакет, а включите ее в отдельный файл JavaScript, чтобы повысить эффективность и улучшить кэширование. Особенно это касается больших библиотек.</span><span class="sxs-lookup"><span data-stu-id="48af3-p105">Your client-side solution might include multiple web parts. These web parts might need to import or share the same library. In such cases, instead of bundling the library, you should include it in a separate JavaScript file to improve performance and caching. This is especially true of larger libraries.</span></span>
+
+### <a name="example"></a><span data-ttu-id="48af3-127">Пример</span><span class="sxs-lookup"><span data-stu-id="48af3-127">Example</span></span>
+
+<span data-ttu-id="48af3-128">В этом примере пакет [marked](https://www.npmjs.com/package/marked) (компилятор Markdown) помещается в отдельный пакет для совместного использования.</span><span class="sxs-lookup"><span data-stu-id="48af3-128">In this example, you will share the [marked](https://www.npmjs.com/package/marked) package - a Markdown compiler - in a separate bundle.</span></span>
+
+<span data-ttu-id="48af3-129">Скачайте пакет **marked** с помощью npm:</span><span class="sxs-lookup"><span data-stu-id="48af3-129">Download the **marked** package from npm:</span></span>
+    
+```
+npm install marked --save
+```
+    
+<span data-ttu-id="48af3-130">Скачайте определения типов:</span><span class="sxs-lookup"><span data-stu-id="48af3-130">Download the typings:</span></span>
+    
+```
+npm install @types/marked --save
+```
+    
+<span data-ttu-id="48af3-p106">Измените **config/config.json** и добавьте запись в схему **externals**. В результате средство увязки поместит эту библиотеку в отдельный файл, а не добавит в пакет:</span><span class="sxs-lookup"><span data-stu-id="48af3-p106">Edit the **config/config.json** and add an entry to the **externals** map. This is what tells the bundler to put this in a separate file. This prevents the bundler from bundling this library:</span></span>
+    
+```json
+"marked": "node_modules/marked/marked.min.js"
+```
+    
+<span data-ttu-id="48af3-134">Теперь, когда мы добавили пакет и определения типов для библиотеки, добавьте оператор для импорта библиотеки `marked` в веб-части:</span><span class="sxs-lookup"><span data-stu-id="48af3-134">Add the statement to import the `marked` library in your web part now that we have added the package and typings for the library:</span></span>
+    
+```typescript
+import * as marked from 'marked';
+```
+     
+<span data-ttu-id="48af3-135">Укажите библиотеку в своей веб-части:</span><span class="sxs-lookup"><span data-stu-id="48af3-135">Use the library in your web part:</span></span>
+    
+```typescript
+console.log(marked('I am using __markdown__.'));
+```
+
+## <a name="loading-a-script-from-a-cdn"></a><span data-ttu-id="48af3-136">Загрузка сценария из CDN</span><span class="sxs-lookup"><span data-stu-id="48af3-136">Loading a script from a CDN</span></span>
+
+<span data-ttu-id="48af3-p107">Вы можете не загружать библиотеку из пакета npm, а загрузить сценарий из CDN. Для этого измените файл **config.json**, чтобы обеспечить загрузку библиотеки с использованием URL-адреса CDN.</span><span class="sxs-lookup"><span data-stu-id="48af3-p107">Instead of loading the library from a npm package, you might want to load a script from a CDN. To do so, edit the **config.json** file to load the library from its CDN URL.</span></span>
+
+### <a name="example"></a><span data-ttu-id="48af3-139">Пример</span><span class="sxs-lookup"><span data-stu-id="48af3-139">Example</span></span>
+
+<span data-ttu-id="48af3-p108">В этом примере из CDN загружается jQuery. Пакет npm устанавливать не нужно. Но определения типов все равно нужно установить.</span><span class="sxs-lookup"><span data-stu-id="48af3-p108">In this example, you will load jQuery from CDN. You don't need to install the npm package. However, you still need to install the typings.</span></span> 
+
+<span data-ttu-id="48af3-143">Установите определения типов для jQuery:</span><span class="sxs-lookup"><span data-stu-id="48af3-143">Install the typings for jQuery:</span></span>
+    
+```
+npm install --save @types/jquery
+```
+    
+<span data-ttu-id="48af3-p109">Обновите файл `config.json` в папке `config` для загрузки jQuery из CDN. Добавьте запись в поле `externals`:</span><span class="sxs-lookup"><span data-stu-id="48af3-p109">Update the `config.json` in the `config` folder to load jQuery from CDN. Add an entry to the `externals` field:</span></span>
+    
+```json
+"jquery": "https://code.jquery.com/jquery-3.1.0.min.js"
+```
+    
+<span data-ttu-id="48af3-146">Импортируйте jQuery в веб-часть:</span><span class="sxs-lookup"><span data-stu-id="48af3-146">Import jQuery in your web part:</span></span>
+    
+```typescript
+import * as $ from 'jquery';
+```
+    
+<span data-ttu-id="48af3-147">Используйте jQuery в своей веб-части:</span><span class="sxs-lookup"><span data-stu-id="48af3-147">Use jQuery in your web part:</span></span>
+    
+```javascript
+alert( $('#foo').val() );
+```
+
+## <a name="loading-a-non-amd-module"></a><span data-ttu-id="48af3-148">Загрузка модуля, отличного от AMD-модуля</span><span class="sxs-lookup"><span data-stu-id="48af3-148">Loading a non-AMD module</span></span>
+
+<span data-ttu-id="48af3-p110">Некоторые сценарии JavaScript предусматривают хранение библиотек в глобальном пространстве имен. Такой подход устарел. Сейчас используются модули [ES6](https://github.com/lukehoban/es6features/blob/master/README.md#modules), [UMD (Universal Module Definitions)](https://github.com/umdjs/umd)/[AMD (Asynchronous Module Definitions)](https://en.wikipedia.org/wiki/Asynchronous_module_definition). Возможно, вам потребуется загрузить такие библиотеки в веб-часть.</span><span class="sxs-lookup"><span data-stu-id="48af3-p110">Some scripts follow the legacy JavaScript pattern of storing the library on the global namespace. This pattern is now deprecated in favor of [Universal Module Definitions (UMD)](https://github.com/umdjs/umd)/[Asynchronous Module Definitions (AMD)](https://en.wikipedia.org/wiki/Asynchronous_module_definition) or [ES6 modules](https://github.com/lukehoban/es6features/blob/master/README.md#modules). However, you might need to load such libraries in your web part.</span></span> 
+
+<span data-ttu-id="48af3-152">Чтобы загрузить модуль, созданный не с помощью AMD, добавьте дополнительное свойство в запись в файле **config.json**.</span><span class="sxs-lookup"><span data-stu-id="48af3-152">To load a non-AMD module, you add an additional property to the entry in your **config.json** file.</span></span>
+
+### <a name="example"></a><span data-ttu-id="48af3-153">Пример</span><span class="sxs-lookup"><span data-stu-id="48af3-153">Example</span></span>
+
+<span data-ttu-id="48af3-p111">В этом примере из CDN Contoso загружается фиктивный модуль, отличный от AMD-модуля. Эти действия предназначены для любого сценария, отличного от AMD-сценария, в каталоге src/ или node_modules/.</span><span class="sxs-lookup"><span data-stu-id="48af3-p111">In this example, you will load a fictional non-AMD module from Contoso's CDN. These steps  apply for any non-AMD script in your src/ or node_modules/ directory.</span></span>
+
+<span data-ttu-id="48af3-p112">Сценарий называется **Contoso.js**. Путь к нему: **https://contoso.com/contoso.js**. Вот его содержимое:</span><span class="sxs-lookup"><span data-stu-id="48af3-p112">The script is called **Contoso.js** and is stored at **https://contoso.com/contoso.js**. Its contents are:</span></span>
+
+```javascript
+var ContosoJS = {
+  say: function(text) { alert(text); },
+  sayHello: function(name) { alert('Hello, ' + name + '!'); }
+};
+```
+
+
+<span data-ttu-id="48af3-158">Создайте определения типов для сценария в файле **contoso.d.ts** из папки веб-части.</span><span class="sxs-lookup"><span data-stu-id="48af3-158">Create typings for the script in a file called **contoso.d.ts** in the web part folder.</span></span>
+    
+```typescript
+declare module "contoso" {
+    interface IContoso {
+        say(text: string): void;
+        sayHello(name: string): void;
+    }
+    var contoso: IContoso;
+    export = contoso;
+}
+```
+    
+<span data-ttu-id="48af3-p113">Включите этот сценарий в файл **config.json**. Добавьте запись в схему **externals**:</span><span class="sxs-lookup"><span data-stu-id="48af3-p113">Update the **config.json** file to include this script. Add an entry to the **externals** map:</span></span>
+    
+```json
+{
+    "contoso": {
+        "path": "https://contoso.com/contoso.js",
+        "globalName": "ContosoJS"
+    }
+}
+```
+    
+<span data-ttu-id="48af3-161">Добавьте операцию импорта в код веб-части:</span><span class="sxs-lookup"><span data-stu-id="48af3-161">Add an import to your web part code:</span></span>
+    
+```typescript
+import contoso from 'contoso';
+```
+    
+<span data-ttu-id="48af3-162">Используйте библиотеку contoso в своем коде:</span><span class="sxs-lookup"><span data-stu-id="48af3-162">Use the contoso library in your code:</span></span>
+    
+```typescript
+contoso.sayHello(username);
+```
+
+## <a name="loading-a-library-that-has-a-dependency-on-another-library"></a><span data-ttu-id="48af3-163">Загрузка библиотеки с зависимостью от другой библиотеки</span><span class="sxs-lookup"><span data-stu-id="48af3-163">Loading a library that has a dependency on another library</span></span>
+
+<span data-ttu-id="48af3-p114">Многие библиотеки содержат зависимости от другой библиотеки. Такие зависимости можно указать в файле **config.json** с помощью свойства **globalDependencies**.</span><span class="sxs-lookup"><span data-stu-id="48af3-p114">Many libraries have dependencies on another library. You can specify such dependencies in the **config.json** file using the **globalDependencies** property.</span></span>
+
+<span data-ttu-id="48af3-p115">Обратите внимание, что это поле не нужно указывать для модулей, отличных от AMD-модулей. Они импортируют друг друга правильно. Обратите внимание, что для модуля, отличного от AMD-модуля, предусмотрен в качестве зависимости модуль AMD.</span><span class="sxs-lookup"><span data-stu-id="48af3-p115">Note that you don't have to specify this field for non-AMD modules; they will properly import each other. However, it is important to note that a non-AMD module have a AMD module as a dependency.</span></span>
+
+<span data-ttu-id="48af3-168">Ниже приведены два примера.</span><span class="sxs-lookup"><span data-stu-id="48af3-168">There are two examples of this.</span></span>
+
+#### <a name="non-amd-module-has-a-non-amd-module-dependency"></a><span data-ttu-id="48af3-169">Для модуля, отличного от AMD-модуля, предусмотрена соответствующая зависимость</span><span class="sxs-lookup"><span data-stu-id="48af3-169">Non-AMD module has a non-AMD module dependency</span></span>
+
+<span data-ttu-id="48af3-p116">В этом примере используются два вымышленных сценария. Они хранятся в папке **src/**, но их также можно загрузить из CDN.</span><span class="sxs-lookup"><span data-stu-id="48af3-p116">This example involves two fictional scripts. These are in the **src/** folder, although they can also be loaded from a CDN.</span></span>
+
+<span data-ttu-id="48af3-172">**ContosoUI.js**</span><span class="sxs-lookup"><span data-stu-id="48af3-172">**ContosoUI.js**</span></span>
+
+```javascript
+Contoso.EventList = {
+    alert: function() {
+        var events = Contoso.getEvents();
+        events.forEach( function(event) {
+            alert(event);
+        });
+    }
+}
+```
+
+<span data-ttu-id="48af3-173">**ContosoCore.js**</span><span class="sxs-lookup"><span data-stu-id="48af3-173">**ContosoCore.js**</span></span>
+
+```javascript
+var Contoso = {
+    getEvents: function() {
+        return ['A', 'B', 'C'];
+    }
+};
+```
+
+<span data-ttu-id="48af3-p117">Добавьте или создайте определения типов для этого класса. В этом случае нужно создать файл `Contoso.d.ts`, который содержит определения типов для обоих файлов JavaScript.</span><span class="sxs-lookup"><span data-stu-id="48af3-p117">Add or create tpyings for this class. In this case, you will create `Contoso.d.ts`, which contains typings for both JavaScript files.</span></span> 
+    
+<span data-ttu-id="48af3-176">**contoso.d.ts**</span><span class="sxs-lookup"><span data-stu-id="48af3-176">**contoso.d.ts**</span></span>
+
+```typescript
+declare module "contoso" {
+    interface IEventList {
+        alert(): void;
+    }
+    interface IContoso {
+        getEvents(): string[];
+        EventList: IEventList;
+    }
+    var contoso: IContoso;
+    export = contoso;
+}
+```
+
+<span data-ttu-id="48af3-p118">Обновите файл **config.json**. Добавьте две записи в **externals**:</span><span class="sxs-lookup"><span data-stu-id="48af3-p118">Update the **config.json** file. Add two entries to **externals**:</span></span>
+    
+```json
+{
+     "contoso": {
+         "path": "/src/ContosoCore.js",
+         "globalName": "Contoso"
+     },
+     "contoso-ui": {
+         "path": "/src/ContosoUI.js",
+         "globalName": "Contoso",
+         "globalDependencies": ["contoso"]
+     }
+}
+```
+    
+<span data-ttu-id="48af3-179">Добавьте операции импорта для Contoso и ContosoUI:</span><span class="sxs-lookup"><span data-stu-id="48af3-179">Add imports for Contoso and ContosoUI:</span></span>
+       
+```typescript
+import contoso = require('contoso');
+require('contoso-ui');
+```
+
+<span data-ttu-id="48af3-180">Укажите библиотеки в своем коде:</span><span class="sxs-lookup"><span data-stu-id="48af3-180">Use the libraries in your code:</span></span>
+    
+```typescript
+contoso.EventList.alert();
+```
+
+## <a name="loading-sharepoint-jsom"></a><span data-ttu-id="48af3-181">Загрузка JSOM SharePoint</span><span class="sxs-lookup"><span data-stu-id="48af3-181">Loading SharePoint JSOM</span></span>
+
+<span data-ttu-id="48af3-p119">Модели JSOM SharePoint загружаются практически так же, как сценарии с зависимостями, отличные от AMD-сценариев. Это значит, что используются параметры **globalName** и **globalDependency**.</span><span class="sxs-lookup"><span data-stu-id="48af3-p119">Loading SharePoint JSOM is essentially the same scenario as loading non-AMD scripts that have dependencies. This means using both the **globalName** and **globalDependency** options.</span></span>
+
+<span data-ttu-id="48af3-184">Установите определения типов для Microsoft Ajax (зависимости для определений типов JSOM):</span><span class="sxs-lookup"><span data-stu-id="48af3-184">Install typings for Microsoft Ajax which is a dependency for JSOM typings:</span></span>
+
+```
+npm install @types/microsoft-ajax --save
+```
+
+<span data-ttu-id="48af3-185">Установите определения типов для JSOM:</span><span class="sxs-lookup"><span data-stu-id="48af3-185">Install typings for the JSOM:</span></span>
+
+```
+npm install @types/sharepoint --save
+``` 
+
+<span data-ttu-id="48af3-186">Добавьте записи в файл `config.json`:</span><span class="sxs-lookup"><span data-stu-id="48af3-186">Add entries to the `config.json`:</span></span>
 
 ```json
 {
-"strings": "strings/{locale}.js"
+    "sp-init": {
+        "path": "https://CONTOSO.sharepoint.com/_layouts/15/init.js",
+        "globalName": "$_global_init"
+    },
+    "microsoft-ajax": {
+        "path": "https://CONTOSO.sharepoint.com/_layouts/15/MicrosoftAjax.js",
+        "globalName": "Sys",
+        "globalDependencies": [ "sp-init" ]
+    },
+    "sp-runtime": {
+        "path": "https://CONTOSO.sharepoint.com/_layouts/15/SP.Runtime.js",
+        "globalName": "SP",
+        "globalDependencies": [ "microsoft-ajax" ]
+    },
+    "sharepoint": {
+        "path": "https://CONTOSO.sharepoint.com/_layouts/15/SP.js",
+        "globalName": "SP",
+        "globalDependencies": [ "sp-runtime" ]
+    }
+}
+```
+
+<span data-ttu-id="48af3-187">Добавьте в веб-часть оператор require:</span><span class="sxs-lookup"><span data-stu-id="48af3-187">In your web part, add the require statements:</span></span>
+    
+```typescript
+require('sp-init');
+require('microsoft-ajax');
+require('sp-runtime');
+require('sharepoint');
+```
+
+## <a name="load-localized-resources"></a><span data-ttu-id="48af3-188">Загрузка локализованных ресурсов</span><span class="sxs-lookup"><span data-stu-id="48af3-188">Load localized resources</span></span>
+
+<span data-ttu-id="48af3-p120">Загружать локализованные ресурсы — просто. В файле **config.json** есть схема **localizedResources**, с помощью которой можно описать, как загружать локализованные ресурсы. Пути в этой схеме заданы относительно папки **lib** и не должны содержать начальную косую черту (**/**).</span><span class="sxs-lookup"><span data-stu-id="48af3-p120">Loading localized resources is simple. There is a map in **config.json** called **localizedResources** with which you can describe how to load localized resources. Paths in this map are relative to the **lib** folder and must not contain a leading slash (**/**).</span></span>
+
+<span data-ttu-id="48af3-p121">В этом примере у вас есть папка **src/strings/**. В этой папке несколько файлов JavaScript, таких как **en-us.js**, **fr-fr.js**, **de-de.js**. Так как каждый из этих файлов должен загружаться загрузчиком модулей, они должны содержать оберточный код CommonJS. Например, в случае файла **en-us.js**:</span><span class="sxs-lookup"><span data-stu-id="48af3-p121">In this example, you have a folder **src/strings/**. In this folder are several JavaScript files with names such as **en-us.js**, **fr-fr.js**, **de-de.js**. Because each of these files must be loadable by the module loader, they must contain a CommonJS wrapper. For example, in **en-us.js**:</span></span>
+
+```typescript
+  define([], function() {
+    return {
+      "PropertyPaneDescription": "Description",
+      "BasicGroupName": "Group Name",
+      "DescriptionFieldLabel": "Description Field"
+    }
+  });
+```
+
+<span data-ttu-id="48af3-p122">Измените файл **config.json**. Добавьте запись в **localizedResources**. **{locale}** — это замещающий токен для имени языкового стандарта.</span><span class="sxs-lookup"><span data-stu-id="48af3-p122">Edit the **config.json** file. Add an entry to **localizedResources**. The **{locale}** is a placeholder token for the locale name:</span></span>
+
+```json
+{
+    "strings": "strings/{locale}.js"
 }
 ```
     
-Добавьте определения типов для строк. В этом случае у вас есть файл **MyStrings.d.ts**:
+<span data-ttu-id="48af3-p123">Добавьте определения типов для строк. В этом случае у вас есть файл **MyStrings.d.ts**:</span><span class="sxs-lookup"><span data-stu-id="48af3-p123">Add typings for your strings. In this case, you have a file **MyStrings.d.ts**:</span></span>
 
 ```typescript
 declare interface IStrings {
-webpartTitle: string;
-initialPrompt: string;
-exitPrompt: string;
+    webpartTitle: string;
+    initialPrompt: string;
+    exitPrompt: string;
 }
 
 declare module 'mystrings' {
-const strings: IStrings;
-export = strings;
+    const strings: IStrings;
+    export = strings;
 }
 ```
     
-<span data-ttu-id="ee669-201">Добавьте операции импорта для строк в проекте:</span><span class="sxs-lookup"><span data-stu-id="ee669-201">Add imports for the strings in your project:</span></span>
+<span data-ttu-id="48af3-201">Добавьте операции импорта для строк в проекте:</span><span class="sxs-lookup"><span data-stu-id="48af3-201">Add imports for the strings in your project:</span></span>
     
 ```typescript
 import * as strings from 'strings';
 ```
     
-<span data-ttu-id="ee669-202">Используйте строки в своем проекте:</span><span class="sxs-lookup"><span data-stu-id="ee669-202">Use the strings in your project:</span></span>
+<span data-ttu-id="48af3-202">Используйте строки в своем проекте:</span><span class="sxs-lookup"><span data-stu-id="48af3-202">Use the strings in your project:</span></span>
 
 ```typescript
 alert(strings.initialPrompt);
