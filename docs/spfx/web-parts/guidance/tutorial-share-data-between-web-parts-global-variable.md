@@ -1,8 +1,8 @@
-# <a name="share-data-between-web-parts-using-a-global-variable-tutorial"></a>Обмен данными между веб-частями с помощью глобальной переменной (руководство)
+# <a name="share-data-between-web-parts-using-a-global-variable-tutorial"></a>Совместное использование данных разными веб-частями с помощью глобальной переменной (руководство)
 
-> Примечание. Эта статья еще не была проверена на версии SPFx GA, поэтому у вас могут возникнуть трудности, например при использовании последней версии.
+> Примечание. Эта статья еще не была проверена на общедоступной версии SPFx, поэтому у вас могут возникнуть трудности при использовании последнего выпуска.
 
-При создании клиентских веб-частей можно загрузить данные один раз и повторно использовать их в разных веб-частях. Это ускорит загрузку страниц и уменьшит нагрузку на сеть. В этом пошаговом руководстве показано, как веб-части могут обмениваться данными с помощью глобальной переменной.
+При создании клиентских веб-частей можно загрузить данные один раз и повторно использовать их в разных веб-частях. Это ускорит загрузку страниц и уменьшит нагрузку на сеть. В этом пошаговом руководстве показано, как веб-части могут совместно использовать данные с помощью глобальной переменной.
 
 > **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки клиентских веб-частей для SharePoint](../../set-up-your-development-environment).
 
@@ -10,7 +10,7 @@
 
 ### <a name="create-a-new-project"></a>Создание проекта
 
-Для начала создайте папку проекта.
+С помощью командной строки создайте папку для проекта:
 
 ```sh
 md react-recentdocuments
@@ -22,19 +22,20 @@ md react-recentdocuments
 cd react-recentdocuments
 ```
 
-В папке проекта запустите генератор Yeoman для SharePoint Framework, чтобы сформировать шаблон проекта на платформе SharePoint Framework.
+В папке проекта запустите генератор Yeoman для SharePoint Framework, чтобы сформировать шаблон проекта на платформе SharePoint Framework:
 
 ```sh
 yo @microsoft/sharepoint
 ```
 
-Введите следующие значения:
+Когда появится соответствующий запрос, укажите следующие значения:
 
+- **WebPart** в качестве типа создаваемого клиентского компонента;
 - **react-recentdocuments** в качестве имени решения;
 - **Use the current folder** (Использовать текущую папку) в качестве расположения файлов;
 - **Recent documents** (Последние документы) в качестве имени веб-части;
 - **Shows recently modified documents** (Показывает недавно измененные документы) в качестве описания веб-части;
-- **React** в качестве отправной точки создания веб-части.
+- **React** в качестве используемой платформы.
 
 ![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../../images/tutorial-sharingdata-yo-sharepoint-recent-documents.png)
 
@@ -44,20 +45,20 @@ yo @microsoft/sharepoint
 
 ## <a name="show-the-recently-modified-documents"></a>Отображение недавно измененных документов
 
-Веб-часть "Recent documents" (Последние документы) показывает сведения о последних измененных документах в виде карточек, используя Office UI Fabric.
+Веб-часть Recent documents (Последние документы) показывает сведения о последних измененных документах в виде карточек, используя Office UI Fabric.
 
-![Веб-часть "Recent documents" (Последние документы) с тремя небольшими карточками документов, представляющими три последних измененных документа](../../../../images/tutorial-sharingdata-recent-documents.png)
+![Веб-часть Recent documents (Последние документы) с тремя небольшими карточками документов, представляющими три последних измененных документа](../../../../images/tutorial-sharingdata-recent-documents.png)
 
 ### <a name="remove-the-standard-description-property"></a>Удаление стандартного свойства _description_
 
-Для начала удалите стандартное свойство **description** из интерфейса **IRecentDocumentsWebPartProps**. В редакторе кода откройте файл **./src/webparts/recentDocuments/IRecentDocumentsWebPartProps.ts** и вставьте следующий код:
+Для начала удалите стандартное свойство `description` из интерфейса `IRecentDocumentsWebPartProps`. В редакторе кода откройте файл **./src/webparts/recentDocuments/IRecentDocumentsWebPartProps.ts** и вставьте следующий код:
 
 ```ts
 export interface IRecentDocumentsWebPartProps {
 }
 ```
 
-Удалите стандартное свойство **description** из манифеста веб-части. Откройте файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.manifest.json** и удалите из свойства **properties** свойство **description**:
+Удалите стандартное свойство `description` из манифеста веб-части. Откройте файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.manifest.json** и удалите из свойства `properties` свойство `description`:
 
 ```json
 {
@@ -81,7 +82,7 @@ export interface IRecentDocumentsWebPartProps {
 }
 ```
 
-Наконец удалите стандартное свойство **description** из веб-части. Откройте в редакторе кода файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts**. Замените метод **render** следующим кодом:
+Наконец удалите стандартное свойство `description` из веб-части. Откройте в редакторе кода файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts**. Замените метод `render` на следующий код:
 
 ```ts
 export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
@@ -99,7 +100,7 @@ export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecen
 }
 ```
 
-Затем замените метод **getPropertyPaneConfiguration** следующим кодом:
+Затем замените метод `getPropertyPaneConfiguration` на следующий код:
 
 ```ts
 export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
@@ -221,19 +222,19 @@ export default class RecentDocuments extends React.Component<IRecentDocumentsPro
 }
 ```
 
-Для начала компонент просматривает документы, переданные с помощью свойства **documents**. Для каждого документа он создает [карточку документа Office UI Fabric](https://dev.office.com/fabric#/components/documentcard), заполняя ее свойства соответствующими сведениями о конкретном документе. После создания карточек для всех документов компонент добавляет их в основной текст и возвращает полную разметку.
+Для начала компонент просматривает документы, переданные с помощью свойства `documents`. Для каждого документа он создает [карточку документа Office UI Fabric](https://dev.office.com/fabric#/components/documentcard), заполняя ее свойства соответствующими сведениями о конкретном документе. После создания карточек для всех документов компонент добавляет их в основной текст и возвращает полную разметку.
 
 ### <a name="load-the-information-about-the-recent-documents"></a>Загрузка сведений о последних документах
 
 В этом примере сведения о недавно измененных документах загружаются из статического набора данных. Однако вы легко можете изменить эту реализацию, чтобы данные загружались из библиотеки документов SharePoint.
 
-Откройте в редакторе кода файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts**. Добавьте к операторам импорта в начале файла ссылку на интерфейс **IDocument**, используя следующий код:
+В редакторе кода откройте файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts**. Добавьте оператор импорта для интерфейса `IDocument` после других операторов импорта в начале файла, используя следующий код:
 
 ```ts
 import { IDocument } from './IDocument';
 ```
 
-В классе **RecentDocumentsWebPart** добавьте новую частную переменную с именем **documents**, используя следующий код:
+В классе `RecentDocumentsWebPart` добавьте новую частную переменную с именем `documents`, используя следующий код:
 
 ```ts
 export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
@@ -299,7 +300,7 @@ export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecen
 }
 ```
 
-Измените метод **render**, чтобы он загружал и отображал сведения о недавно измененных документах:
+Измените метод `render`, чтобы он загружал и отображал сведения о недавно измененных документах:
 
 ```ts
 export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
@@ -323,34 +324,36 @@ export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecen
 }
 ```
 
-Убедитесь, что веб-часть работает надлежащим образом и отображает сведения о трех последних измененных документах. Для этого выполните следующую команду:
+Убедитесь, что веб-часть работает надлежащим образом и отображает сведения о трех последних измененных документах. Для этого с помощью командной строки выполните в каталоге проекта следующую команду:
 
 ```sh
 gulp serve
 ```
 
-Добавьте веб-часть "Recent Documents" (Последние документы) на холст рабочего места SharePoint.
+Добавьте веб-часть Recent Documents (Последние документы) на холст рабочего места SharePoint.
 
-![Веб-часть "Recent Documents" (Последние документы) с тремя недавно измененными документами в виде карточек документов](../../../../images/tutorial-sharingdata-recent-documents.png)
+![Веб-часть Recent Documents (Последние документы) с тремя недавно измененными документами в виде карточек документов](../../../../images/tutorial-sharingdata-recent-documents.png)
 
 ## <a name="show-the-most-recently-modified-document"></a>Отображение последнего измененного документа
 
-В веб-части "Recent document" (Последний документ) отображаются сведения о последнем измененном документе.
+В веб-части Recent document (Последний документ) отображаются сведения о последнем измененном документе.
 
-![Веб-часть "Recent document" (Последний документ) с одной большой карточкой документа, содержащей сведения о последнем измененном документе]()
+![Веб-часть Recent document (Последний документ) с одной большой карточкой документа, содержащей сведения о последнем измененном документе](../../../../images/tutorial-sharingdata-recent-document.png)
 
 ### <a name="add-the-second-web-part"></a>Добавление второй веб-части
 
-Чтобы продемонстрировать обмен данными между веб-частями, добавьте к проекту вторую веб-часть.
+Чтобы продемонстрировать совместное использование данных разными веб-частями, добавьте к проекту вторую веб-часть.
 
-Запустите в папке проекта генератор Yeoman для SharePoint Framework.
+С помощью командной строки запустите в папке проекта генератор Yeoman для SharePoint Framework.
 
 ```sh
 yo @microsoft/sharepoint
 ```
 
-Введите следующие значения:
+Когда появится соответствующий запрос, укажите следующие значения:
 
+
+- **WebPart** в качестве типа создаваемого клиентского компонента;
 - **Recent document** (Последний документ) в качестве имени веб-части;
 - **Shows information about the most recently modified document** (Показывает сведения о последнем измененном документе) в качестве описания веб-части.
 
@@ -358,14 +361,14 @@ yo @microsoft/sharepoint
 
 ### <a name="remove-the-standard-description-property"></a>Удаление стандартного свойства _description_
 
-Для начала удалите свойство **description** из интерфейса **IRecentDocumentWebPartProps**. В редакторе кода откройте файл **./src/webparts/recentDocument/IRecentDocumentWebPartProps.ts** и вставьте следующий код:
+Для начала удалите свойство `description` из интерфейса `IRecentDocumentWebPartProps`. В редакторе кода откройте файл **./src/webparts/recentDocument/IRecentDocumentWebPartProps.ts** и вставьте следующий код:
 
 ```ts
 export interface IRecentDocumentWebPartProps {
 }
 ```
 
-Удалите стандартное свойство **description** из манифеста веб-части. Откройте файл **./src/webparts/recentDocument/RecentDocumentWebPart.manifest.json** и удалите из свойства **properties** свойство **description**:
+Удалите стандартное свойство `description` из манифеста веб-части. Откройте файл **./src/webparts/recentDocument/RecentDocumentWebPart.manifest.json** и удалите из свойства `properties` свойство `description`:
 
 ```json
 {
@@ -389,7 +392,7 @@ export interface IRecentDocumentWebPartProps {
 }
 ```
 
-Наконец, удалите стандартное свойство **description** из области свойств веб-части. Откройте в редакторе кода файл **./src/webparts/recentDocument/RecentDocumentWebPart.ts**. Замените метод **render** следующим кодом:
+Наконец, удалите стандартное свойство `description` из области свойств веб-части. Откройте в редакторе кода файл **./src/webparts/recentDocument/RecentDocumentWebPart.ts**. Замените метод `render` на следующий код:
 
 ```ts
 export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecentDocumentWebPartProps> {
@@ -407,7 +410,7 @@ export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecent
 }
 ```
 
-Затем замените метод **getPropertyPaneConfiguration** следующим кодом:
+Затем замените метод `getPropertyPaneConfiguration` на следующий код:
 
 ```ts
 export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecentDocumentWebPartProps> {
@@ -435,7 +438,7 @@ export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecent
 
 ### <a name="reuse-the-idocument-and-idocumentactivity-interfaces"></a>Повторное использование интерфейсов _IDocument_ и _IDocumentActivity_
 
-Веб-части "Recent document" (Последний документ) и "Recent documents" (Последние документы) отображают сведения о последнем измененном документе по-разному, но они используют одну и ту же структуру данных, представляющую документ. Вместо того чтобы дублировать интерфейсы **IDocument** и **IDocumentActivity**, вы можете использовать их в обеих веб-частях.
+Веб-части Recent document (Последний документ) и Recent documents (Последние документы) отображают сведения о последнем измененном документе по-разному, но они используют одну и ту же структуру данных для представления документа. Вместо того чтобы дублировать интерфейсы `IDocument` и `IDocumentActivity`, вы можете использовать их в обеих веб-частях.
 
 В Visual Studio Code откройте область обозревателя и в папке **./src/webparts/recentDocuments** переместите файлы **IDocument.ts** и **IDocumentActivity.ts** на один уровень выше, в папку **./src/webparts**.
 
@@ -455,13 +458,13 @@ export interface IRecentDocumentsProps {
 }
 ```
 
-Затем откройте файл **./src/webparts/recentDocuments/components/RecentDocuments.tsx** и замените оператор **import** в интерфейсе **IDocument** следующим:
+Затем откройте файл **./src/webparts/recentDocuments/components/RecentDocuments.tsx** и замените оператор `import` в интерфейсе `IDocument` на следующий код:
 
 ```ts
 import { IDocument } from '../../IDocument';
 ```
 
-Наконец, откройте файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts** и замените оператор **import** в интерфейсе **IDocument** следующим:
+Наконец, откройте файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts** и замените оператор `import` в интерфейсе `IDocument` на следующий код:
 
 ```ts
 import { IDocument } from '../IDocument';
@@ -469,7 +472,7 @@ import { IDocument } from '../IDocument';
 
 ### <a name="show-the-most-recent-document-in-the-recentdocument-react-component"></a>Отображение последнего документа в компоненте React RecentDocument
 
-Добавьте свойство **document** к интерфейсу **IRecentDocumentProps**. В редакторе кода откройте файл **./src/webparts/recentDocument/components/IRecentDocumentProps.ts** и вставьте следующий код:
+Добавьте свойство `document` к интерфейсу `IRecentDocumentProps`. В редакторе кода откройте файл **./src/webparts/recentDocument/components/IRecentDocumentProps.ts** и вставьте следующий код:
 
 ```ts
 import { IDocument } from '../../IDocument';
@@ -529,19 +532,19 @@ export default class RecentDocument extends React.Component<IRecentDocumentProps
 }
 ```
 
-Компонент React **RecentDocument** использует сведения о последнем измененном документе, переданные в свойстве **document**, и отображает с их помощью карточки документа Office UI Fabric.
+Компонент React `RecentDocument` использует сведения о последнем измененном документе, переданные в свойстве `document`, и отображает с их помощью карточки документа Office UI Fabric.
 
 ### <a name="load-the-information-about-the-recent-document"></a>Загрузка сведений о последнем документе
 
 В этом примере сведения о последнем измененном документе загружаются из статического набора данных. Однако вы легко можете изменить эту реализацию, чтобы данные загружались из библиотеки документов SharePoint.
 
-Откройте в редакторе кода файл **./src/webparts/recentDocument/RecentDocumentWebPart.ts**. Добавьте к операторам импорта в начале файла ссылку на интерфейс **IDocument**, используя следующий код:
+В редакторе кода откройте файл **./src/webparts/recentDocument/RecentDocumentWebPart.ts**. Добавьте оператор импорта для интерфейса `IDocument` после других операторов импорта в начале файла, используя следующий код:
 
 ```ts
 import { IDocument } from '../IDocument';
 ```
 
-В классе **RecentDocumentWebPart** добавьте новую частную переменную с именем **document**, используя следующий код:
+В классе `RecentDocumentWebPart` добавьте новую частную переменную с именем `document`, используя следующий код:
 
 ```ts
 export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecentDocumentWebPartProps> {
@@ -561,7 +564,7 @@ export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecent
 }
 ```
 
-Измените метод **render**, чтобы он загружал и отображал сведения о последнем измененном документе:
+Измените метод `render`, чтобы он загружал и отображал сведения о последнем измененном документе:
 
 ```ts
 export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
@@ -585,15 +588,15 @@ export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecen
 }
 ```
 
-Убедитесь, что веб-часть работает надлежащим образом и отображает сведения о последнем измененном документе. Для этого выполните следующую команду:
+Убедитесь, что веб-часть работает надлежащим образом и отображает сведения о последнем измененном документе. Для этого с помощью командной строки выполните в папке проекта следующую команду:
 
 ```sh
 gulp serve
 ```
 
-Добавьте веб-часть "Recent document" (Последний документ) на холст рабочего места SharePoint.
+Добавьте веб-часть Recent document (Последний документ) на холст рабочего места SharePoint.
 
-![Веб-часть "Recent document" (Последний документ) с карточкой документа, содержащей сведения о последнем измененном документе](../../../../images/tutorial-sharingdata-recent-document.png)
+![Веб-часть Recent document (Последний документ) с карточкой документа, содержащей сведения о последнем измененном документе](../../../../images/tutorial-sharingdata-recent-document.png)
 
 Текущая реализация — типичный пример независимой разработки двух веб-частей. Если они обе располагаются на одной странице и загружают данные из SharePoint, то для получения похожих сведений приходится выполнять два отдельных запроса. Если в тот или иной момент вам потребуется изменить источник, из которого загружаются данные о недавно измененных документах, то придется обновлять обе веб-части. Чтобы ускорить загрузку страницы и упростить работу с кодом веб-части, вы можете централизовать логику получения данных и сделать однажды полученные данные доступными обеим веб-частям.
 
@@ -601,7 +604,7 @@ gulp serve
 
 Чтобы централизовать загрузку сведений о недавно измененных документах, создайте службу, на которую будут ссылаться обе веб-части.
 
-### <a name="move-data-model-interfaces"></a>Перемещение интерфейсов модели данных
+### <a name="move-the-data-model-interfaces"></a>Перемещение интерфейсов модели данных
 
 Создайте в папке проекта путь **./src/services/documentsService**. Переместите файлы **IDocument.ts** и **IDocumentActivity.ts** из папки **./src/webparts** в папку **./src/services/documentsService**.
 
@@ -691,11 +694,11 @@ export class DocumentsService {
 }
 ```
 
-Класс DocumentsService — это пример службы, загружающей сведения о последних документах. В этом примере используется статический набор данных, но вы легко можете изменить его реализацию, чтобы данные загружались из библиотеки документов SharePoint. На этом этапе класс DocumentsService уже предоставляет центральную точку доступа к данным для всех веб-частей, но еще не сохраняет ранее загруженные данные. Эту возможность мы реализуем позже.
+Класс `DocumentsService` — это пример службы, загружающей сведения о последних документах. В этом примере используется статический набор данных, но вы легко можете изменить его реализацию, чтобы данные загружались из библиотеки документов SharePoint. На этом этапе класс `DocumentsService` уже предоставляет центральную точку доступа к данным для всех веб-частей, но еще не сохраняет ранее загруженные данные. Эту возможность мы реализуем позже.
 
-### <a name="create-barrel-for-the-service-files"></a>Создание блока данных для системных файлов
+### <a name="create-a-barrel-for-the-service-files"></a>Создание блока данных для системных файлов
 
-Ссылаясь на файлы в проекте, вы указываете относительный путь. При изменении этого пути потребуется обновить все ссылки на соответствующий файл. Такие изменения очень вероятны, в частности, в начале разработки, когда добавляются различные элементы, а окончательная структура проекта еще не определена. Во избежание частых изменений ссылок на файлы в проекте вы можете использовать блоки данных.
+Ссылаясь на файлы в проекте, вы указываете относительный путь. При изменении этого пути потребуется обновить все ссылки на соответствующий файл. Такие изменения очень вероятны на раннем этапе разработки, когда добавляются различные элементы, а окончательная структура проекта еще не определена. Во избежание частых изменений ссылок на файлы в проекте вы можете использовать блоки данных.
 
 Блок данных — это контейнер, объединяющий ряд экспортированных объектов. С их помощью вы можете абстрагировать точное расположение файлов от других элементов проекта, использующих их.
 
@@ -707,25 +710,25 @@ export { IDocumentActivity } from './IDocumentActivity';
 export { DocumentsService } from './DocumentsService';
 ```
 
-После определения блока данных другие элементы проекта смогут ссылаться на любой из экспортированных типов по относительному пути к папке **./src/services/documentsService**, а не точному пути. Например, для файла **IDocument.ts** можно использовать следующий путь:
+После определения блока данных другие элементы проекта смогут ссылаться на любой из экспортированных типов по относительному пути к папке **./src/services/documentsService**, а не точному пути к отдельному файлу. Например, ссылка на интерфейс `IDocument` может быть такой:
 
 ```ts
 import { IDocument } from '../services/documentsService';
 ```
 
-вместо такого:
+а не такой:
 
 ```ts
 import { IDocument } from '../services/documentsService/IDocument.ts';
 ```
 
-Если в тот или иной момент вы решите, что предпочтительней переместить файл **IDocument.ts** во вложенную папку или объединить несколько файлов, изменить потребуется только путь к определению блока данных (**./src/services/documentsService/index.ts**). Все элементы проекта по-прежнему могут использовать тот же относительный путь к папке **documentsService**, чтобы ссылаться на интерфейс **IDocument**.
+Если в тот или иной момент вы решите, что предпочтительней переместить файл **IDocument.ts** во вложенную папку или объединить несколько файлов, изменить потребуется только путь к определению блока данных (**./src/services/documentsService/index.ts**). Все элементы проекта по-прежнему могут использовать тот же относительный путь к папке **documentsService**, чтобы ссылаться на интерфейс `IDocument`.
 
-### <a name="update-references-to-the-moved-files-using-the-barrel"></a>Обновление ссылок на перемещенные файлы с помощью блока данных
+### <a name="update-references-to-the-moved-files-to-use-the-barrel"></a>Обновление ссылок на перемещенные файлы для использования блока данных
 
-Так как вы переместили файлы **IDocument.ts** и **IDocumentActivity.ts** в другое расположение, необходимо обновить ссылки на них. Благодаря блокам данных, это будет последний раз, когда вам придется менять эти ссылки.
+Так как вы переместили файлы **IDocument.ts** и **IDocumentActivity.ts** в другое расположение, необходимо обновить ссылки на них. Благодаря блокам данных после этого вам не придется менять эти ссылки.
 
-#### <a name="update-references-in-the-recent-documents-web-part"></a>Обновление ссылок в веб-части "Recent documents" (Последние документы)
+#### <a name="update-references-in-the-recent-documents-web-part"></a>Обновление ссылок в веб-части Recent documents (Последние документы)
 
 В редакторе кода откройте файл **./src/webparts/recentDocuments/components/IRecentDocumentsProps.ts** и измените его код на следующий:
 
@@ -737,19 +740,19 @@ export interface IRecentDocumentsProps {
 }
 ```
 
-Затем откройте файл **./src/webparts/recentDocuments/components/RecentDocuments.tsx** и измените оператор **import** в интерфейсе **IDocument** на следующий:
+Затем откройте файл **./src/webparts/recentDocuments/components/RecentDocuments.tsx** и замените оператор `import` в интерфейсе `IDocument` на следующий код:
 
 ```ts
 import { IDocument } from '../../../services/documentsService';
 ```
 
-После этого откройте файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts** и измените оператор **import** в интерфейсе **IDocument** на следующий:
+Затем откройте файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts** и замените оператор `import` в интерфейсе `IDocument` на следующий код:
 
 ```ts
 import { IDocument } from '../../services/documentsService';
 ```
 
-#### <a name="update-references-in-the-recent-document-web-part"></a>Обновление ссылок в веб-части "Recent document" (Последний документ)
+#### <a name="update-references-in-the-recent-document-web-part"></a>Обновление ссылок в веб-части Recent document (Последний документ)
 
 В редакторе кода откройте файл **./src/webparts/recentDocument/components/IRecentDocumentProps.ts** и измените его код на следующий:
 
@@ -761,39 +764,39 @@ export interface IRecentDocumentProps {
 }
 ```
 
-Затем откройте файл **./src/webparts/recentDocument/components/RecentDocument.tsx** и измените оператор **import** в интерфейсе **IDocument** на следующий:
+Затем откройте файл **./src/webparts/recentDocument/components/RecentDocument.tsx** и измените оператор `import` в интерфейсе `IDocument` на следующий:
 
 ```ts
 import { IDocument } from '../../../services/documentsService';
 ```
 
-После этого откройте файл **./src/webparts/recentDocument/RecentDocumentWebPart.ts** и измените оператор **import** в интерфейсе **IDocument** на следующий:
+Затем откройте файл **./src/webparts/recentDocument/RecentDocumentWebPart.ts** и замените оператор `import` в интерфейсе `IDocument` на следующий:
 
 ```ts
 import { IDocument } from '../../services/documentsService';
 ```
 
-Убедитесь, что ваши изменения работают надлежащим образом. Для этого выполните следующую команду:
+Убедитесь, что ваши изменения работают надлежащим образом. Для этого с помощью командной строки выполните в папке проекта следующую команду:
 
 ```sh
 gulp serve
 ```
 
-![Веб-части "Recent document" (Последний документ) и "Recent documents" (Последние документы) с информацией о недавно измененных документах](../../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
+![Веб-части Recent document (Последний документ) и Recent documents (Последние документы) с информацией о недавно измененных документах](../../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
 
 ### <a name="load-web-part-data-using-the-data-service"></a>Загрузка данных веб-частей с помощью службы данных
 
-Когда служба данных будет готова, необходимо реорганизовать обе веб-части, чтобы они загружали свои данные с помощью службы данных.
+Когда служба данных будет готова, необходимо выполнить рефакторинг обеих веб-частей, чтобы они загружали свои данные с помощью службы данных.
 
 #### <a name="load-information-about-the-recently-modified-documents"></a>Загрузка информации о недавно измененных документах
 
-Откройте в редакторе кода файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts**. Измените оператор **import**, ссылающийся на интерфейс **IDocument**, на следующий оператор:
+Откройте в редакторе кода файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts**. Замените оператор `import`, ссылающийся на интерфейс `IDocument`, на следующий оператор:
 
 ```ts
 import { IDocument, DocumentsService } from '../../services/documentsService';
 ```
 
-Затем обновите метод **render**, используя следующий код:
+Затем обновите метод `render`, используя следующий код:
 
 ```ts
 export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
@@ -820,13 +823,13 @@ export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecen
 
 #### <a name="load-information-about-the-most-recently-modified-document"></a>Загрузка информации о последних измененных документах
 
-Откройте в редакторе кода файл **./src/webparts/recentDocument/RecentDocumentWebPart.ts**. Измените оператор **import**, ссылающийся на интерфейс **IDocument**, на следующий оператор:
+Откройте в редакторе кода файл **./src/webparts/recentDocument/RecentDocumentWebPart.ts**. Замените оператор `import`, ссылающийся на интерфейс `IDocument`, на следующий оператор:
 
 ```ts
 import { IDocument, DocumentsService } from '../../services/documentsService';
 ```
 
-Затем обновите метод **render**, используя следующий код:
+Затем обновите метод `render`, используя следующий код:
 
 ```ts
 export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecentDocumentWebPartProps> {
@@ -851,15 +854,15 @@ export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecent
 }
 ```
 
-Убедитесь, что обе веб-части работают надлежащим образом. Для этого выполните следующую команду:
+Убедитесь, что обе веб-части работают надлежащим образом. Для этого с помощью командной строки выполните в папке проекта следующую команду:
 
 ```sh
 gulp serve
 ```
 
-![Веб-части "Recent document" (Последний документ) и "Recent documents" (Последние документы) с информацией о недавно измененных документах](../../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
+![Веб-части Recent document (Последний документ) и Recent documents (Последние документы) с информацией о недавно измененных документах](../../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
 
-### <a name="share-the-data-between-web-parts"></a>Совместное использование данных разными веб-частями
+### <a name="share-data-between-web-parts"></a>Совместное использование данных разными веб-частями
 
 Теперь, когда обе веб-части загружают свои данные с помощью службы данных, необходимо расширить службу данных так, чтобы она загружала данные только один раз и использовала их для обеих веб-частей.
 
@@ -976,19 +979,19 @@ export class DocumentsService {
 }
 ```
 
-Когда веб-часть впервые вызывает службу данных, чтобы загрузить свои данные, служба задает для глобальной переменной **loadingData** значение **true**. Это означает, что в данный момент данные загружаются. Это необходимо, чтобы данные не загружались несколько раз, если другая веб-часть также запросит загрузку данных, в то время как изначальный запрос на загрузку данных еще не был выполнен. В этом примере данные загружаются из статического набора данных, но вы легко можете изменить реализацию, чтобы данные загружались из библиотеки документов SharePoint.
+Когда веб-часть впервые вызывает службу данных, чтобы загрузить свои данные, служба задает для глобальной переменной `loadingData` значение `true`. Это означает, что в данный момент данные загружаются. Это необходимо, чтобы данные не загружались несколько раз, например если другая веб-часть также запросит загрузку данных, в то время как изначальный запрос на загрузку данных еще не был выполнен. В этом примере данные загружаются из статического набора данных, но вы легко можете изменить реализацию, чтобы данные загружались из библиотеки документов SharePoint.
 
-После загрузки данные хранятся в глобальной переменной **loadedData**. Для переменной **loadingData** задается значение **false**, а обещание разрешается с помощью полученных данных. В следующий раз, когда веб-часть запросит свои данные, служба данных вернет ранее загруженные данные, не совершая никаких запросов к удаленным API.
+После загрузки данные хранятся в глобальной переменной `loadedData`. Для переменной `loadingData` задается значение `false`, а обещание разрешается с помощью полученных данных. В следующий раз, когда веб-часть запросит свои данные, служба данных вернет ранее загруженные данные, не совершая никаких дополнительных запросов к удаленным API.
 
-Убедитесь, что обе веб-части работают надлежащим образом. Для этого выполните следующую команду:
+Убедитесь, что обе веб-части работают надлежащим образом. Для этого с помощью командной строки выполните в папке проекта следующую команду:
 
 ```sh
 gulp serve
 ```
 
-![Веб-части "Recent document" (Последний документ) и "Recent documents" (Последние документы) с информацией о недавно измененных документах](../../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
+![Веб-части Recent document (Последний документ) и Recent documents (Последние документы) с информацией о недавно измененных документах](../../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
 
-Если добавить операторы ведения журнала в разных частях метода **DocumentsService.ensureRecentDocuments**, вы увидите, что данные загружаются один раз, после чего используются повторно.
+Если добавить операторы ведения журнала в разных частях метода `DocumentsService.ensureRecentDocuments`, вы увидите, что данные загружаются один раз, после чего используются повторно.
 
 ![Консоль разработчика с различными операторами ведения журнала в Microsoft Edge](../../../../images/tutorial-sharingdata-console-log.png)
 

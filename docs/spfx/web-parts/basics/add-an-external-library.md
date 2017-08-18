@@ -19,9 +19,9 @@ npm install validator --save
     
 >**Примечание.** Так как вы используете TypeScript, для добавляемого пакета нужны определения типов. Это очень важно при написании кода, так как TypeScript — это просто расширенная версия JavaScript. При компиляции код TypeScript преобразуется в код JavaScript. Для поиска определений типов можно использовать пакет **tsd**, например: `tsd install {package} --save`.
     
-Создайте файл в папке веб-части `validator.d.ts` и добавьте указанный ниже код.
+Создайте в папке веб-части файл с именем `validator.d.ts` и добавьте приведенный ниже код.
     
->**Примечание.** Для некоторых библиотек нет определений типов. Библиотека проверки — одна из них. В этом случае нужно задать собственный файл определений типов `.d.ts` для библиотеки. Ниже показан пример.
+>**Примечание.** У некоторых библиотек нет определений типов. Для библиотеки Validator есть [предоставленный сообществом файл определений типов](https://www.npmjs.com/package/@types/validator), но для данного сценария предположим, что это не так. В этом случае вам потребуется задать собственный файл определений типов `.d.ts` для библиотеки. Ниже представлен пример кода.
     
 ```typescript
 declare module "validator" {
@@ -59,7 +59,7 @@ npm install marked --save
 Скачайте определения типов:
     
 ```
-tsd install marked --save
+npm install @types/marked --save
 ```
     
 Измените **config/config.json** и добавьте запись в схему **externals**. В результате средство увязки поместит эту библиотеку в отдельный файл, а не добавит в пакет:
@@ -198,7 +198,7 @@ Contoso.EventList = {
 ```javascript
 var Contoso = {
     getEvents: function() {
-        return ['A', 'B', 'C'];   
+        return ['A', 'B', 'C'];
     }
 };
 ```
@@ -209,15 +209,15 @@ var Contoso = {
 
 ```typescript
 declare module "contoso" {
-interface IEventList {
- alert(): void;
-}
-interface IContoso {
- getEvents(): string[];
- EventList: IEventList;
-}
-var contoso: IContoso;
-export = contoso;
+    interface IEventList {
+        alert(): void;
+    }
+    interface IContoso {
+        getEvents(): string[];
+        EventList: IEventList;
+    }
+    var contoso: IContoso;
+    export = contoso;
 }
 ```
 
@@ -257,38 +257,38 @@ contoso.EventList.alert();
 Установите определения типов для Microsoft Ajax (зависимости для определений типов JSOM):
 
 ```
-tsd install microsoft.ajax --save
+npm install @types/microsoft-ajax --save
 ```
 
 Установите определения типов для JSOM:
 
 ```
-tsd install sharepoint --save
+npm install @types/sharepoint --save
 ``` 
 
 Добавьте записи в файл `config.json`:
 
 ```json
 {
-"sp-init": {
- "path": "https://CONTOSO.sharepoint.com/_layouts/15/init.js",
- "globalName": "$_global_init"
-},
-"microsoft-ajax": {
- "path": "https://CONTOSO.sharepoint.com/_layouts/15/MicrosoftAjax.js",
- "globalName": "Sys",
- "globalDependencies": [ "sp-init" ]
-},
-"sp-runtime": {
- "path": "https://CONTOSO.sharepoint.com/_layouts/15/SP.Runtime.js",
- "globalName": "SP",
- "globalDependencies": [ "microsoft-ajax" ]
-},
-"sharepoint": {
- "path": "https://CONTOSO.sharepoint.com/_layouts/15/SP.js",
- "globalName": "SP",
- "globalDependencies": [ "sp-runtime" ]
-}
+    "sp-init": {
+        "path": "https://CONTOSO.sharepoint.com/_layouts/15/init.js",
+        "globalName": "$_global_init"
+    },
+    "microsoft-ajax": {
+        "path": "https://CONTOSO.sharepoint.com/_layouts/15/MicrosoftAjax.js",
+        "globalName": "Sys",
+        "globalDependencies": [ "sp-init" ]
+    },
+    "sp-runtime": {
+        "path": "https://CONTOSO.sharepoint.com/_layouts/15/SP.Runtime.js",
+        "globalName": "SP",
+        "globalDependencies": [ "microsoft-ajax" ]
+    },
+    "sharepoint": {
+        "path": "https://CONTOSO.sharepoint.com/_layouts/15/SP.js",
+        "globalName": "SP",
+        "globalDependencies": [ "sp-runtime" ]
+    }
 }
 ```
 
@@ -321,7 +321,7 @@ require('sharepoint');
 
 ```json
 {
-"strings": "strings/{locale}.js"
+    "strings": "strings/{locale}.js"
 }
 ```
     
@@ -329,14 +329,14 @@ require('sharepoint');
 
 ```typescript
 declare interface IStrings {
-webpartTitle: string;
-initialPrompt: string;
-exitPrompt: string;
+    webpartTitle: string;
+    initialPrompt: string;
+    exitPrompt: string;
 }
 
 declare module 'mystrings' {
-const strings: IStrings;
-export = strings;
+    const strings: IStrings;
+    export = strings;
 }
 ```
     
