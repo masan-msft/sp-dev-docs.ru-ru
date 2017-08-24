@@ -274,9 +274,9 @@ function errorHandler(xhr, ajaxOptions, thrownError) {
     
  
 - Статьи TechNet:
-     - [Справочник по детальным разрешениям для SharePoint Server 2013](http://technet.microsoft.com/en-us/library/dn169567.aspx)
-     - [Рекомендации по использованию детальных разрешений в SharePoint Server 2013](http://technet.microsoft.com/en-us/library/gg128955.aspx)
-     - [Разрешения пользователей и уровни разрешений в SharePoint 2013](http://technet.microsoft.com/en-us/library/cc721640.aspx)
+     - [Справочник по детальным разрешениям для SharePoint Server 2013](http://technet.microsoft.com/ru-ru/library/dn169567.aspx)
+     - [Рекомендации по использованию детальных разрешений в SharePoint Server 2013](http://technet.microsoft.com/ru-ru/library/gg128955.aspx)
+     - [Разрешения пользователей и уровни разрешений в SharePoint 2013](http://technet.microsoft.com/ru-ru/library/cc721640.aspx)
     
  
 

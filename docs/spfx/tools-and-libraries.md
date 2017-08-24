@@ -93,7 +93,7 @@ SharePoint Framework — клиентская платформа, поэтому
 
 Рекомендуем ознакомиться со следующими интерфейсами REST API:
 
-* [REST API для списков SharePoint](https://msdn.microsoft.com/EN-US/library/office/dn292552.aspx).
+* [REST API для списков SharePoint](https://msdn.microsoft.com/ru-ru/library/office/dn292552.aspx).
 
 ## <a name="patterns-and-practices"></a>PnP (Patterns and Practices)
 

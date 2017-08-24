@@ -193,7 +193,7 @@
  
 
  
-Подробнее об управлении надстройками см. в статье [Установка надстроек SharePoint и управление ими](http://msdn.microsoft.com/en-us/library/733647a3-a5d3-475b-967d-3bb627c2a0c2) на сайте TechNet.
+Подробнее об управлении надстройками см. в статье [Установка надстроек SharePoint и управление ими](http://msdn.microsoft.com/ru-ru/library/733647a3-a5d3-475b-967d-3bb627c2a0c2) на сайте TechNet.
  
 
  

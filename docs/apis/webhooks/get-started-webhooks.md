@@ -465,7 +465,7 @@ if (queryStringParams.AllKeys.Contains("validationtoken"))
 
 Этот проект просто записывает сведения в журнал трассировки. Однако в вашем приемнике эти сведения будут отправляться в таблицу или очередь, которая может обрабатывать полученные данные для получения сведений из SharePoint. 
 
-С помощью этих данных вы можете составить URL-адрес и использовать API [GetChanges](https://msdn.microsoft.com/EN-US/library/office/dn531433.aspx#bk_ListGetChanges) для просмотра последних изменений.
+С помощью этих данных вы можете составить URL-адрес и использовать API [GetChanges](https://msdn.microsoft.com/ru-ru/library/office/dn531433.aspx#bk_ListGetChanges) для просмотра последних изменений.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -26,10 +26,10 @@
 
 - Среда разработки для SharePoint:
     
-      - О разработке надстроек SharePoint для Office 365 см. в статье[ Настройка среды для разработки надстроек SharePoint в Office 365](http://msdn.microsoft.com/en-us/library/office/apps/fp161179%28v=office.15%29).
+      - О разработке надстроек SharePoint для Office 365 см. в статье[ Настройка среды для разработки надстроек SharePoint в Office 365](http://msdn.microsoft.com/ru-ru/library/office/apps/fp161179%28v=office.15%29).
     
  
-  - Если вы собираетесь создавать надстройки SharePoint, предназначенные для локальной установки SharePoint, см. статью [Настройка локальной среды разработки надстроек SharePoint](http://msdn.microsoft.com/en-us/library/office/apps/fp179923%28v=office.15%29).
+  - Если вы собираетесь создавать надстройки SharePoint, предназначенные для локальной установки SharePoint, см. статью [Настройка локальной среды разработки надстроек SharePoint](http://msdn.microsoft.com/ru-ru/library/office/apps/fp179923%28v=office.15%29).
     
  
 -  [Visual Studio 2015 и Инструменты разработчика Microsoft Office](https://www.visualstudio.com/features/office-tools-vs)
@@ -292,7 +292,7 @@
 
  
 
- **Примечание.** При выполнении инструкций из этого раздела открывается Excel Online, поэтому обязательно наличие учетной записи Office 365. См. статью [Настройка среды для разработки надстроек SharePoint в Office 365](http://msdn.microsoft.com/en-us/library/office/apps/fp161179%28v=office.15%29).
+ **Примечание.** При выполнении инструкций из этого раздела открывается Excel Online, поэтому обязательно наличие учетной записи Office 365. См. статью [Настройка среды для разработки надстроек SharePoint в Office 365](http://msdn.microsoft.com/ru-ru/library/office/apps/fp161179%28v=office.15%29).
  
 
 
