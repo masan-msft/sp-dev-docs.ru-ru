@@ -1,0 +1,187 @@
+
+# <a name="ux-design-for-sharepoint-add-ins"></a><span data-ttu-id="c13cd-101">Проектирование пользовательского интерфейса надстроек SharePoint</span><span class="sxs-lookup"><span data-stu-id="c13cd-101">UX design for SharePoint Add-ins</span></span>
+<span data-ttu-id="c13cd-102">Узнайте о параметрах пользовательского интерфейса, доступных вам при создании надстроек в SharePoint.</span><span class="sxs-lookup"><span data-stu-id="c13cd-102">Learn about the user experience (UX) options that you have when you build add-ins in sp15allshort.</span></span>
+ 
+
+ <span data-ttu-id="c13cd-p101">**Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).</span><span class="sxs-lookup"><span data-stu-id="c13cd-p101">The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint#bk_newname).</span></span>
+ 
+
+<span data-ttu-id="c13cd-p102">При создании надстроек разработчику всегда уделять особое внимание пользовательскому интерфейсу. Модель надстроек SharePoint включает множество компонентов и механизмов, помогающих создать качественный пользовательский интерфейс. Кроме того, пользовательский интерфейс в модели надстроек достаточно гибкий, чтобы вы могли использовать методики и платформы, наиболее соответствующие потребностям пользователей.</span><span class="sxs-lookup"><span data-stu-id="c13cd-p102">As a developer, you should always give high priority to the user experience (UX) when you are creating add-ins. The spappmodel offers many UX components and mechanisms that help you build a great user experience. The user experience in the add-in model is also flexible enough to let you use the techniques and platforms that best adapt to the needs of end users.</span></span>
+ 
+
+## <a name="high-level-overview-of-add-in-ux-in-sharepoint"></a><span data-ttu-id="c13cd-109">Общие сведения об интерфейсе надстроек SharePoint</span><span class="sxs-lookup"><span data-stu-id="c13cd-109">High-level overview of add-in UX in SharePoint</span></span>
+<span data-ttu-id="c13cd-110"><a name="SP15_UXdesignapps_overview"> </a></span><span class="sxs-lookup"><span data-stu-id="c13cd-110"></span></span>
+
+<span data-ttu-id="c13cd-p103">Вы, как разработчик надстроек, должны знать архитектуру своей надстройки. Если вы уже решили, как ваша надстройка будет распределена по удаленным и SharePoint-платформам, можно определяться с выбором доступных вариантов создания пользовательского рабочего интерфейса для вашей надстройки. Вы можете задать себе следующие вопросы:</span><span class="sxs-lookup"><span data-stu-id="c13cd-p103">As the add-in developer, you have to know the architecture of your add-in. After you determine how your add-in will be distributed in remote and SharePoint platforms, you can decide among the available alternatives for building your add-in UX. You might ask yourself the following questions:</span></span>
+ 
+
+ 
+
+- <span data-ttu-id="c13cd-114">Какие средства можно использовать при создании надстройки, размещаемой в облаке?</span><span class="sxs-lookup"><span data-stu-id="c13cd-114">What can I use if I am creating a cloud-hosted add-in?</span></span>
+    
+ 
+- <span data-ttu-id="c13cd-p104">Чем можно пользоваться при создании надстройки с хостингом, предоставляемым SharePoint? Дополнительные сведения см. в статье  [Выбор шаблонов для разработки и размещения надстройки SharePoint](choose-patterns-for-developing-and-hosting-your-sharepoint-add-in).</span><span class="sxs-lookup"><span data-stu-id="c13cd-p104">What can I use if I am creating a SharePoint-hosted add-in? For more information, see  [Choose patterns for developing and hosting your SharePoint Add-in](choose-patterns-for-developing-and-hosting-your-sharepoint-add-in).</span></span>
+    
+ 
+- <span data-ttu-id="c13cd-p105">Как подключить пользовательский интерфейс к хост-сайту? Дополнительные сведения см. в статье [Хост-сайты, сайты надстроек и компоненты SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013).</span><span class="sxs-lookup"><span data-stu-id="c13cd-p105">How can I connect my UX to the host web? For more information, see  [Host webs, add-in webs, and SharePoint components in SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013).</span></span>
+    
+ 
+<span data-ttu-id="c13cd-119">На приведенной ниже схеме показаны основные сценарии и параметры, которые следует рассматривать при проектировании пользовательского интерфейса надстройки.</span><span class="sxs-lookup"><span data-stu-id="c13cd-119">The following diagram shows the main scenarios and options to consider when you are designing your add-in UX.</span></span>
+ 
+
+ 
+
+<span data-ttu-id="c13cd-120">**Рис. 1. Основные сценарии и параметры пользовательского интерфейса надстроек**</span><span class="sxs-lookup"><span data-stu-id="c13cd-120">**Figure 1. Add-in UX main scenarios and options**</span></span>
+
+ 
+
+ 
+![Основные сценарии для пользовательского интерфейса приложения](../../images/AppUX_landscape.png)
+ 
+<span data-ttu-id="c13cd-p106">При выборе дизайна необходимо основательно продумать, какие части вашей надстройки будут размещены в SharePoint, а какие нет. Необходимо также продумать, каким образом ваша надстройка будет взаимодействовать с хост-сетью.</span><span class="sxs-lookup"><span data-stu-id="c13cd-p106">In choosing your design, you should fundamentally consider which parts of your add-in are hosted in SharePoint and which are not. You should also consider how your add-in interacts with the host web.</span></span>
+ 
+
+ 
+
+## <a name="add-in-ux-scenarios-in-cloud-hosted-add-ins"></a><span data-ttu-id="c13cd-124">Сценарии добавления пользовательского интерфейса в надстройки, размещаемые в облаке</span><span class="sxs-lookup"><span data-stu-id="c13cd-124">Add-in UX scenarios in cloud-hosted add-ins</span></span>
+<span data-ttu-id="c13cd-125"><a name="SP15_UXdesignapps_devhosted"> </a></span><span class="sxs-lookup"><span data-stu-id="c13cd-125"></span></span>
+
+<span data-ttu-id="c13cd-p107">Предположим, что вы решаете не размещать определенную рабочую среду в SharePoint. В данных сценариях предполагается, что ваши конечные пользователи будут перемещаться между веб-сайтом SharePoint и надстройкой в облаке. Вы можете использовать технологии и инструменты платформы, но SharePoint также предоставляет ресурсы, которые помогут спроектировать удобную рабочую среду для пользователей.</span><span class="sxs-lookup"><span data-stu-id="c13cd-p107">Suppose that you determine that some of your user experience is not hosted in SharePoint. In these scenarios, it is expected that your end users go back and forth between a SharePoint website and the cloud-hosted add-in. You can use the techniques and tools in the platform, but SharePoint also provides resources to help you design a smooth experience for users.</span></span>
+ 
+
+ 
+<span data-ttu-id="c13cd-129">Для надстроек SharePoint, размещаемых в облаке, доступны следующие ресурсы пользовательского интерфейса:</span><span class="sxs-lookup"><span data-stu-id="c13cd-129">The following UX resources are available for cloud-hosted add-ins in SharePoint:</span></span>
+ 
+
+ 
+
+-  <span data-ttu-id="c13cd-p108">**Элемент управления хрома.**Элемент управления хрома позволяет использовать заголовок навигации определенного веб-сайта SharePoint в вашей надстройке, не прибегая к регистрации серверной библиотеки или использованию конкретной технологии или инструмента. Чтобы использовать данную функцию необходимо зарегистрировать библиотеку SharePoint JavaScript с помощью стандартных тегов <script>. Вы можете установить заполнитель с помощью элемента HTML **div** и затем настроить управление с помощью доступных вариантов. Управление имеет такой же вид, что и указанный веб-сайт SharePoint. Дополнительные сведения см. в статье [Использование клиентского элемента управления хрома в надстройках для SharePoint](use-the-client-chrome-control-in-sharepoint-add-ins).</span><span class="sxs-lookup"><span data-stu-id="c13cd-p108">**Chrome control:** Thechrome control enables you to use the navigation header of a specific SharePoint site in your add-in without needing to register a server library or use a specific technology or tool. To use this functionality, you must register a SharePoint JavaScript library through standard <script> tags. You can provide a placeholder by using an HTML **div** element and further customize the control by using the available options. The control inherits its appearance from the specified SharePoint website. For more information, see [Use the client chrome control in SharePoint Add-ins](use-the-client-chrome-control-in-sharepoint-add-ins).</span></span>
+    
+    <span data-ttu-id="c13cd-135">**Смотреть видео "Элемент управления хрома SharePoint"**</span><span class="sxs-lookup"><span data-stu-id="c13cd-135">**Watch the video: SharePoint chrome control**</span></span>
+
+ 
+
+ 
+![Видео](../../images/mod_icon_video.png)
+ 
+
+ 
+
+ 
+-  <span data-ttu-id="c13cd-p109">**Таблица стилей.** Вы можете оставить ссылку на таблицу стилей веб-сайта SharePoint в Надстройка SharePoint и использовать её для оформления стилей ваших веб-страниц с помощью доступных классов. Помимо этого, если конечные пользователи меняют тему веб-сайта SharePoint, вы можете назначить новые наборы стилей, не меняя ссылку в надстройке. Дополнительные сведения см. в статье [Использование таблицы стилей веб-сайта SharePoint в надстройках для SharePoint](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins).</span><span class="sxs-lookup"><span data-stu-id="c13cd-p109">**Stylesheet:** You can reference a SharePoint website's style sheet in your SharePoint Add-in and use it to style your webpages using the available classes. In addition, if the end users change the SharePoint website's theme, your add-in can adopt the new set of styles without modifying the reference in your add-in. For more information, see [Use a SharePoint website's style sheet in SharePoint Add-ins](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins).</span></span>
+    
+ 
+<span data-ttu-id="c13cd-140">На рис. 2 показаны ресурсы модели для надстроек SharePoint, размещаемых в облаке.</span><span class="sxs-lookup"><span data-stu-id="c13cd-140">Figure 2 shows the resources in the model for SharePoint Add-ins for cloud-hosted add-ins.</span></span>
+ 
+
+ 
+
+<span data-ttu-id="c13cd-141">**Рис. 2. Добавление ресурсов пользовательского интерфейса для надстроек, размещаемых в облаке**</span><span class="sxs-lookup"><span data-stu-id="c13cd-141">**Figure 2. Add-in UX resources for cloud-hosted add-ins**</span></span>
+
+ 
+
+ 
+![Ресурсы пользовательского интерфейса для приложений, размещаемых у разработчика](../../images/AppUX_devhosted.png)
+ 
+
+ 
+
+ 
+
+## <a name="add-in-ux-scenarios-in-sharepoint-hosted-add-ins"></a><span data-ttu-id="c13cd-143">Сценарии добавления пользовательского интерфейса в надстройки, размещаемые в SharePoint</span><span class="sxs-lookup"><span data-stu-id="c13cd-143">Add-in UX scenarios in SharePoint-hosted add-ins</span></span>
+<span data-ttu-id="c13cd-144"><a name="SP15_UXdesignapps_SPhosted"> </a></span><span class="sxs-lookup"><span data-stu-id="c13cd-144"></span></span>
+
+<span data-ttu-id="c13cd-p110">Если ваша надстройка размещена в SharePoint, маловероятно, что пользовательская рабочая среда значительно изменится, когда пользователи будут перемещаться между хост-сетью и сетью надстройки. После развертывания надстройки сеть надстройки использует таблицу стилей и тему из хост-сети. Вы можете по прежнему пользоваться элементом управления хрома и таблицей стилей в надстройке, размещенной в SharePoint, но наиболее значительным отличием от сценариев, размещенных в облаке, является доступность шаблона надстройки.</span><span class="sxs-lookup"><span data-stu-id="c13cd-p110">If your add-in is hosted in SharePoint, the user experience is less likely to change very much when users move back and forth between the host web and the add-in web. When the add-in is deployed, the add-in web takes the style sheet and theme from the host web. You can still use the chrome control and style sheet in a SharePoint-hosted add-in, but the most significant difference with cloud-hosted scenarios is the availability of the add-in template.</span></span>
+ 
+
+ 
+<span data-ttu-id="c13cd-148">Для надстроек, размещаемых в SharePoint доступны следующие ресурсы пользовательского интерфейса:</span><span class="sxs-lookup"><span data-stu-id="c13cd-148">The following UX resource is available for SharePoint-hosted add-ins:</span></span>
+ 
+
+ 
+
+-  <span data-ttu-id="c13cd-p111">**Шаблон надстройки.** Шаблон надстройки включает эталонную страницу **app.master**. Этот вариант используется по умолчанию при создании сайта надстройки.</span><span class="sxs-lookup"><span data-stu-id="c13cd-p111">**Add-in template:** The add-in template includes the **app.master** masterpage. It is the default option when you create an add-in web.</span></span>
+    
+ 
+<span data-ttu-id="c13cd-151">Надстройки, размещаемые в SharePoint, также могут использовать имеющиеся ресурсы и технологии SharePoint, такие как лента, инфраструктура веб-частей и клиентская обработка.</span><span class="sxs-lookup"><span data-stu-id="c13cd-151">SharePoint-hosted add-ins also benefit themselves from existing resources and technologies in SharePoint such as the Ribbon, web part infrastructure and client-side rendering.</span></span>
+ 
+
+ 
+
+## <a name="scenarios-for-connecting-the-add-in-ux-to-the-host-web"></a><span data-ttu-id="c13cd-152">Сценарии подключения пользовательского интерфейса надстройки к хост-сайту</span><span class="sxs-lookup"><span data-stu-id="c13cd-152">Scenarios for connecting the add-in UX to the host web</span></span>
+<span data-ttu-id="c13cd-153"><a name="SP15_UXdesignapps_connectingappUX"> </a></span><span class="sxs-lookup"><span data-stu-id="c13cd-153"></span></span>
+
+<span data-ttu-id="c13cd-p112">В некоторых случаях используемые вами надстройки могут запускаться изнутри хост-сети. Дополнительно к отображениям некоторых рабочих сред вашей надстройки на страницах, размещенных в SharePoint, доступны способы открытия надстроек из библиотеки документов и списка.</span><span class="sxs-lookup"><span data-stu-id="c13cd-p112">Some of the use cases for your add-in can be triggered from within the host web. SharePoint provides ways to open your add-in from a document library or list in addition to ways to show some of your add-in UX within SharePoint-hosted pages.</span></span>
+ 
+
+ 
+<span data-ttu-id="c13cd-156">Для подключения пользовательского интерфейса надстройки к хост-сайту доступны следующие ресурсы:</span><span class="sxs-lookup"><span data-stu-id="c13cd-156">The following UX resources are available to connect your add-in UX to the host web:</span></span>
+ 
+
+ 
+
+-  <span data-ttu-id="c13cd-p113">**Настраиваемые действия.** Настраиваемые действия могут использоваться для подключения к вашей надстройки пользовательской рабочей среды. Существует два типа настраиваемых действий:Лента илиECB. Настраиваемое действие способно посылать параметры, такие как список или элемент, на которых оно было вызвано, в удаленную сеть. Дополнительные сведения см. в статье  [Выполнение пользовательских действий для развертывания надстроек для SharePoint](create-custom-actions-to-deploy-with-sharepoint-add-ins).</span><span class="sxs-lookup"><span data-stu-id="c13cd-p113">**Custom actions**: You can use custom actions to connect the host web UX with your add-in. There are two types of custom actions:Ribbon orECB. A custom action can send parameters such as the list or item on which it was invoked to a remote page. For more information, see  [Create custom actions to deploy with SharePoint Add-ins](create-custom-actions-to-deploy-with-sharepoint-add-ins).</span></span>
+    
+ 
+-  <span data-ttu-id="c13cd-p114">**Веб-части надстройки.** С помощью веб-частей надстроек вы можете добавлять в хост-сеть рабочие среды ваших надстроек. Веб-часть надстройки доступна в галерее Web Part хост-сети после развертывания надстройки. Пользователи могут добавлять веб-часть надстройки на страницу с помощью элемента управления **Web Part Adder**. Дополнительные сведения см. в статье [Создание веб-частей надстройки для установки совместно с надстройкой для SharePoint](create-add-in-parts-to-install-with-your-sharepoint-add-in).</span><span class="sxs-lookup"><span data-stu-id="c13cd-p114">**Add-in parts:** You can include some of your add-in user experience in the host web by using add-in parts. The add-in part is available in the Web Part gallery in the host web when you deploy the add-in. Users can add the add-in part to a page by using the **Web Part Adder** control. For more information, see [Create add-in parts to install with your SharePoint Add-in](create-add-in-parts-to-install-with-your-sharepoint-add-in).</span></span>
+    
+ 
+<span data-ttu-id="c13cd-165">На рис. 3 показаны ресурсы модели надстроек SharePoint, позволяющие подключить пользовательский интерфейс надстройки к хост-сайту.</span><span class="sxs-lookup"><span data-stu-id="c13cd-165">Figure 3 shows the resources in the model for SharePoint Add-ins to connect your add-in UX to the host web.</span></span>
+ 
+
+ 
+
+<span data-ttu-id="c13cd-166">**Рис. 3. Ресурсы пользовательского интерфейса для хост-сайта**</span><span class="sxs-lookup"><span data-stu-id="c13cd-166">**Figure 3. Add-in UX resources for the host web**</span></span>
+
+ 
+
+ 
+![Ресурсы пользовательского интерфейса для хост-сайта](../../images/AppUX_hostweb.png)
+ 
+
+ 
+
+ 
+
+## <a name="additional-resources"></a><span data-ttu-id="c13cd-168">Дополнительные ресурсы</span><span class="sxs-lookup"><span data-stu-id="c13cd-168">Additional resources</span></span>
+<span data-ttu-id="c13cd-169"><a name="SP15_UXdesignapps_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="c13cd-169"></span></span>
+
+<span data-ttu-id="c13cd-170">Сведения о том, как добавлять параметры пользовательского интерфейса к надстройкам SharePoint, вы найдете в следующих ресурсах:</span><span class="sxs-lookup"><span data-stu-id="c13cd-170">To learn how to use the add-in UX options in SharePoint Add-ins, see the following resources:</span></span>
+ 
+
+ 
+
+-  [<span data-ttu-id="c13cd-171">Проектирование надстроек SharePoint</span><span class="sxs-lookup"><span data-stu-id="c13cd-171">Design SharePoint Add-ins</span></span>](design-sharepoint-add-ins)
+    
+ 
+-  [<span data-ttu-id="c13cd-172">Надстройки SharePoint</span><span class="sxs-lookup"><span data-stu-id="c13cd-172">SharePoint Add-ins</span></span>](sharepoint-add-ins)
+    
+ 
+-  [<span data-ttu-id="c13cd-173">Что следует рассмотреть, прежде чем приступать к разработке надстроек SharePoint</span><span class="sxs-lookup"><span data-stu-id="c13cd-173">Three ways to think about design options for SharePoint Add-ins</span></span>](three-ways-to-think-about-design-options-for-sharepoint-add-ins)
+    
+ 
+-  [<span data-ttu-id="c13cd-174">Важные аспекты разработки и архитектуры для надстроек SharePoint</span><span class="sxs-lookup"><span data-stu-id="c13cd-174">Important aspects of the SharePoint Add-in architecture and development landscape</span></span>](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape)
+    
+ 
+-  [<span data-ttu-id="c13cd-175">Хост-сайты, сайты надстроек и компоненты SharePoint в SharePoint</span><span class="sxs-lookup"><span data-stu-id="c13cd-175">Host webs, add-in webs, and SharePoint components in SharePoint</span></span>](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013)
+    
+ 
+-  [<span data-ttu-id="c13cd-176">Рекомендации по проектированию пользовательского интерфейса надстроек SharePoint</span><span class="sxs-lookup"><span data-stu-id="c13cd-176">SharePoint Add-ins UX design guidelines</span></span>](sharepoint-add-ins-ux-design-guidelines)
+    
+ 
+-  [<span data-ttu-id="c13cd-177">Создание компонентов пользовательского интерфейса в SharePoint</span><span class="sxs-lookup"><span data-stu-id="c13cd-177">Create UX components in SharePoint</span></span>](create-ux-components-in-sharepoint-2013)
+    
+ 
+-  [<span data-ttu-id="c13cd-178">Использование таблицы стилей веб-сайта SharePoint в надстройках SharePoint</span><span class="sxs-lookup"><span data-stu-id="c13cd-178">Use a SharePoint website's style sheet in SharePoint Add-ins</span></span>](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins)
+    
+ 
+-  [<span data-ttu-id="c13cd-179">Использование клиентского элемента управления хрома в надстройках SharePoint</span><span class="sxs-lookup"><span data-stu-id="c13cd-179">Use the client chrome control in SharePoint Add-ins</span></span>](use-the-client-chrome-control-in-sharepoint-add-ins)
+    
+ 
+-  [<span data-ttu-id="c13cd-180">Создание веб-частей надстроек для установки вместе с надстройкой SharePoint</span><span class="sxs-lookup"><span data-stu-id="c13cd-180">Create add-in parts to install with your SharePoint Add-in</span></span>](create-add-in-parts-to-install-with-your-sharepoint-add-in)
+    
+ 
+-  [<span data-ttu-id="c13cd-181">Создание дополнительных действий для развертывания с надстройками SharePoint</span><span class="sxs-lookup"><span data-stu-id="c13cd-181">Create custom actions to deploy with SharePoint Add-ins</span></span>](create-custom-actions-to-deploy-with-sharepoint-add-ins)
+    
+ 
+

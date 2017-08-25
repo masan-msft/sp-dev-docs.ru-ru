@@ -1,0 +1,119 @@
+# <a name="deploying-and-installing-sharepoint-add-ins-methods-and-options"></a><span data-ttu-id="eef97-101">Развертывание и установка надстроек SharePoint: методы и параметры</span><span class="sxs-lookup"><span data-stu-id="eef97-101">Deploying and installing SharePoint Add-ins: methods and options</span></span>
+<span data-ttu-id="eef97-102">Узнайте о методах публикации, установке и удалении надстроек SharePoint.</span><span class="sxs-lookup"><span data-stu-id="eef97-102">Learn about the methods for publishing, installing, and uninstalling a SharePoint Add-in.</span></span>
+ 
+
+ <span data-ttu-id="eef97-p101">**Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).</span><span class="sxs-lookup"><span data-stu-id="eef97-p101">The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint#bk_newname).</span></span>
+ 
+
+
+## <a name="publishing-to-the-office-store-or-an-organizations-add-in-catalog"></a><span data-ttu-id="eef97-106">Публикация в Магазине Office или каталоге надстроек организации</span><span class="sxs-lookup"><span data-stu-id="eef97-106">Publishing to the Office Store or an organization's add-in catalog</span></span>
+<span data-ttu-id="eef97-107"><a name="MarketOrCatalog"> </a></span><span class="sxs-lookup"><span data-stu-id="eef97-107"></span></span>
+
+<span data-ttu-id="eef97-p102">Вы можете разместить свою надстройку Надстройка SharePoint в общедоступном Магазин Office или в частном каталоге надстроек организации. Частный каталог надстроек это специальная коллекция веб-сайтов в веб-приложении SharePoint (или клиенте SharePoint Online), в которой размещаются библиотеки документов для приложений для SharePoint и приложений для Office. Размещение каталога в собственной коллекции веб-сайтов позволяет администратору веб-приложений или клиентов более легко ограничивать разрешения на доступ в каталог.</span><span class="sxs-lookup"><span data-stu-id="eef97-p102">You can upload your SharePoint Add-in to either the public Office Store or to an organization's private add-in catalog. A private add-in catalog is a dedicated site collection in a SharePoint web application (or a SharePoint Online tenancy) that hosts document libraries for SharePoint Add-ins and Office Add-ins. Putting the catalog into its own site collection makes it easier for the web application administrator or tenant administrator to limit permissions to the catalog.</span></span> 
+ 
+
+ 
+<span data-ttu-id="eef97-p103">При отправке надстройки в общедоступный Магазин Office, корпорация Майкрософт выполняет в нем ряд проверок. Например, проверяются действительность и полнота разметки манифеста надстройки, а также того, не содержат ли какие-либо из пакетов решений SharePoint (WSP-файлы) запрещенные элементы или функции, область действия которых шире, чем **Интернет**. Содержимое пакета также проверяется на наличие нежелательных элементов. Если надстройка проходит все проверки, пакет надстройки заносится в файл и получает подпись корпорации Майкрософт.</span><span class="sxs-lookup"><span data-stu-id="eef97-p103">If the add-in is uploaded to the Office Store, Microsoft runs some validation checks on it. For example, it checks whether the add-in manifest markup is valid and complete and verifies that any SharePoint solution packages (.wsp files) that are included do not include disallowed elements or Features with a scope broader than **Web**. The content of the package is also inspected for objectionable content. If the add-in passes all tests, the add-in package is wrapped into a file and signed by Microsoft.</span></span> 
+ 
+
+ 
+
+ <span data-ttu-id="eef97-p104">**Примечание.** При разработке надстройки и её развертывании с помощью Инструментов разработчика Microsoft Office для Visual Studio она устанавливается непосредственно на целевом тестовом сайте SharePoint. Так как надстройка не проходит через Магазин Office, описанная выше проверка не выполняется.</span><span class="sxs-lookup"><span data-stu-id="eef97-p104">**Note** When you are developing your add-in and deploying it with Microsoft Office Developer Tools for Visual Studio, the add-in is directly installed in the target test SharePoint site. Since it is not passing through the Office Store, the validation checking described above does not occur.</span></span>
+ 
+
+<span data-ttu-id="eef97-p105">Размещение Надстройка SharePoint в каталоге надстроек организации не сложнее размещения любого файла в библиотеке документов SharePoint Foundation. Вы заполняете всплывающую форму, в которую вводите локальный URL пакета надстройки и другую информацию, такую как название надстройки. После размещения надстройки в каталоге надстроек организации проводятся те же самые проверочные действия, а надстройки, не прошедшие проверку, помечаются в каталоге как недействительные или недоступные.</span><span class="sxs-lookup"><span data-stu-id="eef97-p105">Uploading a SharePoint Add-in to an organization's add-in catalog is as easy as uploading any file to a SharePoint Foundation document library. You fill out a pop-up form in which you supply the local URL of the add-in package and other information, such as the name of the add-in. When the add-in is uploaded to an organization's add-in catalog, similar checks take place and add-ins that do not pass are marked as invalid or disabled in the catalog.</span></span> 
+ 
+
+ 
+<span data-ttu-id="eef97-p106">Администраторы клиентов и веб-приложений SharePoint могут приобретать надстройки SharePoint в общедоступном Магазине Office. Чтобы открыть Магазин Office, администратор должен выбрать команду **Добавить надстройку** на странице **Содержимое сайта**, а затем выбрать **Магазин SharePoint** на странице **Ваши надстройки**. После этого откроется страница **Магазин SharePoint**, на которой администраторы могут находить сведения о надстройках SharePoint, предлагаемых поставщиками. (Это также можно сделать на сайте office.com.) Надстройки, которым необходимы компоненты, не установленные в веб-приложении или клиенте администратора, помечены как недоступные. Например, если приложению необходимы службы поиска, но они не установлены, то надстройка затемняется. Администраторы могут сортировать, фильтровать или просматривать список надстроек, читать сведения и отзывы о надстройках, а также покупать лицензии на них.</span><span class="sxs-lookup"><span data-stu-id="eef97-p106">Tenant administrators and SharePoint web application administrators can shop for SharePoint Add-ins on the Office Store. To open the Office Store, the administrator selects **Add an Add-in** on the **Site Contents** page and then selects **SharePoint Store** in the **Your Add-ins** page. This opens a **SharePoint Store** page that the administrators can use to discover and learn about SharePoint Add-ins that vendors are offering. (They can also do this on office.com.) Add-ins that require a prerequisite that is not installed on the administrator's web application or tenancy appear dimmed and are unavailable in the add-in store. For example, if an add-in requires Search Services and this is not installed, the add-in appears dimmed. Administrators can sort, filter, and browse the list of add-ins, read about the add-ins, see add-in reviews, and purchase licenses for an add-in.</span></span>
+ 
+
+ 
+<span data-ttu-id="eef97-126">Решив приобрести лицензию, администратор должен принять условия покупки и согласиться с разрешениями, которые должна иметь надстройка для нормальной работы, такими как доступ к чтению списков или полный доступ к коллекции веб-сайтов.</span><span class="sxs-lookup"><span data-stu-id="eef97-126">When an administrator decides to purchase a license, she must accept the terms and conditions of purchase and agree to the permissions that the add-in must have in order to execute, such as read access to lists or full control access to the site collection.</span></span> 
+ 
+
+ 
+<span data-ttu-id="eef97-p107">При покупке одной или более лицензий для надстройки они загружаются в веб-приложение или клиент. Автоматическая загрузка и установка надстройки при покупке лицензии не предусмотрены, хотя администраторы имеют возможность совместить установку с покупкой лицензии.</span><span class="sxs-lookup"><span data-stu-id="eef97-p107">When one or more licenses for an add-in are purchased, the licenses are downloaded to the web application or tenancy. The add-in is not automatically downloaded and installed when the license is purchased, although administrators have the option to combine installation with license purchase.</span></span>
+ 
+
+ 
+<span data-ttu-id="eef97-p108">Пользователи устанавливают надстройки со страницы **Ваши надстройки**. На этой странице представлен объединенный список перечисленных ниже элементов.</span><span class="sxs-lookup"><span data-stu-id="eef97-p108">Users install add-ins from the **Your Add-ins** page. This page has a merged listing of the following:</span></span>
+ 
+
+ 
+
+- <span data-ttu-id="eef97-131">Надстройки SharePoint из каталога надстроек в организации веб-приложения (или клиента).</span><span class="sxs-lookup"><span data-stu-id="eef97-131">SharePoint Add-ins from the web application's (or the tenant's) organization add-in catalog.</span></span>
+    
+ 
+- <span data-ttu-id="eef97-132">Надстройки SharePoint из Магазин Office, на который организация или клиент уже имеют лицензию веб-сайта, или лицензию, которая была присвоена пользователю.</span><span class="sxs-lookup"><span data-stu-id="eef97-132">SharePoint Add-ins from the Office Store for which the organization or tenant already owns a site license or a license which has been assigned to the user.</span></span>
+    
+ 
+<span data-ttu-id="eef97-p109">Список содержит все надстройки, которые пользователь может установить сразу. За редкими исключениями, в списке нет других надстроек. Пользователи могут фильтровать список, чтобы на странице отображались только надстройки из каталога надстроек организации. После установки надстройки она отображается в списке на странице **Содержимое сайта** для соответствующего сайта.</span><span class="sxs-lookup"><span data-stu-id="eef97-p109">All the add-ins that the user can install immediately are listed, and with few exceptions only add-ins the user can install immediately are listed. Users can filter the add-ins included on the page to include only add-ins in the organization's add-in catalog. When an add-in is installed, it appears in the list of add-ins on the **Site Contents** page of the website to which it is installed.</span></span>
+ 
+
+ 
+
+## <a name="installing-sharepoint-add-ins"></a><span data-ttu-id="eef97-136">Установка надстроек SharePoint</span><span class="sxs-lookup"><span data-stu-id="eef97-136">Installing SharePoint Add-ins</span></span>
+<span data-ttu-id="eef97-137"><a name="Installing"> </a></span><span class="sxs-lookup"><span data-stu-id="eef97-137"></span></span>
+
+<span data-ttu-id="eef97-p110">Владельцы веб-сайтов устанавливают надстройки SharePoint со страницы **Ваши надстройки**, как описывается ранее в этой статье. При установке создается экземпляр надстройки. Дополнительные сведения об установке надстроек см. в статье [Добавление приложений для SharePoint на сайт SharePoint](https://technet.microsoft.com/en-us/library/fp161231.aspx).</span><span class="sxs-lookup"><span data-stu-id="eef97-p110">Website owners install SharePoint Add-ins from the **Your Add-ins** page as described earlier in this topic. Installation creates an instance of the add-in. For more information about installing add-ins, see [Add SharePoint Add-ins to a SharePoint site](https://technet.microsoft.com/en-us/library/fp161231.aspx).</span></span> 
+ 
+
+ 
+
+ <span data-ttu-id="eef97-p111">**Примечание.** Иногда в результате перебоев сетевого подключения установка может быть заблокирована. Если по какой-либо причине при установке происходит сбой, инфраструктура установки повторяет попытку три раза. В случае неудачи в пользовательском интерфейсе появляется сообщение об ошибке. Пользователи могут повторить попытку установки позже.</span><span class="sxs-lookup"><span data-stu-id="eef97-p111">**Note** Sometimes a temporary loss of a network connection can block installation. If installation fails for any reason, the installation infrastructure will retry three times. If it does not succeed, an indication of the failure appears in the UI. Users can retry the installation later.</span></span> 
+ 
+
+
+## <a name="uninstalling-sharepoint-add-ins"></a><span data-ttu-id="eef97-145">Удаление надстроек SharePoint</span><span class="sxs-lookup"><span data-stu-id="eef97-145">Uninstalling SharePoint Add-ins</span></span>
+<span data-ttu-id="eef97-146"><a name="Uninstalling"> </a></span><span class="sxs-lookup"><span data-stu-id="eef97-146"></span></span>
+
+<span data-ttu-id="eef97-p112">Владельцы веб-сайта могут удалить экземпляр Надстройка SharePoint с помощью пользовательского интерфейса SharePoint. Удаление экземпляра Надстройки SharePoint чистое, т. е. удаляется все, установленное надстройкой.</span><span class="sxs-lookup"><span data-stu-id="eef97-p112">Website owners can uninstall an instance of a SharePoint Add-in through the SharePoint UI. Uninstallation of an instance of a SharePoint Add-ins is clean. This means that everything installed by the add-in is uninstalled.</span></span> 
+ 
+
+ 
+<span data-ttu-id="eef97-p113">Однако компоненты, которые используются надстройкой, но установлены отдельно от нее, не удаляются. Предположим, что у надстройки есть удаленная веб-страница с кнопками, которые создают списки на хост-сайте. Удаление надстройки приведет к удалению плитки надстройки со страницы **Содержимое сайта**, в результате чего удаленная страница станет недоступной или непригодной для пользователей. Однако при этом не удаляются списки, созданные с надстройкой. В SharePoint не хранятся сведения о том, какие списки на хост-сайте были созданы надстройкой, а какие — пользователями в интерфейсе SharePoint, поэтому невозможно удалить списки, созданные надстройкой. В целом, это хорошо, так как списки могут содержать данные, которые будут полезны пользователям даже после удаления надстройки, создавшей их.</span><span class="sxs-lookup"><span data-stu-id="eef97-p113">However, components that an add-in uses, but that are installed separately from the installation of the add-in, are not removed. For example, suppose an add-in has a remote web page with buttons that create lists on the host web. Uninstallation of the add-in removes the add-in's tile from the **Site Contents** page which, in turn makes the remote page effectively inaccessible or unusable for end users, but it does not remove the lists that were created with the add-in. SharePoint does not keep a record of which lists on the host web were created with the add-in and which ones were created by users in the SharePoint UI, so it can't delete lists that were created with the add-in. This is generally desirable behavior because the lists may have data that remains useful to users even after the removal of the add-in that created the lists.</span></span>
+ 
+
+ 
+<span data-ttu-id="eef97-p114">Если Надстройка SharePoint включает в себя веб-надстройку, то она удаляется. Благодаря этому достигается более полное удаление, чем при систематическом отключении функций и запуске WSP-файла надстройки в режиме отмены.</span><span class="sxs-lookup"><span data-stu-id="eef97-p114">If the SharePoint Add-in includes an add-in web, the add-in web is deleted. This provides a cleaner uninstall than systematically deactivating features and reversing the deployment of the add-in's internal .wsp file.</span></span>
+ 
+
+ 
+
+ <span data-ttu-id="eef97-p115">**Примечание.** Когда пользователь удаляет надстройку, она перемещается в корзину первого уровня. Если удалить надстройку оттуда, она перемещается в корзину второго уровня. После удаления из корзины второго уровня надстройка полностью удаляется без возможности восстановления.</span><span class="sxs-lookup"><span data-stu-id="eef97-p115">**Note** When a user removes an add-in, it is moved to the first stage Recycle Bin. Deleting it from there moves it to the second stage Recycle Bin. If it is deleted from the second stage Recycle Bin, then it is completely uninstalled and cannot be restored.</span></span> 
+ 
+
+<span data-ttu-id="eef97-160">Кроме того, при удалении надстройки отзываются разрешения для нее согласно следующим правилам:</span><span class="sxs-lookup"><span data-stu-id="eef97-160">The add-in's permissions are also revoked when it is removed (recycled), according to these rules:</span></span>
+ 
+
+ 
+
+- <span data-ttu-id="eef97-161">разрешения уровня веб-сайта всегда аннулируются;</span><span class="sxs-lookup"><span data-stu-id="eef97-161">Web-scoped permissions are always revoked.</span></span>
+    
+ 
+- <span data-ttu-id="eef97-162">если в семействе веб-сайтов отсутствуют другие экземпляры надстройки, разрешения уровня семейства веб-сайтов также аннулируются;</span><span class="sxs-lookup"><span data-stu-id="eef97-162">If there is no other instance of the add-in in the site collection, site collection-scoped permissions are also revoked.</span></span>
+    
+ 
+- <span data-ttu-id="eef97-163">Если в подписке сайта (клиенте) нет других экземпляров надстройки, разрешения на уровне клиента также отзываются.</span><span class="sxs-lookup"><span data-stu-id="eef97-163">If there is no other instance of the add-in in the site subscription (tenancy), tenant-scoped permissions are also revoked.</span></span>
+    
+ 
+<span data-ttu-id="eef97-p116">Веб-служба  [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx), если она зарегистрирована в манифесте надстройки, выполняется в начале процесса удаления. Это происходит, если надстройка удаляется из корзины второго уровня. Рекомендуется пользоваться веб-службой  [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx), если вы также пользуетесь веб-службой  [InstalledEventEndpoint](http://msdn.microsoft.com/library/af9f83d8-8325-3ede-d7b0-bb82c0445eb9%28Office.15%29.aspx), и настраивать услугу  [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx) так, чтобы она отменяла все действия, выполняемые службой [InstalledEventEndpoint](http://msdn.microsoft.com/library/af9f83d8-8325-3ede-d7b0-bb82c0445eb9%28Office.15%29.aspx). Дополнительные сведения см. в статье  [Обработка событий в надстройках SharePoint](handle-events-in-sharepoint-add-ins).</span><span class="sxs-lookup"><span data-stu-id="eef97-p116">The  [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx) web service, if one is registered in the add-in manifest of the add-in, executes at the beginning of the uninstallation process (which occurs when the add-in is removed from the second stage Recycle Bin). It is a best practice to have an [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx) web service if you have an [InstalledEventEndpoint](http://msdn.microsoft.com/library/af9f83d8-8325-3ede-d7b0-bb82c0445eb9%28Office.15%29.aspx) web service and to design the [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx) service to reverse anything done in your [InstalledEventEndpoint](http://msdn.microsoft.com/library/af9f83d8-8325-3ede-d7b0-bb82c0445eb9%28Office.15%29.aspx) service. For more information, see [Handle events in SharePoint Add-ins](handle-events-in-sharepoint-add-ins).</span></span>
+ 
+
+ 
+
+## <a name="additional-resources"></a><span data-ttu-id="eef97-167">Дополнительные ресурсы</span><span class="sxs-lookup"><span data-stu-id="eef97-167">Additional resources</span></span>
+<span data-ttu-id="eef97-168"><a name="SP15deployinstallapps_addlresources"> </a></span><span class="sxs-lookup"><span data-stu-id="eef97-168"></span></span>
+
+
+-  [<span data-ttu-id="eef97-169">Публикация надстроек SharePoint</span><span class="sxs-lookup"><span data-stu-id="eef97-169">Publish SharePoint Add-ins</span></span>](publish-sharepoint-add-ins)
+    
+ 
+-  [<span data-ttu-id="eef97-170">Важные аспекты разработки и архитектуры для надстроек SharePoint</span><span class="sxs-lookup"><span data-stu-id="eef97-170">Important aspects of the SharePoint Add-in architecture and development landscape</span></span>](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape)
+    
+ 
+-  [<span data-ttu-id="eef97-171">Процесс обновления надстроек SharePoint</span><span class="sxs-lookup"><span data-stu-id="eef97-171">SharePoint Add-ins update process</span></span>](sharepoint-add-ins-update-process)
+    
+ 
+
