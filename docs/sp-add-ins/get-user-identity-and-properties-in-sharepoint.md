@@ -88,7 +88,7 @@ ClientContext clientContext =
 
  
 
- **Примечание.** API находятся в пространстве имен Microsoft.SharePoint.Client.Utilities в сборке [Microsoft.SharePoint.Client.dll](http://msdn.microsoft.com/ru-ru/library/microsoft.sharepoint.client.utilities.utility.resolveprincipal.aspx).
+ **Примечание.** API находятся в пространстве имен Microsoft.SharePoint.Client.Utilities в сборке [Microsoft.SharePoint.Client.dll](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.client.utilities.utility.resolveprincipal.aspx).
  
 
 Ниже представлен пример кода, иллюстрирующей получение данных для входа пользователя.

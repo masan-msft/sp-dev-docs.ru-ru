@@ -205,7 +205,7 @@ List.GetByTitle(listname)
 -  [Знакомство с OData](http://msdn.microsoft.com/en-us/data/hh237663)
     
  
--  [Примеры для протокола Open Data Protocol](http://msdn.microsoft.com/ru-ru/library/ff478141.aspx)
+-  [Примеры для протокола Open Data Protocol](http://msdn.microsoft.com/en-us/library/ff478141.aspx)
     
  
 -  [Open Data Protocol](http://www.odata.org/)

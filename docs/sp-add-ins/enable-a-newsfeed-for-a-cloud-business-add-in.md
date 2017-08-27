@@ -66,7 +66,7 @@
 -  [Разработка облачных бизнес-надстроек](develop-cloud-business-add-ins)
     
  
--  [Функции социальных медиа и совместной работы в SharePoint](http://msdn.microsoft.com/ru-ru/library/office/jj163280.aspx)
+-  [Функции социальных медиа и совместной работы в SharePoint](http://msdn.microsoft.com/en-us/library/office/jj163280.aspx)
     
  
 -  [Создание облачных бизнес-надстроек с каналом новостей для социальных служб](create-a-cloud-business-add-in-with-a-social-newsfeed)
