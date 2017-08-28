@@ -1,46 +1,41 @@
-# <a name="overview-of-sharepoint-framework-extensions-preview"></a>Обзор расширений SharePoint Framework (ознакомительная версия)
+# <a name="overview-of-sharepoint-framework-extensions-preview"></a>Обзор расширений SharePoint Framework (предварительная версия)
 
-С помощью расширений SharePoint Framework разработчики могут дополнять пользовательский интерфейс SharePoint, настраивая такие аспекты интерфейса SharePoint, как области уведомлений, панели инструментов SharePoint и представления данных списков. Расширения SharePoint Framework доступны для тестирования в клиентах разработчиков приложений для Office 365 во время ознакомительного периода, а после выпуска общедоступной версии станут доступны во всех клиентах. 
+С помощью расширений SharePoint Framework можно дополнять пользовательский интерфейс SharePoint, настраивая такие его аспекты, как области уведомлений, панели инструментов и представления данных списков. Расширения SharePoint Framework доступны для тестирования в клиентах Office 365 для разработчиков во время ознакомительного периода. 
 
-> Вы можете бесплатно получить клиент разработчика приложений для Office 365, приняв участие в [программе для разработчиков](http://dev.office.com/devprogram).
+> **Примечание.** Вы можете бесплатно получить клиент Office 365 для разработчиков, приняв участие в [программе для разработчиков](http://dev.office.com/devprogram).
 
-Расширения SharePoint Framework добавляют новые возможности улучшения пользовательского интерфейса SharePoint на современных страницах и в библиотеках документов, используя знакомые средства и библиотеки для клиентской разработки из SharePoint Framework. В частности, SharePoint Framework включает три новых типа расширений:
+Расширения SharePoint Framework позволяют дополнять пользовательский интерфейс SharePoint на современных страницах и в библиотеках документов, используя знакомые библиотеки и средства SharePoint Framework для клиентской разработки. SharePoint Framework включает три новых типа расширений:
 
-- **ApplicationCustomizer** позволяет разработчикам добавлять на страницу скрипты, а также получать доступ к заполнителям известных элементов HTML и расширять их с помощью настраиваемой отрисовки;
-- **FieldCustomizer** можно использовать для предоставления измененных представлений данных для полей списка;
-- **CommandSet** позволяет разработчикам расширять поверхности команд SharePoint, добавляя новые действия, а также клиентский код, с помощью которого можно реализовать поведение.
+- **ApplicationCustomizers.** Позволяет добавлять скрипты на страницу, а также получать доступ к заполнителям известных элементов HTML и дополнять их с использованием специальной отрисовки.
+- **FieldCustomizers.** Предоставляет измененные представления данных для полей списка.
+- **CommandSets.** Позволяет добавлять новые действия для команд SharePoint, а также предоставляет клиентский код, с помощью которого можно реализовать определенное поведение.
 
-Помимо проектов на обычном JavaScript, вы можете создавать расширения на таких распространенных платформах скриптов, как AngularJS и React. Например, вы можете использовать React вместе с компонентами из Office UI Fabric React, чтобы быстро создавать интерфейсы на основе тех же компонентов, которые используются в Office 365.
+Помимо проектов plainJS, вы можете создавать расширения на таких распространенных платформах создания скриптов, как AngularJS и React. Например, вы можете использовать React вместе с компонентами из Office UI Fabric React, чтобы создавать решения на основе тех же компонентов, которые используются в Office 365.
 
-## <a name="getting-started"></a>Начало работы
-Если вы еще не установили SharePoint Framework, ознакомьтесь со следующим руководством, чтобы подготовиться к разработке на платформе SharePoint Framework:
+## <a name="get-started"></a>Начало работы
+Если вы не устанавливали SharePoint Framework, выполните действия [по настройке среды разработки](../set-up-your-development-environment).
 
-* [Настройка среды разработки](../set-up-your-development-environment)
-
-Если вы еще не установили платформу SharePoint Framework, выполните следующую команду, чтобы обновить шаблоны Yeoman до последней версии:
+Когда установите SharePoint Framework, выполните следующую команду, чтобы обновить шаблоны Yeoman до последней версии:
 
 ```
 npm install -g @microsoft/generator-sharepoint
 ```
 
-Начните с руководств по разработке расширений SharePoint Framework:
+Далее вы можете [создать свое первое расширение SharePoint Framework (Hello World, часть 1)](./get-started/build-a-hello-world-extension).
 
-* [Создание первого расширения SharePoint Framework (Hello World, часть 1)](./get-started/build-a-hello-world-extension)
-
-## <a name="updates--feedback"></a>Обновления и отзывы
-
-Чтобы следить за улучшениями SharePoint Framework, в том числе за выпуском расширений, используйте следующие ресурсы:
+## <a name="stay-up-to-date"></a>Своевременное обновление
+Чтобы следить за улучшениями SharePoint Framework, в том числе за обновлением расширений, используйте следующие ресурсы:
 
 * [@SharePoint](https://twitter.com/sharepoint) и [@OfficeDev](https://twitter.com/officedev) в Twitter.
-* [Блог разработчиков Office](http://dev.office.com/blogs).
+* [Блог для разработчиков решений для Office](http://dev.office.com/blogs).
 
-## <a name="provide-feedback-during-preview"></a>Отправка отзывов во время ознакомительного периода
-Ознакомительный выпуск расширений SharePoint Framework призван помочь разработчикам SharePoint собирать отзывы о планируемых возможностях и функциях. Чтобы присоединиться к обсуждению с разработчиками SharePoint, используйте следующие ресурсы:
+## <a name="provide-feedback"></a>Предоставление отзывов 
+Предлагаем предоставить отзывы о предварительном выпуске расширений SharePoint Framework. Отправить эти отзывы непосредственно команде разработчиков SharePoint можно с помощью одного из указанных ниже ресурсов.
 
-- [sp-dev-docs repository issue list](https://github.com/SharePoint/sp-dev-docs/issues) — вопросы, проблемы и комментарии.
+- [Список проблем, касающихся репозитория sp-dev-docs](https://github.com/SharePoint/sp-dev-docs/issues) (вопросы, проблемы и комментарии).
 * [SharePoint StackExchange](http://sharepoint.stackexchange.com/) (используйте теги [#spfx](http://sharepoint.stackexchange.com/tags/spfx/), [#spfx-extensions](http://sharepoint.stackexchange.com/tags/spfx-extensions/) и [#spfx-tooling](http://sharepoint.stackexchange.com/tags/spfx-tooling/)).
-* Группа [SharePoint Developer](https://techcommunity.microsoft.com/t5/SharePoint-Developer/bd-p/SharePointDev) (SharePoint для разработчиков) в сообществе технических специалистов Майкрософт.
-* [UserVoice для разработчиков SharePoint](https://sharepoint.uservoice.com/forums/329220-sharepoint-dev-platform) — предложения новых возможностей и функций.
+* [SharePoint Developer](https://techcommunity.microsoft.com/t5/SharePoint-Developer/bd-p/SharePointDev) (группа в сообществе технических специалистов Майкрософт, в которой участвуют разработчики решений для SharePoint).
+* [UserVoice разработчиков SharePoint](https://sharepoint.uservoice.com/forums/329220-sharepoint-dev-platform) (здесь можно предложить добавить новые возможности и функции).
 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы

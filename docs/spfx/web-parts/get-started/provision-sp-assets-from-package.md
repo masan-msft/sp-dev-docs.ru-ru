@@ -136,7 +136,7 @@ code .
 * Добавляемый тип контента ссылается на настраиваемые поля.
 * Мы используем атрибут **CustomSchema** в элементе **ListInstance**, чтобы определить файл schema.xml file для подготовки списка. Таким образом, список все еще основан на стандартном шаблоне списка (в данном случае это обычный настраиваемый список 100), но мы можем создать альтернативное определение во время начальной подготовки.
 
-> Дополнительные сведения об используемых структурах схемы см. в [документации по платформе компонентов](https://msdn.microsoft.com/ru-ru/library/office/ms460318(v=office.14).aspx) на сайте MSDN.
+> Дополнительные сведения об используемых структурах схемы см. в [документации по платформе компонентов](https://msdn.microsoft.com/en-us/library/office/ms460318(v=office.14).aspx) на сайте MSDN.
 
 ### <a name="add-schemaxml-file-for-defining-list-structure"></a>Добавление файла schema.xml для определения структуры списка
 На предыдущем этапе мы ссылались на файл **schema.xml** в атрибуте **CustomSchema** элемента **ListInstance**, поэтому его потребуется включить в наш пакет. 
@@ -183,9 +183,9 @@ code .
 * Элемент **ContentTypeRef** ссылается на настраиваемый тип контента, развертываемый с помощью файла **elements.xml**.
 * Элемент **FieldRef** ссылается на настраиваемые поля **SPFxAmount** и **SPFxCostCenter**.
 
-> Дополнительные сведения об используемых структурах схемы можно найти в статье [Общие сведения о файлах Schema.xml](https://msdn.microsoft.com/ru-ru/library/office/ms459356(v=office.14).aspx) на сайте MSDN.
+> Дополнительные сведения об используемых структурах схемы можно найти в статье [Общие сведения о файлах Schema.xml](https://msdn.microsoft.com/en-us/library/office/ms459356(v=office.14).aspx) на сайте MSDN.
 
-## <a name="ensure-that-definitions-are-taken-into-use-in-build-pipeline"></a>Проверка использования определений в конвейере сборки
+## <a name="ensure-that-definitions-are-taken-into-use-in-build-pipeline"></a>Обеспечение использования определений в конвейере сборки
 Теперь мы создали необходимые структуры для автоматической подготовки ресурсов SharePoint при развертывании решения. Далее необходимо убедиться, что эти XML-файлы упакованы в файле решения.
 
 Откройте файл **package-solution.json** из папки config. В файле **package-solution.json** определяются метаданные пакета, как показано в следующем фрагменте кода:
@@ -297,7 +297,7 @@ asset-deployment-webpart.sppkg
 * ApplyElementManifest
 * AddContentTypeField
 
-> Дополнительные сведения об определениях действий по обновлению в платформе компонентов см. в статье [Процедура обновления надстроек для SharePoint](https://msdn.microsoft.com/ru-ru/library/office/fp179904.aspx) на сайте MSDN.
+> Дополнительные сведения об определениях действий по обновлению в платформе компонентов см. в статье [Процедура обновления надстроек для SharePoint](https://msdn.microsoft.com/en-us/library/office/fp179904.aspx) на сайте MSDN.
 
 ### <a name="add-new-elementxml-file-for-the-new-version"></a>Добавление нового файла element.xml для новой версии
 Вернитесь к своему решению в Visual Studio Code.
