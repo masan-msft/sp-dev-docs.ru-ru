@@ -1,4 +1,4 @@
-# <a name="integrate-your-sharepoint-client-side-web-part-with-the-property-pane"></a>Интеграция клиентской веб-части SharePoint с областью задач
+# <a name="make-your-sharepoint-client-side-web-part-configurable"></a>Сделайте клиентскую веб-часть SharePoint настраиваемой
 
 С помощью области свойств пользователи могут настраивать различные свойства веб-части. В статье [Создание первой веб-части](../get-started/build-a-hello-world-web-part) рассказывается, как определить область свойств в классе **HelloWorldWebPart**. Свойства для области свойств определяются в параметре **propertyPaneSettings**.
 
@@ -22,10 +22,10 @@
 
 ## <a name="using-the-property-pane"></a>Использование области свойств
 
-В приведенном ниже примере кода инициализируется и настраивается область свойств для веб-части. Создается метод типа **IPropertyPaneSettings** и возвращается коллекция страниц области свойств.
+В приведенном ниже примере кода инициализируется и настраивается область свойств для веб-части. Переопределяется метод **getPropertyPaneConfiguration** и возвращается коллекция страниц области свойств.
 
 ```ts
-protected get propertyPaneSettings(): IPropertyPaneSettings {
+protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
   return {
     pages: [
       {
@@ -50,19 +50,22 @@ protected get propertyPaneSettings(): IPropertyPaneSettings {
 
 ### <a name="property-pane-fields"></a>Поля области свойств
 
-Поддерживаются следующие типы полей:
+Поддерживаемые типы полей представлены ниже.
 
-* Подпись
-* Текстовое поле
-* Многострочное текстовое поле
+* Кнопка
 * Флажок
+* Группа выбора
 * Раскрывающийся список
+* Горизонтальная линейка
+* Метка
 * Ссылка
 * Ползунок
+* Текстовое поле
+* Многострочное текстовое поле
 * Переключатель
 * Пользовательский сервер
 
-Типы полей доступны в виде модулей в **sp-client-platform**. Прежде чем использовать их в коде, их необходимо импортировать:
+Типы полей доступны в виде модулей в **sp-client-platform**. Прежде чем использовать их в коде, их необходимо импортировать.
 
 ```ts
 import {
@@ -76,7 +79,7 @@ import {
 } from '@microsoft/sp-client-preview';
 ```
 
-Конструктор каждого типа поля определяется следующим образом (для примера используется тип **PropertyPaneTextField**):
+Метод определения каждого типа поля приведен ниже (для примера используется тип **PropertyPaneTextField**).
 
 ```ts
 PropertyPaneTextField('targetProperty',{
@@ -100,9 +103,9 @@ export interface IHelloWorldWebPartProps {
 <p class="ms-font-l ms-fontColor-white">${this.properties.description}</p>
 ```
 
-Если свойства определены, к ним можно обращаться из веб-части с помощью переменной **this.properties.<значение_свойства>**. Дополнительные сведения см. в описании метода [**render** веб-части **HelloWorldWebPart**](../get-started/build-a-hello-world-web-part#web-part-render-method):
+Если свойства определены, к ним можно обращаться из веб-части с помощью переменной **this.properties.[property-name]**. Дополнительные сведения см. в описании метода [**render** веб-части **HelloWorldWebPart**](../get-started/build-a-hello-world-web-part#web-part-render-method).
 
-## <a name="handling-field-changes"></a>Обработка изменения полей
+## <a name="handling-field-changes"></a>Обработка изменений полей
 
 У области свойств есть два режима взаимодействия:
 
@@ -119,32 +122,6 @@ protected get disableReactivePropertyChanges(): boolean {
 }
 ```
 
-## <a name="custom-field-example"></a>Пример настраиваемого поля
+## <a name="custom-property-pane-controls"></a>Пользовательский элемент управления области свойств
 
-Добавьте следующее определение поля в массив **groupFields**:
-
-```ts
-{
-  type: IPropertyPaneFieldType.Custom,
-  targetProperty: 'custom',
-  properties: {
-    onRender: this._customFieldRender.bind(this),
-    value: undefined,
-    context: undefined
-  }
-}
-```
-
-Добавьте следующие типы в импортированные элементы **@microsoft/sp-webpart-base**:
-
-```ts
-IPropertyPaneFieldType
-```
-
-Добавьте следующий частный метод для отрисовки настраиваемого поля:
-
-```ts
-private _customFieldRender(elem: HTMLElement, context: any, onChanged?: IOnCustomPropertyFieldChanged): void {
-    elem.innerHTML = '<input id="password" type="password" name="password" class="ms-TextField-field">';
-}
-```
+Платформа SharePoint Framework содержит набор стандартных элементов управления для области свойств, но иногда нужны дополнительные функции. SharePoint Framework дает возможность создавать пользовательские элементы управления для обеспечения требуемой функциональности. Дополнительные сведения см. в руководстве [Создание пользовательских элементов управления для панели свойств](../guidance/build-custom-property-pane-controls).

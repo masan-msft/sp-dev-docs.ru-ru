@@ -120,7 +120,7 @@ npm install jquery jquery-ui --save
 Так как вы создаете веб-часть, используя TypeScript, вам понадобятся определения типов TypeScript для библиотеки jQuery. Их можно установить, выполнив указанную ниже команду.
 
 ```sh
-npm install @types/jquery --save-dev
+npm install @types/jquery --save
 ```
 
 ### <a name="reference-libraries-in-the-web-part"></a>Добавление ссылок на библиотеки в веб-частях
@@ -195,7 +195,7 @@ gulp serve
 Если вы начали с пустого проекта, созданного согласно инструкциям, приведенным ранее в этой статье, установите определения типов TypeScript для jQuery, выполнив следующую команду:
 
 ```sh
-npm install @types/jquery --save-dev
+npm install @types/jquery --save
 ```
 
 ### <a name="specify-urls-of-libraries"></a>Указание URL-ссылок для библиотек
@@ -246,9 +246,9 @@ gulp serve
 
 Вы пока добавили ссылки только на скрипты jQuery UI, поэтому элемент Accordion отображается без стилей. Далее следует добавить недостающие таблицы стилей CSS, чтобы оформить этот элемент должным образом.
 
-### <a name="reference-third-party-css-stylesheets-from-url-in-the-web-part"></a>Добавление в веб-части ссылок на сторонние таблицы стилей CSS с помощью URL-ссылок
+### <a name="reference-third-party-css-stylesheets-from-url-in-the-web-part"></a>Добавление в веб-часть ссылок на сторонние таблицы стилей CSS с помощью URL-ссылок
 
-Добавление ссылок на таблицы стилей CSS с помощью URL-ссылок отличается от добавления ссылок на ресурсы в пакетах проектов. Конфигурация проекта в файле **config.json** позволяет вам указывать внешние ресурсы только в случае скриптов. Чтобы добавить ссылки на таблицы стилей CSS с помощью URL-ссылки, нужно использовать **SPModuleLoader**.
+Добавление ссылок на сторонние таблицы стилей CSS с помощью URL-ссылок отличается от добавления ссылок на ресурсы из пакетов проектов. Конфигурация проекта в файле **config.json** позволяет указывать внешние ресурсы только для сценариев. Чтобы добавить ссылки на таблицы стилей CSS с помощью URL-ссылки, нужно использовать **SPComponentLoader**.
 
 #### <a name="load-css-from-the-url-using-the-spcomponentloader"></a>Загрузка CSS-файла с помощью URL-ссылки и SPComponentLoader
 
@@ -258,15 +258,13 @@ gulp serve
 import { SPComponentLoader } from '@microsoft/sp-loader';
 ```
 
-В том же файле добавьте конструктор веб-части следующим образом:
+В том же файле переопределите метод onInit () так, как представлено ниже.
 
 ```ts
 export default class JQueryAccordionWebPart extends BaseClientSideWebPart<IJQueryAccordionWebPartProps> {
-
-  public constructor() {
-    super();
-
+  protected onInit(): Promise<void> {
     SPComponentLoader.loadCss('https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.min.css');
+    return super.onInit();
   }
 
   // ...
