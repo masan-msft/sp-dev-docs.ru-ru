@@ -10,6 +10,12 @@
 * [Создание первого расширения SharePoint Framework (Hello World, часть 1)](./build-a-hello-world-extension.md)
 * [Использование заполнителей страниц в настройщике приложений (Hello World, часть 2)](./using-page-placeholder-with-extensions.md)
 
+Эти действия также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=P_yWI0WVQIg&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV). 
+
+<a href="https://www.youtube.com/watch?v=P_yWI0WVQIg&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV">
+<img src="../../../../images/spfx-ext-youtube-tutorial3.png" alt="Screenshot of the YouTube video player for this tutorial" />
+</a>
+
 ## <a name="package-the-helloworld-application-customizer"></a>Упаковка настройщика приложений helloWorld
 В окне консоли перейдите к каталогу проекта расширения, создание которого описывается в статье [Создание первого расширения SharePoint Framework (Hello World, часть 1)](./build-a-hello-world-extension.md).
 
@@ -27,7 +33,7 @@ cd app-extension
     * **ClientSiteComponentId:** — это идентификатор (GUID) настройщика приложений, установленного в каталоге приложений. 
     * **ClientSideComponentProperties:** — это необязательный параметр, с помощью которого можно предоставлять свойства для экземпляра настройщика полей.
 
-> Обратите внимание, что в настоящее время необходимо явно устанавливать пакеты решений на сайтах, чтобы расширения выполнялись должным образом. В будущем появятся альтернативные способы достижения этой цели без отдельного развертывания на каждом сайте. 
+> Обратите внимание, что вы можете указать, требуется ли добавлять решение, содержащее ваше расширение, на сайт, используя параметр `skipFeatureDeployment` в файле **package-solution.json**. Даже если устанавливать решение на сайт не требуется, чтобы расширение было видимым, свойство **ClientSideComponentId** необходимо связать с конкретными объектами. 
 
 На следующих этапах мы создадим определение объекта `CustomAction`, которое затем будет автоматически развернуто с необходимыми параметрами при установке пакета решения на сайте. 
 
@@ -60,7 +66,7 @@ cd app-extension
         Title="SPFxApplicationCustomizer"
         Location="ClientSideExtension.ApplicationCustomizer"
         ClientSideComponentId="46606aa6-5dd8-4792-b017-1555ec0a43a4"
-        ClientSideComponentProperties="{&quot;Header&quot;:&quot;Header area of the page&quot;,&quot;Footer&quot;:&quot;Footer area in the page&quot;}">
+        ClientSideComponentProperties="{&quot;Top&quot;:&quot;Top area of the page&quot;,&quot;Bottom&quot;:&quot;Bottom area in the page&quot;}">
 
     </CustomAction>
 
@@ -76,7 +82,8 @@ cd app-extension
   "solution": {
     "name": "app-extension-client-side-solution",
     "id": "02d35a3e-5896-4664-874f-9fe9fdfe8408",
-    "version": "1.0.0.0"
+    "version": "1.0.0.0",
+    "skipFeatureDeployment": false
   },
   "paths": {
     "zippedPackage": "solution/app-extension.sppkg"
@@ -93,6 +100,7 @@ cd app-extension
     "name": "app-extension-client-side-solution",
     "id": "02d35a3e-5896-4664-874f-9fe9fdfe8408",
     "version": "1.0.0.0",
+    "skipFeatureDeployment": false,
     "features": [{
       "title": "Application Extension - Deployment of custom action.",
       "description": "Deploys a custom action with ClientSideComponentId association",

@@ -44,6 +44,8 @@ yo @microsoft/sharepoint
 Когда появится запрос, выполните указанные ниже действия.
 
 * Оставьте значение по умолчанию (**dialog-cmd**) для имени решения и нажмите клавишу **ВВОД**.
+* Выберите **Use the current folder** (Использовать текущую папку) и нажмите клавишу **ВВОД**.
+* Выберите **N**, чтобы сделать установку расширения обязательной на каждом сайте при его использовании.
 * Выберите для создаваемого клиентского компонента тип **Extension (Preview)**. 
 * Выберите для создаваемого расширения тип **ListView Command Set (Preview)**.
 
@@ -77,10 +79,11 @@ code .
 ```json
 {
   //...
-  "commands": {
+  "items": {
     "COMMAND_1": {
-      "title": "Open Custom Dialog",
-      "iconImageUrl": "icons/request.png"
+      "title": { "default": "Open Custom Dialog" },
+      "iconImageUrl": "icons/request.png",
+      "type": "command"
     }
   }
 }
@@ -104,7 +107,6 @@ npm install @microsoft/sp-dialog --save
 
 Добавьте приведенный ниже оператор импорта в начале нового файла. Мы создаем настраиваемое диалоговое окно с помощью [компонентов Office UI Fabric React](https://dev.office.com/fabric#/components), поэтому реализация будет основана на React. 
 
-> **Примечание** В настоящее время компонент `DialogContent` предоставляется из каталога `@microsoft/sp-dialog`, но будет включен в состав компонентов Office UI Fabric React. 
 
 ```ts
 import * as React from 'react';
@@ -115,12 +117,10 @@ import {
   ColorPicker,
   PrimaryButton,
   Button,
-  DialogFooter
-  // DialogContent <- This should be imported here for third parties
+  DialogFooter,
+  DialogContent
 } from 'office-ui-fabric-react';
-// Note: DialogContent is available in v2.32.0 of office-ui-fabric-react
-// As a workaround we're importing it from sp-dialog until the next version bump
-import { DialogContent } from '@microsoft/sp-dialog';
+
 ```
 
 Добавьте приведенное ниже определение интерфейса сразу после операторов импорта. Оно будет использоваться для передачи сведений и функций между набором команд ListView и настраиваемым диалоговым окном.
@@ -258,8 +258,6 @@ gulp serve --nobrowser
 
 Начнется упаковка решения, а полученный манифест станет доступен по адресу `localhost`.
 
-![Исходная структура Visual Studio Code после формирования](../../../../images/ext-com-dialog-gulp-serve.png)
-
 Для тестирования расширения перейдите к сайту в клиенте разработчика приложений для SharePoint Online.
 
 Перейдите к существующему настраиваемому списку на сайте, содержащему несколько элементов, или создайте список и добавьте в него несколько элементов для тестирования. 
@@ -276,12 +274,12 @@ gulp serve --nobrowser
 
 Обратите внимание, что на панели инструментов списка отображается кнопка с текстом *Open Custom Dialog box* (Открыть настраиваемое диалоговое окно).
 
-![Предупреждение о разрешении скриптов отладки](../../../../images/ext-com-dialog-button-in-toolbar.png)
+![Кнопка "Открыть настраиваемое диалоговое окно" на панели инструментов](../../../../images/ext-com-dialog-button-in-toolbar.png)
 
 Нажмите кнопку *Open Custom Dialog box*, чтобы настраиваемое диалоговое окно открылось в представлении списка. 
 
-![Предупреждение о разрешении скриптов отладки](../../../../images/ext-com-dialog-visible-dialog.png)
+![Палитра, отображаемая в диалоговом окне](../../../../images/ext-com-dialog-visible-dialog.png)
 
 Выберите цвет в *палитре* и нажмите кнопку **ОК**, чтобы проверить, как код возвращает вызывающей стороне выбранное значение, которое затем отображается в стандартном диалоговом окне предупреждения.
 
-![Стандартное диалоговое окно предупреждения](../../../../images/ext-com-dialog-oob-alert-dialog.png)
+![Диалоговое окно со сведениями о выбранном цвете](../../../../images/ext-com-dialog-oob-alert-dialog.png)

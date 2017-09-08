@@ -4,9 +4,11 @@
 
 Расширения — это клиентские компоненты, которые запускаются в контексте страницы SharePoint. Расширения можно развертывать в SharePoint Online, а для их создания можно использовать современные инструменты и библиотеки JavaScript.
 
->**Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment). Обратите внимание, что в настоящее время расширения доступны **ТОЛЬКО** в клиентах разработчиков приложений для Office 365.
+Эти действия также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=iW0LQQqAY0Y&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV). 
 
->**Примечание.** В настоящее время отладку расширения с набором команд ListView можно выполнять только с помощью современного интерфейса на классических сайтах SharePoint. Убедитесь, что вы используете для тестирования классический сайт группы с современным интерфейсом списков.
+<a href="https://www.youtube.com/watch?v=iW0LQQqAY0Y&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV">
+<img src="../../../../images/spfx-ext-youtube-tutorialcommand.png" alt="Screenshot of the YouTube video player for this tutorial" />
+</a>
 
 ## <a name="create-an-extension-project"></a>Создание проекта расширения
 Создайте каталог проекта в любом расположении.
@@ -30,6 +32,8 @@ yo @microsoft/sharepoint
 Когда появится запрос, выполните указанные ниже действия.
 
 * Оставьте значение по умолчанию (**command-extension**) для имени решения и нажмите клавишу **ВВОД**.
+* Выберите **Use the current folder** (Использовать текущую папку) и нажмите клавишу **ВВОД**.
+* Выберите **N**, чтобы сделать установку расширения обязательной на каждом сайте при его использовании. 
 * Выберите для создаваемого клиентского компонента тип **Extension (Preview)**. 
 * Выберите для создаваемого расширения тип **ListView Command Set (Preview)**.
 
@@ -75,21 +79,33 @@ code .
 
 Обратите внимание, что базовый класс для набора команд ListView импортируется из пакета **sp-listview-extensibility**, который содержит код платформы SharePoint Framework, необходимый для набора команд ListView.
 
-![Оператор импорта ресурса BaseListViewCommandSet из каталога @microsoft/sp-listview-extensibility](../../../../images/ext-com-vscode-base.png)
+```ts
+import { override } from '@microsoft/decorators';
+import { Log } from '@microsoft/sp-core-library';
+import {
+  BaseListViewCommandSet,
+  Command,
+  IListViewCommandSetListViewUpdatedParameters,
+  IListViewCommandSetExecuteEventParameters
+} from '@microsoft/sp-listview-extensibility';
+```
 
-Поведение настраиваемых кнопок определяется в методах **onRefreshCommand()** и **OnExecute()**.
+Поведение настраиваемых кнопок определяется в методах **onListViewUpdated()** и **OnExecute()**.
 
-Событие **onRefreshCommand()** происходит отдельно для каждой команды (например, элемента меню), когда приложение пытается показать ее в пользовательском интерфейсе. Параметр `“event”` функции представляет сведения об отрисовываемой команде. Обработчик может использовать эти сведения, чтобы настроить заголовок или видимость, например если команда должна отображаться, только когда в представлении списка выбрано определенное количество элементов. Ниже представлена реализация по умолчанию.
+Событие **onListViewUpdated()** происходит отдельно для каждой команды (например, элемента меню), когда в ListView происходит изменение и необходимо обновить пользовательский интерфейс. Параметр `“event”` функции представляет сведения об отрисовываемой команде. Обработчик может использовать эти сведения, чтобы настроить заголовок или видимость, например если команда должна отображаться, только когда в представлении списка выбрано определенное количество элементов. Ниже представлена реализация по умолчанию.
+
+При использовании метода `“tryGetCommand”` вы получите объект Command, представляющий собой команду, отображаемую в пользовательском интерфейсе. Вы можете изменять его значения, например `“title”` или `“visible”`, для изменения элемента пользовательского интерфейса. SPFx использует эту информацию при обновлении команд. При этом сохраняется их состояние из последней прорисовки, поэтому, если для команды задано значение `“visible = false”`, она будет оставаться невидимой, пока снова не будет задано значение `“visible = true”`.
 
 ```ts
   @override
-  public onRefreshCommand(event: IListViewCommandSetRefreshEventParameters): void {
-    event.visible = true; // assume true by default
-
+  public onListViewUpdated(event: IListViewCommandSetListViewUpdatedParameters): void {
     if (this.properties.disabledCommandIds) {
-      if (this.properties.disabledCommandIds.indexOf(event.commandId) >= 0) {
-        Log.info(LOG_SOURCE, 'Hiding command ' + event.commandId);
-        event.visible = false;
+      for (const commandId of this.properties.disabledCommandIds) {
+        const command: Command | undefined = this.tryGetCommand(commandId);
+        if (command && command.visible) {
+          Log.info(LOG_SOURCE, `Hiding command ${commandId}`);
+          command.visible = false;
+        }
       }
     }
   }
@@ -132,7 +148,7 @@ gulp serve --nobrowser
 Добавьте к URL-адресу приведенные ниже параметры строки запроса. Обратите внимание, что вам потребуется обновить GUID в соответствии с идентификатором расширения с набором команд для представления списка, указанным в файле **HelloWorldCommandSet.manifest.json**.
 
 ```
-?loadSpfx=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"81b6a3d7-e408-43a4-8ef1-180d0f2582cc":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar"}}
+?loadSpfx=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"6a6ac29e-258e-4a2c-8de3-6bdd358cdb54":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar"}}
 ```
 
 * **loadSPFX=true:** гарантирует, что платформа SharePoint Framework загружается на странице. Для оптимальной производительности платформа обычно не загружается, если не зарегистрировано хотя бы одно расширение. Так как пока не зарегистрировано ни одного расширения, нам необходимо отдавать явную команду на загрузку платформы.
@@ -148,7 +164,7 @@ gulp serve --nobrowser
 Полный URL-адрес должен выглядеть примерно так, как показано ниже, но соответствовать URL-адресу и расположению списка.
 
 ```
-contoso.sharepoint.com/Lists/Orders/AllItems.aspx?loadSpfx=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"81b6a3d7-e408-43a4-8ef1-180d0f2582cc":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar"}}
+contoso.sharepoint.com/Lists/Orders/AllItems.aspx?loadSpfx=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"6a6ac29e-258e-4a2c-8de3-6bdd358cdb54":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar"}}
 ```
 
 Согласитесь на загрузку манифестов отладки, нажав кнопку **Загрузить скрипты отладки** при появлении соответствующего запроса.
@@ -172,10 +188,10 @@ npm install @microsoft/sp-dialog --save
 
 Откройте файл **HelloWorldCommandSet.ts** в папке **src\extensions\helloWorld**.
 
-Добавьте приведенный ниже оператор импорта для класса `Dialog` из `@microsoft/sp-dialog/lib/index` после имеющихся операторов импорта. 
+Добавьте приведенный ниже оператор импорта для класса `Dialog` из `@microsoft/sp-dialog` после имеющихся операторов импорта. 
 
 ```ts
-import { Dialog } from '@microsoft/sp-dialog/lib/index';
+import { Dialog } from '@microsoft/sp-dialog';
 ``` 
 
 Измените метод **onExecute** следующим образом:
@@ -224,7 +240,7 @@ gulp serve --nobrowser
 
 Структура решения должна быть примерно такой, как на следующем рисунке:
 
-![Папка assets в структуре решения](../../../../images/ext-app-assets-folder.png)
+![Папка assets в структуре решения](../../../../images/ext-com-assets-folder.png)
 
 ### <a name="add-an-elementsxml-file-for-sharepoint-definitions"></a>Добавление файла element.xml для определений SharePoint
 
@@ -265,7 +281,8 @@ gulp serve --nobrowser
   "solution": {
     "name": "command-extension-client-side-solution",
     "id": "dfffbe21-e422-4c0f-a302-d7d62a30c1bf",
-    "version": "1.0.0.0"
+    "version": "1.0.0.0",
+    "skipFeatureDeployment": false,
   },
   "paths": {
     "zippedPackage": "solution/command-extension.sppkg"
@@ -281,6 +298,7 @@ gulp serve --nobrowser
     "name": "command-extension-client-side-solution",
     "id": "dfffbe21-e422-4c0f-a302-d7d62a30c1bf",
     "version": "1.0.0.0",
+    "skipFeatureDeployment": false,    
     "features": [{
       "title": "ListView Command Set - Deployment of custom action.",
       "description": "Deploys a custom action with ClientSideComponentId association",
@@ -339,9 +357,9 @@ gulp serve --nobrowser
 
 Перейдите на тот сайт, где требуется проверить подготовку ресурсов SharePoint. Это может быть любое семейство веб-сайтов в клиенте, где развернут пакет решения.
 
-Нажмите значок шестеренки на верхней панели навигации справа и выберите команду **Добавить приложение**, чтобы перейти к странице "Приложения".
+Нажмите значок шестеренки на верхней панели навигации справа и выберите команду **Добавить приложение**, чтобы перейти на страницу "Приложения".
 
-В поле **Поиск** введите **command** и нажмите клавишу *ВВОД*, чтобы отфильтровать приложения.
+В поле **Поиск** введите **extension** и нажмите клавишу *ВВОД*, чтобы отфильтровать приложения.
 
 ![Установка набора команд ListView на сайте](../../../../images/ext-com-install-solution-to-site.png)
 
@@ -349,7 +367,7 @@ gulp serve --nobrowser
 
 Когда приложение будет успешно установлено, нажмите кнопку **Создать** на панели инструментов страницы **Содержимое сайта** и выберите **Список**.
 
-![Создание списка](../../../../images/ext-field-create-new-list.png)
+![Создание списка](../../../../images/ext-com-create-new-list.png)
 
 Укажите имя **Sample** и нажмите кнопку **Создать**.
 

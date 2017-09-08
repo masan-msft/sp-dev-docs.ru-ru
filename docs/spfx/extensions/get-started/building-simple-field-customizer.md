@@ -4,9 +4,11 @@
 
 Расширения — это клиентские компоненты, которые запускаются в контексте страницы SharePoint. Расширения можно развертывать в SharePoint Online, а для их создания можно использовать современные инструменты и библиотеки JavaScript.
 
->**Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment). Обратите внимание, что в настоящее время расширения доступны **ТОЛЬКО** в клиентах разработчиков приложений для Office 365.
+Эти действия также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=fijOzUmlXrY&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV). 
 
->**Примечание.** В настоящее время отладку расширений для настройки полей можно выполнять только с помощью современного интерфейса на классических сайтах SharePoint. Убедитесь, что вы используете для тестирования классический сайт группы с современным интерфейсом списков.
+<a href="https://www.youtube.com/watch?v=fijOzUmlXrY&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV">
+<img src="../../../../images/spfx-ext-youtube-tutorialfield.png" alt="Screenshot of the YouTube video player for this tutorial" />
+</a>
 
 ## <a name="create-an-extension-project"></a>Создание проекта расширения
 Создайте каталог проекта в любом расположении.
@@ -30,6 +32,8 @@ yo @microsoft/sharepoint
 Когда появится запрос, выполните указанные ниже действия.
 
 * Оставьте значение по умолчанию (**field-extension**) для имени решения и нажмите клавишу **ВВОД**.
+* Выберите **Use the current folder** (Использовать текущую папку) и нажмите клавишу **ВВОД**.
+* Выберите **N**, чтобы сделать установку расширения обязательной на каждом сайте при его использовании.
 * Выберите для создаваемого клиентского компонента тип **Extension (Preview)**. 
 * Выберите для создаваемого расширения тип **Field Customizer (Preview)**.
 
@@ -43,7 +47,7 @@ yo @microsoft/sharepoint
 
 После этого Yeoman установит необходимые зависимости и сформирует файлы решения, а также расширение **HelloWorld**. Это может занять несколько минут. 
 
-После успешного формирования должно появиться следующее сообщение:
+После успешного скаффолдинга должно появиться следующее сообщение:
 
 !["Скаффолдинг клиентского решения SharePoint успешно выполнен".](../../../../images/ext-field-yeoman-complete.png)
 
@@ -72,17 +76,42 @@ code .
 
 Обратите внимание, что базовый класс для настройщика полей импортируется из пакета **sp-application-base**, который содержит код платформы SharePoint Framework, необходимый для настройщика полей.
 
-![Оператор импорта ресурса BaseFieldCustomizer из каталога @microsoft/sp-application-base](../../../../images/ext-field-vscode-customizer-base.png)
+```ts
+import { Log } from '@microsoft/sp-core-library';
+import { override } from '@microsoft/decorators';
+import {
+  BaseFieldCustomizer,
+  IFieldCustomizerCellEventParameters
+} from '@microsoft/sp-listview-extensibility';
+```
 
 Логика настройщика полей содержится в методах **OnInit()**, **onRenderCell()** и **onDisposeCell()**.
 
-* **onInit():** — здесь выполняется вся настройка, необходимая для расширения. Это событие происходит после назначения `this.context` и `this.properties`, но до того, как модель DOM будет готова. Как и в случае с веб-частями, `onInit()` возвращает обещание, с помощью которого можно выполнять асинхронные операции. `onRenderCell()` не будет вызываться, пока обещание не будет разрешено. Если вам это не нужно, просто верните `super.onInit()`.
-* **onRenderCell():** это событие происходит перед отрисовкой каждой ячейки. Оно предоставляет элемент HTML `event.cellDiv`, в который код может записывать содержимое.
+* **onInit():** — здесь выполняется вся настройка, необходимая для расширения. Это событие происходит после назначения `this.context` и `this.properties`, но до того, как модель DOM будет готова. Как и в случае с веб-частями, `onInit()` возвращает обещание, с помощью которого можно выполнять асинхронные операции. `onRenderCell()` не будет вызываться, пока обещание не будет разрешено. Если вам это не нужно, просто верните `Promise.resolve<void>();`.
+* **onRenderCell():** это событие происходит при отрисовке каждой ячейки. Оно предоставляет элемент HTML `event.domElement`, в который код может записывать содержимое.
 * **onDisposeCell():** — это событие, которое происходит сразу после удаления `event.cellDiv`. Его можно использовать для освобождения ресурсов, выделенных во время отрисовки полей. Например, если обработчик события `onRenderCell()` подключил элемент React, то для его освобождения необходимо использовать метод `onDisposeCell()`. В противном случае произойдет утечка ресурсов. 
 
-Ниже представлено содержимое методов **onRenderCell()** и **onDisposeCell()** в стандартном решении.
+Ниже представлено содержимое методов **onRenderCell()** и **onDisposeCell()** в решении по умолчанию.
 
-![Стандартная реализация обработчиков событий onRenderCell и onDisposeCell](../../../../images/ext-field-onrender-default-solution.png)
+```ts
+  @override
+  public onRenderCell(event: IFieldCustomizerCellEventParameters): void {
+    // Use this method to perform your custom cell rendering.
+    const text: string = `['${event.fieldValue}']`;
+
+    event.domElement.innerText = text;
+
+    event.domElement.classList.add(styles.cell);
+  }
+
+  @override
+  public onDisposeCell(event: IFieldCustomizerCellEventParameters): void {
+    // This method should be used to free any resources that were allocated during rendering.
+    // For example, if your onRenderCell() called ReactDOM.render(), then you should
+    // call ReactDOM.unmountComponentAtNode() here.
+    super.onDisposeCell(event);
+  }
+```
 
 ## <a name="debugging-your-field-customizer-using-gulp-serve-and-query-string-parameters"></a>Отладка настройщика полей с помощью gulp serve и параметров строки запроса
 В настоящее время расширения SharePoint Framework невозможно тестировать с помощью локального рабочего места, поэтому тестировать и разрабатывать их следует непосредственно на активном сайте SharePoint Online. Однако при этом не требуется развертывать модификацию в каталоге приложений, что делает отладку простой и эффективной.
@@ -92,9 +121,9 @@ code .
 gulp serve --nobrowser
 ```
 
-Обратите внимание, что мы использовали параметр `--nobrowser`, так как локальная отладка расширений сейчас не поддерживается, то есть нет смысла запускать локальное рабочее место.
+Обратите внимание, что мы использовали параметр `--nobrowser`, так как нет смысла запускать локальную рабочую область — сейчас нельзя отлаживать расширения локально.
 
-Когда компиляция кода завершится без ошибок, полученный манифест будет доступен по адресу http://localhost:4321.
+Когда компиляция кода завершится без ошибок, полученный манифест будет доступен по адресу https://localhost:4321.
 
 ![gulp serve](../../../../images/ext-field-gulp-serve.png)
 
@@ -127,7 +156,7 @@ gulp serve --nobrowser
 Добавьте к URL-адресу приведенные ниже параметры строки запроса. Обратите внимание, что вам потребуется обновить идентификатор в соответствии с идентификатором расширения, указанным в файле **HelloWorldFieldCustomizer.manifest.json**:
 
 ```
-?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&fieldCustomizers={"Percent":{"id":"0e3d8b71-56aa-4405-9225-f08a80fc1d71","properties":{"sampleText":"Hello!"}}}
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&fieldCustomizers={"Percent":{"id":"7e7a4262-d02b-49bf-bfcb-e6ef1716aaef","properties":{"sampleText":"Hello!"}}}
 ```
 Дополнительные сведения о параметрах запросов URL-адресов
 
@@ -141,7 +170,7 @@ gulp serve --nobrowser
 Полный URL-адрес должен выглядеть примерно так, как показано ниже, но соответствовать URL-адресу и расположению нового списка.
 
 ```
-contoso.sharepoint.com/Lists/Orders/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&fieldCustomizers={"Percent":{"id":"0e3d8b71-56aa-4405-9225-f08a80fc1d71","properties":{"sampleText":"Hello!"}}}
+contoso.sharepoint.com/Lists/Orders/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&fieldCustomizers={"Percent":{"id":"7e7a4262-d02b-49bf-bfcb-e6ef1716aaef","properties":{"sampleText":"Hello!"}}}
 ```
 
 Согласитесь на загрузку манифестов отладки, нажав кнопку **Загрузить скрипты отладки** при появлении соответствующего запроса.
@@ -171,22 +200,21 @@ contoso.sharepoint.com/Lists/Orders/AllItems.aspx?loadSPFX=true&debugManifestsFi
 ```
 Откройте файл **HelloWorldFieldCustomizer.ts** в папке **src\extensions\helloWorld** и измените метод **onRednerCell**, как показано ниже.
 
-```
+```ts
   @override
   public onRenderCell(event: IFieldCustomizerCellEventParameters): void {
 
-    event.cellDiv.classList.add(styles.cell);
-    event.cellDiv.innerHTML = `
+    event.domElement.classList.add(styles.cell);
+    event.domElement.innerHTML = `
                 <div class='${styles.full}'>
-                  <div style='width: ${event.cellValue}px; background:#0094ff; color:#c0c0c0'>
-                    &nbsp; ${event.cellValue}
+                  <div style='width: ${event.fieldValue}px; background:#0094ff; color:#c0c0c0'>
+                    &nbsp; ${event.fieldValue}
                   </div>
                 </div>`;
-
   }
 ```
 
-Вернитесь к окну консоли и убедитесь, что не возникло никаких исключений. Если в *locahost* еще нет запущенных решений, выполните следующую команду:
+Вернитесь к окну консоли и убедитесь, что не возникло никаких исключений. Если в *localhost* еще нет запущенных решений, выполните следующую команду:
 
 ```
 gulp serve --nobrowser
@@ -210,9 +238,9 @@ gulp serve --nobrowser
     * **ClientSiteComponentId:** — это идентификатор (GUID) настройщика приложений, установленного в каталоге приложений. 
     * **ClientSideComponentProperties:** это необязательный параметр, с помощью которого можно предоставлять свойства для экземпляра настройщика полей.
 
-> Обратите внимание, что в настоящее время необходимо явно устанавливать пакеты решений на сайтах, чтобы расширения выполнялись должным образом. В будущем появятся альтернативные способы достижения этой цели без отдельного развертывания на каждом сайте. 
+> Обратите внимание, что вы можете указать, требуется ли добавлять решение, содержащее ваше расширение, на сайт, используя параметр `skipFeatureDeployment` в файле **package-solution.json**. Даже если устанавливать решение на сайт не требуется, чтобы расширение было видимым, свойство **ClientSideComponentId** необходимо связать с конкретными объектами. 
 
-На следующих этапах мы создадим определение поля, которое затем будет автоматически развернуто с необходимыми параметрами при установке пакета решения на сайте. 
+На следующих этапах мы создадим определение поля, которое затем будет автоматически развернуто с необходимыми параметрами при установке пакета решения на сайте.
 
 Вернитесь к решению в Visual Studio Code (или другом редакторе, который вы используете).
 
@@ -241,7 +269,7 @@ gulp serve --nobrowser
             Min="0"
             Required="FALSE"
             Group="SPFx Columns"
-            ClientSideComponentId="0e3d8b71-56aa-4405-9225-f08a80fc1d71">
+            ClientSideComponentId="7e7a4262-d02b-49bf-bfcb-e6ef1716aaef">
     </Field>
 
 </Elements>
@@ -256,7 +284,8 @@ gulp serve --nobrowser
   "solution": {
     "name": "field-extension-client-side-solution",
     "id": "11cd343e-1ce6-462c-8acb-929804d0c3b2",
-    "version": "1.0.0.0"
+    "version": "1.0.0.0",
+    "skipFeatureDeployment": false
   },
   "paths": {
     "zippedPackage": "solution/field-extension.sppkg"
@@ -274,6 +303,7 @@ gulp serve --nobrowser
     "name": "field-extension-client-side-solution",
     "id": "11cd343e-1ce6-462c-8acb-929804d0c3b2",
     "version": "1.0.0.0",
+    "skipFeatureDeployment": false,
     "features": [{
       "title": "Field Extension - Deployment of custom field.",
       "description": "Deploys a custom field with ClientSideComponentId association",

@@ -46,10 +46,11 @@
 title                   |ILocalizedString|Да     |Название веб-части, которое отображается на панели элементов.              |`"title": { "default": "Weather", "nl-nl": "Weerbericht" }`
 description             |ILocalizedString|Да     |Описание веб-части, которое отображается в подсказках панели элементов.|`"description": { "default": "Shows weather in the given location", "nl-nl": "Toont weerbericht voor de opgegeven locatie" } `
 officeFabricIconFontName|string          |нет      |Значок веб-части, который отображается на панели элементов. Значение этого параметра должно быть одним из [имен значков Office UI Fabric](https://dev.office.com/fabric#/styles/icons). Если у этого свойства есть значение, свойство **iconImageUrl** игнорируется.|`"officeFabricIconFontName": "Sunny"`
-iconImageUrl            |string          |нет      |Значок веб-части, который отображается на панели элементов и представлен URL-адресом изображения. Размер изображения, находящегося по этому URL-адресу, должен составлять 38 x 38 пикселей. Если у свойства **officeFabricIconName** нет значения, необходимо задать значение для данного свойства.|`"iconImageUrl": "https://cdn.contoso.com/weather.png"`
+iconImageUrl            |string          |нет      |Значок веб-части, который отображается на панели элементов и представлен URL-адресом изображения. Размер изображения, находящегося по этому URL-адресу, должен составлять 40 x 28 пикселей. Если у свойства **officeFabricIconName** нет значения, необходимо задать значение для данного свойства.|`"iconImageUrl": "https://cdn.contoso.com/weather.png"`
 groupId                 |string          |Да     |Идентификатор группы определяет, в какой группе панели элементов будет отображаться веб-часть. Платформа SharePoint Framework резервирует идентификаторы для групп по умолчанию. Разработчик может выбрать одну из них. Если указан идентификатор группы, свойство **group** игнорируется. Кроме того, разработчик может выбрать уникальные идентификатор и имя группы. В этом случае веб-часть будет отображаться в отдельной группе панели элементов.|`"groupId": "6737645a-4443-4210-a70e-e5e2a219133a"`
 group                   |ILocalizedString|нет      |Имя группы панели элементов, в которой будет отображаться веб-часть. Если значение не указано, веб-часть отображается в группе **Пользовательские**.|`"group": { "default": "Content", "nl-nl": "Inhoud" }`
-свойства              |TProperties     |Да     |Объект пары "ключ-значение" со значениями по умолчанию для свойств веб-части.|`"properties": { "location": "Redmond", "numberOfDays": 3, "showIcon": true }`
+dataVersion             |string          |нет      |В этом поле можно указать версию предварительно настроенных данных, предоставленных в веб-часть. Обратите внимание, что версия данных и поле версии в манифесте — это не одно и то же. Версия манифеста используется для управления версиями кода веб-части, а версия данных — для управления версиями сериализованных данных веб-части. Дополнительные сведения см. в поле dataVersion веб-части. Формат поддерживаемых значений: версия MAJOR.MINOR.|`"dataVersion": "1.0"`
+properties              |TProperties     |Да     |Объект пары "ключ-значение" со значениями по умолчанию для свойств веб-части.|`"properties": { "location": "Redmond", "numberOfDays": 3, "showIcon": true }`
 
 Некоторые свойства веб-части принимают значения типа **ILocalizedString**. Этот тип представляет собой объект пары "ключ-значение", с помощью которого разработчики могут указывать строки для различных языковых стандартов. Значение типа **ILocalizedString** должно содержать хотя бы значение **default**. При необходимости разработчик может предоставить перевод этого значения для разных языковых стандартов, поддерживаемых веб-частью. Если веб-часть размещена на странице для языкового стандарта, не указанного в локализованной строке, используется значение по умолчанию.
 
@@ -173,19 +174,27 @@ export default class GalleryWebPart extends BaseClientSideWebPart<IGalleryWebPar
 import * as React from 'react';
 import styles from './Gallery.module.scss';
 import { IGalleryProps } from './IGalleryProps';
-import { Placeholder } from '@microsoft/sp-webpart-base';
 
-export default class Gallery extends React.Component<IGalleryProps, {}> {
+export default class Gallery extends React.Component<IGalleryProps, void> {
   public render(): JSX.Element {
     if (this.needsConfiguration()) {
-      return <Placeholder
-        icon="ms-Icon--ThumbnailView"
-        iconText="Gallery"
-        description="Show items from the selected list" />;
+      return <div className="ms-Grid" style={{ color: "#666", backgroundColor: "#f4f4f4", padding: "80px 0", alignItems: "center", boxAlign: "center" }}>
+        <div className="ms-Grid-row" style={{ color: "#333" }}>
+          <div className="ms-Grid-col ms-u-hiddenSm ms-u-md3"></div>
+          <div className="ms-Grid-col ms-u-sm12 ms-u-md6" style={{ height: "100%", whiteSpace: "nowrap", textAlign: "center" }}>
+            <i className="ms-fontSize-su ms-Icon ms-Icon--ThumbnailView" style={{ display: "inline-block", verticalAlign: "middle", whiteSpace: "normal" }}></i><span className="ms-fontWeight-light ms-fontSize-xxl" style={{ paddingLeft: "20px", display: "inline-block", verticalAlign: "middle", whiteSpace: "normal" }}>Gallery</span>
+          </div>
+          <div className="ms-Grid-col ms-u-hiddenSm ms-u-md3"></div>
+        </div>
+        <div className="ms-Grid-row" style={{ width: "65%", verticalAlign: "middle", margin: "0 auto", textAlign: "center" }}>
+          <span style={{ color: "#666", fontSize: "17px", display: "inline-block", margin: "24px 0", fontWeight: 100 }}>Show items from the selected list</span>
+        </div>
+        <div className="ms-Grid-row"></div>
+      </div>;
     }
     else {
       return (
-        <div className={styles.helloWorld}>
+        <div className={styles.gallery}>
           <div className={styles.container}>
             <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
               <div className='ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1'>

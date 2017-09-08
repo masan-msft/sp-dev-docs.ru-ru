@@ -6,7 +6,13 @@
 
 Эта модель подобна использованию коллекции UserCustomAction в объекте Site или Web для связывания пользовательских ресурсов JavaScript и изменения внешнего вида страницы. Ключевое отличие (или преимущество) расширений SPFx заключается в том, что на странице гарантированно отображаются некоторые элементы независимо от изменений структуры HTML или модели DOM в будущих выпусках SharePoint Online.
 
-В этой статье мы продолжим совершенствовать расширение Hello World, создание которого описывается в предыдущей статье, — [Создание первого расширения SharePoint Framework (Hello World, часть 1)](./build-a-hello-world-extension.md) — для использования заполнителей страниц. 
+В этой статье мы продолжим совершенствовать расширение Hello World, создание которого описывается в предыдущей статье, — [Создание первого расширения SharePoint Framework (Hello World, часть 1)](./build-a-hello-world-extension.md) — для использования заполнителей страниц.
+
+Эти действия также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=ipRw6o6bOTw&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV).
+
+<a href="https://www.youtube.com/watch?v=ipRw6o6bOTw&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV">
+<img src="../../../../images/spfx-ext-youtube-tutorial2.png" alt="Screenshot of the YouTube video player for this tutorial" />
+</a>
 
 ## <a name="getting-access-to-page-placeholders"></a>Получение доступа к заполнителям страниц
 
@@ -16,25 +22,26 @@
 
 ```ts
     // Handling the header placeholder
-    if (!this._headerPlaceholder) {
-      this._headerPlaceholder = this.context.placeholders.tryAttach(
-        'PageHeader',
-        {
-          onDispose: this._onDispose
-        });
+    if (!this._bottomPlaceholder) {
+      this._bottomPlaceholder =
+        this.context.placeholderProvider.tryCreateContent(
+          PlaceholderName.Bottom,
+          { onDispose: this._onDispose });
+    ...
     }
 ```
 
-На последующих этапах мы изменим созданный ранее настройщик приложений Hello World, чтобы получить доступ к заполнителям и изменить их содержимое, добавив к ним пользовательские элементы HTML. 
+На последующих этапах мы изменим созданный ранее настройщик приложений Hello World, чтобы получить доступ к заполнителям и изменить их содержимое, добавив к ним пользовательские элементы HTML.
 
 Перейдите в Visual Studio Code (или другую интегрированную среду разработки) и откройте файл **src\extensions\helloWorld\HelloWorldApplicationCustomizer.ts.**
 
-Добавьте объект `Placeholder` к оператору импорта из `@microsoft/sp-application-base`, изменив его следующим образом:
+Добавьте объекты `PlaceholderContent` и `PlaceholderName` к оператору импорта из `@microsoft/sp-application-base`, изменив его следующим образом:
 
 ```ts
 import {
-  BaseApplicationCustomizer,
-  Placeholder
+  BaseApplicationCustomizer, 
+  PlaceholderContent,
+  PlaceholderName
 } from '@microsoft/sp-application-base';
 ```
 
@@ -56,27 +63,26 @@ import { escape } from '@microsoft/sp-lodash-subset';
 
 ```css
 .app {
-  .header {
-    height:60px; 
-    text-align:center; 
-    line-height:2.5; 
+  .top {
+    height:60px;
+    text-align:center;
+    line-height:2.5;
     font-weight:bold;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .footer {
-    height:40px; 
-    text-align:center; 
-    line-height:2.5; 
+  .bottom {
+    height:40px;
+    text-align:center;
+    line-height:2.5;
     font-weight:bold;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 }
-
 ```
 
 Вернитесь к файлу **HelloWorldApplicationCustomizer.ts** и измените интерфейс **IHelloWorldApplicationCustomizerProperties**, добавив к нему свойства Header и Footer, как показано ниже.
@@ -85,8 +91,8 @@ import { escape } from '@microsoft/sp-lodash-subset';
 
 ```ts
 export interface IHelloWorldApplicationCustomizerProperties {
-  Header: string;
-  Footer: string;
+  Top: string;
+  Bottom: string;
 }
 ```
 
@@ -97,100 +103,113 @@ export default class HelloWorldApplicationCustomizer
   extends BaseApplicationCustomizer<IHelloWorldApplicationCustomizerProperties> {
   
   // These have been added
-  private _headerPlaceholder: Placeholder;
-  private _footerPlaceholder: Placeholder;
+  private _topPlaceholder: PlaceholderContent | undefined;
+  private _bottomPlaceholder: PlaceholderContent | undefined;
 ```
 
-Замените метод `onRender` на приведенный ниже код.
-
-* Мы используем метод `this.context.placeholders.tryAttach` для доступа к заполнителю.
-* Код расширения не должен предполагать, что нужный заполнитель доступен.
-* Код ожидает настраиваемые свойства `Header` и `Footer`. Если свойства существуют, они будут отрисовываться в заполнителях.
-* Обратите внимание, что в приведенном ниже методе пути к верхнему и нижнему колонтитулам практически идентичны. Единственные отличия связаны с используемыми переменными и определениями стилей.
+Обновите код метода `onInit` как показано ниже.
 
 ```ts
   @override
-  public onRender(): void {
+  public onInit(): Promise<void> {
+    Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
 
-    console.log('CustomHeader.onRender()');
-    console.log('Available placeholders: ',
-      this.context.placeholders.placeholderNames.join(', '));
+    // Added to handle possible changes on the existence of placeholders
+    this.context.placeholderProvider.changedEvent.add(this, this._renderPlaceHolders);
 
-    // Handling the header placeholder
-    if (!this._headerPlaceholder) {
-      this._headerPlaceholder = this.context.placeholders.tryAttach(
-        'PageHeader',
-        {
-          onDispose: this._onDispose
-        });
-
-      // The extension should not assume that the expected placeholder is available.
-      if (!this._headerPlaceholder) {
-        console.error('The expected placeholder (PageHeader) was not found.');
-        return;
-      }
-
-      if (this.properties) {
-        let headerString: string = this.properties.Header;
-        if (!headerString) {
-          headerString = '(Header property was not defined.)';
-        }
-
-        if (this._headerPlaceholder.domElement) {
-          this._headerPlaceholder.domElement.innerHTML = `
-                <div class="${styles.app}">
-                  <div class="ms-bgColor-themeDark ms-fontColor-white ${styles.header}">
-                    <i class="ms-Icon ms-Icon--Info" aria-hidden="true"></i> ${escape(headerString)}
-                  </div>
-                </div>`;
-        }
-      }
-    }
-
-    // Handling the footer placeholder
-    if (!this._footerPlaceholder) {
-      this._footerPlaceholder = this.context.placeholders.tryAttach(
-        'PageFooter',
-        {
-          onDispose: this._onDispose
-        });
-
-      // The extension should not assume that the expected placeholder is available.
-      if (!this._footerPlaceholder) {
-        console.error('The expected placeholder (PageFooter) was not found.');
-        return;
-      }
-
-      if (this.properties) {
-        let footerString: string = this.properties.Footer;
-        if (!footerString) {
-          footerString = '(Footer property was not defined.)';
-        }
-
-        if (this._footerPlaceholder.domElement) {
-          this._footerPlaceholder.domElement.innerHTML = `
-                <div class="${styles.app}">
-                  <div class="ms-bgColor-themeDark ms-fontColor-white ${styles.footer}">
-                    <i class="ms-Icon ms-Icon--Info" aria-hidden="true"></i> ${escape(footerString)}
-                  </div>
-                </div>`;
-        }
-      }
-    }
+    // Call render method for generating the needed html elements
+    this._renderPlaceHolders();
+    return Promise.resolve<void>();
   }
-
 ```
 
-Добавьте приведенный ниже метод после метода `onRender`. В этом случае мы просто выводим сообщение в консоли, когда расширение удаляется со страницы. 
+
+Создайте новый частный метод `_renderPlaceHolders` со следующим кодом:
+
+* Мы используем метод `this.context.placeholderProvider.tryCreateContent` для доступа к заполнителю.
+* Код расширения не должен предполагать, что нужный заполнитель доступен.
+* Код ожидает настраиваемые свойства `Top` и `Bottom`. Если свойства существуют, они будут отрисовываться в заполнителях.
+* Обратите внимание, что в приведенном ниже пути к коду для верхних и нижних заполнителей практически идентичны. Единственные отличия связаны с используемыми переменными и определениями стилей.
 
 ```ts
- private _onDispose(): void {
-    console.log('[CustomHeader._onDispose] Disposed custom header.');
+   private _renderPlaceHolders(): void {
+
+    console.log('HelloWorldApplicationCustomizer._renderPlaceHolders()');
+    console.log('Available placeholders: ',
+      this.context.placeholderProvider.placeholderNames.map(name => PlaceholderName[name]).join(', '));
+
+    // Handling the top placeholder
+    if (!this._topPlaceholder) {
+      this._topPlaceholder =
+        this.context.placeholderProvider.tryCreateContent(
+          PlaceholderName.Top,
+          { onDispose: this._onDispose });
+
+      // The extension should not assume that the expected placeholder is available.
+      if (!this._topPlaceholder) {
+        console.error('The expected placeholder (Top) was not found.');
+        return;
+      }
+
+      if (this.properties) {
+        let topString: string = this.properties.Top;
+        if (!topString) {
+          topString = '(Top property was not defined.)';
+        }
+
+        if (this._topPlaceholder.domElement) {
+          this._topPlaceholder.domElement.innerHTML = `
+                <div class="${styles.app}">
+                  <div class="ms-bgColor-themeDark ms-fontColor-white ${styles.top}">
+                    <i class="ms-Icon ms-Icon--Info" aria-hidden="true"></i> ${escape(topString)}
+                  </div>
+                </div>`;
+        }
+      }
+    }
+
+    // Handling the bottom placeholder
+    if (!this._bottomPlaceholder) {
+      this._bottomPlaceholder =
+        this.context.placeholderProvider.tryCreateContent(
+          PlaceholderName.Bottom,
+          { onDispose: this._onDispose });
+
+      // The extension should not assume that the expected placeholder is available.
+      if (!this._bottomPlaceholder) {
+        console.error('The expected placeholder (Bottom) was not found.');
+        return;
+      }
+
+      if (this.properties) {
+        let bottomString: string = this.properties.Bottom;
+        if (!bottomString) {
+          bottomString = '(Bottom property was not defined.)';
+        }
+
+        if (this._bottomPlaceholder.domElement) {
+          this._bottomPlaceholder.domElement.innerHTML = `
+                <div class="${styles.app}">
+                  <div class="ms-bgColor-themeDark ms-fontColor-white ${styles.bottom}">
+                    <i class="ms-Icon ms-Icon--Info" aria-hidden="true"></i> ${escape(bottomString)}
+                  </div>
+                </div>`;
+        }
+      }
+    }
   }
 
 ```
 
-Теперь код готов к тестированию в SharePoint Online. 
+Добавьте приведенный ниже метод после метода `_renderPlaceHolders`. В этом случае мы просто выводим сообщение в консоли, когда расширение удаляется со страницы. 
+
+```ts
+  private _onDispose(): void {
+    console.log('[HelloWorldApplicationCustomizer._onDispose] Disposed custom top and bottom placeholders.');
+  }
+```
+
+Теперь код готов к тестированию в SharePoint Online.
 
 Перейдите в окно консоли, в котором запущена команда `gulp serve`, и проверьте наличие ошибок. Если gulp сообщил об ошибках, их нужно исправить.
 
@@ -208,12 +227,12 @@ gulp serve --nobrowser
 * Мы также используем свойства JSON Header и Footer, чтобы предоставлять параметры или модификации в настройщик приложений. В данном случае мы просто выводим эти значения, но вы можете настроить поведение в соответствии со свойствами, используемыми в рабочей среде. 
 
 ```
-?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"5fc73e12-8085-4a4b-8743-f6d02ffe1240":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"Header":"Header area of the page","Footer":"Footer area in the page"}}}
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"e5625e23-5c5a-4007-a335-e6c2c3afa485":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"Top":"Top area of the page","Bottom":"Bottom area in the page"}}}
 ```
 Полный URL-адрес запроса должен выглядеть примерно так:
 
 ```
-contoso.sharepoint.com/Lists/Contoso/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"5fc73e12-8085-4a4b-8743-f6d02ffe1240":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"Header":"Header area of the page","Footer":"Footer area in the page"}}}
+contoso.sharepoint.com/Lists/Contoso/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"e5625e23-5c5a-4007-a335-e6c2c3afa485":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"Top":"Top area of the page","Bottom":"Bottom area in the page"}}}
 ```
 
 ![Запрос разрешения на отладку манифеста на странице](../../../../images/ext-app-debug-manifest-message.png)
