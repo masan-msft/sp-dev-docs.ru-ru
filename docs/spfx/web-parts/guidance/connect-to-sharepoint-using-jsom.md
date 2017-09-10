@@ -310,7 +310,7 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
     });
 
     return (
-      <div className={styles.helloWorld}>
+      <div className={styles.sharePointLists}>
         <div className={styles.container}>
           <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
             <div className="ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1">
@@ -364,16 +364,21 @@ gulp serve --nobrowser
 
 ```json
 {
-  "entries": [
-    {
-      "entry": "./lib/webparts/sharePointLists/SharePointListsWebPart.js",
-      "manifest": "./src/webparts/sharePointLists/SharePointListsWebPart.manifest.json",
-      "outputPath": "./dist/share-point-lists.bundle.js"
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "share-point-lists-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/sharePointLists/SharePointListsWebPart.js",
+          "manifest": "./src/webparts/sharePointLists/SharePointListsWebPart.manifest.json"
+        }
+      ]
     }
-  ],
+  },
   "externals": {},
   "localizedResources": {
-    "sharePointListsStrings": "webparts/sharePointLists/loc/{locale}.js"
+    "SharePointListsWebPartStrings": "lib/webparts/sharePointLists/loc/{locale}.js"
   }
 }
 ```
@@ -417,7 +422,7 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
 }
 ```
 
-В том же файле замените код метода `getListsTitles` на следующий:
+В том же файле обновите метод `getListsTitles` следующим образом:
 
 ```ts
 export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
@@ -459,11 +464,9 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
 }
 ```
 
-Чтобы сообщать пользователю о состоянии загрузки сценариев SharePoint JSOM, добавьте оператор `import`, ссылающийся на компонент `Placeholder`, и замените код метода `render` на следующий:
+Чтобы сообщать пользователю о состоянии загрузки сценариев SharePoint JSOM, обновите метод `render` следующим образом:
 
 ```tsx
-import { Placeholder } from '@microsoft/sp-webpart-base';
-
 export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
   // ...
   public render(): React.ReactElement<ISharePointListsProps> {
@@ -472,13 +475,22 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
     });
 
     return (
-      <div className={styles.helloWorld}>
+      <div className={styles.sharePointLists}>
         <div className={styles.container}>
           {this.state.loadingScripts &&
-            <Placeholder
-              icon={'ms-Icon--CustomList'}
-              iconText={'SharePoint lists'}
-              description={'Loading SharePoint JSOM scripts...'} />}
+            <div className="ms-Grid" style={{ color: "#666", backgroundColor: "#f4f4f4", padding: "80px 0", alignItems: "center", boxAlign: "center" }}>
+              <div className="ms-Grid-row" style={{ color: "#333" }}>
+                <div className="ms-Grid-col ms-u-hiddenSm ms-u-md3"></div>
+                <div className="ms-Grid-col ms-u-sm12 ms-u-md6" style={{ height: "100%", whiteSpace: "nowrap", textAlign: "center" }}>
+                  <i className="ms-fontSize-su ms-Icon ms-Icon--CustomList" style={{ display: "inline-block", verticalAlign: "middle", whiteSpace: "normal" }}></i><span className="ms-fontWeight-light ms-fontSize-xxl" style={{ paddingLeft: "20px", display: "inline-block", verticalAlign: "middle", whiteSpace: "normal" }}>SharePoint lists</span>
+                </div>
+                <div className="ms-Grid-col ms-u-hiddenSm ms-u-md3"></div>
+              </div>
+              <div className="ms-Grid-row" style={{ width: "65%", verticalAlign: "middle", margin: "0 auto", textAlign: "center" }}>
+                <span style={{ color: "#666", fontSize: "17px", display: "inline-block", margin: "24px 0", fontWeight: 100 }}>Loading SharePoint JSOM scripts...</span>
+              </div>
+              <div className="ms-Grid-row"></div>
+            </div>}
           {this.state.loadingScripts === false &&
             <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
               <div className="ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1">
@@ -507,7 +519,7 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
 }
 ```
 
-Когда состояние компонента React указывает на загрузку сценариев SharePoint JSOM, появляется стандартный заполнитель SharePoint Framework. После загрузки сценариев в веб-части появится обычное содержимое с кнопкой, позволяющей пользователям загрузить сведения о списках SharePoint на текущем сайте.
+Когда состояние компонента React указывает на загрузку сценариев SharePoint JSOM, появляется заполнитель. После загрузки сценариев в веб-части появится обычное содержимое с кнопкой, позволяющей пользователям загрузить сведения о списках SharePoint на текущем сайте.
 
 ### <a name="load-sharepoint-jsom-scripts-using-spcomponentloader"></a>Загрузка сценариев SharePoint JSOM с помощью класса SPComponentLoader
 
@@ -520,7 +532,7 @@ import { SPComponentLoader } from '@microsoft/sp-loader';
 
 export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
   // ...
-  private componentDidMount(): void {
+  public componentDidMount(): void {
     SPComponentLoader.loadScript('/_layouts/15/init.js', {
       globalExportsName: '$_global_init'
     })
