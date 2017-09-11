@@ -62,13 +62,20 @@ export interface IRecentDocumentsWebPartProps {
 
 ```json
 {
-  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+  "$schema": "https://dev.office.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
 
   "id": "7a7e3aa9-5d8a-4155-936b-0b0e06e9ca11",
   "alias": "RecentDocumentsWebPart",
   "componentType": "WebPart",
-  "version": "0.0.1",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
   "manifestVersion": 2,
+
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
 
   "preconfiguredEntries": [{
     "groupId": "7a7e3aa9-5d8a-4155-936b-0b0e06e9ca11",
@@ -372,13 +379,20 @@ export interface IRecentDocumentWebPartProps {
 
 ```json
 {
-  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+  "$schema": "https://dev.office.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
 
   "id": "71a6f643-1ac1-47ee-a9f1-502ef52f26d4",
   "alias": "RecentDocumentWebPart",
   "componentType": "WebPart",
-  "version": "0.0.1",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
   "manifestVersion": 2,
+
+  // If true, the component can only be installed on sites where Custom Script is allowed.
+  // Components that allow authors to embed arbitrary script code should set this to true.
+  // https://support.office.com/en-us/article/Turn-scripting-capabilities-on-or-off-1f2c515f-5d7e-448a-9fd7-835da935584f
+  "requiresCustomScript": false,
 
   "preconfiguredEntries": [{
     "groupId": "71a6f643-1ac1-47ee-a9f1-502ef52f26d4",
@@ -490,19 +504,19 @@ import {
   DocumentCard,
   DocumentCardPreview,
   DocumentCardTitle,
-  DocumentCardActivity,
-  ImageFit
-} from 'office-ui-fabric-react';
+  DocumentCardActivity
+} from 'office-ui-fabric-react/lib/DocumentCard';
+import { ImageFit } from 'office-ui-fabric-react/lib/Image';
 import { IDocument } from '../../IDocument';
 import styles from './RecentDocument.module.scss';
 import { IRecentDocumentProps } from './IRecentDocumentProps';
 
-export default class RecentDocument extends React.Component<IRecentDocumentProps, void> {
+export default class RecentDocument extends React.Component<IRecentDocumentProps, {}> {
   public render(): React.ReactElement<IRecentDocumentProps> {
     const document: IDocument = this.props.document;
 
     return (
-      <div className={styles.helloWorld}>
+      <div className={styles.recentDocument}>
         <DocumentCard onClickHref={document.url}>
           <DocumentCardPreview previewImages={[{
             name: document.title,
@@ -719,7 +733,7 @@ import { IDocument } from '../services/documentsService';
 а не такой:
 
 ```ts
-import { IDocument } from '../services/documentsService/IDocument.ts';
+import { IDocument } from '../services/documentsService/IDocument';
 ```
 
 Если в тот или иной момент вы решите, что предпочтительней переместить файл **IDocument.ts** во вложенную папку или объединить несколько файлов, изменить потребуется только путь к определению блока данных (**./src/services/documentsService/index.ts**). Все элементы проекта по-прежнему могут использовать тот же относительный путь к папке **documentsService**, чтобы ссылаться на интерфейс `IDocument`.
