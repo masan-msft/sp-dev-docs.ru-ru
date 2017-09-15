@@ -189,7 +189,7 @@ export default class ItRequestsWebPart extends BaseClientSideWebPart<IItRequests
   public render(): void {
     this.domElement.innerHTML = `
       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" />
-      <table id="requests" class="display ${styles.helloWorld}" cellspacing="0" width="100%">
+      <table id="requests" class="display ${styles.itRequests}" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>ID</th>
@@ -505,7 +505,7 @@ gulp serve --nobrowser
 Для начала установите определения типов для jQuery и DataTables, выполнив в командной строке следующую команду:
 
 ```sh
-npm install --save-dev @types/jquery @types/jquery.datatables
+npm install --save-dev @types/jquery@1 @types/datatables.net
 ```
 
 Определения типов для пакета Moment.js распространяются вместе с ним. Несмотря на то что мы загружаем Moment.js с URL-адреса, для использования его типов все равно нужно установить в проекте пакет Moment.js.
@@ -530,7 +530,7 @@ import * as $ from 'jquery';
 var $: any = (window as any).$;
 ```
 
-DataTables — это подключаемый модуль для jQuery, который присоединяется к jQuery, поэтому определение его типа невозможно загрузить напрямую. Вместо этого необходимо добавить его в список глобально загружаемых типов. В редакторе кода откройте файл **./tsconfig.json** и добавьте **jquery.datatables** в массив **types**:
+DataTables — это подключаемый модуль для jQuery, который присоединяется к jQuery, поэтому определение его типа невозможно загрузить напрямую. Вместо этого необходимо добавить его в список глобально загружаемых типов. В редакторе кода откройте файл **./tsconfig.json** и добавьте **datatables.net** в массив **types**:
 
 ```json
 {
@@ -544,7 +544,7 @@ DataTables — это подключаемый модуль для jQuery, ко�
     "types": [
       "es6-promise",
       "es6-collections",
-      "jquery.datatables",
+      "datatables.net",
       "webpack-env"
     ]
   }
@@ -607,7 +607,7 @@ export default class ItRequestsWebPart extends BaseClientSideWebPart<IItRequests
       },
       columnDefs: [{
         targets: 4,
-        render: $.fn.dataTable.render.moment('YYYY/MM/DD')
+        render: ($.fn as any).dataTable.render.moment('YYYY/MM/DD')
       }]
     });
   }
@@ -629,7 +629,7 @@ import * as $ from 'jquery';
 import * as moment from 'moment';
 
 /* tslint:disable:no-function-expression */
-$.fn.dataTable.render.moment = function (from: string, to: string, locale: string): (d: any, type: string, row: any) => string {
+($.fn as any).dataTable.render.moment = function (from: string, to: string, locale: string): (d: any, type: string, row: any) => string {
 /* tslint:enable */
     // Argument shifting
     if (arguments.length === 1) {

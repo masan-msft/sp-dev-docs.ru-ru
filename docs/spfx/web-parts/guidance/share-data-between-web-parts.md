@@ -1,7 +1,5 @@
 # <a name="share-data-between-client-side-web-parts"></a>Совместное использование данных клиентскими веб-частями
 
-> Примечание. Эта статья еще не была проверена на общедоступной версии SPFx, поэтому у вас могут возникнуть трудности при использовании последнего выпуска.
-
 При создании клиентских веб-частей можно загрузить данные один раз и повторно использовать их в разных веб-частях. Это улучшит отображение страниц и уменьшит нагрузку на сеть. В статье описан ряд подходов, позволяющий обеспечить совместное использование данных разными веб-частями.
 
 ## <a name="why-share-data-between-web-parts"></a>Зачем разным веб-частям использовать одни и те же данные
@@ -327,12 +325,14 @@ export class DocumentsService implements IDocumentsService {
 
 ```json
 {
-  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+  "$schema": "https://dev.office.com/json-schemas/spfx/client-side-library-manifest.schema.json",
 
   "id": "69b1aacd-68f2-4147-8433-8efb08eae331",
   "alias": "DocumentsService",
   "componentType": "Library",
-  "version": "0.0.1",
+
+  // The "*" signifies that the version should be taken from the package.json
+  "version": "*",
   "manifestVersion": 2
 }
 ```
