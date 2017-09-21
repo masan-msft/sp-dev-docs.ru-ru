@@ -4,10 +4,9 @@
 
 >**Примечание.** Прежде чем выполнять действия, указанные в этой статье, обязательно [настройте клиент Office 365](./set-up-your-developer-tenant).
 
-Эти действия также показаны в видео [канала YouTube, посвященного SharePoint PnP](https://www.youtube.com/watch?v=_fxYexlUhe0&t=5s&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=1). 
+Эти действия также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=_fxYexlUhe0&t=5s&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=1). 
 
-<a href="https://www.youtube.com/watch?v=_fxYexlUhe0&t=5s&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
-    <img src="../../images/spfx-youtube-tutorial0.png" alt="Screenshot of the YouTube video player for this tutorial" />
+<a href="https://www.youtube.com/watch?v=_fxYexlUhe0&t=5s&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq"> <img src="../../images/spfx-youtube-tutorial0.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
 
@@ -65,7 +64,7 @@ npm install -g yo gulp
 ```
 npm install -g @microsoft/generator-sharepoint 
 ```
->**Примечание.** Генератор yeoman для SharePoint должен развертываться глобально с первой общедоступной версией. Существуют известные проблемы при локальной установке в проекте, которые планируется устранить после выпуска общедоступной версии.
+>**Примечание.** Генератор Yeoman для SharePoint можно установить как глобально, так и локально. В этом случае мы устанавливаем генератор Yeoman для SharePoint глобально. 
 
 
 ## <a name="optional-tools"></a>Дополнительные средства

@@ -4,7 +4,7 @@
 
 Расширения SharePoint Framework (SPFx) — это клиентские компоненты, которые запускаются в контексте страницы SharePoint. Расширения можно развертывать в SharePoint Online, используя для их создания современные инструменты и библиотеки JavaScript.
 
-Действия, описанные в этой статье, также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=0BeS0HukW24&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV). 
+В этой статье описано, как создать свое первое расширение SharePoint Framework Hello World. Эти действия также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=0BeS0HukW24&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV). 
 
 <a href="https://www.youtube.com/watch?v=0BeS0HukW24&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV">
 <img src="../../../../images/spfx-ext-youtube-tutorial1.png" alt="Screenshot of the YouTube video player for this tutorial" />
@@ -55,13 +55,13 @@
 
     Сведения об устранении неполадок см. в статье [Известные проблемы](../basics/known-issues).
 
-6. Завершив формирование решения, введите в консоли приведенную ниже команду, чтобы запустить Visual Studio Code.
+6. После формирования шаблонов решения введите в консоли приведенную ниже команду, чтобы запустить Visual Studio Code.
 
     ```
     code .
     ```
 
-    >**Примечание.** Клиентское решение SharePoint создано с помощью HTML и TypeScript, поэтому для разработки расширения можно использовать любой редактор кода, который поддерживает клиентское программирование.
+        >**Note:** Because the SharePoint client-side solution is HTML/TypeScript based, you can use any code editor that supports client-side development to build your extension.
 
     Обратите внимание, что стандартная структура решения аналогична структуре клиентских веб-частей. Это базовая структура решения SharePoint Framework, многие параметры которой не зависят от типа решения.
 
@@ -137,9 +137,9 @@ gulp serve --nobrowser
 contoso.sharepoint.com/Lists/Contoso/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"e5625e23-5c5a-4007-a335-e6c2c3afa485":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"testMessage":"Hello as property!"}}}
 ```
 
-![Запрос разрешения на отладку манифеста на странице](../../../../images/ext-app-debug-manifest-message.png)
-
 Выберите **Загрузить скрипты отладки**, чтобы продолжить загрузку скриптов с локального узла.
+
+![Запрос разрешения на отладку манифеста на странице](../../../../images/ext-app-debug-manifest-message.png)
 
 На странице должно появиться предупреждение.
 
