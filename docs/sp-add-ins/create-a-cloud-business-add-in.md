@@ -1,8 +1,18 @@
+---
+title: "Создание облачной бизнес-надстройки"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: dd7c03e54da77a99f96e206844ca934de758ea8b
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="create-a-cloud-business-add-in"></a>Создание облачной бизнес-надстройки
 С помощью шаблона "Облачная бизнес-надстройка" в Visual Studio можно создавать надстройки для SharePoint или SharePoint в Office 365, оптимизированные для добавления данных и управления ими.
  
 
- **Примечание.** Название "приложения для SharePoint" меняется на "надстройки SharePoint". Пока изменения не будут внесены полностью, в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio по-прежнему может встречаться термин "приложение". Дополнительные сведения см. в разделе [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -24,7 +34,7 @@
 
  
 
-  ![Шаблон для создания облачного бизнес-приложения](../../images/CloudBusinessApptemplate.PNG)
+  ![Шаблон для создания облачного бизнес-приложения](../images/CloudBusinessApptemplate.PNG)
  
 
  
@@ -41,7 +51,7 @@
 
  
 
-  ![URL-адрес SharePoint](../../images/SiteURL.PNG)
+  ![URL-адрес SharePoint](../images/SiteURL.PNG)
  
 
     URL-адрес должен быть представлен в следующем виде: https://_MySite_.sharepoint.com/sites/Developer/.
@@ -59,7 +69,7 @@
 
  
 
-  ![Узел проекта верхнего уровня](../../images/Top-levelprojectnode.PNG)
+  ![Узел проекта верхнего уровня](../images/Top-levelprojectnode.PNG)
  
 
     Откроется конструктор приложений.
@@ -71,7 +81,7 @@
 
  
 
-  ![Вкладка свойств SharePoint](../../images/SharePointtab.PNG)
+  ![Вкладка свойств SharePoint](../images/SharePointtab.PNG)
  
 
  
@@ -88,10 +98,10 @@
 <a name="bk_addresources"> </a>
 
 
--  [Разработка облачных бизнес-надстроек](develop-cloud-business-add-ins)
+-  [Разработка облачных бизнес-надстроек](develop-cloud-business-add-ins.md)
     
  
--  [Создание облачных бизнес-надстроек](create-cloud-business-add-ins)
+-  [Создание облачных бизнес-надстроек](create-cloud-business-add-ins.md)
     
  
 

@@ -1,13 +1,22 @@
-
+---
+title: "Использование клиентского элемента управления \"Выбор людей\" в надстройках SharePoint с размещением в SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: ab5c3d1cb7c47518a4806af2fc075f1730e53399
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="use-the-client-side-people-picker-control-in-sharepoint-hosted-sharepoint-add-ins"></a>Использование клиентского элемента управления "Выбор людей" в надстройках SharePoint с размещением в SharePoint
 В этой статье рассказывается, как использовать клиентский элемент управления "Выбор людей" в надстройках SharePoint, размещаемых в SharePoint.
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
- **Важно!** В этой статье предполагается, что вы умеете создавать надстройки SharePoint, размещаемые в SharePoint. Чтобы узнать, как это сделать, изучите статью [Приступая к созданию надстроек SharePoint, размещаемых у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins).
+ **Важно!** В этой статье предполагается, что вы умеете создавать надстройки SharePoint, размещаемые в SharePoint. Чтобы узнать, как это сделать, изучите статью [Приступая к созданию надстроек SharePoint, размещаемых у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins.md).
  
 
 
@@ -52,7 +61,7 @@
 
  
 
- **Примечание.** Сведения о том, как зарегистрировать Сайт разработчика и начать использовать Napa, см. в статье [Настройка среды разработки для надстроек SharePoint в Office 365](set-up-a-development-environment-for-sharepoint-add-ins-on-office-365).
+ **Примечание.** Сведения о том, как зарегистрировать Сайт разработчика и начать использовать Napa, см. в статье [Настройка среды разработки для надстроек SharePoint в Office 365](set-up-a-development-environment-for-sharepoint-add-ins-on-office-365.md).
  
 
 Если вы не используете Napa на Сайте разработчика, вам потребуется выполнить указанные ниже компоненты.
@@ -73,7 +82,7 @@
  **Примечание.** Рекомендации по настройке среды разработки согласно вашим потребностям см. в статье [Начало создания надстроек Office и SharePoint](http://msdn.microsoft.com/library/187f8c8c-1b15-471c-80b5-69a40e67deea.aspx).
  
 
-В следующих действиях описываются общие действия для добавления элемента управления выбора в надстройку и последующего получения ее сведений о пользователях в другом клиентском элементе управления. Соответствующий код можно найти в разделе  [Пример кода. Использование клиентского элемента управления "Выбор людей"](use-the-client-side-people-picker-control-in-sharepoint-hosted-sharepoint-add-ins#bk_example).
+В следующих действиях описываются общие действия для добавления элемента управления выбора в надстройку и последующего получения ее сведений о пользователях в другом клиентском элементе управления. Соответствующий код можно найти в разделе  [Пример кода. Использование клиентского элемента управления "Выбор людей"](use-the-client-side-people-picker-control-in-sharepoint-hosted-sharepoint-add-in.md#bk_example).
  
 
  
@@ -246,7 +255,7 @@ function onFail(sender, args) {
 <a name="bk_addresources"> </a>
 
 
--  [Создание компонентов пользовательского интерфейса в SharePoint](create-ux-components-in-sharepoint-2013)
+-  [Создание компонентов пользовательского интерфейса в SharePoint](create-ux-components-in-sharepoint.md)
     
  
 -  [Общие сведения о средстве выбора людей и поставщиках требований (SharePoint)](http://technet.microsoft.com/library/gg602078.aspx)

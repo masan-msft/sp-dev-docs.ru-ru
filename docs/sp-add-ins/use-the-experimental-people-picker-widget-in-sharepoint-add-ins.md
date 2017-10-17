@@ -1,13 +1,22 @@
-
+---
+title: "Использование экспериментального мини-приложения \"Выбор людей\" в надстройках SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 72a0ff7295ff45f13c46d56ae448ca0b4f806ab0
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="use-the-experimental-people-picker-widget-in-sharepoint-add-ins"></a>Использование экспериментального мини-приложения "Выбор людей" в надстройках SharePoint
 Узнайте, как использовать мини-приложение "Выбор людей" на любой веб-странице, даже если страница не размещена в SharePoint. С помощью мини-приложения "Выбор людей" можно помочь пользователям надстройки находить и выбирать людей и группы.
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
- **Внимание!** Экспериментальные мини-приложения Office для веб-страниц предоставляются только в целях исследований и сбора отзывов. Не следует использовать их в производственных сценариях. Принцип работы мини-приложений Office для веб-страниц может существенно измениться в будущих выпусках. Ознакомьтесь с [условиями лицензии на экспериментальные мини-приложения Office для веб-страниц](office-web-widgets--experimental-license-terms).
+ **Внимание!** Экспериментальные мини-приложения Office для веб-страниц предоставляются только в целях исследований и сбора отзывов. Не следует использовать их в производственных сценариях. Принцип работы мини-приложений Office для веб-страниц может существенно измениться в будущих выпусках. Ознакомьтесь с [условиями лицензии на экспериментальные мини-приложения Office для веб-страниц](office-web-widgetsexperimental-license-terms.md).
  
 
 
@@ -20,7 +29,7 @@
  
 
  
-![Экспериментальный элемент управления "Выбор людей" на странице](../../images/PeoplePicker_basic.png)
+![Экспериментальный элемент управления "Выбор людей" на странице](../images/PeoplePicker_basic.png)
  
 
  
@@ -68,7 +77,7 @@
 
 ## <a name="use-the-people-picker-widget-in-a-provider-hosted-sharepoint-add-in"></a>Использование мини-приложения "Выбор людей" в размещаемой у поставщика надстройке SharePoint
 
-В этом примере представлена простая страница, размещенная вне SharePoint, которая объявляет мини-приложение "Выбор людей" с использованием разметки. Для простоты в этом примере не объявлено никаких параметров. Пример с параметрами приведен в разделе [Следующие шаги](use-the-experimental-people-picker-widget-in-sharepoint-add-ins#NextSteps).
+В этом примере представлена простая страница, размещенная вне SharePoint, которая объявляет мини-приложение "Выбор людей" с использованием разметки. Для простоты в этом примере не объявлено никаких параметров. Пример с параметрами приведен в разделе [Следующие шаги](use-the-experimental-people-picker-widget-in-sharepoint-add-ins.md#NextSteps).
  
 
  
@@ -264,7 +273,7 @@ Office.Controls.Runtime.initialize({});
 3. Выберите значок надстройки на странице **Содержимое сайта**.
     
  
-Вы также можете загрузить этот пример из коллекции кода. См. пример кода [Использование экспериментальной версии мини-приложения "Выбор людей" в надстройке](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-57859f85).
+Вы также можете загрузить этот пример из коллекции кода. См. пример кода [Использование экспериментальной версии мини-приложения "Выбор людей" в надстройке](http://code.msdn.microsoft.com/SharePoint-Use-the-57859f85).
  
 
  
@@ -300,7 +309,7 @@ new Office.Controls.PeoplePicker(
     document.getElementById("PeoplePickerDiv"), {});
 ```
 
-Пример кода, иллюстрирующий выполнение этих задач, представлен на странице **JSSimple.html** образца [Использование экспериментального мини-приложения "Выбор людей" в надстройке](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-57859f85).
+Пример кода, иллюстрирующий выполнение этих задач, представлен на странице **JSSimple.html** образца [Использование экспериментального мини-приложения "Выбор людей" в надстройке](http://code.msdn.microsoft.com/SharePoint-Use-the-57859f85).
  
 
  
@@ -346,7 +355,7 @@ ctrl.selectedItems.length.toString();
  
 
  
-Пример указания параметров приведен на страницах **MarkupOptions.html** и **JSOptions.html** образца [Использование экспериментального мини-приложения "Выбор людей" в надстройке](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-57859f85).
+Пример указания параметров приведен на страницах **MarkupOptions.html** и **JSOptions.html** образца [Использование экспериментального мини-приложения "Выбор людей" в надстройке](http://code.msdn.microsoft.com/SharePoint-Use-the-57859f85).
  
 
  
@@ -399,7 +408,7 @@ var principal = pplPicker.selectedItems[i];
 $("#msg").text(principal.text + " is selected in the control.");
 ```
 
-Пример получения выбранных пользователей или групп из мини-приложения приведен на странице **demo.html** в разделе [Мини-приложения Office для веб-страниц: экспериментальная демо-версия](http://code.msdn.microsoft.com/SharePoint-2013-Office-Web-6d44aa9e).
+Пример получения выбранных пользователей или групп из мини-приложения приведен на странице **demo.html** в разделе [Мини-приложения Office для веб-страниц: экспериментальная демо-версия](http://code.msdn.microsoft.com/SharePoint-Office-Web-6d44aa9e).
  
 
  
@@ -416,7 +425,7 @@ $("#msg").text(principal.text + " is selected in the control.");
  
 
  
-![Иерархия HTML в мини-приложении "Выбор людей"](../../images/PeoplePicker_HTMLHierarchy.png)
+![Иерархия HTML в мини-приложении "Выбор людей"](../images/PeoplePicker_HTMLHierarchy.png)
  
 Мини-приложение определяет множество классов с префиксом **office-peoplepicker**, которые можно найти и настроить в таблице стилей **Office.Controls.css**.
  
@@ -435,19 +444,19 @@ $("#msg").text(principal.text + " is selected in the control.");
 <a name="bk_addresources"> </a>
 
 
--  [Обзор экспериментальных мини-приложений Office для веб-страниц](office-web-widgets--experimental-overview)
+-  [Обзор экспериментальных мини-приложений Office для веб-страниц](office-web-widgetsexperimental-overview.md)
     
  
--  [Условия лицензии на экспериментальные мини-приложения Office для веб-страниц](office-web-widgets--experimental-license-terms)
+-  [Условия лицензии на экспериментальные мини-приложения Office для веб-страниц](office-web-widgetsexperimental-license-terms.md)
     
  
 -  [Страница коллекции NuGet "Экспериментальные мини-приложения Office для веб-страниц"](http://www.nuget.org/packages/Microsoft.Office.WebWidgets.Experimental/)
     
  
--  [Пример кода. Использование экспериментального мини-приложения "Выбор людей" в надстройке](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-57859f85).
+-  [Пример кода. Использование экспериментального мини-приложения "Выбор людей" в надстройке](http://code.msdn.microsoft.com/SharePoint-Use-the-57859f85).
     
  
--  [Использование экспериментального мини-приложения "Просмотр списка на рабочем столе" в надстройках для SharePoint](use-the-experimental-desktop-list-view-widget-in-sharepoint-add-ins).
+-  [Использование экспериментального мини-приложения "Просмотр списка на рабочем столе" в надстройках для SharePoint](use-the-experimental-desktop-list-view-widget-in-sharepoint-add-ins.md).
     
  
 

@@ -1,9 +1,18 @@
-
+---
+title: "Навигация по структуре данных SharePoint, представленной в службе REST"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: ef5a5b8056899acfa2f55096111ab24b8fdbf49c
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="navigate-the-sharepoint-data-structure-represented-in-the-rest-service"></a>Навигация по структуре данных SharePoint, представленной в службе REST
 Узнайте, как с помощью конечной точки REST в элементе SharePoint получить доступ к связанным элементам, например родительским сайтам или структуре библиотеки, в которой находится этот элемент. 
  
 
- **Примечание.** Название "приложения для SharePoint" меняется на "надстройки SharePoint". Пока изменения не будут внесены полностью, в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio по-прежнему может встречаться термин "приложение". Дополнительные сведения см. в разделе [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -145,28 +154,28 @@
 <a name="bk_addresources"> </a>
 
 
--  [Знакомство со службой REST в SharePoint](get-to-know-the-sharepoint-2013-rest-service)
+-  [Знакомство со службой REST в SharePoint](get-to-know-the-sharepoint-rest-service.md)
     
  
--  [Выполнение базовых операций с использованием конечных точек SharePoint REST](complete-basic-operations-using-sharepoint-2013-rest-endpoints)
+-  [Выполнение базовых операций с использованием конечных точек SharePoint REST](complete-basic-operations-using-sharepoint-rest-endpoints.md)
     
  
--  [Работа со списками и элементами списков в интерфейсе REST](working-with-lists-and-list-items-with-rest)
+-  [Работа со списками и элементами списков в интерфейсе REST](working-with-lists-and-list-items-with-rest.md)
     
  
--  [Работа с папками и файлами в службе REST](working-with-folders-and-files-with-rest)
+-  [Работа с папками и файлами в службе REST](working-with-folders-and-files-with-rest.md)
     
  
--  [Определение URI для конечных точек службы REST в SharePoint](determine-sharepoint-rest-service-endpoint-uris)
+-  [Определение URI для конечных точек службы REST в SharePoint](determine-sharepoint-rest-service-endpoint-uris.md)
     
  
--  [Использование операций запросов OData в запросах REST SharePoint](use-odata-query-operations-in-sharepoint-rest-requests)
+-  [Использование операций запросов OData в запросах REST SharePoint](use-odata-query-operations-in-sharepoint-rest-requests.md)
     
  
 -  [Справочные материалы и примеры по REST API](http://msdn.microsoft.com/library/rest-api-reference-and-samples%28Office.15%29.aspx)
     
  
--  [Синхронизация элементов SharePoint с помощью службы REST](synchronize-sharepoint-items-using-the-rest-service)
+-  [Синхронизация элементов SharePoint с помощью службы REST](synchronize-sharepoint-items-using-the-rest-service.md)
     
  
 -  [Получение версий элементов списков и документов с помощью значений ETag в службе REST](http://msdn.microsoft.com/library/5f7e0579-46b7-44ab-b3b4-cdbc622dcd98%28Office.15%29.aspx)

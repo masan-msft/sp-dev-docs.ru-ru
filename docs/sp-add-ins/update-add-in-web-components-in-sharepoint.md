@@ -1,20 +1,29 @@
-
+---
+title: "Обновление компонентов сайта с надстройкой в SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: ad72f237e3c6ddb9d45c723a65c6225b02119314
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="update-add-in-web-components-in-sharepoint"></a>Обновление компонентов сайта с надстройкой в SharePoint
 В этой статье рассказывается, как обновлять страницы, списки, типы контента и другие компоненты сайта надстройки в надстройке SharePoint.
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
 ## <a name="prerequisites-for-updating-the-add-in-web-components"></a>Компоненты, необходимые для обновления компонентов сайта надстройки
 <a name="Prerequisites"> </a>
 
-Изучите статью [Обновление надстроек SharePoint](update-sharepoint-add-ins) и ознакомьтесь со списком необходимых компонентов и основными понятиями, описанными в этой статье.
+Изучите статью [Обновление надстроек SharePoint](update-sharepoint-add-ins.md) и ознакомьтесь со списком необходимых компонентов и основными понятиями, описанными в этой статье.
  
 
  
-В этом разделе предполагается, что вы разработали и протестировали последнюю версию надстройки, как это описано в статье  [Создание и отладка новой версии в качестве новой надстройки](update-sharepoint-add-ins#DebugFirst).
+В этом разделе предполагается, что вы разработали и протестировали последнюю версию надстройки, как это описано в статье  [Создание и отладка новой версии в качестве новой надстройки](update-sharepoint-add-ins.md#DebugFirst).
  
 
  
@@ -29,11 +38,11 @@
 
 ### <a name="what-can-and-cannot-be-done-declaratively"></a>Действия, которые можно и которые нельзя выполнить декларативно
 
-В случае обновления надстройки, размещенной в SharePoint, можно использовать только разметку XML. При этом возможности декларативного изменения надстройки будут ограничены. Для надстройки, размещенной на стороне поставщика, можно реализовать  [обработчик UpdatedEventEndpoint](create-a-handler-for-the-update-event-in-sharepoint-add-ins), чтобы выполнить действия, которые невозможно сделать декларативно.
+В случае обновления надстройки, размещенной в SharePoint, можно использовать только разметку XML. При этом возможности декларативного изменения надстройки будут ограничены. Для надстройки, размещенной на стороне поставщика, можно реализовать  [обработчик UpdatedEventEndpoint](create-a-handler-for-the-update-event-in-sharepoint-add-ins.md), чтобы выполнить действия, которые невозможно сделать декларативно.
  
 
  
-Добавлять компоненты в надстройку просто. Любой компонент, который можно включить в надстройку, можно добавить также в обновление. (Дополнительные сведения о компонентах, которые могут входить в надстройку, можно найти в статье  [Типы компонентов SharePoint, которые могут находиться в надстройке для SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013#TypesOfSPComponentsInApps).) Но если вы хотите изменить существующий компонент декларативно, учтите указанные ниже сведения. 
+Добавлять компоненты в надстройку просто. Любой компонент, который можно включить в надстройку, можно добавить также в обновление. (Дополнительные сведения о компонентах, которые могут входить в надстройку, можно найти в статье  [Типы компонентов SharePoint, которые могут находиться в надстройке для SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md#TypesOfSPComponentsInApps).) Но если вы хотите изменить существующий компонент декларативно, учтите указанные ниже сведения. 
  
 
  
@@ -83,7 +92,7 @@
 
  
 
-  ![Действия, которые необходимо выполнить, чтобы открыть XML-редактор компонентов](../../images/UpdateAppOpenFeatureXML.png)
+  ![Действия, которые необходимо выполнить, чтобы открыть XML-редактор компонентов](../images/UpdateAppOpenFeatureXML.png)
  
 
  
@@ -231,14 +240,14 @@
 </Module>
 ```
 
-3. В страницы могут быть встроены веб-части, как описано в статье [Добавление веб-части на страницу сайта надстройки](include-a-web-part-in-a-webpage-on-the-add-in-web). Если вы изменяете страницу со встроенной веб-частью (или изменяете свойства веб-части), потребуется выполнить дополнительное действие: добавить на страницу указанную ниже разметку, чтобы служба SharePoint не добавила вторую копию веб-части на страницу. Разметку необходимо добавить к элементу **asp:Content** с идентификатором `PlaceHolderAdditionalPageHead`. (Возможно, при создании страницы пакет Инструменты разработчика Office для Visual Studio уже добавил ее, но вам нужно убедиться в этом.)
+3. В страницы могут быть встроены веб-части, как описано в статье [Добавление веб-части на страницу сайта надстройки](include-a-web-part-in-a-webpage-on-the-add-in-web.md). Если вы изменяете страницу со встроенной веб-частью (или изменяете свойства веб-части), потребуется выполнить дополнительное действие: добавить на страницу указанную ниже разметку, чтобы служба SharePoint не добавила вторую копию веб-части на страницу. Разметку необходимо добавить к элементу **asp:Content** с идентификатором `PlaceHolderAdditionalPageHead`. (Возможно, при создании страницы пакет Инструменты разработчика Office для Visual Studio уже добавил ее, но вам нужно убедиться в этом.)
     
 ```XML
   <meta name="WebPartPageExpansion" content="full" />
 ```
 
 
-     **Note**   If the page was configured to allow users to customize it, then this markup has the side effect of removing those customizations. Users will have to repeat them. If the Web Part was added to the page following the guidance in [Include a Web Part in a webpage on the add-in web](include-a-web-part-in-a-webpage-on-the-add-in-web), then the Web Part markup is in the elements manifest, so changing the Web Part's properties is an exception to the general rule that you should not edit an element manifest file as part of an add-in update. 
+     **Note**   If the page was configured to allow users to customize it, then this markup has the side effect of removing those customizations. Users will have to repeat them. If the Web Part was added to the page following the guidance in [Include a Web Part in a webpage on the add-in web](include-a-web-part-in-a-webpage-on-the-add-in-web.md), then the Web Part markup is in the elements manifest, so changing the Web Part's properties is an exception to the general rule that you should not edit an element manifest file as part of an add-in update. 
 4. Вместо того чтобы изменять страницу, вы можете использовать перенаправление на новую страницу, выполнив указанные ниже действия. 
     
       1. Создайте страницу и настройте для нее разметку обновления, как описано выше в разделе **Добавление компонентов в надстройку**.
@@ -416,18 +425,18 @@
 ## <a name="next-steps"></a>Дальнейшие действия
 <a name="Next"> </a>
 
-Вернитесь к разделу  [Основные действия при обновлении надстройки](update-sharepoint-add-ins#MajorAppUpgradeSteps) или перейдите непосредственно к одной из следующих статей, чтобы узнать, как обновить следующий важный компонент надстройки SharePoint.
+Вернитесь к разделу  [Основные действия при обновлении надстройки](update-sharepoint-add-ins.md#MajorAppUpgradeSteps) или перейдите непосредственно к одной из следующих статей, чтобы узнать, как обновить следующий важный компонент надстройки SharePoint.
  
 
  
 
--  [Обновление компонентов хост-сайта в SharePoint](update-host-web-components-in-sharepoint-2013)
+-  [Обновление компонентов хост-сайта в SharePoint](update-host-web-components-in-sharepoint.md)
     
  
--  [Создание обработчика событий обновления в надстройках SharePoint](create-a-handler-for-the-update-event-in-sharepoint-add-ins)
+-  [Создание обработчика событий обновления в надстройках SharePoint](create-a-handler-for-the-update-event-in-sharepoint-add-ins.md)
     
  
--  [Обновление удаленных компонентов в надстройках SharePoint](update-remote-components-in-sharepoint-add-ins) 
+-  [Обновление удаленных компонентов в надстройках SharePoint](update-remote-components-in-sharepoint-add-ins.md) 
     
  
 
@@ -435,7 +444,7 @@
 <a name="bk_addresources"> </a>
 
 
--  [Обновление надстроек SharePoint](update-sharepoint-add-ins)
+-  [Обновление надстроек SharePoint](update-sharepoint-add-ins.md)
     
  
 -  [Практическое руководство. Добавление элементов к существующему компоненту](http://msdn.microsoft.com/library/b007f419-e0d6-4e3a-a3ae-b8e448656d02%28Office.15%29.aspx) в пакете средств разработки программного обеспечения (SDK) Microsoft SharePoint 2010.

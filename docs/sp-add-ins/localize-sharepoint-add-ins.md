@@ -1,12 +1,22 @@
+---
+title: "Локализация надстроек SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 2203f26ffd261166e71c02b012216008480f21ae
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="localize-sharepoint-add-ins"></a>Локализация надстроек SharePoint
 Узнайте, как локализовать надстройку SharePoint с помощью файлов ресурсов (в том числе JavaScript) и других методов.
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
- **Примечание.** В этой статье предполагается, что вы знакомы с основами создания надстроек SharePoint, компонентами SharePoint, разницей между сайтами надстроек и хост-сайтами, [типами компонентов SharePoint, которые можно размещать в надстройке](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013#TypesOfSPComponentsInApps), и основами локализации с помощью RESX-файлов.
+ **Примечание.** В этой статье предполагается, что вы знакомы с основами создания надстроек SharePoint, компонентами SharePoint, разницей между сайтами надстроек и хост-сайтами, [типами компонентов SharePoint, которые можно размещать в надстройке](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md#TypesOfSPComponentsInApps), и основами локализации с помощью RESX-файлов.
  
 
 
@@ -39,7 +49,7 @@
 ## <a name="localize-the-add-in-web-components"></a>Локализация компонентов сайта надстройки
 <a name="LocalizingAppWeb"> </a>
 
-Сайт надстройки может содержать определенные типы компонентов SharePoint. Дополнительные сведения см. в разделе  [Типы компонентов SharePoint, которые могут находиться в надстройке для SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013#TypesOfSPComponentsInApps). Чтобы локализовать компоненты, развернутые на сайте надстройки, добавьте RESX-файлы в модули в компоненте, который содержит компонент сайта надстройки. Добавьте ссылки на ресурсы в разметку компонента. Ниже описано, как это сделать. Однако дополнительные страницы сайта в надстройке SharePoint используют файлы строковых переменных JavaScript, а не RESX-файлы, как описано ниже.
+Сайт надстройки может содержать определенные типы компонентов SharePoint. Дополнительные сведения см. в разделе  [Типы компонентов SharePoint, которые могут находиться в надстройке для SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md#TypesOfSPComponentsInApps). Чтобы локализовать компоненты, развернутые на сайте надстройки, добавьте RESX-файлы в модули в компоненте, который содержит компонент сайта надстройки. Добавьте ссылки на ресурсы в разметку компонента. Ниже описано, как это сделать. Однако дополнительные страницы сайта в надстройке SharePoint используют файлы строковых переменных JavaScript, а не RESX-файлы, как описано ниже.
  
 
  
@@ -125,7 +135,7 @@
 
  
 
-  ![Локализованный настраиваемый список](../../images/LocSPApp_AppwebList.png)
+  ![Локализованный настраиваемый список](../images/LocSPApp_AppwebList.png)
  
 
  
@@ -281,7 +291,7 @@ var step07 = "Review the localized <a href=\"../Lists/Orders\">Orders</a>" +
 
  
 
-  ![Страница SharePoint, использующая локализованные строки](../../images/LocSPApp_AppwebPage.png)
+  ![Страница SharePoint, использующая локализованные строки](../images/LocSPApp_AppwebPage.png)
  
 
  
@@ -382,7 +392,7 @@ protected override void InitializeCulture()
 ## <a name="localize-remote-javascript-and-the-sharepoint-chrome-control"></a>Локализация удаленных ресурсов JavaScript и элемента управления хрома SharePoint
 <a name="JSandChrome"> </a>
 
-Если в JavaScript вашего веб-приложения имеются локализуемые строковые значения, их можно локализовать с помощью файлов ресурсов JavaScript. Особенно важный пример локализуемого JavaScript  [элемент управления хрома SharePoint](use-the-client-chrome-control-in-sharepoint-add-ins), с помощью которого удаленные страницы можно оформить как страницы SharePoint. В этом разделе в качестве примера будет использована локализация элемента управления хрома.
+Если в JavaScript вашего веб-приложения имеются локализуемые строковые значения, их можно локализовать с помощью файлов ресурсов JavaScript. Особенно важный пример локализуемого JavaScript  [элемент управления хрома SharePoint](use-the-client-chrome-control-in-sharepoint-add-ins.md), с помощью которого удаленные страницы можно оформить как страницы SharePoint. В этом разделе в качестве примера будет использована локализация элемента управления хрома.
  
 
  
@@ -525,7 +535,7 @@ var chromeContactUsLinkName = "Contacto";
  
 
  
-![Страница создания семейства веб-сайтов](../../images/LocSPApp_TestCreatesite.png)
+![Страница создания семейства веб-сайтов](../images/LocSPApp_TestCreatesite.png)
  
 
 ### <a name="to-test-your-add-in-an-on-premises-website"></a>Тестирование надстройки на локальном веб-сайте
@@ -556,7 +566,7 @@ var chromeContactUsLinkName = "Contacto";
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 <a name="SP15Localizeapp_addlresources"> </a>
 
--  [Разработка надстроек SharePoint](develop-sharepoint-add-ins)
+-  [Разработка надстроек SharePoint](develop-sharepoint-add-ins.md)
 -  [Локализация надстроек Office](http://msdn.microsoft.com/library/5a1a1cd7-b716-4597-b51f-fa70357d0833%28Office.15%29.aspx)
 -  [Глобализация и локализация ASP.NET](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d.aspx)
 -  [SharePoint-Add-in-Localization](https://github.com/OfficeDev/SharePoint-Add-in-Localization)

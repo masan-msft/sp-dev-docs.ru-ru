@@ -1,9 +1,18 @@
-
+---
+title: "Настройка локальной среды разработки надстроек SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 9d84d130cc12e7784aa7b87fecd268acc1e6b7c5
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="set-up-an-on-premises-development-environment-for-sharepoint-add-ins"></a>Настройка локальной среды разработки надстроек SharePoint
 Узнайте, как настроить специальную среду разработки надстроек SharePoint с локальной установкой SharePoint.
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -53,7 +62,7 @@
 
  
 
-  ![Тип сервера установки SharePoint](../../images/SP15_app_ServerType.gif)
+  ![Тип сервера установки SharePoint](../images/SP15_app_ServerType.gif)
  
 
  
@@ -75,7 +84,7 @@ dir /od *.log
 
  
 
-  ![Страница шаблонов сайта](../../images/SP15_appChooseSiteTemplate.gif)
+  ![Страница шаблонов сайта](../images/SP15_appChooseSiteTemplate.gif)
  
 
  
@@ -85,7 +94,7 @@ dir /od *.log
 ## <a name="configure-services-in-sharepoint-for-server-to-server-add-in-use"></a>Настройка служб в SharePoint для межсерверного использования надстроек
 <a name="Servertoserver"> </a>
 
-На этом этапе службы в SharePoint настраиваются для межсерверного использования надстроек. Это позволяет создавать размещаемые у поставщиков надстройки с высоким уровнем доверия в вашей среде. Дополнительные сведения о создании таких надстроек см. в статье  [Создание надстроек с высоким уровнем доверия для SharePoint](create-high-trust-sharepoint-add-ins).
+На этом этапе службы в SharePoint настраиваются для межсерверного использования надстроек. Это позволяет создавать размещаемые у поставщиков надстройки с высоким уровнем доверия в вашей среде. Дополнительные сведения о создании таких надстроек см. в статье  [Создание надстроек с высоким уровнем доверия для SharePoint](create-high-trust-sharepoint-add-ins.md).
  
 
  
@@ -170,7 +179,7 @@ dir /od *.log
 ## <a name="configure-an-isolated-add-in-domain-in-sharepoint"></a>Настройка изолированного домена надстройки в SharePoint
 <a name="SP15appdevonprem_bk_configure"> </a>
 
-Прежде чем выполнять процедуры, описанные в этом разделе, см. раздел [Хост-сайты, сайты надстроек и изолированный домен](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013#IsolatedDomain).
+Прежде чем выполнять процедуры, описанные в этом разделе, см. раздел [Хост-сайты, сайты надстроек и изолированный домен](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md#IsolatedDomain).
  
 
  
@@ -242,7 +251,7 @@ $proxyAppSvc = New-SPAppManagementServiceApplicationProxy -ServiceApplication $a
 
 ```
 
-7. Укажите префикс надстройки (см. раздел [Хост-сайты, сайты надстроек и изолированный домен](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013#IsolatedDomain)). Для этого введите приведенный ниже код в командной консоли SharePoint.
+7. Укажите префикс надстройки (см. раздел [Хост-сайты, сайты надстроек и изолированный домен](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md#IsolatedDomain)). Для этого введите приведенный ниже код в командной консоли SharePoint.
     
 ```
   Set-SPAppSiteSubscriptionName -Name "add-in" -Confirm:$false
@@ -283,7 +292,7 @@ $proxyAppSvc = New-SPAppManagementServiceApplicationProxy -ServiceApplication $a
 9. Нажмите кнопку **ОК**, чтобы закрыть диалоговое окно **Свойства браузера**.
     
  
-Сведения о доступных вариантах развертывания надстроек см. в статье [Развертывание и установка надстроек SharePoint: методы и параметры](deploying-and-installing-sharepoint-add-ins-methods-and-options).
+Сведения о доступных вариантах развертывания надстроек см. в статье [Развертывание и установка надстроек SharePoint: методы и параметры](deploying-and-installing-sharepoint-add-ins-methods-and-options.md).
  
 
  
@@ -296,13 +305,13 @@ $proxyAppSvc = New-SPAppManagementServiceApplicationProxy -ServiceApplication $a
 <a name="SP15SetupSPO365_bk_addlresources"> </a>
 
 
--  [Надстройки SharePoint](sharepoint-add-ins)
+-  [Надстройки SharePoint](sharepoint-add-ins.md)
     
  
--  [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins)
+-  [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins.md)
     
  
--  [Знакомство с созданием надстроек SharePoint с размещением в SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins)
+-  [Знакомство с созданием надстроек SharePoint с размещением в SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)
     
  
 

@@ -1,27 +1,36 @@
-
+---
+title: "Использование операций запросов OData в запросах SharePoint REST"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: a0cd291475b492183a57de1db2a9272154fea3f4
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="use-odata-query-operations-in-sharepoint-rest-requests"></a>Использование операций запросов OData в запросах SharePoint REST
 Узнайте, как использовать широкий спектр операторов строки запроса OData для выбора, фильтрации и упорядочивания данных, запрашиваемых у службы REST SharePoint. 
  
 
- **Примечание.** Название "приложения для SharePoint" меняется на "надстройки SharePoint". Пока изменения не будут внесены полностью, в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio по-прежнему может встречаться термин "приложение". Дополнительные сведения см. в разделе [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
  **Перед началом работы**
  
 
--  [Знакомство со службой REST в SharePoint](get-to-know-the-sharepoint-2013-rest-service)
+-  [Знакомство со службой REST в SharePoint](get-to-know-the-sharepoint-rest-service.md)
     
  
--  [Навигация по структуре данных SharePoint, представленной в службе REST](navigate-the-sharepoint-data-structure-represented-in-the-rest-service)
+-  [Навигация по структуре данных SharePoint, представленной в службе REST](navigate-the-sharepoint-data-structure-represented-in-the-rest-service.md)
     
  
--  [Определение универсальных кодов ресурсов (URI) конечных точек службы SharePoint REST](determine-sharepoint-rest-service-endpoint-uris)
+-  [Определение универсальных кодов ресурсов (URI) конечных точек службы SharePoint REST](determine-sharepoint-rest-service-endpoint-uris.md)
     
  
 Служба REST SharePoint поддерживает широкий диапазон операторов строки запроса OData, который позволяет выбирать, фильтровать и упорядочивать запрашиваемые данные.
  
 
- **Совет.** Служба REST в SharePoint Online (а также в локальной среде SharePoint 2016 или более поздней версии) поддерживает объединение нескольких запросов в один вызов с помощью параметра запроса OData `$batch`. Подробные сведения и ссылки на примеры кода см. в статье [Создание пакетного запроса с помощью интерфейсов REST API](make-batch-requests-with-the-rest-apis).
+ **Совет.** Служба REST в SharePoint Online (а также в локальной среде SharePoint 2016 или более поздней версии) поддерживает объединение нескольких запросов в один вызов с помощью параметра запроса OData `$batch`. Подробные сведения и ссылки на примеры кода см. в статье [Создание пакетного запроса с помощью интерфейсов REST API](make-batch-requests-with-the-rest-apis.md).
  
 
 
@@ -138,7 +147,7 @@
  
 
  
-![Синтаксис параметров запроса службы SharePoint REST](../../images/SPF15Con_REST_queryOptionSyntax.png)
+![Синтаксис параметров запроса службы SharePoint REST](../images/SPF15Con_REST_queryOptionSyntax.png)
  
 
  
@@ -149,22 +158,22 @@
 <a name="bk_addresources"> </a>
 
 
--  [Знакомство со службой REST в SharePoint](get-to-know-the-sharepoint-2013-rest-service)
+-  [Знакомство со службой REST в SharePoint](get-to-know-the-sharepoint-rest-service.md)
     
  
--  [Выполнение базовых операций с использованием конечных точек SharePoint REST](complete-basic-operations-using-sharepoint-2013-rest-endpoints)
+-  [Выполнение базовых операций с использованием конечных точек SharePoint REST](complete-basic-operations-using-sharepoint-rest-endpoints.md)
     
  
--  [Работа со списками и элементами списков в интерфейсе REST](working-with-lists-and-list-items-with-rest)
+-  [Работа со списками и элементами списков в интерфейсе REST](working-with-lists-and-list-items-with-rest.md)
     
  
--  [Работа с папками и файлами в службе REST](working-with-folders-and-files-with-rest)
+-  [Работа с папками и файлами в службе REST](working-with-folders-and-files-with-rest.md)
     
  
--  [Навигация по структуре данных SharePoint, представленной в службе REST](navigate-the-sharepoint-data-structure-represented-in-the-rest-service)
+-  [Навигация по структуре данных SharePoint, представленной в службе REST](navigate-the-sharepoint-data-structure-represented-in-the-rest-service.md)
     
  
--  [Определение универсальных кодов ресурсов (URI) конечных точек службы SharePoint REST](determine-sharepoint-rest-service-endpoint-uris)
+-  [Определение универсальных кодов ресурсов (URI) конечных точек службы SharePoint REST](determine-sharepoint-rest-service-endpoint-uris.md)
     
  
 -  [Справочные материалы по интерфейсу API службы REST и примеры](http://msdn.microsoft.com/library/rest-api-reference-and-samples%28Office.15%29.aspx)

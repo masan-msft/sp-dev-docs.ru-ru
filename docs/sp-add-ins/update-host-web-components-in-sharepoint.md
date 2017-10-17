@@ -1,16 +1,25 @@
-
+---
+title: "Обновление компонентов хост-сайта с надстройкой в SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 24d1752c1618551b85fa63fbab7ef747a4873bc6
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="update-host-web-components-in-sharepoint"></a>Обновление компонентов хост-сайта с надстройкой в SharePoint
 Обновление веб-частей надстроек и дополнительных действий на хост-сайте надстройки SharePoint.
  
 
- **Примечание.** Название "приложения для SharePoint" меняется на "надстройки SharePoint". Пока изменения не будут внесены полностью, в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio по-прежнему может встречаться термин "приложение". Дополнительные сведения см. в разделе [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
 ## <a name="prerequisites-for-updating-host-web-components"></a>Необходимые условия для обновления компонентов хост-сайта
 <a name="Prerequisites"> </a>
 
-Ознакомьтесь со статьей [Обновление надстроек SharePoint](update-sharepoint-add-ins), в том числе с перечисленными в ней предварительными требованиями и основными понятиями.
+Ознакомьтесь со статьей [Обновление надстроек SharePoint](update-sharepoint-add-ins.md), в том числе с перечисленными в ней предварительными требованиями и основными понятиями.
  
 
  
@@ -30,7 +39,7 @@
  
 
  
-Вы можете развернуть другие виды компонентов хост-сайта программно, используя удаленный приемник событий, который вы регистрируете в манифесте надстройки с помощью элемента  [InstalledEventEndpoint](http://msdn.microsoft.com/library/af9f83d8-8325-3ede-d7b0-bb82c0445eb9%28Office.15%29.aspx). Вам нужно использовать приемник  [UpgradedEventEndpoint](http://msdn.microsoft.com/library/09a93d44-d295-47bb-f91c-d243178b0f53%28Office.15%29.aspx) для обновления компонентов, которые были первоначально развернуты с помощью приемника **InstalledEventEndpoint**. Приемники  [UpgradedEventEndpoint](http://msdn.microsoft.com/library/09a93d44-d295-47bb-f91c-d243178b0f53%28Office.15%29.aspx) описаны в [Создание обработчика для события обновления в надстройках для SharePoint](create-a-handler-for-the-update-event-in-sharepoint-add-ins).
+Вы можете развернуть другие виды компонентов хост-сайта программно, используя удаленный приемник событий, который вы регистрируете в манифесте надстройки с помощью элемента  [InstalledEventEndpoint](http://msdn.microsoft.com/library/af9f83d8-8325-3ede-d7b0-bb82c0445eb9%28Office.15%29.aspx). Вам нужно использовать приемник  [UpgradedEventEndpoint](http://msdn.microsoft.com/library/09a93d44-d295-47bb-f91c-d243178b0f53%28Office.15%29.aspx) для обновления компонентов, которые были первоначально развернуты с помощью приемника **InstalledEventEndpoint**. Приемники  [UpgradedEventEndpoint](http://msdn.microsoft.com/library/09a93d44-d295-47bb-f91c-d243178b0f53%28Office.15%29.aspx) описаны в [Создание обработчика для события обновления в надстройках для SharePoint](create-a-handler-for-the-update-event-in-sharepoint-add-ins.md).
  
 
  
@@ -38,18 +47,18 @@
 ## <a name="next-steps"></a>Дальнейшие действия
 <a name="Next"> </a>
 
-Перейдите в раздел  [Основные действия при обновлении надстройки](update-sharepoint-add-ins#MajorAppUpgradeSteps) или непосредственно перейдите к одной из следующих статей, чтобы узнать, как обновить очередной основной компонент надстройки SharePoint.
+Перейдите в раздел  [Основные действия при обновлении надстройки](update-sharepoint-add-ins.md#MajorAppUpgradeSteps) или непосредственно перейдите к одной из следующих статей, чтобы узнать, как обновить очередной основной компонент надстройки SharePoint.
  
 
  
 
--  [Обновление компонентов сайта надстройки в SharePoint](update-add-in-web-components-in-sharepoint-2013)
+-  [Обновление компонентов сайта надстройки в SharePoint](update-add-in-web-components-in-sharepoint.md)
     
  
--  [Создание обработчика событий обновления для надстроек SharePoint](create-a-handler-for-the-update-event-in-sharepoint-add-ins)
+-  [Создание обработчика событий обновления для надстроек SharePoint](create-a-handler-for-the-update-event-in-sharepoint-add-ins.md)
     
  
--  [Обновление удаленных компонентов в надстройках SharePoint](update-remote-components-in-sharepoint-add-ins)
+-  [Обновление удаленных компонентов в надстройках SharePoint](update-remote-components-in-sharepoint-add-ins.md) 
     
  
 
@@ -57,10 +66,10 @@
 <a name="bk_addresources"> </a>
 
 
--  [Обновление надстроек SharePoint](update-sharepoint-add-ins)
+-  [Обновление надстроек SharePoint](update-sharepoint-add-ins.md)
     
  
--  [Хост-сайты, сайты надстроек и компоненты в SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013)
+-  [Хост-сайты, сайты надстроек и компоненты SharePoint в SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md)
     
  
 

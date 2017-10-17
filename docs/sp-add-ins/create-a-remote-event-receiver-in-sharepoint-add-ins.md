@@ -1,15 +1,25 @@
+---
+title: "Создание удаленного приемника событий в надстройках SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 1d513a5a15d691a8e7932cdd246a6afd3faac60d
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="create-a-remote-event-receiver-in-sharepoint-add-ins"></a>Создание удаленного приемника событий в надстройках SharePoint
 Создание удаленного приемника событий, обрабатывающего события списка и элементов списка в надстройке SharePoint.
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
 ## <a name="prerequisites"></a>Необходимые компоненты
 <a name="SP15appevent_prereq"> </a>
 
-Для начала желательно иметь представление о надстройках Надстройки SharePoint с размещением у поставщика, а также разработать несколько надстроек, которые были бы хоть немного сложнее, чем "Hello World". Кроме того, следует ознакомиться со статьей  [Обработка событий в надстройках SharePoint](handle-events-in-sharepoint-add-ins). 
+Для начала желательно иметь представление о надстройках Надстройки SharePoint с размещением у поставщика, а также разработать несколько надстроек, которые были бы хоть немного сложнее, чем "Hello World". Кроме того, следует ознакомиться со статьей  [Обработка событий в надстройках SharePoint](handle-events-in-sharepoint-add-ins.md). 
  
 
  
@@ -94,7 +104,7 @@
 ### <a name="to-add-functionality-to-the-remote-event-receiver"></a>Добавление функций в удаленный приемник событий
 
 
-1. Если тестовая ферма SharePoint и Visual Studio работают на разных компьютерах (или в качестве тестового сайта SharePoint используется область клиентов SharePoint Online), настройте проект для отладки с помощью служебной шины Microsoft Azure. Дополнительные сведения см. в статье  [Устранение неполадок и отладка удаленного приемника событий в надстройке для SharePoint](debug-and-troubleshoot-a-remote-event-receiver-in-a-sharepoint-add-in). 
+1. Если тестовая ферма SharePoint и Visual Studio работают на разных компьютерах (или в качестве тестового сайта SharePoint используется область клиентов SharePoint Online), настройте проект для отладки с помощью служебной шины Microsoft Azure. Дополнительные сведения см. в статье  [Устранение неполадок и отладка удаленного приемника событий в надстройке для SharePoint](debug-and-troubleshoot-a-remote-event-receiver-in-a-sharepoint-add-in.md). 
     
  
 2. Замените содержимое файла кода для службы удаленного приемника событий (то есть в файле RemoteEventReceiver1.svc.cs) указанным ниже кодом.
@@ -300,7 +310,7 @@ namespace BasicDataOperationsWeb.Services
 
  
 
-  ![Удаленные события SharePoint в Visual Studio](../../images/SP_VS_Properties_Window_RemoteEvents.PNG)
+  ![Удаленные события SharePoint в Visual Studio](../images/SP_VS_Properties_Window_RemoteEvents.PNG)
  
 
  
@@ -343,13 +353,13 @@ https://github.com/OfficeDev/PnP/tree/master/Samples/Provisioning.ReR)
 <a name="Additional"> </a>
 
 
--  [Обработка событий в надстройках SharePoint](handle-events-in-sharepoint-add-ins)
+-  [Обработка событий в надстройках SharePoint](handle-events-in-sharepoint-add-ins.md)
     
  
--  [Отладка удаленного приемника событий в надстройке для SharePoint и устранение неполадок в нем](debug-and-troubleshoot-a-remote-event-receiver-in-a-sharepoint-add-in)
+-  [Отладка удаленного приемника событий в надстройке для SharePoint и устранение неполадок в нем](debug-and-troubleshoot-a-remote-event-receiver-in-a-sharepoint-add-in.md)
     
  
--  [Удаленные приемники событий: вопросы и ответы](handle-events-in-sharepoint-add-ins#RERFAQ)
+-  [Удаленные приемники событий: вопросы и ответы](handle-events-in-sharepoint-add-ins.md#RERFAQ)
     
  
 

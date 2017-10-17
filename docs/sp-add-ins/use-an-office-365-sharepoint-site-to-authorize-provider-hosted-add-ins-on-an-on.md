@@ -1,9 +1,18 @@
-
+---
+title: "Использование сайта SharePoint Office 365 для авторизации размещенных у поставщика надстроек на локальном сайте SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 7bd39ae974d2c11bf403216f9bb08a7573a17b5b
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="use-an-office-365-sharepoint-site-to-authorize-provider-hosted-add-ins-on-an-on-premises-sharepoint-site"></a>Использование сайта SharePoint Office 365 для авторизации размещенных у поставщика надстроек на локальном сайте SharePoint
 В этой статье описывается использование сайта Office 365 SharePoint для создания среды, в которой можно применять службу контроля доступа для установления отношения доверия между надстройкой с размещением у поставщика и в локальной ферме SharePoint, как при разработке надстроек для сайта Office 365 SharePoint.
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -15,10 +24,10 @@
 
  
 
-- Локальная среда разработки SharePoint. См. статью [Настройка локальной среды разработки для надстроек SharePoint](set-up-an-on-premises-development-environment-for-sharepoint-add-ins).
+- Локальная среда разработки SharePoint. См. статью [Настройка локальной среды разработки для надстроек SharePoint](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md).
     
  
-- Сайт Office 365 SharePoint. Если у вас его еще нет и вы хотите быстро настроить среду разработки, вы можете  [Настройка среды для разработки надстроек SharePoint в Office 365](set-up-a-development-environment-for-sharepoint-add-ins-on-office-365).
+- Сайт Office 365 SharePoint. Если у вас его еще нет и вы хотите быстро настроить среду разработки, вы можете  [Настройка среды для разработки надстроек SharePoint в Office 365](set-up-a-development-environment-for-sharepoint-add-ins-on-office-365.md).
     
  
 -  Среда [Visual Studio 2012](https://www.microsoft.com/en-us/download/details.aspx?id=30682), установленная либо на удаленном компьютере, либо на одном компьютере с SharePoint.
@@ -62,7 +71,7 @@
 
  
 
-  ![Элемент "Сертификаты сервера" в службах IIS](../../images/e38f9b7f-59a3-468c-bcde-a48272f1f217.gif)
+  ![Элемент "Сертификаты сервера" в службах IIS](../images/e38f9b7f-59a3-468c-bcde-a48272f1f217.gif)
  
 
  
@@ -74,7 +83,7 @@
 
  
 
-  ![Ссылка "Создать самозаверяющий сертификат"](../../images/3f0aae5a-e58b-4ec8-b67f-0024abfa2dab.gif)
+  ![Ссылка "Создать самозаверяющий сертификат"](../images/3f0aae5a-e58b-4ec8-b67f-0024abfa2dab.gif)
  
 
  
@@ -89,7 +98,7 @@
 
  
 
-  ![Экспорт тестового сертификата](../../images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
+  ![Экспорт тестового сертификата](../images/997021de-c60c-46b0-961f-7e1e63c0f619.gif)
  
 
  
@@ -122,7 +131,7 @@ Set-SPSecurityTokenServiceConfig -ImportSigningCertificate $stsCertificate -conf
 ```
 
 
- **Примечание.** В документе [Настройка односторонней гибридной среды с SharePoint Server 2013 и Office 365](http://download.microsoft.com/download/6/4/4/644BA525-96CB-4739-B08F-18949A9BDADC/sps-2013-config-one-way-hybrid-environment.docx), который можно скачать на [странице гибридных ресурсов SharePoint](http://www.microsoft.com/en-us/download/details.aspx?id=35593), подробнее объясняется, как заменить сертификат STS по умолчанию для локальной фермы на сертификат из известного центра сертификации или самозаверяющий сертификат.
+ **Примечание.** В документе [Настройка односторонней гибридной среды с SharePoint Server 2013 и Office 365](http://download.microsoft.com/download/6/4/4/644BA525-96CB-4739-B08F-18949A9BDADC/sps-config-one-way-hybrid-environment.docx), который можно скачать на [странице гибридных ресурсов SharePoint](http://www.microsoft.com/en-us/download/details.aspx?id=35593), подробнее объясняется, как заменить сертификат STS по умолчанию для локальной фермы на сертификат из известного центра сертификации или самозаверяющий сертификат.
  
 
 
@@ -139,7 +148,7 @@ Set-SPSecurityTokenServiceConfig -ImportSigningCertificate $stsCertificate -conf
  
 
  
-![Настройка службы контроля доступа на работу с локальной установкой SharePoint с помощью сайта Office 365](../../images/SP15_OnPremACSArchitecture.png)
+![Настройка службы контроля доступа на работу с локальной установкой SharePoint с помощью сайта Office 365](../images/SP15_OnPremACSArchitecture.png)
  
 
  
@@ -462,7 +471,7 @@ Get-SPWebApplication | ForEach-Object {
 ## <a name="next-steps"></a>Дальнейшие действия
 <a name="CreateApp"> </a>
 
-Выполните действия, описанные в статье  [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins), чтобы создать простую надстройку Hello World с размещением у поставщика, которая использует службу контроля доступа в качестве издателя маркеров.
+Выполните действия, описанные в статье  [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins.md), чтобы создать простую надстройку Hello World с размещением у поставщика, которая использует службу контроля доступа в качестве издателя маркеров.
  
 
  
@@ -471,6 +480,6 @@ Get-SPWebApplication | ForEach-Object {
 <a name="bk_addresources"> </a>
 
 
--  [Авторизация и проверка подлинности надстроек SharePoint](authorization-and-authentication-of-sharepoint-add-ins)
+-  [Авторизация и проверка подлинности для надстроек в SharePoint](authorization-and-authentication-of-sharepoint-add-ins.md)
     
  

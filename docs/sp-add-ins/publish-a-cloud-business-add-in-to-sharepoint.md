@@ -1,11 +1,20 @@
-
+---
+title: "Публикация облачной бизнес-надстройки в SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 81cbf2c3deb37ee8a633abbd32470343d0eddc57
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="publish-a-cloud-business-add-in-to-sharepoint"></a>Публикация облачной бизнес-надстройки в SharePoint
 Вы можете опубликовать свою облачную бизнес-надстройку как надстройку для SharePoint с размещением у поставщика. Используя такой тип надстроек, вы сможете гибко развертывать свое веб-приложение и базу данных в локальном сайте SharePoint, Microsoft Azure или на стороннем сайте размещения. После того как вы опубликуете надстройку, другие люди смогут запускать ее из SharePoint на своих компьютерах и мобильных устройствах.
  
 Вы можете опубликовать свою надстройку прямо на сайте, используя WebDeploy, или создать для нее пакет, который можно развертывать на многочисленных серверах.
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -19,7 +28,7 @@
 
  
 
-  ![Узел IncidentManager](../../images/CBA_IM_18.PNG)
+  ![Узел IncidentManager](../images/CBA_IM_18.PNG)
  
 
  
@@ -107,7 +116,7 @@
 
  
 
-  ![Узел IncidentManager](../../images/CBA_IM_18.PNG)
+  ![Узел IncidentManager](../images/CBA_IM_18.PNG)
  
 
     
@@ -161,10 +170,10 @@
 <a name="bk_addresources"> </a>
 
 
--  [Регистрация надстроек SharePoint 2013](register-sharepoint-add-ins-2013)
+-  [Регистрация надстроек SharePoint 2013](register-sharepoint-add-ins.md)
     
  
--  [Публикация облачных бизнес-надстроек](publish-cloud-business-add-ins)
+-  [Публикация облачных бизнес-надстроек](publish-cloud-business-add-ins.md)
     
  
 

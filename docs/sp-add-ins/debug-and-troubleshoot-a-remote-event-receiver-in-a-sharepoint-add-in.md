@@ -1,8 +1,18 @@
+---
+title: "Устранение неполадок и отладка удаленного приемника событий в надстройке для SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 4e378b17fccf84f9d9321b1953d7a3d8f09dc5b7
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="debug-and-troubleshoot-a-remote-event-receiver-in-a-sharepoint-add-in"></a>Устранение неполадок и отладка удаленного приемника событий в надстройке для SharePoint
 Узнайте, как настроить среду разработки для отладки удаленных событий с помощью Visual Studio.
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -69,7 +79,7 @@
 
 1. В Visual Studio создайте надстройку SharePoint, размещаемую у поставщика.
     
-    См. статью [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins).
+    См. статью [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins.md).
     
  
 2. Выберите узел проекта надстройки в **обозревателе решений**.
@@ -146,7 +156,7 @@
  
 
  
-![Уведомления в приемниках удаленных событий](../../images/SP15Con_Remote_Event_Receivers_FAQ_fig3.png)
+![Уведомления в приемниках удаленных событий](../images/SP15Con_Remote_Event_Receivers_FAQ_fig3.png)
  
 
  
@@ -166,7 +176,7 @@
  
 
  
-![Просмотр пространства имен служебной шины](../../images/SP15Con_Remote_Event_Receivers_FAQ_fig4.PNG)
+![Просмотр пространства имен служебной шины](../images/SP15Con_Remote_Event_Receivers_FAQ_fig4.PNG)
  
 
  
@@ -217,10 +227,10 @@ SharePoint требует отсутствия явного порта в URL-а
 <a name="Additional"> </a>
 
 
--  [Обработка событий в надстройках SharePoint](handle-events-in-sharepoint-add-ins)
+-  [Обработка событий в надстройках SharePoint](handle-events-in-sharepoint-add-ins.md)
     
  
--  [Отладка удаленных событий SharePoint с помощью Visual Studio 2012](http://blogs.msdn.com/b/officeapps/archive/2013/03/21/update-to-debugging-sharepoint-2013-remote-events-using-visual-studio-2012.aspx)
+-  [Отладка удаленных событий SharePoint с помощью Visual Studio 2012](http://blogs.msdn.com/b/officeapps/archive/2013/03/21/update-to-debugging-sharepoint-remote-events-using-visual-studio-2012.aspx)
     
  
 

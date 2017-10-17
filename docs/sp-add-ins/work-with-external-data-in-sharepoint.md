@@ -1,9 +1,18 @@
-
+---
+title: "Работа с внешними данными в SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: a3d356feac69517b2d0f0e443460ea984605f8fe
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="work-with-external-data-in-sharepoint"></a>Работа с внешними данными в SharePoint
 Здесь вы найдете ресурсы и рекомендации по доступу к внешним данным и операциям с ними с помощью JavaScript на страницах надстроек SharePoint.
  
 
- **Примечание.** Название "приложения для SharePoint" меняется на "надстройки SharePoint". Пока изменения не будут внесены полностью, в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio по-прежнему может встречаться термин "приложение". Дополнительные сведения см. в разделе [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -21,12 +30,12 @@
  
 
  
-Сведения о том, как использовать библиотеку таким способом, см. в статье [Создание пользовательской прокси-страницы для междоменной библиотеки в SharePoint](create-a-custom-proxy-page-for-the-cross-domain-library-in-sharepoint-2013).
+Сведения о том, как использовать библиотеку таким способом, см. в статье [Создание пользовательской прокси-страницы для междоменной библиотеки в SharePoint](create-a-custom-proxy-page-for-the-cross-domain-library-in-sharepoint.md).
  
 
  
 
- **Примечание.** Междоменную библиотеку SharePoint также можно использовать в другом направлении, т. е. JavaScript на удаленных веб-страницах с ее помощью может получать доступ к данным в SharePoint. Дополнительные сведения о таком применении библиотеки см. в статье [Создание надстроек SharePoint, использующих междоменную библиотеку](creating-sharepoint-add-ins-that-use-the-cross-domain-library).
+ **Примечание.** Междоменную библиотеку SharePoint также можно использовать в другом направлении, т. е. JavaScript на удаленных веб-страницах с ее помощью может получать доступ к данным в SharePoint. Дополнительные сведения о таком применении библиотеки см. в статье [Создание надстроек SharePoint, использующих междоменную библиотеку](creating-sharepoint-add-ins-that-use-the-cross-domain-library.md).
  
 
 
@@ -36,7 +45,7 @@
  
 
  
-Дополнительные сведения о том, как использовать прокси, см. в статье [Отправка запросов удаленной службе с помощью веб-прокси в SharePoint](query-a-remote-service-using-the-web-proxy-in-sharepoint-2013).
+Дополнительные сведения о том, как использовать прокси, см. в статье [Отправка запросов удаленной службе с помощью веб-прокси в SharePoint](query-a-remote-service-using-the-web-proxy-in-sharepoint.md).
  
 
  
@@ -45,10 +54,10 @@
 <a name="SP15Workdata_AddRes"> </a>
 
 
--  [Безопасный доступ к данным и клиентские объектные модели для надстроек SharePoint](secure-data-access-and-client-object-models-for-sharepoint-add-ins)
+-  [Безопасный доступ к данным и клиентские объектные модели для надстроек SharePoint](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
     
  
--  [Разработка надстроек SharePoint](develop-sharepoint-add-ins)
+-  [Разработка надстроек SharePoint](develop-sharepoint-add-ins.md)
     
  
 

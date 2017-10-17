@@ -1,42 +1,51 @@
-
+---
+title: "Работа с данными хост-сайта из JavaScript на сайте надстройки"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 5690868499a39cb0c9b448e7a16a8cf0be1290ec
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="work-with-host-web-data-from-javascript-in-the-add-in-web"></a>Работа с данными хост-сайта из JavaScript на сайте надстройки
 Узнайте, как использовать объектную модель JavaScript (JSOM) в SharePoint для работы с данными SharePoint на хост-сайте в коде JavaScript на страницах сайта надстройки.
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
-Это 11-я часть серии статей, посвященной основам разработки надстроек SharePoint, размещаемых в SharePoint. Для начала вам следует ознакомиться со статьей [Надстройки SharePoint](sharepoint-add-ins) и предыдущими статьями из этой серии.
+Это 11-я часть серии статей, посвященной основам разработки надстроек SharePoint, размещаемых в SharePoint. Для начала вам следует ознакомиться со статьей [Надстройки SharePoint](sharepoint-add-ins.md) и предыдущими статьями из этой серии.
  
 
--  [Знакомство с созданием надстроек SharePoint с размещением в SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins)
+-  [Знакомство с созданием надстроек SharePoint с размещением в SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)
     
  
--  [Развертывание и установка надстроек SharePoint, размещаемых в SharePoint](deploy-and-install-a-sharepoint-hosted-sharepoint-add-in)
+-  [Развертывание и установка надстроек SharePoint, размещаемых в SharePoint](deploy-and-install-a-sharepoint-hosted-sharepoint-add-in.md)
     
  
--  [Добавление настраиваемых столбцов в надстройки, размещаемые в SharePoint](add-custom-columns-to-a-sharepoint-hostedsharepoint-add-in)
+-  [Добавление настраиваемых столбцов в надстройки, размещаемые в SharePoint](add-custom-columns-to-a-sharepoint-hostedsharepoint-add-in.md)
     
  
--  [Добавление настраиваемого типа контента в надстройку, размещаемую в SharePoint](add-a-custom-content-type-to-a-sharepoint-hostedsharepoint-add-in)
+-  [Добавление настраиваемого типа контента в надстройки, размещаемые в SharePoint](add-a-custom-content-type-to-a-sharepoint-hostedsharepoint-add-in.md)
     
  
--  [Добавление веб-части на страницу в надстройке SharePoint, размещаемой в SharePoint](add-a-web-part-to-a-page-in-a-sharepoint-hosted-sharepoint-add-in)
+-  [Добавление веб-части на страницу в надстройку для SharePoint с размещением в SharePoint](add-a-web-part-to-a-page-in-a-sharepoint-hosted-sharepoint-add-in.md)
     
  
--  [Добавление рабочего процесса в надстройку SharePoint, размещаемую в SharePoint](add-a-workflow-to-a-sharepoint-hosted-sharepoint-add-in)
+-  [Добавление рабочего процесса в надстройку для SharePoint с размещением в SharePoint](add-a-workflow-to-a-sharepoint-hosted-sharepoint-add-in.md)
     
  
--  [Добавление настраиваемых страниц и стилей в надстройки SharePoint, размещаемые в SharePoint](add-a-custom-page-and-style-to-a-sharepoint-hosted-sharepoint-add-in)
+-  [Добавление настраиваемой страницы и стиля для надстройки с размещением в SharePoint](add-a-custom-page-and-style-to-a-sharepoint-hosted-sharepoint-add-in.md)
     
  
--  [Добавление пользовательского кода клиентской обработки к надстройке SharePoint, размещенной в SharePoint](add-custom-client-side-rendering-to-a-sharepoint-hosted-sharepoint-add-in)
+-  [Добавление настраиваемой функции отрисовки в клиенте в надстройку SharePoint, размещаемую в SharePoint](add-custom-client-side-rendering-to-a-sharepoint-hosted-sharepoint-add-in.md)
     
  
--  [Создание настраиваемой кнопки ленты на хост-сайте надстройки SharePoint](create-a-custom-ribbon-button-in-the-host-web-of-a-sharepoint-add-in)
+-  [Создание настраиваемой кнопки ленты на хост-сайте надстройки SharePoint](create-a-custom-ribbon-button-in-the-host-web-of-a-sharepoint-add-in.md)
     
  
--  [Работа с данными SharePoint с помощью API JavaScript для SharePoint](use-the-sharepoint-javascript-apis-to-work-with-sharepoint-data)
+-  [Работа с данными SharePoint с помощью API JavaScript для SharePoint](use-the-sharepoint-javascript-apis-to-work-with-sharepoint-data.md)
     
  
 
@@ -80,7 +89,7 @@
 
  
 
-  ![Календарь под названием "Employee Orientation Schedule" (Расписание вводного обучения для сотрудников), где в пункте "June 1st" (1 июня) указано "Orient Cassie Hicks" (Вводное обучение Cassie Hicks)](../../images/d2066862-41c1-424d-9bfb-b6c5342bcf2c.PNG)
+  ![Календарь под названием "Employee Orientation Schedule" (Расписание вводного обучения для сотрудников), где в пункте "June 1st" (1 июня) указано "Orient Cassie Hicks" (Вводное обучение Cassie Hicks)](../images/d2066862-41c1-424d-9bfb-b6c5342bcf2c.PNG)
  
 
  
@@ -352,7 +361,7 @@ function onScheduleItemsFail(sender, args) {
 
  
 
-  ![Список разрешений на вкладке "Разрешения" в надстройке "Конструктор манифестов" для Visual Studio с кнопкой "Редактировать", видимой в ячейке столбца "Свойства"](../../images/03780b79-aca8-44d1-b0bf-d80833d08627.PNG)
+  ![Список разрешений на вкладке "Разрешения" в надстройке "Конструктор манифестов" для Visual Studio с кнопкой "Редактировать", видимой в ячейке столбца "Свойства"](../images/03780b79-aca8-44d1-b0bf-d80833d08627.PNG)
  
 
  
@@ -367,7 +376,7 @@ function onScheduleItemsFail(sender, args) {
 
  
 
-  ![Диалоговое окно свойств для разрешений списка в Visual Studio, где для свойства задано имя "Базовый код списка" и значение 106.](../../images/13773fdd-5606-4f35-b8d5-14aad54cffb7.PNG)
+  ![Диалоговое окно свойств для разрешений списка в Visual Studio, где для свойства задано имя "Базовый код списка" и значение 106.](../images/13773fdd-5606-4f35-b8d5-14aad54cffb7.PNG)
  
 
     Нажмите кнопку **ОК**. Теперь вкладка **Разрешения** должна выглядеть примерно так:
@@ -377,7 +386,7 @@ function onScheduleItemsFail(sender, args) {
 
  
 
-  ![Вкладка "Разрешения" в надстройке "Конструктор манифестов" для Visual Studio, показывающая, что этой надстройке нужно разрешение управления для списков с базовым типом 106.](../../images/14d5a820-ab44-4d12-98de-6672884bf344.PNG)
+  ![Вкладка "Разрешения" в надстройке "Конструктор манифестов" для Visual Studio, показывающая, что этой надстройке нужно разрешение управления для списков с базовым типом 106.](../images/14d5a820-ab44-4d12-98de-6672884bf344.PNG)
  
 
  
@@ -406,7 +415,7 @@ function onScheduleItemsFail(sender, args) {
 
  
 
-  ![Запрос согласия в надстройке SharePoint с кратким описанием разрешений, необходимых для надстройки, а также кнопками "Доверять" и "Отмена".](../../images/99209248-8927-4fc2-abfc-53d530376516.PNG)
+  ![Запрос согласия в надстройке SharePoint с кратким описанием разрешений, необходимых для надстройки, а также кнопками "Доверять" и "Отмена".](../images/99209248-8927-4fc2-abfc-53d530376516.PNG)
  
 
  
@@ -418,7 +427,7 @@ function onScheduleItemsFail(sender, args) {
 
  
 
-  ![Домашняя страница надстройки "Employee Orientation" (Обучение сотрудников) с новой кнопкой с надписью "Ensure Items are Scheduled" (Добавить элементы в расписание).](../../images/72b78f79-78c0-41db-90d5-8f67e1c17b0e.PNG)
+  ![Домашняя страница надстройки "Employee Orientation" (Обучение сотрудников) с новой кнопкой с надписью "Ensure Items are Scheduled" (Добавить элементы в расписание).](../images/72b78f79-78c0-41db-90d5-8f67e1c17b0e.PNG)
  
 
  
@@ -436,7 +445,7 @@ function onScheduleItemsFail(sender, args) {
 
  
 
-  ![Календарь "Employee Orientation" (Обучение сотрудников) с новыми событиями, добавленными для обучения двух сотрудников 10-го и 11-го числа месяца](../../images/f8037509-4bf1-4c69-a673-ee6fe0f0dcb7.PNG)
+  ![Календарь "Employee Orientation" (Обучение сотрудников) с новыми событиями, добавленными для обучения двух сотрудников 10-го и 11-го числа месяца](../images/f8037509-4bf1-4c69-a673-ee6fe0f0dcb7.PNG)
  
 
  
@@ -460,16 +469,16 @@ function onScheduleItemsFail(sender, args) {
 
  
 
--  [Проектирование надстроек SharePoint](design-sharepoint-add-ins)
+-  [Проектирование надстроек SharePoint](design-sharepoint-add-ins.md)
     
  
--  [Разработка надстроек SharePoint](develop-sharepoint-add-ins)
+-  [Разработка надстроек SharePoint](develop-sharepoint-add-ins.md)
     
  
--  [Публикация надстроек SharePoint](publish-sharepoint-add-ins)
+-  [Публикация надстроек SharePoint](publish-sharepoint-add-ins.md)
     
  
--  [Средства и среды для разработки надстроек SharePoint](tools-and-environments-for-developing-sharepoint-add-ins)
+-  [Средства и среды для разработки надстроек SharePoint](tools-and-environments-for-developing-sharepoint-add-ins.md)
     
  
 

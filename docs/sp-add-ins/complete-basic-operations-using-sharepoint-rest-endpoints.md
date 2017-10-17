@@ -1,23 +1,33 @@
+---
+title: "Выполнение базовых операций с использованием конечных точек REST SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 8123b3bfa78cd43f337633618c3ed0453c396702
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="complete-basic-operations-using-sharepoint-rest-endpoints"></a>Выполнение базовых операций с использованием конечных точек REST SharePoint
 Узнайте, как выполнять операции CRUD (создание, чтение, обновление, удаление) с помощью интерфейса REST SharePoint.
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
 ## <a name="developing-with-the-sharepoint-client-apis-and-rest"></a>Разработка с помощью клиентских интерфейсов API и REST для SharePoint
 <a name="ClientAPIs"> </a>
 
-Вы можете выполнять базовые операции создания, чтения, обновления и удаления (CRUD) с помощью интерфейса Representational State Transfer (REST), предоставленного SharePoint. REST позволяет использовать все объекты и операции SharePoint, которые доступны в других клиентских интерфейсах API для SharePoint. Одно из преимуществ REST заключается в том, что вам не придется добавлять ссылки на библиотеки или клиентские сборки SharePoint. Вместо этого вы отправляете HTTP-запросы в соответствующие конечные точки для получения или обновления объектов SharePoint, например веб-сайтов, списков и элементов списков. Подробный обзор интерфейса REST SharePoint и его архитектуры см. в статье  [Знакомство со службой REST для SharePoint](get-to-know-the-sharepoint-2013-rest-service).
+Вы можете выполнять базовые операции создания, чтения, обновления и удаления (CRUD) с помощью интерфейса Representational State Transfer (REST), предоставленного SharePoint. REST позволяет использовать все объекты и операции SharePoint, которые доступны в других клиентских интерфейсах API для SharePoint. Одно из преимуществ REST заключается в том, что вам не придется добавлять ссылки на библиотеки или клиентские сборки SharePoint. Вместо этого вы отправляете HTTP-запросы в соответствующие конечные точки для получения или обновления объектов SharePoint, например веб-сайтов, списков и элементов списков. Подробный обзор интерфейса REST SharePoint и его архитектуры см. в статье  [Знакомство со службой REST для SharePoint](get-to-know-the-sharepoint-rest-service.md).
  
 
  
- Больше о работе с базовыми сущностями можно узнать в статьях SharePoint [Работа со списками и элементами списков в службе REST](working-with-lists-and-list-items-with-rest) и [Работа с папками и файлами в службе REST](working-with-folders-and-files-with-rest). С примерами выполнения многих из этих операций в контексте веб-приложения ASP.NET, написанного на C#, можно ознакомиться в репозитории  [SharePoint-Add-in-REST-OData-BasicDataOperations](https://github.com/OfficeDev/SharePoint-Add-in-REST-OData-BasicDataOperations).
+ Больше о работе с базовыми сущностями можно узнать в статьях SharePoint [Работа со списками и элементами списков в службе REST](working-with-lists-and-list-items-with-rest.md) и [Работа с папками и файлами в службе REST](working-with-folders-and-files-with-rest.md). С примерами выполнения многих из этих операций в контексте веб-приложения ASP.NET, написанного на C#, можно ознакомиться в репозитории  [SharePoint-Add-in-REST-OData-BasicDataOperations](https://github.com/OfficeDev/SharePoint-Add-in-REST-OData-BasicDataOperations.md).
  
 
  
-Более подробные сведения о наборах API, доступных на платформе SharePoint, см. в статье  [Выбор правильного набора API в SharePoint](http://msdn.microsoft.com/library/f36645da-77c5-47f1-a2ca-13d4b62b320d%28Office.15%29.aspx). Дополнительные сведения об использовании других клиентских интерфейсов API см. в статьях  [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013),  [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013) и [Построение приложений Windows Phone, обращающихся к SharePoint](http://msdn.microsoft.com/library/36681335-f772-4499-8445-f94481bc18e7%28Office.15%29.aspx).
+Более подробные сведения о наборах API, доступных на платформе SharePoint, см. в статье  [Выбор правильного набора API в SharePoint](http://msdn.microsoft.com/library/f36645da-77c5-47f1-a2ca-13d4b62b320d%28Office.15%29.aspx). Дополнительные сведения об использовании других клиентских интерфейсов API см. в статьях  [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint.md),  [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint.md) и [Построение приложений Windows Phone, обращающихся к SharePoint](http://msdn.microsoft.com/library/36681335-f772-4499-8445-f94481bc18e7%28Office.15%29.aspx).
  
 
  
@@ -65,7 +75,7 @@
  
 
  
-Приведенный ниже код на C# иллюстрирует создание запроса **GET**, который возвращает представление JSON для всех списков на сайте с помощью JQuery. Предполагается, что у вас есть действительный маркер доступа OAuth, хранящийся в переменной **accessToken**. Маркер доступа не нужен, если вы выполняете вызов с сайта надстройки, как в надстройке, размещенной в SharePoint. Обратите внимание, что невозможно получить маркер доступа из кода, который выполняется в браузерном клиенте. Маркер доступа необходимо получить из кода, выполняемого на сервере. В статьях [Поток маркеров контекста OAuth для надстроек в SharePoint](context-token-oauth-flow-for-sharepoint-add-ins) и [Поток кода аутентификации OAuth для надстроек в SharePoint](authorization-code-oauth-flow-for-sharepoint-add-ins) рассказывается, как получить маркер доступа.
+Приведенный ниже код на C# иллюстрирует создание запроса **GET**, который возвращает представление JSON для всех списков на сайте с помощью JQuery. Предполагается, что у вас есть действительный маркер доступа OAuth, хранящийся в переменной **accessToken**. Маркер доступа не нужен, если вы выполняете вызов с сайта надстройки, как в надстройке, размещенной в SharePoint. Обратите внимание, что невозможно получить маркер доступа из кода, который выполняется в браузерном клиенте. Маркер доступа необходимо получить из кода, выполняемого на сервере. В статьях [Поток маркеров контекста OAuth для надстроек в SharePoint](context-token-oauth-flow-for-sharepoint-add-ins.md) и [Поток кода аутентификации OAuth для надстроек в SharePoint](authorization-code-oauth-flow-for-sharepoint-add-ins.md) рассказывается, как получить маркер доступа.
  
 
  
@@ -86,7 +96,7 @@ HttpWebResponse endpointResponse =
 
 ```
 
-Этот запрос будет выглядеть немного по-другому, если вы создаете надстройку на JavaScript, но с использованием междоменной библиотеки SharePoint. В этом случае предоставлять маркер доступа не нужно. Ниже показано, как выглядел бы запрос, если бы вы использовали междоменную библиотеку и хотели получить представление списков OData в формате XML, а не JSON. Так как по умолчанию отклик представлен в формате Atom, добавлять заголовок **Accept** необязательно. Дополнительные сведения об использовании междоменной библиотеки см. в статье [Обращение к данным SharePoint из надстроек с помощью междоменной библиотеки](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library).
+Этот запрос будет выглядеть немного по-другому, если вы создаете надстройку на JavaScript, но с использованием междоменной библиотеки SharePoint. В этом случае предоставлять маркер доступа не нужно. Ниже показано, как выглядел бы запрос, если бы вы использовали междоменную библиотеку и хотели получить представление списков OData в формате XML, а не JSON. Так как по умолчанию отклик представлен в формате Atom, добавлять заголовок **Accept** необязательно. Дополнительные сведения об использовании междоменной библиотеки см. в статье [Обращение к данным SharePoint из надстроек с помощью междоменной библиотеки](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md).
  
 
  
@@ -171,7 +181,7 @@ HttpWebResponse endpointResponse =
 
 ```
 
-Если вы используете поток аутентификации и авторизации, описанный в статье  [Авторизация и проверка подлинности для надстроек в SharePoint](authorization-and-authentication-of-sharepoint-add-ins), нет необходимости включать в свои запросы дайджест запроса.
+Если вы используете поток аутентификации и авторизации, описанный в статье  [Авторизация и проверка подлинности для надстроек в SharePoint](authorization-and-authentication-of-sharepoint-add-ins.md), нет необходимости включать в свои запросы дайджест запроса.
  
 
  
@@ -307,7 +317,7 @@ jQuery.ajax({
  "X-RequestDigest": $("#__REQUESTDIGEST").val()
     
  
-- Надстройки с размещением в облаке, использующие OAuth, сначала получают значение дайджеста формы, отправляя запрос к конечной точке **contextinfo**, а затем добавляют его в запросы, как показано в разделе [Запись данных с помощью интерфейса REST](complete-basic-operations-using-sharepoint-2013-rest-endpoints#WritingData).
+- В надстройках с размещением в облаке, использующих OAuth, для начала необходимо получить значение дайджеста формы, отправив запрос конечной точке **contextinfo**, а затем добавить его в запросы, как показано в разделе [Запись данных с помощью интерфейса REST](complete-basic-operations-using-sharepoint-rest-endpoints.md#WritingData).
     
  
 - В надстройках с размещением в облаке, которые используют междоменную библиотеку JavaScript, не требуется указывать значение дайджеста формы. По умолчанию SP.RequestExecutor делает это автоматически. (Метод также обрабатывает значение content-length.)
@@ -317,7 +327,7 @@ jQuery.ajax({
 ### <a name="add-ins-that-use-oauth-must-pass-access-tokens-in-requests"></a>Надстройки, использующие OAuth, должны передавать маркеры доступа в запросах
 <a name="OAuthTokens"> </a>
 
-Чтобы авторизовать доступ к данным в SharePoint, надстройки с размещением в облаке используют OAuth или междоменную библиотеку. Компоненты надстроек с кодом, выполняемым на удаленном веб-сервере, должны использовать OAuth для авторизации доступа к данным в SharePoint. В этом случае необходимо включить заголовок **Authorization** для отправки маркера доступа. Пример добавления заголовка авторизации к объекту **HTTPWebRequest** см. в разделе [Чтение данных с помощью интерфейса SharePoint REST](complete-basic-operations-using-sharepoint-2013-rest-endpoints#ReadingData).
+Чтобы авторизовать доступ к данным в SharePoint, надстройки с размещением в облаке используют OAuth или междоменную библиотеку. Компоненты надстроек с кодом, выполняемым на удаленном веб-сервере, должны использовать OAuth для авторизации доступа к данным в SharePoint. В этом случае необходимо включить заголовок **Authorization** для отправки маркера доступа. Пример добавления заголовка авторизации к объекту **HTTPWebRequest** см. в разделе [Чтение данных с помощью интерфейса SharePoint REST](complete-basic-operations-using-sharepoint-rest-endpoints.md#ReadingData).
  
 
  
@@ -325,7 +335,7 @@ jQuery.ajax({
  **Примечание.** Компоненты надстроек с размещением в облаке, написанные на JavaScript, должны использовать объект **SP.RequestExecutor** из междоменной библиотеки для доступа к данным SharePoint. В запросы к междоменной библиотеке не обязательно включать маркер доступа.
  
 
-Подробнее о маркерах доступа OAuth и их получении см. в статьях  [Поток маркеров контекста OAuth для надстроек в SharePoint](context-token-oauth-flow-for-sharepoint-add-ins) и [Поток кода аутентификации OAuth для надстроек в SharePoint](authorization-code-oauth-flow-for-sharepoint-add-ins).
+Подробнее о маркерах доступа OAuth и их получении см. в статьях  [Поток маркеров контекста OAuth для надстроек в SharePoint](context-token-oauth-flow-for-sharepoint-add-ins.md) и [Поток кода аутентификации OAuth для надстроек в SharePoint](authorization-code-oauth-flow-for-sharepoint-add-ins.md).
  
 
  
@@ -359,10 +369,10 @@ jQuery.ajax({
 |Размещение в облаке|Компонент надстройки JavaScript получает доступ к данным в семействе веб-сайтов, не включающем хост-сайт, с помощью междоменной библиотеки (только для надстроек с разрешениями на уровне клиента)| _<app web url>_/_api/SP.AppContextSite(@target)/web/title?@target=' _<target site url>_'|
 |Размещение в SharePoint|Компонент сайта надстройки получает доступ к данным в другом семействе веб-сайтов (только для надстроек с разрешениями на уровне клиента)| _<app web url>_/_api/SP.AppContextSite(@target)/web/title?@target=' _<target site url>_'|
 
- **Примечание.** Для междоменного доступа к данным также требуются соответствующие разрешения для надстроек. Дополнительные сведения см. в разделах [Доступ к данным на хост-сайте](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library#SP15Accessdatafromremoteapp_Hostweb) и [Доступ к данным в нескольких семействах веб-сайтов](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library#SP15Accessdatafromremoteapp_TenantScope).
+ **Примечание.** Для междоменного доступа к данным также требуются соответствующие разрешения для надстроек. Дополнительные сведения см. в разделах [Доступ к данным на хост-сайте](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb) и [Доступ к данным в нескольких семействах веб-сайтов](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_TenantScope).
  
 
-Надстройки SharePoint могут получать URL-адреса сайта надстройки и хост-сайта из строки запроса страницы надстройки, как показано в следующем примере кода. Кроме того, в этом примере показывается, как ссылаться на междоменную библиотеку, определенную в файле SP.RequestExecutor.js на хост-сайте. Этот пример предполагает, что ваша надстройка запускается из SharePoint. Указания по правильной настройке контекста SharePoint, если надстройка запускается не из SharePoint, см. в статье  [Поток кода аутентификации OAuth для надстроек в SharePoint](authorization-code-oauth-flow-for-sharepoint-add-ins).
+Надстройки SharePoint могут получать URL-адреса сайта надстройки и хост-сайта из строки запроса страницы надстройки, как показано в следующем примере кода. Кроме того, в этом примере показывается, как ссылаться на междоменную библиотеку, определенную в файле SP.RequestExecutor.js на хост-сайте. Этот пример предполагает, что ваша надстройка запускается из SharePoint. Указания по правильной настройке контекста SharePoint, если надстройка запускается не из SharePoint, см. в статье  [Поток кода аутентификации OAuth для надстроек в SharePoint](authorization-code-oauth-flow-for-sharepoint-add-ins.md).
  
 
  
@@ -438,7 +448,7 @@ function getQueryStringParameter(paramToRetrieve) {
 ## <a name="batch-job-support"></a>Поддержка пакетных заданий
 <a name="batch"> </a>
 
-Служба REST SharePoint Online (а также локальной версии SharePoint 2016 и последующих выпусков) поддерживает объединение нескольких запросов в одном вызове службы с помощью параметра запроса OData  `$batch`. Дополнительные сведения и ссылки на примеры кода см. в разделе  [Создание пакетного запроса с помощью интерфейсов REST API](make-batch-requests-with-the-rest-apis).
+Служба REST SharePoint Online (а также локальной версии SharePoint 2016 и последующих выпусков) поддерживает объединение нескольких запросов в одном вызове службы с помощью параметра запроса OData  `$batch`. Дополнительные сведения и ссылки на примеры кода см. в разделе  [Создание пакетного запроса с помощью интерфейсов REST API](make-batch-requests-with-the-rest-apis.md).
  
 
  
@@ -447,31 +457,31 @@ function getQueryStringParameter(paramToRetrieve) {
 <a name="bk_addresources"> </a>
 
 
--  [Работа со списками и элементами списков в службе REST](working-with-lists-and-list-items-with-rest)
+-  [Работа со списками и элементами списков в службе REST](working-with-lists-and-list-items-with-rest.md)
     
  
--  [Работа с папками и файлами в службе REST](working-with-folders-and-files-with-rest)
+-  [Работа с папками и файлами в службе REST](working-with-folders-and-files-with-rest.md)
     
  
 -  [SharePoint-Add-in-REST-OData-BasicDataOperations](https://github.com/OfficeDev/SharePoint-Add-in-REST-OData-BasicDataOperations)
     
  
--  [SharePoint: выполнение основных операций доступа к данным в файлах и папках с помощью REST](http://code.msdn.microsoft.com/SharePoint-2013-Perform-ab9c4ae5)
+-  [SharePoint: выполнение основных операций доступа к данным в файлах и папках с помощью REST](http://code.msdn.microsoft.com/SharePoint-Perform-ab9c4ae5)
     
  
--  [Выполнение базовых операций с использованием кода библиотеки клиента в SharePoint](complete-basic-operations-using-sharepoint-2013-client-library-code)
+-  [Выполнение базовых операций с использованием кода библиотеки клиента в SharePoint](complete-basic-operations-using-sharepoint-client-library-code.md)
     
  
--  [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013)
+-  [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint.md)
     
  
--  [Разработка надстроек для SharePoint](develop-sharepoint-add-ins)
+-  [Разработка надстроек SharePoint](develop-sharepoint-add-ins.md)
     
  
--  [Безопасный доступ к данным и клиентские объектные модели для надстроек SharePoint](secure-data-access-and-client-object-models-for-sharepoint-add-ins)
+-  [Безопасный доступ к данным и клиентские объектные модели для надстроек SharePoint](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
     
  
--  [Работа с внешними данными в SharePoint](work-with-external-data-in-sharepoint-2013)
+-  [Работа с внешними данными в SharePoint](work-with-external-data-in-sharepoint.md)
     
  
 -  [Протокол OData](http://www.odata.org/)
@@ -480,7 +490,7 @@ function getQueryStringParameter(paramToRetrieve) {
 -  [OData: формат нотации объектов JavaScript (JSON)](http://www.odata.org/documentation/odata-version-2-0/JSON-format/)
     
  
--  [Установка настраиваемых разрешений для списка с помощью интерфейса REST](set-custom-permissions-on-a-list-by-using-the-rest-interface)
+-  [Назначение настраиваемых разрешений для списка с помощью интерфейса REST](set-custom-permissions-on-a-list-by-using-the-rest-interface.md)
     
  
 

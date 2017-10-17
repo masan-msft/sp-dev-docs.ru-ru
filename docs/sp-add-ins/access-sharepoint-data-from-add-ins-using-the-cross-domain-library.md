@@ -1,8 +1,18 @@
+---
+title: "Обращение к данным SharePoint из надстроек с помощью междоменной библиотеки"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: e7b5afc5617df0998f34dc2d6e353ffd8a4d4998
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="access-sharepoint-data-from-add-ins-using-the-cross-domain-library"></a>Обращение к данным SharePoint из надстроек с помощью междоменной библиотеки
 Узнайте, как работать с данными на веб-сайте SharePoint из надстройки, используя междоменную библиотеку в SharePoint.
  
 
- **Примечание.** Название "приложения для SharePoint" меняется на "надстройки SharePoint". В процессе перехода с одного названия на другое в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio по-прежнему может встречаться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 При создании надстроек SharePoint обычно необходимо объединять данные из различных источников. Но по [соображениям безопасности](http://msdn.microsoft.com/library/cc709423.aspx) используются механизмы блокировки, которые предотвращают одновременный обмен данными с несколькими доменами. Эти механизмы безопасности реализованы в большинстве браузеров, что усложняет или делает невозможным выполнение клиентских вызовов в разных доменах.
@@ -23,7 +33,7 @@
  **Примечание.** В этом разделе **домен надстройки** означает домен, в котором размещаются страницы надстройки. Это может быть домен удаленной веб-надстройки с размещением у поставщика. Но страницы надстройки также могут содержаться в SharePoint на сайте надстройки и отправлять запросы в домен хост-сайта. В последнем случае домен надстройки — это домен сайта надстройки.
  
 
-В главном примере в данной статье показано, как создать надстройку, считывающую данные на сайте надстройки и отображающую их на веб-странице. В разделе  [Дальнейшие действия](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library#SP15Accessdatafromremoteapp_Next) показаны дополнительные сценарии, основанные на главном примере.
+В главном примере в данной статье показано, как создать надстройку, считывающую данные на сайте надстройки и отображающую их на веб-странице. В разделе  [Дальнейшие действия](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Next) показаны дополнительные сценарии, основанные на главном примере.
  
 
 ## <a name="prerequisites-for-using-the-examples-in-this-article"></a>Необходимые условия для использования примеров в этой статье
@@ -75,7 +85,7 @@
  
 
  
-![Пример экрана с междоменными результатами чтения элементов](../../images/CrossDomainReadItemsResult.png)
+![Пример экрана с междоменными результатами чтения элементов](../images/CrossDomainReadItemsResult.png)
  
 
 ### <a name="create-a-sharepoint-add-in-and-web-projects"></a>Создание надстройки SharePoint и веб-проектов
@@ -94,7 +104,7 @@
  
 4. Выберите для надстройки вариант размещения **Размещено у поставщика**.
     
-     **Примечание.** Вы также можете использовать междоменную библиотеку в надстройке, размещаемой в SharePoint. Однако в такой надстройке ее страница уже находится на сайте надстройки, т. е. вам не нужна междоменная библиотека для чтения элементов списка. Пример такой надстройки, которая читает данные на хост-сайте, см. в статье, посвященной [использованию междоменной библиотеки в надстройке, размещаемой в SharePoint (REST)](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-00c37814), или в разделе [Доступ к данным на хост-сайте](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library#SP15Accessdatafromremoteapp_Hostweb) далее в этой статье.
+     **Примечание.** Вы также можете использовать междоменную библиотеку в надстройке, размещаемой в SharePoint. Однако в такой надстройке ее страница уже находится на сайте надстройки, т. е. вам не нужна междоменная библиотека для чтения элементов списка. Пример такой надстройки, которая читает данные на хост-сайте, см. в статье, посвященной [использованию междоменной библиотеки в надстройке, размещаемой в SharePoint (REST)](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-00c37814), или в разделе [Доступ к данным на хост-сайте](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb) далее в этой статье.
 
 ### <a name="create-list-items-on-the-add-in-web"></a>Создание элементов списка на сайте надстройки
 
@@ -147,7 +157,7 @@
  
   - Создает экземпляр объекта **RequestExecutor**. По умолчанию RequestExecutor использует сайт надстройки как сайт контекста.
     
-     **Примечание.** Вы можете изменить сайт контекста на сайты, отличные от сайта надстройки, с помощью конечной точки **AppContextSite** (REST) или объекта (JSOM). Дополнительные сведения об AppContextSite см. в разделе [Доступ к данным на хост-сайте](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library#SP15Accessdatafromremoteapp_Hostweb) далее в этой статье.
+     **Примечание.** Вы можете изменить сайт контекста на сайты, отличные от сайта надстройки, с помощью конечной точки **AppContextSite** (REST) или объекта (JSOM). Дополнительные сведения об AppContextSite см. в разделе [Доступ к данным на хост-сайте](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb) далее в этой статье.
   - Выполняет REST-вызов к конечной точке элементов списка.
     
  
@@ -270,7 +280,7 @@
 
 1. Нажмите клавишу F5.
     
-     **Примечание.** Когда вы нажимаете клавишу F5, Visual Studio выполняет сборку решения, развертывает надстройку и открывает для нее страницу разрешений.
+     **Примечание.** При нажатии клавиши F5 Visual Studio выполняет сборку решения, развертывает надстройку и открывает для нее страницу разрешений.
 2. Нажмите кнопку **Доверять**.
     
  
@@ -287,7 +297,7 @@
 
 |**Если вы видите...**|**Попробуйте...**|
 |:-----|:-----|
-|Сообщение об ошибке: "К сожалению, у нас возникли проблемы с доступом к сайту". К тому же, появляется кнопка, предназначенная для исправления ошибки, но она не устраняет проблему.|Возможно, вы столкнулись с проблемой с зонами безопасности в Internet Explorer, см. статью [Работа с междоменной библиотекой в различных зонах безопасности Internet Explorer в надстройках SharePoint](work-with-the-cross-domain-library-across-different-internet-explorer-security-zones-in-sharepoint-add-ins).|
+|Сообщение об ошибке: "К сожалению, у нас возникли проблемы с доступом к сайту". К тому же, появляется кнопка, предназначенная для исправления ошибки, но она не устраняет проблему.|Возможно, вы столкнулись с проблемой с зонами безопасности в Internet Explorer, см. статью [Работа с междоменной библиотекой в различных зонах безопасности Internet Explorer в надстройках SharePoint](work-with-the-cross-domain-library-across-different-internet-explorer-security-z.md).|
 |Сообщение об ошибке: требуемые функции не поддерживаются вашим браузером. Используйте IE 8 или более позднюю версию либо другой современный браузер. Метатег "X-UA-Compatible" должен быть равен "IE=8" или более высокому значению.|Для междоменной библиотеки требуется режим документа в **IE8** или более поздней версии. В ряде случаев он по умолчанию задан как **IE7**. Можно использовать средства разработчика Internet Explorer, чтобы определить или изменить режим документа для страницы. Дополнительные сведения см. в разделе [Определение совместимости документов](http://msdn.microsoft.com/library/cc288325.aspx).|
 |Сообщение об ошибке: "Тип не определен". Кроме того, надстройка использует объектную модель JavaScript (JSOM).|JSOM использует метод **Type.registerNamespace** в библиотеке Microsoft Ajax для регистрации пространства имен **SP**. Используйте следующий код, чтобы добавить ссылку на библиотеку Microsoft Ajax на вашей странице: ```HTML<script  type="text/javascript"  src="//ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js"></script>```.|
 
@@ -432,7 +442,7 @@ context.load(this.web);
 </AppPermissionRequests>
 ```
 
-Чтобы заменить сайт контекста в коде, используйте конечную точку **AppContextSite** (REST) или объект (JSOM), как в разделе [Доступ к данным на хост-сайте](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library#SP15Accessdatafromremoteapp_Hostweb). Вот напоминание о конечной точке REST: /_api/SP.AppContextSite(@target)/web/title?@target='weburl', а также пример того, как создать экземпляр объекта в JSOM: `appContextSite = new SP.AppContextSite(context, weburl);`.
+Чтобы заменить сайт контекста в коде, используйте конечную точку **AppContextSite** (REST) или объект (JSOM), как в разделе [Доступ к данным на хост-сайте](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md#SP15Accessdatafromremoteapp_Hostweb). Вот напоминание о конечной точке REST: /_api/SP.AppContextSite(@target)/web/title?@target='weburl', а также пример того, как создать экземпляр объекта в JSOM: `appContextSite = new SP.AppContextSite(context, weburl);`.
  
 
  
@@ -456,7 +466,7 @@ context.load(this.web);
  
 
  
-Однако для этих сценариев существует решение. Это **шаблон apphost**, который создает оболочку для страниц надстройки на странице, размещенной на сайте надстройки. Рекомендуем использовать шаблон apphost в надстройках, которые используют междоменную библиотеку, даже если очевидных границ безопасности нет. Дополнительные сведения см. в статье [Работа с междоменной библиотекой в различных зонах безопасности Internet Explorer в надстройках SharePoint](work-with-the-cross-domain-library-across-different-internet-explorer-security-zones-in-sharepoint-add-ins).
+Однако для этих сценариев существует решение. Это **шаблон apphost**, который создает оболочку для страниц надстройки на странице, размещенной на сайте надстройки. Рекомендуем использовать шаблон apphost в надстройках, которые используют междоменную библиотеку, даже если очевидных границ безопасности нет. Дополнительные сведения см. в статье [Работа с междоменной библиотекой в различных зонах безопасности Internet Explorer в надстройках SharePoint](work-with-the-cross-domain-library-across-different-internet-explorer-security-z.md).
  
 
  
@@ -504,18 +514,18 @@ context.load(this.web);
 -  [Пример кода: использование дополнительных действий и междоменной библиотеки для заказа книг](http://code.msdn.microsoft.com/SharePoint-2013-Open-a-36d1598d)
     
  
--  [Безопасный доступ к данным и клиентские объектные модели для надстроек SharePoint](secure-data-access-and-client-object-models-for-sharepoint-add-ins)
+-  [Безопасный доступ к данным и клиентские объектные модели для надстроек SharePoint](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
     
  
--  [Работа с междоменной библиотекой в различных зонах безопасности Internet Explorer в надстройках SharePoint](work-with-the-cross-domain-library-across-different-internet-explorer-security-zones-in-sharepoint-add-ins)
+-  [Работа с междоменной библиотекой в различных зонах безопасности Internet Explorer в надстройках SharePoint](work-with-the-cross-domain-library-across-different-internet-explorer-security-z.md)
     
  
--  [Создание настраиваемой страницы прокси для междоменной библиотеки в SharePoint](create-a-custom-proxy-page-for-the-cross-domain-library-in-sharepoint-2013)
+-  [Создание настраиваемой страницы прокси для междоменной библиотеки в SharePoint](create-a-custom-proxy-page-for-the-cross-domain-library-in-sharepoint.md)
     
  
--  [Отправка запросов удаленной службе с помощью веб-прокси в SharePoint](query-a-remote-service-using-the-web-proxy-in-sharepoint-2013)
+-  [Отправка запросов удаленной службе с помощью веб-прокси в SharePoint](query-a-remote-service-using-the-web-proxy-in-sharepoint.md)
     
  
--  [Настройка локальной среды разработки для надстроек SharePoint](set-up-an-on-premises-development-environment-for-sharepoint-add-ins)
+-  [Настройка локальной среды разработки надстроек SharePoint](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md)
     
  

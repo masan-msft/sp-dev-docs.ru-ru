@@ -1,11 +1,21 @@
+---
+title: "Знакомство с созданием надстроек SharePoint с размещением у поставщика"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 10a49de17943a4384e71904e31625920a3a3513b
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="get-started-creating-provider-hosted-sharepoint-add-ins"></a>Знакомство с созданием надстроек SharePoint с размещением у поставщика
 Узнайте, как настроить среду разработки и создать свою первую надстройку SharePoint с размещением у поставщика.
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
-Надстройки с размещением у поставщика — это один из двух основных типов надстроек SharePoint. Обзор надстроек SharePoint и этих основных типов см. в статье [Надстройки SharePoint](sharepoint-add-ins). Ниже представлен обзор надстроек с размещением у поставщика.
+Надстройки с размещением у поставщика — это один из двух основных типов надстроек SharePoint. Обзор надстроек SharePoint и этих основных типов см. в статье [Надстройки SharePoint](sharepoint-add-ins.md). Ниже представлен обзор надстроек с размещением у поставщика.
  
 
 - К ним относятся веб-приложения, службы или базы данных, размещенные на компьютерах, которые не относятся к ферме SharePoint или подписке SharePoint Online. Они могут также содержать компоненты SharePoint. Вы можете размещать внешние компоненты в любом стеке веб-хостинга, в том числе стеке LAMP (Linux, Apache, MySQL и PHP).
@@ -14,11 +24,11 @@
 - Пользовательская бизнес-логика надстройки должна запускаться на внешних компонентах или в JavaScript пользовательских страниц SharePoint.
     
  
-- [Этап 1. Настройка среды разработки](get-started-creating-provider-hosted-sharepoint-add-ins#Setup) 
+- [Этап 1. Настройка среды разработки](get-started-creating-provider-hosted-sharepoint-add-ins.md#Setup) 
 
-- [Этап 2. Создание проекта приложения](get-started-creating-provider-hosted-sharepoint-add-ins#Create) 
+- [Этап 2. Создание проекта приложения](get-started-creating-provider-hosted-sharepoint-add-ins.md#Create) 
 
-- [Этап 3. Написание кода приложения](get-started-creating-provider-hosted-sharepoint-add-ins#Code)
+- [Этап 3. Написание кода приложения](get-started-creating-provider-hosted-sharepoint-add-ins.md#Code)
  
 ## <a name="set-up-your-dev-environment"></a>Настройка среды разработки
 <a name="Setup"> </a>
@@ -42,7 +52,7 @@
 <a name="o365_signup"> </a>
 
 
- **Примечание.** Возможно, у вас уже есть доступ к Сайту разработчика для Office 365. **Вы являетесь подписчиком MSDN?** Visual Studio Ultimate и Visual Studio Premium с подпиской на MSDN включают бесплатную подписку разработчика приложений для Office 365. [Воспользуйтесь этим преимуществом прямо сегодня.](https://msdn.microsoft.com/subscriptions/manage/default.aspx) **У вас есть один из указанных ниже планов подписки на Office 365?** **В этом случае администратор подписки на Office 365 может создать Сайт разработчика, ** используя [Центр администрирования Office 365](https://portal.microsoftonline.com/admin/default.aspx). Дополнительные сведения см. в статье [Создание сайта разработчика для существующей подписки на Office 365](create-a-developer-site-on-an-existing-office-365-subscription). 
+ **Примечание.** Возможно, у вас уже есть доступ к Сайту разработчика для Office 365. **Вы являетесь подписчиком MSDN?** Visual Studio Ultimate и Visual Studio Premium с подпиской на MSDN включают бесплатную подписку разработчика приложений для Office 365. [Воспользуйтесь этим преимуществом прямо сегодня.](https://msdn.microsoft.com/subscriptions/manage/default.aspx) **У вас есть один из указанных ниже планов подписки на Office 365?** **В этом случае администратор подписки на Office 365 может создать Сайт разработчика, ** используя [Центр администрирования Office 365](https://portal.microsoftonline.com/admin/default.aspx). Дополнительные сведения см. в статье [Создание сайта разработчика для существующей подписки на Office 365](create-a-developer-site-on-an-existing-office-365-subscription.md). 
  
 
 Получить план Office 365 можно тремя способами. 
@@ -69,7 +79,7 @@
  
 
  
-![Страница 2 регистрационной формы для учетной записи Office 365](../../images/ff384c69-56bf-4ceb-81c3-8b874e2407f0.png)
+![Страница 2 регистрационной формы для учетной записи Office 365](../images/ff384c69-56bf-4ceb-81c3-8b874e2407f0.png)
  
 
  
@@ -107,7 +117,7 @@
  
 
  
-![Снимок экрана с изображением Центра администрирования Office 365.](../../images/SP15_Office365AdminInset_border.png)
+![Снимок экрана с изображением Центра администрирования Office 365.](../images/SP15_Office365AdminInset_border.png)
  
 
  
@@ -127,7 +137,7 @@
  
 
  
-![Снимок экрана с изображением домашней страницы Сайта разработчика.](../../images/SP15_DeveloperSiteHome_border.png)
+![Снимок экрана с изображением домашней страницы Сайта разработчика.](../images/SP15_DeveloperSiteHome_border.png)
  
 
  
@@ -491,7 +501,7 @@ namespace SampleAddInWeb
 
  
 
-  ![Страница запуска базового приложения с размещением у заказчика](../../images/SP15_basicself-hostedapp.gif)
+  ![Страница запуска базового приложения с размещением у заказчика](../images/SP15_basicself-hostedapp.gif)
  
 
  
@@ -501,7 +511,7 @@ namespace SampleAddInWeb
 ## <a name="next-steps"></a>Дальнейшие действия
 <a name="SP15createprovider_nextsteps"> </a>
 
-Сведения об интеграции надстройки в схему пользовательского интерфейса SharePoint см. в статье [Настройка внешнего вида надстройки SharePoint, размещенной у поставщика](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel).
+Сведения об интеграции надстройки в схему пользовательского интерфейса SharePoint см. в статье [Настройка внешнего вида надстройки SharePoint, размещенной у поставщика](give-your-provider-hosted-add-in-the-sharepoint-look-and-feel.md).
  
 
  
@@ -510,7 +520,7 @@ namespace SampleAddInWeb
 <a name="bk_addresources"> </a>
 
 
-- Настройка других типов среды разработки (например, среды "все локальные") описана в разделе  [Инструменты](tools-and-environments-for-developing-sharepoint-add-ins) в содержании Надстройки SharePoint.
+- Настройка других типов среды разработки (например, среды "все локальные") описана в разделе  [Инструменты](tools-and-environments-for-developing-sharepoint-add-ins.md) в содержании Надстройки SharePoint.
     
  
 

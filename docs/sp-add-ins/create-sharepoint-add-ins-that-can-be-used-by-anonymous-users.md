@@ -1,8 +1,18 @@
+---
+title: "Создание надстроек SharePoint, которые могут использовать анонимные пользователи"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 55d3a96a340e62ae27fbcd89dca3e9edc57d116b
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="create-sharepoint-add-ins-that-can-be-used-by-anonymous-users"></a>Создание надстроек SharePoint, которые могут использовать анонимные пользователи
 Узнайте, как создавать надстройки SharePoint, которые могут использовать анонимные пользователи на общедоступных веб-сайтах Microsoft SharePoint.
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -14,9 +24,9 @@
 
 Анонимный доступ возможен для Надстройки SharePoint, размещенных в SharePoint и у поставщика. В зависимости от типа приложения изучите один из следующих наборов требований:
  
--  [Знакомство с созданием надстроек SharePoint с размещением в SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins#SP15SPhostedapps_bk_prereqs)
+-  [Знакомство с созданием надстроек SharePoint с размещением в SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)
     
--  [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins#SP15createselfhostapp_bk_prereq)
+-  [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins.md)
     
  
 Вам также потребуется семейство сайтов в тестовой установке SharePoint, настроенной для анонимного доступа. Если у вас есть Сайт разработчиков Office 365, то уже существует связанное общедоступное семейство сайтов, использующее специальное определение общедоступного веб-сайта. (Дополнительные сведения об использовании общедоступных веб-сайтов в Microsoft SharePoint Online см. в статье  [Справка по общедоступному веб-сайту для Office 365](http://office.microsoft.com/en-gb/office365-sharepoint-online-enterprise-help/public-website-help-for-office-365-HA102891740.aspx?CTT=1).) Данное определение сайта недоступно для локальных установок SharePoint, поэтому если ваша тестовая установка находится в локальной среде, вам потребуются следующие компоненты:
@@ -88,20 +98,20 @@
 
  
 
--  [Типы политик авторизации надстроек в SharePoint](add-in-authorization-policy-types-in-sharepoint-2013)
+-  [Типы политик авторизации надстроек в SharePoint](add-in-authorization-policy-types-in-sharepoint.md)
     
  
--  [Разрешения для надстроек в SharePoint](add-in-permissions-in-sharepoint-2013)
+-  [Разрешения для надстроек в SharePoint](add-in-permissions-in-sharepoint.md)
     
  
--  [Изучение структуры манифеста приложения и пакета надстройки SharePoint](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in)
+-  [Изучение структуры манифеста приложения и пакета надстройки SharePoint](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in.md)
     
  
 
 ## <a name="creating-sharepoint-hosted-add-ins-that-are-anonymously-accessible"></a>Создание надстроек, размещенных в SharePoint, которые доступны анонимным пользователям
 <a name="SP-hosted"> </a>
 
-Для создания размещенной в SharePoint надстройки, которую могут запускать анонимные пользователи, не требуются специальные методики. Ее можно создать так же, как любую другую надстройку, размещенную в SharePoint. Дополнительные сведения см. в статьях  [Знакомство с созданием надстроек SharePoint с размещением в SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins) и [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013).
+Для создания размещенной в SharePoint надстройки, которую могут запускать анонимные пользователи, не требуются специальные методики. Ее можно создать так же, как любую другую надстройку, размещенную в SharePoint. Дополнительные сведения см. в статьях  [Знакомство с созданием надстроек SharePoint с размещением в SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md) и [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint.md).
  
 
  
@@ -250,7 +260,7 @@
 <a name="bk_addresources"> </a>
 
 
--  [Разработка надстроек SharePoint](develop-sharepoint-add-ins)
+-  [Разработка надстроек SharePoint](develop-sharepoint-add-ins.md)
     
  
 

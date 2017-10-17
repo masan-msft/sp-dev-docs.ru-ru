@@ -1,12 +1,22 @@
+---
+title: "Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 555ff88386166d381d7ff4c6f3d56f30e5a645e1
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="complete-basic-operations-using-javascript-library-code-in-sharepoint"></a>Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint
 Узнайте, как писать код для выполнения базовых операций с помощью клиентской объектной модели JavaScript в SharePoint.
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
- **Примечание.** Пример создания надстройки SharePoint "Hello World", использующей библиотеку JavaScript, см. в статье [Использование API JavaScript для SharePoint для работы с данными SharePoint](use-the-sharepoint-javascript-apis-to-work-with-sharepoint-data).
+ **Примечание.** Пример создания надстройки SharePoint "Hello World", использующей библиотеку JavaScript, см. в статье [Использование API JavaScript для SharePoint для работы с данными SharePoint](use-the-sharepoint-javascript-apis-to-work-with-sharepoint-data.md).
  
 
 
@@ -42,10 +52,10 @@
 
  
 
--  [Выполнение базовых операций с использованием кода клиентской библиотеки в SharePoint](complete-basic-operations-using-sharepoint-2013-client-library-code)
+-  [Выполнение базовых операций с использованием кода клиентской библиотеки в SharePoint](complete-basic-operations-using-sharepoint-client-library-code.md)
     
  
--  [Выполнение базовых операций с использованием конечных точек SharePoint REST](complete-basic-operations-using-sharepoint-2013-rest-endpoints)
+-  [Выполнение базовых операций с использованием конечных точек SharePoint REST](complete-basic-operations-using-sharepoint-rest-endpoints.md)
     
  
 -  [Построение приложений Windows Phone, обращающихся к SharePoint](http://msdn.microsoft.com/library/36681335-f772-4499-8445-f94481bc18e7%28Office.15%29.aspx)
@@ -766,7 +776,7 @@ function deleteFolder(resultpanel) {
 
  
 
- **Примечание.** С помощью объектной модели JavaScript можно работать только с файлами размером до 1,5 МБ. Чтобы отправлять более крупные файлы, используйте REST. Дополнительные сведения см. в разделе [](complete-basic-operations-using-sharepoint-2013-rest-endpoints#LargeFiles).
+ **Примечание.** С помощью объектной модели JavaScript можно работать только с файлами размером до 1,5 МБ. Чтобы отправлять более крупные файлы, используйте REST. Дополнительные сведения см. в разделе [](complete-basic-operations-using-sharepoint-rest-endpoints#LargeFiles.md).
  
 
 
@@ -1239,7 +1249,7 @@ function onQueryFailed(sender, args) {
 ## <a name="access-objects-in-the-host-web"></a>Доступ к объектам на хост-сайте
 <a name="BasicOps_AccessHostweb"> </a>
 
-При разработке надстройки может потребоваться доступ к хост-сайту для работы с элементами на нем. Используйте объект **AppContextSite** для ссылки на хост-сайт или другие сайты SharePoint, как показано в приведенном ниже примере. Полный пример кода см. в разделе [Получение названия хост-сайта с помощью междоменной библиотеки (JSOM)](http://code.msdn.microsoft.com/office/SharePoint-2013-Get-the-563f2a3d).
+При разработке надстройки может потребоваться доступ к хост-сайту для работы с элементами на нем. Используйте объект **AppContextSite** для ссылки на хост-сайт или другие сайты SharePoint, как показано в приведенном ниже примере. Полный пример кода см. в разделе [Получение названия хост-сайта с помощью междоменной библиотеки (JSOM)](http://code.msdn.microsoft.com/office/SharePoint-Get-the-563f2a3d).
  
 
  
@@ -1283,7 +1293,7 @@ function execCrossDomainRequest(appweburl, hostweburl) {
 }
 ```
 
-В предыдущем примере для доступа к хост-сайту используется междоменная библиотека в SharePoint. Дополнительные сведения см. в разделе  [Обращение к данным SharePoint из надстроек с помощью междоменной библиотеки](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library).
+В предыдущем примере для доступа к хост-сайту используется междоменная библиотека в SharePoint. Дополнительные сведения см. в разделе  [Обращение к данным SharePoint из надстроек с помощью междоменной библиотеки](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md).
  
 
  
@@ -1292,19 +1302,19 @@ function execCrossDomainRequest(appweburl, hostweburl) {
 <a name="BasicOps_AddRes"> </a>
 
 
--  [Выполнение базовых операций с использованием кода клиентской библиотеки в SharePoint](complete-basic-operations-using-sharepoint-2013-client-library-code)
+-  [Выполнение базовых операций с использованием кода клиентской библиотеки в SharePoint](complete-basic-operations-using-sharepoint-client-library-code.md)
     
  
--  [Выполнение базовых операций с использованием конечных точек SharePoint REST](complete-basic-operations-using-sharepoint-2013-rest-endpoints)
+-  [Выполнение базовых операций с использованием конечных точек SharePoint REST](complete-basic-operations-using-sharepoint-rest-endpoints.md)
     
  
--  [Разработка надстроек SharePoint](develop-sharepoint-add-ins)
+-  [Разработка надстроек SharePoint](develop-sharepoint-add-ins.md)
     
  
--  [Безопасный доступ к данным и клиентские объектные модели для надстроек SharePoint](secure-data-access-and-client-object-models-for-sharepoint-add-ins)
+-  [Безопасный доступ к данным и клиентские объектные модели для надстроек SharePoint](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
     
  
--  [Работа с внешними данными в SharePoint](work-with-external-data-in-sharepoint-2013)
+-  [Работа с внешними данными в SharePoint](work-with-external-data-in-sharepoint.md)
     
  
 

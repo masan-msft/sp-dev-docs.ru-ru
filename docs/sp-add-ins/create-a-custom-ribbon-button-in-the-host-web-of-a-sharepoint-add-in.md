@@ -1,35 +1,45 @@
+---
+title: "Создание настраиваемой кнопки ленты на хост-сайте надстройки SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: aa5e03efbb6af2e86f29aa10fbca0f883c0c3427
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="create-a-custom-ribbon-button-in-the-host-web-of-a-sharepoint-add-in"></a>Создание настраиваемой кнопки ленты на хост-сайте надстройки SharePoint
 В этой статье рассказывается, как добавить команды для настраиваемых кнопок ленты на хост-сайте надстройки SharePoint.
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
-Это девятая часть серии статей, посвященной основам разработки надстроек, размещаемых в SharePoint. Для начала вам следует ознакомиться со статьей [Надстройки SharePoint](sharepoint-add-ins) и предыдущими статьями из этой серии.
+Это девятая часть серии статей, посвященной основам разработки надстроек, размещаемых в SharePoint. Для начала вам следует ознакомиться со статьей [Надстройки SharePoint](sharepoint-add-ins.md) и предыдущими статьями из этой серии.
  
 
--  [Знакомство с созданием надстроек SharePoint с размещением в SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins)
+-  [Знакомство с созданием надстроек SharePoint с размещением в SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)
     
  
--  [Развертывание и установка надстроек SharePoint, размещаемых в SharePoint](deploy-and-install-a-sharepoint-hosted-sharepoint-add-in)
+-  [Развертывание и установка надстроек SharePoint, размещаемых в SharePoint](deploy-and-install-a-sharepoint-hosted-sharepoint-add-in.md)
     
  
--  [Добавление настраиваемых столбцов в надстройки, размещаемые в SharePoint](add-custom-columns-to-a-sharepoint-hostedsharepoint-add-in)
+-  [Добавление настраиваемых столбцов в надстройки, размещаемые в SharePoint](add-custom-columns-to-a-sharepoint-hostedsharepoint-add-in.md)
     
  
--  [Добавление настраиваемого типа контента в надстройки, размещаемые в SharePoint](add-a-custom-content-type-to-a-sharepoint-hostedsharepoint-add-in)
+-  [Добавление настраиваемого типа контента в надстройки, размещаемые в SharePoint](add-a-custom-content-type-to-a-sharepoint-hostedsharepoint-add-in.md)
     
  
--  [Добавление веб-части на страницу в надстройке SharePoint, размещаемой в SharePoint](add-a-web-part-to-a-page-in-a-sharepoint-hosted-sharepoint-add-in)
+-  [Добавление веб-части на страницу в надстройку для SharePoint с размещением в SharePoint](add-a-web-part-to-a-page-in-a-sharepoint-hosted-sharepoint-add-in.md)
     
  
--  [Добавление рабочего процесса в надстройку SharePoint, размещаемую в SharePoint](add-a-workflow-to-a-sharepoint-hosted-sharepoint-add-in)
+-  [Добавление рабочего процесса в надстройку для SharePoint с размещением в SharePoint](add-a-workflow-to-a-sharepoint-hosted-sharepoint-add-in.md)
     
  
--  [Добавление настраиваемых страницы и стиля в надстройки SharePoint, размещаемые в SharePoint](add-a-custom-page-and-style-to-a-sharepoint-hosted-sharepoint-add-in)
+-  [Добавление настраиваемой страницы и стиля для надстройки с размещением в SharePoint](add-a-custom-page-and-style-to-a-sharepoint-hosted-sharepoint-add-in.md)
     
  
--  [Добавление настраиваемой клиентской обработки в надстройку SharePoint, размещаемую в SharePoint](add-custom-client-side-rendering-to-a-sharepoint-hosted-sharepoint-add-in)
+-  [Добавление настраиваемой клиентской обработки в надстройку SharePoint, размещаемую в SharePoint](add-custom-client-side-rendering-to-a-sharepoint-hosted-sharepoint-add-in.md)
     
  
 
@@ -52,19 +62,19 @@
 2. В диалоговом окне **Добавление календаря** в поле **Имя** введите Employee Orientation Schedule (Расписание вводного обучения для сотрудников), а затем нажмите кнопку **Создать**.
     
  
-3. Когда откроется календарь, переместите курсор на любую дату, чтобы на ней появилась ссылка **Добавить**, и перейдите по этой ссылке****. 
+3. Когда откроется календарь, наведите указатель на любую дату, чтобы на ней появилась ссылка **Add** (Добавить), и перейдите по этой ссылке. 
     
  
-4. В диалоговом окне **Employee Orientation Schedule - New Item** (Расписание вводного обучения для сотрудников: новый элемент), в поле **Title** (Название), введите Orient Cassi Hicks (Вводное обучение для пользователя Cassi Hicks). В остальных полях оставьте значения, используемые по умолчанию, а затем нажмите кнопку **Сохранить**.
+4. В диалоговом окне **Employee Orientation Schedule - New Item** (Расписание вводного обучения для сотрудников: новый элемент) введите "Orient Cassi Hicks" (Вводное обучение Cassi Hicks) в поле **Title** (Название). В остальных полях оставьте значения, заданные по умолчанию, а затем нажмите кнопку **Save** (Сохранить).
     
-    Календарь должен выглядеть примерно так, как показано ниже.
+    Календарь должен выглядеть примерно так:
     
 
     **Настраиваемый календарь**
 
  
 
-  ![Календарь Employee Orientation Schedule (Расписание вводного обучения для сотрудников), где в элементе "1 июня" указано Orient Cassie Hicks (Вводное обучение для пользователя Cassi Hicks)](../../images/d2066862-41c1-424d-9bfb-b6c5342bcf2c.PNG)
+  ![Календарь Employee Orientation Schedule (Расписание вводного обучения для сотрудников), где в элементе "1 июня" указано Orient Cassie Hicks (Вводное обучение для пользователя Cassi Hicks)](../images/d2066862-41c1-424d-9bfb-b6c5342bcf2c.PNG)
  
 
  
@@ -116,7 +126,7 @@
  
 
  
-![Конструктор компонентов со столбцами "Элементы в решении" и "Элементы в компоненте". "Надстройка запуска адаптации" находится в первом, а не во втором столбце.](../../images/49ea0bf0-2cfa-4070-aa65-24b4a9c5e874.PNG)
+![Конструктор компонентов со столбцами "Элементы в решении" и "Элементы в компоненте". "Надстройка запуска адаптации" находится в первом, а не во втором столбце.](../images/49ea0bf0-2cfa-4070-aa65-24b4a9c5e874.PNG)
  
 
  
@@ -145,7 +155,7 @@
 
  
 
-  ![Лента "События" с настраиваемой кнопкой Employee Orientation (Вводное обучение для сотрудников).](../../images/916ecbba-11ff-45b6-a8e9-ba717ae6fe0b.png)
+  ![Лента "События" с настраиваемой кнопкой Employee Orientation (Вводное обучение для сотрудников).](../images/916ecbba-11ff-45b6-a8e9-ba717ae6fe0b.png)
  
 
  
@@ -164,7 +174,7 @@
 ## 
 <a name="Nextsteps"> </a>
 
-Из следующей статьи этой серии вы узнаете, как добавить JavaScript в надстройку SharePoint и получить доступ к данным SharePoint с помощью объектной модели JavaScript для SharePoint. Название этой статьи:  [Использование API JavaScript для SharePoint для работы с данными SharePoint](use-the-sharepoint-javascript-apis-to-work-with-sharepoint-data).
+Из следующей статьи этой серии вы узнаете, как добавить JavaScript в надстройку SharePoint и получить доступ к данным SharePoint с помощью объектной модели JavaScript для SharePoint. Название этой статьи:  [Использование API JavaScript для SharePoint для работы с данными SharePoint](use-the-sharepoint-javascript-apis-to-work-with-sharepoint-data.md).
  
 
  

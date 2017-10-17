@@ -1,15 +1,25 @@
+---
+title: "Создание приемника событий надстройки в надстройках для SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: cd2e90745acbc17353db12c350127dc793126337
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="create-an-add-in-event-receiver-in-sharepoint-add-ins"></a>Создание приемника событий надстройки в надстройках для SharePoint
 Создайте обработчики для событий установки и удаления надстройки в надстройках SharePoint.
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Необходимые компоненты
 <a name="SP15appevent_prereq"> </a>
 
-В этой статье предполагается, что вы уже имеете представление о Надстройки SharePoint с размещением у поставщика, а также создали несколько приложений, которые хоть немного сложнее, чем "Hello World". Кроме того, предполагается, что вы прочли статью  [Обработка событий в надстройках SharePoint](handle-events-in-sharepoint-add-ins). 
+В этой статье предполагается, что вы уже имеете представление о Надстройки SharePoint с размещением у поставщика, а также создали несколько приложений, которые хоть немного сложнее, чем "Hello World". Кроме того, предполагается, что вы прочли статью  [Обработка событий в надстройках SharePoint](handle-events-in-sharepoint-add-ins.md). 
  
 
  
@@ -31,7 +41,7 @@
 -  [OfficeDev/PnP/Samples/Core.EventReceivers](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.EventReceivers)
     
  
--  [Создание размещаемой у поставщика надстройки, которая настраивает установку надстройки](https://code.msdn.microsoft.com/SharePoint-2013-Create-a-f27752e0)
+-  [Создание размещаемой у поставщика надстройки, которая настраивает установку надстройки](https://code.msdn.microsoft.com/SharePoint-Create-a-f27752e0)
     
  
 
@@ -51,7 +61,7 @@
 
  
 
-  ![События приложения в окне свойств](../../images/SP_VS_Properties_Window_AppEvents.PNG)
+  ![События приложения в окне свойств](../images/SP_VS_Properties_Window_AppEvents.PNG)
  
 
     Инструменты разработчика Office для Visual Studio сделает следующее:
@@ -67,7 +77,7 @@
   - Если в проекте надстройки SharePoint еще нет веб-проекта, Инструменты разработчика Office для Visual Studio создадут его. Кроме того, эти инструменты настроят манифест надстройки для размещения у поставщика. Они также добавят страницы, сценарии, CSS-файлы и другие элементы. Если из удаленных компонентов надстройки требуется только веб-служба обработки событий, вы можете удалить их из проекта. Кроме того, проследите, чтобы элемент **StartPage** в манифесте надстройки не указывал на удаленную страницу.
     
  
-4. Если Visual Studio и ваша тестовая ферма SharePoint развернуты на разных компьютерах, настройте проект для отладки с помощью служебной шины Microsoft Azure. Дополнительные сведения см. в статье  [Устранение неполадок и отладка удаленного приемника событий в надстройке для SharePoint](debug-and-troubleshoot-a-remote-event-receiver-in-a-sharepoint-add-in). 
+4. Если Visual Studio и ваша тестовая ферма SharePoint развернуты на разных компьютерах, настройте проект для отладки с помощью служебной шины Microsoft Azure. Дополнительные сведения см. в статье  [Устранение неполадок и отладка удаленного приемника событий в надстройке для SharePoint](debug-and-troubleshoot-a-remote-event-receiver-in-a-sharepoint-add-in.md). 
     
  
 5. Если в файле AppEventReceiver.svc есть метод  `ProcessOneWayEvent`, его реализация должна содержать только строку  `throw new NotImplementedException();`, поскольку этот метод невозможно использовать в обработчике событий надстройки.  *Обработчики событий надстройки должны возвращать объект, который сообщает среде SharePoint, следует ли завершить событие или отменить его, а метод  `ProcessOneWayEvent` не возвращает никаких данных.* 
@@ -116,7 +126,7 @@
 
 
      **Note**  The  **AppInstalled**,  **AppUpdated**, and  **AppInstalling** events, if you have handlers for them, will each get their own URL registered in the add-in manifest. So you *can*  have different endpoints for them; but this article (and the Office Developer Tools for Visual Studio) assume they have exactly the same endpoint; that's why the code needs to determine which event called it.
-8. Как объясняется в разделе [Включение логики отката и логики проверки выполненных действий в обработчики событий надстроек](handle-events-in-sharepoint-add-ins#Rollback), если в логике установки происходит сбой, почти всегда следует отменять установку: среда SharePoint должна отменить действия, выполненные для установки, а вам нужно отменить все действия, выполненные обработчиком. Для этого можно добавить следующий код в оператор **case** для события AppInstalled.
+8. Как объясняется в разделе [Включение логики отката и логики проверки выполненных действий в обработчики событий надстроек](handle-events-in-sharepoint-add-ins.md#Rollback), если в логике установки происходит сбой, почти всегда следует отменять установку: среда SharePoint должна отменить действия, выполненные для установки, а вам нужно отменить все действия, выполненные обработчиком. Для этого можно добавить следующий код в оператор **case** для события AppInstalled.
     
 ```C#
   case SPRemoteEventType.AppInstalled:
@@ -136,7 +146,7 @@
 
 
      **Note**  Move installation code that takes more than 30 seconds into the add-in itself. You can add it to "first run" logic that executes the first time the add-in runs. The add-in can display a message saying something like "We're getting things ready for you." Alternatively, the add-in can prompt the user to run the initialization code.If "first run" logic is not feasible for your add-in, another option is to have your event handler start a remote asynchronous process and then immediately return a  **SPRemoteEventResult** object with the **Status** set to **Continue**. A weakness of this strategy is that if the remote process fails, it has no way to tell SharePoint to roll back the add-in installation.
-9. Как описано в разделе  [Стратегии архитектуры обработчиков событий надстройки](handle-events-in-sharepoint-add-ins#Strategies), стратегия делегирования обработчиков, предпочтительна, но ее можно использовать не во всех сценариях. В данном примере показано, как реализовать стратегию делегирования обработчиков при добавлении списка на хост-сайт. (Сведения о том, как создать похожий обработчик события AppInstalled, не использующий стратегию делегирования обработчиков, см. в примере  [OfficeDev/PnP/Samples/Core.AppEvents](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.AppEvents).)
+9. Как описано в разделе  [Стратегии архитектуры обработчиков событий надстройки](handle-events-in-sharepoint-add-ins.md#Strategies), стратегия делегирования обработчиков, предпочтительна, но ее можно использовать не во всех сценариях. В данном примере показано, как реализовать стратегию делегирования обработчиков при добавлении списка на хост-сайт. (Сведения о том, как создать похожий обработчик события AppInstalled, не использующий стратегию делегирования обработчиков, см. в примере  [OfficeDev/PnP/Samples/Core.AppEvents](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.AppEvents).)
     
     Ниже представлена новая версия блока **case** для события AppInstalled. Обратите внимание, что логика инициализации, которая применяется ко всем событиям, находится над блоком **switch**. Так как устанавливаемый список будет удален в обработчике события AppUninstalling, этот список определяется там же.
     
@@ -231,7 +241,7 @@ var foundList = matchingLists.FirstOrDefault();
  List createdList = null;
 ```
 
-13. Код для создания списка хост-сайтов добавляется в блок **StartTry**, но сначала код должен проверить, был ли уже добавлен этот список (как описывается в разделе [Включение логики отката и логики проверки выполненных действий в обработчики событий надстроек](handle-events-in-sharepoint-add-ins#Rollback)). Логику If-Then-Else можно делегировать серверу SharePoint с помощью класса **ConditionalScope** (см. также статью [Использование условной области](http://msdn.microsoft.com/library/560112e9-c3ed-4b8f-9cd4-c8bc5d60d63c%28Office.15%29.aspx)). Добавьте следующий код в блок **StartTry**.
+13. Код для создания списка хост-сайтов добавляется в блок **StartTry**, но сначала код должен проверить, был ли уже добавлен этот список (как описывается в разделе [Включение логики отката и логики проверки выполненных действий в обработчики событий надстроек](handle-events-in-sharepoint-add-ins.md#Rollback)). Логику If-Then-Else можно делегировать серверу SharePoint с помощью класса **ConditionalScope** (см. также статью [Использование условной области](http://msdn.microsoft.com/library/560112e9-c3ed-4b8f-9cd4-c8bc5d60d63c%28Office.15%29.aspx)). Добавьте следующий код в блок **StartTry**.
     
 ```C#
   ConditionalScope condScope = new ConditionalScope(clientContext, 
@@ -479,7 +489,7 @@ break;
 ## <a name="create-an-add-in-updated-event-receiver"></a>Создание приемника для события обновления надстройки
 <a name="SP15appevent_prereq"> </a>
 
-Дополнительные сведения о создании обработчика для события обновления надстройки см. в статье [Создание обработчика для события обновления в надстройках SharePoint](create-a-handler-for-the-update-event-in-sharepoint-add-ins).
+Дополнительные сведения о создании обработчика для события обновления надстройки см. в статье [Создание обработчика для события обновления в надстройках SharePoint](create-a-handler-for-the-update-event-in-sharepoint-add-ins.md).
  
 
  
@@ -496,7 +506,7 @@ break;
 <a name="SP15appevent_addlresources"> </a>
 
 
--  [Обработка событий в надстройках SharePoint](handle-events-in-sharepoint-add-ins)
+-  [Обработка событий в надстройках SharePoint](handle-events-in-sharepoint-add-ins.md)
     
  
 
