@@ -5,27 +5,27 @@ ms.prod: sharepoint
 ms.assetid: f1c2b359-5b0d-467d-a863-6732e23863b9
 ms.openlocfilehash: b77d09f9aded3cd5dfca8c76413be8139fce1714
 ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/13/2017
 ---
-# <a name="step-1-creating-a-ecmascript-text-file"></a><span data-ttu-id="1aca7-102">Этап 1: Создание ECMAScript текстового файла</span><span class="sxs-lookup"><span data-stu-id="1aca7-102">Step 1: Creating a ECMAScript Text File</span></span>
+# <a name="step-1-creating-a-ecmascript-text-file"></a><span data-ttu-id="3011c-102">Этап 1: Создание ECMAScript текстового файла</span><span class="sxs-lookup"><span data-stu-id="3011c-102">Step 1: Creating a ECMAScript Text File</span></span>
 
-<span data-ttu-id="1aca7-p101">Для этого пошагового руководства создается текстовый файл ECMAScript (JavaScript, JScript) . В этом пошаговом руководстве предполагается, что вы знакомы с написания кода в JavaScript.</span><span class="sxs-lookup"><span data-stu-id="1aca7-p101">For this walkthrough, you will create an ECMAScript (JavaScript, JScript) text file. This walkthrough assumes that you are familiar with coding in JavaScript.</span></span> 
+<span data-ttu-id="3011c-p101">Для этого пошагового руководства создается текстовый файл ECMAScript (JavaScript, JScript) . В этом пошаговом руководстве предполагается, что вы знакомы с написания кода в JavaScript.</span><span class="sxs-lookup"><span data-stu-id="3011c-p101">For this walkthrough, you will create an ECMAScript (JavaScript, JScript) text file. This walkthrough assumes that you are familiar with coding in JavaScript.</span></span> 
   
     
     
 
 
-### <a name="to-create-an-ecmascript-text-file"></a><span data-ttu-id="1aca7-105">Для создания текстового файла в ECMAScript</span><span class="sxs-lookup"><span data-stu-id="1aca7-105">To create an ECMAScript text file</span></span>
+### <a name="to-create-an-ecmascript-text-file"></a><span data-ttu-id="3011c-105">Для создания текстового файла в ECMAScript</span><span class="sxs-lookup"><span data-stu-id="3011c-105">To create an ECMAScript text file</span></span>
 
 
-1. <span data-ttu-id="1aca7-106">Создайте текстовый файл и присвойте ему имя JSOM_FeedToContentEditor.txt.</span><span class="sxs-lookup"><span data-stu-id="1aca7-106">Create a text file and name it JSOM_FeedToContentEditor.txt.</span></span>
+1. <span data-ttu-id="3011c-106">Создайте текстовый файл и присвойте ему имя JSOM_FeedToContentEditor.txt.</span><span class="sxs-lookup"><span data-stu-id="3011c-106">Create a text file and name it JSOM_FeedToContentEditor.txt.</span></span>
     
   
-2. <span data-ttu-id="1aca7-107">Добавьте следующий скрипт в файл JSOM_FeedToContentEditor.txt.</span><span class="sxs-lookup"><span data-stu-id="1aca7-107">Add the following script to the JSOM_FeedToContentEditor.txt file.</span></span>
+2. <span data-ttu-id="3011c-107">Добавьте следующий скрипт в файл JSOM_FeedToContentEditor.txt.</span><span class="sxs-lookup"><span data-stu-id="3011c-107">Add the following script to the JSOM_FeedToContentEditor.txt file.</span></span>
     
-    <span data-ttu-id="1aca7-108">**Пример кода предоставлен:** Joshi Видия, корпорация Майкрософт.</span><span class="sxs-lookup"><span data-stu-id="1aca7-108">**Sample code provided by:** Vidya Joshi, Microsoft Corporation.</span></span>
+    <span data-ttu-id="3011c-108">**Пример кода предоставлен:** Joshi Видия, корпорация Майкрософт.</span><span class="sxs-lookup"><span data-stu-id="3011c-108">**Sample code provided by:** Vidya Joshi, Microsoft Corporation.</span></span>
     
 
 
@@ -111,21 +111,21 @@ function writelog(output, indentLevel)
 
 ```
 
-3. <span data-ttu-id="1aca7-109">Сохраните текстовый файл.</span><span class="sxs-lookup"><span data-stu-id="1aca7-109">Save the text file.</span></span>
+3. <span data-ttu-id="3011c-109">Сохраните текстовый файл.</span><span class="sxs-lookup"><span data-stu-id="3011c-109">Save the text file.</span></span>
     
   
 
-### <a name="to-save-the-text-file-to-a-trusted-document-library"></a><span data-ttu-id="1aca7-110">Для сохранения текстового файла в библиотеке надежных документов</span><span class="sxs-lookup"><span data-stu-id="1aca7-110">To save the text file to a trusted document library</span></span>
+### <a name="to-save-the-text-file-to-a-trusted-document-library"></a><span data-ttu-id="3011c-110">Для сохранения текстового файла в библиотеке надежных документов</span><span class="sxs-lookup"><span data-stu-id="3011c-110">To save the text file to a trusted document library</span></span>
 
 
-1. <span data-ttu-id="1aca7-111">Отправка текстового файла, созданного в предыдущей процедуре, надежная библиотека документов SharePoint.</span><span class="sxs-lookup"><span data-stu-id="1aca7-111">Upload the text file that you created in the previous procedure to a trusted SharePoint document library.</span></span> 
+1. <span data-ttu-id="3011c-111">Отправка текстового файла, созданного в предыдущей процедуре, надежная библиотека документов SharePoint.</span><span class="sxs-lookup"><span data-stu-id="3011c-111">Upload the text file that you created in the previous procedure to a trusted SharePoint document library.</span></span> 
     
   
-2. <span data-ttu-id="1aca7-p102">Обратите внимание, URL-адрес в текстовом файле. Например:</span><span class="sxs-lookup"><span data-stu-id="1aca7-p102">Note the URL to the text file. For example:</span></span>
+2. <span data-ttu-id="3011c-p102">Обратите внимание, URL-адрес в текстовом файле. Например:</span><span class="sxs-lookup"><span data-stu-id="3011c-p102">Note the URL to the text file. For example:</span></span>
     
-     <span data-ttu-id="1aca7-114">`http://` _myserver_ `/Docs/Documents/JSOM_FeedToContentEditor.txt`</span><span class="sxs-lookup"><span data-stu-id="1aca7-114">`http://` _myserver_ `/Docs/Documents/JSOM_FeedToContentEditor.txt`</span></span>
+     <span data-ttu-id="3011c-114">`http://` _myserver_ `/Docs/Documents/JSOM_FeedToContentEditor.txt`</span><span class="sxs-lookup"><span data-stu-id="3011c-114">`http://` _myserver_ `/Docs/Documents/JSOM_FeedToContentEditor.txt`</span></span>
     
-    <span data-ttu-id="1aca7-115">В следующей процедуре необходимо будет этот URL-адрес для веб-канала в веб-часть редактора содержимого.</span><span class="sxs-lookup"><span data-stu-id="1aca7-115">In the next procedure, you will need this URL to feed to the Content Editor Web Part.</span></span>
+    <span data-ttu-id="3011c-115">В следующей процедуре необходимо будет этот URL-адрес для веб-канала в веб-часть редактора содержимого.</span><span class="sxs-lookup"><span data-stu-id="3011c-115">In the next procedure, you will need this URL to feed to the Content Editor Web Part.</span></span>
     
   
 
