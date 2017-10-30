@@ -5,7 +5,7 @@ ms.prod: sharepoint
 ms.assetid: a9c2f3d9-cea2-49a3-b709-40dc614b9f86
 ms.openlocfilehash: fd1559eda6385ef1717ede81966bba14419039c9
 ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
-ms.translationtype: HT
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/13/2017
 ---
