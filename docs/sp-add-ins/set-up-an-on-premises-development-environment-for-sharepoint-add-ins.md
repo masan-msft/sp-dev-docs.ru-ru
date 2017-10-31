@@ -8,57 +8,57 @@ ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/13/2017
 ---
-# <a name="set-up-an-on-premises-development-environment-for-sharepoint-add-ins"></a><span data-ttu-id="5e788-102">Настройка локальной среды разработки надстроек SharePoint</span><span class="sxs-lookup"><span data-stu-id="5e788-102">Set up an on-premises development environment for SharePoint Add-ins</span></span>
-<span data-ttu-id="5e788-103">Узнайте, как настроить специальную среду разработки надстроек SharePoint с локальной установкой SharePoint.</span><span class="sxs-lookup"><span data-stu-id="5e788-103">Learn how to set up a development environment that is specifically suited to developing SharePoint Add-ins with an on-premises installation of SharePoint.</span></span>
+# <a name="set-up-an-on-premises-development-environment-for-sharepoint-add-ins"></a><span data-ttu-id="480b8-102">Настройка локальной среды разработки надстроек SharePoint</span><span class="sxs-lookup"><span data-stu-id="480b8-102">Set up an on-premises development environment for SharePoint Add-ins</span></span>
+<span data-ttu-id="480b8-103">Узнайте, как настроить специальную среду разработки надстроек SharePoint с локальной установкой SharePoint.</span><span class="sxs-lookup"><span data-stu-id="480b8-103">Learn how to set up a development environment that is specifically suited to developing SharePoint Add-ins with an on-premises installation of SharePoint.</span></span>
  
 
- <span data-ttu-id="5e788-p101">**Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).</span><span class="sxs-lookup"><span data-stu-id="5e788-p101">**Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).</span></span>
+ <span data-ttu-id="480b8-p101">**Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).</span><span class="sxs-lookup"><span data-stu-id="480b8-p101">**Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).</span></span>
  
 
 
-## <a name="install-the-operating-system-for-your-development-environment-for-sharepoint-add-ins"></a><span data-ttu-id="5e788-107">Установка операционной системы для среды разработки надстроек SharePoint</span><span class="sxs-lookup"><span data-stu-id="5e788-107">Install the operating system for your development environment for SharePoint Add-ins</span></span>
-<span data-ttu-id="5e788-108"><a name="bk_installOS"> </a></span><span class="sxs-lookup"><span data-stu-id="5e788-108"></span></span>
+## <a name="install-the-operating-system-for-your-development-environment-for-sharepoint-add-ins"></a><span data-ttu-id="480b8-107">Установка операционной системы для среды разработки надстроек SharePoint</span><span class="sxs-lookup"><span data-stu-id="480b8-107">Install the operating system for your development environment for SharePoint Add-ins</span></span>
+<span data-ttu-id="480b8-108"><a name="bk_installOS"> </a></span><span class="sxs-lookup"><span data-stu-id="480b8-108"><a name="bk_installOS"> </a></span></span>
 
-<span data-ttu-id="5e788-p102">По сравнению с требованиями к рабочей среде, требования к среде разработки менее строгие, а их выполнение менее затратно. Поэтому в инструкциях, приведенных в этом разделе, нет сведений об установке рабочей среды. В статьях  [Обзор установки и настройки SharePoint](http://technet.microsoft.com/en-us/library/ee667264%28v=office.15%29),  [Требования к оборудованию и программному обеспечению для SharePoint](http://technet.microsoft.com/en-us/library/cc262485%28v=office.15%29) и [Настройка среды для надстроек SharePoint](http://technet.microsoft.com/en-us/library/fp161236%28office.15%29.aspx) можно найти инструкции по настройке рабочей среды для SharePoint.</span><span class="sxs-lookup"><span data-stu-id="5e788-p102">The requirements for a development environment are less stringent and costly than the requirements for a production environment, and the guidelines described here do not support a production environment installation. See  [Overview of SharePoint installation and configuration](http://technet.microsoft.com/en-us/library/ee667264%28v=office.15%29),  [Hardware and software requirements for SharePoint](http://technet.microsoft.com/en-us/library/cc262485%28v=office.15%29), and  [Configure an environment for SharePoint Add-ins](http://technet.microsoft.com/en-us/library/fp161236%28office.15%29.aspx) for the instructions to set up a production environment installation of SharePoint.</span></span>
- 
-
- 
-<span data-ttu-id="5e788-111">Во всех средах разработки для установки и запуска SharePoint необходимо использовать компьютер с ЦП, поддерживающим архитектуру x64, и с ОЗУ не менее, чем на 16 ГБ. Рекомендуется ОЗУ на 24 ГБ.</span><span class="sxs-lookup"><span data-stu-id="5e788-111">In any development environment, you should use a computer with an x64-capable CPU, and at least 16 GB of RAM to install and run SharePoint; 24 GB of RAM is preferable.</span></span>
+<span data-ttu-id="480b8-p102">По сравнению с требованиями к рабочей среде, требования к среде разработки менее строгие, а их выполнение менее затратно. Поэтому в инструкциях, приведенных в этом разделе, нет сведений об установке рабочей среды. В статьях  [Обзор установки и настройки SharePoint](http://technet.microsoft.com/en-us/library/ee667264%28v=office.15%29),  [Требования к оборудованию и программному обеспечению для SharePoint](http://technet.microsoft.com/en-us/library/cc262485%28v=office.15%29) и [Настройка среды для надстроек SharePoint](http://technet.microsoft.com/en-us/library/fp161236%28office.15%29.aspx) можно найти инструкции по настройке рабочей среды для SharePoint.</span><span class="sxs-lookup"><span data-stu-id="480b8-p102">The requirements for a development environment are less stringent and costly than the requirements for a production environment, and the guidelines described here do not support a production environment installation. See  [Overview of SharePoint installation and configuration](http://technet.microsoft.com/en-us/library/ee667264%28v=office.15%29),  [Hardware and software requirements for SharePoint](http://technet.microsoft.com/en-us/library/cc262485%28v=office.15%29), and  [Configure an environment for SharePoint Add-ins](http://technet.microsoft.com/en-us/library/fp161236%28office.15%29.aspx) for the instructions to set up a production environment installation of SharePoint.</span></span>
  
 
  
-<span data-ttu-id="5e788-112">В зависимости от конкретных требований и бюджета можно выбрать какой-либо из следующих вариантов.</span><span class="sxs-lookup"><span data-stu-id="5e788-112">Depending on your specific requirements and budget, you can choose from the following options:</span></span>
+<span data-ttu-id="480b8-111">Во всех средах разработки для установки и запуска SharePoint необходимо использовать компьютер с ЦП, поддерживающим архитектуру x64, и с ОЗУ не менее, чем на 16 ГБ. Рекомендуется ОЗУ на 24 ГБ.</span><span class="sxs-lookup"><span data-stu-id="480b8-111">In any development environment, you should use a computer with an x64-capable CPU, and at least 16 GB of RAM to install and run SharePoint; 24 GB of RAM is preferable.</span></span>
+ 
+
+ 
+<span data-ttu-id="480b8-112">В зависимости от конкретных требований и бюджета можно выбрать какой-либо из следующих вариантов.</span><span class="sxs-lookup"><span data-stu-id="480b8-112">Depending on your specific requirements and budget, you can choose from the following options:</span></span>
  
 
  
 
-- <span data-ttu-id="5e788-113">Установите SharePoint на сервере с Windows Server 2008 R2 с пакетом обновления 1 (64-разрядной версии) или Windows Server 2012.</span><span class="sxs-lookup"><span data-stu-id="5e788-113">Install SharePoint on Windows Server 2008 R2 Service Pack 1 x64 or Windows Server 2012.</span></span>
+- <span data-ttu-id="480b8-113">Установите SharePoint на сервере с Windows Server 2008 R2 с пакетом обновления 1 (64-разрядной версии) или Windows Server 2012.</span><span class="sxs-lookup"><span data-stu-id="480b8-113">Install SharePoint on Windows Server 2008 R2 Service Pack 1 x64 or Windows Server 2012.</span></span>
     
  
-- <span data-ttu-id="5e788-p103">Использование Microsoft Hyper-V и установка SharePoint на виртуальной машине под управлением гостевой ОС Windows Server 2008 R2 64-разрядной версии с пакетом обновления 1 или Windows Server 2012. Руководство по настройке виртуальной машины Microsoft Hyper-V для SharePoint см. в статье  [Использование рекомендованных конфигураций виртуальных машин SharePoint и среды Hyper-V](http://technet.microsoft.com/en-US/library/ff621103%28v=office.15%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="5e788-p103">Use Microsoft Hyper-V and install SharePoint on a virtual machine running a Windows Server 2008 R2 Service Pack 1 x64 or Windows Server 2012 guest operating system. See  [Use best practice configurations for the SharePoint virtual machines and Hyper-V environment](http://technet.microsoft.com/en-US/library/ff621103%28v=office.15%29.aspx) for guidance on setting up a Microsoft Hyper-V virtual machine for SharePoint.</span></span>
+- <span data-ttu-id="480b8-p103">Использование Microsoft Hyper-V и установка SharePoint на виртуальной машине под управлением гостевой ОС Windows Server 2008 R2 64-разрядной версии с пакетом обновления 1 или Windows Server 2012. Руководство по настройке виртуальной машины Microsoft Hyper-V для SharePoint см. в статье  [Использование рекомендованных конфигураций виртуальных машин SharePoint и среды Hyper-V](http://technet.microsoft.com/en-US/library/ff621103%28v=office.15%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="480b8-p103">Use Microsoft Hyper-V and install SharePoint on a virtual machine running a Windows Server 2008 R2 Service Pack 1 x64 or Windows Server 2012 guest operating system. See  [Use best practice configurations for the SharePoint virtual machines and Hyper-V environment](http://technet.microsoft.com/en-US/library/ff621103%28v=office.15%29.aspx) for guidance on setting up a Microsoft Hyper-V virtual machine for SharePoint.</span></span>
     
  
 
- <span data-ttu-id="5e788-p104">**Примечание.** Установка SharePoint поддерживается только в ОС Windows Server 2008 R2 64-разрядной версии с пакетом обновления 1 или в Windows Server 2012. Если вы хотите разрабатывать надстройки SharePoint для SharePoint в Windows 7 или Windows 8, можно зарегистрировать Сайт разработчика Office 365 и разрабатывать надстройки удаленно.</span><span class="sxs-lookup"><span data-stu-id="5e788-p104">**Note**  Installation of SharePoint is supported only on Windows Server 2008 R2 Service Pack 1 x64 or Windows Server 2012. If you want to develop SharePoint Add-ins for SharePoint on Windows 7 or Windows 8, you can sign up for an Office 365 Developer Site and develop add-ins remotely.</span></span> 
+ <span data-ttu-id="480b8-p104">**Примечание.** Установка SharePoint поддерживается только в ОС Windows Server 2008 R2 64-разрядной версии с пакетом обновления 1 или в Windows Server 2012. Если вы хотите разрабатывать надстройки SharePoint для SharePoint в Windows 7 или Windows 8, можно зарегистрировать Сайт разработчика Office 365 и разрабатывать надстройки удаленно.</span><span class="sxs-lookup"><span data-stu-id="480b8-p104">**Note**  Installation of SharePoint is supported only on Windows Server 2008 R2 Service Pack 1 x64 or Windows Server 2012. If you want to develop SharePoint Add-ins for SharePoint on Windows 7 or Windows 8, you can sign up for an Office 365 Developer Site and develop add-ins remotely.</span></span> 
  
 
 
-## <a name="install-the-prerequisites-for-the-operating-system-and-sharepoint"></a><span data-ttu-id="5e788-118">Установка необходимых компонентов для операционной системы и SharePoint</span><span class="sxs-lookup"><span data-stu-id="5e788-118">Install the prerequisites for the operating system and SharePoint</span></span>
-<span data-ttu-id="5e788-119"><a name="bk_prereqsOS"> </a></span><span class="sxs-lookup"><span data-stu-id="5e788-119"></span></span>
+## <a name="install-the-prerequisites-for-the-operating-system-and-sharepoint"></a><span data-ttu-id="480b8-118">Установка необходимых компонентов для операционной системы и SharePoint</span><span class="sxs-lookup"><span data-stu-id="480b8-118">Install the prerequisites for the operating system and SharePoint</span></span>
+<span data-ttu-id="480b8-119"><a name="bk_prereqsOS"> </a></span><span class="sxs-lookup"><span data-stu-id="480b8-119"><a name="bk_prereqsOS"> </a></span></span>
 
 
-1. <span data-ttu-id="5e788-120">Запустите средство PrerequisiteInstaller.exe, входящее в состав установочных файлов.</span><span class="sxs-lookup"><span data-stu-id="5e788-120">Run the PrerequisiteInstaller.exe tool that is included with your installation files.</span></span>
+1. <span data-ttu-id="480b8-120">Запустите средство PrerequisiteInstaller.exe, входящее в состав установочных файлов.</span><span class="sxs-lookup"><span data-stu-id="480b8-120">Run the PrerequisiteInstaller.exe tool that is included with your installation files.</span></span>
     
  
-2. <span data-ttu-id="5e788-121">Запустите средство Setup.exe, включенное в ваши установочные файлы.</span><span class="sxs-lookup"><span data-stu-id="5e788-121">Run the Setup.exe tool that is included with your installation files.</span></span>
+2. <span data-ttu-id="480b8-121">Запустите средство Setup.exe, включенное в ваши установочные файлы.</span><span class="sxs-lookup"><span data-stu-id="480b8-121">Run the Setup.exe tool that is included with your installation files.</span></span>
     
  
-3. <span data-ttu-id="5e788-122">Примите условия лицензионного соглашения на использование программного обеспечения Майкрософт.</span><span class="sxs-lookup"><span data-stu-id="5e788-122">Accept the Microsoft Software License Terms.</span></span>
+3. <span data-ttu-id="480b8-122">Примите условия лицензионного соглашения на использование программного обеспечения Майкрософт.</span><span class="sxs-lookup"><span data-stu-id="480b8-122">Accept the Microsoft Software License Terms.</span></span>
     
  
-4. <span data-ttu-id="5e788-123">На странице **выбора варианта установки** выберите вариант **Автономная**.</span><span class="sxs-lookup"><span data-stu-id="5e788-123">On the  **Choose the installation you want** page, choose **Stand-alone**.</span></span>
+4. <span data-ttu-id="480b8-123">На странице **выбора варианта установки** выберите вариант **Автономная**.</span><span class="sxs-lookup"><span data-stu-id="480b8-123">On the  **Choose the installation you want** page, choose **Stand-alone**.</span></span>
     
-    <span data-ttu-id="5e788-124">**Рис. 1. Выбор типа установки**</span><span class="sxs-lookup"><span data-stu-id="5e788-124">**Figure 1. Installation type choice**</span></span>
+    <span data-ttu-id="480b8-124">**Рис. 1. Выбор типа установки**</span><span class="sxs-lookup"><span data-stu-id="480b8-124">**Figure 1. Installation type choice**</span></span>
 
  
 
@@ -68,19 +68,19 @@ ms.lasthandoff: 10/13/2017
  
 
  
-5. <span data-ttu-id="5e788-p105">Если во время установки возникают какие-либо ошибки, просмотрите файл журнала. Чтобы найти его, откройте окно командной строки и введите следующие команды. Ссылка на файл журнала появляется также после завершения установки.</span><span class="sxs-lookup"><span data-stu-id="5e788-p105">If any errors occur in the installation, review the log file. To find the log file, open a Command Prompt window, and then type the following commands at the command prompt. A link to the log file also appears when the installation is complete.</span></span>
+5. <span data-ttu-id="480b8-p105">Если во время установки возникают какие-либо ошибки, просмотрите файл журнала. Чтобы найти его, откройте окно командной строки и введите следующие команды. Ссылка на файл журнала появляется также после завершения установки.</span><span class="sxs-lookup"><span data-stu-id="480b8-p105">If any errors occur in the installation, review the log file. To find the log file, open a Command Prompt window, and then type the following commands at the command prompt. A link to the log file also appears when the installation is complete.</span></span>
     
 ```
   cd %temp%
 dir /od *.log
 ```
 
-6. <span data-ttu-id="5e788-129">После завершения установки вам будет предложено запустить мастер настройки продуктов и технологий SharePoint.</span><span class="sxs-lookup"><span data-stu-id="5e788-129">After the installation is complete, you're prompted to start the SharePoint Products and Technologies Configuration Wizard.</span></span>
+6. <span data-ttu-id="480b8-129">После завершения установки вам будет предложено запустить мастер настройки продуктов и технологий SharePoint.</span><span class="sxs-lookup"><span data-stu-id="480b8-129">After the installation is complete, you're prompted to start the SharePoint Products and Technologies Configuration Wizard.</span></span>
     
-     <span data-ttu-id="5e788-p106">**Примечание.** Если установка выполняется на компьютере, который присоединен к домену, но не подключен к контроллеру домена, работа мастера настройки продуктов и технологий SharePoint может завершиться с ошибкой. В этом случае подключитесь к контроллеру домена напрямую или с помощью VPN-подключения либо выполните вход с помощью локальной учетной записи с правами администратора на компьютере.</span><span class="sxs-lookup"><span data-stu-id="5e788-p106">**Note**  The SharePoint Products and Technologies Configuration Wizard may fail if you're using a computer that is joined to a domain but that is not connected to a domain controller. If you see this failure, connect to a domain controller either directly or through a Virtual Private Network (VPN) connection, or sign in with a local account that has administrative privileges on the computer.</span></span>
-7. <span data-ttu-id="5e788-p107">После завершения работы мастера настройки откроется страница **Выбор шаблона** для нового сайта SharePoint. На этой странице выберите шаблон **Сайт разработчика**. Надстройки SharePoint можно разворачивать с помощью Visual Studio только на Сайте разработчика.</span><span class="sxs-lookup"><span data-stu-id="5e788-p107">After the configuration wizard is complete, you see the  **Template Selection** page of the new SharePoint site. On this page, choose the **Developer Site** template. You can only deploy SharePoint Add-ins from Visual Studio to a Developer Site.</span></span>
+     <span data-ttu-id="480b8-p106">**Примечание.** Если установка выполняется на компьютере, который присоединен к домену, но не подключен к контроллеру домена, работа мастера настройки продуктов и технологий SharePoint может завершиться с ошибкой. В этом случае подключитесь к контроллеру домена напрямую или с помощью VPN-подключения либо выполните вход с помощью локальной учетной записи с правами администратора на компьютере.</span><span class="sxs-lookup"><span data-stu-id="480b8-p106">**Note**  The SharePoint Products and Technologies Configuration Wizard may fail if you're using a computer that is joined to a domain but that is not connected to a domain controller. If you see this failure, connect to a domain controller either directly or through a Virtual Private Network (VPN) connection, or sign in with a local account that has administrative privileges on the computer.</span></span>
+7. <span data-ttu-id="480b8-p107">После завершения работы мастера настройки откроется страница **Выбор шаблона** для нового сайта SharePoint. На этой странице выберите шаблон **Сайт разработчика**. Надстройки SharePoint можно разворачивать с помощью Visual Studio только на Сайте разработчика.</span><span class="sxs-lookup"><span data-stu-id="480b8-p107">After the configuration wizard is complete, you see the  **Template Selection** page of the new SharePoint site. On this page, choose the **Developer Site** template. You can only deploy SharePoint Add-ins from Visual Studio to a Developer Site.</span></span>
     
-    <span data-ttu-id="5e788-135">**Рис. 2. Страница выбора шаблона сайта**</span><span class="sxs-lookup"><span data-stu-id="5e788-135">**Figure 2. Choose the site template page**</span></span>
+    <span data-ttu-id="480b8-135">**Рис. 2. Страница выбора шаблона сайта**</span><span class="sxs-lookup"><span data-stu-id="480b8-135">**Figure 2. Choose the site template page**</span></span>
 
  
 
@@ -91,154 +91,154 @@ dir /od *.log
 
  
 
-## <a name="configure-services-in-sharepoint-for-server-to-server-add-in-use"></a><span data-ttu-id="5e788-137">Настройка служб в SharePoint для межсерверного использования надстроек</span><span class="sxs-lookup"><span data-stu-id="5e788-137">Configure services in SharePoint for server-to-server add-in use</span></span>
-<span data-ttu-id="5e788-138"><a name="Servertoserver"> </a></span><span class="sxs-lookup"><span data-stu-id="5e788-138"></span></span>
+## <a name="configure-services-in-sharepoint-for-server-to-server-add-in-use"></a><span data-ttu-id="480b8-137">Настройка служб в SharePoint для межсерверного использования надстроек</span><span class="sxs-lookup"><span data-stu-id="480b8-137">Configure services in SharePoint for server-to-server add-in use</span></span>
+<span data-ttu-id="480b8-138"><a name="Servertoserver"> </a></span><span class="sxs-lookup"><span data-stu-id="480b8-138"><a name="Servertoserver"> </a></span></span>
 
-<span data-ttu-id="5e788-p108">На этом этапе службы в SharePoint настраиваются для межсерверного использования надстроек. Это позволяет создавать размещаемые у поставщиков надстройки с высоким уровнем доверия в вашей среде. Дополнительные сведения о создании таких надстроек см. в статье  [Создание надстроек с высоким уровнем доверия для SharePoint](create-high-trust-sharepoint-add-ins.md).</span><span class="sxs-lookup"><span data-stu-id="5e788-p108">In this step, you configure services in SharePoint for server-to-server add-in use. These steps ensure that you will be able to create high trust provider-hosted add-ins with your installation. See  [Create high-trust SharePoint Add-ins](create-high-trust-sharepoint-add-ins.md) for more information about creating this kind of add-in.</span></span>
- 
-
+<span data-ttu-id="480b8-p108">На этом этапе службы в SharePoint настраиваются для межсерверного использования надстроек. Это позволяет создавать размещаемые у поставщиков надстройки с высоким уровнем доверия в вашей среде. Дополнительные сведения о создании таких надстроек см. в статье  [Создание надстроек с высоким уровнем доверия для SharePoint](create-high-trust-sharepoint-add-ins.md).</span><span class="sxs-lookup"><span data-stu-id="480b8-p108">In this step, you configure services in SharePoint for server-to-server add-in use. These steps ensure that you will be able to create high trust provider-hosted add-ins with your installation. See  [Create high-trust SharePoint Add-ins](create-high-trust-sharepoint-add-ins.md) for more information about creating this kind of add-in.</span></span>
  
 
-1. <span data-ttu-id="5e788-p109">Убедитесь, что настроены служба управления приложениями и приложение профилей пользователей (эта служба называется службой управления приложениями, так как изначально Надстройки SharePoint назывались "приложениями для SharePoint"). Для этого выполните следующие действия:</span><span class="sxs-lookup"><span data-stu-id="5e788-p109">Ensure that the App Management Service and user profile application are configured. (It is called "App Management Service" because SharePoint Add-ins were originally named "apps for SharePoint".) The steps are as follows:</span></span>
-    
-      1. <span data-ttu-id="5e788-144">В **центре администрирования** выберите в разделе **Управление приложениями** элемент **Управление приложениями-службами**.</span><span class="sxs-lookup"><span data-stu-id="5e788-144">In  **Central Administration**, under  **Application Management**, select  **Manage service applications**.</span></span>
-    
- 
-  2. <span data-ttu-id="5e788-145">На странице **Приложения-службы** убедитесь, что запущены следующие службы:</span><span class="sxs-lookup"><span data-stu-id="5e788-145">On the  **Service Applications** page, ensure that the following services are started:</span></span>
-    
-      - <span data-ttu-id="5e788-146">Приложение-служба профилей пользователей</span><span class="sxs-lookup"><span data-stu-id="5e788-146">User Profile Service Application</span></span>
-    
- 
-  - <span data-ttu-id="5e788-147">Служба управления приложениями</span><span class="sxs-lookup"><span data-stu-id="5e788-147">App Management Service</span></span>
-    
- 
-  3. <span data-ttu-id="5e788-148">В разделе **Управление приложениями** выберите пункт **Управление службами на сервере**.</span><span class="sxs-lookup"><span data-stu-id="5e788-148">Under  **Application Management**, select  **Manage services on server**.</span></span> 
-    
- 
-  4. <span data-ttu-id="5e788-149">На странице **Службы на сервере** убедитесь, что запущены следующие службы:</span><span class="sxs-lookup"><span data-stu-id="5e788-149">On the  **Services on Server** page, ensure that the following services are started:</span></span>
-    
-      - <span data-ttu-id="5e788-150">Служба профилей пользователей</span><span class="sxs-lookup"><span data-stu-id="5e788-150">User Profile Service</span></span> 
-    
- 
-2. <span data-ttu-id="5e788-p110">Убедитесь, что в **приложении-службе профилей пользователей** создан по крайней мере один профиль. Для этого выполните указанные ниже действия.</span><span class="sxs-lookup"><span data-stu-id="5e788-p110">Ensure that at least one profile is created in the  **User Profile Service Application**. The steps are as follows:</span></span>
-    
-      1. <span data-ttu-id="5e788-153">В **центре администрирования** выберите в разделе **Управление приложениями** элемент **Управление приложениями-службами**.</span><span class="sxs-lookup"><span data-stu-id="5e788-153">In  **Central Administration**, under  **Application Management**, select  **Manage service applications**.</span></span>
-    
- 
-  2. <span data-ttu-id="5e788-154">Затем выберите пункт **Приложение-служба профилей пользователей**.</span><span class="sxs-lookup"><span data-stu-id="5e788-154">Next, select  **User Profile Service Application**.</span></span>
-    
- 
-  3. <span data-ttu-id="5e788-155">На странице **Служба управления профилями: приложение-служба профилей пользователей** выберите в разделе **Люди** пункт **Управление профилями пользователей**.</span><span class="sxs-lookup"><span data-stu-id="5e788-155">On the  **Manage Profile Service: User Profile Service Application** page, under **People**, select  **Manage User Profiles**.</span></span>
-    
- 
-  4. <span data-ttu-id="5e788-156">На странице **Управление профилями пользователей** нажмите кнопку **Создать профили**.</span><span class="sxs-lookup"><span data-stu-id="5e788-156">On the  **Manage User Profiles** page, select **New Profiles**.</span></span>
-    
- 
-  5. <span data-ttu-id="5e788-157">На странице **Добавление профиля пользователя** укажите имя своей учетной записи и электронный адрес.</span><span class="sxs-lookup"><span data-stu-id="5e788-157">On the  **Add User Profile** page, type your account name and email address.</span></span>
-    
- 
-  6. <span data-ttu-id="5e788-158">Нажмите кнопку **Сохранить и закрыть**.</span><span class="sxs-lookup"><span data-stu-id="5e788-158">Select  **Save and Close**.</span></span>
-    
-     <span data-ttu-id="5e788-159">**Примечание.** Если появится сообщение о том, что профиль, который вы пытаетесь создать, уже существует, нажмите **Отменить и вернуться**.</span><span class="sxs-lookup"><span data-stu-id="5e788-159">**Note**  If you get a message saying that the profile you are trying to create already exists, select  **Cancel and Go Back**.</span></span>
-  7. <span data-ttu-id="5e788-160">Вернувшись на страницу **Управление профилями пользователей**, вы должны увидеть сообщение **Общее число профилей: 1**.</span><span class="sxs-lookup"><span data-stu-id="5e788-160">Back on the  **Manage User Profiles** page, you should see **Total number of profiles: 1**.</span></span>
-    
  
 
-## <a name="install-visual-studio-and-office-developer-tools-for-visual-studio"></a><span data-ttu-id="5e788-161">Установка Visual Studio и Инструментов разработчика Office для Visual Studio</span><span class="sxs-lookup"><span data-stu-id="5e788-161">Install Visual Studio and Office Developer Tools for Visual Studio</span></span>
-<span data-ttu-id="5e788-162"><a name="SP15Appdevonprem_bk_installVS"> </a></span><span class="sxs-lookup"><span data-stu-id="5e788-162"></span></span>
-
-
-- <span data-ttu-id="5e788-p111">Если вы еще не установили **Visual Studio** 2013 или более поздней версии, сделайте это согласно инструкциям на странице [Установка Visual Studio](http://msdn.microsoft.com/library/da049020-cfda-40d7-8ff4-7492772b620f.aspx). Рекомендуем использовать [последнюю версию из Центра загрузки Майкрософт](https://www.visualstudio.com/downloads/download-visual-studio-vs).</span><span class="sxs-lookup"><span data-stu-id="5e788-p111">If you don't already have  **Visual Studio** 2013 or later installed, install it with the instructions at [Install Visual Studio](http://msdn.microsoft.com/library/da049020-cfda-40d7-8ff4-7492772b620f.aspx). We recommend using the  [latest version from the Microsoft Download Center](https://www.visualstudio.com/downloads/download-visual-studio-vs).</span></span>
+1. <span data-ttu-id="480b8-p109">Убедитесь, что настроены служба управления приложениями и приложение профилей пользователей (эта служба называется службой управления приложениями, так как изначально Надстройки SharePoint назывались "приложениями для SharePoint"). Для этого выполните следующие действия:</span><span class="sxs-lookup"><span data-stu-id="480b8-p109">Ensure that the App Management Service and user profile application are configured. (It is called "App Management Service" because SharePoint Add-ins were originally named "apps for SharePoint".) The steps are as follows:</span></span>
+    
+      1. <span data-ttu-id="480b8-144">В **центре администрирования** выберите в разделе **Управление приложениями** элемент **Управление приложениями-службами**.</span><span class="sxs-lookup"><span data-stu-id="480b8-144">In  **Central Administration**, under  **Application Management**, select  **Manage service applications**.</span></span>
     
  
-- <span data-ttu-id="5e788-p112">В состав Visual Studio входят **Инструменты разработчика Microsoft Office для Visual Studio**, но иногда выход новой версии инструментов не совпадает с выходом обновлений Visual Studio. Чтобы убедиться, что вы используете последнюю версию инструментов, запустите [установщик Инструментов разработчика Office для Visual Studio 2013](http://aka.ms/OfficeDevToolsForVS2013) или [установщик Инструментов разработчика Office для Visual Studio 2015](http://aka.ms/OfficeDevToolsForVS2015).</span><span class="sxs-lookup"><span data-stu-id="5e788-p112">Visual Studio includes the  **Microsoft Office Developer Tools for Visual Studio**, but sometimes a version of the tools is released between updates of Visual Studio. To be sure that you have the latest version of the tools use run the [installer for Office Developer Tools for Visual Studio 2013](http://aka.ms/OfficeDevToolsForVS2013), or  [installer for Office Developer Tools for Visual Studio 2015](http://aka.ms/OfficeDevToolsForVS2015).</span></span>
+  2. <span data-ttu-id="480b8-145">На странице **Приложения-службы** убедитесь, что запущены следующие службы:</span><span class="sxs-lookup"><span data-stu-id="480b8-145">On the  **Service Applications** page, ensure that the following services are started:</span></span>
+    
+      - <span data-ttu-id="480b8-146">Приложение-служба профилей пользователей</span><span class="sxs-lookup"><span data-stu-id="480b8-146">User Profile Service Application</span></span>
+    
+ 
+  - <span data-ttu-id="480b8-147">Служба управления приложениями</span><span class="sxs-lookup"><span data-stu-id="480b8-147">App Management Service</span></span>
+    
+ 
+  3. <span data-ttu-id="480b8-148">В разделе **Управление приложениями** выберите пункт **Управление службами на сервере**.</span><span class="sxs-lookup"><span data-stu-id="480b8-148">Under  **Application Management**, select  **Manage services on server**.</span></span> 
+    
+ 
+  4. <span data-ttu-id="480b8-149">На странице **Службы на сервере** убедитесь, что запущены следующие службы:</span><span class="sxs-lookup"><span data-stu-id="480b8-149">On the  **Services on Server** page, ensure that the following services are started:</span></span>
+    
+      - <span data-ttu-id="480b8-150">Служба профилей пользователей</span><span class="sxs-lookup"><span data-stu-id="480b8-150">User Profile Service</span></span> 
+    
+ 
+2. <span data-ttu-id="480b8-p110">Убедитесь, что в **приложении-службе профилей пользователей** создан по крайней мере один профиль. Для этого выполните указанные ниже действия.</span><span class="sxs-lookup"><span data-stu-id="480b8-p110">Ensure that at least one profile is created in the  **User Profile Service Application**. The steps are as follows:</span></span>
+    
+      1. <span data-ttu-id="480b8-153">В **центре администрирования** выберите в разделе **Управление приложениями** элемент **Управление приложениями-службами**.</span><span class="sxs-lookup"><span data-stu-id="480b8-153">In  **Central Administration**, under  **Application Management**, select  **Manage service applications**.</span></span>
+    
+ 
+  2. <span data-ttu-id="480b8-154">Затем выберите пункт **Приложение-служба профилей пользователей**.</span><span class="sxs-lookup"><span data-stu-id="480b8-154">Next, select  **User Profile Service Application**.</span></span>
+    
+ 
+  3. <span data-ttu-id="480b8-155">На странице **Служба управления профилями: приложение-служба профилей пользователей** выберите в разделе **Люди** пункт **Управление профилями пользователей**.</span><span class="sxs-lookup"><span data-stu-id="480b8-155">On the  **Manage Profile Service: User Profile Service Application** page, under **People**, select  **Manage User Profiles**.</span></span>
+    
+ 
+  4. <span data-ttu-id="480b8-156">На странице **Управление профилями пользователей** нажмите кнопку **Создать профили**.</span><span class="sxs-lookup"><span data-stu-id="480b8-156">On the  **Manage User Profiles** page, select **New Profiles**.</span></span>
+    
+ 
+  5. <span data-ttu-id="480b8-157">На странице **Добавление профиля пользователя** укажите имя своей учетной записи и электронный адрес.</span><span class="sxs-lookup"><span data-stu-id="480b8-157">On the  **Add User Profile** page, type your account name and email address.</span></span>
+    
+ 
+  6. <span data-ttu-id="480b8-158">Нажмите кнопку **Сохранить и закрыть**.</span><span class="sxs-lookup"><span data-stu-id="480b8-158">Select  **Save and Close**.</span></span>
+    
+     <span data-ttu-id="480b8-159">**Примечание.** Если появится сообщение о том, что профиль, который вы пытаетесь создать, уже существует, нажмите **Отменить и вернуться**.</span><span class="sxs-lookup"><span data-stu-id="480b8-159">**Note**  If you get a message saying that the profile you are trying to create already exists, select  **Cancel and Go Back**.</span></span>
+  7. <span data-ttu-id="480b8-160">Вернувшись на страницу **Управление профилями пользователей**, вы должны увидеть сообщение **Общее число профилей: 1**.</span><span class="sxs-lookup"><span data-stu-id="480b8-160">Back on the  **Manage User Profiles** page, you should see **Total number of profiles: 1**.</span></span>
     
  
 
-### <a name="verbose-logging-in-visual-studio"></a><span data-ttu-id="5e788-167">Подробное ведение журнала в Visual Studio</span><span class="sxs-lookup"><span data-stu-id="5e788-167">Verbose logging in Visual Studio</span></span>
+## <a name="install-visual-studio-and-office-developer-tools-for-visual-studio"></a><span data-ttu-id="480b8-161">Установка Visual Studio и Инструментов разработчика Office для Visual Studio</span><span class="sxs-lookup"><span data-stu-id="480b8-161">Install Visual Studio and Office Developer Tools for Visual Studio</span></span>
+<span data-ttu-id="480b8-162"><a name="SP15Appdevonprem_bk_installVS"> </a></span><span class="sxs-lookup"><span data-stu-id="480b8-162"><a name="SP15Appdevonprem_bk_installVS"> </a></span></span>
 
-<span data-ttu-id="5e788-168">Выполните указанные ниже действия, чтобы включить подробное ведение журнала.</span><span class="sxs-lookup"><span data-stu-id="5e788-168">Follow these steps if you want to turn on verbose logging:</span></span>
- 
 
- 
-
-1. <span data-ttu-id="5e788-169">Откройте реестр и перейдите к разделу **HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\ _nn.n_\SharePointTools**, где _nn.n_ — это номер версии Visual Studio, например 12.0 или 14.0.</span><span class="sxs-lookup"><span data-stu-id="5e788-169">Open the registry, and navigate to  **HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\ _nn.n_\SharePointTools**, where _nn.n_ is the version of Visual Studio, such as 12.0 or 14.0.</span></span>
+- <span data-ttu-id="480b8-p111">Если вы еще не установили **Visual Studio** 2013 или более поздней версии, сделайте это согласно инструкциям на странице [Установка Visual Studio](http://msdn.microsoft.com/library/da049020-cfda-40d7-8ff4-7492772b620f.aspx). Рекомендуем использовать [последнюю версию из Центра загрузки Майкрософт](https://www.visualstudio.com/downloads/download-visual-studio-vs).</span><span class="sxs-lookup"><span data-stu-id="480b8-p111">If you don't already have  **Visual Studio** 2013 or later installed, install it with the instructions at [Install Visual Studio](http://msdn.microsoft.com/library/da049020-cfda-40d7-8ff4-7492772b620f.aspx). We recommend using the  [latest version from the Microsoft Download Center](https://www.visualstudio.com/downloads/download-visual-studio-vs).</span></span>
     
  
-2. <span data-ttu-id="5e788-170">Добавьте ключ DWORD под названием **EnableDiagnostics**.</span><span class="sxs-lookup"><span data-stu-id="5e788-170">Add a DWORD key named  **EnableDiagnostics**.</span></span>
+- <span data-ttu-id="480b8-p112">В состав Visual Studio входят **Инструменты разработчика Microsoft Office для Visual Studio**, но иногда выход новой версии инструментов не совпадает с выходом обновлений Visual Studio. Чтобы убедиться, что вы используете последнюю версию инструментов, запустите [установщик Инструментов разработчика Office для Visual Studio 2013](http://aka.ms/OfficeDevToolsForVS2013) или [установщик Инструментов разработчика Office для Visual Studio 2015](http://aka.ms/OfficeDevToolsForVS2015).</span><span class="sxs-lookup"><span data-stu-id="480b8-p112">Visual Studio includes the  **Microsoft Office Developer Tools for Visual Studio**, but sometimes a version of the tools is released between updates of Visual Studio. To be sure that you have the latest version of the tools use run the [installer for Office Developer Tools for Visual Studio 2013](http://aka.ms/OfficeDevToolsForVS2013), or  [installer for Office Developer Tools for Visual Studio 2015](http://aka.ms/OfficeDevToolsForVS2015).</span></span>
     
  
-3. <span data-ttu-id="5e788-171">Присвойте ключу значение **1**.</span><span class="sxs-lookup"><span data-stu-id="5e788-171">Give the key the value  **1**.</span></span>
+
+### <a name="verbose-logging-in-visual-studio"></a><span data-ttu-id="480b8-167">Подробное ведение журнала в Visual Studio</span><span class="sxs-lookup"><span data-stu-id="480b8-167">Verbose logging in Visual Studio</span></span>
+
+<span data-ttu-id="480b8-168">Выполните указанные ниже действия, чтобы включить подробное ведение журнала.</span><span class="sxs-lookup"><span data-stu-id="480b8-168">Follow these steps if you want to turn on verbose logging:</span></span>
+ 
+
+ 
+
+1. <span data-ttu-id="480b8-169">Откройте реестр и перейдите к разделу **HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\ _nn.n_\SharePointTools**, где _nn.n_ — это номер версии Visual Studio, например 12.0 или 14.0.</span><span class="sxs-lookup"><span data-stu-id="480b8-169">Open the registry, and navigate to  **HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\ _nn.n_\SharePointTools**, where _nn.n_ is the version of Visual Studio, such as 12.0 or 14.0.</span></span>
     
  
-<span data-ttu-id="5e788-172">Путь реестра в будущих версиях Visual Studio изменится.</span><span class="sxs-lookup"><span data-stu-id="5e788-172">The registry path will change in future versions of Visual Studio.</span></span>
+2. <span data-ttu-id="480b8-170">Добавьте ключ DWORD под названием **EnableDiagnostics**.</span><span class="sxs-lookup"><span data-stu-id="480b8-170">Add a DWORD key named  **EnableDiagnostics**.</span></span>
+    
+ 
+3. <span data-ttu-id="480b8-171">Присвойте ключу значение **1**.</span><span class="sxs-lookup"><span data-stu-id="480b8-171">Give the key the value  **1**.</span></span>
+    
+ 
+<span data-ttu-id="480b8-172">Путь реестра в будущих версиях Visual Studio изменится.</span><span class="sxs-lookup"><span data-stu-id="480b8-172">The registry path will change in future versions of Visual Studio.</span></span>
  
 
  
 
-## <a name="configure-an-isolated-add-in-domain-in-sharepoint"></a><span data-ttu-id="5e788-173">Настройка изолированного домена надстройки в SharePoint</span><span class="sxs-lookup"><span data-stu-id="5e788-173">Configure an isolated add-in domain in SharePoint</span></span>
-<span data-ttu-id="5e788-174"><a name="SP15appdevonprem_bk_configure"> </a></span><span class="sxs-lookup"><span data-stu-id="5e788-174"></span></span>
+## <a name="configure-an-isolated-add-in-domain-in-sharepoint"></a><span data-ttu-id="480b8-173">Настройка изолированного домена надстройки в SharePoint</span><span class="sxs-lookup"><span data-stu-id="480b8-173">Configure an isolated add-in domain in SharePoint</span></span>
+<span data-ttu-id="480b8-174"><a name="SP15appdevonprem_bk_configure"> </a></span><span class="sxs-lookup"><span data-stu-id="480b8-174"><a name="SP15appdevonprem_bk_configure"> </a></span></span>
 
-<span data-ttu-id="5e788-175">Прежде чем выполнять процедуры, описанные в этом разделе, см. раздел [Хост-сайты, сайты надстроек и изолированный домен](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md#IsolatedDomain).</span><span class="sxs-lookup"><span data-stu-id="5e788-175">Please read  [Host webs, add-in webs, and the isolated domain](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md#IsolatedDomain) before you carry out any procedures in this section.</span></span>
- 
-
- 
-<span data-ttu-id="5e788-p113">Требуется создать изолированный домен в вашей тестовой ферме SharePoint. Кроме того, для установки SharePoint требуется общий домен с заголовком узла с подстановочными знаками, где можно выполнять подготовку надстроек, размещаемых в SharePoint.</span><span class="sxs-lookup"><span data-stu-id="5e788-p113">You must create an isolated domain in your test SharePoint farm. Also, your SharePoint installation needs a general wildcard host header domain where it can provision SharePoint-hosted add-ins.</span></span>
+<span data-ttu-id="480b8-175">Прежде чем выполнять процедуры, описанные в этом разделе, см. раздел [Хост-сайты, сайты надстроек и изолированный домен](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md#IsolatedDomain).</span><span class="sxs-lookup"><span data-stu-id="480b8-175">Please read  [Host webs, add-in webs, and the isolated domain](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md#IsolatedDomain) before you carry out any procedures in this section.</span></span>
  
 
  
-<span data-ttu-id="5e788-p114">В целях разработки можно изменить свой файл Hosts при необходимости, чтобы сделать возможной маршрутизацию с компьютера разработки к тестовому экземпляру Надстройка SharePoint. Visual Studio изменяет файл Hosts автоматически при создании и развертывании надстройки.</span><span class="sxs-lookup"><span data-stu-id="5e788-p114">For development purposes, you can modify your hosts file as you need to route your development computer to a test instance of a SharePoint Add-in. Visual Studio modifies your hosts file automatically when you build and deploy the add-in.</span></span> 
+<span data-ttu-id="480b8-p113">Требуется создать изолированный домен в вашей тестовой ферме SharePoint. Кроме того, для установки SharePoint требуется общий домен с заголовком узла с подстановочными знаками, где можно выполнять подготовку надстроек, размещаемых в SharePoint.</span><span class="sxs-lookup"><span data-stu-id="480b8-p113">You must create an isolated domain in your test SharePoint farm. Also, your SharePoint installation needs a general wildcard host header domain where it can provision SharePoint-hosted add-ins.</span></span>
  
 
  
-
- <span data-ttu-id="5e788-p115">**Примечание.** Для рабочих ферм необходимо создать стратегию маршрутизации DNS в интрасети и, возможно, настроить брандмауэр. Дополнительные сведения о создании и настройке рабочей среды для надстроек SharePoint см. в статье [Установка надстроек SharePoint и управление ими](http://technet.microsoft.com/en-us/library/fp161232%28v=office.15%29).</span><span class="sxs-lookup"><span data-stu-id="5e788-p115">**Note**  For production farms, you would have to create a DNS routing strategy within your intranet and optionally configure your firewall. See  [Install and Manage SharePoint Add-ins](http://technet.microsoft.com/en-us/library/fp161232%28v=office.15%29) for more information about how to create and configure a production environment for SharePoint Add-ins.</span></span>
- 
-
-<span data-ttu-id="5e788-182">Выполните действия, описанные в следующем разделе, чтобы создать изолированный домен надстройки.</span><span class="sxs-lookup"><span data-stu-id="5e788-182">Perform the steps in the following procedure to create an isolated add-in domain.</span></span>
+<span data-ttu-id="480b8-p114">В целях разработки можно изменить свой файл Hosts при необходимости, чтобы сделать возможной маршрутизацию с компьютера разработки к тестовому экземпляру Надстройка SharePoint. Visual Studio изменяет файл Hosts автоматически при создании и развертывании надстройки.</span><span class="sxs-lookup"><span data-stu-id="480b8-p114">For development purposes, you can modify your hosts file as you need to route your development computer to a test instance of a SharePoint Add-in. Visual Studio modifies your hosts file automatically when you build and deploy the add-in.</span></span> 
  
 
  
 
- <span data-ttu-id="5e788-183">**Примечание.** Все эти действия необходимо выполнять от имени администратора фермы, а командную строку и командную консоль SharePoint необходимо запускать от имени администратора.</span><span class="sxs-lookup"><span data-stu-id="5e788-183">**Note**  You must perform all of the steps in the following procedure while logged in as the farm administrator, and you must run the command prompt and the SharePoint Management Shell as an administrator.</span></span>
+ <span data-ttu-id="480b8-p115">**Примечание.** Для рабочих ферм необходимо создать стратегию маршрутизации DNS в интрасети и, возможно, настроить брандмауэр. Дополнительные сведения о создании и настройке рабочей среды для надстроек SharePoint см. в статье [Установка надстроек SharePoint и управление ими](http://technet.microsoft.com/en-us/library/fp161232%28v=office.15%29).</span><span class="sxs-lookup"><span data-stu-id="480b8-p115">**Note**  For production farms, you would have to create a DNS routing strategy within your intranet and optionally configure your firewall. See  [Install and Manage SharePoint Add-ins](http://technet.microsoft.com/en-us/library/fp161232%28v=office.15%29) for more information about how to create and configure a production environment for SharePoint Add-ins.</span></span>
+ 
+
+<span data-ttu-id="480b8-182">Выполните действия, описанные в следующем разделе, чтобы создать изолированный домен надстройки.</span><span class="sxs-lookup"><span data-stu-id="480b8-182">Perform the steps in the following procedure to create an isolated add-in domain.</span></span>
+ 
+
+ 
+
+ <span data-ttu-id="480b8-183">**Примечание.** Все эти действия необходимо выполнять от имени администратора фермы, а командную строку и командную консоль SharePoint необходимо запускать от имени администратора.</span><span class="sxs-lookup"><span data-stu-id="480b8-183">**Note**  You must perform all of the steps in the following procedure while logged in as the farm administrator, and you must run the command prompt and the SharePoint Management Shell as an administrator.</span></span>
  
 
 
-### <a name="create-an-isolated-add-in-domain-on-your-development-computer"></a><span data-ttu-id="5e788-184">Создание изолированного домена надстройки на компьютере для разработки</span><span class="sxs-lookup"><span data-stu-id="5e788-184">Create an isolated add-in domain on your development computer</span></span>
+### <a name="create-an-isolated-add-in-domain-on-your-development-computer"></a><span data-ttu-id="480b8-184">Создание изолированного домена надстройки на компьютере для разработки</span><span class="sxs-lookup"><span data-stu-id="480b8-184">Create an isolated add-in domain on your development computer</span></span>
 
 
-1. <span data-ttu-id="5e788-185">Убедитесь, что запущены службы spadmin и sptimer. Для этого откройте командную строку и введите приведенные ниже команды.</span><span class="sxs-lookup"><span data-stu-id="5e788-185">Ensure that the spadmin and sptimer services are running by opening a command prompt and typing the following commands.</span></span>
+1. <span data-ttu-id="480b8-185">Убедитесь, что запущены службы spadmin и sptimer. Для этого откройте командную строку и введите приведенные ниже команды.</span><span class="sxs-lookup"><span data-stu-id="480b8-185">Ensure that the spadmin and sptimer services are running by opening a command prompt and typing the following commands.</span></span>
     
 ```
   net start spadminv4
 net start sptimerv4
 ```
 
-2. <span data-ttu-id="5e788-p116">Создайте изолированный домен надстройки, запустив командную консоль SharePoint от имени администратора и выполнив следующую команду. Замените  _contosoaddins.com_ доменом вашей надстройки. Это *не*  должен быть поддомен ведущего домена SharePoint. В противном случае потеряется большинство преимуществ безопасности изолированных доменов надстроек. Например, если имя несущего домена contoso.com, не используйте addins.contoso.com в качестве домена надстроек.</span><span class="sxs-lookup"><span data-stu-id="5e788-p116">Create your isolated add-in domain by running the SharePoint Management Shell as an administrator and typing the following command. Replace the  _contosoaddins.com_ with your add-in domain. It should *not*  be a subdomain of the host SharePoint domain. Doing so largely defeats the security advantages of having isolated add-in domains. For example, if the host domain is contoso.com, do not use addins.contoso.com as the add-in domain.</span></span>
+2. <span data-ttu-id="480b8-p116">Создайте изолированный домен надстройки, запустив командную консоль SharePoint от имени администратора и выполнив следующую команду. Замените  _contosoaddins.com_ доменом вашей надстройки. Это *не*  должен быть поддомен ведущего домена SharePoint. В противном случае потеряется большинство преимуществ безопасности изолированных доменов надстроек. Например, если имя несущего домена contoso.com, не используйте addins.contoso.com в качестве домена надстроек.</span><span class="sxs-lookup"><span data-stu-id="480b8-p116">Create your isolated add-in domain by running the SharePoint Management Shell as an administrator and typing the following command. Replace the  _contosoaddins.com_ with your add-in domain. It should *not*  be a subdomain of the host SharePoint domain. Doing so largely defeats the security advantages of having isolated add-in domains. For example, if the host domain is contoso.com, do not use addins.contoso.com as the add-in domain.</span></span>
     
 ```
   Set-SPAppDomain "contosoaddins.com"
 ```
 
-3. <span data-ttu-id="5e788-191">Убедитесь, что запущены службы SPSubscriptionSettingsService и AppManagementServiceInstance. Для этого введите в командной консоли SharePoint приведенную ниже команду.</span><span class="sxs-lookup"><span data-stu-id="5e788-191">Ensure that the SPSubscriptionSettingsService and AppManagementServiceInstance services are running by typing the following command in the SharePoint Management Shell.</span></span>
+3. <span data-ttu-id="480b8-191">Убедитесь, что запущены службы SPSubscriptionSettingsService и AppManagementServiceInstance. Для этого введите в командной консоли SharePoint приведенную ниже команду.</span><span class="sxs-lookup"><span data-stu-id="480b8-191">Ensure that the SPSubscriptionSettingsService and AppManagementServiceInstance services are running by typing the following command in the SharePoint Management Shell.</span></span>
     
 ```
   Get-SPServiceInstance | where{$_.GetType().Name -eq "AppManagementServiceInstance" -or $_.GetType().Name -eq "SPSubscriptionSettingsServiceInstance"} | Start-SPServiceInstance
 ```
 
-4. <span data-ttu-id="5e788-p117">Убедитесь, что службы SPSubscriptionSettingsService и AppManagementServiceInstance работают, введя в командной консоли SharePoint следующую команду. Результат выполнения команды покажет, подключена ли каждая служба.</span><span class="sxs-lookup"><span data-stu-id="5e788-p117">Verify that the SPSubscriptionSettingsService and AppManagementServiceInstance services are running by typing the following command in the SharePoint Management Shell. The output will indicate whether each service is online.</span></span>
+4. <span data-ttu-id="480b8-p117">Убедитесь, что службы SPSubscriptionSettingsService и AppManagementServiceInstance работают, введя в командной консоли SharePoint следующую команду. Результат выполнения команды покажет, подключена ли каждая служба.</span><span class="sxs-lookup"><span data-stu-id="480b8-p117">Verify that the SPSubscriptionSettingsService and AppManagementServiceInstance services are running by typing the following command in the SharePoint Management Shell. The output will indicate whether each service is online.</span></span>
     
 ```
   Get-SPServiceInstance | where{$_.GetType().Name -eq "AppManagementServiceInstance" -or $_.GetType().Name -eq "SPSubscriptionSettingsServiceInstance"}
 ```
 
-5. <span data-ttu-id="5e788-p118">Необходимо указать учетную запись, в которой будут выполняться экземпляры служб SPSubscriptionService и AppManagementServiceInstance. Это должна быть учетная запись SPManagedAccount. Чтобы создать учетную запись SPManagedAccount, введите в командной консоли SharePoint приведенную ниже команду (вам будет предложено указать имя пользователя и домен учетной записи, а также пароль).</span><span class="sxs-lookup"><span data-stu-id="5e788-p118">You must specify an account under which the SPSubscriptionService and AppManagementServiceInstance service instances will run. This account must be an SPManagedAccount. You can create an SPManagedAccount by typing the following command in the SharePoint Management Shell. (You'll be prompted for the account domain\user and password.)</span></span>
+5. <span data-ttu-id="480b8-p118">Необходимо указать учетную запись, в которой будут выполняться экземпляры служб SPSubscriptionService и AppManagementServiceInstance. Это должна быть учетная запись SPManagedAccount. Чтобы создать учетную запись SPManagedAccount, введите в командной консоли SharePoint приведенную ниже команду (вам будет предложено указать имя пользователя и домен учетной записи, а также пароль).</span><span class="sxs-lookup"><span data-stu-id="480b8-p118">You must specify an account under which the SPSubscriptionService and AppManagementServiceInstance service instances will run. This account must be an SPManagedAccount. You can create an SPManagedAccount by typing the following command in the SharePoint Management Shell. (You'll be prompted for the account domain\user and password.)</span></span>
     
 ```
   $account = New-SPManagedAccount
 ```
 
-6. <span data-ttu-id="5e788-p119">Укажите параметры учетной записи, пула приложений и базы данных для служб SPSubscriptionService и AppManagementServiceInstance, введя следующий код в командной консоли SharePoint. Если в предыдущем действии была создана учетная запись SPManagedAccount, используйте здесь ее имя.</span><span class="sxs-lookup"><span data-stu-id="5e788-p119">Specify an account, application pool, and database settings for the SPSubscriptionService and AppManagementServiceInstance services by typing the following code in the SharePoint Management Shell. If you created a SPManagedAccount in the preceding step, use that account name here.</span></span>
+6. <span data-ttu-id="480b8-p119">Укажите параметры учетной записи, пула приложений и базы данных для служб SPSubscriptionService и AppManagementServiceInstance, введя следующий код в командной консоли SharePoint. Если в предыдущем действии была создана учетная запись SPManagedAccount, используйте здесь ее имя.</span><span class="sxs-lookup"><span data-stu-id="480b8-p119">Specify an account, application pool, and database settings for the SPSubscriptionService and AppManagementServiceInstance services by typing the following code in the SharePoint Management Shell. If you created a SPManagedAccount in the preceding step, use that account name here.</span></span>
     
 ```
   $account = Get-SPManagedAccount "domain\user" 
@@ -251,67 +251,67 @@ $proxyAppSvc = New-SPAppManagementServiceApplicationProxy -ServiceApplication $a
 
 ```
 
-7. <span data-ttu-id="5e788-200">Укажите префикс надстройки (см. раздел [Хост-сайты, сайты надстроек и изолированный домен](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md#IsolatedDomain)). Для этого введите приведенный ниже код в командной консоли SharePoint.</span><span class="sxs-lookup"><span data-stu-id="5e788-200">Specify your add-in prefix (see  [Host webs, add-in webs, and the isolated domain](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md#IsolatedDomain)) by typing the following code in the SharePoint Management Shell.</span></span>
+7. <span data-ttu-id="480b8-200">Укажите префикс надстройки (см. раздел [Хост-сайты, сайты надстроек и изолированный домен](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md#IsolatedDomain)). Для этого введите приведенный ниже код в командной консоли SharePoint.</span><span class="sxs-lookup"><span data-stu-id="480b8-200">Specify your add-in prefix (see  [Host webs, add-in webs, and the isolated domain](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md#IsolatedDomain)) by typing the following code in the SharePoint Management Shell.</span></span>
     
 ```
   Set-SPAppSiteSubscriptionName -Name "add-in" -Confirm:$false
 ```
 
- <span data-ttu-id="5e788-p120">**Выполните следующую процедуру, только если в вашей среде используется прокси-сервер.** После создания изолированного домена надстроек выполните действия, приведенные в следующей процедуре, чтобы добавить этот домен в список обхода в Internet Explorer. Это гарантирует, что вы сможете переходить к этому домену после развертывания надстройки, размещенной в SharePoint, или надстройки, размещенной у поставщика, которая содержит сайт надстройки.</span><span class="sxs-lookup"><span data-stu-id="5e788-p120">**Carry out the following procedure only if your environment uses a proxy server.** After you create your isolated add-in domain, perform the steps in the following procedure to add that domain to your bypass list in Internet Explorer. This ensures that you can navigate to this domain after you deploy a SharePoint-hosted add-in or a provider-hosted add-in that includes an add-in web.</span></span>
+ <span data-ttu-id="480b8-p120">**Выполните следующую процедуру, только если в вашей среде используется прокси-сервер.** После создания изолированного домена надстроек выполните действия, приведенные в следующей процедуре, чтобы добавить этот домен в список обхода в Internet Explorer. Это гарантирует, что вы сможете переходить к этому домену после развертывания надстройки, размещенной в SharePoint, или надстройки, размещенной у поставщика, которая содержит сайт надстройки.</span><span class="sxs-lookup"><span data-stu-id="480b8-p120">**Carry out the following procedure only if your environment uses a proxy server.** After you create your isolated add-in domain, perform the steps in the following procedure to add that domain to your bypass list in Internet Explorer. This ensures that you can navigate to this domain after you deploy a SharePoint-hosted add-in or a provider-hosted add-in that includes an add-in web.</span></span>
  
 
  
 
-### <a name="add-your-isolated-add-in-domain-to-your-bypass-list-in-internet-explorer"></a><span data-ttu-id="5e788-204">Добавление изолированного домена надстройки в список обхода в Internet Explorer</span><span class="sxs-lookup"><span data-stu-id="5e788-204">Add your isolated add-in domain to your bypass list in Internet Explorer</span></span>
+### <a name="add-your-isolated-add-in-domain-to-your-bypass-list-in-internet-explorer"></a><span data-ttu-id="480b8-204">Добавление изолированного домена надстройки в список обхода в Internet Explorer</span><span class="sxs-lookup"><span data-stu-id="480b8-204">Add your isolated add-in domain to your bypass list in Internet Explorer</span></span>
 
 
-1. <span data-ttu-id="5e788-205">В Internet Explorer откройте меню **Сервис**.</span><span class="sxs-lookup"><span data-stu-id="5e788-205">In Internet Explorer, go to  **Tools**.</span></span>
+1. <span data-ttu-id="480b8-205">В Internet Explorer откройте меню **Сервис**.</span><span class="sxs-lookup"><span data-stu-id="480b8-205">In Internet Explorer, go to  **Tools**.</span></span>
     
  
-2. <span data-ttu-id="5e788-206">Выберите пункт **Свойства браузера**.</span><span class="sxs-lookup"><span data-stu-id="5e788-206">Choose  **Internet options**.</span></span>
+2. <span data-ttu-id="480b8-206">Выберите пункт **Свойства браузера**.</span><span class="sxs-lookup"><span data-stu-id="480b8-206">Choose  **Internet options**.</span></span>
     
  
-3. <span data-ttu-id="5e788-207">На вкладке **Подключения** нажмите кнопку **Настройка сети**.</span><span class="sxs-lookup"><span data-stu-id="5e788-207">On the  **Connections** tab, choose the **LAN Settings** button.</span></span>
+3. <span data-ttu-id="480b8-207">На вкладке **Подключения** нажмите кнопку **Настройка сети**.</span><span class="sxs-lookup"><span data-stu-id="480b8-207">On the  **Connections** tab, choose the **LAN Settings** button.</span></span>
     
  
-4. <span data-ttu-id="5e788-208">Снимите флажок **Автоматическое определение параметров**.</span><span class="sxs-lookup"><span data-stu-id="5e788-208">Clear the  **Automatically detect settings** check box.</span></span>
+4. <span data-ttu-id="480b8-208">Снимите флажок **Автоматическое определение параметров**.</span><span class="sxs-lookup"><span data-stu-id="480b8-208">Clear the  **Automatically detect settings** check box.</span></span>
     
  
-5. <span data-ttu-id="5e788-209">Установите флажок **Использовать прокси-сервер для локальных подключений**.</span><span class="sxs-lookup"><span data-stu-id="5e788-209">Select the  **Use a proxy server for your LAN** check box.</span></span>
+5. <span data-ttu-id="480b8-209">Установите флажок **Использовать прокси-сервер для локальных подключений**.</span><span class="sxs-lookup"><span data-stu-id="480b8-209">Select the  **Use a proxy server for your LAN** check box.</span></span>
     
  
-6. <span data-ttu-id="5e788-210">Нажмите кнопку **Дополнительно** и добавьте адрес *.Ваш_домен_надстроек.com в список **Исключения**.</span><span class="sxs-lookup"><span data-stu-id="5e788-210">Choose the  **Advanced** button, and then add*.YourAddinsDomain.com to the **Exceptions** list.</span></span>
+6. <span data-ttu-id="480b8-210">Нажмите кнопку **Дополнительно** и добавьте адрес *.Ваш_домен_надстроек.com в список **Исключения**.</span><span class="sxs-lookup"><span data-stu-id="480b8-210">Choose the  **Advanced** button, and then add*.YourAddinsDomain.com to the **Exceptions** list.</span></span>
     
  
-7. <span data-ttu-id="5e788-211">Нажмите кнопку **ОК**.</span><span class="sxs-lookup"><span data-stu-id="5e788-211">Choose the  **OK** button.</span></span>
+7. <span data-ttu-id="480b8-211">Нажмите кнопку **ОК**.</span><span class="sxs-lookup"><span data-stu-id="480b8-211">Choose the  **OK** button.</span></span>
     
  
-8. <span data-ttu-id="5e788-212">Нажмите кнопку **ОК**, чтобы закрыть диалоговое окно **Настройка параметров локальной сети**.</span><span class="sxs-lookup"><span data-stu-id="5e788-212">Choose the  **OK** button to close the **Local Area Network (LAN) Settings** dialog box.</span></span>
+8. <span data-ttu-id="480b8-212">Нажмите кнопку **ОК**, чтобы закрыть диалоговое окно **Настройка параметров локальной сети**.</span><span class="sxs-lookup"><span data-stu-id="480b8-212">Choose the  **OK** button to close the **Local Area Network (LAN) Settings** dialog box.</span></span>
     
  
-9. <span data-ttu-id="5e788-213">Нажмите кнопку **ОК**, чтобы закрыть диалоговое окно **Свойства браузера**.</span><span class="sxs-lookup"><span data-stu-id="5e788-213">Choose the  **OK** button to close the **Internet Options** dialog box.</span></span>
+9. <span data-ttu-id="480b8-213">Нажмите кнопку **ОК**, чтобы закрыть диалоговое окно **Свойства браузера**.</span><span class="sxs-lookup"><span data-stu-id="480b8-213">Choose the  **OK** button to close the **Internet Options** dialog box.</span></span>
     
  
-<span data-ttu-id="5e788-214">Сведения о доступных вариантах развертывания надстроек см. в статье [Развертывание и установка надстроек SharePoint: методы и параметры](deploying-and-installing-sharepoint-add-ins-methods-and-options.md).</span><span class="sxs-lookup"><span data-stu-id="5e788-214">See  [Deploying and installing SharePoint Add-ins: methods and options](deploying-and-installing-sharepoint-add-ins-methods-and-options.md) for information about your options for deploying your add-ins.</span></span>
+<span data-ttu-id="480b8-214">Сведения о доступных вариантах развертывания надстроек см. в статье [Развертывание и установка надстроек SharePoint: методы и параметры](deploying-and-installing-sharepoint-add-ins-methods-and-options.md).</span><span class="sxs-lookup"><span data-stu-id="480b8-214">See  [Deploying and installing SharePoint Add-ins: methods and options](deploying-and-installing-sharepoint-add-ins-methods-and-options.md) for information about your options for deploying your add-ins.</span></span>
  
 
  
 
- <span data-ttu-id="5e788-p121">**Совет.** После того, как вы развернете размещаемую в SharePoint надстройку в вашей установке, при попытке запуска этого приложения вам может предлагаться войти со своими учетными данными. Чтобы такие предложения больше не появлялись, выполните действия, описанные в статье [При просмотре веб-сайта, использующего встроенную проверку подлинности и размещенного на сервере IIS 5.1 или более поздней версии, появляется сообщение об ошибке 401.1](http://support.microsoft.com/kb/896861).</span><span class="sxs-lookup"><span data-stu-id="5e788-p121">**Tip**  After you deploy a SharePoint-hosted add-in to your installation, you may be prompted to log in with your credentials when you try to launch it. You will need to disable the loopback check to get rid of these prompts. See  [You receive error 401.1 when you browse a Web site that uses Integrated Authentication and is hosted on IIS 5.1 or a later version](http://support.microsoft.com/kb/896861) for instructions on how to disable the loopback check.</span></span>
+ <span data-ttu-id="480b8-p121">**Совет.** После того, как вы развернете размещаемую в SharePoint надстройку в вашей установке, при попытке запуска этого приложения вам может предлагаться войти со своими учетными данными. Чтобы такие предложения больше не появлялись, выполните действия, описанные в статье [При просмотре веб-сайта, использующего встроенную проверку подлинности и размещенного на сервере IIS 5.1 или более поздней версии, появляется сообщение об ошибке 401.1](http://support.microsoft.com/kb/896861).</span><span class="sxs-lookup"><span data-stu-id="480b8-p121">**Tip**  After you deploy a SharePoint-hosted add-in to your installation, you may be prompted to log in with your credentials when you try to launch it. You will need to disable the loopback check to get rid of these prompts. See  [You receive error 401.1 when you browse a Web site that uses Integrated Authentication and is hosted on IIS 5.1 or a later version](http://support.microsoft.com/kb/896861) for instructions on how to disable the loopback check.</span></span>
  
 
 
-## <a name="additional-resources"></a><span data-ttu-id="5e788-218">Дополнительные ресурсы</span><span class="sxs-lookup"><span data-stu-id="5e788-218">Additional resources</span></span>
-<span data-ttu-id="5e788-219"><a name="SP15SetupSPO365_bk_addlresources"> </a></span><span class="sxs-lookup"><span data-stu-id="5e788-219"></span></span>
+## <a name="additional-resources"></a><span data-ttu-id="480b8-218">Дополнительные ресурсы</span><span class="sxs-lookup"><span data-stu-id="480b8-218">Additional resources</span></span>
+<span data-ttu-id="480b8-219"><a name="SP15SetupSPO365_bk_addlresources"> </a></span><span class="sxs-lookup"><span data-stu-id="480b8-219"><a name="SP15SetupSPO365_bk_addlresources"> </a></span></span>
 
 
--  [<span data-ttu-id="5e788-220">Надстройки SharePoint</span><span class="sxs-lookup"><span data-stu-id="5e788-220">SharePoint Add-ins</span></span>](sharepoint-add-ins.md)
+-  [<span data-ttu-id="480b8-220">Надстройки SharePoint</span><span class="sxs-lookup"><span data-stu-id="480b8-220">SharePoint Add-ins</span></span>](sharepoint-add-ins.md)
     
  
--  [<span data-ttu-id="5e788-221">Знакомство с созданием надстроек SharePoint с размещением у поставщика</span><span class="sxs-lookup"><span data-stu-id="5e788-221">Get started creating provider-hosted SharePoint Add-ins</span></span>](get-started-creating-provider-hosted-sharepoint-add-ins.md)
+-  [<span data-ttu-id="480b8-221">Знакомство с созданием надстроек SharePoint с размещением у поставщика</span><span class="sxs-lookup"><span data-stu-id="480b8-221">Get started creating provider-hosted SharePoint Add-ins</span></span>](get-started-creating-provider-hosted-sharepoint-add-ins.md)
     
  
--  [<span data-ttu-id="5e788-222">Знакомство с созданием надстроек SharePoint с размещением в SharePoint</span><span class="sxs-lookup"><span data-stu-id="5e788-222">Get started creating SharePoint-hosted SharePoint Add-ins</span></span>](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)
+-  [<span data-ttu-id="480b8-222">Знакомство с созданием надстроек SharePoint с размещением в SharePoint</span><span class="sxs-lookup"><span data-stu-id="480b8-222">Get started creating SharePoint-hosted SharePoint Add-ins</span></span>](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)
     
  
 
