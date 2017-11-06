@@ -1,3 +1,13 @@
+---
+title: "Отправка файла с помощью REST API и jQuery"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 891b9682406188b0c5dff9f07161c1da8ca25739
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="upload-a-file-by-using-the-rest-api-and-jquery"></a>Отправка файла с помощью REST API и jQuery
 Узнайте, как добавить локальный файл в папку SharePoint с помощью REST API и AJAX-запросов jQuery.
  
@@ -16,7 +26,7 @@
 4. Измените отображаемое имя и заголовок элемента списка с помощью запроса MERGE.
 
 ## <a name="running-the-code-examples"></a>Выполнение примеров кода
-<a name="RunTheExamples"> </a> В обоих примерах кода в этой статье показано, как с помощью REST API и AJAX-запросов jQuery добавить локальный файл в библиотеку **Общие документы**, а затем изменить свойства элемента списка. В первом примере вызовы выполняются между доменами SharePoint с помощью **SP.AppContextSite**. Аналогичный код используется надстройкой, размещенной в SharePoint, при отправке файлов на хост-сайт. Во втором примере вызовы выполняются в пределах домена. Аналогичный код используется серверным решением и надстройкой, размещенной в SharePoint, и при отправке файлов на сайт.
+<a name="RunTheExamples"> </a> В обоих примерах кода в этой статье показано, как с помощью REST API и AJAX-запросов jQuery отправить файл в библиотеку **Общие документы**, а затем изменить свойства элемента списка. В первом примере вызовы выполняются между доменами SharePoint с помощью метода **SP.AppContextSite**. Аналогичный код используется надстройкой, размещенной в SharePoint, при отправке файлов на хост-сайт. Во втором примере вызовы выполняются в пределах домена. Аналогичный код используется серверным решением и надстройкой, размещенной в SharePoint, и при отправке файлов на сайт.
 
  **Примечание.** Размещенные у поставщика надстройки, написанные на JavaScript, для отправки запросов в домен SharePoint должны использовать междоменную библиотеку SP.RequestExecutor. [Пример добавления файла с помощью междоменной библиотеки](http://msdn.microsoft.com/library/2c3d2545-1cd7-497e-b535-12199d8edfbb%28Office.15%29.aspx#bk_FileCollectionAdd)
  
@@ -360,4 +370,4 @@ function onError(error) {
 -  [Работа с папками и файлами в службе REST](working-with-folders-and-files-with-rest.md)
 -  [Работа со списками и элементами списков в службе REST](working-with-lists-and-list-items-with-rest.md)
 -  [Справочные материалы по интерфейсу API службы REST и примеры](http://msdn.microsoft.com/library/02128c70-9d27-4388-9374-a11bce68fdb8%28Office.15%29.aspx)
--  [Обращение к данным SharePoint из надстроек с помощью междоменной библиотеки](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library.md)
+-  [Обращение к данным SharePoint из надстроек с помощью междоменной библиотеки](../../sp-add-ins/access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md)

@@ -1,3 +1,13 @@
+---
+title: "Работа со списками и элементами списков в службе REST"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 66e9b7f7e622fe3df661c102fc1d62fde421f31e
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="working-with-lists-and-list-items-with-rest"></a>Работа со списками и элементами списков в службе REST
 Узнайте, как выполнять базовые операции CRUD (создание, чтение, обновление и удаление) со списками и элементами списков с помощью интерфейса REST в SharePoint.
  
@@ -227,7 +237,7 @@ headers:
 ```
 
 ## <a name="using-etag-values-to-determine-document-and-list-item-versioning"></a>Использование значений ETag для определения версий документов и элементов списков
-<a name="Etag"> </a> Служба SharePoint REST, работающая по [стандарту OData](http://www.odata.org/developers/protocols/operations), использует [значения HTML ETag для управления версиями](http://www.odata.org/developers/protocols/operations#ConcurrencycontrolandETags) списков SharePoint и их элементов. Чтобы проверить версию элемента при выполнении запроса **PUT**, **MERGE** или **DELETE**, укажите значение **ETag** в заголовке HTTP-запроса **If-Match**
+<a name="Etag"> </a> Служба SharePoint REST, работающая по [стандарту OData](http://www.odata.org/developers/protocols/operations), использует [значения HTML ETag для управления версиями](http://www.odata.org/developers/protocols/operations#ConcurrencycontrolandETags) списков SharePoint и их элементов. Чтобы проверить версию элемента при выполнении запроса **PUT**, **MERGE** или **DELETE**, укажите значение **ETag** в заголовке HTTP-запроса **If-Match**.
  
 Если указанное значение **ETag** не соответствует значению **ETag** документа или элемента списка на сервере, служба REST возвращает исключение 412 согласно спецификации OData.
  

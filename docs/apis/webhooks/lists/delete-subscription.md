@@ -1,3 +1,13 @@
+---
+title: "Удаление подписки"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 553a20757c0849f5033bc3345c4645f1754945bc
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="delete-a-subscription"></a>Удаление подписки
 
 Удаляет подписку на веб-перехватчики из списка SharePoint. После удаления доставка уведомлений по подписке прекратится.

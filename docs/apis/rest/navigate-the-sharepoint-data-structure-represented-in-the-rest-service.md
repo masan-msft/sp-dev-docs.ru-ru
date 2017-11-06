@@ -1,3 +1,13 @@
+---
+title: "Навигация по структуре данных SharePoint, представленной в службе REST"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 21d0326e9729a0cdb16f03211fae76a76859e5ab
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="navigate-the-sharepoint-data-structure-represented-in-the-rest-service"></a>Навигация по структуре данных SharePoint, представленной в службе REST
 Узнайте, как с помощью конечной точки REST в элементе SharePoint получить доступ к связанным элементам, например родительским сайтам или структуре библиотеки, в которой находится этот элемент. 
  
@@ -53,7 +63,7 @@
 Чтобы перейти к определенному родительскому или дочернему сайту, составьте подходящий URL-адрес REST этого сайта с помощью свойства **Id** или **Title**. После этого вы можете получить доступ к наборам сущностей, связанным с этим сайтом.
  
 ## <a name="navigating-folder-structure"></a>Навигация по структуре папок
-<a name="bk_folders"> </a> Служба REST SharePoint не поддерживает переход по иерархии папок сайта путем составления URL-адресов. Вместо этого можно использовать аналог метода **Web.GetFolderByServerRelativeUrl** в службе REST. Например:
+<a name="bk_folders"> </a> Служба REST SharePoint не поддерживает переход по иерархии папок сайта путем составления URL-адресов. Вместо этого можно использовать аналог метода **Web.GetFolderByServerRelativeUrl** в службе REST. Пример:
  
  *Навигация, не поддерживаемая в службе REST:* 
   

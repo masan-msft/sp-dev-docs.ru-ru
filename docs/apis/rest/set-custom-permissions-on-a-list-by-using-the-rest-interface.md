@@ -1,9 +1,20 @@
-# <a name="set-custom-permissions-on-a-list-by-using-the-rest-interface"></a>Назначение настраиваемых разрешений для списка с помощью интерфейса REST
+---
+title: "Назначение настраиваемых разрешений для списка с помощью интерфейса REST"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 20e1b305fb19a010e8a5b60ab12ffb43cff61cf5
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
+# <a name="set-custom-permissions-on-a-list-by-using-the-rest-interface"></a>Настройка специальных разрешений для списка с помощью интерфейса REST
 Узнайте, как определять детальные настраиваемые разрешения для списка SharePoint с помощью интерфейса REST и JavaScript.
 
 Сайты, списки и элементы списков SharePoint относятся к типу **SecurableObject**. По умолчанию защищаемый объект наследует разрешения от родительского объекта. Чтобы задать настраиваемые разрешения для объекта, необходимо прервать его наследование, чтобы он перестал наследовать разрешения от родительского объекта, а затем определить новые разрешения, добавив или удалив назначения ролей.
  
- **Примечание.** В разделе [Дополнительные ресурсы](set-custom-permissions-on-a-list-by-using-the-rest-interface.md#bk_addresources) представлены ссылки на статьи, посвященные детальным разрешениям.
+> [!Note]
+> Ссылки на статьи о детальных разрешениях см. разделе [Дополнительные ресурсы](set-custom-permissions-on-a-list-by-using-the-rest-interface.md#bk_addresources).
  
 Пример кода в этой статье задает настраиваемые разрешения для списка, а затем меняет разрешения группы для него. В примере интерфейс REST используется в следующих целях.
  
@@ -31,7 +42,7 @@
 
 В приведенных ниже примерах представлено содержимое файла App.js в надстройке с размещением в SharePoint. В первом примере используется междоменная библиотека JavaScript для создания и отправки HTTP-запросов. Во втором примере используются запросы jQuery AJAX.
  
-Прежде чем запускать код, замените заполнители фактическими значениями. Если вы используете другой язык или другую среду, вам потребуется добавить или изменить некоторые компоненты запросов. Дополнительные сведения см. в статье [Отличия между запросами REST в разных средах](complete-basic-operations-using-sharepoint-2013-rest-endpoints.md#bk_HowRequestsDiffer).
+Прежде чем запускать код, замените заполнители фактическими значениями. Если вы используете другой язык или другую среду, вам потребуется добавить или изменить некоторые компоненты запросов. Дополнительные сведения см. в статье [Отличия между запросами REST в разных средах](complete-basic-operations-using-sharepoint-rest-endpoints.md#bk_HowRequestsDiffer).
  
  **Пример 1. Запросы междоменной библиотеки**
  
@@ -274,9 +285,9 @@ function errorHandler(xhr, ajaxOptions, thrownError) {
     
  
 - Статьи TechNet:
-     - [Справочник по детальным разрешениям для SharePoint Server 2013](http://technet.microsoft.com/ru-ru/library/dn169567.aspx)
-     - [Рекомендации по использованию детальных разрешений в SharePoint Server 2013](http://technet.microsoft.com/ru-ru/library/gg128955.aspx)
-     - [Разрешения пользователей и уровни разрешений в SharePoint 2013](http://technet.microsoft.com/ru-ru/library/cc721640.aspx)
+     - [Справочник по детальным разрешениям для SharePoint Server 2013](http://technet.microsoft.com/en-us/library/dn169567.aspx)
+     - [Рекомендации по использованию детальных разрешений в SharePoint Server 2013](http://technet.microsoft.com/en-us/library/gg128955.aspx)
+     - [Разрешения пользователей и уровни разрешений в SharePoint 2013](http://technet.microsoft.com/en-us/library/cc721640.aspx)
     
  
 
