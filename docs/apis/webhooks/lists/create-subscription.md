@@ -1,3 +1,13 @@
+---
+title: "Создание подписки"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 374200568aa1151e58b9ae76fc48fb2465921af7
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="create-a-new-subscription"></a>Создание подписки 
 
 Создает подписку на веб-перехватчики в списке SharePoint. 
@@ -76,4 +86,4 @@ Content-Type: application/json
 
 Перед созданием подписки SharePoint отправит запрос с токеном проверки на указанный URL-адрес службы. Служба должна ответить на него, вернув токен проверки.
 
-В противном случае подписка не будет создана. Подробнее: [Обзор веб-перехватчиков SharePoint](../overview-sharepoint-webhooks).
+В противном случае подписка не будет создана. Дополнительные сведения см. в статье [Обзор веб-перехватчиков SharePoint](../overview-sharepoint-webhooks.md).
