@@ -1,3 +1,13 @@
+---
+title: "Отправка пакетных запросов с помощью интерфейсов REST API"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: b415b086175b366fbbc6d920186198b096cc85c7
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="make-batch-requests-with-the-rest-apis"></a>Отправка пакетных запросов с помощью интерфейсов REST API
 Узнайте, как использовать параметр запроса `$batch` с интерфейсами REST API и OData API.
  
