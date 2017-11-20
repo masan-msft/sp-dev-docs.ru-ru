@@ -1,65 +1,41 @@
 - name: Разработка для SharePoint
   href: index.md
 - name: SharePoint Framework
+  href: spfx/sharepoint-framework-overview.md
   items:
     - name: Обзор
       href: spfx/sharepoint-framework-overview.md
-    - name: План
-      href: spfx/roadmap.md
-    - name: Известные проблемы и часто задаваемые вопросы
-      href: spfx/known-issues-and-common-questions.md
-    - name: Инструменты и библиотеки
-      href: spfx/tools-and-libraries.md
-    - name: Настройка клиента Office 365
+    - name: Начало работы
       href: spfx/set-up-your-developer-tenant.md
-    - name: Настройка среды разработки
-      href: spfx/set-up-your-development-environment.md
-    - name: Поддержка SharePoint 2016
-      href: spfx/sharepoint-2016-support.md
-    - name: Отладка решений с помощью VS Code
-      href: spfx/debug-in-vscode.md
-    - name: Руководство для предприятий
-      href: spfx/enterprise-guidance.md
-    - name: Групповая разработка
-      href: spfx/team-based-development-on-sharepoint-framework.md
-    - name: Развертывание на уровне клиента
-      href: spfx/tenant-scoped-deployment.md
-    - name: Свойства клиента
-      href: spfx/tenant-properties.md
-    - name: Использование цветов темы в решении
-      href: spfx/use-theme-colors-in-your-customizations.md
-    - name: Работа с CSS
-      href: spfx/css-recommendations.md
-    - name: Интеграция с Office UI Fabric
-      href: spfx/office-ui-fabric-integration.md
-    - name: GraphHttpClient
       items:
-        - name: Обзор
-          href: spfx/overview-graphhttpclient.md
-        - name: Вызов Microsoft Graph с помощью GraphHttpClient
-          href: spfx/call-microsoft-graph-using-graphhttpclient.md
-    - name: Цепочка инструментов
-      href: spfx/toolchain/sharepoint-framework-toolchain.md
+        - name: Настройка клиента Office 365
+          href: spfx/set-up-your-developer-tenant.md
+        - name: Настройка среды разработки
+          href: spfx/set-up-your-development-environment.md
+        - name: Создание веб-частей
+          href: spfx/web-parts/get-started/build-a-hello-world-web-part.md
+        - name: Создание расширений
+          href: spfx/extensions/get-started/build-a-hello-world-extension.md
+    - name: Основы
       items:
-        - name: Цепочка инструментов SharePoint Framework
-          href: spfx/toolchain/sharepoint-framework-toolchain.md
-        - name: Генератор yeoman для SharePoint
-          href: spfx/toolchain/scaffolding-projects-using-yeoman-sharepoint-generator.md
-        - name: Обновление пакетов SharePoint Framework
-          href: spfx/toolchain/update-latest-packages.md
-        - name: Оптимизация сборок для производства
-          href: spfx/toolchain/optimize-builds-for-production.md
-        - name: Интеграция задач gulp в цепочку инструментов SharePoint Framework
-          href: spfx/toolchain/integrate-gulp-tasks-in-build-pipeline.md
-        - name: Расширение возможностей webpack в цепочке инструментов SharePoint Framework
-          href: spfx/toolchain/extending-webpack-in-build-pipeline.md
-        - name: Подготовка ресурсов SharePoint
-          href: spfx/toolchain/provision-sharepoint-assets.md
+        - name: Отладка
+          href: spfx/debug-in-vscode.md
+        - name: Подключение к API
+          items:
+            - name: Microsoft Graph
+              href: spfx/overview-graphhttpclient.md
+              items:
+                - name: Обзор
+                  href: spfx/overview-graphhttpclient.md
+                - name: Руководство
+                  href: spfx/call-microsoft-graph-using-graphhttpclient.md
     - name: Расширения
+      href: spfx/extensions/overview-extensions.md
       items:
         - name: Обзор
           href: spfx/extensions/overview-extensions.md
         - name: Начало работы
+          href: spfx/extensions/get-started/build-a-hello-world-extension.md
           items:
             - name: Создание первого расширения
               href: spfx/extensions/get-started/build-a-hello-world-extension.md
@@ -73,15 +49,13 @@
               href: spfx/extensions/get-started/building-simple-field-customizer.md
             - name: Создание набора команд ListView
               href: spfx/extensions/get-started/building-simple-cmdset-with-dialog-api.md
-        - name: Рекомендации
-          items:
-            - name: Использование настраиваемых диалоговых окон
-              href: spfx/extensions/guidance/using-custom-dialogs-with-spfx.md
     - name: Веб-части
+      href: spfx/web-parts/overview-client-side-web-parts.md
       items:
         - name: Обзор
           href: spfx/web-parts/overview-client-side-web-parts.md
         - name: Начало работы
+          href: spfx/web-parts/get-started/build-a-hello-world-web-part.md
           items:
             - name: Создание первой веб-части
               href: spfx/web-parts/get-started/build-a-hello-world-web-part.md
@@ -101,81 +75,157 @@
               href: spfx/web-parts/get-started/hosting-webpart-from-office-365-cdn.md
         - name: Основы
           items:
-            - name: Рекомендации по оформлению
-              href: spfx/web-parts/basics/design-considerations-for-web-parts.md
-            - name: Добавление свойств на панель свойств
+            - name: Настраиваемые свойства
               href: spfx/web-parts/basics/integrate-with-property-pane.md
-            - name: Добавление внешней библиотеки
-              href: spfx/web-parts/basics/add-an-external-library.md
-            - name: Работа с исходным __RequestDigest
-              href: spfx/web-parts/basics/working-with-requestdigest.md
-            - name: Примечания по упаковке решений
-              href: spfx/web-parts/basics/notes-on-solution-packaging.md
+            - name: Настройка значка веб-части
+              href: spfx/web-parts/basics/configure-web-part-icon.md
+            - name: Предварительная настройка веб-частей
+              href: spfx/web-parts/guidance/simplify-adding-web-parts-with-preconfigured-entries.md
+            - name: Проверка свойств
+              href: spfx/web-parts/guidance/validate-web-part-property-values.md
+        - name: Понятия
+          items:
+            - name: Перенос имеющихся модификаций
+              items:
+                - name: Работа с __REQUESTDIGEST
+                  href: spfx/web-parts/basics/working-with-requestdigest.md
+                - name: Использование JSOM
+                  href: spfx/web-parts/guidance/connect-to-sharepoint-using-jsom.md
+                - name: Веб-часть редактора скриптов
+                  href: spfx/web-parts/guidance/migrate-script-editor-web-part-customizations.md
+                - name: jQuery и DataTables
+                  href: spfx/web-parts/guidance/migrate-jquery-datatables-script-to-spfx.md
+                - name: jQuery и FullCalendar
+                  href: spfx/web-parts/guidance/migrate-jquery-fullcalendar-script-to-spfx.md
+                - name: Приложения AngularJS
+                  href: spfx/web-parts/guidance/migrate-angular-1-x-applications-to-sharepoint-framework.md
+            - name: Производительность
+              items:
+                - name: Совместное использование данных разными веб-частями
+                  href: spfx/web-parts/guidance/share-data-between-web-parts.md
+                  items:
+                    - name: Обзор
+                      href: spfx/web-parts/guidance/share-data-between-web-parts.md
+                    - name: Руководство
+                      href: spfx/web-parts/guidance/tutorial-share-data-between-web-parts-global-variable.md
+            - name: Интеграция SharePoint
+              href: spfx/web-parts/guidance/integrate-web-part-properties-with-sharepoint.md
+              items:
+                - name: Интеграция свойств с SharePoint
+                  href: spfx/web-parts/guidance/integrate-web-part-properties-with-sharepoint.md
+            - name: Расширение области свойств
+              items:
+                - name: Создание пользовательских элементов управления
+                  href: spfx/web-parts/guidance/build-custom-property-pane-controls.md
+                - name: Использование каскадных раскрывающихся списков
+                  href: spfx/web-parts/guidance/use-cascading-dropdowns-in-web-part-properties.md
+    - name: Понятия
+      items:
         - name: Рекомендации
           items:
-            - name: Рекомендации по управлению решениями SharePoint Framework
+            - name: Руководство для предприятий
+              href: spfx/enterprise-guidance.md
+            - name: Групповая разработка
+              href: spfx/team-based-development-on-sharepoint-framework.md
+            - name: Рекомендации по управлению
               href: spfx/web-parts/guidance/governance-considerations.md
+        - name: Внешние библиотеки
+          items:
+            - name: Ссылки на внешние библиотеки
+              href: spfx/web-parts/basics/add-an-external-library.md
             - name: Использование существующих библиотек JavaScript
               href: spfx/web-parts/guidance/use-existing-javascript-libraries.md
-            - name: Добавление ссылок на сторонние стили CSS
+            - name: Использование существующих стилей CSS
               href: spfx/web-parts/guidance/reference-third-party-css-styles.md
-            - name: Использование предварительно настроенных записей
-              href: spfx/web-parts/guidance/simplify-adding-web-parts-with-preconfigured-entries.md
-            - name: Интеграция свойств веб-части с SharePoint
-              href: spfx/web-parts/guidance/integrate-web-part-properties-with-sharepoint.md
-            - name: Использование JSOM в веб-части
-              href: spfx/web-parts/guidance/connect-to-sharepoint-using-jsom.md
-            - name: Проверка записей области свойств
-              href: spfx/web-parts/guidance/validate-web-part-property-values.md
-            - name: Использование каскадных раскрывающихся меню в области свойств
-              href: spfx/web-parts/guidance/use-cascading-dropdowns-in-web-part-properties.md
-            - name: Создание пользовательских элементов управления для области свойств
-              href: spfx/web-parts/guidance/build-custom-property-pane-controls.md
-            - name: Обмен данными между веб-частями
-              href: spfx/web-parts/guidance/share-data-between-web-parts.md
-            - name: Обмен данными между веб-частями (руководство)
-              href: spfx/web-parts/guidance/tutorial-share-data-between-web-parts-global-variable.md
-            - name: Перенос настроек веб-части "Редактор скриптов"
-              href: spfx/web-parts/guidance/migrate-script-editor-web-part-customizations.md
-            - name: Перенос решений jQuery и DataTables
-              href: spfx/web-parts/guidance/migrate-jquery-datatables-script-to-spfx.md
-            - name: Перенос решений jQuery и FullCalendar
-              href: spfx/web-parts/guidance/migrate-jquery-fullcalendar-script-to-spfx.md
-            - name: 'Подключение к API, защищенному с помощью Azure Active Directory'
-              href: spfx/web-parts/guidance/connect-to-api-secured-with-aad.md
-            - name: Создание веб-частей с помощью SharePoint PnP JS
+            - name: Использование SP PnP JS
               href: spfx/web-parts/guidance/use-sp-pnp-js-with-spfx-web-parts.md
-            - name: Создание веб-частей с помощью Angular версии 1.x
+            - name: Использование AngularJS
               href: spfx/web-parts/guidance/build-client-side-web-parts-with-angular-1-x.md
-            - name: Перенос приложений Angular
-              href: spfx/web-parts/guidance/migrate-angular-1-x-applications-to-sharepoint-framework.md
-            - name: Локализация
-              href: spfx/web-parts/guidance/localize-web-parts.md
-            - name: Вызов API Microsoft Graph
-              href: spfx/web-parts/guidance/call-microsoft-graph-from-your-web-part.md
-    - name: Руководство по оформлению
-      items:
-        - name: Обзор
-          href: design/design-guidance-overview.md
-        - name: Разработка страниц
-          href: design/authoring-pages.md
-        - name: Оформление веб-части
-          href: design/design-a-web-part.md
+        - name: Подключение к API
           items:
-            - name: Реактивные и нереактивные веб-части
-              href: design/reactive-and-nonreactive-web-parts.md
-            - name: Адаптивный дизайн
-              href: design/grid-and-responsive-design.md
-            - name: Названия и описания
-              href: design/web-part-titles-and-descriptions.md
-            - name: Текст пользовательского интерфейса
-              href: design/ui-text-for-web-parts.md
-            - name: Темы и цвета
-              href: design/themes-colors.md
-            - name: Заполнители и резервные элементы
-              href: design/placeholders-and-fallbacks.md
-            - name: Демонстрация веб-части
-              href: design/showcase-web-part.md
+            - name: 'API, защищенные службой Azure Active Directory'
+              href: spfx/web-parts/guidance/connect-to-api-secured-with-aad.md
+            - name: Вызов API Microsoft Graph с помощью OAuth
+              href: spfx/web-parts/guidance/call-microsoft-graph-from-your-web-part.md
+        - name: Производительность
+          href: spfx/toolchain/optimize-builds-for-production.md
+          items:
+            - name: Оптимизация сборок для рабочей среды
+              href: spfx/toolchain/optimize-builds-for-production.md
+        - name: Установка и развертывание
+          items:
+            - name: Упаковка решения
+              href: spfx/web-parts/basics/notes-on-solution-packaging.md
+            - name: Пользовательские задачи сборки
+              href: spfx/toolchain/integrate-gulp-tasks-in-build-pipeline.md
+            - name: Объединение
+              href: spfx/toolchain/extending-webpack-in-build-pipeline.md
+            - name: Обновление пакетов SharePoint Framework
+              href: spfx/toolchain/update-latest-packages.md
+            - name: Развертывание на уровне клиента
+              href: spfx/tenant-scoped-deployment.md
+            - name: Поддержка SharePoint 2016
+              href: spfx/sharepoint-2016-support.md
+            - name: Подготовка ресурсов SharePoint
+              href: spfx/toolchain/provision-sharepoint-assets.md
+        - name: Пользовательский интерфейс
+          href: design/design-guidance-overview.md
+          items:
+            - name: Руководство по оформлению
+              href: design/design-guidance-overview.md
+              items:
+                - name: Обзор
+                  href: design/design-guidance-overview.md
+                - name: Разработка страниц
+                  href: design/authoring-pages.md
+                - name: Оформление веб-части
+                  href: design/design-a-web-part.md
+                  items:
+                    - name: Реактивные и нереактивные веб-части
+                      href: design/reactive-and-nonreactive-web-parts.md
+                    - name: Адаптивный дизайн
+                      href: design/grid-and-responsive-design.md
+                    - name: Названия и описания
+                      href: design/web-part-titles-and-descriptions.md
+                    - name: Текст пользовательского интерфейса
+                      href: design/ui-text-for-web-parts.md
+                    - name: Темы и цвета
+                      href: design/themes-colors.md
+                    - name: Заполнители и резервные элементы
+                      href: design/placeholders-and-fallbacks.md
+                    - name: Демонстрация веб-части
+                      href: design/showcase-web-part.md
+            - name: Рекомендации по оформлению
+              href: spfx/web-parts/basics/design-considerations-for-web-parts.md
+            - name: Настраиваемые диалоговые окна
+              href: spfx/extensions/guidance/using-custom-dialogs-with-spfx.md
+            - name: Работа с CSS
+              href: spfx/css-recommendations.md
+            - name: Использование тем
+              href: spfx/use-theme-colors-in-your-customizations.md
+            - name: Интеграция с Office UI Fabric
+              href: spfx/office-ui-fabric-integration.md
+        - name: Локализация
+          href: spfx/web-parts/guidance/localize-web-parts.md
+        - name: Интеграция с SharePoint
+          items:
+            - name: Свойства клиента
+              href: spfx/tenant-properties.md
+    - name: Архитектура платформы
+      items:
+        - name: Инструменты и библиотеки
+          href: spfx/tools-and-libraries.md
+        - name: Цепочка инструментов
+          href: spfx/toolchain/sharepoint-framework-toolchain.md
+          items:
+            - name: Обзор
+              href: spfx/toolchain/sharepoint-framework-toolchain.md
+            - name: Генератор Yeoman для SharePoint Framework
+              href: spfx/toolchain/scaffolding-projects-using-yeoman-sharepoint-generator.md
+    - name: План
+      href: spfx/roadmap.md
+    - name: Известные проблемы и часто задаваемые вопросы
+      href: spfx/known-issues-and-common-questions.md
 - name: Декларативная настройка
   items:
     - name: Настройка темы сайта
@@ -965,9 +1015,7 @@
 - name: Надстройки SharePoint
   href: sp-add-ins/sharepoint-add-ins.md
   items:
-    - name: Новое название приложений для SharePoint
-      href: sp-add-ins/new-name-for-apps-for-sharepoint.md
-    - name: Создание надстроек SharePoint с размещением в SharePoint
+    - name: 'Знакомство с созданием надстроек SharePoint, размещаемых в SharePoint'
       href: sp-add-ins/get-started-creating-sharepoint-hosted-sharepoint-add-ins.md
       items:
         - name: 1. Развертывание и установка надстроек с размещением в SharePoint
@@ -1238,3 +1286,312 @@
           items:
             - name: Публикация облачной бизнес-надстройки в SharePoint
               href: sp-add-ins/publish-a-cloud-business-add-in-to-sharepoint.md
+- name: Руководство по решениям
+  href: solution-guidance/Office-365-development-patterns-and-practices-solution-guidance.md
+  items:
+    - name: Фирменный стиль и подготовка сайтов
+      href: solution-guidance/Branding-and-site-provisioning-solutions-for-SharePoint.md
+      items:
+        - name: Модель страниц
+          href: solution-guidance/SharePoint-pages-and-the-page-model.md
+        - name: Инструменты и методики разработки и оформления
+          href: solution-guidance/SharePoint-development-and-design-tools-and-practices.md
+        - name: Фирменный стиль сайта
+          href: solution-guidance/SharePoint-site-branding-and-page-customization-solutions.md
+          items:
+            - name: Применение фирменного стиля к сайтам с помощью составленных представлений
+              href: solution-guidance/Use-composed-looks-to-brand-SharePoint-sites.md
+            - name: Применение фирменного стиля к страницам с помощью удаленной подготовки
+              href: solution-guidance/Use-remote-provisioning-to-brand-SharePoint-pages.md
+            - name: Создание фирменного стиля страниц с помощью CSS
+              href: solution-guidance/Use-CSS-to-brand-pages.md
+            - name: Настройка элементов страницы SharePoint
+              href: solution-guidance/Customize-a-SharePoint-page-by-using-remote-provisioning-and-CSS.md
+            - name: Обновление фирменного стиля имеющихся сайтов и областей
+              href: solution-guidance/update-the-branding-of-existing-sharepoint-sites-and-page-regions.md
+            - name: Настройка фирменного стиля сайтов OneDrive для бизнеса
+              href: solution-guidance/Customization-Options-For-OD4B-Sites.md
+        - name: Подготовка сайта
+          href: solution-guidance/sharepoint-site-provisioning-solutions.md
+          items:
+            - name: Реализация решения для классификации сайтов
+              href: solution-guidance/implement-a-sharepoint-site-classification-solution.md
+            - name: Изменение списков хост-сайтов во время создания
+              href: solution-guidance/modify-sharepoint-host-web-lists-at-creation-time.md
+            - name: Создание типов контента с помощью CSOM
+              href: solution-guidance/create-sharepoint-content-types-by-using-csom.md
+            - name: Изменение разрешений для сайтов и получение состояния внешнего общего доступа
+              href: solution-guidance/modify-sharepoint-site-permissions-and-get-external-sharing-status.md
+            - name: Управление пользователями и группами
+              href: solution-guidance/manage-sharepoint-users-and-groups.md
+        - name: 'Функции для сайтов публикации, для работы с метаданными и навигации по сайтам'
+          href: solution-guidance/sharepoint-metadata-site-navigation-and-publishing-site-features.md
+        - name: Компоненты пользовательского интерфейса
+          href: solution-guidance/ux-components-in-sharepoint-2013-and-sharepoint-online.md
+          items:
+            - name: Настройка пользовательского интерфейса
+              href: solution-guidance/customize-the-ux-by-using-sharepoint-provider-hosted-add-ins.md
+            - name: Создание элементов управления в пользовательском интерфейсе
+              href: solution-guidance/create-ux-controls-by-using-sharepoint-provider-hosted-add-ins.md
+            - name: Отображение сведений с хост-сайта
+              href: solution-guidance/display-information-from-a-host-site-by-using-office-web-widgets.md
+            - name: Повышение производительности
+              href: solution-guidance/improve-performance-in-sharepoint-provider-hosted-add-ins.md
+    - name: Настройка "современных" интерфейсов в SharePoint Online
+      href: solution-guidance/modern-experience-customizations.md
+      items:
+        - name: Подготовка "современных" сайтов групп программным способом
+          href: solution-guidance/modern-experience-customizations-provisioning-sites.md
+        - name: Настройка "современных" сайтов групп
+          href: solution-guidance/modern-experience-customizations-customize-sites.md
+        - name: Настройка "современных" списков и библиотек
+          href: solution-guidance/modern-experience-customizations-customize-lists-and-libraries.md
+        - name: Настройка "современных" страниц сайтов
+          href: solution-guidance/modern-experience-customizations-customize-pages.md
+    - name: Руководство по клиентам SharePoint с поддержкой нескольких регионов
+      href: solution-guidance/multigeo-introduction.md
+      items:
+        - name: Разрешения в клиенте с поддержкой нескольких регионов
+          href: solution-guidance/multigeo-permissions.md
+        - name: Сведения о настройке поддержки нескольких регионов для клиента SharePoint.
+          href: solution-guidance/multigeo-discovery.md
+        - name: OneDrive для бизнеса в клиенте с поддержкой нескольких регионов
+          href: solution-guidance/multigeo-onedrive.md
+        - name: Работа с сайтами SharePoint в клиенте с поддержкой нескольких регионов
+          href: solution-guidance/multigeo-sites.md
+        - name: Работа с профилями пользователей в клиенте с поддержкой нескольких регионов
+          href: solution-guidance/multigeo-userprofileexperience.md
+        - name: Поиск в клиенте SharePoint с поддержкой нескольких регионов
+          href: solution-guidance/multigeo-search.md
+        - name: Управляемые метаданные в клиенте с поддержкой нескольких регионов
+          href: solution-guidance/multigeo-managedmetadata.md
+        - name: Концентратор типов контента в клиенте с поддержкой нескольких регионов
+          href: solution-guidance/multigeo-contenttypehub.md
+    - name: Создание производительных порталов SharePoint Online
+      href: solution-guidance/portal-overview.md
+      items:
+        - name: Рекомендации по оптимизации производительности
+          href: solution-guidance/portal-performance.md
+        - name: Информационная архитектура
+          href: solution-guidance/portal-information-architecture.md
+        - name: Рекомендации по навигации
+          href: solution-guidance/portal-navigation.md
+        - name: Руководство по агрегированию данных
+          href: solution-guidance/portal-data-aggregation.md
+        - name: Фирменная символика на порталах
+          href: solution-guidance/portal-branding.md
+        - name: Подход к запуску портала
+          href: solution-guidance/portal-rollout.md
+    - name: Составные бизнес-надстройки
+      href: solution-guidance/Composite-buisness-apps-for-SharePoint.md
+      items:
+        - name: Перенос форм InfoPath
+          href: solution-guidance/Migrate-InfoPath-forms-to-SharePoint.md
+        - name: Варианты хранения данных
+          href: solution-guidance/Data-storage-options-in-SharePoint-Online.md
+        - name: Интеграция приложений с корпоративными событиями
+          href: solution-guidance/Corporate-app-event-registration-with-SharePoint.md
+        - name: Вызов веб-служб из рабочих процессов
+          href: solution-guidance/Call-web-services-from-SharePoint-workflows.md
+    - name: Решения ECM
+      href: solution-guidance/Enterprise-Content-Management-solutions-for-SharePoint-2013-and-SharePoint-Online.md
+      items:
+        - name: Шаблоны библиотек документов
+          href: solution-guidance/Document-library-templates-sample-app-for-SharePoint.md
+        - name: Автоматическая расстановка тегов
+          href: solution-guidance/Autotagging-sample-app-for-SharePoint.md
+        - name: Управление информацией
+          href: solution-guidance/Information-management-sample-app-for-SharePoint.md
+        - name: Расширения для управления записями
+          href: solution-guidance/Records-management-extensions-sample-app-for-SharePoint.md
+        - name: Операции таксономии
+          href: solution-guidance/Taxonomy-operations-sample-app-for-SharePoint.md
+        - name: Пакетная отправка документов
+          href: solution-guidance/Bulk-upload-documents-sample-app-for-SharePoint.md
+        - name: Отправка больших файлов
+          href: solution-guidance/Upload-large-files-sample-app-for-SharePoint.md
+        - name: Синхронизация групп терминов
+          href: solution-guidance/Synchronize-term-groups-sample-app-for-SharePoint.md
+        - name: 'Поддержка символов % и # в файлах и папках с использованием API ResourcePath'
+          href: solution-guidance/supporting-and-in-file-and-folder-with-the-resourcepath-api.md
+    - name: Решения для локализации
+      href: solution-guidance/localization-solutions-for-sharepoint-2013-and-sharepoint-online.md
+      items:
+        - name: Использование функций локализации
+          href: solution-guidance/Use-localization-features-in-Office-365-sample-app.md
+        - name: Локализация элементов пользовательского интерфейса
+          href: solution-guidance/Localize-UI-elements-sample-app-for-SharePoint.md
+    - name: Решения поиска
+      href: solution-guidance/search-solutions-in-sharepoint-2013-and-sharepoint-online.md
+      items:
+        - name: Настройка поиска
+          href: solution-guidance/search-customizations-for-sharepoint.md
+    - name: Защита и производительность
+      href: solution-guidance/security-and-performance.md
+      items:
+        - name: 'Авторизация пользователей надстроек, размещаемых у поставщика, во время выполнения'
+          href: solution-guidance/authorize-provider-hosted-add-in-users-at-run-time-by-using-oauth.md
+        - name: 'Рекомендации по авторизации для клиентов, размещенных в правительственных средах Германии, Китая и США'
+          href: solution-guidance/Extending-SharePoint-Online-for-Germany-China-USGovernment-environments.md
+        - name: 'Междоменные изображения в надстройках SharePoint, размещаемых у поставщика'
+          href: solution-guidance/cross-domain-images-in-sharepoint-provider-hosted-add-ins.md
+        - name: Повышенные привилегии в надстройках SharePoint
+          href: solution-guidance/elevated-privileges-in-sharepoint-add-ins.md
+        - name: 'Как предоставить разрешения администратора клиента, предназначенные только для приложений, надстройкам в SharePoint Online'
+          href: solution-guidance/how-to-provide-add-in-app-only-tenant-administrative-permissions-in-sharepoint-online.md
+          items:
+            - name: Разработка с использованием разрешений клиента и режима "только для приложений"
+              href: solution-guidance/development-experience-tenant-apponly-permissions-in-sharepoint-online.md
+        - name: Настройка внешнего общего доступа в Office 365
+          href: solution-guidance/Set-external-sharing-on-site-collections-in-Office-365.md
+        - name: Управление регулированием в SharePoint Online
+          href: solution-guidance/Handle-SharePoint-Online-throttling-by-using-exponential-back-off.md
+        - name: Шаблоны и производительность JavaScript
+          href: solution-guidance/javascript-patterns-and-performance.md
+    - name: Инструкции в отношении надстроек SharePoint
+      href: solution-guidance/sharepoint-add-in-recipes.md
+      items:
+        - name: 'Разрешения, предназначенные только для приложений, и более высокие уровни привилегий '
+          href: solution-guidance/app-only-elevated-privileges-sharepoint-add-in.md
+        - name: Фирменный стиль сайтов SharePoint
+          href: solution-guidance/branding-sharepoint-sites-sharepoint-add-in.md
+        - name: Дополнительные действия
+          href: solution-guidance/custom-actions-sharepoint-add-in.md
+        - name: Настраиваемый тип поля
+          href: solution-guidance/custom-field-type-sharepoint-add-in.md
+        - name: Настраиваемые ленты
+          href: solution-guidance/Add-a-custom-ribbon-to-your-SharePoint-site.md
+        - name: Настройка пользовательского интерфейса сайта SharePoint путем внедрения JavaScript
+          href: solution-guidance/Customize-your-SharePoint-site-UI-by-using-JavaScript.md
+        - name: Замещаемые элементы управления
+          href: solution-guidance/delegate-controls-sharepoint-add-in.md
+        - name: Поставщик ИД документов
+          href: solution-guidance/document-id-provider-sharepoint-add-in.md
+        - name: Приемники событий списков и других событий
+          href: solution-guidance/event-receiver-and-list-event-receiver-sharepoint-add-in.md
+        - name: Ассоциация возможностей
+          href: solution-guidance/feature-stapling-sharepoint-add-in.md
+        - name: Политика управления сведениями
+          href: solution-guidance/information-management-policy-sharepoint-add-in.md
+        - name: Настройки JavaScript
+          href: solution-guidance/Embedding-JavaScript-into-SharePoint.md
+        - name: Определение или шаблон списка
+          href: solution-guidance/list-definition-template-sharepoint-add-in.md
+        - name: Экземпляр списка
+          href: solution-guidance/list-instance-sharepoint-add-in.md
+        - name: Локализация
+          href: solution-guidance/localization-sharepoint-add-in.md
+        - name: Эталонные страницы
+          href: solution-guidance/master-pages-sharepoint-add-in.md
+        - name: Работа с MMS
+          href: solution-guidance/mms-manipulation-sharepoint-add-in.md
+        - name: Модули
+          href: solution-guidance/modules-sharepoint-add-in.md
+        - name: Настройка OneDrive для бизнеса
+          href: solution-guidance/onedrive-for-business-customization-sharepoint-add-in.md
+        - name: Вопросы производительности
+          href: solution-guidance/performance-considerations-sharepoint-add-in.md
+        - name: Удаленные задания таймера
+          href: solution-guidance/remote-timer-jobs-sharepoint-add-in.md
+        - name: Удаленные приемники событий
+          href: solution-guidance/Use-remote-event-receivers-in-SharePoint.md
+        - name: Использование API поиска
+          href: solution-guidance/search-api-usage-sharepoint-add-in.md
+        - name: Конфигурация поиска
+          href: solution-guidance/search-configuration-sharepoint-add-in.md
+        - name: Журнал изменений SharePoint
+          href: solution-guidance/query-sharepoint-change-log-with-changequery-and-changeToken.md
+        - name: Столбцы сайтов и типы контента
+          href: solution-guidance/site-columns-and-content-types-sharepoint-add-in.md
+        - name: Подготовка сайта
+          href: solution-guidance/site-provisioning-sharepoint-add-in.md
+        - name: Использование асинхронных операций в надстройках SharePoint
+          href: solution-guidance/use-asynchronous-operations-in-sharepoint-add-ins.md
+        - name: Пользовательские элементы управления и веб-элементы управления
+          href: solution-guidance/user-controls-and-web-controls-sharepoint-add-in.md
+        - name: Операции с профилями пользователей
+          href: solution-guidance/user profile manipulation-sharepoint-add-in.md
+        - name: Варианты
+          href: solution-guidance/variations-sharepoint-add-in.md
+        - name: Веб-часть
+          href: solution-guidance/web-part-sharepoint-add-in.md
+        - name: Отправка веб-частей
+          href: solution-guidance/upload-web-parts-in-sharepoint.md
+        - name: Подключение веб-частей надстроек SharePoint
+          href: solution-guidance/Connect-SharePoint-app-parts-by-using-SignalR.md
+        - name: 'Рабочие процессы, действия, события и формы'
+          href: solution-guidance/workflows-actions-events-and-forms-sharepoint-add-in.md
+        - name: Интеграция Yammer
+          href: solution-guidance/yammer-integration-sharepoint-add-in.md
+    - name: 'Преобразование решений, предусматривающих наличие ферм, в решения модели надстроек SharePoint'
+      href: solution-guidance/Transform-farm-solutions-to-the-SharePoint-app-model.md
+      items:
+        - name: Замена типов контента и столбцов сайта
+          href: solution-guidance/replace-sharepoint-content-types-and-site-columns.md
+        - name: 'Замена файлов, развернутых с помощью модулей в решениях ферм'
+          href: solution-guidance/replace-files-deployed-using-modules-in-sharepoint-farm-solutions.md
+        - name: 'Замена списков, созданных на основе определений'
+          href: solution-guidance/replace-sharepoint-lists-created-from-list-definitions.md
+        - name: Замена веб-частей на веб-части надстроек
+          href: solution-guidance/replace-sharepoint-web-parts-with-add-in-parts.md
+    - name: Руководство по преобразованию изолированных решений
+      href: solution-guidance/Sandbox-Solution-Transformation-Guidance.md
+      items:
+        - name: Веб-части
+          href: solution-guidance/Sandbox-Solution-Transformation-Guidance-WebParts.md
+        - name: Приемники событий
+          href: solution-guidance/Sandbox-Solution-Transformation-Guidance-Event-Receivers.md
+        - name: Приемники компонентов
+          href: solution-guidance/Sandbox-Solution-Transformation-Guidance-Feature-Receivers.md
+        - name: Формы InfoPath с кодом
+          href: solution-guidance/Sandbox-Solution-Transformation-Guidance-InfoPath.md
+    - name: Решения для профилей пользователей
+      href: solution-guidance/user-profile-solutions-for-sharepoint.md
+      items:
+        - name: Чтение и обновление свойств профилей пользователей
+          href: solution-guidance/Read-or-update-user-profile-properties-sample-app-for-SharePoint.md
+        - name: API пакетного обновления профилей пользователей
+          href: solution-guidance/bulk-user-profile-update-api-for-sharepoint-online.md
+        - name: Перенос свойств профилей пользователей
+          href: solution-guidance/Migrate-user-profile-properties-sample-app-for-SharePoint.md
+        - name: Персонализация результатов поиска
+          href: solution-guidance/Personalize-search-results-sample-app-for-SharePoint.md
+        - name: Отправка аватаров пользователей
+          href: solution-guidance/Upload-user-profile-pictures-sample-app-for-SharePoint.md
+    - name: Развертывание надстроек SharePoint
+      href: solution-guidance/deploying-your-sharepoint-add-ins.md
+      items:
+        - name: Развертывание сайтов в Microsoft Azure
+          href: solution-guidance/Move-O365Api-Project-from-Dev-To-Prod.md
+        - name: Использование веб-заданий Azure с Office 365
+          href: solution-guidance/Use-Microsoft-Azure-WebJobs-with-Office-365.md
+        - name: Настройка размещаемых у поставщика надстроек для распространения
+          href: solution-guidance/Configure-SP-Provider-Hosted-Apps-For-Distribution.md
+        - name: Настройка проектов Office 365 для распространения
+          href: solution-guidance/Configure-O365Api-Project-For-Distribution.md
+    - name: Удаленная подготовка PnP
+      href: solution-guidance/pnp-remote-provisioning.md
+      items:
+        - name: Знакомство с подсистемой подготовки PnP
+          href: solution-guidance/Introducing-the-PnP-Provisioning-Engine.md
+        - name: Платформа подготовки PnP
+          href: solution-guidance/pnp-provisioning-framework.md
+        - name: Подсистема подготовки PnP и основная библиотека
+          href: solution-guidance/pnp-provisioning-engine-and-the-core-library.md
+        - name: Схема подготовки PnP
+          href: solution-guidance/pnp-provisioning-schema.md
+        - name: Пример подготовки консольного приложения
+          href: solution-guidance/provisioning-console-application-sample.md
+    - name: Платформа удаленных заданий таймера PnP
+      href: solution-guidance/pnp-remote-timer-job-framework.md
+      items:
+        - name: Платформа заданий таймера
+          href: solution-guidance/timerjob-framework.md
+        - name: Создание удаленных заданий таймера в SharePoint
+          href: solution-guidance/create-remote-timer-jobs-in-sharepoint.md
+        - name: Начало работы с веб-заданиями ("заданиями таймера")
+          href: solution-guidance/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites.md
+    - name: Справочник по основному API сайтов PnP
+      href: 'https://msdn.microsoft.com/en-us/pnp_sites_core/pnp-sites-core-overview'
+    - name: Справочник по PnP PowerShell
+      href: 'https://msdn.microsoft.com/en-us/pnp_powershell/pnp-powershell-overview'
