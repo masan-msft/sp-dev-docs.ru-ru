@@ -68,7 +68,7 @@ private static void Import(string fileName)
 -  [<span data-ttu-id="c4c0f-118">Поиск в SharePoint</span><span class="sxs-lookup"><span data-stu-id="c4c0f-118">Search in SharePoint</span></span>](search-in-sharepoint.md)
     
   
--  [<span data-ttu-id="c4c0f-119">Импорт и экспорт параметров конфигурации настраиваемого поиска в SharePoint</span><span class="sxs-lookup"><span data-stu-id="c4c0f-119">Export and import customized search configuration settings in SharePoint</span></span>](http://technet.microsoft.com/en-us/library/jj871675.aspx)
+-  [<span data-ttu-id="c4c0f-119">Импорт и экспорт параметров конфигурации настраиваемого поиска в SharePoint</span><span class="sxs-lookup"><span data-stu-id="c4c0f-119">Export and import customized search configuration settings in SharePoint</span></span>](http://technet.microsoft.com/ru-ru/library/jj871675.aspx)
     
   
 

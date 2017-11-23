@@ -61,7 +61,7 @@ ms.lasthandoff: 10/13/2017
 <span data-ttu-id="8de5e-125"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="8de5e-125"></span></span>
 
 
--  [<span data-ttu-id="8de5e-126">Планирование социальных вычислений и совместной работы в SharePoint</span><span class="sxs-lookup"><span data-stu-id="8de5e-126">Plan for social computing and collaboration in SharePoint</span></span>](http://technet.microsoft.com/en-us/library/ee662531%28v=office.15%29)
+-  [<span data-ttu-id="8de5e-126">Планирование социальных вычислений и совместной работы в SharePoint</span><span class="sxs-lookup"><span data-stu-id="8de5e-126">Plan for social computing and collaboration in SharePoint</span></span>](http://technet.microsoft.com/ru-ru/library/ee662531%28v=office.15%29)
     
   
 -  [<span data-ttu-id="8de5e-127">Библиотека классов клиента социальных сетей</span><span class="sxs-lookup"><span data-stu-id="8de5e-127">Social client class library</span></span>](http://msdn.microsoft.com/library/9cc3f70c-78ac-4d2d-b46e-77522ee5d937%28Office.15%29.aspx)

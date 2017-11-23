@@ -25,16 +25,16 @@ ms.lasthandoff: 10/13/2017
     
     
 
--  [<span data-ttu-id="a49bf-110">Get-SPEnterpriseSearchContentEnrichmentConfiguration</span><span class="sxs-lookup"><span data-stu-id="a49bf-110">Get-SPEnterpriseSearchContentEnrichmentConfiguration</span></span>](http://technet.microsoft.com/en-us/library/jj219783%28office.15%29.aspx)
+-  [<span data-ttu-id="a49bf-110">Get-SPEnterpriseSearchContentEnrichmentConfiguration</span><span class="sxs-lookup"><span data-stu-id="a49bf-110">Get-SPEnterpriseSearchContentEnrichmentConfiguration</span></span>](http://technet.microsoft.com/ru-ru/library/jj219783%28office.15%29.aspx)
     
   
--  [<span data-ttu-id="a49bf-111">Set-SPEnterpriseSearchContentEnrichmentConfiguration</span><span class="sxs-lookup"><span data-stu-id="a49bf-111">Set-SPEnterpriseSearchContentEnrichmentConfiguration</span></span>](http://technet.microsoft.com/en-us/library/jj219659%28office.15%29.aspx)
+-  [<span data-ttu-id="a49bf-111">Set-SPEnterpriseSearchContentEnrichmentConfiguration</span><span class="sxs-lookup"><span data-stu-id="a49bf-111">Set-SPEnterpriseSearchContentEnrichmentConfiguration</span></span>](http://technet.microsoft.com/ru-ru/library/jj219659%28office.15%29.aspx)
     
   
--  [<span data-ttu-id="a49bf-112">Remove-SPEnterpriseSearchContentEnrichmentConfiguration</span><span class="sxs-lookup"><span data-stu-id="a49bf-112">Remove-SPEnterpriseSearchContentEnrichmentConfiguration</span></span>](http://technet.microsoft.com/en-us/library/jj219742%28office.15%29.aspx)
+-  [<span data-ttu-id="a49bf-112">Remove-SPEnterpriseSearchContentEnrichmentConfiguration</span><span class="sxs-lookup"><span data-stu-id="a49bf-112">Remove-SPEnterpriseSearchContentEnrichmentConfiguration</span></span>](http://technet.microsoft.com/ru-ru/library/jj219742%28office.15%29.aspx)
     
   
--  [<span data-ttu-id="a49bf-113">Новый SPEnterpriseSearchContentEnrichmentConfiguration</span><span class="sxs-lookup"><span data-stu-id="a49bf-113">New-SPEnterpriseSearchContentEnrichmentConfiguration</span></span>](http://technet.microsoft.com/en-us/library/jj219502%28office.15%29.aspx)
+-  [<span data-ttu-id="a49bf-113">Новый SPEnterpriseSearchContentEnrichmentConfiguration</span><span class="sxs-lookup"><span data-stu-id="a49bf-113">New-SPEnterpriseSearchContentEnrichmentConfiguration</span></span>](http://technet.microsoft.com/ru-ru/library/jj219502%28office.15%29.aspx)
     
   
 <span data-ttu-id="a49bf-114">Эти командлеты Windows PowerShell включить администратор может настроить следующие параметры:</span><span class="sxs-lookup"><span data-stu-id="a49bf-114">These Windows PowerShell cmdlets enable an administrator to configure the following:</span></span>
@@ -312,11 +312,11 @@ Set-SPEnterpriseSearchContentEnrichmentConfiguration -SearchApplication
 $ssa -ContentEnrichmentConfiguration $config
 ```
 
-<span data-ttu-id="a49bf-p111">Последовательность Windows PowerShell командлеты позволяют сначала создайте объект конфигурации с помощью командлета  [New-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/en-us/library/jj219502%28office.15%29.aspx) . Объект конфигурации нажмите указывает к реализации службы; Рекомендуется используйте `http://localhost:808` для _Site_URL_.</span><span class="sxs-lookup"><span data-stu-id="a49bf-p111">The sequence of Windows PowerShell cmdlets help you to first create a configuration object by using the  [New-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/en-us/library/jj219502%28office.15%29.aspx) cmdlet. The configuration object is then pointed toward your service implementation; as a best practice, use `http://localhost:808` for _Site_URL_.</span></span>
+<span data-ttu-id="a49bf-p111">Последовательность Windows PowerShell командлеты позволяют сначала создайте объект конфигурации с помощью командлета  [New-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/ru-ru/library/jj219502%28office.15%29.aspx) . Объект конфигурации нажмите указывает к реализации службы; Рекомендуется используйте `http://localhost:808` для _Site_URL_.</span><span class="sxs-lookup"><span data-stu-id="a49bf-p111">The sequence of Windows PowerShell cmdlets help you to first create a configuration object by using the  [New-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/ru-ru/library/jj219502%28office.15%29.aspx) cmdlet. The configuration object is then pointed toward your service implementation; as a best practice, use `http://localhost:808` for _Site_URL_.</span></span>
   
     
     
-<span data-ttu-id="a49bf-p112">Управляемые свойства **Author** и **Filename**, передаются в службе для каждого элемента, который обрабатывается. Кроме того Проинформируйте клиента веб-службы, что службы будут выведены управляемое свойство **Author**. В дополнительных управляемых свойств клиента веб-службы настроена для отправки необработанные данные элемента с ограничением на размер данных. И, наконец командлет  [Set-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/en-us/library/jj219659%28office.15%29.aspx)используется для хранения всей конфигурации. После этот командлет возвращает, конфигурации активен, и компонент обхода контента с помощью этой конфигурации его следующий процесс обхода контента.</span><span class="sxs-lookup"><span data-stu-id="a49bf-p112">The managed properties **Author** and **Filename** are sent to your service for every item that is being processed. In addition, you have informed the web service client that the service will output a single managed property, **Author**. In additional to managed properties, the web service client is configured to send the raw data of the item with a limitation on the size of the data. Finally, the  [Set-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/en-us/library/jj219659%28office.15%29.aspx)cmdlet is used to store the entire configuration. After this cmdlet returns, the configuration is active and the crawl component uses this configuration for its next crawl process.</span></span>
+<span data-ttu-id="a49bf-p112">Управляемые свойства **Author** и **Filename**, передаются в службе для каждого элемента, который обрабатывается. Кроме того Проинформируйте клиента веб-службы, что службы будут выведены управляемое свойство **Author**. В дополнительных управляемых свойств клиента веб-службы настроена для отправки необработанные данные элемента с ограничением на размер данных. И, наконец командлет  [Set-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/ru-ru/library/jj219659%28office.15%29.aspx)используется для хранения всей конфигурации. После этот командлет возвращает, конфигурации активен, и компонент обхода контента с помощью этой конфигурации его следующий процесс обхода контента.</span><span class="sxs-lookup"><span data-stu-id="a49bf-p112">The managed properties **Author** and **Filename** are sent to your service for every item that is being processed. In addition, you have informed the web service client that the service will output a single managed property, **Author**. In additional to managed properties, the web service client is configured to send the raw data of the item with a limitation on the size of the data. Finally, the  [Set-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/ru-ru/library/jj219659%28office.15%29.aspx)cmdlet is used to store the entire configuration. After this cmdlet returns, the configuration is active and the crawl component uses this configuration for its next crawl process.</span></span>
   
     
     
@@ -341,7 +341,7 @@ Remove-SPEnterpriseSearchContentEnrichmentConfiguration -SearchApplication $ssa
 <span data-ttu-id="a49bf-186"><a name="SP15ContentEnrich_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="a49bf-186"><a name="SP15ContentEnrich_addresources"> </a></span></span>
 
 
--  [<span data-ttu-id="a49bf-187">Запустить, приостановить, возобновить или остановить обход контента</span><span class="sxs-lookup"><span data-stu-id="a49bf-187">Start, pause, resume, or stop a crawl</span></span>](http://technet.microsoft.com/en-us/library/jj219814%28office.15%29.aspx)
+-  [<span data-ttu-id="a49bf-187">Запустить, приостановить, возобновить или остановить обход контента</span><span class="sxs-lookup"><span data-stu-id="a49bf-187">Start, pause, resume, or stop a crawl</span></span>](http://technet.microsoft.com/ru-ru/library/jj219814%28office.15%29.aspx)
     
   
 -  [<span data-ttu-id="a49bf-188">Настройка службы поиска в SharePoint</span><span class="sxs-lookup"><span data-stu-id="a49bf-188">Configure search in SharePoint</span></span>](configure-search-in-sharepoint.md)

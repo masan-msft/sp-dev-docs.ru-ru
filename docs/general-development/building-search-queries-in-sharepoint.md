@@ -45,7 +45,7 @@ ms.lasthandoff: 10/13/2017
 - <span data-ttu-id="a0857-118">Замените строку преобразования запроса на эквивалентную строку на языке FQL, например `{?andnot({searchTerms},filter(contentclass:"urn:content-class:SPSPeople*"))}`.</span><span class="sxs-lookup"><span data-stu-id="a0857-118">Replace the Query Transformation string with an FQL equivalent, such as  `{?andnot({searchTerms},filter(contentclass:"urn:content-class:SPSPeople*"))}`.</span></span>
     
   
-<span data-ttu-id="a0857-119">Дополнительные сведения об источниках результатов и принципах их использования см. в статьях [Источники результатов](http://office.microsoft.com/en-us/support/sharepoint/sharepointsearch/understanding-result-sources-HA102848849.aspx) и [Настройка источников результатов для поиска в SharePoint](http://technet.microsoft.com/en-us/library/jj683115%28v=office.15%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="a0857-119">For more information about result sources and how they work, see to:  [Understanding result sources](http://office.microsoft.com/en-us/support/sharepoint/sharepointsearch/understanding-result-sources-HA102848849.aspx) and [Configure result sources for search in SharePoint Server 2013](http://technet.microsoft.com/en-us/library/jj683115%28v=office.15%29.aspx).</span></span>
+<span data-ttu-id="a0857-119">Дополнительные сведения об источниках результатов и принципах их использования см. в статьях [Источники результатов](http://office.microsoft.com/en-us/support/sharepoint/sharepointsearch/understanding-result-sources-HA102848849.aspx) и [Настройка источников результатов для поиска в SharePoint](http://technet.microsoft.com/ru-ru/library/jj683115%28v=office.15%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="a0857-119">For more information about result sources and how they work, see to:  [Understanding result sources](http://office.microsoft.com/en-us/support/sharepoint/sharepointsearch/understanding-result-sources-HA102848849.aspx) and [Configure result sources for search in SharePoint Server 2013](http://technet.microsoft.com/ru-ru/library/jj683115%28v=office.15%29.aspx).</span></span>
   
     
     
@@ -71,10 +71,10 @@ ms.lasthandoff: 10/13/2017
 -  [<span data-ttu-id="a0857-127">Поиск в SharePoint</span><span class="sxs-lookup"><span data-stu-id="a0857-127">Search in SharePoint</span></span>](search-in-sharepoint.md)
     
   
--  [<span data-ttu-id="a0857-128">Планирование преобразования запросов и упорядочивания результатов в SharePoint</span><span class="sxs-lookup"><span data-stu-id="a0857-128">Overview of query processing in SharePoint Server 2013</span></span>](http://technet.microsoft.com/en-us/library/jj219620%28v=office.15%29.aspx)
+-  [<span data-ttu-id="a0857-128">Планирование преобразования запросов и упорядочивания результатов в SharePoint</span><span class="sxs-lookup"><span data-stu-id="a0857-128">Overview of query processing in SharePoint Server 2013</span></span>](http://technet.microsoft.com/ru-ru/library/jj219620%28v=office.15%29.aspx)
     
   
--  [<span data-ttu-id="a0857-129">Переменные запроса в SharePoint</span><span class="sxs-lookup"><span data-stu-id="a0857-129">Query variables in SharePoint Server 2013</span></span>](http://technet.microsoft.com/en-us/library/jj683123.aspx)
+-  [<span data-ttu-id="a0857-129">Переменные запроса в SharePoint</span><span class="sxs-lookup"><span data-stu-id="a0857-129">Query variables in SharePoint Server 2013</span></span>](http://technet.microsoft.com/ru-ru/library/jj683123.aspx)
     
   
 

@@ -235,7 +235,7 @@ ms.lasthandoff: 10/13/2017
   
     
     
-<span data-ttu-id="bc048-p121">Реализация SharePoint Server CMIS использует свойство  [BlockedFileExtensions](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.SPWebApplication.BlockedFileExtensions.aspx) Чтобы получить список расширений файлов, которые не могут быть отправленные или загруженные с сайтов в веб-приложении. CMIS учитывает ли это [типов файлов, блокирующих SharePoint по умолчанию](http://technet.microsoft.com/en-us/library/cc262496.aspx).</span><span class="sxs-lookup"><span data-stu-id="bc048-p121">The SharePoint Server implementation of CMIS uses the  [BlockedFileExtensions](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.SPWebApplication.BlockedFileExtensions.aspx) property to get a list of file extensions that cannot be uploaded or downloaded from sites in the Web application. CMIS respects the [file types that SharePoint blocks by default](http://technet.microsoft.com/en-us/library/cc262496.aspx).</span></span>
+<span data-ttu-id="bc048-p121">Реализация SharePoint Server CMIS использует свойство  [BlockedFileExtensions](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.SPWebApplication.BlockedFileExtensions.aspx) Чтобы получить список расширений файлов, которые не могут быть отправленные или загруженные с сайтов в веб-приложении. CMIS учитывает ли это [типов файлов, блокирующих SharePoint по умолчанию](http://technet.microsoft.com/ru-ru/library/cc262496.aspx).</span><span class="sxs-lookup"><span data-stu-id="bc048-p121">The SharePoint Server implementation of CMIS uses the  [BlockedFileExtensions](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.SPWebApplication.BlockedFileExtensions.aspx) property to get a list of file extensions that cannot be uploaded or downloaded from sites in the Web application. CMIS respects the [file types that SharePoint blocks by default](http://technet.microsoft.com/ru-ru/library/cc262496.aspx).</span></span>
   
     
     
@@ -296,7 +296,7 @@ ms.lasthandoff: 10/13/2017
 -  [<span data-ttu-id="bc048-268">Добавление возможностей SharePoint</span><span class="sxs-lookup"><span data-stu-id="bc048-268">Add SharePoint capabilities</span></span>](add-sharepoint-capabilities.md)
     
   
--  [<span data-ttu-id="bc048-269">Управление заблокированными типами файлов</span><span class="sxs-lookup"><span data-stu-id="bc048-269">Manage blocked file types</span></span>](http://technet.microsoft.com/en-us/library/cc262496.aspx)
+-  [<span data-ttu-id="bc048-269">Управление заблокированными типами файлов</span><span class="sxs-lookup"><span data-stu-id="bc048-269">Manage blocked file types</span></span>](http://technet.microsoft.com/ru-ru/library/cc262496.aspx)
     
   
 -  [<span data-ttu-id="bc048-270">OASIS контента управления взаимодействие спецификацию (CMIS) версии 1.0</span><span class="sxs-lookup"><span data-stu-id="bc048-270">OASIS Content Management Interoperability Specification (CMIS) version 1.0</span></span>](http://docs.oasis-open.org/cmis/CMIS/v1.0/os/cmis-spec-v1.0.html)

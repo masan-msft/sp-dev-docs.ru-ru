@@ -35,11 +35,11 @@ ms.lasthandoff: 10/13/2017
 -  [<span data-ttu-id="875b4-114">Сочетания клавиш для продуктов SharePoint</span><span class="sxs-lookup"><span data-stu-id="875b4-114">Keyboard shortcuts for SharePoint products</span></span>](http://office.microsoft.com/en-us/sharepoint-foundation-help/keyboard-shortcuts-for-sharepoint-products-HA102772894.aspx?CTT=5&amp;origin=HA102772892)
     
   
-<span data-ttu-id="875b4-115">Пользователи, имеющие обязанности администратора сайта обычно используйте сайта центра администрирования SharePoint для управления развертываний.</span><span class="sxs-lookup"><span data-stu-id="875b4-115">Users who have site administrator responsibilities typically use the SharePoint Central Administration site to manage deployments.</span></span> <span data-ttu-id="875b4-116">Мышь и клавиатуру приведены типичные устройств, которые можно использовать для взаимодействия с помощью центра администрирования.</span><span class="sxs-lookup"><span data-stu-id="875b4-116">A mouse and keyboard are the typical devices that you use to interact with Central Administration.</span></span> <span data-ttu-id="875b4-117">Дополнительные сведения о специальных возможностях для администраторов и другие ИТ-специалистов в SharePoint можно [специальных возможностей для SharePoint](http://technet.microsoft.com/en-us/library/jj219681.aspx).</span><span class="sxs-lookup"><span data-stu-id="875b4-117">For more information about accessibility for administrators and other IT pros in SharePoint, see  [Accessibility for SharePoint](http://technet.microsoft.com/en-us/library/jj219681.aspx).</span></span>
+<span data-ttu-id="875b4-115">Пользователи, имеющие обязанности администратора сайта обычно используйте сайта центра администрирования SharePoint для управления развертываний.</span><span class="sxs-lookup"><span data-stu-id="875b4-115">Users who have site administrator responsibilities typically use the SharePoint Central Administration site to manage deployments.</span></span> <span data-ttu-id="875b4-116">Мышь и клавиатуру приведены типичные устройств, которые можно использовать для взаимодействия с помощью центра администрирования.</span><span class="sxs-lookup"><span data-stu-id="875b4-116">A mouse and keyboard are the typical devices that you use to interact with Central Administration.</span></span> <span data-ttu-id="875b4-117">Дополнительные сведения о специальных возможностях для администраторов и другие ИТ-специалистов в SharePoint можно [специальных возможностей для SharePoint](http://technet.microsoft.com/ru-ru/library/jj219681.aspx).</span><span class="sxs-lookup"><span data-stu-id="875b4-117">For more information about accessibility for administrators and other IT pros in SharePoint, see  [Accessibility for SharePoint](http://technet.microsoft.com/ru-ru/library/jj219681.aspx).</span></span>
   
     
     
-<span data-ttu-id="875b4-p105">Пользователи, имеющие ПК, поддерживающие сенсорного ввода можно использовать жесты для выполнения операции. Для получения дополнительных сведений см  [коснитесь](http://msdn.microsoft.com/en-us/library/windows/desktop/cc872774.aspx) на MSDN и [Руководство по коснитесь Office](http://office.microsoft.com/en-us/support/office-touch-guide-HA102823845.aspx) на сайте Office.com.</span><span class="sxs-lookup"><span data-stu-id="875b4-p105">Users who have devices that support touch can use gestures to complete operations. For more information, see  [Touch](http://msdn.microsoft.com/en-us/library/windows/desktop/cc872774.aspx) on MSDN, and the [Office Touch Guide](http://office.microsoft.com/en-us/support/office-touch-guide-HA102823845.aspx) on Office.com.</span></span>
+<span data-ttu-id="875b4-p105">Пользователи, имеющие ПК, поддерживающие сенсорного ввода можно использовать жесты для выполнения операции. Для получения дополнительных сведений см  [коснитесь](http://msdn.microsoft.com/ru-ru/library/windows/desktop/cc872774.aspx) на MSDN и [Руководство по коснитесь Office](http://office.microsoft.com/en-us/support/office-touch-guide-HA102823845.aspx) на сайте Office.com.</span><span class="sxs-lookup"><span data-stu-id="875b4-p105">Users who have devices that support touch can use gestures to complete operations. For more information, see  [Touch](http://msdn.microsoft.com/ru-ru/library/windows/desktop/cc872774.aspx) on MSDN, and the [Office Touch Guide](http://office.microsoft.com/en-us/support/office-touch-guide-HA102823845.aspx) on Office.com.</span></span>
   
     
     
@@ -63,13 +63,13 @@ ms.lasthandoff: 10/13/2017
 -  [<span data-ttu-id="875b4-125">Специальные возможности</span><span class="sxs-lookup"><span data-stu-id="875b4-125">Accessibility</span></span>](http://msdn.microsoft.com/en-us/windows/bb735024.aspx)
     
   
--  [<span data-ttu-id="875b4-126">Разработка специальных возможностей (приложений для магазина Windows)</span><span class="sxs-lookup"><span data-stu-id="875b4-126">Design for Accessibility (Windows Store apps)</span></span>](http://msdn.microsoft.com/en-us/library/windows/apps/hh700407.aspx)
+-  [<span data-ttu-id="875b4-126">Разработка специальных возможностей (приложений для магазина Windows)</span><span class="sxs-lookup"><span data-stu-id="875b4-126">Design for Accessibility (Windows Store apps)</span></span>](http://msdn.microsoft.com/ru-ru/library/windows/apps/hh700407.aspx)
     
   
--  [<span data-ttu-id="875b4-127">Базовая специальные требований (приложений для магазина Windows с помощью HTML и JavaScript)</span><span class="sxs-lookup"><span data-stu-id="875b4-127">Meeting basic accessibility requirements (Windows Store apps using JavaScript and HTML)</span></span>](http://msdn.microsoft.com/en-us/library/windows/apps/hh700338.aspx)
+-  [<span data-ttu-id="875b4-127">Базовая специальные требований (приложений для магазина Windows с помощью HTML и JavaScript)</span><span class="sxs-lookup"><span data-stu-id="875b4-127">Meeting basic accessibility requirements (Windows Store apps using JavaScript and HTML)</span></span>](http://msdn.microsoft.com/ru-ru/library/windows/apps/hh700338.aspx)
     
   
--  [<span data-ttu-id="875b4-128">Специальные возможности в приложений для магазина Windows с помощью JavaScript</span><span class="sxs-lookup"><span data-stu-id="875b4-128">Accessibility in Windows Store apps using JavaScript</span></span>](http://msdn.microsoft.com/en-us/library/windows/apps/hh452702.aspx)
+-  [<span data-ttu-id="875b4-128">Специальные возможности в приложений для магазина Windows с помощью JavaScript</span><span class="sxs-lookup"><span data-stu-id="875b4-128">Accessibility in Windows Store apps using JavaScript</span></span>](http://msdn.microsoft.com/ru-ru/library/windows/apps/hh452702.aspx)
     
   
 
@@ -110,7 +110,7 @@ ms.lasthandoff: 10/13/2017
 -  [<span data-ttu-id="875b4-153">Центры ресурсов специальных возможностей Майкрософт</span><span class="sxs-lookup"><span data-stu-id="875b4-153">Microsoft Accessibility Resource Centers</span></span>](http://www.microsoft.com/enable/centers/)
     
   
--  [<span data-ttu-id="875b4-154">Рекомендации по работе и контрольный список для специальных возможностей</span><span class="sxs-lookup"><span data-stu-id="875b4-154">Guidelines and checklist for accessibility</span></span>](http://msdn.microsoft.com/en-us/library/windows/apps/hh700325.aspx)
+-  [<span data-ttu-id="875b4-154">Рекомендации по работе и контрольный список для специальных возможностей</span><span class="sxs-lookup"><span data-stu-id="875b4-154">Guidelines and checklist for accessibility</span></span>](http://msdn.microsoft.com/ru-ru/library/windows/apps/hh700325.aspx)
     
   
 -  [<span data-ttu-id="875b4-155">Рекомендации по UX design для надстроек для SharePoint</span><span class="sxs-lookup"><span data-stu-id="875b4-155">SharePoint Add-ins UX design guidelines</span></span>](http://msdn.microsoft.com/library/a4a8f53c-27d7-43dc-b6db-aa7b1f1c7d45%28Office.15%29.aspx)
@@ -125,7 +125,7 @@ ms.lasthandoff: 10/13/2017
 -  [<span data-ttu-id="875b4-158">Специальные возможности в продуктах Майкрософт (Возможно, на английском языке)</span><span class="sxs-lookup"><span data-stu-id="875b4-158">Accessibility in Microsoft Products</span></span>](http://www.microsoft.com/enable/products/default.aspx)
     
   
--  [<span data-ttu-id="875b4-159">Специальные возможности для SharePoint</span><span class="sxs-lookup"><span data-stu-id="875b4-159">Accessibility for SharePoint</span></span>](http://technet.microsoft.com/en-us/library/jj219681.aspx)
+-  [<span data-ttu-id="875b4-159">Специальные возможности для SharePoint</span><span class="sxs-lookup"><span data-stu-id="875b4-159">Accessibility for SharePoint</span></span>](http://technet.microsoft.com/ru-ru/library/jj219681.aspx)
     
   
 

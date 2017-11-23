@@ -153,6 +153,6 @@ ms.lasthandoff: 10/13/2017
 
 ## <a name="see-also"></a><span data-ttu-id="718f3-242">См. также</span><span class="sxs-lookup"><span data-stu-id="718f3-242">See also</span></span>
 
-- [<span data-ttu-id="718f3-243">Набор инструментов и ресурсы для дизайна</span><span class="sxs-lookup"><span data-stu-id="718f3-243">Design toolkit and assets</span></span>](https://developer.microsoft.com/en-us/fabric#/resources)
+- [<span data-ttu-id="718f3-243">Набор инструментов и ресурсы для дизайна</span><span class="sxs-lookup"><span data-stu-id="718f3-243">Design toolkit and assets</span></span>](https://developer.microsoft.com/ru-ru/fabric#/resources)
 
 

@@ -159,7 +159,7 @@ ms.lasthandoff: 10/13/2017
 <span data-ttu-id="94036-149"><a name="ConNavExample_resources"> </a></span><span class="sxs-lookup"><span data-stu-id="94036-149"><a name="ConNavExample_resources"> </a></span></span>
 
 
--  [<span data-ttu-id="94036-150">Duet Enterprise для Microsoft SharePoint и SAP Server 2.0</span><span class="sxs-lookup"><span data-stu-id="94036-150">Duet Enterprise for Microsoft SharePoint and SAP Server 2.0</span></span>](http://technet.microsoft.com/en-us/library/ff972436.aspx)
+-  [<span data-ttu-id="94036-150">Duet Enterprise для Microsoft SharePoint и SAP Server 2.0</span><span class="sxs-lookup"><span data-stu-id="94036-150">Duet Enterprise for Microsoft SharePoint and SAP Server 2.0</span></span>](http://technet.microsoft.com/ru-ru/library/ff972436.aspx)
     
   
 -  [<span data-ttu-id="94036-151">Как: создать внешний тип контента из источника OData в SharePoint</span><span class="sxs-lookup"><span data-stu-id="94036-151">How to: Create an external content type from an OData source in SharePoint</span></span>](how-to-create-an-external-content-type-from-an-odata-source-in-sharepoint.md)

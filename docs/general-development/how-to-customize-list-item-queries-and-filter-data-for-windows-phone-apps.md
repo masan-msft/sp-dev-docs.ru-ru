@@ -257,7 +257,7 @@ static Dictionary<string, string> ViewXmls = new Dictionary<string, string>()
 -  [<span data-ttu-id="cb387-159">Построение приложений Windows Phone, обращающихся к SharePoint</span><span class="sxs-lookup"><span data-stu-id="cb387-159">Build Windows Phone apps that access SharePoint</span></span>](build-windows-phone-apps-that-access-sharepoint.md)
     
   
--  [<span data-ttu-id="cb387-160">Введение в Collaborative Application Markup Language (CAML)</span><span class="sxs-lookup"><span data-stu-id="cb387-160">Introduction to Collaborative Application Markup Language (CAML)</span></span>](http://msdn.microsoft.com/en-us/library/ms426449.aspx)
+-  [<span data-ttu-id="cb387-160">Введение в Collaborative Application Markup Language (CAML)</span><span class="sxs-lookup"><span data-stu-id="cb387-160">Introduction to Collaborative Application Markup Language (CAML)</span></span>](http://msdn.microsoft.com/ru-ru/library/ms426449.aspx)
     
   
 -  [<span data-ttu-id="cb387-161">Как: Настройка среды разработки мобильных приложений для SharePoint</span><span class="sxs-lookup"><span data-stu-id="cb387-161">How to: Set up an environment for developing mobile apps for SharePoint</span></span>](how-to-set-up-an-environment-for-developing-mobile-apps-for-sharepoint.md)

@@ -53,16 +53,16 @@ ms.lasthandoff: 10/13/2017
     
     
 
--  [<span data-ttu-id="fa553-120">Разработка Windows Phone приложения от начала до конца</span><span class="sxs-lookup"><span data-stu-id="fa553-120">Developing a Windows Phone Application from Start to Finish</span></span>](http://msdn.microsoft.com/en-us/library/gg680270%28v=pandp.11%29.aspx)
+-  [<span data-ttu-id="fa553-120">Разработка Windows Phone приложения от начала до конца</span><span class="sxs-lookup"><span data-stu-id="fa553-120">Developing a Windows Phone Application from Start to Finish</span></span>](http://msdn.microsoft.com/ru-ru/library/gg680270%28v=pandp.11%29.aspx)
     
   
--  [<span data-ttu-id="fa553-121">Пользовательский интерфейс для Windows Phone</span><span class="sxs-lookup"><span data-stu-id="fa553-121">User interface for Windows Phone</span></span>](http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff967556%28v=vs.105%29.aspx)
+-  [<span data-ttu-id="fa553-121">Пользовательский интерфейс для Windows Phone</span><span class="sxs-lookup"><span data-stu-id="fa553-121">User interface for Windows Phone</span></span>](http://msdn.microsoft.com/ru-ru/library/windowsphone/develop/ff967556%28v=vs.105%29.aspx)
     
   
--  [<span data-ttu-id="fa553-122">Краткое руководство: Создание пользовательского интерфейса с помощью XAML для Windows Phone</span><span class="sxs-lookup"><span data-stu-id="fa553-122">Quickstart: Creating a user interface with XAML for Windows Phone</span></span>](http://msdn.microsoft.com/en-us/library/windowsphone/develop/jj207025%28v=vs.105%29.aspx)
+-  [<span data-ttu-id="fa553-122">Краткое руководство: Создание пользовательского интерфейса с помощью XAML для Windows Phone</span><span class="sxs-lookup"><span data-stu-id="fa553-122">Quickstart: Creating a user interface with XAML for Windows Phone</span></span>](http://msdn.microsoft.com/ru-ru/library/windowsphone/develop/jj207025%28v=vs.105%29.aspx)
     
   
--  [<span data-ttu-id="fa553-123">Архитектура управления PIVOT для Windows Phone</span><span class="sxs-lookup"><span data-stu-id="fa553-123">Pivot control architecture for Windows Phone</span></span>](http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff941097%28v=vs.105%29.aspx)
+-  [<span data-ttu-id="fa553-123">Архитектура управления PIVOT для Windows Phone</span><span class="sxs-lookup"><span data-stu-id="fa553-123">Pivot control architecture for Windows Phone</span></span>](http://msdn.microsoft.com/ru-ru/library/windowsphone/develop/ff941097%28v=vs.105%29.aspx)
     
   
 
@@ -256,7 +256,7 @@ ms.lasthandoff: 10/13/2017
 -  [<span data-ttu-id="fa553-199">Пакет SDK Microsoft SharePoint для Windows Phone 7.1</span><span class="sxs-lookup"><span data-stu-id="fa553-199">Microsoft SharePoint SDK for Windows Phone 7.1</span></span>](http://www.microsoft.com/en-us/download/details.aspx?id=30476)
     
   
--  [<span data-ttu-id="fa553-200">О Expression Blend</span><span class="sxs-lookup"><span data-stu-id="fa553-200">About Expression Blend</span></span>](http://msdn.microsoft.com/en-us/library/cc296376%28Expression.40%29.aspx)
+-  [<span data-ttu-id="fa553-200">О Expression Blend</span><span class="sxs-lookup"><span data-stu-id="fa553-200">About Expression Blend</span></span>](http://msdn.microsoft.com/ru-ru/library/cc296376%28Expression.40%29.aspx)
     
   
 

@@ -1173,10 +1173,10 @@ End Namespace
 <span data-ttu-id="2a4a2-198"><a name="bk_addResources"> </a></span><span class="sxs-lookup"><span data-stu-id="2a4a2-198"></span></span>
 
 
--  [<span data-ttu-id="2a4a2-199">Как: создать фильтр поставщиков данных для служб PerformancePoint Services в SharePoint</span><span class="sxs-lookup"><span data-stu-id="2a4a2-199">How to: Create filter data providers for PerformancePoint Services in SharePoint</span></span>](https://msdn.microsoft.com/en-us/library/office/cc159445.aspx)
+-  [<span data-ttu-id="2a4a2-199">Как: создать фильтр поставщиков данных для служб PerformancePoint Services в SharePoint</span><span class="sxs-lookup"><span data-stu-id="2a4a2-199">How to: Create filter data providers for PerformancePoint Services in SharePoint</span></span>](https://msdn.microsoft.com/ru-ru/library/office/cc159445.aspx)
     
   
--  [<span data-ttu-id="2a4a2-200">PerformancePoint Services в SharePoint</span><span class="sxs-lookup"><span data-stu-id="2a4a2-200">PerformancePoint Services in SharePoint</span></span>](https://msdn.microsoft.com/en-us/library/office/ee559635.aspx)
+-  [<span data-ttu-id="2a4a2-200">PerformancePoint Services в SharePoint</span><span class="sxs-lookup"><span data-stu-id="2a4a2-200">PerformancePoint Services in SharePoint</span></span>](https://msdn.microsoft.com/ru-ru/library/office/ee559635.aspx)
     
   
 

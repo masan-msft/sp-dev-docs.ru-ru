@@ -50,10 +50,10 @@ ms.lasthandoff: 10/13/2017
     
 
 
--  [<span data-ttu-id="d638c-112">Изменение ранжирования результатов поиска в Управление правилами запросов</span><span class="sxs-lookup"><span data-stu-id="d638c-112">Change ranked search results in Manage query rules</span></span>](http://technet.microsoft.com/en-us/library/jj871676.aspx#BKMK_ChangeRankedSearchResults)
+-  [<span data-ttu-id="d638c-112">Изменение ранжирования результатов поиска в Управление правилами запросов</span><span class="sxs-lookup"><span data-stu-id="d638c-112">Change ranked search results in Manage query rules</span></span>](http://technet.microsoft.com/ru-ru/library/jj871676.aspx#BKMK_ChangeRankedSearchResults)
     
   
--  [<span data-ttu-id="d638c-113">Изменение ранжирования результатов поиска в создание правил запросов для управления веб-контентом</span><span class="sxs-lookup"><span data-stu-id="d638c-113">Change ranked search results in Create query rules for web content management</span></span>](http://technet.microsoft.com/en-us/library/jj871014.aspx#BKMK_ChangeRankedSearchResults)
+-  [<span data-ttu-id="d638c-113">Изменение ранжирования результатов поиска в создание правил запросов для управления веб-контентом</span><span class="sxs-lookup"><span data-stu-id="d638c-113">Change ranked search results in Create query rules for web content management</span></span>](http://technet.microsoft.com/ru-ru/library/jj871014.aspx#BKMK_ChangeRankedSearchResults)
     
   
 
@@ -592,7 +592,7 @@ using (var context = new ClientContext("http://localhost"))
 -  [<span data-ttu-id="d638c-315">Общие сведения об API службы поиска REST для SharePoint</span><span class="sxs-lookup"><span data-stu-id="d638c-315">SharePoint Search REST API overview</span></span>](sharepoint-search-rest-api-overview.md)
     
   
--  [<span data-ttu-id="d638c-316">Обзор свойств для обхода и управляемых свойств в SharePoint</span><span class="sxs-lookup"><span data-stu-id="d638c-316">Overview of crawled and managed properties in SharePoint</span></span>](http://technet.microsoft.com/en-us/library/jj219630%28office.15%29.aspx)
+-  [<span data-ttu-id="d638c-316">Обзор свойств для обхода и управляемых свойств в SharePoint</span><span class="sxs-lookup"><span data-stu-id="d638c-316">Overview of crawled and managed properties in SharePoint</span></span>](http://technet.microsoft.com/ru-ru/library/jj219630%28office.15%29.aspx)
     
   
 

@@ -88,10 +88,10 @@ ms.lasthandoff: 10/13/2017
 <span data-ttu-id="68ca9-139"><a name="was15AdditionalResources"> </a></span><span class="sxs-lookup"><span data-stu-id="68ca9-139"><a name="was15AdditionalResources"> </a></span></span>
 
 
--  [<span data-ttu-id="68ca9-140">Службы Word Automation Services в SharePoint Server 2010</span><span class="sxs-lookup"><span data-stu-id="68ca9-140">Word Automation Services in SharePoint Server 2010</span></span>](http://msdn.microsoft.com/en-us/library/ee558278)
+-  [<span data-ttu-id="68ca9-140">Службы Word Automation Services в SharePoint Server 2010</span><span class="sxs-lookup"><span data-stu-id="68ca9-140">Word Automation Services in SharePoint Server 2010</span></span>](http://msdn.microsoft.com/ru-ru/library/ee558278)
     
   
--  [<span data-ttu-id="68ca9-141">Службы Word Automation Services Class библиотеки</span><span class="sxs-lookup"><span data-stu-id="68ca9-141">Word Automation Services Class Library</span></span>](http://msdn.microsoft.com/en-us/library/ee559408)
+-  [<span data-ttu-id="68ca9-141">Службы Word Automation Services Class библиотеки</span><span class="sxs-lookup"><span data-stu-id="68ca9-141">Word Automation Services Class Library</span></span>](http://msdn.microsoft.com/ru-ru/library/ee559408)
     
   
 

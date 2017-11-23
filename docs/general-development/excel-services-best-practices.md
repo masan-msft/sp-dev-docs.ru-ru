@@ -100,7 +100,7 @@ ms.lasthandoff: 10/13/2017
 - <span data-ttu-id="b8060-132">Physically protect the relevant network if a custom application using Веб-службы Excel is running in a confined networkfor example, if Веб-службы Excel is deployed on a Web front-end computer within the enterprise.</span><span class="sxs-lookup"><span data-stu-id="b8060-132">Physically protect the relevant network if a custom application using Excel Web Services is running in a confined network—for example, if Excel Web Services is deployed on a Web front-end computer within the enterprise.</span></span>
     
   
-<span data-ttu-id="b8060-133">For more information, see  [Securing Your Network](http://msdn.microsoft.com/library/af62ece0-0dd7-4b8e-ad12-4d13f2d60816.aspx) and [SOAP Security](http://msdn.microsoft.com/en-us/library/aa912494.aspx).</span><span class="sxs-lookup"><span data-stu-id="b8060-133">For more information, see  [Securing Your Network](http://msdn.microsoft.com/library/af62ece0-0dd7-4b8e-ad12-4d13f2d60816.aspx) and [SOAP Security](http://msdn.microsoft.com/en-us/library/aa912494.aspx).</span></span>
+<span data-ttu-id="b8060-133">For more information, see  [Securing Your Network](http://msdn.microsoft.com/library/af62ece0-0dd7-4b8e-ad12-4d13f2d60816.aspx) and [SOAP Security](http://msdn.microsoft.com/ru-ru/library/aa912494.aspx).</span><span class="sxs-lookup"><span data-stu-id="b8060-133">For more information, see  [Securing Your Network](http://msdn.microsoft.com/library/af62ece0-0dd7-4b8e-ad12-4d13f2d60816.aspx) and [SOAP Security](http://msdn.microsoft.com/ru-ru/library/aa912494.aspx).</span></span>
   
     
     

@@ -17,7 +17,7 @@ ms.lasthandoff: 10/13/2017
     
 
 
-> <span data-ttu-id="5d320-105">**Примечание:** API REST служб Excel применяется к SharePoint и SharePoint 2016 локально.</span><span class="sxs-lookup"><span data-stu-id="5d320-105">**Note:** The Excel Services REST API applies to SharePoint and SharePoint 2016 on-premises.</span></span> <span data-ttu-id="5d320-106">Для учетных записей для Office 365 Education, Business и Enterprise,, используйте интерфейсы API REST Excel, входят в состав [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel) конечной точки.</span><span class="sxs-lookup"><span data-stu-id="5d320-106">For For Office 365 Education, Business, and Enterprise accounts,, use the Excel REST APIs that are part of the  [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel) endpoint.</span></span>
+> <span data-ttu-id="5d320-105">**Примечание:** API REST служб Excel применяется к SharePoint и SharePoint 2016 локально.</span><span class="sxs-lookup"><span data-stu-id="5d320-105">**Note:** The Excel Services REST API applies to SharePoint and SharePoint 2016 on-premises.</span></span> <span data-ttu-id="5d320-106">Для учетных записей для Office 365 Education, Business и Enterprise,, используйте интерфейсы API REST Excel, входят в состав [Microsoft Graph](http://graph.microsoft.io/ru-ru/docs/api-reference/v1.0/resources/excel) конечной точки.</span><span class="sxs-lookup"><span data-stu-id="5d320-106">For For Office 365 Education, Business, and Enterprise accounts,, use the Excel REST APIs that are part of the  [Microsoft Graph](http://graph.microsoft.io/ru-ru/docs/api-reference/v1.0/resources/excel) endpoint.</span></span>
   
     
     

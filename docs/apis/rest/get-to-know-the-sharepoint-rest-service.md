@@ -138,7 +138,7 @@ List.GetByTitle(listname)
 
 -  [<span data-ttu-id="1cc18-223">Знакомство с OData</span><span class="sxs-lookup"><span data-stu-id="1cc18-223">Introducing OData</span></span>](http://msdn.microsoft.com/en-us/data/hh237663) 
 -  <span data-ttu-id="1cc18-224">
-  [Примеры для протокола Open Data Protocol](http://msdn.microsoft.com/en-us/library/ff478141.aspx)</span><span class="sxs-lookup"><span data-stu-id="1cc18-224">[Open Data Protocol by Example](http://msdn.microsoft.com/en-us/library/ff478141.aspx)</span></span>
+  [Примеры для протокола Open Data Protocol](http://msdn.microsoft.com/ru-ru/library/ff478141.aspx)</span><span class="sxs-lookup"><span data-stu-id="1cc18-224">[Open Data Protocol by Example](http://msdn.microsoft.com/ru-ru/library/ff478141.aspx)</span></span>
 -  [<span data-ttu-id="1cc18-225">Open Data Protocol</span><span class="sxs-lookup"><span data-stu-id="1cc18-225">Open Data Protocol</span></span>](http://www.odata.org/)
 -  [<span data-ttu-id="1cc18-226">Соглашения об URI для протокола OData</span><span class="sxs-lookup"><span data-stu-id="1cc18-226">OData Protocol URI Conventions</span></span>](http://www.odata.org/documentation/odata-version-2-0/uri-conventions/)
 -  [<span data-ttu-id="1cc18-227">Адресация для операций службы</span><span class="sxs-lookup"><span data-stu-id="1cc18-227">Addressing Service Operations</span></span>](http://www.odata.org/documentation/odata-version-2-0/uri-conventions#AddressingServiceOperations)

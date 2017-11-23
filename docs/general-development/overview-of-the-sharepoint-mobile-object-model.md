@@ -64,7 +64,7 @@ public String Uri
 public UrlZone UrlZone
 ```
 
-<span data-ttu-id="6b0d4-p102">Класс UrlZone является версия объектной модели клиента класса SPUrlZone в серверной объектной модели. Дополнительные сведения о нем можно  [SharePoint 2010 Software Development Kit (SDK)](http://msdn.microsoft.com/en-us/library/ee557253.aspx).</span><span class="sxs-lookup"><span data-stu-id="6b0d4-p102">The UrlZone class is the client object model version of the SPUrlZone class in the server object model. For more information about it, see the  [SharePoint 2010 Software Development Kit (SDK)](http://msdn.microsoft.com/en-us/library/ee557253.aspx).</span></span>
+<span data-ttu-id="6b0d4-p102">Класс UrlZone является версия объектной модели клиента класса SPUrlZone в серверной объектной модели. Дополнительные сведения о нем можно  [SharePoint 2010 Software Development Kit (SDK)](http://msdn.microsoft.com/ru-ru/library/ee557253.aspx).</span><span class="sxs-lookup"><span data-stu-id="6b0d4-p102">The UrlZone class is the client object model version of the SPUrlZone class in the server object model. For more information about it, see the  [SharePoint 2010 Software Development Kit (SDK)](http://msdn.microsoft.com/ru-ru/library/ee557253.aspx).</span></span>
   
     
     
@@ -347,7 +347,7 @@ public NetworkCredential GetCredential(Uri uri, string authType)
 -  <span data-ttu-id="6b0d4-170">_authType_  тип проверки подлинности, требуемой.</span><span class="sxs-lookup"><span data-stu-id="6b0d4-170">_authType_ is the type of authentication requested.</span></span>
     
   
-<span data-ttu-id="6b0d4-p103">Этот метод используется только для анонимной проверки подлинности. Если  _authType_ не является "Basic", возвращается пустой объект. Дополнительные сведения о классе **NetworkCredential** можно [Класс NetworkCredential](http://msdn.microsoft.com/en-us/library/system.net.networkcredential.aspx).</span><span class="sxs-lookup"><span data-stu-id="6b0d4-p103">This method is only used for anonymous authentication. If  _authType_ is not "Basic", an empty object is returned. For more information about the **NetworkCredential** class, see [NetworkCredential Class](http://msdn.microsoft.com/en-us/library/system.net.networkcredential.aspx).</span></span>
+<span data-ttu-id="6b0d4-p103">Этот метод используется только для анонимной проверки подлинности. Если  _authType_ не является "Basic", возвращается пустой объект. Дополнительные сведения о классе **NetworkCredential** можно [Класс NetworkCredential](http://msdn.microsoft.com/ru-ru/library/system.net.networkcredential.aspx).</span><span class="sxs-lookup"><span data-stu-id="6b0d4-p103">This method is only used for anonymous authentication. If  _authType_ is not "Basic", an empty object is returned. For more information about the **NetworkCredential** class, see [NetworkCredential Class](http://msdn.microsoft.com/ru-ru/library/system.net.networkcredential.aspx).</span></span>
   
     
     

@@ -22,7 +22,7 @@ ms.lasthandoff: 10/13/2017
   
     
     
-<span data-ttu-id="68529-112">Полное описание Настройка гибридного решения работа в разделе [гибридной среды для SharePoint](http://technet.microsoft.com/en-us/library/jj838715.aspx).</span><span class="sxs-lookup"><span data-stu-id="68529-112">For a complete description of how to configure a working hybrid solution, see  [Hybrid for SharePoint](http://technet.microsoft.com/en-us/library/jj838715.aspx).</span></span> <span data-ttu-id="68529-113">В этих статьях описывается все требования к настройке источников данных, обратных прокси-серверов, поиска, безопасности, сети и все необходимые для настройки-сквозного сценария.</span><span class="sxs-lookup"><span data-stu-id="68529-113">This series of articles walks you through all the requirements of configuring data sources, reverse proxies, search, security, networking, and everything else needed to set up the end-to-end scenario.</span></span>
+<span data-ttu-id="68529-112">Полное описание Настройка гибридного решения работа в разделе [гибридной среды для SharePoint](http://technet.microsoft.com/ru-ru/library/jj838715.aspx).</span><span class="sxs-lookup"><span data-stu-id="68529-112">For a complete description of how to configure a working hybrid solution, see  [Hybrid for SharePoint](http://technet.microsoft.com/ru-ru/library/jj838715.aspx).</span></span> <span data-ttu-id="68529-113">В этих статьях описывается все требования к настройке источников данных, обратных прокси-серверов, поиска, безопасности, сети и все необходимые для настройки-сквозного сценария.</span><span class="sxs-lookup"><span data-stu-id="68529-113">This series of articles walks you through all the requirements of configuring data sources, reverse proxies, search, security, networking, and everything else needed to set up the end-to-end scenario.</span></span>
   
     
     
@@ -121,7 +121,7 @@ ms.lasthandoff: 10/13/2017
 -  [<span data-ttu-id="68529-153">Приступая к работе с OData часть 1: построение службы OData</span><span class="sxs-lookup"><span data-stu-id="68529-153">Getting Started With OData Part 1: Building an OData Service</span></span>](http://msdn.microsoft.com/en-us/data/gg601462)
     
   
--  [<span data-ttu-id="68529-154">Краткое руководство (службы данных WCF)</span><span class="sxs-lookup"><span data-stu-id="68529-154">Quickstart (WCF Data Services)</span></span>](http://msdn.microsoft.com/en-us/library/cc668796.aspx)
+-  [<span data-ttu-id="68529-154">Краткое руководство (службы данных WCF)</span><span class="sxs-lookup"><span data-stu-id="68529-154">Quickstart (WCF Data Services)</span></span>](http://msdn.microsoft.com/ru-ru/library/cc668796.aspx)
     
   
 
@@ -215,7 +215,7 @@ ms.lasthandoff: 10/13/2017
 <span data-ttu-id="68529-193"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="68529-193"><a name="bk_addresources"> </a></span></span>
 
 
--  [<span data-ttu-id="68529-194">Hybrid for SharePoint</span><span class="sxs-lookup"><span data-stu-id="68529-194">Hybrid for SharePoint</span></span>](http://technet.microsoft.com/en-us/library/jj838715.aspx)
+-  [<span data-ttu-id="68529-194">Hybrid for SharePoint</span><span class="sxs-lookup"><span data-stu-id="68529-194">Hybrid for SharePoint</span></span>](http://technet.microsoft.com/ru-ru/library/jj838715.aspx)
     
   
 -  [<span data-ttu-id="68529-195">Business Connectivity Services в SharePoint</span><span class="sxs-lookup"><span data-stu-id="68529-195">Business Connectivity Services in SharePoint</span></span>](business-connectivity-services-in-sharepoint.md)

@@ -48,7 +48,7 @@ ms.lasthandoff: 10/13/2017
 ```
 
 
-> <span data-ttu-id="93353-116">**Примечание:** Дополнительные сведения о параметрах в файле WMAppManifest.xml видеть [Приложения манифест файла для Windows Phone](http://msdn.microsoft.com/en-us/library/ff769509.aspx).</span><span class="sxs-lookup"><span data-stu-id="93353-116">**Note:** For more information about settings in the WMAppManifest.xml file, see  [Application Manifest File for Windows Phone](http://msdn.microsoft.com/en-us/library/ff769509.aspx).</span></span> 
+> <span data-ttu-id="93353-116">**Примечание:** Дополнительные сведения о параметрах в файле WMAppManifest.xml видеть [Приложения манифест файла для Windows Phone](http://msdn.microsoft.com/ru-ru/library/ff769509.aspx).</span><span class="sxs-lookup"><span data-stu-id="93353-116">**Note:** For more information about settings in the WMAppManifest.xml file, see  [Application Manifest File for Windows Phone](http://msdn.microsoft.com/ru-ru/library/ff769509.aspx).</span></span> 
   
     
     
@@ -81,7 +81,7 @@ ms.lasthandoff: 10/13/2017
   
     
     
-<span data-ttu-id="93353-p104">В проекте на основе шаблона пустой SharePoint приложения Windows Phone это стандартные файлы приложения Silverlight Windows Phone. Файл MainPage.xaml содержит объявления XAML, которые составляют пользовательского интерфейса (UI) приложения. Файл фонового кода, файл MainPage.xaml.cs, связан с файла MainPage.xaml с помощью механизма разделяемых классов, как и другие файлы кода в проекте. (  [Фонового кода и разделяемых классов](http://msdn.microsoft.com/en-us/library/cc221357.aspx)см). Файл MainPage.xaml.cs содержит процедурный код, реализующий логику для поддержки операций и события в пользовательском Интерфейсе. Файл App.xaml представляет общий приложение Windows. Файл выделенным кодом App.xaml.cs, включает в себя процедурного кода для обработки событий жизненного цикла для приложения.</span><span class="sxs-lookup"><span data-stu-id="93353-p104">The files in a project based on the Windows Phone Empty SharePoint Application template are the standard files of a Silverlight Windows Phone app. The MainPage.xaml file contains XAML declarations that constitute the user interface (UI) of the app. A code-behind file, MainPage.xaml.cs, is associated with the MainPage.xaml file by using the mechanism of partial classes, as are the other code-behind files in the project. (See  [Code-Behind and Partial Classes](http://msdn.microsoft.com/en-us/library/cc221357.aspx).) The MainPage.xaml.cs file contains procedural code to implement logic to support operations and events in the UI. The App.xaml file represents the overall Windows app. The associated code-behind file, App.xaml.cs, includes procedural code to handle life-cycle events for the app.</span></span>
+<span data-ttu-id="93353-p104">В проекте на основе шаблона пустой SharePoint приложения Windows Phone это стандартные файлы приложения Silverlight Windows Phone. Файл MainPage.xaml содержит объявления XAML, которые составляют пользовательского интерфейса (UI) приложения. Файл фонового кода, файл MainPage.xaml.cs, связан с файла MainPage.xaml с помощью механизма разделяемых классов, как и другие файлы кода в проекте. (  [Фонового кода и разделяемых классов](http://msdn.microsoft.com/ru-ru/library/cc221357.aspx)см). Файл MainPage.xaml.cs содержит процедурный код, реализующий логику для поддержки операций и события в пользовательском Интерфейсе. Файл App.xaml представляет общий приложение Windows. Файл выделенным кодом App.xaml.cs, включает в себя процедурного кода для обработки событий жизненного цикла для приложения.</span><span class="sxs-lookup"><span data-stu-id="93353-p104">The files in a project based on the Windows Phone Empty SharePoint Application template are the standard files of a Silverlight Windows Phone app. The MainPage.xaml file contains XAML declarations that constitute the user interface (UI) of the app. A code-behind file, MainPage.xaml.cs, is associated with the MainPage.xaml file by using the mechanism of partial classes, as are the other code-behind files in the project. (See  [Code-Behind and Partial Classes](http://msdn.microsoft.com/ru-ru/library/cc221357.aspx).) The MainPage.xaml.cs file contains procedural code to implement logic to support operations and events in the UI. The App.xaml file represents the overall Windows app. The associated code-behind file, App.xaml.cs, includes procedural code to handle life-cycle events for the app.</span></span>
   
     
     
@@ -173,7 +173,7 @@ ms.lasthandoff: 10/13/2017
 -  [<span data-ttu-id="93353-197">Пакет SDK Microsoft SharePoint для Windows Phone 7.1</span><span class="sxs-lookup"><span data-stu-id="93353-197">Microsoft SharePoint SDK for Windows Phone 7.1</span></span>](http://www.microsoft.com/en-us/download/details.aspx?id=30476)
     
   
--  [<span data-ttu-id="93353-198">Windows Phone разработки</span><span class="sxs-lookup"><span data-stu-id="93353-198">Windows Phone Development</span></span>](http://msdn.microsoft.com/en-us/library/ff402535%28v=vs.92%29.aspx)
+-  [<span data-ttu-id="93353-198">Windows Phone разработки</span><span class="sxs-lookup"><span data-stu-id="93353-198">Windows Phone Development</span></span>](http://msdn.microsoft.com/ru-ru/library/ff402535%28v=vs.92%29.aspx)
     
   
 

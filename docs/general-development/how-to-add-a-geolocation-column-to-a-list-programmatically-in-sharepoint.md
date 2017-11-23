@@ -194,7 +194,7 @@ private void AddListItem()
 -  [<span data-ttu-id="8412f-160">Как: интеграция карт с помощью приложения для Windows Phone и списки SharePoint</span><span class="sxs-lookup"><span data-stu-id="8412f-160">How to: Integrate maps with Windows Phone apps and SharePoint lists</span></span>](how-to-integrate-maps-with-windows-phone-apps-and-sharepoint-lists.md)
     
   
--  [<span data-ttu-id="8412f-161">Использование типа поля расположения SharePoint в мобильных приложениях</span><span class="sxs-lookup"><span data-stu-id="8412f-161">Use the SharePoint location field type in mobile applications</span></span>](http://technet.microsoft.com/en-us/library/fp161355%28v=office.15%29.aspx)
+-  [<span data-ttu-id="8412f-161">Использование типа поля расположения SharePoint в мобильных приложениях</span><span class="sxs-lookup"><span data-stu-id="8412f-161">Use the SharePoint location field type in mobile applications</span></span>](http://technet.microsoft.com/ru-ru/library/fp161355%28v=office.15%29.aspx)
     
   
 

@@ -150,10 +150,10 @@ ms.lasthandoff: 10/13/2017
 -  [<span data-ttu-id="ce6c3-227">SharePoint 2010 и веб-шаблоны</span><span class="sxs-lookup"><span data-stu-id="ce6c3-227">SharePoint 2010 and web templates</span></span>](http://blogs.msdn.com/b/vesku/archive/2010/10/14/sharepoint-2010-and-web-templates.aspx)
     
   
--  [<span data-ttu-id="ce6c3-228">Планирование обновления семейства веб-сайтов</span><span class="sxs-lookup"><span data-stu-id="ce6c3-228">Plan to upgrade a site collection</span></span>](https://technet.microsoft.com/en-us/library/ff191199.aspx)
+-  [<span data-ttu-id="ce6c3-228">Планирование обновления семейства веб-сайтов</span><span class="sxs-lookup"><span data-stu-id="ce6c3-228">Plan to upgrade a site collection</span></span>](https://technet.microsoft.com/ru-ru/library/ff191199.aspx)
     
   
--  [<span data-ttu-id="ce6c3-229">Планирование обновлений семейств сайтов в SharePoint</span><span class="sxs-lookup"><span data-stu-id="ce6c3-229">Plan for site collection upgrades in SharePoint</span></span>](http://technet.microsoft.com/en-us/library/ff191199.aspx)
+-  [<span data-ttu-id="ce6c3-229">Планирование обновлений семейств сайтов в SharePoint</span><span class="sxs-lookup"><span data-stu-id="ce6c3-229">Plan for site collection upgrades in SharePoint</span></span>](http://technet.microsoft.com/ru-ru/library/ff191199.aspx)
     
   
 

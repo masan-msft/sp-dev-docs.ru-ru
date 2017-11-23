@@ -126,7 +126,7 @@ ewa.BrowserUdfs.add("StockQuote",
 -  [<span data-ttu-id="d1fe7-142">Новые возможности служб Excel для разработчиков</span><span class="sxs-lookup"><span data-stu-id="d1fe7-142">What's new in Excel Services for developers</span></span>](http://msdn.microsoft.com/library/09e96c8b-cb55-4fd1-a797-b50fbf0f9296.aspx)
     
   
--  [<span data-ttu-id="d1fe7-143">Пользовательские функции служб Excel</span><span class="sxs-lookup"><span data-stu-id="d1fe7-143">Excel Services User-Defined Functions</span></span>](http://msdn.microsoft.com/en-us/library/ms493934)
+-  [<span data-ttu-id="d1fe7-143">Пользовательские функции служб Excel</span><span class="sxs-lookup"><span data-stu-id="d1fe7-143">Excel Services User-Defined Functions</span></span>](http://msdn.microsoft.com/ru-ru/library/ms493934)
     
   
 

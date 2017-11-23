@@ -69,12 +69,12 @@ PS> Register-SPWorkflowService -SPSite "https://myserver/mysitecollection" -Work
 <span data-ttu-id="07e65-164"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="07e65-164"><a name="bk_addresources"> </a></span></span>
 
 
--  [<span data-ttu-id="07e65-165">Установка и настройка рабочих процессов для SharePoint</span><span class="sxs-lookup"><span data-stu-id="07e65-165">Install and configure workflow for SharePoint</span></span>](http://technet.microsoft.com/en-us/library/jj658588.aspx)
+-  [<span data-ttu-id="07e65-165">Установка и настройка рабочих процессов для SharePoint</span><span class="sxs-lookup"><span data-stu-id="07e65-165">Install and configure workflow for SharePoint</span></span>](http://technet.microsoft.com/ru-ru/library/jj658588.aspx)
     
   
--  [<span data-ttu-id="07e65-166">Серия: Установка и настройка рабочего процесса в SharePoint</span><span class="sxs-lookup"><span data-stu-id="07e65-166">Video series: Install and configure Workflow in SharePoint</span></span>](http://technet.microsoft.com/en-us/library/dn201724.aspx)
+-  [<span data-ttu-id="07e65-166">Серия: Установка и настройка рабочего процесса в SharePoint</span><span class="sxs-lookup"><span data-stu-id="07e65-166">Video series: Install and configure Workflow in SharePoint</span></span>](http://technet.microsoft.com/ru-ru/library/dn201724.aspx)
     
   
--  [<span data-ttu-id="07e65-167">Диспетчер рабочих процессов версии 1.0</span><span class="sxs-lookup"><span data-stu-id="07e65-167">Workflow Manager 1.0</span></span>](http://msdn.microsoft.com/en-us/library/jj193528%28Azure.10%29)
+-  [<span data-ttu-id="07e65-167">Диспетчер рабочих процессов версии 1.0</span><span class="sxs-lookup"><span data-stu-id="07e65-167">Workflow Manager 1.0</span></span>](http://msdn.microsoft.com/ru-ru/library/jj193528%28Azure.10%29)
     
   

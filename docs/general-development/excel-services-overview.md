@@ -104,7 +104,7 @@ ms.lasthandoff: 10/13/2017
     
 
     
-> <span data-ttu-id="f6ede-149">**Примечание.** Чтобы открыть книгу с помощью команды **Открыть в Excel**, необходимы права на открытие.</span><span class="sxs-lookup"><span data-stu-id="f6ede-149">**Note:** To open a workbook by using the **Open in Excel** command, you must have "open" rights.</span></span> <span data-ttu-id="f6ede-150">Дополнительные сведения см. в следующем разделе, **Управление книгами**, и статье [Разрешения пользователей и уровни разрешений](http://technet.microsoft.com/en-us/library/cc721640%28office.14%29.aspx) на сайте [TechNet](http://technet.microsoft.com/en-us/library/cc263215%28office.14%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="f6ede-150">For more information, see the next section, **Managing Workbooks**, and  [User Permissions and Permission Levels](http://technet.microsoft.com/en-us/library/cc721640%28office.14%29.aspx) on [TechNet](http://technet.microsoft.com/en-us/library/cc263215%28office.14%29.aspx).</span></span> <span data-ttu-id="f6ede-151">Даже пользователи, не обладающие правами на открытие, могут открывать моментальные снимки в Excel.</span><span class="sxs-lookup"><span data-stu-id="f6ede-151">Users who do not have "open" rights can still open a snapshot in Excel.</span></span> 
+> <span data-ttu-id="f6ede-149">**Примечание.** Чтобы открыть книгу с помощью команды **Открыть в Excel**, необходимы права на открытие.</span><span class="sxs-lookup"><span data-stu-id="f6ede-149">**Note:** To open a workbook by using the **Open in Excel** command, you must have "open" rights.</span></span> <span data-ttu-id="f6ede-150">Дополнительные сведения см. в следующем разделе, **Управление книгами**, и статье [Разрешения пользователей и уровни разрешений](http://technet.microsoft.com/ru-ru/library/cc721640%28office.14%29.aspx) на сайте [TechNet](http://technet.microsoft.com/ru-ru/library/cc263215%28office.14%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="f6ede-150">For more information, see the next section, **Managing Workbooks**, and  [User Permissions and Permission Levels](http://technet.microsoft.com/ru-ru/library/cc721640%28office.14%29.aspx) on [TechNet](http://technet.microsoft.com/ru-ru/library/cc263215%28office.14%29.aspx).</span></span> <span data-ttu-id="f6ede-151">Даже пользователи, не обладающие правами на открытие, могут открывать моментальные снимки в Excel.</span><span class="sxs-lookup"><span data-stu-id="f6ede-151">Users who do not have "open" rights can still open a snapshot in Excel.</span></span> 
   
     
     
@@ -152,7 +152,7 @@ ms.lasthandoff: 10/13/2017
   
     
     
-<span data-ttu-id="f6ede-167">Дополнительные сведения об управлении книгами с помощью Службы Excel см. в документации по SharePoint Server на сайте  [TechNet](http://technet.microsoft.com/en-us/library/ee424405%28office.14%29.aspx) или в справке SharePoint Server.</span><span class="sxs-lookup"><span data-stu-id="f6ede-167">For more information about managing workbooks by using Excel Services, see the SharePoint Server documentation on  [TechNet](http://technet.microsoft.com/en-us/library/ee424405%28office.14%29.aspx) or SharePoint Server Help.</span></span>
+<span data-ttu-id="f6ede-167">Дополнительные сведения об управлении книгами с помощью Службы Excel см. в документации по SharePoint Server на сайте  [TechNet](http://technet.microsoft.com/ru-ru/library/ee424405%28office.14%29.aspx) или в справке SharePoint Server.</span><span class="sxs-lookup"><span data-stu-id="f6ede-167">For more information about managing workbooks by using Excel Services, see the SharePoint Server documentation on  [TechNet](http://technet.microsoft.com/ru-ru/library/ee424405%28office.14%29.aspx) or SharePoint Server Help.</span></span>
   
     
     
@@ -198,7 +198,7 @@ ms.lasthandoff: 10/13/2017
   
     
     
-<span data-ttu-id="f6ede-p118">Пользовательские функции JavaScript похожи на  [пользовательские функции](http://msdn.microsoft.com/en-us/library/ms499792.aspx), которые вы можете создать для Microsoft Excel. Разница состоит в том, что пользовательские функции JavaScript используются только в книгах, внедренных в веб-страницу, и существуют только на этой веб-странице.</span><span class="sxs-lookup"><span data-stu-id="f6ede-p118">JavaScript UDFs are similar to  [UDFs](http://msdn.microsoft.com/en-us/library/ms499792.aspx) that you can create for Microsoft Excel. The difference is that JavaScript UDFs are only used in workbooks embedded in a webpage and only exist on that web page.</span></span>
+<span data-ttu-id="f6ede-p118">Пользовательские функции JavaScript похожи на  [пользовательские функции](http://msdn.microsoft.com/ru-ru/library/ms499792.aspx), которые вы можете создать для Microsoft Excel. Разница состоит в том, что пользовательские функции JavaScript используются только в книгах, внедренных в веб-страницу, и существуют только на этой веб-странице.</span><span class="sxs-lookup"><span data-stu-id="f6ede-p118">JavaScript UDFs are similar to  [UDFs](http://msdn.microsoft.com/ru-ru/library/ms499792.aspx) that you can create for Microsoft Excel. The difference is that JavaScript UDFs are only used in workbooks embedded in a webpage and only exist on that web page.</span></span>
   
     
     
@@ -248,7 +248,7 @@ ms.lasthandoff: 10/13/2017
     
     
  <span data-ttu-id="f6ede-204">
-  [API-интерфейс REST служб Excel 2010](http://msdn.microsoft.com/en-us/library/ee556413.aspx) документации по пакету SDK SharePoint.</span><span class="sxs-lookup"><span data-stu-id="f6ede-204">[Excel Services 2010 REST API](http://msdn.microsoft.com/en-us/library/ee556413.aspx) documentation in the SharePoint SDK documentation.</span></span>
+  [API-интерфейс REST служб Excel 2010](http://msdn.microsoft.com/ru-ru/library/ee556413.aspx) документации по пакету SDK SharePoint.</span><span class="sxs-lookup"><span data-stu-id="f6ede-204">[Excel Services 2010 REST API](http://msdn.microsoft.com/ru-ru/library/ee556413.aspx) documentation in the SharePoint SDK documentation.</span></span>
   
     
     

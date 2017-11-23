@@ -61,19 +61,19 @@ ms.lasthandoff: 10/13/2017
     
 
 -  <span data-ttu-id="9ff1d-125">
-  [Get-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff607990.aspx)</span><span class="sxs-lookup"><span data-stu-id="9ff1d-125">[Get-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff607990.aspx)</span></span>
+  [Get-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/ru-ru/library/ff607990.aspx)</span><span class="sxs-lookup"><span data-stu-id="9ff1d-125">[Get-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/ru-ru/library/ff607990.aspx)</span></span>
     
   
 -  <span data-ttu-id="9ff1d-126">
-  [New-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff607980.aspx)</span><span class="sxs-lookup"><span data-stu-id="9ff1d-126">[New-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff607980.aspx)</span></span>
+  [New-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/ru-ru/library/ff607980.aspx)</span><span class="sxs-lookup"><span data-stu-id="9ff1d-126">[New-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/ru-ru/library/ff607980.aspx)</span></span>
     
   
 -  <span data-ttu-id="9ff1d-127">
-  [Remove-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff608045.aspx)</span><span class="sxs-lookup"><span data-stu-id="9ff1d-127">[Remove-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff608045.aspx)</span></span>
+  [Remove-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/ru-ru/library/ff608045.aspx)</span><span class="sxs-lookup"><span data-stu-id="9ff1d-127">[Remove-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/ru-ru/library/ff608045.aspx)</span></span>
     
   
 -  <span data-ttu-id="9ff1d-128">
-  [Set-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff607940.aspx)</span><span class="sxs-lookup"><span data-stu-id="9ff1d-128">[Set-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff607940.aspx)</span></span>
+  [Set-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/ru-ru/library/ff607940.aspx)</span><span class="sxs-lookup"><span data-stu-id="9ff1d-128">[Set-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/ru-ru/library/ff607940.aspx)</span></span>
     
   
 
@@ -153,7 +153,7 @@ $rm.RankingModelXML > myrm.xml
 3. <span data-ttu-id="9ff1d-p107">Отредактируйте файл  `myrm.xml` в редакторе XML. В качестве атрибутов **id** в элементе _RankModel2Stage_ и всех элементах _RankingModel2NN_ необходимо использовать новые значения GUID. Чтобы получить новое значение GUID, вы можете использовать следующую команду Windows PowerShell: `[guid]::NewGuid()`</span><span class="sxs-lookup"><span data-stu-id="9ff1d-p107">Edit the  `myrm.xml` file in an XML editor. You must use new GUID values for the **id** attributes in _RankModel2Stage_ element and all _RankingModel2NN_ elements. To get a new GUID value you can for example use the following Windows PowerShell command: `[guid]::NewGuid()`</span></span>
     
   
-4. <span data-ttu-id="9ff1d-146">Создайте новую модель ранжирования с помощью командлета  [New-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff607980.aspx), выполнив следующие команды.</span><span class="sxs-lookup"><span data-stu-id="9ff1d-146">Create a new ranking model with the  [New-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/en-us/library/ff607980.aspx) cmdlet by running the following commands.</span></span>
+4. <span data-ttu-id="9ff1d-146">Создайте новую модель ранжирования с помощью командлета  [New-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/ru-ru/library/ff607980.aspx), выполнив следующие команды.</span><span class="sxs-lookup"><span data-stu-id="9ff1d-146">Create a new ranking model with the  [New-SPEnterpriseSearchRankingModel](http://technet.microsoft.com/ru-ru/library/ff607980.aspx) cmdlet by running the following commands.</span></span>
     
 ```powershell
   

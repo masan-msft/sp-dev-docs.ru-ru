@@ -70,16 +70,16 @@ ms.lasthandoff: 10/13/2017
     
     
 
--  [<span data-ttu-id="43157-132">Get-SPEnterpriseSearchContentEnrichmentConfiguration</span><span class="sxs-lookup"><span data-stu-id="43157-132">Get-SPEnterpriseSearchContentEnrichmentConfiguration</span></span>](http://technet.microsoft.com/en-us/library/jj219783%28office.15%29.aspx)
+-  [<span data-ttu-id="43157-132">Get-SPEnterpriseSearchContentEnrichmentConfiguration</span><span class="sxs-lookup"><span data-stu-id="43157-132">Get-SPEnterpriseSearchContentEnrichmentConfiguration</span></span>](http://technet.microsoft.com/ru-ru/library/jj219783%28office.15%29.aspx)
     
   
--  [<span data-ttu-id="43157-133">Set-SPEnterpriseSearchContentEnrichmentConfiguration</span><span class="sxs-lookup"><span data-stu-id="43157-133">Set-SPEnterpriseSearchContentEnrichmentConfiguration</span></span>](http://technet.microsoft.com/en-us/library/jj219659%28office.15%29.aspx)
+-  [<span data-ttu-id="43157-133">Set-SPEnterpriseSearchContentEnrichmentConfiguration</span><span class="sxs-lookup"><span data-stu-id="43157-133">Set-SPEnterpriseSearchContentEnrichmentConfiguration</span></span>](http://technet.microsoft.com/ru-ru/library/jj219659%28office.15%29.aspx)
     
   
--  [<span data-ttu-id="43157-134">Remove-SPEnterpriseSearchContentEnrichmentConfiguration</span><span class="sxs-lookup"><span data-stu-id="43157-134">Remove-SPEnterpriseSearchContentEnrichmentConfiguration</span></span>](http://technet.microsoft.com/en-us/library/jj219742%28office.15%29.aspx)
+-  [<span data-ttu-id="43157-134">Remove-SPEnterpriseSearchContentEnrichmentConfiguration</span><span class="sxs-lookup"><span data-stu-id="43157-134">Remove-SPEnterpriseSearchContentEnrichmentConfiguration</span></span>](http://technet.microsoft.com/ru-ru/library/jj219742%28office.15%29.aspx)
     
   
--  [<span data-ttu-id="43157-135">Новый SPEnterpriseSearchContentEnrichmentConfiguration</span><span class="sxs-lookup"><span data-stu-id="43157-135">New-SPEnterpriseSearchContentEnrichmentConfiguration</span></span>](http://technet.microsoft.com/en-us/library/jj219502%28office.15%29.aspx)
+-  [<span data-ttu-id="43157-135">Новый SPEnterpriseSearchContentEnrichmentConfiguration</span><span class="sxs-lookup"><span data-stu-id="43157-135">New-SPEnterpriseSearchContentEnrichmentConfiguration</span></span>](http://technet.microsoft.com/ru-ru/library/jj219502%28office.15%29.aspx)
     
   
 <span data-ttu-id="43157-136">В таблице 1 перечислены свойства, которые можно настроить через Windows PowerShell командлеты, указанным выше.</span><span class="sxs-lookup"><span data-stu-id="43157-136">Table 1 lists the properties you can configure through the Windows PowerShell cmdlets mentioned previously.</span></span>
@@ -106,7 +106,7 @@ ms.lasthandoff: 10/13/2017
 ### <a name="how-to-list-all-read-only-managed-properties-for-the-content-enrichment-web-service"></a><span data-ttu-id="43157-176">Вывод списка всех только для чтения управляемых свойств для повышения качества контента веб-службы</span><span class="sxs-lookup"><span data-stu-id="43157-176">How to list all read-only managed properties for the Content Enrichment web service</span></span>
 <span data-ttu-id="43157-177"><a name="SP15contentprocess_read-only_managed_properties"> </a></span><span class="sxs-lookup"><span data-stu-id="43157-177"><a name="SP15contentprocess_read-only_managed_properties"> </a></span></span>
 
-<span data-ttu-id="43157-p110">Некоторые управляемые свойства доступны только для чтения и не может быть выходных данных из веб-службы. Эти свойства можно отобразить с помощью  [Get-SPEnterpriseSearchServiceApplication](http://technet.microsoft.com/en-us/library/ff608050%28office.15%29.aspx) и [Get-SPEnterpriseSearchMetadataManagedProperty](http://technet.microsoft.com/en-us/library/ff607560%28office.15%29.aspx)Windows PowerShell командлетов, показано в следующем примере:</span><span class="sxs-lookup"><span data-stu-id="43157-p110">Certain managed properties are read-only and cannot be output from the web service. These properties can be listed by using the  [Get-SPEnterpriseSearchServiceApplication](http://technet.microsoft.com/en-us/library/ff608050%28office.15%29.aspx) and [Get-SPEnterpriseSearchMetadataManagedProperty](http://technet.microsoft.com/en-us/library/ff607560%28office.15%29.aspx)Windows PowerShell cmdlets, shown in the following example:</span></span>
+<span data-ttu-id="43157-p110">Некоторые управляемые свойства доступны только для чтения и не может быть выходных данных из веб-службы. Эти свойства можно отобразить с помощью  [Get-SPEnterpriseSearchServiceApplication](http://technet.microsoft.com/ru-ru/library/ff608050%28office.15%29.aspx) и [Get-SPEnterpriseSearchMetadataManagedProperty](http://technet.microsoft.com/ru-ru/library/ff607560%28office.15%29.aspx)Windows PowerShell командлетов, показано в следующем примере:</span><span class="sxs-lookup"><span data-stu-id="43157-p110">Certain managed properties are read-only and cannot be output from the web service. These properties can be listed by using the  [Get-SPEnterpriseSearchServiceApplication](http://technet.microsoft.com/ru-ru/library/ff608050%28office.15%29.aspx) and [Get-SPEnterpriseSearchMetadataManagedProperty](http://technet.microsoft.com/ru-ru/library/ff607560%28office.15%29.aspx)Windows PowerShell cmdlets, shown in the following example:</span></span>
   
     
     

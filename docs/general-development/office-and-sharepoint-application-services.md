@@ -95,7 +95,7 @@ ms.lasthandoff: 10/13/2017
 -  [<span data-ttu-id="52938-168">Поиск в SharePoint</span><span class="sxs-lookup"><span data-stu-id="52938-168">Search in SharePoint</span></span>](search-in-sharepoint.md)
     
   
--  [<span data-ttu-id="52938-169">Установка компонентов бизнес-Аналитики SQL Server с помощью SharePoint (PowerPivot и служб отчетов)</span><span class="sxs-lookup"><span data-stu-id="52938-169">Install SQL Server BI Features with SharePoint (PowerPivot and Reporting Services)</span></span>](http://msdn.microsoft.com/en-us/library/hh231671)
+-  [<span data-ttu-id="52938-169">Установка компонентов бизнес-Аналитики SQL Server с помощью SharePoint (PowerPivot и служб отчетов)</span><span class="sxs-lookup"><span data-stu-id="52938-169">Install SQL Server BI Features with SharePoint (PowerPivot and Reporting Services)</span></span>](http://msdn.microsoft.com/ru-ru/library/hh231671)
     
   
 

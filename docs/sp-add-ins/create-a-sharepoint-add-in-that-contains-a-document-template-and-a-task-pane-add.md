@@ -26,10 +26,10 @@
 
 - <span data-ttu-id="924fe-114">Среда разработки для SharePoint:</span><span class="sxs-lookup"><span data-stu-id="924fe-114">A SharePoint development environment:</span></span>
     
-      - <span data-ttu-id="924fe-115">О разработке надстроек SharePoint для Office 365 см. в статье[ Настройка среды для разработки надстроек SharePoint в Office 365](http://msdn.microsoft.com/en-us/library/office/apps/fp161179%28v=office.15%29).</span><span class="sxs-lookup"><span data-stu-id="924fe-115">To develop SharePoint Add-ins that target SharePoint in Office 365, see  [How to: Set up an environment for developing SharePoint Add-ins on Office 365](http://msdn.microsoft.com/en-us/library/office/apps/fp161179%28v=office.15%29).</span></span>
+      - <span data-ttu-id="924fe-115">О разработке надстроек SharePoint для Office 365 см. в статье[ Настройка среды для разработки надстроек SharePoint в Office 365](http://msdn.microsoft.com/ru-ru/library/office/apps/fp161179%28v=office.15%29).</span><span class="sxs-lookup"><span data-stu-id="924fe-115">To develop SharePoint Add-ins that target SharePoint in Office 365, see  [How to: Set up an environment for developing SharePoint Add-ins on Office 365](http://msdn.microsoft.com/ru-ru/library/office/apps/fp161179%28v=office.15%29).</span></span>
     
  
-  - <span data-ttu-id="924fe-116">Если вы собираетесь создавать надстройки SharePoint, предназначенные для локальной установки SharePoint, см. статью [Настройка локальной среды разработки надстроек SharePoint](http://msdn.microsoft.com/en-us/library/office/apps/fp179923%28v=office.15%29).</span><span class="sxs-lookup"><span data-stu-id="924fe-116">To develop SharePoint Add-ins that target an on-premises installation of SharePoint, see [How to: Set up an on-premises development environment for SharePoint Add-ins](http://msdn.microsoft.com/en-us/library/office/apps/fp179923%28v=office.15%29).</span></span>
+  - <span data-ttu-id="924fe-116">Если вы собираетесь создавать надстройки SharePoint, предназначенные для локальной установки SharePoint, см. статью [Настройка локальной среды разработки надстроек SharePoint](http://msdn.microsoft.com/ru-ru/library/office/apps/fp179923%28v=office.15%29).</span><span class="sxs-lookup"><span data-stu-id="924fe-116">To develop SharePoint Add-ins that target an on-premises installation of SharePoint, see [How to: Set up an on-premises development environment for SharePoint Add-ins](http://msdn.microsoft.com/ru-ru/library/office/apps/fp179923%28v=office.15%29).</span></span>
     
  
 -  [<span data-ttu-id="924fe-117">Visual Studio 2015 и Инструменты разработчика Microsoft Office</span><span class="sxs-lookup"><span data-stu-id="924fe-117">Visual Studio 2015 and the Microsoft Office Developer Tools</span></span>](https://www.visualstudio.com/features/office-tools-vs)
@@ -292,7 +292,7 @@
 
  
 
- <span data-ttu-id="924fe-p116">**Примечание.** При выполнении инструкций из этого раздела открывается Excel Online, поэтому обязательно наличие учетной записи Office 365. См. статью [Настройка среды для разработки надстроек SharePoint в Office 365](http://msdn.microsoft.com/en-us/library/office/apps/fp161179%28v=office.15%29).</span><span class="sxs-lookup"><span data-stu-id="924fe-p116">**Note**  This procedure opens the Excel Online. It works only when you have an Office 365 account. See [How to: Set up an environment for developing SharePoint Add-ins on Office 365](http://msdn.microsoft.com/en-us/library/office/apps/fp161179%28v=office.15%29).</span></span>
+ <span data-ttu-id="924fe-p116">**Примечание.** При выполнении инструкций из этого раздела открывается Excel Online, поэтому обязательно наличие учетной записи Office 365. См. статью [Настройка среды для разработки надстроек SharePoint в Office 365](http://msdn.microsoft.com/ru-ru/library/office/apps/fp161179%28v=office.15%29).</span><span class="sxs-lookup"><span data-stu-id="924fe-p116">**Note**  This procedure opens the Excel Online. It works only when you have an Office 365 account. See [How to: Set up an environment for developing SharePoint Add-ins on Office 365](http://msdn.microsoft.com/ru-ru/library/office/apps/fp161179%28v=office.15%29).</span></span>
  
 
 

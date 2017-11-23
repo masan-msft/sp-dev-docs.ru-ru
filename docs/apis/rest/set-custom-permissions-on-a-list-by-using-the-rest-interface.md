@@ -285,9 +285,9 @@ function errorHandler(xhr, ajaxOptions, thrownError) {
     
  
 - <span data-ttu-id="16d84-149">Статьи TechNet:</span><span class="sxs-lookup"><span data-stu-id="16d84-149">TechNet articles:</span></span>
-     - [<span data-ttu-id="16d84-150">Справочник по детальным разрешениям для SharePoint Server 2013</span><span class="sxs-lookup"><span data-stu-id="16d84-150">Fine-grained permission reference for SharePoint Server 2013</span></span>](http://technet.microsoft.com/en-us/library/dn169567.aspx)
-     - [<span data-ttu-id="16d84-151">Рекомендации по использованию детальных разрешений в SharePoint Server 2013</span><span class="sxs-lookup"><span data-stu-id="16d84-151">Best practices for using fine-grained permissions in SharePoint Server 2013</span></span>](http://technet.microsoft.com/en-us/library/gg128955.aspx)
-     - [<span data-ttu-id="16d84-152">Разрешения пользователей и уровни разрешений в SharePoint 2013</span><span class="sxs-lookup"><span data-stu-id="16d84-152">User permissions and permission levels in SharePoint 2013</span></span>](http://technet.microsoft.com/en-us/library/cc721640.aspx)
+     - [<span data-ttu-id="16d84-150">Справочник по детальным разрешениям для SharePoint Server 2013</span><span class="sxs-lookup"><span data-stu-id="16d84-150">Fine-grained permission reference for SharePoint Server 2013</span></span>](http://technet.microsoft.com/ru-ru/library/dn169567.aspx)
+     - [<span data-ttu-id="16d84-151">Рекомендации по использованию детальных разрешений в SharePoint Server 2013</span><span class="sxs-lookup"><span data-stu-id="16d84-151">Best practices for using fine-grained permissions in SharePoint Server 2013</span></span>](http://technet.microsoft.com/ru-ru/library/gg128955.aspx)
+     - [<span data-ttu-id="16d84-152">Разрешения пользователей и уровни разрешений в SharePoint 2013</span><span class="sxs-lookup"><span data-stu-id="16d84-152">User permissions and permission levels in SharePoint 2013</span></span>](http://technet.microsoft.com/ru-ru/library/cc721640.aspx)
     
  
 

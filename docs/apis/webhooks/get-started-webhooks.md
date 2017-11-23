@@ -475,7 +475,7 @@ if (queryStringParams.AllKeys.Contains("validationtoken"))
 
 <span data-ttu-id="b1bd5-p122">Этот проект просто записывает сведения в журнал трассировки. Однако в вашем приемнике эти сведения будут отправляться в таблицу или очередь, которая может обрабатывать полученные данные для получения сведений из SharePoint.</span><span class="sxs-lookup"><span data-stu-id="b1bd5-p122">This project just writes the information to the trace log. However, in your receiver, you will send this information into a table or a queue that can process the received data to get information from SharePoint.</span></span> 
 
-<span data-ttu-id="b1bd5-282">С помощью этих данных вы можете составить URL-адрес и использовать API [GetChanges](https://msdn.microsoft.com/EN-US/library/office/dn531433.aspx#bk_ListGetChanges) для просмотра последних изменений.</span><span class="sxs-lookup"><span data-stu-id="b1bd5-282">With this data, you can construct the URL and use the [GetChanges](https://msdn.microsoft.com/EN-US/library/office/dn531433.aspx#bk_ListGetChanges) API to get the latest changes.</span></span>
+<span data-ttu-id="b1bd5-282">С помощью этих данных вы можете составить URL-адрес и использовать API [GetChanges](https://msdn.microsoft.com/ru-ru/library/office/dn531433.aspx#bk_ListGetChanges) для просмотра последних изменений.</span><span class="sxs-lookup"><span data-stu-id="b1bd5-282">With this data, you can construct the URL and use the [GetChanges](https://msdn.microsoft.com/ru-ru/library/office/dn531433.aspx#bk_ListGetChanges) API to get the latest changes.</span></span>
 
 ## <a name="next-steps"></a><span data-ttu-id="b1bd5-283">Дальнейшие действия</span><span class="sxs-lookup"><span data-stu-id="b1bd5-283">Next steps</span></span>
 

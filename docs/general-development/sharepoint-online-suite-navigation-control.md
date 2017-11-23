@@ -310,7 +310,7 @@ var g_navBarHelpDefaultKey = "HelpHome";
 -  [<span data-ttu-id="03759-152">Новые возможности разработки сайтов в SharePoint</span><span class="sxs-lookup"><span data-stu-id="03759-152">What's new with SharePoint site development</span></span>](what-s-new-with-sharepoint-site-development.md)
     
   
--  [<span data-ttu-id="03759-153">Menu control overview (ASP.NET)</span><span class="sxs-lookup"><span data-stu-id="03759-153">Menu control overview (ASP.NET)</span></span>](http://msdn.microsoft.com/en-us/library/ecs0x9w5%28v=vs.90%29.aspx.aspx)
+-  [<span data-ttu-id="03759-153">Menu control overview (ASP.NET)</span><span class="sxs-lookup"><span data-stu-id="03759-153">Menu control overview (ASP.NET)</span></span>](http://msdn.microsoft.com/ru-ru/library/ecs0x9w5%28v=vs.90%29.aspx.aspx)
     
   
 

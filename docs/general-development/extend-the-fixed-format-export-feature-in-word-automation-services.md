@@ -13,7 +13,7 @@ ms.lasthandoff: 10/26/2017
 <span data-ttu-id="cce87-103">Расширение Word Automation Services в Microsoft Office 2013 для замены библиотеки, используемой функции экспорта в неизменяемом формате.</span><span class="sxs-lookup"><span data-stu-id="cce87-103">Extend Word Automation Services in Microsoft Office 2013 to replace the library used by the fixed-format export feature.</span></span>
 ## <a name="introduction-to-the-word-file-conversion-service-fixed-format-export-feature"></a><span data-ttu-id="cce87-104">Общие сведения о Word conversion службы фиксированной форматов файлов экспорта компонента</span><span class="sxs-lookup"><span data-stu-id="cce87-104">Introduction to the Word file conversion service fixed-format export feature</span></span>
 
-<span data-ttu-id="cce87-p101">В этой статье описывается расширение функции экспорта в неизменяемом формате Word Automation Services для использования различных экспорта в неизменяемом формате библиотеки DLL, сторонние разработчики могут заменить те, предоставляемым корпорацией Майкрософт. Этот механизм требует и расширяет интерфейс COM расширяемость фиксированного формата в клиенте Office. Для получения дополнительных сведений см  [расширение функции экспорта фиксированный формат Office 2007](http://msdn.microsoft.com/en-us/library/aa338206.aspx).</span><span class="sxs-lookup"><span data-stu-id="cce87-p101">This article describes how to extend the fixed-format export feature of Word Automation Services to use different fixed-format export DLLs, so third-party developers can replace those provided by Microsoft. This mechanism requires and extends the Office client fixed-format extensibility COM interface. For more information, see  [Extending the Office 2007 Fixed-Format Export Feature](http://msdn.microsoft.com/en-us/library/aa338206.aspx).</span></span>
+<span data-ttu-id="cce87-p101">В этой статье описывается расширение функции экспорта в неизменяемом формате Word Automation Services для использования различных экспорта в неизменяемом формате библиотеки DLL, сторонние разработчики могут заменить те, предоставляемым корпорацией Майкрософт. Этот механизм требует и расширяет интерфейс COM расширяемость фиксированного формата в клиенте Office. Для получения дополнительных сведений см  [расширение функции экспорта фиксированный формат Office 2007](http://msdn.microsoft.com/ru-ru/library/aa338206.aspx).</span><span class="sxs-lookup"><span data-stu-id="cce87-p101">This article describes how to extend the fixed-format export feature of Word Automation Services to use different fixed-format export DLLs, so third-party developers can replace those provided by Microsoft. This mechanism requires and extends the Office client fixed-format extensibility COM interface. For more information, see  [Extending the Office 2007 Fixed-Format Export Feature](http://msdn.microsoft.com/ru-ru/library/aa338206.aspx).</span></span>
   
     
     
@@ -72,7 +72,7 @@ PFNKeepAlive pfnKeepAlive
 
 ## <a name="imsodocexporter"></a><span data-ttu-id="cce87-125">IMsoDocExporter</span><span class="sxs-lookup"><span data-stu-id="cce87-125">IMsoDocExporter</span></span>
 
-<span data-ttu-id="cce87-p103">Интерфейс **IMsoDocExporter** идентична существующего интерфейса, задокументированные в MSDN. Для получения дополнительных сведений см [расширение функции экспорта фиксированный формат Office 2007](http://msdn.microsoft.com/en-us/library/aa338206.aspx). При предыдущем методом успешно, этот интерфейс выполняет преобразование.</span><span class="sxs-lookup"><span data-stu-id="cce87-p103">The **IMsoDocExporter** interface is identical to the existing interface documented on MSDN. For more information, see [Extending the Office 2007 Fixed-Format Export Feature](http://msdn.microsoft.com/en-us/library/aa338206.aspx). When the previous method returns success, this interface performs the conversion.</span></span>
+<span data-ttu-id="cce87-p103">Интерфейс **IMsoDocExporter** идентична существующего интерфейса, задокументированные в MSDN. Для получения дополнительных сведений см [расширение функции экспорта фиксированный формат Office 2007](http://msdn.microsoft.com/ru-ru/library/aa338206.aspx). При предыдущем методом успешно, этот интерфейс выполняет преобразование.</span><span class="sxs-lookup"><span data-stu-id="cce87-p103">The **IMsoDocExporter** interface is identical to the existing interface documented on MSDN. For more information, see [Extending the Office 2007 Fixed-Format Export Feature](http://msdn.microsoft.com/ru-ru/library/aa338206.aspx). When the previous method returns success, this interface performs the conversion.</span></span>
   
     
     
@@ -184,7 +184,7 @@ HANDLE phFile,
     
     
 
--  [<span data-ttu-id="cce87-170">Расширение функции экспорта в неизменяемом формате Office 2007</span><span class="sxs-lookup"><span data-stu-id="cce87-170">Extending the Office 2007 Fixed-Format Export Feature</span></span>](http://msdn.microsoft.com/en-us/library/office/aa338206%28v=office.12%29.aspx)
+-  [<span data-ttu-id="cce87-170">Расширение функции экспорта в неизменяемом формате Office 2007</span><span class="sxs-lookup"><span data-stu-id="cce87-170">Extending the Office 2007 Fixed-Format Export Feature</span></span>](http://msdn.microsoft.com/ru-ru/library/office/aa338206%28v=office.12%29.aspx)
     
   
 

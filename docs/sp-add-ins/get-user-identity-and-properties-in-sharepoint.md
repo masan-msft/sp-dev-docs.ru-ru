@@ -88,7 +88,7 @@ ClientContext clientContext =
 
  
 
- <span data-ttu-id="267f9-136">**Примечание.** API находятся в пространстве имен Microsoft.SharePoint.Client.Utilities в сборке [Microsoft.SharePoint.Client.dll](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.client.utilities.utility.resolveprincipal.aspx).</span><span class="sxs-lookup"><span data-stu-id="267f9-136">**Note** The APIs are in the Microsoft.SharePoint.Client.Utilities namespace in the  [Microsoft.SharePoint.Client.dll](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.client.utilities.utility.resolveprincipal.aspx) assembly.</span></span>
+ <span data-ttu-id="267f9-136">**Примечание.** API находятся в пространстве имен Microsoft.SharePoint.Client.Utilities в сборке [Microsoft.SharePoint.Client.dll](http://msdn.microsoft.com/ru-ru/library/microsoft.sharepoint.client.utilities.utility.resolveprincipal.aspx).</span><span class="sxs-lookup"><span data-stu-id="267f9-136">**Note** The APIs are in the Microsoft.SharePoint.Client.Utilities namespace in the  [Microsoft.SharePoint.Client.dll](http://msdn.microsoft.com/ru-ru/library/microsoft.sharepoint.client.utilities.utility.resolveprincipal.aspx) assembly.</span></span>
  
 
 <span data-ttu-id="267f9-137">Ниже представлен пример кода, иллюстрирующей получение данных для входа пользователя.</span><span class="sxs-lookup"><span data-stu-id="267f9-137">The following is sample code to show how to get the user login information.</span></span>

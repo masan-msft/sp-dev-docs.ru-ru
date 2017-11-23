@@ -46,7 +46,7 @@ ms.lasthandoff: 10/13/2017
 <span data-ttu-id="3cd73-133"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="3cd73-133"></span></span>
 
 
--  [<span data-ttu-id="3cd73-134">Планирование обновления семейства веб-сайтов</span><span class="sxs-lookup"><span data-stu-id="3cd73-134">Plan to upgrade a site collection</span></span>](https://technet.microsoft.com/en-us/library/ff191199.aspx)
+-  [<span data-ttu-id="3cd73-134">Планирование обновления семейства веб-сайтов</span><span class="sxs-lookup"><span data-stu-id="3cd73-134">Plan to upgrade a site collection</span></span>](https://technet.microsoft.com/ru-ru/library/ff191199.aspx)
     
   
 -  [<span data-ttu-id="3cd73-135">Проблемы с конфигурацией продукта, могут возникнуть при обновлении в SharePoint</span><span class="sxs-lookup"><span data-stu-id="3cd73-135">Branding issues that may occur when upgrading to SharePoint</span></span>](http://office.microsoft.com/en-us/office365-sharepoint-online-enterprise-help/branding-issues-that-may-occur-when-upgrading-to-sharepoint-HA104052656.aspx?CTT=5&amp;origin=HA104034491)

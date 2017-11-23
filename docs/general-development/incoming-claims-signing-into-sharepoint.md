@@ -18,7 +18,7 @@ ms.lasthandoff: 10/18/2017
     
     
 
-> <span data-ttu-id="e75c5-106">**Примечание:** Сведения о проверки подлинности для одной фермы SharePoint и проверки подлинности утверждений между фермами SharePoint можно [планирование проверки подлинности на основе утверждений](http://technet.microsoft.com/en-us/library/cc262350.aspx) на сайте TechNet.</span><span class="sxs-lookup"><span data-stu-id="e75c5-106">**Note:** For information about claims authentication for a single SharePoint farm and inter-farm SharePoint claims authentication, see  [Plan for claims authentication](http://technet.microsoft.com/en-us/library/cc262350.aspx) on TechNet.</span></span>
+> <span data-ttu-id="e75c5-106">**Примечание:** Сведения о проверки подлинности для одной фермы SharePoint и проверки подлинности утверждений между фермами SharePoint можно [планирование проверки подлинности на основе утверждений](http://technet.microsoft.com/ru-ru/library/cc262350.aspx) на сайте TechNet.</span><span class="sxs-lookup"><span data-stu-id="e75c5-106">**Note:** For information about claims authentication for a single SharePoint farm and inter-farm SharePoint claims authentication, see  [Plan for claims authentication](http://technet.microsoft.com/ru-ru/library/cc262350.aspx) on TechNet.</span></span>
   
     
     

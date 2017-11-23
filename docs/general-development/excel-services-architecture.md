@@ -38,7 +38,7 @@ ms.lasthandoff: 10/13/2017
     
   
 
-> <span data-ttu-id="f7eaa-113">**Примечание:** Microsoft Excel Online, часть Office Online также поддерживает книги Excel в браузере.</span><span class="sxs-lookup"><span data-stu-id="f7eaa-113">**Note:** Microsoft Excel Online, part of Office Online, also supports Excel workbooks in the browser.</span></span> <span data-ttu-id="f7eaa-114">Дополнительные сведения о Excel Online в документации [по Office Web Apps](https://technet.microsoft.com/en-us/library/ee855124.aspx).</span><span class="sxs-lookup"><span data-stu-id="f7eaa-114">For more information about Excel Online, see  [documentation about Office Web Apps](https://technet.microsoft.com/en-us/library/ee855124.aspx).</span></span> 
+> <span data-ttu-id="f7eaa-113">**Примечание:** Microsoft Excel Online, часть Office Online также поддерживает книги Excel в браузере.</span><span class="sxs-lookup"><span data-stu-id="f7eaa-113">**Note:** Microsoft Excel Online, part of Office Online, also supports Excel workbooks in the browser.</span></span> <span data-ttu-id="f7eaa-114">Дополнительные сведения о Excel Online в документации [по Office Web Apps](https://technet.microsoft.com/ru-ru/library/ee855124.aspx).</span><span class="sxs-lookup"><span data-stu-id="f7eaa-114">For more information about Excel Online, see  [documentation about Office Web Apps](https://technet.microsoft.com/ru-ru/library/ee855124.aspx).</span></span> 
   
     
     
@@ -75,7 +75,7 @@ ms.lasthandoff: 10/13/2017
   
     
     
-<span data-ttu-id="f7eaa-126">Сведения о топологии Службы Excel, масштабируемости, производительности и безопасности обратитесь к документации SharePoint Server 2010 на  [сайте TechNet](http://technet.microsoft.com/en-us/library/cc303422%28office.14%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="f7eaa-126">For information about Excel Services topology, scalability, performance, and security, see the SharePoint Server 2010 documentation on  [TechNet](http://technet.microsoft.com/en-us/library/cc303422%28office.14%29.aspx).</span></span> 
+<span data-ttu-id="f7eaa-126">Сведения о топологии Службы Excel, масштабируемости, производительности и безопасности обратитесь к документации SharePoint Server 2010 на  [сайте TechNet](http://technet.microsoft.com/ru-ru/library/cc303422%28office.14%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="f7eaa-126">For information about Excel Services topology, scalability, performance, and security, see the SharePoint Server 2010 documentation on  [TechNet](http://technet.microsoft.com/ru-ru/library/cc303422%28office.14%29.aspx).</span></span> 
   
     
     

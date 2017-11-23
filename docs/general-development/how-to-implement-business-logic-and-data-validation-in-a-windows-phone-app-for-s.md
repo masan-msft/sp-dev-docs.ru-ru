@@ -310,7 +310,7 @@ public override void Validate(string fieldName, object value)
 -  [<span data-ttu-id="46d40-198">Построение приложений Windows Phone, обращающихся к SharePoint</span><span class="sxs-lookup"><span data-stu-id="46d40-198">Build Windows Phone apps that access SharePoint</span></span>](build-windows-phone-apps-that-access-sharepoint.md)
     
   
--  [<span data-ttu-id="46d40-199">Привязка данных Silverlight</span><span class="sxs-lookup"><span data-stu-id="46d40-199">Silverlight Data Binding</span></span>](http://msdn.microsoft.com/en-us/library/cc278072.aspx)
+-  [<span data-ttu-id="46d40-199">Привязка данных Silverlight</span><span class="sxs-lookup"><span data-stu-id="46d40-199">Silverlight Data Binding</span></span>](http://msdn.microsoft.com/ru-ru/library/cc278072.aspx)
     
   
 -  [<span data-ttu-id="46d40-200">Как: Настройка среды разработки мобильных приложений для SharePoint</span><span class="sxs-lookup"><span data-stu-id="46d40-200">How to: Set up an environment for developing mobile apps for SharePoint</span></span>](how-to-set-up-an-environment-for-developing-mobile-apps-for-sharepoint.md)

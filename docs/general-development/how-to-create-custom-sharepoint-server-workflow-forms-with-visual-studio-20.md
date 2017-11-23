@@ -664,7 +664,7 @@ wfParams['SomeRandomString'] = strInputValue
 
 
 -  <span data-ttu-id="9c642-385">
-  [Формы сопоставления и запуска рабочих процессов (SharePoint Foundation)](http://msdn.microsoft.com/en-us/library/office/ms481192%28v=office.14%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="9c642-385">[Workflow Association and Initiation Forms (SharePoint Foundation)](http://msdn.microsoft.com/en-us/library/office/ms481192%28v=office.14%29.aspx)</span></span>
+  [Формы сопоставления и запуска рабочих процессов (SharePoint Foundation)](http://msdn.microsoft.com/ru-ru/library/office/ms481192%28v=office.14%29.aspx)</span><span class="sxs-lookup"><span data-stu-id="9c642-385">[Workflow Association and Initiation Forms (SharePoint Foundation)](http://msdn.microsoft.com/ru-ru/library/office/ms481192%28v=office.14%29.aspx)</span></span>
     
   
 -  [<span data-ttu-id="9c642-386">Работа с клиентской объектной моделью служб рабочих процессов в SharePoint</span><span class="sxs-lookup"><span data-stu-id="9c642-386">Working with the SharePoint Workflow Services Client Side Object Model</span></span>](working-with-the-sharepoint-workflow-services-client-side-object-model.md)

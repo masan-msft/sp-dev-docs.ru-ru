@@ -173,7 +173,7 @@ ms.lasthandoff: 10/13/2017
 
  
 
-1. <span data-ttu-id="e6808-p130">Получить отпечаток сертификата в виде массива байтов (не строки). Это дайджест сертификата SHA-1. (В управляемом коде это можно выполнить с помощью метода  [GetCertHash()](http://msdn2.microsoft.com/EN-US/library/4f9acc3f). Вам потребуется его эквивалент в языке, который вы используете.)</span><span class="sxs-lookup"><span data-stu-id="e6808-p130">Obtain the byte array (not string) version of the thumbprint of the certificate. This is a SHA-1 digest of the certificate. (In managed code, this can be done with the  [GetCertHash()](http://msdn2.microsoft.com/EN-US/library/4f9acc3f) method. You will need something equivalent in the language you are using.)</span></span>
+1. <span data-ttu-id="e6808-p130">Получить отпечаток сертификата в виде массива байтов (не строки). Это дайджест сертификата SHA-1. (В управляемом коде это можно выполнить с помощью метода  [GetCertHash()](http://msdn2.microsoft.com/ru-ru/library/4f9acc3f). Вам потребуется его эквивалент в языке, который вы используете.)</span><span class="sxs-lookup"><span data-stu-id="e6808-p130">Obtain the byte array (not string) version of the thumbprint of the certificate. This is a SHA-1 digest of the certificate. (In managed code, this can be done with the  [GetCertHash()](http://msdn2.microsoft.com/ru-ru/library/4f9acc3f) method. You will need something equivalent in the language you are using.)</span></span>
     
  
 2. <span data-ttu-id="e6808-241">Закодировать байтовый массив с помощью кодировки Base 64 для URL-адресов.</span><span class="sxs-lookup"><span data-stu-id="e6808-241">Encode the byte array with Base 64 URL encoding.</span></span>

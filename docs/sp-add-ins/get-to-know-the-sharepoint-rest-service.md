@@ -205,7 +205,7 @@
 -  [<span data-ttu-id="0793f-232">Знакомство с OData</span><span class="sxs-lookup"><span data-stu-id="0793f-232">Introducing OData</span></span>](http://msdn.microsoft.com/en-us/data/hh237663)
     
  
--  [<span data-ttu-id="0793f-233">Примеры для протокола Open Data Protocol</span><span class="sxs-lookup"><span data-stu-id="0793f-233">Open Data Protocol by Example</span></span>](http://msdn.microsoft.com/en-us/library/ff478141.aspx)
+-  [<span data-ttu-id="0793f-233">Примеры для протокола Open Data Protocol</span><span class="sxs-lookup"><span data-stu-id="0793f-233">Open Data Protocol by Example</span></span>](http://msdn.microsoft.com/ru-ru/library/ff478141.aspx)
     
  
 -  [<span data-ttu-id="0793f-234">Open Data Protocol</span><span class="sxs-lookup"><span data-stu-id="0793f-234">Open Data Protocol</span></span>](http://www.odata.org/)

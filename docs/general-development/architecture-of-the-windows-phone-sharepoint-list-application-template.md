@@ -149,7 +149,7 @@ ms.lasthandoff: 10/13/2017
 ## <a name="the-appxaml-file-and-the-silverlight-application-model"></a><span data-ttu-id="6be19-172">Файл App.xaml и модель приложения Silverlight</span><span class="sxs-lookup"><span data-stu-id="6be19-172">The App.xaml file and the Silverlight application model</span></span>
 <span data-ttu-id="6be19-173"><a name="BKMK_ApplicationModel"> </a></span><span class="sxs-lookup"><span data-stu-id="6be19-173"><a name="BKMK_ApplicationModel"> </a></span></span>
 
-<span data-ttu-id="6be19-p121">Файл App.xaml и его файл выделенным кодом App.xaml.cs, являются стандартные компоненты управляемого приложения Silverlight. Приложения, использующие управляемого интерфейса API для Silverlight необходимо включить класс, производный от класса Silverlight  [приложения](http://msdn.microsoft.com/en-us/library/system.windows.application%28VS.95%29.aspx) для реализации модели приложения Silverlight. Класс **Application** поддерживает события жизненным циклом приложения и средства для управления ресурсами, такими как изображения, строк и шаблоны XAML.</span><span class="sxs-lookup"><span data-stu-id="6be19-p121">The App.xaml file and its associated code-behind file, App.xaml.cs, are standard components of a managed Silverlight application. Applications that use the managed API for Silverlight must include a class derived from the Silverlight  [Application](http://msdn.microsoft.com/en-us/library/system.windows.application%28VS.95%29.aspx) class, in order to implement the Silverlight application model. The **Application** class supports application life-cycle events and facilities for managing resources like images, strings, and XAML templates.</span></span>
+<span data-ttu-id="6be19-p121">Файл App.xaml и его файл выделенным кодом App.xaml.cs, являются стандартные компоненты управляемого приложения Silverlight. Приложения, использующие управляемого интерфейса API для Silverlight необходимо включить класс, производный от класса Silverlight  [приложения](http://msdn.microsoft.com/ru-ru/library/system.windows.application%28VS.95%29.aspx) для реализации модели приложения Silverlight. Класс **Application** поддерживает события жизненным циклом приложения и средства для управления ресурсами, такими как изображения, строк и шаблоны XAML.</span><span class="sxs-lookup"><span data-stu-id="6be19-p121">The App.xaml file and its associated code-behind file, App.xaml.cs, are standard components of a managed Silverlight application. Applications that use the managed API for Silverlight must include a class derived from the Silverlight  [Application](http://msdn.microsoft.com/ru-ru/library/system.windows.application%28VS.95%29.aspx) class, in order to implement the Silverlight application model. The **Application** class supports application life-cycle events and facilities for managing resources like images, strings, and XAML templates.</span></span>
   
     
     
@@ -162,16 +162,16 @@ ms.lasthandoff: 10/13/2017
 <span data-ttu-id="6be19-179"><a name="SP15Winphoneover_addlresources"> </a></span><span class="sxs-lookup"><span data-stu-id="6be19-179"><a name="SP15Winphoneover_addlresources"> </a></span></span>
 
 
--  [<span data-ttu-id="6be19-180">С использованием шаблона Model-View-ViewModel</span><span class="sxs-lookup"><span data-stu-id="6be19-180">Using the Model-View-ViewModel Pattern</span></span>](http://msdn.microsoft.com/en-us/library/hh821028.aspx)
+-  [<span data-ttu-id="6be19-180">С использованием шаблона Model-View-ViewModel</span><span class="sxs-lookup"><span data-stu-id="6be19-180">Using the Model-View-ViewModel Pattern</span></span>](http://msdn.microsoft.com/ru-ru/library/hh821028.aspx)
     
   
--  [<span data-ttu-id="6be19-181">Архитектура управления PIVOT для Windows Phone</span><span class="sxs-lookup"><span data-stu-id="6be19-181">Pivot Control Architecture for Windows Phone</span></span>](http://msdn.microsoft.com/en-us/library/ff941097%28VS.92%29.aspx)
+-  [<span data-ttu-id="6be19-181">Архитектура управления PIVOT для Windows Phone</span><span class="sxs-lookup"><span data-stu-id="6be19-181">Pivot Control Architecture for Windows Phone</span></span>](http://msdn.microsoft.com/ru-ru/library/ff941097%28VS.92%29.aspx)
     
   
--  [<span data-ttu-id="6be19-182">Модель приложения Silverlight</span><span class="sxs-lookup"><span data-stu-id="6be19-182">Silverlight Application Model</span></span>](http://msdn.microsoft.com/en-us/library/cc872869%28VS.95%29.aspx)
+-  [<span data-ttu-id="6be19-182">Модель приложения Silverlight</span><span class="sxs-lookup"><span data-stu-id="6be19-182">Silverlight Application Model</span></span>](http://msdn.microsoft.com/ru-ru/library/cc872869%28VS.95%29.aspx)
     
   
--  [<span data-ttu-id="6be19-183">Разработка приложения Windows Phone с помощью шаблоне MVVM</span><span class="sxs-lookup"><span data-stu-id="6be19-183">Developing a Windows Phone Application using the MVVM Pattern</span></span>](http://msdn.microsoft.com/en-us/library/hh848247.aspx)
+-  [<span data-ttu-id="6be19-183">Разработка приложения Windows Phone с помощью шаблоне MVVM</span><span class="sxs-lookup"><span data-stu-id="6be19-183">Developing a Windows Phone Application using the MVVM Pattern</span></span>](http://msdn.microsoft.com/ru-ru/library/hh848247.aspx)
     
   
 -  [<span data-ttu-id="6be19-184">Приложений WPF с помощью шаблона разработки Model-View-ViewModel</span><span class="sxs-lookup"><span data-stu-id="6be19-184">WPF Apps With The Model-View-ViewModel Design Pattern</span></span>](http://msdn.microsoft.com/en-us/magazine/dd419663.aspx)

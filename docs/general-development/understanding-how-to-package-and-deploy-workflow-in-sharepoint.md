@@ -224,7 +224,7 @@ ms.lasthandoff: 10/13/2017
 <span data-ttu-id="ba4b2-179"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="ba4b2-179"></span></span>
 
 
--  [<span data-ttu-id="ba4b2-180">Рабочий процесс в SharePoint </span><span class="sxs-lookup"><span data-stu-id="ba4b2-180">Workflow in SharePoint </span></span>](http://technet.microsoft.com/en-us/sharepoint/jj556245.aspx)
+-  [<span data-ttu-id="ba4b2-180">Рабочий процесс в SharePoint </span><span class="sxs-lookup"><span data-stu-id="ba4b2-180">Workflow in SharePoint </span></span>](http://technet.microsoft.com/ru-ru/sharepoint/jj556245.aspx)
     
   
 -  [<span data-ttu-id="ba4b2-181">Новые возможности рабочего процесса в SharePoint</span><span class="sxs-lookup"><span data-stu-id="ba4b2-181">What's new in workflow in SharePoint</span></span>](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)

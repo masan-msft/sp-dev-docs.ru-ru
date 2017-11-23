@@ -100,7 +100,7 @@ function ewaApplicationReady()
     /*
     * This code uses the Microsoft Office Excel JavaScript object model to programmatically insert the
     * Excel Web App into a div with id=myExcelDiv. The full API is documented at
-    * http://msdn.microsoft.com/en-us/library/hh315812.aspx. There you can find out how to programmatically get
+    * http://msdn.microsoft.com/ru-ru/library/hh315812.aspx. There you can find out how to programmatically get
     * values from your Excel file and how to use the rest of the object model. 
     */
 
@@ -167,7 +167,7 @@ function ewaApplicationReady()
 <span data-ttu-id="b8811-132"><a name="SP15DevKitchenCon_AnatomyofanappSignupsheets_Additionalresources"> </a></span><span class="sxs-lookup"><span data-stu-id="b8811-132"></span></span>
 
 
--  [<span data-ttu-id="b8811-133">С помощью API JavaScript служб Excel для работы с внедренными книгами Excel</span><span class="sxs-lookup"><span data-stu-id="b8811-133">Using the Excel Services JavaScript API to Work with Embedded Excel Workbooks</span></span>](http://msdn.microsoft.com/en-us/library/hh315812.aspx)
+-  [<span data-ttu-id="b8811-133">С помощью API JavaScript служб Excel для работы с внедренными книгами Excel</span><span class="sxs-lookup"><span data-stu-id="b8811-133">Using the Excel Services JavaScript API to Work with Embedded Excel Workbooks</span></span>](http://msdn.microsoft.com/ru-ru/library/hh315812.aspx)
     
   
 -  [<span data-ttu-id="b8811-134">Ewa.EwaControl.loadEwaAsync</span><span class="sxs-lookup"><span data-stu-id="b8811-134">Ewa.EwaControl.loadEwaAsync</span></span>](http://msdn.microsoft.com/library/a7ee4d6d-5472-b942-c78e-b368d30bcb0e%28Office.15%29.aspx)

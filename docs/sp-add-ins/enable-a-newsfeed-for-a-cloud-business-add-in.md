@@ -76,7 +76,7 @@ ms.lasthandoff: 10/13/2017
 -  [<span data-ttu-id="2cc76-133">Разработка облачных бизнес-надстроек</span><span class="sxs-lookup"><span data-stu-id="2cc76-133">Develop cloud business add-ins</span></span>](develop-cloud-business-add-ins.md)
     
  
--  [<span data-ttu-id="2cc76-134">Функции социальных медиа и совместной работы в SharePoint</span><span class="sxs-lookup"><span data-stu-id="2cc76-134">Social and collaboration features in SharePoint</span></span>](http://msdn.microsoft.com/en-us/library/office/jj163280.aspx)
+-  [<span data-ttu-id="2cc76-134">Функции социальных медиа и совместной работы в SharePoint</span><span class="sxs-lookup"><span data-stu-id="2cc76-134">Social and collaboration features in SharePoint</span></span>](http://msdn.microsoft.com/ru-ru/library/office/jj163280.aspx)
     
  
 -  [<span data-ttu-id="2cc76-135">Создание облачных бизнес-надстроек с каналом новостей для социальных служб</span><span class="sxs-lookup"><span data-stu-id="2cc76-135">Create a cloud business add-in with a social newsfeed</span></span>](create-a-cloud-business-add-in-with-a-social-newsfeed.md)

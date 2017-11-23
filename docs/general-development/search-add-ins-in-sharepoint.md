@@ -252,7 +252,7 @@ http://mylocalhost/_api/search/query?querytext='SharePoint'
 -  [<span data-ttu-id="7e8fd-181">Экспорт и импорт параметров конфигурации поиска в SharePoint</span><span class="sxs-lookup"><span data-stu-id="7e8fd-181">Exporting and importing search configuration settings in SharePoint</span></span>](exporting-and-importing-search-configuration-settings-in-sharepoint.md)
     
   
--  [<span data-ttu-id="7e8fd-182">Импорт и экспорт параметров конфигурации настраиваемого поиска в SharePoint (TechNet)</span><span class="sxs-lookup"><span data-stu-id="7e8fd-182">Export and import customized search configuration settings in SharePoint (TechNet)</span></span>](http://technet.microsoft.com/en-us/library/jj871675.aspx)
+-  [<span data-ttu-id="7e8fd-182">Импорт и экспорт параметров конфигурации настраиваемого поиска в SharePoint (TechNet)</span><span class="sxs-lookup"><span data-stu-id="7e8fd-182">Export and import customized search configuration settings in SharePoint (TechNet)</span></span>](http://technet.microsoft.com/ru-ru/library/jj871675.aspx)
     
   
 

@@ -22,7 +22,7 @@ ms.lasthandoff: 10/13/2017
     
 
 
-> <span data-ttu-id="39264-107">**Примечание:** В этом разделе предполагается, что вы знакомы с что поддерживается и не поддерживаются в Microsoft Office SharePoint Server 2007.</span><span class="sxs-lookup"><span data-stu-id="39264-107">**Note:** This topic assumes that you are familiar with what is supported and unsupported in Microsoft Office SharePoint Server 2007.</span></span> <span data-ttu-id="39264-108">Дополнительные сведения о неподдерживаемых возможностях можно найти в Office SharePoint Server 2007 в [Неподдерживаемые функции в службах Excel](http://msdn.microsoft.com/en-us/library/ms496823.aspx).</span><span class="sxs-lookup"><span data-stu-id="39264-108">You can find more information about the unsupported features in Office SharePoint Server 2007 in  [Unsupported Features in Excel Services](http://msdn.microsoft.com/en-us/library/ms496823.aspx).</span></span> 
+> <span data-ttu-id="39264-107">**Примечание:** В этом разделе предполагается, что вы знакомы с что поддерживается и не поддерживаются в Microsoft Office SharePoint Server 2007.</span><span class="sxs-lookup"><span data-stu-id="39264-107">**Note:** This topic assumes that you are familiar with what is supported and unsupported in Microsoft Office SharePoint Server 2007.</span></span> <span data-ttu-id="39264-108">Дополнительные сведения о неподдерживаемых возможностях можно найти в Office SharePoint Server 2007 в [Неподдерживаемые функции в службах Excel](http://msdn.microsoft.com/ru-ru/library/ms496823.aspx).</span><span class="sxs-lookup"><span data-stu-id="39264-108">You can find more information about the unsupported features in Office SharePoint Server 2007 in  [Unsupported Features in Excel Services](http://msdn.microsoft.com/ru-ru/library/ms496823.aspx).</span></span> 
   
     
     
@@ -159,7 +159,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
-> <span data-ttu-id="39264-160">**Примечание:** В разделе [Неподдерживаемые функции в службах Excel](http://msdn.microsoft.com/en-us/library/ms496823.aspx) содержатся дополнительные сведения о новых компонентов.</span><span class="sxs-lookup"><span data-stu-id="39264-160">**Note:** The  [Unsupported Features in Excel Services](http://msdn.microsoft.com/en-us/library/ms496823.aspx) topic contains more details about these unsupported features.</span></span>
+> <span data-ttu-id="39264-160">**Примечание:** В разделе [Неподдерживаемые функции в службах Excel](http://msdn.microsoft.com/ru-ru/library/ms496823.aspx) содержатся дополнительные сведения о новых компонентов.</span><span class="sxs-lookup"><span data-stu-id="39264-160">**Note:** The  [Unsupported Features in Excel Services](http://msdn.microsoft.com/ru-ru/library/ms496823.aspx) topic contains more details about these unsupported features.</span></span>
   
     
     

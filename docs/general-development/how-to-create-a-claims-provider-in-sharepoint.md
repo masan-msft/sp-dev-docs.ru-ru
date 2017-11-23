@@ -22,7 +22,7 @@ ms.lasthandoff: 10/13/2017
     
 
 
-> <span data-ttu-id="0a16e-114">**Примечание:** "Выбор людей" с возможностью выбора утверждений иногда называется элемент управления Выбор утверждений.</span><span class="sxs-lookup"><span data-stu-id="0a16e-114">**Note:** A people picker with claims picking functionality is sometimes referred to as a claims picker.</span></span> <span data-ttu-id="0a16e-115">Дополнительные сведения см в [средстве выбора людей и поставщика утверждений планирования](http://technet.microsoft.com/en-us/library/gg602063.aspx).</span><span class="sxs-lookup"><span data-stu-id="0a16e-115">For more information, see  [People picker and claims provider planning](http://technet.microsoft.com/en-us/library/gg602063.aspx).</span></span> 
+> <span data-ttu-id="0a16e-114">**Примечание:** "Выбор людей" с возможностью выбора утверждений иногда называется элемент управления Выбор утверждений.</span><span class="sxs-lookup"><span data-stu-id="0a16e-114">**Note:** A people picker with claims picking functionality is sometimes referred to as a claims picker.</span></span> <span data-ttu-id="0a16e-115">Дополнительные сведения см в [средстве выбора людей и поставщика утверждений планирования](http://technet.microsoft.com/ru-ru/library/gg602063.aspx).</span><span class="sxs-lookup"><span data-stu-id="0a16e-115">For more information, see  [People picker and claims provider planning](http://technet.microsoft.com/ru-ru/library/gg602063.aspx).</span></span> 
   
     
     

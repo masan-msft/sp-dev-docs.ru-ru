@@ -353,7 +353,7 @@ ms.lasthandoff: 10/13/2017
 <span data-ttu-id="41474-224"><a name="section3"> </a></span><span class="sxs-lookup"><span data-stu-id="41474-224"></span></span>
 
 
--  [<span data-ttu-id="41474-225">Рабочий процесс в SharePoint </span><span class="sxs-lookup"><span data-stu-id="41474-225">Workflow in SharePoint </span></span>](http://technet.microsoft.com/en-us/sharepoint/jj556245.aspx)
+-  [<span data-ttu-id="41474-225">Рабочий процесс в SharePoint </span><span class="sxs-lookup"><span data-stu-id="41474-225">Workflow in SharePoint </span></span>](http://technet.microsoft.com/ru-ru/sharepoint/jj556245.aspx)
     
   
 -  [<span data-ttu-id="41474-226">Установка и управление приложениями для SharePoint</span><span class="sxs-lookup"><span data-stu-id="41474-226">Install and manage apps for SharePoint</span></span>](http://msdn.microsoft.com/library/733647a3-a5d3-475b-967d-3bb627c2a0c2.aspx)

@@ -16,10 +16,10 @@ ms.lasthandoff: 10/13/2017
     
 
 <span data-ttu-id="a38f3-109">Сведения о том, как писать средство разбиения по словам можно найти в следующих статьях</span><span class="sxs-lookup"><span data-stu-id="a38f3-109">For information on how to write a word breaker refer to the following articles</span></span> 
--  [<span data-ttu-id="a38f3-110">Реализация средства разбиения по словам</span><span class="sxs-lookup"><span data-stu-id="a38f3-110">Implementing a Word Breaker</span></span>](http://msdn.microsoft.com/en-us/library/ms693186%28v=vs.85%29.aspx)
+-  [<span data-ttu-id="a38f3-110">Реализация средства разбиения по словам</span><span class="sxs-lookup"><span data-stu-id="a38f3-110">Implementing a Word Breaker</span></span>](http://msdn.microsoft.com/ru-ru/library/ms693186%28v=vs.85%29.aspx)
     
   
--  [<span data-ttu-id="a38f3-111">Интерфейс IWordBreaker</span><span class="sxs-lookup"><span data-stu-id="a38f3-111">IWordBreaker interface</span></span>](http://msdn.microsoft.com/en-us/library/ms691079%28v=vs.85%29.aspx)
+-  [<span data-ttu-id="a38f3-111">Интерфейс IWordBreaker</span><span class="sxs-lookup"><span data-stu-id="a38f3-111">IWordBreaker interface</span></span>](http://msdn.microsoft.com/ru-ru/library/ms691079%28v=vs.85%29.aspx)
     
   
 
@@ -284,10 +284,10 @@ ms.lasthandoff: 10/13/2017
 -  [<span data-ttu-id="a38f3-188">Настройка службы поиска в SharePoint</span><span class="sxs-lookup"><span data-stu-id="a38f3-188">Configure search in SharePoint</span></span>](configure-search-in-sharepoint.md)
     
   
--  [<span data-ttu-id="a38f3-189">Реализация средства разбиения по словам</span><span class="sxs-lookup"><span data-stu-id="a38f3-189">Implementing a Word Breaker</span></span>](http://msdn.microsoft.com/en-us/library/ms693186%28v=vs.85%29.aspx)
+-  [<span data-ttu-id="a38f3-189">Реализация средства разбиения по словам</span><span class="sxs-lookup"><span data-stu-id="a38f3-189">Implementing a Word Breaker</span></span>](http://msdn.microsoft.com/ru-ru/library/ms693186%28v=vs.85%29.aspx)
     
   
--  [<span data-ttu-id="a38f3-190">Интерфейс IWordBreaker</span><span class="sxs-lookup"><span data-stu-id="a38f3-190">IWordBreaker interface</span></span>](http://msdn.microsoft.com/en-us/library/ms691079%28v=vs.85%29.aspx)
+-  [<span data-ttu-id="a38f3-190">Интерфейс IWordBreaker</span><span class="sxs-lookup"><span data-stu-id="a38f3-190">IWordBreaker interface</span></span>](http://msdn.microsoft.com/ru-ru/library/ms691079%28v=vs.85%29.aspx)
     
   
 

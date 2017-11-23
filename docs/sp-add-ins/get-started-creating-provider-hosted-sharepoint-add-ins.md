@@ -193,7 +193,7 @@ ms.lasthandoff: 10/13/2017
 1. <span data-ttu-id="be0cf-p117">Откройте файл AppManifest.xml. На вкладке **Разрешения** укажите область **Семейство веб-сайтов** и уровень разрешений **Чтение**.</span><span class="sxs-lookup"><span data-stu-id="be0cf-p117">Open the AppManifest.xml file. On the  **Permissions** tab, specify the **Site Collection** scope and the **Read** permission level.</span></span>
     
  
-2. <span data-ttu-id="be0cf-p118">Удалите часть кода в теге **<body>** файла Pages/Default.aspx веб-приложения, а затем добавьте приведенные ниже элементы управления HTML и ASP.NET в раздел **<body>**. В этом примере используется элемент управления [UpdatePanel](http://msdn2.microsoft.com/EN-US/library/bb359258), который включает частичную отрисовку страницы.</span><span class="sxs-lookup"><span data-stu-id="be0cf-p118">Delete any markup inside the  **<body>** tag of the Pages/Default.aspx file of your web application, and then add the following HTML and ASP.NET controls inside the **<body>**. This sample uses the  [UpdatePanel](http://msdn2.microsoft.com/EN-US/library/bb359258) control to enable partial page rendering.</span></span>
+2. <span data-ttu-id="be0cf-p118">Удалите часть кода в теге **<body>** файла Pages/Default.aspx веб-приложения, а затем добавьте приведенные ниже элементы управления HTML и ASP.NET в раздел **<body>**. В этом примере используется элемент управления [UpdatePanel](http://msdn2.microsoft.com/ru-ru/library/bb359258), который включает частичную отрисовку страницы.</span><span class="sxs-lookup"><span data-stu-id="be0cf-p118">Delete any markup inside the  **<body>** tag of the Pages/Default.aspx file of your web application, and then add the following HTML and ASP.NET controls inside the **<body>**. This sample uses the  [UpdatePanel](http://msdn2.microsoft.com/ru-ru/library/bb359258) control to enable partial page rendering.</span></span>
     
 ```HTML
   <form id="form1" runat="server">
@@ -249,7 +249,7 @@ using System.IO;
 using System.Xml;
 ```
 
-4. <span data-ttu-id="be0cf-198">В файле Default.aspx.cs веб-приложения добавьте указанные ниже переменные в класс [Page](http://msdn2.microsoft.com/EN-US/library/dfbt9et1).</span><span class="sxs-lookup"><span data-stu-id="be0cf-198">In the Default.aspx.cs file of your web application, add these variables inside the  [Page](http://msdn2.microsoft.com/EN-US/library/dfbt9et1) class.</span></span>
+4. <span data-ttu-id="be0cf-198">В файле Default.aspx.cs веб-приложения добавьте указанные ниже переменные в класс [Page](http://msdn2.microsoft.com/ru-ru/library/dfbt9et1).</span><span class="sxs-lookup"><span data-stu-id="be0cf-198">In the Default.aspx.cs file of your web application, add these variables inside the  [Page](http://msdn2.microsoft.com/ru-ru/library/dfbt9et1) class.</span></span>
     
 ```C#
   SharePointContextToken contextToken;
@@ -261,7 +261,7 @@ List<string> listOfUsers = new List<string>();
 List<string> listOfLists = new List<string>();
 ```
 
-5. <span data-ttu-id="be0cf-p119">Добавьте метод  `RetrieveWithCSOM` в класс [Page](http://msdn2.microsoft.com/EN-US/library/dfbt9et1) . Этот метод использует CSOM SharePoint, чтобы получать сведения о вашем сайте и отображать их на странице.</span><span class="sxs-lookup"><span data-stu-id="be0cf-p119">Add the  `RetrieveWithCSOM` method inside the [Page](http://msdn2.microsoft.com/EN-US/library/dfbt9et1) class. This method uses the SharePoint CSOM to retrieve information about your site and display it on the page.</span></span>
+5. <span data-ttu-id="be0cf-p119">Добавьте метод  `RetrieveWithCSOM` в класс [Page](http://msdn2.microsoft.com/ru-ru/library/dfbt9et1) . Этот метод использует CSOM SharePoint, чтобы получать сведения о вашем сайте и отображать их на странице.</span><span class="sxs-lookup"><span data-stu-id="be0cf-p119">Add the  `RetrieveWithCSOM` method inside the [Page](http://msdn2.microsoft.com/ru-ru/library/dfbt9et1) class. This method uses the SharePoint CSOM to retrieve information about your site and display it on the page.</span></span>
     
 ```C#
   // This method retrieves information about the host web by using the CSOM.
@@ -313,7 +313,7 @@ private void RetrieveWithCSOM(string accessToken)
 }
 ```
 
-6. <span data-ttu-id="be0cf-p120">Добавьте метод `CSOM_Click` в класс [Page](http://msdn2.microsoft.com/EN-US/library/dfbt9et1). Этот метод вызывает событие, которое возникает, когда пользователь переходит по ссылке **Заполнение данными**.</span><span class="sxs-lookup"><span data-stu-id="be0cf-p120">Add the  `CSOM_Click` method inside the [Page](http://msdn2.microsoft.com/EN-US/library/dfbt9et1) class. This method triggers the event that occurs when the user clicks the **Populate Data** link.</span></span>
+6. <span data-ttu-id="be0cf-p120">Добавьте метод `CSOM_Click` в класс [Page](http://msdn2.microsoft.com/ru-ru/library/dfbt9et1). Этот метод вызывает событие, которое возникает, когда пользователь переходит по ссылке **Заполнение данными**.</span><span class="sxs-lookup"><span data-stu-id="be0cf-p120">Add the  `CSOM_Click` method inside the [Page](http://msdn2.microsoft.com/ru-ru/library/dfbt9et1) class. This method triggers the event that occurs when the user clicks the **Populate Data** link.</span></span>
     
 ```C#
   protected void CSOM_Click(object sender, EventArgs e)

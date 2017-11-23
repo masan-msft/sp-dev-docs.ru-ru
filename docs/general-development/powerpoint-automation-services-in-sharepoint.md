@@ -101,7 +101,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
-> <span data-ttu-id="be407-151">**Примечание:** Дополнительные сведения о работе с шаблоном асинхронного видеть [Обзор асинхронного программирования](http://msdn.microsoft.com/en-us/library/ms228963.aspx).</span><span class="sxs-lookup"><span data-stu-id="be407-151">**Note:** For more information about how to work with the asynchronous design pattern, see the  [Asynchronous Programming Overview](http://msdn.microsoft.com/en-us/library/ms228963.aspx).</span></span> 
+> <span data-ttu-id="be407-151">**Примечание:** Дополнительные сведения о работе с шаблоном асинхронного видеть [Обзор асинхронного программирования](http://msdn.microsoft.com/ru-ru/library/ms228963.aspx).</span><span class="sxs-lookup"><span data-stu-id="be407-151">**Note:** For more information about how to work with the asynchronous design pattern, see the  [Asynchronous Programming Overview](http://msdn.microsoft.com/ru-ru/library/ms228963.aspx).</span></span> 
   
     
     
@@ -144,7 +144,7 @@ ms.lasthandoff: 10/13/2017
 -  <span data-ttu-id="be407-176">_extension_ строка, указывающая расширение файла преобразуемого файла.</span><span class="sxs-lookup"><span data-stu-id="be407-176">_extension_—A string that specifies the file extension of the file being converted.</span></span>
     
   
--  <span data-ttu-id="be407-177">_output_ объект  [SPFileStream](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.spfilestream.aspx) , указывающий, где будут храниться выходные данные.</span><span class="sxs-lookup"><span data-stu-id="be407-177">_output_—An  [SPFileStream](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.spfilestream.aspx) object that specifies where the output will be stored.</span></span>
+-  <span data-ttu-id="be407-177">_output_ объект  [SPFileStream](http://msdn.microsoft.com/ru-ru/library/microsoft.sharepoint.spfilestream.aspx) , указывающий, где будут храниться выходные данные.</span><span class="sxs-lookup"><span data-stu-id="be407-177">_output_—An  [SPFileStream](http://msdn.microsoft.com/ru-ru/library/microsoft.sharepoint.spfilestream.aspx) object that specifies where the output will be stored.</span></span>
     
   
 <span data-ttu-id="be407-p114">Класс **PresentationRequest** имеет один перегрузки для метода конструктора, добавляющий параметр _settings_. Параметр _settings_ объект **PresentationSettings** принимает в качестве аргумента.</span><span class="sxs-lookup"><span data-stu-id="be407-p114">The **PresentationRequest** class has a single overload for its constructor method that adds a _settings_ parameter. The _settings_ parameter accepts a **PresentationSettings** object as an argument.</span></span>
@@ -152,7 +152,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
-> <span data-ttu-id="be407-180">**Совет:** При преобразовании выходные данные [потока](https://msdn.microsoft.com/library/System.IO.Stream.aspx) объекта обратно на объект [SPFile](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.spfile.aspx) проверьте, что данное расширение имени файла, присвоенное созданный файл сопоставляет расширение типа файлов, которое (PPT или PPTX-файл).</span><span class="sxs-lookup"><span data-stu-id="be407-180">**Tip:** When converting the output  [Stream](https://msdn.microsoft.com/library/System.IO.Stream.aspx) object back to an [SPFile](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.spfile.aspx) object, check that the extension given to the resulting file matches the extension of the file type that you want (.ppt or .pptx).</span></span>
+> <span data-ttu-id="be407-180">**Совет:** При преобразовании выходные данные [потока](https://msdn.microsoft.com/library/System.IO.Stream.aspx) объекта обратно на объект [SPFile](http://msdn.microsoft.com/ru-ru/library/microsoft.sharepoint.spfile.aspx) проверьте, что данное расширение имени файла, присвоенное созданный файл сопоставляет расширение типа файлов, которое (PPT или PPTX-файл).</span><span class="sxs-lookup"><span data-stu-id="be407-180">**Tip:** When converting the output  [Stream](https://msdn.microsoft.com/library/System.IO.Stream.aspx) object back to an [SPFile](http://msdn.microsoft.com/ru-ru/library/microsoft.sharepoint.spfile.aspx) object, check that the extension given to the resulting file matches the extension of the file type that you want (.ppt or .pptx).</span></span>
   
     
     
@@ -173,7 +173,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
-> <span data-ttu-id="be407-187">**Совет:** При преобразовании выходные данные [потока](https://msdn.microsoft.com/library/System.IO.Stream.aspx) объекта обратно на объект [SPFile](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.spfile.aspx) проверьте, что данное расширение имени файла, присвоенное созданный файл сопоставляет расширение типа файлов, которые должны (PDF-файл).</span><span class="sxs-lookup"><span data-stu-id="be407-187">**Tip:** When converting the output  [Stream](https://msdn.microsoft.com/library/System.IO.Stream.aspx) object back to an [SPFile](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.spfile.aspx) object, check that the extension given to the resulting file matches the extension of the file type that you want (.pdf).</span></span>
+> <span data-ttu-id="be407-187">**Совет:** При преобразовании выходные данные [потока](https://msdn.microsoft.com/library/System.IO.Stream.aspx) объекта обратно на объект [SPFile](http://msdn.microsoft.com/ru-ru/library/microsoft.sharepoint.spfile.aspx) проверьте, что данное расширение имени файла, присвоенное созданный файл сопоставляет расширение типа файлов, которые должны (PDF-файл).</span><span class="sxs-lookup"><span data-stu-id="be407-187">**Tip:** When converting the output  [Stream](https://msdn.microsoft.com/library/System.IO.Stream.aspx) object back to an [SPFile](http://msdn.microsoft.com/ru-ru/library/microsoft.sharepoint.spfile.aspx) object, check that the extension given to the resulting file matches the extension of the file type that you want (.pdf).</span></span>
   
     
     
@@ -194,7 +194,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
-> <span data-ttu-id="be407-194">**Совет:** Класс **PictureRequest** возвращает поток, содержащий пакет файлы изображений.</span><span class="sxs-lookup"><span data-stu-id="be407-194">**Tip:** The **PictureRequest** class returns a stream that contains a package of image files.</span></span> <span data-ttu-id="be407-195">При преобразовании выходные данные [потока](https://msdn.microsoft.com/library/System.IO.Stream.aspx) объекта обратно в объект [SPFile](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.spfile.aspx) , убедитесь, что данное расширение имени файла, присвоенное созданный файл .zip.</span><span class="sxs-lookup"><span data-stu-id="be407-195">When converting the output [Stream](https://msdn.microsoft.com/library/System.IO.Stream.aspx) object back to an [SPFile](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.spfile.aspx) object, check that the extension given to the resulting file is .zip.</span></span>
+> <span data-ttu-id="be407-194">**Совет:** Класс **PictureRequest** возвращает поток, содержащий пакет файлы изображений.</span><span class="sxs-lookup"><span data-stu-id="be407-194">**Tip:** The **PictureRequest** class returns a stream that contains a package of image files.</span></span> <span data-ttu-id="be407-195">При преобразовании выходные данные [потока](https://msdn.microsoft.com/library/System.IO.Stream.aspx) объекта обратно в объект [SPFile](http://msdn.microsoft.com/ru-ru/library/microsoft.sharepoint.spfile.aspx) , убедитесь, что данное расширение имени файла, присвоенное созданный файл .zip.</span><span class="sxs-lookup"><span data-stu-id="be407-195">When converting the output [Stream](https://msdn.microsoft.com/library/System.IO.Stream.aspx) object back to an [SPFile](http://msdn.microsoft.com/ru-ru/library/microsoft.sharepoint.spfile.aspx) object, check that the extension given to the resulting file is .zip.</span></span>
   
     
     
@@ -480,7 +480,7 @@ End Namespace
 <span data-ttu-id="be407-248"><a name="PAS_Additional"> </a></span><span class="sxs-lookup"><span data-stu-id="be407-248"></span></span>
 
 
--  [<span data-ttu-id="be407-249">Разработка с помощью SharePoint 2010 Word Automation Services</span><span class="sxs-lookup"><span data-stu-id="be407-249">Developing with SharePoint 2010 Word Automation Services</span></span>](http://msdn.microsoft.com/en-us/library/ff742315.aspx)
+-  [<span data-ttu-id="be407-249">Разработка с помощью SharePoint 2010 Word Automation Services</span><span class="sxs-lookup"><span data-stu-id="be407-249">Developing with SharePoint 2010 Word Automation Services</span></span>](http://msdn.microsoft.com/ru-ru/library/ff742315.aspx)
     
   
 -  [<span data-ttu-id="be407-250">Центр разработчиков PowerPoint</span><span class="sxs-lookup"><span data-stu-id="be407-250">PowerPoint Developer Center</span></span>](http://msdn.microsoft.com/en-us/office/aa905465)

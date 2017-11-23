@@ -4,8 +4,8 @@
 
 ## <a name="prerequisites"></a><span data-ttu-id="5d23b-103">Предварительные требования</span><span class="sxs-lookup"><span data-stu-id="5d23b-103">Prerequisites</span></span>
 <span data-ttu-id="5d23b-104">Прежде чем приступить к работе, убедитесь, что вы знакомы с понятиями, описанными в следующих статьях:</span><span class="sxs-lookup"><span data-stu-id="5d23b-104">Before you get started, make sure that you're familiar with the following:</span></span>
-- [<span data-ttu-id="5d23b-105">Использование клиентской объектной модели</span><span class="sxs-lookup"><span data-stu-id="5d23b-105">Using the Client Object Model</span></span>](https://msdn.microsoft.com/en-us/library/ff798388.aspx)
-- [<span data-ttu-id="5d23b-106">Общие задачи программирования</span><span class="sxs-lookup"><span data-stu-id="5d23b-106">Common Programming Tasks in the Managed Client Object Model</span></span>](https://msdn.microsoft.com/en-us/library/ee537013.aspx)
+- [<span data-ttu-id="5d23b-105">Использование клиентской объектной модели</span><span class="sxs-lookup"><span data-stu-id="5d23b-105">Using the Client Object Model</span></span>](https://msdn.microsoft.com/ru-ru/library/ff798388.aspx)
+- [<span data-ttu-id="5d23b-106">Общие задачи программирования</span><span class="sxs-lookup"><span data-stu-id="5d23b-106">Common Programming Tasks in the Managed Client Object Model</span></span>](https://msdn.microsoft.com/ru-ru/library/ee537013.aspx)
 
 <span data-ttu-id="5d23b-107">Вам также потребуется добавить ссылку на пакет NuGet [Microsoft.SharePointOnline.CSOM](https://www.nuget.org/packages/Microsoft.SharePointOnline.CSOM/) (версия 16.1.6906.1200 или более поздняя).</span><span class="sxs-lookup"><span data-stu-id="5d23b-107">You will also need to reference the [Microsoft.SharePointOnline.CSOM](https://www.nuget.org/packages/Microsoft.SharePointOnline.CSOM/) NuGet package (version 16.1.6906.1200 or later).</span></span>
 
@@ -15,7 +15,7 @@
 
 ><span data-ttu-id="5d23b-110">**Примечание.**</span><span class="sxs-lookup"><span data-stu-id="5d23b-110">**Note**</span></span>
 >* <span data-ttu-id="5d23b-111">URL-адрес, используемый для создания объекта контекста, включает суффикс _-admin_, так как методы **TenantAdministration** работают с сайтом администрирования.</span><span class="sxs-lookup"><span data-stu-id="5d23b-111">The URL used to create the context object includes the _-admin_ suffix, because **TenantAdministration** methods work with the admin site.</span></span>
->* <span data-ttu-id="5d23b-112">Создайте экземпляр объекта __Tenant__ с помощью [конструктора Tenant](https://msdn.microsoft.com/en-us/library/dn174852.aspx), а затем вызывайте методы в этом экземпляре.</span><span class="sxs-lookup"><span data-stu-id="5d23b-112">Create a __Tenant__ instance with the [Tenant constructor](https://msdn.microsoft.com/en-us/library/dn174852.aspx), and then call the methods on that instance.</span></span>
+>* <span data-ttu-id="5d23b-112">Создайте экземпляр объекта __Tenant__ с помощью [конструктора Tenant](https://msdn.microsoft.com/ru-ru/library/dn174852.aspx), а затем вызывайте методы в этом экземпляре.</span><span class="sxs-lookup"><span data-stu-id="5d23b-112">Create a __Tenant__ instance with the [Tenant constructor](https://msdn.microsoft.com/ru-ru/library/dn174852.aspx), and then call the methods on that instance.</span></span>
 >* <span data-ttu-id="5d23b-113">Вы можете использовать тот же подход для вызова других методов управления темами.</span><span class="sxs-lookup"><span data-stu-id="5d23b-113">You can use the same approach to call other theme management methods.</span></span>
 
 ```C#
@@ -192,5 +192,5 @@ __Return type:__ ClientResult<bool></span></span>
 * [<span data-ttu-id="5d23b-188">Настройка тем для сайтов SharePoint: схема JSON</span><span class="sxs-lookup"><span data-stu-id="5d23b-188">SharePoint site theming: JSON schema</span></span>](sharepoint-site-theming-json-schema.md)
 * [<span data-ttu-id="5d23b-189">Настройка тем для сайтов SharePoint: командлеты PowerShell</span><span class="sxs-lookup"><span data-stu-id="5d23b-189">SharePoint site theming: PowerShell cmdlets</span></span>](sharepoint-site-theming-powershell.md)
 * [<span data-ttu-id="5d23b-190">Настройка тем для сайтов SharePoint: REST API</span><span class="sxs-lookup"><span data-stu-id="5d23b-190">SharePoint site theming: REST API</span></span>](sharepoint-site-theming-rest-api.md)
-* [<span data-ttu-id="5d23b-191">Использование клиентской объектной модели</span><span class="sxs-lookup"><span data-stu-id="5d23b-191">Using the Client Object Model</span></span>](https://msdn.microsoft.com/en-us/library/ff798388.aspx)
-* [<span data-ttu-id="5d23b-192">Общие задачи программирования</span><span class="sxs-lookup"><span data-stu-id="5d23b-192">Common Programming Tasks in the Managed Client Object Model</span></span>](https://msdn.microsoft.com/en-us/library/ee537013.aspx)
+* [<span data-ttu-id="5d23b-191">Использование клиентской объектной модели</span><span class="sxs-lookup"><span data-stu-id="5d23b-191">Using the Client Object Model</span></span>](https://msdn.microsoft.com/ru-ru/library/ff798388.aspx)
+* [<span data-ttu-id="5d23b-192">Общие задачи программирования</span><span class="sxs-lookup"><span data-stu-id="5d23b-192">Common Programming Tasks in the Managed Client Object Model</span></span>](https://msdn.microsoft.com/ru-ru/library/ee537013.aspx)

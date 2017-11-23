@@ -83,7 +83,7 @@ ms.lasthandoff: 10/13/2017
 -  <span data-ttu-id="7b662-127">Класс  [LogToHistoryListActivity](https://msdn.microsoft.com/library/Microsoft.SharePoint.WorkflowActions.LogToHistoryListActivity.aspx)</span><span class="sxs-lookup"><span data-stu-id="7b662-127">[LogToHistoryListActivity](https://msdn.microsoft.com/library/Microsoft.SharePoint.WorkflowActions.LogToHistoryListActivity.aspx) class</span></span>
     
   
--  [<span data-ttu-id="7b662-128">Как: журнал в списке журнала из действия рабочего процесса</span><span class="sxs-lookup"><span data-stu-id="7b662-128">How to: Log to the History List from a Workflow Activity</span></span>](http://msdn.microsoft.com/en-us/library/ff798337.aspx)
+-  [<span data-ttu-id="7b662-128">Как: журнал в списке журнала из действия рабочего процесса</span><span class="sxs-lookup"><span data-stu-id="7b662-128">How to: Log to the History List from a Workflow Activity</span></span>](http://msdn.microsoft.com/ru-ru/library/ff798337.aspx)
     
   
 -  [<span data-ttu-id="7b662-129">С помощью журнала для действия SharePoint списка журнала рабочего процесса для отладки</span><span class="sxs-lookup"><span data-stu-id="7b662-129">Using the Log to History List SharePoint workflow action for debugging</span></span>](http://www.documentmanagementworkflowinfo.com/sample-sharepoint-workflows/use-log-to-history-list-sharepoint-designer-workflow-action-debug)
@@ -108,7 +108,7 @@ ms.lasthandoff: 10/13/2017
 -  <span data-ttu-id="7b662-135">Класс  [LogToHistoryListActivity](https://msdn.microsoft.com/library/Microsoft.SharePoint.WorkflowActions.LogToHistoryListActivity.aspx)</span><span class="sxs-lookup"><span data-stu-id="7b662-135">[LogToHistoryListActivity](https://msdn.microsoft.com/library/Microsoft.SharePoint.WorkflowActions.LogToHistoryListActivity.aspx) class</span></span>
     
   
--  [<span data-ttu-id="7b662-136">Как: журнал в списке журнала из действия рабочего процесса</span><span class="sxs-lookup"><span data-stu-id="7b662-136">How to: Log to the History List from a Workflow Activity</span></span>](http://msdn.microsoft.com/en-us/library/ff798337.aspx)
+-  [<span data-ttu-id="7b662-136">Как: журнал в списке журнала из действия рабочего процесса</span><span class="sxs-lookup"><span data-stu-id="7b662-136">How to: Log to the History List from a Workflow Activity</span></span>](http://msdn.microsoft.com/ru-ru/library/ff798337.aspx)
     
   
 -  [<span data-ttu-id="7b662-137">С помощью журнала для действия SharePoint списка журнала рабочего процесса для отладки</span><span class="sxs-lookup"><span data-stu-id="7b662-137">Using the Log to History List SharePoint workflow action for debugging</span></span>](http://www.documentmanagementworkflowinfo.com/sample-sharepoint-workflows/use-log-to-history-list-sharepoint-designer-workflow-action-debug)
@@ -123,17 +123,17 @@ ms.lasthandoff: 10/13/2017
     
     
 
--  [<span data-ttu-id="7b662-142">Запись в журнал трассировки</span><span class="sxs-lookup"><span data-stu-id="7b662-142">Writing to the Trace Log</span></span>](http://msdn.microsoft.com/en-us/library/aa979595.aspx)
+-  [<span data-ttu-id="7b662-142">Запись в журнал трассировки</span><span class="sxs-lookup"><span data-stu-id="7b662-142">Writing to the Trace Log</span></span>](http://msdn.microsoft.com/ru-ru/library/aa979595.aspx)
     
   
--  [<span data-ttu-id="7b662-143">С помощью событий и отслеживания журналы в SharePoint</span><span class="sxs-lookup"><span data-stu-id="7b662-143">Using Event and Trace Logs in SharePoint</span></span>](http://msdn.microsoft.com/en-us/library/ff647362.aspx)
+-  [<span data-ttu-id="7b662-143">С помощью событий и отслеживания журналы в SharePoint</span><span class="sxs-lookup"><span data-stu-id="7b662-143">Using Event and Trace Logs in SharePoint</span></span>](http://msdn.microsoft.com/ru-ru/library/ff647362.aspx)
     
   
 
 ### <a name="verify-that-variables-are-non-null-and-contain-expected-values"></a><span data-ttu-id="7b662-144">Убедитесь, что переменные ненулевые и содержат ожидаемые значения</span><span class="sxs-lookup"><span data-stu-id="7b662-144">Verify that variables are non-null and contain expected values</span></span>
 <span data-ttu-id="7b662-145"><a name="bkm_04"> </a></span><span class="sxs-lookup"><span data-stu-id="7b662-145"><a name="bkm_04"> </a></span></span>
 
-<span data-ttu-id="7b662-p104">Прежде чем использовать переменные в рабочих процессах, убедитесь, что нет значение null, переменных. Кроме того убедитесь, что переменные содержат ожидаемые значения и имеют правильный тип данных. Для получения дополнительных сведений см  [переменных и аргументов](http://msdn.microsoft.com/en-us/library/dd489456.aspx).</span><span class="sxs-lookup"><span data-stu-id="7b662-p104">Before using variables in your workflows, ensure there are no null variables. Also, ensure that variables contain expected values and are of the correct data type. For more information, see  [Variables and Arguments](http://msdn.microsoft.com/en-us/library/dd489456.aspx).</span></span>
+<span data-ttu-id="7b662-p104">Прежде чем использовать переменные в рабочих процессах, убедитесь, что нет значение null, переменных. Кроме того убедитесь, что переменные содержат ожидаемые значения и имеют правильный тип данных. Для получения дополнительных сведений см  [переменных и аргументов](http://msdn.microsoft.com/ru-ru/library/dd489456.aspx).</span><span class="sxs-lookup"><span data-stu-id="7b662-p104">Before using variables in your workflows, ensure there are no null variables. Also, ensure that variables contain expected values and are of the correct data type. For more information, see  [Variables and Arguments](http://msdn.microsoft.com/ru-ru/library/dd489456.aspx).</span></span>
   
     
     

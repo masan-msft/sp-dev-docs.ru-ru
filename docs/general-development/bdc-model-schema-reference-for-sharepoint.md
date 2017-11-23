@@ -24,7 +24,7 @@ ms.lasthandoff: 10/13/2017
   
     
     
-<span data-ttu-id="bbff8-108">В статье  [Обзор системы безопасности служб Business Connectivity Services](http://technet.microsoft.com/en-us/library/ee661734%28office.14%29.aspx) приведены дополнительные сведения о Business Connectivity Services и системе безопасности.</span><span class="sxs-lookup"><span data-stu-id="bbff8-108">See  [Business Connectivity Services security overview](http://technet.microsoft.com/en-us/library/ee661734%28office.14%29.aspx) to learn more about the Business Connectivity Services and security.</span></span>
+<span data-ttu-id="bbff8-108">В статье  [Обзор системы безопасности служб Business Connectivity Services](http://technet.microsoft.com/ru-ru/library/ee661734%28office.14%29.aspx) приведены дополнительные сведения о Business Connectivity Services и системе безопасности.</span><span class="sxs-lookup"><span data-stu-id="bbff8-108">See  [Business Connectivity Services security overview](http://technet.microsoft.com/ru-ru/library/ee661734%28office.14%29.aspx) to learn more about the Business Connectivity Services and security.</span></span>
   
     
     

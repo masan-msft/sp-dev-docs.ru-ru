@@ -232,7 +232,7 @@ ms.lasthandoff: 10/13/2017
 -  [<span data-ttu-id="1531d-180">Создание настраиваемой страницы прокси для междоменной библиотеки в SharePoint</span><span class="sxs-lookup"><span data-stu-id="1531d-180">Create a custom proxy page for the cross-domain library in SharePoint</span></span>](create-a-custom-proxy-page-for-the-cross-domain-library-in-sharepoint.md)
     
  
--  [<span data-ttu-id="1531d-181">Междоменная безопасность на стороне клиента</span><span class="sxs-lookup"><span data-stu-id="1531d-181">Client-side Cross-domain Security</span></span>](http://msdn.microsoft.com/en-us/library/cc709423%28v=vs.85%29.aspx)
+-  [<span data-ttu-id="1531d-181">Междоменная безопасность на стороне клиента</span><span class="sxs-lookup"><span data-stu-id="1531d-181">Client-side Cross-domain Security</span></span>](http://msdn.microsoft.com/ru-ru/library/cc709423%28v=vs.85%29.aspx)
     
  
 

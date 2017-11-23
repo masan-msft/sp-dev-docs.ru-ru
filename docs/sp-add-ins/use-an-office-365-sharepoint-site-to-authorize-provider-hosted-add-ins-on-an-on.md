@@ -50,11 +50,11 @@ ms.lasthandoff: 10/13/2017
  
 
  
- <span data-ttu-id="3c0fa-124">[Сначала создайте тестовый PFX-файл сертификата, а затем соответствующий CER-файл](http://msdn.microsoft.com/en-us/library/windows/hardware/ff552299%28v=vs.85%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="3c0fa-124">[Create a test .pfx certificate file first, and then a corresponding test .cer file](http://msdn.microsoft.com/en-us/library/windows/hardware/ff552299%28v=vs.85%29.aspx).</span></span> 
+ <span data-ttu-id="3c0fa-124">[Сначала создайте тестовый PFX-файл сертификата, а затем соответствующий CER-файл](http://msdn.microsoft.com/ru-ru/library/windows/hardware/ff552299%28v=vs.85%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="3c0fa-124">[Create a test .pfx certificate file first, and then a corresponding test .cer file](http://msdn.microsoft.com/ru-ru/library/windows/hardware/ff552299%28v=vs.85%29.aspx).</span></span> 
  
 
  
- <span data-ttu-id="3c0fa-125">[Вы также можете использовать тестовую программу MakeCert, чтобы создать тестовый сертификат X.509](http://msdn.microsoft.com/en-us/library/ms537364%28VS.85%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="3c0fa-125">[You can also use the MakeCert test program to generate a test X.509 certificate](http://msdn.microsoft.com/en-us/library/ms537364%28VS.85%29.aspx).</span></span> 
+ <span data-ttu-id="3c0fa-125">[Вы также можете использовать тестовую программу MakeCert, чтобы создать тестовый сертификат X.509](http://msdn.microsoft.com/ru-ru/library/ms537364%28VS.85%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="3c0fa-125">[You can also use the MakeCert test program to generate a test X.509 certificate](http://msdn.microsoft.com/ru-ru/library/ms537364%28VS.85%29.aspx).</span></span> 
  
 
  
@@ -104,7 +104,7 @@ ms.lasthandoff: 10/13/2017
  
 
  
-6. <span data-ttu-id="3c0fa-p106">Экспортируйте файл в выбранное расположение и создайте для него пароль. В этом примере используется пароль **password**. В рабочей среде следует использовать надежный пароль. См. статьи [Рекомендации по созданию надежных паролей](http://msdn.microsoft.com/en-us/library/bb416446.aspx) и [Надежные пароли](http://msdn.microsoft.com/en-us/library/ms161962.aspx).</span><span class="sxs-lookup"><span data-stu-id="3c0fa-p106">Export the file to a location you choose and give it a password. In this example, the password is  **password**. In a production environment, use a strong password. See [Guidelines for creating strong passwords](http://msdn.microsoft.com/en-us/library/bb416446.aspx) and [Strong passwords](http://msdn.microsoft.com/en-us/library/ms161962.aspx).</span></span>
+6. <span data-ttu-id="3c0fa-p106">Экспортируйте файл в выбранное расположение и создайте для него пароль. В этом примере используется пароль **password**. В рабочей среде следует использовать надежный пароль. См. статьи [Рекомендации по созданию надежных паролей](http://msdn.microsoft.com/ru-ru/library/bb416446.aspx) и [Надежные пароли](http://msdn.microsoft.com/ru-ru/library/ms161962.aspx).</span><span class="sxs-lookup"><span data-stu-id="3c0fa-p106">Export the file to a location you choose and give it a password. In this example, the password is  **password**. In a production environment, use a strong password. See [Guidelines for creating strong passwords](http://msdn.microsoft.com/ru-ru/library/bb416446.aspx) and [Strong passwords](http://msdn.microsoft.com/ru-ru/library/ms161962.aspx).</span></span>
     
  
 

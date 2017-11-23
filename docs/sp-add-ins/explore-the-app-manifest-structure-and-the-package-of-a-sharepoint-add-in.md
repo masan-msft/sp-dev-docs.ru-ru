@@ -144,7 +144,7 @@ ms.lasthandoff: 10/13/2017
 -  [<span data-ttu-id="1b36e-192">Open Packaging Conventions (OPC)</span><span class="sxs-lookup"><span data-stu-id="1b36e-192">Open Packaging Conventions (OPC)</span></span>](http://msdn.microsoft.com/en-us/magazine/cc163372.aspx)
     
  
--  [<span data-ttu-id="1b36e-193">Подключение приложения уровня данных (DAC)</span><span class="sxs-lookup"><span data-stu-id="1b36e-193">Data-Tier Application Connection (DAC)</span></span>](http://msdn.microsoft.com/en-us/library/ee210546)
+-  [<span data-ttu-id="1b36e-193">Подключение приложения уровня данных (DAC)</span><span class="sxs-lookup"><span data-stu-id="1b36e-193">Data-Tier Application Connection (DAC)</span></span>](http://msdn.microsoft.com/ru-ru/library/ee210546)
     
  
 -  [<span data-ttu-id="1b36e-194">Web Deploy 2.0</span><span class="sxs-lookup"><span data-stu-id="1b36e-194">Web Deploy 2.0</span></span>](http://www.iis.net/download/WebDeploy)

@@ -202,7 +202,7 @@ ms.lasthandoff: 10/13/2017
  
 
  
-<span data-ttu-id="def32-226">Подробнее об управлении надстройками см. в статье [Установка надстроек SharePoint и управление ими](http://msdn.microsoft.com/en-us/library/733647a3-a5d3-475b-967d-3bb627c2a0c2) на сайте TechNet.</span><span class="sxs-lookup"><span data-stu-id="def32-226">For more information about managing add-ins, see  [Install and manage SharePoint Add-ins](http://msdn.microsoft.com/en-us/library/733647a3-a5d3-475b-967d-3bb627c2a0c2) on TechNet.</span></span>
+<span data-ttu-id="def32-226">Подробнее об управлении надстройками см. в статье [Установка надстроек SharePoint и управление ими](http://msdn.microsoft.com/ru-ru/library/733647a3-a5d3-475b-967d-3bb627c2a0c2) на сайте TechNet.</span><span class="sxs-lookup"><span data-stu-id="def32-226">For more information about managing add-ins, see  [Install and manage SharePoint Add-ins](http://msdn.microsoft.com/ru-ru/library/733647a3-a5d3-475b-967d-3bb627c2a0c2) on TechNet.</span></span>
  
 
  

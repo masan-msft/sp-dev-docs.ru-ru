@@ -325,10 +325,10 @@ query.Refiners);
 <span data-ttu-id="2ed43-294"><a name="SP15_Query_refinement_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="2ed43-294"></span></span>
 
 
--  [<span data-ttu-id="2ed43-295">Настройка свойств веб-части уточнения результатов поиска в SharePoint</span><span class="sxs-lookup"><span data-stu-id="2ed43-295">Configure properties of the Refinement Web Part in SharePoint</span></span>](http://technet.microsoft.com/en-us/library/gg549985.aspx)
+-  [<span data-ttu-id="2ed43-295">Настройка свойств веб-части уточнения результатов поиска в SharePoint</span><span class="sxs-lookup"><span data-stu-id="2ed43-295">Configure properties of the Refinement Web Part in SharePoint</span></span>](http://technet.microsoft.com/ru-ru/library/gg549985.aspx)
     
   
--  [<span data-ttu-id="2ed43-296">Обзор схемы поиска в SharePoint</span><span class="sxs-lookup"><span data-stu-id="2ed43-296">Overview of the search schema in SharePoint</span></span>](http://technet.microsoft.com/en-us/library/jj219669%28office.15%29.aspx)
+-  [<span data-ttu-id="2ed43-296">Обзор схемы поиска в SharePoint</span><span class="sxs-lookup"><span data-stu-id="2ed43-296">Overview of the search schema in SharePoint</span></span>](http://technet.microsoft.com/ru-ru/library/jj219669%28office.15%29.aspx)
     
   
 

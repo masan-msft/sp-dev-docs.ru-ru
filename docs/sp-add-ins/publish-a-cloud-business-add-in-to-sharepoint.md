@@ -97,7 +97,7 @@ ms.lasthandoff: 10/13/2017
  
 12. <span data-ttu-id="e6bea-145">Укажите **идентификатор клиента** и **секрет клиента** для своей надстройки.</span><span class="sxs-lookup"><span data-stu-id="e6bea-145">Enter the  **Client ID** and **Client Secret** values for your add-in.</span></span>
     
-    <span data-ttu-id="e6bea-p107">Вы можете получить эти значения на странице **appregnew** сайта SharePoint или Панели мониторинга продаж. См. статью [Регистрация надстроек для SharePoint 2013](http://msdn.microsoft.com/en-us/library/office/jj687469%28v=office.15%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="e6bea-p107">You can get these values from the  **appregnew** page of your SharePoint site or from the Seller dashboard. See [Guidelines for registering SharePoint Add-ins 2013](http://msdn.microsoft.com/en-us/library/office/jj687469%28v=office.15%29.aspx).</span></span>
+    <span data-ttu-id="e6bea-p107">Вы можете получить эти значения на странице **appregnew** сайта SharePoint или Панели мониторинга продаж. См. статью [Регистрация надстроек для SharePoint 2013](http://msdn.microsoft.com/ru-ru/library/office/jj687469%28v=office.15%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="e6bea-p107">You can get these values from the  **appregnew** page of your SharePoint site or from the Seller dashboard. See [Guidelines for registering SharePoint Add-ins 2013](http://msdn.microsoft.com/ru-ru/library/office/jj687469%28v=office.15%29.aspx).</span></span>
     
  
 13. <span data-ttu-id="e6bea-148">Нажмите кнопку **Опубликовать**, чтобы опубликовать надстройку.</span><span class="sxs-lookup"><span data-stu-id="e6bea-148">Choose  **Publish** to publish your add-in.</span></span>
@@ -157,7 +157,7 @@ ms.lasthandoff: 10/13/2017
  
 11. <span data-ttu-id="e6bea-169">Введите **идентификатор клиента** и **секрет клиента** для надстройки.</span><span class="sxs-lookup"><span data-stu-id="e6bea-169">Enter the  **Client ID** and **Client Secret** for your add-in.</span></span>
     
-    <span data-ttu-id="e6bea-p109">Вы можете получить эти значения на странице **appregnew** сайта SharePoint или Панели мониторинга продаж. См. статью [Регистрация надстроек для SharePoint 2013](http://msdn.microsoft.com/en-us/library/office/jj687469%28v=office.15%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="e6bea-p109">You can get these values from the  **appregnew** page of your SharePoint site or from the Seller dashboard. See [Guidelines for registering SharePoint Add-ins 2013](http://msdn.microsoft.com/en-us/library/office/jj687469%28v=office.15%29.aspx).</span></span>
+    <span data-ttu-id="e6bea-p109">Вы можете получить эти значения на странице **appregnew** сайта SharePoint или Панели мониторинга продаж. См. статью [Регистрация надстроек для SharePoint 2013](http://msdn.microsoft.com/ru-ru/library/office/jj687469%28v=office.15%29.aspx).</span><span class="sxs-lookup"><span data-stu-id="e6bea-p109">You can get these values from the  **appregnew** page of your SharePoint site or from the Seller dashboard. See [Guidelines for registering SharePoint Add-ins 2013](http://msdn.microsoft.com/ru-ru/library/office/jj687469%28v=office.15%29.aspx).</span></span>
     
  
 12. <span data-ttu-id="e6bea-172">Нажмите кнопку **Опубликовать**, чтобы опубликовать надстройку.</span><span class="sxs-lookup"><span data-stu-id="e6bea-172">Choose  **Publish** to publish your add-in.</span></span>

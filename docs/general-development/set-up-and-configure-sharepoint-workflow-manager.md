@@ -16,26 +16,26 @@ ms.lasthandoff: 10/13/2017
     
 
  <span data-ttu-id="f9e20-105">
-  [Установка и настройка рабочего процесса в SharePoint](http://technet.microsoft.com/en-us/library/jj658586%28v=office.15%29)</span><span class="sxs-lookup"><span data-stu-id="f9e20-105">[Install and configure workflow in SharePoint Server 2013](http://technet.microsoft.com/en-us/library/jj658586%28v=office.15%29)</span></span>
+  [Установка и настройка рабочего процесса в SharePoint](http://technet.microsoft.com/ru-ru/library/jj658586%28v=office.15%29)</span><span class="sxs-lookup"><span data-stu-id="f9e20-105">[Install and configure workflow in SharePoint Server 2013](http://technet.microsoft.com/ru-ru/library/jj658586%28v=office.15%29)</span></span>
 -  <span data-ttu-id="f9e20-106">
-  [Установка и настройка рабочего процесса для SharePoint](http://technet.microsoft.com/en-us/library/jj658588%28v=office.15%29)</span><span class="sxs-lookup"><span data-stu-id="f9e20-106">[Installing and configuring workflow for SharePoint Server 2013](http://technet.microsoft.com/en-us/library/jj658588%28v=office.15%29)</span></span>
+  [Установка и настройка рабочего процесса для SharePoint](http://technet.microsoft.com/ru-ru/library/jj658588%28v=office.15%29)</span><span class="sxs-lookup"><span data-stu-id="f9e20-106">[Installing and configuring workflow for SharePoint Server 2013](http://technet.microsoft.com/ru-ru/library/jj658588%28v=office.15%29)</span></span>
     
   
 -  <span data-ttu-id="f9e20-107">
-  [Установка сертификата рабочих процессов Microsoft Azure в SharePoint](http://technet.microsoft.com/en-us/library/jj658589%28v=office.15%29)</span><span class="sxs-lookup"><span data-stu-id="f9e20-107">[Installing Microsoft Azure Workflow certificates in SharePoint Server 2013](http://technet.microsoft.com/en-us/library/jj658589%28v=office.15%29)</span></span>
+  [Установка сертификата рабочих процессов Microsoft Azure в SharePoint](http://technet.microsoft.com/ru-ru/library/jj658589%28v=office.15%29)</span><span class="sxs-lookup"><span data-stu-id="f9e20-107">[Installing Microsoft Azure Workflow certificates in SharePoint Server 2013](http://technet.microsoft.com/ru-ru/library/jj658589%28v=office.15%29)</span></span>
     
   
 
 ## <a name="additional-resources"></a><span data-ttu-id="f9e20-108">Дополнительные ресурсы</span><span class="sxs-lookup"><span data-stu-id="f9e20-108">Additional resources</span></span>
 
 
--  [<span data-ttu-id="f9e20-109">Установка и развертывание для Центра ресурсов SharePoint</span><span class="sxs-lookup"><span data-stu-id="f9e20-109">Installation and Deployment for SharePoint Resource Center</span></span>](http://technet.microsoft.com/en-US/sharepoint/fp142376)
+-  [<span data-ttu-id="f9e20-109">Установка и развертывание для Центра ресурсов SharePoint</span><span class="sxs-lookup"><span data-stu-id="f9e20-109">Installation and Deployment for SharePoint Resource Center</span></span>](http://technet.microsoft.com/ru-ru/sharepoint/fp142376)
     
   
--  [<span data-ttu-id="f9e20-110">Что нового в Центре ресурсов SharePoint</span><span class="sxs-lookup"><span data-stu-id="f9e20-110">What's New in SharePoint Resource Center</span></span>](http://technet.microsoft.com/en-US/sharepoint/fp142374)
+-  [<span data-ttu-id="f9e20-110">Что нового в Центре ресурсов SharePoint</span><span class="sxs-lookup"><span data-stu-id="f9e20-110">What's New in SharePoint Resource Center</span></span>](http://technet.microsoft.com/ru-ru/sharepoint/fp142374)
     
   
--  [<span data-ttu-id="f9e20-111">Центр ресурсов рабочих процессов</span><span class="sxs-lookup"><span data-stu-id="f9e20-111">Workflow Resource Center</span></span>](http://technet.microsoft.com/en-US/sharepoint/jj556245)
+-  [<span data-ttu-id="f9e20-111">Центр ресурсов рабочих процессов</span><span class="sxs-lookup"><span data-stu-id="f9e20-111">Workflow Resource Center</span></span>](http://technet.microsoft.com/ru-ru/sharepoint/jj556245)
     
   
 -  [<span data-ttu-id="f9e20-112">Рабочие процессы в SharePoint</span><span class="sxs-lookup"><span data-stu-id="f9e20-112">Workflows in SharePoint</span></span>](workflows-in-sharepoint.md)

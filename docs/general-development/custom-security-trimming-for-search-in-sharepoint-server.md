@@ -114,13 +114,13 @@ ms.lasthandoff: 10/13/2017
     
     
 
--  <span data-ttu-id="e01b4-141">_documentUrls_: A [IList\<T\> ](http://msdn2.microsoft.com/EN-US/library/5y536ey6) объект, который содержит URL-адреса для каждого элемента контента в результатах поиска, соответствующие правила обхода контента.</span><span class="sxs-lookup"><span data-stu-id="e01b4-141">_documentUrls_: A  [IList\<T\>](http://msdn2.microsoft.com/EN-US/library/5y536ey6) object that contain the URLs for each content item from the search results that match the crawl rule.</span></span>
+-  <span data-ttu-id="e01b4-141">_documentUrls_: A [IList\<T\> ](http://msdn2.microsoft.com/ru-ru/library/5y536ey6) объект, который содержит URL-адреса для каждого элемента контента в результатах поиска, соответствующие правила обхода контента.</span><span class="sxs-lookup"><span data-stu-id="e01b4-141">_documentUrls_: A  [IList\<T\>](http://msdn2.microsoft.com/ru-ru/library/5y536ey6) object that contain the URLs for each content item from the search results that match the crawl rule.</span></span>
     
   
--  <span data-ttu-id="e01b4-142">_documentAcls_: A [IList\<T\> ](http://msdn2.microsoft.com/EN-US/library/5y536ey6) object, содержащий элемент списков управления доступом для каждого элемента контента, чьи доступа — это будет определено в реализации триммера безопасности.</span><span class="sxs-lookup"><span data-stu-id="e01b4-142">_documentAcls_: A  [IList\<T\>](http://msdn2.microsoft.com/EN-US/library/5y536ey6) object containing item ACLs for each content item whose access is to be determined by the security trimmer implementation.</span></span>
+-  <span data-ttu-id="e01b4-142">_documentAcls_: A [IList\<T\> ](http://msdn2.microsoft.com/ru-ru/library/5y536ey6) object, содержащий элемент списков управления доступом для каждого элемента контента, чьи доступа — это будет определено в реализации триммера безопасности.</span><span class="sxs-lookup"><span data-stu-id="e01b4-142">_documentAcls_: A  [IList\<T\>](http://msdn2.microsoft.com/ru-ru/library/5y536ey6) object containing item ACLs for each content item whose access is to be determined by the security trimmer implementation.</span></span>
     
   
--  <span data-ttu-id="e01b4-143">_управляющегопользователями_: A [IDictionary\<TKey, TValue\> ](http://msdn2.microsoft.com/EN-US/library/s4ys34ea) object, содержащий контейнер временные свойств.</span><span class="sxs-lookup"><span data-stu-id="e01b4-143">_sessionProperties_: A  [IDictionary\<TKey, TValue\>](http://msdn2.microsoft.com/EN-US/library/s4ys34ea) object containing the transient property bag.</span></span>
+-  <span data-ttu-id="e01b4-143">_управляющегопользователями_: A [IDictionary\<TKey, TValue\> ](http://msdn2.microsoft.com/ru-ru/library/s4ys34ea) object, содержащий контейнер временные свойств.</span><span class="sxs-lookup"><span data-stu-id="e01b4-143">_sessionProperties_: A  [IDictionary\<TKey, TValue\>](http://msdn2.microsoft.com/ru-ru/library/s4ys34ea) object containing the transient property bag.</span></span>
     
   
 -  <span data-ttu-id="e01b4-144">_userIdentity_: объекта  [IIdentity](https://msdn.microsoft.com/library/System.Security.Principal.IIdentity.aspx) , из которого исполняющих объектов можно получить учетные данные пользователя.</span><span class="sxs-lookup"><span data-stu-id="e01b4-144">_userIdentity_: An  [IIdentity](https://msdn.microsoft.com/library/System.Security.Principal.IIdentity.aspx) object from which implementers can retrieve the user's identity.</span></span>
@@ -259,6 +259,6 @@ public void Initialize(NameValueCollection staticProperties, SearchServiceApplic
 -  [<span data-ttu-id="e01b4-206">ISecurityTrimmerPost</span><span class="sxs-lookup"><span data-stu-id="e01b4-206">ISecurityTrimmerPost</span></span>](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ISecurityTrimmerPost.aspx)
     
   
--  [<span data-ttu-id="e01b4-207">Общие сведения о Business Connectivity Services в SharePoint</span><span class="sxs-lookup"><span data-stu-id="e01b4-207">Overview of Business Connectivity Services in SharePoint</span></span>](http://technet.microsoft.com/en-us/library/ee661740.aspx)
+-  [<span data-ttu-id="e01b4-207">Общие сведения о Business Connectivity Services в SharePoint</span><span class="sxs-lookup"><span data-stu-id="e01b4-207">Overview of Business Connectivity Services in SharePoint</span></span>](http://technet.microsoft.com/ru-ru/library/ee661740.aspx)
     
   

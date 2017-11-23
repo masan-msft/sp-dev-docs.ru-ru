@@ -289,7 +289,7 @@ using (var context = new ClientContext("http://localhost"))
 -  [<span data-ttu-id="2c7d4-272">KeywordQuery</span><span class="sxs-lookup"><span data-stu-id="2c7d4-272">KeywordQuery</span></span>](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.KeywordQuery.aspx)
     
   
--  [<span data-ttu-id="2c7d4-273">Обзор схемы поиска в SharePoint</span><span class="sxs-lookup"><span data-stu-id="2c7d4-273">Overview of the search schema in SharePoint</span></span>](http://technet.microsoft.com/en-us/library/jj219669%28office.15%29.aspx)
+-  [<span data-ttu-id="2c7d4-273">Обзор схемы поиска в SharePoint</span><span class="sxs-lookup"><span data-stu-id="2c7d4-273">Overview of the search schema in SharePoint</span></span>](http://technet.microsoft.com/ru-ru/library/jj219669%28office.15%29.aspx)
     
   
 

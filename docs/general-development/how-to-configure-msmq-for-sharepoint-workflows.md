@@ -83,13 +83,13 @@ $proxy.Update();
     
     
 
--  [<span data-ttu-id="f6542-135">Об очереди сообщений</span><span class="sxs-lookup"><span data-stu-id="f6542-135">About Message Queuing</span></span>](http://msdn.microsoft.com/en-us/library/windows/desktop/ms706032%28v=vs.85%29.aspx)
+-  [<span data-ttu-id="f6542-135">Об очереди сообщений</span><span class="sxs-lookup"><span data-stu-id="f6542-135">About Message Queuing</span></span>](http://msdn.microsoft.com/ru-ru/library/windows/desktop/ms706032%28v=vs.85%29.aspx)
     
   
--  [<span data-ttu-id="f6542-136">Справочник по очереди сообщений</span><span class="sxs-lookup"><span data-stu-id="f6542-136">Message Queuing Reference</span></span>](http://msdn.microsoft.com/en-us/library/windows/desktop/ms700112%28v=vs.85%29.aspx)
+-  [<span data-ttu-id="f6542-136">Справочник по очереди сообщений</span><span class="sxs-lookup"><span data-stu-id="f6542-136">Message Queuing Reference</span></span>](http://msdn.microsoft.com/ru-ru/library/windows/desktop/ms700112%28v=vs.85%29.aspx)
     
   
--  [<span data-ttu-id="f6542-137">Очередь сообщений об ошибках и коды информации</span><span class="sxs-lookup"><span data-stu-id="f6542-137">Message Queuing Error and Information Codes</span></span>](http://msdn.microsoft.com/en-us/library/windows/desktop/ms700106%28v=vs.85%29.aspx)
+-  [<span data-ttu-id="f6542-137">Очередь сообщений об ошибках и коды информации</span><span class="sxs-lookup"><span data-stu-id="f6542-137">Message Queuing Error and Information Codes</span></span>](http://msdn.microsoft.com/ru-ru/library/windows/desktop/ms700106%28v=vs.85%29.aspx)
     
   
 
@@ -97,7 +97,7 @@ $proxy.Update();
 <span data-ttu-id="f6542-139"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="f6542-139"></span></span>
 
 
--  [<span data-ttu-id="f6542-140">Очередь сообщений (MSMQ)</span><span class="sxs-lookup"><span data-stu-id="f6542-140">Message Queuing (MSMQ)</span></span>](http://msdn.microsoft.com/en-us/library/windows/desktop/ms711472%28v=vs.85%29.aspx)
+-  [<span data-ttu-id="f6542-140">Очередь сообщений (MSMQ)</span><span class="sxs-lookup"><span data-stu-id="f6542-140">Message Queuing (MSMQ)</span></span>](http://msdn.microsoft.com/ru-ru/library/windows/desktop/ms711472%28v=vs.85%29.aspx)
     
   
 
