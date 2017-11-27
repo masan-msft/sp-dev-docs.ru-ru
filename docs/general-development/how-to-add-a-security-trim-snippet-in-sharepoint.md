@@ -1,16 +1,18 @@
 ---
-title: "Как добавить фрагмент Trim безопасности в SharePoint"
+title: "Добавить фрагмент Trim безопасности в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 4beaab08-760b-408a-b768-906312779379
-ms.openlocfilehash: 4b6dd168f921d249159a05cf6266ae2ca79cf698
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 823a5fdc6f6f9d229a0020fd42211ffb05df03af
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-add-a-security-trim-snippet-in-sharepoint"></a>Как: добавить фрагмент Trim безопасности в SharePoint
+# <a name="add-a-security-trim-snippet-in-sharepoint"></a>Добавить фрагмент Trim безопасности в SharePoint
+
 Вы можете использовать фрагмент фильтрации по ролям безопасности, чтобы отображать контент только для указанных пользователей, имеющих специальное разрешение и прошедших или не прошедших (анонимные пользователи) проверку подлинности.
+
 ## <a name="introduction-to-the-security-trim-snippet"></a>Общие сведения о фрагменте Trim безопасности
 <a name="Introduction"> </a>
 

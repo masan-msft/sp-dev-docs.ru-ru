@@ -1,17 +1,17 @@
 ---
-title: How to Programmatically Add an Excel Web Access Web Part to a Page
+title: "Добавление веб-части Excel Web Access на страницу программным способом"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto,webpart
 f1_keywords: how to,howdoi,howto,webpart
 ms.prod: sharepoint
 ms.assetid: 858bb0f6-654a-4f12-ba0b-4776bda5ff6d
-ms.openlocfilehash: 85020bb527853d4b1b51910cf61d452f4e9ab5c6
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 3b7a2529cfa7f79ccadd8ac2f78babe2682c54f1
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-programmatically-add-an-excel-web-access-web-part-to-a-page"></a>How to: Programmatically Add an Excel Web Access Web Part to a Page
+# <a name="programmatically-add-an-excel-web-access-web-part-to-a-page"></a>Добавление веб-части Excel Web Access на страницу программным способом
 
 This example shows how to programmatically add an Веб-клиент Excel Web Part to a SharePoint page. It also shows you how to display an Excel workbook programmatically in an Веб-клиент Excel Web Part. 
   

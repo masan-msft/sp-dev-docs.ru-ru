@@ -1,15 +1,15 @@
 ---
-title: How to Set Various Credentials
+title: "Задание различных учетных данных"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: eb819681-5a4f-49ae-b7f4-334366c51112
-ms.openlocfilehash: a1faa07c07c24886d73874af54d125e713fd7c87
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 03efdb576c70191c911d7668a3343b5ad832ea0e
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-set-various-credentials"></a>How to: Set Various Credentials
+# <a name="set-various-credentials"></a>Задание различных учетных данных
 
 Необходимо задать учетные данные для пользователей, прежде чем они могут вызывать веб-служб Excel с помощью настраиваемого приложения. Необходимо явно задать учетные данные, даже в том случае, если вы намерены использовать учетные данные по умолчанию. Веб-служб Excel с помощью схемы проверки подлинности, поддерживаемые Microsoft SharePoint Foundation. Дополнительные сведения о SharePoint Foundation схем проверки подлинности, обратитесь к документации SharePoint Foundation в этом пакете SDK и [входящей на основе утверждений: вход в SharePoint](incoming-claims-signing-into-sharepoint.md).
   

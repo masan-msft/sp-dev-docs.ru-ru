@@ -1,37 +1,19 @@
 ---
-title: "Как задать ключ карт Bing на уровне веб-серверы и фермы в SharePoint"
+title: "Задать ключ карт Bing на уровне веб-серверы и фермы в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 507ed9de-c349-44b5-b182-e838795dd862
-ms.openlocfilehash: f433e66bf82336b2450382bef1a3e34df5feeb62
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: bef24775bb6e5bafc64d3d21ef4dcb25ed6c2be3
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-set-the-bing-maps-key-at-the-web-and-farm-level-in-sharepoint"></a>Как: задать ключ карт Bing на уровне веб-серверы и фермы в SharePoint
+# <a name="set-the-bing-maps-key-at-the-web-and-farm-level-in-sharepoint"></a>Задать ключ карт Bing на уровне веб-серверы и фермы в SharePoint
 
-  
-    
-    
 ![Раздел "Инструкции"](../images/mod_icon_howto.png)
-  
-    
-    
 
-  
-    
-    
-
-  
-    
-    
 Узнайте, как программно задать ключ Карт Bing на веб-уровне и уровне фермы с помощью клиентской объектной модели SharePoint и Windows PowerShell, чтобы включить функционал Карт Bing в списке SharePoint, а также в веб-приложениях и мобильных приложениях на основе местоположения.
-
-  
-    
-    
-
 
 ## <a name="prerequisites-for-setting-the-bing-maps-key"></a>Необходимые условия для установки ключ Bing Maps
 <a name="SP15Bing_prereq"> </a>
@@ -146,7 +128,7 @@ class Program
     
     
 
--  [Как: Добавление столбца географического расположения списка программными средствами в SharePoint](how-to-add-a-geolocation-column-to-a-list-programmatically-in-sharepoint.md)
+-  [Как программно добавить столбец "Географическое расположение" в список SharePoint](how-to-add-a-geolocation-column-to-a-list-programmatically-in-sharepoint.md)
     
   
 -  [Как: расширение типа поля географического расположения, с использованием обработки на стороне клиента](how-to-extend-the-geolocation-field-type-using-client-side-rendering.md)

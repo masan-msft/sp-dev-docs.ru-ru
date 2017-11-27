@@ -1,15 +1,15 @@
 ---
-title: "Как создать приложение списка SharePoint для Windows Phone"
+title: "Создание приложения списка SharePoint для Windows Phone"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 3e40c475-f4c1-4a4f-a3e5-1a55f814d272
-ms.openlocfilehash: 79c763ceaa201007d9a43047c7e71ab0682a4e04
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 6d3a9f1f13f5c84a4a4260a7a68edfba6cef1264
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-a-windows-phone-sharepoint-list-app"></a>Как: Создание приложения списка SharePoint для Windows Phone
+# <a name="create-a-windows-phone-sharepoint-list-app"></a>Создание приложения списка SharePoint для Windows Phone
 Создайте приложение Windows Phone в Visual Studio на основе шаблона приложения списка SharePoint для Windows Phone. Установка пакета SDK Windows Phone SharePoint предоставляет два шаблона приложения SharePoint для Windows Phone в Visual Studio 2010 или Visual Studio 2010 Express для Windows Phone. (  [Как: Настройка среды разработки мобильных приложений для SharePoint](how-to-set-up-an-environment-for-developing-mobile-apps-for-sharepoint.md)см). На основе шаблона приложения списка SharePoint для Windows Phone, можно следуйте указаниям мастера для создания функциональные приложения Windows Phone, которые можно получить доступ к и работы с данными в списке SharePoint.
 
 

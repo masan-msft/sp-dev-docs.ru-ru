@@ -1,16 +1,18 @@
 ---
-title: "Как выполнить документов и сайтов с помощью клиентской объектной модели .NET в SharePoint"
+title: "Выполните указанные документы и веб-узлы с помощью клиентской объектной модели .NET в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 84366e01-4961-459d-8109-2f1d2d714353
-ms.openlocfilehash: 7b5ba3031c5c02784b00da46d91105c729119d4a
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 6e6690c40b37b65fe58100f7412e68ee827a970e
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-follow-documents-and-sites-by-using-the-net-client-object-model-in-sharepoint"></a>Как: выполните документов и сайтов с помощью клиентской объектной модели .NET в SharePoint
-Узнайте, как работа с функциями следующие контента с помощью клиентской объектной модели SharePoint .NET.
+# <a name="follow-documents-and-sites-by-using-the-net-client-object-model-in-sharepoint"></a>Выполните указанные документы и веб-узлы с помощью клиентской объектной модели .NET в SharePoint
+
+Узнайте, как подписываться на контент, используя клиентскую объектную модель .NET в SharePoint.
+
 ## <a name="how-do-i-use-the-net-client-object-model-to-follow-content"></a>Использование клиентской объектной модели .NET для подписка на контент
 <a name="bk_intro"> </a>
 
@@ -348,10 +350,10 @@ namespace FollowContentCSOM
 -  [Подписка на контент в SharePoint](follow-content-in-sharepoint.md)
     
   
--  [Как: выполните документы, сайты и теги с помощью службы REST в SharePoint](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md)
+-  [Как подписываться на документы, сайты и теги, используя службу REST в SharePoint](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md)
     
   
--  [Как: подписка на людей с помощью клиентской объектной модели .NET в SharePoint](how-to-follow-people-by-using-the-net-client-object-model-in-sharepoint.md)
+-  [Как подписываться на пользователей, используя клиентскую объектную модель .NET в SharePoint](how-to-follow-people-by-using-the-net-client-object-model-in-sharepoint.md)
     
   
 

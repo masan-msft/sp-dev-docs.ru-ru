@@ -1,17 +1,17 @@
 ---
-title: How to Save from Excel Client to the Server
+title: "Сохраните из клиента Excel на сервере"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto
 f1_keywords: how to,howdoi,howto
 ms.prod: sharepoint
 ms.assetid: 28716ba5-0774-44df-833b-0034d2c63319
-ms.openlocfilehash: 6841c378cd102949ba663d26267e8c203bb988d6
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 1601689491584b8a359a5bffa4b0596d10ab9e6f
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-save-from-excel-client-to-the-server"></a>How to: Save from Excel Client to the Server
+# <a name="save-from-excel-client-to-the-server"></a>Сохраните из клиента Excel на сервере
 
 This example shows you how to:
   

@@ -1,16 +1,17 @@
 ---
-title: "Как включить упоминания, теги и ссылки на сайты и документы в публикации в SharePoint"
+title: "Включить упоминания, теги и ссылки на сайты и документы в публикации в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 975da333-372b-4bf6-a3f4-7452db369f04
-ms.openlocfilehash: 3ca0f7365a2000525cef8492ff685ac3a514a86f
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: f0af1c97baf6da530358f2a2ff86f29e2f9bb03e
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-include-mentions-tags-and-links-to-sites-and-documents-in-posts-in-sharepoint"></a>Как: Включение упоминания, теги и ссылки на сайты и документы в публикации в SharePoint
-Узнайте, как добавлять объекты [SocialDataItem](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx) микроблога публикации, которые отображаются в виде упоминания, теги и ссылки на веб-каналов социальных SharePoint.
+# <a name="include-mentions-tags-and-links-to-sites-and-documents-in-posts-in-sharepoint"></a>Включить упоминания, теги и ссылки на сайты и документы в публикации в SharePoint
+
+Узнайте, как добавлять в записи микроблога объекты [SocialDataItem](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx), которые отображаются в каналах SharePoint в виде упоминаний, тегов или ссылок.
 В социальных веб-канал простейшей формой post контента содержит только текст, но также можно добавлять ссылки, которые отображаются в виде упоминания теги и ссылки на веб-сайты, сайты SharePoint и документы. Для этого добавьте объекты [SocialDataItem](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx) свойство [ContentItems](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.ContentItems.aspx) объекта [SocialPostCreationData](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx) , который определяет post. Публикации о может содержать несколько ссылок.
   
     

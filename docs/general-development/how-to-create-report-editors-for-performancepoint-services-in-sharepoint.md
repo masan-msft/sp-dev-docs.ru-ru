@@ -1,15 +1,17 @@
 ---
-title: "Создание редакторы отчетов для PerformancePoint Services в SharePoint"
+title: "Создание отчета редакторы для служб PerformancePoint Services в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: f9675950d272a1bd90efa4eb26a6772f13dd24bc
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 64e2ba69caccae2580f34c973a4be340e19ec6c2
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-report-editors-for-performancepoint-services-in-sharepoint"></a>Как: создать отчет редакторы для служб PerformancePoint Services в SharePoint
+# <a name="create-report-editors-for-performancepoint-services-in-sharepoint"></a>Создание отчета редакторы для служб PerformancePoint Services в SharePoint
+
 Узнайте, как создать компонент редактора для модуля пользовательских отчетов для Службы PerformancePoint Services.
+
 ## <a name="what-are-custom-report-editors-for-performancepoint-services"></a>Что такое редакторы настраиваемых отчетов по Службы PerformancePoint Services ?
 <a name="bi_intro"> </a>
 

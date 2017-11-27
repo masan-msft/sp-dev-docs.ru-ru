@@ -1,17 +1,17 @@
 ---
-title: How to Catch Exceptions
+title: "Перехват исключений"
 ms.date: 09/25/2017
 keywords: errors,how to,howdoi,howto
 f1_keywords: errors,how to,howdoi,howto
 ms.prod: sharepoint
 ms.assetid: de5fdb67-201b-4d7a-90a8-99ab7e51ea4e
-ms.openlocfilehash: de6e3df6cdc37eade4d3c52c843b7c70278f3300
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 6cddc476c859aef2993bfd6192337c9b8df524a1
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-catch-exceptions"></a>Практическое руководство. Перехват исключений
+# <a name="catch-exceptions"></a>Перехват исключений
 
 You place the sections of code that might throw exceptions in a try block and place code that handles exceptions in a catch block. The order of catch statements is important. When an exception occurs, it is passed up the stack and each catch block is given the opportunity to handle it. The catch block that should handle the exception is determined by matching the type of the exception to the name of the exception specified in the catch block. For example, the following catch block catches Simple Object Access Protocol (SOAP) exceptions:
   

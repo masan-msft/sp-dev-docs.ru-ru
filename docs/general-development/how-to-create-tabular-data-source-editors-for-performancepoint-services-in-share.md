@@ -3,14 +3,16 @@ title: "Создание табличных данных редакторы ис
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 3136420a-f8a2-4677-8b69-1d5d9705d96f
-ms.openlocfilehash: e17519a120a9a5d0c0c587adc1d9b8e9fc576200
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2ea178c0f757520bb65ac2d840022fcd2891b1fe
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-tabular-data-source-editors-for-performancepoint-services-in-sharepoint"></a>Как: создание табличных данных редакторы исходного для служб PerformancePoint Services в SharePoint
+# <a name="create-tabular-data-source-editors-for-performancepoint-services-in-sharepoint"></a>Создание табличных данных редакторы исходного для служб PerformancePoint Services в SharePoint
+
 Узнайте, как создать компонент редактора для модуля пользовательских табличных источников данных для Службы PerformancePoint Services.
+
 ## <a name="what-are-custom-data-source-editors-for-performancepoint-services"></a>Что такое редакторы исходного пользовательские данные для Службы PerformancePoint Services ?
 <a name="bk_intro"> </a>
 

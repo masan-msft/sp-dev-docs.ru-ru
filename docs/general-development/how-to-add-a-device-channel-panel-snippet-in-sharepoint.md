@@ -1,16 +1,18 @@
 ---
-title: "Как добавить фрагмент панели каналов устройств в SharePoint"
+title: "Добавить фрагмент панели каналов устройств в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 612780a8-6267-49f6-a32d-33600bb5f6b4
-ms.openlocfilehash: e919968511523889fe699545ed6e0a2a36f81d6c
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 8a86abb4f4166da8b63d1ad3c4ec8431ce1ae8fa
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-add-a-device-channel-panel-snippet-in-sharepoint"></a>Как: добавить фрагмент панели каналов устройств в SharePoint
+# <a name="add-a-device-channel-panel-snippet-in-sharepoint"></a>Добавить фрагмент панели каналов устройств в SharePoint
+
 Панель канала устройств  это фрагмент, который можно добавить на эталонную страницу или макет страницы, чтобы управлять контентом, который отображается для каждого созданного канала. Основная цель панели канала устройств  это выборочное отображение полей различных страниц на различных каналах из одного макета шаблона.
+
 ## <a name="introduction-to-the-device-channel-panel-snippet"></a>Общие сведения о фрагменте панели каналов устройств
 <a name="Introduction"> </a>
 

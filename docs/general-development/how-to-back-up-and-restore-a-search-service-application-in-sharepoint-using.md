@@ -1,16 +1,18 @@
 ---
-title: "Как резервное копирование и восстановление приложения-службы поиска в SharePoint с использованием служба теневого копирования ТОМОВ"
+title: "Резервное копирование и восстановление приложения-службы поиска в SharePoint с использованием служба теневого копирования ТОМОВ"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 87ee28e6-8170-4dba-8c9d-f04ab9e632dc
-ms.openlocfilehash: 20d1cfd4d8056c3b38405b3e14f4351eb3454322
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 7b0e93318f0eaddb08643e139de0b16e9a3a169b
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-back-up-and-restore-a-search-service-application-in-sharepoint-using-vss"></a>Как: резервное копирование и восстановление приложения-службы поиска в SharePoint с использованием служба теневого копирования ТОМОВ
- **Сводка:** Узнайте, как резервное копирование и восстановление приложения-службы поиска в SharePoint с помощью тома теневой копии Service (VSS).
+# <a name="back-up-and-restore-a-search-service-application-in-sharepoint-using-vss"></a>Резервное копирование и восстановление приложения-службы поиска в SharePoint с использованием служба теневого копирования ТОМОВ
+
+Узнайте, как резервное копирование и восстановление приложения-службы поиска в SharePoint с помощью тома теневой копии Service (VSS).
+
 ## <a name="prerequisites-for-backing-up-and-restoring-sharepoint-with-the-volume-shadow-copy-service"></a>Необходимые условия для резервного копирования и восстановления SharePoint с помощью службы теневого копирования томов
 
 Чтобы программного резервного копирования и восстановления решения для SharePoint, необходимо понять, как работает служба теневого копирования ТОМОВ и интерфейс SharePoint с ним.

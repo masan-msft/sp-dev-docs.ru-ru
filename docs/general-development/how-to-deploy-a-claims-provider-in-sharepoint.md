@@ -3,14 +3,16 @@ title: "Развертывание поставщика утверждений �
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 3a5fcedc-aa9a-4ff4-95c0-0e0a7dea9d1f
-ms.openlocfilehash: bdf882e8a6e59a74c351f2c76427442fcd790fcf
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ef8377ceea402d2cc0573fbd5443974284f8ee7f
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-deploy-a-claims-provider-in-sharepoint"></a>Как: развернуть поставщик утверждений в SharePoint
+# <a name="deploy-a-claims-provider-in-sharepoint"></a>Развертывание поставщика утверждений в SharePoint
+
 Узнайте, как развернуть поставщика утверждений SharePoint с использованием инфраструктуры функций и созданием класса, наследуемого из  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) .
+
 ## <a name="deploying-a-claims-provider-as-part-of-a-setup"></a>Развертывание поставщика утверждений как часть процесса установки
 <a name="SP15_HowToDeployClaimsProvider_DeployingClaimsSetup"> </a>
 

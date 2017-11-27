@@ -1,16 +1,18 @@
 ---
-title: "Как сведения для чтения и записи социальных канал, чтобы с помощью клиентской объектной модели .NET в SharePoint"
+title: "Чтение и запись на социальные веб-канал с помощью клиентской объектной модели .NET в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 3c15ede5-8a59-47e6-a0b2-c17ec6bf4ae1
-ms.openlocfilehash: 52a67e44daccd4a9d86bb110f16f99da011e64ea
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 73eaf6bf117694cd1c4378bde0541e7db782a079
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-learn-to-read-and-write-to-the-social-feed-by-using-the-net-client-object-model-in-sharepoint"></a>Как: сведения для чтения и записи социальных канал, чтобы с помощью клиентской объектной модели .NET в SharePoint
+# <a name="read-and-write-to-the-social-feed-by-using-the-net-client-object-model-in-sharepoint"></a>Чтение и запись на социальные веб-канал с помощью клиентской объектной модели .NET в SharePoint
+
 Создайте консольное приложение, которое читает канал социальных сетей и пишет в него с помощью клиентской объектной модели .NET для SharePoint.
+
 ## <a name="prerequisites-for-creating-a-console-application-that-reads-and-writes-to-the-social-feed-by-using-the-sharepoint-net-client-object-model"></a>Необходимые условия для создания консольного приложения, которое считывает и записывает социальных канал, чтобы с помощью клиентской объектной модели SharePoint .NET
 <a name="bkmk_Prereqs"> </a>
 

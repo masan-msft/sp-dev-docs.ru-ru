@@ -3,13 +3,13 @@ title: "Настройка пользовательского интерфейс
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 09ed59af-5e2b-4716-a9e4-a015e4793d85
-ms.openlocfilehash: 81e6202027a0c94af385bb5c586521995ba6c182
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 856716c69bdf77c497ccc3f0fa0a0ba960c6fac4
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-customize-the-user-interface-of-a-sharepoint-list-app-for-windows-phone"></a>Как: Настройка пользовательского интерфейса приложения списка SharePoint для Windows Phone
+# <a name="customize-the-user-interface-of-a-sharepoint-list-app-for-windows-phone"></a>Настройка пользовательского интерфейса приложения списка SharePoint для Windows Phone
 Настройте пользовательский интерфейс Windows Phone, созданный с помощью шаблона приложения списка SharePoint для Windows. Приложения списка SharePoint из шаблона приложения списка SharePoint для Windows Phone основаны на платформе Silverlight для Windows Phone. Все возможности, предоставляемые платформы Silverlight на ОС Windows Phone, доступны для разработчиков по настройке пользовательского интерфейса (UI) приложения списка SharePoint, предназначенной для Windows Phone.
   
     

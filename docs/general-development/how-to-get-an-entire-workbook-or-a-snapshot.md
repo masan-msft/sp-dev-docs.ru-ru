@@ -1,17 +1,17 @@
 ---
-title: How to Get an Entire Workbook or a Snapshot
+title: "Получение всей книги или ее снимка"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto
 f1_keywords: how to,howdoi,howto
 ms.prod: sharepoint
 ms.assetid: 39115503-8352-4589-87f4-cfa9c07260b6
-ms.openlocfilehash: 0c57d2f0c1276f49ef6c97455de43bf766dcbae0
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 113bf67f3abcb3b936c3d1421cae5ea9f7524be6
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-get-an-entire-workbook-or-a-snapshot"></a>How to: Get an Entire Workbook or a Snapshot
+# <a name="get-an-entire-workbook-or-a-snapshot"></a>Получение всей книги или ее снимка
 
 This example shows how to get an entire workbook, a snapshot of the entire file, or just a snapshot of the viewable sheets or objects in the file by using Веб-службы Excel. Getting the workbook or a snapshot is useful if you want to save a copy of the up-to-date workbook, store it somewhere, send it to someone, and so on.
   

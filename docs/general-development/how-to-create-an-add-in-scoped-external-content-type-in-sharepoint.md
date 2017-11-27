@@ -1,16 +1,18 @@
 ---
-title: "Как создать добавить в пределах внешнего типа контента в SharePoint"
+title: "Создание добавить в пределах внешнего типа контента в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: de4b50a3-84da-48ce-9ba0-fe06571e52a8
-ms.openlocfilehash: 385bec9d7904031dee03347afc83974da7c3b6a0
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: b223f4925792bc7765792cdbb6f71aae8b3832c3
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-an-add-in-scoped-external-content-type-in-sharepoint"></a>Как: создать добавить в пределах внешнего типа контента в SharePoint
+# <a name="create-an-add-in-scoped-external-content-type-in-sharepoint"></a>Создание добавить в пределах внешнего типа контента в SharePoint
+
 Узнайте, как создать внешний тип контента, который можно устанавливать, защищать и использовать в Надстройка SharePoint.
+
 ## <a name="prerequisites-for-developing-add-in-scoped-external-content-types"></a>Предварительные требования для разработки добавьте в пределах внешних типов контента
 <a name="bkmk_Prerequisites"> </a>
 

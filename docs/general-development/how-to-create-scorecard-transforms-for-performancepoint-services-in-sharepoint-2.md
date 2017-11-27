@@ -2,14 +2,16 @@
 title: "Создание преобразований системы показателей для служб PerformancePoint Services в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 9aae4706af5d5ae59a4e190216667186f6e9e29f
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: e19f99c6bceffe5551d2d2f3c2c5e918e78acbb4
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-scorecard-transforms-for-performancepoint-services-in-sharepoint"></a>Как: создать преобразования системы показателей для служб PerformancePoint Services в SharePoint
-Сведения о создании пользовательских преобразований показателей для служб PerformancePoint Services в SharePoint.
+# <a name="create-scorecard-transforms-for-performancepoint-services-in-sharepoint"></a>Создание преобразований системы показателей для служб PerformancePoint Services в SharePoint
+
+Узнайте, как создать пользовательские преобразования системы показателей для служб PerformancePoint Services в SharePoint.
+
 ## <a name="what-are-scorecard-transforms-in-performancepoint-services"></a>Что такое системы показателей преобразований в Службы PerformancePoint Services ?
 <a name="bk_intro"> </a>
 

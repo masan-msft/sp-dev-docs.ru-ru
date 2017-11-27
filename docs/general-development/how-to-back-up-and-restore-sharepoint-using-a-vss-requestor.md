@@ -1,16 +1,18 @@
 ---
-title: "Как резервное копирование и восстановление SharePoint с использованием модуля запросов VSS"
+title: "Резервное копирование и восстановление SharePoint с использованием модуля запросов VSS"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: cab5ba90-bd23-4cec-82d7-529e3f86ba88
-ms.openlocfilehash: e4a4134f22ab22e778d48b0c6f3e980ae6c38c5d
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 76664d750be4e8ecf98dae4fc5aa106d2c8864e7
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-back-up-and-restore-sharepoint-using-a-vss-requestor"></a>Как: резервное копирование и восстановление SharePoint с использованием модуля запросов VSS
- **Сводка:** Узнайте, как резервного и восстановления с помощью запросившая сторона службы теневого копирования томов (VSS) для Microsoft SharePoint.
+# <a name="back-up-and-restore-sharepoint-using-a-vss-requestor"></a>Резервное копирование и восстановление SharePoint с использованием модуля запросов VSS
+
+Узнайте, как резервного и восстановления с помощью запросившая сторона службы теневого копирования томов (VSS) для Microsoft SharePoint.
+
 ## <a name="backing-up-and-restoring-with-the-requestor"></a>Резервное копирование и восстановление с запрашивающего
 
 Используйте следующую процедуру для резервного копирования и восстановления данных Microsoft SharePoint Foundation , с помощью приложения VSS requestor.

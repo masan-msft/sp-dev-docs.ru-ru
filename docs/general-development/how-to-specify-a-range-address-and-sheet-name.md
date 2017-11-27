@@ -1,17 +1,17 @@
 ---
-title: How to Specify a Range Address and Sheet Name
+title: "Укажите имя листа и адреса диапазона"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto,set range
 f1_keywords: how to,howdoi,howto,set range
 ms.prod: sharepoint
 ms.assetid: 8bfefc48-1fbc-4b65-8156-1b7d0a8453ee
-ms.openlocfilehash: 53e69056b6a320c4fd34bf39874a3637eae057ef
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: e3eef43bdbeea5b1c5c2b3ac9e499ccc14f39e40
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-specify-a-range-address-and-sheet-name"></a>How to: Specify a Range Address and Sheet Name
+# <a name="specify-a-range-address-and-sheet-name"></a>Укажите имя листа и адреса диапазона
 
 This example shows how to specify range addresses by using range coordinates, named ranges, rows, and columns. It also shows how to specify a sheet name and the relationship between a sheet name and a range address.
   

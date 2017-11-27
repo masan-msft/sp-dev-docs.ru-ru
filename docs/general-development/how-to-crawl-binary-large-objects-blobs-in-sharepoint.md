@@ -1,16 +1,18 @@
 ---
-title: "Выполнение обхода больших двоичных объектов (BLOB) в SharePoint"
+title: "Обход больших двоичных объектов (BLOB) в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 99b3dd51-1651-4300-a2de-33681f4cc258
-ms.openlocfilehash: 6189c821032c5e6707bdc6d699dace29cdb77f64
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: d7fec8ce2a152b72c80d0a6776947d136638fb13
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-crawl-binary-large-objects-blobs-in-sharepoint"></a>Как: обхода больших двоичных объектов (BLOB) в SharePoint
+# <a name="crawl-binary-large-objects-blobs-in-sharepoint"></a>Обход больших двоичных объектов (BLOB) в SharePoint
+
 Узнайте, как можно модифицировать файл модели BCS для соединителя индексации BCS базы данных, чтобы включить программу-обходчик для Поиск в SharePoint для обхода больших двоичных объектов (BLOB), хранимых в базе данных SQL Server.
+
 ## <a name="crawling-blob-data"></a>Обход данных объектов BLOB
 <a name="HowToCrawlBlobs_CrawlingBlobData"> </a>
 

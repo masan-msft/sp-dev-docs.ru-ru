@@ -1,16 +1,18 @@
 ---
-title: "Выполнение обхода связанных внешних типов контента в SharePoint"
+title: "Обход связанных внешних типов контента в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 187ec42e-f749-4e22-abef-1df604143063
-ms.openlocfilehash: 492c481703b7bb16a4c709d65f1698a06e024ded
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: c6aaedd3271255c03840d8fd7c26abe689286f2b
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-crawl-associated-external-content-types-in-sharepoint"></a>Как: обход связанных внешних типов контента в SharePoint
+# <a name="crawl-associated-external-content-types-in-sharepoint"></a>Обход связанных внешних типов контента в SharePoint
+
 В этой статье описывается использование свойств, имеющих отношение к поиску, в модели метаданных Служба подключения к бизнес-данным (BDC) для обхода связей, а также различные взаимодействия с пользователем, которые можно задействовать.
+
 ## <a name="crawling-the-associated-external-content-type"></a>Обход связанного внешнего типа контента
 <a name="HowToCrawlAssociations_CrawlingAssociatedExternalTypes"> </a>
 

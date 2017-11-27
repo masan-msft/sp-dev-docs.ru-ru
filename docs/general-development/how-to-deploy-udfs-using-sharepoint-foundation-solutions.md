@@ -1,17 +1,17 @@
 ---
-title: How to Deploy UDFs Using SharePoint Foundation Solutions
+title: "Развертывание пользовательских функций с помощью решений SharePoint Foundation"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto,udf list,WSS Solutions
 f1_keywords: how to,howdoi,howto,udf list,WSS Solutions
 ms.prod: sharepoint
 ms.assetid: 97751a6c-ef73-4d95-a3c4-98014d84ba48
-ms.openlocfilehash: 9b259e58d4a503283098f5b96622e7d968ce99bc
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 48f06c78c96dac5c0d81b35aa5f6fb4d7d2aa1ae
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-deploy-udfs-using-sharepoint-foundation-solutions"></a>How to: Deploy UDFs Using SharePoint Foundation Solutions
+# <a name="deploy-udfs-using-sharepoint-foundation-solutions"></a>Развертывание пользовательских функций с помощью решений SharePoint Foundation
 
 This example shows how to deploy a user-defined function (UDF) DLL by using the Microsoft SharePoint Foundation solution framework.
   

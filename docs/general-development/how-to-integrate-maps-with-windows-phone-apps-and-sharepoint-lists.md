@@ -1,15 +1,15 @@
 ---
-title: "Как интегрировать карт с помощью приложения Windows Phone и списков SharePoint"
+title: "Интеграция приложений Windows Phone карт и списки SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 7e0550bc-92d1-407f-b8ba-1371c63bd16e
-ms.openlocfilehash: edaa7fc078ced8ed4b99503346ddd9d1a8a9d4ca
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 4bbf3bbf37b7317d27abf0c980e31c806023bb20
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-integrate-maps-with-windows-phone-apps-and-sharepoint-lists"></a>Как: интеграция карт с приложения Windows Phone и списков SharePoint
+# <a name="integrate-maps-with-windows-phone-apps-and-sharepoint-lists"></a>Интеграция приложений Windows Phone карт и списки SharePoint
 Узнайте, как интегрировать в списки SharePoint сведения о местонахождении и карты, а также веб-приложения и мобильные Надстройки SharePoint на основе местонахождения с использованием нового поля географического положения и путем создания собственных типов полей на основе географического положения.
 SharePoint представлен новый тип поля с именем географического расположения, которая позволяет добавлять комментарии к списки SharePoint, содержащие сведения о расположении. В столбцах типа географического расположения можно ввести сведения о расположении в виде пары Широта и долгота координат в десятичное градусов или получить координаты текущее расположение пользователя в браузере, если браузер реализует интерфейс API географического расположения W3C. В списке SharePoint расположение на карте корневых объектов на базе службы Bing Maps. Друг с другом поля географического расположения и представления карты позволяют предоставить Пространственные контекста какие-либо сведения по интеграции данных из SharePoint в сопоставления качества и позволяют пользователям вступать в новых способов в web и мобильных приложений и решений. Мы будем для создания простого Windows 7, сопоставляет мобильного приложения, который использует функцию тип поля географического расположения SharePoint для использования возможностей сопоставления может отображать для мобильных устройств надстройки SharePoint элементов списка.
   
@@ -280,7 +280,7 @@ public override void FeatureDeactivating(
 -  [Как: расширение типа поля географического расположения, с использованием обработки на стороне клиента](how-to-extend-the-geolocation-field-type-using-client-side-rendering.md)
     
   
--  [Как: Добавление столбца географического расположения списка программными средствами в SharePoint](how-to-add-a-geolocation-column-to-a-list-programmatically-in-sharepoint.md)
+-  [Как программно добавить столбец "Географическое расположение" в список SharePoint](how-to-add-a-geolocation-column-to-a-list-programmatically-in-sharepoint.md)
     
   
 -  [Как: Настройка среды разработки мобильных приложений для SharePoint](how-to-set-up-an-environment-for-developing-mobile-apps-for-sharepoint.md)

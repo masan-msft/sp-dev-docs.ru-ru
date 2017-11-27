@@ -1,22 +1,22 @@
 ---
-title: "Как использовать код для терминов ПИН-кода для наборов терминов навигации в SharePoint"
+title: "Задает использовать код с условиями ПИН-кода для терминов навигации в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 4a2811dc-25fd-4eb2-b0ab-1edded64c556
-ms.openlocfilehash: 51fd92462a452a66e7344f9c0f0b6870602b6481
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: c04261b5106e2c66a308b0f96afd09b2065e41d4
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-use-code-to-pin-terms-to-navigation-term-sets-in-sharepoint"></a>Как: задает использовать код с условиями ПИН-кода для терминов навигации в SharePoint
+# <a name="use-code-to-pin-terms-to-navigation-term-sets-in-sharepoint"></a>Задает использовать код с условиями ПИН-кода для терминов навигации в SharePoint
+
 Узнайте, как использовать код, чтобы закрепить термины в наборах терминов навигации.
+
 В разделе Создание таксономии фиксации — это возможность подключать терминов в целевой. SharePoint представляется фиксации терминов. Закрепленные терминов — так же, как условие, которое используется повторно, за исключением того, как он доступен только для чтения и не может изменяться в расположение, где используется термин.
-  
-    
-    
 
 В области навигации управляемых API позволяет ПИН-код нового или существующего условия [NavigationTermSet](https://msdn.microsoft.com/library/Microsoft.SharePoint.Publishing.Navigation.NavigationTermSet.aspx) объект. В Microsoft SharePoint Server 2010 пользователи могли бы повторно использовать условия (и всех вложенных в повторно используемую условия) в другие расположения в иерархии терминов. После того как эти термины, которые использовались повторно, может быть изменено в любом месте и изменения будут видны везде термины, которые использовались повторно.
+
 ## <a name="term-pinning-essentials"></a>Закрепленным essentials терминов
 <a name="SP15_H2UseCodeToPinTerms_TermPinningEssentials"> </a>
 

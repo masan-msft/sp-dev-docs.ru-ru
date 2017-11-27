@@ -1,16 +1,18 @@
 ---
-title: "Способы устранения ошибки и предупреждения при предварительном просмотре страницы в SharePoint"
+title: "Устранение ошибок и предупреждения при предварительном просмотре страницы в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 03f72f65-b22b-4304-be92-f44ce0619372
-ms.openlocfilehash: fc31a94d4fb8cc195bfe66bc75ff453bd80b6bfc
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 73895457694d250f1527b69bd558335fd573263c
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-resolve-errors-and-warnings-when-previewing-a-page-in-sharepoint"></a>Как: Устранение ошибок и предупреждения при предварительном просмотре страницы в SharePoint
+# <a name="resolve-errors-and-warnings-when-previewing-a-page-in-sharepoint"></a>Устранение ошибок и предупреждения при предварительном просмотре страницы в SharePoint
+
 После преобразования HTML-файла в эталонную страницу SharePoint или создания макета страницы вы можете просмотреть эту страницу в браузере. Однако перед этим вам может потребоваться устранить проблемы, которые препятствуют отрисовке вашей страницы предварительного просмотра на стороне сервера.
+
 ## <a name="introduction-to-resolving-preview-errors"></a>Общие сведения о Устранение ошибок предварительного просмотра
 <a name="Introduction"> </a>
 
@@ -176,7 +178,7 @@ ms.lasthandoff: 10/13/2017
 -  [Разработка макета сайта в SharePoint](develop-the-site-design-in-sharepoint.md)
     
   
--  [Способ: изменение страницы предварительного просмотра в диспетчере оформления SharePoint](how-to-change-the-preview-page-in-sharepoint-design-manager.md)
+-  [Как изменить страницу предварительного просмотра в Дизайнере SharePoint](how-to-change-the-preview-page-in-sharepoint-design-manager.md)
     
   
 -  [Фрагменты кода дизайнер SharePoint](sharepoint-design-manager-snippets.md)

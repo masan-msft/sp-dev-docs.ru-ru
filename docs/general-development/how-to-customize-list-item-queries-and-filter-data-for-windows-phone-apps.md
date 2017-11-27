@@ -1,15 +1,16 @@
 ---
-title: "Как Настройка запросов элементов списка и фильтрация данных для приложения для Windows Phone"
+title: "Настройка запросов элементов списка и фильтрация данных для приложений Windows Phone"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 32f89b97-8274-4cb0-9164-7898735a18aa
-ms.openlocfilehash: 17e1916fbcc6578994a8c0f357234a434f8d6013
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: c7347e36ce052f8b8f341689a633ac9a6850247f
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-customize-list-item-queries-and-filter-data-for-windows-phone-apps"></a>Как: Настройка запросов элементов списка и фильтрация данных для приложения для Windows Phone
+# <a name="customize-list-item-queries-and-filter-data-for-windows-phone-apps"></a>Настройка запросов элементов списка и фильтрация данных для приложений Windows Phone
+
 Настройте запросы данных, на которых основаны представления в приложении Windows Phone. С помощью проектах, созданных на основе шаблона приложения списка SharePoint для Windows Phone разработчики могут использовать преимущества шаблона разработки, реализованных в шаблон, который позволяет им настроить компонентов на уровне данных для приложения Windows Phone. Представление списка SharePoint в приложении Windows Phone можно настраивать в Microsoft SharePoint Server и включенных в приложение на телефоне или можно создать настраиваемое представление для приложения.
   
     

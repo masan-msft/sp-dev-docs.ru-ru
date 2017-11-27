@@ -1,21 +1,18 @@
 ---
-title: "Как Настройка типа поля, с использованием обработки на стороне клиента"
+title: "Настройка типа поля, с использованием обработки на стороне клиента"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 18e32537-d7ed-4fe7-90cf-b6cfab3f85a3
-ms.openlocfilehash: 093deb2b9204f4bfff2fa0227097332f5bea1d50
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: dd6a1f5ac337d61c273d416bdc20c06117298e1e
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-customize-a-field-type-using-client-side-rendering"></a>Как: Настройка типа поля, с использованием обработки на стороне клиента
+# <a name="customize-a-field-type-using-client-side-rendering"></a>Настройка типа поля, с использованием обработки на стороне клиента
+
 Узнайте, как настроить тип поля с помощью технологии клиентской обработки в SharePoint.
 Клиентская обработка механизм, которые можно использовать для создания собственных вывода для набора элементов управления, которые размещены на странице SharePoint. Этот механизм позволяет использовать хорошо известных технологий, таких как HTML и JavaScript, определение логики визуализации настраиваемых типов полей. В обработки на стороне клиента можно указать ресурсов JavaScript и их размещать в доступных вариантов хранилищ данных решения фермы, такие как папке _layouts.
-  
-    
-    
-
 
 ## <a name="prerequisites-for-using-the-examples-in-this-article"></a>Предварительные требования для использования примеров в этой статье
 <a name="SP15CustomizeafieldtypeusingCSR_Prereq"> </a>

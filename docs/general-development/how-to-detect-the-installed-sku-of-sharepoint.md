@@ -1,16 +1,18 @@
 ---
-title: "Как определить, установленного SKU SharePoint"
+title: "Определение установленных SKU SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d5d84d6f-6a8e-4ead-9296-7025baf1e154
-ms.openlocfilehash: 34c6fb7ee7f980a67b51aa4f31c7c612eac9cd39
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 4e7d8343d3151ac3fc0c4514e7bddfbf0f0ddd65
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-detect-the-installed-sku-of-sharepoint"></a>Как: определить установленного SKU SharePoint
+# <a name="detect-the-installed-sku-of-sharepoint"></a>Определение установленных SKU SharePoint
+
 Если поведение решений зависит от установленных локально SKU SharePoint или Project Server 2013, используйте в примере кода в этой статье для поиска нужной информации SKU.
+
 ## <a name="detect-the-installed-sku-of-sharepoint-or-project-server-2013-by-using-code"></a>Определение установленных SKU SharePoint или Project Server 2013 с помощью кода
 <a name="SP15DetectSKU_detect"> </a>
 

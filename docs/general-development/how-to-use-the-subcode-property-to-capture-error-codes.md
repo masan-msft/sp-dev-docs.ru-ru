@@ -1,17 +1,17 @@
 ---
-title: How to Use the SubCode Property to Capture Error Codes
+title: "Использование свойства SubCode для получения кодов ошибок"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto,subcode
 f1_keywords: how to,howdoi,howto,subcode
 ms.prod: sharepoint
 ms.assetid: 8ce4d5b2-111b-49e7-9d07-8c2c586221ec
-ms.openlocfilehash: 6617f026a1d284120c27a409fd001eda6b4a58e5
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 5d9271f0233e99b74a924c1014c04fe0547114f8
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-use-the-subcode-property-to-capture-error-codes"></a>How to: Use the SubCode Property to Capture Error Codes
+# <a name="use-the-subcode-property-to-capture-error-codes"></a>Использование свойства SubCode для получения кодов ошибок
 
 Службы Excel generates errors in the SOAP exception based on errors that occur in Службы Excel. To make it easier for the developer to catch specific error conditions, an Службы вычислений Excel alert has an associated error code. The Веб-службы Excel then returns the error using properties from the **SoapException** class.
   

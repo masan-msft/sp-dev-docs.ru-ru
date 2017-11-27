@@ -1,16 +1,18 @@
 ---
-title: "Как создать службу данных OData для использования в качестве внешней системы BCS"
+title: "Создание службы данных OData для использования в качестве внешней системы BCS"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 7d7b3aa6-85b7-400d-8ea5-50bebac56a1d
-ms.openlocfilehash: 288a2b15329c934de74436e3bef4c319a07e6d7d
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 71c2397d1064746db45a55b05452352dc6c8ef5c
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-an-odata-data-service-for-use-as-a-bcs-external-system"></a>Как: создать службу данных OData для использования в качестве внешней системы BCS
-Узнайте, как создать Интернет адресации WCF службу, которая использует OData для отправки уведомлений в SharePoint при изменении базовых данных. Такие уведомления используются для активируют события, подключенные к внешним спискам.
+# <a name="create-an-odata-data-service-for-use-as-a-bcs-external-system"></a>Создание службы данных OData для использования в качестве внешней системы BCS
+
+Узнайте, как создать интернет-адресуемую службу WCF, которая использует OData для отправки уведомлений в SharePoint при изменении базовых данных. Эти уведомления используются для запуска событий, которые прикреплены ко внешним спискам.
+
 В этой статье описывается создание службы данных ASP.NET Windows Communication Foundation (WCF) для предоставления образца базы данных AdventureWorks 2012 LT. Это позволяет получать доступ к данным посредством протокола Open Data protocol (OData). Если доступ установлено через OData, можно настроить Business Connectivity Services (BCS) внешнего типа контента, который будет включен SharePoint для использования данных из внешней базы данных. Для дальнейшего улучшения этого источника OData, можно добавить контракты службы для службы WCF, которая позволит BCS для подписки на уведомления, оповещающие об изменении внешних данных.
   
     

@@ -1,17 +1,17 @@
 ---
-title: How to Locate and Copy Microsoft.Office.Excel.WebUI.dll and Microsoft.Office.Excel.WebUI.Internal.dll
+title: "Найдите и скопируйте Microsoft.Office.Excel.WebUI.dll и Microsoft.Office.Excel.WebUI.Internal.dll"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto,WebUI DLL
 f1_keywords: how to,howdoi,howto,WebUI DLL
 ms.prod: sharepoint
 ms.assetid: 09ad5d5e-1678-45e4-8159-23ef56f84215
-ms.openlocfilehash: 2b2f649329835a9ccdde92a07ab5f443f8fa1716
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 07089089b39fec2e6c7bd804f7188b5e0b666859
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-locate-and-copy-microsoftofficeexcelwebuidll-and-microsoftofficeexcelwebuiinternaldll"></a>How to: Locate and Copy Microsoft.Office.Excel.WebUI.dll and Microsoft.Office.Excel.WebUI.Internal.dll
+# <a name="locate-and-copy-microsoftofficeexcelwebuidll-and-microsoftofficeexcelwebuiinternaldll"></a>Найдите и скопируйте Microsoft.Office.Excel.WebUI.dll и Microsoft.Office.Excel.WebUI.Internal.dll
 
 If you want to programmatically add an Веб-клиент Excel Web Part to a SharePoint page and programmatically change the Веб-клиент Excel Web Part, you must add a reference to the required SharePoint DLLs. For example: 
   

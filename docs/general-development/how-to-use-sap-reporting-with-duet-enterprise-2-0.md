@@ -1,15 +1,15 @@
 ---
-title: "Способ использование отчетов SAP с Duet Enterprise 2.0 (en)"
+title: "Использование отчетов SAP с Duet Enterprise 2.0 (en)"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: a54c6cd2-2283-440d-af55-e98e3212caa1
-ms.openlocfilehash: 0d4e3b0f8ec5d3c54a52017b75768d8bbf6ac748
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 089a22b0f96c4dd2cb5d4a7ad1808b4307986fb2
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-use-sap-reporting-with-duet-enterprise-20"></a>Способ: использование отчетов SAP с Duet Enterprise 2.0 (en)
+# <a name="use-sap-reporting-with-duet-enterprise-20"></a>Использование отчетов SAP с Duet Enterprise 2.0 (en)
 
 ## <a name="introduction"></a>Введение
 <a name="bkmk_Introduction"> </a>

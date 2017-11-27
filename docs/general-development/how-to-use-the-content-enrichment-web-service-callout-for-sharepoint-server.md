@@ -1,29 +1,26 @@
 ---
-title: "Как используйте вызов повышения качества контента веб-службы для SharePoint Server"
+title: "Используйте вызов повышения качества контента веб-службы для SharePoint Server"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d4e44498-9a3d-4f2f-b5ba-6ebef9971dcb
-ms.openlocfilehash: cd0c56acb2b806bcaf2718f0702729d005711f78
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: f0b9fc5e96448361dab885c14a8663b90770b7ee
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-use-the-content-enrichment-web-service-callout-for-sharepoint-server"></a>Как: используйте вызов повышения качества контента веб-службы для SharePoint Server
-Узнайте, как реализовать повышения качества контента веб-службы в SharePoint для изменения управляемого свойства для обхода элементов перед их индексации.
+# <a name="use-the-content-enrichment-web-service-callout-for-sharepoint-server"></a>Используйте вызов повышения качества контента веб-службы для SharePoint Server
+
+Узнайте, как сделать так, чтобы веб-служба обогащения контента в SharePoint изменяла управляемые свойства просканированных элементов перед их индексацией.
+
 Поиск в SharePoint позволяет разработчикам Добавление настраиваемого шага для обработки изменение управляемого свойства для обхода элементов перед их индексации контента. Этот шаг настраиваемого необходимо реализовать внешние веб-службы — веб-служба повышения качества контента--можно расширить управляемых свойств элементов, обрабатываемых; и затем Настройка системы, чтобы вызвать этот внешний веб-службы.
-  
-    
-    
 
 Реализация веб-службы, повышения качества внешнего контента зависит от интерфейсов в пространстве имен  [Microsoft.Office.Server.Search.ContentProcessingEnrichment](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.ContentProcessingEnrichment.aspx) .
+
 ## <a name="windows-powershell-cmdlets-to-use-with-the-content-enrichment-web-service"></a>Командлеты Windows PowerShell для использования в веб-службу повышения качества контента
 <a name="SP15_PowerShell_Cmdlets_Content_Enrichment"> </a>
 
 Функциональные возможности повышения качества контента настроить и включить с помощью следующих командлетов Windows PowerShell:
-  
-    
-    
 
 -  [Get-SPEnterpriseSearchContentEnrichmentConfiguration](http://technet.microsoft.com/en-us/library/jj219783%28office.15%29.aspx)
     

@@ -1,16 +1,18 @@
 ---
-title: "Как следить за пользователями с помощью клиентской объектной модели .NET в SharePoint"
+title: "Подписка на людей с помощью клиентской объектной модели .NET в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 0fdb7ca5-d408-4256-b52b-886c4bc3b5b8
-ms.openlocfilehash: 3c097c476f3bb020a26f0baf9b2dcdb23babb1a3
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 7bef2d0bdef87db1d0234acba60341ff22254df8
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-follow-people-by-using-the-net-client-object-model-in-sharepoint"></a>Как: подписка на людей с помощью клиентской объектной модели .NET в SharePoint
-Узнайте, как работа с функциями следующих пользователей с помощью клиентской объектной модели SharePoint .NET.
+# <a name="follow-people-by-using-the-net-client-object-model-in-sharepoint"></a>Подписка на людей с помощью клиентской объектной модели .NET в SharePoint
+
+Узнайте, как подписываться на пользователей, используя клиентскую объектную модель .NET в SharePoint.
+
 ## <a name="why-use-following-people-features-in-sharepoint"></a>Причины использования функций следующих пользователей в SharePoint?
 
 В SharePoint при подписан пользователь людей, публикации и действий пользователей, а затем отображаются в канале новостей пользователя. С помощью функции следующие сотрудники сосредоточиться на пользователей, которые важны пользователей, можно улучшить релевантности приложений или решений. В клиентской объектной модели .NET людей, которые вы выполните представлены объектами [SocialActor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialActor.aspx) . Для выполнения основных задач следующие сотрудники в клиентской объектной модели .NET, используйте объект [SocialFollowingManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.aspx) . В этой статье описывается использование клиентской объектной модели .NET для работы с функциями следующие сотрудники.
@@ -306,10 +308,10 @@ namespace FollowPeopleCSOM
 -  [Подписка на людей в SharePoint](follow-people-in-sharepoint.md)
     
   
--  [Как: подписка на людей с помощью объектной модели JavaScript в SharePoint](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md)
+-  [Как подписываться на пользователей, используя объектную модель JavaScript в SharePoint](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md)
     
   
--  [Как: выполните документов и сайтов с помощью клиентской объектной модели .NET в SharePoint](how-to-follow-documents-and-sites-by-using-the-net-client-object-model-in-sharep.md)
+-  [Как подписываться на документы и сайты, используя клиентскую объектную модель .NET в SharePoint](how-to-follow-documents-and-sites-by-using-the-net-client-object-model-in-sharep.md)
     
   
 

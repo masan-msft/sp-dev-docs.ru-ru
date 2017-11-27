@@ -1,16 +1,18 @@
 ---
-title: "Как фрагменты марки с помощью CSS в SharePoint"
+title: "Фрагменты кода марки с помощью CSS в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d18d07b6-1a6b-4589-a65c-932b67cef595
-ms.openlocfilehash: 2dad9df9f9d61abb0cdeb75de243d47826735411
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 43292df391d739aa031370a659bac821ac60ab16
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-brand-snippets-by-using-css-in-sharepoint"></a>Как: фирменной символики фрагментов кода с помощью CSS в SharePoint
+# <a name="brand-snippets-by-using-css-in-sharepoint"></a>Фрагменты кода марки с помощью CSS в SharePoint
+
 Применять стиль фрагмент, переопределить стилей по умолчанию с помощью настраиваемого CSS. Идентификаторы CSS и значения выбора элементов можно использовать для переопределения стилей по умолчанию, применяемые к элементам, или можно использовать редактор HTML или средства, такие как средства разработчика F12 в Internet Explorer для идентификации и переопределения стили установленный по умолчанию.
+
 ## <a name="introduction-to-styling-snippets-with-css"></a>Общие сведения о фрагменты стилей с помощью CSS
 <a name="Introduction"> </a>
 

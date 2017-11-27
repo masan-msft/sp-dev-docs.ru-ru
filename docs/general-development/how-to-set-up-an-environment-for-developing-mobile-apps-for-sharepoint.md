@@ -1,15 +1,16 @@
 ---
-title: "Как Настройка среды разработки мобильных приложений для SharePoint"
+title: "Настройка среды для разработки мобильных приложений для SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: acaf556d-e20d-478d-8c59-2efd8efb9dcb
-ms.openlocfilehash: ad2e9ecac7cb9129b5df24abc57b126e2cd139c8
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 9c18eb3fa355abd5f96b2620bd0ee8aed825cdb4
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-set-up-an-environment-for-developing-mobile-apps-for-sharepoint"></a>Как: Настройка среды разработки мобильных приложений для SharePoint
+# <a name="set-up-an-environment-for-developing-mobile-apps-for-sharepoint"></a>Настройка среды для разработки мобильных приложений для SharePoint
+
 Узнайте о требованиях к системе и настройке среды разработки для мобильных проектов SharePoint.
 Минимальная Настройка для работы с SharePoint мобильности проектов требуются сервере под управлением SharePoint (или SharePoint Online учетной записи) и в среде разработки на отдельной клиентской операционной системы. Установка SharePoint на клиентские операционные системы (например, Windows 7) не поддерживается, и установка средства, необходимые для разработки приложений Windows Phone, не поддерживается в операционных системах сервера (например, Windows Server 2008).
   

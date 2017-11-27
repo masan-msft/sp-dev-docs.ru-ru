@@ -1,16 +1,18 @@
 ---
-title: "Создание поставщиков данных фильтра для PerformancePoint Services в SharePoint"
+title: "Создание фильтра поставщиков данных для служб PerformancePoint Services в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 25508ec6-86bf-4eea-acf0-00f88e4faa55
-ms.openlocfilehash: 14b0b02b1fdd365bb0f300ccf19ce6e7b9b21f98
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 12aa96215ad74fd29663a81a7e7197992fd44ecb
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-filter-data-providers-for-performancepoint-services-in-sharepoint"></a>Как: создать фильтр поставщиков данных для служб PerformancePoint Services в SharePoint
+# <a name="create-filter-data-providers-for-performancepoint-services-in-sharepoint"></a>Создание фильтра поставщиков данных для служб PerformancePoint Services в SharePoint
+
 Узнайте, как создать компонент поставщика данных в модуле пользовательских фильтров для Службы PerformancePoint Services.
+
 ## <a name="what-are-custom-data-providers-for-performancepoint-services"></a>Что такое настраиваемые поставщики данных для Службы PerformancePoint Services ?
 <a name="bk_introduction"> </a>
 

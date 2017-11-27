@@ -1,17 +1,17 @@
 ---
-title: How to Access an External Data Source from a UDF
+title: "Доступ к внешнему источнику данных из пользовательской функции"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto,UDF
 f1_keywords: how to,howdoi,howto,UDF
 ms.prod: sharepoint
 ms.assetid: 7a1876da-aeb5-4017-8eb6-3fed47912f70
-ms.openlocfilehash: 86661604cf7f105d9aeb29697bc3ff3fa0f65253
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: d1357dedf74ec344ef0f58fb4b0afe34a566508a
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-access-an-external-data-source-from-a-udf"></a>Доступ к внешнему источнику данных из пользовательской функции
+# <a name="access-an-external-data-source-from-a-udf"></a>Доступ к внешнему источнику данных из пользовательской функции
 
 This example shows how to access an external database from a user-defined function (UDF). 
   

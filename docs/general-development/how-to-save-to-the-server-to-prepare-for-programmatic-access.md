@@ -1,23 +1,19 @@
 ---
-title: How to Save to the Server to Prepare for Programmatic Access
+title: "Сохранение на сервере для подготовки для программного доступа"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto
 f1_keywords: how to,howdoi,howto
 ms.prod: sharepoint
 ms.assetid: 80b34a29-3d40-4d11-9ba1-b4886ffcfd42
-ms.openlocfilehash: e17d155f2c67b957990a119cae8f7d2a2eb00049
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 32162a764919dc313bd1d64e9867029ba7ffb8ee
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-save-to-the-server-to-prepare-for-programmatic-access"></a>How to: Save to the Server to Prepare for Programmatic Access
+# <a name="save-to-the-server-to-prepare-for-programmatic-access"></a>Сохранение на сервере для подготовки для программного доступа
 
-This example shows how to save an Excel workbook to the server to to prepare it for programmatic access. The steps are:
-  
-    
-    
-
+В этом примере показано, как сохранить книгу Excel на сервере для подготовки для программного доступа. Порядок действий:
 
 1. Create a workbook with named ranges.
     
@@ -190,7 +186,7 @@ status = xlSrv.SetCellA1(sessionId, String.Empty, args[1], args[2]);
     
   
 
-> **Примечание:** Дополнительные сведения о моментальных снимков можно [как: получение всей книги или ее снимка](how-to-get-an-entire-workbook-or-a-snapshot.md). Дополнительные сведения о методе **SetCellA1** веб-служб Excel см. Пространство имен веб-службы является [Microsoft.Office.Excel.Server.WebServices (en)](https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.WebServices.aspx) .
+> **Примечание.** Дополнительные сведения о снимках см. в статье [Инструкции. Получение всей книги или моментального снимка](how-to-get-an-entire-workbook-or-a-snapshot.md). Дополнительные сведения о методе **SetCellA1** веб-служб Excel см. Пространство имен веб-службы является [Microsoft.Office.Excel.Server.WebServices (en)](https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.WebServices.aspx) .
   
     
     

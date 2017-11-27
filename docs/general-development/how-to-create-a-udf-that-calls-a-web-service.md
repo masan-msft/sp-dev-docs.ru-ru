@@ -1,17 +1,17 @@
 ---
-title: How to Create a UDF That Calls a Web Service
+title: "Создание пользовательской функции, которая вызывает веб-службы"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto,UDF
 f1_keywords: how to,howdoi,howto,UDF
 ms.prod: sharepoint
 ms.assetid: 360c5766-4b5d-4a48-9f23-8955036924ce
-ms.openlocfilehash: 3a5c92ead3b481e9462f33863027d827ea157baa
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: bc240dfb4d9d398afcc3be2377726da09c977e06
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-a-udf-that-calls-a-web-service"></a>How to: Create a UDF That Calls a Web Service
+# <a name="create-a-udf-that-calls-a-web-service"></a>Создание пользовательской функции, которая вызывает веб-службы
 
 This example shows how to call an external Web service from a user-defined function (UDF). The Web service used in this example is:
   

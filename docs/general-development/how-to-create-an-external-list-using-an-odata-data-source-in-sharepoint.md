@@ -1,15 +1,16 @@
 ---
-title: "Как создать внешний список с помощью источника данных OData в SharePoint"
+title: "Создание внешнего списка с помощью источника данных OData в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 601fbfce-a0c6-43dd-8398-540d094c083c
-ms.openlocfilehash: c0fe48ca9061d22f5aade9b3afbf15ba306f0ae0
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: a926f2a85678a35e41cb590da67eae1724cdd29c
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-an-external-list-using-an-odata-data-source-in-sharepoint"></a>Как: Создание внешнего списка с помощью источника данных OData в SharePoint
+# <a name="create-an-external-list-using-an-odata-data-source-in-sharepoint"></a>Создание внешнего списка с помощью источника данных OData в SharePoint
+
 Узнайте, как программно создать внешний список и привязать его к внешнему типу контента на основе OData в SharePoint.
 Несмотря на то, что опытный пользователь или администратор SharePoint скорее всего будет создать внешний список с помощью SharePoint Designer 2013, разработчик будет интересовать возможность создания внешних списков с помощью средств их торговые разработчика Office и Visual Studio 2012 Средства Visual Studio 2012. Это обеспечивает большую гибкость для добавления функций и Упакуйте решение, которое включает функции Business Connectivity Services (BCS) для последующего развертывания в одну или многие размещения сред.
   

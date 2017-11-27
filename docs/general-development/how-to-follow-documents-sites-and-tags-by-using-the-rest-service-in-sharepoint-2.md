@@ -1,16 +1,18 @@
 ---
-title: "Как с помощью службы REST в SharePoint, выполните документы, сайты и тегов"
+title: "Выполните указанные документы, сайты и теги с помощью службы REST в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 989a5873-49f9-49e4-8d0f-439dde891cc2
-ms.openlocfilehash: 05348a84843074ee7c859847c006565edf05df4a
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 73796b89f04291d86072234833953c97881cdff8
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint"></a>Как: выполните документы, сайты и теги с помощью службы REST в SharePoint
+# <a name="follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint"></a>Выполните указанные документы, сайты и теги с помощью службы REST в SharePoint
+
 Создание размещенных в SharePoint приложений, подписка на контент (документы, сайты и теги) с помощью службы REST и для получения отслеживаемого содержимого.
+
 ## <a name="how-do-i-use-the-sharepoint-rest-service-to-follow-content"></a>Как использовать службы SharePoint REST для подписка на контент?
 <a name="bk_intro"> </a>
 
@@ -912,7 +914,7 @@ function requestFailed(xhr, ajaxOptions, thrownError) {
 -  [Following people and content REST API reference for SharePoint](following-people-and-content-rest-api-reference-for-sharepoint.md)
     
   
--  [Как: выполните документов и сайтов с помощью клиентской объектной модели .NET в SharePoint](how-to-follow-documents-and-sites-by-using-the-net-client-object-model-in-sharep.md)
+-  [Как подписываться на документы и сайты, используя клиентскую объектную модель .NET в SharePoint](how-to-follow-documents-and-sites-by-using-the-net-client-object-model-in-sharep.md)
     
   
 

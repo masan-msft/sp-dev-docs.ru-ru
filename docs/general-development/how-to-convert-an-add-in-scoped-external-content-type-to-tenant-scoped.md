@@ -1,15 +1,16 @@
 ---
-title: "Как преобразование добавить в пределах внешнего типа контента на уровне клиента"
+title: "Преобразование добавить в пределах внешнего типа контента на уровне клиента"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 35c5d670-e402-4641-b3c5-6f61ae1ec69b
-ms.openlocfilehash: 2e52c54b30f2e22017682edb01d1d00fefd90359
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: a6790c1f756ab06cb9e00efe7eeac2675eb5bc85
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-convert-an-add-in-scoped-external-content-type-to-tenant-scoped"></a>Как: преобразование добавить в пределах внешнего типа контента на уровне клиента
+# <a name="convert-an-add-in-scoped-external-content-type-to-tenant-scoped"></a>Преобразование добавить в пределах внешнего типа контента на уровне клиента
+
 Сведения о создании основе внешнего типа контента с помощью средств Visual Studio 2012 для автоматического создания и импорта его в Business Connectivity Services (BCS) метаданные хранилища, чтобы они могут использоваться в рабочей области для всей клиента. Модели BDC, сложных определения XML из внешнего источника данных. Они используются при определении внешних типов контента для BCS. Они являются очень неудобен для создания вручную, поэтому средства были созданы для автоматического создания файлов, с помощью Visual Studio 2012 и Инструменты разработчика Office для Visual Studio 2012. С помощью этих средств, можно создать пакет .app, с помощью Visual Studio публикации и затем откройте пакет для извлечения файла модели.
   
     

@@ -1,16 +1,18 @@
 ---
-title: "Как настроить MSMQ для рабочих процессов SharePoint"
+title: "Настройка MSMQ для рабочих процессов SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c0e130f6-c210-44ea-83ed-b327f04551d6
-ms.openlocfilehash: 40ad8b9b742a19a24e0e2dfa648efeda623a892a
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 3b6e7082898073404259563dd7eb67ef2db9c3b0
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-configure-msmq-for-sharepoint-workflows"></a>Как: Настройка MSMQ для рабочих процессов SharePoint
+# <a name="configure-msmq-for-sharepoint-workflows"></a>Настройка MSMQ для рабочих процессов SharePoint
+
 Сведения о настройке очередей сообщений Microsoft (MSMQ) в SharePoint для поддержки асинхронные события системы обмена сообщениями в рабочих процессах SharePoint. 
+
 ## <a name="enabling-msmq"></a>Включение MSMQ
 
 MSMQ  это компонент Windows Server, которые можно включить на компьютере SharePoint Server, чтобы разрешить асинхронные события системы обмена сообщениями в рабочих процессах SharePoint. Чтобы обеспечить поддержку асинхронные события системы обмена сообщениями, необходимо включить MSMQ на компьютере SharePoint Server.

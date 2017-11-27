@@ -1,17 +1,17 @@
 ---
-title: How to Use the CloseWorkbook Method Call Asynchronously
+title: "Используйте асинхронный вызов метода CloseWorkbook"
 ms.date: 09/25/2017
 keywords: async,how to,howdoi,howto
 f1_keywords: async,how to,howdoi,howto
 ms.prod: sharepoint
 ms.assetid: 6febe7dc-a552-4c79-aa3e-203d882286e3
-ms.openlocfilehash: 19001c339f1e76daaf0a716389d1ab387e86d6e0
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 4abef18cee1d669291381a49c1d3b03d60db6da6
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-use-the-closeworkbook-method-call-asynchronously"></a>How to: Use the CloseWorkbook Method Call Asynchronously
+# <a name="use-the-closeworkbook-method-call-asynchronously"></a>Используйте асинхронный вызов метода CloseWorkbook
 
 When you are using Веб-службы Excel, it is good practice to close the workbook by calling the **CloseWorkbook** method if you are finished using the session. This closes the session and allows Службы Excel to free resources in a predictable manner. This could potentially improve your server performance and robustness.
   

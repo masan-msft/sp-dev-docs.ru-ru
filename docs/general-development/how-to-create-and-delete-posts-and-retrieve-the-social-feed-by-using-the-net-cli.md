@@ -1,16 +1,18 @@
 ---
-title: "Как создать \"и\" Удаление публикации и извлечение социальных сетей канал с помощью клиентской объектной модели .NET в SharePoint"
+title: "Создание и удаление сообщений и извлечение социальных веб-канал с помощью клиентской объектной модели .NET в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c8d68632-1b55-454c-961a-f3ddad731bf6
-ms.openlocfilehash: 57c579bd297a0c72fbb26293ce7da18ecc7defcb
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: dfbf3dccf1212b967a19385f51d12c6bafcd04a1
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-and-delete-posts-and-retrieve-the-social-feed-by-using-the-net-client-object-model-in-sharepoint"></a>Как: Создание и удаление сообщений и извлечение социальных веб-канал с помощью клиентской объектной модели .NET в SharePoint
+# <a name="create-and-delete-posts-and-retrieve-the-social-feed-by-using-the-net-client-object-model-in-sharepoint"></a>Создание и удаление сообщений и извлечение социальных веб-канал с помощью клиентской объектной модели .NET в SharePoint
+
 Узнайте, как создавать и удалять записи микроблогов и восстанавливать каналы социальных сетей с помощью клиентской объектной модели .NET для SharePoint.
+
 ## <a name="what-are-social-feeds-in-sharepoint"></a>Что такое социальные веб-каналами в SharePoint
 <a name="bk_intro"> </a>
 
@@ -468,7 +470,7 @@ namespace SocialFeedCSOM
 ## <a name="next-steps"></a>Дальнейшие действия
 <a name="bkmk_DeletePosts"> </a>
 
- [Как: Включение упоминания, теги и ссылки на сайты и документы в публикации в SharePoint](how-to-include-mentions-tags-and-links-to-sites-and-documents-in-posts-in-sharep.md)
+ [Как добавлять в записи упоминания, теги и ссылки на сайты и документы в SharePoint](how-to-include-mentions-tags-and-links-to-sites-and-documents-in-posts-in-sharep.md)
   
     
     

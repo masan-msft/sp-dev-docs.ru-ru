@@ -1,15 +1,15 @@
 ---
-title: "Способ использование SAP рабочего процесса с Duet Enterprise 2.0 (en)"
+title: "Использование рабочего процесса SAP с Duet Enterprise 2.0"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 816e28ed-8cea-4e33-98e5-d3d27136e2e6
-ms.openlocfilehash: 516e0ee220db2d6ebaea1db3cdff9a6dc98c346c
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2b0d1758f4f19941c87f61c3617dfd4e624c25f9
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-use-sap-workflow-with-duet-enterprise-20"></a>Способ: использование SAP рабочего процесса с Duet Enterprise 2.0 (en)
+# <a name="use-sap-workflow-with-duet-enterprise-20"></a>Использование рабочего процесса SAP с Duet Enterprise 2.0
 
 ## <a name="introduction"></a>Введение
 <a name="bkmk_Introduction"> </a>

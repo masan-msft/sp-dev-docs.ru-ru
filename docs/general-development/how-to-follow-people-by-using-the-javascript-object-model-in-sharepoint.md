@@ -1,16 +1,18 @@
 ---
-title: "Как следить за пользователями с помощью объектной модели JavaScript в SharePoint"
+title: "Подписка на людей с помощью объектной модели JavaScript в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 2643c286-47c9-4a7a-9273-7474394477d6
-ms.openlocfilehash: 56c38ff03d11fc9c66d885d92d572aa1a5bf9286
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 32f8d67f05048a15d3c1e2d0d1313f38945ff593
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint"></a>Как: подписка на людей с помощью объектной модели JavaScript в SharePoint
+# <a name="follow-people-by-using-the-javascript-object-model-in-sharepoint"></a>Подписка на людей с помощью объектной модели JavaScript в SharePoint
+
 Узнайте, как работать с функцией подписки на пользователей с помощью объектной модели JavaScript для SharePoint.
+
 ## <a name="why-use-following-people-features-in-sharepoint"></a>Причины использования функций следующих пользователей в SharePoint?
 <a name="bk_FollowingPeopleFeatures"> </a>
 
@@ -296,7 +298,7 @@ function requestFailed(sender, args) {
 -  [Подписка на людей в SharePoint](follow-people-in-sharepoint.md)
     
   
--  [Как: подписка на людей с помощью клиентской объектной модели .NET в SharePoint](how-to-follow-people-by-using-the-net-client-object-model-in-sharepoint.md)
+-  [Как подписываться на пользователей, используя клиентскую объектную модель .NET в SharePoint](how-to-follow-people-by-using-the-net-client-object-model-in-sharepoint.md)
     
   
 

@@ -1,15 +1,16 @@
 ---
-title: "Описывается поддержка и преобразования типов поля SharePoint для приложений Windows Phone"
+title: "Поддержка и преобразования типов поля SharePoint для приложений Windows Phone"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 301e6e58-5153-4ca9-a419-8ae0535ebbed
-ms.openlocfilehash: 50e7405ed9390000f3152dfd06c3103b1b42d037
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 22a2f1dccbaa825fa53bf85225de2018b5ecffda
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-support-and-convert-sharepoint-field-types-for-windows-phone-apps"></a>Как: поддержка и convert SharePoint поля типов приложений Windows Phone
+# <a name="support-and-convert-sharepoint-field-types-for-windows-phone-apps"></a>Поддержка и преобразования типов поля SharePoint для приложений Windows Phone
+
 Реализуйте логику преобразования данных для поддержки типов полей SharePoint в приложениях Windows Phone. В проектах, созданных на основе шаблона приложения списка SharePoint для Windows Phone данные множество типов поля SharePoint обрабатываются и координированное логикой преобразования по умолчанию для подходит для отображения и управление ими в пользовательском интерфейсе Silverlight Windows Phone, но разработчики также могут реализовать собственные пользовательские данные процедур обработки.
   
     

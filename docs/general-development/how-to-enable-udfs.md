@@ -1,17 +1,17 @@
 ---
-title: How to Enable UDFs
+title: "Включение пользовательских функций"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto,UDF list
 f1_keywords: how to,howdoi,howto,UDF list
 ms.prod: sharepoint
 ms.assetid: 8c1af2eb-bb22-45e1-82de-a2b4b53d7a26
-ms.openlocfilehash: f3aff43f1cc90c37bca097830002e09c0c232fca
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 6eb51af89ab003e507ec9acb2f81a70bf843ee99
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-enable-udfs"></a>How to: Enable UDFs
+# <a name="enable-udfs"></a>Включение пользовательских функций
 
 Each Службы Excel trusted location in the Shared Services Provider (SSP) has an **AllowUdfs** flag.
   

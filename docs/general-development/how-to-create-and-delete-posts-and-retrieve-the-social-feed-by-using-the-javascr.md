@@ -1,16 +1,18 @@
 ---
-title: "Как создать \"и\" Удаление публикации и извлечение социальных веб-канал с помощью объектной модели JavaScript в SharePoint"
+title: "Создание и удаление сообщений и извлечение социальных веб-канал с помощью объектной модели JavaScript в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: e8c21960-6ea0-43c0-821e-2db2a0ecec90
-ms.openlocfilehash: 168352c7225b43a54be6e39fc8bdf2eb1f8b7173
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 6c9c6f36c5dfbb872f10d175815e6b9f7cfb38b6
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-and-delete-posts-and-retrieve-the-social-feed-by-using-the-javascript-object-model-in-sharepoint"></a>Как: Создание и удаление сообщений и извлечение социальных веб-канал с помощью объектной модели JavaScript в SharePoint
-Узнайте, как создавать и удалять записи микроблогов и восстанавливать каналы социальных сетей с помощью объектной модели JavaScript для SharePoint.
+# <a name="create-and-delete-posts-and-retrieve-the-social-feed-by-using-the-javascript-object-model-in-sharepoint"></a>Создание и удаление сообщений и извлечение социальных веб-канал с помощью объектной модели JavaScript в SharePoint
+
+Узнайте, как создавать и удалять записи микроблогов, а также восстанавливать каналы, используя объектную модель JavaScript для SharePoint.
+
 ## <a name="what-are-social-feeds-in-sharepoint"></a>Что такое социальные веб-каналами в SharePoint
 <a name="bk_intro"> </a>
 

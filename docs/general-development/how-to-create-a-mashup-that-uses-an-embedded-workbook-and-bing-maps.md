@@ -1,15 +1,15 @@
 ---
-title: "Как создать веб-приложения, использующего внедренной книги и карт Bing"
+title: "Создание веб-приложения, использующего внедренной книги и карт Bing"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 3cfeb8d7-84b8-4673-bc92-b176cba4ac3e
-ms.openlocfilehash: 4fd4caf9c77aec37a888fd74cf819037e7372af1
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 3ffda7629e52045086e8dcd45e97c959058d7951
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-a-mashup-that-uses-an-embedded-workbook-and-bing-maps"></a>Как: Создание веб-приложения, использующего внедренной книги и карт Bing
+# <a name="create-a-mashup-that-uses-an-embedded-workbook-and-bing-maps"></a>Создание веб-приложения, использующего внедренной книги и карт Bing
 
 В этой статье рассматриваются основные мощные веб-веб-приложения, который объединяет внедренные книги Excel и Bing Maps.
   

@@ -1,16 +1,18 @@
 ---
-title: "Порядок извлечения свойств профилей пользователей с помощью клиентской объектной модели .NET в SharePoint"
+title: "Извлечение свойств профиля пользователя с помощью клиентской объектной модели .NET в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 236ebaf8-f92e-4192-9b51-0a9de0210885
-ms.openlocfilehash: b825ec245435a9d172c8fdc8064be7d92b0de38f
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 1d77fdaccfeeefafc9a7d43476140a0c8a632515
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-retrieve-user-profile-properties-by-using-the-net-client-object-model-in-sharepoint"></a>Как: получение свойств профиля пользователя с помощью клиентской объектной модели .NET в SharePoint
+# <a name="retrieve-user-profile-properties-by-using-the-net-client-object-model-in-sharepoint"></a>Извлечение свойств профиля пользователя с помощью клиентской объектной модели .NET в SharePoint
+
 Узнайте, как программно восстановить свойства профиля пользователя с помощью клиентской объектной модели .NET для SharePoint.
+
 ## <a name="what-are-user-profile-properties-in-sharepoint"></a>Что такое свойства профилей пользователей в SharePoint
 <a name="bkmk_WhatIs"> </a>
 
@@ -34,7 +36,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
-> **Примечание:** Версия клиентского объекта [UserProfile](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.UserProfile.aspx) , не содержит все свойства пользователя как версию на сервере. Тем не менее клиентские версии предоставляет методы для создания личного сайта для текущего пользователя. Чтобы получить клиентские [UserProfile](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.UserProfile.aspx) для текущего пользователя, используйте метод [ProfileLoader.GetUserProfile](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.ProfileLoader.GetUserProfile.aspx) .
+> **Примечание:** Версия клиентского объекта [UserProfile](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.UserProfile.aspx) , не содержит все свойства пользователя как версию на сервере. Однако клиентская версия предоставляет методы для создания личного сайта для текущего пользователя. Чтобы получить клиентские [UserProfile](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.UserProfile.aspx) для текущего пользователя, используйте метод [ProfileLoader.GetUserProfile](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.ProfileLoader.GetUserProfile.aspx) .
   
     
     
@@ -52,7 +54,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
-- SharePoint с помощью профилей, созданных для текущего пользователя и конечного пользователя
+- SharePoint с профилями для текущего пользователя и целевого пользователя;
     
   
 - Visual Studio 2012

@@ -1,15 +1,16 @@
 ---
-title: "Как создать поставщик утверждений в SharePoint"
+title: "Создание поставщика утверждений в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 8f3228ca-57fd-4253-a07d-abeb63298c58
-ms.openlocfilehash: 12d42c832cfe9741306adf78ba3d1bc4a708ac5d
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: bcc75f6c67d1941197bf60ec07457d456149e1ff
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-a-claims-provider-in-sharepoint"></a>Как: создать поставщик утверждений в SharePoint
+# <a name="create-a-claims-provider-in-sharepoint"></a>Создание поставщика утверждений в SharePoint
+
 Узнайте, как создать и реализовать поставщика утверждений SharePoint, который соответствует требованиям по приращению и отбору утверждений.
 Поставщик утверждений выдает утверждения и упаковывает утверждений в маркеры безопасности. Поставщик утверждений имеет две роли: приращения и комплектации.
   

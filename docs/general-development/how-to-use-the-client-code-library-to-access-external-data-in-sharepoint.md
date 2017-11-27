@@ -1,16 +1,18 @@
 ---
-title: "Как использовать клиентскую библиотеку кода для доступа к внешним данным в SharePoint"
+title: "Использование клиентской библиотеки кода для доступа к внешним данным в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c280ae92-c52b-4658-b0f3-805fb215ef8e
-ms.openlocfilehash: 33d7be96c78828dc657331876ff03fb72f02c044
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2f4e7a87db95ee5d1105111a5f5cdab9d1d6242b
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-use-the-client-code-library-to-access-external-data-in-sharepoint"></a>Как: используйте клиентская библиотека кода для доступа к внешним данным в SharePoint
+# <a name="use-the-client-code-library-to-access-external-data-in-sharepoint"></a>Использование клиентской библиотеки кода для доступа к внешним данным в SharePoint
+
 Сведения об использовании клиентской объектной модели SharePoint для работы с объектами Business Connectivity Services (BCS) в SharePoint с использованием сценариев на основе браузера.
+
 В этой статье показано, как настроить внешний список, который получает данные из источника Open Data protocol (OData) с помощью клиентской объектной модели в SharePoint.
   
     

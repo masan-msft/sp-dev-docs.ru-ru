@@ -1,15 +1,15 @@
 ---
-title: "Как избежать получения регулирование или заблокированные в SharePoint Online"
+title: "Избегайте начало регулирование или заблокированные в SharePoint Online"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 33ed8106-d850-42b1-8d7f-5ba83901149c
-ms.openlocfilehash: 4be030d0e9ee97d6f5c704e5ffa7d1be87c23325
-ms.sourcegitcommit: 61f26b4fe41d3cd80622d9950d8f6599df48f26f
+ms.openlocfilehash: 85e7c62014d00e4803f160f1704d3debf7a8393f
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-avoid-getting-throttled-or-blocked-in-sharepoint-online"></a>Как: избежать получения регулирование или заблокированные в SharePoint Online
+# <a name="avoid-getting-throttled-or-blocked-in-sharepoint-online"></a>Избегайте начало регулирование или заблокированные в SharePoint Online
 Узнайте о регулирования в SharePoint Online и узнайте, как избежать регулирование или заблокирован. Включает пример кода CSOM и REST, которые можно использовать для упрощения задачи.
 
 -  [Что такое регулирование?](how-to-avoid-getting-throttled-or-blocked-in-sharepoint-online.md#BKMK_Whatisthrottling)

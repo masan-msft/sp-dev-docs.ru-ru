@@ -1,15 +1,16 @@
 ---
-title: "Как получить доступ к внешним данным с помощью REST в SharePoint"
+title: "Доступ к внешним данным с помощью REST в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 0663cc8c-a736-434d-9858-6ce12ce7f748
-ms.openlocfilehash: c2043eb097ba6b8db294737f413cf91dd2e7c8ab
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 3b51aeb585db992208117c2ddcc014425c87822c
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-access-external-data-with-rest-in-sharepoint"></a>Как: доступ к внешним данным с помощью REST в SharePoint
+# <a name="access-external-data-by-using-rest-in-sharepoint"></a>Доступ к внешним данным с помощью REST в SharePoint
+
 Узнайте, как получить доступ к внешним данным из SharePoint с помощью представлений состояния (REST) URL-адреса Business Connectivity Services (BCS).
 В этой статье показано, как настроить внешний список, который получает данные из источника Open Data protocol (OData).
   

@@ -1,15 +1,16 @@
 ---
-title: "Как хранения и извлечения SharePoint списка элементов на ОС Windows Phone"
+title: "Хранение и получение элементов списка SharePoint на Windows Phone"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 14ca37a2-5b45-430d-9004-ff3016f89834
-ms.openlocfilehash: 90a2028958d05bcb88a6d6f2dec2d3f30b86524c
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: f55cdc8e1a104a2827a4b06341e9415d6da8e5aa
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-store-and-retrieve-sharepoint-list-items-on-a-windows-phone"></a>Как: хранения и извлечения SharePoint списка элементов на ОС Windows Phone
+# <a name="store-and-retrieve-sharepoint-list-items-on-a-windows-phone"></a>Хранение и получение элементов списка SharePoint на Windows Phone
+
 Узнайте о жизненном цикле приложения Windows Phone и локальном хранении сетевых данных. Одно из наиболее важные замечания при разработке приложения для Windows Phone  управление сведения о состоянии, как для приложения в целом, так и для отдельных элементов страниц или данных в приложении. При разработке приложения для Windows Phone, необходимо учитывать, что пользователи приложений могут потерять возможность подключения к сетевым ресурсам (например, списки SharePoint). Инфраструктура разработки для приложений Windows Phone предоставляет механизмы для обработки сведения о состоянии на различных этапах жизненного цикла приложения.
   
     

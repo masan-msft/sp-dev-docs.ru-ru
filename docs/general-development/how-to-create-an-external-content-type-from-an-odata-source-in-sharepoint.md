@@ -3,14 +3,16 @@ title: "Создание внешнего типа контента из ист�
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: bc60ea49-c44e-4531-af62-06b8cf77d35d
-ms.openlocfilehash: addfafb7917d3e4c5c35c3f5c2e67dbb4051fa43
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 9ddf00811e05fcca25b4c4f406ac22ce5de9aca0
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-an-external-content-type-from-an-odata-source-in-sharepoint"></a>Как: создать внешний тип контента из источника OData в SharePoint
+# <a name="create-an-external-content-type-from-an-odata-source-in-sharepoint"></a>Создание внешнего типа контента из источника OData в SharePoint
+
 Узнайте, как использовать Visual Studio 2012 для обнаружения опубликованного источника OData и создать для повторного использования внешний тип контента для использования в Business Connectivity Services (BCS) в SharePoint.
+
 ## <a name="prerequisites-for-creating-odata-based-external-content-types"></a>Необходимые условия для создания на основе OData внешних типов контента
 <a name="bkmk_Prerequisites"> </a>
 

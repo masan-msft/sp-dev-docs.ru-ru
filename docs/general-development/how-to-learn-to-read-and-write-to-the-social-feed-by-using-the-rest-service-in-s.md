@@ -1,16 +1,18 @@
 ---
-title: "Как сведения для чтения и записи социальных канал с помощью службы REST в SharePoint"
+title: "Чтение и запись на социальные веб-канал с помощью службы REST в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 1da8d484-3666-42c3-8a8f-8b3ef93e96e9
-ms.openlocfilehash: 359ac864ffa30f4577859f7dbf80233bf6731cc2
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2fafda13f6d5c6e62f7519bd9896c91a87dcc5f3
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-learn-to-read-and-write-to-the-social-feed-by-using-the-rest-service-in-sharepoint"></a>Как: сведения для чтения и записи социальных канал с помощью службы REST в SharePoint
+# <a name="read-and-write-to-the-social-feed-by-using-the-rest-service-in-sharepoint"></a>Чтение и запись на социальные веб-канал с помощью службы REST в SharePoint
+
 Создайте приложение, размещенное в SharePoint, которое использует службу REST для публикации записи блога и получения личного веб-канала для текущего пользователя.
+
 ## <a name="prerequisites-for-creating-a-sharepoint-hosted-sharepoint-add-in-that-publishes-a-post-and-gets-the-social-feed-by-using-the-sharepoint-rest-service"></a>Необходимые условия для создания SharePoint хостингом SharePoint надстройки, которая публикует сообщение и получает социальные веб-канал с помощью службы SharePoint REST
 <a name="bkmk_Prereqs"> </a>
 

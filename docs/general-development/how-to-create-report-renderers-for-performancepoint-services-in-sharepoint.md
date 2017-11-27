@@ -2,14 +2,16 @@
 title: "Создание средств отображения отчетов для PerformancePoint Services в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: eeab12ad6c73463b15e9086b18cc054b501b71d5
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 44a84b222c6bb661b1b4560ab7b72a9063507d4e
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-report-renderers-for-performancepoint-services-in-sharepoint"></a>Как: создать средств отображения отчетов для PerformancePoint Services в SharePoint
+# <a name="create-report-renderers-for-performancepoint-services-in-sharepoint"></a>Создание средств отображения отчетов для PerformancePoint Services в SharePoint
+
 Узнайте, как создать компонент модуля подготовки в модуле пользовательских отчетов для Службы PerformancePoint Services.
+
 ## <a name="what-are-custom-report-renderers-for-performancepoint-services"></a>Что такое средств отображения настраиваемых отчетов для Службы PerformancePoint Services ?
 <a name="bk_intro"> </a>
 

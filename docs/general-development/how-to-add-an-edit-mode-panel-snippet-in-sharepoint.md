@@ -1,16 +1,18 @@
 ---
-title: "Как добавить фрагмент изменить режим панель в SharePoint"
+title: "Добавление фрагмента панель режима изменения в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 39fa1e32-9129-407d-914f-96f4c6e66dc8
-ms.openlocfilehash: 6a2b599f3d41e98b06e500fce734ac30fd80573a
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 09082485506e6894e3188d1334880196c03d212d
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-add-an-edit-mode-panel-snippet-in-sharepoint"></a>Как: Добавление фрагмента панель режима изменения в SharePoint
+# <a name="add-an-edit-mode-panel-snippet-in-sharepoint"></a>Добавление фрагмента панель режима изменения в SharePoint
+
 Панель режима изменения  это фрагмент, который можно создать для отображения инструкции или другого содержимого для авторов контента, которые видят содержимое этой панели только во время изменения страницы. С другой стороны, этот фрагмент также можно настроить для отображения этого содержимого только в обычном режиме (режиме просмотра), а не режиме изменения.
+
 ## <a name="introduction-to-the-edit-mode-panel"></a>Общие сведения о панели режим редактирования
 <a name="Introduction"> </a>
 

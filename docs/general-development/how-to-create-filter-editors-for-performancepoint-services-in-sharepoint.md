@@ -1,15 +1,17 @@
 ---
-title: "Создание редакторов фильтра для PerformancePoint Services в SharePoint"
+title: "Создание фильтра редакторы для служб PerformancePoint Services в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: f4d9584f81f607714e5d06bcfb445fe76e7531f5
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 0d04a5b6b0d102890b60b6fcea9e234155694213
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-filter-editors-for-performancepoint-services-in-sharepoint"></a>Как: создать фильтр редакторы для служб PerformancePoint Services в SharePoint
+# <a name="create-filter-editors-for-performancepoint-services-in-sharepoint"></a>Создание фильтра редакторы для служб PerformancePoint Services в SharePoint
+
 Узнайте, как создать компонент редактора для модуля пользовательских фильтров для Службы PerformancePoint Services.
+
 ## <a name="what-are-custom-filter-editors-for-performancepoint-services"></a>Что такое редакторы настраиваемых фильтров для Службы PerformancePoint Services ?
 <a name="bk_intro"> </a>
 

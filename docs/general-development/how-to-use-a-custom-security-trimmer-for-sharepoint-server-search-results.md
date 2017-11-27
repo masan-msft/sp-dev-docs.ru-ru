@@ -1,16 +1,18 @@
 ---
-title: "Способ использование пользовательского триммера безопасности для результатов поиска SharePoint Server"
+title: "Использование пользовательского триммера безопасности для результатов поиска SharePoint Server"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: e1a8664e-fb43-45c2-83aa-9635fe1efc99
-ms.openlocfilehash: 32260af258ca3c1f2acd714fabde74b9ed621171
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: f661cf012664960bc703e9bebed1cb9e0d00c214
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-use-a-custom-security-trimmer-for-sharepoint-server-search-results"></a>Способ: использование пользовательского триммера безопасности для результатов поиска SharePoint Server
+# <a name="use-a-custom-security-trimmer-for-sharepoint-server-search-results"></a>Использование пользовательского триммера безопасности для результатов поиска SharePoint Server
+
 В данном практическом руководстве описывается порядок реализации — создание, развертывание и регистрация — пользовательского триммера безопасности для поиска в SharePoint с помощью Microsoft Visual Studio 2010.
+
 Поиск в SharePoint выполняет фильтрацию по ролям безопасности время выполнения запроса из результатов поиска. Тем не менее может быть сценарии, в которых требуется выполнить фильтрацию по ролям безопасности. Поиск в SharePoint обеспечивает поддержку для следующих сценариев через ( [Microsoft.Office.Server.Search.Query.ISecurityTrimmerPre](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ISecurityTrimmerPre.aspx) , [Microsoft.Office.Server.Search.Query.ISecurityTrimmerPost](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ISecurityTrimmerPost.aspx) и [ISecurityTrimmer2](https://msdn.microsoft.com/library/Microsft.Office.Server.Search.Query.ISecurityTrimmer2.aspx) устаревшие) интерфейсов в пространстве имен [Microsoft.Office.Server.Search.Query](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.aspx) .
   
     
@@ -449,7 +451,7 @@ net restart sphostcontrollerservice
 <a name="bk_sectrimmer_addlresources"> </a>
 
 
--  [Фильтрация по ролям безопасности для поиска в SharePoint](custom-security-trimming-for-search-in-sharepoint-server.md)
+-  [Специальная фильтрация по ролям безопасности, настраиваемая для поиска в SharePoint](custom-security-trimming-for-search-in-sharepoint-server.md)
     
   
 -  [Microsoft.Office.Server.Search.Query.ISecurityTrimmerPre](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.ISecurityTrimmerPre.aspx)

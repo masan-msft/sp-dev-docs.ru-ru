@@ -1,15 +1,16 @@
 ---
-title: "Как настроить и использовать push-уведомлений в приложениях SharePoint для Windows Phone"
+title: "Настройка и использование push-уведомлений в приложениях SharePoint для Windows Phone"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 68fa2138-86d9-4e35-9c7c-5cd292087b80
-ms.openlocfilehash: 393dc7654777122ec5761486e97c1114db0be8e3
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: b9e6c480be922250a62a524a703ea2cd0925b548
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-configure-and-use-push-notifications-in-sharepoint-apps-for-windows-phone"></a>Как: Настройка и использование push-уведомлений в приложениях SharePoint для Windows Phone
+# <a name="configure-and-use-push-notifications-in-sharepoint-apps-for-windows-phone"></a>Настройка и использование push-уведомлений в приложениях SharePoint для Windows Phone
+
 Создайте в SharePoint Server решение для отправки push-уведомлений и разработайте приложение Windows Phone для получения этих уведомлений. Использование службы Push-уведомления Майкрософт (MPNS), приложения для Windows Phone могут получать уведомления по Интернету событий, которые запускаются на Microsoft SharePoint Server. Приложение телефон не опроса сервера для изменения, например, элементов в виде списка, лежащие в основе приложение телефон. Приложения могут быть зарегистрированы на получение уведомлений с сервера, а приемника событий можно инициировать уведомление и отправьте его в получающей приложение для обработки. Ретрансляция push-уведомлений для устройств Windows Phone с MPNS.
   
     

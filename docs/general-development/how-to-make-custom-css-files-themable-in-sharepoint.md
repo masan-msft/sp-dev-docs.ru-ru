@@ -1,16 +1,18 @@
 ---
-title: "Как сделать настраиваемые CSS-файлы тем в SharePoint"
+title: "Сделать настраиваемые CSS-файлы тем в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: b8c82c77-c836-47f9-a11e-6c9c656d436b
-ms.openlocfilehash: 24d22d47c8c53b0aeb33a14bef989ab3138a06f8
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 6a2febe12c0420a75024937b3127504ca00592f6
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-make-custom-css-files-themable-in-sharepoint"></a>Как: сделать настраиваемые CSS-файлы тем в SharePoint
+# <a name="make-custom-css-files-themable-in-sharepoint"></a>Сделать настраиваемые CSS-файлы тем в SharePoint
+
 Узнайте, как добавьте разметку комментарий стилей CSS-файл, чтобы его можно использовать в модуле темы SharePoint.
+
 ## <a name="introduction-to-annotations"></a>Общие сведения о аннотаций
 <a name="Intro"> </a>
 
@@ -183,7 +185,7 @@ ms.lasthandoff: 10/13/2017
 ## <a name="upload-the-css-file-to-the-themable-folder-in-the-style-library"></a>Отправка CSS-файл в папку Themable в библиотеку стилей
 <a name="uploadCSS"> </a>
 
-Размещение настраиваемого CSS-файлы в папку Themable в библиотеку стилей (не Themable папке в коллекции главных страниц). Только CSS-файлы, которые хранятся в папке Themable в библиотеку стилей распознаются ядром темы. Для сайтов публикации автоматически создается папка Themable. В противном случае можно создать папку Themable в правильном месте (http:// _SiteCollectionName_Style Library / __языка/Themable /).
+Размещение настраиваемого CSS-файлы в папку Themable в библиотеку стилей (не Themable папке в коллекции главных страниц). Обработчик тем распознает только CSS-файлы, сохраненные в папке Themable в библиотеке стилей. Для сайтов публикации автоматически создается папка Themable. В противном случае можно создать папку Themable в правильном месте (http:// _SiteCollectionName_Style Library / __языка/Themable /).
   
     
     

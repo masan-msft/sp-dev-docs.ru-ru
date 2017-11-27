@@ -1,17 +1,17 @@
 ---
-title: How to Refresh Data
+title: "Обновление данных"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto
 f1_keywords: how to,howdoi,howto
 ms.prod: sharepoint
 ms.assetid: 6cfd89ff-846e-486b-8f73-a109016813ab
-ms.openlocfilehash: 0383cea3a068481c26c06462e728ca7f45072c7f
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: e20ec7f931b88605f7a8e888f8a1ea30b66ec1bb
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-refresh-data"></a>Обновление данных
+# <a name="refresh-data"></a>Обновление данных
 
 This example shows how to retrieve updated data from external data sources for the open workbook by using the **Refresh** method. The Веб-службы Excel signature for the **Refresh** method is as follows:
   

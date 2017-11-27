@@ -1,17 +1,17 @@
 ---
-title: How to Set Values of Ranges
+title: "Набор значений из диапазонов"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto,set range
 f1_keywords: how to,howdoi,howto,set range
 ms.prod: sharepoint
 ms.assetid: ccc7e204-f857-45a9-81ec-3a8484e6d454
-ms.openlocfilehash: 124be9f8cc71e14976913ec77a92d60a1a34cd03
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 0ed126fe8b25df7b34f05d22f02df6089c4fa55b
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-set-values-of-ranges"></a>How to: Set Values of Ranges
+# <a name="set-values-of-ranges"></a>Набор значений из диапазонов
 
 Веб-службы Excel exposes four methods for setting values into an Excel workbook: **SetCell**, **SetCellA1**, **SetRange**, and **SetRangeA1**. 
   
