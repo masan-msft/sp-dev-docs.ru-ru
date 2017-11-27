@@ -3,22 +3,24 @@ title: "Развертывание поставщика утверждений �
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 3a5fcedc-aa9a-4ff4-95c0-0e0a7dea9d1f
-ms.openlocfilehash: bdf882e8a6e59a74c351f2c76427442fcd790fcf
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ef8377ceea402d2cc0573fbd5443974284f8ee7f
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-deploy-a-claims-provider-in-sharepoint"></a><span data-ttu-id="e65c6-102">Как: развернуть поставщик утверждений в SharePoint</span><span class="sxs-lookup"><span data-stu-id="e65c6-102">How to: Deploy a claims provider in SharePoint</span></span>
-<span data-ttu-id="e65c6-103">Узнайте, как развернуть поставщика утверждений SharePoint с использованием инфраструктуры функций и созданием класса, наследуемого из  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) .</span><span class="sxs-lookup"><span data-stu-id="e65c6-103">Learn how to deploy a SharePoint claims provider by using the features infrastructure and creating a class that inherits from  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) .</span></span>
-## <a name="deploying-a-claims-provider-as-part-of-a-setup"></a><span data-ttu-id="e65c6-104">Развертывание поставщика утверждений как часть процесса установки</span><span class="sxs-lookup"><span data-stu-id="e65c6-104">Deploying a claims provider as part of a setup</span></span>
-<span data-ttu-id="e65c6-105"><a name="SP15_HowToDeployClaimsProvider_DeployingClaimsSetup"> </a></span><span class="sxs-lookup"><span data-stu-id="e65c6-105"></span></span>
+# <a name="deploy-a-claims-provider-in-sharepoint"></a><span data-ttu-id="7c748-102">Развертывание поставщика утверждений в SharePoint</span><span class="sxs-lookup"><span data-stu-id="7c748-102">Deploy a claims provider in SharePoint</span></span>
 
-<span data-ttu-id="e65c6-p101">С помощью инфраструктуру функций  это самый простой способ развертывания поставщика утверждений. Для этого сначала определения компонента и приемника компонента, который является производным от класса  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) и переопределяют базовые свойства.</span><span class="sxs-lookup"><span data-stu-id="e65c6-p101">The easiest way to deploy a claims provider is by using the features infrastructure. To do this, first define a feature and a feature receiver that derives from the  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) class, and override the base properties.</span></span>
+<span data-ttu-id="7c748-103">Узнайте, как развернуть поставщика утверждений SharePoint с использованием инфраструктуры функций и созданием класса, наследуемого из  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) .</span><span class="sxs-lookup"><span data-stu-id="7c748-103">Learn how to deploy a SharePoint claims provider by using the features infrastructure and creating a class that inherits from  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) .</span></span>
+
+## <a name="deploying-a-claims-provider-as-part-of-a-setup"></a><span data-ttu-id="7c748-104">Развертывание поставщика утверждений как часть процесса установки</span><span class="sxs-lookup"><span data-stu-id="7c748-104">Deploying a claims provider as part of a setup</span></span>
+<span data-ttu-id="7c748-105"><a name="SP15_HowToDeployClaimsProvider_DeployingClaimsSetup"> </a></span><span class="sxs-lookup"><span data-stu-id="7c748-105"></span></span>
+
+<span data-ttu-id="7c748-p101">С помощью инфраструктуру функций  это самый простой способ развертывания поставщика утверждений. Для этого сначала определения компонента и приемника компонента, который является производным от класса  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) и переопределяют базовые свойства.</span><span class="sxs-lookup"><span data-stu-id="7c748-p101">The easiest way to deploy a claims provider is by using the features infrastructure. To do this, first define a feature and a feature receiver that derives from the  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) class, and override the base properties.</span></span>
   
     
     
-<span data-ttu-id="e65c6-108">Ниже приведен пример того, как это сделать.</span><span class="sxs-lookup"><span data-stu-id="e65c6-108">The following is an example of how to do this.</span></span>
+<span data-ttu-id="7c748-108">Ниже приведен пример того, как это сделать.</span><span class="sxs-lookup"><span data-stu-id="7c748-108">The following is an example of how to do this.</span></span>
   
     
     
@@ -49,10 +51,10 @@ public class MyClaimProviderFeatureReceiver : SPClaimProviderFeatureReceiver
 ```
 
 
-## <a name="deploying-a-claims-provider-using-the-feature-infrastructure"></a><span data-ttu-id="e65c6-109">Развертывание с помощью инфраструктуры компонента поставщика утверждений</span><span class="sxs-lookup"><span data-stu-id="e65c6-109">Deploying a claims provider using the feature infrastructure</span></span>
-<span data-ttu-id="e65c6-110"><a name="SP15_HowToDeployClaimsProvider_DeployingClaimsFeature"> </a></span><span class="sxs-lookup"><span data-stu-id="e65c6-110"></span></span>
+## <a name="deploying-a-claims-provider-using-the-feature-infrastructure"></a><span data-ttu-id="7c748-109">Развертывание с помощью инфраструктуры компонента поставщика утверждений</span><span class="sxs-lookup"><span data-stu-id="7c748-109">Deploying a claims provider using the feature infrastructure</span></span>
+<span data-ttu-id="7c748-110"><a name="SP15_HowToDeployClaimsProvider_DeployingClaimsFeature"> </a></span><span class="sxs-lookup"><span data-stu-id="7c748-110"></span></span>
 
-<span data-ttu-id="e65c6-111">Ниже приведен пример, в котором показано, как для определения компонента и приемника компонента, который является производным от  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) и переопределяют базовые свойства.</span><span class="sxs-lookup"><span data-stu-id="e65c6-111">The following is a sample that demonstrates how to define a feature and a feature receiver that derives from  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) and override the base properties.</span></span>
+<span data-ttu-id="7c748-111">Ниже приведен пример, в котором показано, как для определения компонента и приемника компонента, который является производным от  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) и переопределяют базовые свойства.</span><span class="sxs-lookup"><span data-stu-id="7c748-111">The following is a sample that demonstrates how to define a feature and a feature receiver that derives from  [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx) and override the base properties.</span></span>
   
     
     
@@ -157,20 +159,20 @@ namespace MySample.Sample.Server.SampleClaimsProvider
 ```
 
 
-## <a name="additional-resources"></a><span data-ttu-id="e65c6-112">Дополнительные ресурсы</span><span class="sxs-lookup"><span data-stu-id="e65c6-112">Additional resources</span></span>
-<span data-ttu-id="e65c6-113"><a name="SP15_HowToDeployClaimsProvider_AdditionalResources"> </a></span><span class="sxs-lookup"><span data-stu-id="e65c6-113"></span></span>
+## <a name="additional-resources"></a><span data-ttu-id="7c748-112">Дополнительные ресурсы</span><span class="sxs-lookup"><span data-stu-id="7c748-112">Additional resources</span></span>
+<span data-ttu-id="7c748-113"><a name="SP15_HowToDeployClaimsProvider_AdditionalResources"> </a></span><span class="sxs-lookup"><span data-stu-id="7c748-113"></span></span>
 
 
--  [<span data-ttu-id="e65c6-114">Удостоверение, основанное на основе утверждений в SharePoint</span><span class="sxs-lookup"><span data-stu-id="e65c6-114">Claims-based identity in SharePoint</span></span>](claims-based-identity-in-sharepoint.md)
+-  [<span data-ttu-id="7c748-114">Удостоверение, основанное на основе утверждений в SharePoint</span><span class="sxs-lookup"><span data-stu-id="7c748-114">Claims-based identity in SharePoint</span></span>](claims-based-identity-in-sharepoint.md)
     
   
--  [<span data-ttu-id="e65c6-115">Входящих утверждений: вход в SharePoint</span><span class="sxs-lookup"><span data-stu-id="e65c6-115">Incoming claims: Signing into SharePoint</span></span>](incoming-claims-signing-into-sharepoint.md)
+-  [<span data-ttu-id="7c748-115">Входящих утверждений: вход в SharePoint</span><span class="sxs-lookup"><span data-stu-id="7c748-115">Incoming claims: Signing into SharePoint</span></span>](incoming-claims-signing-into-sharepoint.md)
     
   
--  [<span data-ttu-id="e65c6-116">Поставщик утверждений в SharePoint</span><span class="sxs-lookup"><span data-stu-id="e65c6-116">Claims provider in SharePoint</span></span>](claims-provider-in-sharepoint.md)
+-  [<span data-ttu-id="7c748-116">Поставщик утверждений в SharePoint</span><span class="sxs-lookup"><span data-stu-id="7c748-116">Claims provider in SharePoint</span></span>](claims-provider-in-sharepoint.md)
     
   
--  [<span data-ttu-id="e65c6-117">Как: создать поставщик утверждений в SharePoint</span><span class="sxs-lookup"><span data-stu-id="e65c6-117">How to: Create a claims provider in SharePoint</span></span>](how-to-create-a-claims-provider-in-sharepoint.md)
+-  [<span data-ttu-id="7c748-117">Как: создать поставщик утверждений в SharePoint</span><span class="sxs-lookup"><span data-stu-id="7c748-117">How to: Create a claims provider in SharePoint</span></span>](how-to-create-a-claims-provider-in-sharepoint.md)
     
   
 
