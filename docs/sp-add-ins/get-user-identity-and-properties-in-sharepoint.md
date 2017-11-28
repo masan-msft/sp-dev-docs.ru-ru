@@ -1,8 +1,18 @@
-# <a name="get-user-identity-and-properties-in-sharepoint"></a>Получение свойств и удостоверения пользователя в SharePoint
+---
+title: "Получение свойств и удостоверения пользователя в SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 6bfca47eb63da2fe4351d93485f533a9e1c6eedf
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
+# <a name="get-user-identity-and-properties-in-sharepoint"></a>Получение удостоверения и свойств пользователя в SharePoint
 Узнайте, как получить удостоверение пользователя и сведения о нем в SharePoint.
  
 
- **Примечание.** Название "приложения для SharePoint" меняется на "надстройки SharePoint". Пока изменения не будут внесены полностью, в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio по-прежнему может встречаться термин "приложение". Дополнительные сведения см. в разделе [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Существуют разные способы получения удостоверения и сведений о пользователе, в зависимости от сведений, которые требуется получить. В этой статье рассматриваются некоторые способы, с помощью которых это можно сделать.
@@ -12,7 +22,7 @@
 <a name="Prereq"> </a>
 
 
-- Подготовьте среду разработки надстроек, как описано в статье [Настройка локальной среды разработки для надстроек SharePoint](set-up-an-on-premises-development-environment-for-sharepoint-add-ins).
+- Подготовьте среду разработки надстроек, как описано в статье [Настройка локальной среды разработки для надстроек SharePoint](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md).
     
  
 - Установите Visual Studio.
@@ -22,7 +32,7 @@
     
  
 
- **Примечание.** Руководство по настройке среды разработки, соответствующей вашим потребностям, см. в статье [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins).
+ **Примечание.** Руководство по настройке среды разработки, соответствующей вашим потребностям, см. в статье [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins.md).
  
 
 
@@ -36,9 +46,9 @@
 
 |**Статья **|**Описание**|
 |:-----|:-----|
-| [Разрешения надстроек в SharePoint](add-in-permissions-in-sharepoint-2013)|Сведения о разрешениях надстроек SharePoint для работы с SharePoint, включая типы разрешений надстроек, уровни запроса разрешений и управление разрешениями. В этой статье также рассматриваются различия между правами разрешений надстройки и правами пользователя.|
-| [Поток OAuth маркера контекста для надстроек SharePoint](context-token-oauth-flow-for-sharepoint-add-ins)|Сведения о потоке проверки подлинности и авторизации OAuth для надстроек, размещаемых в облаке.|
-| [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins)|Узнайте, как создавать базовое размещенное у поставщика Надстройка SharePoint с помощью Инструменты разработчика Office для Visual Studio 2012, как взаимодействовать с сайтами Microsoft SharePoint с помощью CSOM (клиентской объектной модели) SharePoint, и как реализовать OAuth в Надстройка SharePoint.|
+| [Разрешения для надстроек в SharePoint](add-in-permissions-in-sharepoint.md)|Сведения о разрешениях надстроек SharePoint для работы с SharePoint, включая типы разрешений надстроек, уровни запроса разрешений и управление разрешениями. В этой статье также рассматриваются различия между правами разрешений надстройки и правами пользователя.|
+| [Поток OAuth токена контекста для надстроек SharePoint](context-token-oauth-flow-for-sharepoint-add-ins.md)|Сведения о потоке проверки подлинности и авторизации OAuth для надстроек, размещаемых в облаке.|
+| [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins.md)|Узнайте, как создавать базовое размещенное у поставщика Надстройка SharePoint с помощью Инструменты разработчика Office для Visual Studio 2012, как взаимодействовать с сайтами Microsoft SharePoint с помощью CSOM (клиентской объектной модели) SharePoint, и как реализовать OAuth в Надстройка SharePoint.|
 
 ## <a name="retrieving-current-website-user-identity"></a>Получение удостоверения текущего пользователя веб-сайта
 <a name="WebsiteUserID"> </a>
@@ -88,7 +98,7 @@ ClientContext clientContext =
 
  
 
- **Примечание.** API находятся в пространстве имен Microsoft.SharePoint.Client.Utilities в сборке [Microsoft.SharePoint.Client.dll](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.client.utilities.utility.resolveprincipal.aspx).
+ **Примечание.** API находятся в пространстве имен Microsoft.SharePoint.Client.Utilities в сборке [Microsoft.SharePoint.Client.dll](http://msdn.microsoft.com/ru-RU/library/microsoft.sharepoint.client.utilities.utility.resolveprincipal.aspx).
  
 
 Ниже представлен пример кода, иллюстрирующей получение данных для входа пользователя.
@@ -189,19 +199,19 @@ clientContext.ExecuteQuery();
 <a name="AdditionalResources"> </a>
 
 
--  [Разрешения надстроек в SharePoint](add-in-permissions-in-sharepoint-2013)
+-  [Разрешения для надстроек в SharePoint](add-in-permissions-in-sharepoint.md)
     
  
--  [Поток OAuth маркера контекста для надстроек SharePoint](context-token-oauth-flow-for-sharepoint-add-ins)
+-  [Поток OAuth токена контекста для надстроек SharePoint](context-token-oauth-flow-for-sharepoint-add-ins.md)
     
  
--  [Надстройки SharePoint](sharepoint-add-ins)
+-  [Надстройки SharePoint](sharepoint-add-ins.md)
     
  
--  [Настройка локальной среды разработки для надстроек SharePoint](set-up-an-on-premises-development-environment-for-sharepoint-add-ins)
+-  [Настройка локальной среды разработки надстроек SharePoint](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md)
     
  
--  [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins)
+-  [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins.md)
     
  
 

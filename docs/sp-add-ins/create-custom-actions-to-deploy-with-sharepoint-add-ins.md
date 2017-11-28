@@ -1,8 +1,18 @@
+---
+title: "Создание дополнительных действий для развертывания с надстройками SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 8772f35ad0f165e172356350f23bb1859d4a131a
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="create-custom-actions-to-deploy-with-sharepoint-add-ins"></a>Создание дополнительных действий для развертывания с надстройками SharePoint
 Узнайте, как создать дополнительное действие в SharePoint, которое разворачивается на хост-сайте во время развертывания надстройки SharePoint.
  
 
- **Примечание.** Название "приложения для SharePoint" меняется на "надстройки SharePoint". В процессе перехода с одного названия на другое в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio по-прежнему может встречаться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Дополнительные действия позволяют взаимодействовать со списками и лентой на хост-сайте. Дополнительное действие разворачивается на хост-сайте, когда конечные пользователи устанавливают вашу надстройку. Дополнительные действия могут открывать удаленную веб-страницу и передавать информацию через строку запроса. Для надстроек доступны дополнительные действия ленты и элемента меню.
@@ -11,7 +21,7 @@
 ## <a name="prerequisites-for-using-the-examples-in-this-article"></a>Необходимые условия для использования примеров в этой статье
 <a name="SP15Createcustomactionsapps_Prereq"> </a>
 
-Вам необходима среда разработки, описанная в статье [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins).
+Вам необходима среда разработки, описанная в статье [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins.md).
  
 
  
@@ -28,9 +38,9 @@
 
 |**Статья**|**Описание**|
 |:-----|:-----|
-| [Надстройки SharePoint](sharepoint-add-ins)|Сведения о новой модели надстроек в SharePoint, с помощью которой можно создавать надстройки — небольшие и удобные в использовании решения для пользователей.|
-| [Проектирование пользовательского интерфейса надстроек SharePoint](ux-design-for-sharepoint-add-ins)|Узнайте, как создать удобную надстройку SharePoint.|
-| [Хост-сайты, сайты надстроек и компоненты SharePoint в SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013)|Изучите различия между хост-сайтами и сайтами надстроек. Узнайте, какие компоненты SharePoint можно включать в надстройку для SharePoint, какие компоненты необходимо разворачивать на хост-сайте, а какие на сайте надстройки, и как выполнить развертывание сайта надстройки в изолированном домене.|
+| [Надстройки SharePoint](sharepoint-add-ins.md)|Сведения о новой модели надстроек в SharePoint, с помощью которой можно создавать надстройки — небольшие и удобные в использовании решения для пользователей.|
+| [Разработка пользовательского интерфейса для надстроек SharePoint](ux-design-for-sharepoint-add-ins.md)|Узнайте, как создать удобную надстройку SharePoint.|
+| [Хост-сайты, сайты надстроек и компоненты SharePoint в SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md)|Изучите различия между хост-сайтами и сайтами надстроек. Узнайте, какие компоненты SharePoint можно включать в надстройку для SharePoint, какие компоненты необходимо разворачивать на хост-сайте, а какие на сайте надстройки, и как выполнить развертывание сайта надстройки в изолированном домене.|
 
 ## <a name="code-example-create-a-custom-action-in-the-host-web-document-libraries"></a>Пример кода. Создание дополнительного действия в библиотеках документов хост-сайта
 <a name="SP15Createcustomactionsapps_Codeexample"> </a>
@@ -56,7 +66,7 @@
 1. Откройте Visual Studio от имени администратора. (Для этого щелкните правой кнопкой мыши значок Visual Studio в меню **Пуск** и выберите **Запуск от имени администратора**.)
     
  
-2. Создайте надстройку SharePoint с размещением у поставщика, как описано в статье [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins), и назовите ее itCustomActionsApp. 
+2. Создайте надстройку SharePoint с размещением у поставщика, как описано в статье [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins.md), и назовите ее itCustomActionsApp. 
     
  
 
@@ -286,7 +296,7 @@
 
  
 
-  ![Библиотека документов с открытой выноской для документа, меню, которое открывает кнопка выноски, и открытое меню "Дополнительно".](../../images/477cecf5-03ff-46ff-9c25-a5f9a86d43f4.png)
+  ![Библиотека документов с открытой выноской для документа, меню, которое открывает кнопка выноски, и открытое меню "Дополнительно".](../images/477cecf5-03ff-46ff-9c25-a5f9a86d43f4.png)
  
 
  
@@ -307,7 +317,7 @@
 
  
 
-  ![Веб-страница с параметрами из дополнительного действия](../../images/CustomActions_target.png)
+  ![Веб-страница с параметрами из дополнительного действия](../images/CustomActions_target.png)
  
 
  
@@ -319,7 +329,7 @@
 
  
 
-  ![Библиотека документов с выбранным документом, открытой вкладкой "Файл" и дополнительной кнопкой на ленте.](../../images/b315cb68-ff6a-4770-a1dc-738696ab71d2.png)
+  ![Библиотека документов с выбранным документом, открытой вкладкой "Файл" и дополнительной кнопкой на ленте.](../images/b315cb68-ff6a-4770-a1dc-738696ab71d2.png)
  
 
  
@@ -351,22 +361,22 @@
 
  
 
--  [Пример кода. Открытие удаленной веб-страницы надстройки с помощью дополнительного действия ECB](http://code.msdn.microsoft.com/SharePoint-2013-Open-e0ca1826)
+-  [Пример кода. Открытие удаленной веб-страницы надстройки с помощью дополнительного действия ECB](http://code.msdn.microsoft.com/SharePoint-Open-e0ca1826)
     
  
 -  [SharePoint-Add-in-Localization](https://github.com/OfficeDev/SharePoint-Add-in-Localization)
     
  
--  [Пример кода. Использование дополнительных действий и междоменной библиотеки для заказа книг](http://code.msdn.microsoft.com/SharePoint-2013-Open-a-36d1598d)
+-  [Пример кода. Использование дополнительных действий и междоменной библиотеки для заказа книг](http://code.msdn.microsoft.com/SharePoint-Open-a-36d1598d)
     
  
--  [Использование таблицы стилей веб-сайта SharePoint в надстройках SharePoint](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins)
+-  [Использование таблицы стилей веб-сайта SharePoint в надстройках SharePoint](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins.md)
     
  
--  [Использование клиентского элемента управления хрома в надстройках SharePoint](use-the-client-chrome-control-in-sharepoint-add-ins)
+-  [Использование клиентского элемента управления хрома в надстройках SharePoint](use-the-client-chrome-control-in-sharepoint-add-ins.md)
     
  
--  [Создание частей надстройки для установки совместно с надстройкой SharePoint](create-add-in-parts-to-install-with-your-sharepoint-add-in)
+-  [Создание веб-частей надстроек для установки вместе с надстройкой SharePoint](create-add-in-parts-to-install-with-your-sharepoint-add-in.md)
     
  
 
@@ -374,22 +384,22 @@
 <a name="SP15Createcustomactionsapps_AddResources"> </a>
 
 
--  [Настройка локальной среды разработки для надстроек SharePoint](set-up-an-on-premises-development-environment-for-sharepoint-add-ins)
+-  [Настройка локальной среды разработки надстроек SharePoint](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md)
     
  
--  [Дизайн пользовательского интерфейса надстроек SharePoint](ux-design-for-sharepoint-add-ins)
+-  [Разработка пользовательского интерфейса для надстроек SharePoint](ux-design-for-sharepoint-add-ins.md)
     
  
--  [Рекомендации по проектированию пользовательского интерфейса надстроек SharePoint](sharepoint-add-ins-ux-design-guidelines)
+-  [Рекомендации по проектированию пользовательского интерфейса надстроек SharePoint](sharepoint-add-ins-ux-design-guidelines.md)
     
  
--  [Создание компонентов пользовательского интерфейса в SharePoint](create-ux-components-in-sharepoint-2013)
+-  [Создание компонентов пользовательского интерфейса в SharePoint](create-ux-components-in-sharepoint.md)
     
  
--  [Что следует рассмотреть, прежде чем приступать к разработке надстроек SharePoint](three-ways-to-think-about-design-options-for-sharepoint-add-ins)
+-  [Что следует рассмотреть, прежде чем приступать к разработке надстроек SharePoint](three-ways-to-think-about-design-options-for-sharepoint-add-ins.md)
     
  
--  [Важные аспекты разработки и архитектуры для надстроек SharePoint](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape)
+-  [Важные аспекты разработки и архитектуры для надстроек SharePoint](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md)
     
  
 

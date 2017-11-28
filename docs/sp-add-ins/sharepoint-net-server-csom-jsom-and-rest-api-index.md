@@ -1,9 +1,18 @@
-
+---
+title: "Сервер .NET, CSOM, JSOM и индекс REST API для SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: c2dc4270954f04c6313e740a2cda96e20fdc4d7c
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="sharepoint-net-server-csom-jsom-and-rest-api-index"></a>Сервер .NET, CSOM, JSOM и индекс REST API для SharePoint
 
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -102,13 +111,13 @@
 <a name="bk_addresources"> </a>
 
 
--  [Выполнение базовых операций с использованием кода клиентской библиотеки в SharePoint](complete-basic-operations-using-sharepoint-2013-client-library-code)
+-  [Выполнение базовых операций с использованием кода библиотеки клиента в SharePoint](complete-basic-operations-using-sharepoint-client-library-code.md)
     
  
--  [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013)
+-  [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint.md)
     
  
--  [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013)
+-  [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint.md)
     
  
 

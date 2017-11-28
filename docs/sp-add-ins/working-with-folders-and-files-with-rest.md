@@ -1,13 +1,22 @@
-
+---
+title: "Работа с папками и файлами в службе REST"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: ec4f299782b5f1ae58c04ba245ae6c10aeb35c60
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="working-with-folders-and-files-with-rest"></a>Работа с папками и файлами в службе REST
 Узнайте, как выполнять основные операции по созданию, чтению, обновлению и удалению (CRUD) папок и файлов с помощью интерфейса REST SharePoint.
  
 
- **Примечание.** Название "приложения для SharePoint" меняется на "надстройки SharePoint". Пока изменения не будут внесены полностью, в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio по-прежнему может встречаться термин "приложение". Дополнительные сведения см. в разделе [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
- **Совет.** Служба REST в SharePoint Online (а также в локальной среде SharePoint 2016 или более поздней версии) поддерживает объединение нескольких запросов в один вызов с помощью параметра запроса OData `$batch`. Подробные сведения и ссылки на примеры кода см. в статье [Создание пакетного запроса с помощью интерфейсов REST API](make-batch-requests-with-the-rest-apis). 
+ **Совет.** Служба REST в SharePoint Online (а также в локальной среде SharePoint 2016 или более поздней версии) поддерживает объединение нескольких запросов в один вызов с помощью параметра запроса OData `$batch`. Подробные сведения и ссылки на примеры кода см. в статье [Создание пакетного запроса с помощью интерфейсов REST API](make-batch-requests-with-the-rest-apis.md). 
  
 
 
@@ -189,7 +198,7 @@ Headers:
     content-length:length of post body
 ```
 
-Если вы хотите обновить метаданные файла, необходимо создать конечную точку, которая получает файл как элемент списка. Это возможно, так как каждая папка также является списком, а каждый файл — элементом списка. Создайте такую конечную точку: `https://<site url>/_api/web/lists/getbytitle('Documents')/items(<item id>)`.  В статье [Работа со списками и элементами списков в службе REST](working-with-lists-and-list-items-with-rest) описано, как обновить метаданные элемента списка.
+Если вы хотите обновить метаданные файла, необходимо создать конечную точку, которая получает файл как элемент списка. Это возможно, так как каждая папка также является списком, а каждый файл — элементом списка. Создайте такую конечную точку: `https://<site url>/_api/web/lists/getbytitle('Documents')/items(<item id>)`.  В статье [Работа со списками и элементами списков в службе REST](working-with-lists-and-list-items-with-rest.md) описано, как обновить метаданные элемента списка.
  
 
  
@@ -245,7 +254,7 @@ headers:
 ## <a name="working-with-large-files-by-using-rest"></a>Работа с большими файлами с помощью REST
 <a name="LargeFiles"> </a>
 
- Отправить двоичный файл больше 1,5 МБ можно только с помощью интерфейса REST. Пример кода для отправки двоичного файла объемом менее 1,5 МБ с помощью объектной модели Javascript SharePoint см. в статье [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013). Максимальный размер двоичного файла, который можно создать с помощью REST, составляет 2 ГБ. В следующем примере показано, как **создать** большой двоичный файл.
+Отправить двоичный файл размером более 1,5 МБ можно только с помощью интерфейса REST. Пример кода для отправки двоичного файла размером менее 1,5 МБ с помощью объектной модели Javascript SharePoint см. в статье [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint.md). Максимальный размер двоичного файла, который можно создать с помощью REST, составляет 2 ГБ. В следующем примере показано, как **создать** большой двоичный файл.
  
 
  
@@ -379,22 +388,22 @@ headers:
 <a name="bk_addresources"> </a>
 
 
--  [Выполнение базовых операций с использованием конечных точек SharePoint REST](complete-basic-operations-using-sharepoint-2013-rest-endpoints)
+-  [Выполнение базовых операций с использованием конечных точек SharePoint REST](complete-basic-operations-using-sharepoint-rest-endpoints.md)
     
  
 -  [Справочные материалы по интерфейсу API службы REST для файлов и папок](http://msdn.microsoft.com/library/files-and-folders-rest-api-reference%28Office.15%29.aspx)
     
  
--  [Отправка файла с помощью REST API и jQuery](upload-a-file-by-using-the-rest-api-and-jquery)
+-  [Отправка файла с помощью REST API и jQuery](upload-a-file-by-using-the-rest-api-and-jquery.md)
     
  
--  [Работа со списками и элементами списков в службе REST](working-with-lists-and-list-items-with-rest)
+-  [Работа со списками и элементами списков в службе REST](working-with-lists-and-list-items-with-rest.md)
     
  
 -  [SharePoint-Add-in-REST-OData-BasicDataOperations](https://github.com/OfficeDev/SharePoint-Add-in-REST-OData-BasicDataOperations)
     
  
--  [SharePoint: выполнение базовых операций доступа к данным файлов и папок с помощью REST](http://code.msdn.microsoft.com/SharePoint-2013-Perform-ab9c4ae5)
+-  [SharePoint: выполнение основных операций доступа к данным в файлах и папках с помощью REST](http://code.msdn.microsoft.com/SharePoint-Perform-ab9c4ae5)
     
  
 -  [Выполнение вызовов REST при помощи C# и JavaScript для SharePoint](http://www.microsoft.com/resources/msdn/en-us/office/media/video/videol?cid=sdc&amp;from=mscomsdc&amp;VideoID=4e4cc094-ff69-405b-852f-2ac7c41293c5)
@@ -403,25 +412,25 @@ headers:
 -  [Выполнение вызовов REST при помощи C# и JavaScript для демоверсии SharePoint](http://www.microsoft.com/resources/msdn/en-us/office/media/video/videol?cid=sdc&amp;from=mscomsdc&amp;VideoID=b1e7c9c5-0f62-4a78-bb7b-8e283c86145c)
     
  
--  [Выполнение базовых операций с использованием кода клиентской библиотеки в SharePoint](complete-basic-operations-using-sharepoint-2013-client-library-code)
+-  [Выполнение базовых операций с использованием кода клиентской библиотеки в SharePoint](complete-basic-operations-using-sharepoint-client-library-code.md)
     
  
--  [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013)
+-  [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint.md)
     
  
--  [Разработка надстроек SharePoint](develop-sharepoint-add-ins)
+-  [Разработка надстроек SharePoint](develop-sharepoint-add-ins.md)
     
  
--  [Безопасный доступ к данным и клиентские объектные модели для надстроек SharePoint](secure-data-access-and-client-object-models-for-sharepoint-add-ins)
+-  [Безопасный доступ к данным и клиентские объектные модели для надстроек SharePoint](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
     
  
--  [Работа с внешними данными в SharePoint](work-with-external-data-in-sharepoint-2013)
+-  [Работа с внешними данными в SharePoint](work-with-external-data-in-sharepoint.md)
     
  
--  [Open Data Protocol](http://www.odata.org/)
+-  [Протокол OData](http://www.odata.org/)
     
  
--  [OData: формат JSON](http://www.odata.org/documentation/odata-version-2-0/JSON-format/)
+-  [OData: формат нотации объектов JavaScript (JSON)](http://www.odata.org/documentation/odata-version-2-0/JSON-format/)
     
  
 

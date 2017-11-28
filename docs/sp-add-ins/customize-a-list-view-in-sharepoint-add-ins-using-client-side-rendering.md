@@ -1,8 +1,18 @@
-# <a name="customize-a-list-view-in-sharepoint-add-ins-using-client-side-rendering"></a>Настройка представления списка в надстройках SharePoint с использованием технологии клиентской обработки
+---
+title: "Настройка представления списка в надстройках SharePoint с помощью технологии клиентской обработки"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: db1bc6ebc7d2991cff5bae762080d85cdcfb0ec5
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
+# <a name="customize-a-list-view-in-sharepoint-add-ins-using-client-side-rendering"></a>Настройка представления списка в надстройках SharePoint с помощью технологии клиентской обработки
 В этой статье рассказывается, как настроить представление списка в надстройке, размещаемой в SharePoint, с использованием технологии клиентской обработки в SharePoint.
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 В SharePoint технология клиентской обработки позволяет вам создавать собственные выходные данные для набора элементов управления, размещенных на странице SharePoint. Благодаря ей вы можете использовать хорошо известные технологии, например HTML и JavaScript, для задания логики отрисовки представлений списков в SharePoint. Технология клиентской обработки дает вам возможность указывать собственные ресурсы JavaScript и размещать их в хранилищах данных, доступных для ваших надстроек, например в библиотеке документов. Надстройка, размещаемая в SharePoint, включает только компоненты SharePoint. Ресурсы надстройки, размещаемой в SharePoint, хранятся на изолированном дочернем сайте хост-сайта, называемом сайтом надстройки.
@@ -39,9 +49,9 @@
 
 |**Название статьи**|**Описание**|
 |:-----|:-----|
-| [Надстройки SharePoint](sharepoint-add-ins)|Изучите новую модель надстроек в Microsoft SharePoint, с помощью которой можно создавать небольшие и удобные в использовании надстройки для пользователей.|
-| [Разработка пользовательского интерфейса для надстроек SharePoint](ux-design-for-sharepoint-add-ins)|Изучите различные варианты пользовательского интерфейса, доступные при создании надстроек SharePoint.|
-| [Хост-сайты, сайты надстроек и компоненты SharePoint в SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013)|Изучите различия между хост-сайтами и сайтами надстроек. Узнайте, какие компоненты SharePoint можно включать в надстройку для SharePoint, какие компоненты разворачиваются на хост-сайте, какие компоненты разворачиваются на сайте надстройки, и как выполняется развертывание сайта надстройки в изолированном домене.|
+| [Надстройки SharePoint](sharepoint-add-ins.md)|Изучите новую модель надстроек в Microsoft SharePoint, с помощью которой можно создавать небольшие и удобные в использовании надстройки для пользователей.|
+| [Разработка пользовательского интерфейса для надстроек SharePoint](ux-design-for-sharepoint-add-ins.md)|Изучите различные варианты пользовательского интерфейса, доступные при создании надстроек SharePoint.|
+| [Хост-сайты, сайты надстроек и компоненты SharePoint в SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md)|Изучите различия между хост-сайтами и сайтами надстроек. Узнайте, какие компоненты SharePoint можно включать в надстройку для SharePoint, какие компоненты разворачиваются на хост-сайте, какие компоненты разворачиваются на сайте надстройки, и как выполняется развертывание сайта надстройки в изолированном домене.|
 
 ## <a name="code-example-customize-a-list-view-by-using-client-side-rendering"></a>Пример кода: настройка представления списка с использованием технологии клиентской обработки
 <a name="SP15CSRlistview_Codeexample"> </a>
@@ -70,7 +80,7 @@
  
 
  
-![Настраиваемое представление списка объявлений](../../images/CSRListView_result.png)
+![Настраиваемое представление списка объявлений](../images/CSRListView_result.png)
  
 
 ### <a name="to-create-the-sharepoint-add-in-project"></a>Создание проекта надстройки SharePoint
@@ -88,13 +98,13 @@
 
  
 
-  ![Шаблон Visual Studio "Надстройка SharePoint"](../../images/AppForSharePointVSTemplate.PNG)
+  ![Шаблон Visual Studio "Надстройка SharePoint"](../images/AppForSharePointVSTemplate.PNG)
  
 
  
 
  
-3. Укажите URL-адрес веб-сайта SharePoint, который вы хотите использовать для отладки.
+3. Укажите URL-адрес веб-сайта SharePoint, который планируется использовать для отладки.
     
  
 4. В качестве варианта размещения надстройки выберите пункт **Размещение в SharePoint**.
@@ -226,9 +236,9 @@ function postRenderHandler(ctx) {
 ### <a name="to-build-and-run-the-solution"></a>Построение и запуск решения
 
 
-1. Нажмите клавишу F5.
+1. Нажмите клавишу F5.
     
-     **Примечание.** Когда вы нажимаете клавишу F5, Visual Studio создает решение, развертывает надстройку и открывает страницу разрешений для надстройки.
+     **Примечание.** При нажатии клавиши F5 Visual Studio выполняет сборку решения, развертывает надстройку и открывает для нее страницу разрешений.
 2. Нажмите кнопку **Доверять**.
     
  
@@ -244,19 +254,19 @@ function postRenderHandler(ctx) {
 
  
 
--  [Пример кода: настройка представления списка в надстройке с использованием технологии клиентской обработки](http://code.msdn.microsoft.com/SharePoint-2013-Customize-61761017)
+-  [Пример кода: настройка представления списка в надстройке с использованием технологии клиентской обработки](http://code.msdn.microsoft.com/SharePoint-Customize-61761017)
     
  
--  [Использование таблицы стилей веб-сайта SharePoint в надстройках SharePoint](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins)
+-  [Использование таблицы стилей веб-сайта SharePoint в надстройках SharePoint](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins.md)
     
  
--  [Использование клиентского элемента управления хрома в надстройках SharePoint](use-the-client-chrome-control-in-sharepoint-add-ins)
+-  [Использование клиентского элемента управления хрома в надстройках SharePoint](use-the-client-chrome-control-in-sharepoint-add-ins.md)
     
  
--  [Создание дополнительных действий для развертывания с надстройками SharePoint](create-custom-actions-to-deploy-with-sharepoint-add-ins)
+-  [Создание дополнительных действий для развертывания с надстройками SharePoint](create-custom-actions-to-deploy-with-sharepoint-add-ins.md)
     
  
--  [Создание веб-частей надстроек для установки вместе с надстройкой SharePoint](create-add-in-parts-to-install-with-your-sharepoint-add-in)
+-  [Создание веб-частей надстроек для установки вместе с надстройкой SharePoint](create-add-in-parts-to-install-with-your-sharepoint-add-in.md)
     
  
 
@@ -264,19 +274,19 @@ function postRenderHandler(ctx) {
 <a name="SP15CSRlistview_AddResources"> </a>
 
 
--  [Настройка локальной среды разработки для надстроек SharePoint](set-up-an-on-premises-development-environment-for-sharepoint-add-ins)
+-  [Настройка локальной среды разработки надстроек SharePoint](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md)
     
  
--  [Разработка пользовательского интерфейса для надстроек SharePoint](ux-design-for-sharepoint-add-ins)
+-  [Разработка пользовательского интерфейса для надстроек SharePoint](ux-design-for-sharepoint-add-ins.md)
     
  
--  [Создание компонентов пользовательского интерфейса в SharePoint](create-ux-components-in-sharepoint-2013)
+-  [Создание компонентов пользовательского интерфейса в SharePoint](create-ux-components-in-sharepoint.md)
     
  
--  [Что следует рассмотреть, прежде чем приступать к разработке надстроек SharePoint](three-ways-to-think-about-design-options-for-sharepoint-add-ins)
+-  [Что следует рассмотреть, прежде чем приступать к разработке надстроек SharePoint](three-ways-to-think-about-design-options-for-sharepoint-add-ins.md)
     
  
--  [Важные аспекты разработки и архитектуры для надстроек SharePoint](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape)
+-  [Важные аспекты разработки и архитектуры для надстроек SharePoint](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md)
     
  
 

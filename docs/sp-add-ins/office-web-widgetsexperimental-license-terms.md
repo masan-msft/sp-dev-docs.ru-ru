@@ -1,8 +1,18 @@
-# <a name="office-web-widgets---experimental-license-terms"></a>Условия лицензии на экспериментальные мини-приложения Office для веб-страниц
-Ознакомьтесь с условиями лицензии на использование экспериментальной версии мини-приложений Office для веб-страниц.
+---
+title: "Экспериментальные веб-виджеты Office — условия лицензии"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: b4c22a69b93747535f3cfe710f1102973b63ed7b
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
+# <a name="office-web-widgets---experimental-license-terms"></a>Экспериментальные веб-виджеты Office — условия лицензии
+Ознакомьтесь с условиями лицензии на использование экспериментальных веб-виджетов Office.
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
  **Чтобы скачать файл, необходимо принять следующие условия:**
@@ -142,13 +152,13 @@
 <a name="bk_addresources"> </a>
 
 
--  [Обзор экспериментальных мини-приложений Office для веб-страниц](office-web-widgets--experimental-overview)
+-  [Обзор экспериментальных веб-виджетов Office](office-web-widgetsexperimental-overview.md)
     
  
--  [Использование экспериментального мини-приложения "Выбор людей" в надстройках SharePoint](use-the-experimental-people-picker-widget-in-sharepoint-add-ins)
+-  [Использование экспериментального виджета"Выбор людей" в надстройках SharePoint](use-the-experimental-people-picker-widget-in-sharepoint-add-ins.md)
     
  
--  [Использование экспериментального мини-приложения "Представление списка на рабочем столе" в надстройках SharePoint](use-the-experimental-desktop-list-view-widget-in-sharepoint-add-ins).
+-  [Использование экспериментального виджета "Представление списка на рабочем столе" в надстройках для SharePoint](use-the-experimental-desktop-list-view-widget-in-sharepoint-add-ins.md).
     
  
 

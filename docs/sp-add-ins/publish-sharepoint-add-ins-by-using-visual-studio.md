@@ -1,9 +1,18 @@
-
+---
+title: "Публикация надстроек SharePoint с помощью Visual Studio"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 7215ae000b40436c64b2a4b566948a88f20b9533
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="publish-sharepoint-add-ins-by-using-visual-studio"></a>Публикация надстроек SharePoint с помощью Visual Studio
 Узнайте, как опубликовать Надстройка SharePoint с помощью Microsoft Visual Studio 2013 или Visual Studio 2012. Если с надстройкой связано веб-приложение, то сначала необходимо развернуть его. Затем, как и для всех Надстройки SharePoint, необходимо упаковать Надстройка SharePoint и опубликовать его. Кроме того, можно отправить надстройку для ее включения в Магазин Office.
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 
@@ -154,7 +163,7 @@
  
 4. В полях под заголовком **Удостоверение надстройки** укажите идентификатор и секрет клиента, а затем нажмите кнопку **Далее**.
     
-    См. статью [Авторизация и проверка подлинности надстроек SharePoint](authorization-and-authentication-of-sharepoint-add-ins).
+    См. статью [Авторизация и проверка подлинности надстроек SharePoint](authorization-and-authentication-of-sharepoint-add-ins.md).
     
  
 5. Для всех типов надстроек SharePoint установите флажок **Открыть папку выходных данных после успешной упаковки** (если он еще не установлен) и нажмите кнопку **Готово**.
@@ -188,7 +197,7 @@
 ### <a name="step-3-publish-your-sharepoint-add-in"></a>Этап 3. Публикация надстройки SharePoint
 <a name="Publish"> </a>
 
-Чтобы опубликовать Надстройка SharePoint, отправьте файл манифеста надстройки (APP-файл) в Магазин Office, каталог надстроек Office, SharePoint, файловый ресурс или каталог Exchange. Манифест надстройки находится в папке  `app.publish`, например  `%UserProfile%\Documents\Visual Studio 2012\Projects\MyApp\bin\Debug\app.publish`. Дополнительные сведения о публикации Надстройка SharePoint см. в статье  [Авторизация и проверка подлинности для надстроек в SharePoint](authorization-and-authentication-of-sharepoint-add-ins).
+Чтобы опубликовать Надстройка SharePoint, отправьте файл манифеста надстройки (APP-файл) в Магазин Office, каталог надстроек Office, SharePoint, файловый ресурс или каталог Exchange. Манифест надстройки находится в папке  `app.publish`, например  `%UserProfile%\Documents\Visual Studio 2012\Projects\MyApp\bin\Debug\app.publish`. Дополнительные сведения о публикации Надстройка SharePoint см. в статье  [Авторизация и проверка подлинности для надстроек в SharePoint](authorization-and-authentication-of-sharepoint-add-ins.md).
  
 
  
@@ -197,7 +206,7 @@
 <a name="Additional"> </a>
 
 
--  [Публикация надстроек SharePoint](publish-sharepoint-add-ins)
+-  [Публикация надстроек SharePoint](publish-sharepoint-add-ins.md)
     
  
 -  [Публикация надстройки Office](http://msdn.microsoft.com/library/7f3ae6a0-06e9-438c-8899-bd9f605e6d9e%28Office.15%29.aspx)

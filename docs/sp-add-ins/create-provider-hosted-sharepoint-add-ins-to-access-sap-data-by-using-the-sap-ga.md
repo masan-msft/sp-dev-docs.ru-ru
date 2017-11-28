@@ -1,8 +1,18 @@
-# <a name="create-provider-hosted-sharepoint-add-ins-to-access-sap-data-by-using-the-sap-gateway-for-microsoft"></a>Создание надстроек SharePoint, размещенных у поставщика, для доступа к данным SAP с помощью шлюза SAP для Майкрософт
+---
+title: "Создание надстроек SharePoint, размещенных у поставщика, для доступа к данным SAP с помощью шлюза SAP для Microsoft"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: d32e94567b67e3f3acdfb042daa6a9de68c5209f
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
+# <a name="create-provider-hosted-sharepoint-add-ins-to-access-sap-data-by-using-the-sap-gateway-for-microsoft"></a>Создание надстроек SharePoint, размещенных у поставщика, для доступа к данным SAP с помощью шлюза SAP для Microsoft
 Узнайте, как создать надстройку SharePoint, имеющую доступ к данным SAP.
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Вы можете создать надстройку SharePoint, которая считывает и записывает данные SAP, а при необходимости и данные SharePoint, с помощью шлюза SAP для Майкрософт и библиотеки аутентификации Azure AD для .NET. В этой статье описано, как создать надстройку SharePoint для получения авторизованного доступа к SAP. 
@@ -15,7 +25,7 @@
 
  
 
--  **Сайт разработчиков Office 365** это домен Office 365, связанный с подпиской Microsoft Azure Active Directory. См. статью [Настройка среды для разработки надстроек SharePoint в Office 365](set-up-a-development-environment-for-sharepoint-add-ins-on-office-365) или [Создание сайта разработчика с использованием актуальной подписки на Office 365](create-a-developer-site-on-an-existing-office-365-subscription).
+-  **Сайт разработчиков Office 365** это домен Office 365, связанный с подпиской Microsoft Azure Active Directory. См. статью [Настройка среды для разработки надстроек SharePoint в Office 365](set-up-a-development-environment-for-sharepoint-add-ins-on-office-365.md) или [Создание сайта разработчика с использованием актуальной подписки на Office 365](create-a-developer-site-on-an-existing-office-365-subscription.md).
     
  
 -  Среда **Visual Studio 2013 c обновлением 2** или более поздней версии, которую вы можете получить в статье [Вас приветствует Visual Studio 2013](http://msdn.microsoft.com/library/dd831853.aspx).
@@ -36,13 +46,13 @@
 -  **Общее представление об Azure AD.** См. статью [Начало работы с Azure AD](http://msdn.microsoft.com/library/azure/dn655157.aspx).
     
  
--  **Общее представление о надстройках SharePoint.** См. статью [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins).
+-  **Общее представление о надстройках SharePoint.** См. статью [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins.md).
     
  
 -  **Общее представление об OAuth 2.0 в Azure AD**. См. статью [Авторизация доступа к веб-приложениям с помощью OAuth 2.0 и Azure Active Directory](http://msdn.microsoft.com/library/azure/dn645545.aspx) и ее дочерних статей.
     
  
- **Пример кода.** [SharePoint: использование шлюза SAP для Майкрософт в надстройке SharePoint](http://code.msdn.microsoft.com/SharePoint-2013-Using-the-0931abce)
+ **Пример кода.** [SharePoint: использование шлюза SAP для Майкрософт в надстройке SharePoint](http://code.msdn.microsoft.com/SharePoint-Using-the-0931abce)
  
 
  
@@ -50,7 +60,7 @@
 ## <a name="understand-authentication-and-authorization-to-sap-gateway-for-microsoft-and-sharepoint"></a>Общие сведения о проверке подлинности и авторизации в шлюзе SAP для Майкрософт и SharePoint
 <a name="AuthOverview"> </a>
 
-OAuth 2.0 в Azure AD позволяет приложениям получать доступ к различным ресурсам, размещенным в Microsoft Azure, например Шлюз SAP для Майкрософт. В OAuth 2.0 приложения и пользователи субъекты безопасности. Субъектам приложений, как и пользователям (а иногда и вместо пользователей), требуется аутентификация и авторизация на защищенных ресурсах. В этом процессе участвует поток OAuth, в котором приложение (например, Надстройка SharePoint) получает маркеры доступа и обновления. Первый из двух маркеров принимают все службы и приложения, размещенные в Microsoft Azure и использующие Azure AD в качестве сервера авторизации OAuth 2.0. Этот процесс во многом аналогичен тому, как удаленные компоненты размещенного у поставщика приложения для SharePoint авторизируются в SharePoint (см. статью  [Создание надстроек для SharePoint, которые используют авторизацию с низким уровнем доверия](creating-sharepoint-add-ins-that-use-low-trust-authorization) и ее подразделы). Однако система авторизации для контроля доступа использует в качестве доверенного поставщика маркеров Служба контроля доступа Microsoft Azure (ACS), а не Azure AD.
+OAuth 2.0 в Azure AD позволяет приложениям получать доступ к различным ресурсам, размещенным в Microsoft Azure, например Шлюз SAP для Майкрософт. В OAuth 2.0 приложения и пользователи субъекты безопасности. Субъектам приложений, как и пользователям (а иногда и вместо пользователей), требуется аутентификация и авторизация на защищенных ресурсах. В этом процессе участвует поток OAuth, в котором приложение (например, Надстройка SharePoint) получает маркеры доступа и обновления. Первый из двух маркеров принимают все службы и приложения, размещенные в Microsoft Azure и использующие Azure AD в качестве сервера авторизации OAuth 2.0. Этот процесс во многом аналогичен тому, как удаленные компоненты размещенного у поставщика приложения для SharePoint авторизируются в SharePoint (см. статью  [Создание надстроек для SharePoint, которые используют авторизацию с низким уровнем доверия](creating-sharepoint-add-ins-that-use-low-trust-authorization.md) и ее подразделы). Однако система авторизации для контроля доступа использует в качестве доверенного поставщика маркеров Служба контроля доступа Microsoft Azure (ACS), а не Azure AD.
  
 
  
@@ -58,7 +68,7 @@ OAuth 2.0 в Azure AD позволяет приложениям получать
  **Совет.** Если надстройка SharePoint получает доступ не только к шлюзу SAP для Майкрософт, но и к SharePoint, то ей потребуется использовать *обе* системы: Azure AD, чтобы получить маркер доступа к шлюзу SAP для Майкрософт, и систему авторизации ACS для получения маркера доступа к SharePoint. Маркеры из этих двух источников не являются взаимозаменяемыми. Дополнительные сведения см. в разделе [(Необязательно) Предоставление приложению ASP.NET доступа к SharePoint](#SharePoint).
  
 
-Подробное описание и схему потока OAuth, используемого протоколом OAuth 2.0 в Azure AD, см. в статье  [Поток предоставления кода авторизации](http://msdn.microsoft.com/library/azure/dn645542.aspx). Похожее описание и схему потока доступа к SharePoint см. в статье  [Этапы потока маркеров контекста](context-token-oauth-flow-for-sharepoint-add-ins#OAuth_ProcessFlowSteps).
+Подробное описание и схему потока OAuth, используемого протоколом OAuth 2.0 в Azure AD, см. в статье  [Поток предоставления кода авторизации](http://msdn.microsoft.com/library/azure/dn645542.aspx). Похожее описание и схему потока доступа к SharePoint см. в статье  [Этапы потока маркеров контекста](context-token-oauth-flow-for-sharepoint-add-ins.md#OAuth_ProcessFlowSteps).
  
 
  
@@ -450,7 +460,7 @@ using Newtonsoft.Json.Linq;
 
 
      **Important**  Delete this line when you are ready to deploy the ASP.NET application to staging. See  [Modify the add-in and stage it to Azure and Office 365](#Stage).
-5. Добавьте приведенный ниже код в метод **Page_Load**. Строка, передаваемая методу `GetSAPData`, — это запрос OData.
+1. Добавьте приведенный ниже код в метод **Page_Load**. Строка, передаваемая методу `GetSAPData`, — это запрос OData.
     
 ```
   if (!IsPostBack)
@@ -509,7 +519,7 @@ using Newtonsoft.Json.Linq;
 </div>
 ```
 
-2. При желании вы можете придать веб-странице внешний вид страницы SharePoint с помощью SharePoint  [элемента управления хрома](use-the-client-chrome-control-in-sharepoint-add-ins) и [таблицы стилей веб-сайта SharePoint](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins).
+2. При желании вы можете придать веб-странице внешний вид страницы SharePoint с помощью SharePoint  [элемента управления хрома](use-the-client-chrome-control-in-sharepoint-add-ins.md) и [таблицы стилей веб-сайта SharePoint](use-a-sharepoint-website-s-style-sheet-in-sharepoint-add-ins.md).
     
  
 
@@ -532,7 +542,7 @@ using Newtonsoft.Json.Linq;
 ## <a name="optionally-add-sharepoint-access-to-the-aspnet-application"></a>(Необязательно) Предоставление приложению ASP.NET доступа к SharePoint
 <a name="SharePoint"> </a>
 
-Конечно, надстройка SharePoint не обязательно должна показывать только данные SAP на веб-странице, открытой из SharePoint. Она также может выполнять операции CRUD (создание, чтение, обновление и удаление) с данными SharePoint. Их можно реализовать в коде с помощью клиентской объектной модели SharePoint (CSOM) или интерфейсов REST API SharePoint. Модель CSOM развертывается в виде пары сборок, которые Инструменты разработчика Office для Visual Studio автоматически включают в проект ASP.NET и для которых включается параметр **Копировать локально** в Visual Studio, чтобы они добавлялись в пакет приложения ASP.NET. Сведения об использовании CSOM см. в статье [Выполнение базовых операций с помощью кода клиентской библиотеки SharePoint](complete-basic-operations-using-sharepoint-2013-client-library-code). Сведения об использовании интерфейсов REST API см. в статье [Знакомство с REST-интерфейсом SharePoint и его использование](http://msdn.microsoft.com/en-us/magazine/dn198245.aspx). 
+Конечно, надстройка SharePoint не обязательно должна показывать только данные SAP на веб-странице, открытой из SharePoint. Она также может выполнять операции CRUD (создание, чтение, обновление и удаление) с данными SharePoint. Их можно реализовать в коде с помощью клиентской объектной модели SharePoint (CSOM) или интерфейсов REST API SharePoint. Модель CSOM развертывается в виде пары сборок, которые Инструменты разработчика Office для Visual Studio автоматически включают в проект ASP.NET и для которых включается параметр **Копировать локально** в Visual Studio, чтобы они добавлялись в пакет приложения ASP.NET. Сведения об использовании CSOM см. в статье [Выполнение базовых операций с помощью кода клиентской библиотеки SharePoint](complete-basic-operations-using-sharepoint-client-library-code.md). Сведения об использовании интерфейсов REST API см. в статье [Знакомство с REST-интерфейсом SharePoint и его использование](http://msdn.microsoft.com/ru-RU/magazine/dn198245.aspx). 
  
 
  
@@ -541,19 +551,19 @@ using Newtonsoft.Json.Linq;
 
  
 
--  [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins)
+-  [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins.md)
     
  
--  [Авторизация и проверка подлинности надстроек SharePoint](authorization-and-authentication-of-sharepoint-add-ins)
+-  [Авторизация и проверка подлинности для надстроек в SharePoint](authorization-and-authentication-of-sharepoint-add-ins.md)
     
  
--  [Три системы авторизации для надстроек SharePoint](three-authorization-systems-for-sharepoint-add-ins)
+-  [Три системы авторизации для надстроек SharePoint](three-authorization-systems-for-sharepoint-add-ins.md)
     
  
--  [Создание надстроек SharePoint, использующих авторизацию с низким уровнем доверия](creating-sharepoint-add-ins-that-use-low-trust-authorization)
+-  [Создание надстроек SharePoint, использующих авторизацию с низким уровнем доверия](creating-sharepoint-add-ins-that-use-low-trust-authorization.md)
     
  
--  [Поток OAuth токена контекста для надстроек SharePoint](context-token-oauth-flow-for-sharepoint-add-ins)
+-  [Поток OAuth токена контекста для надстроек SharePoint](context-token-oauth-flow-for-sharepoint-add-ins.md)
     
  
 
@@ -672,20 +682,20 @@ using Newtonsoft.Json.Linq;
 7. Нажмите кнопку **СОХРАНИТЬ** в нижней части экрана.
     
  
-8. Зарегистрируйте надстройку в Azure ACS. Это необходимо сделать, даже если надстройка не получает доступ к SharePoint и не будет использовать маркеры из службы контроля доступа, так как при этом надстройка регистрируется еще и в службе управления надстройками для подписки на Office 365, а это обязательно. (Служба управления надстройками получила такое название, так как она используется для управления надстройками SharePoint, которые ранее назывались приложениями для SharePoint.) В случае подписки на Office 365 регистрация выполняется на странице AppRegNew.aspx любого веб-сайта SharePoint. Дополнительные сведения см. в статье [Регистрация надстроек SharePoint 2013](register-sharepoint-add-ins-2013). В ходе регистрации вы получите новые идентификатор и секрет клиента. Вставьте эти значения в файл web.config в качестве ключей **ClientId** (не **ida:ClientID**) и **ClientSecret**.
+8. Зарегистрируйте надстройку в Azure ACS. Это необходимо сделать, даже если надстройка не получает доступ к SharePoint и не будет использовать маркеры из службы контроля доступа, так как при этом надстройка регистрируется еще и в службе управления надстройками для подписки на Office 365, а это обязательно. (Служба управления надстройками получила такое название, так как она используется для управления надстройками SharePoint, которые ранее назывались приложениями для SharePoint.) В случае подписки на Office 365 регистрация выполняется на странице AppRegNew.aspx любого веб-сайта SharePoint. Дополнительные сведения см. в статье [Регистрация надстроек SharePoint 2013](register-sharepoint-add-ins.md). В ходе регистрации вы получите новые идентификатор и секрет клиента. Вставьте эти значения в файл web.config в качестве ключей **ClientId** (не **ida:ClientID**) и **ClientSecret**.
     
      **Внимание!** Если по какой-либо причине вы нажмете клавишу F5 после внесения этих изменений, Инструменты разработчика Office для Visual Studio заменят одно из этих значений или оба значения. Поэтому следует вести журнал значений, полученных на странице AppRegNew.aspx, и всегда проверять правильность значений в файле web.config непосредственно перед публикацией приложения ASP.NET. 
 
 ### <a name="publish-the-aspnet-application-to-azure-and-install-the-add-in-to-sharepoint"></a>Публикация приложения ASP.NET в Azure и установка надстройки в SharePoint
 
 
-1. Опубликовать приложение ASP.NET в Веб-сайт Azure можно несколькими способами. Дополнительные сведения см. в статье  [Развертывание веб-сайта Azure](http://azure.microsoft.com/en-us/documentation/articles/web-sites-deploy/).
+1. Опубликовать приложение ASP.NET в Веб-сайт Azure можно несколькими способами. Дополнительные сведения см. в статье  [Развертывание веб-сайта Azure](http://azure.microsoft.com/ru-RU/documentation/articles/web-sites-deploy/).
     
  
 2. В Visual Studio щелкните правой кнопкой мыши надстройку SharePoint и выберите пункт **Упаковать**. На открывшейся странице **Публикация надстройки** нажмите **Упаковать надстройку**. Откроется окно проводника с папкой, содержащей пакет надстройки.
     
  
-3. Войдите в Office 365 от имени глобального администратора и перейдите к семейству веб-сайтов каталога надстроек. Если такого семейства нет, создайте его (см. статью  [Использование каталога надстроек для развертывания пользовательских бизнес-надстроек в среде SharePoint Online](http://office.microsoft.com/en-us/sharepoint-help/use-the-app-catalog-to-make-custom-business-apps-available-for-your-sharepoint-online-environment-HA102772362.aspx)).
+3. Войдите в Office 365 от имени глобального администратора и перейдите к семейству веб-сайтов каталога надстроек. Если такого семейства нет, создайте его (см. статью  [Использование каталога надстроек для развертывания пользовательских бизнес-надстроек в среде SharePoint Online](http://office.microsoft.com/ru-RU/sharepoint-help/use-the-app-catalog-to-make-custom-business-apps-available-for-your-sharepoint-online-environment-HA102772362.aspx)).
     
  
 4. Отправьте пакет надстройки в каталог надстроек.
@@ -700,7 +710,7 @@ using Newtonsoft.Json.Linq;
 7. После установки надстройки щелкните ее значок на странице **Контент сайта**, чтобы запустить надстройку.
     
  
-Дополнительные сведения об установке надстроек SharePoint см. в статье [Развертывание и установка надстроек SharePoint: методы и параметры](deploying-and-installing-sharepoint-add-ins-methods-and-options).
+Дополнительные сведения об установке надстроек SharePoint см. в статье [Развертывание и установка надстроек SharePoint: методы и параметры](deploying-and-installing-sharepoint-add-ins-methods-and-options.md).
  
 
 ## <a name="deploying-the-add-in-to-production"></a>Развертывание надстройки в рабочей среде

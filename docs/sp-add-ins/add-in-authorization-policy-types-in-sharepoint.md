@@ -1,11 +1,21 @@
-# <a name="add-in-authorization-policy-types-in-sharepoint"></a>Типы политик авторизации надстроек в SharePoint
+---
+title: "Типы политик авторизации надстроек в SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 1a5d59656cb15f023b57b912c0cd248352931b2e
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
+# <a name="add-in-authorization-policy-types-in-sharepoint"></a>Политики авторизации надстроек в SharePoint
 Узнайте о различных политиках авторизации надстроек в SharePoint: только для надстроек, для пользователей и надстроек и только для пользователей. В ней также представлены рекомендации по использованию политики только для надстроек.
  
 
- **Примечание.** Название "приложения для SharePoint" меняется на "надстройки SharePoint". Пока изменения не будут внесены полностью, в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio по-прежнему может встречаться термин "приложение". Дополнительные сведения см. в разделе [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
-Прежде чем изучать эту статью, следует ознакомиться со статьями [Разрешения надстроек в SharePoint](add-in-permissions-in-sharepoint-2013) и [Поток OAuth маркера контекста для надстроек SharePoint](context-token-oauth-flow-for-sharepoint-add-ins).
+Прежде чем изучать эту статью, следует ознакомиться со статьями [Разрешения надстроек в SharePoint](add-in-permissions-in-sharepoint.md) и [Поток OAuth маркера контекста для надстроек SharePoint](context-token-oauth-flow-for-sharepoint-add-ins.md).
  
 
 ## <a name="get-an-overview-of-add-in-authorization-policies-types"></a>Обзор типов политик авторизации для надстроек
@@ -70,7 +80,7 @@
  **Примечание.** Предыдущее название надстроек SharePoint — "приложения для SharePoint". Для поддержания обратной совместимости схема манифеста приложения осталась без изменений, поэтому строка "app" присутствует в именах многих элементов и атрибутов.
  
 
-Пользователю, устанавливающему надстройку, будет предложено утвердить этот запрос. Если надстройка запрашивает клиентские разрешения, то разрешить использование политики только для надстроек может только администратор клиента, поэтому только он может установить надстройку. Если надстройка не запрашивает никакие разрешения, область которых выше семейства веб-сайтов, то установить ее может администратор семейства веб-сайтов. Дополнительные сведения об областях разрешений см. в разделе  [Разрешения для надстроек в SharePoint](add-in-permissions-in-sharepoint-2013).
+Пользователю, устанавливающему надстройку, будет предложено утвердить этот запрос. Если надстройка запрашивает клиентские разрешения, то разрешить использование политики только для надстроек может только администратор клиента, поэтому только он может установить надстройку. Если надстройка не запрашивает никакие разрешения, область которых выше семейства веб-сайтов, то установить ее может администратор семейства веб-сайтов. Дополнительные сведения об областях разрешений см. в разделе  [Разрешения для надстроек в SharePoint](add-in-permissions-in-sharepoint.md).
  
 
  
@@ -139,19 +149,19 @@ if (contextTokenString != null)
 <a name="AR"> </a>
 
 
--  [Авторизация и проверка подлинности надстроек SharePoint](authorization-and-authentication-of-sharepoint-add-ins)
+-  [Авторизация и проверка подлинности для надстроек в SharePoint](authorization-and-authentication-of-sharepoint-add-ins.md)
     
  
--  [Разрешения надстроек в SharePoint](add-in-permissions-in-sharepoint-2013)
+-  [Разрешения для надстроек в SharePoint](add-in-permissions-in-sharepoint.md)
     
  
--  [Поток OAuth маркера контекста для надстроек SharePoint](context-token-oauth-flow-for-sharepoint-add-ins)
+-  [Поток OAuth токена контекста для надстроек SharePoint](context-token-oauth-flow-for-sharepoint-add-ins.md)
     
  
--  [Надстройки SharePoint](sharepoint-add-ins)
+-  [Надстройки SharePoint](sharepoint-add-ins.md)
     
  
--  [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins)
+-  [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins.md)
     
  
 

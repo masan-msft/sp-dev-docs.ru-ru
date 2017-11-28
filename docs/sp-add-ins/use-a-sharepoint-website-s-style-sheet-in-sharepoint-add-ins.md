@@ -1,9 +1,18 @@
-
+---
+title: "Использование таблицы стилей веб-сайта SharePoint в надстройках SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 10a440ad261191df975cae695cffa5d6261a65a5
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="use-a-sharepoint-websites-style-sheet-in-sharepoint-add-ins"></a>Использование таблицы стилей веб-сайта SharePoint в надстройках SharePoint
 Узнайте, как использовать таблицы стилей веб-сайта SharePoint в надстройке SharePoint.
  
 
- **Примечание.** Название "приложения для SharePoint" меняется на "надстройки SharePoint". Пока изменения не будут внесены полностью, в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio по-прежнему может встречаться термин "приложение". Дополнительные сведения см. в разделе [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Вы можете ссылаться на таблицу стилей веб-сайта SharePoint в вашей надстройке SharePoint и использовать ее для настройки стиля ваших веб-страниц с помощью таблицы стилей в SharePoint. Кроме того, если кто-либо изменяет таблицу стилей или тему веб-сайта SharePoint, то вы сможете применить новый набор стилей, не меняя ссылку на таблицу стилей в вашей надстройке.
@@ -16,7 +25,7 @@
 ## <a name="prerequisites-for-using-the-examples-in-this-article"></a>Необходимые условия для использования примеров в этой статье
 <a name="SP15Usestylesheetcontrol_Prereq"> </a>
 
-Вам необходима среда разработки, описанная в статье [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins).
+Вам необходима среда разработки, описанная в статье [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins.md).
  
 
  
@@ -33,9 +42,9 @@
 
 |**Название статьи**|**Описание**|
 |:-----|:-----|
-| [Надстройки SharePoint](sharepoint-add-ins)|Сведения о новой модели надстроек в SharePoint, с помощью которой можно создавать надстройки — небольшие и удобные в использовании решения для пользователей.|
-| [Дизайн пользовательского интерфейса надстроек SharePoint](ux-design-for-sharepoint-add-ins)|Сведения о параметрах и вариантах построения пользовательского интерфейса при создании надстроек SharePoint.|
-| [Хост-сайты, сайты надстроек и компоненты в SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013)|Узнайте, в чем разница между хост-сайтами и сайтами надстроек. Узнайте, какие компоненты SharePoint можно включить в Надстройка SharePoint, какие компоненты можно развернуть на хост-сайтах, а какие на сайтах надстроек, а также узнайте, как развертывать сайты надстроек в изолированном домене.|
+| [Надстройки SharePoint](sharepoint-add-ins.md)|Сведения о новой модели надстроек в SharePoint, с помощью которой можно создавать надстройки — небольшие и удобные в использовании решения для пользователей.|
+| [Разработка пользовательского интерфейса для надстроек SharePoint](ux-design-for-sharepoint-add-ins.md)|Сведения о параметрах и вариантах построения пользовательского интерфейса при создании надстроек SharePoint.|
+| [Хост-сайты, сайты надстроек и компоненты SharePoint в SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md)|Узнайте, в чем разница между хост-сайтами и сайтами надстроек. Узнайте, какие компоненты SharePoint можно включить в Надстройка SharePoint, какие компоненты можно развернуть на хост-сайтах, а какие на сайтах надстроек, а также узнайте, как развертывать сайты надстроек в изолированном домене.|
 
 ## <a name="code-example-use-a-sharepoint-websites-style-sheet-in-a-sharepoint-add-in"></a>Пример кода. Использование таблицы стилей веб-сайта SharePoint в надстройке SharePoint
 <a name="SP15Usestylesheetcontrol_Example"> </a>
@@ -71,7 +80,7 @@
  
 
  
-![Веб-страница с использованием элемента управления "Таблица стилей"](../../images/StylesheetControl_result.png)
+![Веб-страница с использованием элемента управления "Таблица стилей"](../images/StylesheetControl_result.png)
  
 
 ### <a name="to-create-the-sharepoint-add-in-and-remote-web-projects"></a>Создание надстройки SharePoint и удаленных веб-проектов
@@ -80,7 +89,7 @@
 1. Откройте Visual Studio от имени администратора. Для этого щелкните правой кнопкой мыши значок Visual Studio в меню **Пуск** и выберите пункт **Запуск от имени администратора**.
     
  
-2. Создайте надстройку SharePoint с размещением у поставщика, как описано в статье [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins), и задайте для нее имя itStylesheetAdd-in. 
+2. Создайте надстройку SharePoint с размещением у поставщика, как описано в статье [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins.md), и задайте для нее имя itStylesheetAdd-in. 
     
  
 
@@ -235,7 +244,7 @@
  
 2. Нажмите клавишу F5.
     
-     **Примечание.** При нажатии клавиши F5 Visual Studio собирает решение, развертывает надстройку и открывает страницу ее разрешений.
+     **Примечание.** При нажатии клавиши F5 Visual Studio выполняет сборку решения, развертывает надстройку и открывает для нее страницу разрешений.
 3. Нажмите кнопку **Доверять**.
     
  
@@ -248,7 +257,7 @@
 
  
 
-  ![Элемент управления "Таблица стилей", используемый на веб-странице](../../images/StylesheetControl_result2.png)
+  ![Элемент управления "Таблица стилей", используемый на веб-странице](../images/StylesheetControl_result2.png)
  
 
  
@@ -274,16 +283,16 @@
 
  
 
--  [Пример кода. Использование таблицы стилей SharePoint в надстройке](http://code.msdn.microsoft.com/SharePoint-2013-Use-the-7a8684e2)
+-  [Пример кода. Использование таблицы стилей SharePoint в надстройке](http://code.msdn.microsoft.com/SharePoint-Use-the-7a8684e2)
     
  
--  [Использование клиентского элемента управления хрома в надстройках SharePoint](use-the-client-chrome-control-in-sharepoint-add-ins)
+-  [Использование клиентского элемента управления хрома в надстройках SharePoint](use-the-client-chrome-control-in-sharepoint-add-ins.md)
     
  
--  [Создание дополнительных действий для развертывания с надстройками SharePoint](create-custom-actions-to-deploy-with-sharepoint-add-ins)
+-  [Создание дополнительных действий для развертывания с надстройками SharePoint](create-custom-actions-to-deploy-with-sharepoint-add-ins.md)
     
  
--  [Создание веб-частей надстроек для установки вместе с надстройкой SharePoint](create-add-in-parts-to-install-with-your-sharepoint-add-in)
+-  [Создание веб-частей надстроек для установки вместе с надстройкой SharePoint](create-add-in-parts-to-install-with-your-sharepoint-add-in.md)
     
  
 
@@ -291,19 +300,19 @@
 <a name="SP15Usestylesheetcontrol_Addresources"> </a>
 
 
--  [Дизайн пользовательского интерфейса надстроек SharePoint](ux-design-for-sharepoint-add-ins)
+-  [Разработка пользовательского интерфейса для надстроек SharePoint](ux-design-for-sharepoint-add-ins.md)
     
  
--  [Рекомендации по проектированию пользовательского интерфейса надстроек SharePoint](sharepoint-add-ins-ux-design-guidelines)
+-  [Рекомендации по проектированию пользовательского интерфейса надстроек SharePoint](sharepoint-add-ins-ux-design-guidelines.md)
     
  
--  [Создание компонентов пользовательского интерфейса в SharePoint](create-ux-components-in-sharepoint-2013)
+-  [Создание компонентов пользовательского интерфейса в SharePoint](create-ux-components-in-sharepoint.md)
     
  
--  [Три представления о вариантах разработки надстроек SharePoint](three-ways-to-think-about-design-options-for-sharepoint-add-ins)
+-  [Что следует рассмотреть, прежде чем приступать к разработке надстроек SharePoint](three-ways-to-think-about-design-options-for-sharepoint-add-ins.md)
     
  
--  [Важные аспекты архитектуры и разработки надстроек SharePoint](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape)
+-  [Важные аспекты разработки и архитектуры для надстроек SharePoint](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md)
     
  
 

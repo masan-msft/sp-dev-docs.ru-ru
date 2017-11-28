@@ -1,8 +1,18 @@
-# <a name="create-a-provider-hosted-add-in-that-includes-a-custom-sharepoint-list-and-content-type"></a>Создание надстроек с размещением у поставщика, которые включают пользовательский список SharePoint и тип контента
+---
+title: "Создание надстройки с размещением у поставщика, которая включает пользовательский список SharePoint и тип контента"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: e5dacf516a3569b2dd38cdbe1936e6c874cb0556
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
+# <a name="create-a-provider-hosted-add-in-that-includes-a-custom-sharepoint-list-and-content-type"></a>Создание надстройки с размещением у поставщика, которая включает пользовательский список SharePoint и тип контента
 Узнайте, как создать надстройку SharePoint, которая объединяет веб-приложение, размещенное в облаке, с размещенными в SharePoint пользовательскими шаблонами списков, экземплярами списков и пользовательскими типами контента, с помощью Инструментов разработчика Office для Visual Studio 2012. Узнайте, как взаимодействовать с сайтами надстроек SharePoint с помощью веб-службы REST/OData и как реализовать OAuth в надстройке SharePoint.
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Большинство классических компонентов SharePoint, например настраиваемые типы контента, пользовательские определения списков и рабочие процессы, можно включить в надстройку SharePoint, размещенную в облаке. Простой пример, приведенный в этой статье, включает следующие компоненты:
@@ -33,7 +43,7 @@
 -  [Visual Studio 2012](https://www.microsoft.com/en-us/download/details.aspx?id=30682) или более поздней версии.
     
  
--  [Office Developer Tools](https://msdn.microsoft.com/en-us/office/aa905340.aspx).
+-  [Office Developer Tools](https://msdn.microsoft.com/ru-RU/office/aa905340.aspx).
     
  
 - Установка SharePoint для тестирования и отладки
@@ -44,7 +54,7 @@
   - Тестовый веб-сайт SharePoint необходимо создать на основе определения **Сайт разработчика** (его можно создать в Центре администрирования).
     
  
-  - Для обмена данными с сайтом надстройки ваше удаленное приложение использует либо JavaScript и [междоменную библиотеку](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library), либо [OAuth](authorization-and-authentication-of-sharepoint-add-ins). При использовании OAuth, как демонстрирует пример в данной статье, необходимо настроить установку SharePoint для работы с OAuth.
+  - Для обмена данными с сайтом надстройки ваше удаленное приложение использует либо JavaScript и [междоменную библиотеку](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md), либо [OAuth](authorization-and-authentication-of-sharepoint-add-ins.md). При использовании OAuth, как демонстрирует пример в данной статье, необходимо настроить установку SharePoint для работы с OAuth.
     
  
 
@@ -64,9 +74,9 @@
 
 |**Название статьи**|**Описание**|
 |:-----|:-----|
-| [Надстройки SharePoint](sharepoint-add-ins)|Изучите новую модель надстроек в SharePoint, с помощью которой можно создавать небольшие и удобные в использовании надстройки для пользователей.|
-| [Важные аспекты разработки и архитектуры для надстроек SharePoint](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape)|Изучите аспекты архитектуры надстроек SharePoint и Модель для надстроек SharePoint, в том числе параметры размещения надстроек и пользовательского интерфейса, систему развертывания, систему безопасности и жизненный цикл.|
-| [Выбор шаблонов для разработки и размещения надстройки SharePoint](choose-patterns-for-developing-and-hosting-your-sharepoint-add-in)|Узнайте о различных способах размещения надстроек SharePoint.|
+| [Надстройки SharePoint](sharepoint-add-ins.md)|Изучите новую модель надстроек в SharePoint, с помощью которой можно создавать небольшие и удобные в использовании надстройки для пользователей.|
+| [Важные аспекты разработки и архитектуры для надстроек SharePoint](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md)|Изучите аспекты архитектуры надстроек SharePoint и Модель для надстроек SharePoint, в том числе параметры размещения надстроек и пользовательского интерфейса, систему развертывания, систему безопасности и жизненный цикл.|
+| [Выбор шаблонов для разработки и размещения надстройки SharePoint](choose-patterns-for-developing-and-hosting-your-sharepoint-add-in.md)|Узнайте о различных способах размещения надстроек SharePoint.|
 
 ## <a name="develop-the-sharepoint-add-in"></a>Разработка надстройки SharePoint
 <a name="Develop"> </a>
@@ -105,14 +115,14 @@
   -  **System.IdentityModel.dll** Данная сборка является частью .NET Framework 4, и она появляется в узле **Assemblies | Framework** диалогового окна **Добавить ссылку**.
     
  
-7. Если удаленное веб-приложение получает доступ к данным на хост-сайте и на сайте надстройки, то необходимо добавить элемент **AppPermissionRequests** (с одним или несколькими дочерними элементами **AppPermissionRequest**) в файл AppManifest.xml. Веб-приложение в нашем примере получает доступ только к сайту надстройки. Субъекты надстроек автоматически получают все разрешения, необходимые для сайта надстройки, поэтому в файле AppManifest.xml из этого примера нет элемента **AppPermissionRequests**. Дополнительные сведения о запросах разрешений для надстроек и о том, как добавлять их, см. в статье [Разрешения для надстроек в SharePoint](add-in-permissions-in-sharepoint-2013).
+7. Если удаленное веб-приложение получает доступ к данным на хост-сайте и на сайте надстройки, то необходимо добавить элемент **AppPermissionRequests** (с одним или несколькими дочерними элементами **AppPermissionRequest**) в файл AppManifest.xml. Веб-приложение в нашем примере получает доступ только к сайту надстройки. Субъекты надстроек автоматически получают все разрешения, необходимые для сайта надстройки, поэтому в файле AppManifest.xml из этого примера нет элемента **AppPermissionRequests**. Дополнительные сведения о запросах разрешений для надстроек и о том, как добавлять их, см. в статье [Разрешения для надстроек в SharePoint](add-in-permissions-in-sharepoint.md).
     
  
 
 ### <a name="to-add-the-sharepoint-components"></a>Добавление компонентов SharePoint
 
 
-1. Вы можете добавлять компоненты SharePoint в надстройку точно так же, как и в классическое решение фермы. Тем не менее, не каждый тип компонентов SharePoint можно включить в надстройку SharePoint. Цели, для которых служат этих компоненты, Надстройки SharePoint достигают другими способами. Подробные сведения о том, какие типы компонентов SharePoint можно включить в надстройку SharePoint, и о том, как включить их в проект, см. в разделах  [Типы компонентов SharePoint, которые могут находиться в надстройке для SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013#TypesOfSPComponentsInApps).
+1. Вы можете добавлять компоненты SharePoint в надстройку точно так же, как и в классическое решение фермы. Тем не менее, не каждый тип компонентов SharePoint можно включить в надстройку SharePoint. Цели, для которых служат этих компоненты, Надстройки SharePoint достигают другими способами. Подробные сведения о том, какие типы компонентов SharePoint можно включить в надстройку SharePoint, и о том, как включить их в проект, см. в разделах  [Типы компонентов SharePoint, которые могут находиться в надстройке для SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md#TypesOfSPComponentsInApps).
     
     Для примера используйте указанные ниже процедуры. В них имеются примеры использования Visual Studio 2012, с помощью которых можно добавить настраиваемые столбцы, типы содержимого, шаблоны списков и экземпляры списков в надстройку SharePoint.
     
@@ -370,7 +380,7 @@
 
     В нашем примере создается веб-приложение ASP.NET. Выполните указанные ниже действия.
     
-      1. Откройте файл Default.aspx и замените основной элемент файла на приведенную ниже разметку. Она добавляет кнопку **Get the Cast** (Получить состав актеров), при нажатии которой данные из списка **Герои пьесы "Гамлет"** на сайте приложения отображаются в элементе управления [GridView](http://msdn2.microsoft.com/EN-US/library/4w7ya1ts), появляющемся только после нажатия кнопки.
+      1. Откройте файл Default.aspx и замените основной элемент файла на приведенную ниже разметку. Она добавляет кнопку **Get the Cast** (Получить состав актеров), при нажатии которой данные из списка **Герои пьесы "Гамлет"** на сайте приложения отображаются в элементе управления [GridView](http://msdn2.microsoft.com/ru-RU/library/4w7ya1ts), появляющемся только после нажатия кнопки.
     
 ```HTML
   <body >
@@ -415,7 +425,7 @@ string accessToken;
 Uri sharepointUrl;
 ```
 
-  4. Замените метод **Page_Load** на приведенный ниже код, который использует класс **TokenHelper** для получения маркеров с защищенного сервера маркеров, совместимого с OAuth. Затем маркер доступа сохраняется в свойстве [CommandArgument](http://msdn2.microsoft.com/EN-US/library/hykdabtx) кнопки для дальнейшего вызова обработчиком события при нажатии кнопки.
+  4. Замените метод **Page_Load** на приведенный ниже код, который использует класс **TokenHelper** для получения маркеров с защищенного сервера маркеров, совместимого с OAuth. Затем маркер доступа сохраняется в свойстве [CommandArgument](http://msdn2.microsoft.com/ru-RU/library/hykdabtx) кнопки для дальнейшего вызова обработчиком события при нажатии кнопки.
     
 ```C#
   protected void Page_Load(object sender, EventArgs e)
@@ -438,7 +448,7 @@ Uri sharepointUrl;
 }
 ```
 
-  5. Добавьте к классу **Default** приведенный ниже обработчик событий. Сначала обработчик получает маркер доступа, который был сохранен в свойстве [CommandArgument](http://msdn2.microsoft.com/EN-US/library/hykdabtx) кнопки.
+  5. Добавьте к классу **Default** приведенный ниже обработчик событий. Сначала обработчик получает маркер доступа, который был сохранен в свойстве [CommandArgument](http://msdn2.microsoft.com/ru-RU/library/hykdabtx) кнопки.
     
 ```C#
   protected void Button1_Click(object sender, EventArgs e)
@@ -458,14 +468,14 @@ Uri sharepointUrl;
 }
 ```
 
-  7. Для получения данных списка добавьте приведенную ниже строку, в которой используется одна из конечных точек SharePoint REST/OData. В этом примере код считывает список **Герои пьесы "Гамлет"**, развернутый на сайте надстройки. Благодаря API для этой службы достаточно одной строки кода, чтобы выбрать список и указать три возвращаемых поля. Обратите внимание, что в URL-адресе OData необходимо использовать внутренние имена полей (столбцов), а не отображаемые имена, поэтому в коде используются значения `Title`, `Actor` и `CastingStatus`, а не `Character`, `Actor/Actress` и `Casting Status.`. Дополнительные сведения о веб-службе REST/OData см. в статье [Использование операций запросов OData в запросах SharePoint REST](use-odata-query-operations-in-sharepoint-rest-requests).
+  7. Для получения данных списка добавьте приведенную ниже строку, в которой используется одна из конечных точек SharePoint REST/OData. В этом примере код считывает список **Герои пьесы "Гамлет"**, развернутый на сайте надстройки. Благодаря API для этой службы достаточно одной строки кода, чтобы выбрать список и указать три возвращаемых поля. Обратите внимание, что в URL-адресе OData необходимо использовать внутренние имена полей (столбцов), а не отображаемые имена, поэтому в коде используются значения `Title`, `Actor` и `CastingStatus`, а не `Character`, `Actor/Actress` и `Casting Status.`. Дополнительные сведения о веб-службе REST/OData см. в статье [Использование операций запросов OData в запросах SharePoint REST](use-odata-query-operations-in-sharepoint-rest-requests.md).
     
 ```C#
   // REST/OData URL section
  string oDataUrl = "/_api/Web/lists/getbytitle('Characters In Hamlet')/items?$select=Title,Actor,CastingStatus";
 ```
 
-  8. Добавьте приведенный ниже код, создающий объекты HTTP-запроса и отклика с помощью классов [HttpWebRequest](http://msdn2.microsoft.com/EN-US/library/8y7x3zz2) и [HttpWebResponse](http://msdn2.microsoft.com/EN-US/library/ww5755y6) из пространства имен [System.Net](http://msdn2.microsoft.com/EN-US/library/btdf6a7e).
+  8. Добавьте приведенный ниже код, создающий объекты HTTP-запроса и отклика с помощью классов [HttpWebRequest](http://msdn2.microsoft.com/ru-RU/library/8y7x3zz2) и [HttpWebResponse](http://msdn2.microsoft.com/ru-RU/library/ww5755y6) из пространства имен [System.Net](http://msdn2.microsoft.com/ru-RU/library/btdf6a7e).
     
 ```C#
   // HTTP Request and Response construction section
@@ -477,7 +487,7 @@ request.Headers.Add("Authorization", "Bearer " + accessToken);
 HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 ```
 
-  9. Для выполнения синтаксического анализа XML-ответа в формате ATOM добавьте следующий код. Он использует классы области имен  [System.Xml.Linq](http://msdn2.microsoft.com/EN-US/library/bb299195) для синтаксического анализа возвращенных данных и создания [List<T>](http://msdn2.microsoft.com/EN-US/library/6sh2ey19) элементов из списка SharePoint. (Вы также могли бы использовать классы области имен [System.Xml](http://msdn2.microsoft.com/EN-US/library/y3y47afh) .) Обратите внимание, что в XML-файле, возвращаемом SharePoint, дочерние элементы элемента **entry** содержат метаданные об элементе списка. Фактические данные строк элемента списка SharePoint размещаются двумя уровнями ниже в элементе **properties**. По этой причине для отфильтровывания верхних уровней дважды используется метод расширения  [Elements<T>](http://msdn2.microsoft.com/EN-US/library/bb348465)
+  9. Для выполнения синтаксического анализа XML-ответа в формате ATOM добавьте следующий код. Он использует классы области имен  [System.Xml.Linq](http://msdn2.microsoft.com/ru-RU/library/bb299195) для синтаксического анализа возвращенных данных и создания [List<T>](http://msdn2.microsoft.com/ru-RU/library/6sh2ey19) элементов из списка SharePoint. (Вы также могли бы использовать классы области имен [System.Xml](http://msdn2.microsoft.com/ru-RU/library/y3y47afh) .) Обратите внимание, что в XML-файле, возвращаемом SharePoint, дочерние элементы элемента **entry** содержат метаданные об элементе списка. Фактические данные строк элемента списка SharePoint размещаются двумя уровнями ниже в элементе **properties**. По этой причине для отфильтровывания верхних уровней дважды используется метод расширения  [Elements<T>](http://msdn2.microsoft.com/ru-RU/library/bb348465)
     
 ```C#
   // Response markup parsing section
@@ -492,7 +502,7 @@ List<XElement> entries = oDataXML.Descendants(atom + "entry")
                          .ToList();
 ```
 
-  10. Добавьте приведенный ниже запрос LINQ, чтобы создать коллекцию [IEnumerable<T>](http://msdn2.microsoft.com/EN-US/library/9eekhta0) анонимного типа, включающего только необходимые нам свойства. Обратите внимание: несмотря на то что код должен ссылаться на поле имени элемента по его внутреннему имени (`Title`), в качестве имени свойства в анонимном типе, которому назначается значение, можно указать значение `Character`. В результате после привязки коллекции к элементу управления сетки на странице будет отображаться более понятное название — **Персонаж**.
+  10. Добавьте приведенный ниже запрос LINQ, чтобы создать коллекцию [IEnumerable<T>](http://msdn2.microsoft.com/ru-RU/library/9eekhta0) анонимного типа, включающего только необходимые нам свойства. Обратите внимание: несмотря на то что код должен ссылаться на поле имени элемента по его внутреннему имени (`Title`), в качестве имени свойства в анонимном типе, которому назначается значение, можно указать значение `Character`. В результате после привязки коллекции к элементу управления сетки на странице будет отображаться более понятное название — **Персонаж**.
     
 ```C#
   var entryFieldValues = from entry in entries
@@ -502,7 +512,7 @@ List<XElement> entries = oDataXML.Descendants(atom + "entry")
 
 ```
 
-  11. Завершите настройку обработчика следующим кодом, привязывающим данные к элементу контроля  [GridView](http://msdn2.microsoft.com/EN-US/library/4w7ya1ts) на странице. Заголовкам столбцов в сетке по умолчанию присваиваются имена свойств анонимного типа: `Character`,  `Actor` и `CastingStatus`. Элемент управления  [GridView](http://msdn2.microsoft.com/EN-US/library/4w7ya1ts) имеет свойства, позволяющие управлять именем и форматировать заголовки колонок, поэтому вы можете сделать так, чтобы имена **Actor/Actress** (Актер/актриса) и **Casting Status** (Статус кастинга) совпадали с заголовками колонок в SharePoint. Чтобы избежать сложностей, эти методы здесь не описываются. (Вы можете также использовать элемент управления [DataGrid](http://msdn2.microsoft.com/EN-US/library/e1zk1ey1) .)
+  11. Завершите настройку обработчика следующим кодом, привязывающим данные к элементу контроля  [GridView](http://msdn2.microsoft.com/ru-RU/library/4w7ya1ts) на странице. Заголовкам столбцов в сетке по умолчанию присваиваются имена свойств анонимного типа: `Character`,  `Actor` и `CastingStatus`. Элемент управления  [GridView](http://msdn2.microsoft.com/ru-RU/library/4w7ya1ts) имеет свойства, позволяющие управлять именем и форматировать заголовки колонок, поэтому вы можете сделать так, чтобы имена **Actor/Actress** (Актер/актриса) и **Casting Status** (Статус кастинга) совпадали с заголовками колонок в SharePoint. Чтобы избежать сложностей, эти методы здесь не описываются. (Вы можете также использовать элемент управления [DataGrid](http://msdn2.microsoft.com/ru-RU/library/e1zk1ey1) .)
     
 ```C#
   GridView1.DataSource = entryFieldValues;
@@ -527,7 +537,7 @@ GridView1.DataBind();
 ## <a name="publishing-the-sharepoint-add-in"></a>Публикация надстройки SharePoint
 <a name="Publish"> </a>
 
-Чтобы опубликовать вашу надстройку SharePoint, отправьте пакет надстройки в корпоративный каталог надстроек или в магазин надстроек Office. Дополнительные сведения см. в разделах  [Публикация в Магазин Office или каталоге надстроек организации](deploying-and-installing-sharepoint-add-ins-methods-and-options#MarketOrCatalog) и [Публикация надстроек для SharePoint](publish-sharepoint-add-ins).
+Чтобы опубликовать вашу надстройку SharePoint, отправьте пакет надстройки в корпоративный каталог надстроек или в магазин надстроек Office. Дополнительные сведения см. в разделах  [Публикация в Магазин Office или каталоге надстроек организации](deploying-and-installing-sharepoint-add-ins-methods-and-options.md#MarketOrCatalog) и [Публикация надстроек для SharePoint](publish-sharepoint-add-ins.md).
  
 
  
@@ -579,13 +589,13 @@ GridView1.DataBind();
 
  
 
-- Добавление в надстройку всех функций CRUD с помощью конечных точек REST/OData или с помощью одной из клиентских объектных моделей. Дополнительные сведения см. в статье [Использование операций запросов OData в запросах SharePoint REST](use-odata-query-operations-in-sharepoint-rest-requests) и [Выполнение базовых операций с помощью кода клиентской библиотеки SharePoint](complete-basic-operations-using-sharepoint-2013-client-library-code).
+- Добавление в надстройку всех функций CRUD с помощью конечных точек REST/OData или с помощью одной из клиентских объектных моделей. Дополнительные сведения см. в статье [Использование операций запросов OData в запросах SharePoint REST](use-odata-query-operations-in-sharepoint-rest-requests.md) и [Выполнение базовых операций с помощью кода клиентской библиотеки SharePoint](complete-basic-operations-using-sharepoint-client-library-code.md).
     
  
-- Локализация надстройки SharePoint для других языков. Дополнительные сведения см. в статье [Локализация надстроек SharePoint](localize-sharepoint-add-ins).
+- Локализация надстройки SharePoint для других языков. Дополнительные сведения см. в статье [Локализация надстроек SharePoint](localize-sharepoint-add-ins.md).
     
  
-- Создание надстройки-компаньона для Windows Phone, которая дублирует функции удаленного веб-приложения. Дополнительные сведения см. в разделе  [Создание мобильных надстроек для SharePoint 2013](http://msdn.microsoft.com/en-us/library/office/jj163228.aspx).
+- Создание надстройки-компаньона для Windows Phone, которая дублирует функции удаленного веб-приложения. Дополнительные сведения см. в разделе  [Создание мобильных надстроек для SharePoint 2013](http://msdn.microsoft.com/ru-RU/library/office/jj163228.aspx).
     
  
 
@@ -593,10 +603,10 @@ GridView1.DataBind();
 <a name="SP15createcloud_bk_addlresources"> </a>
 
 
--  [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins)
+-  [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins.md)
     
  
--  [Знакомство с созданием надстроек SharePoint с размещением в SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins)
+-  [Знакомство с созданием надстроек SharePoint с размещением в SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)
     
  
 

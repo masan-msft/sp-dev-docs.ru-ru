@@ -1,8 +1,18 @@
-# <a name="create-a-custom-proxy-page-for-the-cross-domain-library-in-sharepoint"></a>Создание настраиваемой страницы прокси для междоменной библиотеки в SharePoint
+---
+title: "Создание пользовательской страницы прокси для междоменной библиотеки в SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 78bd322c79ed6c26c5b44b11042064896274f2b7
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
+# <a name="create-a-custom-proxy-page-for-the-cross-domain-library-in-sharepoint"></a>Создание пользовательской страницы прокси для междоменной библиотеки в SharePoint
 Узнайте, как создать пользовательскую страницу прокси для доступа к данным в удаленной службе с веб-страницы SharePoint, используя междоменную библиотеку в SharePoint. 
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 В процессе создания создании надстроек SharePoint обычно приходится использовать данные из различных источников. При этом из соображений безопасности применяются механизмы блокировки, которые препятствуют обмену данными с более чем одним доменом одновременно.
@@ -15,7 +25,7 @@
 ## <a name="prerequisites-for-using-the-examples-in-this-article"></a>Компоненты, необходимые для использования примеров в этой статье
 <a name="SP15Createcustomproxypage_Prereq"> </a>
 
-Вам необходима среда разработки, описанная в статье [Приступая к созданию надстроек SharePoint, размещаемых у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins).
+Вам необходима среда разработки, описанная в статье [Приступая к созданию надстроек SharePoint, размещаемых у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins.md).
  
 
  
@@ -32,10 +42,10 @@
 
 |**Название статьи**|**Описание**|
 |:-----|:-----|
-| [Надстройки SharePoint](sharepoint-add-ins)|Изучите новую модель надстроек в SharePoint, с помощью которой можно создавать небольшие и удобные в использовании надстройки для пользователей.|
-| [Безопасный доступ к данным и клиентские объектные модели для надстроек SharePoint](secure-data-access-and-client-object-models-for-sharepoint-add-ins)|Узнайте о параметрах доступа к данным в Надстройки SharePoint. В этой статье представлена информация об альтернативах высокого уровня при работе с данными в надстройке.|
-| [Хост-сайты, сайты надстроек и компоненты SharePoint в SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint-2013)|Узнайте, в чем разница между хост-сайтами и сайтами надстроек. Узнайте, какие компоненты SharePoint можно включить в Надстройка SharePoint, какие компоненты можно развернуть на хост-сайтах, а какие на сайтах надстроек, а также узнайте, как развертывать сайты надстроек в изолированном домене.|
-| [Междоменная безопасность на стороне клиента](http://msdn.microsoft.com/en-us/library/cc709423%28v=vs.85%29.aspx)|Изучите междоменные угрозы и примеры использования, а также принципы безопасности для междоменных запросов, и оцените риски разработчиков, связанные с улучшением междоменного доступа из веб-приложений, которые запускаются в браузере.|
+| [Надстройки SharePoint](sharepoint-add-ins.md)|Сведения о новой модели надстроек в SharePoint, с помощью которой можно создавать небольшие и удобные в использовании надстройки для пользователей.|
+| [Безопасный доступ к данным и клиентские объектные модели для надстроек SharePoint](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)|Узнайте о параметрах доступа к данным в Надстройки SharePoint. В этой статье представлена информация об альтернативах высокого уровня при работе с данными в надстройке.|
+| [Хост-сайты, сайты надстроек и компоненты SharePoint в SharePoint](host-webs-add-in-webs-and-sharepoint-components-in-sharepoint.md)|Узнайте, в чем разница между хост-сайтами и сайтами надстроек. Узнайте, какие компоненты SharePoint можно включить в Надстройка SharePoint, какие компоненты можно развернуть на хост-сайтах, а какие на сайтах надстроек, а также узнайте, как развертывать сайты надстроек в изолированном домене.|
+| [Междоменная безопасность на стороне клиента](http://msdn.microsoft.com/ru-RU/library/cc709423%28v=vs.85%29.aspx)|Изучите междоменные угрозы и примеры использования, а также принципы безопасности для междоменных запросов, и оцените риски разработчиков, связанные с улучшением междоменного доступа из веб-приложений, которые запускаются в браузере.|
 
 ## <a name="code-example-access-remote-data-using-a-custom-proxy-page-for-the-cross-domain-library"></a>Пример кода: доступ к удаленным данным с помощью настраиваемой страницы прокси для междоменной библиотеки
 <a name="SP15Createcustomproxypage_Codeexample"> </a>
@@ -64,7 +74,7 @@
 1. Откройте Visual Studio от имени администратора. (Для этого щелкните правой кнопкой мыши значок Visual Studio в меню **Пуск** и выберите пункт **Запуск от имени администратора**.)
     
  
-2. Создайте надстройку SharePoint, размещаемую у поставщика, как описано в статье [Приступая к созданию надстроек SharePoint, размещаемых у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins), и назовите ее ProxyPageApp. 
+2. Создайте надстройку SharePoint, размещаемую у поставщика, как описано в статье [Приступая к созданию надстроек SharePoint, размещаемых у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins.md), и назовите ее ProxyPageApp. 
     
  
 
@@ -83,7 +93,7 @@
 ```
 
 
-     **Note**  The  **AllowedRemoteHostUrl** attribute is used to specify the remote domain. The **~remoteAppUrl** resolves to the remote add-in URL. For more information about tokens, see [Explore the app manifest structure and the package of a SharePoint Add-in](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in).
+     **Note**  The  **AllowedRemoteHostUrl** attribute is used to specify the remote domain. The **~remoteAppUrl** resolves to the remote add-in URL. For more information about tokens, see [Explore the app manifest structure and the package of a SharePoint Add-in](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in.md).
 
 ### <a name="to-create-a-custom-proxy-page"></a>Создание настраиваемой страницы прокси
 
@@ -325,9 +335,9 @@ Response.End();
 1. Убедитесь, что проект Надстройка SharePoint выбран как запускаемый проект.
     
  
-2. Нажмите клавишу F5.
+2. Нажмите клавишу F5.
     
-     **Примечание.** Когда вы нажимаете клавишу F5, Visual Studio создает решение, развертывает надстройку и открывает страницу разрешений для надстройки.
+     **Примечание.** При нажатии клавиши F5 Visual Studio выполняет сборку решения, развертывает надстройку и открывает для нее страницу разрешений.
 3. Нажмите кнопку **Доверять**.
     
     Откроется домашняя страница, которая должна выглядеть следующим образом. Может потребоваться несколько секунд, чтобы появилась фраза "Just some text", так как она извлекается со страницы Content.aspx удаленного домена.
@@ -337,7 +347,7 @@ Response.End();
 
  
 
-  ![Страница SharePoint с данными из удаленной службы](../../images/CustomProxy_result.jpg)
+  ![Страница SharePoint с данными из удаленной службы](../images/CustomProxy_result.jpg)
  
 
  
@@ -349,7 +359,7 @@ Response.End();
 
 |**Проблема**|**Решение**|
 |:-----|:-----|
-|Visual Studio не открывает браузер после нажатия клавиши F5.|Настройте проект надстройки SharePoint в качестве запускаемого проекта.|
+|Visual Studio не открывает браузер после нажатия клавиши F5.|Настройте проект надстройки SharePoint в качестве запускаемого проекта.|
 |Необработанное исключение **Не определен указатель стека**.|Убедитесь, что у вас есть доступ к файлу SP.RequestExecutor.js в окне браузера.|
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -360,13 +370,13 @@ Response.End();
 
  
 
--  [Пример кода: получение данных с помощью страницы прокси для междоменной библиотеки](http://code.msdn.microsoft.com/SharePoint-2013-Get-data-10039ff1)
+-  [Пример кода: получение данных с помощью страницы прокси для междоменной библиотеки](http://code.msdn.microsoft.com/SharePoint-Get-data-10039ff1)
     
  
--  [Доступ к данным SharePoint из надстроек с помощью междоменной библиотеки](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library)
+-  [Доступ к данным SharePoint из надстроек с помощью междоменной библиотеки](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md)
     
  
--  [Отправка запросов удаленной службе с помощью веб-прокси в SharePoint](query-a-remote-service-using-the-web-proxy-in-sharepoint-2013)
+-  [Отправка запросов удаленной службе с помощью веб-прокси в SharePoint](query-a-remote-service-using-the-web-proxy-in-sharepoint.md)
     
  
 
@@ -374,28 +384,28 @@ Response.End();
 <a name="SP15Createcustomproxypage_Addresources"> </a>
 
 
--  [Настройка локальной среды разработки для надстроек SharePoint](set-up-an-on-premises-development-environment-for-sharepoint-add-ins)
+-  [Настройка локальной среды разработки надстроек SharePoint](set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md)
     
  
--  [Работа с внешними данными в SharePoint](work-with-external-data-in-sharepoint-2013)
+-  [Работа с внешними данными в SharePoint](work-with-external-data-in-sharepoint.md)
     
  
--  [Безопасный доступ к данным и клиентские объектные модели для надстроек SharePoint](secure-data-access-and-client-object-models-for-sharepoint-add-ins)
+-  [Безопасный доступ к данным и клиентские объектные модели для надстроек SharePoint](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
     
  
--  [Авторизация и проверка подлинности надстроек SharePoint](authorization-and-authentication-of-sharepoint-add-ins)
+-  [Авторизация и проверка подлинности для надстроек в SharePoint](authorization-and-authentication-of-sharepoint-add-ins.md)
     
  
--  [Использование операций запросов OData в запросах REST SharePoint](use-odata-query-operations-in-sharepoint-rest-requests)
+-  [Использование операций запросов OData в запросах REST SharePoint](use-odata-query-operations-in-sharepoint-rest-requests.md)
     
  
--  [Что следует рассмотреть, прежде чем приступать к разработке надстроек SharePoint](three-ways-to-think-about-design-options-for-sharepoint-add-ins)
+-  [Что следует рассмотреть, прежде чем приступать к разработке надстроек SharePoint](three-ways-to-think-about-design-options-for-sharepoint-add-ins.md)
     
  
--  [Важные аспекты разработки и архитектуры для надстроек SharePoint](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape)
+-  [Важные аспекты разработки и архитектуры для надстроек SharePoint](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md)
     
  
--  [Хранение данных в надстройках SharePoint](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape#Data)
+-  [Хранение данных в надстройках SharePoint](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md#Data)
     
  
 

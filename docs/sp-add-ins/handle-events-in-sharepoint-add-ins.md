@@ -1,6 +1,16 @@
+---
+title: "Обработка событий в надстройках SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 5640d1698772b300b66a40fc848ed810c63cdf19
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="handle-events-in-sharepoint-add-ins"></a>Обработка событий в надстройках SharePoint
 
- **Примечание.** Название "приложения для SharePoint" меняется на "надстройки SharePoint". В процессе перехода с одного названия на другое в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio по-прежнему может встречаться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Пользовательский код в надстройках с размещением у поставщика может обрабатывать три категории событий:
@@ -39,10 +49,10 @@
 
  
 
-- События на хост-сайте регистрируются программно с помощью CSOM (клиентской объектной модели) или REST API SharePoint. Обычно для этого используется логика "первого запуска" в надстройке или обработчике события надстройки. Обзор событий надстроек см. в разделе [Обработка событий надстроек](#HandlingAppEvents) этой статьи. Пример кода, который программно регистрирует событие списка: [OfficeDev/PnP/Samples/Core.EventReceivers](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.EventReceivers).
+- События на хост-сайте регистрируются программно с помощью CSOM (клиентской объектной модели) или REST API SharePoint. Обычно для этого используется логика "первого запуска" в надстройке или обработчике события надстройки. Обзор событий надстроек см. в разделе [Обработка событий надстроек](#HandlingAppEvents) этой статьи. Пример кода, который программно регистрирует событие списка: [OfficeDev/PnP/Samples/Core.EventReceivers](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.EventReceivers.md).
     
  
--  События на сайте надстройки обычно регистрируются в компоненте сайта с помощью простой разметки XML. Подробные сведения о создании разметки и службы представлены в статье [Создание удаленного приемника событий в надстройках SharePoint](create-a-remote-event-receiver-in-sharepoint-add-ins). Кроме того, события на сайте надстройки можно регистрировать программным способом.
+-  События на сайте надстройки обычно регистрируются в компоненте сайта с помощью простой разметки XML. Подробные сведения о создании разметки и службы представлены в статье [Создание удаленного приемника событий в надстройках SharePoint](create-a-remote-event-receiver-in-sharepoint-add-ins.md). Кроме того, события на сайте надстройки можно регистрировать программным способом.
     
  
 
@@ -133,7 +143,7 @@
 
  
 
- **Примечание.** Дополнительные сведения об удаленных приемниках событий, в том числе сведения об устранении неполадок, см. [здесь](handle-events-in-sharepoint-add-ins#RERFAQ).
+ **Примечание.** Дополнительные сведения об удаленных приемниках событий, в том числе сведения об устранении неполадок, см. [здесь](handle-events-in-sharepoint-add-ins.md#RERFAQ).
  
 
 
@@ -152,7 +162,7 @@
 
  
 
- **Примечание.** При установке надстройки на [уровне клиента](tenancies-and-deployment-scopes-for-sharepoint-add-ins) она устанавливается в семействе веб-сайтов каталога надстроек, и событие AppInstalled запускается только после этого. Надстройка видима на нескольких веб-сайтах в клиентской организации, но событие не запускается для каждого из них отдельно.
+ **Примечание.** При установке надстройки на [уровне клиента](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md) она устанавливается в семействе веб-сайтов каталога надстроек, и событие AppInstalled запускается только после этого. Надстройка видима на нескольких веб-сайтах в клиентской организации, но событие не запускается для каждого из них отдельно.
  
 
 Помимо отмены установки надстройки, это событие можно использовать для других целей, в том числе:
@@ -168,7 +178,7 @@
  
 - Установка параметров инициализации, зависящих от экземпляра надстройки. Например, у надстройки может быть контейнер свойств сайта надстройки для хранения параметров, которые отличаются между разными экземплярами надстройки. Обработчик AppInstalled может записывать в контейнер свойств разные значения, зависящие, к примеру, от типа хост-сайта (например, сайта группы или блога).
     
-     **Примечание.** Проверив, является ли хост-сайт сайтом каталога надстроек, можно определить, установлена ли надстройка на уровне клиента. См. статью [Области клиентов и области развертывания для надстроек SharePoint](tenancies-and-deployment-scopes-for-sharepoint-add-ins).
+     **Примечание.** Проверив, является ли хост-сайт сайтом каталога надстроек, можно определить, установлена ли надстройка на уровне клиента. См. статью [Области клиентов и области развертывания для надстроек SharePoint](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md).
 - Выполнение в удаленном веб-приложении настройки, зависящей от экземпляра надстройки, например добавление таблицы в базу данных.
     
  
@@ -208,7 +218,7 @@
 - Изменение компонентов, зависящих от экземпляра надстройки, в веб-приложении или удаленной базе данных надстройки.
     
  
- *Подробные инструкции по созданию обработчиков событий надстроек см. в [этой статье](create-an-add-in-event-receiver-in-sharepoint-add-ins)*.
+ *Подробные инструкции по созданию обработчиков событий надстроек см. в [этой статье](create-an-add-in-event-receiver-in-sharepoint-add-ins.md)*.
  
 
  
@@ -245,7 +255,7 @@
  
 
  
-![Действия для просмотра ошибок при установке надстройки в SharePoint](../../images/1edb644e-b3d4-4a9b-b92e-4ae2c07341c2.png)
+![Действия для просмотра ошибок при установке надстройки в SharePoint](../images/1edb644e-b3d4-4a9b-b92e-4ae2c07341c2.png)
  
 
 #### <a name="add-in-event-handler-architecture-strategies"></a>Стратегии архитектуры обработчиков событий надстройки
@@ -308,7 +318,7 @@ Send
  
 
  
-Модель надстроек SharePoint не позволяет хранить пользовательский серверный код в SharePoint и вызывать его из CSOM (клиентской объектной модели). Но CSOM позволяет объединить логику try-catch и if-then-else и отправить ее на сервер для выполнения. Подробный пример обработчика событий надстройки, который использует стратегию делегирования для добавления списка на хост-сайт см. в [этой статье](create-an-add-in-event-receiver-in-sharepoint-add-ins). Пример кода см. на странице [OfficeDev/PnP/Samples/Core.AppEvents.HandlerDelegation](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.AppEvents.HandlerDelegation).
+Модель надстроек SharePoint не позволяет хранить пользовательский серверный код в SharePoint и вызывать его из CSOM (клиентской объектной модели). Но CSOM позволяет объединить логику try-catch и if-then-else и отправить ее на сервер для выполнения. Подробный пример обработчика событий надстройки, который использует стратегию делегирования для добавления списка на хост-сайт см. в [этой статье](create-an-add-in-event-receiver-in-sharepoint-add-ins.md). Пример кода см. на странице [OfficeDev/PnP/Samples/Core.AppEvents.HandlerDelegation](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.AppEvents.HandlerDelegation.md).
  
 
  
@@ -324,7 +334,7 @@ Send
 ## <a name="remote-event-receivers-in-add-ins-that-support-multiple-security-zones"></a>Удаленные приемники событий в надстройках, поддерживающих несколько зон безопасности
 <a name="HandlingAppEvents"> </a>
 
-В отношении разработки надстроек, поддерживающих несколько зон безопасности и содержащих удаленный приемник событий, действуют некоторые ограничения. Дополнительные сведения см. в статье базы знаний kb3135876 о том, что [невозможно добавить приложение из Магазина SharePoint по умолчанию при использовании надстроек, размещенных у поставщика, не в зонах по умолчанию в SharePoint](https://support.microsoft.com/en-us/kb/3135876).
+В отношении разработки надстроек, поддерживающих несколько зон безопасности и содержащих удаленный приемник событий, действуют некоторые ограничения. Дополнительные сведения см. в статье базы знаний kb3135876 о том, что [невозможно добавить приложение из Магазина SharePoint по умолчанию при использовании надстроек, размещенных у поставщика, не в зонах по умолчанию в SharePoint](https://support.microsoft.com/ru-RU/kb/3135876).
  
 
  
@@ -387,7 +397,7 @@ properties.EventType == SPRemoteEventType.ItemUpdating)
 
 ```
 
-| Полный пример кода см. в [этой статье](http://code.msdn.microsoft.com/SharePoint-2013-Add-list-2c6e71e0). Подробную демонстрацию см. в [этом видео](http://channel9.msdn.com/Series/Reimagine-SharePoint-Development/Migrating-a-SharePoint-Event-Receiver-to-a-Remote-Event-Receiver).
+| Полный пример кода см. в [этой статье](http://code.msdn.microsoft.com/SharePoint-Add-list-2c6e71e0). Подробную демонстрацию см. в [этом видео](http://channel9.msdn.com/Series/Reimagine-SharePoint-Development/Migrating-a-SharePoint-Event-Receiver-to-a-Remote-Event-Receiver).
  
 
  
@@ -395,7 +405,7 @@ properties.EventType == SPRemoteEventType.ItemUpdating)
 ### 
 <a name="RER_HowRERDifferentfrom2010"> </a>
 
-Сведения см. в разделе [Перечисление SPRemoteEventType](https://msdn.microsoft.com/en-us/library/microsoft.sharepoint.client.eventreceivers.spremoteeventtype.aspx).
+Сведения см. в разделе [Перечисление SPRemoteEventType](https://msdn.microsoft.com/ru-RU/library/microsoft.sharepoint.client.eventreceivers.spremoteeventtype.aspx).
  
 
  
@@ -423,7 +433,7 @@ properties.EventType == SPRemoteEventType.ItemUpdating)
  
 
  
-![Принцип действия удаленных приемников событий в SharePoint](../../images/SP15Con_Remote_Event_Receivers_FAQ_fig1.png)
+![Принцип действия удаленных приемников событий в SharePoint](../images/SP15Con_Remote_Event_Receivers_FAQ_fig1.png)
  
 
  
@@ -433,7 +443,7 @@ properties.EventType == SPRemoteEventType.ItemUpdating)
 ### <a name="how-do-i-debug-remote-event-receivers"></a>Как отлаживать удаленные приемники событий?
 <a name="RER_DebugRER"> </a>
 
-См. статью [Устранение неполадок и отладка удаленного приемника событий в надстройке SharePoint](debug-and-troubleshoot-a-remote-event-receiver-in-a-sharepoint-add-in). 
+См. статью [Устранение неполадок и отладка удаленного приемника событий в надстройке SharePoint](debug-and-troubleshoot-a-remote-event-receiver-in-a-sharepoint-add-in.md). 
  
 
  
@@ -466,10 +476,10 @@ properties.EventType == SPRemoteEventType.ItemUpdating)
 <a name="SP15handleevents_addlresources"> </a>
 
 
--  [Создание удаленного приемника событий в надстройках SharePoint](create-a-remote-event-receiver-in-sharepoint-add-ins)
+-  [Создание удаленного приемника событий в надстройках SharePoint](create-a-remote-event-receiver-in-sharepoint-add-ins.md)
     
  
--  [Создание приемника событий надстроек в надстройках SharePoint](create-an-add-in-event-receiver-in-sharepoint-add-ins)
+-  [Создание удаленного приемника событий в надстройках SharePoint](create-an-add-in-event-receiver-in-sharepoint-add-ins.md)
     
  
 -  [Введение в удаленные приемники событий в SharePoint](http://www.microsoft.com/resources/msdn/en-us/office/media/video/videol?cid=sdc&amp;from=mscomsdc&amp;VideoID=3ef8f7ae-85a7-44c3-967d-d1620e2a019f)

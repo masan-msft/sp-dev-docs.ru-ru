@@ -1,9 +1,19 @@
-# <a name="develop-sharepoint-add-ins"></a>Разработка надстроек для SharePoint
+---
+title: "Разработка надстроек SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: db07ab3033222bf7240db0b99f4a9fafb961c3e7
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
+# <a name="develop-sharepoint-add-ins"></a>Разработка надстроек SharePoint
 Здесь вы найдете подробные статьи и ресурсы, которые помогут вам расширить возможности своих надстроек SharePoint.
  
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
-> **Примечание.** В этой статье предполагается, что вы ознакомились со статьей [Надстройки SharePoint](sharepoint-add-ins) и материалами, посвященными началу работы, на которые она ссылается.
+> **Примечание.** В этой статье предполагается, что вы ознакомились со статьей [Надстройки SharePoint](sharepoint-add-ins.md) и материалами, посвященными началу работы, на которые она ссылается.
 
 В разделе **Разработка** доступны следующие материалы, в которых описываются все возможности надстроек SharePoint:
 
@@ -26,7 +36,7 @@
 ## <a name="get-started-with-sharepoint-add-ins-resources"></a>Начало работы с ресурсами надстроек SharePoint
 <a name="bk_gettingstarted"> </a>
 
-Если вы только приступаете к разработке Надстройки SharePoint, сначала обратитесь к странице  [Надстройки SharePoint](sharepoint-add-ins). На ней приведены ссылки на основные статьи, которые позволят вам быстро ознакомиться с различными типами Надстройки SharePoint. Прежде чем переходить к разработке более сложных Надстройки SharePoint, вам нужно ясно представлять себе, какие типы надстроек вы собираетесь создавать, какие технологии вы хотите включить и какие варианты размещения вы планируете использовать.
+Если вы только приступаете к разработке Надстройки SharePoint, сначала обратитесь к странице  [Надстройки SharePoint](sharepoint-add-ins.md). На ней приведены ссылки на основные статьи, которые позволят вам быстро ознакомиться с различными типами Надстройки SharePoint. Прежде чем переходить к разработке более сложных Надстройки SharePoint, вам нужно ясно представлять себе, какие типы надстроек вы собираетесь создавать, какие технологии вы хотите включить и какие варианты размещения вы планируете использовать.
  
 ### <a name="essential-tasks-and-resources-for-developing-sharepoint-add-ins-using-the-client-object-model-javascript-object-model-and-rest-endpoints-in-sharepoint"></a>Основные задачи и ресурсы, посвященные разработке надстроек SharePoint с помощью объектной модели JavaScript, клиентской объектной модели и конечных точек REST в SharePoint
 <a name="bk_essentials"> </a>
@@ -38,9 +48,9 @@
 
 |**Статья**|**Описание**|
 |:-----|:-----|
-| [Выполнение базовых операций с использованием кода клиентской библиотеки в SharePoint](complete-basic-operations-using-sharepoint-2013-client-library-code)|Узнайте, как выполнять распространенные операции с помощью C# и клиентской объектной модели.|
-| [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013)|Узнайте, как выполнять распространенные операции с помощью объектной модели JavaScript.|
-| [Выполнение базовых операций с использованием конечных точек SharePoint REST](complete-basic-operations-using-sharepoint-2013-rest-endpoints)|Узнайте, как выполнять распространенные операции с помощью интерфейса REST.|
+| [Выполнение базовых операций с использованием кода библиотеки клиента в SharePoint](complete-basic-operations-using-sharepoint-client-library-code.md)|Узнайте, как выполнять распространенные операции с помощью C# и клиентской объектной модели.|
+| [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint.md)|Узнайте, как выполнять распространенные операции с помощью объектной модели JavaScript.|
+| [Выполнение базовых операций с использованием конечных точек SharePoint REST](complete-basic-operations-using-sharepoint-rest-endpoints.md)|Узнайте, как выполнять распространенные операции с помощью интерфейса REST.|
 
 ## <a name="learn-the-fundamental-concepts-for-development-with-sharepoint-add-ins"></a>Сведения об основных понятиях, связанных с разработкой надстроек SharePoint
 <a name="bk_fundamentals"> </a>
@@ -51,10 +61,10 @@
 
 |**Статья**|**Описание**|
 |:-----|:-----|
-| [Авторизация и проверка подлинности надстроек SharePoint](authorization-and-authentication-of-sharepoint-add-ins)|Узнайте об основных понятиях, связанных с получением необходимых привилегий для работы с ресурсами SharePoint.|
-| [Изучение структуры манифеста приложения и пакета надстройки SharePoint](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in)|Узнайте, как работают манифесты и создаются пакеты надстроек.|
-| [Создание компонентов пользовательского интерфейса в SharePoint](create-ux-components-in-sharepoint-2013)|Описание способов создания функционального пользовательского интерфейса в надстройках SharePoint.|
-| [Работа с внешними данными в SharePoint](work-with-external-data-in-sharepoint-2013)|Описание параметров и методик доступа к данным, доступных в надстройках SharePoint различных типов.|
+| [Авторизация и проверка подлинности для надстроек в SharePoint](authorization-and-authentication-of-sharepoint-add-ins.md)|Узнайте об основных понятиях, связанных с получением необходимых привилегий для работы с ресурсами SharePoint.|
+| [Изучение структуры манифеста приложения и пакета надстройки SharePoint](explore-the-app-manifest-structure-and-the-package-of-a-sharepoint-add-in.md)|Узнайте, как работают манифесты и создаются пакеты надстроек.|
+| [Создание компонентов пользовательского интерфейса в SharePoint](create-ux-components-in-sharepoint.md)|Описание способов создания функционального пользовательского интерфейса в надстройках SharePoint.|
+| [Работа с внешними данными в SharePoint](work-with-external-data-in-sharepoint.md)|Описание параметров и методик доступа к данным, доступных в надстройках SharePoint различных типов.|
 | [Лицензирование надстроек Office и SharePoint](http://msdn.microsoft.com/library/license-your-office-and-sharepoint-add-ins%28Office.15%29.aspx)|Описание платформы лицензий для надстроек Office и SharePoint.|
 
 ## <a name="put-the-pieces-together-building-advanced-sharepoint-add-ins-by-integrating-capabilities"></a>Резюме: совершенствование надстроек SharePoint путем внедрения возможностей
@@ -66,13 +76,13 @@
 
 |**Статья**|**Описание**|
 |:-----|:-----|
-| [Создание надстройки с размещением у поставщика, включающей настраиваемый список SharePoint и пользовательский тип контента](create-a-provider-hosted-add-in-that-includes-a-custom-sharepoint-list-and-conte)|Узнайте, как создавать размещаемые в облаке надстройки SharePoint, которые включают настраиваемые списки SharePoint и пользовательские типы контента.|
+| [Создание надстройки с размещением у поставщика, включающей настраиваемый список SharePoint и пользовательский тип контента](create-a-provider-hosted-add-in-that-includes-a-custom-sharepoint-list-and-conte.md)|Узнайте, как создавать размещаемые в облаке надстройки SharePoint, которые включают настраиваемые списки SharePoint и пользовательские типы контента.|
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 <a name="bk_addresources"> </a>
 
--  [Средства и среды для разработки надстроек SharePoint](tools-and-environments-for-developing-sharepoint-add-ins) 
--  [Проектирование надстроек SharePoint](design-sharepoint-add-ins)
--  [Публикация надстроек SharePoint](publish-sharepoint-add-ins)
+-  [Средства и среды для разработки надстроек SharePoint](tools-and-environments-for-developing-sharepoint-add-ins.md) 
+-  [Проектирование надстроек SharePoint](design-sharepoint-add-ins.md)
+-  [Публикация надстроек SharePoint](publish-sharepoint-add-ins.md)
 -  [Пакет примеров надстроек SharePoint](http://code.msdn.microsoft.com/office/Apps-for-SharePoint-sample-64c80184)
  

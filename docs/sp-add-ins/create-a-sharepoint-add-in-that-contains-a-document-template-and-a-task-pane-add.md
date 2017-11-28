@@ -1,8 +1,18 @@
-# <a name="create-a-sharepoint-add-in-that-contains-a-document-template-and-a-task-pane-add-in"></a>Создание надстройки SharePoint, содержащей шаблон документов и надстройку области задач
+---
+title: "Создание надстройки SharePoint, содержащей шаблон документа и надстройку области задач"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 8cda409943bfb30168650d3aaf8118ce4af0faac
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
+# <a name="create-a-sharepoint-add-in-that-contains-a-document-template-and-a-task-pane-add-in"></a>Создание надстройки SharePoint, содержащей шаблон документа и надстройку области задач
 Разработка надстройки Office, которая отображается в документе, открытом из надстройки SharePoint, с помощью Visual Studio.
  
 
- **Примечание.** Название "приложения для SharePoint" меняется на "надстройки SharePoint". Пока изменения не будут внесены полностью, в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio по-прежнему может встречаться термин "приложение". Дополнительные сведения см. в разделе [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Вы можете создать надстройку SharePoint, которая включает в себя шаблон документа (например, авансовый отчет). Этот документ может содержать надстройку области задач, взаимодействующую с данными SharePoint. Например, пользователи могут заполнить поля счета, используя данные из Business Connectivity Services (BCS), или создать авансовый отчет, выбрав категорию расходов из списка SharePoint.
@@ -26,10 +36,10 @@
 
 - Среда разработки для SharePoint:
     
-      - О разработке надстроек SharePoint для Office 365 см. в статье[ Настройка среды для разработки надстроек SharePoint в Office 365](http://msdn.microsoft.com/en-us/library/office/apps/fp161179%28v=office.15%29).
+      - О разработке надстроек SharePoint для Office 365 см. в статье[ Настройка среды для разработки надстроек SharePoint в Office 365](http://msdn.microsoft.com/ru-RU/library/office/apps/fp161179%28v=office.15%29).
     
  
-  - Если вы собираетесь создавать надстройки SharePoint, предназначенные для локальной установки SharePoint, см. статью [Настройка локальной среды разработки надстроек SharePoint](http://msdn.microsoft.com/en-us/library/office/apps/fp179923%28v=office.15%29).
+  - Если вы собираетесь создавать надстройки SharePoint, предназначенные для локальной установки SharePoint, см. статью [Настройка локальной среды разработки надстроек SharePoint](http://msdn.microsoft.com/ru-RU/library/office/apps/fp179923%28v=office.15%29).
     
  
 -  [Visual Studio 2015 и Инструменты разработчика Microsoft Office](https://www.visualstudio.com/features/office-tools-vs)
@@ -143,7 +153,7 @@
  
 12. В конструкторе манифестов задайте для элемента **Начальная страница** значение ~appWebUrl/Lists/MyDocumentLibrary. Оно будет преобразовано в значение OfficeEnabledAddin/Lists/MyDocumentLibrary.
     
-     **Примечание.** Этот URL-адрес относится к библиотеке документов. В начале любого URL-адреса в манифесте надстройки Office, указывающего на элементы веб-сайта надстройки, необходимо указывать токен ~appWebUrl. Дополнительные сведения о токенах URL-адреса в проекте надстройки SharePoint см. в статье [Токены и строки URL-адресов в надстройках SharePoint](url-strings-and-tokens-in-sharepoint-add-ins).
+     **Примечание.** Этот URL-адрес относится к библиотеке документов. В начале любого URL-адреса в манифесте надстройки Office, указывающего на элементы веб-сайта надстройки, необходимо указывать токен ~appWebUrl. Дополнительные сведения о токенах URL-адреса в проекте надстройки SharePoint см. в статье [Токены и строки URL-адресов в надстройках SharePoint](url-strings-and-tokens-in-sharepoint-add-ins.md).
 13. Закройте конструктор манифестов, чтобы сохранить изменения.
     
  
@@ -160,10 +170,10 @@
 
  
 
--  [Выполнение базовых операций с использованием конечных точек SharePoint REST](complete-basic-operations-using-sharepoint-2013-rest-endpoints)
+-  [Выполнение базовых операций с использованием конечных точек SharePoint REST](complete-basic-operations-using-sharepoint-rest-endpoints.md)
     
  
--  [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint-2013)
+-  [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint.md)
     
  
 -  [Сохранение состояния и параметров надстройки](http://msdn.microsoft.com/library/407df6e8-c237-4d6a-b357-3000fe3de9ff%28Office.15%29.aspx)
@@ -292,7 +302,7 @@
 
  
 
- **Примечание.** При выполнении инструкций из этого раздела открывается Excel Online, поэтому обязательно наличие учетной записи Office 365. См. статью [Настройка среды для разработки надстроек SharePoint в Office 365](http://msdn.microsoft.com/en-us/library/office/apps/fp161179%28v=office.15%29).
+ **Примечание.** При выполнении инструкций из этого раздела открывается Excel Online, поэтому обязательно наличие учетной записи Office 365. См. статью [Настройка среды для разработки надстроек SharePoint в Office 365](http://msdn.microsoft.com/ru-RU/library/office/apps/fp161179%28v=office.15%29).
  
 
 
@@ -354,7 +364,7 @@
 
 - В  **обозревателе решений** откройте контекстное меню для проекта надстройки SharePoint и выберите элемент **Опубликовать**.
     
-    Откроется **мастер публикации надстроек для Office и SharePoint**. Дополнительные сведения см. в статье [Публикация надстройки для SharePoint с помощью Visual Studio](publish-sharepoint-add-ins-by-using-visual-studio).
+    Откроется **мастер публикации надстроек для Office и SharePoint**. Дополнительные сведения см. в статье [Публикация надстройки для SharePoint с помощью Visual Studio](publish-sharepoint-add-ins-by-using-visual-studio.md).
     
  
 

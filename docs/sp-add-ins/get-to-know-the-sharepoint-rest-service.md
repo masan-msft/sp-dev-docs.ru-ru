@@ -1,8 +1,18 @@
+---
+title: "Знакомство со службой REST в SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: a9efa0de0a7510749ab0e9d3f854ad1f959798b5
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="get-to-know-the-sharepoint-rest-service"></a>Знакомство со службой REST в SharePoint
 Основы использования службы REST в SharePoint для чтения и изменения данных в SharePoint по веб-протоколам REST и OData.
  
 
- **Примечание.** Название "приложения для SharePoint" меняется на "надстройки SharePoint". Пока изменения не будут внесены полностью, в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio по-прежнему может встречаться термин "приложение". Дополнительные сведения см. в разделе [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 В SharePoint появилась служба передачи репрезентативного состояния (REST), которую можно сравнить с уже входящими в состав SharePoint [клиентскими объектными моделями](http://msdn.microsoft.com/library/88e5e1b9-eab2-4f3b-a3f2-75c96b86f1f4%28Office.15%29.aspx). Теперь разработчики могут удаленно взаимодействовать непосредственно с данными SharePoint, используя любую технологию, поддерживающую веб-запросы REST. Это означает, что разработчики могут совершать операции **Create**, **Read**, **Update** и **Delete** (CRUD) из надстроек, решений и клиентских приложений SharePoint с помощью веб-технологий REST и стандартного синтаксиса Open Data Protocol (OData).
@@ -52,7 +62,7 @@ List.GetByTitle(listname)
  
 
  
-![Архитектура службы REST в SharePoint](../../images/SPF15Con_REST_RESTStructure.png)
+![Архитектура службы REST в SharePoint](../images/SPF15Con_REST_RESTStructure.png)
  
 Благодаря функциональности и простоте использования этих клиентских объектных моделей разработчики чаще всего применяют их для обмена данными с сайтами SharePoint, используя управляемый код для .NET Framework, Silverlight или JavaScript.
  
@@ -118,7 +128,7 @@ List.GetByTitle(listname)
  
 
  
-В статье  [Определение универсальных кодов ресурсов (URI) конечных точек службы SharePoint REST](determine-sharepoint-rest-service-endpoint-uris) представлены дополнительные инструкции по определению URI конечных точек SharePoint REST из подписи соответствующих API клиентской объектной модели.
+В статье [Как определить URI конечных точек службы REST в SharePoint](determine-sharepoint-rest-service-endpoint-uris.md) представлены дополнительные указания, позволяющие определить URI для конечных точек службы REST в SharePoint, используя подписи соответствующих API клиентской объектной модели.
  
 
  
@@ -165,7 +175,7 @@ List.GetByTitle(listname)
 ## <a name="batch-job-support"></a>Поддержка пакетных заданий
 <a name="batch"> </a>
 
-Служба REST SharePoint Online (а также локального выпуска SharePoint 2016 или более поздней версии) поддерживает объединение нескольких запросов в одном вызове службы с помощью параметра запроса OData  `$batch`. Дополнительные сведения и ссылки на примеры кода см. в разделе  [Создание пакетного запроса с помощью интерфейсов REST API](make-batch-requests-with-the-rest-apis).
+Служба REST в SharePoint Online (а также локальной среде SharePoint 2016 или более поздней версии) поддерживает объединение нескольких запросов в один при вызове службы с помощью параметра запроса OData `$batch`. Подробные сведения и ссылки на примеры кода см. в статье [Выполнение пакетных запросов с помощью REST API](make-batch-requests-with-the-rest-apis.md).
  
 
  
@@ -180,18 +190,18 @@ List.GetByTitle(listname)
 
 |**Название**|**Описание**|
 |:-----|:-----|
-| [Выполнение базовых операций с использованием конечных точек SharePoint REST](complete-basic-operations-using-sharepoint-2013-rest-endpoints)|Узнайте, как выполнять операции CRUD (создание, чтение, обновление, удаление) с помощью интерфейса REST SharePoint.|
-| [Работа со списками и элементами списков в службе REST](working-with-lists-and-list-items-with-rest)|Узнайте, как выполнять основные операции по созданию, чтению, обновлению и удалению списков и элементов списков с помощью интерфейса REST SharePoint.|
-| [Работа с папками и файлами в службе REST](working-with-folders-and-files-with-rest)|Узнайте, как выполнять основные операции по созданию, чтению, обновлению и удалению папок и файлов с помощью интерфейса REST SharePoint.|
-| [Навигация по структуре данных SharePoint, представленной в службе REST](navigate-the-sharepoint-data-structure-represented-in-the-rest-service)|Узнайте, как с помощью конечной точки REST в элементе SharePoint получить доступ к связанным элементам, например родительским сайтам или структуре библиотеки, в которой находится этот элемент.|
-| [Определение универсальных кодов ресурсов (URI) конечных точек службы SharePoint REST](determine-sharepoint-rest-service-endpoint-uris)|В этой статье представлены общие инструкции, позволяющие определить URI конечных точек REST в SharePoint, используя подписи соответствующих API клиентской объектной модели.|
-| [Использование операций запросов OData в запросах SharePoint REST](use-odata-query-operations-in-sharepoint-rest-requests)|Узнайте, как использовать широкий спектр операторов строки запроса OData для выбора, фильтрации и упорядочивания данных, запрашиваемых у службы REST SharePoint.|
+| [Выполнение базовых операций с использованием конечных точек SharePoint REST](complete-basic-operations-using-sharepoint-rest-endpoints.md)|Узнайте, как выполнять операции CRUD (создание, чтение, обновление, удаление) с помощью интерфейса REST SharePoint.|
+| [Работа со списками и элементами списков в службе REST](working-with-lists-and-list-items-with-rest.md)|Узнайте, как выполнять основные операции по созданию, чтению, обновлению и удалению списков и элементов списков с помощью интерфейса REST SharePoint.|
+| [Работа с папками и файлами в службе REST](working-with-folders-and-files-with-rest.md)|Узнайте, как выполнять основные операции по созданию, чтению, обновлению и удалению папок и файлов с помощью интерфейса REST SharePoint.|
+| [Навигация по структуре данных SharePoint, представленной в службе REST](navigate-the-sharepoint-data-structure-represented-in-the-rest-service.md)|Узнайте, как с помощью конечной точки REST в элементе SharePoint получить доступ к связанным элементам, например родительским сайтам или структуре библиотеки, в которой находится этот элемент.|
+| [Как определить URI конечных точек службы REST в SharePoint](determine-sharepoint-rest-service-endpoint-uris.md)|В этой статье представлены общие инструкции, позволяющие определить URI конечных точек REST в SharePoint, используя подписи соответствующих API клиентской объектной модели.|
+| [Использование операций запросов OData в запросах REST SharePoint](use-odata-query-operations-in-sharepoint-rest-requests.md)|Узнайте, как использовать широкий спектр операторов строки запроса OData для выбора, фильтрации и упорядочивания данных, запрашиваемых у службы REST SharePoint.|
 | [SharePoint REST API, конечные точки и примеры](http://msdn.microsoft.com/library/rest-api-reference-and-samples%28Office.15%29.aspx)|На этой странице приведены ссылки на все ресурсы по REST, доступные для разработчиков SharePoint в MSDN.|
 | [Общие сведения о REST API для службы поиска SharePoint](http://msdn.microsoft.com/library/8a4f7863-e4c1-4099-9189-a1894db36930%28Office.15%29.aspx)|Добавление функции поиска в клиентские и мобильные приложения с помощью службы поиска REST в SharePoint Server 2013 и в любой технологии, поддерживающей веб-запросы REST.|
 | [Social feed REST API reference for SharePoint](http://msdn.microsoft.com/library/f1cb914f-1e91-4e23-bf53-d2ab323eac13%28Office.15%29.aspx)|Подробнее о конечных точках REST SharePoint для выполнения задач, связанных с каналами.|
 | [Following people and content REST API reference for SharePoint](http://msdn.microsoft.com/library/c05755df-846d-4a39-941d-950d066cc6d4%28Office.15%29.aspx)|Подробнее о конечных точках REST SharePoint для подписки на людей и контент.|
-| [Создание пакетного запроса с помощью интерфейсов REST API](make-batch-requests-with-the-rest-apis)|Узнайте, как объединить несколько запросов в один пот вызове службы REST.|
-| [Синхронизация элементов SharePoint с помощью службы REST](synchronize-sharepoint-items-using-the-rest-service)|Узнайте, как синхронизировать элементы между SharePoint и надстройками или службами с помощью ресурса **GetListItemChangesSinceToken**, входящего в состав службы REST в SharePoint.|
+| [Отправка пакетных запросов с помощью интерфейсов REST API](make-batch-requests-with-the-rest-apis.md)|Узнайте, как объединить несколько запросов в один пот вызове службы REST.|
+| [Синхронизация элементов SharePoint с помощью службы REST](synchronize-sharepoint-items-using-the-rest-service.md)|Узнайте, как синхронизировать элементы между SharePoint и надстройками или службами с помощью ресурса **GetListItemChangesSinceToken**, входящего в состав службы REST в SharePoint.|
 | [Получение версий элементов из списка документов с помощью значений ETag через службы REST](http://msdn.microsoft.com/library/5f7e0579-46b7-44ab-b3b4-cdbc622dcd98%28Office.15%29.aspx)|Узнайте, как использовать теги HTML ETag в службе REST SharePoint для управления параллелизмом списков SharePoint и их элементов.|
 
 ## <a name="odata-resources"></a>Материалы по OData
@@ -202,10 +212,10 @@ List.GetByTitle(listname)
 
  
 
--  [Знакомство с OData](http://msdn.microsoft.com/en-us/data/hh237663)
+-  [Знакомство с OData](http://msdn.microsoft.com/ru-RU/data/hh237663)
     
  
--  [Примеры для протокола Open Data Protocol](http://msdn.microsoft.com/en-us/library/ff478141.aspx)
+-  [Примеры для протокола Open Data Protocol](http://msdn.microsoft.com/ru-RU/library/ff478141.aspx)
     
  
 -  [Open Data Protocol](http://www.odata.org/)
