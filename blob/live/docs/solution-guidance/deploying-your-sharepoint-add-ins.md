@@ -1,0 +1,24 @@
+---
+title: "Развертывание надстройки SharePoint"
+ms.date: 11/03/2017
+ms.openlocfilehash: 78eea67ff452bcccc9bc8ab59bb65477d942c19e
+ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 11/06/2017
+---
+# <a name="deploying-your-sharepoint-add-ins"></a><span data-ttu-id="71d0b-102">Развертывание надстройки SharePoint</span><span class="sxs-lookup"><span data-stu-id="71d0b-102">Deploying your SharePoint Add-Ins</span></span>
+
+<span data-ttu-id="71d0b-103">Статьи в этом разделе показано, как развернуть надстройки SharePoint.</span><span class="sxs-lookup"><span data-stu-id="71d0b-103">The articles in this section show you how to deploy your SharePoint add-ins.</span></span>
+
+|<span data-ttu-id="71d0b-104">**Статья**</span><span class="sxs-lookup"><span data-stu-id="71d0b-104">**Article**</span></span>|<span data-ttu-id="71d0b-105">**Показано, как использовать модель надстройки для**</span><span class="sxs-lookup"><span data-stu-id="71d0b-105">**Shows you how to use the add-in model to**</span></span>|
+|:-----|:-----|
+|[<span data-ttu-id="71d0b-106">Развертывание сайтов в Microsoft Azure</span><span class="sxs-lookup"><span data-stu-id="71d0b-106">Deploy Sites to Microsoft Azure</span></span>](Move-O365Api-Project-from-Dev-To-Prod.md)|<span data-ttu-id="71d0b-107">На этой странице Описание действий, необходимых для создания заметок в проект разработки Office 365 API и запуска его примеры размещенных полностью в Microsoft Azure.</span><span class="sxs-lookup"><span data-stu-id="71d0b-107">This page explains the steps involved in taking an Office 365 API development project and launching it to a working sample hosted entirely in Microsoft Azure .</span></span>|
+|[<span data-ttu-id="71d0b-108">Использование Azure WebJobs с Office 365</span><span class="sxs-lookup"><span data-stu-id="71d0b-108">Use Azure WebJobs with Office 365</span></span>](Use-Microsoft-Azure-WebJobs-with-Office-365.md)|<span data-ttu-id="71d0b-109">Используйте Azure WebJobs для реализации заданий таймера, можно получить доступ к SharePoint Online.</span><span class="sxs-lookup"><span data-stu-id="71d0b-109">Use Azure WebJobs to implement timer jobs that can access SharePoint Online.</span></span>|
+|[<span data-ttu-id="71d0b-110">Настройка размещением у поставщика надстроек для распределения</span><span class="sxs-lookup"><span data-stu-id="71d0b-110">Configure Provider-Hosted Add-ins for Distribution</span></span>](Configure-SP-Provider-Hosted-Apps-For-Distribution.md)|<span data-ttu-id="71d0b-111">На этой странице рассматриваются проблемы, которые могут возникнуть при совместном использовании SharePoint приложение с размещением у поставщика с другими разработчиками или при получении копии из системы управления версиями, такие как Team Foundation Server, Git или Visual Studio Online.</span><span class="sxs-lookup"><span data-stu-id="71d0b-111">This page explains issues that may arise when sharing a SharePoint Provider-Hosted application with other developers or when obtaining a copy from a source control system such as Team Foundation Server, Git or Visual Studio Online.</span></span>|
+|[<span data-ttu-id="71d0b-112">Настройка проектов Office 365 для рассылки</span><span class="sxs-lookup"><span data-stu-id="71d0b-112">Configure Office 365 Projects for Distribution</span></span>](Configure-O365Api-Project-For-Distribution.md)|<span data-ttu-id="71d0b-113">На этой странице описываются некоторые действия разработчикам следует рассмотреть возможность на свои проекты, использующие API-интерфейсы Office 365 перед их распространения с другими разработчиками клиентами, или для системы управления версиями.</span><span class="sxs-lookup"><span data-stu-id="71d0b-113">This page explains some steps developers should consider taking on their projects that leverage the Office 365 APIs prior to distributing them to other developers, their customers, or to source control systems.</span></span>|
+
+## <a name="additional-resources"></a><span data-ttu-id="71d0b-114">Дополнительные ресурсы</span><span class="sxs-lookup"><span data-stu-id="71d0b-114">Additional resources</span></span>
+<span data-ttu-id="71d0b-115"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="71d0b-115"></span></span>
+
+- [<span data-ttu-id="71d0b-116">Шаблоны и рекомендации решений разработки Office 365</span><span class="sxs-lookup"><span data-stu-id="71d0b-116">Office 365 development patterns and practices solution guidance</span></span>](Office-365-development-patterns-and-practices-solution-guidance.md)
