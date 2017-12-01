@@ -1,4 +1,14 @@
-# <a name="notes-on-solution-packaging"></a>Примечания к пакету решений
+---
+title: "Примечания к упаковке решений"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 41baeeed27f08f155b425d7886f1f54aae4e670d
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
+# <a name="notes-on-solution-packaging"></a>Примечания к упаковке решений
 
 Задача gulp **package-solution** проверяет файл **/config/package-solution.json** на наличие различных сведений конфигурации, включая некоторые универсальные пути к файлам и определения связей между компонентами (_WebParts_ и _Applications_) в пакете.
 

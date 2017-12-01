@@ -1,10 +1,20 @@
+---
+title: "Ссылки на сторонние стили CSS в веб-частях SharePoint Framework"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 9f85911dd2696fcb4c3dff7430883bd19a0ceb70
+ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/20/2017
+---
 # <a name="reference-third-party-css-styles-in-sharepoint-framework-web-parts"></a>Ссылки на сторонние стили CSS в веб-частях SharePoint Framework
 
 Существует множество сторонних библиотек, которые можно использовать для создания полнофункциональных клиентских веб-частей SharePoint Framework. Кроме сценариев, эти библиотеки часто содержат дополнительные ресурсы, такие как таблицы стилей. Эта статья показывает два разных подхода, позволяющих включить сторонние стили CSS в веб-части, а также описывает, как каждый из них влияет на создание пакета веб-частей. Веб-часть, которая приведена в этой статье для примера, использует библиотеки jQuery и jQuery UI для отображения элемента Accordion.
 
-![Элемент Accordion jQuery UI, отрисованный клиентской веб-частью SharePoint Framework](../../../../images/thirdpartycss-accordion-styled.png)
+![Элемент Accordion jQuery UI, отрисованный клиентской веб-частью SharePoint Framework](../../../images/thirdpartycss-accordion-styled.png)
 
-> **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки клиентских веб-частей для SharePoint](../../set-up-your-development-environment).
+> **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки клиентских веб-частей для SharePoint](../../set-up-your-development-environment.md).
 
 ## <a name="prepare-the-project"></a>Подготовка проекта
 
@@ -36,11 +46,17 @@ yo @microsoft/sharepoint
 - **jQuery accordion** (Элемент Accordion jQuery) в качестве имени веб-части;
 - **Shows jQuery accordion** (Отображает элемент Accordion jQuery) в качестве описания веб-части.
 
-![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../../images/thirdpartycss-yeoman.png)
+![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/thirdpartycss-yeoman.png)
 
-Когда шаблон будет сформирован, откройте папку проекта в редакторе кода. В этой статье инструкции и снимки экрана основаны на Visual Studio Code, но вы можете использовать любой редактор.
+После завершения скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
 
-![Проект SharePoint Framework, открытый в Visual Studio Code](../../../../images/thirdpartycss-visual-studio-code.png)
+```sh
+npm shrinkwrap
+```
+
+Далее откройте папку проекта в редакторе кода. В этой статье в инструкциях и на снимках экрана указан Visual Studio Code, но вы можете использовать любой редактор.
+
+![Проект SharePoint Framework, открытый в Visual Studio Code](../../../images/thirdpartycss-visual-studio-code.png)
 
 ### <a name="add-test-content"></a>Добавление содержимого теста
 
@@ -142,7 +158,7 @@ gulp serve
 
 Когда вы добавите веб-часть на холст, элемент Accordion должен заработать.
 
-![Элемент Accordion jQuery UI без стилей, отрисованный клиентской веб-частью SharePoint Framework](../../../../images/thirdpartycss-accordion-not-styled.png)
+![Элемент Accordion jQuery UI без стилей, отрисованный клиентской веб-частью SharePoint Framework](../../../images/thirdpartycss-accordion-not-styled.png)
 
 Вы пока добавили ссылки только на скрипты jQuery UI, поэтому элемент Accordion отображается без стилей. Далее следует добавить недостающие таблицы стилей CSS, чтобы оформить этот элемент должным образом.
 
@@ -168,7 +184,7 @@ gulp serve
 
 Элемент Accordion должен будет правильно отображаться, к нему будет применена стандартная тема jQuery UI.
 
-![Элемент Accordion jQuery UI, к которому применена стандартная тема jQuery UI и который отрисован клиентской веб-частью SharePoint Framework](../../../../images/thirdpartycss-accordion-styled.png)
+![Элемент Accordion jQuery UI, к которому применена стандартная тема jQuery UI и который отрисован клиентской веб-частью SharePoint Framework](../../../images/thirdpartycss-accordion-styled.png)
 
 ### <a name="analyze-the-contents-of-the-generated-web-part-bundle"></a>Анализ содержимого пакета веб-частей, который уже создан
 
@@ -176,7 +192,7 @@ gulp serve
 
 Чтобы посмотреть, как добавление библиотек повлияло на размер созданного пакета веб-части, после упаковки проекта откройте файл **./dist/js-thirdpartycss.stats.html** в веб-браузере. Наведите указатель мыши на диаграмму, и вы увидите, например, что размер CSS-файлов пользовательского интерфейса jQuery, на которые ссылается веб-часть, составляет более 6 % от размера всего пакета веб-части.
 
-![CSS-файл пользовательского интерфейса jQuery, выделенный в диаграмме, демонстрирующей размер составляющих созданного пакета веб-части](../../../../images/thirdpartycss-jquery-ui-css-size.png)
+![CSS-файл пользовательского интерфейса jQuery, выделенный в диаграмме, демонстрирующей размер составляющих созданного пакета веб-части](../../../images/thirdpartycss-jquery-ui-css-size.png)
 
 Как указано под диаграммой, показаны приблизительные значения, дающие представление о размере отладочной версии пакета веб-частей. Версия пакета веб-частей, предназначенная для выпуска, будет значительно меньше. И все же не помешает знать, каковы составляющие пакета веб-частей и каков размер каждой из них по сравнению с другими элементами этого пакета.
 
@@ -238,11 +254,11 @@ gulp serve
 
 Когда вы добавите веб-часть на холст, элемент Accordion должен заработать.
 
-![Элемент Accordion jQuery UI без стилей, отрисованный клиентской веб-частью SharePoint Framework](../../../../images/thirdpartycss-accordion-not-styled.png)
+![Элемент Accordion jQuery UI без стилей, отрисованный клиентской веб-частью SharePoint Framework](../../../images/thirdpartycss-accordion-not-styled.png)
 
 В веб-браузере откройте средства разработчика, перейдите на вкладку с запросами сети и повторно загрузите страницу. Библиотеки jQuery и jQuery UI должны загрузиться из CDN.
 
-![Запросы для библиотек jQuery и jQuery UI, выделенные в окне средств разработчика, открытом в Microsoft Edge](../../../../images/thirdpartycss-libraries-cdn.png)
+![Запросы для библиотек jQuery и jQuery UI, выделенные в окне средств разработчика, открытом в Microsoft Edge](../../../images/thirdpartycss-libraries-cdn.png)
 
 Вы пока добавили ссылки только на скрипты jQuery UI, поэтому элемент Accordion отображается без стилей. Далее следует добавить недостающие таблицы стилей CSS, чтобы оформить этот элемент должным образом.
 
@@ -281,7 +297,7 @@ gulp serve
 
 Элемент Accordion должен будет правильно отображаться, к нему будет применена стандартная тема jQuery UI.
 
-![Элемент Accordion jQuery UI, к которому применена стандартная тема jQuery UI и который отрисован клиентской веб-частью SharePoint Framework](../../../../images/thirdpartycss-accordion-styled.png)
+![Элемент Accordion jQuery UI, к которому применена стандартная тема jQuery UI и который отрисован клиентской веб-частью SharePoint Framework](../../../images/thirdpartycss-accordion-styled.png)
 
 ### <a name="analyze-the-contents-of-the-generated-web-part-bundle-loading-resources-from-url"></a>Анализ содержимого созданного пакета веб-части, который загружает ресурсы с URL-адреса
 

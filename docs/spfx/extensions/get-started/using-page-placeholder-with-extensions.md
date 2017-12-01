@@ -1,228 +1,247 @@
-# <a name="using-page-placeholders-from-application-customizer-hello-world-part-2"></a>Использование заполнителей страниц в настройщике приложений (Hello World, часть 2)
+# <a name="use-page-placeholders-from-application-customizer-hello-world-part-2"></a>Использование заполнителей страниц из настройщика приложений (Hello World, часть 2)
 
->**Примечание.** Расширения для платформы SharePoint Framework находятся на этапе тестирования и могут меняться. В настоящее время расширения SharePoint Framework невозможно использовать в рабочих средах.
+Настройщики приложений обеспечивают доступ к известным местам на страницах SharePoint, которые можно менять в соответствии с организационными и функциональными требованиями. Например, вы можете создать динамические верхний и нижний колонтитулы, которые отображаются на всех страницах в SharePoint Online. 
 
-Настройщики приложений также предоставляют доступ к известным расположениям на странице, которые можно менять в соответствии с бизнес-требованиями и необходимыми функциями. К типичным примерам относятся динамические верхние и нижние колонтитулы, которые отображаются на всех страницах в SharePoint Online. 
+Эта модель сопоставима с использованием коллекции **UserCustomAction** в объекте **Site** или **Web** для изменения страницы с помощью пользовательского кода JavaScript. Основное отличие или преимущество расширений SharePoint Framework (SPFx) в том, что элементы страницы не меняются при изменении структуры HTML/DOM в SharePoint Online.
 
-Эта модель подобна использованию коллекции UserCustomAction в объекте Site или Web для связывания пользовательских ресурсов JavaScript и изменения внешнего вида страницы. Ключевое отличие (или преимущество) расширений SPFx заключается в том, что на странице гарантированно отображаются некоторые элементы независимо от изменений структуры HTML или модели DOM в будущих выпусках SharePoint Online.
+В этой статье описано, как сделать так, чтобы [расширение Hello World](./build-a-hello-world-extension.md) использовало заполнители страниц. Эти действия также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=ipRw6o6bOTw&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV).
 
-В этой статье мы продолжим совершенствовать расширение Hello World, создание которого описывается в предыдущей статье, — [Создание первого расширения SharePoint Framework (Hello World, часть 1)](./build-a-hello-world-extension.md) — для использования заполнителей страниц. 
+<a href="https://www.youtube.com/watch?v=3LXuYBaJ1Lc">
+<img src="../../../images/spfx-ext-youtube-tutorial2.png" alt="Screenshot of the YouTube video player for this tutorial" />
+</a>
 
-## <a name="getting-access-to-page-placeholders"></a>Получение доступа к заполнителям страниц
+## <a name="get-access-to-page-placeholders"></a>Получение доступа к заполнителям страниц
 
-Расширения настройщиков приложений поддерживаются в областях `Site`, `Web` и `List`. Вы можете управлять областью, выбирая, где и как настройщик приложений будет регистрироваться в клиенте SharePoint. Если настройщик приложений существует в области и отрисовывается, то вы можете получить доступ к заполнителю с помощью описанного ниже способа. Получив объект заполнителя, вы можете полностью контролировать элементы, которые видны пользователю.
-
-Обратите внимание, что вы запрашиваете известный заполнитель по соответствующему известному идентификатору. В этом случае код получает доступ к разделу верхнего колонтитула страницы по идентификатору `PageHeader`. 
+Расширения настройщика приложений поддерживаются в областях `Site`, `Web` и `List`. Вы можете контролировать место и способ регистрации настройщика приложений в клиенте SharePoint. Когда настройщик приложений существует в области и отображается, вы можете использовать следующий метод, чтобы получить доступ к заполнителю. 
 
 ```ts
-    // Handling the header placeholder
-    if (!this._headerPlaceholder) {
-      this._headerPlaceholder = this.context.placeholders.tryAttach(
-        'PageHeader',
-        {
-          onDispose: this._onDispose
-        });
+    // Handling the Bottom placeholder
+    if (!this._bottomPlaceholder) {
+      this._bottomPlaceholder =
+        this.context.placeholderProvider.tryCreateContent(
+          PlaceholderName.Bottom,
+          { onDispose: this._onDispose });
+    ...
     }
 ```
 
-На последующих этапах мы изменим созданный ранее настройщик приложений Hello World, чтобы получить доступ к заполнителям и изменить их содержимое, добавив к ним пользовательские элементы HTML. 
+После этого вы полностью контролируете, какие элементы показываются конечному пользователю.
 
-Перейдите в Visual Studio Code (или другую интегрированную среду разработки) и откройте файл **src\extensions\helloWorld\HelloWorldApplicationCustomizer.ts.**
+Обратите внимание, что вы запрашиваете известный заполнитель, используя соответствующий известный идентификатор. В этом случае код получает доступ к нижнему колонтитулу страницы, используя идентификатор `Bottom`. 
 
-Добавьте объект `Placeholder` к оператору импорта из `@microsoft/sp-application-base`, изменив его следующим образом:
+Позже вы измените настройщик приложений Hello World, чтобы получить доступ к заполнителям и изменить их, добавив пользовательские элементы HTML.
 
-```ts
-import {
-  BaseApplicationCustomizer,
-  Placeholder
-} from '@microsoft/sp-application-base';
-```
+1. В Visual Studio Code (или другой интегрированной среде разработки) откройте файл **src\extensions\helloWorld\HelloWorldApplicationCustomizer.ts.**
 
-Кроме того, добавьте следующие операторы импорта после кода импорта `strings` в начале файла:
+2. Добавьте объекты `PlaceholderContent` и `PlaceholderName` к оператору импорта из `@microsoft/sp-application-base`, изменив его следующим образом:
 
-* На последующих этапах мы создадим определения стилей для выходных данных.
-* Для отмены свойств настройщика приложений используется функция `escape`.  
+    ```ts
+    import {
+      BaseApplicationCustomizer, 
+      PlaceholderContent,
+      PlaceholderName
+    } from '@microsoft/sp-application-base';
+    ```
+    
+      Кроме того, добавьте следующие операторы импорта после кода импорта `strings` в начале файла:
 
-```ts
-import styles from './AppCustomizer.module.scss';
-import { escape } from '@microsoft/sp-lodash-subset'; 
-```
+    ```ts
+    import styles from './AppCustomizer.module.scss';
+    import { escape } from '@microsoft/sp-lodash-subset'; 
+    ```
 
-Создайте файл с именем **AppCustomizer.module.scss** в папке **src\extensions\helloWorld**. 
+    Для экранирования свойств настройщика приложений используется функция `escape`. На следующих этапах вы создадите определения стилей для выходных данных.  
 
-Измените файл **AppCustomizer.module.scss** следующим образом:
+3. Создайте файл с именем **AppCustomizer.module.scss** в папке **src\extensions\helloWorld**. 
 
-* Это стили, которые будут использоваться в выходном коде HTML для заполнителей верхнего и нижнего колонтитулов.
+4. Измените файл **AppCustomizer.module.scss** следующим образом:
 
-```css
-.app {
-  .header {
-    height:60px; 
-    text-align:center; 
-    line-height:2.5; 
-    font-weight:bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+    >**Примечание.** Это стили, которые будут использоваться в выходном HTML-коде для верхнего и нижнего колонтитулов.
 
-  .footer {
-    height:40px; 
-    text-align:center; 
-    line-height:2.5; 
-    font-weight:bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-```
-
-Вернитесь к файлу **HelloWorldApplicationCustomizer.ts** и измените интерфейс **IHelloWorldApplicationCustomizerProperties**, добавив к нему свойства Header и Footer, как показано ниже.
-
-* Если ваш набор команд использует входные данные ClientSideComponentProperties в формате JSON, он будет десериализован в объект `BaseExtension.properties`. Вы можете определить интерфейс для его описания.
-
-```ts
-export interface IHelloWorldApplicationCustomizerProperties {
-  Header: string;
-  Footer: string;
-}
-```
-
-Добавьте приведенные ниже частные переменные в класс **HelloWorldApplicationCustomizer**. В данном сценарии это могут быть обычные локальные переменные в методе `onRender`, но если вы хотите сделать их доступными другим объектам, вы можете определить их как частные переменные. 
-
-```ts
-export default class HelloWorldApplicationCustomizer
-  extends BaseApplicationCustomizer<IHelloWorldApplicationCustomizerProperties> {
-  
-  // These have been added
-  private _headerPlaceholder: Placeholder;
-  private _footerPlaceholder: Placeholder;
-```
-
-Замените метод `onRender` на приведенный ниже код.
-
-* Мы используем метод `this.context.placeholders.tryAttach` для доступа к заполнителю.
-* Код расширения не должен предполагать, что нужный заполнитель доступен.
-* Код ожидает настраиваемые свойства `Header` и `Footer`. Если свойства существуют, они будут отрисовываться в заполнителях.
-* Обратите внимание, что в приведенном ниже методе пути к верхнему и нижнему колонтитулам практически идентичны. Единственные отличия связаны с используемыми переменными и определениями стилей.
-
-```ts
-  @override
-  public onRender(): void {
-
-    console.log('CustomHeader.onRender()');
-    console.log('Available placeholders: ',
-      this.context.placeholders.placeholderNames.join(', '));
-
-    // Handling the header placeholder
-    if (!this._headerPlaceholder) {
-      this._headerPlaceholder = this.context.placeholders.tryAttach(
-        'PageHeader',
-        {
-          onDispose: this._onDispose
-        });
-
-      // The extension should not assume that the expected placeholder is available.
-      if (!this._headerPlaceholder) {
-        console.error('The expected placeholder (PageHeader) was not found.');
-        return;
-      }
-
-      if (this.properties) {
-        let headerString: string = this.properties.Header;
-        if (!headerString) {
-          headerString = '(Header property was not defined.)';
+      ```css
+      .app {
+        .top {
+          height:60px;
+          text-align:center;
+          line-height:2.5;
+          font-weight:bold;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
-        if (this._headerPlaceholder.domElement) {
-          this._headerPlaceholder.domElement.innerHTML = `
-                <div class="${styles.app}">
-                  <div class="ms-bgColor-themeDark ms-fontColor-white ${styles.header}">
-                    <i class="ms-Icon ms-Icon--Info" aria-hidden="true"></i> ${escape(headerString)}
-                  </div>
-                </div>`;
+        .bottom {
+          height:40px;
+          text-align:center;
+          line-height:2.5;
+          font-weight:bold;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
       }
+      ```
+
+5. Вернитесь к файлу **HelloWorldApplicationCustomizer.ts** и измените интерфейс **IHelloWorldApplicationCustomizerProperties**, добавив к нему свойства Header и Footer, как показано ниже.
+
+      **Примечание.** Если ваш набор команд использует входные данные ClientSideComponentProperties в формате JSON, он будет десериализован в объект `BaseExtension.properties`. Вы можете определить интерфейс для его описания.
+
+    ```ts
+    export interface IHelloWorldApplicationCustomizerProperties {
+      Top: string;
+      Bottom: string;
     }
+    ```
 
-    // Handling the footer placeholder
-    if (!this._footerPlaceholder) {
-      this._footerPlaceholder = this.context.placeholders.tryAttach(
-        'PageFooter',
-        {
-          onDispose: this._onDispose
-        });
+6. Добавьте следующие частные переменные в класс **HelloWorldApplicationCustomizer**. В этом случае это могут быть локальные переменные в методе `onRender`, но если вы хотите, чтобы они были доступны другим объектам, определите их как частные переменные. 
 
-      // The extension should not assume that the expected placeholder is available.
-      if (!this._footerPlaceholder) {
-        console.error('The expected placeholder (PageFooter) was not found.');
-        return;
-      }
+      ```ts
+      export default class HelloWorldApplicationCustomizer
+        extends BaseApplicationCustomizer<IHelloWorldApplicationCustomizerProperties> {
 
-      if (this.properties) {
-        let footerString: string = this.properties.Footer;
-        if (!footerString) {
-          footerString = '(Footer property was not defined.)';
+        // These have been added
+        private _topPlaceholder: PlaceholderContent | undefined;
+        private _bottomPlaceholder: PlaceholderContent | undefined;
+    ```
+
+7. Обновите код метода `onInit` как показано ниже.
+
+      ```ts
+        @override
+        public onInit(): Promise<void> {
+          Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
+
+          // Added to handle possible changes on the existence of placeholders.
+          this.context.placeholderProvider.changedEvent.add(this, this._renderPlaceHolders);
+
+          // Call render method for generating the HTML elements.
+          this._renderPlaceHolders();
+          return Promise.resolve<void>();
+        }
+      ```
+
+
+8. Создайте новый частный метод `_renderPlaceHolders` со следующим кодом:
+
+      ```ts
+        private _renderPlaceHolders(): void {
+
+          console.log('HelloWorldApplicationCustomizer._renderPlaceHolders()');
+          console.log('Available placeholders: ',
+        this.context.placeholderProvider.placeholderNames.map(name => PlaceholderName[name]).join(', '));
+
+          // Handling the top placeholder
+          if (!this._topPlaceholder) {
+        this._topPlaceholder =
+          this.context.placeholderProvider.tryCreateContent(
+            PlaceholderName.Top,
+            { onDispose: this._onDispose });
+
+        // The extension should not assume that the expected placeholder is available.
+        if (!this._topPlaceholder) {
+          console.error('The expected placeholder (Top) was not found.');
+          return;
         }
 
-        if (this._footerPlaceholder.domElement) {
-          this._footerPlaceholder.domElement.innerHTML = `
-                <div class="${styles.app}">
-                  <div class="ms-bgColor-themeDark ms-fontColor-white ${styles.footer}">
-                    <i class="ms-Icon ms-Icon--Info" aria-hidden="true"></i> ${escape(footerString)}
-                  </div>
-                </div>`;
+        if (this.properties) {
+          let topString: string = this.properties.Top;
+          if (!topString) {
+            topString = '(Top property was not defined.)';
+          }
+
+          if (this._topPlaceholder.domElement) {
+            this._topPlaceholder.domElement.innerHTML = `
+              <div class="${styles.app}">
+                <div class="ms-bgColor-themeDark ms-fontColor-white ${styles.top}">
+                  <i class="ms-Icon ms-Icon--Info" aria-hidden="true"></i> ${escape(topString)}
+                </div>
+              </div>`;
+          }
         }
-      }
-    }
-  }
+          }
 
-```
+          // Handling the bottom placeholder
+          if (!this._bottomPlaceholder) {
+        this._bottomPlaceholder =
+          this.context.placeholderProvider.tryCreateContent(
+            PlaceholderName.Bottom,
+            { onDispose: this._onDispose });
 
-Добавьте приведенный ниже метод после метода `onRender`. В этом случае мы просто выводим сообщение в консоли, когда расширение удаляется со страницы. 
+        // The extension should not assume that the expected placeholder is available.
+        if (!this._bottomPlaceholder) {
+          console.error('The expected placeholder (Bottom) was not found.');
+          return;
+        }
 
-```ts
- private _onDispose(): void {
-    console.log('[CustomHeader._onDispose] Disposed custom header.');
-  }
+        if (this.properties) {
+          let bottomString: string = this.properties.Bottom;
+          if (!bottomString) {
+            bottomString = '(Bottom property was not defined.)';
+          }
 
-```
+          if (this._bottomPlaceholder.domElement) {
+            this._bottomPlaceholder.domElement.innerHTML = `
+              <div class="${styles.app}">
+                <div class="ms-bgColor-themeDark ms-fontColor-white ${styles.bottom}">
+                  <i class="ms-Icon ms-Icon--Info" aria-hidden="true"></i> ${escape(bottomString)}
+                </div>
+              </div>`;
+          }
+        }
+          }
+        }
+      ```
 
-Теперь код готов к тестированию в SharePoint Online. 
+      * Используйте метод `this.context.placeholderProvider.tryCreateContent` для доступа к заполнителю.
+      * Код расширения не должен предполагать, что нужный заполнитель доступен.
+      * Код ожидает настраиваемые свойства `Top` и `Bottom`. Если свойства существуют, они будут отображаться в заполнителях.
+      * Обратите внимание, что путь к коду верхнего и нижнего заполнителей почти идентичный. Он отличается только используемыми переменными и определениями стиля.
 
-Перейдите в окно консоли, в котором запущена команда `gulp serve`, и проверьте наличие ошибок. Если gulp сообщил об ошибках, их нужно исправить.
+9. Добавьте приведенный ниже метод после метода `_renderPlaceHolders`. В этом случае вы просто выводите сообщение в консоли, когда расширение удаляется со страницы. 
 
-Если в данный момент решение не запущено, выполните приведенную ниже команду и убедитесь, что не возникает никаких ошибок.
+      ```ts
+        private _onDispose(): void {
+          console.log('[HelloWorldApplicationCustomizer._onDispose] Disposed custom top and bottom placeholders.');
+        }
+      ```
+
+Теперь можно проверить код в SharePoint Online.
+
+## <a name="test-your-code"></a>Проверка кода
+
+Перейдите в окно консоли, в котором запущена команда `gulp serve`, и проверьте наличие ошибок. Gulp сообщает обо всех ошибках в консоли; исправьте их, чтобы продолжить работу.
+
+Если решение не запущено, используйте следующую команду, чтобы проверить наличие ошибок.
 
 ```
 gulp serve --nobrowser
 ```
 
-Перейдите ко встроенному списку в SharePoint Online. Это может быть список или библиотека для первоначального тестирования. 
+Перейдите в современный список в SharePoint Online. Это может быть список или библиотека. 
 
-Для тестирования расширения добавьте к URL-адресу следующие параметры строки запроса:
+Для тестирования расширения добавьте в URL-адрес следующие параметры строки запроса:
 
-* Обратите внимание, что GUID, используемый в этом параметре запроса, должен совпадать с атрибутом ID настройщика приложений, указанным в файле **HelloWorldApplicationCustomizer.manifest.json**.
-* Мы также используем свойства JSON Header и Footer, чтобы предоставлять параметры или модификации в настройщик приложений. В данном случае мы просто выводим эти значения, но вы можете настроить поведение в соответствии со свойствами, используемыми в рабочей среде. 
 
 ```
-?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"5fc73e12-8085-4a4b-8743-f6d02ffe1240":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"Header":"Header area of the page","Footer":"Footer area in the page"}}}
-```
-Полный URL-адрес запроса должен выглядеть примерно так:
-
-```
-contoso.sharepoint.com/Lists/Contoso/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"5fc73e12-8085-4a4b-8743-f6d02ffe1240":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"Header":"Header area of the page","Footer":"Footer area in the page"}}}
+?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"e5625e23-5c5a-4007-a335-e6c2c3afa485":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"Top":"Top area of the page","Bottom":"Bottom area in the page"}}}
 ```
 
-![Запрос разрешения на отладку манифеста на странице](../../../../images/ext-app-debug-manifest-message.png)
+* Обратите внимание, что GUID, используемый в этом параметре запроса, должен совпадать с атрибутом ID настройщика приложений. Он доступен в файле **HelloWorldApplicationCustomizer.manifest.json**.
+* Свойства JSON Header и Footer используются для отправки параметров или конфигураций в настройщик приложений. В этом случае вы просто выводите эти значения. Вы также можете настроить поведение на основе свойств, используемых в производстве. 
 
-Нажмите кнопку **Загрузить скрипты отладки**, чтобы продолжить загрузку скриптов с локального узла.
+Полный URL-адрес должен выглядеть примерно следующим образом:
 
-Теперь на странице должно отображаться пользовательское содержимое верхнего и нижнего колонтитулов. 
+```
+contoso.sharepoint.com/Lists/Contoso/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"e5625e23-5c5a-4007-a335-e6c2c3afa485":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"Top":"Top area of the page","Bottom":"Bottom area in the page"}}}
+```
 
-![Пользовательские элементы верхнего и нижнего колонтитулов на странице](../../../../images/ext-app-header-footer-visible.png)
+Выберите **Загрузить скрипты отладки**, чтобы продолжить загрузку скриптов с локального узла.
+
+![Запрос разрешения на отладку манифеста на странице](../../../images/ext-app-debug-manifest-message.png)
+
+Теперь на странице должны отображаться пользовательские верхний и нижний колонтитулы. 
+
+![Пользовательские элементы верхнего и нижнего колонтитулов на странице](../../../images/ext-app-header-footer-visible.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Поздравляем! Вы создали собственные верхний и нижний колонтитул с помощью настройщика приложений. Вы можете продолжить разработку расширения Hello World в следующей статье — [Развертывание расширения в семействе веб-сайтов (Hello World, часть 3)](./serving-your-extension-from-sharepoint.md). Вы научитесь развертывать и просматривать расширение Hello World в семействе веб-сайтов SharePoint, не используя параметры запроса **Debug**. 
+Поздравляем, вы создали собственные верхний и нижний колонтитулы с помощью настройщика приложений! Далее см. статью [Развертывание расширения в SharePoint (Hello World, часть 3)](./serving-your-extension-from-sharepoint.md). Вы узнаете, как развернуть и просмотреть расширение Hello World в семействе веб-сайтов SharePoint, не используя параметры запроса **Debug**. 

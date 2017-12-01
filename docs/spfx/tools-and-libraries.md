@@ -1,3 +1,13 @@
+---
+title: "Библиотеки и средства разработки платформы SharePoint Framework"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 2df6ebaaf1d56b20e2ae96063c9d6bff339603c5
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="sharepoint-framework-development-tools-and-libraries"></a>Библиотеки и средства разработки платформы SharePoint Framework
 
 Платформа SharePoint Framework включает несколько клиентских библиотек JavaScript, которые можно использовать для создания решений. В этой статье рассмотрены инструменты и библиотеки, которые можно использовать для разработки клиентских веб-частей.
@@ -93,7 +103,7 @@ SharePoint Framework — клиентская платформа, поэтому
 
 Рекомендуем ознакомиться со следующими интерфейсами REST API:
 
-* [REST API для списков SharePoint](https://msdn.microsoft.com/ru-ru/library/office/dn292552.aspx).
+* [REST API для списков SharePoint](https://msdn.microsoft.com/ru-RU/library/office/dn292552.aspx).
 
 ## <a name="patterns-and-practices"></a>PnP (Patterns and Practices)
 
@@ -101,5 +111,5 @@ SharePoint Framework — клиентская платформа, поэтому
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [SharePoint Framework](sharepoint-framework-overview)
-* [Создание клиентской веб-части Hello World](web-parts/get-started/build-a-hello-world-web-part)
+* [SharePoint Framework](sharepoint-framework-overview.md)
+* [Создание клиентской веб-части Hello World](web-parts/get-started/build-a-hello-world-web-part.md)

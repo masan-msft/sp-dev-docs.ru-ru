@@ -1,3 +1,13 @@
+---
+title: "Развертывание решений SharePoint Framework на уровне клиента"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 2340e4f5ee0bdc48c5bd4dd6dc85f9c63e3b2697
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="tenant-scoped-solution-deployment-for-sharepoint-framework-solutions"></a>Развертывание решений SharePoint Framework на уровне клиента
 
 Вы можете настроить компоненты SharePoint Framework так, чтобы они были доступны в клиенте сразу после установки пакета решения в каталоге приложений клиента. Это можно сделать с помощью атрибута **skipFeatureDeployment** в файле **package-solution.json**.
@@ -7,7 +17,7 @@
 Развертывание на уровне клиента также демонстрируется в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=pemHOZCSwZI).
 
 <a href="https://www.youtube.com/watch?v=pemHOZCSwZI&list=PLR9nK3mnD-OXZbEvTEPxzIOMGXj_aZKJG">
-<img src="../../images/tenant-deploy-youtube-video.png" alt="PnP Short Guidance video on tenant-wide deployment option" />
+<img src="../images/tenant-deploy-youtube-video.png" alt="PnP Short Guidance video on tenant-wide deployment option" />
 </a>
 
 > Обратите внимание, что для использования этой возможности необходимо обновить шаблон Yeoman для SharePoint Framework до последней версии. Вы можете обновить глобальную установку с помощью команды `npm install -g @microsoft/generator-sharepoint`. 
@@ -24,7 +34,7 @@
 
 Шаблон Yeoman для SharePoint Framework задаст конкретный вопрос, связанный с этим вариантом развертывания. Это непосредственно повлияет на атрибут **skipFeatureDeployment** в файле **package-solution.json**. 
 
-![Вопрос Yeoman о варианте развертывания на уровне клиента](../../images/tenant-deploy-yeoman.png)
+![Вопрос Yeoman о варианте развертывания на уровне клиента](../images/tenant-deploy-yeoman.png)
 
 В приведенном ниже примере конфигурации для параметра **skipFeatureDeployment** задано значение true, указывающее, что решение можно централизованно развернуть на уровне клиента. 
 
@@ -49,7 +59,7 @@
 
 По умолчанию флажок **Сделать это решение доступным всем сайтам в организации** снят. Если администратор установит этот флажок, компоненты решения будут автоматически видны и доступны на уровне клиента. 
 
-![Параметр "Сделать это решение доступным всем сайтам в организации" при развертывании решения в каталоге приложений](../../images/tenant-deploy-app-catalog.png)
+![Параметр "Сделать это решение доступным всем сайтам в организации" при развертывании решения в каталоге приложений](../images/tenant-deploy-app-catalog.png)
 
 Обратите внимание, что специальные действия по обновлению решений и сайтов доступны только при использовании платформы компонентов, поэтому не существует специального варианта обновления для централизованно развернутых решений. Вы можете просто обновить ресурс такого решения в сети CDN и пакет в каталоге приложений. При этом все существующие экземпляры компонентов будут автоматически обновлены для использования последних версий ресурсов компонентов, таких как файлы JavaScript и обновленные CSS-файлы.
 

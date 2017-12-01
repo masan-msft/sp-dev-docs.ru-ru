@@ -1,3 +1,13 @@
+---
+title: "Добавление внешней библиотеки в клиентскую веб-часть SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 1dd951a3f2e07c263ae1b5d8fba697365bf454c8
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="add-an-external-library-to-your-sharepoint-client-side-web-part"></a>Добавление внешней библиотеки в клиентскую веб-часть SharePoint
 
 Вам может понадобиться добавить в веб-часть одну или несколько библиотек JavaScript. В этой статье описано, как добавить внешнюю библиотеку в пакет и использовать библиотеки в нескольких веб-частях.

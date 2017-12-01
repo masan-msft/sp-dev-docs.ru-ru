@@ -1,3 +1,13 @@
+---
+title: "Подготовка ресурсов SharePoint из клиентской веб-части SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: d8092cc92e1922cc4fd7ecb71a6121cb097727f5
+ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/20/2017
+---
 # <a name="provisioning-sharepoint-assets-from-your-sharepoint-client-side-web-part"></a>Подготовка ресурсов SharePoint из клиентской веб-части SharePoint
 
 В этой статье описывается подготовка ресурсов SharePoint в составе решения SharePoint Framework. Эти ресурсы развертываются на сайтах SharePoint при установке решения. Кроме того, в этой статье рассматриваются необходимые действия для установки возможных обновлений в составе новых версий пакета. Этот процесс идентичен обновлению надстроек.
@@ -11,7 +21,7 @@
 ## <a name="resources"></a>Ресурсы
 В приведенных ниже ресурсах вы найдете дополнительные сведения на темы, рассматриваемые в данном руководстве.
 
-* [Подготовка ресурсов SharePoint с пакетом решения](../../toolchain/provision-sharepoint-assets)
+* [Подготовка ресурсов SharePoint с пакетом решения](../../toolchain/provision-sharepoint-assets.md)
 * [Пример решения: развертывание ресурсов SharePoint в составе пакета SPFx](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-feature-framework)
 
 ## <a name="create-a-new-web-part-project"></a>Создание проекта веб-части
@@ -47,7 +57,13 @@ yo @microsoft/sharepoint
 
 После этого Yeoman установит необходимые зависимости и сформирует шаблоны файлов решения. Это может занять несколько минут. При этом Yeoman также включит в проект веб-часть **AssetDeployment**.
 
-Введите в консоли следующий код, чтобы открыть проект веб-части в Visual Studio Code:
+После завершения скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
+
+```sh
+npm shrinkwrap
+```
+
+Далее введите следующий код, чтобы открыть проект веб-части в Visual Studio Code:
 
 ```
 code .
@@ -62,7 +78,7 @@ code .
 
 Структура решения должна быть такой, как на рисунке ниже.
 
-![Снимок экрана с папкой assets, вложенной в папку sharepoint, в структуре решения](../../../../images/tutorial-feature-solution-initial-structure.png)
+![Снимок экрана с папкой assets, вложенной в папку sharepoint, в структуре решения](../../../images/tutorial-feature-solution-initial-structure.png)
 
 ## <a name="create-feature-framework-files-for-initial-deployment"></a>Создание файлов платформы компонентов для начального развертывания
 Для подготовки ресурсов SharePoint на сайтах с элементами платформы компонентов необходимо создать нужные XML-файлы в папке ресурсов. Пакеты решений SharePoint Framework поддерживают следующие элементы:
@@ -258,7 +274,7 @@ asset-deployment-webpart.sppkg
 ```
 Прежде чем тестировать пакет в SharePoint, взглянем на стандартные структуры, созданные для пакета в определенных элементах платформы компонентов. Вернитесь к Visual Studio Code и разверните папку `sharepoint/solution/debug`, которая содержит необработанные структуры XML, включаемые в фактический пакет **sppkg**.
 
-![Снимок экрана с папкой debug, вложенной в папку sharepoint, в структуре решения](../../../../images/tutorial-feature-solution-debug-folder.png)
+![Снимок экрана с папкой debug, вложенной в папку sharepoint, в структуре решения](../../../images/tutorial-feature-solution-debug-folder.png)
 
 Далее вам потребуется развернуть созданный пакет в каталоге приложений.
 
@@ -266,7 +282,7 @@ asset-deployment-webpart.sppkg
 
 Отправьте или перетащите файл asset-deployment-webpart.sppkg из папки `sharepoint/solution` в каталог приложений. В SharePoint откроется диалоговое окно с предложением разрешить развертывание клиентского решения.
 
-![Диалоговое окно доверия для развертывания пакета решения](../../../../images/tutorial-feature-solution-trust-app-catalog.png)
+![Диалоговое окно доверия для развертывания пакета решения](../../../images/tutorial-feature-solution-trust-app-catalog.png)
 
 > Примечание. SharePoint проверяет опубликованный пакет при его развертывании, а диалоговое окно доверия открывается, только если пакет допускается к развертыванию. Вы также можете просмотреть состояние этой проверки в столбце "Допустимый пакет приложения" каталога приложений.
 
@@ -276,17 +292,17 @@ asset-deployment-webpart.sppkg
 
 В **поле поиска** введите **deployment** и нажмите клавишу **ВВОД**, чтобы отфильтровать приложения. 
 
-![Поиск приложения на сайте](../../../../images/tutorial-feature-solution-add-app.png)
+![Поиск приложения на сайте](../../../images/tutorial-feature-solution-add-app.png)
 
 Выберите приложение **asset-deployment-webpart-client-side-solution**, чтобы установить его на сайте. По завершении установки обновите страницу, нажав клавишу **F5**.
 
-![Новый список SPFx List и приложение на странице содержимого сайта после подготовки решения](../../../../images/tutorial-feature-solution-provision-app.png)
+![Новый список SPFx List и приложение на странице содержимого сайта после подготовки решения](../../../images/tutorial-feature-solution-provision-app.png)
 
 Обратите внимание, что настраиваемый список **SPFx List** также был подготовлен на сайте при развертывании пакета решения.
 
 Выберите **SPFx List**, чтобы перейти к списку.
 
-![Представление по умолчанию для настраиваемого списка с дополнительными стандартными полями](../../../../images/tutorial-feature-solution-list-view.png)
+![Представление по умолчанию для настраиваемого списка с дополнительными стандартными полями](../../../images/tutorial-feature-solution-list-view.png)
 
 Обратите внимание, что настраиваемые поля **Amount** и **Cost Center** автоматически отображаются в представлении списка по умолчанию. 
 
@@ -297,7 +313,7 @@ asset-deployment-webpart.sppkg
 * ApplyElementManifest
 * AddContentTypeField
 
-> Дополнительные сведения об определениях действий по обновлению в платформе компонентов см. в статье [Процедура обновления надстроек для SharePoint](https://msdn.microsoft.com/en-us/library/office/fp179904.aspx) на сайте MSDN.
+> Дополнительные сведения об определениях действий по обновлению в платформе компонентов см. в статье [Процедура обновления надстроек для SharePoint](https://msdn.microsoft.com/ru-RU/library/office/fp179904.aspx) на сайте MSDN.
 
 ### <a name="add-new-elementxml-file-for-the-new-version"></a>Добавление нового файла element.xml для новой версии
 Вернитесь к своему решению в Visual Studio Code.
@@ -391,13 +407,13 @@ gulp package-solution
 
 Отправьте или перетащите файл asset-deployment-webpart.sppkg из папки `sharepoint/solution` в каталог приложений. SharePoint предложит вам подтвердить переопределение текущей версии.
 
-![Вопрос о замене в каталоге приложений](../../../../images/tutorial-feature-solution-override-sppkg.png)
+![Вопрос о замене в каталоге приложений](../../../images/tutorial-feature-solution-override-sppkg.png)
 
 Нажмите кнопку **Заменить**, чтобы добавить последнюю версию в каталог приложений.
 
 Обратите внимание, что в столбце "Версия приложения" для решения **asset-deployment-webpart-client-side-solution** теперь отображается значение "2.0.0.0".
 
-![Увеличенная строка решения в каталоге приложений с обновленным номером версии](../../../../images/tutorial-feature-solution-version-2.png)
+![Увеличенная строка решения в каталоге приложений с обновленным номером версии](../../../images/tutorial-feature-solution-version-2.png)
 
 ### <a name="update-existing-instance-in-the-site"></a>Обновление существующего экземпляра на сайте
 Теперь, когда пакет в каталоге приложений обновлен, мы можем перейти к фактическому сайту с содержимым SharePoint и обновить существующий экземпляр.
@@ -406,18 +422,18 @@ gulp package-solution
 
 Выберите пункт **О программе** в контекстном меню решения **asset-deployment-webpart-client-side-solution**
 
-![Контекстное меню существующего пакета на сайте](../../../../images/tutorial-feature-solution-hover-menu.png)
+![Контекстное меню существующего пакета на сайте](../../../images/tutorial-feature-solution-hover-menu.png)
 
 Вы увидите текущие сведения об установленном решении SharePoint Framework. На этой странице также отображается текст "*Доступна новая версия этого приложения. Получите ее сейчас*", указывающий на наличие новой версии.
 
-![Контекстное меню существующего пакета на сайте](../../../../images/tutorial-feature-solution-app-details.png)
+![Контекстное меню существующего пакета на сайте](../../../images/tutorial-feature-solution-app-details.png)
 
 Нажмите кнопку **ПОЛУЧИТЬ**, чтобы приступить к обновлению пакета.
 
-![Состояние приложения на странице содержимого сайта меняется на "Обновление"](../../../../images/tutorial-feature-solution-updating-app.png)
+![Состояние приложения на странице содержимого сайта меняется на "Обновление"](../../../images/tutorial-feature-solution-updating-app.png)
 
 Обновление может занять некоторое время, но когда надстройка снова вернется в обычное состояние, вы можете нажать клавишу **F5**, чтобы обновить страницу содержимого сайта и убедиться, что новый список успешно подготовлен при обновлении.
 
-![Страница содержимого сайта с дополнительным списком New List](../../../../images/tutorial-feature-solution-new-list.png)
+![Страница содержимого сайта с дополнительным списком New List](../../../images/tutorial-feature-solution-new-list.png)
 
 Теперь мы успешно обновили этот экземпляр до последней версии. Платформа компонентов используется для подготовки ресурсов SharePoint практически так же, как и для модели надстроек SharePoint. Основное отличие заключается в том, что ресурсы подготавливаются непосредственно на обычном сайте SharePoint, так как в решениях SharePoint Framework нет таких понятий, как приложение и сайт приложения. 

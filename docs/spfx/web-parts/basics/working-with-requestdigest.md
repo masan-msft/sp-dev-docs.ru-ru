@@ -1,3 +1,13 @@
+---
+title: "Работа с __REQUESTDIGEST"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: ae30e9d655ebaf9d99d6e72017a2ed62e2fb3aac
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="working-with-requestdigest"></a>Работа с __REQUESTDIGEST
 
 При выполнении запросов REST к API SharePoint (всех, кроме GET) в них необходимо добавлять действительный дайджест. Он подтверждает действительность вашего запроса к SharePoint. Так как срок действия этого токена ограничен, его необходимо проверить, прежде чем добавлять в запрос, иначе возникнет ошибка. В этой статье описано, как получить действительный дайджест запроса и избежать ошибок.

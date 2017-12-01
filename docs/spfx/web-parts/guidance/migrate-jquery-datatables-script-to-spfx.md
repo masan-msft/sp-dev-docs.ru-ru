@@ -1,4 +1,14 @@
-# <a name="migrate-jquery-and-datatables-solution-built-using-script-editor-web-part-to-sharepoint-framework"></a>Перенос решения на основе jQuery и DataTables, созданного с помощью веб-части редактора скриптов, на платформу SharePoint Framework
+---
+title: "Перенос решения с jQuery и DataTables, созданного с помощью веб-части редактора скриптов, на платформу SharePoint Framework"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: a50a56f3b433d9152e047bd51525747abf9d2865
+ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/20/2017
+---
+# <a name="migrate-jquery-and-datatables-solution-built-using-script-editor-web-part-to-sharepoint-framework"></a>Перенос решения с jQuery и DataTables, созданного с помощью веб-части редактора скриптов, на платформу SharePoint Framework
 
 Один из часто используемых подключаемых модулей jQuery — [DataTables](https://datatables.net/). С помощью таблиц данных вы можете легко создавать функциональные представления данных, поступающих из SharePoint и внешних API. В этой статье показано, как перенести модификацию SharePoint с использованием модуля DataTables, созданную с помощью веб-части редактора скриптов, на платформу SharePoint Framework.
 
@@ -6,7 +16,7 @@
 
 Чтобы проиллюстрировать перенос модификации SharePoint с использованием модуля DataTables на платформу SharePoint Framework, мы будем использовать представленное ниже решение, которое показывает обзор запросов в службу поддержки, полученных из списка SharePoint.
 
-![Обзор запросов в службу поддержки на странице SharePoint](../../../../images/datatables-sewp.png)
+![Обзор запросов в службу поддержки на странице SharePoint](../../../images/datatables-sewp.png)
 
 Решение создано с помощью стандартной веб-части редактора скриптов SharePoint. Ниже представлен код, используемый модификацией.
 
@@ -113,11 +123,11 @@ $(document).ready(function() {
 
 Благодаря модулю DataTables пользователи получают функциональное решение, в котором легко фильтровать, сортировать и перелистывать результаты, не прилагая дополнительных усилий.
 
-![Список запросов в службу поддержки, отображаемый с помощью таблиц данных, который отфильтрован по запросам, назначенным пользователю Lidia и отсортирован по дате выполнения](../../../../images/datatables-sewp-filter.png)
+![Список запросов в службу поддержки, отображаемый с помощью таблиц данных, который отфильтрован по запросам, назначенным пользователю Lidia и отсортирован по дате выполнения](../../../images/datatables-sewp-filter.png)
 
 ## <a name="migrate-the-it-requests-overview-solution-from-the-script-editor-web-part-to-the-sharepoint-framework"></a>Перенос решения для просмотра запросов в службу поддержки из веб-части редактора скриптов на платформу SharePoint Framework
 
-> **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment) для создания решений на платформе SharePoint Framework.
+> **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment.md) для создания решений на платформе SharePoint Framework.
 
 Преобразование этой модификации для платформы SharePoint Framework предоставляет ряд преимуществ, таких как удобство настройки и централизованное управление решением. Ниже представлено пошаговое руководство по переносу решения на платформу SharePoint Framework. Для начала мы перенесем решение на платформу SharePoint Framework, внося как можно меньше изменений в исходный код. Затем мы преобразуем код решения в TypeScript, чтобы воспользоваться функциями обеспечения безопасности типов во время разработки.
 
@@ -150,11 +160,17 @@ yo @microsoft/sharepoint
 - имя веб-части — **IT requests** (Запросы в службу поддержки);
 - описание веб-части — **Shows overview of IT support requests** (Показывает обзор запросов в службу поддержки).
 
-![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../../images/datatables-yeoman.png)
+![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/datatables-yeoman.png)
 
-Когда шаблон будет сформирован, откройте папку проекта в редакторе кода. В этом руководстве используется Visual Studio Code.
+После завершения скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
 
-![Проект SharePoint Framework, открытый в Visual Studio Code](../../../../images/datatables-vscode.png)
+```sh
+npm shrinkwrap
+```
+
+Далее откройте папку проекта в редакторе кода. В этом руководстве используется Visual Studio Code.
+
+![Проект SharePoint Framework, открытый в Visual Studio Code](../../../images/datatables-vscode.png)
 
 ### <a name="load-javascript-libraries"></a>Загрузка библиотек JavaScript
 
@@ -340,7 +356,7 @@ gulp serve --nobrowser
 
 Так как веб-часть загружает свои данные из SharePoint, необходимо протестировать ее с помощью размещенного рабочего места SharePoint Framework. Перейдите на страницу **https://yourtenant.sharepoint.com/_layouts/workbench.aspx** и добавьте веб-часть на холст. Должны появиться запросы в службу поддержки, отображаемые с помощью подключаемого модуля DataTables для jQuery.
 
-![Запросы в службу поддержки, отображаемые в клиентской веб-части SharePoint Framework](../../../../images/datatables-spfx.png)
+![Запросы в службу поддержки, отображаемые в клиентской веб-части SharePoint Framework](../../../images/datatables-spfx.png)
 
 ## <a name="add-support-for-configuring-the-web-part-through-web-part-properties"></a>Добавление поддержки настройки веб-части с помощью ее свойств
 
@@ -350,7 +366,7 @@ gulp serve --nobrowser
 
 Для начала определите свойство веб-части для хранения имени списка, из которого загружаются запросы в службу поддержки. В редакторе кода откройте файл **./src/webparts/itRequests/ItRequestsWebPart.manifest.json**, измените имя заданного по умолчанию свойства **description** на **listName** и удалите его значение.
 
-![Свойство listName манифеста веб-части, выделенное в Visual Studio Code](../../../../images/datatables-spfx-listname-property.png)
+![Свойство listName манифеста веб-части, выделенное в Visual Studio Code](../../../images/datatables-spfx-listname-property.png)
 
 Затем обновите интерфейс свойств веб-части, чтобы увидеть изменения в манифесте. В редакторе кода откройте файл **./src/webparts/itRequests/IItRequestsWebPartProps.ts** и измените его содержимое на следующее:
 
@@ -492,7 +508,7 @@ gulp serve --nobrowser
 
 Перейдите к размещенному рабочему месту и добавьте веб-часть на холст. Откройте область свойств веб-части, укажите имя списка запросов в службу поддержки и нажмите кнопку **Применить**, чтобы подтвердить изменения. Теперь в веб-части должны отображаться запросы в службу поддержки.
 
-![Запросы в службу поддержки, загруженные из указанного списка и отображаемые в клиентской веб-части SharePoint Framework](../../../../images/datatables-spfx-list-configured.png)
+![Запросы в службу поддержки, загруженные из указанного списка и отображаемые в клиентской веб-части SharePoint Framework](../../../images/datatables-spfx-list-configured.png)
 
 ## <a name="transform-the-plain-javascript-code-to-typescript"></a>Преобразование обычного кода JavaScript в TypeScript
 

@@ -1,4 +1,14 @@
-# <a name="migrate-jquery-and-fullcalendar-solution-built-using-script-editor-web-part-to-sharepoint-framework"></a>Перенос решения на основе jQuery и FullCalendar, созданного с помощью веб-части редактора скриптов, на платформу SharePoint Framework
+---
+title: "Перенос решения с jQuery и FullCalendar, созданного с помощью веб-части редактора скриптов, на платформу SharePoint Framework"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 7df585424fb5a0e4f056c791385e6a7214e28b3c
+ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/20/2017
+---
+# <a name="migrate-jquery-and-fullcalendar-solution-built-using-script-editor-web-part-to-sharepoint-framework"></a>Перенос решения с jQuery и FullCalendar, созданного с помощью веб-части редактора скриптов, на платформу SharePoint Framework
 
 При создании решений для SharePoint разработчики часто используют подключаемый модуль [FullCalendar](https://fullcalendar.io) для jQuery, чтобы выводить данные в представлении календаря. FullCalendar — это отличная альтернатива стандартному представлению календаря SharePoint, так как она позволяет представлять данные из нескольких списков календарей, данные из других списков и даже данные, находящиеся за пределами SharePoint. В этой статье показано, как перенести модификацию SharePoint с использованием FullCalendar, созданную с помощью веб-части редактора скриптов, на платформу SharePoint Framework.
 
@@ -6,7 +16,7 @@
 
 Чтобы проиллюстрировать перенос модификации SharePoint с использованием FullCalendar на платформу SharePoint Framework, мы будем использовать представленное ниже решение, которое показывает представление календаря с задачами, полученными из списка SharePoint.
 
-![Представление календаря с задачами, отображаемое на странице SharePoint](../../../../images/fullcalendar-sewp.png)
+![Представление календаря с задачами, отображаемое на странице SharePoint](../../../images/fullcalendar-sewp.png)
 
 Решение создано с помощью стандартной веб-части редактора скриптов SharePoint. Ниже представлен код, используемый модификацией.
 
@@ -149,11 +159,11 @@ $filter=((DueDate ge '" + startDate + "' and DueDate le '" + endDate + "')or(Sta
 
 Используя подключаемый модуль FullCalendar для jQuery, можно с минимальными усилиями создавать функциональные решения, предоставляющие пользователям такие возможности, как пометка событий разными цветами и упорядочивание событий путем перетаскивания.
 
-![Перетаскивание событий в модуле FullCalendar для перепланировки задач](../../../../images/fullcalendar-sewp-draganddrop.png)
+![Перетаскивание событий в модуле FullCalendar для перепланировки задач](../../../images/fullcalendar-sewp-draganddrop.png)
 
 ## <a name="migrate-the-tasks-calendar-solution-from-the-script-editor-web-part-to-the-sharepoint-framework"></a>Перенос решения для просмотра календаря задач из веб-части редактора скриптов на платформу SharePoint Framework
 
-> **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment) для создания решений на платформе SharePoint Framework.
+> **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment.md) для создания решений на платформе SharePoint Framework.
 
 Преобразование модификации на основе веб-части редактора скриптов для платформы SharePoint Framework предоставляет ряд преимуществ, таких как удобство настройки и централизованное управление решением. Ниже представлено пошаговое руководство по переносу решения на платформу SharePoint Framework. Для начала мы перенесем решение на платформу SharePoint Framework, внося как можно меньше изменений в исходный код. Затем мы преобразуем код решения в TypeScript, чтобы воспользоваться функциями обеспечения безопасности типов во время разработки, а также заменим некоторые фрагменты кода для применения API SharePoint Framework, чтобы сделать доступными возможности этой платформы и сделать решение еще проще.
 
@@ -187,11 +197,17 @@ yo @microsoft/sharepoint
 - описание веб-части **Shows tasks in the calendar view** (Показывает задачи в представлении календаря);
 - отправная точка создания веб-части — **No javaScript web framework** (Без платформы JavaScript).
 
-![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../../images/fullcalendar-yeoman.png)
+![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/fullcalendar-yeoman.png)
 
-Когда шаблон будет сформирован, откройте папку проекта в редакторе кода. В этом руководстве используется Visual Studio Code.
+После завершения скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
 
-![Проект SharePoint Framework, открытый в Visual Studio Code](../../../../images/fullcalendar-vscode.png)
+```sh
+npm shrinkwrap
+```
+
+Далее откройте папку проекта в редакторе кода. В этом руководстве используется Visual Studio Code.
+
+![Проект SharePoint Framework, открытый в Visual Studio Code](../../../images/fullcalendar-vscode.png)
 
 ### <a name="load-javascript-libraries"></a>Загрузка библиотек JavaScript
 
@@ -393,7 +409,7 @@ gulp serve --nobrowser
 
 Так как веб-часть загружает свои данные из SharePoint, необходимо протестировать ее с помощью размещенного рабочего места SharePoint Framework. Перейдите на страницу **https://yourtenant.sharepoint.com/_layouts/workbench.aspx** и добавьте веб-часть на холст. Должны появиться задачи, отображаемые в представлении календаря с помощью подключаемого модуля FullCalendar для jQuery.
 
-![Задачи, отображаемые в представлении календаря в клиентской веб-части SharePoint Framework](../../../../images/fullcalendar-spfx.png)
+![Задачи, отображаемые в представлении календаря в клиентской веб-части SharePoint Framework](../../../images/fullcalendar-spfx.png)
 
 ## <a name="add-support-for-configuring-the-web-part-through-web-part-properties"></a>Добавление поддержки настройки веб-части с помощью ее свойств
 
@@ -403,7 +419,7 @@ gulp serve --nobrowser
 
 Для начала определите свойство веб-части для хранения имени списка, из которого загружаются задачи. В редакторе кода откройте файл **./src/webparts/tasksCalendar/TasksCalendarWebPart.manifest.json**, измените имя заданного по умолчанию свойства **description** на **listName** и удалите его значение.
 
-![Свойство listName манифеста веб-части, выделенное в Visual Studio Code](../../../../images/fullcalendar-spfx-listname-property.png)
+![Свойство listName манифеста веб-части, выделенное в Visual Studio Code](../../../images/fullcalendar-spfx-listname-property.png)
 
 Затем обновите интерфейс свойств веб-части, чтобы увидеть изменения в манифесте. В редакторе кода откройте файл **./src/webparts/tasksCalendar/ITasksCalendarWebPartProps.ts** и измените его содержимое на следующее:
 
@@ -651,7 +667,7 @@ gulp serve --nobrowser
 
 Перейдите к размещенному рабочему месту и добавьте веб-часть на холст. Откройте область свойств веб-части, укажите имя списка задач и нажмите кнопку **Применить**, чтобы подтвердить изменения. Теперь в веб-части должны отображаться задачи в представлении календаря.
 
-![Задачи, загруженные из указанного списка и отображаемые в клиентской веб-части SharePoint Framework](../../../../images/fullcalendar-spfx-list-configured.png)
+![Задачи, загруженные из указанного списка и отображаемые в клиентской веб-части SharePoint Framework](../../../images/fullcalendar-spfx-list-configured.png)
 
 ## <a name="transform-the-plain-javascript-code-to-typescript"></a>Преобразование обычного кода JavaScript в TypeScript
 

@@ -1,3 +1,13 @@
+---
+title: "Использование цветов темы в настройке SharePoint Framework"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: f7f8c24bb2483064504e75e71a19caf1914874f4
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="use-theme-colors-in-your-sharepoint-framework-customizations"></a>Использование цветов темы в настройке SharePoint Framework
 
 При создании настроек SharePoint Framework следует использовать цвета темы, чтобы настройки сочетались с дизайном сайта. Эта статья описывает, как использовать цвета темы контекстного сайта в своем решении SharePoint Framework.
@@ -8,7 +18,7 @@
 
 При формировании шаблона новой клиентской веб-части SharePoint Framework используется фиксированная синяя палитра. Если добавить такую ​​веб-часть на современный сайт с другой цветовой схемой, она будет выделяться и выглядеть неорганично.
 
-![Клиентская веб-часть SharePoint Framework, использующая синюю цветовую схему, на современном сайте группы с красной темой](../../images/themed-styles-blue-web-part-red-site.png)
+![Клиентская веб-часть SharePoint Framework, использующая синюю цветовую схему, на современном сайте группы с красной темой](../images/themed-styles-blue-web-part-red-site.png)
 
 Используя фиксированные цвета, вы заранее определяете, какие цвета вы хотите использовать для каких элементов. Это может привести к ситуации, когда, отображаясь на красном сайте группы, синяя веб-часть выделяется (а это неуместно). В большинстве случаев нужно стараться использовать цвета темы контекстного сайта, чтобы решение не выделялось, а выглядело как часть сайта.
 
@@ -63,7 +73,7 @@ SharePoint Framework дает возможность использовать ц
 
 В редакторе кода откройте файл **./src/webparts/helloWorld/components/HelloWorld.tsx** и с div с классом **ms-Grid-row** удалите класс **ms-bgColor-themeDark**.
 
-![Класс "ms-bgColor-themeDark", выбранный в редакторе Visual Studio Code](../../images/themed-styles-ms-bgcolor-themedark-class.png)
+![Класс "ms-bgColor-themeDark", выбранный в редакторе Visual Studio Code](../images/themed-styles-ms-bgcolor-themedark-class.png)
 
 Затем в той же папке откройте файл **HelloWorld.module.scss** и измените `.row` селектор на указанный ниже.
 
@@ -74,7 +84,7 @@ SharePoint Framework дает возможность использовать ц
 }
 ```
 
-![Область выделения строки, дополненная цветом фона](../../images/themed-styles-row-class.png)
+![Область выделения строки, дополненная цветом фона](../images/themed-styles-row-class.png)
 
 В селекторе `.button` замените свойства `background-color` и `border-color` указанными ниже:
 
@@ -87,11 +97,11 @@ SharePoint Framework дает возможность использовать ц
 }
 ```
 
-![Селектор .button обновлен с использованием цветов темы](../../images/themed-styles-button-class.png)
+![Селектор .button обновлен с использованием цветов темы](../images/themed-styles-button-class.png)
 
 При добавлении веб-части на сайт цвета, используемые веб-частью, будут автоматически адаптироваться к цветам темы, используемым на текущем сайте.
 
-![Параллельное представление одной и той же веб-части, отображаемой на двух сайтах с использованием разных цветов; веб-часть соответствует цветовой схеме каждого веб-сайта](../../images/themed-styles-side-by-side.png)
+![Параллельное представление одной и той же веб-части, отображаемой на двух сайтах с использованием разных цветов; веб-часть соответствует цветовой схеме каждого веб-сайта](../images/themed-styles-side-by-side.png)
 
 ## <a name="more-information"></a>Подробнее
 

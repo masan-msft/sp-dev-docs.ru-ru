@@ -1,8 +1,18 @@
+---
+title: "Подключение к SharePoint с помощью объектной модели JavaScript (JSOM)"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: cbaaf3811d6975b6fb94d14b451722f396f10cc0
+ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/20/2017
+---
 # <a name="connect-to-sharepoint-using-the-javascript-object-model-jsom"></a>Подключение к SharePoint с помощью объектной модели JavaScript (JSOM)
 
 В прошлом при создании модификаций для SharePoint вы могли использовать объектную модель JavaScript (JSOM) для связи с SharePoint. Это больше не является рекомендуемым подходом (см. раздел **Замечания** ниже), но все еще приемлемо в некоторых случаях, например при переносе кода. В этой статье показано, как использовать SharePoint JSOM при создании решений на платформе SharePoint Framework.
 
-> **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки SharePoint Framework](../../set-up-your-development-environment).
+> **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки SharePoint Framework](../../set-up-your-development-environment.md).
 
 ## <a name="create-a-new-project"></a>Создание проекта
 
@@ -33,11 +43,17 @@ yo @microsoft/sharepoint
 - **Списки SharePoint** в качестве имени веб-части;
 - **Показывает имена списков на текущем сайте** в качестве описания веб-части.
 
-![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../../images/tutorial-spjsom-yo-sharepoint.png)
+![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/tutorial-spjsom-yo-sharepoint.png)
 
-Когда шаблон будет сформирован, откройте папку проекта в редакторе кода. В этой статье инструкции и снимки экрана основаны на Visual Studio Code, но вы можете использовать любой редактор.
+После завершения скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
 
-![Проект SharePoint Framework, открытый в Visual Studio Code](../../../../images/tutorial-spjsom-vscode.png)
+```sh
+npm shrinkwrap
+```
+
+Далее откройте папку проекта в редакторе кода. В этой статье в инструкциях и на снимках экрана указан Visual Studio Code, но вы можете использовать любой редактор.
+
+![Проект SharePoint Framework, открытый в Visual Studio Code](../../../images/tutorial-spjsom-vscode.png)
 
 Чтобы открыть каталог в Visual Studio Code, введите в консоли следующую команду:
 ```sh
@@ -228,7 +244,7 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
 
 Пример клиентской веб-части, используемый в этой статье, загружает сведения из списков SharePoint на текущем сайте после нажатия кнопки.
 
-![Клиентская веб-часть SharePoint Framework с названиями списков SharePoint на текущем сайте](../../../../images/tutorial-spjsom-web-part-list-titles.png)
+![Клиентская веб-часть SharePoint Framework с названиями списков SharePoint на текущем сайте](../../../images/tutorial-spjsom-web-part-list-titles.png)
 
 Откройте в редакторе кода файл **./src/webparts/sharePointLists/components/SharePointLists.tsx**. В классе `SharePointLists` добавьте метод `getListsTitles`:
 
@@ -310,7 +326,7 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
     });
 
     return (
-      <div className={styles.helloWorld}>
+      <div className={styles.sharePointLists}>
         <div className={styles.container}>
           <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
             <div className="ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1">
@@ -346,7 +362,7 @@ gulp serve --nobrowser
 
 Мы используем SharePoint JSOM для связи с SharePoint, поэтому веб-часть необходимо протестировать с помощью размещенной версии рабочего места SharePoint (именно поэтому указывается параметр `--nobrowser` — он предотвращает автоматическую загрузку локального рабочего места).
 
-![Клиентская веб-часть SharePoint Framework с названиями списков SharePoint на текущем сайте](../../../../images/tutorial-spjsom-web-part-list-titles.png)
+![Клиентская веб-часть SharePoint Framework с названиями списков SharePoint на текущем сайте](../../../images/tutorial-spjsom-web-part-list-titles.png)
 
 Декларативные ссылки на сценарии SharePoint JSOM (как на внешние сценарии) удобно использовать, и они делают код более удобочитаемым. Недостаток этого способа заключается в том, что необходимо указывать абсолютные URL-адреса источников, из которых загружаются сценарии SharePoint JSOM. Если вы используете отдельные клиенты SharePoint для разработки, тестирования и работы, то потребуется приложить дополнительные усилия, чтобы изменить эти URL-адреса для разных сред. В таких случаях также можно принудительно ссылаться на JSOM с помощью класса [SPComponentLoader](https://dev.office.com/sharepoint/reference/spfx/sp-loader/spcomponentloader), чтобы загружать сценарии в коде компонента SPFx.
 
@@ -364,16 +380,21 @@ gulp serve --nobrowser
 
 ```json
 {
-  "entries": [
-    {
-      "entry": "./lib/webparts/sharePointLists/SharePointListsWebPart.js",
-      "manifest": "./src/webparts/sharePointLists/SharePointListsWebPart.manifest.json",
-      "outputPath": "./dist/share-point-lists.bundle.js"
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "share-point-lists-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/sharePointLists/SharePointListsWebPart.js",
+          "manifest": "./src/webparts/sharePointLists/SharePointListsWebPart.manifest.json"
+        }
+      ]
     }
-  ],
+  },
   "externals": {},
   "localizedResources": {
-    "sharePointListsStrings": "webparts/sharePointLists/loc/{locale}.js"
+    "SharePointListsWebPartStrings": "lib/webparts/sharePointLists/loc/{locale}.js"
   }
 }
 ```
@@ -417,7 +438,7 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
 }
 ```
 
-В том же файле замените код метода `getListsTitles` на следующий:
+В том же файле обновите метод `getListsTitles` следующим образом:
 
 ```ts
 export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
@@ -459,11 +480,9 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
 }
 ```
 
-Чтобы сообщать пользователю о состоянии загрузки сценариев SharePoint JSOM, добавьте оператор `import`, ссылающийся на компонент `Placeholder`, и замените код метода `render` на следующий:
+Чтобы сообщать пользователю о состоянии загрузки сценариев SharePoint JSOM, обновите метод `render` следующим образом:
 
 ```tsx
-import { Placeholder } from '@microsoft/sp-webpart-base';
-
 export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
   // ...
   public render(): React.ReactElement<ISharePointListsProps> {
@@ -472,13 +491,22 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
     });
 
     return (
-      <div className={styles.helloWorld}>
+      <div className={styles.sharePointLists}>
         <div className={styles.container}>
           {this.state.loadingScripts &&
-            <Placeholder
-              icon={'ms-Icon--CustomList'}
-              iconText={'SharePoint lists'}
-              description={'Loading SharePoint JSOM scripts...'} />}
+            <div className="ms-Grid" style={{ color: "#666", backgroundColor: "#f4f4f4", padding: "80px 0", alignItems: "center", boxAlign: "center" }}>
+              <div className="ms-Grid-row" style={{ color: "#333" }}>
+                <div className="ms-Grid-col ms-u-hiddenSm ms-u-md3"></div>
+                <div className="ms-Grid-col ms-u-sm12 ms-u-md6" style={{ height: "100%", whiteSpace: "nowrap", textAlign: "center" }}>
+                  <i className="ms-fontSize-su ms-Icon ms-Icon--CustomList" style={{ display: "inline-block", verticalAlign: "middle", whiteSpace: "normal" }}></i><span className="ms-fontWeight-light ms-fontSize-xxl" style={{ paddingLeft: "20px", display: "inline-block", verticalAlign: "middle", whiteSpace: "normal" }}>SharePoint lists</span>
+                </div>
+                <div className="ms-Grid-col ms-u-hiddenSm ms-u-md3"></div>
+              </div>
+              <div className="ms-Grid-row" style={{ width: "65%", verticalAlign: "middle", margin: "0 auto", textAlign: "center" }}>
+                <span style={{ color: "#666", fontSize: "17px", display: "inline-block", margin: "24px 0", fontWeight: 100 }}>Loading SharePoint JSOM scripts...</span>
+              </div>
+              <div className="ms-Grid-row"></div>
+            </div>}
           {this.state.loadingScripts === false &&
             <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
               <div className="ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1">
@@ -507,7 +535,7 @@ export default class SharePointLists extends React.Component<ISharePointListsPro
 }
 ```
 
-Когда состояние компонента React указывает на загрузку сценариев SharePoint JSOM, появляется стандартный заполнитель SharePoint Framework. После загрузки сценариев в веб-части появится обычное содержимое с кнопкой, позволяющей пользователям загрузить сведения о списках SharePoint на текущем сайте.
+Когда состояние компонента React указывает на загрузку сценариев SharePoint JSOM, появляется заполнитель. После загрузки сценариев в веб-части появится обычное содержимое с кнопкой, позволяющей пользователям загрузить сведения о списках SharePoint на текущем сайте.
 
 ### <a name="load-sharepoint-jsom-scripts-using-spcomponentloader"></a>Загрузка сценариев SharePoint JSOM с помощью класса SPComponentLoader
 
@@ -520,7 +548,7 @@ import { SPComponentLoader } from '@microsoft/sp-loader';
 
 export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
   // ...
-  private componentDidMount(): void {
+  public componentDidMount(): void {
     SPComponentLoader.loadScript('/_layouts/15/init.js', {
       globalExportsName: '$_global_init'
     })
@@ -560,7 +588,7 @@ gulp serve --nobrowser
 
 Как и раньше, в веб-части должны появиться названия списков SharePoint на текущем сайте.
 
-![Клиентская веб-часть SharePoint Framework с названиями списков SharePoint на текущем сайте](../../../../images/tutorial-spjsom-web-part-list-titles.png)
+![Клиентская веб-часть SharePoint Framework с названиями списков SharePoint на текущем сайте](../../../images/tutorial-spjsom-web-part-list-titles.png)
 
 Для использования класса `SPComponentLoader` требуются дополнительные усилия, но вы получаете возможность указывать URL-адреса относительно сервера. Это удобно в тех случаях, когда для разработки, тестирования и работы используются разные клиенты.
 

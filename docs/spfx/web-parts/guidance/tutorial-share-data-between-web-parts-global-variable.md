@@ -1,10 +1,20 @@
-# <a name="share-data-between-web-parts-using-a-global-variable-tutorial"></a>Совместное использование данных разными веб-частями с помощью глобальной переменной (руководство)
+---
+title: "Совместное использование данных разными веб-частями с применением глобальной переменной (руководство)"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 5ee1bf737bc3d78636e981092212e5f37d89d5bc
+ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/20/2017
+---
+# <a name="share-data-between-web-parts-using-a-global-variable-tutorial"></a>Совместное использование данных разными веб-частями с применением глобальной переменной (руководство)
 
 > Примечание. Эта статья еще не была проверена на общедоступной версии SPFx, поэтому у вас могут возникнуть трудности при использовании последнего выпуска.
 
 При создании клиентских веб-частей можно загрузить данные один раз и повторно использовать их в разных веб-частях. Это ускорит загрузку страниц и уменьшит нагрузку на сеть. В этом пошаговом руководстве показано, как веб-части могут совместно использовать данные с помощью глобальной переменной.
 
-> **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки клиентских веб-частей для SharePoint](../../set-up-your-development-environment).
+> **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки клиентских веб-частей для SharePoint](../../set-up-your-development-environment.md).
 
 ## <a name="prepare-the-project"></a>Подготовка проекта
 
@@ -37,17 +47,23 @@ yo @microsoft/sharepoint
 - **Shows recently modified documents** (Показывает недавно измененные документы) в качестве описания веб-части;
 - **React** в качестве используемой платформы.
 
-![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../../images/tutorial-sharingdata-yo-sharepoint-recent-documents.png)
+![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/tutorial-sharingdata-yo-sharepoint-recent-documents.png)
 
-Когда шаблон будет сформирован, откройте папку проекта в редакторе кода. В этой статье инструкции и снимки экрана основаны на Visual Studio Code, но вы можете использовать любой редактор.
+После завершения скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
 
-![Проект SharePoint Framework, открытый в Visual Studio Code](../../../../images/tutorial-sharingdata-vscode.png)
+```sh
+npm shrinkwrap
+```
+
+Далее откройте папку проекта в редакторе кода. В этой статье в инструкциях и на снимках экрана указан Visual Studio Code, но вы можете использовать любой редактор.
+
+![Проект SharePoint Framework, открытый в Visual Studio Code](../../../images/tutorial-sharingdata-vscode.png)
 
 ## <a name="show-the-recently-modified-documents"></a>Отображение недавно измененных документов
 
 Веб-часть Recent documents (Последние документы) показывает сведения о последних измененных документах в виде карточек, используя Office UI Fabric.
 
-![Веб-часть Recent documents (Последние документы) с тремя небольшими карточками документов, представляющими три последних измененных документа](../../../../images/tutorial-sharingdata-recent-documents.png)
+![Веб-часть Recent documents (Последние документы) с тремя небольшими карточками документов, представляющими три последних измененных документа](../../../images/tutorial-sharingdata-recent-documents.png)
 
 ### <a name="remove-the-standard-description-property"></a>Удаление стандартного свойства _description_
 
@@ -332,13 +348,13 @@ gulp serve
 
 Добавьте веб-часть Recent Documents (Последние документы) на холст рабочего места SharePoint.
 
-![Веб-часть Recent Documents (Последние документы) с тремя недавно измененными документами в виде карточек документов](../../../../images/tutorial-sharingdata-recent-documents.png)
+![Веб-часть Recent Documents (Последние документы) с тремя недавно измененными документами в виде карточек документов](../../../images/tutorial-sharingdata-recent-documents.png)
 
 ## <a name="show-the-most-recently-modified-document"></a>Отображение последнего измененного документа
 
 В веб-части Recent document (Последний документ) отображаются сведения о последнем измененном документе.
 
-![Веб-часть Recent document (Последний документ) с одной большой карточкой документа, содержащей сведения о последнем измененном документе](../../../../images/tutorial-sharingdata-recent-document.png)
+![Веб-часть Recent document (Последний документ) с одной большой карточкой документа, содержащей сведения о последнем измененном документе](../../../images/tutorial-sharingdata-recent-document.png)
 
 ### <a name="add-the-second-web-part"></a>Добавление второй веб-части
 
@@ -357,7 +373,7 @@ yo @microsoft/sharepoint
 - **Recent document** (Последний документ) в качестве имени веб-части;
 - **Shows information about the most recently modified document** (Показывает сведения о последнем измененном документе) в качестве описания веб-части.
 
-![Генератор Yeoman для SharePoint Framework со сведениями для формирования второй веб-части](../../../../images/tutorial-sharingdata-yo-sharepoint-recent-document.png)
+![Генератор Yeoman для SharePoint Framework со сведениями для формирования второй веб-части](../../../images/tutorial-sharingdata-yo-sharepoint-recent-document.png)
 
 ### <a name="remove-the-standard-description-property"></a>Удаление стандартного свойства _description_
 
@@ -442,7 +458,7 @@ export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecent
 
 В Visual Studio Code откройте область обозревателя и в папке **./src/webparts/recentDocuments** переместите файлы **IDocument.ts** и **IDocumentActivity.ts** на один уровень выше, в папку **./src/webparts**.
 
-![Область обозревателя Visual Studio Code с выделенными файлами IDocument.ts и IDocumentActivity.ts](../../../../images/tutorial-sharingdata-interfaces.png)
+![Область обозревателя Visual Studio Code с выделенными файлами IDocument.ts и IDocumentActivity.ts](../../../images/tutorial-sharingdata-interfaces.png)
 
 #### <a name="update-references-to-the-moved-files"></a>Обновление ссылок на перемещенные файлы
 
@@ -596,7 +612,7 @@ gulp serve
 
 Добавьте веб-часть Recent document (Последний документ) на холст рабочего места SharePoint.
 
-![Веб-часть Recent document (Последний документ) с карточкой документа, содержащей сведения о последнем измененном документе](../../../../images/tutorial-sharingdata-recent-document.png)
+![Веб-часть Recent document (Последний документ) с карточкой документа, содержащей сведения о последнем измененном документе](../../../images/tutorial-sharingdata-recent-document.png)
 
 Текущая реализация — типичный пример независимой разработки двух веб-частей. Если они обе располагаются на одной странице и загружают данные из SharePoint, то для получения похожих сведений приходится выполнять два отдельных запроса. Если в тот или иной момент вам потребуется изменить источник, из которого загружаются данные о недавно измененных документах, то придется обновлять обе веб-части. Чтобы ускорить загрузку страницы и упростить работу с кодом веб-части, вы можете централизовать логику получения данных и сделать однажды полученные данные доступными обеим веб-частям.
 
@@ -608,7 +624,7 @@ gulp serve
 
 Создайте в папке проекта путь **./src/services/documentsService**. Переместите файлы **IDocument.ts** и **IDocumentActivity.ts** из папки **./src/webparts** в папку **./src/services/documentsService**.
 
-![Файлы IDocument.ts и IDocumentActivity.ts, выделенные в области обозревателя Visual Studio Code](../../../../images/tutorial-sharingdata-interfaces-documentsservice.png)
+![Файлы IDocument.ts и IDocumentActivity.ts, выделенные в области обозревателя Visual Studio Code](../../../images/tutorial-sharingdata-interfaces-documentsservice.png)
 
 ### <a name="build-the-data-access-service"></a>Создание службы доступа к данным
 
@@ -782,7 +798,7 @@ import { IDocument } from '../../services/documentsService';
 gulp serve
 ```
 
-![Веб-части Recent document (Последний документ) и Recent documents (Последние документы) с информацией о недавно измененных документах](../../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
+![Веб-части Recent document (Последний документ) и Recent documents (Последние документы) с информацией о недавно измененных документах](../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
 
 ### <a name="load-web-part-data-using-the-data-service"></a>Загрузка данных веб-частей с помощью службы данных
 
@@ -860,7 +876,7 @@ export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecent
 gulp serve
 ```
 
-![Веб-части Recent document (Последний документ) и Recent documents (Последние документы) с информацией о недавно измененных документах](../../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
+![Веб-части Recent document (Последний документ) и Recent documents (Последние документы) с информацией о недавно измененных документах](../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
 
 ### <a name="share-data-between-web-parts"></a>Совместное использование данных разными веб-частями
 
@@ -989,12 +1005,12 @@ export class DocumentsService {
 gulp serve
 ```
 
-![Веб-части Recent document (Последний документ) и Recent documents (Последние документы) с информацией о недавно измененных документах](../../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
+![Веб-части Recent document (Последний документ) и Recent documents (Последние документы) с информацией о недавно измененных документах](../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
 
 Если добавить операторы ведения журнала в разных частях метода `DocumentsService.ensureRecentDocuments`, вы увидите, что данные загружаются один раз, после чего используются повторно.
 
-![Консоль разработчика с различными операторами ведения журнала в Microsoft Edge](../../../../images/tutorial-sharingdata-console-log.png)
+![Консоль разработчика с различными операторами ведения журнала в Microsoft Edge](../../../images/tutorial-sharingdata-console-log.png)
 
 ## <a name="see-also"></a>См. также
 
-- [Совместное использование данных клиентскими веб-частями](./share-data-between-web-parts)
+- [Совместное использование данных клиентскими веб-частями](./share-data-between-web-parts.md)

@@ -1,3 +1,13 @@
+---
+title: "Интеграция задач gulp в цепочку инструментов SharePoint Framework"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 6dd97e3d939228969c86e0ab7272008b40c3bf31
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="integrate-gulp-tasks-in-sharepoint-framework-toolchain"></a>Интеграция задач gulp в цепочку инструментов SharePoint Framework
 
 Средства разработки клиентских приложений для SharePoint позволяют применять [gulp](http://gulpjs.com/) для запуска следующих задач по сборке:
@@ -20,7 +30,7 @@ gulp.task('somename', function() {
 
 При работе с цепочкой инструментов SharePoint Framework необходимо определить задачи в конвейере сборки платформы. После определения и регистрации в конвейере задача добавляется в цепочку инструментов.
 
-В SharePoint Framework используется [обычная цепочка инструментов сборки](sharepoint-framework-toolchain.md#common-build-tools-packages), которая состоит из набора пакетов npm с общими задачами сборки. Поэтому задачи по умолчанию определяются в обычном пакете, в отличие от ситуации, когда используется `gulpfile.js` клиентского проекта. Чтобы просмотреть доступные задачи, выполните следующую команду в консоли для каталога проекта:
+В SharePoint Framework используется [обычная цепочка инструментов сборки](sharepoint-framework-toolchain.md#common-build-tool-packages), которая состоит из набора пакетов npm с общими задачами сборки. Поэтому задачи по умолчанию определяются в обычном пакете, в отличие от ситуации, когда используется `gulpfile.js` клиентского проекта. Чтобы просмотреть доступные задачи, выполните следующую команду в консоли для каталога проекта:
 
 ```
 gulp --tasks
@@ -28,7 +38,7 @@ gulp --tasks
 
 При выполнении этой команды будет выведен список всех доступных задач.
 
-![Доступные задачи gulp](../../../images/gulp-tasks-available.png)
+![Доступные задачи gulp](../../images/gulp-tasks-available.png)
 
 ## <a name="custom-gulp-tasks"></a>Специальные задачи gulp
 Для добавления специальных задач нужно определить их в `gulpfile.js`. Откройте `gulpfile.js` в редакторе кода. Код по умолчанию инициализирует цепочку инструментов SharePoint Framework и глобальный экземпляр `gulp` для этой цепочки. Любые добавляемые специальные задачи необходимо определять до инициализации глобального экземпляра `gulp`.
@@ -138,11 +148,11 @@ let imageResizeTask = build.task('resize-images', imageResizeSubTask);
 gulp resize-images
 ```
 
-![image-resize-task](../../../images/gulp-extend-image-resize-task.png)
+![image-resize-task](../../images/gulp-extend-image-resize-task.png)
 
 Эта задача `resize-images` отобразится также в списке доступных задач проекта при выполнении `gulp --tasks`.
 
-![image-resize-task with available tasks](../../../images/gulp-extend-image-resize-available-tasks.png)
+![image-resize-task with available tasks](../../images/gulp-extend-image-resize-available-tasks.png)
 
 
 
