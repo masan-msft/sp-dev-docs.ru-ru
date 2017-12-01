@@ -1,51 +1,79 @@
-# <a name="working-with-the-original-requestdigest"></a><span data-ttu-id="4d681-101">Работа с исходным __RequestDigest</span><span class="sxs-lookup"><span data-stu-id="4d681-101">Working with the original __RequestDigest</span></span>
+---
+title: "Работа с __REQUESTDIGEST"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: ae30e9d655ebaf9d99d6e72017a2ed62e2fb3aac
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
+# <a name="working-with-requestdigest"></a><span data-ttu-id="43790-102">Работа с __REQUESTDIGEST</span><span class="sxs-lookup"><span data-stu-id="43790-102">Working with __REQUESTDIGEST</span></span>
 
-<span data-ttu-id="4d681-p101">Есть много программных кодов, созданных для работы с классическими страницами SharePoint, которые можно использовать с платформой SharePoint Framework, но иногда бывает, что не удается найти определенные компоненты или переменные. Например, поле формы `__REQUESTDIGEST`. В идеале вам не нужно использовать глобальную переменную для доступа к дайджесту. Достаточно обновленного объекта `HttpRequest` для вызовов SharePoint, и он сам будет обрабатывать всю логику дайджеста и проверки подлинности (например, маркеры с истекшим сроком действия). Как это сделать, можно узнать из статьи [Подключение клиентской веб-части к SharePoint ("Здравствуй, мир!", часть 2)](https://dev.office.com/sharepoint/docs/spfx/web-parts/get-started/connect-to-sharepoint).</span><span class="sxs-lookup"><span data-stu-id="4d681-p101">There is a lot of code written to work with the classic SharePoint pages that you can use with the SharePoint Framework, but sometimes certain components or variables aren't there. One example is the __REQUESTDIGEST form field.  In an ideal world, you wouldn't use a global variable to access the digest, you'd just use the updated HttpRequest object to make your SharePoint call, and it will handle all the digest / auth logic for you (including things like expired tokens).  The Connect your client-side web part to SharePoint (Hello world part 2) article shows you how to do this.</span></span>
+<span data-ttu-id="43790-p101">При выполнении запросов REST к API SharePoint (всех, кроме GET) в них необходимо добавлять действительный дайджест. Он подтверждает действительность вашего запроса к SharePoint. Так как срок действия этого токена ограничен, его необходимо проверить, прежде чем добавлять в запрос, иначе возникнет ошибка. В этой статье описано, как получить действительный дайджест запроса и избежать ошибок.</span><span class="sxs-lookup"><span data-stu-id="43790-p101">When executing non-GET REST requests to the SharePoint API, you must add a valid request digest to your request. This digest proves validity of your request to SharePoint. Because this token is valid only for a limited period of time, you have to ensure that the token you have is valid, before adding it to your request or the request will fail. This article describes the different approaches to obtain a valid request digest and pitfalls of some commonly used approaches.</span></span>
 
-<span data-ttu-id="4d681-p102">Тем не менее, если в существующем коде использованы более старые конструкции, с помощью клиентского кода и работы с DOM их довольно легко добавить обратно на страницу. Для этого нужно задействовать метод `onInit` в базовом классе веб-частей и запросить нужный элемент создания DOM. Вот пример создания элемента формы `__REQUESTDIGEST`.</span><span class="sxs-lookup"><span data-stu-id="4d681-p102">However, if your existing code uses some older constructs, through the power of client side code and DOM manipulation, it's fairly easy to add these back to a page.  The key is to hook into the onInit method in the base web part class, and pull the create the DOM element that you expect to be there.  Here's an example that creates the __REQESTDIGEST form element.</span></span>
+## <a name="considerations-when-using-request-digest-from-the-hidden-requestdigest-field"></a><span data-ttu-id="43790-107">Что следует учитывать при использовании дайджеста запроса из скрытого поля __REQUESTDIGEST</span><span class="sxs-lookup"><span data-stu-id="43790-107">Considerations when using request digest from the hidden __REQUESTDIGEST field</span></span>
 
-```JavaScript
-    public onInit<T>(): Promise<T>
-    {
-    // does the digest exist?
-    if ( !document.getElementById('__REQUESTDIGEST') )
-    {
-      // OK, the request digest does not exist. Let's create it.
-      // first, grab the digest value out of the contextWebInfo object (if it exists).
-      var digestValue: string;
-      try{
-        digestValue = (window as any)._spClientSidePageContext.contextWebInfo.FormDigestValue;
-      }
-      catch (exception){
-        // there is no digest on this page, so just return. This can easily happen on the local workbench
-        return Promise.resolve();
-      }
+<span data-ttu-id="43790-p102">На классических страницах SharePoint включает токен дайджеста запроса в скрытом поле **__REQUESTDIGEST**. Один из наиболее распространенных способов работы с дайджестом запроса — извлечение его из этого поля и добавление в запрос, например:</span><span class="sxs-lookup"><span data-stu-id="43790-p102">In classic pages, SharePoint includes a request digest token on the page in a hidden field named **__REQUESTDIGEST**. One of the most common approaches to work with the request digest, is to obtain it from that field and add it to the request, for example:</span></span>
 
-      if (digestValue){
-        // OK, now lets create the digest input form. It looks like this:
-        // <input type="hidden" name="__REQUESTDIGEST" id="__REQUESTDIGEST" value="blahblahblahblahblahblah, July23 -0000 or something like that">
-        const requestDigestInput: Element = document.createElement('input');
-        requestDigestInput.setAttribute('type', 'hidden');
-        requestDigestInput.setAttribute('name', '__REQUESTDIGEST');
-        requestDigestInput.setAttribute('id', '__REQUESTDIGEST');
-        requestDigestInput.setAttribute('value', digestValue);
-
-        // lastly, add the digest to the page
-        document.body.appendChild(requestDigestInput);
-      }
+```js
+var digest = $('#__REQUESTDIGEST').val();
+$.ajax({
+    url: '/_api/web/...'
+    method: "POST",
+    headers: {
+        "Accept": "application/json; odata=nometadata",
+        "X-RequestDigest": digest
+    },
+    success: function (data) {
+      // ...
+    },
+    error: function (data, errorCode, errorMessage) {
+      // ...
     }
-
-    // no promise to return
-    return Promise.resolve();
-    }
+});
 ```
 
-><span data-ttu-id="4d681-109">**Примечание.** Есть лучший способ получить текущее значение дайджеста, обрабатывающего все события кэширования, истечения времени, повторной выборки и т. д. Попробуйте его. Вам потребуется импортировать `digestCacheServiceKey` и `IDigestCache` из **sp-client-base**.</span><span class="sxs-lookup"><span data-stu-id="4d681-109">Note: There is a better way to get the current digest value that will handle all of the caching / expiring / refetching / etc.  Give this a try.  You'll need to import digestCacheServiceKey and IDigestCache from sp-client-base</span></span>
+<span data-ttu-id="43790-p103">Первоначально такой запрос будет работать, но если страница будет открыта в течение долгого времени, срок действия дайджеста запроса истечет и возникнет ошибка **403 FORBIDDEN**. По умолчанию токен дайджеста запроса действителен в течение 30 минут, поэтому перед использованием его необходимо проверить. Раньше для этого нужно было сравнить метку времени из дайджеста запроса с текущим временем. SharePoint Framework упрощает этот процесс. Проверить токен дайджеста запроса можно двумя способами.</span><span class="sxs-lookup"><span data-stu-id="43790-p103">Such request would work initially, but if the user would have the page open for a longer period of time, the request digest on the page would expire and the request would fail with a **403 FORBIDDEN** result. By default, a request digest token is valid for 30 minutes, so before using it, you have to ensure that it's still valid. In the past you had to do this manually, by comparing the timestamp from the request digest with the current time. SharePoint Framework simplifies this process by offering you two ways of ensuring that your request has a valid request digest token.</span></span>
 
-```JavaScript
-    var digestCache:IDigestCache = this.context.serviceScope.consume(digestCacheServiceKey);
-    digestCache.fetchDigest(this.context.pageContext.web.serverRelativeUrl).then((digest: string) => {
-      // Do Something with the digest
-      console.log(digest);
+## <a name="use-the-sphttpclient-to-communicate-with-the-sharepoint-rest-api"></a><span data-ttu-id="43790-114">Использование SPHttpClient для связи с REST API SharePoint</span><span class="sxs-lookup"><span data-stu-id="43790-114">Use the SPHttpClient to communicate with the SharePoint REST API</span></span>
+
+<span data-ttu-id="43790-p104">Для связи с REST API SharePoint рекомендуется использовать SPHttpClient, предоставляемый вместе с SharePoint Framework. Этот класс содержит удобную логику для отправки запросов REST к API SharePoint, которая упрощает код. Например, когда вы отправляете запрос, отличный от GET, используя SPHttpClient, он автоматически получает действительный дайджест запроса и добавляет его в запрос. Это значительно упрощает решение, так как не нужно создавать код для управления токенами дайджеста запросов и их проверки.</span><span class="sxs-lookup"><span data-stu-id="43790-p104">The recommended way to communicate with the SharePoint REST API is using the SPHttpClient provided with the SharePoint Framework. This class wraps issuing REST requests to the SharePoint REST API with convenient logic that simplifies your code. For example, whenever you issue a non-GET request using the SPHttpClient, it will automatically obtain a valid request digest and add it to the request. This significantly simplifies your solution as you don't need to build code to manage request digest tokens and ensure their validity.</span></span>
+
+<span data-ttu-id="43790-p105">При создании новых настроек в SharePoint Framework для связи с REST API SharePoint всегда следует использовать SPHttpClient. Однако, иногда это невозможно, например, когда вы переносите существующую настройку в SharePoint Framework и хотите сохранить как можно больше исходного кода или создаете настройку, используя библиотеку, такую как Angular(JS), с собственными службами для отправки веб-запросов. В таких случаях действительный токен дайджеста запроса можно получить из службы **DigestCache**.</span><span class="sxs-lookup"><span data-stu-id="43790-p105">If you're building new customizations on the SharePoint Framework, you should always use the SPHttpClient to communicate with the SharePoint REST API. Sometimes however, you might not be able to use the SPHttpClient. This can be the case for example when you're migrating an existing customization to the SharePoint Framework and want to keep as much of the original code as possible, or you're building a customization using a library such as Angular(JS), that has its own services for issuing web requests. In such cases you can obtain a valid request digest token from the **DigestCache**.</span></span>
+
+## <a name="retrieve-valid-request-digest-using-the-digestcache-service"></a><span data-ttu-id="43790-123">Извлечение действительного дайджеста запроса с помощью службы DigestCache</span><span class="sxs-lookup"><span data-stu-id="43790-123">Retrieve valid request digest using the DigestCache service</span></span>
+
+<span data-ttu-id="43790-p106">Если использовать SPHttpClient для связи с REST API SharePoint невозможно, действительный токен дайджеста запроса можно получить, используя службу **DigestCache**, предоставляемую вместе с SharePoint Framework. Использовать службу DigestCache удобнее, чем получать действительный токен дайджеста запроса вручную, так как DigestCache автоматически проверяет полученный ранее дайджест запроса. Если срок его действия истек, служба DigestCache автоматически запрашивает новый токен дайджеста запроса в SharePoint и сохраняет его для последующих запросов. Использование DigestCache упрощает код и делает решение более надежным.</span><span class="sxs-lookup"><span data-stu-id="43790-p106">If you can't use the SPHttpClient for communicating with the SharePoint REST API, you can obtain a valid request digest token using the **DigestCache** service provided with the SharePoint Framework. The benefit of using the DigestCache service over manually obtaining a valid request digest token is, that the DigestCache automatically checks if the previously retrieved request digest is still valid or not. If it's expired, the DigestCache service will automatically request a new request digest token from SharePoint and store it from subsequent requests. Using the DigestCache simplifies your code and makes your solution more robust.</span></span>
+
+<span data-ttu-id="43790-128">Чтобы использовать службу DigestCache в коде, сначала импортируйте типы **DigestCache** и **IDigestCache** из пакета **@microsoft/sp-http**:</span><span class="sxs-lookup"><span data-stu-id="43790-128">To use the DigestCache service in your code, first import the **DigestCache** and **IDigestCache** types from the **@microsoft/sp-http** package:</span></span>
+
+```ts
+// ...
+import { IDigestCache, DigestCache } from '@microsoft/sp-http';
+
+export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorldWebPartProps> {
+  // ...
+}
+```
+
+<span data-ttu-id="43790-129">После этого, когда вам понадобится действительный токен дайджеста запроса, получите ссылку на службу DigestCache и вызовите ее метод **fetchDigest**:</span><span class="sxs-lookup"><span data-stu-id="43790-129">Next, whenever you need a valid request digest token, retrieve a reference to the DigestCache service and call its **fetchDigest** method:</span></span>
+
+```ts
+// ...
+import { IDigestCache, DigestCache } from '@microsoft/sp-http';
+
+export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorldWebPartProps> {
+  protected onInit(): Promise<void> {
+    return new Promise<void>((resolve: () => void, reject: (error: any) => void): void => {
+      const digestCache: IDigestCache = this.context.serviceScope.consume(DigestCache.serviceKey);
+      digestCache.fetchDigest(this.context.pageContext.web.serverRelativeUrl).then((digest: string): void => {
+        // use the digest here
+        resolve();
+      });
     });
+  }
+
+  // ...
+}
 ```
