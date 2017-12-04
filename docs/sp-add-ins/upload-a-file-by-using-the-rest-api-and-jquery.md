@@ -1,9 +1,18 @@
-
+---
+title: "Отправка файла с помощью REST API и jQuery"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 1e43bc768703da811f4168413da258dc1beddbeb
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="upload-a-file-by-using-the-rest-api-and-jquery"></a>Отправка файла с помощью REST API и jQuery
 Узнайте, как добавить локальный файл в папку SharePoint с помощью REST API и AJAX-запросов jQuery.
  
 
- **Примечание.** Название "приложения для SharePoint" меняется на "надстройки SharePoint". Пока изменения не будут внесены полностью, в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio по-прежнему может встречаться термин "приложение". Дополнительные сведения см. в разделе [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 В примерах кода в этой статье показано, как с помощью интерфейса REST и AJAX-запросов jQuery добавить локальный файл в библиотеку **Документы**, а затем изменить свойства элемента списка, представляющего отправленный файл.
@@ -75,7 +84,7 @@
  
 
  
-Для использования этого примера должны соблюдаться [эти требования](upload-a-file-by-using-the-rest-api-and-jquery#RunTheExamples).
+Чтобы воспользоваться этим примером, ваша среда должна соответствовать [этим требованиям](upload-a-file-by-using-the-rest-api-and-jquery.md#RunTheExamples).
  
 
  
@@ -255,7 +264,7 @@ function getQueryStringParameter(paramToRetrieve) {
  
 
  
-Для запуска этого примера должны соблюдаться [эти требования](upload-a-file-by-using-the-rest-api-and-jquery#RunTheExamples).
+Чтобы воспользоваться этим примером, ваша среда должна соответствовать [этим требованиям](upload-a-file-by-using-the-rest-api-and-jquery.md#RunTheExamples).
  
 
  
@@ -404,19 +413,19 @@ function onError(error) {
 <a name="bk_addresources"> </a>
 
 
--  [Знакомство со службой REST в SharePoint](get-to-know-the-sharepoint-2013-rest-service)
+-  [Знакомство со службой REST в SharePoint](get-to-know-the-sharepoint-rest-service.md)
     
  
--  [Работа с папками и файлами в службе REST](working-with-folders-and-files-with-rest)
+-  [Работа с папками и файлами в службе REST](working-with-folders-and-files-with-rest.md)
     
  
--  [Работа со списками и элементами списков в службе REST](working-with-lists-and-list-items-with-rest)
+-  [Работа со списками и элементами списков в службе REST](working-with-lists-and-list-items-with-rest.md)
     
  
 -  [Справочные материалы по интерфейсу API службы REST и примеры](http://msdn.microsoft.com/library/rest-api-reference-and-samples%28Office.15%29.aspx)
     
  
--  [Обращение к данным SharePoint из надстроек с помощью междоменной библиотеки](access-sharepoint-2013-data-from-add-ins-using-the-cross-domain-library)
+-  [Доступ к данным SharePoint из надстроек с помощью междоменной библиотеки](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md)
     
  
 

@@ -1,15 +1,24 @@
-
+---
+title: "Назначение настраиваемых разрешений для списка с помощью интерфейса REST"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: fd612cffae478e71b620a9e0fb0de6ab8e7480d1
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="set-custom-permissions-on-a-list-by-using-the-rest-interface"></a>Назначение настраиваемых разрешений для списка с помощью интерфейса REST
 Узнайте, как определять детальные настраиваемые разрешения для списка SharePoint с помощью интерфейса REST и JavaScript.
  
 
- **Примечание.** Название "приложения для SharePoint" меняется на "надстройки SharePoint". Пока изменения не будут внесены полностью, в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio по-прежнему может встречаться термин "приложение". Дополнительные сведения см. в разделе [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Сайты, списки и элементы списков SharePoint относятся к типу **SecurableObject**. По умолчанию защищаемый объект наследует разрешения от родительского объекта. Чтобы задать настраиваемые разрешения для объекта, необходимо прервать его наследование, чтобы он перестал наследовать разрешения от родительского объекта, а затем определить новые разрешения, добавив или удалив назначения ролей.
  
 
- **Примечание.** В разделе [Дополнительные ресурсы](set-custom-permissions-on-a-list-by-using-the-rest-interface#bk_addresources) представлены ссылки на статьи, посвященные детальным разрешениям.
+ **Примечание.** В разделе [Дополнительные ресурсы](set-custom-permissions-on-a-list-by-using-the-rest-interface.md#bk_addresources) представлены ссылки на статьи, посвященные детальным разрешениям.
  
 
 Пример кода в этой статье задает настраиваемые разрешения для списка, а затем меняет разрешения группы для него. В примере интерфейс REST используется в следующих целях.
@@ -57,7 +66,7 @@
  
 
  
-Прежде чем запускать код, замените заполнители фактическими значениями. Если вы используете другой язык или другую среду, вам потребуется добавить или изменить некоторые компоненты запросов. Дополнительные сведения см. в статье [Отличия между запросами REST в разных средах](complete-basic-operations-using-sharepoint-2013-rest-endpoints#bk_HowRequestsDiffer).
+Прежде чем запускать код, замените заполнители фактическими значениями. Если вы используете другой язык или другую среду, вам потребуется добавить или изменить некоторые компоненты запросов. Дополнительные сведения см. в статье [Отличия между запросами REST в разных средах](complete-basic-operations-using-sharepoint-rest-endpoints.md#bk_HowRequestsDiffer).
  
 
  
@@ -299,13 +308,13 @@ function errorHandler(xhr, ajaxOptions, thrownError) {
 <a name="bk_addresources"> </a>
 
 
--  [Знакомство со службой REST в SharePoint](get-to-know-the-sharepoint-2013-rest-service)
+-  [Знакомство со службой REST в SharePoint](get-to-know-the-sharepoint-rest-service.md)
     
  
--  [Выполнение базовых операций с использованием конечных точек SharePoint REST](complete-basic-operations-using-sharepoint-2013-rest-endpoints)
+-  [Выполнение базовых операций с использованием конечных точек SharePoint REST](complete-basic-operations-using-sharepoint-rest-endpoints.md)
     
  
--  [Работа со списками и элементами списков в интерфейсе REST](working-with-lists-and-list-items-with-rest)
+-  [Работа со списками и элементами списков в интерфейсе REST](working-with-lists-and-list-items-with-rest.md)
     
  
 - Ресурсы REST:
@@ -325,11 +334,11 @@ function errorHandler(xhr, ajaxOptions, thrownError) {
  
 - Статьи TechNet:
     
-     [Справочник по детальным разрешениям для SharePoint Server 2013](http://technet.microsoft.com/en-us/library/dn169567.aspx)
+     [Справочник по детальным разрешениям для SharePoint Server 2013](http://technet.microsoft.com/ru-RU/library/dn169567.aspx)
     
-     [Рекомендации по использованию детальных разрешений в SharePoint Server 2013](http://technet.microsoft.com/en-us/library/gg128955.aspx)
+     [Рекомендации по использованию детальных разрешений в SharePoint Server 2013](http://technet.microsoft.com/ru-RU/library/gg128955.aspx)
     
-     [Разрешения пользователей и уровни разрешений в SharePoint](http://technet.microsoft.com/en-us/library/cc721640.aspx)
+     [Разрешения пользователей и уровни разрешений в SharePoint](http://technet.microsoft.com/ru-RU/library/cc721640.aspx)
     
  
 

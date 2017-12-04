@@ -1,12 +1,21 @@
-
+---
+title: "Отправка пакетных запросов с помощью интерфейсов REST API"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 68dff5844cfaaa27071ca5f5d870e4be1eeaf7b7
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="make-batch-requests-with-the-rest-apis"></a>Отправка пакетных запросов с помощью интерфейсов REST API
 Узнайте, как использовать параметр запроса `$batch` с интерфейсами REST API и API OData.
  
 
- **Примечание.** Название "приложения для SharePoint" меняется на "надстройки SharePoint". Пока изменения не будут внесены полностью, в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio по-прежнему может встречаться термин "приложение". Дополнительные сведения см. в разделе [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint#bk_newname).
+ **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
-В этой статье описана отправка пакетных запросов и операций в случае REST API или OData API для Microsoft SharePoint Online (а также локальной среды SharePoint 2016 и более поздних версий), а также в случае [подмножества файлов и папок](http://msdn.microsoft.com/en-us/office/office365/api/files-rest-operations) REST API для Office 365. С помощью этой методики вы можете повысить производительность надстройки, совместив множество операций в одном запросе к серверу и одном отклике.
+В этой статье описана отправка пакетных запросов и операций в случае REST API или OData API для Microsoft SharePoint Online (а также локальной среды SharePoint 2016 и более поздних версий), а также в случае [подмножества файлов и папок](http://msdn.microsoft.com/ru-RU/office/office365/api/files-rest-operations) REST API для Office 365. С помощью этой методики вы можете повысить производительность надстройки, совместив множество операций в одном запросе к серверу и одном отклике.
  
 
 ## <a name="executive-summary-of-the-batch-option"></a>Аннотация к параметру $batch
@@ -120,7 +129,7 @@ GET https://fabrikam.sharepoint.com/_api/Web/lists HTTP/1.1
 
  
 
--  [Библиотека OData .NET](http://msdn.microsoft.com/en-us/office/microsoft.data.odata%28v=vs.90%29). Обратите особое внимание на классы **ODataBatch***.
+-  [Библиотека OData .NET](http://msdn.microsoft.com/ru-RU/office/microsoft.data.odata%28v=vs.90%29). Обратите особое внимание на классы **ODataBatch***.
     
  
 -  [Библиотека Data.js](http://datajs.codeplex.com/documentation). Обратите особое внимание на [пакетные операции](http://datajs.codeplex.com/wikipage?title=datajs%20OData%20API&amp;referringTitle=Documentation#Batch).
