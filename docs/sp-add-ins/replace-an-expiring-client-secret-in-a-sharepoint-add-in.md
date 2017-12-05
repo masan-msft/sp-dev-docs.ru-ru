@@ -2,23 +2,25 @@
 title: "Замена секрета клиента с истекающим сроком действия в надстройке SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: ee8edbcf57bb30d5328def3b6352ad62d880f5f6
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 4c5295ea0cd345f01264f86c6d84230029c6ace8
+ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="replace-an-expiring-client-secret-in-a-sharepoint-add-in"></a>Замена секрета клиента с истекающим сроком действия в надстройке SharePoint
 Узнайте, как добавить новый секрет клиента для надстройки SharePoint, зарегистрированной на странице AppRegNew.aspx.
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
+> [!NOTE]
+> Название "приложения для SharePoint" меняется на "надстройки SharePoint". В переходный период в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средствах Visual Studio по-прежнему может использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
 
 Срок действия секретов клиента для надстроек SharePoint, зарегистрированных на странице AppRegNew.aspx, завершается через год. В этой статье описано, как добавить новый секрет клиента для надстройки, а также как создать секрет клиента, действительный в течение трех лет.
  
 
- **Примечание.** Эта статья посвящена надстройкам SharePoint, распространяемым через каталог организации и зарегистрированным на странице AppRegNew.aspx. Если для регистрации приложения использовалась Панель мониторинга продаж, см. раздел [Создание или обновление идентификаторов и секретов клиентов на Панели мониторинга продаж](https://dev.office.com/officestore/docs/create-or-update-client-ids-and-secrets#bk_update).
+> [!NOTE]
+> Эта статья посвящена надстройкам SharePoint, распространяемым через каталог организации и зарегистрированным на странице AppRegNew.aspx. Если для регистрации надстройки использовалась Панель мониторинга продаж, см. статью [Создание или обновление идентификаторов и секретов клиентов на Панели мониторинга продаж](https://dev.office.com/officestore/docs/create-or-update-client-ids-and-secrets#bk_update).
  
 
 
@@ -107,9 +109,9 @@ $rand = [System.Security.Cryptography.RandomNumberGenerator]::Create()
 $rand.GetBytes($bytes)
 $rand.Dispose()
 $newClientSecret = [System.Convert]::ToBase64String($bytes)
-New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Usage Sign -Value $newClientSecret
-New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Usage Verify -Value $newClientSecret
-New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Password -Usage Verify -Value $newClientSecret
+New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Usage Sign -Value $newClientSecret -StartDate (Get-Date) -EndDate (Get-Date).AddYears(1)
+New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Usage Verify -Value $newClientSecret -StartDate (Get-Date) -EndDate (Get-Date).AddYears(1)
+New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Password -Usage Verify -Value $newClientSecret -StartDate (Get-Date) -EndDate (Get-Date).AddYears(1)
 $newClientSecret
 ```
 
@@ -117,14 +119,14 @@ $newClientSecret
     
  
 
- **Совет.** По умолчанию срок действия надстройки составляет один год. Вы можете сократить или увеличить его (до 3 лет) с помощью параметра **-EndDate** в трех вызовах командлета **New-MsolServicePrincipalCredential**. Значением этого параметра должен быть объект [DateTime](http://msdn2.microsoft.com/EN-US/library/03ybds8y), превышающий значение **DateTime.Now** не более чем на 3 года.
+> [!TIP]
+> По умолчанию срок действия секрета надстройки составляет один год. Вы можете сократить или увеличить его (до 3 лет) с помощью параметра **-EndDate**, трижды вызвав командлет **New-MsolServicePrincipalCredential**. Значением этого параметра должен быть объект [DateTime](http://msdn2.microsoft.com/EN-US/library/03ybds8y), превышающий значение **DateTime.Now** не более чем на 3 года.
  
-
-
 ## <a name="update-the-remote-web-application-in-visual-studio-to-use-the-new-secret"></a>Обновление удаленного веб-приложения в Visual Studio для использования нового секрета
 
 
- **Важно!** Если ваша надстройка изначально создана с помощью предварительного выпуска Инструментов разработчика Microsoft Office для Visual Studio, она может содержать устаревшую версию файла TokenHelper (с расширением CS или VB). Если файл не содержит строку secondaryClientSecret, то это устаревшая версия, которую следует заменить, прежде чем обновлять веб-приложение для использования нового секрета. Чтобы получить копию файла финальной версии, необходима среда Visual Studio 2012 или более поздней версии. Создайте проект надстройки SharePoint в Visual Studio. Скопируйте файл TokenHelper из него в проект веб-приложения своей надстройки SharePoint. 
+> [!IMPORTANT]
+>  Если ваша надстройка изначально создана с помощью предварительного выпуска Инструментов разработчика Microsoft Office для Visual Studio, она может содержать устаревшую версию файла TokenHelper (с расширением CS или VB). Если файл не содержит строку "secondaryClientSecret", то это устаревшая версия, которую следует заменить, прежде чем обновлять веб-приложение для использования нового секрета. Чтобы можно было получить копию файла финальной версии, требуется Visual Studio 2012 или более поздней версии. Создайте проект надстройки SharePoint в Visual Studio. Скопируйте файл TokenHelper из него в проект веб-приложения своей надстройки SharePoint. 
  
 
 
@@ -145,7 +147,8 @@ $newClientSecret
   <add key="SecondaryClientSecret" value="your old secret here" />
 ```
 
-> **Примечание.** Если вы впервые выполняете эту процедуру, то в этой части файла конфигурации не будет записи свойства **SecondaryClientSecret**. Но если процедура выполняется для последующего (второго или третьего) секрета клиента, то свойство **SecondaryClientSecret** уже присутствует и содержит исходный или уже просроченный секрет. В этом случае необходимо удалить свойство **SecondaryClientSecret**, прежде чем переименовывать ключ **ClientSecret**.
+> [!NOTE]
+> Если вы впервые выполняете эту процедуру, в файле конфигурации не будет записи свойства **SecondaryClientSecret**. Но если процедура выполняется для последующего (второго или третьего) секрета клиента, то свойство **SecondaryClientSecret** уже присутствует и содержит исходный или другой просроченный секрет. В этом случае необходимо удалить свойство **SecondaryClientSecret**, прежде чем переименовывать **ClientSecret**.
 
 3. Добавьте новый ключ **ClientSecret** и включите в него новый секрет клиента. Результат должен выглядеть так:
     
@@ -157,6 +160,9 @@ $newClientSecret
      ... other settings may be here ...
 </appSettings>
 ```
+
+> [!IMPORTANT]
+> Вы не сможете использовать новый секрет клиента, который создали, пока не истечет срок действия текущего. Если вы замените ключ ClientId новым секретом клиента, когда отсутствует ключ SecondaryClientSecret, нужного результата не будет. Необходимо выполнить инструкции из этой статьи и подождать, пока не истечет срок действия предыдущего секрета клиента. После этого можно будет при необходимости удалить SecondaryClientSecret.
 
 4. Если вы использовали новый файл TokenHelper, выполните повторную сборку проекта.
     
@@ -183,7 +189,7 @@ connect-msolservice -credential $msolcred
 
 2. Получите **ServicePrincipals** и ключи. При использовании параметра **$keys** возвращаются три записи. Замените каждое значение **KeyId** в *KeyId1*, *KeyId2* и *KeyId3*. Вы также увидите значение **EndDate** для каждого ключа. Убедитесь, что там отображается просроченный ключ.
     
-     **Примечание.** Значение **clientId** должно совпадать с просроченным **clientId**. Рекомендуется удалить все ключи (как просроченные, так и действительные) для этого идентификатора **clientId**.
+     >**Примечание.** Значение **clientId** должно совпадать с просроченным **clientId**. Рекомендуется удалить все ключи (как просроченные, так и действительные) для этого идентификатора **clientId**.
     
 
 
@@ -223,9 +229,4 @@ $newClientSecret
 
 ## <a name="see-also"></a>См. также
 
-
-#### <a name="other-resources"></a>Другие ресурсы
-
-
- 
- [Размещенное у поставщика приложение не работает в SPO](http://blogs.technet.com/b/sharepointdevelopersupport/archive/2015/03/11/provider-hosted-app-fails-on-spo.aspx)
+[Размещаемое у поставщика приложение не работает в SPO](http://blogs.technet.com/b/sharepointdevelopersupport/archive/2015/03/11/provider-hosted-app-fails-on-spo.aspx)
