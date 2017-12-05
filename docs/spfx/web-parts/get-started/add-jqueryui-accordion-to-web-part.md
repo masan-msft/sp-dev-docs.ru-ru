@@ -1,13 +1,23 @@
+---
+title: "Добавление элемента Accordion jQueryUI в клиентскую веб-часть SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: fb93d06b47d54a2836c33f832440a054475e563d
+ms.sourcegitcommit: 64ea77c00eea763edc4c524b678af9226d5aba35
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/31/2017
+---
 # <a name="add-jqueryui-accordion-to-your-sharepoint-client-side-web-part"></a>Добавление элемента Accordion jQueryUI в клиентскую веб-часть SharePoint
 
 В этой статье описано, как добавить элемент Accordion jQueryUI в проект веб-части. Для этого нужно создать новую веб-часть, как показано на приведенном ниже изображении. 
 
-![Снимок экрана: веб-часть, включающая элемент Accordion jQuery](../../../../images/jquery-accordion-wb.png)
+![Снимок экрана: веб-часть, включающая элемент Accordion jQuery](../../../images/jquery-accordion-wb.png)
 
 Эти действия также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=-3m__hRQxEI&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq). 
 
 <a href="https://www.youtube.com/watch?v=-3m__hRQxEI&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
-<img src="../../../../images/spfx-youtube-tutorial5.png" alt="Screenshot of the YouTube video player for this tutorial" />
+<img src="../../../images/spfx-youtube-tutorial5.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
 ## <a name="prerequisites"></a>Обязательные условия
@@ -46,24 +56,33 @@ yo @microsoft/sharepoint
 
 Когда появится запрос:
 
-* Оставьте имя по умолчанию (**jquery-webpart**) для своего решения и нажмите клавишу **ВВОД**.
-* Выберите вариант **Use the current folder** (Использовать текущую папку) для размещения файлов.
+* Оставьте имя по умолчанию **jquery-webpart** для своего решения и нажмите клавишу **ВВОД**.
+* Выберите **Только SharePoint Online (новая версия)** и нажмите клавишу **ВВОД**.
+* Выберите вариант **Использовать текущую папку** для размещения файлов.
+* Выберите **N**, чтобы сделать установку расширения обязательной на каждом сайте при его использовании. 
+* Выберите **Webpart** в качестве типа создаваемого клиентского компонента. 
 
-Далее вам потребуется указать определенные сведения о веб-части:
+Далее потребуется указать определенные сведения о веб-части:
 
-* Оставьте выбранным параметр **No javascript web framework** (Не использовать платформу веб-решений на базе JavaScript) по умолчанию и нажмите клавишу **ВВОД**, чтобы продолжить.
 * Введите имя **jQuery** для веб-части и нажмите клавишу **ВВОД**.
 * Введите описание веб-части **jQuery Web Part** и нажмите клавишу **ВВОД**. 
+* Оставьте параметр **Не использовать платформу веб-решений на базе JavaScript** по умолчанию и нажмите клавишу **ВВОД**, чтобы продолжить.
 
 После этого Yeoman установит необходимые зависимости и выполнит скаффолдинг файлов решения. Это может занять несколько минут. При этом Yeoman также включит в проект веб-часть **jQueryWebPart**.
 
-Введите в консоли следующий код, чтобы открыть проект веб-части в Visual Studio Code:
+После скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
+
+```sh
+npm shrinkwrap
+```
+
+Далее введите следующий код, чтобы открыть проект веб-части в Visual Studio Code:
 
 ```
 code .
 ```
 
-## <a name="install-jquery-and-jquery-ui-npm-packages"></a>Установка пакетов npm jQuery и jQuery UI
+## <a name="install-jquery-and-jquery-ui-npm-packages"></a>Установка пакетов NPM jQuery и jQuery UI
 
 Введите в консоли следующий код, чтобы установить пакет npm jQuery:
 
@@ -89,20 +108,23 @@ npm install --save @types/jqueryui
 ### <a name="unbundle-external-dependencies-from-web-part-bundle"></a>Извлечение внешних зависимостей из пакета веб-части
 По умолчанию все добавляемые зависимости включаются в пакет веб-части. Это не всегда удобно. Вы можете извлечь эти зависимости из пакета веб-части.
 
-Откройте файл config\config.json в Visual Studio Code.
+В Visual Studio Code откройте файл **config\config.json**.
 
 Этот файл содержит сведения о пакетах и возможных внешних зависимостях. 
 
-Область `entries` содержит сведения о пакете по умолчанию (в данном случае — пакете веб-части jQuery). Каждой добавленной веб-части, добавленной в решение, соответствует одна запись.
+Область `bundles` содержит сведения о пакете по умолчанию (в данном случае — пакете веб-части jQuery). Каждой добавленной веб-части, добавленной в решение, соответствует одна запись.
 
 ```json
-"entries": [
-  {
-    "entry": "./lib/webparts/jQuery/jQueryWebPart.js",
-    "manifest": "./src/webparts/jQuery/jQueryWebPart.manifest.json",
-    "outputPath": "./dist/j-query.bundle.js",
-  }
-]
+  "bundles": {
+    "j-query-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/jQuery/JQueryWebPart.js",
+          "manifest": "./src/webparts/jQuery/JQueryWebPart.manifest.json"
+        }
+      ]
+    }
+  },
 ```
 
 Раздел `externals` содержит библиотеки, не включенные в пакет по умолчанию. 
@@ -124,19 +146,24 @@ npm install --save @types/jqueryui
 
 ```json
 {
-  "entries": [
-    {
-      "entry": "./lib/webparts/jQuery/JQueryWebPart.js",
-      "manifest": "./src/webparts/jQuery/JQueryWebPart.manifest.json",
-      "outputPath": "./dist/j-query.bundle.js"
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "j-query-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/jQuery/JQueryWebPart.js",
+          "manifest": "./src/webparts/jQuery/JQueryWebPart.manifest.json"
+        }
+      ]
     }
-  ],
+  },
   "externals": {
     "jquery":"node_modules/jquery/dist/jquery.min.js",
     "jqueryui":"node_modules/jqueryui/jquery-ui.min.js"
   },
   "localizedResources": {
-    "jQueryStrings": "webparts/jQuery/loc/{locale}.js"
+    "JQueryWebPartStrings": "lib/webparts/jQuery/loc/{locale}.js"
   }
 }
 ```
@@ -144,7 +171,7 @@ npm install --save @types/jqueryui
 
 ## <a name="build-the-accordion"></a>Создание элемента Accordion
 
-Откройте папку проекта **jquery-webpart** в Visual Studio Code. Проект должен содержать веб-часть jQuery, добавленную ранее в папку /src/webparts/jQuery.
+Откройте папку проекта **jquery-webpart** в Visual Studio Code. Проект должен содержать веб-часть jQuery, добавленную ранее в папку `/src/webparts/jQuery`.
 
 ### <a name="add-accordion-html"></a>Добавление HTML-кода Accordion
 Добавьте в папку `src/webparts/jQuery` новый файл **MyAccordionTemplate.ts**.
@@ -312,12 +339,13 @@ public render(): void {
 gulp serve
 ```
 
-> **Примечание.** Visual Studio Code поддерживает Gulp и другие средства запуска задач. Нажмите клавиши **CTRL+SHIFT+B** в Windows или **CMD+SHIFT+B** в Mac OS для отладки и просмотра веб-части.
+> [!NOTE]
+> Visual Studio Code поддерживает Gulp и другие средства запуска задач. Нажмите клавиши **CTRL+SHIFT+B** в Windows или **CMD+SHIFT+B** в macOS для отладки и просмотра веб-части.
 
 Gulp выполнит задачи и откроет локальную рабочую область веб-частей SharePoint.
 
 Выберите значок **+** на холсте страницы, чтобы отобразить список веб-частей, и добавьте веб-часть jQuery. Теперь должен появиться элемент Accordion jQueryUI!
 
-![Снимок экрана: веб-часть, включающая элемент Accordion jQuery](../../../../images/jquery-accordion-wb.png)
+![Снимок экрана: веб-часть, включающая элемент Accordion jQuery](../../../images/jquery-accordion-wb.png)
 
 В консоли, в которой запущена команда `gulp serve`, нажмите клавиши **CTRL+C**, чтобы завершить задачу.

@@ -1,11 +1,21 @@
+---
+title: "Подключение клиентской веб-части к SharePoint (Hello world, часть 2)"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: eababc970e28ac857293c51337adc55959599df1
+ms.sourcegitcommit: 64ea77c00eea763edc4c524b678af9226d5aba35
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/31/2017
+---
 # <a name="connect-your-client-side-web-part-to-sharepoint-hello-world-part-2"></a>Подключение клиентской веб-части к SharePoint (Hello world, часть 2)
 
-Подключите веб-часть к SharePoint для доступа к функциям и данным SharePoint, чтобы интегрировать сервисы для конечных пользователей. В этой статье мы продолжим работу с веб-частью hello world, созданной в предыдущей статье [Создание первой веб-части](./build-a-hello-world-web-part).
+Подключите веб-часть к SharePoint для доступа к функциям и данным SharePoint, а также более интегрированного процесса работы для конечных пользователей. В этой статье мы продолжим работу с веб-частью Hello world, созданной в предыдущей статье [Создание первой веб-части](./build-a-hello-world-web-part.md).
 
 Указанные ниже действия также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=9VMwjb2pbQ8&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq). 
 
 <a href="https://www.youtube.com/watch?v=9VMwjb2pbQ8&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
-<img src="../../../../images/spfx-youtube-tutorial2.png" alt="Screenshot of the YouTube video player for this tutorial" />
+<img src="../../../images/spfx-youtube-tutorial2.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
 
@@ -41,17 +51,17 @@ this.context.pageContext
 
 ```ts
     this.domElement.innerHTML = `
-      <div class="${styles.helloWorld}">
-        <div class="${styles.container}">
-          <div class="ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}">
-            <div class="ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1">
-              <span class="ms-font-xl ms-fontColor-white">Welcome to SharePoint!</span>
-              <p class="ms-font-l ms-fontColor-white">Customize SharePoint experiences using Web Parts.</p>
-              <p class="ms-font-l ms-fontColor-white">${escape(this.properties.description)}</p>
-              <p class="ms-font-l ms-fontColor-white">${escape(this.properties.test2)}</p>
-              <p class="ms-font-l ms-fontColor-white">Loading from ${escape(this.context.pageContext.web.title)}</p>
-              <a href="https://aka.ms/spfx" class="${styles.button}">
-                <span class="${styles.label}">Learn more</span>
+      <div class="${ styles.helloWorld }">
+        <div class="${ styles.container }">
+          <div class="${ styles.row }">
+            <div class="${ styles.column }">
+              <span class="${ styles.title }">Welcome to SharePoint!</span>
+              <p class="${ styles.subTitle }">Customize SharePoint experiences using Web Parts.</p>
+              <p class="${ styles.description }">${escape(this.properties.description)}</p>
+              <p class="${ styles.description }">${escape(this.properties.test)}</p>
+              <p class="${ styles.description }">Loading from ${escape(this.context.pageContext.web.title)}</p>
+              <a href="https://aka.ms/spfx" class="${ styles.button }">
+                <span class="${ styles.label }">Learn more</span>
               </a>
             </div>
           </div>
@@ -61,26 +71,28 @@ this.context.pageContext
 
 Обратите внимание, что для вывода значения переменной в блоке HTML используется `${ }`. Дополнительный HTML `p` используется для отображения `this.context.pageContext.web.title`. Так как эта веб-часть загружается из локальной среды, в заголовке будет указано **Локальная рабочая область**.
 
-Сохраните файл. Команда `gulp serve`, запущенная в консоли, определит эту операцию и сделает следующее:
+Сохраните файл. Команда `gulp serve`, запущенная в консоли, определит эту операцию и:
 
 * выполнит сборку обновленного кода и объединит его в пакет автоматически;
-* обновит страницу локальной рабочей области (так как код веб-части необходимо перезагрузить).
+* Обновите страницу локальной рабочей области (так как код веб-части необходимо перезагрузить).
 
->**Примечание.** Поместите окно консоли рядом с окном VS Code, чтобы видеть, как gulp автоматически выполняет компиляцию при сохранении изменений в VS Code.
+> [!NOTE]
+> Поместите окно консоли рядом с окном VS Code, чтобы видеть, как gulp автоматически выполняет компиляцию при сохранении изменений в VS Code.
 
 В браузере откройте вкладку локальной рабочей области SharePoint Workbench. URL-адрес этой вкладки: `https://localhost:4321/temp/workbench.html` (на случай, если вы ее закрыли).
 
 Веб-часть должна выглядеть следующим образом:
 
-![Контекст страницы SharePoint на localhost](../../../../images/sp-mock-localhost-wp.png)
+![Контекст страницы SharePoint на localhost](../../../images/sp-mock-localhost-wp.png)
 
 Теперь перейдите к рабочей области SharePoint Workbench, размещенной в SharePoint. Полный URL-адрес: `https://your-sharepoint-site-url/_layouts/workbench.aspx`. Обратите внимание, что на стороне SharePoint Online необходимо обновить страницу, чтобы увидеть внесенные изменения.
 
->**Примечание.** Если у вас не установлен сертификат разработчика SPFx, рабочая область сообщит вам, что она не загружает сценарии из localhost. Выполните команду `gulp trust-dev-cert` в консоли каталога проекта, чтобы установить сертификат разработчика.
+> [!NOTE]
+> Если у вас не установлен сертификат разработчика SPFx, рабочая область сообщит вам, что она не загружает сценарии из localhost. Выполните команду `gulp trust-dev-cert` в консоли каталога проекта, чтобы установить сертификат разработчика.
 
 Теперь, когда веб-части доступен контекст страницы, в ней появится название сайта SharePoint.
 
-![Контекст страницы SharePoint на сайте SharePoint](../../../../images/sp-lists-spsiteurl-wp.png)
+![Контекст страницы SharePoint на сайте SharePoint](../../../images/sp-lists-spsiteurl-wp.png)
 
 ## <a name="define-list-model"></a>Определение модели списка
 Чтобы начать работу с данными списка SharePoint, нужна модель списка. Для получения списков нужны две модели. 
@@ -140,7 +152,7 @@ export default class MockHttpClient  {
 
 Откройте файл **HelloWorldWebPart.ts**.
 
-Скопируйте приведенный ниже код и вставьте его под разделом `import { IHelloWorldWebPartProps } from './IHelloWorldWebPartProps';`.
+Скопируйте следующий код и вставьте его под разделом `import * as strings from 'HelloWorldWebPartStrings';`.
 
 ```ts
 import MockHttpClient from './MockHttpClient';
@@ -319,24 +331,25 @@ import {
 
 ```ts
     this.domElement.innerHTML = `
-      <div class="${styles.helloWorld}">
-        <div class="${styles.container}">
-          <div class="ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}">
-            <div class="ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1">
-              <span class="ms-font-xl ms-fontColor-white">Welcome to SharePoint!</span>
-              <p class="ms-font-l ms-fontColor-white">Customize SharePoint experiences using Web Parts.</p>
-              <p class="ms-font-l ms-fontColor-white">${escape(this.properties.description)}</p>
-              <p class="ms-font-l ms-fontColor-white">Loading from ${escape(this.context.pageContext.web.title)}</p>
-              <a href="https://aka.ms/spfx" class="${styles.button}">
-                <span class="${styles.label}">Learn more</span>
+      <div class="${ styles.helloWorld }">
+        <div class="${ styles.container }">
+          <div class="${ styles.row }">
+            <div class="${ styles.column }">
+              <span class="${ styles.title }">Welcome to SharePoint!</span>
+              <p class="${ styles.subTitle }">Customize SharePoint experiences using Web Parts.</p>
+              <p class="${ styles.description }">${escape(this.properties.description)}</p>
+              <p class="${ styles.description }">${escape(this.properties.test)}</p>
+              <p class="${ styles.description }">Loading from ${escape(this.context.pageContext.web.title)}</p>
+              <a href="https://aka.ms/spfx" class="${ styles.button }">
+                <span class="${ styles.label }">Learn more</span>
               </a>
             </div>
           </div>
-        </div>  
-        <div id="spListContainer" />
+          <div id="spListContainer" />
+        </div>
       </div>`;
 
-    this._renderListAsync(); 
+      this._renderListAsync();
 ```
 
 Сохраните файл.
@@ -347,16 +360,16 @@ import {
 
 Должны появиться фиктивные данные.
 
-![Отрисовка данных списков из localhost](../../../../images/sp-lists-render-localhost.png)
+![Отрисовка данных списков из localhost](../../../images/sp-lists-render-localhost.png)
 
 Перейдите в рабочую область, размещенную в SharePoint. Обновите страницу и добавьте веб-часть HelloWorld.
 
 Должны появиться списки с текущего сайта.
 
-![Отрисовка данных списков из SharePoint](../../../../images/sp-lists-render-spsite.png)
+![Отрисовка данных списков из SharePoint](../../../images/sp-lists-render-spsite.png)
 
 Теперь вы можете остановить работу сервера. Перейдите в консоль и остановите команду `gulp serve`. Нажмите клавиши `Ctrl+C`, чтобы завершить задачу gulp.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Поздравляем: вы подключили веб-часть к данным списков SharePoint! Из следующей статьи, которая называется [Развертывание веб-части на странице SharePoint](./serve-your-web-part-in-a-sharepoint-page), вы узнаете, как развернуть и просмотреть веб-часть Hello World на классической серверной странице SharePoint.
+Поздравляем: вы подключили веб-часть к данным списков SharePoint! Из следующей статьи, которая называется [Развертывание веб-части на странице SharePoint](./serve-your-web-part-in-a-sharepoint-page.md), вы узнаете, как развернуть и просмотреть веб-часть Hello World на классической серверной странице SharePoint.

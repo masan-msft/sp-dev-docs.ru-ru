@@ -1,12 +1,22 @@
+---
+title: "Использование каскадных раскрывающихся меню для свойств веб-частей"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: aecede48a431e42fa2edc3b1040e03d839022907
+ms.sourcegitcommit: 61f26b4fe41d3cd80622d9950d8f6599df48f26f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/26/2017
+---
 # <a name="use-cascading-dropdowns-in-web-part-properties"></a>Использование каскадных раскрывающихся меню для свойств веб-частей
 
 Когда вы создаете панель свойств для клиентских веб-частей SharePoint, параметры одного свойства веб-части могут отображаться с учетом значения, выбранного для другого свойства. Такое обычно происходит, если применяются каскадные раскрывающиеся меню. В этой статье описано, как создавать каскадные раскрывающиеся меню на панели свойств веб-части, не создавая соответствующий пользовательский элемент управления.
 
-![Раскрывающееся меню отключено, а заполнитель веб-части сообщает о загрузке обновленного списка элементов](../../../../images/react-cascading-dropdowns-loading-indicator-when-loading-items.png)
+![Раскрывающееся меню отключено, а заполнитель веб-части сообщает о загрузке обновленного списка элементов](../../../images/react-cascading-dropdowns-loading-indicator-when-loading-items.png)
 
 Исходный код рабочей веб-части доступен на сайте GitHub по адресу [https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-custompropertypanecontrols](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-custompropertypanecontrols).
 
-> **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки клиентских веб-частей для SharePoint](../../set-up-your-development-environment).
+> **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки клиентских веб-частей для SharePoint](../../set-up-your-development-environment.md).
 
 ## <a name="create-new-project"></a>Создание проекта
 
@@ -36,11 +46,17 @@ yo @microsoft/sharepoint
 - **List items** (Элементы списка) в качестве имени веб-части;
 - **Shows list items from the selected list** (Показывает элементы списка из выбранного списка) в качестве описания веб-части.
 
-![Генератор Yeoman для SharePoint Framework с параметрами по умолчанию](../../../../images/react-cascading-dropdowns-yo-sharepoint.png)
+![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/react-cascading-dropdowns-yo-sharepoint.png)
 
-Когда шаблон будет сформирован, откройте папку проекта в редакторе кода. В этой статье инструкции и снимки экрана основаны на Visual Studio Code, но вы можете использовать любой редактор.
+После скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
 
-![Проект SharePoint Framework, открытый в Visual Studio Code](../../../../images/react-cascading-dropdowns-visual-studio-code.png)
+```sh
+npm shrinkwrap
+```
+
+Далее откройте папку проекта в редакторе кода. В этой статье инструкции и снимки экрана основаны на Visual Studio Code, но вы можете использовать любой редактор.
+
+![Проект SharePoint Framework, открытый в Visual Studio Code](../../../images/react-cascading-dropdowns-visual-studio-code.png)
 
 ## <a name="define-a-web-part-property-to-store-the-selected-list"></a>Определение свойства веб-части для хранения выбранного списка
 
@@ -48,7 +64,7 @@ yo @microsoft/sharepoint
 
 В редакторе кода откройте файл **src/webparts/listItems/ListItemsWebPartManifest.json**. Замените свойство по умолчанию **description** на новое свойство `listName`.
 
-![Манифест веб-части с выделенным свойством списка веб-части](../../../../images/react-cascading-dropdowns-listname-property-web-part-manifest.png)
+![Манифест веб-части с выделенным свойством списка веб-части](../../../images/react-cascading-dropdowns-listname-property-web-part-manifest.png)
 
 Далее откройте файл **src/webparts/listItems/IListItemsWebPartProps.ts** и замените его содержимое на следующее:
 
@@ -166,7 +182,7 @@ gulp serve
 
 В веб-браузере добавьте веб-часть **List items** на полотно и откройте ее свойства. Убедитесь, что значение свойства **List** отображается в теле веб-части.
 
-![Веб-часть, в которой отображается значение свойства listName](../../../../images/react-cascading-dropdowns-web-part-first-run.png)
+![Веб-часть, в которой отображается значение свойства listName](../../../images/react-cascading-dropdowns-web-part-first-run.png)
 
 ## <a name="populate-the-dropdown-with-sharepoint-lists-to-choose-from"></a>Заполнение раскрывающегося меню списками SharePoint, из которых следует выбирать
 
@@ -242,7 +258,7 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
 gulp serve
 ```
 
-![Свойство listName, отрисованное на панели свойств веб-части с использованием раскрывающегося меню](../../../../images/react-cascading-dropdowns-listname-property-pane-dropdown.png)
+![Свойство listName, отрисованное на панели свойств веб-части с использованием раскрывающегося меню](../../../images/react-cascading-dropdowns-listname-property-pane-dropdown.png)
 
 ### <a name="show-available-lists-in-the-list-dropdown"></a>Отображение доступных списков в раскрывающемся меню
 
@@ -303,7 +319,7 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
 
 SharePoint Framework вызывает метод **onPropertyPaneConfigurationStart** после открытия панели свойств для веб-части. Сначала метод проверяет, загружена ли информация о доступных списках на текущем сайте. Если она загружена, будет включено раскрывающееся меню со списками. Если она пока не загружена, отобразится индикатор загрузки, информирующий пользователя о том, что веб-часть загружает сведения о списках.
 
-![Индикатор загрузки, отображающийся в веб-части во время загрузки информации о доступных списках](../../../../images/react-cascading-dropdowns-loading-indicator-when-loading-list-info.png)
+![Индикатор загрузки, отображающийся в веб-части во время загрузки информации о доступных списках](../../../images/react-cascading-dropdowns-loading-indicator-when-loading-list-info.png)
 
 Когда информация о доступных списках загрузится, метод назначит полученные данные переменной класса **lists**, благодаря чему будет возможно отображение этих сведений в раскрывающемся меню со списками. Далее будет включено раскрывающееся меню, позволяющее пользователю выбрать список. Благодаря вызову метода **this.context.propertyPane.refresh()** обновляется область свойств веб-части, чтобы отобразить последние изменения в раскрывающемся меню со списками. Когда информация загрузится, индикатор загрузки будет удален благодаря вызову метода **clearLoadingIndicator**. Так как при вызове метода очищается пользовательский интерфейс веб-части, вызывается метод **render**, чтобы веб-часть отрисовалась вновь.
 
@@ -315,13 +331,13 @@ gulp serve
 
 Когда вы добавляете веб-часть на холст и открываете панель ее свойств, раскрывающееся меню со списками должно заполниться доступными списками, из которых может выбирать пользователь.
 
-![Раскрывающееся меню со списками на панели свойств веб-части, в котором показаны доступные списки](../../../../images/react-cascading-dropdowns-list-dropdown-available-lists.png)
+![Раскрывающееся меню со списками на панели свойств веб-части, в котором показаны доступные списки](../../../images/react-cascading-dropdowns-list-dropdown-available-lists.png)
 
 ## <a name="allow-users-to-select-an-item-from-the-selected-list"></a>Предоставление пользователям возможности выбрать элемент в указанном списке
 
 При создании веб-частей часто требуется предоставить пользователям возможность выбирать из набора значений, которые определяются ранее указанным значением (например, выбрать страну после указания континента или выбрать элемент списка после указания списка). Это позволяют сделать каскадные раскрывающиеся меню. Вы можете создать каскадные раскрывающиеся меню на панели свойств веб-части, используя стандартные возможности клиентских веб-частей SharePoint Framework. Для этого вы добавите в ранее созданную веб-часть возможность выбрать элемент списка, обусловленный выбранным списком.
 
-![Раскрывающееся меню со списками, открытое на панели свойств веб-части](../../../../images/react-cascading-dropdowns-item-dropdown-list-items.png)
+![Раскрывающееся меню со списками, открытое на панели свойств веб-части](../../../images/react-cascading-dropdowns-item-dropdown-list-items.png)
 
 ### <a name="add-item-web-part-property"></a>Добавление свойства веб-части item
 
@@ -338,7 +354,7 @@ gulp serve
 }
 ```
 
-![Манифест веб-части с выделенным свойством веб-части itemName](../../../../images/react-cascading-dropdowns-itemname-property-web-part-manifest.png)
+![Манифест веб-части с выделенным свойством веб-части itemName](../../../images/react-cascading-dropdowns-itemname-property-web-part-manifest.png)
 
 Замените код в файле **src/webparts/listItems/IListItemsWebPartProps.ts** следующим:
 
@@ -493,7 +509,7 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
 gulp serve
 ```
 
-![Свойство itemName, отрисованное на панели свойств веб-части с использованием раскрывающегося меню](../../../../images/react-cascading-dropdowns-itemname-property-pane-dropdown.png)
+![Свойство itemName, отрисованное на панели свойств веб-части с использованием раскрывающегося меню](../../../images/react-cascading-dropdowns-itemname-property-pane-dropdown.png)
 
 ### <a name="show-items-available-in-the-selected-list-in-the-item-dropdown"></a>Отображение доступных элементов выбранного списка в раскрывающемся меню
 
@@ -595,7 +611,7 @@ gulp serve
 
 При необходимости раскрывающееся меню может быть изначально отключено, чтобы пользователи сначала выбирали список. На данном этапе, даже после выбора списка, раскрывающееся меню элементов остается отключенным.
 
-![Раскрывающееся меню отключено, даже когда выбран список](../../../../images/react-cascading-dropdowns-list-selected-item-disabled.png)
+![Раскрывающееся меню отключено, даже когда выбран список](../../../images/react-cascading-dropdowns-list-selected-item-disabled.png)
 
 #### <a name="update-web-part-property-pane-after-selecting-a-list"></a>Обновление панели свойств веб-части после выбора списка
 
@@ -662,4 +678,4 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
 > isDisabled: newProps.isDisabled !== undefined ? newProps.isDisabled : newProps.disabled
 > ```
 
-![Раскрывающееся меню на панели свойств веб-части, показывающее доступные элементы выбранного списка](../../../../images/react-cascading-dropdowns-item-dropdown-list-items.png)
+![Раскрывающееся меню на панели свойств веб-части, показывающее доступные элементы выбранного списка](../../../images/react-cascading-dropdowns-item-dropdown-list-items.png)

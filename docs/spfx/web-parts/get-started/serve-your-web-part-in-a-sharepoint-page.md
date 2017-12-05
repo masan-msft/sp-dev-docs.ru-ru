@@ -1,22 +1,32 @@
+---
+title: "Развертывание клиентской веб-части на странице SharePoint (Hello World, часть 3)"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: a2cb54bbf984f18e74c07ec2dd44af73c8d715f1
+ms.sourcegitcommit: 64ea77c00eea763edc4c524b678af9226d5aba35
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/31/2017
+---
 # <a name="deploy-your-client-side-web-part-to-a-sharepoint-page-hello-world-part-3"></a>Развертывание клиентской веб-части на странице SharePoint (Hello World, часть 3)
 
-Из этой статьи вы узнаете, как развернуть клиентскую веб-часть в SharePoint и проверить ее работу на современной серверной странице SharePoint. В этой статье рассматривается веб-часть Hello World, создание которой описано в предыдущей статье, [Подключение клиентской веб-части к SharePoint](./connect-to-sharepoint).
+Из этой статьи вы узнаете, как развернуть клиентскую веб-часть в SharePoint и проверить ее работу на современной серверной странице SharePoint. В этой статье рассматривается веб-часть Hello World, создание которой описано в предыдущей статье [Подключение клиентской веб-части к SharePoint](./connect-to-sharepoint.md).
 
 Перед началом работы убедитесь, что вы выполнили процедуры, описанные в предыдущих статьях:
 
-* [Создание первой клиентской веб-части SharePoint](./build-a-hello-world-web-part)
-* [Подключение клиентской веб-части к SharePoint](./connect-to-sharepoint)
+* [Создание первой клиентской веб-части SharePoint](./build-a-hello-world-web-part.md)
+* [Подключение клиентской веб-части к SharePoint](./connect-to-sharepoint.md)
 
 Эти инструкции также изложены в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=asmQIfgaKSw&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq). 
 
 <a href="https://www.youtube.com/watch?v=asmQIfgaKSw&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
-<img src="../../../../images/spfx-youtube-tutorial3.png" alt="Screenshot of the YouTube video player for this tutorial" />
+<img src="../../../images/spfx-youtube-tutorial3.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
 
 ## <a name="package-the-helloworld-web-part"></a>Упаковка веб-части HelloWorld
 
-В окне консоли перейдите к каталогу проекта веб-части, создание которого описывается в статье [Создание первой клиентской веб-части SharePoint](./build-a-hello-world-web-part).
+В окне консоли перейдите к каталогу проекта веб-части, создание которого описывается в статье [Создание первой клиентской веб-части SharePoint](./build-a-hello-world-web-part.md).
 
 ```
 cd helloworld-webpart
@@ -34,15 +44,17 @@ cd helloworld-webpart
 
 ```json
 {
-    "solution": {
-        "name": "helloworld-webpart-client-side-solution",
-        "id": "ed83e452-2286-4ea0-8f98-c79d257acea5",
-        "version": "1.0.0.0"
-    },
-    "paths": {
-        "zippedPackage": "solution/helloworld-webpart.sppkg"
-    }
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "helloworld-webpart-client-side-solution",
+    "id": "4432f33b-5845-4ca0-827e-a8ae68c7b945",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/helloworld-webpart.sppkg"
+  }
 }
+
 ```
 
 Чтобы упаковать клиентское решение, содержащее веб-часть, введите в окне консоли следующую команду:
@@ -77,11 +89,11 @@ helloworld-webpart.sppkg
 
 Отправьте или перетащите файл **helloworld-webpart.sppkg** в каталог приложений.
 
-![Отправка решения в каталог приложений](../../../../images/upload-solution-app-catalog.png) 
+![Отправка решения в каталог приложений](../../../images/upload-solution-app-catalog.png) 
 
 При этом будет развернут пакет клиентского решения. Так как это клиентское решение с полным доверием, в SharePoint появится диалоговое окно с предложением разрешить развертывание клиентского решения.
 
-![Доверие развертыванию клиентского решения](../../../../images/sp-app-deploy-trust.png) 
+![Доверие развертыванию клиентского решения](../../../images/sp-app-deploy-trust.png) 
     
 Нажмите кнопку **Развернуть**
 
@@ -93,11 +105,11 @@ helloworld-webpart.sppkg
 
 В **поле поиска** введите **helloworld** и нажмите клавишу **ВВОД**, чтобы отфильтровать приложения.
     
-![Добавление приложения на сайт](../../../../images/install-app-your-site.png) 
+![Добавление приложения на сайт](../../../images/install-app-your-site.png)
     
 Выберите приложение **helloworld-webpart-client-side-solution**, чтобы установить его на сайте.
     
-![Доверие приложению](../../../../images/app-installed-your-site.png) 
+![Доверие приложению](../../../images/app-installed-your-site.png) 
 
 Теперь клиентское решение и веб-часть установлены на сайте разработчика.
 
@@ -125,7 +137,8 @@ helloworld-webpart.sppkg
 gulp serve --nobrowser
 ```
 
->**Примечание.** SharePoint Workbench не запускается автоматически при использовании `--nobrowser`.
+> [!NOTE]
+> SharePoint Workbench не запускается автоматически при использовании `--nobrowser`.
 
 ## <a name="add-the-helloworld-web-part-to-modern-page"></a>Добавление веб-части HelloWorld на современную страницу
 
@@ -139,19 +152,19 @@ gulp serve --nobrowser
     
 Должна появиться веб-часть **HelloWorld**, создание которой описано в предыдущей статье, получающая списки с текущего сайта. 
 
-![Веб-часть Hello World на современной странице](../../../../images/sp-wp-modern-page.png)
+![Веб-часть Hello World на современной странице](../../../images/sp-wp-modern-page.png)
 
 ## <a name="edit-web-part-properties"></a>Изменение свойств веб-части
 
 Нажмите значок **Настроить элемент** (перо) в веб-части, чтобы открыть область свойств.
 
-![Изменение веб-части](../../../../images/edit-webpart-modern-page.png)
+![Изменение веб-части](../../../images/edit-webpart-modern-page.png)
 
 Это та же область свойств, которую вы создали и проверили в среде разработки проектов.
     
 Измените свойство **Description** (Описание), указав текст **Client-side web parts are awesome!** (Клиентские веб-части — это круто).
     
-![Веб-часть Hello World на современной странице](../../../../images/sp-wp-modern-page-pp.png)
+![Веб-часть Hello World на современной странице](../../../images/sp-wp-modern-page-pp.png)
 
 Обратите внимание, что веб-часть обновляется по мере ввода текста, как и на реактивной панели.
     
@@ -161,4 +174,4 @@ gulp serve --nobrowser
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Поздравляем! Вы развернули клиентскую веб-часть на современной странице SharePoint. Вы можете продолжить разработку веб-части Hello World, прочитав следующую статью — [Развертывание источника клиентской веб-части в CDN](./deploy-web-part-to-cdn). Из нее вы узнаете, как развернуть и загрузить ресурсы веб-части из сети CDN, а не из localhost.
+Поздравляем! Вы развернули клиентскую веб-часть на современной странице SharePoint. Вы можете продолжить разработку веб-части Hello World, прочитав следующую статью — [Развертывание источника клиентской веб-части в CDN](./deploy-web-part-to-cdn.md). Из нее вы узнаете, как развернуть и загрузить ресурсы веб-части из сети CDN, а не из localhost.

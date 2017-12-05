@@ -1,17 +1,25 @@
+---
+title: "Использование компонентов Office UI Fabric React в клиентской веб-части SharePoint"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: ba0c27ed1feeefd8a7762fbf1979c291d33879ff
+ms.sourcegitcommit: 64ea77c00eea763edc4c524b678af9226d5aba35
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/31/2017
+---
 # <a name="use-office-ui-fabric-react-components-in-your-sharepoint-client-side-web-part"></a>Использование компонентов Office UI Fabric React в клиентской веб-части SharePoint
-
-> **Внимание!** Существующие проекты нужно изменить так, чтобы в них использовались @microsoft/sp-build-web@1.0.1 или более поздней версии и Office UI Fabric React. Самый простой способ достичь этого — получить последний пакет, выполнив в консоли команду `npm install -g @microsoft/generator-sharepoint`, прежде чем следовать инструкциям из этого руководства. 
 
 В этой статье описано, как создать простую веб-часть на базе компонента DocumentCard, доступного в [Office UI Fabric React](https://github.com/OfficeDev/office-ui-fabric-react). Office UI Fabric React — это клиентская платформа, позволяющая создавать решения для Office и Office 365. Она включает большую коллекцию адаптивных компонентов для мобильных устройств, с помощью которых вы легко сможете создавать веб-части на языке дизайна Office.
 
 На приведенном ниже изображении показан компонент DocumentCard, созданный с помощью Office UI Fabric React.
 
-![Изображение компонента DocumentCard Fabric в рабочей среде SharePoint](../../../../images/fabric-components-doc-card-view-ex.png)
+![Изображение компонента DocumentCard Fabric в рабочей среде SharePoint](../../../images/fabric-components-doc-card-view-ex.png)
 
 Указанные ниже действия также показаны в видео на [канале SharePoint PnP на YouTube](https://www.youtube.com/watch?v=1N6kNvLxyg4&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq). 
 
 <a href="https://www.youtube.com/watch?v=1N6kNvLxyg4&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
-<img src="../../../../images/spfx-youtube-tutorial6.png" alt="Screenshot of the YouTube video player for this tutorial" />
+<img src="../../../images/spfx-youtube-tutorial6.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
 
@@ -39,21 +47,33 @@ yo @microsoft/sharepoint
     
 Когда появится запрос:
 
-* Оставьте имя по умолчанию (**documentcardexample-webpart**) для своего решения и нажмите клавишу **ВВОД**.
-* Выберите **WebPart** в качестве типа клиентского компонента и нажмите клавишу **ВВОД**.
+* Оставьте имя по умолчанию **documentcardexample-webpart** для своего решения и нажмите клавишу **ВВОД**.
+* Выберите **Только SharePoint Online (новая версия)** и нажмите клавишу **ВВОД**.
+* Выберите вариант **Использовать текущую папку** для размещения файлов.
+* Выберите **N**, чтобы сделать установку расширения обязательной на каждом сайте при его использовании. 
+* Выберите **Webpart** в качестве типа создаваемого клиентского компонента. 
+
+Далее потребуется указать определенные сведения о веб-части:
+
 * Укажите **DocumentCardExample** в качестве имени своей веб-части и нажмите клавишу **ВВОД**.
 * Оставьте **описание DocumentCardExample** по умолчанию и нажмите клавишу **ВВОД**.
 * Выберите **React** в качестве платформы и нажмите клавишу **ВВОД**.
 
 После этого Yeoman установит необходимые зависимости и применит скаффолдинг к файлам решения. Это может занять несколько минут. Yeoman также включит в проект веб-часть DocumentCardExample, применяя к нему скаффолдинг.
-    
-Когда процесс скаффолдинга завершится, введите в консоли следующий код, чтобы открыть проект веб-части в редакторе Visual Studio Code:
+
+После скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
+
+```sh
+npm shrinkwrap
+```
+
+Далее введите следующий код, чтобы открыть проект веб-части в Visual Studio Code:
 
 ```
 code .
 ```
     
-Создание проекта веб-части с помощью платформы React завершено.
+Теперь проект веб-части создан с помощью платформы React.
 
 Откройте **DocumentCardExampleWebPart.ts** в папке **src\webparts\documentCardExample**. 
 
@@ -74,18 +94,18 @@ code .
 Это основной компонент React, добавленный генератором Yeoman в ваш проект, который обрабатывается в элементе DOM веб-части.
 
 ```ts
-export default class DocumentCardExample extends React.Component<IDocumentCardExampleProps, void> {
+export default class DocumentCardExample extends React.Component<IDocumentCardExampleProps, {}> {
   public render(): React.ReactElement<IDocumentCardExampleProps> {
     return (
-      <div className={styles.helloWorld}>
-        <div className={styles.container}>
-          <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
-            <div className="ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1">
-              <span className="ms-font-xl ms-fontColor-white">Welcome to SharePoint!</span>
-              <p className="ms-font-l ms-fontColor-white">Customize SharePoint experiences using Web Parts.</p>
-              <p className="ms-font-l ms-fontColor-white">{escape(this.props.description)}</p>
-              <a href="https://aka.ms/spfx" className={styles.button}>
-                <span className={styles.label}>Learn more</span>
+      <div className={ styles.documentCardExample }>
+        <div className={ styles.container }>
+          <div className={ styles.row }>
+            <div className={ styles.column }>
+              <span className={ styles.title }>Welcome to SharePoint!</span>
+              <p className={ styles.subTitle }>Customize SharePoint experiences using Web Parts.</p>
+              <p className={ styles.description }>{escape(this.props.description)}</p>
+              <a href="https://aka.ms/spfx" className={ styles.button }>
+                <span className={ styles.label }>Learn more</span>
               </a>
             </div>
           </div>
@@ -94,6 +114,7 @@ export default class DocumentCardExample extends React.Component<IDocumentCardEx
     );
   }
 }
+
 ```
 
 ### <a name="add-an-office-ui-fabric-component"></a>Добавление компонента Office UI Fabric
@@ -102,7 +123,8 @@ export default class DocumentCardExample extends React.Component<IDocumentCardEx
 
 Так как при создании решения мы выбрали платформу React, генератор установил также правильную версию Office UI Fabric React. Можно напрямую импортировать компоненты Fabric в компоненты React без дополнительных усилий. 
 
->**Примечание.** С первым выпуском SharePoint Framework рекомендуем использовать Office UI Fabric и Office UI Fabric React, поставляемые с генератором. Не рекомендуем обновлять пакеты Office UI Fabric и Office UI Fabric React отдельно, так как возможен конфликт с уже имеющейся версией в SharePoint, из-за чего веб-часть может не работать должным образом.
+> [!NOTE]
+> С первым выпуском SharePoint Framework рекомендуем использовать Office UI Fabric и Office UI Fabric React, поставляемые с генератором. Не рекомендуем обновлять пакеты Office UI Fabric и Office UI Fabric React отдельно, так как возможен конфликт с уже имеющейся версией в SharePoint, из-за чего веб-часть может не работать должным образом.
 
 Откройте **DocumentCardExample.tsx** в папке **src\webparts\documentCardExample\components**. 
 
@@ -232,4 +254,4 @@ gulp serve
     
 На панели элементов выберите веб-часть `DocumentCardExample` для добавления:
     
-![Изображение компонента DocumentCard Fabric в рабочей среде SharePoint](../../../../images/fabric-components-doc-card-view-ex.png)
+![Изображение компонента DocumentCard Fabric в рабочей среде SharePoint](../../../images/fabric-components-doc-card-view-ex.png)
