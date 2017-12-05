@@ -21,6 +21,7 @@
 Здесь можно скопировать сценарий:
 
 ```powershell
+#Requires -RunAsAdministrator
 <#
 .SYNOPSIS
 Creates a Self Signed Certificate for use in server to server authentication
@@ -278,5 +279,5 @@ namespace AzureADCertAuth
 
 ## <a name="faq"></a>Вопросы и ответы
 ### <a name="can-i-use-other-means-besides-certificates-for-realizing-app-only-access-for-my-azure-ad-app"></a>Можно использовать другие означает, что помимо сертификаты для реализации доступ только для приложений для приложения Azure AD
-Нет, все другие параметры являются заблокированных и по SharePoint Online и приведет к сообщение об отказе в доступе.
+Нет, все другие параметры блокируемые по SharePoint Online и приведет к сообщение об отказе в доступе.
 
