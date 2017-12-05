@@ -2,66 +2,68 @@
 title: "Замена секрета клиента с истекающим сроком действия в надстройке SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: ee8edbcf57bb30d5328def3b6352ad62d880f5f6
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 4c5295ea0cd345f01264f86c6d84230029c6ace8
+ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/03/2017
 ---
-# <a name="replace-an-expiring-client-secret-in-a-sharepoint-add-in"></a><span data-ttu-id="33e9a-102">Замена секрета клиента с истекающим сроком действия в надстройке SharePoint</span><span class="sxs-lookup"><span data-stu-id="33e9a-102">Replace an expiring client secret in a SharePoint Add-in</span></span>
-<span data-ttu-id="33e9a-103">Узнайте, как добавить новый секрет клиента для надстройки SharePoint, зарегистрированной на странице AppRegNew.aspx.</span><span class="sxs-lookup"><span data-stu-id="33e9a-103">Learn how to add a new client secret for a SharePoint Add-in that is registered with AppRegNew.aspx.</span></span>
+# <a name="replace-an-expiring-client-secret-in-a-sharepoint-add-in"></a><span data-ttu-id="0d1d7-102">Замена секрета клиента с истекающим сроком действия в надстройке SharePoint</span><span class="sxs-lookup"><span data-stu-id="0d1d7-102">Replace an expiring client secret in a SharePoint Add-in</span></span>
+<span data-ttu-id="0d1d7-103">Узнайте, как добавить новый секрет клиента для надстройки SharePoint, зарегистрированной на странице AppRegNew.aspx.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-103">Learn how to add a new client secret for a SharePoint Add-in that is registered with AppRegNew.aspx.</span></span>
  
 
- <span data-ttu-id="33e9a-p101">**Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).</span><span class="sxs-lookup"><span data-stu-id="33e9a-p101">**Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).</span></span>
+> [!NOTE]
+> <span data-ttu-id="0d1d7-p101">Название "приложения для SharePoint" меняется на "надстройки SharePoint". В переходный период в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средствах Visual Studio по-прежнему может использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).</span><span class="sxs-lookup"><span data-stu-id="0d1d7-p101">The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).</span></span>
  
 
-<span data-ttu-id="33e9a-p102">Срок действия секретов клиента для надстроек SharePoint, зарегистрированных на странице AppRegNew.aspx, завершается через год. В этой статье описано, как добавить новый секрет клиента для надстройки, а также как создать секрет клиента, действительный в течение трех лет.</span><span class="sxs-lookup"><span data-stu-id="33e9a-p102">Client secrets for SharePoint Add-ins that are registered using the AppRegNew.aspx page expire after one year. This article explains how to add a new secret for the add-in, as well as how to create a new client secret that is valid for three years.</span></span>
+<span data-ttu-id="0d1d7-p102">Срок действия секретов клиента для надстроек SharePoint, зарегистрированных на странице AppRegNew.aspx, завершается через год. В этой статье описано, как добавить новый секрет клиента для надстройки, а также как создать секрет клиента, действительный в течение трех лет.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-p102">Client secrets for SharePoint Add-ins that are registered using the AppRegNew.aspx page expire after one year. This article explains how to add a new secret for the add-in, as well as how to create a new client secret that is valid for three years.</span></span>
  
 
- <span data-ttu-id="33e9a-p103">**Примечание.** Эта статья посвящена надстройкам SharePoint, распространяемым через каталог организации и зарегистрированным на странице AppRegNew.aspx. Если для регистрации приложения использовалась Панель мониторинга продаж, см. раздел [Создание или обновление идентификаторов и секретов клиентов на Панели мониторинга продаж](https://dev.office.com/officestore/docs/create-or-update-client-ids-and-secrets#bk_update).</span><span class="sxs-lookup"><span data-stu-id="33e9a-p103">**Note**  This article is about SharePoint Add-ins that are distributed through an organization catalog and registered with the AppRegNew.aspx page. If the add-in is registered on the Seller Dashboard, see  [Create or update client IDs and secrets in the Seller Dashboard](https://dev.office.com/officestore/docs/create-or-update-client-ids-and-secrets#bk_update).</span></span>
+> [!NOTE]
+> <span data-ttu-id="0d1d7-p103">Эта статья посвящена надстройкам SharePoint, распространяемым через каталог организации и зарегистрированным на странице AppRegNew.aspx. Если для регистрации надстройки использовалась Панель мониторинга продаж, см. статью [Создание или обновление идентификаторов и секретов клиентов на Панели мониторинга продаж](https://dev.office.com/officestore/docs/create-or-update-client-ids-and-secrets#bk_update).</span><span class="sxs-lookup"><span data-stu-id="0d1d7-p103">[Note](https://dev.office.com/officestore/docs/create-or-update-client-ids-and-secrets#bk_update)  This article is about SharePoint Add-ins that are distributed through an organization catalog and registered with the AppRegNew.aspx page. If the add-in is registered on the Seller Dashboard, see  Create or update client IDs and secrets in the Seller Dashboard.</span></span>
  
 
 
-## <a name="prerequisites-for-refreshing-a-client-secret"></a><span data-ttu-id="33e9a-111">Необходимые условия для обновления секрета клиента</span><span class="sxs-lookup"><span data-stu-id="33e9a-111">Prerequisites for refreshing a client secret</span></span>
+## <a name="prerequisites-for-refreshing-a-client-secret"></a><span data-ttu-id="0d1d7-111">Необходимые условия для обновления секрета клиента</span><span class="sxs-lookup"><span data-stu-id="0d1d7-111">Prerequisites for refreshing a client secret</span></span>
 
-<span data-ttu-id="33e9a-112">Убедитесь в следующем перед началом работы:</span><span class="sxs-lookup"><span data-stu-id="33e9a-112">Ensure the following before you begin:</span></span>
+<span data-ttu-id="0d1d7-112">Убедитесь в следующем перед началом работы:</span><span class="sxs-lookup"><span data-stu-id="0d1d7-112">Ensure the following before you begin:</span></span>
  
 
  
 
--  <span data-ttu-id="33e9a-113">[Помощник по входу в Microsoft Online Services](http://www.microsoft.com/download/details.aspx?id=39267) установлен на компьютере разработчика.</span><span class="sxs-lookup"><span data-stu-id="33e9a-113">[Microsoft Online Services Sign-In Assistant](http://www.microsoft.com/download/details.aspx?id=39267) is installed on the development computer.</span></span>
+-  <span data-ttu-id="0d1d7-113">[Помощник по входу в Microsoft Online Services](http://www.microsoft.com/download/details.aspx?id=39267) установлен на компьютере разработчика.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-113">[Microsoft Online Services Sign-In Assistant](http://www.microsoft.com/download/details.aspx?id=39267) is installed on the development computer.</span></span>
     
  
-- <span data-ttu-id="33e9a-114">Модуль PowerShell для Microsoft Online Services ( [32-разрядный](http://go.microsoft.com/fwlink/p/?linkid=236298);  [64-разрядный](http://go.microsoft.com/fwlink/p/?linkid=236297)) установлен на компьютере для разработки.</span><span class="sxs-lookup"><span data-stu-id="33e9a-114">Microsoft Online Services PowerShell Module ( [32-bit](http://go.microsoft.com/fwlink/p/?linkid=236298);  [64-bit](http://go.microsoft.com/fwlink/p/?linkid=236297)) is installed on the development computer.</span></span>
+- <span data-ttu-id="0d1d7-114">Модуль PowerShell для Microsoft Online Services ( [32-разрядный](http://go.microsoft.com/fwlink/p/?linkid=236298);  [64-разрядный](http://go.microsoft.com/fwlink/p/?linkid=236297)) установлен на компьютере для разработки.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-114">Microsoft Online Services PowerShell Module ( [32-bit](http://go.microsoft.com/fwlink/p/?linkid=236298);  [64-bit](http://go.microsoft.com/fwlink/p/?linkid=236297)) is installed on the development computer.</span></span>
     
  
-- <span data-ttu-id="33e9a-115">Вы администратор фермы или клиента Office 365, для которого зарегистрирована надстройка на странице AppRegNew.aspx.</span><span class="sxs-lookup"><span data-stu-id="33e9a-115">You are a tenant administrator for the Office 365 tenant (or a farm administrator on the farm) where the add-in was registered with the AppRegNew.aspx page.</span></span>
+- <span data-ttu-id="0d1d7-115">Вы администратор фермы или клиента Office 365, для которого зарегистрирована надстройка на странице AppRegNew.aspx.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-115">You are a tenant administrator for the Office 365 tenant (or a farm administrator on the farm) where the add-in was registered with the AppRegNew.aspx page.</span></span>
     
  
 
-## <a name="find-out-the-expiration-dates-of-the-sharepoint-add-ins-installed-to-the-office-365-tenancy"></a><span data-ttu-id="33e9a-116">Просмотр дат истечения срока Надстройки SharePoint, установленных на клиенте Office 365</span><span class="sxs-lookup"><span data-stu-id="33e9a-116">Find out the expiration dates of the SharePoint Add-ins installed to the Office 365 tenancy</span></span>
+## <a name="find-out-the-expiration-dates-of-the-sharepoint-add-ins-installed-to-the-office-365-tenancy"></a><span data-ttu-id="0d1d7-116">Просмотр дат истечения срока Надстройки SharePoint, установленных на клиенте Office 365</span><span class="sxs-lookup"><span data-stu-id="0d1d7-116">Find out the expiration dates of the SharePoint Add-ins installed to the Office 365 tenancy</span></span>
 
 
  
 
  
 
-1. <span data-ttu-id="33e9a-117">Откройте Windows PowerShell и запустите следующий командлет:</span><span class="sxs-lookup"><span data-stu-id="33e9a-117">Open Windows PowerShell and run the following cmdlet:</span></span>
+1. <span data-ttu-id="0d1d7-117">Откройте Windows PowerShell и запустите следующий командлет:</span><span class="sxs-lookup"><span data-stu-id="0d1d7-117">Open Windows PowerShell and run the following cmdlet:</span></span>
     
 ```
   Connect-MsolService
 
 ```
 
-2. <span data-ttu-id="33e9a-118">При появлении запроса введите учетные данные администратора клиента или администратора фермы для области клиента Office 365 или фермы, где надстройка зарегистрирована с использованием AppRegNew.aspx.</span><span class="sxs-lookup"><span data-stu-id="33e9a-118">At the login prompt, enter tenant-administrator (or farm administrator) credentials for the Office 365 tenancy or farm where the add-in was registered with AppRegNew.aspx.</span></span>
+2. <span data-ttu-id="0d1d7-118">При появлении запроса введите учетные данные администратора клиента или администратора фермы для области клиента Office 365 или фермы, где надстройка зарегистрирована с использованием AppRegNew.aspx.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-118">At the login prompt, enter tenant-administrator (or farm administrator) credentials for the Office 365 tenancy or farm where the add-in was registered with AppRegNew.aspx.</span></span>
     
  
-3. <span data-ttu-id="33e9a-p104">Создайте отчет со списком всех надстроек и датами истечения срока действия их секретов с помощью указанных ниже строк. Обратите внимание на особенности этого кода:</span><span class="sxs-lookup"><span data-stu-id="33e9a-p104">Generate a report that lists each add-in and the date that its secret expires with the following lines. Note the following about this code:</span></span>
+3. <span data-ttu-id="0d1d7-p104">Создайте отчет со списком всех надстроек и датами истечения срока действия их секретов с помощью указанных ниже строк. Обратите внимание на особенности этого кода:</span><span class="sxs-lookup"><span data-stu-id="0d1d7-p104">Generate a report that lists each add-in and the date that its secret expires with the following lines. Note the following about this code:</span></span>
     
-      - <span data-ttu-id="33e9a-121">Сначала он применяет фильтр к приложениям Майкрософт, надстройкам в процессе разработки, а также нерекомендуемым надстройкам — автоматически размещенным.</span><span class="sxs-lookup"><span data-stu-id="33e9a-121">It first filters out Microsoft's own applications, add-ins still under development (and a now-deprecated type of add-in that was called autohosted).</span></span>
+      - <span data-ttu-id="0d1d7-121">Сначала он применяет фильтр к приложениям Майкрософт, надстройкам в процессе разработки, а также нерекомендуемым надстройкам — автоматически размещенным.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-121">It first filters out Microsoft's own applications, add-ins still under development (and a now-deprecated type of add-in that was called autohosted).</span></span>
     
  
-  - <span data-ttu-id="33e9a-122">Из оставшихся результатов он исключает надстройки не для SharePoint и надстройки с использованием асимметричных ключей, например рабочие процессы.</span><span class="sxs-lookup"><span data-stu-id="33e9a-122">From the remainder, it filters out non-SharePoint add-ins and add-ins that use asymmetric keys, like workflows.</span></span>
+  - <span data-ttu-id="0d1d7-122">Из оставшихся результатов он исключает надстройки не для SharePoint и надстройки с использованием асимметричных ключей, например рабочие процессы.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-122">From the remainder, it filters out non-SharePoint add-ins and add-ins that use asymmetric keys, like workflows.</span></span>
     
  
 
@@ -81,25 +83,25 @@ foreach ($appentry in $applist)
 }  > c:\temp\appsec.txt
 ```
 
-4. <span data-ttu-id="33e9a-p105">Откройте файл C:\temp\appsec.txt, чтобы просмотреть отчет. Не закрывайте окно Windows PowerShell для выполнения следующей процедуры, если скоро истекает срок действия какого-либо секрета.</span><span class="sxs-lookup"><span data-stu-id="33e9a-p105">Open the file C:\temp\appsec.txt to see the report. Leave the Windows PowerShell window open for the next procedure, if any of the secrets is near to expiration.</span></span>
+4. <span data-ttu-id="0d1d7-p105">Откройте файл C:\temp\appsec.txt, чтобы просмотреть отчет. Не закрывайте окно Windows PowerShell для выполнения следующей процедуры, если скоро истекает срок действия какого-либо секрета.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-p105">Open the file C:\temp\appsec.txt to see the report. Leave the Windows PowerShell window open for the next procedure, if any of the secrets is near to expiration.</span></span>
     
  
 
-## <a name="generate-a-new-secret"></a><span data-ttu-id="33e9a-125">Создание секрета клиента</span><span class="sxs-lookup"><span data-stu-id="33e9a-125">Generate a new secret</span></span>
+## <a name="generate-a-new-secret"></a><span data-ttu-id="0d1d7-125">Создание секрета клиента</span><span class="sxs-lookup"><span data-stu-id="0d1d7-125">Generate a new secret</span></span>
 
 
  
 
  
 
-1. <span data-ttu-id="33e9a-126">Создайте переменную ИД клиента со следующем строкой, используя ИД клиента, которое имеет Надстройка SharePoint, в качестве параметра.</span><span class="sxs-lookup"><span data-stu-id="33e9a-126">Create a client ID variable with the following line, using the client ID of the SharePoint Add-in as the parameter.</span></span>
+1. <span data-ttu-id="0d1d7-126">Создайте переменную ИД клиента со следующем строкой, используя ИД клиента, которое имеет Надстройка SharePoint, в качестве параметра.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-126">Create a client ID variable with the following line, using the client ID of the SharePoint Add-in as the parameter.</span></span>
     
 ```
   $clientId = 'client id of the add-in'
 
 ```
 
-2. <span data-ttu-id="33e9a-127">Создайте новый секрет клиента со следующими строками:</span><span class="sxs-lookup"><span data-stu-id="33e9a-127">Generate a new client secret with the following lines:</span></span>
+2. <span data-ttu-id="0d1d7-127">Создайте новый секрет клиента со следующими строками:</span><span class="sxs-lookup"><span data-stu-id="0d1d7-127">Generate a new client secret with the following lines:</span></span>
     
 ```
   $bytes = New-Object Byte[] 32
@@ -107,28 +109,28 @@ $rand = [System.Security.Cryptography.RandomNumberGenerator]::Create()
 $rand.GetBytes($bytes)
 $rand.Dispose()
 $newClientSecret = [System.Convert]::ToBase64String($bytes)
-New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Usage Sign -Value $newClientSecret
-New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Usage Verify -Value $newClientSecret
-New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Password -Usage Verify -Value $newClientSecret
+New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Usage Sign -Value $newClientSecret -StartDate (Get-Date) -EndDate (Get-Date).AddYears(1)
+New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Symmetric -Usage Verify -Value $newClientSecret -StartDate (Get-Date) -EndDate (Get-Date).AddYears(1)
+New-MsolServicePrincipalCredential -AppPrincipalId $clientId -Type Password -Usage Verify -Value $newClientSecret -StartDate (Get-Date) -EndDate (Get-Date).AddYears(1)
 $newClientSecret
 ```
 
-3. <span data-ttu-id="33e9a-p106">Новый секрет клиента появится в консоли Windows PowerShell. Скопируйте его в текстовый файл, он будет нужен для следующей процедуры.</span><span class="sxs-lookup"><span data-stu-id="33e9a-p106">The new client secret will appear on the Windows PowerShell console. Copy it to a text file. You use it in the next procedure.</span></span>
+3. <span data-ttu-id="0d1d7-p106">Новый секрет клиента появится в консоли Windows PowerShell. Скопируйте его в текстовый файл, он будет нужен для следующей процедуры.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-p106">The new client secret will appear on the Windows PowerShell console. Copy it to a text file. You use it in the next procedure.</span></span>
     
  
 
- <span data-ttu-id="33e9a-p107">**Совет.** По умолчанию срок действия надстройки составляет один год. Вы можете сократить или увеличить его (до 3 лет) с помощью параметра **-EndDate** в трех вызовах командлета **New-MsolServicePrincipalCredential**. Значением этого параметра должен быть объект [DateTime](http://msdn2.microsoft.com/EN-US/library/03ybds8y), превышающий значение **DateTime.Now** не более чем на 3 года.</span><span class="sxs-lookup"><span data-stu-id="33e9a-p107">**Tip**  By default, the add-in secret lasts one year. You can set this to a shorter or longer (up to 3 years maximum) by using the  **-EndDate** parameter on the three calls of the **New-MsolServicePrincipalCredential** cmdlet. The value of the parameter must be a [DateTime](http://msdn2.microsoft.com/EN-US/library/03ybds8y) object set to no longer than 3 years from **DateTime.Now**.</span></span>
+> [!TIP]
+> <span data-ttu-id="0d1d7-p107">По умолчанию срок действия секрета надстройки составляет один год. Вы можете сократить или увеличить его (до 3 лет) с помощью параметра **-EndDate**, трижды вызвав командлет **New-MsolServicePrincipalCredential**. Значением этого параметра должен быть объект [DateTime](http://msdn2.microsoft.com/EN-US/library/03ybds8y), превышающий значение **DateTime.Now** не более чем на 3 года.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-p107">**Tip**  By default, the add-in secret lasts one year. You can set this to a shorter or longer (up to 3 years maximum) by using the  **-EndDate** parameter on the three calls of the [New-MsolServicePrincipalCredential](http://msdn2.microsoft.com/EN-US/library/03ybds8y) cmdlet. The value of the parameter must be a **DateTime** object set to no longer than 3 years from DateTime.Now.</span></span>
+ 
+## <a name="update-the-remote-web-application-in-visual-studio-to-use-the-new-secret"></a><span data-ttu-id="0d1d7-134">Обновление удаленного веб-приложения в Visual Studio для использования нового секрета</span><span class="sxs-lookup"><span data-stu-id="0d1d7-134">Update the remote web application in Visual Studio to use the new secret</span></span>
+
+
+> [!IMPORTANT]
+>  <span data-ttu-id="0d1d7-p108">Если ваша надстройка изначально создана с помощью предварительного выпуска Инструментов разработчика Microsoft Office для Visual Studio, она может содержать устаревшую версию файла TokenHelper (с расширением CS или VB). Если файл не содержит строку "secondaryClientSecret", то это устаревшая версия, которую следует заменить, прежде чем обновлять веб-приложение для использования нового секрета. Чтобы можно было получить копию файла финальной версии, требуется Visual Studio 2012 или более поздней версии. Создайте проект надстройки SharePoint в Visual Studio. Скопируйте файл TokenHelper из него в проект веб-приложения своей надстройки SharePoint.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-p108">Important  If your add-in was originally created with a prerelease version the Microsoft Office Developer Tools for Visual Studio, it may contain an out-of-date version of the TokenHelper.cs (or .vb) file. If the file does not contain the string "secondaryClientSecret", it is out-of-date and it must be replaced before you can update the web application with a new secret. To obtain a copy of a release version of the file, you need Visual Studio 2012 or later. Create a new SharePoint Add-in project in Visual Studio. Copy the TokenHelper file from it to the web application project of your SharePoint Add-in.</span></span> 
  
 
 
-## <a name="update-the-remote-web-application-in-visual-studio-to-use-the-new-secret"></a><span data-ttu-id="33e9a-134">Обновление удаленного веб-приложения в Visual Studio для использования нового секрета</span><span class="sxs-lookup"><span data-stu-id="33e9a-134">Update the remote web application in Visual Studio to use the new secret</span></span>
-
-
- <span data-ttu-id="33e9a-p108">**Важно!** Если ваша надстройка изначально создана с помощью предварительного выпуска Инструментов разработчика Microsoft Office для Visual Studio, она может содержать устаревшую версию файла TokenHelper (с расширением CS или VB). Если файл не содержит строку secondaryClientSecret, то это устаревшая версия, которую следует заменить, прежде чем обновлять веб-приложение для использования нового секрета. Чтобы получить копию файла финальной версии, необходима среда Visual Studio 2012 или более поздней версии. Создайте проект надстройки SharePoint в Visual Studio. Скопируйте файл TokenHelper из него в проект веб-приложения своей надстройки SharePoint.</span><span class="sxs-lookup"><span data-stu-id="33e9a-p108">**Important**  If your add-in was originally created with a prerelease version the Microsoft Office Developer Tools for Visual Studio, it may contain an out-of-date version of the TokenHelper.cs (or .vb) file. If the file does not contain the string "secondaryClientSecret", it is out-of-date and it must be replaced before you can update the web application with a new secret. To obtain a copy of a release version of the file, you need Visual Studio 2012 or later. Create a new SharePoint Add-in project in Visual Studio. Copy the TokenHelper file from it to the web application project of your SharePoint Add-in.</span></span> 
- 
-
-
-1. <span data-ttu-id="33e9a-p109">Откройте проект надстройки SharePoint в Visual Studio, а затем откройте файл web.config из проекта веб-приложения. В разделе **appSettings** указаны ключи для идентификатора и секрета клиента. Ниже приведен пример.</span><span class="sxs-lookup"><span data-stu-id="33e9a-p109">Open the SharePoint Add-in project in Visual Studio, and open the web.config file for the web application project. In the  **appSettings** section, there are keys for the client ID and client secret. The following is an example:</span></span>
+1. <span data-ttu-id="0d1d7-p109">Откройте проект надстройки SharePoint в Visual Studio, а затем откройте файл web.config из проекта веб-приложения. В разделе **appSettings** указаны ключи для идентификатора и секрета клиента. Ниже приведен пример.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-p109">Open the SharePoint Add-in project in Visual Studio, and open the web.config file for the web application project. In the  **appSettings** section, there are keys for the client ID and client secret. The following is an example:</span></span>
     
 ```XML
   <appSettings>
@@ -139,15 +141,16 @@ $newClientSecret
 
 ```
 
-2. <span data-ttu-id="33e9a-143">Измените имя ключа **ClientSecret** на SecondaryClientSecret, как показано в приведенном ниже примере.</span><span class="sxs-lookup"><span data-stu-id="33e9a-143">Change the name of the  **ClientSecret** key to "SecondaryClientSecret" as shown in the following example:</span></span>
+2. <span data-ttu-id="0d1d7-143">Измените имя ключа **ClientSecret** на SecondaryClientSecret, как показано в приведенном ниже примере.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-143">Change the name of the  **ClientSecret** key to "SecondaryClientSecret" as shown in the following example:</span></span>
     
 ```XML
   <add key="SecondaryClientSecret" value="your old secret here" />
 ```
 
-> <span data-ttu-id="33e9a-p110">**Примечание.** Если вы впервые выполняете эту процедуру, то в этой части файла конфигурации не будет записи свойства **SecondaryClientSecret**. Но если процедура выполняется для последующего (второго или третьего) секрета клиента, то свойство **SecondaryClientSecret** уже присутствует и содержит исходный или уже просроченный секрет. В этом случае необходимо удалить свойство **SecondaryClientSecret**, прежде чем переименовывать ключ **ClientSecret**.</span><span class="sxs-lookup"><span data-stu-id="33e9a-p110">**Note** If you are performing this procedure for the first time there will be no **SecondaryClientSecret** property entry at this point in the configuration file. However if you are performing the procedure for a subsequent client secret expiration (second or third) the property **SecondaryClientSecret** is already present and containing the initial or already longer time ago expired old secret. In this case delete the **SecondaryClientSecret** property first before renaming **ClientSecret**.</span></span>
+> [!NOTE]
+> <span data-ttu-id="0d1d7-p110">Если вы впервые выполняете эту процедуру, в файле конфигурации не будет записи свойства **SecondaryClientSecret**. Но если процедура выполняется для последующего (второго или третьего) секрета клиента, то свойство **SecondaryClientSecret** уже присутствует и содержит исходный или другой просроченный секрет. В этом случае необходимо удалить свойство **SecondaryClientSecret**, прежде чем переименовывать **ClientSecret**.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-p110">**Note** If you are performing this procedure for the first time there will be no **SecondaryClientSecret** property entry at this point in the configuration file. However if you are performing the procedure for a subsequent client secret expiration (second or third) the property **SecondaryClientSecret** is already present and containing the initial or already longer time ago expired old secret. In this case delete the **SecondaryClientSecret** property first before renaming ClientSecret.</span></span>
 
-3. <span data-ttu-id="33e9a-p111">Добавьте новый ключ **ClientSecret** и включите в него новый секрет клиента. Результат должен выглядеть так:</span><span class="sxs-lookup"><span data-stu-id="33e9a-p111">Add a new  **ClientSecret** key and give it your new client secret. Your markup should now look like the following:</span></span>
+3. <span data-ttu-id="0d1d7-p111">Добавьте новый ключ **ClientSecret** и включите в него новый секрет клиента. Результат должен выглядеть так:</span><span class="sxs-lookup"><span data-stu-id="0d1d7-p111">Add a new  **ClientSecret** key and give it your new client secret. Your markup should now look like the following:</span></span>
     
 ```XML
   <appSettings>
@@ -158,21 +161,24 @@ $newClientSecret
 </appSettings>
 ```
 
-4. <span data-ttu-id="33e9a-149">Если вы использовали новый файл TokenHelper, выполните повторную сборку проекта.</span><span class="sxs-lookup"><span data-stu-id="33e9a-149">If you changed to a new TokenHelper file, rebuild the project.</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="0d1d7-149">Вы не сможете использовать новый секрет клиента, который создали, пока не истечет срок действия текущего.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-149">You will not be able to use the newly generated client secret until the current client secret expires.</span></span> <span data-ttu-id="0d1d7-150">Если вы замените ключ ClientId новым секретом клиента, когда отсутствует ключ SecondaryClientSecret, нужного результата не будет.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-150">Therefore, changing the ClientId key to the new client secret without the SecondaryClientSecret key present will not work.</span></span> <span data-ttu-id="0d1d7-151">Необходимо выполнить инструкции из этой статьи и подождать, пока не истечет срок действия предыдущего секрета клиента.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-151">You must follow the  procedure in this article and wait for the previous client secret to expire.</span></span> <span data-ttu-id="0d1d7-152">После этого можно будет при необходимости удалить SecondaryClientSecret.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-152">Then you can remove the SecondaryClientSecret if you want to.</span></span>
+
+4. <span data-ttu-id="0d1d7-153">Если вы использовали новый файл TokenHelper, выполните повторную сборку проекта.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-153">If you changed to a new TokenHelper file, rebuild the project.</span></span>
     
  
-5. <span data-ttu-id="33e9a-150">Опубликуйте веб-приложение повторно.</span><span class="sxs-lookup"><span data-stu-id="33e9a-150">Republish the web application.</span></span>
+5. <span data-ttu-id="0d1d7-154">Опубликуйте веб-приложение повторно.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-154">Republish the web application.</span></span>
     
  
 
-## <a name="create-a-client-secret-that-is-valid-for-three-years"></a><span data-ttu-id="33e9a-151">Создание секрета клиента, действительного на протяжении трех лет</span><span class="sxs-lookup"><span data-stu-id="33e9a-151">Create a client secret that is valid for three years</span></span>
+## <a name="create-a-client-secret-that-is-valid-for-three-years"></a><span data-ttu-id="0d1d7-155">Создание секрета клиента, действительного на протяжении трех лет</span><span class="sxs-lookup"><span data-stu-id="0d1d7-155">Create a client secret that is valid for three years</span></span>
 
-<span data-ttu-id="33e9a-p112">Если срок действия секретов клиента истек, сначала удалите все просроченные секреты с заданным значением **clientId**. После этого создайте новые с помощью PowerShell для Microsoft Office, подождите хотя бы 24 часа, а затем протестируйте приложение с использованием нового значения **clientId** и ключа **ClientSecret**.</span><span class="sxs-lookup"><span data-stu-id="33e9a-p112">For expired client secrets, first you must delete all of the expired secrets for a given  **clientId**. Then you create a new one with MSO PowerShell, wait at least 24 hours, and test the app with the new **clientId** and **ClientSecret** key.</span></span>
+<span data-ttu-id="0d1d7-p113">Если срок действия секретов клиента истек, сначала удалите все просроченные секреты с заданным значением **clientId**. После этого создайте новые с помощью PowerShell для Microsoft Office, подождите хотя бы 24 часа, а затем протестируйте приложение с использованием нового значения **clientId** и ключа **ClientSecret**.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-p113">For expired client secrets, first you must delete all of the expired secrets for a given  **clientId**. Then you create a new one with MSO PowerShell, wait at least 24 hours, and test the app with the new **clientId** and **ClientSecret** key.</span></span>
  
 
  
 
-1. <span data-ttu-id="33e9a-154">Подключитесь к Microsoft Office Online от имени администратора клиента с помощью приведенной ниже разметки, используя Windows PowerShell для SharePoint.</span><span class="sxs-lookup"><span data-stu-id="33e9a-154">Connect to MSOnline using the tenant admin user with the below markup using SharePoint Windows PowerShell.</span></span>
+1. <span data-ttu-id="0d1d7-158">Подключитесь к Microsoft Office Online от имени администратора клиента с помощью приведенной ниже разметки, используя Windows PowerShell для SharePoint.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-158">Connect to MSOnline using the tenant admin user with the below markup using SharePoint Windows PowerShell.</span></span>
     
 ```
   import-module MSOnline
@@ -181,9 +187,9 @@ connect-msolservice -credential $msolcred
 
 ```
 
-2. <span data-ttu-id="33e9a-p113">Получите **ServicePrincipals** и ключи. При использовании параметра **$keys** возвращаются три записи. Замените каждое значение **KeyId** в *KeyId1*, *KeyId2* и *KeyId3*. Вы также увидите значение **EndDate** для каждого ключа. Убедитесь, что там отображается просроченный ключ.</span><span class="sxs-lookup"><span data-stu-id="33e9a-p113">Get  **ServicePrincipals** and keys. Printing **$keys** returns three records. Replace each **KeyId** in *KeyId1*  , *KeyId2*  and *KeyId3*  . You will also see the **EndDate** of each key. Confirm whether your expired key appers there.</span></span>
+2. <span data-ttu-id="0d1d7-p114">Получите **ServicePrincipals** и ключи. При использовании параметра **$keys** возвращаются три записи. Замените каждое значение **KeyId** в *KeyId1*, *KeyId2* и *KeyId3*. Вы также увидите значение **EndDate** для каждого ключа. Убедитесь, что там отображается просроченный ключ.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-p114">Get  **ServicePrincipals** and keys. Printing **$keys** returns three records. Replace each **KeyId** in *KeyId1*  , *KeyId2*  and *KeyId3*  . You will also see the **EndDate** of each key. Confirm whether your expired key appers there.</span></span>
     
-     <span data-ttu-id="33e9a-p114">**Примечание.** Значение **clientId** должно совпадать с просроченным **clientId**. Рекомендуется удалить все ключи (как просроченные, так и действительные) для этого идентификатора **clientId**.</span><span class="sxs-lookup"><span data-stu-id="33e9a-p114">**Note:** The **clientId** needs to match your expired **clientId**. It's recommended to delete all keys, both expired and unexpired, for this **clientId**.</span></span>
+     ><span data-ttu-id="0d1d7-p115">**Примечание.** Значение **clientId** должно совпадать с просроченным **clientId**. Рекомендуется удалить все ключи (как просроченные, так и действительные) для этого идентификатора **clientId**.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-p115">**Note:** The **clientId** needs to match your expired **clientId**. It's recommended to delete all keys, both expired and unexpired, for this **clientId**.</span></span>
     
 
 
@@ -194,7 +200,7 @@ Remove-MsolServicePrincipalCredential -KeyIds @("KeyId1"," KeyId2"," KeyId3") -A
 
 ```
 
-3. <span data-ttu-id="33e9a-p115">Создайте новое значение **ClientSecret** для этого идентификатора **clientID**. Для него используется то же значение **clientId**, что и на предыдущем этапе. Новое значение **ClientSecret** действительно в течение 3 лет.</span><span class="sxs-lookup"><span data-stu-id="33e9a-p115">Generate a new  **ClientSecret** for this **clientID**. It uses the same **clientId** as set in the above step. The new **ClientSecret** is valid for 3 years.</span></span>
+3. <span data-ttu-id="0d1d7-p116">Создайте новое значение **ClientSecret** для этого идентификатора **clientID**. Для него используется то же значение **clientId**, что и на предыдущем этапе. Новое значение **ClientSecret** действительно в течение 3 лет.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-p116">Generate a new  **ClientSecret** for this **clientID**. It uses the same **clientId** as set in the above step. The new **ClientSecret** is valid for 3 years.</span></span>
     
 ```
   $bytes = New-Object Byte[] 32
@@ -211,21 +217,16 @@ $newClientSecret
 
 ```
 
-4. <span data-ttu-id="33e9a-165">Скопируйте выходные данные **$newClientSecret**.</span><span class="sxs-lookup"><span data-stu-id="33e9a-165">Copy the output of  **$newClientSecret**.</span></span>
+4. <span data-ttu-id="0d1d7-169">Скопируйте выходные данные **$newClientSecret**.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-169">Copy the output of  **$newClientSecret**.</span></span>
     
  
-5. <span data-ttu-id="33e9a-p116">Замените **Web.config** на эти значения **ClientId** и **ClientSecret**. Вам не потребуются параметры приложения **SecondaryClientSecret**.</span><span class="sxs-lookup"><span data-stu-id="33e9a-p116">Replace the  **Web.config** with this **ClientId** and **ClientSecret**. You don't need **SecondaryClientSecret** app settings.</span></span>
+5. <span data-ttu-id="0d1d7-p117">Замените **Web.config** на эти значения **ClientId** и **ClientSecret**. Вам не потребуются параметры приложения **SecondaryClientSecret**.</span><span class="sxs-lookup"><span data-stu-id="0d1d7-p117">Replace the  **Web.config** with this **ClientId** and **ClientSecret**. You don't need **SecondaryClientSecret** app settings.</span></span>
     
  
-6. <span data-ttu-id="33e9a-168">Подождите хотя бы 24 часа, чтобы ключ **ClientSecret** распространился в SharePoint Online (SPO).</span><span class="sxs-lookup"><span data-stu-id="33e9a-168">Wait at least 24 hours to propagate  **ClientSecret** to SharePoint Office (SPO).</span></span>
+6. <span data-ttu-id="0d1d7-172">Подождите хотя бы 24 часа, чтобы ключ **ClientSecret** распространился в SharePoint Online (SPO).</span><span class="sxs-lookup"><span data-stu-id="0d1d7-172">Wait at least 24 hours to propagate  **ClientSecret** to SharePoint Office (SPO).</span></span>
     
  
 
-## <a name="see-also"></a><span data-ttu-id="33e9a-169">См. также</span><span class="sxs-lookup"><span data-stu-id="33e9a-169">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0d1d7-173">См. также</span><span class="sxs-lookup"><span data-stu-id="0d1d7-173">See also</span></span>
 
-
-#### <a name="other-resources"></a><span data-ttu-id="33e9a-170">Другие ресурсы</span><span class="sxs-lookup"><span data-stu-id="33e9a-170">Other resources</span></span>
-
-
- 
- [<span data-ttu-id="33e9a-171">Размещенное у поставщика приложение не работает в SPO</span><span class="sxs-lookup"><span data-stu-id="33e9a-171">Provider Hosted App fails on SPO</span></span>](http://blogs.technet.com/b/sharepointdevelopersupport/archive/2015/03/11/provider-hosted-app-fails-on-spo.aspx)
+[<span data-ttu-id="0d1d7-174">Размещаемое у поставщика приложение не работает в SPO</span><span class="sxs-lookup"><span data-stu-id="0d1d7-174">Provider Hosted App fails on SPO</span></span>](http://blogs.technet.com/b/sharepointdevelopersupport/archive/2015/03/11/provider-hosted-app-fails-on-spo.aspx)
