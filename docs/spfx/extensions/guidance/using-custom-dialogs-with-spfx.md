@@ -2,14 +2,9 @@
 
 Вы можете использовать настраиваемые диалоговые окна, доступные в пакете **@microsoft/sp-dialog**, в контексте расширений SharePoint Framework или клиентских веб-частей. 
 
-В этой статье описываются создание настраиваемого диалогового окна и его использование в контексте расширения с набором команд ListView.
+В этой статье описываются создание настраиваемого диалогового окна и его использование в контексте расширения ListView Command Set.
 
->**Примечание.** В настоящее время функция настраиваемых диалоговых окон находится на этапе тестирования. Перед выпуском мы хотим собрать ваши отзывы. Чтобы оставить отзыв, [оформите отчет о проблеме в репозитории GitHub](https://github.com/SharePoint/sp-dev-docs/issues).
-
-> Обратите внимание, что в настоящее время отладка настраиваемых наборов команд ListView в SharePoint Online доступна только в современном интерфейсе списков на классических сайтах групп, размещенных в **клиенте разработчика**.
-
-
-Пример кода, на котором основана эта статья, можно найти в репозитории [](https://github.com/SharePoint/sp-dev-fx-extensions/tree/master/samples/react-command-dialog).
+Пример кода, который упоминается в этой статье, можно найти в репозитории [](https://github.com/SharePoint/sp-dev-fx-extensions/tree/master/samples/react-command-dialog).
 
 ## <a name="set-up-your-development-environment"></a>Настройка среды разработки
 
@@ -44,31 +39,40 @@ yo @microsoft/sharepoint
 Когда появится запрос, выполните указанные ниже действия.
 
 * Оставьте значение по умолчанию (**dialog-cmd**) для имени решения и нажмите клавишу **ВВОД**.
-* Выберите для создаваемого клиентского компонента тип **Extension (Preview)**. 
-* Выберите для создаваемого расширения тип **ListView Command Set (Preview)**.
+* Выберите **SharePoint Online only (latest)** (Только SharePoint Online, последняя версия) и нажмите клавишу **ВВОД**.
+* Выберите **Use the current folder** (Использовать текущую папку) и нажмите клавишу **ВВОД**.
+* Выберите **N**, чтобы сделать установку расширения, выполняемую напрямую, обязательной на каждом сайте при его использовании.
+* Выберите **Extension** (Расширение) в качестве типа создаваемого клиентского компонента. 
+* Выберите для создаваемого расширения тип **ListView Command Set**.
 
 Далее вам потребуется указать определенные сведения о расширении.
 
 * Используйте значение **DialogDemo** для имени решения и нажмите клавишу **ВВОД**.
 * Оставьте значение по умолчанию (**DialogDemo description**) для описания решения и нажмите клавишу **ВВОД**.
 
-![Генератор Yeoman для SharePoint предлагает создать решение расширения](../../../../images/ext-com-dialog-yeoman-prompts.png)
+![Генератор Yeoman для SharePoint предлагает создать решение расширения](../../../images/ext-com-dialog-yeoman-prompts.png)
 
-После этого Yeoman установит необходимые зависимости и сформирует файлы решения, а также расширение *DialogDemo*. Это может занять несколько минут. 
+После этого Yeoman установит необходимые зависимости и сформирует файлы решения, а также расширение *DialogDemo*. Это может занять несколько минут.
 
 После успешного формирования должно появиться следующее сообщение:
 
-!["Формирование клиентского решения SharePoint успешно выполнено".](../../../../images/ext-com-dialog-yeoman-complete.png)
+!["Формирование клиентского решения SharePoint успешно выполнено".](../../../images/ext-com-dialog-yeoman-complete.png)
 
->**Примечание.** Сведения об устранении неполадок см. в статье [Известные проблемы](../basics/known-issues).
+>**Примечание.** Сведения об устранении неполадок см. в статье [Известные проблемы](../../known-issues-and-common-questions.md).
 
-Когда шаблон будет сформирован, откройте папку проекта в редакторе кода. В этой статье инструкции и снимки экрана основаны на Visual Studio Code, но вы можете использовать любой редактор. Чтобы открыть папку в Visual Studio Code, выполните в консоли следующую команду:
+После завершения скаффолдинга блокируйте версию зависимостей проекта, выполнив следующую команду:
+
+```sh
+npm shrinkwrap
+```
+
+Далее откройте папку проекта в редакторе кода. В инструкциях и на снимках экрана из этой статьи указан Visual Studio Code, но вы можете использовать любой редактор. Чтобы открыть папку в Visual Studio Code, выполните следующую команду в консоли:
 
 ```sh
 code .
 ```
 
-![Исходная структура Visual Studio Code после формирования](../../../../images/ext-com-dialog-vs-code-initial.png)
+![Исходная структура Visual Studio Code после скаффолдинга](../../../images/ext-com-dialog-vs-code-initial.png)
 
 ## <a name="modify-the-extension-manifest"></a>Изменение манифеста расширения
 
@@ -77,26 +81,15 @@ code .
 ```json
 {
   //...
-  "commands": {
+  "items": {
     "COMMAND_1": {
-      "title": "Open Custom Dialog",
-      "iconImageUrl": "icons/request.png"
+      "title": { "default": "Open Custom Dialog" },
+      "iconImageUrl": "icons/request.png",
+      "type": "command"
     }
   }
 }
 ```
-
-## <a name="add-the-sp-dialog-package-to-the-solution"></a>Добавление пакета sp-dialog в решение
-
-Вернитесь к консоли и выполните приведенную ниже команду, чтобы включить API диалоговых окон в свое решение.
-
-```sh
-npm install @microsoft/sp-dialog --save
-```
-
-Так как вы используете параметр `--save`, эта зависимость будет добавлена в файл **package.json**. Это гарантирует, что она будет автоматически установлена при выполнении команды `npm install` (это важно при восстановлении или клонировании проекта в другом месте).
-
-Вернитесь к Visual Studio Code (или другому редактору, который вы используете).
 
 ## <a name="create-a-custom-dialog-box"></a>Создание настраиваемого диалогового окна
 
@@ -104,7 +97,6 @@ npm install @microsoft/sp-dialog --save
 
 Добавьте приведенный ниже оператор импорта в начале нового файла. Мы создаем настраиваемое диалоговое окно с помощью [компонентов Office UI Fabric React](https://dev.office.com/fabric#/components), поэтому реализация будет основана на React. 
 
-> **Примечание** В настоящее время компонент `DialogContent` предоставляется из каталога `@microsoft/sp-dialog`, но будет включен в состав компонентов Office UI Fabric React. 
 
 ```ts
 import * as React from 'react';
@@ -115,12 +107,10 @@ import {
   ColorPicker,
   PrimaryButton,
   Button,
-  DialogFooter
-  // DialogContent <- This should be imported here for third parties
+  DialogFooter,
+  DialogContent
 } from 'office-ui-fabric-react';
-// Note: DialogContent is available in v2.32.0 of office-ui-fabric-react
-// As a workaround we're importing it from sp-dialog until the next version bump
-import { DialogContent } from '@microsoft/sp-dialog';
+
 ```
 
 Добавьте приведенное ниже определение интерфейса сразу после операторов импорта. Оно будет использоваться для передачи сведений и функций между набором команд ListView и настраиваемым диалоговым окном.
@@ -205,7 +195,6 @@ export default class ColorPickerDialog extends BaseDialog {
 Добавьте приведенные ниже операторы импорта под имеющимся оператором импорта **strings**. Они предназначены для использования настраиваемого диалогового окна в контексте набора команд ListView. 
 
 ```ts
-import { Dialog } from '@microsoft/sp-dialog';
 import ColorPickerDialog from './ColorPickerDialog';
 ```
 
@@ -227,7 +216,7 @@ import ColorPickerDialog from './ColorPickerDialog';
 ```ts
   @override
   public onExecute(event: IListViewCommandSetExecuteEventParameters): void {
-    switch (event.commandId) {
+    switch (event.itemId) {
       case 'COMMAND_1':
         const dialog: ColorPickerDialog = new ColorPickerDialog();
         dialog.message = 'Pick a color:';
@@ -258,8 +247,6 @@ gulp serve --nobrowser
 
 Начнется упаковка решения, а полученный манифест станет доступен по адресу `localhost`.
 
-![Исходная структура Visual Studio Code после формирования](../../../../images/ext-com-dialog-gulp-serve.png)
-
 Для тестирования расширения перейдите к сайту в клиенте разработчика приложений для SharePoint Online.
 
 Перейдите к существующему настраиваемому списку на сайте, содержащему несколько элементов, или создайте список и добавьте в него несколько элементов для тестирования. 
@@ -267,21 +254,23 @@ gulp serve --nobrowser
 Добавьте к URL-адресу приведенные ниже параметры строки запроса. Обратите внимание, что вам потребуется обновить параметр **id** в соответствии с идентификатором расширения, указанным в файле **DialogDemoCommandSet.manifest.json**:
 
 ```
-?loadSpfx=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"8701f44c-8c81-4e54-999d-62763e8f34d2":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar"}}
+?loadSpfx=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"fcbc5541-b335-4ed0-b8a4-8d40d3c4d25d":{"location":"ClientSideExtension.ListViewCommandSet.CommandBar"}}
 ```
 
 Согласитесь на загрузку манифестов отладки, нажав кнопку **Загрузить скрипты отладки** при появлении соответствующего запроса.
 
-![Предупреждение о разрешении скриптов отладки](../../../../images/ext-com-dialog-debug-scripts.png)
+![Предупреждение о разрешении скриптов отладки](../../../images/ext-com-dialog-debug-scripts.png)
 
-Обратите внимание, что на панели инструментов списка отображается кнопка с текстом *Open Custom Dialog box* (Открыть настраиваемое диалоговое окно).
+Обратите внимание на то, что новая кнопка НЕ отображается на панели инструментов по умолчанию, так как стандартное решение требует выбора одного элемента списка. 
 
-![Предупреждение о разрешении скриптов отладки](../../../../images/ext-com-dialog-button-in-toolbar.png)
+Выберите элемент из списка или библиотеки. После этого на панели инструментов будет отображаться кнопка с текстом *Open Custom Dialog box* (Открыть настраиваемое диалоговое окно).
 
-Нажмите кнопку *Open Custom Dialog box*, чтобы настраиваемое диалоговое окно открылось в представлении списка. 
+![Кнопка "Open Cusotm Dialog" (Открыть настраиваемое диалоговое окно) на панели инструментов](../../../images/ext-com-dialog-button-in-toolbar.png)
 
-![Предупреждение о разрешении скриптов отладки](../../../../images/ext-com-dialog-visible-dialog.png)
+Нажмите кнопку *Open Custom Dialog box* (Открыть настраиваемое диалоговое окно), чтобы настраиваемое диалоговое окно отобразилось в представлении списка. 
+
+![Палитра, отображаемая в режиме диалогового окна](../../../images/ext-com-dialog-visible-dialog.png)
 
 Выберите цвет в *палитре* и нажмите кнопку **ОК**, чтобы проверить, как код возвращает вызывающей стороне выбранное значение, которое затем отображается в стандартном диалоговом окне предупреждения.
 
-![Стандартное диалоговое окно предупреждения](../../../../images/ext-com-dialog-oob-alert-dialog.png)
+![Диалоговое окно со сведениями о выбранном цвете](../../../images/ext-com-dialog-oob-alert-dialog.png)

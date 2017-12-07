@@ -1,3 +1,13 @@
+---
+title: "Известные проблемы и часто задаваемые вопросы"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 9621898741763ed6adf9b967e8c300932bee139a
+ms.sourcegitcommit: 11d9185437fc819ab41421c0f4fe06aa300b9d28
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/25/2017
+---
 # <a name="known-issues-and-frequently-asked-questions"></a>Известные проблемы и часто задаваемые вопросы
 
 На этой странице представлены известные проблемы и ответы на часто задаваемые вопросы о SharePoint Framework. 
@@ -19,15 +29,16 @@
 
 - *Дата: 6 июня.*
 
-Расширения SharePoint с дополнительными возможностями настройки для SharePoint Online теперь доступны в качестве предварительной версии для разработчиков. Пока дата выпуска общедоступной версии неизвестна. О том, как создавать эти расширения, можно прочесть сначала в приведенных ниже руководствах.
+Расширения SharePoint с дополнительными возможностями настройки для SharePoint Online теперь доступны в SharePoint Online. Дополнительные сведения о расширениях SharePoint Framework можно найти в соответствующей документации.
 
-* [Начало работы с расширениями SharePoint Framework](http://aka.ms/spfx-extensions)
+- [Обзор расширений SharePoint Framework](./extensions/overview-extensions.md)
+- [Руководство по расширениям SharePoint Framework](./extensions/get-started/build-a-hello-world-extension.md)
 
 **Будет ли платформа SharePoint Framework доступна локально?**
 
 - *Дата: 6 июня.*
 
-Клиентские веб-части SharePoint Framework будут выпущены для SharePoint 2016 в составе пакета дополнительных компонентов 2 (FP2). 
+Клиентские веб-части SharePoint Framework на классических страницах выпущены для SharePoint 2016 в составе пакета дополнительных компонентов 2 (FP2). Мы пока не планируем добавлять возможности SharePoint Framework в SharePoint 2013. Готового списка возможностей SharePoint Framework, которые будут включены в выпуск SharePoint 2019, нет.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 Используйте указанные ниже ресурсы, чтобы отправлять отзывы, комментарии и вопросы, касающиеся разработки решений для SharePoint. 

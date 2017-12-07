@@ -1,12 +1,22 @@
-# <a name="build-sharepoint-framework-client-side-web-parts-with-angular-v1x"></a>Создание клиентских веб-частей SharePoint Framework с помощью Angular v1.x
+---
+title: "Создание клиентских веб-частей SharePoint Framework с помощью AngularJS"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: dea4a6c45f08228c57c4cd4f821cdcca7c12d713
+ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/20/2017
+---
+# <a name="build-sharepoint-framework-client-side-web-parts-with-angularjs"></a>Создание клиентских веб-частей SharePoint Framework с помощью AngularJS
 
-Популярную платформу Angular также можно использовать для создания клиентских веб-частей. Благодаря модульности с ее помощью можно создавать что-угодно — от сложных одностраничных приложений с переключением представлений до небольших компонентов, таких как веб-части. Раньше во многих организациях для создания решений SharePoint использовался Angular. В этой статье описано, как с помощью Angular v1.x создать клиентскую веб-часть SharePoint Framework, а также выбрать для нее стиль, используя [Office UI Fabric](http://dev.office.com/fabric). Работая с этим руководством, вы создадите простую веб-часть, которая управляет элементами списка дел.
+Популярную платформу AngularJS также можно использовать для создания клиентских веб-частей. Благодаря модульности с ее помощью можно создавать что-угодно — от сложных одностраничных приложений с различными представлениями до небольших компонентов, таких как веб-части. Раньше во многих организациях решения для SharePoint создавались с помощью AngularJS. В этой статье описано, как с помощью AngularJS создать клиентскую веб-часть SharePoint Framework, а также выбрать для нее стиль, используя [Office UI Fabric](http://dev.office.com/fabric). Работая с этим руководством, вы создадите простую веб-часть, которая управляет элементами списка дел.
 
-![Клиентская веб-часть SharePoint Framework, созданная на основе Angular, в рабочей области SharePoint](../../../../images/ng-intro-hide-finished-tasks.png)
+![Клиентская веб-часть SharePoint Framework, созданная на основе AngularJS, в системе разработки SharePoint](../../../images/ng-intro-hide-finished-tasks.png)
 
 Исходный код рабочей веб-части доступен на сайте GitHub по адресу [https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo).
 
-> **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment) для создания решений на платформе SharePoint Framework.
+> **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment.md) для создания решений на платформе SharePoint Framework.
 
 ## <a name="create-new-project"></a>Создание проекта
 
@@ -35,38 +45,44 @@ yo @microsoft/sharepoint
 - **To do** (Текущие дела) как имя веб-части
 - **Simple management of to do tasks** (Простое управление задачами) как описание веб-части
 
-![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../../images/ng-intro-yeoman-generator.png)
+![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/ng-intro-yeoman-generator.png)
 
-Когда шаблон будет сформирован, откройте папку проекта в редакторе кода. В этом руководстве используется Visual Studio Code.
+После завершения скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
 
-![Проект SharePoint Framework, открытый в Visual Studio Code](../../../../images/ng-intro-project-visual-studio-code.png)
+```sh
+npm shrinkwrap
+```
 
-## <a name="add-angular"></a>Добавление Angular
+Далее откройте папку проекта в редакторе кода. В этом руководстве используется Visual Studio Code.
 
-С помощью этого руководства можно загрузить Angular с сети CDN. Для этого откройте в редакторе кода файл **config/config.json** и добавьте следующие строки в свойстве **externals**:
+![Проект SharePoint Framework, открытый в Visual Studio Code](../../../images/ng-intro-project-visual-studio-code.png)
+
+## <a name="add-angularjs"></a>Добавление AngularJS
+
+В этом руководстве показано, как загрузить AngularJS из сети CDN. Для этого откройте в редакторе кода файл **config/config.json** и добавьте следующие строки в свойстве **externals**:
 
 ```json
 "angular": {
-  "path": "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js",
+  "path": "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.min.js",
   "globalName": "angular"
 }
 ```
 
-![Angular добавляется к файлу config.json](../../../../images/ng-intro-angular-config.png)
+![AngularJS добавляется к файлу config.json](../../../images/ng-intro-angular-config.png)
 
-## <a name="add-angular-typings-for-typescript"></a>Добавление определений типа Angular для TypeScript
+## <a name="add-angularjs-typings-for-typescript"></a>Добавление определений типа AngularJS для TypeScript
 
-Так как в коде веб-части вы будете ссылаться на Angular, вам также потребуются определения типов Angular для TypeScript. Чтобы установить их, выполните в командной строке следующую команду:
+Так как в коде веб-части вы будете ссылаться на AngularJS, вам также потребуются определения типов AngularJS для TypeScript. Чтобы установить их, выполните в командной строке следующую команду:
 
 ```sh
 npm install @types/angular --save-dev
 ```
 
-## <a name="implement-angular-application"></a>Реализация приложения Angular
+## <a name="implement-angularjs-application"></a>Реализация приложения AngularJS
 
-Далее можете начинать реализацию приложения Angular. Так как оно будет состоять из нескольких файлов, создайте для его отдельную папку **app**.
+Когда все необходимые компоненты будут установлены, можете начинать реализацию примера приложения AngularJS. Так как этот пример будет состоять из нескольких файлов, создайте для него отдельную папку **app**.
 
-![Папка app, выделенная в Visual Studio Code](../../../../images/ng-intro-app-folder.png)
+![Папка app, выделенная в Visual Studio Code](../../../images/ng-intro-app-folder.png)
 
 ### <a name="implement-to-do-data-service"></a>Реализация службы данных о задачах
 
@@ -180,7 +196,7 @@ export default class DataService implements IDataService {
 }
 ```
 
-![Файл DataService.ts, открытый в Visual Studio Code](../../../../images/ng-intro-dataservice.png)
+![Файл DataService.ts, открытый в Visual Studio Code](../../../images/ng-intro-dataservice.png)
 
 В предыдущем фрагменте кода реализуются три типа: интерфейс **ITodo**, который представляет элемент списка дел в приложении, интерфейс **IDataService**, который определяет подпись из службы данных, и класс**DataService**, который отвечает за получение элементов списка дел и управление ими. Служба данных реализует простые методы добавления и изменения элементов списка дел. Несмотря на то что операции происходят мгновенно, для единообразия каждая функция CRUD возвращает обещание.
 
@@ -298,9 +314,9 @@ export default class HomeController {
 }
 ```
 
-![Файл HomeController.ts, открытый в Visual Studio Code](../../../../images/ng-intro-homecontroller.png)
+![Файл HomeController.ts, открытый в Visual Studio Code](../../../images/ng-intro-homecontroller.png)
 
-Для начала загрузите реализованную ранее службу данных. Она нужна контроллеру для получения списка элементов и их изменения по запросу пользователя. С помощью системы внедрения зависимостей Angular служба внедряется в контроллер. Контроллер реализует ряд функций, доступных для модели представления, которые будут вызываться из шаблона. С помощью этих функций пользователи смогут добавлять и удалять задачи, а также помечать их как завершенные и незавершенные.
+Для начала загрузите реализованную ранее службу данных. Она нужна контроллеру для получения списка элементов и их изменения по запросу пользователя. С помощью системы внедрения зависимостей AngularJS служба внедряется в контроллер. Контроллер реализует ряд функций, доступных для модели представления, которые будут вызываться из шаблона. С помощью этих функций пользователи смогут добавлять и удалять задачи, а также помечать их как завершенные и незавершенные.
 
 ### <a name="implement-the-main-module"></a>Реализация основного модуля
 
@@ -318,15 +334,15 @@ todoapp
   .service('DataService', DataService);
 ```
 
-![Файл app-module.ts, открытый в Visual Studio Code](../../../../images/ng-intro-app-module.png)
+![Файл app-module.ts, открытый в Visual Studio Code](../../../images/ng-intro-app-module.png)
 
-Для начала добавьте ссылки на Angular и загрузите реализованные ранее контроллер и службу данных. Далее определите модуль для приложения. Наконец, зарегистрируйте в приложении контроллер и службу данных.
+Для начала добавьте ссылки на AngularJS и загрузите реализованные ранее контроллер и службу данных. Далее определите модуль для приложения. Наконец, зарегистрируйте в приложении контроллер и службу данных.
 
-Вы создали приложение Angular для веб-части. Далее необходимо зарегистрировать приложение Angular в веб-части и сделать его настраиваемым с помощью свойств веб-части.
+Вы создали приложение AngularJS для веб-части. Далее необходимо зарегистрировать приложение AngularJS в веб-части и сделать его настраиваемым с помощью свойств веб-части.
 
-## <a name="register-angular-application-with-web-part"></a>Регистрация приложения Angular в веб-части
+## <a name="register-angularjs-application-with-web-part"></a>Регистрация приложения AngularJS в веб-части
 
-Следующий шаг — добавление приложения Angular в веб-часть. В редакторе кода откройте файл **ToDoWebPart.ts**.
+Следующий шаг — добавление приложения AngularJS в веб-часть. В редакторе кода откройте файл **ToDoWebPart.ts**.
 
 Перед определением класса добавьте следующие строки:
 
@@ -335,17 +351,17 @@ import * as angular from 'angular';
 import './app/app-module';
 ```
 
-![Операторы импорта в файле ToDoWebPart.ts, выделенные в Visual Studio Code](../../../../images/ng-intro-web-part-import-angular.png)
+![Операторы импорта в файле ToDoWebPart.ts, выделенные в Visual Studio Code](../../../images/ng-intro-web-part-import-angular.png)
 
-Это позволяет загрузить ссылку на Angular и приложение, которые нужны для начальной загрузки приложения Angular.
+Это позволяет загрузить ссылку на AngularJS и приложение, которые нужны для запуска приложения AngularJS.
 
-Измените функцию **render** веб-части, как показано ниже:
+Измените функцию **render** веб-части, как показано ниже.
 
 ```ts
 public render(): void {
   if (this.renderedOnce === false) {
     this.domElement.innerHTML = `
-<div class="${styles.toDoWebPart}">
+<div class="${styles.toDo}">
   <div data-ng-controller="HomeController as vm">
     <div class="${styles.loading}" ng-show="vm.isLoading">
       <div class="${styles.spinner}">
@@ -389,14 +405,14 @@ public render(): void {
 }
 ```
 
-![Функция веб-части render в Visual Studio Code](../../../../images/ng-intro-web-part-render-angular.png)
+![Функция веб-части render в Visual Studio Code](../../../images/ng-intro-web-part-render-angular.png)
 
-Код сначала присваивает шаблон приложения непосредственно элементу DOM веб-части. В корневом элементе укажите имя контроллера, который будет обрабатывать события и привязку данных в шаблоне. Затем выполните начальную загрузку приложения с помощью имени **todoapp**, которое вы использовали при определении основного модуля. Свойство веб-части **renderedOnce** необходимо, чтобы начальная загрузка приложения Angular выполнялась только один раз. Без него при изменении одного из свойств веб-части функция **render** снова запустит начальную загрузку приложения Angular, что приведет к ошибке.
+Код сначала присваивает шаблон приложения непосредственно элементу DOM веб-части. В корневом элементе укажите имя контроллера, который будет обрабатывать события и привязку данных в шаблоне. Затем запустите приложение, указав имя **todoapp**, которое вы использовали при определении основного модуля. Свойство веб-части **renderedOnce** необходимо, чтобы запуск приложения AngularJS выполнялся только один раз. Без него при изменении одного из свойств веб-части функция **render** снова запустит приложение AngularJS, что приведет к ошибке.
 
 Кроме того, необходимо реализовать стили CSS, которые вы используете с шаблоном. В редакторе кода откройте файл **ToDo.module.scss** и замените его содержимое на следующие строки:
 
 ```css
-.toDoWebPart {
+.toDo {
   .loading {
     margin: 0 auto;
     width: 6em;
@@ -637,7 +653,7 @@ public render(): void {
 }
 ```
 
-![Файл ToDo.module.scss, открытый в Visual Studio Code](../../../../images/ng-intro-web-part-css.png)
+![Файл ToDo.module.scss, открытый в Visual Studio Code](../../../images/ng-intro-web-part-css.png)
 
 Выполните следующую команду, чтобы убедиться, что все работает правильно:
 
@@ -647,7 +663,7 @@ gulp serve
 
 В браузере должна появиться ваша веб-часть с элементами списка дел.
 
-![Веб-часть с элементами списка дел, отрисованная с помощью Office UI Fabric](../../../../images/ng-intro-workbench-office-ui-fabric.png)
+![Веб-часть с элементами списка дел, отрисованная с помощью Office UI Fabric](../../../images/ng-intro-workbench-office-ui-fabric.png)
 
 ## <a name="make-web-part-configurable"></a>Как сделать веб-часть настраиваемой
 
@@ -655,19 +671,19 @@ gulp serve
 
 ### <a name="add-property-in-the-web-part-manifest"></a>Добавление свойства в манифест веб-части
 
-Для начала добавьте свойство настройки в манифест веб-части. В редакторе кода откройте файл **ToDoWebPart.manifest.json**. В разделе **preconfiguredEntries** перейдите к массиву **properties** и замените свойство **description** на следующую строку:
+Для начала добавьте свойство настройки в манифест веб-части. В редакторе кода откройте файл **ToDoWebPart.manifest.json**. В разделе **preconfiguredEntries** перейдите к массиву **properties** и замените свойство **description** следующей строкой:
 
 ```json
 "hideFinishedTasks": false
 ```
 
-![Свойство hideFinishedTasks, выделенное в манифесте веб-части](../../../../images/ng-intro-manifest-property.png)
+![Свойство hideFinishedTasks, выделенное в манифесте веб-части](../../../images/ng-intro-manifest-property.png)
 
 ### <a name="update-the-signature-of-the-web-part-properties-interface"></a>Обновление подписи интерфейса свойств веб-части
 
 Далее обновите подпись интерфейса свойств веб-части.
 
-В редакторе кода откройте файл **IToDoWebPartProps.ts** и замените его содержимое на следующие строки:
+В редакторе кода откройте файл **ToDoWebPart.ts** и обновите интерфейс `IToDoWebPartProps`, добавив следующее:
 
 ```ts
 export interface IToDoWebPartProps {
@@ -675,7 +691,7 @@ export interface IToDoWebPartProps {
 }
 ```
 
-![Файл IToDoWebPartProps.ts, открытый в Visual Studio Code](../../../../images/ng-intro-property-interface.png)
+![Файл IToDoWebPartProps.ts, открытый в Visual Studio Code](../../../images/ng-intro-property-interface.png)
 
 ### <a name="add-the-property-to-the-web-part-property-pane"></a>Добавление свойства в панель свойств веб-части
 
@@ -691,7 +707,7 @@ import {
 } from '@microsoft/sp-webpart-base';
 ```
 
-![Оператор импорта PropertyPaneToggle, выделенный в Visual Studio Code](../../../../images/ng-intro-property-pane-toggle.png)
+![Оператор импорта PropertyPaneToggle, выделенный в Visual Studio Code](../../../images/ng-intro-property-pane-toggle.png)
 
 Измените функцию `propertyPaneSettings`, как показано ниже:
 
@@ -722,19 +738,19 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
 Чтобы исправить ссылки на отсутствующие строки, сначала нужно изменить подпись строк. В редакторе кода откройте файл **loc/mystrings.d.ts** и замените его содержимое на следующие строки:
 
 ```ts
-declare interface IToDoStrings {
+declare interface IToDoWebPartStrings {
   PropertyPaneDescription: string;
-  ViewGroupName: string;
+  BasicGroupName: string;
   HideFinishedTasksFieldLabel: string;
 }
 
-declare module 'toDoStrings' {
-  const strings: IToDoStrings;
+declare module 'ToDoWebPartStrings' {
+  const strings: IToDoWebPartStrings;
   export = strings;
 }
 ```
 
-![Файл loc/mystrings.d.ts, открытый в Visual Studio Code](../../../../images/ng-intro-strings-interface.png)
+![Файл loc/mystrings.d.ts, открытый в Visual Studio Code](../../../images/ng-intro-strings-interface.png)
 
 Далее нужно указать действительные значения для новых строк. В редакторе кода откройте файл **loc/en-us.js** и замените его содержимое на следующие строки:
 
@@ -748,7 +764,7 @@ define([], function() {
 });
 ```
 
-![Файл loc/en-us.js, открытый в Visual Studio Code](../../../../images/ng-intro-strings.png)
+![Файл loc/en-us.js, открытый в Visual Studio Code](../../../images/ng-intro-strings.png)
 
 Выполните следующую команду, чтобы убедиться, что всё работает правильно:
 
@@ -758,15 +774,15 @@ gulp serve
 
 На панели свойств веб-части должен появиться выключатель для нового свойства.
 
-![Выключатель на панели свойств веб-части](../../../../images/ng-intro-property-pane-toggle-browser.png)
+![Выключатель в области свойств веб-части](../../../images/ng-intro-property-pane-toggle-browser.png)
 
-Сейчас выключатель не работает, так как он еще не подключен к Angular. Это следующий шаг.
+Сейчас выключатель не работает, так как он еще не подключен к AngularJS. Это следующий шаг.
 
-### <a name="make-the-angular-application-configurable-using-web-part-properties"></a>Как сделать приложение Angular настраиваемым с помощью свойств веб-части
+### <a name="make-the-angularjs-application-configurable-using-web-part-properties"></a>Как сделать приложение AngularJS настраиваемым с помощью свойств веб-части
 
-В предыдущем шаге вы определили свойство веб-части, которое позволяет пользователям решать, показывать ли завершенные задачи. Далее нужно передать выбранное пользователем значение в приложение Angular, чтобы оно могло загрузить соответствующие элементы.
+Выполняя предыдущий шаг, вы определили свойство веб-части, которое позволяет пользователям решать, нужно ли показывать завершенные задачи. Далее нужно передать выбранное пользователем значение в приложение AngularJS, чтобы оно могло загрузить соответствующие элементы.
 
-#### <a name="broadcast-angular-event-on-web-part-property-change"></a>Рассылка события Angular при изменении свойства веб-части
+#### <a name="broadcast-angularjs-event-on-web-part-property-change"></a>Трансляция события AngularJS при изменении свойства веб-части
 
 В редакторе кода откройте файл **ToDoWebPart.ts**. Добавьте следующую строку перед конструктором веб-части:
 
@@ -774,15 +790,15 @@ gulp serve
 private $injector: angular.auto.IInjectorService;
 ```
 
-![Переменная класса $injector, выделенная в Visual Studio Code](../../../../images/ng-intro-injector-class-variable.png)
+![Переменная класса $injector, выделенная в Visual Studio Code](../../../images/ng-intro-injector-class-variable.png)
 
-Далее измените функцию **render** веб-части, как показано ниже:
+Далее измените функцию **render** веб-части, как показано ниже.
 
 ```ts
 public render(): void {
   if (this.renderedOnce === false) {
     this.domElement.innerHTML = `
-<div class="${styles.toDoWebPart}">
+<div class="${styles.toDo}">
   <div data-ng-controller="HomeController as vm">
     <div class="${styles.loading}" ng-show="vm.isLoading">
       <div class="${styles.spinner}">
@@ -830,9 +846,9 @@ public render(): void {
 }
 ```
 
-В приведенном выше примере при каждом изменении свойства веб-части код будет рассылать событие Angular, на которое приложение Angular его подпишет. Когда приложение Angular получит событие, оно обработает его соответствующим образом.
+Приведенный выше пример кода при каждом изменении свойства веб-части будет транслировать событие AngularJS, на которое приложение AngularJS его подпишет. Когда приложение AngularJS получит событие, оно обработает его соответствующим образом.
 
-#### <a name="subscribe-to-web-part-property-change-event-in-angular"></a>Подписка на событие изменения свойства веб-части в Angular
+#### <a name="subscribe-to-web-part-property-change-event-in-angularjs"></a>Подписка на событие изменения свойства веб-части в AngularJS
 
 В редакторе кода откройте файл **app/HomeController.ts**. Дополните конструктор следующим образом:
 
@@ -847,9 +863,9 @@ constructor(private dataService: IDataService, private $window: angular.IWindowS
 }
 ```
 
-![Определение конструктора в файле HomeController.ts, выделенное в Visual Studio Code](../../../../images/ng-intro-homecontroller-event.png)
+![Определение конструктора в файле HomeController.ts, выделенное в Visual Studio Code](../../../images/ng-intro-homecontroller-event.png)
 
-Чтобы убедиться, что приложение Angular работает без ошибок и правильно отвечает на изменение свойства, в командной строке выполните следующую команду:
+Чтобы убедиться, что приложение AngularJS работает без ошибок и правильно отвечает на изменение свойства, в командной строке выполните следующую команду:
 
 ```sh
 gulp serve
@@ -857,4 +873,4 @@ gulp serve
 
 Когда вы переместите переключатель **Hide finished tasks** (Скрыть завершенные задачи), веб-часть должна показать или скрыть завершенные задачи.
 
-![В веб-части показаны только незавершенные задачи: параметр "Скрыть завершенные задачи" включен](../../../../images/ng-intro-hide-finished-tasks.png)
+![В веб-части показаны только незавершенные задачи: параметр "Скрыть завершенные задачи" включен](../../../images/ng-intro-hide-finished-tasks.png)

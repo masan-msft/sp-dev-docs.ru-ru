@@ -12,7 +12,7 @@ npm install @microsoft/generator-sharepoint -g
 
 >**Примечание.** Генератор yeoman для SharePoint должен развертываться глобально с первой общедоступной версией. Существуют известные проблемы при локальной установке в проекте, которые планируется устранить после выпуска общедоступной версии.
 
-Рекомендуем воспользоваться [этими инструкциями](../spfx/set-up-your-development-environment.md), чтобы установить на компьютер полный набор инструментов разработчика, в том числе генератор yeoman для SharePoint. 
+Рекомендуем воспользоваться [этими инструкциями](../set-up-your-development-environment.md), чтобы установить на компьютер полный набор инструментов разработчика, в том числе генератор yeoman для SharePoint. 
 
 ## <a name="using-the-yeoman-sharepoint-generator"></a>Использование генератора yeoman для SharePoint
 
@@ -28,28 +28,40 @@ yo
 
 ## <a name="available-command-line-options-for-the-generator"></a>Доступные параметры командной строки для генератора
 
-Вы можете использовать параметры командной строки, доступные для генератора SharePoint, чтобы не следовать инструкциям, а инициализировать проекты с помощью одной команды. Выполните следующую команду, чтобы просмотреть список параметров командной строки, доступных для генератора SharePoint:
+Параметры командной строки, доступные генератору Yeoman для SharePoint, позволяют не следовать отображаемым на экране инструкциям, а выполнять скаффолдинг проектов с помощью одной команды. Выполните следующую команду, чтобы просмотреть список параметров командной строки, доступных генератору Yeoman для SharePoint:
 
 ```
 yo @microsoft/generator-sharepoint --help
 ```
 
-![параметры командной строки для генератора SharePoint](../../images/yeoman-sp-cmdline-options.png)
+![Параметры командной строки, доступные генератору Yeoman для SharePoint](../../images/yeoman-sp-cmdline-options.png)
 
 Параметр | Описание 
 -----|------
---skip-install|Не устанавливать зависимости автоматически.
---solutionName|Имя клиентского решения, а также имя папки.
---framework|Платформа, которую необходимо использовать для решения: "none", "react" или "knockout".
---componentType|Тип компонента. В настоящее время поддерживается только "webpart".
---componentName|Имя компонента.
+--help|Печать сведений об использовании генератора и его параметров.
+--skip-cache|Ответы на запросы не сохраняются. По умолчанию: *false*.
+--skip-install|Зависимости не устанавливаются автоматически. По умолчанию: *false*.
+--componentType|Тип компонента. Сейчас поддерживаются WebPart и Extension (то есть веб-часть и расширение).
 --componentDescription|Описание компонента.
+--componentName|Имя компонента.
+--framework|Платформа, которую необходимо использовать для решения: React, Knockout или платформа, отличная от JavaScript.
+--extensionType|Тип расширения. Сейчас поддерживаются ApplicationCustomizer, FieldCustomizer, ListViewCommandSet.
+--solutionName|Имя клиентского решения, а также имя папки.
+--environment|Целевая среда для решения: локальная (onprem) или SharePoint Online (spo).
 
-Ниже приведен пример команды, которая создает решение "hello-world" с веб-частью "HelloWorld" на платформе "react":
+В приведенной ниже таблице указаны доступные аргументы.
+
+Аргумент | Описание | Тип | Обязательный |
+-- | -- | -- | -- |
+skipFeatureDeployment | Если указан, позволяет администратору клиента сделать так, что развертывание компонентов на всех сайтах будет выполнено сразу. В этом случае администратору не нужно будет запускать развертывание компонентов и добавлять приложения на сайтах. | Boolean | false | 
+
+Ниже приведен пример команды, которая создает решение hello-world с веб-частью HelloWorld на платформе React, предназначенное только для SharePoint Online и предусматривающее возможность развертывания на уровне клиента.
 
 ```
-yo @microsoft/sharepoint --solutionName "hello-world" --framework "react" --componentType "webpart" --componentName "HelloWorld" --componentDescription "HelloWorld web part"
+yo @microsoft/sharepoint --solutionName "hello-world" --framework "react" --componentType "webpart" --componentName "HelloWorld" --componentDescription "HelloWorld web part" --skip-install --environment "spo" skipFeatureDeployment true
 ```
+
+> Обратите внимание на то, что некоторые параметры связаны зависимостями. Вы не можете создать, например, расширение с параметром локальной среды.
 
 ### <a name="notes-on---skip-install"></a>Примечания по --skip-install 
 

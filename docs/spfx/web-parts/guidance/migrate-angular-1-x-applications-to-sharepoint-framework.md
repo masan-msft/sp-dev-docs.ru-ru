@@ -1,20 +1,28 @@
-# <a name="migrate-angular-v1x-applications-to-sharepoint-framework"></a>Миграция приложений Angular 1.x на платформу SharePoint Framework
+---
+title: "Перенос приложений AngularJS на платформу SharePoint Framework"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: cd07f02873ed476e298dcbbc17014cbc2443639b
+ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/20/2017
+---
+# <a name="migrate-angularjs-applications-to-sharepoint-framework"></a>Перенос приложений AngularJS на платформу SharePoint Framework
 
-> Примечание. Эта статья еще не была проверена на версии SPFx GA, поэтому у вас могут возникнуть трудности, например при использовании последней версии.
+Раньше во многих организациях решения для SharePoint создавались с помощью AngularJS. В этой статье показано, как перенести имеющееся приложение AngularJS, стиль которого создан с помощью [ngOfficeUIFabric](http://ngofficeuifabric.com) (директив AngularJS для Office UI Fabric), в клиентскую веб-часть SharePoint Framework. Приложение, используемое в этом руководстве, управляет элементами списка дел, сохраненными в списке SharePoint.
 
-Раньше во многих организациях для создания решений SharePoint использовался Angular. В этой статье показано, как перенести имеющееся приложение Angular 1.x, стиль которого создан с помощью [ngOfficeUIFabric](http://ngofficeuifabric.com) — директив Angular для Office UI Fabric, в клиентскую веб-часть SharePoint Framework. Приложение, используемое в этом руководстве, управляет элементами списка дел, сохраненными в списке SharePoint.
+![Приложение AngularJS для управления элементами списка дел, сохраненными в списке SharePoint](../../../images/ng-migration-original-angular-application.png)
 
-![Приложение Angular для управления элементами списка дел, сохраненными в списке SharePoint](../../../../images/ng-migration-original-angular-application.png)
+Исходный код приложения AngularJS доступен на сайте GitHub по адресу [https://github.com/SharePoint/sp-dev-fx-webparts/tree/dev/samples/angular-migration/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/dev/samples/angular-migration/angular-todo).
 
-Исходный код приложения Angular доступен на сайте GitHub по адресу [https://github.com/SharePoint/sp-dev-fx-webparts/tree/dev/samples/angular-migration/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/dev/samples/angular-migration/angular-todo).
-
-Исходный код приложения Angular, перенесенного на платформу SharePoint Framework, доступен на сайте GitHub по адресу [https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo-webpart](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo-webpart).
+Исходный код приложения AngularJS, перенесенного на платформу SharePoint Framework, доступен на сайте GitHub по адресу [https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo).
 
 > **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](http://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment) для создания решений на платформе SharePoint Framework.
 
 ## <a name="setup-project"></a>Настройка проекта
 
-Прежде чем приступить к переносу приложения Angular, создайте и настройте новый проект на платформе SharePoint Framework для размещения приложения Angular.
+Прежде чем приступить к переносу приложения AngularJS, создайте и настройте новый проект на платформе SharePoint Framework для размещения приложения AngularJS.
 
 ### <a name="create-new-project"></a>Создание проекта
 
@@ -37,67 +45,72 @@ yo @microsoft/sharepoint
 ```
 
 Определите значения следующим образом:
+
 - **angular-todo** как имя решения
 - расположение файлов — **Use the current folder** (Использовать текущую папку)
 - имя веб-части — **To do** (Текущие дела)
 - описание веб-части — **Simple management of to do tasks** (Простое управление задачами)
 - отправная точка создания веб-части — **No JavaScript web framework** (Без веб-платформы JavaScript).
 
-![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../../images/ng-migration-yeoman-generator.png)
+![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/ng-migration-yeoman-generator.png)
 
-Когда шаблон будет сформирован, откройте папку проекта в редакторе кода. В этом руководстве используется Visual Studio Code.
+После завершения скаффолдинга блокируйте версию зависимостей проекта, выполнив следующую команду:
 
-![Проект SharePoint Framework, открытый в Visual Studio Code](../../../../images/ng-migration-project-visual-studio-code.png)
+```sh
+npm shrinkwrap
+```
 
-### <a name="add-angular-and-ngofficeuifabric"></a>Добавление Angular и ngOfficeUIFabric
+Далее откройте папку проекта в редакторе кода. В этом руководстве используется Visual Studio Code.
 
-В этом руководстве Angular и ngOfficeUIFabric загружаются из CDN. Для этого откройте в редакторе кода файл **config/config.json** и добавьте следующие строки в свойстве **externals**:
+![Проект SharePoint Framework, открытый в Visual Studio Code](../../../images/ng-migration-project-visual-studio-code.png)
+
+### <a name="add-angularjs-and-ngofficeuifabric"></a>Добавление AngularJS и ngOfficeUIFabric
+
+В этом руководстве AngularJS и ngOfficeUIFabric загружаются из CDN. Для этого откройте в редакторе кода файл **config/config.json** и добавьте следующие строки в свойстве **externals**:
 
 ```json
 "angular": {
-  "path": "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.16/angular.min.js",
+  "path": "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.min.js",
   "globalName": "angular"
 },
 "ng-office-ui-fabric": "https://cdnjs.cloudflare.com/ajax/libs/ngOfficeUiFabric/0.12.3/ngOfficeUiFabric.js"
 ```
 
-![Angular и ngOfficeUIFabric, добавленные в файл config.json](../../../../images/ng-migration-angular-ngofficeuifabric-config.png)
+### <a name="add-angularjs-typings-for-typescript"></a>Добавление определений типа AngularJS для TypeScript
 
-### <a name="add-angular-typings-for-typescript"></a>Добавление определений типа Angular для TypeScript
-
-Так как в коде веб-части вы будете ссылаться на Angular, вам также потребуются определения типов Angular для TypeScript. Чтобы установить их, выполните в командной строке следующую команду:
+Так как в коде веб-части вы будете ссылаться на AngularJS, вам также потребуются определения типов AngularJS для TypeScript. Чтобы установить их, выполните в командной строке следующую команду:
 
 ```sh
 npm install @types/angular --save-dev
 ```
 
-## <a name="migrate-the-angular-application-as-is"></a>Миграция приложения Angular "как есть"
+## <a name="migrate-the-angularjs-application-as-is"></a>Перенос приложения AngularJS "как есть"
 
-Для начала мы перенесем приложение Angular с минимальными изменениями кода. Позже мы обновим обычный код JavaScript приложения до TypeScript и улучшим его интеграцию с клиентской веб-частью.
+Для начала мы перенесем приложение AngularJS с минимальными изменениями кода. Позже мы обновим обычный код JavaScript приложения до TypeScript и улучшим его интеграцию с клиентской веб-частью.
 
 ### <a name="create-sharepoint-list"></a>Создание списка SharePoint
 
-Создайте на сайте SharePoint новый список под названием **Список дел**. Добавьте в список новый столбец вариантов под названием **Состояние**. Укажите следующие варианты:
+Создайте на сайте SharePoint новый список под названием **Todo** (Список дел). Добавьте в список новый столбец вариантов под названием **Status** (Состояние). Укажите следующие варианты:
 
-```
+```text
 Not started
 In progress
 Completed
 ```
 
-![Список дел в SharePoint](../../../../images/ng-migration-todo-list.png)
+![Список дел в SharePoint](../../../images/ng-migration-todo-list.png)
 
-### <a name="copy-angular-application-files-to-the-web-part-project"></a>Копирование файлов приложения Angular в проект веб-части
+### <a name="copy-angularjs-application-files-to-the-web-part-project"></a>Копирование файлов приложения AngularJS в проект веб-части
 
 В проекте веб-части создайте в папке **src/webparts/toDo** дочернюю папку с именем `app`.
 
-![Папка приложения, выделенная в области обозревателя Visual Studio Code](../../../../images/ng-migration-app-folder-visual-studio-code.png)
+![Папка приложения, выделенная в области обозревателя Visual Studio Code](../../../images/ng-migration-app-folder-visual-studio-code.png)
 
 Скопируйте содержимое папки **app** из исходного приложения в новую папку **app** проекта веб-части.
 
-![Файлы приложения, выделенные в области обозревателя Visual Studio Code](../../../../images/ng-migration-app-files-visual-studio-code.png)
+![Файлы приложения, выделенные в области обозревателя Visual Studio Code](../../../images/ng-migration-app-files-visual-studio-code.png)
 
-### <a name="load-the-angular-application-in-the-client-side-web-part"></a>Загрузка приложения Angular в клиентской веб-части
+### <a name="load-the-angularjs-application-in-the-client-side-web-part"></a>Загрузка приложения AngularJS в клиентской веб-части
 
 В редакторе кода откройте файл **./src/webparts/toDo/ToDoWebPart.ts**.
 
@@ -107,8 +120,6 @@ Completed
 import * as angular from 'angular';
 import 'ng-office-ui-fabric';
 ```
-
-![Операторы импорта для загрузки Angular и ngOfficeUIFabric](../../../../images/ng-migration-angular-ngofficeuifabric-import.png)
 
 Замените содержимое метода **render** на следующий код:
 
@@ -159,9 +170,20 @@ export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps
 
 ### <a name="update-site-path"></a>Обновление пути к сайту
 
-Откройте в редакторе кода файл **./src/webparts/toDo/app/app.config.js**. Замените значение константы **sharepointApi** на относительный URL-адрес сайта SharePoint, на котором создан список дел, и добавьте к нему строку `/_api/`.
+Откройте в редакторе кода файл **./src/webparts/toDo/app/app.config.js**. Замените значение константы **sharepointApi** на относительный касательно сервера URL-адрес для сайта SharePoint, на котором создан список дел, и добавьте к нему строку `/_api/`.
 
-![URL-адрес веб-сайта, выделенный в файле app.config.js в Visual Studio Code](../../../../images/ng-migration-app-config-web-url.png)
+### <a name="add-css-styles"></a>Добавление стилей CSS
+
+Кроме того, необходимо реализовать стили CSS, которые вы используете с шаблоном. В редакторе кода откройте файл **ToDoWebPart.module.scss** и замените его содержимое на следующие строки:
+
+```scss
+.toDo {
+  .loading {
+    margin: 0 auto;
+    width: 6em;
+  }
+}
+```
 
 ### <a name="trust-the-development-certificate"></a>Доверие сертификату разработки
 
@@ -173,7 +195,7 @@ export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps
 gulp trust-dev-cert
 ```
 
-### <a name="upload-workbenchaspx-to-sharepoint"></a>Отправка файла workbench.aspx в SharePoint
+### <a name="preview-web-part-in-the-hosted-workbench"></a>Просмотр веб-части в размещенной системе разработки
 
 Выполните в командной строке следующую команду:
 
@@ -181,29 +203,23 @@ gulp trust-dev-cert
 gulp serve --nobrowser
 ```
 
-В папке **./temp** скопируйте файл **workbench.html** и переименуйте его в **workbench.aspx**. В файле **workbench.aspx** измените значение свойства **webAbsoluteUrl** на полный URL-адрес сайта SharePoint, на котором создан список дел.
-
-![URL-адрес веб-сайта, выделенный в файле workbench.aspx в Visual Studio Code](../../../../images/ng-migration-workbench-weburl.png)
-
-Отправьте файл **workbench.aspx** в библиотеку документов на сайте SharePoint.
-
-![URL-адрес веб-сайта, выделенный в файле workbench.aspx в Visual Studio Code](../../../../images/ng-migration-workbench-aspx-doclib.png)
+К URL-адресу сайта SharePoint добавьте `/_layouts/workbench.aspx`, например `https://contoso.sharepoint.com/_layouts/workbench.aspx`, а затем перейдите по этому адресу в веб-браузере.
 
 Если вы правильно выполнили все действия, в браузере должна появиться веб-часть с формой для добавления элементов в список дел.
 
-![Перенесенное приложение Angular в рабочей области SharePoint, отправленной в SharePoint](../../../../images/ng-migration-first-run.png)
+![Перенесенное приложение AngularJS в системе разработки SharePoint (отправлено в SharePoint)](../../../images/ng-migration-first-run.png)
 
 Добавьте несколько элементов списка дел, чтобы проверить работу веб-части.
 
-![Перенесенное приложение Angular с неправильным стилем](../../../../images/ng-migration-old-office-ui-fabric.png)
+![Перенесенное приложение AngularJS с неправильным стилем](../../../images/ng-migration-old-office-ui-fabric.png)
 
 ### <a name="fix-web-part-styling"></a>Исправление стиля веб-части
 
-Веб-часть работает правильно, но выглядит не так, как исходное приложение Angular. Это связано с тем, что ngOfficeUIFabric использует более раннюю версию Office UI Fabric, чем рабочая область SharePoint. Ситуацию легко исправить, загрузив стили CSS, используемые в ngOfficeUIFabric. Но эти стили будут конфликтовать со стилями Office UI Fabric, используемыми в рабочей области SharePoint. В результате изменится ее пользовательский интерфейс. Более эффективное решение — добавить стили, необходимые определенным компонентам, к стилям веб-части.
+Веб-часть работает правильно, но выглядит не так, как исходное приложение AngularJS. Это связано с тем, что ngOfficeUIFabric использует более раннюю версию Office UI Fabric, чем система разработки SharePoint. Ситуацию легко исправить, загрузив стили CSS, используемые в ngOfficeUIFabric. Но эти стили будут конфликтовать со стилями Office UI Fabric, используемыми в рабочей области SharePoint. В результате изменится ее пользовательский интерфейс. Более эффективное решение — добавить стили, необходимые определенным компонентам, к стилям веб-части.
 
-Откройте в редакторе кода файл **./src/webparts/toDo/ToDo.module.scss**. Измените его содержимое на следующее:
+Откройте в редакторе кода файл **./src/webparts/toDo/ToDoWebPart.module.scss**. Замените его содержимое следующим:
 
-```css
+```scss
 .toDo {
   .loading {
     margin: 0 auto;
@@ -220,7 +236,10 @@ gulp serve --nobrowser
   }
 
   :global {
-  .ms-ListItem{font-family:"Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;box-sizing:border-box;margin:0;padding:0;box-shadow:none;padding:9px 28px 3px;position:relative;display:block}.ms-ListItem::after,.ms-ListItem::before{display:table;content:"";line-height:0}.ms-ListItem::after{clear:both}.ms-ListItem-primaryText,.ms-ListItem-secondaryText,.ms-ListItem-tertiaryText{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block}.ms-ListItem-primaryText{font-family:"Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;font-size:21px;font-weight:100;padding-right:80px;position:relative;top:-4px}.ms-ListItem-secondaryText{font-family:"Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;line-height:25px;position:relative;top:-7px;padding-right:30px}.ms-ListItem-tertiaryText{font-family:"Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;position:relative;top:-9px;margin-bottom:-4px;padding-right:30px}.ms-ListItem-metaText{font-family:"Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;font-size:11px;font-weight:400;position:absolute;right:30px;top:39px}.ms-ListItem-image{float:left;height:70px;margin-left:-8px;margin-right:10px;width:70px}.ms-ListItem-selectionTarget{display:none}.ms-ListItem-actions{max-width:80px;position:absolute;right:30px;text-align:right;top:10px}.ms-ListItem-action{color:#a6a6a6;display:inline-block;font-size:15px;position:relative;text-align:center;top:3px;cursor:pointer;height:16px;width:16px}.ms-ListItem-action .ms-Icon{vertical-align:top}.ms-ListItem-action:hover{color:#666666;outline:1px solid transparent}.ms-ListItem.is-unread{border-left:3px solid #0078d7;padding-left:27px}.ms-ListItem.is-unread .ms-ListItem-metaText,.ms-ListItem.is-unread .ms-ListItem-secondaryText{color:#0078d7;font-weight:600}.ms-ListItem.is-unseen:after{border-right:10px solid transparent;border-top:10px solid #0078d7;left:0;position:absolute;top:0}.ms-ListItem.is-selectable .ms-ListItem-selectionTarget{display:block;height:20px;left:6px;position:absolute;top:13px;width:20px}.ms-ListItem.is-selectable .ms-ListItem-image{margin-left:0}.ms-ListItem.is-selectable:hover{background-color:#eaeaea;cursor:pointer;outline:1px solid transparent}.ms-ListItem.is-selectable:hover:before{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-family:FabricMDL2Icons;font-style:normal;font-weight:400;speak:none;position:absolute;top:12px;left:6px;height:15px;width:15px;border:1px solid #767676}.ms-ListItem.is-selected:before{border:1px solid transparent}.ms-ListItem.is-selected:before,.ms-ListItem.is-selected:hover:before{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-family:FabricMDL2Icons;font-style:normal;font-weight:400;speak:none;content:'\e041';font-size:15px;color:#767676;position:absolute;top:12px;left:6px}.ms-ListItem.is-selected:hover{background-color:#c7e0f4;outline:1px solid transparent}.ms-ListItem.ms-ListItem--document{padding:0}.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon{width:70px;height:70px;float:left;text-align:center}.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon .ms-Icon{font-size:38px;line-height:70px;color:#666666}.ms-ListItem.ms-ListItem--document .ms-ListItem-primaryText{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;padding-top:15px;padding-right:0;position:static}.ms-ListItem.ms-ListItem--document .ms-ListItem-secondaryText{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:"Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;font-size:11px;font-weight:400;padding-top:6px}.MailList{overflow-y:auto;-webkit-overflow-scrolling:touch;max-height:500px}.MailTile{margin-bottom:5px;padding:10px;background:red}
+    .ms-Spinner{position:relative;height:20px}.ms-Spinner.ms-Spinner--large{height:28px}.ms-Spinner.ms-Spinner--large .ms-Spinner-label{left:34px;top:6px}.ms-Spinner-circle{position:absolute;border-radius:100px;background-color:#0078d7;opacity:0}@media screen and (-ms-high-contrast:active){.ms-Spinner-circle{background-color:#fff}}@media screen and (-ms-high-contrast:black-on-white){.ms-Spinner-circle{background-color:#000}}.ms-Spinner-label{position:relative;color:#333;font-family:Segoe UI Regular WestEuropean,Segoe UI,Tahoma,Arial,sans-serif;font-size:12px;font-weight:400;color:#0078d7;left:28px;top:2px}
+    .ms-TextField{color:#333;font-family:Segoe UI Regular WestEuropean,Segoe UI,Tahoma,Arial,sans-serif;font-size:14px;font-weight:400;box-sizing:border-box;margin:0;padding:0;box-shadow:none;margin-bottom:8px}.ms-TextField.is-disabled .ms-TextField-field{background-color:#f4f4f4;border-color:#f4f4f4;pointer-events:none;cursor:default}.ms-TextField.is-disabled:-moz-placeholder,.ms-TextField.is-disabled:-ms-input-placeholder,.ms-TextField.is-disabled::-moz-placeholder,.ms-TextField.is-disabled::-webkit-input-placeholder{color:#a6a6a6}.ms-TextField.is-required .ms-Label:after{content:' *';color:#a80000}.ms-TextField.is-required:-moz-placeholder:after,.ms-TextField.is-required:-ms-input-placeholder:after,.ms-TextField.is-required::-moz-placeholder:after,.ms-TextField.is-required::-webkit-input-placeholder:after{content:' *';color:#a80000}.ms-TextField.is-active{border-color:#0078d7}.ms-TextField-field{box-sizing:border-box;margin:0;padding:0;box-shadow:none;border:1px solid #c8c8c8;border-radius:0;font-family:Segoe UI Semilight WestEuropean,Segoe UI Semilight,Segoe UI,Tahoma,Arial,sans-serif;font-size:12px;color:#333;height:32px;padding:6px 10px 8px;width:100%;min-width:180px;outline:0}.ms-TextField-field:hover{border-color:#767676}.ms-TextField-field:focus{border-color:#0078d7}@media screen and (-ms-high-contrast:active){.ms-TextField-field:focus,.ms-TextField-field:hover{border-color:#1aebff}}@media screen and (-ms-high-contrast:black-on-white){.ms-TextField-field:focus,.ms-TextField-field:hover{border-color:#37006e}}.ms-TextField-field:-moz-placeholder,.ms-TextField-field:-ms-input-placeholder,.ms-TextField-field::-moz-placeholder,.ms-TextField-field::-webkit-input-placeholder{color:#666}.ms-TextField-description{color:#767676;font-size:11px}.ms-TextField.ms-TextField--placeholder{position:relative}.ms-TextField.ms-TextField--placeholder .ms-Label{position:absolute;font-family:Segoe UI Semilight WestEuropean,Segoe UI Semilight,Segoe UI,Tahoma,Arial,sans-serif;font-size:12px;color:#666;padding:7px 0 7px 10px}.ms-TextField.ms-TextField--placeholder.is-disabled,.ms-TextField.ms-TextField--placeholder.is-disabled .ms-Label{color:#a6a6a6}@media screen and (-ms-high-contrast:active){.ms-TextField.ms-TextField--placeholder.is-disabled .ms-Label{color:#0f0}}@media screen and (-ms-high-contrast:black-on-white){.ms-TextField.ms-TextField--placeholder.is-disabled .ms-Label{color:#600000}}.ms-TextField.ms-TextField--underlined{border-bottom:1px solid #c8c8c8;display:table;width:100%;min-width:180px}.ms-TextField.ms-TextField--underlined:hover{border-color:#767676}@media screen and (-ms-high-contrast:active){.ms-TextField.ms-TextField--underlined:hover{border-color:#1aebff}}@media screen and (-ms-high-contrast:black-on-white){.ms-TextField.ms-TextField--underlined:hover{border-color:#37006e}}.ms-TextField.ms-TextField--underlined:active,.ms-TextField.ms-TextField--underlined:focus{border-color:#0078d7}.ms-TextField.ms-TextField--underlined .ms-Label{font-size:12px;margin-right:8px;display:table-cell;vertical-align:bottom;padding-left:12px;padding-bottom:5px;height:32px;width:1%;white-space:nowrap}.ms-TextField.ms-TextField--underlined .ms-TextField-field{border:0;float:left;display:table-cell;text-align:left;padding-top:8px;padding-bottom:2px}.ms-TextField.ms-TextField--underlined .ms-TextField-field:active,.ms-TextField.ms-TextField--underlined .ms-TextField-field:focus,.ms-TextField.ms-TextField--underlined .ms-TextField-field:hover{outline:0}.ms-TextField.ms-TextField--underlined.is-disabled{border-bottom-color:#eaeaea}.ms-TextField.ms-TextField--underlined.is-disabled .ms-Label{color:#a6a6a6}@media screen and (-ms-high-contrast:active){.ms-TextField.ms-TextField--underlined.is-disabled .ms-Label{color:#0f0}}@media screen and (-ms-high-contrast:black-on-white){.ms-TextField.ms-TextField--underlined.is-disabled .ms-Label{color:#600000}}.ms-TextField.ms-TextField--underlined.is-disabled .ms-TextField-field{background-color:transparent;color:#a6a6a6}.ms-TextField.ms-TextField--underlined.is-active{border-color:#0078d7}@media screen and (-ms-high-contrast:active){.ms-TextField.ms-TextField--underlined.is-active{border-color:#1aebff}}@media screen and (-ms-high-contrast:black-on-white){.ms-TextField.ms-TextField--underlined.is-active{border-color:#37006e}}.ms-TextField.ms-TextField--multiline .ms-TextField-field{line-height:17px;min-height:60px;min-width:260px;padding-top:6px;overflow:auto}.ms-Label,.ms-TextField.ms-TextField--multiline .ms-TextField-field{color:#333;font-family:Segoe UI Regular WestEuropean,Segoe UI,Tahoma,Arial,sans-serif;font-size:12px;font-weight:400}
+    .ms-Label{margin:0;padding:0;box-shadow:none;box-sizing:border-box;display:block;padding:5px 0}.ms-Label.is-required:after{content:' *';color:#a80000}.ms-Label.is-disabled{color:#a6a6a6}@media screen and (-ms-high-contrast:active){.ms-Label.is-disabled{color:#0f0}}@media screen and (-ms-high-contrast:black-on-white){.ms-Label.is-disabled{color:#600000}}.is-disabled .ms-Label{color:#a6a6a6}@media screen and (-ms-high-contrast:active){.is-disabled .ms-Label{color:#0f0}}@media screen and (-ms-high-contrast:black-on-white){.is-disabled .ms-Label{color:#600000}}.ms-Toggle{color:#333;font-family:Segoe UI Regular WestEuropean,Segoe UI,Tahoma,Arial,sans-serif;font-size:14px;font-weight:400;box-sizing:border-box;margin:0;padding:0;box-shadow:none;position:relative;display:block;margin-bottom:26px}.ms-Toggle .ms-Label{position:relative;padding:0 0 0 62px;font-size:12px}.ms-Toggle:hover .ms-Label{color:#000}.ms-Toggle:active .ms-Label{color:#333}.ms-Toggle.is-disabled .ms-Label{color:#a6a6a6}@media screen and (-ms-high-contrast:active){.ms-Toggle.is-disabled .ms-Label{color:#0f0}}@media screen and (-ms-high-contrast:black-on-white){.ms-Toggle.is-disabled .ms-Label{color:#600000}}
+    .ms-ListItem{font-family:"Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;box-sizing:border-box;margin:0;padding:0;box-shadow:none;padding:9px 28px 3px;position:relative;display:block}.ms-ListItem::after,.ms-ListItem::before{display:table;content:"";line-height:0}.ms-ListItem::after{clear:both}.ms-ListItem-primaryText,.ms-ListItem-secondaryText,.ms-ListItem-tertiaryText{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block}.ms-ListItem-primaryText{font-family:"Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;font-size:21px;font-weight:100;padding-right:80px;position:relative;top:-4px}.ms-ListItem-secondaryText{font-family:"Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;line-height:25px;position:relative;top:-7px;padding-right:30px}.ms-ListItem-tertiaryText{font-family:"Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;position:relative;top:-9px;margin-bottom:-4px;padding-right:30px}.ms-ListItem-metaText{font-family:"Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;font-size:11px;font-weight:400;position:absolute;right:30px;top:39px}.ms-ListItem-image{float:left;height:70px;margin-left:-8px;margin-right:10px;width:70px}.ms-ListItem-selectionTarget{display:none}.ms-ListItem-actions{max-width:80px;position:absolute;right:30px;text-align:right;top:10px}.ms-ListItem-action{color:#a6a6a6;display:inline-block;font-size:15px;position:relative;text-align:center;top:3px;cursor:pointer;height:16px;width:16px}.ms-ListItem-action .ms-Icon{vertical-align:top}.ms-ListItem-action:hover{color:#666666;outline:1px solid transparent}.ms-ListItem.is-unread{border-left:3px solid #0078d7;padding-left:27px}.ms-ListItem.is-unread .ms-ListItem-metaText,.ms-ListItem.is-unread .ms-ListItem-secondaryText{color:#0078d7;font-weight:600}.ms-ListItem.is-unseen:after{border-right:10px solid transparent;border-top:10px solid #0078d7;left:0;position:absolute;top:0}.ms-ListItem.is-selectable .ms-ListItem-selectionTarget{display:block;height:20px;left:6px;position:absolute;top:13px;width:20px}.ms-ListItem.is-selectable .ms-ListItem-image{margin-left:0}.ms-ListItem.is-selectable:hover{background-color:#eaeaea;cursor:pointer;outline:1px solid transparent}.ms-ListItem.is-selectable:hover:before{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-family:FabricMDL2Icons;font-style:normal;font-weight:400;speak:none;position:absolute;top:12px;left:6px;height:15px;width:15px;border:1px solid #767676}.ms-ListItem.is-selected:before{border:1px solid transparent}.ms-ListItem.is-selected:before,.ms-ListItem.is-selected:hover:before{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-family:FabricMDL2Icons;font-style:normal;font-weight:400;speak:none;content:'\e041';font-size:15px;color:#767676;position:absolute;top:12px;left:6px}.ms-ListItem.is-selected:hover{background-color:#c7e0f4;outline:1px solid transparent}.ms-ListItem.ms-ListItem--document{padding:0}.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon{width:70px;height:70px;float:left;text-align:center}.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon .ms-Icon{font-size:38px;line-height:70px;color:#666666}.ms-ListItem.ms-ListItem--document .ms-ListItem-primaryText{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;padding-top:15px;padding-right:0;position:static}.ms-ListItem.ms-ListItem--document .ms-ListItem-secondaryText{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:"Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;font-size:11px;font-weight:400;padding-top:6px}.MailList{overflow-y:auto;-webkit-overflow-scrolling:touch;max-height:500px}.MailTile{margin-bottom:5px;padding:10px;background:red}
   }
 }
 ```
@@ -239,8 +258,8 @@ export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps
 
       this.domElement.innerHTML = `
         <div class="${styles.toDo}">
-          <div data-ng-controller="HomeController as vm">
-            <div id="loading" ng-show="vm.isLoading">
+          <div data-ng-controller="homeController as vm">
+            <div class="${styles.loading}" ng-show="vm.isLoading">
               <uif-spinner>Loading...</uif-spinner>
             </div>
             <div id="entryform" ng-show="vm.isLoading === false">
@@ -272,13 +291,13 @@ export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps
 }
 ```
 
-Когда вы обновите веб-часть в браузере, стиль станет правильным.
+Когда вы обновите страницу веб-части в браузере, стиль станет правильным.
 
-![Перенесенное приложение Angular с правильной пометкой выполненных задач в веб-части](../../../../images/ng-migration-correct-styling.png)
+![Перенесенное приложение AngularJS с правильной пометкой выполненных задач в веб-части](../../../images/ng-migration-correct-styling.png)
 
-## <a name="upgrade-the-angular-application-to-typescript"></a>Обновление приложения Angular до TypeScript
+## <a name="upgrade-the-angularjs-application-to-typescript"></a>Обновление приложения AngularJS до TypeScript
 
-Исходное приложение Angular написано на обычном JavaScript, из-за чего в нем могут возникать ошибки. При создании клиентских веб-частей на платформе SharePoint Framework можно использовать TypeScript и его функции обеспечения безопасности типа во время разработки. На этом этапе мы преобразуем обычный код JavaScript Angular в TypeScript.
+Исходное приложение AngularJS написано на обычном JavaScript, из-за чего в нем могут возникать ошибки. При создании клиентских веб-частей на платформе SharePoint Framework можно использовать TypeScript и его функции обеспечения безопасности типа во время разработки. На этом этапе мы преобразуем обычный код JavaScript AngularJS в TypeScript.
 
 ### <a name="upgrade-application-configuration"></a>Обновление конфигурации приложения
 
@@ -585,7 +604,7 @@ export default class HomeController {
 
 ### <a name="upgrade-application-module"></a>Обновление модуля приложения
 
-В проекте переименуйте файл **./src/webparts/toDo/app/app.module.js** в `app.module.ts`. Измените его содержимое на следующее:
+В проекте переименуйте файл **./src/webparts/toDo/app/app.module.js** в `app.module.ts`. Замените его содержимое следующим:
 
 ```ts
 import * as angular from 'angular';
@@ -607,11 +626,11 @@ todoapp
   .service('DataService', DataService);
 ```
 
-### <a name="update-reference-to-angular-application-in-the-web-part"></a>Обновление ссылки на приложение Angular в веб-части
+### <a name="update-reference-to-angularjs-application-in-the-web-part"></a>Обновление ссылки на приложение AngularJS в веб-части
 
-Теперь, когда приложение Angular перенесено на TypeScript, а его фрагменты ссылаются друг на друга, веб-части больше не требуется ссылаться на все фрагменты приложения. Ей достаточно загрузить главный модуль, который загрузит все остальные элементы приложения Angular.
+Теперь, когда приложение AngularJS написано на TypeScript, а его фрагменты ссылаются друг на друга, веб-части больше не требуется ссылаться на все фрагменты приложения. Ей достаточно загрузить главный модуль, который загрузит все остальные элементы приложения AngularJS.
 
-В редакторе кода откройте файл **./src/webparts/toDo/ToDoWebPart.ts**. Измените код метода **render** на следующий:
+В редакторе кода откройте файл **./src/webparts/toDo/ToDoWebPart.ts**. Замените метод **render** следующим:
 
 ```ts
 export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
@@ -623,7 +642,7 @@ export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps
       this.domElement.innerHTML = `
         <div class="${styles.toDo}">
           <div data-ng-controller="HomeController as vm">
-            <div id="loading" ng-show="vm.isLoading">
+            <div class="${styles.loading}" ng-show="vm.isLoading">
               <uif-spinner>Loading...</uif-spinner>
             </div>
             <div id="entryform" ng-show="vm.isLoading === false">
@@ -661,19 +680,19 @@ export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps
 gulp serve --nobrowser
 ```
 
-Обновите рабочую область SharePoint в веб-браузере. Веб-часть должна отображаться так же, как и раньше.
+Обновите страницу системы разработки SharePoint в веб-браузере. Веб-часть должна отображаться так же, как и раньше.
 
-![Перенесенное приложение Angular с правильной пометкой выполненных задач в веб-части](../../../../images/ng-migration-correct-styling.png)
+![Перенесенное приложение AngularJS с правильной пометкой выполненных задач в веб-части](../../../images/ng-migration-correct-styling.png)
 
 Внешний вид веб-части не изменился, но ее код стал лучше. Если вы захотите ее обновить, вам будет проще проверять правильность и целостность кода во время разработки.
 
-## <a name="improve-integration-of-the-angular-application-with-the-sharepoint-framework"></a>Улучшение интеграции приложения Angular с платформой SharePoint Framework
+## <a name="improve-integration-of-the-angularjs-application-with-the-sharepoint-framework"></a>Улучшение интеграции приложения AngularJS с платформой SharePoint Framework
 
-На этом этапе приложение Angular работает правильно и заключено в клиентскую веб-часть на платформе SharePoint Framework. Пользователи могут добавить веб-часть на страницу, но не могут настроить ее работу. Все значения конфигурации внедрены в код приложения Angular. В этом разделе мы расширим веб-часть, чтобы пользователи могли указывать имя списка дел и управлять отображением выполненных задач.
+На этом этапе приложение AngularJS работает правильно и заключено в клиентскую веб-часть на платформе SharePoint Framework. Пользователи могут добавить веб-часть на страницу, но не могут настроить ее работу. Все значения конфигурации внедрены в код приложения AngularJS. В этом разделе показано расширение веб-части, позволяющее пользователям указывать имя списка дел и управлять отображением выполненных задач.
 
 ### <a name="define-web-part-properties"></a>Определение свойств веб-части
 
-В редакторе кода откройте файл **./src/webparts/toDo/ToDoWebPart.manifest.json**. Замените текст в разделе **properties** на следующий:
+В редакторе кода откройте файл **./src/webparts/toDo/ToDoWebPart.manifest.json**. Замените раздел **properties** следующим:
 
 ```json
 "properties": {
@@ -682,9 +701,7 @@ gulp serve --nobrowser
 }
 ```
 
-![Манифест веб-части с новыми свойствами для приложения Angular](../../../../images/ng-migration-angular-web-part-properties.png)
-
-Измените содержимое файла **./src/webparts/toDo/IToDoWebPartProps.ts** на следующее:
+В файле **./src/webparts/toDo/ToDoWebPart.ts** замените определение интерфейса `IToDoWebPartProps` следующим:
 
 ```ts
 export interface IToDoWebPartProps {
@@ -699,20 +716,17 @@ export interface IToDoWebPartProps {
 import {
   BaseClientSideWebPart,
   IPropertyPaneSettings,
-  IWebPartContext,
   PropertyPaneTextField,
   PropertyPaneToggle
-} from '@microsoft/sp-client-preview';
+} from '@microsoft/sp-webpart-base';
 ```
 
-![Оператор импорта, обновленный для загрузки элемента управления областью свойств PropertyPaneToggle](../../../../images/ng-migration-import-propertypanetoggle.png)
-
-В том же файле измените код метода **propertyPaneSettings** на следующий:
+После этого в файле примера измените замените метод **getPropertyPaneConfiguration** следующим:
 
 ```ts
 export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
   // ...
-  protected get propertyPaneSettings(): IPropertyPaneSettings {
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
         {
@@ -740,18 +754,18 @@ export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps
 }
 ```
 
-Добавьте недостающие строки ресурсов, изменив содержимое файла **./src/webparts/toDo/loc/mystrings.d.ts** на следующее:
+Добавьте недостающие строки ресурсов, заменив содержимое файла **./src/webparts/toDo/loc/mystrings.d.ts** на следующее:
 
 ```ts
-declare interface IToDoStrings {
+declare interface IToDoWebPartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
   ListNameFieldLabel: string;
   HideFinishedTasksFieldLabel: string;
 }
 
-declare module 'toDoStrings' {
-  const strings: IToDoStrings;
+declare module 'ToDoWebPartStrings' {
+  const strings: IToDoWebPartStrings;
   export = strings;
 }
 ```
@@ -769,17 +783,17 @@ define([], function() {
 });
 ```
 
-### <a name="pass-web-part-properties-values-to-the-angular-application"></a>Передача свойств веб-части в приложение Angular
+### <a name="pass-web-part-properties-values-to-the-angularjs-application"></a>Передача значений свойств веб-части в приложение AngularJS
 
-На этом этапе пользователи могут настраивать работу веб-части, но приложение Angular не использует эти значения. В этом разделе мы расширим приложение Angular, чтобы оно использовало значения конфигурации, указанные пользователем в области свойств веб-части. Для этого можно транслировать событие Angular в методе **render** и подписаться на это событие в контроллере, используемом веб-частью.
+На этом этапе пользователи могут настраивать работу веб-части, но приложение AngularJS не использует эти значения. В этом разделе мы расширим приложение AngularJS, чтобы оно использовало значения конфигурации, указанные пользователем в области свойств веб-части. Для этого можно транслировать событие AngularJS в методе **render** и подписаться на это событие в контроллере, используемом веб-частью.
 
-#### <a name="delete-angular-configuration-file"></a>Удаление файла конфигурации Angular
+#### <a name="delete-angularjs-configuration-file"></a>Удаление файла конфигурации AngularJS
 
 Удалите из проекта файл **./src/webparts/toDo/app/app.config.ts**. Позже мы обновим приложение, чтобы оно получало значения конфигурации из свойств веб-части.
 
 #### <a name="remove-reference-to-configuration"></a>Удаление ссылки на конфигурацию
 
-В файле **./src/webparts/toDo/app/app.module.ts** удалите ссылку на конфигурацию Angular, изменив его содержимое на следующее:
+В файле **./src/webparts/toDo/app/app.module.ts** удалите ссылку на конфигурацию AngularJS, заменив его содержимое следующим:
 
 ```ts
 import * as angular from 'angular';
@@ -800,7 +814,7 @@ todoapp
 
 #### <a name="update-data-service-to-accept-configuration-value-in-method-parameters"></a>Обновление службы данных для принятия значений конфигурации в параметрах методов
 
-Изначально служба данных получала свою конфигурацию из констант, определенных в файле **app.config.ts**. Чтобы использовать вместо них значения конфигурации, настроенные в свойствах веб-части, определенные методы должны принимать параметры. 
+Изначально служба данных получала свою конфигурацию из констант, определенных в файле **app.config.ts**. Чтобы использовать вместо них значения конфигурации, настроенные в свойствах веб-части, определенные методы должны принимать параметры.
 
 Откройте в редакторе кода файл **./src/webparts/toDo/app/DataService.ts** и замените его содержимое на следующее:
 
@@ -998,9 +1012,7 @@ export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps
 }
 ```
 
-![Свойство Injector, выделенное в классе ToDoWebPart](../../../../images/ng-migration-injector-property.png)
-
-В том же файле измените код метода **render** на следующий:
+В том же файле измените метод **render** так:
 
 ```ts
 export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
@@ -1055,9 +1067,9 @@ export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps
 }
 ```
 
-В файле **./src/webparts/toDo/ToDo.module.scss** добавьте недостающие стили для класса **.configurationNeeded**:
+В файле **./src/webparts/toDo/ToDoWebPart.module.scss** добавьте недостающие стили для класса **.configurationNeeded**:
 
-```css
+```scss
 .toDo {
   /* ... */
   .configurationNeeded {
@@ -1221,10 +1233,10 @@ export default class HomeController {
 
 Проверьте работу веб-части, выполнив в командной строке следующую команду:
 
-```
+```sh
 gulp serve --nobrowser
 ```
 
-В веб-браузере откройте рабочую область SharePoint и добавьте веб-часть на холст. Переместите переключатель **Hide finished tasks**, чтобы показать или скрыть выполненные задачи.
+В веб-браузере откройте рабочую область SharePoint и добавьте веб-часть на холст. Если переместить переключатель **Hide finished tasks** (Скрыть выполненные задачи), выполненные задачи будут показаны или скрыты.
 
-![Приложение Angular со скрытыми выполненными задачами](../../../../images/ng-migration-finished-tasks-hidden.png)
+![Приложение AngularJS со скрытыми выполненными задачами](../../../images/ng-migration-finished-tasks-hidden.png)

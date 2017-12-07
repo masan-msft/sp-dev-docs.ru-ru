@@ -1,8 +1,18 @@
+---
+title: "Обновление пакетов SharePoint Framework"
+ms.date: 09/25/2017
+ms.prod: sharepoint
+ms.openlocfilehash: b8d542ac73d1739faff65f4636cffdef062a3c00
+ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 10/13/2017
+---
 # <a name="update-sharepoint-framework-packages"></a>Обновление пакетов SharePoint Framework 
 
 Средства клиентской разработки для SharePoint управляют зависимостями и другими необходимыми вспомогательными элементами JavaScript с помощью диспетчера пакетов [npm](https://www.npmjs.com/). Этот диспетчер обычно устанавливается вместе с Node.js.
 
-При создании нового клиентского решения генератор Yeoman для SharePoint получает последние версии необходимых для проекта пакетов SharePoint Framework. По мере работы над проектом пакеты могут устаревать. Изучив [заметки о последнем выпуске](https://aka.ms/spfx-release-notes), вы можете решить обновить пакеты SharePoint Framework, используемые в проекте. Пакеты SharePoint Framework включают установленные в проекте пакеты npm, например [@microsoft/sp-core-library](https://www.npmjs.com/package/@microsoft/sp-core-library), и глобально установленные пакеты npm, например [@microsoft/generator-sharepoint](https://www.npmjs.com/package/@microsoft/generator-sharepoint). 
+При создании нового клиентского решения генератор Yeoman для SharePoint получает последние версии необходимых для проекта пакетов SharePoint Framework. По мере работы над проектом пакеты могут устаревать. Изучив [заметки о выпуске](https://aka.ms/spfx-release-notes), касающиеся определенного выпуска или последней версии пакета, вы можете решить обновить пакеты SharePoint Framework, используемые в проекте. Пакеты SharePoint Framework включают установленные в проекте пакеты npm, например [@microsoft/sp-core-library](https://www.npmjs.com/package/@microsoft/sp-core-library), и глобально установленные пакеты npm, например [@microsoft/generator-sharepoint](https://www.npmjs.com/package/@microsoft/generator-sharepoint). 
 
 Рекомендуем время от времени обновлять пакеты SharePoint Framework, чтобы получать доступ к последним изменениям и исправлениям. 
 
