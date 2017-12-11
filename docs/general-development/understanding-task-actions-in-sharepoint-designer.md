@@ -3,11 +3,11 @@ title: "Общие сведения о действия с задачами в S
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 6fd69e94-ebe1-4d5d-98db-b2f3ce16f098
-ms.openlocfilehash: d552cfecf00972f0b21b513d6ff52d1f53316a41
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ea78cffb454521f88e01fede693a4659594b7e42
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="understanding-task-actions-in-sharepoint-designer-2013"></a>Общие сведения о действия с задачами в SharePoint Designer 2013
 Изучите использование действия задачи в SharePoint Designer 2013.
@@ -200,14 +200,14 @@ ms.lasthandoff: 10/13/2017
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 
--  [Новые возможности рабочего процесса в SharePoint](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)
+-  [Новые возможности рабочих процессов SharePoint](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)
     
   
--  [Приступая к работе с рабочего процесса SharePoint](http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx)
+-  [Начало работы с рабочими процессами SharePoint](http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx)
     
   
 -  [Разработка рабочих процессов в SharePoint Designer и Visio](workflow-development-in-sharepoint-designer-and-visio.md)

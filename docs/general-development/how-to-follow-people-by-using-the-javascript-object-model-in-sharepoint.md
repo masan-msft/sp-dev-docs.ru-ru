@@ -3,11 +3,11 @@ title: "Подписка на людей с помощью объектной м
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 2643c286-47c9-4a7a-9273-7474394477d6
-ms.openlocfilehash: 32f8d67f05048a15d3c1e2d0d1313f38945ff593
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 441c7e8085f28ddf58e627b8f8261d04a035c916
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="follow-people-by-using-the-javascript-object-model-in-sharepoint"></a>Подписка на людей с помощью объектной модели JavaScript в SharePoint
 
@@ -18,10 +18,8 @@ ms.lasthandoff: 11/15/2017
 
 В SharePoint следующие сотрудники возможности помогают пользователям всегда оставаться на связи друг с другом. Например когда кто-то подписан пользователь, публикации и действия этого лица отображаются в канал новостей пользователя. С помощью функции следующие сотрудники сосредоточиться на пользователей, которые важны пользователей, можно улучшить релевантности приложений или решений. В объектной модели JavaScript людей, которые вы выполните представлены объектами [SocialActor](http://msdn.microsoft.com/library/4e369fd5-b9b0-9804-957e-b3e39c559cd4%28Office.15%29.aspx) . Для выполнения основных задач следующие сотрудники в объектной модели JavaScript, используйте объект [SocialFollowingManager](http://msdn.microsoft.com/library/9ee1c0c0-b864-f0c3-f0cb-4dd4f1870dfa%28Office.15%29.aspx) . В этой статье описывается использование объектной модели JavaScript для работы с функциями следующие сотрудники.
   
-    
-    
-> **Примечание:**
-> [SocialFollowingManager](http://msdn.microsoft.com/library/9ee1c0c0-b864-f0c3-f0cb-4dd4f1870dfa%28Office.15%29.aspx) рекомендуется использовать для следующие людей и контент. Тем не менее объект [PeopleManager](http://msdn.microsoft.com/library/985fd2df-0e31-6ece-b846-ba2ccb156d00%28Office.15%29.aspx) содержит дополнительные функции для следующих пользователей, таких как метод [amIFollowedBy](http://msdn.microsoft.com/library/3641c469-0063-054d-355d-e56697cb08ae%28Office.15%29.aspx) и методы, которые получить следующие состояния другим пользователям.
+> [!NOTE]
+> [!Примечание]  [SocialFollowingManager](http://msdn.microsoft.com/library/9ee1c0c0-b864-f0c3-f0cb-4dd4f1870dfa%28Office.15%29.aspx) рекомендуется использовать для подписки на людей и контент. Тем не менее объект [PeopleManager](http://msdn.microsoft.com/library/985fd2df-0e31-6ece-b846-ba2ccb156d00%28Office.15%29.aspx) содержит дополнительные функции для следующих пользователей, таких как метод [amIFollowedBy](http://msdn.microsoft.com/library/3641c469-0063-054d-355d-e56697cb08ae%28Office.15%29.aspx) и методы, которые получить следующие состояния другим пользователям.
   
     
     
@@ -75,7 +73,8 @@ ms.lasthandoff: 11/15/2017
   
 7. В папке **Layouts** откройте контекстное меню для папки **FollowPeopleJSOM** и добавьте новую страницу приложения SharePoint с именемFollowPeople.aspx.
     
-   > **Примечание:** Примеры кода в этой статье определение пользовательского кода в разметке страницы, но не используйте класс фонового кода, который создает Visual Studio для страницы. 
+    > [!NOTE]
+    > [!Примечание] Примеры кода в этой статье определение пользовательского кода в разметке страницы, но не используйте класс фонового кода, Visual Studio создает для этой страницы. 
 
 8. Откройте контекстное меню для страницы FollowPeople.aspx и нажмите кнопку **Set as Startup Item**.
     
@@ -95,7 +94,8 @@ ms.lasthandoff: 11/15/2017
 </script>
 ```
 
-   > **Примечание:** В примере «Получить последователи и пользователей» не использует элемент управления button или управления дайджест формы, который является только необходимые для операций, которые обновления содержимого сервера. Дайджест формы создает дайджест сообщения, используемый для проверки подлинности. 
+    > [!NOTE]
+    > The "Get followers and followed people" example doesn't use the button control or the form digest control, which is only required for operations that update server content. A form digest generates a message digest used for security validation. 
 
 10. Замените комментарий между тегами **script** с пример кода из одного из следующих сценариев:
     
@@ -127,7 +127,8 @@ ms.lasthandoff: 11/15/2017
     
   
 
-> **Примечание:** Вставьте следующий код между тегами **сценария** , которые добавлены в процедуре [создать решение фермы и страницы приложения](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md#bk_CreateSolution) . Измените значение заполнитель для переменной **targetUser** до выполнения этого кода.
+> [!NOTE]
+>  [!Примечание] Вставьте следующий код в тегах **script**, которые добавлены в процедуре [создать решение фермы и страницы приложения](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md#bk_CreateSolution) . Измените значение заполнитель для переменной **targetUser** до выполнения этого кода.
   
     
     
@@ -220,9 +221,8 @@ function requestFailed(sender, args) {
   
 - Выполните итерацию по группам людей или get отображения имени, личного сайта URI пользователя, а также рисунок URI.
     
-  
-
-> **Примечание:** Вставьте следующий код между тегами **сценария** , которые добавлены в процедуре [создать решение фермы и страницы приложения](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md#bk_CreateSolution) .
+> [!NOTE]
+> [!Примечание] Вставьте следующий код в тегах **script**, которые добавлены в процедуре [создать решение фермы и страницы приложения](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md#bk_CreateSolution) .
   
     
     
@@ -291,7 +291,7 @@ function requestFailed(sender, args) {
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_AdditionalResources"> </a>
 
 

@@ -3,11 +3,11 @@ title: "Расширенные сценарии и дополнительные 
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 110bcc88-2b55-4d80-ab5c-dc3b9658e48d
-ms.openlocfilehash: 5ea2b20a7b94eb7fef7d414ae317c9b430d23e94
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 841135ef768c4d6c0d901b79cd869244aac38b49
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="advanced-scenarios-and-additional-samples"></a>Расширенные сценарии и дополнительные примеры
 
@@ -17,8 +17,9 @@ ms.lasthandoff: 10/13/2017
     
 
 
-> **Примечание:** API REST служб Excel применяется к SharePoint и SharePoint 2016 локально. Для образовательных учреждений Office 365, бизнеса и корпоративных учетных записей используйте Excel API-интерфейсы REST, входящих в состав [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
-> ) конечной точки.
+> [!NOTE]
+> API REST служб Excel применяется к SharePoint и SharePoint 2016 локально. Для учетных записей Office 365 для образования, Office 365 бизнес и Office 365 корпоративный используйте REST API Excel, входящие в состав конечной точки [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
+).
   
     
     

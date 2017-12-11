@@ -1,15 +1,15 @@
 ---
-title: "Настройки, администрирования и ресурсы в SharePoint"
+title: "Настройка, администрирование и ресурсы в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: e7d8c919-7aa6-466a-acb0-27366129061c
-ms.openlocfilehash: d2fa033b86a3036647248d50d393d9f6add503bf
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: a165add5f6c80df634a960e665f29813e2177bb9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="configuration-administration-and-resources-in-sharepoint"></a>Настройки, администрирования и ресурсы в SharePoint
+# <a name="configuration-administration-and-resources-in-sharepoint"></a>Настройка, администрирование и ресурсы в SharePoint
 
 Дополнительные сведения о планировании, администрировании, конфигурации, развертывании, миграции, обновлении и настройке утверждений, а также системы безопасности в целом см. в документации и рекомендациях для ИТ-специалистов и администраторов на веб-сайте  [Microsoft TechNet](http://technet.microsoft.com/en-us/sharepoint/ee263910.aspx).
   
@@ -69,7 +69,8 @@ ms.lasthandoff: 10/13/2017
     
   
 
-> **Примечание:** Сведения о Windows Identity Foundation (WIF) можно [Windows Identity Foundation SDK](http://www.microsoft.com/downloads/en/details.aspx?FamilyID=C148B2DF-C7AF-46BB-9162-2C9422208504&amp;amp;displaylang=en). 
+> [!NOTE]
+> [!Примечание] Сведения о Windows Identity Foundation (WIF) [Windows Identity Foundation SDK](http://www.microsoft.com/downloads/en/details.aspx?FamilyID=C148B2DF-C7AF-46BB-9162-2C9422208504&amp;amp;displaylang=en)см. 
   
     
     
@@ -109,7 +110,7 @@ ms.lasthandoff: 10/13/2017
 |Библиотека классов .NET Framework  <br/> | [Библиотеки классов .NET framework](http://msdn.microsoft.com/en-us/library/ms229335.aspx) <br/> |
    
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

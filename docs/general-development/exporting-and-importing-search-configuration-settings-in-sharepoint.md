@@ -3,15 +3,17 @@ title: "Экспорт и импорт параметров конфигурац
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d00679a3-ffa2-4281-ad8b-70fc2c4a14e2
-ms.openlocfilehash: 2b742f7676a7252a45609d92da05dd670f34b5d4
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 517e7e941ef0f4b45d77c77581ddf50a8b38311f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="exporting-and-importing-search-configuration-settings-in-sharepoint"></a>Экспорт и импорт параметров конфигурации поиска в SharePoint
 Получение примеров кода, которые показывают, как для экспорта и импорта параметров конфигурации настраиваемого поиска. Эти параметры включают все правила настраиваемых запросов, источники результатов, типы результатов, моделей ранжирования и параметры поиска для сайтов. SharePoint предоставляет эту функцию через пространство имен  [Microsoft.Office.Server.Search.Portability](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Portability.aspx) .Можно также экспорт параметров конфигурации настраиваемого поиска из приложения-службы поиска (SSA) и импорта параметров для сайтов и семейств веб-сайтов. 
-> **Примечание:** Не удается Импорт параметров конфигурации настраиваемого поиска SSA или экспорт параметров конфигурации поиска по умолчанию. 
+
+> [!NOTE]
+> [!Примечание] Не удается Импорт параметров конфигурации настраиваемого поиска SSA или экспорт параметров конфигурации поиска по умолчанию. 
   
     
     
@@ -61,7 +63,7 @@ private static void Import(string fileName)
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

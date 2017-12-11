@@ -5,11 +5,11 @@ keywords: "доступ к fco определений в SharePoint, бизне�
 f1_keywords: accessing fco definitions in SharePoint,bi in SharePoint using performancepoint services,business intelligence in SharePoint,business intelligence using performancepoint services in SharePoint,create scorecard transforms using performancepoint in SharePoint,custom filter control in SharePoint,custom performancepoint extensions,customize performancepoint in sharepoint,data source creation in SharePoint,dlls used for performancepoint development,extending performancepoint services for sharepoint,fcos in sharepoint performancepoint,filter creation in SharePoint,filters as fcos in pps performancepoint,getting started with performancepoint services,integration of performancepoint services in sharepoint,performancepoint assemblies used in development,performancepoint custom data sources,performancepoint custom filters,performancepoint custom reports,performancepoint custom scorecard transforms,performancepoint development scenarios,performancepoint services development,performancepoint services development scenarios,performancepoint services programming,performancepoint services sdk,pps custom dashboards in SharePoint,pps development,pps programming,pps sdk,report creation in SharePoint,report renderer in SharePoint,SharePoint service application PerformancePoint
 ms.prod: sharepoint
 ms.assetid: fb159708-d6b4-40c1-b5cc-4bb2071a7930
-ms.openlocfilehash: 50c3e818676191899d2f2c7ad4a492431572b8b8
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ce0a29e9adba8e1606088444a2189f2f62bc4301
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="performancepoint-services-in-sharepoint"></a>PerformancePoint Services в SharePoint
 Ознакомьтесь с поддерживаемым сценариям разработки и архитектура расширения для служб PerformancePoint Services в SharePoint.
@@ -81,8 +81,8 @@ PerformancePoint Services — это приложение службы SharePoin
 -  [Как: создание табличных данных редакторы исходного для служб PerformancePoint Services в SharePoint](how-to-create-tabular-data-source-editors-for-performancepoint-services-in-share.md)
     
   
-
-> **Примечание:** Конструктора панели мониторинга PerformancePoint позволяет создавать и удалять пользовательские объекты, поэтому редактора необходимо предоставить логику для создания или удаления объектов. 
+> [!NOTE]
+> [!Примечание] Конструктор панели мониторинга PerformancePoint позволяет создавать и удалять пользовательские объекты, поэтому редактора необходимо предоставить логику для создания или удаления объектов. 
   
     
     
@@ -112,10 +112,8 @@ PerformancePoint Services — это приложение службы SharePoin
     
 Дополнительные сведения о преобразований системы показателей можно [как: создать преобразования системы показателей для служб PerformancePoint Services в SharePoint](how-to-create-scorecard-transforms-for-performancepoint-services-in-sharepoint-2.md).
   
-    
-    
-
-> **Примечание:** Преобразование выполняется изменение значений данных в системе показателей, изменения распространение непосредственно на отчетов стратегических карт, использующих систему показателей в качестве источника данных. Кроме того изменения в системах показателей может повлиять на отчеты о ключевом индикаторе Производительности. 
+> [!NOTE]
+> [!Примечание] Если преобразование изменяет значения данных в системе показателей, изменения распространяются напрямую в отчеты стратегической карты, использующие эту систему в качестве источника данных. Кроме того, изменения в системе показателей могут повлиять на отчеты о ключевых показателях эффективности. 
   
     
     
@@ -164,7 +162,7 @@ PerformancePoint Services — это приложение службы SharePoin
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bkmk_AdditionalResources"> </a>
 
 

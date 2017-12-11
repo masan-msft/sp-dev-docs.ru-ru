@@ -3,11 +3,11 @@ title: "Службы приложений Office 2013 и SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: f962922c-2967-492f-9a89-5ad10a1a6dd3
-ms.openlocfilehash: d976ee840824abe4a12e7cacc28b1cf46cb11c94
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: e649ad7e40cada921cbee105d69668bf0633cc6f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="office-2013-and-sharepoint-application-services"></a>Службы приложений Office 2013 и SharePoint
 Сведения о Службы Access, Службы Excel, Служба машинного перевода, Службы PerformancePoint Services, Службы автоматизации PowerPoint, Службы Visio и Word Automation Services.
@@ -50,13 +50,14 @@ ms.lasthandoff: 10/13/2017
 |Word Automation Services  <br/> |||X  <br/> ||
    
 
-> **Примечание:** Не все службы и сценарии, представленные в этом разделе. Ссылки на документацию по разработке для других служб в разделе [Дополнительные ресурсы](#bkmk_Resources). 
+> [!NOTE]
+> [!Примечание] Не все службы и сценарии, представленные в этом разделе. Ссылки на документацию по разработке для других служб в разделе  [Дополнительные ресурсы](#bkmk_Resources). 
   
     
     
 
 
-## <a name="in-this-section"></a>В этом разделе:
+## <a name="in-this-section"></a>В этом разделе
 <a name="bkmk_inThisSection"> </a>
 
 Используйте ссылки в таблице 2 для получения дополнительных сведений о разработке с использованием служб Office и SharePoint, описанных в данном разделе: Службы Access, Службы Excel, Служба машинного перевода, Службы PerformancePoint Services, Службы автоматизации PowerPoint, Службы Visio и Word Automation Services. 
@@ -82,7 +83,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bkmk_Resources"> </a>
 
 

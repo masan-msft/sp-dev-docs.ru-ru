@@ -3,11 +3,11 @@ title: "Создание подключения к гибридных прило
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 311f036e-3442-4497-b35e-442b665462d3
-ms.openlocfilehash: 32d6e0471cf2bd5c29b2335edb309e40065e9119
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 19c48b7f0d8da449cd1c96561b8017fb4d7514b1
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-hybrid-connectivity-apps-for-sharepoint"></a>Создание подключения к гибридных приложений для SharePoint
 Сведения о процессе разработки и развертывания приложений для подключения к гибридные решения SharePoint.
@@ -83,7 +83,9 @@ ms.lasthandoff: 10/13/2017
 
 1. Создание веб-сайта IIS, выполнив по крайней мере Microsoft .NET Framework 4. Обеспечение безопасности сайта, обычную проверку подлинности.
     
-    > **Примечание:** Не требуется для SharePoint для установки на этом сервере. На самом деле для простоты и производительности, лучше Если SharePoint не установлен на сервере, на котором размещается служба данных WCF. 
+    > [!NOTE]
+    > [!Примечание] Не требуется для SharePoint для установки на этом сервере. На самом деле для простоты и производительности, лучше Если SharePoint не установлен на сервере, на котором размещается служба данных WCF. 
+
 2. Создайте новый проект в Visual Studio 2012 на основе шаблона **Пустой веб-приложения ASP.NET**.
     
   
@@ -211,7 +213,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

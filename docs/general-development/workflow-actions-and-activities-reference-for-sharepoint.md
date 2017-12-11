@@ -3,11 +3,11 @@ title: "Справочник по действий рабочих процесс
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 88e09f75-480f-4a68-87a6-b496350345cc
-ms.openlocfilehash: 2be2fd88314a3e961a586ee4b80c80010cc0976f
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 4f808bbc0e8d6f08d2779a1e3d6b2343f9a5dd01
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="workflow-actions-and-activities-reference-for-sharepoint"></a>Справочник по действий рабочих процессов для SharePoint
 Сведения о действия рабочего процесса, доступных для разработки рабочего процесса в SharePoint Designer 2013 и классы действий рабочего процесса, доступные для разработчиков рабочих процессов с помощью Visual Studio 2012.
@@ -57,7 +57,7 @@ ms.lasthandoff: 10/13/2017
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bkm_addlres"> </a>
 
 

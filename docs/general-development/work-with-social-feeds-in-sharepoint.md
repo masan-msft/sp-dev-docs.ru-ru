@@ -3,11 +3,11 @@ title: "Работа с социальными веб-каналами в ShareP
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 39f2163e-15cc-43bc-b131-041d5afdcd90
-ms.openlocfilehash: 20e31de9a616bdc48746ff7bba6949d404c7d02d
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: c10c57ef21db6156ae02cd50a247199499184213
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="work-with-social-feeds-in-sharepoint"></a>Работа с социальными веб-каналами в SharePoint
 Сведения о распространенных задач программирования по работе с социальными веб-каналов и микроблога публикации в SharePoint.
@@ -23,24 +23,24 @@ SharePoint предоставляет следующие интерфейсы AP
     
     
 
-- Клиентские объектные модели для управляемого кода:
+- Клиентские объектные модели для управляемого кода
     
-  - клиентская объектная модель .NET;
-    
-  
-  - клиентская объектная модель Silverlight;
+  - Клиентская объектная модель .NET
     
   
-  - мобильная клиентская объектная модель.
+  - Клиентская объектная модель Silverlight
     
   
-- Объектная модель JavaScript.
+  - Клиентская объектная модель для мобильных устройств.
+    
+  
+- Объектная модель JavaScript
     
   
 - Служба передачи репрезентативного состояния (REST).
     
   
-- Серверная объектная модель
+- Объектная модель сервера
     
   
 Рекомендуется при разработке для SharePoint при вы можете Используйте клиентские API-интерфейсы. API-интерфейсов клиента включают клиентской объектной модели, объектной модели JavaScript и службы REST. Дополнительные сведения об интерфейсах API в SharePoint и их использовании см. раздел [Выбор право API в SharePoint](choose-the-right-api-set-in-sharepoint.md).
@@ -49,10 +49,8 @@ SharePoint предоставляет следующие интерфейсы AP
     
 Each API includes a manager object that you use to perform core feed-related tasks. Table 1 shows the manager and other key objects (or REST resources) in the APIs and the class library (or endpoint URI) where you can find them.
   
-    
-    
-
-> **Примечание:** Silverlight и мобильных устройств клиентской объектной модели не указан явно в таблице 1 или в таблице 2, так как они обеспечивают основные функциональные возможности, аналогичные клиентской объектной модели .NET и использовать же цифровые подписи. Клиентская объектная модель Silverlight определяется в Microsoft.SharePoint.Client.UserProfiles.Silverlight.dll и мобильных устройств клиентской объектной модели определяется в Microsoft.SharePoint.Client.UserProfiles.Phone.dll. 
+> [!NOTE] 
+> [!Примечание] The Silverlight and mobile client object models are not explicitly mentioned in Table 1 or Table 2 because they provide the same core functionality as the .NET client object model and use the same signatures. The Silverlight client object model is defined in Microsoft.SharePoint.Client.UserProfiles.Silverlight.dll, and the mobile client object model is defined in Microsoft.SharePoint.Client.UserProfiles.Phone.dll. 
   
     
     
@@ -100,12 +98,12 @@ Table 2 shows common programming tasks for working with social feeds and the mem
 
 |**Задача**|**Участники**|
 |:-----|:-----|
-|Create an instance of the manager object in the context of the current user|CSOM:  [SocialFeedManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.aspx) <br/> JSOM:  [SocialFeedManager](http://msdn.microsoft.com/library/f7cf172f-970b-6b71-9eb4-b9a8bb7a0001%28Office.15%29.aspx) <br/> **Получение** REST:[`<siteUri>/_api/social.feed`](social-feed-rest-api-reference-for-sharepoint.md) <br/> SSOM:  [SPSocialFeedManager](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFeedManager.aspx)|
+|Create an instance of the manager object in the context of the current user|CSOM:  [SocialFeedManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.aspx) <br/> JSOM:  [SocialFeedManager](http://msdn.microsoft.com/library/f7cf172f-970b-6b71-9eb4-b9a8bb7a0001%28Office.15%29.aspx) <br/> REST: **GET** [`<siteUri>/_api/social.feed`](social-feed-rest-api-reference-for-sharepoint.md) <br/> SSOM:  [SPSocialFeedManager](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFeedManager.aspx)|
 |Create an instance of the manager object in the context of a particular user|CSOM: не реализовано  <br/> JSOM: не реализовано  <br/> REST: не реализовано  <br/> SSOM:  [SPSocialFeedManager](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFeedManager.aspx)|
-|Get the user for the current context|CSOM:  [Owner](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.Owner.aspx) <br/> JSOM:  [owner](http://msdn.microsoft.com/library/0307264e-d733-77f0-edae-f5468e58d0b7%28Office.15%29.aspx) <br/> **Получение** REST:[`<siteUri>/_api/social.feed/my`](social-feed-rest-api-reference-for-sharepoint.md#bk_my) <br/> SSOM:  [Owner](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFeedManager.Owner.aspx)|
+|Get the user for the current context|CSOM:  [Owner](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.Owner.aspx) <br/> JSOM:  [owner](http://msdn.microsoft.com/library/0307264e-d733-77f0-edae-f5468e58d0b7%28Office.15%29.aspx) <br/> REST: **GET** [`<siteUri>/_api/social.feed/my`](social-feed-rest-api-reference-for-sharepoint.md#bk_my) <br/> SSOM:  [Owner](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFeedManager.Owner.aspx)|
 |Get the feed for the current user  <br/> (specify the feed type)|CSOM:  [GetFeed](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetFeed.aspx) <br/> JSOM:  [getFeed](http://msdn.microsoft.com/library/cddaccd8-28da-6798-d8cb-4e9351efddf3%28Office.15%29.aspx) <br/> REST: **Получение** [`<siteUri>/_api/social.feed/my/Feed`](social-feed-rest-api-reference-for-sharepoint.md#bk_myFeed) (личные feed.md), [`<siteUri>/_api/social.feed/my/News`](social-feed-rest-api-reference-for-sharepoint.md#bk_myNews), [`<siteUri>/_api/social.feed/my/TimelineFeed`](social-feed-rest-api-reference-for-sharepoint.md#bk_myTimelineFeed), или[`<siteUri>/_api/social.feed/my/Likes`](social-feed-rest-api-reference-for-sharepoint.md#bk_myLikes) <br/> SSOM:  [GetFeed](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFeedManager.GetFeed.aspx)|
-|Get the personal feed for a particular user|CSOM:  [GetFeedFor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetFeedFor.aspx) <br/> JSOM:  [getFeedFor](http://msdn.microsoft.com/library/074ed255-9393-448d-1f7e-720fdeb05f48%28Office.15%29.aspx) <br/> **Получение** REST:[`<siteUri>/_api/social.feed/actor(item='domain\\user')/Feed`](social-feed-rest-api-reference-for-sharepoint.md#bk_actorFeed) <br/> SSOM:  [GetFeedFor](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFeedManager.GetFeedFor.aspx)|
-|Get the site feed for a team site  <br/> (specify the URL of the site feed as the actor (example: http://<siteCollection>/<teamSite>/newsfeed.aspx))|CSOM:  [GetFeedFor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetFeedFor.aspx) <br/> JSOM:  [getFeedFor](http://msdn.microsoft.com/library/074ed255-9393-448d-1f7e-720fdeb05f48%28Office.15%29.aspx) <br/> **Получение** REST:[`<siteUri>/_api/social.feed/actor(item=@v)/Feed?@v='http://<siteCollection>/<teamSite>/newsfeed.aspx'`](social-feed-rest-api-reference-for-sharepoint.md#bk_actorFeed) <br/> SSOM:  [GetFeedFor](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFeedManager.GetFeedFor.aspx)|
+|Get the personal feed for a particular user|CSOM:  [GetFeedFor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetFeedFor.aspx) <br/> JSOM:  [getFeedFor](http://msdn.microsoft.com/library/074ed255-9393-448d-1f7e-720fdeb05f48%28Office.15%29.aspx) <br/> REST: **GET** [`<siteUri>/_api/social.feed/actor(item='domain\\user')/Feed`](social-feed-rest-api-reference-for-sharepoint.md#bk_actorFeed) <br/> SSOM:  [GetFeedFor](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFeedManager.GetFeedFor.aspx)|
+|Get the site feed for a team site  <br/> (specify the URL of the site feed as the actor (example: http://<siteCollection>/<teamSite>/newsfeed.aspx))|CSOM:  [GetFeedFor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetFeedFor.aspx) <br/> JSOM:  [getFeedFor](http://msdn.microsoft.com/library/074ed255-9393-448d-1f7e-720fdeb05f48%28Office.15%29.aspx) <br/> REST: **GET** [`<siteUri>/_api/social.feed/actor(item=@v)/Feed?@v='http://<siteCollection>/<teamSite>/newsfeed.aspx'`](social-feed-rest-api-reference-for-sharepoint.md#bk_actorFeed) <br/> SSOM:  [GetFeedFor](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFeedManager.GetFeedFor.aspx)|
 |Publish a root post to the current user's feed  <br/> (specify **null** for the target)|CSOM:  [CreatePost](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.CreatePost.aspx) <br/> JSOM:  [createPost](http://msdn.microsoft.com/library/e9ad06a1-831d-8ed0-c76e-8b049f14216f%28Office.15%29.aspx) <br/> REST: **POST** [`<siteUri>/_api/social.feed/my/Feed/Post`](social-feed-rest-api-reference-for-sharepoint.md#bk_myFeedPost) и передайте параметр _restCreationData_ в тексте запроса <br/> SSOM:  [CreatePost](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFeedManager.CreatePost.aspx)|
 |Publish a post to a site feed  <br/> (specify the URL of the site feed as the target (example: http://<siteCollection>/teamSite>/newsfeed.aspx))|CSOM:  [CreatePost](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.CreatePost.aspx) <br/> JSOM:  [createPost](http://msdn.microsoft.com/library/e9ad06a1-831d-8ed0-c76e-8b049f14216f%28Office.15%29.aspx) <br/> REST: **POST** [`<siteUri>/_api/social.feed/actor(item=@av)/feed/post/?@av='<teamSiteUri>/newsfeed.aspx'`](social-feed-rest-api-reference-for-sharepoint.md#bk_actorFeedPost) и передайте параметр _restCreationData_ в тексте запроса (указать **значение null** для параметра _ID_ ) <br/> SSOM:  [CreatePost](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFeedManager.CreatePost.aspx)|
 |Publish a reply to a post  <br/> (specify the ID of the target thread)|CSOM:  [CreatePost](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.CreatePost.aspx) <br/> JSOM:  [createPost](http://msdn.microsoft.com/library/e9ad06a1-831d-8ed0-c76e-8b049f14216f%28Office.15%29.aspx) <br/> REST: **POST** [`<siteUri>/_api/social.feed/Post/Reply`](social-feed-rest-api-reference-for-sharepoint.md#bk_postReply) и передайте параметр _restCreationData_ в тексте запроса <br/> SSOM:  [CreatePost](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFeedManager.CreatePost.aspx)|
@@ -113,12 +111,12 @@ Table 2 shows common programming tasks for working with social feeds and the mem
 |Get a thread (a root post and all its replies) from the user's feed|CSOM:  [GetFullThread](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetFullThread.aspx) <br/> JSOM:  [getFullThread](http://msdn.microsoft.com/library/6bb384f3-9474-581f-e18d-e8c4f44c3cdf%28Office.15%29.aspx) <br/> REST: **POST** [`<siteUri>/_api/social.feed/Post`](social-feed-rest-api-reference-for-sharepoint.md#bk_post) и передайте параметр _ID_ в теле запроса <br/> SSOM:  [GetFullThread](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFeedManager.GetFullThread.aspx)|
 |Have the user like (unlike) a post or reply|CSOM:  [LikePost](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.LikePost.aspx) ( [UnlikePost](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.UnlikePost.aspx) ) <br/> JSOM:  [likePost](http://msdn.microsoft.com/library/f401a584-1712-50af-ee08-2999a16388d6%28Office.15%29.aspx) ( [unlikePost](http://msdn.microsoft.com/library/c778bd7d-91e5-15dc-eeb8-b571957e8338%28Office.15%29.aspx))  <br/> REST: **POST** [`<siteUri>/_api/social.feed/Post/Like`](social-feed-rest-api-reference-for-sharepoint.md#bk_postLike) ( [`<siteUri>/_api/social.feed/Post/Unlike`](social-feed-rest-api-reference-for-sharepoint.md#bk_postUnlike)) и передайте параметр _ID_ в теле запроса <br/> SSOM:  [LikePost](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFeedManager.LikePost.aspx) ( [UnlikePost](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFeedManager.UnlikePost.aspx) )|
 |Get all likers for a post|CSOM:  [GetAllLikers](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetAllLikers.aspx) <br/> JSOM:  [getAllLikers](http://msdn.microsoft.com/library/76286fdc-002f-2b13-dc26-53097eb2e3a2%28Office.15%29.aspx) <br/> REST: **POST** [`<siteUri>/_api/social.feed/Post/Likers`](social-feed-rest-api-reference-for-sharepoint.md#bk_postLikers) и передайте параметр _ID_ в теле запроса <br/> SSOM:  [GetAllLikers](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFeedManager.GetAllLikers.aspx)|
-|Get the posts that mention a user|CSOM:  [GetMentions](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetMentions.aspx) <br/> JSOM:  [getMentions](http://msdn.microsoft.com/library/78f064c3-5b96-373e-e7f0-8603aedc5ded%28Office.15%29.aspx) <br/> **Получение** REST:[`<siteUri>/_api/social.feed/my/MentionFeed`](social-feed-rest-api-reference-for-sharepoint.md#bk_myMentionFeed) <br/> SSOM:  [GetMentions](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFeedManager.GetMentions.aspx)|
-|Get the number of unread mentions for the current user|CSOM:  [GetUnreadMentionCount](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetUnreadMentionCount.aspx) <br/> JSOM:  [getUnreadMentionCount](http://msdn.microsoft.com/library/18dde16a-f78f-f65e-0644-4eb737b1ae00%28Office.15%29.aspx) <br/> **Получение** REST:[`<siteUri>/_api/social.feed/my/UnreadMentionCount`](social-feed-rest-api-reference-for-sharepoint.md#bk_myUnreadMentionCount) <br/> SSOM:  [GetUnreadMentionCount](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFeedManager.GetUnreadMentionCount.aspx)|
+|Get the posts that mention a user|CSOM:  [GetMentions](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetMentions.aspx) <br/> JSOM:  [getMentions](http://msdn.microsoft.com/library/78f064c3-5b96-373e-e7f0-8603aedc5ded%28Office.15%29.aspx) <br/> REST: **GET** [`<siteUri>/_api/social.feed/my/MentionFeed`](social-feed-rest-api-reference-for-sharepoint.md#bk_myMentionFeed) <br/> SSOM:  [GetMentions](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFeedManager.GetMentions.aspx)|
+|Get the number of unread mentions for the current user|CSOM:  [GetUnreadMentionCount](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetUnreadMentionCount.aspx) <br/> JSOM:  [getUnreadMentionCount](http://msdn.microsoft.com/library/18dde16a-f78f-f65e-0644-4eb737b1ae00%28Office.15%29.aspx) <br/> REST: **GET** [`<siteUri>/_api/social.feed/my/UnreadMentionCount`](social-feed-rest-api-reference-for-sharepoint.md#bk_myUnreadMentionCount) <br/> SSOM:  [GetUnreadMentionCount](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFeedManager.GetUnreadMentionCount.aspx)|
 |Lock (unlock) a thread in the current user's feed|CSOM:  [LockThread](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.LockThread.aspx) ( [UnlockThread](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.UnlockThread.aspx) ) <br/> JSOM:  [lockThread](http://msdn.microsoft.com/library/cc696bb7-e7fd-7a57-5db5-736c3733589e%28Office.15%29.aspx) ( [unlockThread](http://msdn.microsoft.com/library/ee9288d6-ace0-1ec2-ea7c-0ee300b6e1ea%28Office.15%29.aspx))  <br/> REST: **POST** [`<siteUri>/_api/social.feed/Post/Lock`](social-feed-rest-api-reference-for-sharepoint.md#bk_postLock) ( [`<siteUri>/_api/social.feed/Post/Unlock`](social-feed-rest-api-reference-for-sharepoint.md#bk_postUnlock)) и передайте параметр _ID_ в теле запроса <br/> SSOM: [LockThread](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFeedManager.LockThread.aspx) (публикацию повторно [UnlockThread](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFeedManager.UnlockThread.aspx) )|
    
-
-> **Примечание:** _Домена\\пользователя_ значение заполнителя в примере REST должно быть заменено имя учетной записи реального пользователя. Как передать параметр REST в тексте запроса, см в [примерах](social-feed-rest-api-reference-for-sharepoint.md#bk_exampleRequests) социальные веб-канала активности Справочник по API-Интерфейс REST.
+> [!NOTE] 
+> _Домена\\пользователя_ значение заполнителя в примере REST должно быть заменено имя учетной записи реального пользователя. Как передать параметр REST в тексте запроса, см в [примерах](social-feed-rest-api-reference-for-sharepoint.md#bk_exampleRequests) социальные веб-канала активности Справочник по API-Интерфейс REST.
   
     
     
@@ -153,10 +151,8 @@ Feed types represent slices of feed data. When you retrieve a feed for the curre
   
 The server, client, and JavaScript object models provide the **GetFeed** method that you can use to retrieve any feed type for the current user and the **GetFeedFor** method that you can use to retrieve the **Personal** feed type (only) for a specified user. Both methods take a **SocialFeedOptions** object as a parameter, which you use to specify the time-based sort order, date range, and maximum number of threads to return.
   
-    
-    
-
-> **Примечание:** Служба REST предоставляет отдельные ресурсы для получения каждого веб-канала активности, как показано в таблице 2. 
+> [!NOTE] 
+> [!Примечание] The REST service provides separate resources to retrieve each feed type, as shown in Table 2. 
   
     
     
@@ -166,7 +162,7 @@ If a thread contains more than two replies, the server returns a digest of the t
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bkmk_AdditionalResources"> </a>
 
 
@@ -188,10 +184,10 @@ If a thread contains more than two replies, the server returns a digest of the t
 -  [Как: сведения для чтения и записи социальных канал с помощью службы REST в SharePoint](how-to-learn-to-read-and-write-to-the-social-feed-by-using-the-rest-service-in-s.md)
     
   
--  [Как: Включение упоминания, теги и ссылки на сайты и документы в публикации в SharePoint](how-to-include-mentions-tags-and-links-to-sites-and-documents-in-posts-in-sharep.md)
+-  [Как добавлять в записи упоминания, теги и ссылки на сайты и документы в SharePoint](how-to-include-mentions-tags-and-links-to-sites-and-documents-in-posts-in-sharep.md)
     
   
--  [Как: Внедрение изображения, видео и документы в публикации в SharePoint](how-to-embed-images-videos-and-documents-in-posts-in-sharepoint-server.md)
+-  [Как внедрять в записи изображения, видео и документы в SharePoint](how-to-embed-images-videos-and-documents-in-posts-in-sharepoint-server.md)
     
   
 -  [Справочник по потоки и потоки дайджест в веб-каналов социальных SharePoint](reference-threads-and-digest-threads-in-sharepoint-server-social-feeds.md)

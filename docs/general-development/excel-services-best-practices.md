@@ -5,11 +5,11 @@ keywords: guidelines
 f1_keywords: guidelines
 ms.prod: sharepoint
 ms.assetid: 56fa3913-c156-49da-bed0-a6a106fc129f
-ms.openlocfilehash: 0e425e366f3dd54e1d7eaff609e0854a6f82a9d7
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: f2c2e5205b464f0e62e485d2d56e6397a6b581d1
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="excel-services-best-practices"></a>Excel Services Best Practices
 
@@ -34,9 +34,8 @@ The following settings combination gives anonymous users access to any files in 
   
 - You have a UNC trusted location and the **Process account** is turned on.
     
-  
-
-> **Примечание:** **Учетная запись процесса** — это глобальный параметр служб Excel, влияет на все надежные расположения.
+> [!NOTE]
+> [!Примечание] The **Process account** is a global Службы Excel setting that affects all trusted locations.
   
     
     

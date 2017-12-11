@@ -1,15 +1,15 @@
 ---
-title: "Языковая поддержка для Windows Phone в SharePoint"
+title: "Поддержка языков для Windows Phone в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 2c396a91-0fc1-4e25-942b-fffad49bd2c6
-ms.openlocfilehash: 3cb2a1bfd23e9d533a53597437afec41d56d84c1
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: cf88870f273399d8dea044626f96766967fa071d
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="language-support-for-windows-phone-in-sharepoint"></a>Языковая поддержка для Windows Phone в SharePoint
+# <a name="language-support-for-windows-phone-in-sharepoint"></a>Поддержка языков для Windows Phone в SharePoint
 Сведения о языковой поддержке шаблонов Visual Studio, которые устанавливаются с SharePoint Software Development Kit (SDK) для Windows Phone для разработки мобильных приложений. Для разработки мобильных приложений для нескольких языках, необходимо глобализации и локализации приложения. Большая часть функциональных возможностей глобализации и локализации, необходимый для реализации уже встроен в .NET Framework. С помощью этой функции можно получить доступ к клиентам в многих других странах и регионах.
   
     
@@ -115,7 +115,7 @@ ms.lasthandoff: 10/13/2017
 |Шведский (Швеция)  <br/> |sv  <br/> |
    
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

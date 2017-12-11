@@ -1,15 +1,15 @@
 ---
-title: "Используйте вызов повышения качества контента веб-службы для SharePoint Server"
+title: "Использование вызова веб-службы обогащения контента для SharePoint Server"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d4e44498-9a3d-4f2f-b5ba-6ebef9971dcb
-ms.openlocfilehash: f0b9fc5e96448361dab885c14a8663b90770b7ee
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: a4cfbfeb185b40c1933171dad4326ed74728c950
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="use-the-content-enrichment-web-service-callout-for-sharepoint-server"></a>Используйте вызов повышения качества контента веб-службы для SharePoint Server
+# <a name="use-the-content-enrichment-web-service-callout-for-sharepoint-server"></a>Использование вызова веб-службы обогащения контента для SharePoint Server
 
 Узнайте, как сделать так, чтобы веб-служба обогащения контента в SharePoint изменяла управляемые свойства просканированных элементов перед их индексацией.
 
@@ -119,7 +119,8 @@ ms.lasthandoff: 11/15/2017
   
 2. Нажмите кнопку **Обзор** и найдите сборку **Microsoft.Office.Server.Search.ContentProcessingEnrichment** в папке установки SharePoint в разделе _Installation Path_\\Microsoft Office Servers\\15.0\\Search\\Applications\\External. 
     
-    > **Примечание:** Если на компьютере, используемом для разработки компьютере установлена служба SharePoint, скопируйте сборку на компьютере для разработки и ссылаться на нее из. 
+    > [!NOTE]
+    > [!Примечание] Если на компьютере, используемом для разработки компьютере установлена служба SharePoint, скопируйте сборку на компьютере для разработки и ссылаться на нее из. 
 
 ## <a name="create-a-content-enrichment-service"></a>Создание службы повышения качества контента
 <a name="SP15ContentEnrich_createservice"> </a>
@@ -334,7 +335,7 @@ Remove-SPEnterpriseSearchContentEnrichmentConfiguration -SearchApplication $ssa
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15ContentEnrich_addresources"> </a>
 
 

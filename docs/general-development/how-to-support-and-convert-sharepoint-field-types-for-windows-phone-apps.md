@@ -1,15 +1,15 @@
 ---
-title: "Поддержка и преобразования типов поля SharePoint для приложений Windows Phone"
+title: "Поддержка и преобразование типов полей SharePoint для приложений Windows Phone"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 301e6e58-5153-4ca9-a419-8ae0535ebbed
-ms.openlocfilehash: 22a2f1dccbaa825fa53bf85225de2018b5ecffda
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 7c2c179fc4e0c32ace022e5202947241a65a9e06
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="support-and-convert-sharepoint-field-types-for-windows-phone-apps"></a>Поддержка и преобразования типов поля SharePoint для приложений Windows Phone
+# <a name="support-and-convert-sharepoint-field-types-for-windows-phone-apps"></a>Поддержка и преобразование типов полей SharePoint для приложений Windows Phone
 
 Реализуйте логику преобразования данных для поддержки типов полей SharePoint в приложениях Windows Phone. В проектах, созданных на основе шаблона приложения списка SharePoint для Windows Phone данные множество типов поля SharePoint обрабатываются и координированное логикой преобразования по умолчанию для подходит для отображения и управление ими в пользовательском интерфейсе Silverlight Windows Phone, но разработчики также могут реализовать собственные пользовательские данные процедур обработки.
   
@@ -385,10 +385,8 @@ protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventA
     
 Предположим, что вы создаете приложения Windows Phone, на основе списка SharePoint с именем идентификаторы продукта, которая содержит поле с типом данных **Guid**. В этом в следующем примере кода предполагается, что список имеет продукта (или заголовок) поле (типа **Text**) и поле идентификатора (из типа **Guid**).
   
-    
-    
-
-> **Примечание:** Списки SharePoint с помощью полей **Guid** должен быть создан программным образом или из шаблона списка, включающего поля **Guid** .
+> [!NOTE]
+> [!Примечание] Списки SharePoint с полями **Guid** должен быть создан программным образом или из шаблона списка, включающего **Guid** полей.
   
     
     
@@ -602,7 +600,7 @@ private void Application_Launching(object sender, LaunchingEventArgs e)
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15Supportwinphone_addlresources"> </a>
 
 

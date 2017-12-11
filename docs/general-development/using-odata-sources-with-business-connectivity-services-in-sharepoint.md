@@ -3,11 +3,11 @@ title: "Использование источников OData со служба�
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 7a87e5bf-4428-4055-b113-7665a93e7326
-ms.openlocfilehash: bfa67d4b9d7f3db5306c5bbc3ec1c92b727c1459
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 40dcb00b9ab16c621aafd053691315ea9f4f99f7
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="using-odata-sources-with-business-connectivity-services-in-sharepoint"></a>Использование источников OData со службами Business Connectivity Services в SharePoint
 Узнайте, как приступить к созданию внешних типов контента на основе источников OData и использовать эти данные в SharePoint или Office 2013 компонентов.
@@ -102,7 +102,7 @@ OData  это протокол, который используется HTTP, 
     
     
 
-## <a name="in-this-section"></a>В этом разделе:
+## <a name="in-this-section"></a>В этой статье
 <a name="SP15GetstartedOdata_inthissect"> </a>
 
 
@@ -116,7 +116,7 @@ OData  это протокол, который используется HTTP, 
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15GetstartedOdata_addres"> </a>
 
 

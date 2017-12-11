@@ -3,11 +3,11 @@ title: "Проблемы проверки в Visio (платформа рабо�
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 416c8269-3c4e-40f4-bc20-a625f07a4dac
-ms.openlocfilehash: 170ff120dceb06e6854aaf63079f9f3027c244a3
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 4a700ee4a3061096db6e63f78fde2b0badac7f7c
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="validation-issues-in-visio-sharepoint-2010-workflow-platform"></a>Проблемы проверки в Visio (платформа рабочих процессов SharePoint 2010)
 Используйте эту ссылку для устранения проблемы при проверке при экспорте рабочего процесса SharePoint в Visio Professional 2013 SharePoint Designer 2013. В этой статье описываются проблемы, которые могут возникнуть при использовании платформы рабочего процесса SharePoint 2010 в SharePoint Designer 2013 при проверке.
@@ -656,7 +656,7 @@ Visio профессиональный 2013 может распознать не
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

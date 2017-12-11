@@ -3,11 +3,11 @@ title: "Сделать настраиваемые CSS-файлы тем в Share
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: b8c82c77-c836-47f9-a11e-6c9c656d436b
-ms.openlocfilehash: 6a2febe12c0420a75024937b3127504ca00592f6
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 65eba334096bb40701560e5850dcc3548cf89137
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="make-custom-css-files-themable-in-sharepoint"></a>Сделать настраиваемые CSS-файлы тем в SharePoint
 
@@ -187,10 +187,8 @@ ms.lasthandoff: 11/15/2017
 
 Размещение настраиваемого CSS-файлы в папку Themable в библиотеку стилей (не Themable папке в коллекции главных страниц). Обработчик тем распознает только CSS-файлы, сохраненные в папке Themable в библиотеке стилей. Для сайтов публикации автоматически создается папка Themable. В противном случае можно создать папку Themable в правильном месте (http:// _SiteCollectionName_Style Library / __языка/Themable /).
   
-    
-    
-
-> **Примечание:** Имя папки _языка_ должно быть в формате 4-значного _Яя сс_ для идентификации языка и региональных параметров, соответственно. Например, en-us или ar-sa. Для получения дополнительных сведений см [идентификаторы языков и значения идентификаторов OptionState в Office 2013](http://technet.microsoft.com/en-us/library/cc179219.aspx). 
+> [!NOTE]
+> [!Примечание] Имя папки  _language_ должно быть в формате 4-значного _ll-cc_ для идентификации языка и региональных параметров, соответственно. Например, en-us или ar-sa. Для получения дополнительных сведений см [идентификаторы языков и значения идентификаторов OptionState в Office 2013](http://technet.microsoft.com/en-us/library/cc179219.aspx). 
   
     
     
@@ -231,14 +229,14 @@ CSS-файлы должны вернули и опубликован. Если C
 </head>
 ```
 
-
-> **Примечание:** Маркер **%$SPUrl** не может использоваться в SharePoint Foundation 2013. Необходимо использовать URL-адрес, чтобы указать расположение CSS-файла.
+> [!NOTE]
+> [!Примечание] Маркер **%$SPUrl** не может использоваться для SharePoint Foundation 2013. Необходимо использовать URL-адрес, чтобы указать расположение CSS-файла.
   
     
     
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="addresources"> </a>
 
 

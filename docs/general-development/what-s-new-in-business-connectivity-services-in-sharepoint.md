@@ -3,11 +3,11 @@ title: "Новые возможности служб Business Connectivity Servi
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 3c96be6a-a8ff-43ad-8361-999293aff71f
-ms.openlocfilehash: f00cb948c43df75b7acc3609af6f48321ec2a608
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2b75381dc43be1fa882a23864bc88336f1b92acf
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="whats-new-in-business-connectivity-services-in-sharepoint"></a>Новые возможности служб Business Connectivity Services в SharePoint
 Узнайте о измененные и новые возможности в Business Connectivity Services (BCS) для SharePoint, включая расширенную поддержку REST, OData, внешние события и области приложения внешние типы контента.
@@ -36,7 +36,7 @@ BCS усовершенствованные и расширенные для Shar
 |Расширенная поддержка представлений состояния (REST) и клиентской объектной модели.  <br/> | [Начало работы с помощью клиентской объектной модели с внешними данными в SharePoint](get-started-using-the-client-object-model-with-external-data-in-sharepoint.md) <br/> |
    
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15whatsnewBCS_addresources"> </a>
 
 

@@ -3,11 +3,11 @@ title: "Публикация сайтов SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 46b5a79c-962f-4a07-8316-d5005eabd0e0
-ms.openlocfilehash: 499e42a703295db74702751f607e2b41fc7c04d5
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: c66a184baaded55a0e47301bfce63a74cedb48d7
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="publish-sharepoint-sites"></a>Публикация сайтов SharePoint
 
@@ -55,7 +55,7 @@ ms.lasthandoff: 10/13/2017
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

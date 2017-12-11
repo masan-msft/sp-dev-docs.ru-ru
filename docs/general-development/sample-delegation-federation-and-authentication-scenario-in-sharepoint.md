@@ -1,14 +1,14 @@
 ---
-title: "Примерный сценарий делегирования, федерации и проверки подлинности в SharePoint"
+title: "Пример сценария делегирования, федерации и проверки подлинности в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 6e1b643582a9ae4df479ffc0e4016ca3ec5446aa
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 43ed1eaec1f6e5ec9e29e032162b271d2830b41d
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="sample-delegation-federation-and-authentication-scenario-in-sharepoint"></a>Примерный сценарий делегирования, федерации и проверки подлинности в SharePoint
+# <a name="sample-delegation-federation-and-authentication-scenario-in-sharepoint"></a>Пример сценария делегирования, федерации и проверки подлинности в SharePoint
 В этой статье приведены примеры сценариев для делегирования удостоверений и федерации удостоверений.
 ## <a name="sample-scenarios"></a>Примеры сценариев
 <a name="SP15_SampleDelegation_SampleScenarios"> </a>
@@ -193,7 +193,7 @@ ms.lasthandoff: 10/13/2017
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15_SampleDelegation_AdditionalResources"> </a>
 
 

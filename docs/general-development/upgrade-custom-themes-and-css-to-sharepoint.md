@@ -3,11 +3,11 @@ title: "Обновление пользовательских тем и CSS в S
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 8d1a4e3a-ae6f-41a5-bd80-3398ba541207
-ms.openlocfilehash: 80f13488c0695ae8656d8f097e40f2f2fed934ee
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: d0e4096ec6f79eb75a9ff386e0f66a88c234d7ad
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="upgrade-custom-themes-and-css-to-sharepoint"></a>Обновление пользовательских тем и CSS в SharePoint
 Описание обновления проблемы, связанные с тем настроек, например настраиваемых CSS и настраиваемых главных страниц и как обновить настроек для работы в SharePoint.
@@ -20,10 +20,8 @@ ms.lasthandoff: 10/13/2017
     
 В этой статье описываются проблемы, которые могут возникнуть при попытке использовать пользовательских тем SharePoint 2010, SharePoint 2010 CSS и настраиваемых CSS с новой версии интерфейса темы. Здесь также объясняется изменения, которые необходимо внести в пользовательских тем SharePoint 2010, SharePoint 2010 CSS и настраиваемых CSS, если вы хотите использовать их на сайтах SharePoint.
   
-    
-    
-
-> **Примечание:** Темы SharePoint 2010 можно использовать для семейств веб-сайтов, на которых выполняется в режиме 2010. Дополнительные сведения о режимах семейств сайтов можно [Планирование обновлений семейств сайтов в SharePoint](http://technet.microsoft.com/en-us/library/ff191199.aspx) или [Планирование обновления для SharePoint](https://technet.microsoft.com/en-us/library/cc303429.aspx). 
+> [!NOTE] 
+> Темы SharePoint 2010 можно использовать для семейств веб-сайтов, на которых выполняется в режиме 2010. Дополнительные сведения о режимах семейств сайтов можно [Планирование обновлений семейств сайтов в SharePoint](http://technet.microsoft.com/en-us/library/ff191199.aspx) или [Планирование обновления для SharePoint](https://technet.microsoft.com/en-us/library/cc303429.aspx). 
   
     
     
@@ -54,7 +52,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
-Можно также использовать один из предустановленной темы SharePoint. Для получения дополнительных сведений см. раздел [Выбор темы для сайта публикации](http://office.microsoft.com/en-us/office365-sharepoint-online-enterprise-help/choose-a-theme-for-your-publishing-site-HA102891580.aspx?CTT=1) на сайте Office.com.
+Можно также использовать один из предустановленной темы SharePoint. Дополнительные сведения см. в статье [Выбор темы для сайта публикации](http://office.microsoft.com/en-us/office365-sharepoint-online-enterprise-help/choose-a-theme-for-your-publishing-site-HA102891580.aspx?CTT=1).
   
     
     
@@ -101,7 +99,7 @@ ms.lasthandoff: 10/13/2017
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="addresources"> </a>
 
 

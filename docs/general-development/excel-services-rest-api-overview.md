@@ -3,21 +3,18 @@ title: "Интерфейс API REST служб Excel"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 5872f311-e180-4578-ac80-2519c1081951
-ms.openlocfilehash: d6b5abba5dea4a47bd52b7615594afbdb5e59794
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 624336e751c28d7bacce26f88e6d9f7dc570c93c
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="excel-services-rest-api-overview"></a>Интерфейс API REST служб Excel
 
 API-интерфейс REST в Службы Excel появился в версии Microsoft SharePoint Server 2010. С помощью API-интерфейса REST можно обращаться к частям или элементам книги напрямую через URL-адрес.
   
-    
-    
-
-
-> **Примечание:** API REST служб Excel применяется к SharePoint и SharePoint 2016 локально. Для учетных записей для Office 365 Education, Business и Enterprise,, используйте интерфейсы API REST Excel, входят в состав [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel) конечной точки.
+> [!NOTE]
+> API REST служб Excel применяется к SharePoint и SharePoint 2016 локально. Для учетных записей для Office 365 Education, Business и Enterprise,, используйте интерфейсы API REST Excel, входят в состав [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel) конечной точки.
   
     
     
@@ -36,7 +33,9 @@ API-интерфейс REST в Службы Excel появился в верси
     
   
 Службы REST предназначены для работы с ресурсами. REST разделяет данные на ресурсы, каждому ресурсу присваивается URL-адрес, и стандартные операции реализуются для ресурсов, что обеспечивает выполнение таких операций, как создание, извлечение, обновление и удаление. 
-> **Примечание:** Дополнительные сведения о различиях между службы REST и настраиваемые веб-службы можно [настраиваемой службы или службы RESTful](http://msdn.microsoft.com/en-us/magazine/dd882522.aspx). 
+
+> [!NOTE]
+> [!Примечание] Дополнительные сведения о разнице между службами REST и настраиваемыми веб-службами см. в статье, посвященной  [настраиваемой службе или службе RESTful](http://msdn.microsoft.com/en-us/magazine/dd882522.aspx). 
   
     
     

@@ -3,11 +3,11 @@ title: "Обновление веб-шаблоны для SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 69048e4c-6d6d-4e4e-b74c-7c72ae444354
-ms.openlocfilehash: cb8e3849b9853d593ce8504814e92066bf08a540
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: efa803c32e4da5c54df61f0647c2685006512916
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="upgrade-web-templates-for-sharepoint"></a>Обновление веб-шаблоны для SharePoint
 Сведения об обновлении настраиваемые веб-шаблоны SharePoint 2010 для использования в SharePoint после самостоятельного обновления.
@@ -132,27 +132,15 @@ SharePoint значительно изменился базовых компон
    
 5. Сохраните изменения и развертывания обычным образом.
     
+> [!NOTE] 
+> [!Примечание] Может также потребоваться для активации этих компонентов в программе центра администрирования. 
   
-
-> **Примечание:** Может также потребоваться для активации этих компонентов в программе центра администрирования. 
-  
-    
-    
-
-
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
-
 -  [Обновление настроек сайта для SharePoint](upgrade-site-customizations-for-sharepoint.md)
-    
-  
--  [SharePoint 2010 и веб-шаблоны](http://blogs.msdn.com/b/vesku/archive/2010/10/14/sharepoint-2010-and-web-templates.aspx)
-    
-  
+-  [SharePoint 2010 и веб-шаблоны](http://blogs.msdn.com/b/vesku/archive/2010/10/14/sharepoint-2010-and-web-templates.aspx) 
 -  [Планирование обновления семейства веб-сайтов](https://technet.microsoft.com/en-us/library/ff191199.aspx)
-    
-  
 -  [Планирование обновлений семейств сайтов в SharePoint](http://technet.microsoft.com/en-us/library/ff191199.aspx)
     
   

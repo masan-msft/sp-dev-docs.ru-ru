@@ -3,11 +3,11 @@ title: "Подписка на людей с помощью клиентской 
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 0fdb7ca5-d408-4256-b52b-886c4bc3b5b8
-ms.openlocfilehash: 7bef2d0bdef87db1d0234acba60341ff22254df8
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: f910e2cd067ba4cb13d543bc651b779a9a601066
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="follow-people-by-using-the-net-client-object-model-in-sharepoint"></a>Подписка на людей с помощью клиентской объектной модели .NET в SharePoint
 
@@ -17,10 +17,8 @@ ms.lasthandoff: 11/15/2017
 
 В SharePoint при подписан пользователь людей, публикации и действий пользователей, а затем отображаются в канале новостей пользователя. С помощью функции следующие сотрудники сосредоточиться на пользователей, которые важны пользователей, можно улучшить релевантности приложений или решений. В клиентской объектной модели .NET людей, которые вы выполните представлены объектами [SocialActor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialActor.aspx) . Для выполнения основных задач следующие сотрудники в клиентской объектной модели .NET, используйте объект [SocialFollowingManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.aspx) . В этой статье описывается использование клиентской объектной модели .NET для работы с функциями следующие сотрудники.
   
-    
-    
-
-> **Примечание:** Внимание на [SocialFollowingManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.aspx) поскольку объединяет основные функциональные возможности для следующих пользователей и контента. Тем не менее объект [PeopleManager](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.PeopleManager.aspx) содержит дополнительные функции для следующих пользователей, таких как метод [AmIFollowedBy(String)](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.AmIFollowedBy.aspx) и методы, которые получить следующие состояния другим пользователям.
+> [!NOTE]
+> [!Примечание] Внимание на  [SocialFollowingManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.aspx) поскольку объединяет основные функциональные возможности для следующих пользователей и контента. Тем не менее объект [PeopleManager](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.PeopleManager.aspx) содержит дополнительные функции для следующих пользователей, таких как метод [AmIFollowedBy(String)](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.AmIFollowedBy.aspx) и методы, которые получить следующие состояния другим пользователям.
   
     
     
@@ -41,9 +39,8 @@ ms.lasthandoff: 11/15/2017
   
 - **Полный** доступ к приложению-службе профилей пользователей для пользователя, вошедшего в систему
     
-  
-
-> **Примечание:** При разработке не на компьютере, на котором работает SharePoint, загрузить [Клиентские компоненты SharePoint](http://www.microsoft.com/en-us/download/details.aspx?id=35585) , содержащий клиентскую сборку SharePoint.
+> [!NOTE]
+> При разработке не на компьютере, на котором работает SharePoint, загрузить [Клиентские компоненты SharePoint](http://www.microsoft.com/en-us/download/details.aspx?id=35585) , содержащий клиентскую сборку SharePoint.
   
     
     
@@ -104,10 +101,8 @@ ms.lasthandoff: 11/15/2017
   
 В этом примере код использует объект  [SocialFollowResult](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowResult.aspx) , который возвращается методом [Follow](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.Follow.aspx) , чтобы определить, нужно ли запустить или остановить после конечного пользователя.
   
-    
-    
-
-> **Примечание:** Изменение значений заполнитель для переменных **serverUrl** и **targetUser** , прежде чем запускать код.
+> [!NOTE]
+> [!Примечание] Изменение значений заполнитель для переменных **serverUrl** и **targetUser**, прежде чем запускать код.
   
     
     
@@ -221,9 +216,8 @@ namespace FollowPeopleCSOM
   
 - Выполните итерацию по группам людей и получить отображаемое имя каждого контакта, личные URI и рисунков URI.
     
-  
-
-> **Примечание:** Изменение значений заполнитель для переменных **serverUrl** и **targetUser** , прежде чем запускать код.
+> [!NOTE]
+> [!Примечание] Изменение значений заполнитель для переменных **serverUrl** и **targetUser**, прежде чем запускать код.
   
     
     
@@ -301,7 +295,7 @@ namespace FollowPeopleCSOM
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bkmk_AdditionalResources"> </a>
 
 

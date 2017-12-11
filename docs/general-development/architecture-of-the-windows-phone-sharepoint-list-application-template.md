@@ -3,11 +3,11 @@ title: "Архитектура шаблона приложения списка 
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 2c09bd02-bed0-4293-a4d4-1778692e246a
-ms.openlocfilehash: 0e2c348460bf4095b684e1e7f76ebe6e61974fd4
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: e9b6fb4ea3e5832b668f677578e0f549a8a00b65
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="architecture-of-the-windows-phone-sharepoint-list-application-template"></a>Архитектура шаблона приложения списка SharePoint для Windows Phone
 Основные сведения о шаблоне разработки проектах, созданных на основе шаблона приложения списка SharePoint для Windows Phone. Шаблон приложения списка SharePoint для Windows Phone, установленных с Windows Phone SharePoint Software Development Kit предназначен для создания на основе шаблона, отделяющий части проекта в различных компонентов приложения для Windows Phone. Шаблон не работать над созданием классы и файлы для установки шаблона, что позволяет разработчикам сосредоточиться на расширение создаются проекты на основе их определенным требованиям, бизнес-логику и данные.
@@ -140,7 +140,8 @@ ms.lasthandoff: 10/13/2017
     
 
     
-> **Примечание:** Объект **ListDataProvider** только загружает данные с сервера. Других операций, например, **Добавление**, **обновление**и **Удаление**, выполняются в ViewModel, за которым следует вызова обновления для обновления данных ViewModel с сервера. Такой подход позволяет сократить засорение кода. 
+> [!NOTE]
+> [!Примечание] Объект **ListDataProvider** только загружает данные с сервера. Другие операции, такие как **Add**, **Update**и **Delete**, выполняются в ViewModel, последующим вызовом обновления для обновления данных ViewModel с сервера. Такой подход позволяет сократить засорение кода. 
   
     
     
@@ -158,7 +159,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15Winphoneover_addlresources"> </a>
 
 

@@ -3,11 +3,11 @@ title: "Перемещение рабочего процесса SharePoint Desi
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: dbe6f019-b4f2-480f-a8e7-bcb8842ab924
-ms.openlocfilehash: 42d3743885eeea645e2f8a5a88b8646c68379d91
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: fed1dc9c7c69538f615d9f25f16d16140e24ad77
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="transfer-a-workflow-between-sharepoint-designer-2013-and-visio-professional-2013-sharepoint-2010-workflow-platform"></a>Перемещение рабочего процесса SharePoint Designer 2013 и Visio Professional 2013 (платформа рабочих процессов SharePoint 2010)
 Используйте SharePoint Designer для импорта рабочего процесса Visio или Экспорт рабочего процесса в Visio.
@@ -135,10 +135,8 @@ ms.lasthandoff: 10/13/2017
 
 После создания или изменения рабочего процесса в SharePoint Designer 2013 можно экспортировать рабочего процесса в приложении Visio, который можно открыть в Visio профессиональный 2013. Экспорт рабочего процесса в Visio после изменения в SharePoint Designer, также известной как «обратное преобразование»  обеспечивает более подробные совместную работу бизнес-пользователи и разработчики рабочих процессов. При итерации разработки рабочего процесса, таким образом, можно использовать Visio для определения бизнес-требований, а затем использовать обратное преобразование для координации усилий и Подтверждение изменений.
   
-    
-    
-
-> **Примечание:** Visio профессиональный 2013 не поддерживает действия. Сведения о действие, которое было добавлено в SharePoint Designer может утеряны при просмотре рабочего процесса в Visio и повторно импортированы в SharePoint Designer. 
+> [!NOTE] 
+> [!Примечание] Visio профессиональный 2013 не поддерживает действия. Сведения о действие, которое было добавлено в SharePoint Designer может утеряны при просмотре рабочего процесса в Visio и повторно импортированы в SharePoint Designer. 
   
     
     
@@ -158,7 +156,7 @@ ms.lasthandoff: 10/13/2017
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

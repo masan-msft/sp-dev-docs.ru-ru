@@ -3,21 +3,18 @@ title: "Классы действий рабочего процесса в Share
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 70d5ca8d-520d-40a9-b24e-52bb31bd6c22
-ms.openlocfilehash: edfc04ae1f46b9f786c35fdfcda0d39c11d8cbe3
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 8f8b57aca40efecf9a63f2213817c29e1e116837
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="workflow-activity-classes-in-sharepoint"></a>Классы действий рабочего процесса в SharePoint
 Обзор рабочего процесса SharePoint классы действий, доступных в SharePoint.
 Палитра классы действий был обновлен для SharePoint. В таблице 1 перечислены текущий каталог 49 доступных действий, сгруппированных по их категории соответствующих действий.
   
-    
-    
-
-
-> **Примечание:** В будущих выпусках действий, описанных в данной таблице будет предоставлять ссылки на документацию по Справочник по API для их соответствующих управляемых классов. 
+> [!NOTE] 
+> [!Примечание] В будущих выпусках действий, описанных в данной таблице будет предоставлять ссылки на документацию по Справочник по API для их соответствующих управляемых классов. 
   
     
     
@@ -83,7 +80,7 @@ ms.lasthandoff: 10/13/2017
 |WriteToHistory  <br/> |Служебная программа  <br/> |Число операций записи указанный комментарий в журнал.  <br/> |
    
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bkm_addlresource"> </a>
 
 

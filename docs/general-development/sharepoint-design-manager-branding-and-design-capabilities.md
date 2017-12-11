@@ -3,11 +3,11 @@ title: "Фирменная символика и конструкция возм
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 2f81acbb-1263-4f9d-8865-36eb7a3f907b
-ms.openlocfilehash: 8394c73339c0a5bc9fc9b33bb7ed79eef5cc4fb1
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 9d7aa55efd42b0a8c1795669616661d96f503e08
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-design-manager-branding-and-design-capabilities"></a>Фирменная символика и конструкция возможности дизайнер SharePoint
 Ссылки на сведения об использовании дизайнер фирменная символика и конструкция возможности в SharePoint.
@@ -20,7 +20,7 @@ ms.lasthandoff: 10/13/2017
 -  [Пакеты разработки](sharepoint-design-manager-design-packages.md): Узнайте, как создавать и экспортировать визуальный Дизайн семейства веб-сайтов SharePoint в виде пакета.
     
   
--  [Каналы устройств](sharepoint-design-manager-device-channels.md): с помощью каналов устройств в SharePoint, можно отображать один сайт публикации несколькими способами, используя разные проекты, предназначенных для различных устройств. Узнайте, как создать канал устройства, изменение канала устройств, удаление канала устройств и изменять их порядок каналов устройств в SharePoint.
+-  [Каналы устройств](sharepoint-design-manager-device-channels.md): с помощью каналов устройств в SharePoint, можно отображать один сайт публикации несколькими способами, используя разные проекты, предназначенных для различных устройств. Узнайте, как создать, изменить и удалить канал устройств, а также изменить порядок этих каналов в SharePoint.
     
   
 -  [Шаблоны отображения](sharepoint-design-manager-display-templates.md): Узнайте о шаблонах отображения, включая их связи с веб-частей поиска, как структурированы шаблоны, как сопоставить свойства и использовать переменные и jQuery и создание шаблона для отображения настраиваемых в SharePoint.
@@ -36,7 +36,7 @@ ms.lasthandoff: 10/13/2017
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

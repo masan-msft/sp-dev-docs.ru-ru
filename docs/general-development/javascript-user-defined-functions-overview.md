@@ -3,11 +3,11 @@ title: "Общие сведения о пользовательских функ
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: fee38837-1985-4319-ba4e-b99c6ec66336
-ms.openlocfilehash: f154b2ba19fd37bb51ec4ada82ed5e6ce47b3006
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 8c4a4d867fc19d84b05b81497272e39d72f27118
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="javascript-user-defined-functions-overview"></a>Общие сведения о пользовательских функций JavaScript
 JavaScript пользовательские функции (UDF) являются новыми в службах Excel в SharePoint. В этой статье предоставляет подробный обзор пользовательских функций JavaScript, в том числе основные сведения о работе в службах Excel.
@@ -116,7 +116,7 @@ ewa.BrowserUdfs.add("StockQuote",
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

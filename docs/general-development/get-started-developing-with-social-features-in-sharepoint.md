@@ -3,11 +3,11 @@ title: "Приступая к разработке с использование
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 8852ce36-8309-45a7-a141-2e10ac17a123
-ms.openlocfilehash: 9566ab4fde6513c7a22e537bac66a6880ded981a
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: c8ecb5d92ed472137c5053dcb46e81b6d7e72f5f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="get-started-developing-with-social-features-in-sharepoint"></a>Приступая к разработке с использованием социальных функций в SharePoint
 Начало работы по программированию с социальными веб-каналами SharePoint и микроблога публикации, следуя людей и содержимое (документы, сайты и теги) и работа с профилями пользователей.
@@ -120,12 +120,12 @@ ms.lasthandoff: 10/13/2017
 | [Как: сведения для чтения и записи социальных канал с помощью службы REST в SharePoint](how-to-learn-to-read-and-write-to-the-social-feed-by-using-the-rest-service-in-s.md)|Познакомьтесь с помощью подробные инструкции по созданию приложения, которое считывает и записывает социальные веб-канал с помощью службы REST.|
 | [Как: Создание и удаление сообщений и извлечение социальных веб-канал с помощью клиентской объектной модели .NET в SharePoint](how-to-create-and-delete-posts-and-retrieve-the-social-feed-by-using-the-net-cli.md)|Узнайте, как создавать и удалять и публикации в микроблога и извлечение социальных веб-каналов с помощью клиентской объектной модели .NET.|
 | [Как: Создание и удаление сообщений и извлечение социальных веб-канал с помощью объектной модели JavaScript в SharePoint](how-to-create-and-delete-posts-and-retrieve-the-social-feed-by-using-the-javascr.md)|Узнайте, как создавать и удалять и публикации в микроблога и извлечение социальных веб-каналов с помощью объектной модели JavaScript.|
-| [Как: Включение упоминания, теги и ссылки на сайты и документы в публикации в SharePoint](how-to-include-mentions-tags-and-links-to-sites-and-documents-in-posts-in-sharep.md)|Узнайте, как добавлять объекты **SocialDataItem** микроблога публикации, которые отображаются в виде упоминания, теги и ссылок в социальных веб-каналов.|
-| [Как: Внедрение изображения, видео и документы в публикации в SharePoint](how-to-embed-images-videos-and-documents-in-posts-in-sharepoint-server.md)|Узнайте, как добавлять объекты **SocialAttachment** микроблога публикации, которые отображаются в виде внедренного изображения, видео и документами в социальных веб-каналов.|
-| [Как: подписка на людей с помощью клиентской объектной модели .NET в SharePoint](how-to-follow-people-by-using-the-net-client-object-model-in-sharepoint.md)|Узнайте, как работа с функциями следующих пользователей с помощью клиентской объектной модели .NET.|
-| [Как: подписка на людей с помощью объектной модели JavaScript в SharePoint](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md)|Узнайте, как работа с функциями следующих пользователей с помощью объектной модели JavaScript.|
-| [Как: выполните документов и сайтов с помощью клиентской объектной модели .NET в SharePoint](how-to-follow-documents-and-sites-by-using-the-net-client-object-model-in-sharep.md)|Узнайте, как работа с функциями следующие контента с помощью клиентской объектной модели .NET.|
-| [Как: выполните документы, сайты и теги с помощью службы REST в SharePoint](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md)|Узнайте, как работа с функциями следующие контента с помощью службы REST.|
+| [Как добавлять в записи упоминания, теги и ссылки на сайты и документы в SharePoint](how-to-include-mentions-tags-and-links-to-sites-and-documents-in-posts-in-sharep.md)|Узнайте, как добавлять объекты **SocialDataItem** микроблога публикации, которые отображаются в виде упоминания, теги и ссылок в социальных веб-каналов.|
+| [Как внедрять в записи изображения, видео и документы в SharePoint](how-to-embed-images-videos-and-documents-in-posts-in-sharepoint-server.md)|Узнайте, как добавлять объекты **SocialAttachment** микроблога публикации, которые отображаются в виде внедренного изображения, видео и документами в социальных веб-каналов.|
+| [Как подписываться на пользователей, используя клиентскую объектную модель .NET в SharePoint](how-to-follow-people-by-using-the-net-client-object-model-in-sharepoint.md)|Узнайте, как работа с функциями следующих пользователей с помощью клиентской объектной модели .NET.|
+| [Как подписываться на пользователей, используя объектную модель JavaScript в SharePoint](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md)|Узнайте, как работа с функциями следующих пользователей с помощью объектной модели JavaScript.|
+| [Как подписываться на документы и сайты, используя клиентскую объектную модель .NET в SharePoint](how-to-follow-documents-and-sites-by-using-the-net-client-object-model-in-sharep.md)|Узнайте, как работа с функциями следующие контента с помощью клиентской объектной модели .NET.|
+| [Как подписываться на документы, сайты и теги, используя службу REST в SharePoint](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md)|Узнайте, как работа с функциями следующие контента с помощью службы REST.|
 | [Как: получение свойств профиля пользователя с помощью клиентской объектной модели .NET в SharePoint](how-to-retrieve-user-profile-properties-by-using-the-net-client-object-model-in.md)|Узнайте, как получение свойств профиля пользователя с помощью клиентской объектной модели .NET.|
 | [Инструкции. Получение свойств профиля пользователя с помощью объектной модели JavaScript в SharePoint](how-to-retrieve-user-profile-properties-by-using-the-javascript-object-model-in.md)|Узнайте, как получение свойств профиля пользователя с помощью объектной модели JavaScript.|
 | [Инструкции. Работа с профилями пользователей и организации с использованием объектной модели сервера в SharePoint](how-to-work-with-user-profiles-and-organization-profiles-by-using-the-server-obj.md)|Узнайте, как создание, получение и управление свойства и профили пользователей с помощью объектной модели сервера.|
@@ -145,14 +145,14 @@ ms.lasthandoff: 10/13/2017
 |**Имя API**|**Источник и путь**|
 |:-----|:-----|
 | [Клиентская объектная модель .NET](http://msdn.microsoft.com/library/9cc3f70c-78ac-4d2d-b46e-77522ee5d937%28Office.15%29.aspx)|Библиотеке Microsoft.SharePoint.Client.UserProfiles.dll<br/>в папке % ProgramFiles %\\общие файлы\\Microsoft Shared\\веб-серверных расширений\\15\\ISAPI|
-|клиентская объектная модель Silverlight;|Microsoft.SharePoint.Client.UserProfiles.Silverlight.dll<br/>в папке % ProgramFiles %\\общие файлы\\Microsoft Shared\\веб-серверных расширений\\15\\ШАБЛОНА\\МАКЕТОВ\\ClientBin|
-|мобильная клиентская объектная модель.|Microsoft.SharePoint.Client.UserProfiles.Phone.dll<br/>в папке % ProgramFiles %\\общие файлы\\Microsoft Shared\\веб-серверных расширений\\15\\ШАБЛОНА\\МАКЕТОВ\\ClientBin|
+|Клиентская объектная модель Silverlight|Microsoft.SharePoint.Client.UserProfiles.Silverlight.dll<br/>в папке % ProgramFiles %\\общие файлы\\Microsoft Shared\\веб-серверных расширений\\15\\ШАБЛОНА\\МАКЕТОВ\\ClientBin|
+|Клиентская объектная модель для мобильных устройств.|Microsoft.SharePoint.Client.UserProfiles.Phone.dll<br/>в папке % ProgramFiles %\\общие файлы\\Microsoft Shared\\веб-серверных расширений\\15\\ШАБЛОНА\\МАКЕТОВ\\ClientBin|
 | [Объектная модель JavaScript](http://msdn.microsoft.com/library/95cb5427-8514-4e9a-8eee-7ed4b82ec01b%28Office.15%29.aspx)|SP. UserProfiles.js<br/>в папке % ProgramFiles %\\общие файлы\\Microsoft Shared\\веб-серверных расширений\\15\\ШАБЛОНА\\МАКЕТОВ|
 |Служба передачи репрезентативного состояния (REST).| [`http://<site url>/_api/social.feed`](social-feed-rest-api-reference-for-sharepoint.md)<br/>[`http://<site url>/_api/social.following`](following-people-and-content-rest-api-reference-for-sharepoint.md)<br/>[`http://<site url>/_api/SP.UserProfiles.PeopleManager`](http://msdn.microsoft.com/library/10757ed1-6e86-474f-89e0-6dec6aa66a2b%28Office.15%29.aspx.md#bk_PeopleManager)|
 | [Серверная объектная модель.](http://msdn.microsoft.com/library/87c5118c-ac0e-4bd9-a75f-7452a9eb0e41%28Office.15%29.aspx)|Microsoft.Office.Server.UserProfiles.dll<br/>в папке % ProgramFiles %\\общие файлы\\Microsoft Shared\\веб-серверных расширений\\15\\ISAPI|
    
-
-> **Примечание:** Не все функциональные возможности на сервере в сборке Microsoft.Office.Server.UserProfiles доступен из клиентских API-интерфейсов. Доступные API-интерфейсы см пространства имен [Microsoft.SharePoint.Client.Social](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.aspx) и пространства имен [Microsoft.SharePoint.Client.UserProfiles](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.aspx) .
+> [!NOTE]
+> [!Примечание] Не все функциональные возможности на сервере в сборке Microsoft.Office.Server.UserProfiles доступен из клиентских API-интерфейсов. Доступные API-интерфейсы см пространства имен  [Microsoft.SharePoint.Client.Social](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.aspx) и пространства имен [Microsoft.SharePoint.Client.UserProfiles](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.aspx) .
   
     
     
@@ -210,7 +210,7 @@ ms.lasthandoff: 10/13/2017
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_AddResources"> </a>
 
  **Основные статьи**
@@ -218,7 +218,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
--  [Функции социальных медиа и совместной работы в SharePoint](social-and-collaboration-features-in-sharepoint.md)
+-  [Социальные функции и функции совместной работы в SharePoint](social-and-collaboration-features-in-sharepoint.md)
     
   
 -  [Новые возможности социальных сетей и совместной работы в SharePoint для разработчиков](what-s-new-for-developers-in-social-and-collaboration-features-in-sharepoint-201.md)

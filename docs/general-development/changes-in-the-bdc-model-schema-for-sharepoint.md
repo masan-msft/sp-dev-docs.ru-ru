@@ -1,15 +1,15 @@
 ---
-title: "Изменения в схеме модели BDC для SharePoint"
+title: "Изменения в схеме модели подключения к бизнес-данным для SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 882ea867-9acb-4313-99c9-865a523b72fd
-ms.openlocfilehash: 95048677b9ef34f394c58d4a13c3edf5ab538754
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: c95208da93af349ae768df7069c425eb088b8b30
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="changes-in-the-bdc-model-schema-for-sharepoint"></a>Изменения в схеме модели BDC для SharePoint
+# <a name="changes-in-the-bdc-model-schema-for-sharepoint"></a>Изменения в схеме модели подключения к бизнес-данным для SharePoint
 Узнайте, что изменилось в SharePoint для схемы модели BDC.
 Количество изменений в схеме (BDCMetadata.xsd) для создания моделей BDC в SharePoint относительно невелико. Однако эти изменения оказывают значительное влияние на функцию Настройка Business Connectivity Services (BCS) и услуги.
   
@@ -66,7 +66,7 @@ ms.lasthandoff: 10/13/2017
 |Нет изменений  <br/> |||
    
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bkmk_AdditionalResources"> </a>
 
 

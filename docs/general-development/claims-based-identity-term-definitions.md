@@ -3,11 +3,11 @@ title: "Определения терминов идентификации на 
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 0f3decb5-dcd8-432f-9bb8-533f2d01bef7
-ms.openlocfilehash: 471bedc2b00ceb2cbc4cdbaa717b39e9d3b0f5b2
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ab9e96d73a694747f42ee21797e8db032e12b670
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="claims-based-identity-term-definitions"></a>Определения терминов идентификации на основе утверждений
 
@@ -53,7 +53,7 @@ ms.lasthandoff: 10/13/2017
 |WS-Trust  <br/> |Стандарт, использующего WS-Security для предоставления веб-служб с помощью методов для построения и проверки отношений доверия. Дополнительные сведения о WS-Trust можно  [TC OASIS Web Services безопасного Exchange (WS-SX)](http://www.oasis-open.org/committees/tc_home.php?wg_abbrev=ws-sx) на веб-сайте OASIS.<br/> |
    
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

@@ -2,11 +2,11 @@
 title: "Создание преобразований системы показателей для служб PerformancePoint Services в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: e19f99c6bceffe5551d2d2f3c2c5e918e78acbb4
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: cdcb54a17b5575524acfaa5400234401f150eaa1
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-scorecard-transforms-for-performancepoint-services-in-sharepoint"></a>Создание преобразований системы показателей для служб PerformancePoint Services в SharePoint
 
@@ -155,10 +155,8 @@ namespace Microsoft.PerformancePoint.SDK.Samples.ScorecardTransforms.PreQuery
 
 Следующий пример кода создает преобразование **PreQuery**, которое применяет к пустым ячейкам системы показателей серый цвет фона.
   
-    
-    
-
-> **Примечание:** Перед компиляцией этого примера кода необходимо настроить среду разработки, как описано в [Создание преобразований для систем показателей PerformancePoint Services](#BKMK_CreateClass). Кроме того необходимо добавить ссылку на сборку **System.Drawing** в проект.
+> [!NOTE]
+> [!Примечание] Перед компиляцией этого примера кода необходимо настроить среду разработки, как описано в разделе  [Создание преобразований для Службы PerformancePoint Services систем показателей](#BKMK_CreateClass). Кроме того необходимо добавить ссылку на сборку **System.Drawing** в проект.
   
     
     
@@ -229,7 +227,7 @@ namespace Microsoft.PerformancePoint.SDK.Samples
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addResources"> </a>
 
 

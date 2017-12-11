@@ -1,15 +1,15 @@
 ---
-title: "Создание решений SharePoint без написания кода"
+title: "Создание решений для SharePoint без кода"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 9511846c-d2c6-4f23-b5de-24be4749598a
-ms.openlocfilehash: e952c1f5fdf27ebb0f9ba4bd2eb8f7a1efb40d29
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 77f2f4def0fc59f2f16f8f2fed0135527f9a6a8e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="create-sharepoint-no-code-solutions"></a>Создание решений SharePoint без написания кода
+# <a name="create-sharepoint-no-code-solutions"></a>Создание решений для SharePoint без кода
 Узнайте о составные приложения SharePoint, без написания кода самостоятельной бизнес-решения, можно быстро создавать посредством сборки, подключение и настройки основных компонентов функциональные возможности, доступные в SharePoint и Office 2013.
 ## <a name="what-is-a-sharepoint-composite"></a>Что такое SharePoint Composite?
 <a name="bk_whatiscomposite"> </a>
@@ -39,7 +39,7 @@ SharePoint Composite — это решение без написания код�
 | [Сохраните, загрузите и отправка сайта SharePoint как шаблона](save-download-and-upload-a-sharepoint-site-as-a-template.md) <br/> |Описание способов создания шаблонов сайта без использования кода, поэтому вы легко можете развернуть решения без написания кода.  <br/> |
    
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

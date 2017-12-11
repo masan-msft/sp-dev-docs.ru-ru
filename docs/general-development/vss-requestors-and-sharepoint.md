@@ -1,15 +1,15 @@
 ---
-title: "Опросчики VSS и SharePoint"
+title: "Запрашивающие стороны VSS и SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 0b2e5a4e-40f0-4ccf-a21a-7274921f2169
-ms.openlocfilehash: c6608d90a0a4549557f813d184b63aede17ddadd
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: e33fbaaaed785786e6be0abca0d691748dc0798f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="vss-requestors-and-sharepoint"></a>Опросчики VSS и SharePoint
+# <a name="vss-requestors-and-sharepoint"></a>Запрашивающие стороны VSS и SharePoint
  **Сводка:** Сведения о работе системы запросившая сторона службы теневого копирования томов (VSS) системы с помощью Microsoft SharePoint.
 Служба теневого копирования ТОМОВ в Windows Server можно использовать для создания приложений, резервное копирование и восстановление Microsoft SharePoint Foundation. Служба теневого копирования ТОМОВ предоставляет инфраструктуру, которая позволяет программам управления хранилищами сторонних производителей, бизнес-приложениями и поставщиками оборудования для взаимодействия при создании и управлении теневые копии. Решения, основанные на этом инфраструктуры можно использовать теневые копии (или зеркальной копии) для резервного копирования и восстановления одного или нескольких баз данных SharePoint Foundation.
   
@@ -96,7 +96,7 @@ ms.lasthandoff: 10/13/2017
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

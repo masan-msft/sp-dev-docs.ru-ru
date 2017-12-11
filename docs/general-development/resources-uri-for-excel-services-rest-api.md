@@ -3,22 +3,19 @@ title: "Ресурсы URI для интерфейса API REST служб Excel
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 79f95305-ec9e-4842-b937-85f66ced98e4
-ms.openlocfilehash: 01b264b2e668e3779df8fcc08c70142241f7f8db
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: e1b77373e293051315900e9fb06cb287c46e509e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="resources-uri-for-excel-services-rest-api"></a>Ресурсы URI для интерфейса API REST служб Excel
 
 Непосредственно с помощью API-Интерфейс REST в Службы Excel можно связать сущности.
   
-    
-    
-
-
-> **Примечание:** API REST служб Excel применяется к SharePoint и SharePoint 2016 локально. Для образовательных учреждений Office 365, бизнеса и корпоративных учетных записей используйте Excel API-интерфейсы REST, входящих в состав [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
-> ) конечной точки.
+> [!NOTE]
+> API REST служб Excel применяется к SharePoint и SharePoint 2016 локально. Для учетных записей Office 365 для образования, Office 365 бизнес и Office 365 корпоративный используйте REST API Excel, входящие в состав конечной точки [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
+).
   
     
     
@@ -96,20 +93,9 @@ http://<ServerName>/_vti_bin/ExcelRest.aspx/Docs/Documents/sampleWorkbook.xlsx
 |/model/PivotTables('[Name]')  <br/> |HTML (по умолчанию)  <br/> |/model/PivotTables('MyPivotTable)?$format=html  <br/> |Фрагмент HTML-кода для запрошенного сводных таблиц.  <br/> |
 |/model/PivotTables('[Name]')  <br/> |Atom  <br/> |/model/PivotTables('MyPivotTable')?$format=atom  <br/> |Запись Atom, содержащий XML-представление данных в сводных таблицах.  <br/> |
    
-
-> **Примечание:** Службы Excel — ограничивает число диапазоны, которые можно включить в URL-адреса до 10. Если включить более 10 диапазоны в URL-адрес, вы получите сообщение о том, что служба недоступна. 
-  
-    
-    
-
+> [!NOTE]
+> [!Примечание] Службы Excel ограничивает количество диапазоны, которые можно включить в URL-адрес для 10. При наличии более 10 диапазонов в URL-адрес, вы получите сообщение о том, что служба недоступна. 
 
 ## <a name="see-also"></a>См. также
 
-
-#### <a name="concepts"></a>Основные понятия
-
-
-  
-    
-    
- [Структура базового URI и путь](basic-uri-structure-and-path.md)
+- [Структура базового URI и путь](basic-uri-structure-and-path.md)

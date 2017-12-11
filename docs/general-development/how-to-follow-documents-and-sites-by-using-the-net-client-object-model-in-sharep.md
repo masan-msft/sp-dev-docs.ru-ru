@@ -3,11 +3,11 @@ title: "Выполните указанные документы и веб-уз�
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 84366e01-4961-459d-8109-2f1d2d714353
-ms.openlocfilehash: 6e6690c40b37b65fe58100f7412e68ee827a970e
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: b499f866a482eae50a0721382c1ddd28f76d6750
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="follow-documents-and-sites-by-using-the-net-client-object-model-in-sharepoint"></a>Выполните указанные документы и веб-узлы с помощью клиентской объектной модели .NET в SharePoint
 
@@ -36,9 +36,8 @@ ms.lasthandoff: 11/15/2017
   
 -  [Microsoft.SharePoint.Client.Social.SocialActorType](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialActorType.aspx) и [Microsoft.SharePoint.Client.Social.SocialActorTypes](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialActorTypes.aspx) укажите типы контента в запросах со стороны клиента к серверу.
     
-  
-
-> **Примечание:** Также использовать эти API-интерфейсы для задачи следующие сотрудники, но **GetSuggestions** и **GetFollowers** методы, доступные из поддерживают только [SocialFollowingManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.aspx) , отслеживаемые пользователи не контента. Дополнительные сведения об использовании [SocialFollowingManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.aspx) можно [Подписка на контент в SharePoint](follow-content-in-sharepoint.md) и [Подписка на людей в SharePoint](follow-people-in-sharepoint.md). Примеры кода, показывающие, как следить за людьми, в разделе [как: подписка на людей с помощью клиентской объектной модели .NET в SharePoint](how-to-follow-people-by-using-the-net-client-object-model-in-sharepoint.md). 
+> [!NOTE]
+> Также использовать эти API-интерфейсы для задачи следующие сотрудники, но **GetSuggestions** и **GetFollowers** методы, доступные из поддерживают только [SocialFollowingManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.aspx) , отслеживаемые пользователи не контента. Дополнительные сведения об использовании [SocialFollowingManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.aspx) можно [Подписка на контент в SharePoint](follow-content-in-sharepoint.md) и [Подписка на людей в SharePoint](follow-people-in-sharepoint.md). Примеры кода, показывающие, как следить за людьми, в разделе [как: подписка на людей с помощью клиентской объектной модели .NET в SharePoint](how-to-follow-people-by-using-the-net-client-object-model-in-sharepoint.md). 
   
     
     
@@ -60,9 +59,8 @@ ms.lasthandoff: 11/15/2017
   
 - **Полный** доступ к приложению-службе профилей пользователей для пользователя, вошедшего в систему
     
-  
-
-> **Примечание:** Если вы работаете не на компьютере, на котором работает SharePoint, загрузить [Клиентских компонентов SharePoint](http://www.microsoft.com/en-us/download/details.aspx?id=35585) , содержащий клиентскую сборку SharePoint.
+> [!NOTE]
+> Если вы работаете не на компьютере, на котором работает SharePoint, загрузить [Клиентских компонентов SharePoint](http://www.microsoft.com/en-us/download/details.aspx?id=35585) , содержащий клиентскую сборку SharePoint.
   
     
     
@@ -121,10 +119,8 @@ ms.lasthandoff: 11/15/2017
   
 В этом примере код использует объект  [SocialFollowResult](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowResult.aspx) , который возвращается методом [Follow](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.Follow.aspx) для определения необходимости запустить или остановить после конечного элемента.
   
-    
-    
-
-> **Примечание:** Изменение значений заполнитель для переменных **serverUrl** и **contentUrl** , прежде чем запускать код. Чтобы использовать вместо документ на сайт, используйте переменные, которые закомментированы.
+> [!NOTE]
+> [!Примечание] Изменение значений заполнитель для переменных **serverUrl** и **contentUrl**, прежде чем запускать код. Чтобы использовать вместо документ на сайт, используйте переменные, которые закомментированы.
   
     
     
@@ -249,9 +245,8 @@ namespace FollowContentCSOM
   
 - Выполните итерацию по группы содержимого и получение каждого элемента имя контента URI и URI.
     
-  
-
-> **Примечание:** Измените значение заполнитель для переменных **serverUrl**, **docContentUrl**и **siteContentUrl** , прежде чем запускать код.
+> [!NOTE]
+> [!Примечание] Измените значение заполнитель для переменных **serverUrl**, **docContentUrl**и **siteContentUrl**, прежде чем запускать код.
   
     
     
@@ -343,7 +338,7 @@ namespace FollowContentCSOM
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bkmk_AddtionalResources"> </a>
 
 

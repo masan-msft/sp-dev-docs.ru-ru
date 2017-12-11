@@ -1,15 +1,15 @@
 ---
-title: "Используйте несколько списков SharePoint в приложении Windows Phone"
+title: "Использование нескольких списков SharePoint в приложении Windows Phone"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 5251d35a-d659-49b3-8e0d-dfd4a7faee6b
-ms.openlocfilehash: 08638a14c0cd602dfb4cb1288fbe089ccace16fc
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 675a42d7de04467d780aa170183ce3c9d309d94a
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="use-multiple-sharepoint-lists-in-a-windows-phone-app"></a>Используйте несколько списков SharePoint в приложении Windows Phone
+# <a name="use-multiple-sharepoint-lists-in-a-windows-phone-app"></a>Использование нескольких списков SharePoint в приложении Windows Phone
 Создайте приложения Windows Phone, использующие данные из нескольких списков SharePoint. Можно использовать несколько списков SharePoint в приложении несколькими способами. При создании приложения Windows Phone, на основе шаблона приложения списка SharePoint для Windows Phone, укажите единого целевого списка SharePoint, но архитектура результирующий проект расширяемой, чтобы учесть интеграции нескольких списков.
   
     
@@ -876,7 +876,7 @@ private void OnOrdersButtonClick(object sender, RoutedEventArgs e)
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15Usemultlists_addlresources"> </a>
 
 

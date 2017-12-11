@@ -3,11 +3,11 @@ title: "Получение предложений запроса, с помощ�
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: a64c5bec-64a8-4752-9c72-433d1c864aed
-ms.openlocfilehash: d3359be5b2c4f68ea75419babd9ceb8096fc3446
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 64f07696df6df14756303a53dd75f41de9ccbdbf
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="retrieving-query-suggestions-using-the-search-rest-service"></a>Получение предложений запроса, с помощью службы Search REST
 Узнайте, как использовать службы поиска REST из клиентов и мобильных приложений для извлечения предложений запроса из поиска в SharePoint.
@@ -51,8 +51,8 @@ URI для **GET** запросов к конечной точке службы 
 >  `http://server/_api/search/suggest(parameter=value&amp;parameter=value)`
     
   
-
-> **Примечание:** Службы поиска REST не поддерживает анонимные запросы к конечной точке **Предложить** .
+> [!NOTE]
+> [!Примечание] Службы поиска REST не поддерживает анонимные запросы к конечной точке **Suggest**.
   
     
     
@@ -231,7 +231,7 @@ http:// _server_/_api/search/suggest?querytext = "sharepoint" &amp; fprefixmatch
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

@@ -3,11 +3,11 @@ title: "Чтение и запись на социальные веб-канал
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 1da8d484-3666-42c3-8a8f-8b3ef93e96e9
-ms.openlocfilehash: 2fafda13f6d5c6e62f7519bd9896c91a87dcc5f3
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 51db8b71573045c030ce7b941344c1203fed2b27
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="read-and-write-to-the-social-feed-by-using-the-rest-service-in-sharepoint"></a>Чтение и запись на социальные веб-канал с помощью службы REST в SharePoint
 
@@ -18,10 +18,8 @@ ms.lasthandoff: 11/15/2017
 
 В этой статье предполагается, что вы создаете надстройку для SharePoint с помощью Napa на сайте разработчика Office 365. Если вы используете эту среду разработки, то необходимые условия выполняются.
   
-    
-    
-
-> **Примечание:** Перейдите к [Настройка среды разработки для SharePoint надстройки на Office 365](http://msdn.microsoft.com/library/b22ce52a-ae9e-4831-9b68-c9210af6dc54%28Office.15%29.aspx) и узнайте, как зарегистрироваться на сайте разработчика и начать работу с использованием Napa.
+> [!NOTE]
+> [!Примечание] В статье  [Настройка среды для разработки надстроек SharePoint в Office 365](http://msdn.microsoft.com/library/b22ce52a-ae9e-4831-9b68-c9210af6dc54%28Office.15%29.aspx) можно найти сведения о том, как зарегистрироваться на сайте разработчика и начать использовать Napa.
   
     
     
@@ -39,9 +37,8 @@ ms.lasthandoff: 11/15/2017
   
 - **Полный** доступ к приложению-службе профилей пользователей для пользователя, вошедшего в систему
     
-  
-
-> **Примечание:** [Начните создавать приложения для Office и SharePoint](http://msdn.microsoft.com/library/187f8c8c-1b15-471c-80b5-69a40e67deea.aspx)рекомендации о том, как настроить среду разработки, который соответствует требованиям, см. 
+> [!NOTE]
+> [!Примечание] Руководство по настройке среды разработки, соответствующей вашим потребностям, см. в статье  [Начало создания приложений для Office и SharePoint](http://msdn.microsoft.com/library/187f8c8c-1b15-471c-80b5-69a40e67deea.aspx). 
   
     
     
@@ -329,7 +326,7 @@ function feedRetrieved(data) {
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addResources"> </a>
 
 

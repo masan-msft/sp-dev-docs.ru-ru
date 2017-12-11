@@ -3,11 +3,11 @@ title: "Специальные возможности в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c9106d47-c523-49c1-b9f1-cdd7420abd5e
-ms.openlocfilehash: 775beb8e18c42621ad074daef6402c9696a1d37f
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 5c315cb4c40186f6dee0c7c1a380623ed902c018
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="accessibility-in-sharepoint"></a>Специальные возможности в SharePoint
 Сведения о функциях, продуктах и службах, обеспечивающих доступность SharePoint для людей с ограниченными возможностями и найдите ресурсы для разработчиков, которые помогут вам разработка и создание приложений и веб-сайты, которые поддерживают сценарии ключевые специальных возможностей.
@@ -100,7 +100,7 @@ SharePoint поддерживает функции специальных воз
 |Chrome  <br/> | [Техническая документация по специальным возможностям Chrome](http://go.microsoft.com/fwlink/p/?LinkId=275211) <br/> |
    
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

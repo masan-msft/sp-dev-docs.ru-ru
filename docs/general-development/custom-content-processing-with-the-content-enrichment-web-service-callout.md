@@ -3,11 +3,11 @@ title: "Нестандартная обработка контента с исп
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: bdda92c8-9c8d-416e-9a6b-4a9373686fa0
-ms.openlocfilehash: 621505bfb2ee7c406d55cad2c76061bdd4cb7114
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 7aa11f7002ab6c8440311d69a1869c303d6da617
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="custom-content-processing-with-the-content-enrichment-web-service-callout"></a>Нестандартная обработка контента с использованием выноски веб-службы "Обогащение контента"
 Узнайте о вызов повышения качества контента веб-службы в SharePoint, который позволяет разработчикам создавать внешние веб-службы для изменения управляемых свойств для обхода элементов во время обработки контента.
@@ -165,7 +165,7 @@ Get-SPEnterpriseSearchMetadataManagedProperty -SearchApplication $ssa  | ?{$_.Is
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

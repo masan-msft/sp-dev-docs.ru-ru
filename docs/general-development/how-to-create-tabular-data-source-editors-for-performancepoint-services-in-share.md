@@ -3,11 +3,11 @@ title: "Создание табличных данных редакторы ис
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 3136420a-f8a2-4677-8b69-1d5d9705d96f
-ms.openlocfilehash: 2ea178c0f757520bb65ac2d840022fcd2891b1fe
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 84aa10f950e93dc06e265cde072cb7c707018a70
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-tabular-data-source-editors-for-performancepoint-services-in-sharepoint"></a>Создание табличных данных редакторы исходного для служб PerformancePoint Services в SharePoint
 
@@ -76,7 +76,8 @@ ms.lasthandoff: 11/15/2017
   
 7. Объявите переменные для элементов управления, предоставляющие свойства, которые должны видеть или изменять пользователи. В примере редактора источника данных сначала объявляются переменные для серверных веб-элементов управления, определенные в компоненте пользовательского интерфейса, являющемся ASPX-страницей. В примере редактора также определяется элемент управления ''Кнопка'', позволяющий пользователям передать изменения. Затем редактор вызывает метод  [CreateChildControls()](https://msdn.microsoft.com/library/System.Web.UI.Control.CreateChildControls.aspx) , чтобы сделать элементы управления доступными на странице.
     
-    > **Примечание:** Редактор определяет логику программирования отдельно от пользовательского интерфейса. Инструкции по созданию компонентов пользовательского интерфейса редактора выходят за рамки данной документации. 
+    > [!NOTE]
+    > [!Примечание] В редакторе программная логика определяется отдельно от пользовательского интерфейса. Инструкции по созданию компонента пользовательского интерфейса не входят в данную документации. 
 
     Редактор источника данных пример выполняет шаги с 8 по 11 в методе **Page_Load**. **Page_Load** также используется для инициализации и проверка переменными и элементами управления, заполнения элементов управления и сохранить сведения о состоянии для пользовательских данных источника и вспомогательные объекты.
     
@@ -119,7 +120,8 @@ DataSourceRepositoryHelper = new DataSourceRepositoryHelper();
   
   - Чтобы создать пользовательский источник данных, используйте конструктор **DataSource()**, а затем определите свойства [Name](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Name.aspx) и [SubTypeId](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.DataSource.SubTypeId.aspx) источника данных. [SubTypeId](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.DataSource.SubTypeId.aspx)  уникальный идентификатор для источника данных, и он должен соответствовать атрибуту **subType**, указанная для источника пользовательских данных в файле web.config Службы PerformancePoint Services.
     
-    > **Примечание:** Редактор источника данных образца не содержит логику для создания объекта источника данных. Примеры создания пользовательских объектов, в разделе [как: создать отчет редакторы для служб PerformancePoint Services в SharePoint](how-to-create-report-editors-for-performancepoint-services-in-sharepoint.md) или [как: создать фильтр редакторы для служб PerformancePoint Services в SharePoint](how-to-create-filter-editors-for-performancepoint-services-in-sharepoint.md). 
+    > [!NOTE]
+    > Редактор источника данных образца не содержит логику для создания объекта источника данных. Примеры создания пользовательских объектов, в разделе [как: создать отчет редакторы для служб PerformancePoint Services в SharePoint](how-to-create-report-editors-for-performancepoint-services-in-sharepoint.md) или [как: создать фильтр редакторы для служб PerformancePoint Services в SharePoint](how-to-create-filter-editors-for-performancepoint-services-in-sharepoint.md). 
 
 ```cs
   if (ClickOnceLaunchValues.OpenItem.Equals(action, StringComparison.OrdinalIgnoreCase))
@@ -140,15 +142,17 @@ else
 ```
 
 
-    > **Note:**
-      > By default, users can create custom objects from PerformancePoint Dashboard Designer only. To enable users to create a custom object outside of Dashboard Designer, you must add a menu item that sends a  _CreateItem_ request to your editor from the content type in the repository. For more information, see [Editors for Custom PerformancePoint Services Objects](http://msdn.microsoft.com/library/7c5924f1-91f3-436a-9d94-2e0dc454c8cc%28Office.15%29.aspx). 
+    > [!NOTE]
+    > By default, users can create custom objects from PerformancePoint Dashboard Designer only. To enable users to create a custom object outside of Dashboard Designer, you must add a menu item that sends a  _CreateItem_ request to your editor from the content type in the repository. For more information, see [Editors for Custom PerformancePoint Services Objects](http://msdn.microsoft.com/library/7c5924f1-91f3-436a-9d94-2e0dc454c8cc%28Office.15%29.aspx). 
 
     The sample data source editor performs steps 12 and 13 in the **buttonOK_Click** and **CreateCacheFile** methods. **buttonOK_Click** is also used to call the **AreAllInputsValid** method to validate the contents of the controls and to retrieve state information for the custom data source and the helper object.
     
   
 12. Обновите источник данных, внеся определенные пользователями изменения. В этом примере редактора источника данных вызывается метод **DataSourceRepositoryHelper.Update** для обновления свойств [Name](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Name.aspx) , [Description](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Description.aspx) и [CustomData](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.DataSource.CustomData.aspx) объекта источника данных в репозитории. Свойство [CustomData](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.DataSource.CustomData.aspx) можно использовать для хранения сериализованного объекта или строки. В примере редактора используются пользовательские символы акций, расположение файла кэша, в котором хранятся значения котировок акций, и адрес прокси-сервера.
     
-    > **Примечание:** Пользователи могут изменить [имя](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Name.aspx) , [Описание](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Description.aspx) и свойства [Owner](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Owner.aspx) ( **Ответственное лицо**) настраиваемого объекта и удалять настраиваемые объекты непосредственно из конструктора панели мониторинга и репозитория служб PerformancePoint Services. 
+    > [!NOTE]
+    > [!Примечание] Пользователи могут изменять  [Name](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Name.aspx) , [Description](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Description.aspx) и свойства [Owner](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Owner.aspx) ( **Ответственное лицо** ) пользовательского объекта и удалять настраиваемые объекты непосредственно из репозитория Службы PerformancePoint Services и Конструктор панели мониторинга. 
+
 13. Вызовите поставщик источника данных, чтобы определить сопоставления столбцов (если они еще не определены).
     
   
@@ -437,7 +441,7 @@ namespace Microsoft.PerformancePoint.SDK.Samples.SampleDataSource
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_resources"> </a>
 
 

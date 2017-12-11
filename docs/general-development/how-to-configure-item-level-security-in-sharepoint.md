@@ -3,11 +3,11 @@ title: "Настройка безопасности на уровне элеме
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: ffd730f2-e7b7-4707-b677-d073da7df7d7
-ms.openlocfilehash: ce2ece9f7f4f35fa3235d26ab384dc3783b333c7
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: a04fac042531932e2fefad7c820aee16f3d3386e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="configure-item-level-security-in-sharepoint"></a>Настройка безопасности на уровне элементов в SharePoint
 
@@ -79,8 +79,8 @@ DefaultDisplayName="ReadSecurity">
 </Method>
 ```
 
-
-> **Примечание:** Если вы вернетесь дескриптор безопасности в поле внешний тип контента, нельзя использовать кэширования клиентов. Это так, как кэшированные элементы ограничены определенного размера, можно легко превысить какие списки управления доступом (ACL). Таким образом инфраструктура соединителей поиска игнорирует запросы к элементам кэша, если они содержат поля дескриптор безопасности. 
+> [!NOTE]
+> командной ограничены определенного размера, можно легко превысить какие списки управления доступом (ACL). Таким образом инфраструктура соединителей поиска игнорирует запросы к элементам кэша, если они содержат поля дескриптор безопасности. 
   
     
     
@@ -191,7 +191,7 @@ unchecked((int)0xffffffffL), InheritanceFlags.None, PropagationFlags.None);
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15Itemlevelsec_addlresources"> </a>
 
 

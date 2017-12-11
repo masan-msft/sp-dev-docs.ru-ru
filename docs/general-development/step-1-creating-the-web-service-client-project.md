@@ -3,11 +3,11 @@ title: "Шаг 1. Создание проекта клиента веб-служ
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 1f0fc9fc-0db4-47bb-8204-a06777b84e76
-ms.openlocfilehash: 4224c42b2ffbb1cf037e59fac927811510441970
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: f84022cc8462bb0f98e8e032ac90695221d4407e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="step-1-creating-the-web-service-client-project"></a>Шаг 1. Создание проекта клиента веб-службы
 
@@ -21,10 +21,8 @@ ms.lasthandoff: 10/13/2017
 
 В описываемом проекте используется среда Microsoft Visual Studio 2003.
   
-    
-    
-
-> **Примечание:** Если вы используете Microsoft Visual Studio 2005 или Microsoft Visual Studio 2008, процесс создания нового проекта отличается в зависимости от того, какие параметры использовать в среде разработки Visual Studio (IDE).
+> [!NOTE]
+> [!Примечание]  Если используется среда Microsoft Visual Studio 2005 или Microsoft Visual Studio 2008, процесс создания нового проекта будет немного отличаться в зависимости от параметров, установленных в интегрированной среде разработки Visual Studio (IDE).
   
     
     

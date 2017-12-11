@@ -1,14 +1,14 @@
 ---
-title: "Использование средств взаимодействия рабочих процессов для SharePoint"
+title: "Использование взаимодействия между рабочими процессами в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 3da21b5ba12d0e2b463a3e1a8b5807cd8a597862
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ca7cdff78e6bb6341f26454e95805d75aca52364
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="use-workflow-interop-for-sharepoint"></a>Использование средств взаимодействия рабочих процессов для SharePoint
+# <a name="use-workflow-interop-for-sharepoint"></a>Использование взаимодействия между рабочими процессами в SharePoint
 Предоставляет сведения об использовании средств взаимодействия рабочих процессов SharePoint в конструкторе рабочих процессов Visual Studio 2012. Рабочий процесс взаимодействия позволяет выполнять рабочего процесса SharePoint 2010 из рабочего процесса SharePoint. Это является важной функцией, которая позволяет повторно использовать существующие компоненты рабочих процессов и вызвать для действий рабочего процесса, не встроенные в SharePoint.
 
   
@@ -160,7 +160,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

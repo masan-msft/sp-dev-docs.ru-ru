@@ -3,11 +3,11 @@ title: "BCS клиента Справочник по объектной моде
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: fe7d12a3-6ea9-47f9-b69e-f66da9e661dc
-ms.openlocfilehash: 648dd7c17e0ac4c7869d93df88ae155dcfde7b84
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 270b8d32d5f416f9e4ac37f1452ea672a737b5b1
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="bcs-client-object-model-reference-for-sharepoint"></a>BCS клиента Справочник по объектной модели для SharePoint
 
@@ -492,7 +492,7 @@ ms.lasthandoff: 10/13/2017
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bkmk_Addres"> </a>
 
 

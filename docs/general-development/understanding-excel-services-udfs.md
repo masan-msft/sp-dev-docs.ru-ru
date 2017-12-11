@@ -3,11 +3,11 @@ title: Understanding Excel Services UDFs
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: a1567278-fac4-4b3b-a814-56f2376c1217
-ms.openlocfilehash: 175e916ef29f1211cc158634a883020da444b49b
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: a0cac568ed46e0b2230b302d514ba8f271ee636d
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="understanding-excel-services-udfs"></a>Understanding Excel Services UDFs
 
@@ -119,10 +119,8 @@ UDF assemblies are disabled by default.
     
 Each Службы Excel trusted location has an **AllowUdfs** flag.
   
-    
-    
-
-> **Примечание:** Флаг **AllowUdfs** идентификаторами с помощью параметра **пользовательские функции разрешены** на странице "Надежные расположения файлов Excel Services". Чтобы узнать, как для перехода к странице "Надежные расположения файлов", обратитесь к разделу [Шаг 3: развертывание и включение пользовательских функций](step-3-deploying-and-enabling-udfs.md). 
+> [!NOTE] 
+> [!Примечание] The **AllowUdfs** flag is denoted by the **User-defined functions allowed** option on the Службы Excel Trusted File Locations page. To learn how to navigate to the Trusted File Locations page, see [Step 3: Deploying and Enabling UDFs](step-3-deploying-and-enabling-udfs.md). 
   
     
     

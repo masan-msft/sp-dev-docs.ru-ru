@@ -3,11 +3,11 @@ title: "Начало работы с Business Connectivity Services в SharePoin
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c6bf3db0-db79-4b13-9834-891d24b2c9e5
-ms.openlocfilehash: 71ff8cc2b13f8fc6dd9d65eab41cb2743d713f4f
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 971c338c4d05ddb8ede3cf5f77aa3eabebb2b1b3
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="get-started-with-business-connectivity-services-in-sharepoint"></a>Начало работы с Business Connectivity Services в SharePoint
 Основные сведения о Business Connectivity Services (BCS) предоставляет разработчикам решений SharePoint, а также как приступить к работе с помощью службы BCS в различных типов решений.
@@ -121,7 +121,7 @@ Business Connectivity Services (BCS) была введена в SharePoint Serve
 | [Справочник по API-Интерфейс REST BCS для SharePoint](bcs-rest-api-reference-for-sharepoint.md) <br/> |Найдите справочные сведения для создания представлений состояния (REST) коды URI используются для доступа и управления источников OData.  <br/> |
    
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15GettingStartedBCS_LearnMore"> </a>
 
 

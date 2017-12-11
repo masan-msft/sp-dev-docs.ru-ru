@@ -3,11 +3,11 @@ title: "Обход связанных внешних типов контента
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 187ec42e-f749-4e22-abef-1df604143063
-ms.openlocfilehash: c6aaedd3271255c03840d8fd7c26abe689286f2b
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 5524dce752f7cd3a93954942024bcb624da66064
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="crawl-associated-external-content-types-in-sharepoint"></a>Обход связанных внешних типов контента в SharePoint
 
@@ -85,7 +85,8 @@ ms.lasthandoff: 11/15/2017
 ```
 
 
-> **Примечание:** Можно задать любое значение для свойства **AttachmentAccessor** ; Поиск не проверяет это значение.
+> [!NOTE]
+> [!Примечание] Можно задать любое значение для свойства **AttachmentAccessor**; Поиск не проверяет это значение.
   
     
     
@@ -110,14 +111,14 @@ ms.lasthandoff: 11/15/2017
 </Association>
 ```
 
-
-> **Примечание:** Можно задать любое значение для свойства **DirectoryLink** . Поиск не проверяет это значение.
+> [!NOTE]
+> [!Примечание] Можно задать любое значение для свойства **DirectoryLink**. Поиск не проверяет это значение.
   
     
     
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15crawlects_addlresources"> </a>
 
 

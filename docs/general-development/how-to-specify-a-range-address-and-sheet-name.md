@@ -1,17 +1,17 @@
 ---
-title: "Укажите имя листа и адреса диапазона"
+title: "Указание адреса диапазона и имени листа"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto,set range
 f1_keywords: how to,howdoi,howto,set range
 ms.prod: sharepoint
 ms.assetid: 8bfefc48-1fbc-4b65-8156-1b7d0a8453ee
-ms.openlocfilehash: e3eef43bdbeea5b1c5c2b3ac9e499ccc14f39e40
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 803f786e522bc70753459e5a3d18d1d7f5b50efc
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="specify-a-range-address-and-sheet-name"></a>Укажите имя листа и адреса диапазона
+# <a name="specify-a-range-address-and-sheet-name"></a>Указание адреса диапазона и имени листа
 
 This example shows how to specify range addresses by using range coordinates, named ranges, rows, and columns. It also shows how to specify a sheet name and the relationship between a sheet name and a range address.
   
@@ -75,8 +75,8 @@ xlServices.SetCellA1(sessionId, String.Empty, "MyNamedRange", 8)
 If you specify a sheet name, the ranges you reference must exist on the sheet you specify. If you specify a sheet that does not exist, the call will fail and you will get a Simple Object Access Protocol (SOAP) exception, saying that the sheet does not exist.
 ## <a name="example"></a>Пример
 
-
-> **Примечание:** Предполагается, что уже создан в библиотеке документов SharePoint и был очень надежного расположения. Дополнительные сведения об этом можно [как: надежного расположения](how-to-trust-a-location.md) и [как: Trust Workbook Locations Using Script](http://msdn.microsoft.com/library/79ab6ced-7a0c-4275-b852-bb246fc6be57%28Office.15%29.aspx). 
+> [!NOTE]
+> [!Примечание] It is assumed that you have already created a SharePoint document library and made it a trusted location. For more information about this, see  [How to: Trust a Location](how-to-trust-a-location.md) and [How to: Trust Workbook Locations Using Script](http://msdn.microsoft.com/library/79ab6ced-7a0c-4275-b852-bb246fc6be57%28Office.15%29.aspx). 
   
     
     

@@ -3,11 +3,11 @@ title: "Пошаговое руководство по разработке с �
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 0b5e74b7-405c-43c5-b2dd-1dff77280856
-ms.openlocfilehash: ded8a724e95d5bc9f4c10a9d902d7f13a468baad
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 0e0aa228b67a78c87b6cc9bc47c025c340d67361
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="walkthrough-developing-using-the-content-editor-web-part"></a>Пошаговое руководство по разработке с использованием веб-части редактора контента
 
@@ -25,39 +25,13 @@ ms.lasthandoff: 10/13/2017
   
 - Отображения и взаимодействия с книги с помощью Службы Excel веб-часть, которая будет вызывать JavaScript в Службы Excel , который вы или с помощью сценария. 
     
+> [!NOTE] 
+> [!Примечание] Сведения о том, как надежного расположения можно  [How to: Trust a Location](how-to-trust-a-location.md). 
   
-
-> **Примечание:** Сведения о том, как надежного расположения можно [как: надежного расположения](how-to-trust-a-location.md). 
-  
-    
-    
-
 
 ## <a name="see-also"></a>См. также
 
-
-#### <a name="tasks"></a>Задачи
-
-
-  
-    
-    
- [How to: Trust a Location](how-to-trust-a-location.md)
-#### <a name="concepts"></a>Основные понятия
-
-
-  
-    
-    
- [Excel Services Alerts](excel-services-alerts.md)
-  
-    
-    
- [Excel Services Known Issues and Tips](excel-services-known-issues-and-tips.md)
-#### <a name="other-resources"></a>Другие ресурсы
-
-
-  
-    
-    
- [How to: Trust Workbook Locations Using Script](http://msdn.microsoft.com/library/79ab6ced-7a0c-4275-b852-bb246fc6be57%28Office.15%29.aspx)
+- [How to: Trust a Location](how-to-trust-a-location.md)
+- [Excel Services Alerts](excel-services-alerts.md)
+- [Excel Services Known Issues and Tips](excel-services-known-issues-and-tips.md)
+- [How to: Trust Workbook Locations Using Script](http://msdn.microsoft.com/library/79ab6ced-7a0c-4275-b852-bb246fc6be57%28Office.15%29.aspx)

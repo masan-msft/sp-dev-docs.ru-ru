@@ -3,11 +3,11 @@ title: "Внешние события и оповещения в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: e48e4812-a185-43c5-b243-04b1d79b88ee
-ms.openlocfilehash: 3d5a845f0865ac51c1a02d561bb55049e305a808
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 287b8f87327973b9fd9ffd720a8f24f60fab3f4e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="external-events-and-alerts-in-sharepoint"></a>Внешние события и оповещения в SharePoint
 Узнайте концепции создания приемников удаленных событий в SharePoint, которые можно присоединить к внешним спискам и выполнить при обновлении внешних данных, представляемых списком.
@@ -60,10 +60,8 @@ public class EntryContentEventReceiver : SPItemEventReceiver
     
 Чтобы решить эту проблему, были добавлены два стереотипов схеме модели BDC: **EventSubscriber** и **EventUnsubscriber**.
   
-    
-    
-
-> **Примечание:** Приемники событий не поддерживаются в изолированных решениях. 
+> [!NOTE]
+> [!Примечание] Приемники событий не поддерживаются в изолированных решениях. 
   
     
     
@@ -442,9 +440,8 @@ public class EntryContentEventReceiver : SPItemEventReceiver
   
 - **Полное элемента:** В этом случае полезных данных  это запись, который был изменен во внешней системе. В примере клиента включается запись всей измененных клиента.
     
-  
-
-> **Примечание:** Все элементы поддерживается только при использовании соединитель OData. 
+> [!NOTE]
+> [!Примечание] Все элементы поддерживается только при использовании соединитель OData. 
   
     
     
@@ -650,7 +647,7 @@ private static void AddEventReceiver(string siteUrl, string listTitle)
 | [Как: создать службу данных OData для использования в качестве внешней системы BCS](how-to-create-an-odata-data-service-for-use-as-a-bcs-external-system.md) <br/> |Узнайте, как создать службу Интернет адресации Windows Communication Foundation (WCF), который используется для отправки уведомлений SharePoint при изменении базовых данных OData. Такие уведомления используются для активируют события, подключенные к внешним спискам.  <br/> |
    
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="Externalevents_Addres"> </a>
 
 

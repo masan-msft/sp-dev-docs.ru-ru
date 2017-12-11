@@ -1,25 +1,22 @@
 ---
-title: "Набор значений из диапазонов"
+title: "Настройка значений диапазонов"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto,set range
 f1_keywords: how to,howdoi,howto,set range
 ms.prod: sharepoint
 ms.assetid: ccc7e204-f857-45a9-81ec-3a8484e6d454
-ms.openlocfilehash: 0ed126fe8b25df7b34f05d22f02df6089c4fa55b
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 81f2ea350dff1bd84572cbe222f072b0c5d2c2a5
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="set-values-of-ranges"></a>Набор значений из диапазонов
+# <a name="set-values-of-ranges"></a>Настройка значений диапазонов
 
 Веб-службы Excel exposes four methods for setting values into an Excel workbook: **SetCell**, **SetCellA1**, **SetRange**, and **SetRangeA1**. 
   
-    
-    
-
-
-> **Примечание:** При внесении изменений в листе —, например, задание значений для диапазона, с помощью веб-служб Excel — изменения в книгу, сохраняются только для конкретного сеанса. Изменения не сохраняются и не сохраняется исходную книгу. При завершении текущего сеанса книги (например, при вызове метода **CloseWorkbook** или превышено время ожидания), внесенные изменения будут потеряны. > Если вы хотите сохранить изменения, вносимые в книге, можно использовать метод **GetWorkbook** и затем Сохраните книгу с помощью API хранилища файлов назначения. Дополнительные сведения можно [как: получение всей книги или ее снимка](how-to-get-an-entire-workbook-or-a-snapshot.md) и [как: сохранить книгу](http://msdn.microsoft.com/library/feb74f7a-2d8f-4672-911b-de85f8852aea%28Office.15%29.aspx). 
+> [!NOTE]
+> [!Примечание] When you make changes to a workbookfor example, by setting values to a range using Веб-службы Excelthe changes to the workbook are preserved only for that particular session. The changes are not saved or persisted back to the original workbook. When the current workbook session ends (for example, when you call the **CloseWorkbook** method, or the session times out), changes you made will be lost.> If you want to save changes you make to a workbook, you can use the **GetWorkbook** method and then save the workbook using the API of the destination file store. For more information, see [How to: Get an Entire Workbook or a Snapshot](how-to-get-an-entire-workbook-or-a-snapshot.md) and [How to: Save a Workbook](http://msdn.microsoft.com/library/feb74f7a-2d8f-4672-911b-de85f8852aea%28Office.15%29.aspx). 
   
     
     

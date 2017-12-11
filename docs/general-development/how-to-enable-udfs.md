@@ -5,21 +5,18 @@ keywords: how to,howdoi,howto,UDF list
 f1_keywords: how to,howdoi,howto,UDF list
 ms.prod: sharepoint
 ms.assetid: 8c1af2eb-bb22-45e1-82de-a2b4b53d7a26
-ms.openlocfilehash: 6eb51af89ab003e507ec9acb2f81a70bf843ee99
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: e413bb036e33d905751d7fae0066242d6910c0b5
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="enable-udfs"></a>Включение пользовательских функций
 
 Each Службы Excel trusted location in the Shared Services Provider (SSP) has an **AllowUdfs** flag.
   
-    
-    
-
-
-> **Примечание:** Флаг **AllowUdfs** идентификаторами с помощью параметра **пользовательские функции разрешены** на странице "Надежные расположения файлов Excel Services".
+> [!NOTE]
+> [!Примечание] The **AllowUdfs** flag is denoted by the **User-defined functions allowed** option on the Excel Services Trusted File Locations page.
   
     
     
@@ -67,7 +64,9 @@ To do the following steps, you need a computer that has Microsoft SharePoint Ser
   
 7. Under **Assembly Location**, click **Local file**.
     
-    > **Примечание:** Параметр **локального файла** будут заменены на **путь к файлу** в будущих выпусках служб Excel. Если отображается **путь к файлу**, выберите его. 
+    > [!NOTE]
+  > [!Примечание] The **Local file** option will be replaced with **File path** in future releases of Службы Excel. If you see **File path**, select that instead.   
+  
 8. Under **Enable Assembly**, the **Assembly enabled** check box should be selected by default.
     
   
@@ -83,7 +82,9 @@ To do the following steps, you need a computer that has Microsoft SharePoint Ser
 
 1. Open the Excel Services Add Trusted File Location page (if you are adding a new trusted location) or Excel Services Edit Trusted File Location page (if you are editing an existing trusted location). 
     
-    > **Примечание:** Дополнительные сведения о определение надежного расположения можно [как: надежного расположения](how-to-trust-a-location.md). 
+    > [!NOTE]
+    > [!Примечание] For more information about trusting a location, see  [How to: Trust a Location](how-to-trust-a-location.md). 
+
 2. Under **Allow User-Defined Functions**, select **User-defined functions allowed** to allow UDFs to be called from workbooks stored in this trusted location.
     
   
@@ -93,46 +94,12 @@ To do the following steps, you need a computer that has Microsoft SharePoint Ser
 
 ## <a name="see-also"></a>См. также
 
-
-#### <a name="tasks"></a>Задачи
-
-
-  
-    
-    
- [Step 3: Deploying and Enabling UDFs](step-3-deploying-and-enabling-udfs.md)
-  
-    
-    
- [How to: Create a UDF That Calls a Web Service](how-to-create-a-udf-that-calls-a-web-service.md)
-  
-    
-    
- [How to: Trust a Location](how-to-trust-a-location.md)
-#### <a name="concepts"></a>Основные понятия
-
-
-  
-    
-    
- [Walkthrough: Developing a Managed-Code UDF](walkthrough-developing-a-managed-code-udf.md)
-  
-    
-    
- [Frequently Asked Questions About Excel Services UDFs](frequently-asked-questions-about-excel-services-udfs.md)
-  
-    
-    
- [Understanding Excel Services UDFs](understanding-excel-services-udfs.md)
-  
-    
-    
- [Excel Services Alerts](excel-services-alerts.md)
-  
-    
-    
- [Excel Services Known Issues and Tips](excel-services-known-issues-and-tips.md)
-  
-    
-    
- [Excel Services Best Practices](excel-services-best-practices.md)
+- [Step 3: Deploying and Enabling UDFs](step-3-deploying-and-enabling-udfs.md)
+- [How to: Create a UDF That Calls a Web Service](how-to-create-a-udf-that-calls-a-web-service.md)
+- [How to: Trust a Location](how-to-trust-a-location.md)
+- [Walkthrough: Developing a Managed-Code UDF](walkthrough-developing-a-managed-code-udf.md)
+- [Frequently Asked Questions About Excel Services UDFs](frequently-asked-questions-about-excel-services-udfs.md)
+- [Understanding Excel Services UDFs](understanding-excel-services-udfs.md)
+- [Excel Services Alerts](excel-services-alerts.md)
+- [Excel Services Known Issues and Tips](excel-services-known-issues-and-tips.md)
+- [Excel Services Best Practices](excel-services-best-practices.md)

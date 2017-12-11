@@ -3,11 +3,11 @@ title: "Управление жизненным циклом приложени�
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: caaf9a09-2e6a-49e3-a8d6-aaf7f93a842a
-ms.openlocfilehash: a969bc3ae2e64de2214e8e85443ddc3164c10341
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 93314de898aa1880a0de48b5cfbf7a2e94d57b36
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-application-lifecycle-management"></a>Управление жизненным циклом приложений SharePoint
 Применяет основные понятия управления Жизненным циклом приложения и рекомендации для разработки приложений с помощью технологий SharePoint.
@@ -662,7 +662,7 @@ ForSharePoint приложения разработчикам следует и�
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 
@@ -675,7 +675,7 @@ ForSharePoint приложения разработчикам следует и�
 -  [Использование сайта Office 365 SharePoint для авторизации размещенных у поставщика надстроек на локальном сайте SharePoint](http://msdn.microsoft.com/library/2f65ba3f-b246-4064-b4fb-ad18399d387a%28Office.15%29.aspx)
     
   
--  [Обзор разработки решений с помощью SharePoint](sharepoint-development-overview.md)
+-  [Обзор разработки решений для SharePoint](sharepoint-development-overview.md)
     
   
 -  [Что такое Open Data Protocol?](http://www.odata.org/)

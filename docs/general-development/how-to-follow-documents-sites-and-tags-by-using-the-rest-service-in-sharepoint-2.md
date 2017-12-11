@@ -3,11 +3,11 @@ title: "Выполните указанные документы, сайты и 
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 989a5873-49f9-49e4-8d0f-439dde891cc2
-ms.openlocfilehash: 73796b89f04291d86072234833953c97881cdff8
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 1c27c11c49be77941fd7c7b2e4876f43938dea66
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint"></a>Выполните указанные документы, сайты и теги с помощью службы REST в SharePoint
 
@@ -56,9 +56,8 @@ ms.lasthandoff: 11/15/2017
   
 - **my/followedcount** для подсчета число документов, сайтов и тегов
     
-  
-
-> **Примечание:** Для следующих пользователей задачи, но **последователи** и **предложений** ресурсы, доступные из поддерживают только **SocialRestFollowingManager** , отслеживаемые пользователи не контента также использовать эти конечные точки. Дополнительные сведения об использовании **SocialRestFollowingManager**можно [Подписка на контент в SharePoint](follow-content-in-sharepoint.md) и [Подписка на людей в SharePoint](follow-people-in-sharepoint.md). 
+> [!NOTE]
+> Для следующих пользователей задачи, но **последователи** и **предложений** ресурсы, доступные из поддерживают только **SocialRestFollowingManager** , отслеживаемые пользователи не контента также использовать эти конечные точки. Дополнительные сведения об использовании **SocialRestFollowingManager**можно [Подписка на контент в SharePoint](follow-content-in-sharepoint.md) и [Подписка на людей в SharePoint](follow-people-in-sharepoint.md). 
   
     
     
@@ -69,10 +68,8 @@ ms.lasthandoff: 11/15/2017
 
 В этой статье предполагается, что вы создаете надстройку для SharePoint с помощью Napa на сайте разработчика Office 365. Если вы используете эту среду разработки, то необходимые условия выполняются.
   
-    
-    
-
-> **Примечание:** Перейдите к зарегистрироваться на сайте разработчика и начать работу с использованием Napa [настроить среду разработки для SharePoint надстройки на Office 365](http://msdn.microsoft.com/library/b22ce52a-ae9e-4831-9b68-c9210af6dc54%28Office.15%29.aspx) .
+> [!NOTE]
+> [!Примечание] Перейдите к  [Настройка среды для разработки надстроек SharePoint в Office 365](http://msdn.microsoft.com/library/b22ce52a-ae9e-4831-9b68-c9210af6dc54%28Office.15%29.aspx) Зарегистрируйтесь на сайте разработчика и начать использовать Napa.
   
     
     
@@ -101,9 +98,8 @@ ms.lasthandoff: 11/15/2017
   
   - Необходимо войти в систему как кто-то отличную от учетной записи системы. Системная учетная запись не имеет разрешения, чтобы установить приложение.
     
-  
-
-> **Примечание:** В разделе [Настройка локальной среды разработки для SharePoint надстройки](http://msdn.microsoft.com/library/b0878c12-27c9-4eea-ae3b-7e79e5a8838d%28Office.15%29.aspx) рекомендации для локальной установки (включая отключение проверки замыкания на себя при необходимости).
+> [!NOTE]
+> [!Примечание] В разделе  [Настройка локальной среды разработки надстроек SharePoint](http://msdn.microsoft.com/library/b0878c12-27c9-4eea-ae3b-7e79e5a8838d%28Office.15%29.aspx) руководство по локальной установки (включая отключение проверки замыкания на себя при необходимости).
   
     
     
@@ -780,8 +776,8 @@ function requestFailed(xhr, ajaxOptions, thrownError) {
 |2|**LimitReached**. Запрос завершился ошибкой, так как достигнут внутренний предел.|
 |3|**InternalError**. Не удалось выполнить запрос из-за внутренней ошибки.|
    
-
-> **Примечание:** Службы REST не возвращает ответ на запрос **StopFollowing** . Она возвращает `{"d":{"StopFollowing":null}}`. 
+> [!NOTE]
+> [!Примечание] Службы REST не возвращает ответ на запрос **StopFollowing**. Она возвращает `{"d":{"StopFollowing":null}}`. 
   
     
     
@@ -904,7 +900,7 @@ function requestFailed(xhr, ajaxOptions, thrownError) {
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bkmk_AddtionalResources"> </a>
 
 

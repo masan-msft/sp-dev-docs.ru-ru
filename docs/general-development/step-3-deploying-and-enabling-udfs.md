@@ -3,11 +3,11 @@ title: Step 3 Deploying and Enabling UDFs
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 1e5e2a0a-041a-481c-a18b-578562a60e24
-ms.openlocfilehash: 9db2e49544445e33058734bc42ed1a33a4448b98
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 7d2abb6cce364a634fcd5f68c139e89931f3c3de
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="step-3-deploying-and-enabling-udfs"></a>Step 3: Deploying and Enabling UDFs
 
@@ -119,53 +119,21 @@ To do the following steps, you need a computer that has SharePoint Server 2010 i
 
 If the **AllowUdfs** value is **false** when a session is started on a workbook that has UDF calls, the UDF calls will fail.
   
-    
-    
-
-> **Примечание:** Флаг **AllowUdfs** обозначается параметр **пользовательские функции разрешены** (в разделе шаг 9 в доверие» расположение «).
+> [!NOTE]
+> [!Примечание] The **AllowUdfs** flag is denoted by the **User-defined functions allowed** option (see step 9 in the "Trusting a Location" section).
   
     
     
 
-If you change the **AllowUdfs** value to **true** after a session has started, the UDF calls will also fail. This is because changes in the **AllowUdfs** flag take effect on the next session. You can get around this by resetting Microsoft Internet Information Services (IIS). Resetting IIS will reload UDFs.
-  
-    
+If you change the **AllowUdfs** value to **true** after a session has started, the UDF calls will also fail. This is because changes in the **AllowUdfs** flag take effect on the next session. You can get around this by resetting Microsoft Internet Information Services (IIS). Resetting IIS will reload UDFs.  
     
 For more information about resetting IIS, see  [How to: Enable UDFs](how-to-enable-udfs.md).
   
-    
-    
-
 ## <a name="see-also"></a>См. также
 
-
-#### <a name="tasks"></a>Задачи
-
-
-  
-    
-    
- [Step 1: Creating a Project and Adding a UDF Reference](step-1-creating-a-project-and-adding-a-udf-reference.md)
-  
-    
-    
- [Step 2: Creating a Managed-Code UDF](step-2-creating-a-managed-code-udf.md)
-  
-    
-    
- [Step 4: Testing and Calling UDFs from Cells](step-4-testing-and-calling-udfs-from-cells.md)
-  
-    
-    
- [How to: Enable UDFs](how-to-enable-udfs.md)
-#### <a name="concepts"></a>Основные понятия
-
-
-  
-    
-    
- [Walkthrough: Developing a Managed-Code UDF](walkthrough-developing-a-managed-code-udf.md)
-  
-    
-    
- [Understanding Excel Services UDFs](understanding-excel-services-udfs.md)
+- [Step 1: Creating a Project and Adding a UDF Reference](step-1-creating-a-project-and-adding-a-udf-reference.md)
+- [Step 2: Creating a Managed-Code UDF](step-2-creating-a-managed-code-udf.md)
+- [Step 4: Testing and Calling UDFs from Cells](step-4-testing-and-calling-udfs-from-cells.md)
+- [How to: Enable UDFs](how-to-enable-udfs.md)
+- [Walkthrough: Developing a Managed-Code UDF](walkthrough-developing-a-managed-code-udf.md)
+- [Understanding Excel Services UDFs](understanding-excel-services-udfs.md)

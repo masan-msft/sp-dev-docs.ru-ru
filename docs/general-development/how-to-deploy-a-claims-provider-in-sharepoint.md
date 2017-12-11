@@ -3,11 +3,11 @@ title: "Развертывание поставщика утверждений �
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 3a5fcedc-aa9a-4ff4-95c0-0e0a7dea9d1f
-ms.openlocfilehash: ef8377ceea402d2cc0573fbd5443974284f8ee7f
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 06b647062eaa4fcd29442e02dce5e67e02943213
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="deploy-a-claims-provider-in-sharepoint"></a>Развертывание поставщика утверждений в SharePoint
 
@@ -159,7 +159,7 @@ namespace MySample.Sample.Server.SampleClaimsProvider
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15_HowToDeployClaimsProvider_AdditionalResources"> </a>
 
 

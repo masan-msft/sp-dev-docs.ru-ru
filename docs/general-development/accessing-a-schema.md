@@ -3,22 +3,20 @@ title: "Доступ к схеме"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 02613912-36f6-4edc-a915-165d12e60bc8
-ms.openlocfilehash: 9f9bb2513eb8c2dbbe5951d86391ebb239a6c389
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: be1ae13fdef00d69d887859b3881c8cef28ac9a4
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="accessing-a-schema"></a>Доступ к схеме
 
 В этом разделе показано один пример того, как можно получить доступ к и просмотрите схемы для службы REST в Службы Excel. В этом разделе предполагается, что вы прочли  [Пример URI для интерфейса API REST служб Excel](sample-uri-for-excel-services-rest-api.md).d
   
-    
-    
-
-
-> **Примечание:** API REST служб Excel применяется к SharePoint и SharePoint 2016 локально. Для образовательных учреждений Office 365, бизнеса и корпоративных учетных записей используйте Excel API-интерфейсы REST, входящих в состав [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
-> ) конечной точки.
+> [!NOTE]
+> 
+> API REST служб Excel применяется к SharePoint и SharePoint 2016 локально. Для учетных записей Office 365 для образования, Office 365 бизнес и Office 365 корпоративный используйте REST API Excel, входящие в состав конечной точки [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
+).
   
     
     

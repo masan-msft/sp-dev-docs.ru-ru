@@ -1,15 +1,15 @@
 ---
-title: "Обзор мобильных устройств объектной модели SharePoint"
+title: "Обзор объектной модели SharePoint для мобильных устройств"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 72319846-d02d-49e7-b830-48eb8f5715cb
-ms.openlocfilehash: 4f2f38a46c0afe3b534b7e2b2ee1c5a8dbbe0300
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 171c14d60a6f3063e8a903387a0faad34cd34308
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="overview-of-the-sharepoint-mobile-object-model"></a>Обзор мобильных устройств объектной модели SharePoint
+# <a name="overview-of-the-sharepoint-mobile-object-model"></a>Обзор объектной модели SharePoint для мобильных устройств
 Узнайте о новых общим классам в серверной объектной модели SharePoint и клиентская объектная модель Silverlight, которые используются для разработки интегрированные решения для SharePoint и Windows Phone 7.5.
 ## <a name="client-object-model-for-mobile-silverlight"></a>Клиентская объектная модель для мобильных устройств Silverlight
 <a name="SP15OM_ClientOM"> </a>
@@ -947,10 +947,8 @@ public override object ValidateAndParseValue(SPListItem item, string value)
     
 Получает или задает имя файла JavaScript, которая отображает поля типа **SPFieldGeolocation**.
   
-    
-    
-
-> **Примечание:** Перечислены JSLink, свойство не поддерживается в опросе или событий. Календарь SharePoint — это список событий. 
+> [!NOTE]
+> [!Примечание] Перечислены JSLink, свойство не поддерживается в опросе или событий. Календарь SharePoint  это список событий. 
   
     
     
@@ -1752,8 +1750,8 @@ public SPPhoneNotificationSubscriber GetPhoneNotificationSubscriber(Guid deviceA
 public SPPhoneNotificationSubscriberCollection GetPhoneNotificationSubscribers(string customArgs)
 ```
 
-
-> **Примечание:** Имя объектной модели клиента — **GetPhoneNotificationSubscribersByArgs**. 
+> [!NOTE]
+> [!Примечание] Имя объектной модели клиента  **GetPhoneNotificationSubscribersByArgs**. 
   
     
     
@@ -1766,8 +1764,8 @@ public SPPhoneNotificationSubscriberCollection GetPhoneNotificationSubscribers(s
 
 ```
 
-
-> **Примечание:** Имя объектной модели клиента — **GetPhoneNotificationSubscribersByUser**. 
+> [!NOTE]
+> [!Примечание] Имя объектной модели клиента  **GetPhoneNotificationSubscribersByUser**. 
   
     
     
@@ -2265,7 +2263,7 @@ public string MessageId
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15MobileOM_addlresources"> </a>
 
 

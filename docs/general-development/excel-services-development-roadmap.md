@@ -5,11 +5,11 @@ keywords: roadmap
 f1_keywords: roadmap
 ms.prod: sharepoint
 ms.assetid: 5c789f58-9cdb-4601-9047-9c6f83f2fbba
-ms.openlocfilehash: 3f67b18a438c601ae59effe957d756ebee9117a4
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: fdd3793c25280dd5dd0ae6de26eb7c731048d8fa
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="excel-services-development-roadmap"></a>Excel Services Development Roadmap
 
@@ -118,10 +118,8 @@ In this scenario, a custom application uses Веб-службы Excel to do the 
   
 The custom application retrieves the live version of the workbook or snapshot and then saves the workbook or snapshot by using Веб-службы Excel.
   
-    
-    
-
-> **Примечание:** При внесении изменений в листе — например, путем установки значений для диапазона с помощью веб-служб Excel — изменения в книгу, сохраняются только для конкретного сеанса. Изменения не сохраняются и не сохраняется исходную книгу. При завершении текущего сеанса книги (например, при вызове метода **CloseWorkbook** или при истечении времени ожидания сеанса), внесенные изменения не сохраняются. > Если вы хотите сохранить изменения, внесенные в книгу, можно использовать **GetWorkbook** метод и затем сохраните книгу с помощью метода **SaveWorkbook** или метод **SaveWorkbookCopy** . Дополнительные сведения об API веб-служб Excel можно [Microsoft.Office.Excel.Server.WebServices (en)](https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.WebServices.aspx) .
+> [!NOTE]
+> [!Примечание] When you make changes to a workbookfor example, by setting values to a range by using Веб-службы Excelthe changes to the workbook are preserved only for that particular session. The changes are not saved or persisted back to the original workbook. When the current workbook session ends (for example, when you call the **CloseWorkbook** method, or when the session times out), changes that you made are lost.> If you want to save changes that you make to a workbook, you can use the **GetWorkbook** method and then save the workbook by using the **SaveWorkbook** method or the **SaveWorkbookCopy** method. For more information about the Веб-службы Excel API, see [Microsoft.Office.Excel.Server.WebServices](https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.WebServices.aspx) .
   
     
     

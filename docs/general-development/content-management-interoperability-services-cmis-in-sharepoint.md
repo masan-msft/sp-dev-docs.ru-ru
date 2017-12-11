@@ -3,11 +3,11 @@ title: "Служб взаимодействия управления конте�
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: a1def24c-b2db-4bf9-8d2c-02f5628832f8
-ms.openlocfilehash: 564277ef0fdfe48ffe893840c581170389cd3a8e
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: b2dafc5c63d7da4398134cd0e57e8edc92b4db39
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="content-management-interoperability-services-cmis-in-sharepoint"></a>Служб взаимодействия управления контентом (CMIS) в SharePoint
 Сведения о реализации SharePoint версии 1.0 из OASIS контента управления взаимодействия служб (CMIS) standard.
@@ -289,7 +289,7 @@ CMIS 1.1 в SharePoint не поддерживается, но более нов
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15CMIS_AdditionalResources"> </a>
 
 

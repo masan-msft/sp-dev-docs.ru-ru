@@ -3,11 +3,11 @@ title: "Службы Excel в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: f7e13fcb-a86a-4a1e-af59-3bace98ce9d7
-ms.openlocfilehash: 2621e87cfaf5fb2de6da2b1f518bf5828101044d
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ee4ce478992dabf3d6ca4bd3c512983432589d43
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="excel-services-in-sharepoint"></a>Службы Excel в SharePoint
 Узнайте о новых возможностях в службах Excel в SharePoint и как их использовать в работу разработчика.
@@ -38,14 +38,14 @@ SharePoint Server 2010 появился API-Интерфейс REST для ис�
 ### 
 <a name="xlsOdata"> </a>
 
-
-> **Примечание:** Интерактивное представление Excel возможность отключена. Сведения об удалении этой функции из веб-сайте содержатся [Удаление интерактивное представление Excel из веб-страницы](removing-excel-interactive-view-from-a-webpage.md). 
+> [!NOTE]
+> он интерактивное представление Excel функция была отключена. Сведения о том, как удалить эту функцию с веб-сайта, см. в статье [Удаление интерактивного представления Excel с веб-страницы](removing-excel-interactive-view-from-a-webpage.md). 
   
     
     
 
 
-## <a name="in-this-section"></a>В этом разделе:
+## <a name="in-this-section"></a>В этой статье
 <a name="xlsWhatsNew"> </a>
 
 
@@ -74,14 +74,14 @@ SharePoint Server 2010 появился API-Интерфейс REST для ис�
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 
 -  [Добавление возможностей SharePoint](add-sharepoint-capabilities.md)
     
   
--  [Службы приложений Office 2013 и SharePoint](office-and-sharepoint-application-services.md)
+-  [Службы приложений Office 2013 и SharePoint](office-and-sharepoint-application-services.md)
     
   
 

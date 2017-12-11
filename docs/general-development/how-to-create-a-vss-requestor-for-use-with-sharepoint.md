@@ -1,15 +1,15 @@
 ---
-title: "Создание опросчика VSS для использования с SharePoint"
+title: "Создание запрашивающей стороны VSS для использования в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 63b3145b-ece2-4acf-b58a-fd8b50303030
-ms.openlocfilehash: 75c7d5f2bbfa921f6fdfdc886b8eb9aee15dc2ae
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 816d3be516ff144c66aad667f6cff1173f9235f5
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="create-a-vss-requestor-for-use-with-sharepoint"></a>Создание опросчика VSS для использования с SharePoint
+# <a name="create-a-vss-requestor-for-use-with-sharepoint"></a>Создание запрашивающей стороны VSS для использования в SharePoint
 
 Сведения о создании запросившей для использования с помощью модуля записи службы теневого копирования томов (VSS) для Microsoft SharePoint.
 
@@ -35,7 +35,7 @@ ms.lasthandoff: 11/15/2017
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

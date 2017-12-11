@@ -3,11 +3,11 @@ title: "Чтение и запись на социальные веб-канал
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 3c15ede5-8a59-47e6-a0b2-c17ec6bf4ae1
-ms.openlocfilehash: 73eaf6bf117694cd1c4378bde0541e7db782a079
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 74fe67537137ffd6665a1ee0d00afdfa944ecdfa
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="read-and-write-to-the-social-feed-by-using-the-net-client-object-model-in-sharepoint"></a>Чтение и запись на социальные веб-канал с помощью клиентской объектной модели .NET в SharePoint
 
@@ -33,9 +33,8 @@ ms.lasthandoff: 11/15/2017
   
 - **Полный** доступ к приложению-службе профилей пользователей для пользователя, вошедшего в систему
     
-  
-
-> **Примечание:** При разработке не на компьютере, на котором работает SharePoint, загрузить [Клиентские компоненты SharePoint](http://www.microsoft.com/en-us/download/details.aspx?id=35585) , содержащий клиентскую сборку SharePoint.
+> [!NOTE]
+> При разработке не на компьютере, на котором работает SharePoint, загрузить [Клиентские компоненты SharePoint](http://www.microsoft.com/en-us/download/details.aspx?id=35585) , содержащий клиентскую сборку SharePoint.
   
     
     
@@ -106,42 +105,43 @@ using Microsoft.SharePoint.Client.Social;
 
 1. Объявите переменные для URL-адрес сервера и создания решений учетные данные учетной записи пользователя.
     
-```cs
-const string serverUrl = "http://serverName/";
-const string targetUser = "domainName\\userName";
-```
+    ```cs
+    const string serverUrl = "http://serverName/";
+    const string targetUser = "domainName\\userName";
+    ```
 
-   > **Примечание:** Не забудьте заменить `http://serverName/` и `domainName\\userName` заполнитель значения, прежде чем запускать код.
+    > [!NOTE]
+    > [!Примечание] Не забудьте заменить заполнитель значения  `http://serverName/` и `domainName\\userName` , прежде чем запускать код.
    
 2. В методе **Main** инициализации контекста клиента SharePoint.
     
-```cs
-ClientContext clientContext = new ClientContext(serverUrl);
-```
+    ```cs
+    ClientContext clientContext = new ClientContext(serverUrl);
+    ```
 
 3. Создайте экземпляр  [SocialFeedManager](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.aspx) .
     
-```cs
-SocialFeedManager feedManager = new SocialFeedManager(clientContext);
-```
+    ```cs
+    SocialFeedManager feedManager = new SocialFeedManager(clientContext);
+    ```
 
 4. Задание параметров для веб-канала активности контент, который требуется получить.
     
-```cs
-  SocialFeedOptions feedOptions = new SocialFeedOptions();
-feedOptions.MaxThreadCount = 10;
-```
+    ```cs
+    SocialFeedOptions feedOptions = new SocialFeedOptions();
+    feedOptions.MaxThreadCount = 10;
+    ```
 
-    The default options return the first 20 threads in the feed, sorted by last modified date.
+    Параметры по умолчанию возвращения первых 20 потоков в веб-канал, отсортированные по дату последнего изменения.
   
 5. Получите конечного пользователя веб-канал.
     
-```cs 
-ClientResult<SocialFeed> feed = feedManager.GetFeedFor(targetUser, feedOptions);
-clientContext.ExecuteQuery();
-```
+    ```cs 
+    ClientResult<SocialFeed> feed = feedManager.GetFeedFor(targetUser, feedOptions);
+    clientContext.ExecuteQuery();
+    ```
 
-     [GetFeedFor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetFeedFor.aspx) returns a **ClientResult<T>** object that stores the collection of threads in its [Value](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ClientResult`1.Value.aspx) property.
+    [GetFeedFor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.GetFeedFor.aspx) возвращает объект **ClientResult<T>**, в которой хранится коллекция потоков в своем свойстве [Value](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.ClientResult`1.Value.aspx) .
     
   
 
@@ -193,13 +193,15 @@ feedManager.CreatePost(threadToReplyTo, postCreationData);
 clientContext.ExecuteQuery();
 ```
 
-   > **Примечание:** Метод [CreatePost](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.CreatePost.aspx) также используется для публикации корневого post для текущего пользователя веб-канал, передав **значение null** для первого параметра.
+    > [!NOTE]
+    > The  [CreatePost](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFeedManager.CreatePost.aspx) method is also used to publish a root post to the current user's feed by passing **null** for the first parameter.
+
 4. (Связанные с Интерфейсом только) Выйти из программы.
     
-```cs
-Console.WriteLine("Your reply was published.");
-Console.ReadKey(false);
-```
+    ```cs
+    Console.WriteLine("Your reply was published.");
+    Console.ReadKey(false);
+    ```
 
 5. Тестирование консольного приложения в строке меню выберите команду **Отладка**, **Начать отладку**.
     
@@ -298,7 +300,7 @@ namespace ReadWriteMySite
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15ReadWriteSocial_addlresources"> </a>
 
 

@@ -1,17 +1,17 @@
 ---
-title: "Ограничение разрешений безопасности доступа кода UDF"
+title: "Ограничение разрешений на управление доступом для кода пользовательских функций"
 ms.date: 09/25/2017
 keywords: cas,how to,howdoi,howto,UDF list
 f1_keywords: cas,how to,howdoi,howto,UDF list
 ms.prod: sharepoint
 ms.assetid: 4f022e0d-1fe3-4fab-b41f-82a0d628f77c
-ms.openlocfilehash: 16245fdcbbd67cfd354456d1f72a45b982bcd7cd
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 6a562afe83302a01be3f9a349b61f0e3b6944acc
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="restrict-udf-code-access-security-permissions"></a>Ограничение разрешений безопасности доступа кода UDF
+# <a name="restrict-udf-code-access-security-permissions"></a>Ограничение разрешений на управление доступом для кода пользовательских функций
 
 If you do not want a particular user-defined function (UDF) assembly to run with full trust, you must explicitly restrict code access security permissions for it. You can configure code groups and restrict permissions by using the .NET Framework 2.0 Configuration tool. 
   
@@ -121,44 +121,18 @@ For more information about configuring code groups, see the following articles o
   
 3. Click **Apply**, and then click **OK**.
     
-    > **Примечание:** Если возникает исключение метода UDF за невозможности вызова веб-службы, вы должны получить **#VALUE!** Ошибка в формуле Excel, вызвавшей пользовательскую Функцию.
+    > [!NOTE]
+    > [!Примечание] If the UDF method throws an exception because it cannot make the Web service call, you should receive a **#VALUE!** error in the Excel formula that called the UDF.
 
-    > **Примечание:** Если вы хотите включить веб-доступ для сборки пользовательских Функций для тестирования, необходимо добавить соответствующие разрешения в набор разрешений. Для этого в шаг 11 в процедуре «Чтобы создать новую группу кода» выберите **Веб-клиента**. 
+    > [!NOTE]
+    > [!Примечание] If you want to enable Web access for your UDF assembly for testing, you must add the appropriate permission to your custom permission set. To do this, in Step 11 of the "To create a new code group" procedure, select **Web Access**. 
 
 ## <a name="see-also"></a>См. также
 
-
-#### <a name="tasks"></a>Задачи
-
-
-  
-    
-    
- [How to: Create a UDF That Calls a Web Service](how-to-create-a-udf-that-calls-a-web-service.md)
-  
-    
-    
- [How to: Enable UDFs](how-to-enable-udfs.md)
-  
-    
-    
- [How to: Access an External Data Source from a UDF](how-to-access-an-external-data-source-from-a-udf.md)
-  
-    
-    
- [How to: Deploy UDFs Using SharePoint Foundation Solutions](how-to-deploy-udfs-using-sharepoint-foundation-solutions.md)
-#### <a name="concepts"></a>Основные понятия
-
-
-  
-    
-    
- [Walkthrough: Developing a Managed-Code UDF](walkthrough-developing-a-managed-code-udf.md)
-  
-    
-    
- [Frequently Asked Questions About Excel Services UDFs](frequently-asked-questions-about-excel-services-udfs.md)
-  
-    
-    
- [Understanding Excel Services UDFs](understanding-excel-services-udfs.md)
+- [How to: Create a UDF That Calls a Web Service](how-to-create-a-udf-that-calls-a-web-service.md)
+- [How to: Enable UDFs](how-to-enable-udfs.md)
+- [How to: Access an External Data Source from a UDF](how-to-access-an-external-data-source-from-a-udf.md)
+- [How to: Deploy UDFs Using SharePoint Foundation Solutions](how-to-deploy-udfs-using-sharepoint-foundation-solutions.md)
+- [Walkthrough: Developing a Managed-Code UDF](walkthrough-developing-a-managed-code-udf.md)
+- [Frequently Asked Questions About Excel Services UDFs](frequently-asked-questions-about-excel-services-udfs.md)
+- [Understanding Excel Services UDFs](understanding-excel-services-udfs.md)

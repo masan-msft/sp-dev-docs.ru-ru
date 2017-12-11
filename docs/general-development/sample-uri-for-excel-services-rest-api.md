@@ -3,22 +3,19 @@ title: "Пример URI для интерфейса API REST служб Excel"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 4ebe1da2-9861-416f-bef1-4a62599efe2e
-ms.openlocfilehash: 003f7097ee68e014f232b3e4817ab397202675d0
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 221b89caf533a3f430a467f6eef68b4713c9de3e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sample-uri-for-excel-services-rest-api"></a>Пример URI для интерфейса API REST служб Excel
 
 В этом разделе приведены примеры коды URI для команды службы передачи (REST) представлений состояний в Службы Excel.
   
-    
-    
-
-
-> **Примечание:** API REST служб Excel применяется к SharePoint и SharePoint 2016 локально. Для образовательных учреждений Office 365, бизнеса и корпоративных учетных записей используйте Excel API-интерфейсы REST, входящих в состав [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
-> ) конечной точки.
+> [!NOTE]
+> API REST служб Excel применяется к SharePoint и SharePoint 2016 локально. Для учетных записей Office 365 для образования, Office 365 бизнес и Office 365 корпоративный используйте REST API Excel, входящие в состав конечной точки [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
+).
   
     
     

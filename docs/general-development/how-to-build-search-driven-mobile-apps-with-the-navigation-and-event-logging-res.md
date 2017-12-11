@@ -1,15 +1,15 @@
 ---
-title: "Создание на основе механизмов поиска мобильных приложений с помощью интерфейсов навигации и REST ведение журнала событий"
+title: "Создание мобильных приложений, ориентированных на поиск, с помощью интерфейсов навигации и ведения журнала событий REST"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 5b313130-500c-4ccf-80ea-b102f30e5afb
-ms.openlocfilehash: 98ba8acf95b52ddc183574684901923b4544e37c
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: b7763321614f66447a6ee818b1b4bb08a24fc0aa
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="build-search-driven-mobile-apps-with-the-navigation-and-event-logging-rest-interfaces"></a>Создание на основе механизмов поиска мобильных приложений с помощью интерфейсов навигации и REST ведение журнала событий
+# <a name="build-search-driven-mobile-apps-with-the-navigation-and-event-logging-rest-interfaces"></a>Создание мобильных приложений, ориентированных на поиск, с помощью интерфейсов навигации и ведения журнала событий REST
 
 SharePoint представляется интерфейсы навигации и REST ведение журнала событий, позволяя создавать мобильного приложения для мобильных устройств, например телефонов и планшетные ПК под управлением операционных системах, отличных от Windows, управляемых с помощью поиска — например, Android и операций ввода-вывода.
 ## <a name="how-apps-work-with-the-product-catalog"></a>Как работают приложения с каталогом продуктов
@@ -317,7 +317,7 @@ POST http://server/_api/events/logevent
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

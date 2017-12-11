@@ -3,11 +3,11 @@ title: "Изменение компонентов SharePoint для MDS"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c967be7c-f29f-481a-9ce2-915ead315dcd
-ms.openlocfilehash: 697a284f3d07c6b3ddcdad005578ba3f9f7700ac
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 4639c5c0c53dfa080081316d744614db1b1bcc68
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="modify-sharepoint-components-for-mds"></a>Изменение компонентов SharePoint для MDS
 Узнайте, как изменить компоненты проекта SharePoint, чтобы использовать преимущества из минимальной загрузки стратегии (MDS) в SharePoint.
@@ -37,22 +37,12 @@ ms.lasthandoff: 10/13/2017
     
     
 
-**На рисунке 1. Компоненты, которые необходимо обновить на главной странице**
-
-  
-    
-    
-
-  
-    
+**На рисунке 1. Компоненты, которые необходимо обновить на главной странице**  
     
 ![Компоненты, которые необходимо обновить на главной странице](../images/MDS_SeattleMaster.png)
   
-    
-    
-
-    
-> **Примечание:** Существует множество дополнительных компонентов на главной странице Seattle.master, которые изменяют со страницы на страницу, такие как файлы JavaScript и таблицы стилей. На рисунке 1 показано только несколько примеров. 
+> [!NOTE]
+> [!Примечание] Существует множество дополнительных компонентов на главной странице Seattle.master, которые изменяют со страницы на страницу, например, таблицы стилей и файлы JavaScript. На рисунке 1 показано только несколько примеров. 
   
     
     
@@ -249,7 +239,7 @@ namespace VisualWebPartProject2.VisualWebPart1
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

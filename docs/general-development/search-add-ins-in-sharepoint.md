@@ -3,11 +3,11 @@ title: "Надстройки поиска в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 21682e45-dd78-4f3c-8f1e-cdd48de3bde2
-ms.openlocfilehash: 79522329a6a06808be5e3034a5d82ed9c3a35590
-ms.sourcegitcommit: 4ceb9b0dd0a9974df6180ca9959a1e9f452c7518
+ms.openlocfilehash: a0a9204a4b0d77abdda9bcb01fdade3af6e018fc
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="search-add-ins-in-sharepoint"></a>Надстройки поиска в SharePoint
 Сведения о поиска Надстройки SharePoint и как можно создавать свои собственные надстройки поиска. Надстройки, которые можно создать можно добавить к каталогу SharePoint надстройки, чтобы их можно использовать в локальном развертывании и Office 365. Надстройки поиска возможен только с данными, хранящимися в индексе поиска, а не исходного документа. Надстройки SharePoint  изолированная части функции, расширяющие возможности SharePoint веб-сайта. Эти надстройки путем интеграции с рекомендациями по SharePoint и веб-решения специфические потребности бизнеса и конечных пользователей. Надстройка может содержать различные элементы SharePoint, такие как списки, удаленных приемников событий, типов контента, рабочие процессы, настраиваемые действия рабочего процесса, столбцы сайта, модули, настраиваемые действия элемента меню, клиентского веб-частей и конфигурации поиска. Для получения дополнительных сведений см  [Надстройки SharePoint](http://msdn.microsoft.com/library/cd1eda9e-8e54-4223-93a9-a6ea0d18df70%28Office.15%29.aspx).
@@ -221,7 +221,7 @@ HTTP-запрос POST
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15_Search_app_addresources"> </a>
 
 

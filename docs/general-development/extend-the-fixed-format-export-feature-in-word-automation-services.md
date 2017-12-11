@@ -3,11 +3,11 @@ title: "Расширение функции экспорта в неизменя
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d8375505-432e-438e-971b-221a1d9bb601
-ms.openlocfilehash: de50843d70b07089a27ac8601fc76377717fd135
-ms.sourcegitcommit: 61f26b4fe41d3cd80622d9950d8f6599df48f26f
+ms.openlocfilehash: aad6cd52499a1599b15625d245e48eb46a7862be
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="extend-the-fixed-format-export-feature-in-word-automation-services"></a>Расширение функции экспорта в неизменяемом формате в службы Word Automation Services
 Расширение Word Automation Services в Microsoft Office 2013 для замены библиотеки, используемой функции экспорта в неизменяемом формате.
@@ -176,7 +176,7 @@ HANDLE phFile,
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 Дополнительные сведения см. в следующих документах:

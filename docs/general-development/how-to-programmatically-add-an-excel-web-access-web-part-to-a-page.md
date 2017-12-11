@@ -1,17 +1,17 @@
 ---
-title: "Добавление веб-части Excel Web Access на страницу программным способом"
+title: "Программный способ добавления веб-части Excel Web Access на страницу"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto,webpart
 f1_keywords: how to,howdoi,howto,webpart
 ms.prod: sharepoint
 ms.assetid: 858bb0f6-654a-4f12-ba0b-4776bda5ff6d
-ms.openlocfilehash: 3b7a2529cfa7f79ccadd8ac2f78babe2682c54f1
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 940389dc1ff428ae01e932beb4c7c5d267490760
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="programmatically-add-an-excel-web-access-web-part-to-a-page"></a>Добавление веб-части Excel Web Access на страницу программным способом
+# <a name="programmatically-add-an-excel-web-access-web-part-to-a-page"></a>Программный способ добавления веб-части Excel Web Access на страницу
 
 This example shows how to programmatically add an Веб-клиент Excel Web Part to a SharePoint page. It also shows you how to display an Excel workbook programmatically in an Веб-клиент Excel Web Part. 
   
@@ -19,13 +19,12 @@ This example shows how to programmatically add an Веб-клиент Excel Web 
     
 
 The following project uses Microsoft Visual Studio.
-> **Примечание:** В зависимости от версии Visual Studio и среды разработки Visual Studio (IDE) параметры, которые вы используете, процесса и действия, для создания проекта Visual Studio может немного отличаться от процедуры, приведенные в этом разделе. 
+
+> [!NOTE]
+> [!Примечание] Depending on the Visual Studio version and the Visual Studio integrated development environment (IDE) settings that you are using, the process and steps to create a Visual Studio project could be slightly different from the procedures shown in this topic. 
   
-    
-    
-
-
-> **Примечание:** Предполагается, что уже создан в библиотеке документов SharePoint и был очень надежного расположения. Дополнительные сведения можно [как: надежного расположения](how-to-trust-a-location.md). 
+> [!NOTE]
+> [!Примечание] It is assumed that you have already created a SharePoint document library and made it a trusted location. For more information, see  [How to: Trust a Location](how-to-trust-a-location.md). 
   
     
     
@@ -35,10 +34,8 @@ The following project uses Microsoft Visual Studio.
 
 The following steps show how to locate Microsoft.Office.Excel.WebUI.dll and how to add a reference to it. Repeat for Microsoft.Office.Excel.WebUI.Internal.dll and Microsoft.SharePoint.dll.
   
-    
-    
-
-> **Примечание:** Предполагается, что уже копирования Microsoft.Office.Excel.WebUI.dll и Microsoft.Office.Excel.WebUI.Internal.dll из глобального кэша сборок в папке по выбору. Дополнительные сведения о том, как найти и копирование Microsoft.Office.Excel.WebUI.dll и Microsoft.Office.Excel.WebUI.Internal.dll можно [как: найдите и копии Microsoft.Office.Excel.WebUI.dll и Microsoft.Office.Excel.WebUI.Internal.dll](how-to-locate-and-copy-microsoft-office-excel-webui-dll-and-microsoft-office-exc.md) . 
+> [!NOTE]
+> [!Примечание] It is assumed that you have already copied Microsoft.Office.Excel.WebUI.dll and Microsoft.Office.Excel.WebUI.Internal.dll from the global assembly cache to a folder of your choice. For more information about how to locate and copy Microsoft.Office.Excel.WebUI.dll and Microsoft.Office.Excel.WebUI.Internal.dll, see  [How to: Locate and Copy Microsoft.Office.Excel.WebUI.dll and Microsoft.Office.Excel.WebUI.Internal.dll](how-to-locate-and-copy-microsoft-office-excel-webui-dll-and-microsoft-office-exc.md). 
   
     
     
@@ -52,7 +49,9 @@ The following steps show how to locate Microsoft.Office.Excel.WebUI.dll and how 
   
 2. In the **Add Reference** dialog box, click **Browse**.
     
-    > **Примечание:** Можно также открыть диалоговое окно **Добавить ссылку** в области **Обозреватель решений** , щелкнув правой кнопкой мыши **ссылки** и выберите команду **Добавить ссылку**. 
+    > [!NOTE]
+    > [!Примечание] You can also open the **Add Reference** dialog box in the **Solution Explorer** pane by right-clicking **References** and selecting **Add Reference**. 
+    
 3. Browse to the location of Microsoft.Office.Excel.WebUI.dll.
     
   

@@ -3,11 +3,11 @@ title: "Общие сведения о действия с событиями в
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: fe4ad8cf-2c6f-488d-8b33-6bf4357018ac
-ms.openlocfilehash: cae929fc09b460eff0847d060247ec0e235fcfd5
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 07ec3fe8c0a131b9f5a87df55e5745a664aba825
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="understanding-eventing-actions-in-sharepoint-designer-2013"></a>Общие сведения о действия с событиями в SharePoint Designer 2013
 Изучите использование действия с событиями в SharePoint Designer 2013.
@@ -30,10 +30,8 @@ ms.lasthandoff: 10/13/2017
   
 Действия событий осуществляется в ленте SharePoint Designer 2013, как показано на рисунках в меню **Действие**.
   
-    
-    
-
-> **Примечание:** **Project Web App действий** доступны только при работе с сайта Project Web App.
+> [!NOTE] 
+> [!Примечание] **Project Web App действий** доступны только при работе с сайта Project Web App.
   
     
     
@@ -260,17 +258,17 @@ ms.lasthandoff: 10/13/2017
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 
--  [Рабочий процесс в SharePoint ](http://technet.microsoft.com/en-us/sharepoint/jj556245.aspx)
+-  [Рабочий процесс в SharePoint](http://technet.microsoft.com/en-us/sharepoint/jj556245.aspx)
     
   
--  [Новые возможности рабочего процесса в SharePoint](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)
+-  [Новые возможности рабочих процессов SharePoint](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)
     
   
--  [Приступая к работе с рабочего процесса SharePoint](http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx)
+-  [Начало работы с рабочими процессами SharePoint](http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx)
     
   
 -  [Разработка рабочих процессов в SharePoint Designer и Visio](workflow-development-in-sharepoint-designer-and-visio.md)

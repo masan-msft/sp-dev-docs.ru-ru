@@ -3,11 +3,11 @@ title: "Действия рабочего процесса можно получ
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: a8903440-ff8f-41a4-8c2a-5dbe12c07cfb
-ms.openlocfilehash: 1fcc19e690fbc662b8bea46949c698b82967f882
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 922eb86581cc0eab665c343379819bccdf9a273e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="workflow-actions-available-using-the-workflow-interop-bridge"></a>Действия рабочего процесса можно получить с моста взаимодействия рабочих процессов
 Содержит краткий список действий рабочих процессов в SharePoint 2010, доступные для рабочих процессов SharePoint с помощью моста взаимодействия рабочих процессов.
@@ -110,7 +110,7 @@ ms.lasthandoff: 10/13/2017
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bkm_addlresources"> </a>
 
 

@@ -3,11 +3,11 @@ title: "Управляемые метаданные и навигация в Sha
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: b66d4ec1-a2ef-49cc-8ca5-a6b516bff02e
-ms.openlocfilehash: e4b5453894cf03a93758157b5caa2e2f92208646
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 3da23b3b9d628188322c876094c616a4c0a8a0cb
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="managed-metadata-and-navigation-in-sharepoint"></a>Управляемые метаданные и навигация в SharePoint
 
@@ -234,7 +234,7 @@ SharePoint CSOM поддерживает настройки таксономии
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15_ManagedMetadataAndNav_AdditionalResources"> </a>
 
 

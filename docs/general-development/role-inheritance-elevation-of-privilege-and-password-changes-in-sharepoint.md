@@ -1,14 +1,14 @@
 ---
-title: "Роли, наследования, несанкционированное получение прав и изменения паролей в SharePoint"
+title: "Роли, наследование, повышение прав и изменение пароля в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 6860c6c126d3d617e303ec4bd67f73236eb647d0
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 07ff58f15255bdb924b3ccc14877056c64d65172
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="role-inheritance-elevation-of-privilege-and-password-changes-in-sharepoint"></a>Роли, наследования, несанкционированное получение прав и изменения паролей в SharePoint
+# <a name="role-inheritance-elevation-of-privilege-and-password-changes-in-sharepoint"></a>Роли, наследование, повышение прав и изменение пароля в SharePoint
 
 ## <a name="roles-role-definitions-and-role-assignments"></a>Роли, определения ролей и назначения ролей
 <a name="SP15_RoleInheritance_Role"> </a>
@@ -212,7 +212,7 @@ SPSecurity.RunWithElevatedPrivileges(delegate()
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15_RoleInheritance_AdditionalResources"> </a>
 
 

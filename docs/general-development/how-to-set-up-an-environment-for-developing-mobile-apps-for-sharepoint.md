@@ -1,15 +1,15 @@
 ---
-title: "Настройка среды для разработки мобильных приложений для SharePoint"
+title: "Настройка среды разработки мобильных приложений для SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: acaf556d-e20d-478d-8c59-2efd8efb9dcb
-ms.openlocfilehash: 9c18eb3fa355abd5f96b2620bd0ee8aed825cdb4
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: b17c804dc00fd8aa64c070c13a709e463d531c60
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="set-up-an-environment-for-developing-mobile-apps-for-sharepoint"></a>Настройка среды для разработки мобильных приложений для SharePoint
+# <a name="set-up-an-environment-for-developing-mobile-apps-for-sharepoint"></a>Настройка среды разработки мобильных приложений для SharePoint
 
 Узнайте о требованиях к системе и настройке среды разработки для мобильных проектов SharePoint.
 Минимальная Настройка для работы с SharePoint мобильности проектов требуются сервере под управлением SharePoint (или SharePoint Online учетной записи) и в среде разработки на отдельной клиентской операционной системы. Установка SharePoint на клиентские операционные системы (например, Windows 7) не поддерживается, и установка средства, необходимые для разработки приложений Windows Phone, не поддерживается в операционных системах сервера (например, Windows Server 2008).
@@ -53,7 +53,9 @@ ms.lasthandoff: 11/15/2017
     
     8.0 пакет SDK для Windows Phone  это среда разработки полнофункциональных для создания приложения и игры для Windows Phone 8.0 и Windows Phone 7.5. Пакет SDK для Windows Phone предоставляет изолированный Visual Studio 2012, Express edition для Windows Phone или работает в качестве надстройки для Visual Studio 2012 Professional, Premium или Ultimate выпуски. С помощью пакета SDK можно использовать имеющиеся навыки программирования и кода для создания управляемого или собственного кода приложения. Кроме того пакет SDK содержит несколько эмуляторов и дополнительные средства для профилирования и тестированию приложения Windows Phone в реальных условиях.
     
-    > **Примечание:** Если компьютер соответствует требованиям оборудования и требования к операционной системе, но не соответствует требованиям для эмулятора Windows Phone 8, установки и выполнения 8.0 пакет SDK для Windows Phone. Тем не менее эмулятора Windows Phone 8 не будет работать, и вы не сможете для развертывания или тестирования приложения в эмуляторе Windows Phone 8. Сведения о требованиях к системе для запуска эмулятора Windows Phone видеть [программы установки и системы-требования для эмулятора Windows Phone](http://msdn.microsoft.com/en-us/library/ff626524). 
+    > [!NOTE]
+    > [!Примечание] Если компьютер соответствует требованиям оборудования и требования к операционной системе, но не соответствует требованиям для эмулятора Windows Phone 8, установки и выполнения 8.0 пакет SDK для Windows Phone. Тем не менее эмулятора Windows Phone 8 не будет работать, и вы не сможете для развертывания или тестирования приложения в эмуляторе Windows Phone 8. Сведения о требованиях к системе для запуска эмулятора Windows Phone  [программа установки, которая системы-требования для эмулятора телефона Windows](http://msdn.microsoft.com/en-us/library/ff626524)см. 
+
 2. Установите  [Пакет SDK Microsoft SharePoint для Windows Phone 8](http://www.microsoft.com/en-us/download/details.aspx?id=36818).
     
     Пакет SDK для SharePoint для Windows Phone устанавливает два шаблоны Silverlight для Windows Phone (кроме, установленных с пакет SDK для Windows Phone): шаблон приложение Windows Phone пустой SharePoint и приложения списка SharePoint для Windows Phone. Пакет SDK также устанавливается SharePoint CSOM библиотеки, библиотеки проверки подлинности и шаблоны проектов Windows Phone и он теперь поддерживает проверку подлинности NTLM. Связанные интерфейсы API и шаблоны можно использовать для построения приложений Windows Phone 8 на основе SharePoint.
@@ -73,8 +75,8 @@ ms.lasthandoff: 11/15/2017
     
   
 
-    > **Примечание:** Шаблоны в пакете SDK SharePoint для Windows Phone в настоящее время доступны только для проектов C#. 
-      > Дополнительные сведения о шаблонах в пакете SDK SharePoint для Windows Phone можно [шаблоны приложений Overview of Windows Phone SharePoint в Visual Studio](overview-of-windows-phone-sharepoint-application-templates-in-visual-studio.md).
+    > [!NOTE]
+    > Шаблоны в пакете SDK SharePoint для Windows Phone в настоящее время доступны только для проектов C#. Дополнительные сведения о шаблонах в пакете SDK SharePoint для Windows Phone можно [шаблоны приложений Overview of Windows Phone SharePoint в Visual Studio](overview-of-windows-phone-sharepoint-application-templates-in-visual-studio.md).
   
     
     
@@ -88,7 +90,8 @@ ms.lasthandoff: 11/15/2017
 
 1. На компьютере с поддерживаемой клиентской операционной системы установите  [пакет SDK для Windows Phone 7.1](http://www.microsoft.com/en-us/download/details.aspx?id=27570).
     
-    > **Примечание:** Более ранней версии пакета SDK Windows Phone был с именем средств разработчика Windows Phone. 
+    > [!NOTE]
+    > [!Примечание] Пакет SDK для Windows Phone более ранней версии был с именем средств разработчика Windows Phone. 
 
     Пакет SDK для Windows Phone устанавливает Microsoft Visual Studio 2010 Express для Windows Phone, эмулятора Windows Phone, Studio игру XNA и Blend выражений Microsoft для Windows Phone. Visual Studio 2010, экспресс-выпуск for Windows Phone  это среду разработки подходит для большинства решений для Windows Phone. Visual Studio 2010 Professional также можно использовать в качестве среды разработки предпочитаемый, но все еще необходимо установить пакет SDK для телефонов Windows, которая устанавливает необходимые надстройки Visual Studio. (Пакет SDK для Windows Phone не поддерживается в настоящее время для использования с Visual Studio 2012.)
     
@@ -114,13 +117,13 @@ ms.lasthandoff: 11/15/2017
     
   
 
-    > **Примечание:** Шаблоны в пакете SDK SharePoint для Windows Phone в настоящее время доступны только для проектов C#. 
-      > Дополнительные сведения о шаблонах в пакете SDK SharePoint для Windows Phone можно [шаблоны приложений Overview of Windows Phone SharePoint в Visual Studio](overview-of-windows-phone-sharepoint-application-templates-in-visual-studio.md).
+    > [!NOTE]
+    > Шаблоны в пакете SDK SharePoint для Windows Phone в настоящее время доступны только для проектов C#. Дополнительные сведения о шаблонах в пакете SDK SharePoint для Windows Phone можно [шаблоны приложений Overview of Windows Phone SharePoint в Visual Studio](overview-of-windows-phone-sharepoint-application-templates-in-visual-studio.md).
   
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15Setupmobile_addlresources"> </a>
 
 

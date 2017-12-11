@@ -1,17 +1,17 @@
 ---
-title: "Создание пользовательской функции, которая вызывает веб-службы"
+title: "Создание пользовательской функции, которая вызывает веб-службу"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto,UDF
 f1_keywords: how to,howdoi,howto,UDF
 ms.prod: sharepoint
 ms.assetid: 360c5766-4b5d-4a48-9f23-8955036924ce
-ms.openlocfilehash: bc240dfb4d9d398afcc3be2377726da09c977e06
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 37202a89818446d1a3730d09012469a7f7e110d4
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="create-a-udf-that-calls-a-web-service"></a>Создание пользовательской функции, которая вызывает веб-службы
+# <a name="create-a-udf-that-calls-a-web-service"></a>Создание пользовательской функции, которая вызывает веб-службу
 
 This example shows how to call an external Web service from a user-defined function (UDF). The Web service used in this example is:
   
@@ -20,11 +20,8 @@ This example shows how to call an external Web service from a user-defined funct
 
  `http://webservices.imacination.com/distance/Distance.jws?wsdl` You must use Microsoft Visual Studio 2005 or a similar Microsoft .NET Framework 2.0-compatible development tool to create this sample. 
   
-    
-    
-
-
-> **Примечание:** Перед началом тестирования в коде, убедитесь в том, что веб-службы, который вы вызываете доступен. Веб-службы сервера может быть недоступен или удаленные веб-службы. Если веб-служба недоступна, вызовы, сделанные в веб-службу из кода завершится с ошибкой. > Вы можете проверить, доступен ли веб-службы, посетив его сайта. В этом примере — это URL-адрес: > `http://webservices.imacination.com/distance/Distance.jws?wsdl`> Если веб-службы, вы сможете видеть языка описания веб-служб (WSDL). Если он недоступен, возникает ошибка обычным «веб-страницу не найден». 
+> [!NOTE]
+> [!Примечание] Before testing the code, make sure that the Web service you are calling is available. The Web service server could be down or the Web service discontinued. If the Web service is unavailable, the calls you make to the Web service from your code will fail. > You can check if a Web service is available by visiting its site. In this example, the URL is: >  `http://webservices.imacination.com/distance/Distance.jws?wsdl`> If the Web service is available, you will be able to see the Web Services Description Language (WSDL). If it is not available, you will get the usual "Web page not found" error. 
   
     
     

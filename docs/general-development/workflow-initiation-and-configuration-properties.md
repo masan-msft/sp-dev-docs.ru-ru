@@ -3,11 +3,11 @@ title: "Запуск и настройка свойств рабочего пр�
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 7386bbf9-3ed6-4732-bcdb-b27baed7397e
-ms.openlocfilehash: eb69b75b91289cca91edb448242b4f233c7a08f7
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 3dea52f65dfb581448e48789b40ffa07e4482813
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="workflow-initiation-and-configuration-properties"></a>Запуск и настройка свойств рабочего процесса
 Общие сведения о инициализации и сопоставлении свойств, которые задает SharePoint для рабочих процессов.
@@ -33,9 +33,8 @@ ms.lasthandoff: 10/13/2017
   
 - Для запуска рабочего процесса **сайта**, используйте метод [StartWorkflow](https://msdn.microsoft.com/library/Microsoft.SharePoint.WorkflowServices.WorkflowInstanceService.StartWorkflow.aspx) .
     
-  
-
-> **Примечание:** Два метода для **связывания** рабочих процессов находятся в классе [WorkflowSubscriptionService](https://msdn.microsoft.com/library/Microsoft.SharePoint.WorkflowServices.WorkflowSubscriptionService.aspx) во время на класс [WorkflowInstanceService](https://msdn.microsoft.com/library/Microsoft.SharePoint.WorkflowServices.WorkflowInstanceService.aspx) находятся два метода для **запуска** рабочих процессов.
+> [!NOTE] 
+> [!Примечание] Два метода для **связывания** рабочих процессов находятся в классе [WorkflowSubscriptionService](https://msdn.microsoft.com/library/Microsoft.SharePoint.WorkflowServices.WorkflowSubscriptionService.aspx) во время на класс [WorkflowInstanceService](https://msdn.microsoft.com/library/Microsoft.SharePoint.WorkflowServices.WorkflowInstanceService.aspx) находятся два метода для **запуска** рабочих процессов.
   
     
     
@@ -115,13 +114,11 @@ ms.lasthandoff: 10/13/2017
     
   
 
-> **Важные:** Свойства, помеченные звездочкой (\*) не определены в API рабочего процесса, чтобы получить доступ к их просто использовать их строковые значения. 
+> [!IMPORTANT] 
+> Свойства, помеченные звездочкой (\*) не определены в API рабочего процесса, чтобы получить доступ к их просто использовать их строковые значения. 
   
-    
-    
-
-
-> **Примечание:** Можно добавить пользовательские сопоставления свойств с помощью формы связывания. 
+> [!NOTE] 
+> [!Примечание] Можно добавить пользовательские сопоставления свойств с помощью формы связывания. 
   
     
     
@@ -170,21 +167,17 @@ ms.lasthandoff: 10/13/2017
   
 -  [UniqueId](https://msdn.microsoft.com/library/Microsoft.SharePoint.WorkflowServices.ExternalVariableName.UniqueId.aspx)
     
-  
-
-> **Примечание:** Можно добавить настраиваемые инициализации свойства с помощью форму запуска. 
+> [!NOTE] 
+> [!Примечание] Можно добавить настраиваемые инициализации свойства с помощью форму запуска. 
   
     
     
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
-
 -  [Разработка рабочих процессов в SharePoint с помощью Visual Studio](develop-sharepoint-workflows-using-visual-studio.md)
-    
-  
 -  [Как: создание рабочих процессов SharePoint с помощью Visual Studio](how-to-create-sharepoint-workflows-using-visual-studio.md)
     
   

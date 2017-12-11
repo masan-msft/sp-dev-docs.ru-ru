@@ -3,11 +3,11 @@ title: "Создание локализованных приложений дл�
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c12d7fd4-8c6b-446b-970b-1eb0e5d0a9b2
-ms.openlocfilehash: 423cd5cfe84bdf23f8991a28eea70f90c83b93cf
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 3c55a33469bc580d15a126585ce7ecac4babc841
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="build-localized-applications-for-windows-phone-based-on-the-sharepoint-templates"></a>Создание локализованных приложений для Windows Phone на основе шаблонов SharePoint
 Узнайте, как построение локализуемых приложений Windows Phone, используя новые шаблоны SharePoint отличается от построение один с помощью другие шаблоны Windows Phone.
@@ -50,7 +50,7 @@ Visual Studio использует файлы ресурсов для конкр
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

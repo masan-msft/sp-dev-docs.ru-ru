@@ -1,15 +1,15 @@
 ---
-title: "Получение URL-адрес библиотеки страниц"
+title: "Получение URL-адреса библиотеки страниц"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d9922e4b-4948-4c4a-a8ca-1623168143a3
-ms.openlocfilehash: 8f132495459b0b581be648942c81dbf60382cac0
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: f8b4943bf2eb60640d25a6b0b9d00e22173f7749
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="retrieve-the-url-of-a-pages-library"></a>Получение URL-адрес библиотеки страниц
+# <a name="retrieve-the-url-of-a-pages-library"></a>Получение URL-адреса библиотеки страниц
 
 Узнайте, как получить URL-адрес для список страниц для публикации веб-сайта в семействе сайтов, которые отличаются от текущего контекста.
 
@@ -116,7 +116,7 @@ Key = vti_pageslistname, Value = {the URL to the Pages list}
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

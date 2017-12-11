@@ -1,18 +1,19 @@
 ---
-title: "С помощью OData с помощью служб Excel REST в SharePoint"
+title: "Использование OData с REST служб Excel в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 8a20225a-323c-4420-bbb4-eef60aed4b42
-ms.openlocfilehash: 61d8691d95786ed10a514d0c990b5ab61859faaf
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2e45347cab9befa2bf333339db59fa052ece11af
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="using-odata-with-excel-services-rest-in-sharepoint"></a>С помощью OData с помощью служб Excel REST в SharePoint
+# <a name="using-odata-with-excel-services-rest-in-sharepoint"></a>Использование OData с REST служб Excel в SharePoint
 SharePoint Server 2010 появился API-Интерфейс REST для использования в считывание и запись сведений в книгах Excel, хранящиеся в библиотеках документов SharePoint. SharePoint добавляет новый способ запроса данных из служб Excel, использующего Open Data Protocol (OData) которого можно использовать для получения сведений обо всех ресурсах служб Excel. Эта новая служба во многом зависит от существующего интерфейса API REST служб Excel. В этом разделе представлены высокоуровневый обзор использования OData в службах Excel.
-> **Примечание:** API REST служб Excel применяется к SharePoint и SharePoint 2016 локально. Для образовательных учреждений Office 365, бизнеса и корпоративных учетных записей используйте Excel API-интерфейсы REST, входящих в состав [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
-> ) конечной точки.
+
+> [!NOTE] 
+> API REST служб Excel применяется к SharePoint и SharePoint 2016 локально. Для учетных записей Office 365 для образования, Office 365 бизнес и Office 365 корпоративный используйте REST API Excel, входящие в состав конечной точки [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel).
   
     
     
@@ -115,7 +116,7 @@ OData предоставляет простой способ получения 
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="xlsOdataAddRes"> </a>
 
 

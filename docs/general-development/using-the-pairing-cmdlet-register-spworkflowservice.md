@@ -3,11 +3,11 @@ title: "С помощью командлета связывания Register-SPW
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 91fca6c2-60ca-4177-8560-2b310dac0e2c
-ms.openlocfilehash: b04bb57d3583ea7fb4e8927ff867ab5ff3e2b264
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 93941c54931812e0333c2297705d5196dff164a6
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="using-the-pairing-cmdlet-register-spworkflowservice"></a>С помощью командлета связывания Register-SPWorkflowService
 Узнайте, как использовать командлет **Register-SPWorkflowService** успешно связать SharePoint с помощью диспетчера рабочих процессов.
@@ -65,7 +65,7 @@ PS> Register-SPWorkflowService -SPSite "https://myserver/mysitecollection" -Work
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

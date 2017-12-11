@@ -3,11 +3,11 @@ title: "Создание внешнего списка с помощью ист�
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 601fbfce-a0c6-43dd-8398-540d094c083c
-ms.openlocfilehash: a926f2a85678a35e41cb590da67eae1724cdd29c
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 6e437123a2f4d618c8232a3c789df2522cecb433
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-an-external-list-using-an-odata-data-source-in-sharepoint"></a>Создание внешнего списка с помощью источника данных OData в SharePoint
 
@@ -65,10 +65,8 @@ ms.lasthandoff: 11/15/2017
 
 Ниже показано, как создать новый внешний список, привязки на основе внешнего типа контента и публикация в SharePoint с помощью Visual Studio 2012.
   
-    
-    
-
-> **Примечание:** Первый шаг предполагается, что вы создали внешнего типа контента, как описано в статье [как: создать внешний тип контента из источника OData в SharePoint](how-to-create-an-external-content-type-from-an-odata-source-in-sharepoint.md). 
+> [!NOTE]
+> Первый шаг предполагается, что вы создали внешнего типа контента, как описано в статье [как: создать внешний тип контента из источника OData в SharePoint](how-to-create-an-external-content-type-from-an-odata-source-in-sharepoint.md). 
   
     
     
@@ -113,7 +111,7 @@ ms.lasthandoff: 11/15/2017
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bkmk_AdditionalResources"> </a>
 
 

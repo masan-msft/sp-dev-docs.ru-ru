@@ -2,11 +2,11 @@
 title: "Синтаксис выражений триггер в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: bb466b4bff566808c970b4015815fd94651aff43
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: b8ecbc4a50a26dfa03a612946186ee5a01a6bcc6
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="trigger-expressions-syntax-in-sharepoint"></a>Синтаксис выражений триггер в SharePoint
 Сведения о выражениях триггер, которые можно использовать для создания условия запуска для настройки вызов веб-службы в SharePoint. 
@@ -32,9 +32,8 @@ ms.lasthandoff: 10/13/2017
   
 - Константы
     
-  
-
-> **Примечание:** Строка « **Null**» зарезервирован для значение **Null**. 
+> [!NOTE] 
+> [!Примечание] Строка " **Null**" зарезервирован для значение **Null**. 
   
     
     
@@ -58,7 +57,7 @@ ms.lasthandoff: 10/13/2017
 |ADDITIVE  <br/> |+  <br/> -  <br/> &amp;  <br/> |Добавление  <br/> Вычитание  <br/> Объединение строк  <br/> |
 |Реляционные  <br/> |=, ==  <br/> ! = <>  <br/> <  <br/> >  <br/> <=  <br/> >=  <br/> |Равенство  <br/> Неравенство  <br/> Меньше  <br/> Больше  <br/> Меньше или равно  <br/> Больше или равно  <br/> |
 |Логическое И  <br/> |&amp; &amp;, AND  <br/> |Логическое И  <br/> |
-|Логическое ИЛИ  <br/> | ИЛИ  <br/> |Логическое ИЛИ  <br/> |
+|Логическое ИЛИ  <br/> | OR  <br/> |Логическое ИЛИ  <br/> |
    
 
 ## <a name="managed-property-access-in-trigger-expressions"></a>Управляемые свойства access в выражениях триггер
@@ -244,7 +243,7 @@ ms.lasthandoff: 10/13/2017
 |**RegexOptionConstant** <br/> |**IgnoreCase** <br/> |С помощью функции **IsMatch**, **Match**, **ReplaceRegex**и **IndexOfRegex**. <br/> |
    
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15triggerex_addresources"> </a>
 
 

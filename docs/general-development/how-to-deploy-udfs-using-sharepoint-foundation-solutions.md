@@ -5,11 +5,11 @@ keywords: how to,howdoi,howto,udf list,WSS Solutions
 f1_keywords: how to,howdoi,howto,udf list,WSS Solutions
 ms.prod: sharepoint
 ms.assetid: 97751a6c-ef73-4d95-a3c4-98014d84ba48
-ms.openlocfilehash: 48f06c78c96dac5c0d81b35aa5f6fb4d7d2aa1ae
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: e731eee138d97bd80cea236f78fd760cf7af2e7a
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="deploy-udfs-using-sharepoint-foundation-solutions"></a>Развертывание пользовательских функций с помощью решений SharePoint Foundation
 
@@ -28,7 +28,9 @@ The SharePoint Foundation solution framework lets you bundle all the components 
     
     The solution manifest (always called Manifest.xml) is stored at the root of a solution file. This file defines the list of features, site definitions, resource files, Web Part files, and assemblies to be processed. It does not define the file structure; if files are included in a solution but not listed in the manifest XML file, they are not processed in any way.
     
-    > **Примечание:** Дополнительные сведения о структуре XML-файле манифеста обратитесь к документации SharePoint Foundation. 
+    > [!NOTE]
+    > [!Примечание] For more information about the structure of the manifest XML file, see the SharePoint Foundation documentation. 
+
 2. Package the UDF assembly and Manifest.xml into a CAB file.
     
   
@@ -42,7 +44,9 @@ The SharePoint Foundation solution framework lets you bundle all the components 
     
   
 Each Службы Excel trusted location has an **AllowUdfs** flag.
-> **Примечание:** Флаг **AllowUdfs** идентификаторами с помощью параметра **пользовательские функции разрешены** на странице "Надежные расположения файлов Excel Services". Чтобы узнать, как для перехода к странице "Надежные расположения файлов", обратитесь к разделу [Шаг 3: развертывание и включение пользовательских функций](step-3-deploying-and-enabling-udfs.md). 
+
+> [!NOTE]
+> [!Примечание] The **AllowUdfs** flag is denoted by the **User-defined functions allowed** option on the Службы Excel Trusted File Locations page. To learn how to navigate to the Trusted File Locations page, see [Step 3: Deploying and Enabling UDFs](step-3-deploying-and-enabling-udfs.md). 
   
     
     
@@ -55,7 +59,9 @@ In order to allow UDFs to be called from a specific trusted location, you must:
     
   
 For more information on how to enable UDFs and add UDFs to the trusted UDF list, see  [How to: Enable UDFs](how-to-enable-udfs.md).
-> **Примечание:** Во избежание конфликта, предоставьте сборки пользовательских Функций и их зависимости строгих имен и назвать их по мере возможности уникально. Для получения дополнительных сведений см [Рекомендации для служб Excel](excel-services-best-practices.md) и [Excel Services известные проблемы и советы](excel-services-known-issues-and-tips.md). 
+
+> [!NOTE]
+> [!Примечание] To avoid name collision, give your UDF assemblies and their dependencies strong names, and name them as uniquely as possible. For more information, see  [Excel Services Best Practices](excel-services-best-practices.md) and [Excel Services Known Issues and Tips](excel-services-known-issues-and-tips.md). 
   
     
     
@@ -89,8 +95,8 @@ For more information on how to enable UDFs and add UDFs to the trusted UDF list,
 ```
 
 
-    > **Note:**
-      > You should generate a unique GUID for each solution. For more information about **Solution** element, see the SharePoint Foundation [Solutions and Web Part Packages](http://msdn.microsoft.com/library/a145a5eb-fbb6-4328-b5b3-96bf5ce89a19%28Office.15%29.aspx) (http://msdn.microsoft.com/en-us/library/ms413687.aspx).
+    > [!NOTE]
+    > You should generate a unique GUID for each solution. For more information about **Solution** element, see the SharePoint Foundation [Solutions and Web Part Packages](http://msdn.microsoft.com/library/a145a5eb-fbb6-4328-b5b3-96bf5ce89a19%28Office.15%29.aspx) (http://msdn.microsoft.com/en-us/library/ms413687.aspx).
 
 ### <a name="to-create-a-solution-package"></a>To create a solution package
 
@@ -123,9 +129,11 @@ For more information on how to enable UDFs and add UDFs to the trusted UDF list,
     
     stsadm.exe -o addsolution -filename <pathtoCAB>
     
-    > **Примечание:** Можно найти Stsadm.exe в: > C:\\Program Files\\общие файлы\\Microsoft Shared\\веб-серверных расширений\\12\\КОРЗИНЫ. 
+    > [!NOTE]
+    > [!Примечание] You can find the Stsadm.exe at: > C:\\Program Files\\Common Files\\Microsoft Shared\\web server extensions\\12\\BIN. 
 
-    > **Примечание:** Дополнительные сведения о параметрах командной строки Stsadm.exe можно [команд Stsadm и Windows PowerShell сопоставление (SharePoint Foundation 2010)](http://technet.microsoft.com/en-us/library/ff621081.aspx) (http://technet.microsoft.com/en-us/library/ff621081.aspx).
+    > [!NOTE]
+    > [!Примечание] For more information about Stsadm.exe command options, see the  [Stsadm to Windows PowerShell Mapping (SharePoint Foundation 2010)](http://technet.microsoft.com/en-us/library/ff621081.aspx) (http://technet.microsoft.com/en-us/library/ff621081.aspx).
 
   
     

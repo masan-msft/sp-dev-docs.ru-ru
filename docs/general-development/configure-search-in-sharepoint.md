@@ -1,15 +1,15 @@
 ---
-title: "Настройка службы поиска в SharePoint"
+title: "Настройка поиска в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: e447127c-2b11-4d65-b46e-01a18cdcdee5
-ms.openlocfilehash: 0fa1ba925fd858ebef033a89bf98f0fe566fb167
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 0109e7f7b9c1028e0ddee988aeda93491d65154c
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="configure-search-in-sharepoint"></a>Настройка службы поиска в SharePoint
+# <a name="configure-search-in-sharepoint"></a>Настройка поиска в SharePoint
 Узнайте о двух типах настройки в поиска SharePoint: Добавление настраиваемого разбиения и Добавление настраиваемого шага для изменения управляемых свойств для обхода элементов во время обработки контента.
    
 
@@ -40,7 +40,7 @@ ms.lasthandoff: 10/13/2017
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15configsearch_addlresources"> </a>
 
 

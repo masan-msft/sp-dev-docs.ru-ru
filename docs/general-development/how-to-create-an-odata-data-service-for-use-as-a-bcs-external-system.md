@@ -3,11 +3,11 @@ title: "Создание службы данных OData для использо
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 7d7b3aa6-85b7-400d-8ea5-50bebac56a1d
-ms.openlocfilehash: 71c2397d1064746db45a55b05452352dc6c8ef5c
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 7395ef6587e416478ea7581caa63c39b5e19ea31
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-an-odata-data-service-for-use-as-a-bcs-external-system"></a>Создание службы данных OData для использования в качестве внешней системы BCS
 
@@ -208,8 +208,9 @@ public class AdventureWorks : DataService<AdventureWorksEntities>
 
     This enables authorized clients to have read and write access to resources for the specified entity sets.
     
-    > **Note:**
-      > Any client that can access the ASP.NET application can also access the resources that are exposed by the data service. In a production data service, to prevent unauthorized access to resources, you should also secure the application itself. For more information, see  [Securing WCF Data Services](http://msdn.microsoft.com/en-us/library/dd728284.aspx). 
+    > [!NOTE]
+    > Any client that can access the ASP.NET application can also access the resources that are exposed by the data service. In a production data service, to prevent unauthorized access to resources, you should also secure the application itself. For more information, see  [Securing WCF Data Services](http://msdn.microsoft.com/en-us/library/dd728284.aspx). 
+
 Для BCS для получения уведомлений должен быть механизм в источнике данных, которая будет принимать запрос для добавления и удаления из подписки на уведомления. 
   
     
@@ -230,8 +231,8 @@ public string subscriptionStorePath = @"\\\\[SHARE_NAME]\\SubscriptionStore\\Sub
 ```
 
 
-    > **Note:**
-      > This file is an XML file that is updated with the new subscriptions. Access to this file will be made by the server process, so make sure you have granted sufficient rights for this file access. > You might also want to create a database solution for storing subscription information. 
+    > [!NOTE]
+    > This file is an XML file that is updated with the new subscriptions. Access to this file will be made by the server process, so make sure you have granted sufficient rights for this file access. > You might also want to create a database solution for storing subscription information. 
 
     Then add the following two **WebGet** methods to handle the subscriptions.
     
@@ -305,7 +306,7 @@ public string subscriptionStorePath = @"\\\\[SHARE_NAME]\\SubscriptionStore\\Sub
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bkmk_Addresources"> </a>
 
 

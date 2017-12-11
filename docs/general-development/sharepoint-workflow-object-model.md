@@ -1,17 +1,17 @@
 ---
-title: "Объектная модель рабочего процесса SharePoint"
+title: "Объектная модель рабочих процессов SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: be615a89-3201-4cd8-bbc7-15f3abf9f668
-ms.openlocfilehash: 0b02055055f6777b6c641c1a1445194573c54de5
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 02434d1a009b54ad971145d53cb1c47b52a096ad
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="sharepoint-workflow-object-model"></a>Объектная модель рабочего процесса SharePoint
+# <a name="sharepoint-workflow-object-model"></a>Объектная модель рабочих процессов SharePoint
 Получите Краткое введение в объектной модели рабочих процессов в SharePoint.
-## <a name="sharepoint-workflow-object-model"></a>Объектная модель рабочего процесса SharePoint
+## <a name="sharepoint-workflow-object-model"></a>Объектная модель рабочих процессов SharePoint
 <a name="bk_SPwfom"> </a>
 
 Для Windows Workflow Foundation 4, но с нововведения, которые позволяют функциональности рабочих процессов в SharePoint как правило и в SharePoint надстройки в частности, объектной модели SharePoint построен на основе объектной модели .NET Framework 4. Собственной объектной модели .NET Framework 4 для Windows Workflow Foundation 4 находится в.NET Framework [пространства имен System.Workflow](http://msdn.microsoft.com/en-us/library/gg145026.aspx).
@@ -106,7 +106,7 @@ ms.lasthandoff: 10/13/2017
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_additionalresources"> </a>
 
 

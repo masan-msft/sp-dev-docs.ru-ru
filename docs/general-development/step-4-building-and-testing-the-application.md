@@ -3,11 +3,11 @@ title: "Этап 4. Построение и тестирование прило�
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: f2feeecb-1b4c-4049-be4e-11d414f13d9f
-ms.openlocfilehash: 344c1fff77662184f13d9f4397b1c7e1f6b065e1
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: fd80f3fabb19e74e04afb60b544c81785e7af19f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="step-4-building-and-testing-the-application"></a>Этап 4. Построение и тестирование приложения
 
@@ -35,19 +35,17 @@ ms.lasthandoff: 10/13/2017
   
 2. В консоли приложение выведет следующие данные:
     
-    > **Примечание:** Эти значения зависят от значения, которые имеют в книге, идентификатор сеанса и т. д. 
+    > [!NOTE]
+    > [!Примечание] Эти значения могут различаться в зависимости от значений в книге, кода сеанса и т. д. 
 
-```
-  
-The Credential is: System.Net.SystemNetworkCredential
-Total rows in range: 18
-Value in range is: 4245.955129
-```
+    ```
+    The Credential is: System.Net.SystemNetworkCredential
+    Total rows in range: 18
+    Value in range is: 4245.955129
+    ```
 
 3. Нажмите любую клавишу, чтобы закрыть программу SampleApplication.exe.
     
-  
-
 ### <a name="file-not-found-exception"></a>Исключение "Файл не найден"
 
 

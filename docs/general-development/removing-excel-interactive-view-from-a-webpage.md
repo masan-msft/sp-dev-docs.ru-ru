@@ -1,15 +1,15 @@
 ---
-title: "Удаление интерактивное представление Excel из веб-страницы"
+title: "Удаление интерактивного представления Excel с веб-страницы"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 407b3aa3-7286-462b-905f-811a3b7f3f1c
-ms.openlocfilehash: bb8372a12f8f33fcfca26c1917ac6e1800d1c80e
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: d91eefbcbb34967acca01da89d60a914d681a46b
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="removing-excel-interactive-view-from-a-webpage"></a>Удаление интерактивное представление Excel из веб-страницы
+# <a name="removing-excel-interactive-view-from-a-webpage"></a>Удаление интерактивного представления Excel с веб-страницы
 
 Интерактивное представление Excel возможность отключена. Если введено интерактивное представление Excel в веб-страницу, его можно удалить путем удаления `<script>` тег и заполнитель `<a>` тегов для кнопки из HTML-код веб-страницы.
   
@@ -39,7 +39,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

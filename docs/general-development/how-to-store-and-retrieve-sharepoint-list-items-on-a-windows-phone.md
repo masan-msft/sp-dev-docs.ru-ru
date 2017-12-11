@@ -1,15 +1,15 @@
 ---
-title: "Хранение и получение элементов списка SharePoint на Windows Phone"
+title: "Хранение и извлечение элементов списка SharePoint в Windows Phone"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 14ca37a2-5b45-430d-9004-ff3016f89834
-ms.openlocfilehash: f55cdc8e1a104a2827a4b06341e9415d6da8e5aa
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 601fdd8c374f822486e6ca9926e1a6d5539e3803
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="store-and-retrieve-sharepoint-list-items-on-a-windows-phone"></a>Хранение и получение элементов списка SharePoint на Windows Phone
+# <a name="store-and-retrieve-sharepoint-list-items-on-a-windows-phone"></a>Хранение и извлечение элементов списка SharePoint в Windows Phone
 
 Узнайте о жизненном цикле приложения Windows Phone и локальном хранении сетевых данных. Одно из наиболее важные замечания при разработке приложения для Windows Phone  управление сведения о состоянии, как для приложения в целом, так и для отдельных элементов страниц или данных в приложении. При разработке приложения для Windows Phone, необходимо учитывать, что пользователи приложений могут потерять возможность подключения к сетевым ресурсам (например, списки SharePoint). Инфраструктура разработки для приложений Windows Phone предоставляет механизмы для обработки сведения о состоянии на различных этапах жизненного цикла приложения.
   
@@ -712,7 +712,9 @@ namespace SPListAppLocalStorage
   
 11. В браузере, который открывает перейдите к папке, в котором были установлены стандартные изображения значка Windows Phone по Windows Phone SDK 7.1.
     
-    > **Примечание:** Изображения с быстрое переднего плана и темный фон находятся в `%PROGRAMFILES%(x86)\\Microsoft SDKs\\Windows Phone\\v7.1\\Icons\\dark` при установке пакета SDK.
+    > [!NOTE]
+    > [!Примечание] Изображения с быстрое переднего плана и темный фон находятся в  `%PROGRAMFILES%(x86)\\Microsoft SDKs\\Windows Phone\\v7.1\\Icons\\dark` при установке пакета SDK.
+
 12. Выберите файл изображения, с именем appbar.back.rest.png и нажмите кнопку **Добавить**. Изображение добавляется в проект в узле **изображений**.
     
   
@@ -811,7 +813,9 @@ private void OnSaveDraftButtonClick(object sender, EventArgs e)
   
 5. В браузере, который открывает перейдите к папке, в котором были установлены стандартные изображения значка Windows Phone по Windows Phone SDK 7.1.
     
-    > **Примечание:** Изображения с быстрое переднего плана и темный фон находятся в `%PROGRAMFILES%(x86)\\Microsoft SDKs\\Windows Phone\\v7.1\\Icons\\dark` при установке пакета SDK.
+    > [!NOTE]
+    > [!Примечание] Изображения с быстрое переднего плана и темный фон находятся в  `%PROGRAMFILES%(x86)\\Microsoft SDKs\\Windows Phone\\v7.1\\Icons\\dark` при установке пакета SDK.
+
 6. Выберите файл изображения, с именем appbar.folder.rest.png и нажмите кнопку **Добавить**. 
     
     Добавить изображение добавляется в проект в узле **изображений**.
@@ -913,7 +917,7 @@ private void OnDraftsButtonClick(object sender, EventArgs e)
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15StoreSPlist_addlresources"> </a>
 
 

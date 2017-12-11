@@ -3,11 +3,11 @@ title: "Создание связей в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 202599e3-232e-4b3a-9da5-c11f6e972283
-ms.openlocfilehash: a6033a798f575ef81abac5e0cdbdcfcd42f27d30
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 8ad040828e8bc35b730f054fb401b0aaf9595015
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-associations-in-sharepoint"></a>Создание связей в SharePoint
 
@@ -33,7 +33,7 @@ ms.lasthandoff: 10/13/2017
 | [Определение связей в Business Connectivity Services с помощью SharePoint Designer](http://msdn.microsoft.com/en-us/library/gg607166.aspx) <br/> |Показано, как создать расширенные связей между внешними типами контента.  <br/> |
    
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 
 
 -  [Внешние типы контента в SharePoint](external-content-types-in-sharepoint.md)

@@ -3,11 +3,11 @@ title: "Пошаговое руководство. Разработка наст
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 2f9bf243-281a-4d70-917e-9eaf0b867631
-ms.openlocfilehash: 96cbe71ced7143b9888645b3b455c3738f0030a6
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 57f6eb6d15510b1147b82fdce53436dded5fa47a
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="walkthrough-developing-a-custom-application-using-excel-web-services"></a>Пошаговое руководство. Разработка настраиваемого приложения с помощью веб-служб Excel
 
@@ -45,13 +45,17 @@ ms.lasthandoff: 10/13/2017
   
 - Достаточные разрешения (как минимум разрешения на просмотр) для доступа к веб-службам Веб-службы Excel на компьютере, на котором располагаются SharePoint Server 2010. 
     
-    > **Примечание:** Дополнительные сведения о разрешениях книги в следующем разделе, книги» разрешения «. 
+    > [!NOTE] 
+    > [!Примечание] Дополнительные сведения о разрешениях рабочих книг см. в следующем разделе "Разрешения рабочих книг". 
+
 - Пример рабочей книги, установленный на локальном диске или в локальной библиотеке документов SharePoint. 
     
   
 - Надежное расположение для хранения рабочих книг, доступ к которым будет осуществляться с помощью веб-служб Веб-службы Excel. Если рабочие книги хранятся не в надежном расположении, вызовы веб-служб Веб-службы Excel для открытия таких книг завершаются сбоем. В этом пошаговом руководстве подразумевается, что рабочая книга размещается на локальном компьютере. 
     
-    > **Примечание:** Сведения о том, как надежного расположения можно [как: надежного расположения](how-to-trust-a-location.md) и [как: доверия Workbook Locations Using Script](http://msdn.microsoft.com/library/79ab6ced-7a0c-4275-b852-bb246fc6be57%28Office.15%29.aspx). 
+    > [!NOTE] 
+    > [!Примечание] Присвоение доверия расположению рассматривается в статьях  [How to: Trust a Location](how-to-trust-a-location.md) и [How to: Trust Workbook Locations Using Script](http://msdn.microsoft.com/library/79ab6ced-7a0c-4275-b852-bb246fc6be57%28Office.15%29.aspx). 
+
 - Возможность создания книги с помощью Excel.
     
   
@@ -74,46 +78,16 @@ ms.lasthandoff: 10/13/2017
   
 - Для остальных методов веб-служб Веб-службы Excel вызывающему объекту требуются разрешения на просмотр (в Microsoft SharePoint Foundation) или чтение (на общем файловом ресурсе) рабочей книги.
     
-    > **Примечание:** Дополнительные сведения о настройке разрешений обратитесь к документации SharePoint Foundation. 
+    > [!NOTE] 
+    > [!Примечание] Дополнительные сведения об установке разрешений см. в документации SharePoint Foundation. 
 
 ## <a name="see-also"></a>См. также
 
-
-#### <a name="concepts"></a>Основные понятия
-
-
-  
-    
-    
- [Доступ к API SOAP](accessing-the-soap-api.md)
-  
-    
-    
- [Excel Services Alerts](excel-services-alerts.md)
-  
-    
-    
- [Excel Services Known Issues and Tips](excel-services-known-issues-and-tips.md)
-  
-    
-    
- [Loop-Back SOAP Calls and Direct Linking](loop-back-soap-calls-and-direct-linking.md)
-#### <a name="other-resources"></a>Другие ресурсы
-
-
-  
-    
-    
- [Шаг 1. Создание проекта клиента веб-службы](step-1-creating-the-web-service-client-project.md)
-  
-    
-    
- [Этап 2. Добавление веб-ссылки](step-2-adding-a-web-reference.md)
-  
-    
-    
- [Этап 3. Получение доступа к веб-службе](step-3-accessing-the-web-service.md)
-  
-    
-    
- [Этап 4. Построение и тестирование приложения](step-4-building-and-testing-the-application.md)
+- [Доступ к API SOAP](accessing-the-soap-api.md)
+- [Excel Services Alerts](excel-services-alerts.md)
+- [Excel Services Known Issues and Tips](excel-services-known-issues-and-tips.md)
+- [Loop-Back SOAP Calls and Direct Linking](loop-back-soap-calls-and-direct-linking.md)
+- [Шаг 1. Создание проекта клиента веб-службы](step-1-creating-the-web-service-client-project.md)
+- [Этап 2. Добавление веб-ссылки](step-2-adding-a-web-reference.md)
+- [Этап 3. Получение доступа к веб-службе](step-3-accessing-the-web-service.md)
+- [Этап 4. Построение и тестирование приложения](step-4-building-and-testing-the-application.md)

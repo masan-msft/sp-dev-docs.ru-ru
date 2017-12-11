@@ -1,17 +1,17 @@
 ---
-title: "Используйте асинхронный вызов метода CloseWorkbook"
+title: "Асинхронный вызов метода CloseWorkbook"
 ms.date: 09/25/2017
 keywords: async,how to,howdoi,howto
 f1_keywords: async,how to,howdoi,howto
 ms.prod: sharepoint
 ms.assetid: 6febe7dc-a552-4c79-aa3e-203d882286e3
-ms.openlocfilehash: 4abef18cee1d669291381a49c1d3b03d60db6da6
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 7720c0d18c101d137906f217e5caf58f3ba6b7d0
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="use-the-closeworkbook-method-call-asynchronously"></a>Используйте асинхронный вызов метода CloseWorkbook
+# <a name="use-the-closeworkbook-method-call-asynchronously"></a>Асинхронный вызов метода CloseWorkbook
 
 When you are using Веб-службы Excel, it is good practice to close the workbook by calling the **CloseWorkbook** method if you are finished using the session. This closes the session and allows Службы Excel to free resources in a predictable manner. This could potentially improve your server performance and robustness.
   
@@ -20,11 +20,8 @@ When you are using Веб-службы Excel, it is good practice to close the w
 
 However, any Web service call takes time. Depending on the way your server is installed, the way that you access it, and how much stress the server is under, the call can take anywhere between 50 milliseconds to 500 milliseconds. It can also take longer, but only if your server is under severe stress. Because a failed **CloseWorkbook** method call is not actionable, you do not need to wait for it to finish to see whether it succeeds. Because of this, you can usually make the call asynchronously and save some operation time.
   
-    
-    
-
-
-> **Примечание:** Если приложение вызывает некоторые службы Excel и затем завершается, можно закрыть книгу синхронно, а не асинхронно. В этом случае вызове метода **CloseWorkbook** вместо метода **CloseWorkbookAsync** . Причиной является при выходе процесс сразу же после выдачи асинхронный вызов есть большая вероятность, вызов не может получить с помощью.
+> [!NOTE]
+> [!Примечание] If your application makes some calls to Службы Excel and then exits, you may want to close a workbook synchronously instead of asynchronously. In this case, you call the **CloseWorkbook** method instead of the **CloseWorkbookAsync** method. The reason is if you immediately exit the process after issuing an asynchronous call, there is a good chance the call might not get through.
   
     
     
@@ -47,7 +44,9 @@ End Sub
 ```
 
 You don't have to implement the event that is called when the **CloseWorkbookAsync** method is called.You can find the signature in the "Reference.cs" file in your project "Web References" directory. 
-> **Примечание:** Метод **CloseWorkbookAsync** можно найти в прокси-класса, созданного при добавлении веб-ссылки, с помощью Microsoft Visual Studio 2005. Если вы используете Visual Studio 2003, вызове метода **begincloseworkbook рабочая** Закрытие книги вместо асинхронно.
+
+> [!NOTE]
+> [!Примечание] You can find the **CloseWorkbookAsync** method in the proxy class that is generated when you add a Web reference using Microsoft Visual Studio 2005. If you are using Visual Studio 2003, you call the **BeginCloseWorkbook** method to close a workbook asynchronously instead.
   
     
     

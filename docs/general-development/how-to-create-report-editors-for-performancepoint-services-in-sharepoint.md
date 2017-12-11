@@ -2,11 +2,11 @@
 title: "Создание отчета редакторы для служб PerformancePoint Services в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 64e2ba69caccae2580f34c973a4be340e19ec6c2
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 8c48ffd7d0029309e9cb816c64e45c5f9caf5a84
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-report-editors-for-performancepoint-services-in-sharepoint"></a>Создание отчета редакторы для служб PerformancePoint Services в SharePoint
 
@@ -75,9 +75,9 @@ ms.lasthandoff: 11/15/2017
   
   - IDataSourceConsumer.cs
     
-  
+  > [!NOTE]
+    > Пример отчета получает данные из фильтра, поэтому он не использует **DataSourceConsumerHelper** или **IDataSourceConsumer** объектов. Тем не менее, если отчет получает данные из источника данных PerformancePoint Services, можно использовать методы, предоставляемые классом **DataSourceConsumerHelper** для получения источников данных, как описано в [как для: создание редакторов для фильтра PerformancePoint Services в SharePoint](https://officedevcentersite-release.azurewebsites.net/sharepoint/docs/general-development/how-to-create-report-editors-for-performancepoint-services-in-sharepoint). 
 
-    > **Примечание:** Пример отчета получает данные из фильтра, поэтому он не использует **DataSourceConsumerHelper** или **IDataSourceConsumer** объектов. Тем не менее, если отчет получает данные из источника данных PerformancePoint Services, можно использовать методы, предоставляемые классом **DataSourceConsumerHelper** для получения источников данных, как описано в [как для: создание редакторов для фильтра PerformancePoint Services в SharePoint](https://officedevcentersite-release.azurewebsites.net/sharepoint/docs/general-development/how-to-create-report-editors-for-performancepoint-services-in-sharepoint). 
 5. В классе редактора добавьте директивы **using** для следующих пространств имен Службы PerformancePoint Services.
     
   - **Microsoft.PerformancePoint.Scorecards**
@@ -95,7 +95,8 @@ ms.lasthandoff: 11/15/2017
   
 7. Объявите переменные для элементов управления, предоставляющих свойства, которые пользователи должны просматривать или редактировать. Образец редактора отчетов сначала объявляет переменные для элементов управления веб-сервера, заданных в компоненте пользовательского интерфейса, который является ASPX-страницей. В образце редактора также определяется элемент управления кнопки, который позволяет пользователям передавать изменения. Затем редактор вызывает метод  [CreateChildControls()](https://msdn.microsoft.com/library/System.Web.UI.Control.CreateChildControls.aspx) для размещения элементов управления на странице.
     
-    > **Примечание:** Редактор определяет логику программирования отдельно от пользовательского интерфейса. Инструкции по созданию компонентов пользовательского интерфейса редактора выходят за рамки данной документации. 
+    > [!NOTE]
+    > [!Примечание] В редакторе программная логика определяется отдельно от пользовательского интерфейса. Инструкции по созданию компонента пользовательского интерфейса не входят в данную документации. 
 
     Редактор отчетов пример выполняет шаги с 8 по 12 в методе **Page_Load**. **Page_Load** также используется для инициализации и проверка переменными и элементами управления, заполнения элементов управления и сохранить сведения о состоянии для настраиваемых отчетов и вспомогательные объекты.
     
@@ -173,8 +174,9 @@ reportviewRepositoryHelper = new ReportViewRepositoryHelper();
 ```
 
 
-    > **Note:**
-      > By default, users can create custom objects from PerformancePoint Dashboard Designer only. To enable users to create a custom object outside of Dashboard Designer, you must add a menu item that sends a  _CreateItem_ request to your editor from the content type in the repository. For more information, see [Editors for Custom PerformancePoint Services Objects](http://msdn.microsoft.com/library/7c5924f1-91f3-436a-9d94-2e0dc454c8cc%28Office.15%29.aspx). 
+    > [!NOTE]
+    > By default, users can create custom objects from PerformancePoint Dashboard Designer only. To enable users to create a custom object outside of Dashboard Designer, you must add a menu item that sends a  _CreateItem_ request to your editor from the content type in the repository. For more information, see [Editors for Custom PerformancePoint Services Objects](http://msdn.microsoft.com/library/7c5924f1-91f3-436a-9d94-2e0dc454c8cc%28Office.15%29.aspx). 
+
 13. Определите конечную точку отчета, которая позволяет отчету получать данные из фильтров и систем показателей. В образце редактора отчетов определяются обязательные свойства конечной точки, как показано в следующем примере кода.
     
 ```cs
@@ -202,7 +204,8 @@ if (0 == reportview.EndPoints.Count)
   
 14. Обновите отчет в соответствии с изменениями, внесенными пользователем. Метод **buttonOK_Click** в образце редактора отчетов вызывает метод **ReportViewRepositoryHelper.Update** для обновления свойств [Name](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Name.aspx) и [Description](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Description.aspx) отчета в репозитории. **buttonOK_Click** также используется для проверки содержимого элементов управления и извлечения сведений о состоянии для настраиваемого отчета и вспомогательного объекта.
     
-    > **Примечание:** Пользователи могут изменить [имя](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Name.aspx) , [Описание](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Description.aspx) и свойства [Owner](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Owner.aspx) ( **Ответственное лицо**) настраиваемого объекта и удалять настраиваемые объекты непосредственно из конструктора панели мониторинга и репозитория служб PerformancePoint Services. 
+    > [!NOTE]
+    > [!Примечание] Пользователи могут изменять  [Name](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Name.aspx) , [Description](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Description.aspx) и свойства [Owner](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Owner.aspx) ( **Ответственное лицо** ) пользовательского объекта и удалять настраиваемые объекты непосредственно из репозитория Службы PerformancePoint Services и Конструктор панели мониторинга. 
 
 ## <a name="code-example-create-retrieve-and-update-custom-performancepoint-services-reports-in-sharepoint"></a>Пример кода: создание, извлечение и обновление настраиваемых отчетов служб PerformancePoint Services в SharePoint
 <a name="bk_example"> </a>
@@ -473,7 +476,7 @@ namespace Microsoft.PerformancePoint.SDK.Samples.SampleReport
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addResources"> </a>
 
 

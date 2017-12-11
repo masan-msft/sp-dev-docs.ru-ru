@@ -3,22 +3,19 @@ title: "Включить упоминания, теги и ссылки на с�
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 975da333-372b-4bf6-a3f4-7452db369f04
-ms.openlocfilehash: f0af1c97baf6da530358f2a2ff86f29e2f9bb03e
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 7778161ec06bd2a47012b830617132be3e3cd375
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="include-mentions-tags-and-links-to-sites-and-documents-in-posts-in-sharepoint"></a>Включить упоминания, теги и ссылки на сайты и документы в публикации в SharePoint
 
 Узнайте, как добавлять в записи микроблога объекты [SocialDataItem](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx), которые отображаются в каналах SharePoint в виде упоминаний, тегов или ссылок.
 В социальных веб-канал простейшей формой post контента содержит только текст, но также можно добавлять ссылки, которые отображаются в виде упоминания теги и ссылки на веб-сайты, сайты SharePoint и документы. Для этого добавьте объекты [SocialDataItem](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx) свойство [ContentItems](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.ContentItems.aspx) объекта [SocialPostCreationData](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx) , который определяет post. Публикации о может содержать несколько ссылок.
   
-    
-    
-
-
-> **Примечание:** Чтобы добавить содержимое post внедренные изображения, видео или документы, добавьте объект [SocialAttachment](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachment.aspx) свойством [SocialPostCreationData.Attachment](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.Attachment.aspx) . Дополнительные сведения можно [как: Внедрение изображения, видео и документы в публикации в SharePoint](how-to-embed-images-videos-and-documents-in-posts-in-sharepoint-server.md). 
+> [!NOTE]
+> Чтобы добавить содержимое post внедренные изображения, видео или документы, добавьте объект [SocialAttachment](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachment.aspx) свойством [SocialPostCreationData.Attachment](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.Attachment.aspx) . Дополнительные сведения можно [как: Внедрение изображения, видео и документы в публикации в SharePoint](how-to-embed-images-videos-and-documents-in-posts-in-sharepoint-server.md). 
   
     
     
@@ -68,19 +65,16 @@ API, описанных в этой статье  от клиентской о
   
 - Добавьте объекты ссылок свойство  [ContentItems](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.ContentItems.aspx) объекта [SocialPostCreationData](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx) , который используется для создания post.
     
-  
-
-> **Примечание:** На данный момент SharePoint значками ссылки на веб-сайты, сайты SharePoint и документов, таким же образом, но рекомендуется, выберите тип [сайта](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItemType.Site.aspx) и типа [документа](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItemType.Document.aspx) для сайтов SharePoint и документов.
+> [!NOTE]
+> На данный момент SharePoint значками ссылки на веб-сайты, сайты SharePoint и документов, таким же образом, но рекомендуется, выберите тип [сайта](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItemType.Site.aspx) и типа [документа](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItemType.Document.aspx) для сайтов SharePoint и документов.
   
     
     
 
 Социальные веб-канала щелкнув ссылку на веб-сайта, сайт SharePoint или документ откроется элемента в отдельном окне браузера.
   
-    
-    
-
-> **Примечание:** Изменение значений заполнитель для переменных URL-адрес, прежде чем запускать код. 
+> [!NOTE]
+> [!Примечание] Изменение значений заполнитель для переменных URL-адрес, прежде чем запускать код. 
   
     
     
@@ -190,10 +184,8 @@ namespace IncludeLinksInPost
   
 Социальные веб-канала нажав кнопку упоминание перенаправляет страницы упомянутый пользователя **о**.
   
-    
-    
-
-> **Примечание:** Изменение значений заполнитель для переменных **serverURL** и **имя учетной записи** , прежде чем запускать код.
+> [!NOTE]
+> [!Примечание] Изменение значений заполнитель для переменных **serverURL** и **accountName**, прежде чем запускать код.
   
     
     
@@ -281,10 +273,8 @@ namespace IncludeMentionInPost
   
 Социальные веб-канала нажав кнопку тега будет перенаправлять тег **о** страницу. Если тег еще не существует, сервер создает его.
   
-    
-    
-
-> **Примечание:** Изменение значений заполнитель для переменных **serverURL** и **tagName** , прежде чем запускать код.
+> [!NOTE]
+> [!Примечание] Изменение значений заполнитель для переменных **serverURL** и **tagName**, прежде чем запускать код.
   
     
     
@@ -354,7 +344,7 @@ namespace IncludeTagInPost
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

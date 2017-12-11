@@ -3,11 +3,11 @@ title: "Обход больших двоичных объектов (BLOB) в Sh
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 99b3dd51-1651-4300-a2de-33681f4cc258
-ms.openlocfilehash: d7fec8ce2a152b72c80d0a6776947d136638fb13
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 7b2804c5e24e5938ced28926626f2e21a8eb2993
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="crawl-binary-large-objects-blobs-in-sharepoint"></a>Обход больших двоичных объектов (BLOB) в SharePoint
 
@@ -87,7 +87,8 @@ ms.lasthandoff: 11/15/2017
   
 2. Создайте новый метод, возвращающий поле объектов BLOB. Необходимо определить экземпляр метода типа **StreamAccessor** для этого метода, как показано в следующем примере.
     
-    > **Примечание:** Имя таблицы в этом примере — вложения. 
+    > [!NOTE]
+    > [!Примечание] В этом примере используется имя таблицы «Attachment». 
 
 ```XML
   
@@ -167,7 +168,7 @@ ms.lasthandoff: 11/15/2017
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15Crawlblobs_addlresources"> </a>
 
 

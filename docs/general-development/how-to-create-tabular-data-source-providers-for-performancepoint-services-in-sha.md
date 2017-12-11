@@ -3,11 +3,11 @@ title: "Создание поставщиков табличных источн�
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 8d734ed6-7636-40c5-a99b-bc038362cffe
-ms.openlocfilehash: 4421efa84a8a313b0ed666df72335134aae3e489
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: d3e07812b180244e76e991e7b06dec1d94ad6b69
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-tabular-data-source-providers-for-performancepoint-services-in-sharepoint"></a>Создание поставщиков табличных источников данных для служб PerformancePoint Services в SharePoint
 
@@ -423,7 +423,7 @@ namespace Microsoft.PerformancePoint.SDK.Samples.SampleDataSource
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addResources"> </a>
 
 

@@ -1,17 +1,17 @@
 ---
-title: "Найдите и скопируйте Microsoft.Office.Excel.WebUI.dll и Microsoft.Office.Excel.WebUI.Internal.dll"
+title: "Обнаружение и копирование Microsoft.Office.Excel.WebUI.dll и Microsoft.Office.Excel.WebUI.Internal.dll"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto,WebUI DLL
 f1_keywords: how to,howdoi,howto,WebUI DLL
 ms.prod: sharepoint
 ms.assetid: 09ad5d5e-1678-45e4-8159-23ef56f84215
-ms.openlocfilehash: 07089089b39fec2e6c7bd804f7188b5e0b666859
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 227d8f98a7ab49d090612ed6411b44865a4d2ea8
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="locate-and-copy-microsoftofficeexcelwebuidll-and-microsoftofficeexcelwebuiinternaldll"></a>Найдите и скопируйте Microsoft.Office.Excel.WebUI.dll и Microsoft.Office.Excel.WebUI.Internal.dll
+# <a name="locate-and-copy-microsoftofficeexcelwebuidll-and-microsoftofficeexcelwebuiinternaldll"></a>Обнаружение и копирование Microsoft.Office.Excel.WebUI.dll и Microsoft.Office.Excel.WebUI.Internal.dll
 
 If you want to programmatically add an Веб-клиент Excel Web Part to a SharePoint page and programmatically change the Веб-клиент Excel Web Part, you must add a reference to the required SharePoint DLLs. For example: 
   
@@ -40,9 +40,8 @@ The following steps show how to:
   
 - Copy Microsoft.Office.Excel.WebUI.dll from the global assembly cache to a folder of your choice.
     
-  
-
-> **Примечание:** Повторите действия, чтобы скопировать в папку Microsoft.Office.Excel.WebUI.Internal.dll из глобального кэша сборок. 
+> [!NOTE]
+> [!Примечание] Repeat the steps to copy Microsoft.Office.Excel.WebUI.Internal.dll from the global assembly cache to a folder. 
   
     
     
@@ -61,21 +60,23 @@ The following steps show how to:
   
 3. Use the **cd** command to navigate to the "C:\\Windows\\assembly" directory:
     
-    > **Примечание:** Структура каталогов на вашем компьютере может немного отличаться. В этом примере используется компьютер с Windows Server 2008 установлены. 
+    > [!NOTE]
+    > [!Примечание] The directory structure on your computer might be slightly different. This example uses a computer that has Windows Server 2008 installed. 
 
-```
-  
-cd C:\\Windows\\assembly
-```
+
+    ```
+      
+    cd C:\\Windows\\assembly
+    ```
 
 4. Use the **dir** command to display the contents of the "C:\\Windows\\assembly" directory:
     
-```
-  C:\\Windows\\assembly>dir
-```
+    ```
+      C:\\Windows\\assembly>dir
+    ```
 
 
-    You will see contents similar to the following:
+  You will see contents similar to the following:
     
 
 

@@ -3,11 +3,11 @@ title: "Диагностика ошибок проверки рабочих пр
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c21cc3e2-45bd-4d34-a57d-dd0954436bd8
-ms.openlocfilehash: df9cbf15f3249b8dae78463b97be7d1f9cae595b
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 7462f1de37b128255198e6165c98b0258ba8e2b0
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="troubleshooting-sharepoint-server-workflow-validation-errors-in-visio"></a>Диагностика ошибок проверки рабочих процессов SharePoint Server в Visio
 Используйте эту ссылку для устраните проблемы проверки и контроля ошибок в шаблоне рабочего процесса Microsoft SharePoint в Microsoft Visio 2013 и Microsoft SharePoint Designer 2013.
@@ -48,7 +48,7 @@ ms.lasthandoff: 10/13/2017
 |Параллельные действия должен начинаться с фигурой Запуск параллельной ветви.  <br/> |Проверка каждого параллельные действия в рабочем процессе, убедитесь, что он имеет форму запуска параллельной ветви до начала действия parallel.  <br/> |
    
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="VSSPD_Trouble_Additional"> </a>
 
 

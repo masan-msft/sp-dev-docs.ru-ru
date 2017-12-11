@@ -3,11 +3,11 @@ title: "Возможности социальных сетей и совмест
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 5060f676-9aaa-41fe-88ef-e862ee2e1c52
-ms.openlocfilehash: 8fe69747b471220b5bb87926f06e89379d408e25
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 5ec81d54f9f1d43a798fcc2e0c0141351c724d7e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="social-and-collaboration-features-in-sharepoint"></a>Возможности социальных сетей и совместной работы в SharePoint
 Сведения о возможности социальных вычислений и совместной работы в SharePoint и Разработка сценариев для личных сайтов, веб-сайтов групп и сайты сообщества.
@@ -57,7 +57,7 @@ ms.lasthandoff: 10/13/2017
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

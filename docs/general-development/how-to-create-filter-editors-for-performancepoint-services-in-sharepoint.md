@@ -2,11 +2,11 @@
 title: "Создание фильтра редакторы для служб PerformancePoint Services в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 0d04a5b6b0d102890b60b6fcea9e234155694213
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: ddad9b7357ee041c4eb935fd5baad915915c11f0
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-filter-editors-for-performancepoint-services-in-sharepoint"></a>Создание фильтра редакторы для служб PerformancePoint Services в SharePoint
 
@@ -99,7 +99,8 @@ ms.lasthandoff: 11/15/2017
   
 7. Определите элементы управления для доступа к свойствам, которые пользователи смогут просматривать или изменять. В образце редактора фильтров сначала объявляются переменные для серверных веб-элементов управления, определенных в компоненте пользовательского интерфейса, представляющем собой страницу ASPX. В образце редактора также определяется элемент управления "Кнопка", позволяющий пользователям отправлять изменения. Затем в редакторе вызывается метод  [CreateChildControls()](https://msdn.microsoft.com/library/System.Web.UI.Control.CreateChildControls.aspx) , чтобы сделать элементы управления доступными на странице.
     
-    > **Примечание:** Редактор определяет логику программирования отдельно от пользовательского интерфейса. Инструкции по созданию компонентов пользовательского интерфейса редактора выходят за рамки данной документации. 
+    > [!NOTE]
+    > [!Примечание] В редакторе программная логика определяется отдельно от пользовательского интерфейса. Инструкции по созданию компонента пользовательского интерфейса не входят в данную документации. 
 
     Редактор фильтров пример выполняет шаги с 8 по 12 в методе **Page_Load**. **Page_Load** также используется для инициализации и проверка переменными и элементами управления, заполнения элементов управления и сохранить сведения о состоянии для настраиваемого фильтра и вспомогательные объекты.
     
@@ -210,8 +211,9 @@ End If
 ```
 
 
-    > **Note:**
-      > By default, users can create custom objects from PerformancePoint Dashboard Designer only. To enable users to create a custom object outside of Dashboard Designer, you must add a menu item that sends a  _CreateItem_ request to your editor from the content type in the repository. For more information, see [Editors for Custom PerformancePoint Services Objects](http://msdn.microsoft.com/library/7c5924f1-91f3-436a-9d94-2e0dc454c8cc%28Office.15%29.aspx). 
+    > [!NOTE]
+    > By default, users can create custom objects from PerformancePoint Dashboard Designer only. To enable users to create a custom object outside of Dashboard Designer, you must add a menu item that sends a  _CreateItem_ request to your editor from the content type in the repository. For more information, see [Editors for Custom PerformancePoint Services Objects](http://msdn.microsoft.com/library/7c5924f1-91f3-436a-9d94-2e0dc454c8cc%28Office.15%29.aspx). 
+
 13. Извлеките из репозитория базовый источник данных фильтра. В данном образце редактора фильтров используется свойство **FilterRepositoryHelper.DataSourceHelper** для вызова метода **DataSourceConsumerHelper.GetDataSource**, позволяющего найти источник данных по его расположению в репозитории. Это показано в следующем примере кода.
     
 ```cs
@@ -276,7 +278,8 @@ Dim dataSourceCollection As ICollection = filterRepositoryHelper.DataSourceHelpe
     
   
 
-    > **Примечание:** В таблице данных отображения возвращается свойством [DisplayValues](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.ParameterDefinition.DisplayValues.aspx) и инициализации при поставщика данных фильтра вызывает метод [GetDisplayDataInternal](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Server.Extensions.CustomParameterDataProvider.GetDisplayDataInternal.aspx) . Если в таблице данных содержит другие столбцы, можно определить другие сопоставления столбцов для предоставления дополнительных функциональных возможностей.
+    > [!NOTE]
+    > [!Примечание] Таблица отображаемых данных возвращается свойством  [DisplayValues](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.ParameterDefinition.DisplayValues.aspx) и инициализируется, когда поставщик данных фильтра вызывает метод [GetDisplayDataInternal](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Server.Extensions.CustomParameterDataProvider.GetDisplayDataInternal.aspx) . Если в таблице отображаемых данных содержатся и другие столбцы, можно определить сопоставления других столбцов для обеспечения дополнительных функциональных возможностей.
 
 ```cs
   
@@ -336,10 +339,13 @@ End If
   
 16. Инициализируйте фильтр, выполнив запрос фильтра и получив данные из источника данных. Метод **buttonOK_Click** в данном образце редактора фильтров вызывает метод **FilterRepositoryHelper.GetParameterDisplayData** для инициализации фильтра.
     
-    > **Примечание:** **Filterrepositoryhelper.getparameterdisplaydata должен по крайней мере один раз перед обновлением объекта фильтра.**
+    > [!NOTE]
+    > [!Примечание] Метод **FilterRepositoryHelper.GetParameterDisplayData** должен быть вызван в редакторе по крайней мере один раз перед обновлением объекта фильтра.
+
 17. Обновите фильтр, применив изменения, определенные пользователем. Метод **buttonOK_Click** в образце редактора фильтров вызывает метод **FilterRepositoryHelper.Update** для обновления свойств [Name](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Name.aspx) , [Description](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Description.aspx) и [DataSourceLocation](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Filter.DataSourceLocation.aspx) данного фильтра в репозитории. Кроме того, с помощью метода **buttonOK_Click** проверяется содержимое элементов управления и извлекается информация о состоянии настраиваемого фильтра и вспомогательного объекта.
     
-    > **Примечание:** Пользователи могут задать [имя](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Name.aspx) , [Описание](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Description.aspx) и свойства [Owner](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Owner.aspx) ( **Ответственное лицо**) настраиваемого объекта и удалять настраиваемые объекты непосредственно из конструктора панели мониторинга и репозитория служб PerformancePoint Services. 
+    > [!NOTE]
+    > [!Примечание] Пользователи могут установить  [Name](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Name.aspx) , [Description](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Description.aspx) и свойства [Owner](https://msdn.microsoft.com/library/Microsoft.PerformancePoint.Scorecards.Element.Owner.aspx) ( **Ответственное лицо** ) пользовательского объекта и удалять настраиваемые объекты непосредственно из репозитория Службы PerformancePoint Services и Конструктор панели мониторинга. 
 
 ## <a name="code-example-create-retrieve-and-update-custom-performancepoint-services-filters-in-sharepoint"></a>Пример кода: создание, извлечение и обновление настраиваемых фильтров PerformancePoint Services в SharePoint
 <a name="bk_example"> </a>
@@ -1171,7 +1177,7 @@ End Namespace
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addResources"> </a>
 
 

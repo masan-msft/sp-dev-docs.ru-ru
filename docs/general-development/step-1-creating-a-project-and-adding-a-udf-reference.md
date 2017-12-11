@@ -3,11 +3,11 @@ title: Step 1 Creating a Project and Adding a UDF Reference
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 4c6f1279-28df-45af-8488-42a6573d526d
-ms.openlocfilehash: 530231d09b22be8036a815e6c60945364b5a6ba7
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: f4ccef885ce00bdad740154890d81c9495b02c86
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="step-1-creating-a-project-and-adding-a-udf-reference"></a>Step 1: Creating a Project and Adding a UDF Reference
 
@@ -21,10 +21,8 @@ In this step, you will create a project and add a reference to Microsoft.Office.
 
 The following project uses Microsoft Visual Studio 2005.
   
-    
-    
-
-> **Примечание:** В зависимости от того, какие параметры использовать в среде разработки Visual Studio (IDE) процесс создания проекта может немного отличаться. 
+> [!NOTE]
+> [!Примечание] Depending on which settings you use in the Visual Studio integrated development environment (IDE), the process to create a project could be slightly different. 
   
     
     
@@ -99,41 +97,19 @@ The following steps show how to locate Microsoft.Office.Excel.Server.Udf.dll and
   
 2. In the **Add Reference** dialog box, on the **.NET** tab, select **Excel Services UDF Framework**.
     
-    > **Примечание:** Можно также открыть диалоговое окно **Добавление ссылки** в **Окне Обозреватель решений** , щелкнув правой кнопкой мыши **ссылки** и выберите команду **Добавить ссылку**. 
+    > [!NOTE]
+    > [!Примечание] You can also open the **Add Reference** dialog box in **Solution Explorer** by right-clicking **References** and selecting **Add Reference**. 
+
 3. Click **OK**.
     
-    > **Примечание:** Предыдущие действия предполагается, что построении проекта на компьютере с Microsoft SharePoint Server 2010. На компьютере, где установлен SharePoint Server 2010, можно найти копию Microsoft.Office.Excel.Server.UDF.dll по следующему пути: > [диск:]\\Program Files\\общие файлы\\Microsoft Shared\\web server extensions\\14\\ISAPI 
+    > [!NOTE]
+    > [!Примечание] The previous steps assume that you are building the project on a computer that has Microsoft SharePoint Server 2010 installed. On the computer where you have installed SharePoint Server 2010, you can find a copy of Microsoft.Office.Excel.Server.Udf.dll at: > [drive:]\\Program Files\\Common Files\\Microsoft Shared\\web server extensions\\14\\ISAPI 
 
 ## <a name="see-also"></a>См. также
 
-
-#### <a name="tasks"></a>Задачи
-
-
-  
-    
-    
- [Step 2: Creating a Managed-Code UDF](step-2-creating-a-managed-code-udf.md)
-  
-    
-    
- [Step 3: Deploying and Enabling UDFs](step-3-deploying-and-enabling-udfs.md)
-  
-    
-    
- [Step 4: Testing and Calling UDFs from Cells](step-4-testing-and-calling-udfs-from-cells.md)
-  
-    
-    
- [How to: Create a UDF That Calls a Web Service](how-to-create-a-udf-that-calls-a-web-service.md)
-#### <a name="concepts"></a>Основные понятия
-
-
-  
-    
-    
- [Walkthrough: Developing a Managed-Code UDF](walkthrough-developing-a-managed-code-udf.md)
-  
-    
-    
- [Understanding Excel Services UDFs](understanding-excel-services-udfs.md)
+- [Step 2: Creating a Managed-Code UDF](step-2-creating-a-managed-code-udf.md)
+- [Step 3: Deploying and Enabling UDFs](step-3-deploying-and-enabling-udfs.md)
+- [Step 4: Testing and Calling UDFs from Cells](step-4-testing-and-calling-udfs-from-cells.md)
+- [How to: Create a UDF That Calls a Web Service](how-to-create-a-udf-that-calls-a-web-service.md)
+- [Walkthrough: Developing a Managed-Code UDF](walkthrough-developing-a-managed-code-udf.md)
+- [Understanding Excel Services UDFs](understanding-excel-services-udfs.md)

@@ -1,15 +1,15 @@
 ---
-title: "Виртуальные каталоги в решениях SharePoint"
+title: "Виртуальные каталоги решений для SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c26c4160-31be-4358-89cf-082b8a1e6a6c
-ms.openlocfilehash: 93be71d76718e12439ea7d9d359639a139dfb89d
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: bba15a4ae1866fe9cc39757442dd8d89fe963950
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="virtual-directories-in-sharepoint-solutions"></a>Виртуальные каталоги в решениях SharePoint
+# <a name="virtual-directories-in-sharepoint-solutions"></a>Виртуальные каталоги решений для SharePoint
 Сведения о влиянии изменения в систему виртуального каталога на создание решений фермы SharePoint.
 ## <a name="make-your-solutions-compatible-with-the-new-ui-mode-system"></a>Сделать решений совместимым с новой системы режим пользовательского интерфейса
 
@@ -23,16 +23,14 @@ ms.lasthandoff: 10/13/2017
     
 Если вам потребуется сделать совместимым с семейств веб-сайтов из любого из режима решения, ветвление логику для определения режима в текущем семействе сайтов и создать виртуальный путь к соответствующим образом. Свойство  [CompatibilityLevel](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPSite.CompatibilityLevel.aspx) , которое возможности также доступны на всех клиентских объектных моделей SharePoint и интерфейс REST,  одну позицию, где код можно проверить, для режима. Класс [SPUtility](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPUtility.aspx) также имеет несколько новых свойств для помощи в управлении уровень совместимости имеющихся. Они не доступны в клиентской объектной модели. И, наконец существует несколько элементов управления в SharePoint, которые предоставляют свойство **UIVersion**, которое кода можно также использовать для поиска текущий уровень совместимости.
   
-    
-    
-
-> **Примечание:** Если файл виртуальный путь *.aspx, SharePoint автоматическое определение режим в текущем семействе сайтов и возврата файла из соответствующего куста. Поэтому необходимо вставить «/ 15» в виртуальный путь. 
+> [!NOTE] 
+> [!Примечание] Если файл виртуальный путь *.aspx, SharePoint автоматическое определение режим в текущем семействе сайтов и возврата файла из соответствующего куста. Поэтому необходимо вставить "/ 15" в виртуальный путь. 
   
     
     
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

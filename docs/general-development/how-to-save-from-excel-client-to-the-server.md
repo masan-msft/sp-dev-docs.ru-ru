@@ -1,30 +1,28 @@
 ---
-title: "Сохраните из клиента Excel на сервере"
+title: "Сохранение на сервере данных из клиента Excel"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto
 f1_keywords: how to,howdoi,howto
 ms.prod: sharepoint
 ms.assetid: 28716ba5-0774-44df-833b-0034d2c63319
-ms.openlocfilehash: 1601689491584b8a359a5bffa4b0596d10ab9e6f
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 18868cec79119123cf8262b9b93e9fd7eca1571f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="save-from-excel-client-to-the-server"></a>Сохраните из клиента Excel на сервере
+# <a name="save-from-excel-client-to-the-server"></a>Сохранение на сервере данных из клиента Excel
 
 This example shows you how to:
-  
-    
-    
-
 
 1. Create a workbook with editable ranges.
     
   
 2. Save the workbook to a SharePoint document library that is a trusted location.
     
-    > **Примечание:** Предполагается, что уже создан в библиотеке документов SharePoint и был очень надежного расположения. Дополнительные сведения можно [как: надежного расположения](how-to-trust-a-location.md). 
+    > [!NOTE]
+    > [!Примечание] It is assumed that you have already created a SharePoint document library and made it a trusted location. For more information, see  [How to: Trust a Location](how-to-trust-a-location.md).
+
 3. Change values in a workbook by using the parameters pane in Веб-клиент Excel.
     
   

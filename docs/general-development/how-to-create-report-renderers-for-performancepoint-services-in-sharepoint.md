@@ -2,11 +2,11 @@
 title: "Создание средств отображения отчетов для PerformancePoint Services в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 44a84b222c6bb661b1b4560ab7b72a9063507d4e
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 14533254c82bcca8e5aaa53c7b37c54824106842
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-report-renderers-for-performancepoint-services-in-sharepoint"></a>Создание средств отображения отчетов для PerformancePoint Services в SharePoint
 
@@ -270,7 +270,7 @@ namespace Microsoft.PerformancePoint.SDK.Samples.SampleReport
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addResources"> </a>
 
 

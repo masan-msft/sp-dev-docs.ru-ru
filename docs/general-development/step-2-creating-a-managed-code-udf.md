@@ -5,11 +5,11 @@ keywords: soap
 f1_keywords: soap
 ms.prod: sharepoint
 ms.assetid: 3c9edf82-ee2d-41f0-9d66-e88e8dc0cc69
-ms.openlocfilehash: f763b1599a2fcbb1c8d70998ad02b707c79769d5
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: acb89ed685130f98c3dc5963c8839d2f2919ac39
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="step-2-creating-a-managed-code-udf"></a>Step 2: Creating a Managed-Code UDF
 
@@ -83,8 +83,9 @@ End Function
 ```
 
 
-    > **Note:**
-      > The default value for the **IsVolatile** property is **false**, which means that particular UDF method is nonvolatile. Therefore, it is sufficient to mark a nonvolatile UDF method as  `[UdfMethod]`. It is not necessary to mark it as  `[UdfMethod(IsVolatile = false)]`. 
+    > [!NOTE]
+    > The default value for the **IsVolatile** property is **false**, which means that particular UDF method is nonvolatile. Therefore, it is sufficient to mark a nonvolatile UDF method as  `[UdfMethod]`. It is not necessary to mark it as  `[UdfMethod(IsVolatile = false)]`. 
+    
 3. Create another function that returns the current date using the **System.DateTime.Today** property. The function is a UDF method that is volatile. Add the following code to `Class1`:
     
 ```cs

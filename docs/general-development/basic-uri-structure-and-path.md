@@ -3,22 +3,20 @@ title: "Структура базового URI и путь"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d73cf6c2-0677-4726-8a3e-2ad130e1a12c
-ms.openlocfilehash: 2902dca96c5325250d8e1cd31647172e6968d632
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 3cb8133b01c2a7ec88e954c6a455e80677b53b38
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="basic-uri-structure-and-path"></a>Структура базового URI и путь
 
 В этом разделе объясняется, как создать URI структуры и путь для команды службы REST в Службы Excel.
   
-    
-    
-
-
-> **Примечание:** API REST служб Excel применяется к SharePoint и SharePoint 2016 локально. Для образовательных учреждений Office 365, бизнеса и корпоративных учетных записей используйте Excel API-интерфейсы REST, входящих в состав [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
-> ) конечной точки.
+> [!NOTE]
+> 
+> API REST служб Excel применяется к SharePoint и SharePoint 2016 локально. Для учетных записей Office 365 для образования, Office 365 бизнес и Office 365 корпоративный используйте REST API Excel, входящие в состав конечной точки [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
+).
   
     
     

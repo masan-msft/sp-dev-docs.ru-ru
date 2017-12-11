@@ -3,22 +3,19 @@ title: "Обнаружение в API REST служб Excel"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: e3a8e057-f803-446d-81c9-4eb8ef3691e1
-ms.openlocfilehash: a667a39d7e66f93367364b36501f52f53d50e401
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 3b89c557207195b675224b7be525c5fe670c20a9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="discovery-in-excel-services-rest-api"></a>Обнаружение в API REST служб Excel
 
 В этом разделе описываются механизмы обнаружения, встроенные в API-интерфейс RESTСлужбы Excel.
   
-    
-    
-
-
-> **Примечание:** API REST служб Excel применяется к SharePoint и SharePoint 2016 локально. Для образовательных учреждений Office 365, бизнеса и корпоративных учетных записей используйте Excel API-интерфейсы REST, входящих в состав [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
-> ) конечной точки.
+> [!NOTE]
+> API REST служб Excel применяется к SharePoint и SharePoint 2016 локально. Для учетных записей Office 365 для образования, Office 365 бизнес и Office 365 корпоративный используйте REST API Excel, входящие в состав конечной точки [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
+).
   
     
     

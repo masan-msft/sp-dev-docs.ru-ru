@@ -3,22 +3,19 @@ title: "Внедрение изображения, видео и докумен�
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 9927b9e7-daea-4261-80fa-4cc25f489e22
-ms.openlocfilehash: f06a936839773e58837042fea884082aaeabe36e
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: f253398d85d12fc53ce85130fef66c632f22b588
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="embed-images-videos-and-documents-in-posts-in-sharepoint"></a>Внедрение изображения, видео и документы в публикации в SharePoint
 
 Узнайте, как добавлять в записи микроблога объекты [SocialAttachment](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachment.aspx), которые отображаются в каналах SharePoint в виде внедренных рисунков, видеозаписей и документов.
 В это социальные веб-канал простейшей формой post контента содержит только текст, но также можно добавить внедренные изображения, видео и документы. Для этого воспользуйтесь свойством [вложений](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.Attachment.aspx) в объекте [SocialPostCreationData](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.aspx) , определяющий post. Публикации о может содержать одно вложение, что представленный объектом [SocialAttachment](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachment.aspx) .
   
-    
-    
-
-
-> **Примечание:** Добавление упоминаются, тег или ссылка для записи контента, добавьте объект [SocialDataItem](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx) свойством [SocialPostCreationData.ContentItems](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.ContentItems.aspx) . Дополнительные сведения можно [как: Включение упоминания, теги и ссылки на сайты и документы в публикации в SharePoint](how-to-include-mentions-tags-and-links-to-sites-and-documents-in-posts-in-sharep.md). 
+> [!NOTE]
+> Добавление упоминаются, тег или ссылка для записи контента, добавьте объект [SocialDataItem](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx) свойством [SocialPostCreationData.ContentItems](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialPostCreationData.ContentItems.aspx) . Дополнительные сведения можно [как: Включение упоминания, теги и ссылки на сайты и документы в публикации в SharePoint](how-to-include-mentions-tags-and-links-to-sites-and-documents-in-posts-in-sharep.md). 
   
     
     
@@ -295,7 +292,7 @@ namespace EmbedDocumentInPost
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

@@ -3,11 +3,11 @@ title: "Извлечение свойств профиля пользовате�
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 236ebaf8-f92e-4192-9b51-0a9de0210885
-ms.openlocfilehash: 1d77fdaccfeeefafc9a7d43476140a0c8a632515
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 8ff2bf5802099c70f60cf362916659af1c657a8b
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="retrieve-user-profile-properties-by-using-the-net-client-object-model-in-sharepoint"></a>Извлечение свойств профиля пользователя с помощью клиентской объектной модели .NET в SharePoint
 
@@ -33,10 +33,8 @@ ms.lasthandoff: 11/15/2017
   
 Свойства профиля пользователя из клиентских API находятся только для чтения (за исключением изображение профиля можно изменить с помощью метода  [PeopleManager.SetMyProfilePicture](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.SetMyProfilePicture.aspx) ). Если вы хотите изменить другие свойства профиля пользователя, необходимо использовать серверной объектной модели.
   
-    
-    
-
-> **Примечание:** Версия клиентского объекта [UserProfile](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.UserProfile.aspx) , не содержит все свойства пользователя как версию на сервере. Однако клиентская версия предоставляет методы для создания личного сайта для текущего пользователя. Чтобы получить клиентские [UserProfile](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.UserProfile.aspx) для текущего пользователя, используйте метод [ProfileLoader.GetUserProfile](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.ProfileLoader.GetUserProfile.aspx) .
+> [!NOTE]
+> [!Примечание] Версия клиентского объекта  [UserProfile](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.UserProfile.aspx) не содержит все свойства пользователя как версию на сервере. Тем не менее клиентские версии предоставляет методы для создания личного сайта для текущего пользователя. Чтобы получить клиентские [UserProfile](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.UserProfile.aspx) для текущего пользователя, используйте метод [ProfileLoader.GetUserProfile](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.ProfileLoader.GetUserProfile.aspx) .
   
     
     
@@ -62,9 +60,8 @@ ms.lasthandoff: 11/15/2017
   
 - разрешения уровня **Полный доступ** для подключения к приложению-службе профиля текущего пользователя.
     
-  
-
-> **Примечание:** При разработке не на компьютере, на котором работает SharePoint, загрузить [Клиентские компоненты SharePoint](http://www.microsoft.com/en-us/download/details.aspx?id=35585) , содержащий клиентскую сборку SharePoint.
+> [!NOTE]
+> При разработке не на компьютере, на котором работает SharePoint, загрузить [Клиентские компоненты SharePoint](http://www.microsoft.com/en-us/download/details.aspx?id=35585) , содержащий клиентскую сборку SharePoint.
   
     
     
@@ -145,10 +142,8 @@ foreach (var property in personProperties.UserProfileProperties)
 
 В следующем примере кода показано, как получить и выполнять итерацию по всем свойства профиля пользователя конечного пользователя, как описано в  [предыдущей процедуре](how-to-retrieve-user-profile-properties-by-using-the-net-client-object-model-in.md#bk_RetrieveProps).
   
-    
-    
-
-> **Примечание:** Замените `http://serverName/` и `domainName\\\\userName` заполнитель значения, прежде чем запускать код.
+> [!NOTE]
+> [!Примечание] Замените значения заполнителей  `http://serverName/` и `domainName\\\\userName` , прежде чем запускать код.
   
     
     
@@ -242,20 +237,16 @@ if (contextTokenString != null)
 
 В следующем примере кода показано, как получить определенный набор свойств профилей пользователей для конечного пользователя.
   
-    
-    
-
-> **Примечание:** Чтобы получить значение для свойства профиля только один пользователь, используйте метод [GetUserProfilePropertyFor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetUserProfilePropertyFor.aspx) .
+> [!NOTE]
+> [!Примечание] Чтобы получить значение для свойства профиля только один пользователь, используйте метод  [GetUserProfilePropertyFor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetUserProfilePropertyFor.aspx) .
   
     
     
 
 В отличие от предыдущего примера кода, который извлекает объект  [PersonProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.aspx) для конечного пользователя в этом примере вызов метода [PeopleManager.GetUserProfilePropertiesFor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetUserProfilePropertiesFor.aspx) и передает в объект [UserProfilePropertiesForUser](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.UserProfilePropertiesForUser.aspx) , который указывает конечного пользователя и свойств профилей пользователей для извлечения. [GetUserProfilePropertiesFor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PeopleManager.GetUserProfilePropertiesFor.aspx) возвращает коллекцию **IEnumerable<string>**, который содержит значения свойств, которые можно указать.
   
-    
-    
-
-> **Примечание:** Замените `http://serverName/` и `domainName\\\\userName` заполнитель значения, прежде чем запускать код.
+> [!NOTE]
+> [!Примечание] Замените значения заполнителей  `http://serverName/` и `domainName\\\\userName` , прежде чем запускать код.
   
     
     
@@ -316,7 +307,7 @@ namespace UserProfilesCSOM
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

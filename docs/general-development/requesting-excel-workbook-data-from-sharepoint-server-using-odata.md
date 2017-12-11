@@ -3,15 +3,16 @@ title: "Запрашивает данные книги Excel с SharePoint Serve
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 2f846e96-6c9e-4ed2-9602-4081ad0ab135
-ms.openlocfilehash: 79e7a64b88e54105ad5ad846939836121621cc45
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: c7547b4bc0b504780609dffafe7fc15669cd68c4
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="requesting-excel-workbook-data-from-sharepoint-server-using-odata"></a>Запрашивает данные книги Excel с SharePoint Server с помощью OData
 
-> **Примечание:** API REST служб Excel применяется к SharePoint и SharePoint 2016 локально. Для образовательных учреждений Office 365, бизнеса и корпоративных учетных записей используйте Excel API-интерфейсы REST, входящих в состав [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel) конечной точки.
+> [!NOTE]
+> API REST служб Excel применяется к SharePoint и SharePoint 2016 локально. Для учетных записей Office 365 для образования, Office 365 бизнес и Office 365 корпоративный используйте REST API Excel, входящие в состав конечной точки [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel).
   
     
     
@@ -70,11 +71,11 @@ http://contoso1/_vti_bin/ExcelRest.aspx
 **В таблице 1. Системные параметры запросов OData служб Excel**
 
 
-|**Системный параметр запроса**|**Description**|
+|**Системный параметр запроса**|**Описание**|
 |:-----|:-----|
 |/\<tableName\>  <br/> |Возвращает все строки в таблице, указанный с \<tableName\>, где \<tableName\> — это имя таблицы в книгу Excel, которая содержит строки, которую необходимо получить.  <br/> **Важные:** Эта форма запроса OData возвращает не более 500 строк за раз. Каждый набор строк, 500 состоит из одной страницы. Для получения строк в дальнейшем страниц в таблице, имеющей более 500 строк, используйте параметр запроса **$skiptoken** (см. ниже).<br/>Следующий пример возвращает все строки до 500th строк в Table1 ProductSales.xlsx книги.  <br/> |
 |**$metadata** <br/> |Возвращает все доступные таблицы и сведения о типе для всех строк в каждой таблице в указанной книге.  <br/> Следующий пример возвращает таблиц и сведения о типе для таблиц в книге ProductSales.xlsx.  <br/> http://Contoso1/_vti_bin/ExcelRest.aspx/Documents/ProductSales.xlsx/OData/$ метаданных  <br/> |
-|**$orderby** <br/> |Возвращает строк в указанной таблице, отсортированные по значения, указанного в **$orderby**.  <br/> Следующий пример возвращает все строки в таблице 1, отсортированные по столбце имя в книге ProductSales.xlsx.  <br/> **Примечание:** Значение по умолчанию для **$orderby** по возрастанию.          http://Contoso1/_vti_bin/ExcelRest.aspx/Documents/ProductSales.xlsx/OData/Table1?$ orderby = имя  <br/> |
+|**$orderby** <br/> |Возвращает строк в указанной таблице, отсортированные по значения, указанного в **$orderby**.  <br/> Следующий пример возвращает все строки в таблице 1, отсортированные по столбце имя в книге ProductSales.xlsx.  <br/> **Примечание**: по возрастанию значение по умолчанию для **$orderby** .          http://Contoso1/_vti_bin/ExcelRest.aspx/Documents/ProductSales.xlsx/OData/Table1?$ orderby = имя  <br/> |
 |**$top** <br/> |Возвращает N строк из таблицы, где N  число указанное значение **$top**.  <br/> Следующий пример возвращает первые 5 строк из Table1, отсортированные по имени столбца в книге ProductSales.xlsx.  <br/> http://Contoso1/_vti_bin/ExcelRest.aspx/Documents/ProductSales.xlsx/OData/Table1_qM _ $orderby = имя&amp;$top = 5  <br/> |
 |**$skip** <br/> |Пропускает N строк, N  номер, указанный по значению **$skip**и затем возвращает остальных строк таблицы.  <br/> Следующий пример возвращает все оставшиеся строки после пятой из Table1 ProductSales.xlsx книги.  <br/> Пропустить $ http://Contoso1/_vti_bin/ExcelRest.aspx/Documents/ProductSales.xlsx/OData/Table1? = 5  <br/> |
 |**$skiptoken** <br/> |Операций поиска n-й строке, где N  это положение строки порядковый номер, указанный в параметре значение **$skiptoken**и затем возвращает всех оставшихся строк, начиная с строки N + 1. Коллекция начинается с нуля, поэтому второй строке, например, обозначается $skiptoken = 1.<br/> Следующий пример возвращает все оставшиеся строки после второй строке из Table1 ProductSales.xlsx книги.  <br/> http://Contoso1/_vti_bin/ExcelRest.aspx/Documents/ProductSales.xlsx/OData/Table1?$ skiptoken = 1  <br/> Можно также использовать параметр запроса **$skiptoken** для получения строк в страницы после первой страницы из таблицы, содержащее более 500 строк. Следующем примере показано, как получить строку 500th и более поздних версий, из таблицы с более чем 500 строк.<br/> http://Contoso1/_vti_bin/ExcelRest.aspx/Documents/ProductSales.xlsx/OData/Table1?$ skiptoken = 499  <br/> |
@@ -84,7 +85,7 @@ http://contoso1/_vti_bin/ExcelRest.aspx
 |**$inlinecount** <br/> | Возвращает количество строк в указанной таблице. <br/>  $ **inlinecount** можно использовать только 1 из 2 из следующих значений. <br/><ul><li>**allpages**  возвращает количество для всех строк в таблице.</li><li>**none** - не включает число строк в таблице.</li></ul><br/>В следующем примере возвращается количество для общее число строк в Table1 в книге ProductSales.xlsx. <br/>  http://Contoso1/_vti_bin/ExcelRest.aspx/Documents/ProductSales.xlsx/OData/Table1?$ inlinecount = allpages <br/> |
    
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="xlsAdditionalResources"> </a>
 
 

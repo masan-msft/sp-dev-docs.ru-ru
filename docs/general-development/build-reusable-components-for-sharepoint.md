@@ -1,15 +1,15 @@
 ---
-title: "Создание многократно используемых компонентов для SharePoint"
+title: "Создание повторно используемых компонентов для SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: bb4467e2-57f0-4cf1-91b8-4d3d8d2358cb
-ms.openlocfilehash: c51ae0c737445f5812afbf35f3fe1d28c7c6284c
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 997f882794dfef4ef9fa3173ee61fd76c6c84d3e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="build-reusable-components-for-sharepoint"></a>Создание многократно используемых компонентов для SharePoint
+# <a name="build-reusable-components-for-sharepoint"></a>Создание повторно используемых компонентов для SharePoint
 Сведения о некоторых наиболее важные для повторного использования компонентов, которые можно создать в SharePoint, включая веб-частей, рабочие процессы, настраиваемые списки и многое другое.
 ## <a name="reusable-components-in-sharepoint"></a>Для повторного использования компонентов в SharePoint
 <a name="SP15Reusecomp_Reusable"> </a>
@@ -17,9 +17,8 @@ ms.lasthandoff: 10/13/2017
 При использовании SharePoint можно создавать различные компоненты, такие как списки, веб-частей и типов контента, которые можно использовать в различных приложениях, сайтов и решений. В этом разделе представлены некоторые из наиболее распространенных компонентов для повторного использования, которые можно создать в SharePoint. В этой документации в дальнейшем будет содержать сведения о дополнительных компонентов, можно построить.
   
     
-    
-
-> **Примечание:** Существуют некоторые ограничения на какие компоненты можно использовать в SharePoint надстройки. Для получения дополнительных сведений см [хост-сайты, добавьте в веб-сайтов и компоненты SharePoint в SharePoint](http://msdn.microsoft.com/library/b791cdf5-8aa2-47fa-bc4c-aee437354759%28Office.15%29.aspx). 
+> [!NOTE]
+> Существуют некоторые ограничения на какие компоненты можно использовать в SharePoint надстройки. Для получения дополнительных сведений см [хост-сайты, добавьте в веб-сайтов и компоненты SharePoint в SharePoint](http://msdn.microsoft.com/library/b791cdf5-8aa2-47fa-bc4c-aee437354759%28Office.15%29.aspx). 
   
     
     
@@ -31,7 +30,7 @@ ms.lasthandoff: 10/13/2017
 - **Настраиваемые списки** на сайтах SharePoint укажите расположение для хранения данных. Операции с данными в списках SharePoint рекомендуется широко используемых. Списки можно использовать для хранения данных, можно получить доступ программными средствами. Дополнительные сведения можно [стандартный блок: списки и библиотеки документов](http://msdn.microsoft.com/library/16da8f64-f53b-4490-8636-db0e4d7a6912%28Office.15%29.aspx).
     
   
-- **Рабочие процессы** позволяют пожалейте и стандартизации бизнес-процессов и являетесь одним из средства, необходимые для реализации определенного сценария. Для получения дополнительных сведений см [рабочих процессов в SharePoint](workflows-in-sharepoint.md).
+- **Рабочие процессы** позволяют пожалейте и стандартизации бизнес-процессов и являетесь одним из средства, необходимые для реализации определенного сценария. Дополнительные сведения см. в статье [Рабочие процессы в SharePoint](workflows-in-sharepoint.md).
     
   
 - **Внешние типы контента** доступность данных из за пределами развертывания SharePoint для приложения SharePoint. Для получения дополнительных сведений см [внешние типы контента в SharePoint](external-content-types-in-sharepoint.md).
@@ -50,7 +49,7 @@ ms.lasthandoff: 10/13/2017
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15Reusecomp_AddRes"> </a>
 
 
@@ -60,7 +59,7 @@ ms.lasthandoff: 10/13/2017
 -  [Настройка общей среды разработки для SharePoint](set-up-a-general-development-environment-for-sharepoint.md)
     
   
--  [Обзор разработки решений с помощью SharePoint](sharepoint-development-overview.md)
+-  [Обзор разработки решений для SharePoint](sharepoint-development-overview.md)
     
   
 -  [Хост-сайты, сайты надстроек и компоненты SharePoint в SharePoint](http://msdn.microsoft.com/library/b791cdf5-8aa2-47fa-bc4c-aee437354759%28Office.15%29.aspx)

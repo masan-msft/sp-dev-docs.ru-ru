@@ -1,15 +1,15 @@
 ---
-title: "Задать ключ карт Bing на уровне веб-серверы и фермы в SharePoint"
+title: "Настройка ключа службы \"Карты Bing\" в SharePoint на уровне фермы и веб-сайта"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 507ed9de-c349-44b5-b182-e838795dd862
-ms.openlocfilehash: bef24775bb6e5bafc64d3d21ef4dcb25ed6c2be3
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 2414eef9bc3f1781d02c33fbfeaa5824e161b5d9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="set-the-bing-maps-key-at-the-web-and-farm-level-in-sharepoint"></a>Задать ключ карт Bing на уровне веб-серверы и фермы в SharePoint
+# <a name="set-the-bing-maps-key-at-the-web-and-farm-level-in-sharepoint"></a>Настройка ключа службы "Карты Bing" в SharePoint на уровне фермы и веб-сайта
 
 ![Раздел "Инструкции"](../images/mod_icon_howto.png)
 
@@ -56,7 +56,8 @@ ms.lasthandoff: 11/15/2017
     
     Ключ Bing Maps теперь имеет значение на уровне фермы в SharePoint. 
     
-    > **Примечание:** При использовании Windows PowerShell, ключ Bing Maps можно задать только на уровне фермы. Если вы хотите задать ключ карт Bing на уровне веб-, можно установить ключ программно, как показано в следующем разделе. 
+    > [!NOTE]
+    > [!Примечание] При использовании Windows PowerShell ключ Bing Maps можно задать только на уровне фермы. Если вы хотите задать ключ карт Bing на уровне веб-, можно установить ключ программно, как показано в следующем разделе. 
 
 ### <a name="to-set-the-bing-maps-key-at-the-farm-or-web-level-using-the-client-object-model"></a>Чтобы задать ключ карт Bing на уровне фермы или веб-клиента с помощью объектной модели
 

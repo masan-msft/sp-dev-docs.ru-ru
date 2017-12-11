@@ -1,15 +1,15 @@
 ---
-title: "Веб-часть поиска контента в SharePoint"
+title: "Веб-часть \"Поиск контента\" в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 6fb4bf41-0846-4dca-ad9e-906afdfd3d2b
-ms.openlocfilehash: 9585738005f8fb2ed7581ef8245b60c60c16ff5b
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 127e71765887f369191f1d468485eca916162f48
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="content-search-web-part-in-sharepoint"></a>Веб-часть поиска контента в SharePoint
+# <a name="content-search-web-part-in-sharepoint"></a>Веб-часть "Поиск контента" в SharePoint
 
   
     
@@ -67,7 +67,7 @@ CSWP возвращает содержимое, максимально акту�
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15_CSWP_AdditionalResources"> </a>
 
 

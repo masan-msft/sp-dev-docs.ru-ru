@@ -3,11 +3,11 @@ title: "Разработка с помощью Duet Enterprise 2.0"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c3ef38aa-559e-4832-95c7-75e222c77624
-ms.openlocfilehash: 15b9ac70484db215dd36a46d3648999aa26664e5
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 6694ddfdd6b312f59d0449643f8743f119b506dd
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="developing-with-duet-enterprise-20"></a>Разработка с помощью Duet Enterprise 2.0
 
@@ -155,7 +155,7 @@ Duet Enterprise 2.0 устанавливается несколько служб
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="ConNavExample_resources"> </a>
 
 

@@ -3,11 +3,11 @@ title: "Подписка на контент в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 30e68cd6-6e55-4cf9-afd6-7139b0a97288
-ms.openlocfilehash: 96a334f77bbf9e5b1512290ace4e01b61435548f
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: e670bd3dbf8c50a98c1ac5c5599b565bd42aef7e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="follow-content-in-sharepoint"></a>Подписка на контент в SharePoint
 Узнайте о типичные задачи программирования для следующее содержимое (документы, сайты и теги) в SharePoint.
@@ -23,24 +23,24 @@ SharePoint предоставляет следующие интерфейсы AP
     
     
 
-- Клиентские объектные модели для управляемого кода:
+- Клиентские объектные модели для управляемого кода
     
-  - клиентская объектная модель .NET;
-    
-  
-  - клиентская объектная модель Silverlight;
+  - Клиентская объектная модель .NET
     
   
-  - мобильная клиентская объектная модель.
+  - Клиентская объектная модель Silverlight
     
   
-- Объектная модель JavaScript.
+  - Клиентская объектная модель для мобильных устройств.
+    
+  
+- Объектная модель JavaScript
     
   
 - Служба передачи репрезентативного состояния (REST).
     
   
-- Серверная объектная модель
+- Объектная модель сервера
     
   
 Рекомендуется при разработке для SharePoint при вы можете Используйте клиентские API-интерфейсы. API-интерфейсов клиента включают клиентской объектной модели, объектной модели JavaScript и службы REST. Дополнительные сведения об интерфейсах API в SharePoint и их использовании см. раздел [Выбор право API в SharePoint](choose-the-right-api-set-in-sharepoint.md).
@@ -49,20 +49,16 @@ SharePoint предоставляет следующие интерфейсы AP
     
 Каждый API включает в себя объект диспетчера, используемая для выполнения основных задач по следующее содержимое.
   
-    
-    
-
-> **Примечание:** Же API используются следить за людьми. [Подписка на людей в SharePoint](follow-people-in-sharepoint.md) в разделе Общие сведения о задачах следующие сотрудники.
+> [!NOTE]
+> Же API используются следить за людьми. [Подписка на людей в SharePoint](follow-people-in-sharepoint.md) в разделе Общие сведения о задачах следующие сотрудники.
   
     
     
 
 В таблице 1 приведены диспетчер и другие ключевые объекты (или ресурсы REST) в API-интерфейсы и библиотека классов (или точка доступа) где их можно найти.
   
-    
-    
-
-> **Примечание:** Silverlight и мобильных устройств клиентской объектной модели не включаются в таблице 1 или в таблице 2, так как они обеспечивают основные функциональные возможности, аналогичные клиентской объектной модели .NET и использовать же цифровые подписи. Клиентская объектная модель Silverlight определяется в Microsoft.SharePoint.Client.UserProfiles.Silverlight.dll и мобильных устройств клиентской объектной модели определяется в Microsoft.SharePoint.Client.UserProfiles.Phone.dll. 
+> [!NOTE]
+> [!Примечание] Модель Silverlight и мобильная клиентская объектная модель не включены в таблицу 1 или таблицу 2, так как они предоставляют такой же основной функционал, как и клиентская объектная модель .NET, и одинаковые подписи. Клиентская объектная модель Silverlight определена в Microsoft.SharePoint.Client.UserProfiles.Silverlight.dll, а мобильная клиентская объектная модель  в Microsoft.SharePoint.Client.UserProfiles.Phone.dll. 
   
     
     
@@ -83,10 +79,8 @@ SharePoint предоставляет следующие интерфейсы AP
 
 В таблице 2 перечислены типичные задачи программирования для следующее содержимое и элементы, которые можно использовать для их выполнения. Члены: от клиентской объектной модели .NET (CSOM), JavaScript объектной модели (JSOM), служба REST и серверной объектной модели (SSOM).
   
-    
-    
-
-> **Примечание:** Же API используются следить за людьми. [Подписка на людей в SharePoint](follow-people-in-sharepoint.md) в разделе Общие сведения о задачах следующие сотрудники.
+> [!NOTE]
+> Же API используются следить за людьми. [Подписка на людей в SharePoint](follow-people-in-sharepoint.md) в разделе Общие сведения о задачах следующие сотрудники.
   
     
     
@@ -103,11 +97,11 @@ SharePoint предоставляет следующие интерфейсы AP
 |Узнать, является ли текущий пользователь является после определенного элемента|CSOM:  [IsFollowed](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.IsFollowed.aspx) <br/> JSOM:  [isFollowed](http://msdn.microsoft.com/library/2c1f62e6-fb75-ad4d-c081-36408b418c21%28Office.15%29.aspx) <br/> REST: **POST** [`<siteUri>/_api/social.following/IsFollowed`](following-people-and-content-rest-api-reference-for-sharepoint.md#bk_IsFollowed) и передайте параметр _actor_ в теле запроса <br/> SSOM:  [IsFollowed](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFollowingManager.IsFollowed.aspx)|
 |Получение документы, сайты и/или теги, выполнив текущего пользователя|CSOM:  [GetFollowed](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.GetFollowed.aspx) <br/> JSOM:  [getFollowed](http://msdn.microsoft.com/library/432a7cec-6add-fdb1-a79f-a93414ee8cd3%28Office.15%29.aspx) <br/> REST: **Получение** [`<siteUri>/_api/social.following/my/Followed(types=2)`](following-people-and-content-rest-api-reference-for-sharepoint.md#bk_Followed) (документы = **2**, сайты = **4**, теги = публикацию повторно **8**)  <br/> SSOM:  [GetFollowed](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFollowingManager.GetFollowed.aspx)|
 |Получение числа документы, сайты и/или теги, на которые подписан пользователь|CSOM:  [GetFollowedCount](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.GetFollowedCount.aspx) <br/> JSOM:  [getFollowedCount](http://msdn.microsoft.com/library/97b53b4f-481a-cf41-1854-8f3ff860b2bb%28Office.15%29.aspx) <br/> REST: **Получение** [`<siteUri>/_api/social.following/my/FollowedCount(types=2)`](following-people-and-content-rest-api-reference-for-sharepoint.md#bk_FollowedCount) (документы = **2**, сайты = **4**, теги = публикацию повторно **8**)  <br/> SSOM:  [GetFollowedCount](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFollowingManager.GetFollowedCount.aspx)|
-|Получение URI-адрес сайта, в котором приведены число документов текущего пользователя|CSOM:  [FollowedDocumentsUri](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.FollowedDocumentsUri.aspx) <br/> JSOM:  [followedDocumentsUri](http://msdn.microsoft.com/library/3a70b9c7-abd7-94ff-d730-70298673d6ec%28Office.15%29.aspx) <br/> **Получение** REST:[`<siteUri>/_api/social.following/my/FollowedDocumentsUri`](following-people-and-content-rest-api-reference-for-sharepoint.md#bk_MyFollowedDocumentsUri) <br/> SSOM:  [FollowedDocumentsUri](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFollowingManager.FollowedDocumentsUri.aspx)|
-|Получение URI-адрес сайта, в котором приведены число сайтов текущего пользователя|CSOM:  [FollowedSitesUri](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.FollowedSitesUri.aspx) <br/> JSOM:  [followedSitesUri](http://msdn.microsoft.com/library/829404bc-1b3a-7545-5e95-0922df330084%28Office.15%29.aspx) <br/> **Получение** REST:[`<siteUri>/_api/social.following/my/FollowedSitesUri`](following-people-and-content-rest-api-reference-for-sharepoint.md#bk_MyFollowedSitesUri) <br/> SSOM:  [FollowedSitesUri](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFollowingManager.FollowedSitesUri.aspx)|
+|Получение URI-адрес сайта, в котором приведены число документов текущего пользователя|CSOM:  [FollowedDocumentsUri](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.FollowedDocumentsUri.aspx) <br/> JSOM:  [followedDocumentsUri](http://msdn.microsoft.com/library/3a70b9c7-abd7-94ff-d730-70298673d6ec%28Office.15%29.aspx) <br/> REST: **GET** [`<siteUri>/_api/social.following/my/FollowedDocumentsUri`](following-people-and-content-rest-api-reference-for-sharepoint.md#bk_MyFollowedDocumentsUri) <br/> SSOM:  [FollowedDocumentsUri](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFollowingManager.FollowedDocumentsUri.aspx)|
+|Получение URI-адрес сайта, в котором приведены число сайтов текущего пользователя|CSOM:  [FollowedSitesUri](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialFollowingManager.FollowedSitesUri.aspx) <br/> JSOM:  [followedSitesUri](http://msdn.microsoft.com/library/829404bc-1b3a-7545-5e95-0922df330084%28Office.15%29.aspx) <br/> REST: **GET** [`<siteUri>/_api/social.following/my/FollowedSitesUri`](following-people-and-content-rest-api-reference-for-sharepoint.md#bk_MyFollowedSitesUri) <br/> SSOM:  [FollowedSitesUri](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialFollowingManager.FollowedSitesUri.aspx)|
    
-
-> **Примечание:** Примеры, показывающие, как использовать службы REST для подписка на контент, в разделе [как: с помощью службы REST в SharePoint, выполните документы, сайты и тегов](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md). 
+> [!NOTE]
+> Примеры, показывающие, как использовать службы REST для подписка на контент, в разделе [как: с помощью службы REST в SharePoint, выполните документы, сайты и тегов](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md). 
   
     
     
@@ -159,14 +153,14 @@ function getTagGuid() {
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addResources"> </a>
 
 
--  [Как: выполните документов и сайтов с помощью клиентской объектной модели .NET в SharePoint](how-to-follow-documents-and-sites-by-using-the-net-client-object-model-in-sharep.md)
+-  [Как подписываться на документы и сайты, используя клиентскую объектную модель .NET в SharePoint](how-to-follow-documents-and-sites-by-using-the-net-client-object-model-in-sharep.md)
     
   
--  [Как: выполните документы, сайты и теги с помощью службы REST в SharePoint](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md)
+-  [Как подписываться на документы, сайты и теги, используя службу REST в SharePoint](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md)
     
   
 -  [Following people and content REST API reference for SharePoint](following-people-and-content-rest-api-reference-for-sharepoint.md)

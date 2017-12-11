@@ -3,11 +3,11 @@ title: "Этап 2. Добавление веб-ссылки"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: e9175863-ddb4-4750-847d-d53cb59b33cb
-ms.openlocfilehash: ced2da0e9fcbdfdca79175d0219f13dcce4e63d4
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 8f306628c2fa335631c441c905bfb1d6d87e79d8
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="step-2-adding-a-web-reference"></a>Этап 2. Добавление веб-ссылки
 
@@ -30,7 +30,9 @@ ms.lasthandoff: 10/13/2017
   
 2. В поле **URL-адрес** диалогового окна **Добавить веб-ссылку** введите URL-адрес для получения описания веб-служб Веб-службы Excel, например `http://<server>/<customsite>/_vti_bin/excelservice.asmx` или `http://<server>/_vti_bin/excelservice.asmx`. Затем нажмите кнопку **Найти**, чтобы получить сведения о веб-службе.
     
-    > **Примечание:** Можно также открыть диалоговое окно **Добавить веб-ссылку** в области **Обозреватель решений** , щелкнув правой кнопкой мыши **ссылки** и выбрав пункт **Добавить веб-ссылку**. 
+    > [!NOTE]
+    > [!Примечание] Кроме того, диалоговое окно **Добавить веб-ссылку** можно открыть в области **Обозреватель решений**, щелкнув элемент **Ссылки** правой кнопкой мыши и выбрав **Добавить веб-ссылку**. 
+    
 3. В поле **Имя веб-ссылки** задайте имяExcelWebService.
     
   

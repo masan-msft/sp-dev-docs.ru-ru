@@ -3,11 +3,11 @@ title: "Изменение страницы предварительного п�
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: e5dfd8df-65de-44fc-aa97-23b4685d33ee
-ms.openlocfilehash: 1e461af4186d957b75b9bee327f6d0f0e85f7221
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: c09d1c02a80cbc29a863cf354c3dc7a4fe6ac116
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="change-the-preview-page-in-sharepoint-design-manager"></a>Изменение страницы предварительного просмотра в диспетчере оформления SharePoint
 Узнайте, как настроить, создать и изменить страницу предварительного просмотра в Дизайнере SharePoint.
@@ -98,7 +98,7 @@ ms.lasthandoff: 11/15/2017
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="addresources"> </a>
 
 

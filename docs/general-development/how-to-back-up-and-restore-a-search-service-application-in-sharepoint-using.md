@@ -1,15 +1,15 @@
 ---
-title: "Резервное копирование и восстановление приложения-службы поиска в SharePoint с использованием служба теневого копирования ТОМОВ"
+title: "Резервное копирование и восстановление приложения службы поиска в SharePoint с помощью VSS"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 87ee28e6-8170-4dba-8c9d-f04ab9e632dc
-ms.openlocfilehash: 7b0e93318f0eaddb08643e139de0b16e9a3a169b
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 15538df022c8caffcae9fe75ed7fed22efaa043b
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="back-up-and-restore-a-search-service-application-in-sharepoint-using-vss"></a>Резервное копирование и восстановление приложения-службы поиска в SharePoint с использованием служба теневого копирования ТОМОВ
+# <a name="back-up-and-restore-a-search-service-application-in-sharepoint-using-vss"></a>Резервное копирование и восстановление приложения службы поиска в SharePoint с помощью VSS
 
 Узнайте, как резервное копирование и восстановление приложения-службы поиска в SharePoint с помощью тома теневой копии Service (VSS).
 
@@ -90,60 +90,61 @@ ms.lasthandoff: 11/15/2017
 
 2. Замените заполнители 10 в этот файл с соответствующими значениями из файла writer.txt, который вы создали на первом шаге. Используйте следующие таблицы в качестве руководства. 
     
-    > **Примечание:** В правом столбце _SSA_ является имя приложения-службы поиска.
+    > [!NOTE]
+    > [!Примечание] В правом столбце  _SSA_ является имя приложения-службы поиска.
 
    **В таблице 2. Файл манифеста заполнители SSA и значениями, полученными из writers.txt**
 
 
-|**Заполнитель**|**Расположение сведения в writers.txt.**|
-|:-----|:-----|
-| _SharePoint Services Writer ID_ <br/> |Идентификатор GUID WriterId из списка в разделе запись «Записи SharePoint Services»  <br/> |
-| _PathSSA_ <br/> |Запись логический путь, имя приложения-службы поиска в запись «Записи SharePoint Services» в списке  <br/> |
-| _PathC_ <br/> |Запись логический путь из списка для компонент с именем" _SSA__CrawlStore" в запись "Записи SharePoint Services"  <br/> |
-| _PathA_ <br/> |Запись логический путь из списка для компонент с именем" _SSA_ _AnalyticsReportingStore" в запись "Записи SharePoint Services" <br/> |
-| _PathL_ <br/> |Запись логический путь из списка для компонент с именем" _SSA__LinksStore" в запись "Записи SharePoint Services"  <br/> |
-| _SQL Server Writer ID_ <br/> |Идентификатор GUID WriterId из списка в разделе запись «SqlServerWriter»  <br/> |
-| _PathDbSSA_ <br/> |Операция логический путь из списка для компонента с именем приложения-службы поиска в записи «SqlServerWriter»  <br/> |
-| _PathDbC_ <br/> |Запись логический путь из списка для компонент с именем" _SSA__CrawlStore" операции "SqlServerWriter"  <br/> |
-| _PathDbA_ <br/> |Запись логический путь из списка для компонент с именем" _SSA__AnalyticsReportingStore" операции "SqlServerWriter"  <br/> |
-| _PathDbL_ <br/> |Запись логический путь из списка для компонент с именем" _SSA__LinksStore" операции "SqlServerWriter"  <br/> |
+  |**Заполнитель**|**Расположение сведения в writers.txt.**|
+  |:-----|:-----|
+  | _SharePoint Services Writer ID_ <br/> |Идентификатор GUID WriterId из списка в разделе запись «Записи SharePoint Services»  <br/> |
+  | _PathSSA_ <br/> |Запись логический путь, имя приложения-службы поиска в запись «Записи SharePoint Services» в списке  <br/> |
+  | _PathC_ <br/> |Запись логический путь из списка для компонент с именем" _SSA__CrawlStore" в запись "Записи SharePoint Services"  <br/> |
+  | _PathA_ <br/> |Запись логический путь из списка для компонент с именем" _SSA_ _AnalyticsReportingStore" в запись "Записи SharePoint Services" <br/> |
+  | _PathL_ <br/> |Запись логический путь из списка для компонент с именем" _SSA__LinksStore" в запись "Записи SharePoint Services"  <br/> |
+  | _SQL Server Writer ID_ <br/> |Идентификатор GUID WriterId из списка в разделе запись «SqlServerWriter»  <br/> |
+  | _PathDbSSA_ <br/> |Операция логический путь из списка для компонента с именем приложения-службы поиска в записи «SqlServerWriter»  <br/> |
+  | _PathDbC_ <br/> |Запись логический путь из списка для компонент с именем" _SSA__CrawlStore" операции "SqlServerWriter"  <br/> |
+  | _PathDbA_ <br/> |Запись логический путь из списка для компонент с именем" _SSA__AnalyticsReportingStore" операции "SqlServerWriter"  <br/> |
+  | _PathDbL_ <br/> |Запись логический путь из списка для компонент с именем" _SSA__LinksStore" операции "SqlServerWriter"  <br/> |
    
 
-    This is the SSA manifest file. For an example of a completed SSA manifest file, see  [Example manifest files](#Examples).
+    Это файл манифеста SSA. В качестве примера завершенный файл манифеста SSA см [файлов манифеста](#Examples).
     
   
 3. Выполните следующие действия для создания манифеста для поиска файлов индекса. Повторите эти действия на каждом сервере, содержащий компонент индекса.
     
 1. Создайте XML-файл и скопируйте в него следующий:
     
-```XML
-  
-<BETest>
-   <Writer writerid="SharePoint Services Writer ID">
-      <Component logicalPath="PathIndex" componentName="NameIndex" />
-   </Writer>
-   <Writer writerid="OSearch15 Writer ID">
-      <Component logicalPath="PathOSearch15" componentName="IndexComponentGroup" />
-   </Writer>    
-</BETest>
-```
+    ```XML
+      
+    <BETest>
+      <Writer writerid="SharePoint Services Writer ID">
+          <Component logicalPath="PathIndex" componentName="NameIndex" />
+      </Writer>
+      <Writer writerid="OSearch15 Writer ID">
+          <Component logicalPath="PathOSearch15" componentName="IndexComponentGroup" />
+      </Writer>    
+    </BETest>
+    ```
 
 2. Замените заполнители шесть в этот файл с соответствующими значениями из файла writer.txt, который вы создали на первом шаге. Используйте следующие таблицы в качестве руководства.
     
    **В таблице 3. Заполнители файл манифеста индекса поиска и значениями, полученными из writer.txt**
 
 
-|**Заполнитель**|**Расположение сведения в writers.txt**|
-|:-----|:-----|
-| _SharePoint Services Writer ID_ <br/> |Идентификатор GUID WriterId из списка в разделе запись «Записи SharePoint Services»  <br/> |
-| _PathIndex_ <br/> |Операция логический путь из списка для компонента, имена которых начинаются с «IndexComponentGroup» в запись «Записи SharePoint Services»  <br/> |
-| _NameIndex_ <br/> |Запись имени, перечисленных для компонента, имена которых начинаются с «IndexComponentGroup» в запись «Записи SharePoint Services»  <br/> |
-| _OSearch15 Writer ID_ <br/> |Идентификатор GUID WriterId из списка в разделе запись «Записи VSS OSearch15»  <br/> |
-| _PathOSearch15_ <br/> |Запись логический путь, указанные для компонента, имена которых начинаются с «IndexComponentGroup» в запись «Записи VSS OSearch15». Это обычно пустым.  <br/> |
-| _IndexComponentGroup_ <br/> |Запись имени, перечисленных для компонента, имена которых начинаются с «IndexComponentGroup» в запись «Записи VSS OSearch15»  <br/> |
+    |**Заполнитель**|**Расположение сведения в writers.txt**|
+    |:-----|:-----|
+    | _SharePoint Services Writer ID_ <br/> |Идентификатор GUID WriterId из списка в разделе запись «Записи SharePoint Services»  <br/> |
+    | _PathIndex_ <br/> |Операция логический путь из списка для компонента, имена которых начинаются с «IndexComponentGroup» в запись «Записи SharePoint Services»  <br/> |
+    | _NameIndex_ <br/> |Запись имени, перечисленных для компонента, имена которых начинаются с «IndexComponentGroup» в запись «Записи SharePoint Services»  <br/> |
+    | _OSearch15 Writer ID_ <br/> |Идентификатор GUID WriterId из списка в разделе запись «Записи VSS OSearch15»  <br/> |
+    | _PathOSearch15_ <br/> |Запись логический путь, указанные для компонента, имена которых начинаются с «IndexComponentGroup» в запись «Записи VSS OSearch15». Это обычно пустым.  <br/> |
+    | _IndexComponentGroup_ <br/> |Запись имени, перечисленных для компонента, имена которых начинаются с «IndexComponentGroup» в запись «Записи VSS OSearch15»  <br/> |
    
 
-    This is the search index manifest file. For an example of a completed search index manifest file, see  [Example manifest files](#Examples).
+    Это файл манифеста индекса поиска. Пример завершенных поискового индекса-файл манифеста, пример [файлов манифеста](#Examples).
     
   
 4. (Необязательно) Запишите размеры папок **IndexComponent** на каждом сервере, который содержит компонент индекса. Эти сведения можно использовать более поздней версии для проверки резервной копии.
@@ -205,7 +206,8 @@ betest.exe /v /r /d "destination backup folder" /s "backup log file" /x SSA_mani
 
 3. На том же сервере откройте Командная консоль SharePoint и выполните следующие строки, чтобы восстановить SSA, где  _application pool name_  это имя нового пула, _domain\\user_  это доменное имя пула приложений входит в систему в качестве пользователя, _name of the search service application_  это имя SSA и _topology_file_name_  это путь и имя файла топология, созданному при SSA была создана резервная копия.
     
-    > **Совет:** В этом коде создается новый удостоверения пула приложений для запуска восстановленных SSA, но можно также использовать существующую учетную запись с помощью командлета **Get-SPServiceApplicationPool** .
+    > [!TIP]
+    > [!Совет] В этом коде создается новый удостоверения пула приложений для запуска восстановленных SSA, но можно также использовать существующую учетную запись с помощью командлета **Get-SPServiceApplicationPool**.
 
 ```
   $applicationPool = New-SPServiceApplicationPool -name "application pool name" -account "domain\\user"
@@ -332,7 +334,7 @@ stop-service SPSearchHostController
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

@@ -1,25 +1,23 @@
 ---
-title: "Обзор объектной модели SharePoint мобильного клиента проверки подлинности"
+title: "Обзор объектной модели для аутентификации мобильного клиента SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 00ee657f-a32a-495e-80b4-83ac0f60df44
-ms.openlocfilehash: c28e4bfd51af86ae91d859432851f31cf4c2b629
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2b85c47729de11fa05cc052c5068eb0638ee9bf2
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="overview-of-the-sharepoint-mobile-client-authentication-object-model"></a>Обзор объектной модели SharePoint мобильного клиента проверки подлинности
+# <a name="overview-of-the-sharepoint-mobile-client-authentication-object-model"></a>Обзор объектной модели для аутентификации мобильного клиента SharePoint
 Обзор разработки с помощью проверки подлинности интерфейсы API клиентской объектной модели SharePoint для Silverlight.
 ## <a name="authentication-and-client-context-on-a-windows-phone"></a>Проверка подлинности и клиентского контекста на ОС Windows Phone
 <a name="SP15Mobileclientauth_auth"> </a>
 
 Процесс проверки подлинности пользователя SharePoint на Windows Phone 7.5 немного отличается от тот же самый процесс на клиентском компьютере. Клиентский код на Windows Phone 7.5 сначала создает объект класса **средства проверки подлинности** или **ODataAuthenticator** класс, который были добавлены в объектную модель SharePointclient для Microsoft Silverlight для Windows Phone. Затем этот объект используется как учетные данные пользователя.
   
-    
-    
-
-> **Примечание:** Дополнительные сведения об API-интерфейсы, описанные в этом разделе можно [Общие сведения о мобильных объектной модели SharePoint](overview-of-the-sharepoint-mobile-object-model.md). Дополнительные сведения о клиентской объектной модели SharePoint для Silverlight см [Управляемой клиентской объектной модели](http://msdn.microsoft.com/en-us/library/ee537247.aspx) и [с помощью объектной модели Silverlight](http://msdn.microsoft.com/en-us/library/ee538971.aspx). 
+> [!NOTE]
+> Дополнительные сведения об API-интерфейсы, описанные в этом разделе можно [Общие сведения о мобильных объектной модели SharePoint](overview-of-the-sharepoint-mobile-object-model.md). Дополнительные сведения о клиентской объектной модели SharePoint для Silverlight см [Управляемой клиентской объектной модели](http://msdn.microsoft.com/en-us/library/ee537247.aspx) и [с помощью объектной модели Silverlight](http://msdn.microsoft.com/en-us/library/ee538971.aspx). 
   
     
     
@@ -38,7 +36,9 @@ ms.lasthandoff: 10/13/2017
   
 2. Создайте новый объект **Authenticator** и инициализация его свойств.
     
-    > **Примечание:** Можно использовать один объект **проверки подлинности** с помощью только один объект **ClientContext** . Объект **проверки подлинности** не могут совместно использоваться несколько объектов **ClientContext** с разных URL-адресов.
+    > [!NOTE]
+    > [!Примечание] Можно использовать один объект **Authenticator** с только один объект **ClientContext**. Объект **Authenticator** не могут совместно использоваться несколько объектов **ClientContext** с разных URL-адресов.
+
 3. Класс **Authenticator** реализует интерфейс [ICredentials](http://msdn.microsoft.com/en-us/library/system.net.icredentials.aspx) , поэтому назначить объект свойство [учетные данные](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.client.clientruntimecontext.credentials.aspx) объекта **ClientContext**.
     
   
@@ -262,10 +262,8 @@ at.AuthenticationMode = ClientAuthenticationMode.MicrosoftOnline;
 
 Для проверки подлинности URL-адрес SharePoint Online, присвойте свойству **AuthenticationMode** объекта **Authenticator** в режим **MicrosoftOnline**. Остальные действия, описанные в процедуре такие же, как для URL-адреса локального SharePoint.
   
-    
-    
-
-> **Примечание:** Имя пользователя и пароль не может быть жестко для SharePoint Online.The, пользователю предлагается ввести учетные данные для входа. 
+> [!NOTE]
+> [!Примечание] Имя пользователя и пароль не может быть жестко для SharePoint Online. Пользователю предлагается ввести учетные данные для входа. 
   
     
     
@@ -310,7 +308,7 @@ ClientContext ctx = new ClientContext("SiteUrl");
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15Mobileclientauth_addlresources"> </a>
 
 

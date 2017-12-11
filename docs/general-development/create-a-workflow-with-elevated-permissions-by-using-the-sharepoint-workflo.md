@@ -1,15 +1,15 @@
 ---
-title: "Создание рабочего процесса с повышенным уровнем разрешений с помощью платформы рабочих процессов SharePoint"
+title: "Создание рабочего процесса с повышенным уровнем разрешений при помощи платформы SharePoint Workflow"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 4656f6a0-36fd-4b7d-898e-8cd4bdbbda57
-ms.openlocfilehash: 8e3742beba383d3119081f801af52fab3214e507
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: fd9fa5fe19916eb3f5fefba6644484f1700deac8
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="create-a-workflow-with-elevated-permissions-by-using-the-sharepoint-workflow-platform"></a>Создание рабочего процесса с повышенным уровнем разрешений с помощью платформы рабочих процессов SharePoint
+# <a name="create-a-workflow-with-elevated-permissions-by-using-the-sharepoint-workflow-platform"></a>Создание рабочего процесса с повышенным уровнем разрешений при помощи платформы SharePoint Workflow
 Узнайте, как создать рабочий процесс с повышенным уровнем разрешений с помощью платформы рабочих процессов SharePoint.
 ## <a name="sharepoint-app-catalog-and-workflow"></a>Каталог приложений SharePoint и рабочих процессов
 <a name="section1"> </a>
@@ -149,7 +149,8 @@ ms.lasthandoff: 10/13/2017
     
     Пример: http://{hostname}/{the Collection}/_layouts/15/appinv.aspx сайта. 
     
-    > **Примечание:** На этом этапе «приложение» относится к приложения рабочего процесса в общих параметров и не только определенного рабочего процесса. Отдельные рабочие процессы не могут быть контролем доступа. При включении разрешений приложения включается для всех рабочих процессов в пределах семейства веб-сайтов. 
+    > [!NOTE]
+    > [!Примечание] «Приложения» на этом этапе ссылается приложение рабочего процесса в общих параметров и не только определенных рабочего процесса. Отдельные рабочие процессы не может быть контролем доступа. При включении разрешения приложений можно включить для всех рабочих процессов в пределах семейства веб-сайтов. 
 
     Дополнительные сведения о настройке рабочего процесса можно [статья блога из Sympraxis Consulting: циклический через контента в рабочий процесс сайта SharePoint](http://sympmarc.com/2016/01/14/looping-through-content-in-a-sharepoint-site-workflow-part-1-introduction)
     
@@ -349,20 +350,20 @@ ms.lasthandoff: 10/13/2017
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="section3"> </a>
 
 
--  [Рабочий процесс в SharePoint ](http://technet.microsoft.com/en-us/sharepoint/jj556245.aspx)
+-  [Рабочий процесс в SharePoint](http://technet.microsoft.com/en-us/sharepoint/jj556245.aspx)
     
   
 -  [Установка и управление приложениями для SharePoint](http://msdn.microsoft.com/library/733647a3-a5d3-475b-967d-3bb627c2a0c2.aspx)
     
   
--  [Новые возможности рабочего процесса в SharePoint](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)
+-  [Новые возможности рабочих процессов SharePoint](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)
     
   
--  [Приступая к работе с рабочего процесса SharePoint](http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx)
+-  [Начало работы с рабочими процессами SharePoint](http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx)
     
   
 -  [Разработка рабочих процессов в SharePoint Designer и Visio](workflow-development-in-sharepoint-designer-and-visio.md)

@@ -1,15 +1,15 @@
 ---
-title: "Использование рабочего процесса SAP с Duet Enterprise 2.0"
+title: "Использование рабочего процесса SAP в Duet Enterprise 2.0"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 816e28ed-8cea-4e33-98e5-d3d27136e2e6
-ms.openlocfilehash: 2b0d1758f4f19941c87f61c3617dfd4e624c25f9
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 77e613f09c0d51da7d7c00c7be76b3cd8028a0b7
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="use-sap-workflow-with-duet-enterprise-20"></a>Использование рабочего процесса SAP с Duet Enterprise 2.0
+# <a name="use-sap-workflow-with-duet-enterprise-20"></a>Использование рабочего процесса SAP в Duet Enterprise 2.0
 
 ## <a name="introduction"></a>Введение
 <a name="bkmk_Introduction"> </a>
@@ -118,7 +118,8 @@ BCS должна состоять принять во внимание к вне
     
   
 
-> **Примечание:** Убедитесь, что службы рабочих процессов SAP позволяет обычной проверки подлинности, как средства для автоматического создания BDC в Visual Studio. 
+> [!NOTE]
+> [!Примечание] Убедитесь, что службы рабочих процессов SAP позволяет обычной проверки подлинности, как средства для автоматического создания BDC в Visual Studio. 
   
     
     
@@ -210,9 +211,8 @@ BCS должна состоять принять во внимание к вне
   
 5. Перейдите к списку **рабочих элементов** в веб-узла и выберите команду **Просмотр сведений** в контекстном меню. Вы будете перенаправлены на **ViewDetails.aspx**.
     
-  
-
-> **Примечание:** Убедитесь, что службы рабочих процессов SAP позволяет обычной проверки подлинности. BDC для автоматического создания средства в Visual Studio в настоящее время поддерживают только анонимных и обычная проверка подлинности. 
+> [!NOTE]
+> [!Примечание] Убедитесь, что службы рабочих процессов SAP позволяет обычной проверки подлинности. BDC для автоматического создания средства в Visual Studio в настоящее время поддерживают только анонимных и обычная проверка подлинности. 
   
     
     
@@ -776,8 +776,9 @@ function RegisterCallOut(divId, displayName, aboutme, userUrl, isFollowed) {
 ```
 
 
-    > **Note:**
-      > The user name of the participant in company's network is same as that in SAP. 
+> [!NOTE]
+> [!Примечание] Имя участника в сети компании же, что и в SAP.
+
 3. Откройте страницу **AppManifest.xml**.
     
   
@@ -798,14 +799,14 @@ function RegisterCallOut(divId, displayName, aboutme, userUrl, isFollowed) {
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 
 -  [Надстройки SharePoint](http://msdn.microsoft.com/library/cd1eda9e-8e54-4223-93a9-a6ea0d18df70%28Office.15%29.aspx)
     
   
--  [Выполнение базовых операций с использованием кода библиотеки клиента в SharePoint](http://msdn.microsoft.com/library/5a69c9e3-73bf-4ed5-bc19-182056bdb394%28Office.15%29.aspx)
+-  [Выполнение базовых операций с использованием кода клиентской библиотеки в SharePoint](http://msdn.microsoft.com/library/5a69c9e3-73bf-4ed5-bc19-182056bdb394%28Office.15%29.aspx)
     
   
 -  [Общие сведения о рабочих процессов SAP Business](http://scn.sap.com/docs/DOC-31056)

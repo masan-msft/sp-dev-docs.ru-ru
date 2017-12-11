@@ -1,15 +1,15 @@
 ---
-title: "Общие сведения о SharePoint и службы теневого копирования томов"
+title: "Обзор SharePoint и службы теневого копирования томов"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d1cb6653-bfc0-4af2-b221-d7d30cb40d84
-ms.openlocfilehash: 918da2e73f82cc5f674c9a7128a2882453a54374
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 16ba81e41273df0243063aeae3d80030b718fa61
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="overview-of-sharepoint-and-the-volume-shadow-copy-service"></a>Общие сведения о SharePoint и службы теневого копирования томов
+# <a name="overview-of-sharepoint-and-the-volume-shadow-copy-service"></a>Обзор SharePoint и службы теневого копирования томов
  **Сводка:** Сведения об интерфейсе Microsoft SharePoint для службы теневого копирования томов (VSS).
 Для резервного копирования поставщиков тома теневой копии Service (VSS) упрощает резервное копирование Microsoft server решений с помощью централизованного API. Microsoft SharePoint Foundation включает в себя ссылочной модуля записи VSS (в дальнейшем, называемое «SPF-VSS Writer»), которая интегрируется с платформой резервного копирования Windows служба теневого копирования ТОМОВ Включение приложений резервного копирования для резервного копирования и восстановления данных SharePoint Foundation. Он поддерживает аварийное перезаписи сценария для всей фермы (включенные индекс поиска). На восстановление он подключается баз данных, а также сведения об сопоставлений.
   
@@ -45,11 +45,8 @@ VSS взаимодействует с файловой системой Windows 
     
 Во время восстановления резервное копирование и восстановление приложения указывает, что модуль записи SPF-VSS для координации с хранилищем SharePoint Foundation (действующие от имени запрашивающего) отключить группы хранения и файлы базы данных подключить группу хранения.
   
-    
-    
-
-    
-> **Примечание:** Важные сведения о восстановлений в разделе «Восстановление» в [опросчики VSS и SharePoint](vss-requestors-and-sharepoint.md) .
+> [!NOTE]
+> Важные сведения о восстановлений в разделе «Восстановление» в [опросчики VSS и SharePoint](vss-requestors-and-sharepoint.md) .
   
     
     
@@ -94,7 +91,7 @@ VSS взаимодействует с файловой системой Windows 
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

@@ -3,11 +3,11 @@ title: "Оптимизация производительности страни
 ms.date: 11/01/2017
 ms.prod: sharepoint
 ms.assetid: 262caeef-64fd-4e02-b947-d772faf01159
-ms.openlocfilehash: 628d42cd5c3deaf9fbf2d06a4024a9b97311154e
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: 02b95e8c2b30c5236af293cde9c5b213f24c0d5e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="optimize-page-performance-in-sharepoint"></a>Оптимизация производительности страниц в SharePoint
 
@@ -529,7 +529,7 @@ $appsetting.Update()
 
 Большая часть рекомендации по оптимизации производительности страниц SharePoint 2010 относится к SharePoint. В этой статье приводятся некоторые элементы руководство по SharePoint 2010 при Освоение новой области, которые специально бы преимущества в отношении производительности. Мы рассматриваются некоторые очевидны изменения и улучшения, например, MDS и улучшенные информационная панель разработчика. Мы оболочку с классической руководство: уплотнения вниз JavaScript и каскадные таблицы стилей, используйте CDN для общие библиотеки JavaScript, если это возможно для кэширования, объединять и сжатия изображений по возможности, ограничить или удалить ненужные данные из представления и построение внимательно представления списка. Методики и компоненты, обсуждаемые в этой статье "участие" для поддержки целей производительности.
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Создание сайтов для SharePoint](build-sites-for-sharepoint.md)  

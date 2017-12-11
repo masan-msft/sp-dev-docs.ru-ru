@@ -1,17 +1,17 @@
 ---
-title: "Использование свойства SubCode для получения кодов ошибок"
+title: "Использование свойства SubCode для определения кодов ошибок"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto,subcode
 f1_keywords: how to,howdoi,howto,subcode
 ms.prod: sharepoint
 ms.assetid: 8ce4d5b2-111b-49e7-9d07-8c2c586221ec
-ms.openlocfilehash: 5d9271f0233e99b74a924c1014c04fe0547114f8
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 3688236127c17920b97ce25c909cbf953a1cc4d9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="use-the-subcode-property-to-capture-error-codes"></a>Использование свойства SubCode для получения кодов ошибок
+# <a name="use-the-subcode-property-to-capture-error-codes"></a>Использование свойства SubCode для определения кодов ошибок
 
 Службы Excel generates errors in the SOAP exception based on errors that occur in Службы Excel. To make it easier for the developer to catch specific error conditions, an Службы вычислений Excel alert has an associated error code. The Веб-службы Excel then returns the error using properties from the **SoapException** class.
   
@@ -19,10 +19,9 @@ ms.lasthandoff: 11/15/2017
     
 
 The following examples show how to capture the error codes using the  [SubCode](http://msdn.microsoft.com/library/frlrfSystemWebServicesProtocolsSoapExceptionClassSubCodeTopic.aspx) property (http://msdn.microsoft.com/en-us/library/system.web.services.protocols.soapexception.subcode.aspx) of the **SoapException** class.
-> **Примечание:** Чтобы иметь возможность использовать свойства **SubCode** , необходимо использовать Microsoft Visual Studio 2005. Свойства **SubCode** не существует в более ранних версиях Visual Studio.
-  
-    
-    
+
+ [!NOTE]
+> [!Примечание] To be able to use the **SubCode** property, you must use Microsoft Visual Studio 2005. The **SubCode** property does not exist in earlier versions of Visual Studio.
 
 For a list of error codes, see  [Коды ошибок для служб Excel](excel-services-error-codes.md).
 ### <a name="to-capture-error-codes-when-using-soap"></a>To capture error codes when using SOAP

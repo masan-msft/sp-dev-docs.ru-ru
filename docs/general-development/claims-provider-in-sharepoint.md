@@ -3,11 +3,11 @@ title: "Поставщик утверждений в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 5918d5b6-5fd6-4f41-9473-a15b1491d056
-ms.openlocfilehash: cd935e975f4c469079905c1afe242da790f33e2f
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 8e1c4ff8f761926a3fb532919a9dac494bb302cc
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="claims-provider-in-sharepoint"></a>Поставщик утверждений в SharePoint
 
@@ -19,10 +19,8 @@ ms.lasthandoff: 10/13/2017
     
 Поставщик утверждений в SharePoint имеет две роли: приращения и комплектации.
   
-    
-    
-
-> **Примечание:** Сведения о том, как создать поставщик утверждений можно [как: создать поставщик утверждений в SharePoint](how-to-create-a-claims-provider-in-sharepoint.md). 
+> [!NOTE]
+> Сведения о том, как создать поставщик утверждений можно [как: создать поставщик утверждений в SharePoint](how-to-create-a-claims-provider-in-sharepoint.md). 
   
     
     
@@ -68,10 +66,8 @@ ms.lasthandoff: 10/13/2017
 
 В SharePoint Server существуют некоторые поставщики определенные встроенные утверждения, которые позволяют реализации поддержка понятия, такие как прошедших проверку пользователей. Это также известной как Все пользователи. Этот сценарий позволяет вам права для всех пользователей из заданного проверки подлинности поставщика.
   
-    
-    
-
-> **Примечание:** Поставщик проверки подлинности может быть Windows Active Directory, проверку подлинности на основе форм или надежный поставщик маркеров SAML (то есть, STS). 
+> [!NOTE]
+> [!Примечание] Поставщик проверки подлинности может быть Windows Active Directory, проверку подлинности на основе форм или надежный поставщик маркеров SAML (то есть, Служба маркеров безопасности (STS) ). 
   
     
     
@@ -99,7 +95,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

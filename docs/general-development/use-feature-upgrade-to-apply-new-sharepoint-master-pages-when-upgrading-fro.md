@@ -1,15 +1,15 @@
 ---
-title: "Использовать функцию обновление для применения новых главных страницах SharePoint при выполнении обновления с SharePoint 2010"
+title: "Использование обновления компонентов для применения новых эталонных страниц SharePoint при обновлении SharePoint 2010"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: de3169f1-715e-4f80-bfbf-caea744e2a0b
-ms.openlocfilehash: 7ffa948154a5d78b9c65b88275c278d46d49a849
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 3f370357d065ae858d0f21d8c4d59d927d55805f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="use-feature-upgrade-to-apply-new-sharepoint-master-pages-when-upgrading-from-sharepoint-2010"></a>Использовать функцию обновление для применения новых главных страницах SharePoint при выполнении обновления с SharePoint 2010
+# <a name="use-feature-upgrade-to-apply-new-sharepoint-master-pages-when-upgrading-from-sharepoint-2010"></a>Использование обновления компонентов для применения новых эталонных страниц SharePoint при обновлении SharePoint 2010
 Узнайте, как очистить настраиваемой главной страницы во время `FeatureUpgrading` событий при обновлении сайта SharePoint 2010 в режиме совместимости 2013.
 При обновлении настройки SharePoint 2010 до SharePoint ссылки на настраиваемых главных страниц, созданному вами переключитесь обратно на странице default.master. Если развернута функциональная возможность, которая содержит одно или несколько настраиваемых главных страниц для обновленных семейства сайтов SharePoint, на котором работает в режиме совместимости SharePoint 2010 необходимо сбросить главных страниц SharePoint при обновлении до совместимость 2013 режим. В этом разделе описывается использование приемника компонента, чтобы убедиться в том, что перезапуска настраиваемой главной страницы SharePoint при обновлении с SharePoint 2010. 
   
@@ -134,7 +134,7 @@ public override void FeatureUpgrading(SPFeatureReceiverProperties properties, st
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

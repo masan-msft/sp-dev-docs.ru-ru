@@ -1,17 +1,17 @@
 ---
-title: "Сохранение на сервере для подготовки для программного доступа"
+title: "Сохранение данных на сервере для подготовки к программному доступу"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto
 f1_keywords: how to,howdoi,howto
 ms.prod: sharepoint
 ms.assetid: 80b34a29-3d40-4d11-9ba1-b4886ffcfd42
-ms.openlocfilehash: 32162a764919dc313bd1d64e9867029ba7ffb8ee
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 47d2d9cd97c6fff52de770b4701f2c77d830e7ed
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="save-to-the-server-to-prepare-for-programmatic-access"></a>Сохранение на сервере для подготовки для программного доступа
+# <a name="save-to-the-server-to-prepare-for-programmatic-access"></a>Сохранение данных на сервере для подготовки к программному доступу
 
 В этом примере показано, как сохранить книгу Excel на сервере для подготовки для программного доступа. Порядок действий:
 
@@ -20,7 +20,9 @@ ms.lasthandoff: 11/15/2017
   
 2. Save the workbook to a trusted SharePoint library location. 
     
-    > **Примечание:** Предполагается, что уже создан в библиотеке документов SharePoint и был очень надежного расположения. Дополнительные сведения можно [как: надежного расположения](how-to-trust-a-location.md). 
+    > [!NOTE]
+    > [!Примечание] It is assumed that you have already created a SharePoint document library and made it a trusted location. For more information, see  [How to: Trust a Location](how-to-trust-a-location.md). 
+
 3. Programmatically specify values for the worksheet, named range, and cell value by using the Веб-службы Excel **SetCellA1** method. The values are passed in as argumentsthat is, _args [1]_ and _args [2]_:
     
 ```cs
@@ -186,7 +188,8 @@ status = xlSrv.SetCellA1(sessionId, String.Empty, args[1], args[2]);
     
   
 
-> **Примечание.** Дополнительные сведения о снимках см. в статье [Инструкции. Получение всей книги или моментального снимка](how-to-get-an-entire-workbook-or-a-snapshot.md). Дополнительные сведения о методе **SetCellA1** веб-служб Excel см. Пространство имен веб-службы является [Microsoft.Office.Excel.Server.WebServices (en)](https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.WebServices.aspx) .
+> [!NOTE]
+> [!Примечание] For more information about snapshots, see  [How to: Get an Entire Workbook or a Snapshot](how-to-get-an-entire-workbook-or-a-snapshot.md). For more information about the **SetCellA1** method, see the Веб-службы Excel reference documentation. The namespace of the Web service is [Microsoft.Office.Excel.Server.WebServices](https://msdn.microsoft.com/library/Microsoft.Office.Excel.Server.WebServices.aspx) .
   
     
     

@@ -3,11 +3,11 @@ title: "Настройка результатов поиска в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 1b30f6df-643a-4570-ae5c-d3d8df5609b8
-ms.openlocfilehash: 66856c768d51d8de633bc7419148aa9d8b48a7e8
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: e14e8f47074b9277167b7049c0d9ddb1d335416c
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="customizing-search-results-in-sharepoint"></a>Настройка результатов поиска в SharePoint
 Узнайте, как для группировки схожих элементов или удаление повторяющихся элементов в списке поиска результатов в SharePoint, эти результаты можно представить в виде краткие и для чтения.
@@ -231,10 +231,8 @@ using (var context = new ClientContext("http://localhost"))
     
  `TrimDuplicatesOnProperty = <managed property>`
   
-    
-    
-
-> **Примечание:** В SharePoint используйте **CollapseSpecification** , где это возможно. **TrimDuplicatesOnProperty** доступна только в целях обратной совместимости.
+> [!NOTE]
+> В SharePoint используйте **CollapseSpecification** , где это возможно. **TrimDuplicatesOnProperty** доступна только в целях обратной совместимости.
   
     
     
@@ -273,16 +271,14 @@ using (var context = new ClientContext("http://localhost"))
     
  `TrimDuplicatesIncludeId = <docid>`
   
-    
-    
-
-> **Примечание:** _Fcoid_ управляемого свойства в FAST Search Server 2010 for SharePoint заменена _docid_ управляемых свойств в SharePoint.
+> [!NOTE]
+> _Fcoid_ управляемого свойства в FAST Search Server 2010 for SharePoint заменена _docid_ управляемых свойств в SharePoint.
   
     
     
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

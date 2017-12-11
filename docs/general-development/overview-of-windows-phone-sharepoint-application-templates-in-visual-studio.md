@@ -1,15 +1,15 @@
 ---
-title: "Обзор шаблонов приложений Windows Phone SharePoint в Visual Studio"
+title: "Обзор шаблонов приложений SharePoint для Windows Phone в Visual Studio"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 6ae27957-fa41-4e6f-92e3-db11dae1f6c2
-ms.openlocfilehash: c1cd9e144b5fa71d64b0a3bac46420bcc86c8b85
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 552055e08e4f0d370fd6c4a870f6a76e4039baa6
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="overview-of-windows-phone-sharepoint-application-templates-in-visual-studio"></a>Обзор шаблонов приложений Windows Phone SharePoint в Visual Studio
+# <a name="overview-of-windows-phone-sharepoint-application-templates-in-visual-studio"></a>Обзор шаблонов приложений SharePoint для Windows Phone в Visual Studio
 Узнайте о шаблонах Visual Studio, установленных с помощью пакета SDK SharePoint для Windows Phone для разработки мобильного приложения.
 ## <a name="templates-installed-by-the-windows-phone-sharepoint-software-development-kit"></a>Шаблоны, установленные с средств разработки программного обеспечения для Windows Phone SharePoint
 <a name="BKMK_TemplatesInstalled"> </a>
@@ -27,10 +27,8 @@ ms.lasthandoff: 10/13/2017
   
 На данный момент эти шаблоны предназначены для использования только в проектах C#. Они недоступны для Visual Basic проектов. Тем не менее, для использования в Visual Studio 2012 и Visual Studio Express 2012 для Windows Phone 8 и Visual Studio 2010 и Visual Studio 2010, экспресс-выпуск для Windows Phone 7 доступны шаблоны.
   
-    
-    
-
-> **Примечание:** Шаблоны Windows Phone SharePoint не отображаются в меню **Создать проект** Expression Blend. Тем не менее можно изменить проект в Expression Blend, выбрав команду **Открыть в выражении Blend** контекстное меню в Visual Studio.
+> [!NOTE]
+> [!Примечание] Шаблоны Windows Phone SharePoint не отображаются в меню **Создать проект** Expression Blend. Тем не менее можно изменить проект в Expression Blend, выбрав команду **Открыть в выражении Blend** контекстное меню в Visual Studio.
   
     
     
@@ -47,8 +45,8 @@ ms.lasthandoff: 10/13/2017
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
 ```
 
-
-> **Примечание:** Дополнительные сведения о параметрах в файле WMAppManifest.xml видеть [Приложения манифест файла для Windows Phone](http://msdn.microsoft.com/en-us/library/ff769509.aspx). 
+> [!NOTE]
+> [!Примечание] Дополнительные сведения о параметрах в файле WMAppManifest.xml  [Приложения манифест файла для Windows Phone](http://msdn.microsoft.com/en-us/library/ff769509.aspx)см. 
   
     
     
@@ -59,10 +57,8 @@ ms.lasthandoff: 10/13/2017
 
 При создании проекта Visual Studio на основе шаблона пустой SharePoint приложения Windows Phone, начала проекта похож на проект, созданный с помощью базового шаблона приложения для Windows Phone (устанавливается по Windows Phone SDK 7.1), с добавлением ссылок на библиотеки DLL, установленных с Windows Phone пакет SDK для SharePoint (Microsoft.SharePoint.Client.Phone.dll, Microsoft.SharePoint.Client.Phone.Auth.UI и Microsoft.SharePoint.Client.Phone.Runtime.dll, как показано на рисунке 1) и некоторые другие при изменении конфигурации.
   
-    
-    
-
-> **Примечание:** Шаблоны доступны для Windows Phone 8 в Visual Studio Express 2012. 
+> [!NOTE]
+> [!Примечание] Шаблоны доступны для Windows Phone 8 в Visual Studio Express 2012. 
   
     
     
@@ -91,10 +87,8 @@ ms.lasthandoff: 10/13/2017
 
 Шаблон приложения списка SharePoint для Windows Phone значительно эффективнее, чем шаблон приложение Windows Phone пустой SharePoint. Этот шаблон разработан для создания приложения для Windows Phone для обработки вероятный сценарий в разработки мобильных приложений для SharePoint: доступа и управления данными в список SharePoint из Windows Phone. При создании проекта Visual Studio, основанных на этом шаблоне, мастер помогает выполнить необходимые шаги по настройке и создает файлы решения для работы приложения Windows Phone, можно работать с данными списков SharePoint. Можно создать и развернуть приложение из созданные файлы с минимальными или без изменений.
   
-    
-    
-
-> **Примечание:** Шаблоны доступны для Windows Phone 8 в Visual Studio Express 2012. 
+> [!NOTE]
+> [!Примечание] Шаблоны доступны для Windows Phone 8 в Visual Studio Express 2012. 
   
     
     
@@ -151,7 +145,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15winphoneover_addlresources"> </a>
 
 

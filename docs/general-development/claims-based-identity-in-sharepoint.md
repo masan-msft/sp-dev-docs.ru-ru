@@ -1,15 +1,15 @@
 ---
-title: "Удостоверение, основанное на основе утверждений в SharePoint"
+title: "Удостоверение, основанное на утверждениях, в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 32b6af2a-72f3-4302-a6af-5f00143cbf67
-ms.openlocfilehash: 7df5c259861cb43a36d5c7290a45698614ebfd20
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: a45031d32b91cd4b8339dda588ddcd9a657cd05f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="claims-based-identity-in-sharepoint"></a>Удостоверение, основанное на основе утверждений в SharePoint
+# <a name="claims-based-identity-in-sharepoint"></a>Удостоверение, основанное на утверждениях, в SharePoint
 Сведения о базовых компонента архитектура идентификации на основе утверждений в SharePoint.
 ## <a name="claims-based-authentication"></a>Проверка подлинности на основе утверждений
 
@@ -48,7 +48,7 @@ Word, утверждения используется вместо wordатри�
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15_RoleInheritance_AdditionalResources"> </a>
 
 

@@ -3,11 +3,11 @@ title: "Фигур Visio в SharePoint Designer 2013 краткий справо
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 51bc37fd-37de-4ad0-a75a-bdf7333bc80c
-ms.openlocfilehash: d685265148d2e626982a6010f5f48a00d366863f
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 44b084ef9dee9d50f45f8b5863ea9dc4f133f0dc
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="visio-shapes-in-sharepoint-designer-2013-a-quick-reference-guide-sharepoint-2010-workflow-platform"></a>Фигур Visio в SharePoint Designer 2013: краткий справочник (платформа рабочих процессов SharePoint 2010)
 Можно создать рабочий процесс в Microsoft Visio профессиональный 2013 и экспортировать его в Microsoft SharePoint Designer 2013. В этом руководстве идентифицирует фигур Visio, используемые для создания рабочего процесса.Используйте эту статью ссылку только в том случае, если пользователь работает в SharePoint Designer 2013, но продолжить использование платформы рабочих процессов SharePoint 2010.Фигуры для платформы рабочих процессов SharePoint 2010 поступают в трех наборы элементов: **действия - рабочего процесса SharePoint 2010**, **условия - рабочего процесса SharePoint 2010** и **конца - рабочего процесса SharePoint 2010**.
@@ -223,7 +223,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

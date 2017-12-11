@@ -3,11 +3,11 @@ title: "Использование клиентской библиотеки к�
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c280ae92-c52b-4658-b0f3-805fb215ef8e
-ms.openlocfilehash: 2f4e7a87db95ee5d1105111a5f5cdab9d1d6242b
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: bee624e58e0b7b85adbbdbc6097e04961001422f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="use-the-client-code-library-to-access-external-data-in-sharepoint"></a>Использование клиентской библиотеки кода для доступа к внешним данным в SharePoint
 
@@ -55,7 +55,7 @@ ms.lasthandoff: 11/15/2017
 
 |**Статья**|**Описание**|
 |:-----|:-----|
-| [Выполнение базовых операций с использованием кода библиотеки клиента в SharePoint](http://msdn.microsoft.com/library/5a69c9e3-73bf-4ed5-bc19-182056bdb394%28Office.15%29.aspx) <br/> |Узнайте, как писать код выполните основные операции с клиента SharePoint .NET Framework объектной модели (CSOM).  <br/> |
+| [Выполнение базовых операций с использованием кода клиентской библиотеки в SharePoint](http://msdn.microsoft.com/library/5a69c9e3-73bf-4ed5-bc19-182056bdb394%28Office.15%29.aspx) <br/> |Узнайте, как писать код выполните основные операции с клиента SharePoint .NET Framework объектной модели (CSOM).  <br/> |
    
 
 ## <a name="create-an-sharepoint-add-in-to-access-external-data-using-the-client-object-model"></a>Создание Надстройка SharePoint для доступа к внешним данным с помощью клиентской объектной модели
@@ -202,7 +202,7 @@ function getCustomers() {
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bkmk_Addresources"> </a>
 
 

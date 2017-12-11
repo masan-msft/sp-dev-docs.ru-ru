@@ -1,17 +1,17 @@
 ---
-title: "Получение всей книги или ее снимка"
+title: "Получение всей книги или моментального снимка"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto
 f1_keywords: how to,howdoi,howto
 ms.prod: sharepoint
 ms.assetid: 39115503-8352-4589-87f4-cfa9c07260b6
-ms.openlocfilehash: 113bf67f3abcb3b936c3d1421cae5ea9f7524be6
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 22fa7131e89f660bc9b47aa1c8aa8ba2614bb64f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="get-an-entire-workbook-or-a-snapshot"></a>Получение всей книги или ее снимка
+# <a name="get-an-entire-workbook-or-a-snapshot"></a>Получение всей книги или моментального снимка
 
 This example shows how to get an entire workbook, a snapshot of the entire file, or just a snapshot of the viewable sheets or objects in the file by using Веб-службы Excel. Getting the workbook or a snapshot is useful if you want to save a copy of the up-to-date workbook, store it somewhere, send it to someone, and so on.
   
@@ -219,10 +219,8 @@ C:\\>GetSnapshot.exe http://myServer02/reports/reports/OriginalWorkbook.xlsx > S
 
 If you use the previous command-line example, the GetSnapshot tool places a new file in the "C:\\" directory.
   
-    
-    
-
-> **Примечание:** Книги, чтобы получить снимок должен находиться в надежном расположении. 
+> [!NOTE]
+> он книги, которую требуется получить снимок должен находиться в надежном расположении. 
   
     
     

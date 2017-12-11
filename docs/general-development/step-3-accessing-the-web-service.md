@@ -3,11 +3,11 @@ title: "Этап 3. Получение доступа к веб-службе"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d27f654d-242f-4f34-8385-be857c170532
-ms.openlocfilehash: be159956d3799a2c9dac2d3aef309a178889f494
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 9ba31951d530f3051f6233fb6f6f1bd5c4b37360
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="step-3-accessing-the-web-service"></a>Этап 3. Получение доступа к веб-службе
 
@@ -82,39 +82,40 @@ Dim rangeCoordinates As New RangeCoordinates()
 
 3. Добавьте код, чтобы указать лист, к которому требуется получить доступ. В этом примере лист называется Sheet1. Добавьте в свой код следующее: 
     
-```cs
-  
-string sheetName = "Sheet1";
-```
+    ```cs
+    
+    string sheetName = "Sheet1";
+    ```
 
 
-```VB.net
-  Dim sheetName As String = "Sheet1"
-```
+    ```VB.net
+    Dim sheetName As String = "Sheet1"
+    ```
+    > [!NOTE]
+    > [!Примечание] Убедитесь, что в книге, которую вы хотите открыть, есть лист Sheet1, содержащий значения. Аналогично можно заменить имя Sheet1 в коде на другое имя листа. 
 
-
-    > **Note:**
-      > Make sure the workbook you want to open has a worksheet called "Sheet1" that contains values. Alternatively, you can change "Sheet1" in the code to the name of your worksheet. 
 4.  `Add the following code to point to the workbook you want to open`:
     
-```cs
-  string targetWorkbookPath = "http://myserver02/example/Shared%20Documents/Book1.xlsx";
-```
+        ```cs
+        string targetWorkbookPath = "http://myserver02/example/Shared%20Documents/Book1.xlsx";
+        ```
 
 
-```VB.net
-  Dim targetWorkbookPath As String = "http://myserver02/example/Shared%20Documents/Book1.xlsx"
-```
+        ```VB.net
+        Dim targetWorkbookPath As String = "http://myserver02/example/Shared%20Documents/Book1.xlsx"
+        ```
 
 
-    > **Important:**
-      > Change the workbook path to match the location of the workbook you are using for this walkthrough. Make sure the workbook exists and that the location where the workbook is saved is a trusted location. Using an HTTP URL to point to the location of a workbook allows you to access it remotely. 
+    > [!IMPORTANT]
+    > [!Важно!] Измените путь к книге, чтобы он соответствовал расположению книги, используемому в данном руководстве. Убедитесь, что книга существует и что расположение, где она хранится, является надежным расположением. Использование URL-адреса в формате HTTP для указания расположения книги позволяет получать к ней удаленный доступ. 
 
-    > **Note:**
-      > You can get the path to a workbook in Microsoft SharePoint Server 2010 by right-clicking the workbook and selecting **Copy Shortcut**. Alternatively, you can select **Properties** and copy the path to the workbook from there.
+    > [!NOTE]
+    > [!Примечание] Получить путь к книге в Microsoft SharePoint Server 2010 можно, щелкнув ее правой кнопкой мыши и выбрав в меню пункт **Копировать ярлык**. Аналогично можно выбрать пункт **Свойства** и скопировать путь к рабочей книге в этом окне.
+
 5. Добавьте следующий код, чтобы указать учетные данные для запроса. 
     
-    > **Примечание:** Необходимо явно задать учетные данные, даже в том случае, если вы намерены использовать учетные данные по умолчанию. 
+    > [!NOTE]
+    > [!Примечание] Требуется явно задать учетные данные, даже если вы намерены использовать учетные данные по умолчанию. 
 
 ```cs
   es.Credentials = System.Net.CredentialCache.DefaultCredentials;
@@ -344,7 +345,7 @@ End Namespace
 ## <a name="see-also"></a>См. также
 
 
-#### <a name="concepts"></a>Понятия
+#### <a name="concepts"></a>Основные понятия
 
 
   

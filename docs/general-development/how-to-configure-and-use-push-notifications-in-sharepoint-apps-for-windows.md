@@ -3,11 +3,11 @@ title: "Настройка и использование push-уведомлен
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 68fa2138-86d9-4e35-9c7c-5cd292087b80
-ms.openlocfilehash: b9e6c480be922250a62a524a703ea2cd0925b548
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 249e1a4c3ffb93b04f4ddcf0e1e4df4c33eceaca
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="configure-and-use-push-notifications-in-sharepoint-apps-for-windows-phone"></a>Настройка и использование push-уведомлений в приложениях SharePoint для Windows Phone
 
@@ -383,10 +383,8 @@ namespace PushNotificationsList
     
 Пустая строка просто передается в качестве значения параметра **toastParam**, которой соответствует свойству **Param** в XML-схему для уведомлений всплывающего уведомления. Этот параметр может использоваться для указания, например, на страницу приложения phone следует открыть при нажатии кнопки уведомлений на телефоне. В примере приложения телефона, разработанных далее в этом разделе для получения этих уведомлений с сервера свойство **Param** не используется. Форма списка (List.xaml) в приложении просто открывается при нажатии кнопки уведомления.
   
-    
-    
-
-> **Примечание:** Свойства **параметров** для уведомлений всплывающим поддерживается только в ОС Windows Phone 7.1 или более поздней версии.
+> [!NOTE]
+> [!Примечание] Свойство **Param** для уведомлений всплывающим поддерживается только в ОС Windows Phone 7.1 или более поздней версии.
   
     
     
@@ -1148,7 +1146,9 @@ namespace SPListAppForNotifications
   
 10. Перейдите к папке, в котором были установлены стандартные изображения значка Windows Phone по Windows Phone SDK 7.1.
     
-    > **Примечание:** Изображения с быстрое переднего плана и темный фон находятся в %PROGRAMFILES%(x86)\\пакеты SDK для Microsoft\\Windows Phone\\v7.1\\значки\\темный при установке пакета SDK. 
+    > [!NOTE]
+    > [!Примечание] Изображения с быстрое переднего плана и темный фон находятся в % PROGRAMFILES %(x86) \\Microsoft SDKs\\Windows Phone\\v7.1\\Icons\\dark при установке пакета SDK. 
+
 11. Выберите файл изображения, с именем appbar.check.rest.png и нажмите кнопку **Добавить**. Добавить изображение добавляется в проект в узле изображений.
     
   
@@ -1350,7 +1350,7 @@ private void Application_Launching(object sender, LaunchingEventArgs e)
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15Configurepushnot_addlresources"> </a>
 
 

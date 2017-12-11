@@ -3,11 +3,11 @@ title: "Улучшение файла модели BDC для поиска в Sh
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 3c67b1cf-5fca-4805-a1b5-c9ac1ff8aede
-ms.openlocfilehash: 7ec597c113aec7f5a017dbe233e6a89ef416ec07
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 26b06db6e478c15d47257b8a88de30da1f0bb0c1
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="enhancing-the-bdc-model-file-for-search-in-sharepoint"></a>Улучшение файла модели BDC для поиска в SharePoint
 Сведения о свойствах в модели метаданных BDC, которые могут быть применены соединители индексации BCS, позволяющие поиска в SharePoint для обхода внешних данных.
@@ -170,16 +170,11 @@ Select * from table where ColumnA=@value
     
 Страницы профиля могут требовать использования Служба Secure Store из-за проблемы многозвенного делегирования от интерфейсного веб-сервера. При возникновении этой проблемы можно оптимизировать обход и контента в то же время сохранить использование страниц профиля, создав два похожих экземпляра **LobSystemInstance**. Первый экземпляр должен использовать учетные данные из проверки подлинности Служба Secure Store. Этот экземпляр не должен содержать свойство **ShowInSearchUI**. Второй экземпляр должен использовать сквозную проверку подлинности и должен содержать свойство **ShowInSearchUI**. Страницы профиля используют первый экземпляр **LobSystemInstance**, а программа-обходчик  второй.
   
-    
-    
-
-> **Примечание:** Это необходимо задать свойство **ShowInSearchUI** на **LobSystemInstance** уровня, а не на уровне **LobSystem** .
-  
-    
-    
+> [!NOTE]
+> [!Примечание] Для этого необходимо задать свойство **ShowInSearchUI** на уровне **LobSystemInstance**, а не на уровне **LobSystem**.
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15enhanceBDC_addlresources"> </a>
 
 

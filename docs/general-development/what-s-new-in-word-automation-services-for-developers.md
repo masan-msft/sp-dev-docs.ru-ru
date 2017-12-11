@@ -3,11 +3,11 @@ title: "Новые возможности Word Automation Services для раз
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 00d2cf8d-93b0-4aab-8e76-31a6bb2f0dcb
-ms.openlocfilehash: c01450d5a61edd71ee767c6028bd94937dd5e124
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: bba621cc37299a956e9a46dbb6dc7cdfc280b251
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="whats-new-in-word-automation-services-for-developers"></a>Новые возможности Word Automation Services для разработчиков (en)
 Этот раздел содержит общий обзор дополнений и усовершенствований в службы Word Automation Services для разработчиков. В Microsoft SharePoint основной дополнение к Word Automation Services — поддержка «по запросу» файл запросов на преобразование. Наиболее значительное расширение возможностей Word Automation Services добавлена поддержка использование потоков в качестве входных данных и выходные данные задания преобразования.
@@ -84,7 +84,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
-### <a name="additional-resources"></a>Дополнительные ресурсы
+### <a name="see-also"></a>См. также
 <a name="was15AdditionalResources"> </a>
 
 

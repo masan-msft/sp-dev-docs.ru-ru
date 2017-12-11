@@ -3,11 +3,11 @@ title: "Службы Visio в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: ed8c5d12-e17d-4ceb-b195-601c26824370
-ms.openlocfilehash: d59e3c6d447327e9ad9444f889f38c24ca21120f
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ad71c9db6949c0011e8a1d0ff1e8c5580f23b43e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="visio-services-in-sharepoint"></a>Службы Visio в SharePoint
 Службы Visio в Microsoft SharePoint позволяет загружать, отображать и программно взаимодействовать с Visio vsdx (en), .vsdm файлы и веб-документов Visio (.vdw) на Microsoft SharePoint и Microsoft SharePoint Online.
@@ -25,7 +25,7 @@ ms.lasthandoff: 10/13/2017
 
 |||
 |:-----|:-----|
-|![Заметка в облачном режиме](../images/mod_icon_incloud.gif)           <br/> ![Заметка локального режима](../images/mod_icon_onpremises.gif)|Visio 2013 представлен новый формат файла (vsdx (en), на основе Open Packaging Conventions (OPC) standard (ISO 29500, часть 2) и XML-элементы из предыдущих Visio формат XML-файла (.vdx). Это формат ZIP-файл на основе XML, аналогичную форматы файлов, используемые в других приложениях .<br/> С помощью нового формата файлов можно сохранить Visio 2013 документа в библиотеке SharePoint Server или SharePoint Online без необходимости опубликуйте файл как Visio Web рисунка (.vdw). Тем не менее Службы Visio возможность чтения и отображение файлов веб-документа Visio.<br/> Службы Visio сохраняет возможность отображения в формат веб-документа Visio (.vdw) в браузере. Он теперь также выводит нового Visio документа (vsdx (en) и Visio макросами рисунка (.vsdm) форматы.<br/> Объектная модельECMAScript (JavaScript, JScript)Службы Visio содержит новые API для поддержки новый формат файла:  [Vwa.VwaControl.getDiagramFileType Method](http://msdn.microsoft.com/library/fd8ca95f-a3be-4000-bce8-3aaf1f48148c%28Office.15%29.aspx). Методы возвращает значение из  [Vwa.DiagramFileType Enumeration](http://msdn.microsoft.com/library/dd2f8a5d-a54b-44bd-a458-02efdcba0201%28Office.15%29.aspx) , которое указывает, является ли имя файла, отображаемое в веб-части Visio Web Access (vsdx (en) документа Visio или Visio Web рисунка (.vdw). <br/> Дополнительные сведения о новом формате Visio 2013 [Introduction to the Visio file format (.vsdx)](http://msdn.microsoft.com/library/69736f40-8f67-46c2-abf6-82dffecb2274%28Office.15%29.aspx)см.  <br/> **Примечание:** Новые файлы Visio (vsdx (en) и .vsdm) отображаются только в растровом формате в Visio Services. Веб-документов Visio (.vdw) по-прежнему отображаются с помощью Silverlight.           |
+|![Заметка в облачном режиме](../images/mod_icon_incloud.gif)           <br/> ![Заметка локального режима](../images/mod_icon_onpremises.gif)|Visio 2013 представлен новый формат файла (vsdx (en), на основе Open Packaging Conventions (OPC) standard (ISO 29500, часть 2) и XML-элементы из предыдущих Visio формат XML-файла (.vdx). Это формат ZIP-файл на основе XML, аналогичную форматы файлов, используемые в других приложениях .<br/> С помощью нового формата файлов можно сохранить Visio 2013 документа в библиотеке SharePoint Server или SharePoint Online без необходимости опубликуйте файл как Visio Web рисунка (.vdw). Тем не менее Службы Visio возможность чтения и отображение файлов веб-документа Visio.<br/> Службы Visio сохраняет возможность отображения в формат веб-документа Visio (.vdw) в браузере. Он теперь также выводит нового Visio документа (vsdx (en) и Visio макросами рисунка (.vsdm) форматы.<br/> Объектная модельECMAScript (JavaScript, JScript)Службы Visio содержит новые API для поддержки новый формат файла:  [Vwa.VwaControl.getDiagramFileType Method](http://msdn.microsoft.com/library/fd8ca95f-a3be-4000-bce8-3aaf1f48148c%28Office.15%29.aspx). Методы возвращает значение из  [Vwa.DiagramFileType Enumeration](http://msdn.microsoft.com/library/dd2f8a5d-a54b-44bd-a458-02efdcba0201%28Office.15%29.aspx) , которое указывает, является ли имя файла, отображаемое в веб-части Visio Web Access (vsdx (en) документа Visio или Visio Web рисунка (.vdw). <br/> Дополнительные сведения о новом формате Visio 2013 [Introduction to the Visio file format (.vsdx)](http://msdn.microsoft.com/library/69736f40-8f67-46c2-abf6-82dffecb2274%28Office.15%29.aspx)см.  <br/> **Примечание**: новые файлы Visio (vsdx (en) и .vsdm) отображаются только в растровом формате в Visio Services. Веб-документов Visio (.vdw) по-прежнему отображаются с помощью Silverlight.           |
    
 
 ### <a name="support-for-business-connectivity-services-bcs-data"></a>Поддержка данных Business Connectivity Services (BCS)
@@ -34,7 +34,7 @@ ms.lasthandoff: 10/13/2017
 
 |||
 |:-----|:-----|
-|![Заметка в облачном режиме](../images/mod_icon_incloud.gif)           <br/> ![Заметка локального режима](../images/mod_icon_onpremises.gif)|Схемы Visio 2013 теперь могут быть подключены к внешним спискам, созданных с помощью Microsoft Business Connectivity Services (BCS) на серверах SharePoint и в SharePoint Online. Службы Visio поддерживают возможность обновления схемы Visio как обновления данных.  <br/> **Примечание:** Службам Visio не поддерживает SQL, SQL Azure, OLEDC, ODBC и настраиваемые поставщики данных в качестве источников данных в SharePoint Online.           |
+|![Заметка в облачном режиме](../images/mod_icon_incloud.gif)           <br/> ![Заметка локального режима](../images/mod_icon_onpremises.gif)|Схемы Visio 2013 теперь могут быть подключены к внешним спискам, созданных с помощью Microsoft Business Connectivity Services (BCS) на серверах SharePoint и в SharePoint Online. Службы Visio поддерживают возможность обновления схемы Visio как обновления данных.  <br/> **Примечание**: службам Visio не поддерживает SQL, SQL Azure, OLEDC, ODBC и настраиваемые поставщики данных в качестве источников данных в SharePoint Online.           |
    
 
 ### <a name="commenting"></a>Комментарии
@@ -91,7 +91,7 @@ ms.lasthandoff: 10/13/2017
 |![Заметка локального режима](../images/mod_icon_onpremises.gif)|Библиотека классов служб Visio, в пространство имен [Microsoft.Office.Visio.Server](https://msdn.microsoft.com/library/Microsoft.Office.Visio.Server.aspx) можно использовать для создания настраиваемых поставщиков данных служб Visio. Поставщики данных позволяют программным путем обновления данных, полученных от источников пользовательских данных в схемы Visio 2013, размещенного на сайте SharePoint. <br/> Дополнительные сведения о создании настраиваемого поставщика данных и для работы через в единое решение начала до конца содержатся в разделе  [Создание настраиваемого поставщика данных с помощью служб Visio](http://msdn.microsoft.com/en-us/library/ff394595.aspx).  <br/> |
    
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="visserv15_Additional"> </a>
 
 

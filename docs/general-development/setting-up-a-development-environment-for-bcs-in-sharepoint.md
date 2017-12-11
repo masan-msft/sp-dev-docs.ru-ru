@@ -3,11 +3,11 @@ title: "Настройка среды разработки для BCS в SharePo
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: d83c8a43-49dd-47eb-94d4-23aa2cf71a9a
-ms.openlocfilehash: ccd96046c91dae94fb68d5a38cf7a8546f38f284
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 33956da39dedd23fa5f81ce131d84e22eca9d60f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="setting-up-a-development-environment-for-bcs-in-sharepoint"></a>Настройка среды разработки для BCS в SharePoint
 Сведения о настройке среды разработки для разработки решений SharePoint и надстройки SharePoint с помощью Business Connectivity Services (BCS).
@@ -52,7 +52,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15SettingupdevenvBCS_addresources"> </a>
 
 
@@ -65,7 +65,7 @@ ms.lasthandoff: 10/13/2017
 -  [Business Connectivity Services в SharePoint](business-connectivity-services-in-sharepoint.md)
     
   
--  [Обзор разработки решений с помощью SharePoint](sharepoint-development-overview.md)
+-  [Обзор разработки решений для SharePoint](sharepoint-development-overview.md)
     
   
 

@@ -3,11 +3,11 @@ title: "Подписки на людей и контент Справочник 
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c05755df-846d-4a39-941d-950d066cc6d4
-ms.openlocfilehash: d18faadfbb6ea259fb073609e892d2fa4dcd344d
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 4e2cbe5819a0e5d2e5c58a1675503d5e899d6805
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="following-people-and-content-rest-api-reference-for-sharepoint"></a>Подписки на людей и контент Справочник по интерфейсу API службы REST для SharePoint
 Поиск конечных точек SharePoint REST для подписки на людей и контент с помощью **SocialRestFollowingManager** ресурсов и ресурсов **PeopleManager** .
@@ -17,7 +17,9 @@ ms.lasthandoff: 10/13/2017
     
 
 URI конечной точки для большинства следующие задачи начинается с ресурсом **SocialRestFollowingManager** ( `social.following`) и заканчивается ресурсов, используемая для выполнения определенной задачи. Например необходимо использовать URI  `http://www.contoso.com/_api/social.following/follow` текущего пользователя запустите следующие людей или содержимого и URI `https://www.contoso.com/sites/devSite/_api/social.following/followed` люди или контента  это следующий текущего пользователя.
-> **Примечание:** В этой статье показаны конечной точке URI и параметр компоненты HTTP-запросов. В разделе примеры запросов на полный [как: с помощью службы REST в SharePoint, выполните документы, сайты и тегов](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md). 
+
+> [!NOTE]
+> В этой статье показаны конечной точке URI и параметр компоненты HTTP-запросов. В разделе примеры запросов на полный [как: с помощью службы REST в SharePoint, выполните документы, сайты и тегов](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md). 
   
     
     
@@ -969,10 +971,8 @@ URI для страницы **сайты, у меня есть подписка*
 
 Получает пользователей, которые текущий пользователь может потребоваться выполнить.
   
-    
-    
-
-> **Примечание:** Рекомендации людей функциональные возможности, зависит от следующих действий пользователей, обходы при поиске и аналитика поиска. Просмотрите, [как предложения людей можно устанавливать в SharePoint Online](follow-people-in-sharepoint.md#bk_PeopleSuggestions). 
+> [!NOTE]
+> [!Примечание] Рекомендации людей функциональные возможности, зависит от следующих действий пользователей, обходы при поиске и аналитика поиска. Увидеть  [Как работают предложения людей на SharePoint Online](follow-people-in-sharepoint.md#bk_PeopleSuggestions). 
   
     
     
@@ -1012,10 +1012,8 @@ URI для страницы **сайты, у меня есть подписка*
 
 Получает пользователей, которые текущий пользователь может потребоваться выполнить.
   
-    
-    
-
-> **Примечание:** Рекомендации людей функциональные возможности, зависит от следующих действий пользователей, обходы при поиске и аналитика поиска. Просмотрите, [как предложения людей можно устанавливать в SharePoint Online](follow-people-in-sharepoint.md#bk_PeopleSuggestions). 
+> [!NOTE]
+> [!Примечание] Рекомендации людей функциональные возможности, зависит от следующих действий пользователей, обходы при поиске и аналитика поиска. Увидеть  [Как работают предложения людей на SharePoint Online](follow-people-in-sharepoint.md#bk_PeopleSuggestions). 
   
     
     
@@ -1561,11 +1559,11 @@ URI для страницы **сайты, у меня есть подписка*
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 
--  [Как: выполните документы, сайты и теги с помощью службы REST в SharePoint](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md)
+-  [Как подписываться на документы, сайты и теги, используя службу REST в SharePoint](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md)
     
   
 -  [Social feed REST API reference for SharePoint](social-feed-rest-api-reference-for-sharepoint.md)

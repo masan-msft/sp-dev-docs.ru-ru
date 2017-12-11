@@ -1,15 +1,15 @@
 ---
-title: "Избегайте начало регулирование или заблокированные в SharePoint Online"
+title: "Как избежать регулирования или блокировки в SharePoint Online"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 33ed8106-d850-42b1-8d7f-5ba83901149c
-ms.openlocfilehash: 85e7c62014d00e4803f160f1704d3debf7a8393f
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 60c499de684a1ca6d9c6621441390a523312fde3
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="avoid-getting-throttled-or-blocked-in-sharepoint-online"></a>Избегайте начало регулирование или заблокированные в SharePoint Online
+# <a name="avoid-getting-throttled-or-blocked-in-sharepoint-online"></a>Как избежать регулирования или блокировки в SharePoint Online
 Узнайте о регулирования в SharePoint Online и узнайте, как избежать регулирование или заблокирован. Включает пример кода CSOM и REST, которые можно использовать для упрощения задачи.
 
 -  [Что такое регулирование?](how-to-avoid-getting-throttled-or-blocked-in-sharepoint-online.md#BKMK_Whatisthrottling)
@@ -297,7 +297,7 @@ public static void ExecuteQueryWithIncrementalRetry(this ClientContext context, 
   
 Если мы заблокировать подписки, вы увидите код состояния HTTP 503, и мы будем напоминания о том, блокировки в центре сообщений Office 365. Сообщение описывает причину блокировки, представлены рекомендации о том, как устранить проблему, вызвавшей ошибку и вы узнаете, к кому обращаться для получения блока удалены.
   
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="BKMK_Additionalresources"> </a>
 
 -  [Diagnosing performance issues with SharePoint Online](https://support.office.com/en-us/article/3c364f9e-b9f6-4da4-a792-c8e8c8cd2e86)
