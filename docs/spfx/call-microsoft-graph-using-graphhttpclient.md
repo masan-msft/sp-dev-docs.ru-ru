@@ -1,62 +1,318 @@
-# <a name="call-microsoft-graph-using-the-sharepoint-framework-graphhttpclient"></a>Вызов Microsoft Graph с помощью клиента GraphHttpClient на платформе SharePoint Framework
+# <a name="use-graphhttpclient-to-call-microsoft-graph"></a>Вызов Microsoft Graph с помощью класса GraphHttpClient
+> [!IMPORTANT]
+>Класс **GraphHttpClient** находится на этапе тестирования, и в него могут быть внесены изменения. Сейчас он не поддерживается для использования в рабочих средах.
 
-С помощью Microsoft Graph вы можете создавать функциональные решения, использующие данные из различных служб, входящих в состав Office 365. В прошлом подключать решения SharePoint Framework к Microsoft Graph было сложно, так как для этого требовалось зарегистрировать приложение Azure Active Directory и выполнить поток авторизации. Благодаря клиенту GraphHttpClient на платформе SharePoint Framework вы можете вызывать Microsoft Graph напрямую без дополнительной настройки.
+Используйте класс **GraphHttpClient**, чтобы совершать вызовы к REST API Microsoft Graph. Вы можете выполнять запросы GET, POST и PATCH, используя методы **get()**, **post()** и **fetch()**. В этой статье рассказывается, как создать веб-часть, которая использует класс **GraphHttpClient**, но вы можете применять класс **GraphHttpClient** в любом клиентском коде в SharePoint Framework.
 
-> **Важно!** В настоящее время GraphHttpClient находится на этапе тестирования разработчиками. Его не следует использовать в рабочей среде.
+## <a name="retrieve-office-365-groups-using-a-get-call"></a>Получение групп Office 365 с помощью вызова GET
 
-## <a name="what-is-graphhttpclient"></a>Что такое GraphHttpClient
+Вы можете использовать метод **get()** для совершения вызова REST к Microsoft Graph. В этом примере показано, как получить список групп Office 365. 
 
-GraphHttpClient — это специальный HTTP-клиент, входящий в состав SharePoint Framework. Он работает аналогично клиенту HttpClient, используемому для связи со сторонними API. Этот клиент, основанный на HttpClient, автоматически обеспечивает наличие действительного маркера доступа носителя и необходимых заголовков в запросе к Microsoft Graph. Когда вы отправляете запрос GET или POST, GraphHttpClient проверяет наличие действительного маркера доступа и, в случае его отсутствия, автоматически получает маркер из внутреннего API и сохраняет его для последующих запросов.
+### <a name="create-a-new-web-part-project"></a>Создание проекта веб-части
 
-Ниже представлен пример запроса к Microsoft Graph с использованием GraphHttpClient.
+1. Создайте каталог проекта в любом расположении. 
 
-```ts
-// ...
-import { GraphHttpClient, GraphClientResponse } from '@microsoft/sp-http';
+  ```
+  mkdir hellograph-webpart
+  ```
 
-export default class MyApplicationCustomizer
-  extends BaseApplicationCustomizer<IMyApplicationCustomizerProperties> {
+2. Перейдите в каталог проекта.
 
-  // ...
+  ```
+  cd hellograph-webpart
+  ```
 
-  @override
-  public onRender(): void {
-    this.context.graphHttpClient.get("v1.0/groups?$select=displayName", GraphHttpClient.configurations.v1)
-      .then((response: GraphClientResponse): Promise<any> => {
-        return response.json();
-      })
-      .then((data: any): void => {
-        // ...
+3. Создайте веб-часть, запустив генератор Yeoman для SharePoint.
+
+  ```
+  yo @microsoft/sharepoint
+  ```
+
+4. Когда отобразится соответствующий запрос, выполните указанные ниже действия.
+
+  * Введите имя решения **hellograph-webpart**.
+  * В качестве расположения для размещения файлов выберите вариант **Использовать текущую папку**.
+  * Когда отобразится соответствующий запрос, введите **д**, если вы хотите разрешить администратору клиента развертывать решение немедленно на всех сайтах, не запуская процесс развертывания компонентов или добавления приложений на сайтах.
+  * В качестве типа клиентского компонента, который необходимо создать, выберите вариант **Веб-часть**.
+  * В качестве имени веб-части введите **HelloGraph**.
+  * В качестве описания веб-части введите **Совершает вызовы API Групп Microsoft Graph**.
+  * Примите значение **Веб-платформа без JavaScript**, используемое по умолчанию, в качестве платформы и нажмите клавишу **ВВОД**.
+
+  ![Значения класса GraphHttpClient, которые необходимо вводить в командной строке](../images/graphhttpclient-web-part-create.jpg)
+
+5. Генератор Yeoman создаст веб-часть. По завершении формирования шаблонов откройте папку проекта в редакторе кода. В этой статье в инструкциях и на снимках экрана используется Visual Studio Code, но вы можете использовать любой другой редактор.
+
+6. Выполните команду gulp serve и подтвердите, что она правильно выполняется на рабочем месте.
+
+  ```
+  gulp serve
+  ```
+
+### <a name="add-a-button-and-placeholder-for-results"></a>Добавление кнопки и заполнителя для результатов
+Далее вы измените HTML-код и добавите кнопку для получения групп Office 365. В HTML-код также необходимо добавить заполнитель для отображения групп.
+
+1. В редакторе кода откройте файл **/src/webparts/helloGraph/HelloGraphWebPart.ts**.
+
+2. Измените метод **render()** так, чтобы он содержал кнопку и раздел **div**, в котором код будет отображать группы Office 365 после их получения.
+
+  Ваш код должен выглядеть, как указанный ниже TypeScript.
+
+  ```typescript
+    public render(): void {
+      this.domElement.innerHTML = `
+        <div class="${styles.helloGraph}">
+        <div class="${styles.container}">
+        <div class="ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}">
+          <div class="ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1">
+            <span class="ms-font-xl ms-fontColor-white">Welcome to SharePoint!</span>
+            <p class="ms-font-l ms-fontColor-white">Customize SharePoint experiences using Web Parts.</p>
+            <p class="ms-font-l ms-fontColor-white">${escape(this.properties.description)}</p>
+            <a href="https://aka.ms/spfx" class="${styles.button}">
+              <span class="${styles.label}">Learn more</span>
+            </a>
+            <p>
+            <input id="readGroups" type="button" value="Read Groups"/> 
+            </p>
+            <div id="spTableContainer" ></div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+    this.domElement.querySelector('#readGroups').addEventListener('click',() => {this._readGroups();});
+    }
+  ```
+
+  Вы определите метод **_readGroups()** позже.
+
+3. Определите интерфейс для представления каждой группы Office 365. Добавьте указанный ниже код непосредственно перед классом **HelloGraphWebPart**, но после операций импорта.
+
+  ```typescript
+  export interface IOffice365Group {
+    // Microsoft Graph has more group properties.
+    displayName: string;
+    mail: string;
+    description: string;
+  }
+  ```
+
+### <a name="use-the-graphhttpclientget-method-to-retrieve-office-365-groups"></a>Получение групп Office 365 с помощью метода GraphHttpClient.get
+Далее вы вызовете метод **GraphHttpClient.get()**, чтобы совершить вызов REST к Microsoft Graph и получить список групп Office 365.
+
+1. Импортируйте класс **GraphHttpClient** и связанные с ним типы, добавив указанный оператор импорта в начале файла **HelloGraphWebPart.ts**.
+
+  ```typescript
+  import { GraphHttpClient, HttpClientResponse, IGraphHttpClientOptions } from '@microsoft/sp-http';
+  ```
+
+2. Создайте метод **_readGroups()**, добавив указанный ниже код в класс **HelloGraphWebPart**.
+
+  ```typescript
+  protected _readGroups(){
+      // Query for all groups on the tenant using Microsoft Graph.
+      this.context.graphHttpClient.get(`v1.0/groups?$orderby=displayName`, GraphHttpClient.configurations.v1).then((response: HttpClientResponse) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          console.warn(response.statusText);
+        }
+      }).then((result: any) => {
+        // Transfer result values to the group variable
+        this._renderTable(result.value);
       });
   }
-}
+  ```
+
+  В предыдущем фрагменте кода у свойства контекста имеется экземпляр класса GraphHttpClient. Когда вы вызываете метод **get()**, выполняется вызов REST к Microsoft Graph, который передает указанный URL-адрес. В данном случае используется следующий URL-адрес: **v1.0/groups?orderby=displayName**. В результате будет создан запрос GET, и Microsoft Graph возвратит все группы Office 365 в клиенте, отсортировав их по отображаемому имени.
+
+  Вы можете создать любой запрос GET, использовав этот метод и введя правильные значения URL-адреса. Значения URL-адресов см. в [документации по Microsoft Graph](https://developer.microsoft.com/ru-RU/graph/docs/concepts/overview). Например, для получения группы вы можете использовать URL-адрес, указанный в статье о [запросах GET для получения групп](https://developer.microsoft.com/ru-RU/graph/docs/api-reference/v1.0/api/group_get). 
+
+  Метод **get()** возвращает объект **HttpClientResponse**, который вы можете использовать для определения того, успешно ли выполнен вызов. Возвращенный объект JSON находится в объекте **result.value**. Так как вы ожидаете получить несколько групп, вы передадите значение в метод **_renderTable()**, который создаст таблицу строк для каждой группы.
+
+3. Создайте метод **_renderTable()** для отображения возвращенных групп в таблице, в которой каждая строка представляет отдельную группу. Добавьте указанный ниже метод в класс **HelloGraphWebPart**.
+
+  ```typescript
+  protected _renderTable(items: IOffice365Group[]): void {
+    let html: string = '';
+    if (items.length<=0){
+      html=`<p>There are no groups to list...</p>`;
+    }
+    else {
+      html += `
+      <table><tr>
+        <th>Display Name</th>
+        <th>Mail</th>
+        <th>Description</th></tr>`;
+      items.forEach((item: IOffice365Group) => {
+        html += `
+          <tr>
+              <td>${item.displayName}</td>
+              <td>${item.mail}</td>
+              <td>${item.description}</td>
+          </tr>`;
+      });
+      html += `</table>`;
+    }
+    const tableContainer: Element = this.domElement.querySelector('#spTableContainer');
+    tableContainer.innerHTML = html;
+    return;
+  }
+  ```
+
+### <a name="run-the-web-part-to-call-microsoft-graph"></a>Запуск веб-части для вызова Microsoft Graph
+Коду необходимо вызвать приложение **GraphHttpClient**, которое выполняется в SharePoint, поэтому вам не удастся запустить его на локальном рабочем месте. Вам придется упаковать и развернуть его в SharePoint.
+
+1. Упакуйте решение с помощью команды gulp.
+
+  ```
+  gulp package-solution
+  ```
+
+2. Разверните решение в своем клиенте SharePoint, выполнив указанные ниже действия.
+  * Перейдите в каталог приложений вашего сайта.
+  * Отправьте или перетащите файл **hellograph-webpart.sppkg** в каталог приложений.
+  * Если вы доверяете **hellograph-webpart-client-side-solution**, то при отображении соответствующего запроса выберите вариант **Сделать это решение доступным для всех сайтов в организации** и нажмите кнопку **Развернуть**.
+
+3. Разместите веб-часть с помощью команды gulp serve.
+
+  ```
+  gulp serve --nobrowser
+  ```
+
+4. Добавьте веб-часть на веб-страницу или используйте рабочее место SharePoint.
+
+  На странице должно отображаться следующее:
+  ![Веб-часть GraphHttpClient, на которой отображается кнопка чтения групп, и одна группа отображена в таблице](../images/graphhttpclient-read-groups-display.jpg)
+
+  Если вы нажмете кнопку **Read Groups** (Прочитать группы), отобразится список всех групп Office 365 в вашем клиенте. Если в списке нет ни одной группы, отобразится сообщение, в котором будет указано, что нет ни одной группы. Далее вы создадите группу.
+
+## <a name="create-a-new-office-365-group-using-a-post-call"></a>Создание группы Office 365 с помощью вызова POST
+
+Вы можете совершать вызовы POST к API Microsoft Graph, используя метод **GraphHttpClient.post()**. Вы создадите группу Office 365, используя метод **post()**.
+
+
+### <a name="add-a-button-and-placeholder-for-results"></a>Добавление кнопки и заполнителя для результатов
+И снова вам потребуется изменить HTML-код и добавить в него кнопку создания группы.
+
+1. В редакторе кода откройте файл **/src/webparts/helloGraph/HelloGraphWebPart.ts**.
+
+2. Измените метод **render()** так, чтобы он содержал кнопку и раздел **div**, который будет сигнализировать об успешности создания группы.
+
+  Ваш код должен выглядеть, как указанный ниже TypeScript.
+
+  ```typescript
+    public render(): void {
+      this.domElement.innerHTML = `
+        <div class="${styles.helloGraph}">
+        <div class="${styles.container}">
+        <div class="ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}">
+          <div class="ms-Grid-col ms-u-lg10 ms-u-xl8 ms-u-xlPush2 ms-u-lgPush1">
+            <span class="ms-font-xl ms-fontColor-white">Welcome to SharePoint!</span>
+            <p class="ms-font-l ms-fontColor-white">Customize SharePoint experiences using Web Parts.</p>
+            <p class="ms-font-l ms-fontColor-white">${escape(this.properties.description)}</p>
+            <a href="https://aka.ms/spfx" class="${styles.button}">
+              <span class="${styles.label}">Learn more</span>
+            </a>
+            <p>
+            <input id="readGroups" type="button" value="Read Groups"/> 
+            <input id="createGroup" type="button" value="Create New Group"/>                           
+            </p>
+            <div id="spCreateGroupResults" ></div>
+            <div id="spTableContainer" ></div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+    this.domElement.querySelector('#createGroup').addEventListener('click',() => {this._createGroup();});
+    this.domElement.querySelector('#readGroups').addEventListener('click',() => {this._readGroups();});    
+    }
+  ```
+
+3. Добавьте метод **_createGroup()** для совершения вызовов к API Microsoft Graph и создания группы.
+
+  ```typescript
+    protected _createGroup(){
+      // Use Microsoft Graph to create a sample group.
+      this.context.graphHttpClient.post(`v1.0/groups`,GraphHttpClient.configurations.v1,{
+        body: JSON.stringify({"description": "Self help community for library",
+        "displayName": "Library Assist",
+        "groupTypes": [
+          "Unified"
+        ],
+        "mailEnabled": true,
+        "mailNickname": "library",
+        "securityEnabled": false
+      })
+    }).then((response: HttpClientResponse) => {
+      const resultContainer: Element = this.domElement.querySelector('#spCreateGroupResults');
+        if (response.ok) {
+          resultContainer.innerHTML = `<p>Sample group created</p>`;
+        } else {
+          resultContainer.innerHTML = `<p>Could not create group see console for details</p>`;        
+          console.warn(response.status);
+        }
+      });
+    }
+  ```
+
+  Показанный выше код создает простую группу с помощью примера кода из статьи [Создание группы](https://developer.microsoft.com/ru-RU/graph/docs/api-reference/v1.0/api/group_post_groups), посвященной Microsoft Graph.
+
+  Метод **post()** совершает вызов REST API POST по URL-адресу **v1.0/groups**. Третий параметр — значение **IGraphHttpClientOptions**, в котором указано тело JSON для описания новой группы. Класс **HttpClientResponse** используется для определения успешности выполнения вызова и для отображения соответствующего результата.
+
+  Вы можете совершить вызов POST из документации по Microsoft Graph, использовав этот шаблон и указав объект JSON в теле.
+
+### <a name="run-the-web-part-to-create-a-new-group"></a>Запуск веб-части для создания группы
+
+1. Упакуйте решение с помощью команды gulp.
+
+  ```
+  gulp package-solution
+  ```
+
+2. Разверните решение в своем клиенте SharePoint, выполнив указанные ниже действия.
+  * Перейдите в каталог приложений вашего сайта.
+  * Отправьте или перетащите файл **hellograph-webpart.sppkg** в каталог приложений.
+  * Так как ваше решение уже зарегистрировано, отобразится запрос о том, не хотите ли вы заменить его. Выберите вариант **Заменить**.
+  * Когда отобразится запрос о том, доверяете ли вы решению, выберите вариант **Развернуть**.
+
+3. Разместите веб-часть с помощью команды gulp serve.
+
+  ```
+  gulp serve --nobrowser
+  ```
+
+4. Добавьте веб-часть на веб-страницу или используйте рабочее место SharePoint.
+
+  На странице должно отображаться следующее:
+  ![Веб-часть GraphHttpClient с кнопкой создания группы и сообщением о том, что группа успешно создана](../images/graphhttpclient-group-created.jpg)
+
+5. Если вы нажмете кнопку **Create New Group** (Создать группу), код создаст группу Office 365. 
+
+  > [!NOTE] 
+  >Если вы попытаетесь еще раз создать ту же самую группу, код возвратит ошибку, так как группа уже существует. Сообщение об ошибке будет отображено в консоли, и вы сможете просмотреть его в режиме разработчика в браузере.
+
+## <a name="update-a-group-using-a-patch-call"></a>Изменение группы с помощью вызова PATCH
+
+К данному моменту вы должны были разобраться в шаблоне. Если вам необходимо совершить вызов к REST API Microsoft Graph, используйте для запроса метод **get()** или **post()** с URL-адресом. Последний метод, о котором следует рассказать, — метод **fetch()**. С помощью этого метода вы можете создать запрос PATCH к Microsoft Graph для изменения ресурса.
+
+В коде ниже показано, как вызвать метод **fetch()** для изменения существующей группы.
+
+```typescript
+    this.context.graphHttpClient.fetch(`v1.0/groups/2dfead70-21e4-4f30-bb2b-94b1bbdefdfa`,GraphHttpClient.configurations.v1,{
+      method: "PATCH",
+      body: JSON.stringify(
+        {
+          "description": "This is the new description",
+          "displayName": "testtest"
+        })
+  }).then((response: HttpClientResponse) => {
+    const resultContainer: Element = this.domElement.querySelector('#spUpdateGroupResults');
+      if (response.ok) {
+        resultContainer.innerHTML = `<p>Group updated</p>`;
+      } else {
+        resultContainer.innerHTML = `<p>Could not update group see console for details</p>`;        
+        console.warn(response.status);
+      }
+    });
 ```
 
-Для начала из пакета **@microsoft/sp-http** импортируются модули **GraphHttpClient** и **GraphClientResponse**. Затем с помощью экземпляра GraphHttpClient, доступного в свойстве `this.context.graphHttpClient`, запрос GET или POST отправляется в Microsoft Graph. В качестве параметров указываются вызываемый API Microsoft Graph (начиная с версии API без начального символа `/`) и конфигурация GraphHttpClient. При желании можно указать дополнительные заголовки запроса, которые будут объединены с заголовками по умолчанию, заданными клиентом GraphHttpClient (`'Accept': 'application/json'`, `'Authorization': 'Bearer [token]'` и `'Content-Type': 'application/json; charset=utf-8'`).
-
-## <a name="graphhttpclient-considerations"></a>Замечания касательно GraphHttpClient
-
-Использование GraphHttpClient — очень удобный способ связи с Microsoft Graph, так как он позволяет абстрагироваться от потока авторизации и управления маркерами доступа. В настоящее время GraphHttpClient находится на этапе тестирования разработчиками, и перед его использованием следует учитывать некоторые особенности.
-
-### <a name="use-for-microsoft-graph-access-only"></a>Использование только для доступа к Microsoft Graph
-
-GraphHttpClient предназначен только для доступа к Microsoft Graph. Указанный в запросе URL-адрес должен начинаться с версии API Microsoft Graph (**v1.0** или **beta**), за которой следует операция API. Все остальные URL-адреса отклоняются с ошибкой.
-
-### <a name="available-permission-scopes"></a>Доступные области разрешений
-
-GraphHttpClient использует приложение **Office 365 SharePoint Online** для Azure Active Directory, чтобы получить действительный маркер доступа к Microsoft Graph от имени текущего пользователя. Полученный маркер доступа содержит две области разрешений: 
-
-* **Чтение и запись всех групп (предварительная версия)** (`Group.ReadWrite.All`) 
-* **Чтение всех отчетов об использовании** (`Reports.Read.All`) 
-
-В настоящее время при использовании GraphHttpClient доступно только две области разрешений. Если для вашего решения необходимы другие области разрешений, следует использовать [ADAL JS с неявным потоком OAuth](web-parts/guidance/call-microsoft-graph-from-your-web-part).
-
-### <a name="tokens-are-retrieved-using-an-internal-api"></a>Извлечение маркеров с помощью внутреннего API
-
-Чтобы получить действительный маркер доступа, GraphHttpClient отправляет веб-запрос конечной точке `/_api/SP.OAuth.Token/Acquire`. Этот API предназначен для внутреннего использования, и к нему не следует обращаться напрямую в решениях.
-
-## <a name="more-information"></a>Дополнительные сведения
-
-Пример практического использования GraphHttpClient можно увидеть в образце решения на сайте GitHub по адресу [https://github.com/SharePoint/sp-dev-fx-extensions/tree/master/samples/js-application-graph-client](https://github.com/SharePoint/sp-dev-fx-extensions/tree/master/samples/js-application-graph-client).
-
-Дополнительные сведения о Microsoft Graph см. на странице [https://developer.microsoft.com/ru-ru/graph/](https://developer.microsoft.com/en-us/graph/).
+Идентификатор группы указан в URL-адресе. Получите идентификатор, выполнив сначала вызов GET. Параметр **method** имеет значение **PATCH**. В теле указано, свойства какой группы необходимо изменить.
