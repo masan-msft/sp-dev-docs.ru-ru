@@ -3,28 +3,28 @@ title: "Настройка безопасности на уровне элеме
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: ffd730f2-e7b7-4707-b677-d073da7df7d7
-ms.openlocfilehash: ce2ece9f7f4f35fa3235d26ab384dc3783b333c7
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: a04fac042531932e2fefad7c820aee16f3d3386e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="configure-item-level-security-in-sharepoint"></a><span data-ttu-id="44c2a-102">Настройка безопасности на уровне элементов в SharePoint</span><span class="sxs-lookup"><span data-stu-id="44c2a-102">Configure item-level security in SharePoint</span></span>
+# <a name="configure-item-level-security-in-sharepoint"></a><span data-ttu-id="8477b-102">Настройка безопасности на уровне элементов в SharePoint</span><span class="sxs-lookup"><span data-stu-id="8477b-102">Configure item-level security in SharePoint</span></span>
 
-<span data-ttu-id="44c2a-103">Узнайте, как настроить безопасность уровня элементов при обходе внешних данных с помощью соединителей индексации BCS в SharePoint.</span><span class="sxs-lookup"><span data-stu-id="44c2a-103">Learn how to configure item level security when crawling external data with BCS indexing connectors in SharePoint.</span></span>
+<span data-ttu-id="8477b-103">Узнайте, как настроить безопасность уровня элементов при обходе внешних данных с помощью соединителей индексации BCS в SharePoint.</span><span class="sxs-lookup"><span data-stu-id="8477b-103">Learn how to configure item level security when crawling external data with BCS indexing connectors in SharePoint.</span></span>
 
-## <a name="external-systems-with-ntlm-authentication"></a><span data-ttu-id="44c2a-104">Внешние системы с проверкой подлинности NTLM</span><span class="sxs-lookup"><span data-stu-id="44c2a-104">External systems with NTLM authentication</span></span>
-<span data-ttu-id="44c2a-105"><a name="ItemLevelSecurity_NTLMAuth"> </a></span><span class="sxs-lookup"><span data-stu-id="44c2a-105"></span></span>
+## <a name="external-systems-with-ntlm-authentication"></a><span data-ttu-id="8477b-104">Внешние системы с проверкой подлинности NTLM</span><span class="sxs-lookup"><span data-stu-id="8477b-104">External systems with NTLM authentication</span></span>
+<span data-ttu-id="8477b-105"><a name="ItemLevelSecurity_NTLMAuth"> </a></span><span class="sxs-lookup"><span data-stu-id="8477b-105"></span></span>
 
-<span data-ttu-id="44c2a-p101">Для внешних систем, поддерживающих проверку подлинности NTLM, дескриптор безопасности для каждого экземпляра внешнего типа контента можно получить во время обхода контента и сохранить его в индексе контента. Во время выполнения запроса дескриптор безопасности пользователя, отправляющего поисковый запрос, сопоставляется с сохраненным дескриптором безопасности, что позволяет определить наличие у пользователя прав доступа к элементу. Это самый быстрый способ выполнения фильтрации по ролям безопасности для набора результатов. Модель метаданных для внешней системы должна содержать указание на расположение, где дескриптор безопасности размещен как поле или метод внешнего типа контента.</span><span class="sxs-lookup"><span data-stu-id="44c2a-p101">For external systems that support NTLM authentication, the security descriptor can be obtained for each instance of the external content type at crawl time and stored in the content index. During query time, the security descriptor of the user who is submitting the search query is compared to the stored security descriptor to determine whether the user has access to the item. This is the fastest way to perform security trimming on the result set. The metadata model for the external system must indicate where the security descriptor can be found as an external content type field or method.</span></span>
+<span data-ttu-id="8477b-p101">Для внешних систем, поддерживающих проверку подлинности NTLM, дескриптор безопасности для каждого экземпляра внешнего типа контента можно получить во время обхода контента и сохранить его в индексе контента. Во время выполнения запроса дескриптор безопасности пользователя, отправляющего поисковый запрос, сопоставляется с сохраненным дескриптором безопасности, что позволяет определить наличие у пользователя прав доступа к элементу. Это самый быстрый способ выполнения фильтрации по ролям безопасности для набора результатов. Модель метаданных для внешней системы должна содержать указание на расположение, где дескриптор безопасности размещен как поле или метод внешнего типа контента.</span><span class="sxs-lookup"><span data-stu-id="8477b-p101">For external systems that support NTLM authentication, the security descriptor can be obtained for each instance of the external content type at crawl time and stored in the content index. During query time, the security descriptor of the user who is submitting the search query is compared to the stored security descriptor to determine whether the user has access to the item. This is the fastest way to perform security trimming on the result set. The metadata model for the external system must indicate where the security descriptor can be found as an external content type field or method.</span></span>
   
     
     
 
-### <a name="external-content-type-field"></a><span data-ttu-id="44c2a-110">Поле внешнего типа контента</span><span class="sxs-lookup"><span data-stu-id="44c2a-110">External content type field</span></span>
-<span data-ttu-id="44c2a-111"><a name="ItemLevelSecurity_ExtTypeField"> </a></span><span class="sxs-lookup"><span data-stu-id="44c2a-111"></span></span>
+### <a name="external-content-type-field"></a><span data-ttu-id="8477b-110">Поле внешнего типа контента</span><span class="sxs-lookup"><span data-stu-id="8477b-110">External content type field</span></span>
+<span data-ttu-id="8477b-111"><a name="ItemLevelSecurity_ExtTypeField"> </a></span><span class="sxs-lookup"><span data-stu-id="8477b-111"></span></span>
 
-<span data-ttu-id="44c2a-112">Microsoft SharePoint сохраняет дескриптор безопасности, если поле внешнего типа контента, содержащее дескриптор, помечено посредством использования свойства **WindowsSecurityDescriptorField** , как показано в следующем примере.</span><span class="sxs-lookup"><span data-stu-id="44c2a-112">Microsoft SharePoint stores the security descriptor if the field of the external content type that contains the descriptor is marked by using the **WindowsSecurityDescriptorField** property, as shown in the following example.</span></span>
+<span data-ttu-id="8477b-112">Microsoft SharePoint сохраняет дескриптор безопасности, если поле внешнего типа контента, содержащее дескриптор, помечено посредством использования свойства **WindowsSecurityDescriptorField** , как показано в следующем примере.</span><span class="sxs-lookup"><span data-stu-id="8477b-112">Microsoft SharePoint stores the security descriptor if the field of the external content type that contains the descriptor is marked by using the **WindowsSecurityDescriptorField** property, as shown in the following example.</span></span>
   
     
     
@@ -79,17 +79,17 @@ DefaultDisplayName="ReadSecurity">
 </Method>
 ```
 
-
-> <span data-ttu-id="44c2a-113">**Примечание:** Если вы вернетесь дескриптор безопасности в поле внешний тип контента, нельзя использовать кэширования клиентов.</span><span class="sxs-lookup"><span data-stu-id="44c2a-113">**Note:** If you return the security descriptor as a field of the external content type, you cannot use client caching.</span></span> <span data-ttu-id="44c2a-114">Это так, как кэшированные элементы ограничены определенного размера, можно легко превысить какие списки управления доступом (ACL).</span><span class="sxs-lookup"><span data-stu-id="44c2a-114">This is because cached items are limited to a specific size, which access control lists (ACL) can easily exceed.</span></span> <span data-ttu-id="44c2a-115">Таким образом инфраструктура соединителей поиска игнорирует запросы к элементам кэша, если они содержат поля дескриптор безопасности.</span><span class="sxs-lookup"><span data-stu-id="44c2a-115">Therefore, the Search connector framework ignores requests to cache items if they contain a security descriptor field.</span></span> 
+> [!NOTE]
+> <span data-ttu-id="8477b-113">командной ограничены определенного размера, можно легко превысить какие списки управления доступом (ACL).</span><span class="sxs-lookup"><span data-stu-id="8477b-113">ems are limited to a specific size, which access control lists (ACL) can easily exceed.</span></span> <span data-ttu-id="8477b-114">Таким образом инфраструктура соединителей поиска игнорирует запросы к элементам кэша, если они содержат поля дескриптор безопасности.</span><span class="sxs-lookup"><span data-stu-id="8477b-114">Therefore, the Search connector framework ignores requests to cache items if they contain a security descriptor field.</span></span> 
   
     
     
 
 
-### <a name="external-content-type-method"></a><span data-ttu-id="44c2a-116">Метод внешнего типа контента</span><span class="sxs-lookup"><span data-stu-id="44c2a-116">External content type method</span></span>
-<span data-ttu-id="44c2a-117"><a name="ItemLevelSecurity_ExtTypeMethod"> </a></span><span class="sxs-lookup"><span data-stu-id="44c2a-117"></span></span>
+### <a name="external-content-type-method"></a><span data-ttu-id="8477b-115">Метод внешнего типа контента</span><span class="sxs-lookup"><span data-stu-id="8477b-115">External content type method</span></span>
+<span data-ttu-id="8477b-116"><a name="ItemLevelSecurity_ExtTypeMethod"> </a></span><span class="sxs-lookup"><span data-stu-id="8477b-116"></span></span>
 
-<span data-ttu-id="44c2a-118">При наличии метода, определенного в модели метаданных, возвращающей дескриптор безопасности для элемента в зависимости от его идентификатора, можно использовать стереотип метода **BinarySecurityDescriptorAccessor**, как показано в следующем примере.</span><span class="sxs-lookup"><span data-stu-id="44c2a-118">If you have a method defined in the metadata model that returns the security descriptor for an item based on its identifier, you can use the **BinarySecurityDescriptorAccessor** method stereotype, as shown in the following example.</span></span>
+<span data-ttu-id="8477b-117">При наличии метода, определенного в модели метаданных, возвращающей дескриптор безопасности для элемента в зависимости от его идентификатора, можно использовать стереотип метода **BinarySecurityDescriptorAccessor**, как показано в следующем примере.</span><span class="sxs-lookup"><span data-stu-id="8477b-117">If you have a method defined in the metadata model that returns the security descriptor for an item based on its identifier, you can use the **BinarySecurityDescriptorAccessor** method stereotype, as shown in the following example.</span></span>
   
     
     
@@ -134,7 +134,7 @@ ReturnTypeDescriptorLevel="0">
 </Method>
 ```
 
-<span data-ttu-id="44c2a-119">Следующий код представляет собой подпись метода для метода, заданного в предыдущем примере.</span><span class="sxs-lookup"><span data-stu-id="44c2a-119">The following code is the method signature for the method that is specified in the previous example.</span></span>
+<span data-ttu-id="8477b-118">Следующий код представляет собой подпись метода для метода, заданного в предыдущем примере.</span><span class="sxs-lookup"><span data-stu-id="8477b-118">The following code is the method signature for the method that is specified in the previous example.</span></span>
   
     
     
@@ -150,10 +150,10 @@ Public static Byte[]GetItemSecurity (string  id)
 ```
 
 
-## <a name="external-systems-with-authentication-schemes-that-can-be-mapped-to-ntlm-authentication"></a><span data-ttu-id="44c2a-120">Внешние системы, содержащие схемы проверки подлинности, которые могут сопоставляться с проверкой подлинности NTLM</span><span class="sxs-lookup"><span data-stu-id="44c2a-120">External systems with authentication schemes that can be mapped to NTLM authentication</span></span>
-<span data-ttu-id="44c2a-121"><a name="ItemLevelSecurity_MappedToNTLM"> </a></span><span class="sxs-lookup"><span data-stu-id="44c2a-121"></span></span>
+## <a name="external-systems-with-authentication-schemes-that-can-be-mapped-to-ntlm-authentication"></a><span data-ttu-id="8477b-119">Внешние системы, содержащие схемы проверки подлинности, которые могут сопоставляться с проверкой подлинности NTLM</span><span class="sxs-lookup"><span data-stu-id="8477b-119">External systems with authentication schemes that can be mapped to NTLM authentication</span></span>
+<span data-ttu-id="8477b-120"><a name="ItemLevelSecurity_MappedToNTLM"> </a></span><span class="sxs-lookup"><span data-stu-id="8477b-120"></span></span>
 
-<span data-ttu-id="44c2a-p103">Если внешние системы не поддерживают проверку подлинности NTLM, но при этом пользователи внешней системы могут быть сопоставлены пользователям Windows посредством таблицы сопоставления, можно использовать подход, описанный в двух предыдущих примерах кода, в целях обеспечения безопасности на уровне элемента. В целях обеспечения работоспособности этой схемы веб-служба или служба Windows Communication Foundation (WCF), представленная внешней системой, должна включать метод, который выполняет внутреннее преобразование пользователей внешней системы в пользователей Windows, после чего возвращает дескриптор безопасности Windows для каждого URL-адреса. В следующем примере рассматривается создание кода такого метода.</span><span class="sxs-lookup"><span data-stu-id="44c2a-p103">If the external system does not support NTLM authentication, but the external system users can be mapped to Windows users by using a mapping table, you can use the approach described in the previous two code examples to provide item level security. For this to work, the web service or Windows Communication Foundation (WCF) service exposed by the external system must include a method that converts the external system users to Windows users internally, and then returns a Windows security descriptor for each URL. The following example shows how you could code this method.</span></span> 
+<span data-ttu-id="8477b-p103">Если внешние системы не поддерживают проверку подлинности NTLM, но при этом пользователи внешней системы могут быть сопоставлены пользователям Windows посредством таблицы сопоставления, можно использовать подход, описанный в двух предыдущих примерах кода, в целях обеспечения безопасности на уровне элемента. В целях обеспечения работоспособности этой схемы веб-служба или служба Windows Communication Foundation (WCF), представленная внешней системой, должна включать метод, который выполняет внутреннее преобразование пользователей внешней системы в пользователей Windows, после чего возвращает дескриптор безопасности Windows для каждого URL-адреса. В следующем примере рассматривается создание кода такого метода.</span><span class="sxs-lookup"><span data-stu-id="8477b-p103">If the external system does not support NTLM authentication, but the external system users can be mapped to Windows users by using a mapping table, you can use the approach described in the previous two code examples to provide item level security. For this to work, the web service or Windows Communication Foundation (WCF) service exposed by the external system must include a method that converts the external system users to Windows users internally, and then returns a Windows security descriptor for each URL. The following example shows how you could code this method.</span></span> 
   
     
     
@@ -191,17 +191,17 @@ unchecked((int)0xffffffffL), InheritanceFlags.None, PropagationFlags.None);
 ```
 
 
-## <a name="additional-resources"></a><span data-ttu-id="44c2a-125">Дополнительные ресурсы</span><span class="sxs-lookup"><span data-stu-id="44c2a-125">Additional resources</span></span>
-<span data-ttu-id="44c2a-126"><a name="SP15Itemlevelsec_addlresources"> </a></span><span class="sxs-lookup"><span data-stu-id="44c2a-126"></span></span>
+## <a name="see-also"></a><span data-ttu-id="8477b-124">См. также</span><span class="sxs-lookup"><span data-stu-id="8477b-124">See also</span></span>
+<span data-ttu-id="8477b-125"><a name="SP15Itemlevelsec_addlresources"> </a></span><span class="sxs-lookup"><span data-stu-id="8477b-125"></span></span>
 
 
--  [<span data-ttu-id="44c2a-127">Инфраструктура соединителей поиска в SharePoint</span><span class="sxs-lookup"><span data-stu-id="44c2a-127">Search connector framework in SharePoint</span></span>](search-connector-framework-in-sharepoint.md)
+-  [<span data-ttu-id="8477b-126">Инфраструктура соединителей поиска в SharePoint</span><span class="sxs-lookup"><span data-stu-id="8477b-126">Search connector framework in SharePoint</span></span>](search-connector-framework-in-sharepoint.md)
     
   
--  [<span data-ttu-id="44c2a-128">Реализация метода BinarySecurityDescriptorAccessor</span><span class="sxs-lookup"><span data-stu-id="44c2a-128">Implementing a BinarySecurityDescriptorAccessor</span></span>](http://msdn.microsoft.com/library/6cf70490-dd3c-49cd-bb13-ed33e938435d%28Office.15%29.aspx)
+-  [<span data-ttu-id="8477b-127">Реализация метода BinarySecurityDescriptorAccessor</span><span class="sxs-lookup"><span data-stu-id="8477b-127">Implementing a BinarySecurityDescriptorAccessor</span></span>](http://msdn.microsoft.com/library/6cf70490-dd3c-49cd-bb13-ed33e938435d%28Office.15%29.aspx)
     
   
--  [<span data-ttu-id="44c2a-129">Улучшение файла модели BDC для поиска в SharePoint</span><span class="sxs-lookup"><span data-stu-id="44c2a-129">Enhancing the BDC model file for Search in SharePoint</span></span>](enhancing-the-bdc-model-file-for-search-in-sharepoint.md)
+-  [<span data-ttu-id="8477b-128">Улучшение файла модели BDC для поиска в SharePoint</span><span class="sxs-lookup"><span data-stu-id="8477b-128">Enhancing the BDC model file for Search in SharePoint</span></span>](enhancing-the-bdc-model-file-for-search-in-sharepoint.md)
     
   
 

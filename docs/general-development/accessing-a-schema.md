@@ -3,31 +3,29 @@ title: "Доступ к схеме"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 02613912-36f6-4edc-a915-165d12e60bc8
-ms.openlocfilehash: 9f9bb2513eb8c2dbbe5951d86391ebb239a6c389
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: be1ae13fdef00d69d887859b3881c8cef28ac9a4
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="accessing-a-schema"></a><span data-ttu-id="a75e3-102">Доступ к схеме</span><span class="sxs-lookup"><span data-stu-id="a75e3-102">Accessing a Schema</span></span>
+# <a name="accessing-a-schema"></a><span data-ttu-id="19c72-102">Доступ к схеме</span><span class="sxs-lookup"><span data-stu-id="19c72-102">Accessing a Schema</span></span>
 
-<span data-ttu-id="a75e3-p101">В этом разделе показано один пример того, как можно получить доступ к и просмотрите схемы для службы REST в Службы Excel. В этом разделе предполагается, что вы прочли  [Пример URI для интерфейса API REST служб Excel](sample-uri-for-excel-services-rest-api.md).d</span><span class="sxs-lookup"><span data-stu-id="a75e3-p101">This topic shows one example of how you can access and look at a schema for the REST service in Excel Services. This topic assumes that you have read  [Sample URI For Excel Services REST API](sample-uri-for-excel-services-rest-api.md).d</span></span>
+<span data-ttu-id="19c72-p101">В этом разделе показано один пример того, как можно получить доступ к и просмотрите схемы для службы REST в Службы Excel. В этом разделе предполагается, что вы прочли  [Пример URI для интерфейса API REST служб Excel](sample-uri-for-excel-services-rest-api.md).d</span><span class="sxs-lookup"><span data-stu-id="19c72-p101">This topic shows one example of how you can access and look at a schema for the REST service in Excel Services. This topic assumes that you have read  [Sample URI For Excel Services REST API](sample-uri-for-excel-services-rest-api.md).d</span></span>
   
-    
-    
-
-
-> <span data-ttu-id="a75e3-105">**Примечание:** API REST служб Excel применяется к SharePoint и SharePoint 2016 локально.</span><span class="sxs-lookup"><span data-stu-id="a75e3-105">**Note:** The Excel Services REST API applies to SharePoint and SharePoint 2016 on-premises.</span></span> <span data-ttu-id="a75e3-106">Для образовательных учреждений Office 365, бизнеса и корпоративных учетных записей используйте Excel API-интерфейсы REST, входящих в состав [Microsoft Graph](http://graph.microsoft.io/ru-ru/docs/api-reference/v1.0/resources/excel
-> ) конечной точки.</span><span class="sxs-lookup"><span data-stu-id="a75e3-106">For Office 365 Education, Business, and Enterprise accounts, use the Excel REST APIs that are part of the  [Microsoft Graph](http://graph.microsoft.io/ru-ru/docs/api-reference/v1.0/resources/excel
+> [!NOTE]
+> 
+> <span data-ttu-id="19c72-105">API REST служб Excel применяется к SharePoint и SharePoint 2016 локально.</span><span class="sxs-lookup"><span data-stu-id="19c72-105">The Excel Services REST API applies to SharePoint and SharePoint 2016 on-premises.</span></span> <span data-ttu-id="19c72-106">Для учетных записей Office 365 для образования, Office 365 бизнес и Office 365 корпоративный используйте REST API Excel, входящие в состав конечной точки [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
+).</span><span class="sxs-lookup"><span data-stu-id="19c72-106">For Office 365 Education, Business, and Enterprise accounts, use the Excel REST APIs that are part of the  [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
 ) endpoint.</span></span>
   
     
     
 
 
-## <a name="viewing-a-schema"></a><span data-ttu-id="a75e3-107">Просмотр схемы</span><span class="sxs-lookup"><span data-stu-id="a75e3-107">Viewing a Schema</span></span>
+## <a name="viewing-a-schema"></a><span data-ttu-id="19c72-107">Просмотр схемы</span><span class="sxs-lookup"><span data-stu-id="19c72-107">Viewing a Schema</span></span>
 
- <span data-ttu-id="a75e3-108">В адресной строке браузера введите URI для Atom XML веб-канал с помощью URI, как показано ниже:</span><span class="sxs-lookup"><span data-stu-id="a75e3-108">In the browser address bar, type the URI to an Atom XML feed by using a URI, as follows:</span></span>
+ <span data-ttu-id="19c72-108">В адресной строке браузера введите URI для Atom XML веб-канал с помощью URI, как показано ниже:</span><span class="sxs-lookup"><span data-stu-id="19c72-108">In the browser address bar, type the URI to an Atom XML feed by using a URI, as follows:</span></span>
   
     
     
@@ -37,11 +35,11 @@ ms.lasthandoff: 10/13/2017
 http://myserver/_vti_bin/ExcelRest.aspx/Docs/Documents/sampleWorkbook.xlsx/model/Ranges('Sheet1!A1|H3')?$format=atom
 ```
 
-<span data-ttu-id="a75e3-109">Щелкните правой кнопкой мыши веб-страницы и нажмите кнопку **Просмотреть исходный код**.</span><span class="sxs-lookup"><span data-stu-id="a75e3-109">Right-click the Web page, and then click **View Source**.</span></span>
+<span data-ttu-id="19c72-109">Щелкните правой кнопкой мыши веб-страницы и нажмите кнопку **Просмотреть исходный код**.</span><span class="sxs-lookup"><span data-stu-id="19c72-109">Right-click the Web page, and then click **View Source**.</span></span>
   
     
     
-<span data-ttu-id="a75e3-110">Вы должны увидеть схему, которая выглядит примерно следующим образом:</span><span class="sxs-lookup"><span data-stu-id="a75e3-110">You should see a schema that looks similar to the following example:</span></span>
+<span data-ttu-id="19c72-110">Вы должны увидеть схему, которая выглядит примерно следующим образом:</span><span class="sxs-lookup"><span data-stu-id="19c72-110">You should see a schema that looks similar to the following example:</span></span>
   
     
     

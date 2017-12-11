@@ -1,76 +1,76 @@
 ---
-title: "Добавление столбца географического расположения списка программными средствами в SharePoint"
+title: "Программный способ добавления столбца \"Географическое положение\" в список SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: f31a3594-c328-4731-b8eb-5da6b85103ad
-ms.openlocfilehash: 58fb0341e34fc56f9fa07cba477aadb6efe8bf58
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 3278aba461fe9d1acbc33b5e4f24595794646e15
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="add-a-geolocation-column-to-a-list-programmatically-in-sharepoint"></a><span data-ttu-id="86976-102">Добавление столбца географического расположения списка программными средствами в SharePoint</span><span class="sxs-lookup"><span data-stu-id="86976-102">Add a Geolocation column to a list programmatically in SharePoint</span></span>
-<span data-ttu-id="86976-103">Узнайте, как для программного добавления столбца географического расположения в список SharePoint.</span><span class="sxs-lookup"><span data-stu-id="86976-103">Learn how to programmatically add a Geolocation column to a list in SharePoint.</span></span> <span data-ttu-id="86976-104">Интегрируйте сведения о местоположении и карт в списки SharePoint и зависимостью от расположения веб-сайтов с помощью нового поля географического расположения, создание собственного типа поля на основе географического расположения.</span><span class="sxs-lookup"><span data-stu-id="86976-104">Integrate location information and maps in SharePoint lists and location-based websites by using the new Geolocation field creating your own Geolocation-based field type.</span></span>
-<span data-ttu-id="86976-105">SharePoint представлен новый тип поля с именем географического расположения, которая позволяет добавлять комментарии к списки SharePoint, содержащие сведения о расположении.</span><span class="sxs-lookup"><span data-stu-id="86976-105">SharePoint introduces a new field type named Geolocation that enables you to annotate SharePoint lists with location information.</span></span> <span data-ttu-id="86976-106">В столбцах типа географического расположения можно ввести сведения о расположении в виде пары Широта и долгота координат в десятичное градусов или получить координаты текущее расположение пользователя в браузере, если он реализует интерфейс API географического расположения W3C.</span><span class="sxs-lookup"><span data-stu-id="86976-106">In columns of type Geolocation, you can enter location information as a pair of latitude and longitude coordinates in decimal degrees or retrieve the coordinates of the user's current location from the browser if it implements the W3C Geolocation API.</span></span> <span data-ttu-id="86976-107">Дополнительные сведения о столбце географического расположения можно [интегрирование расположение и карты функциональные возможности в SharePoint](integrating-location-and-map-functionality-in-sharepoint.md).</span><span class="sxs-lookup"><span data-stu-id="86976-107">For more information about the Geolocation column, see [Integrating location and map functionality in SharePoint](integrating-location-and-map-functionality-in-sharepoint.md).</span></span> <span data-ttu-id="86976-108">В столбце географического расположения недоступен в списки SharePoint по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="86976-108">The Geolocation column is not available by default in SharePoint lists.</span></span> <span data-ttu-id="86976-109">Чтобы добавить столбец к списку SharePoint, необходимо написать код.</span><span class="sxs-lookup"><span data-stu-id="86976-109">To add the column to a SharePoint list, you have to write code.</span></span> <span data-ttu-id="86976-110">В этой статье процедура добавления поля географического расположения в список программным путем с помощью клиентской объектной модели SharePoint.</span><span class="sxs-lookup"><span data-stu-id="86976-110">In this article, learn how to add the Geolocation field to a list programmatically by using the SharePoint client object model.</span></span>
+# <a name="add-a-geolocation-column-to-a-list-programmatically-in-sharepoint"></a><span data-ttu-id="a9ec5-102">Программный способ добавления столбца "Географическое положение" в список SharePoint</span><span class="sxs-lookup"><span data-stu-id="a9ec5-102">Add a Geolocation column to a list programmatically in SharePoint</span></span>
+<span data-ttu-id="a9ec5-103">Узнайте, как для программного добавления столбца географического расположения в список SharePoint.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-103">Learn how to programmatically add a Geolocation column to a list in SharePoint.</span></span> <span data-ttu-id="a9ec5-104">Интегрируйте сведения о местоположении и карт в списки SharePoint и зависимостью от расположения веб-сайтов с помощью нового поля географического расположения, создание собственного типа поля на основе географического расположения.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-104">Integrate location information and maps in SharePoint lists and location-based websites by using the new Geolocation field creating your own Geolocation-based field type.</span></span>
+<span data-ttu-id="a9ec5-105">SharePoint представлен новый тип поля с именем географического расположения, которая позволяет добавлять комментарии к списки SharePoint, содержащие сведения о расположении.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-105">SharePoint introduces a new field type named Geolocation that enables you to annotate SharePoint lists with location information.</span></span> <span data-ttu-id="a9ec5-106">В столбцах типа географического расположения можно ввести сведения о расположении в виде пары Широта и долгота координат в десятичное градусов или получить координаты текущее расположение пользователя в браузере, если он реализует интерфейс API географического расположения W3C.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-106">In columns of type Geolocation, you can enter location information as a pair of latitude and longitude coordinates in decimal degrees or retrieve the coordinates of the user's current location from the browser if it implements the W3C Geolocation API.</span></span> <span data-ttu-id="a9ec5-107">Дополнительные сведения о столбце географического расположения можно [интегрирование расположение и карты функциональные возможности в SharePoint](integrating-location-and-map-functionality-in-sharepoint.md).</span><span class="sxs-lookup"><span data-stu-id="a9ec5-107">For more information about the Geolocation column, see [Integrating location and map functionality in SharePoint](integrating-location-and-map-functionality-in-sharepoint.md).</span></span> <span data-ttu-id="a9ec5-108">В столбце географического расположения недоступен в списки SharePoint по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-108">The Geolocation column is not available by default in SharePoint lists.</span></span> <span data-ttu-id="a9ec5-109">Чтобы добавить столбец к списку SharePoint, необходимо написать код.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-109">To add the column to a SharePoint list, you have to write code.</span></span> <span data-ttu-id="a9ec5-110">В этой статье процедура добавления поля географического расположения в список программным путем с помощью клиентской объектной модели SharePoint.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-110">In this article, learn how to add the Geolocation field to a list programmatically by using the SharePoint client object model.</span></span>
   
     
     
 
-<span data-ttu-id="86976-111">Пакет MSI с именем SQLSysClrTypes.msi необходимо установить на каждый интерфейсный веб-сервер SharePoint для просмотра значения поля географического расположения или данных в виде списка.</span><span class="sxs-lookup"><span data-stu-id="86976-111">An MSI package named SQLSysClrTypes.msi must be installed on every SharePoint front-end web server to view the geolocation field value or data in a list.</span></span> <span data-ttu-id="86976-112">Этот пакет устанавливает компоненты, которые реализуют новые типы идентификатор геометрии, geography и иерархии в SQL Server 2008.</span><span class="sxs-lookup"><span data-stu-id="86976-112">This package installs components that implement the new geometry, geography, and hierarchy ID types in SQL Server 2008.</span></span> <span data-ttu-id="86976-113">По умолчанию этот файл установлен для SharePoint Online.</span><span class="sxs-lookup"><span data-stu-id="86976-113">By default, this file is installed for SharePoint Online.</span></span> <span data-ttu-id="86976-114">Тем не менее он не является локальных развертываний SharePoint.</span><span class="sxs-lookup"><span data-stu-id="86976-114">However, it is not for an on-premises deployment of SharePoint.</span></span> <span data-ttu-id="86976-115">Необходимо быть членом группы администраторов фермы для выполнения этой операции.</span><span class="sxs-lookup"><span data-stu-id="86976-115">You must be a member of the Farm Administrators group to perform this operation.</span></span> <span data-ttu-id="86976-116">Загрузить SQLSysClrTypes.msi, можно в статье [Microsoft SQL Server 2008 R2 пакета дополнительных компонентов SP1](http://www.microsoft.com/en-us/download/details.aspx?id=26728) для SQL Server 2008 или [Пакета дополнительных компонентов Microsoft SQL Server 2012](http://www.microsoft.com/en-us/download/details.aspx?id=29065)для SQL Server 2012 в центре загрузки Майкрософт.</span><span class="sxs-lookup"><span data-stu-id="86976-116">To download SQLSysClrTypes.msi, see  [Microsoft SQL Server 2008 R2 SP1 Feature Pack](http://www.microsoft.com/en-us/download/details.aspx?id=26728) for SQL Server 2008, or [Microsoft SQL Server 2012 Feature Pack](http://www.microsoft.com/en-us/download/details.aspx?id=29065)for SQL Server 2012 in the Microsoft Download Center.</span></span>
-## <a name="prerequisites-for-adding-a-geolocation-column"></a><span data-ttu-id="86976-117">Необходимые условия для добавления столбца географического расположения</span><span class="sxs-lookup"><span data-stu-id="86976-117">Prerequisites for adding a Geolocation column</span></span>
-<span data-ttu-id="86976-118"><a name="SP15addgeo_prereq"> </a></span><span class="sxs-lookup"><span data-stu-id="86976-118"></span></span>
+<span data-ttu-id="a9ec5-111">Пакет MSI с именем SQLSysClrTypes.msi необходимо установить на каждый интерфейсный веб-сервер SharePoint для просмотра значения поля географического расположения или данных в виде списка.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-111">An MSI package named SQLSysClrTypes.msi must be installed on every SharePoint front-end web server to view the geolocation field value or data in a list.</span></span> <span data-ttu-id="a9ec5-112">Этот пакет устанавливает компоненты, которые реализуют новые типы идентификатор геометрии, geography и иерархии в SQL Server 2008.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-112">This package installs components that implement the new geometry, geography, and hierarchy ID types in SQL Server 2008.</span></span> <span data-ttu-id="a9ec5-113">По умолчанию этот файл установлен для SharePoint Online.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-113">By default, this file is installed for SharePoint Online.</span></span> <span data-ttu-id="a9ec5-114">Тем не менее он не является локальных развертываний SharePoint.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-114">However, it is not for an on-premises deployment of SharePoint.</span></span> <span data-ttu-id="a9ec5-115">Необходимо быть членом группы администраторов фермы для выполнения этой операции.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-115">You must be a member of the Farm Administrators group to perform this operation.</span></span> <span data-ttu-id="a9ec5-116">Загрузить SQLSysClrTypes.msi, можно в статье [Microsoft SQL Server 2008 R2 пакета дополнительных компонентов SP1](http://www.microsoft.com/en-us/download/details.aspx?id=26728) для SQL Server 2008 или [Пакета дополнительных компонентов Microsoft SQL Server 2012](http://www.microsoft.com/en-us/download/details.aspx?id=29065)для SQL Server 2012 в центре загрузки Майкрософт.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-116">To download SQLSysClrTypes.msi, see  [Microsoft SQL Server 2008 R2 SP1 Feature Pack](http://www.microsoft.com/en-us/download/details.aspx?id=26728) for SQL Server 2008, or [Microsoft SQL Server 2012 Feature Pack](http://www.microsoft.com/en-us/download/details.aspx?id=29065)for SQL Server 2012 in the Microsoft Download Center.</span></span>
+## <a name="prerequisites-for-adding-a-geolocation-column"></a><span data-ttu-id="a9ec5-117">Необходимые условия для добавления столбца географического расположения</span><span class="sxs-lookup"><span data-stu-id="a9ec5-117">Prerequisites for adding a Geolocation column</span></span>
+<span data-ttu-id="a9ec5-118"><a name="SP15addgeo_prereq"> </a></span><span class="sxs-lookup"><span data-stu-id="a9ec5-118"></span></span>
 
 
   
     
     
 
-- <span data-ttu-id="86976-119">Доступ к списку SharePoint, имеющего достаточные права для добавления столбца.</span><span class="sxs-lookup"><span data-stu-id="86976-119">Access to a SharePoint list, with sufficient privileges to add a column.</span></span>
+- <span data-ttu-id="a9ec5-119">Доступ к списку SharePoint, имеющего достаточные права для добавления столбца.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-119">Access to a SharePoint list, with sufficient privileges to add a column.</span></span>
     
   
-- <span data-ttu-id="86976-120">Действительный ключ карт Bing на уровне фермы или веб-, который можно получить из  [Центр учетных записей карт Bing](https://www.bingmapsportal.com/).</span><span class="sxs-lookup"><span data-stu-id="86976-120">A valid Bing Maps key set at the farm or web level, which can be obtained from the  [Bing Maps Account Center](https://www.bingmapsportal.com/).</span></span>
+- <span data-ttu-id="a9ec5-120">Действительный ключ карт Bing на уровне фермы или веб-, который можно получить из  [Центр учетных записей карт Bing](https://www.bingmapsportal.com/).</span><span class="sxs-lookup"><span data-stu-id="a9ec5-120">A valid Bing Maps key set at the farm or web level, which can be obtained from the  [Bing Maps Account Center](https://www.bingmapsportal.com/).</span></span>
     
-    > <span data-ttu-id="86976-121">**Важные:** Обратите внимание, что вы несете ответственность за соблюдение сроками и условиями, которые применяются к использованию ключ Bing Maps и все необходимые условия для пользователей приложения о данных, передаваемых службы Bing Maps.</span><span class="sxs-lookup"><span data-stu-id="86976-121">**Important:** Please note that you are responsible for compliance with terms and conditions applicable to your use of the Bing Maps key, and any necessary disclosures to users of your application regarding data passed to the Bing Maps service.</span></span> 
-- <span data-ttu-id="86976-122">Visual Studio 2010.</span><span class="sxs-lookup"><span data-stu-id="86976-122">Visual Studio 2010.</span></span>
+    > <span data-ttu-id="a9ec5-121">**Важные:** Обратите внимание, что вы несете ответственность за соблюдение сроками и условиями, которые применяются к использованию ключ Bing Maps и все необходимые условия для пользователей приложения о данных, передаваемых службы Bing Maps.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-121">**Important:** Please note that you are responsible for compliance with terms and conditions applicable to your use of the Bing Maps key, and any necessary disclosures to users of your application regarding data passed to the Bing Maps service.</span></span> 
+- <span data-ttu-id="a9ec5-122">Visual Studio 2010.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-122">Visual Studio 2010.</span></span>
     
   
 
-## <a name="code-example-add-a-geolocation-column-to-a-list-programmatically"></a><span data-ttu-id="86976-123">Пример кода: Добавление столбца географического расположения в список программным путем</span><span class="sxs-lookup"><span data-stu-id="86976-123">Code example: Add a Geolocation column to a list programmatically</span></span>
-<span data-ttu-id="86976-124"><a name="SP15addgeo_addcolumn"> </a></span><span class="sxs-lookup"><span data-stu-id="86976-124"></span></span>
+## <a name="code-example-add-a-geolocation-column-to-a-list-programmatically"></a><span data-ttu-id="a9ec5-123">Пример кода: Добавление столбца географического расположения в список программным путем</span><span class="sxs-lookup"><span data-stu-id="a9ec5-123">Code example: Add a Geolocation column to a list programmatically</span></span>
+<span data-ttu-id="a9ec5-124"><a name="SP15addgeo_addcolumn"> </a></span><span class="sxs-lookup"><span data-stu-id="a9ec5-124"></span></span>
 
-<span data-ttu-id="86976-125">Выполните следующие действия для добавления столбца географического расположения в список с помощью клиентской объектной модели SharePoint.</span><span class="sxs-lookup"><span data-stu-id="86976-125">Follow these steps to add the Geolocation column to a list using the SharePoint client object model.</span></span>
+<span data-ttu-id="a9ec5-125">Выполните следующие действия для добавления столбца географического расположения в список с помощью клиентской объектной модели SharePoint.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-125">Follow these steps to add the Geolocation column to a list using the SharePoint client object model.</span></span>
   
     
     
 
-### <a name="to-add-the-geolocation-column-to-a-list-using-the-client-object-model"></a><span data-ttu-id="86976-126">Для добавления столбца географического расположения в список с помощью клиентской объектной модели</span><span class="sxs-lookup"><span data-stu-id="86976-126">To add the Geolocation column to a list using the client object model</span></span>
+### <a name="to-add-the-geolocation-column-to-a-list-using-the-client-object-model"></a><span data-ttu-id="a9ec5-126">Для добавления столбца географического расположения в список с помощью клиентской объектной модели</span><span class="sxs-lookup"><span data-stu-id="a9ec5-126">To add the Geolocation column to a list using the client object model</span></span>
 
 
-1. <span data-ttu-id="86976-127">Запустите Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="86976-127">Start Visual Studio.</span></span>
+1. <span data-ttu-id="a9ec5-127">Запустите Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-127">Start Visual Studio.</span></span>
     
   
-2. <span data-ttu-id="86976-p103">В строке меню выберите пункты **файл, создать проект**. Откроется диалоговое окно **Новый проект**.</span><span class="sxs-lookup"><span data-stu-id="86976-p103">On the menu bar, choose **File, New Project**. The **New Project** dialog box opens.</span></span>
+2. <span data-ttu-id="a9ec5-p103">В строке меню выберите пункты **файл, создать проект**. Откроется диалоговое окно **Новый проект**.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-p103">On the menu bar, choose **File, New Project**. The **New Project** dialog box opens.</span></span>
     
   
-3. <span data-ttu-id="86976-130">В диалоговом окне **Создать проект** выберите пункт **C#** в поле **Установленные шаблоны** и затем выберите шаблон **Консольное приложение**.</span><span class="sxs-lookup"><span data-stu-id="86976-130">In the **New Project** dialog box, choose **C#** in the **Installed Templates** box, and then choose the **Console Application** template.</span></span>
+3. <span data-ttu-id="a9ec5-130">В диалоговом окне **Создать проект** выберите пункт **C#** в поле **Установленные шаблоны** и затем выберите шаблон **Консольное приложение**.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-130">In the **New Project** dialog box, choose **C#** in the **Installed Templates** box, and then choose the **Console Application** template.</span></span>
     
   
-4. <span data-ttu-id="86976-131">Назовите проект и затем нажмите кнопку **ОК**.</span><span class="sxs-lookup"><span data-stu-id="86976-131">Give the project a name, and then choose the **OK** button.</span></span>
+4. <span data-ttu-id="a9ec5-131">Назовите проект и затем нажмите кнопку **ОК**.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-131">Give the project a name, and then choose the **OK** button.</span></span>
     
   
-5. <span data-ttu-id="86976-p104">Visual Studio создает проект. Добавление ссылки на следующие сборки и нажмите **кнопку ОК**.</span><span class="sxs-lookup"><span data-stu-id="86976-p104">Visual Studio creates the project. Add a reference to the following assemblies, and choose **OK**.</span></span>
+5. <span data-ttu-id="a9ec5-p104">Visual Studio создает проект. Добавление ссылки на следующие сборки и нажмите **кнопку ОК**.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-p104">Visual Studio creates the project. Add a reference to the following assemblies, and choose **OK**.</span></span>
     
-    <span data-ttu-id="86976-134">Microsoft.SharePoint.Client.dll</span><span class="sxs-lookup"><span data-stu-id="86976-134">Microsoft.SharePoint.Client.dll</span></span>
+    <span data-ttu-id="a9ec5-134">Microsoft.SharePoint.Client.dll</span><span class="sxs-lookup"><span data-stu-id="a9ec5-134">Microsoft.SharePoint.Client.dll</span></span>
     
-    <span data-ttu-id="86976-135">Microsoft.SharePoint.Client.Runtime.dll</span><span class="sxs-lookup"><span data-stu-id="86976-135">Microsoft.SharePoint.Client.Runtime.dll</span></span>
+    <span data-ttu-id="a9ec5-135">Microsoft.SharePoint.Client.Runtime.dll</span><span class="sxs-lookup"><span data-stu-id="a9ec5-135">Microsoft.SharePoint.Client.Runtime.dll</span></span>
     
   
-6. <span data-ttu-id="86976-136">В файле .cs по умолчанию добавьте директиву **using** следующим образом.</span><span class="sxs-lookup"><span data-stu-id="86976-136">In the default .cs file, add a **using** directive as follows.</span></span>
+6. <span data-ttu-id="a9ec5-136">В файле .cs по умолчанию добавьте директиву **using** следующим образом.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-136">In the default .cs file, add a **using** directive as follows.</span></span>
     
      `using Microsoft.SharePoint.Client;`
     
   
-7. <span data-ttu-id="86976-137">Добавьте следующий код в метод **Main** в CS-файл.</span><span class="sxs-lookup"><span data-stu-id="86976-137">Add the following code to the **Main** method in the .cs file.</span></span>
+7. <span data-ttu-id="a9ec5-137">Добавьте следующий код в метод **Main** в CS-файл.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-137">Add the following code to the **Main** method in the .cs file.</span></span>
     
 ```cs
   
@@ -93,15 +93,15 @@ class Program
     }
 ```
 
-8. <span data-ttu-id="86976-138">Замените \<URL-адрес сайта\> и \<заголовок списка\> с допустимыми значениями.</span><span class="sxs-lookup"><span data-stu-id="86976-138">Replace \<Site Url\> and \<List Title\> with valid values.</span></span>
+8. <span data-ttu-id="a9ec5-138">Замените \<URL-адрес сайта\> и \<заголовок списка\> с допустимыми значениями.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-138">Replace \<Site Url\> and \<List Title\> with valid values.</span></span>
     
   
-9.  <span data-ttu-id="86976-139">Установка версии .NET framework в свойствах проекта по .NET Framework 4.0 или 3.5 и запустите пример.</span><span class="sxs-lookup"><span data-stu-id="86976-139">Set the target framework in Project Properties as .NET Framework 4.0 or 3.5, and run the example.</span></span>
+9.  <span data-ttu-id="a9ec5-139">Установка версии .NET framework в свойствах проекта по .NET Framework 4.0 или 3.5 и запустите пример.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-139">Set the target framework in Project Properties as .NET Framework 4.0 or 3.5, and run the example.</span></span>
     
   
-10. <span data-ttu-id="86976-p105">Перейдите к списку. Можно видеть столбец с именем **расположение** типа географического расположения в списке. Теперь можно ввести несколько значений и Испытайте программу в действии. На рисунке 1 показано расположение по умолчанию и функции сопоставления, будут видеть в списке.</span><span class="sxs-lookup"><span data-stu-id="86976-p105">Navigate to the list. You should be able to see a column named **Location** of type Geolocation in the list. You can now enter some values and see it in action. Figure 1 shows the default location and map features that you can expect to see in your list.</span></span>
+10. <span data-ttu-id="a9ec5-p105">Перейдите к списку. Можно видеть столбец с именем **расположение** типа географического расположения в списке. Теперь можно ввести несколько значений и Испытайте программу в действии. На рисунке 1 показано расположение по умолчанию и функции сопоставления, будут видеть в списке.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-p105">Navigate to the list. You should be able to see a column named **Location** of type Geolocation in the list. You can now enter some values and see it in action. Figure 1 shows the default location and map features that you can expect to see in your list.</span></span>
     
-   <span data-ttu-id="86976-144">**На рисунке 1. Обобщенное представление по умолчанию расположение и функции сопоставления**</span><span class="sxs-lookup"><span data-stu-id="86976-144">**Figure 1. Summarized view of the default location and map features**</span></span>
+   <span data-ttu-id="a9ec5-144">**На рисунке 1. Обобщенное представление по умолчанию расположение и функции сопоставления**</span><span class="sxs-lookup"><span data-stu-id="a9ec5-144">**Figure 1. Summarized view of the default location and map features**</span></span>
 
   
 
@@ -112,18 +112,18 @@ class Program
 
   
 
-## <a name="add-a-list-item-with-the-geolocation-field-value-to-a-sharepoint-list-programmatically"></a><span data-ttu-id="86976-146">Добавление элемента списка со значением поля географического расположения в список SharePoint программными средствами</span><span class="sxs-lookup"><span data-stu-id="86976-146">Add a list item with the Geolocation field value to a SharePoint list programmatically</span></span>
-<span data-ttu-id="86976-147"><a name="SP15addgeo_addlistitem"> </a></span><span class="sxs-lookup"><span data-stu-id="86976-147"></span></span>
+## <a name="add-a-list-item-with-the-geolocation-field-value-to-a-sharepoint-list-programmatically"></a><span data-ttu-id="a9ec5-146">Добавление элемента списка со значением поля географического расположения в список SharePoint программными средствами</span><span class="sxs-lookup"><span data-stu-id="a9ec5-146">Add a list item with the Geolocation field value to a SharePoint list programmatically</span></span>
+<span data-ttu-id="a9ec5-147"><a name="SP15addgeo_addlistitem"> </a></span><span class="sxs-lookup"><span data-stu-id="a9ec5-147"></span></span>
 
-<span data-ttu-id="86976-p106">После географического расположения добавляется поле со списком SharePoint, разработчик может добавить элемент списка в список программными средствами. Существует два способа для программного добавления элемента списка:, передав объект **FieldGeolocationValue** для поля географического расположения, а также с передачей **Начальное значение** для поля географического расположения.</span><span class="sxs-lookup"><span data-stu-id="86976-p106">After the Geolocation field is added to a SharePoint list, the developer can add the list item to the list programmatically. There are two ways to add the list item programmatically: by passing the **FieldGeolocationValue** object to the Geolocation field, and by passing **Raw Value** to the Geolocation field.</span></span>
+<span data-ttu-id="a9ec5-p106">После географического расположения добавляется поле со списком SharePoint, разработчик может добавить элемент списка в список программными средствами. Существует два способа для программного добавления элемента списка:, передав объект **FieldGeolocationValue** для поля географического расположения, а также с передачей **Начальное значение** для поля географического расположения.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-p106">After the Geolocation field is added to a SharePoint list, the developer can add the list item to the list programmatically. There are two ways to add the list item programmatically: by passing the **FieldGeolocationValue** object to the Geolocation field, and by passing **Raw Value** to the Geolocation field.</span></span>
   
     
     
 
-### <a name="method-a-pass-the-fieldgeolocationvalue-object-to-the-geolocation-field"></a><span data-ttu-id="86976-150">Метод A: передайте этот объект FieldGeolocationValue поля географического расположения</span><span class="sxs-lookup"><span data-stu-id="86976-150">Method A: Pass the FieldGeolocationValue object to the Geolocation field</span></span>
+### <a name="method-a-pass-the-fieldgeolocationvalue-object-to-the-geolocation-field"></a><span data-ttu-id="a9ec5-150">Метод A: передайте этот объект FieldGeolocationValue поля географического расположения</span><span class="sxs-lookup"><span data-stu-id="a9ec5-150">Method A: Pass the FieldGeolocationValue object to the Geolocation field</span></span>
 
 
-- <span data-ttu-id="86976-151">Следующий метод добавляет элемент списка, передав значение географическое положение как объект.</span><span class="sxs-lookup"><span data-stu-id="86976-151">The following method adds a list item by passing the Geolocation value as an object.</span></span>
+- <span data-ttu-id="a9ec5-151">Следующий метод добавляет элемент списка, передав значение географическое положение как объект.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-151">The following method adds a list item by passing the Geolocation value as an object.</span></span>
     
 ```cs
   
@@ -149,10 +149,10 @@ private void AddListItem()
 ```
 
 
-### <a name="method-b-pass-a-raw-value-to-the-geolocation-field"></a><span data-ttu-id="86976-152">Метод B: передайте начальное значение для поля географического расположения</span><span class="sxs-lookup"><span data-stu-id="86976-152">Method B: Pass a raw value to the Geolocation field</span></span>
+### <a name="method-b-pass-a-raw-value-to-the-geolocation-field"></a><span data-ttu-id="a9ec5-152">Метод B: передайте начальное значение для поля географического расположения</span><span class="sxs-lookup"><span data-stu-id="a9ec5-152">Method B: Pass a raw value to the Geolocation field</span></span>
 
 
-- <span data-ttu-id="86976-153">Следующий метод добавляет элемент списка в список SharePoint, передавая необработанные значения поля географического расположения.</span><span class="sxs-lookup"><span data-stu-id="86976-153">The following method adds a list item to the SharePoint list by passing raw values to the Geolocation field.</span></span>
+- <span data-ttu-id="a9ec5-153">Следующий метод добавляет элемент списка в список SharePoint, передавая необработанные значения поля географического расположения.</span><span class="sxs-lookup"><span data-stu-id="a9ec5-153">The following method adds a list item to the SharePoint list by passing raw values to the Geolocation field.</span></span>
     
 ```cs
   
@@ -175,26 +175,26 @@ private void AddListItem()
 ```
 
 
-## <a name="additional-resources"></a><span data-ttu-id="86976-154">Дополнительные ресурсы</span><span class="sxs-lookup"><span data-stu-id="86976-154">Additional resources</span></span>
-<span data-ttu-id="86976-155"><a name="SP15addgeo_addlresources"> </a></span><span class="sxs-lookup"><span data-stu-id="86976-155"></span></span>
+## <a name="see-also"></a><span data-ttu-id="a9ec5-154">См. также</span><span class="sxs-lookup"><span data-stu-id="a9ec5-154">See also</span></span>
+<span data-ttu-id="a9ec5-155"><a name="SP15addgeo_addlresources"> </a></span><span class="sxs-lookup"><span data-stu-id="a9ec5-155"></span></span>
 
 
--  [<span data-ttu-id="86976-156">Интеграция расположение и карты функциональные возможности в SharePoint</span><span class="sxs-lookup"><span data-stu-id="86976-156">Integrating location and map functionality in SharePoint</span></span>](integrating-location-and-map-functionality-in-sharepoint.md)
+-  [<span data-ttu-id="a9ec5-156">Интеграция расположение и карты функциональные возможности в SharePoint</span><span class="sxs-lookup"><span data-stu-id="a9ec5-156">Integrating location and map functionality in SharePoint</span></span>](integrating-location-and-map-functionality-in-sharepoint.md)
     
   
--  [<span data-ttu-id="86976-157">Как: задать ключ карт Bing на уровне веб-серверы и фермы в SharePoint</span><span class="sxs-lookup"><span data-stu-id="86976-157">How to: Set the Bing Maps key at the web and farm level in SharePoint</span></span>](how-to-set-the-bing-maps-key-at-the-web-and-farm-level-in-sharepoint.md)
+-  [<span data-ttu-id="a9ec5-157">Как: задать ключ карт Bing на уровне веб-серверы и фермы в SharePoint</span><span class="sxs-lookup"><span data-stu-id="a9ec5-157">How to: Set the Bing Maps key at the web and farm level in SharePoint</span></span>](how-to-set-the-bing-maps-key-at-the-web-and-farm-level-in-sharepoint.md)
     
   
--  [<span data-ttu-id="86976-158">Как: расширение типа поля географического расположения, с использованием обработки на стороне клиента</span><span class="sxs-lookup"><span data-stu-id="86976-158">How to: Extend the Geolocation field type using client-side rendering</span></span>](how-to-extend-the-geolocation-field-type-using-client-side-rendering.md)
+-  [<span data-ttu-id="a9ec5-158">Как: расширение типа поля географического расположения, с использованием обработки на стороне клиента</span><span class="sxs-lookup"><span data-stu-id="a9ec5-158">How to: Extend the Geolocation field type using client-side rendering</span></span>](how-to-extend-the-geolocation-field-type-using-client-side-rendering.md)
     
   
--  [<span data-ttu-id="86976-159">Создание представления карты для поля географического расположения в SharePoint</span><span class="sxs-lookup"><span data-stu-id="86976-159">Create a map view for the Geolocation field in SharePoint</span></span>](create-a-map-view-for-the-geolocation-field-in-sharepoint.md)
+-  [<span data-ttu-id="a9ec5-159">Создание представления карты для поля географического расположения в SharePoint</span><span class="sxs-lookup"><span data-stu-id="a9ec5-159">Create a map view for the Geolocation field in SharePoint</span></span>](create-a-map-view-for-the-geolocation-field-in-sharepoint.md)
     
   
--  [<span data-ttu-id="86976-160">Как: интеграция карт с помощью приложения для Windows Phone и списки SharePoint</span><span class="sxs-lookup"><span data-stu-id="86976-160">How to: Integrate maps with Windows Phone apps and SharePoint lists</span></span>](how-to-integrate-maps-with-windows-phone-apps-and-sharepoint-lists.md)
+-  [<span data-ttu-id="a9ec5-160">Как: интеграция карт с помощью приложения для Windows Phone и списки SharePoint</span><span class="sxs-lookup"><span data-stu-id="a9ec5-160">How to: Integrate maps with Windows Phone apps and SharePoint lists</span></span>](how-to-integrate-maps-with-windows-phone-apps-and-sharepoint-lists.md)
     
   
--  [<span data-ttu-id="86976-161">Использование типа поля расположения SharePoint в мобильных приложениях</span><span class="sxs-lookup"><span data-stu-id="86976-161">Use the SharePoint location field type in mobile applications</span></span>](http://technet.microsoft.com/en-us/library/fp161355%28v=office.15%29.aspx)
+-  [<span data-ttu-id="a9ec5-161">Использование типа поля расположения SharePoint в мобильных приложениях</span><span class="sxs-lookup"><span data-stu-id="a9ec5-161">Use the SharePoint location field type in mobile applications</span></span>](http://technet.microsoft.com/en-us/library/fp161355%28v=office.15%29.aspx)
     
   
 

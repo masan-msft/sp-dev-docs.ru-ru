@@ -1,34 +1,33 @@
 ---
-title: "Использование свойства SubCode для получения кодов ошибок"
+title: "Использование свойства SubCode для определения кодов ошибок"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto,subcode
 f1_keywords: how to,howdoi,howto,subcode
 ms.prod: sharepoint
 ms.assetid: 8ce4d5b2-111b-49e7-9d07-8c2c586221ec
-ms.openlocfilehash: 5d9271f0233e99b74a924c1014c04fe0547114f8
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 3688236127c17920b97ce25c909cbf953a1cc4d9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="use-the-subcode-property-to-capture-error-codes"></a><span data-ttu-id="3d757-103">Использование свойства SubCode для получения кодов ошибок</span><span class="sxs-lookup"><span data-stu-id="3d757-103">Use the SubCode property to capture error codes</span></span>
+# <a name="use-the-subcode-property-to-capture-error-codes"></a><span data-ttu-id="1a84d-103">Использование свойства SubCode для определения кодов ошибок</span><span class="sxs-lookup"><span data-stu-id="1a84d-103">Use the SubCode property to capture error codes</span></span>
 
-<span data-ttu-id="3d757-p101">Службы Excel generates errors in the SOAP exception based on errors that occur in Службы Excel. To make it easier for the developer to catch specific error conditions, an Службы вычислений Excel alert has an associated error code. The Веб-службы Excel then returns the error using properties from the **SoapException** class.</span><span class="sxs-lookup"><span data-stu-id="3d757-p101">Excel Services generates errors in the SOAP exception based on errors that occur in Excel Services. To make it easier for the developer to catch specific error conditions, an Excel Calculation Services alert has an associated error code. The Excel Web Services then returns the error using properties from the **SoapException** class.</span></span>
+<span data-ttu-id="1a84d-p101">Службы Excel generates errors in the SOAP exception based on errors that occur in Службы Excel. To make it easier for the developer to catch specific error conditions, an Службы вычислений Excel alert has an associated error code. The Веб-службы Excel then returns the error using properties from the **SoapException** class.</span><span class="sxs-lookup"><span data-stu-id="1a84d-p101">Excel Services generates errors in the SOAP exception based on errors that occur in Excel Services. To make it easier for the developer to catch specific error conditions, an Excel Calculation Services alert has an associated error code. The Excel Web Services then returns the error using properties from the **SoapException** class.</span></span>
   
     
     
 
-<span data-ttu-id="3d757-107">The following examples show how to capture the error codes using the  [SubCode](http://msdn.microsoft.com/library/frlrfSystemWebServicesProtocolsSoapExceptionClassSubCodeTopic.aspx) property (http://msdn.microsoft.com/en-us/library/system.web.services.protocols.soapexception.subcode.aspx) of the **SoapException** class.</span><span class="sxs-lookup"><span data-stu-id="3d757-107">The following examples show how to capture the error codes using the  [SubCode](http://msdn.microsoft.com/library/frlrfSystemWebServicesProtocolsSoapExceptionClassSubCodeTopic.aspx) property (http://msdn.microsoft.com/en-us/library/system.web.services.protocols.soapexception.subcode.aspx) of the **SoapException** class.</span></span>
-> <span data-ttu-id="3d757-108">**Примечание:** Чтобы иметь возможность использовать свойства **SubCode** , необходимо использовать Microsoft Visual Studio 2005.</span><span class="sxs-lookup"><span data-stu-id="3d757-108">**Note:** To be able to use the **SubCode** property, you must use Microsoft Visual Studio 2005.</span></span> <span data-ttu-id="3d757-109">Свойства **SubCode** не существует в более ранних версиях Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="3d757-109">The **SubCode** property does not exist in earlier versions of Visual Studio.</span></span>
-  
-    
-    
+<span data-ttu-id="1a84d-107">The following examples show how to capture the error codes using the  [SubCode](http://msdn.microsoft.com/library/frlrfSystemWebServicesProtocolsSoapExceptionClassSubCodeTopic.aspx) property (http://msdn.microsoft.com/en-us/library/system.web.services.protocols.soapexception.subcode.aspx) of the **SoapException** class.</span><span class="sxs-lookup"><span data-stu-id="1a84d-107">The following examples show how to capture the error codes using the  [SubCode](http://msdn.microsoft.com/library/frlrfSystemWebServicesProtocolsSoapExceptionClassSubCodeTopic.aspx) property (http://msdn.microsoft.com/en-us/library/system.web.services.protocols.soapexception.subcode.aspx) of the **SoapException** class.</span></span>
 
-<span data-ttu-id="3d757-110">For a list of error codes, see  [Коды ошибок для служб Excel](excel-services-error-codes.md).</span><span class="sxs-lookup"><span data-stu-id="3d757-110">For a list of error codes, see  [Excel Services Error Codes](excel-services-error-codes.md).</span></span>
-### <a name="to-capture-error-codes-when-using-soap"></a><span data-ttu-id="3d757-111">To capture error codes when using SOAP</span><span class="sxs-lookup"><span data-stu-id="3d757-111">To capture error codes when using SOAP</span></span>
+ [!NOTE]
+> <span data-ttu-id="1a84d-p102">[!Примечание] To be able to use the **SubCode** property, you must use Microsoft Visual Studio 2005. The **SubCode** property does not exist in earlier versions of Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="1a84d-p102">To be able to use the **SubCode** property, you must use Microsoft Visual Studio 2005. The **SubCode** property does not exist in earlier versions of Visual Studio.</span></span>
+
+<span data-ttu-id="1a84d-110">For a list of error codes, see  [Коды ошибок для служб Excel](excel-services-error-codes.md).</span><span class="sxs-lookup"><span data-stu-id="1a84d-110">For a list of error codes, see  [Excel Services Error Codes](excel-services-error-codes.md).</span></span>
+### <a name="to-capture-error-codes-when-using-soap"></a><span data-ttu-id="1a84d-111">To capture error codes when using SOAP</span><span class="sxs-lookup"><span data-stu-id="1a84d-111">To capture error codes when using SOAP</span></span>
 
 
-1. <span data-ttu-id="3d757-112">After adding a Web reference to the Веб-службы Excel, add the following using directive so that you can use the **SoapException** class without having to qualify it with a full namespace:</span><span class="sxs-lookup"><span data-stu-id="3d757-112">After adding a Web reference to the Excel Web Services, add the following using directive so that you can use the **SoapException** class without having to qualify it with a full namespace:</span></span>
+1. <span data-ttu-id="1a84d-112">After adding a Web reference to the Веб-службы Excel, add the following using directive so that you can use the **SoapException** class without having to qualify it with a full namespace:</span><span class="sxs-lookup"><span data-stu-id="1a84d-112">After adding a Web reference to the Excel Web Services, add the following using directive so that you can use the **SoapException** class without having to qualify it with a full namespace:</span></span>
     
 ```cs
   
@@ -40,7 +39,7 @@ using System.Web.Services.Protocols;
   Imports System.Web.Services.Protocols
 ```
 
-2. <span data-ttu-id="3d757-p103">To capture the Службы Excel error codes using the **SubCode** property, you must use the SOAP12 protocol version. After instantiating the Веб-службы Excel proxy class, set the SOAP protocol version as follows:</span><span class="sxs-lookup"><span data-stu-id="3d757-p103">To capture the Excel Services error codes using the **SubCode** property, you must use the SOAP12 protocol version. After instantiating the Excel Web Services proxy class, set the SOAP protocol version as follows:</span></span>
+2. <span data-ttu-id="1a84d-p103">To capture the Службы Excel error codes using the **SubCode** property, you must use the SOAP12 protocol version. After instantiating the Веб-службы Excel proxy class, set the SOAP protocol version as follows:</span><span class="sxs-lookup"><span data-stu-id="1a84d-p103">To capture the Excel Services error codes using the **SubCode** property, you must use the SOAP12 protocol version. After instantiating the Excel Web Services proxy class, set the SOAP protocol version as follows:</span></span>
     
 ```cs
   // Instantiate the Web service.
@@ -60,7 +59,7 @@ xlservice.SoapVersion = SoapProtocolVersion.Soap12;
 xlservice.SoapVersion = SoapProtocolVersion.Soap12
 ```
 
-3. <span data-ttu-id="3d757-115">To catch the error codes using the **SubCode** property, add a SOAP exception catch block to your code, for example:</span><span class="sxs-lookup"><span data-stu-id="3d757-115">To catch the error codes using the **SubCode** property, add a SOAP exception catch block to your code, for example:</span></span>
+3. <span data-ttu-id="1a84d-115">To catch the error codes using the **SubCode** property, add a SOAP exception catch block to your code, for example:</span><span class="sxs-lookup"><span data-stu-id="1a84d-115">To catch the error codes using the **SubCode** property, add a SOAP exception catch block to your code, for example:</span></span>
     
 ```cs
   
@@ -82,13 +81,13 @@ End Try
 ```
 
 
-### <a name="to-capture-error-codes-when-using-direct-linking"></a><span data-ttu-id="3d757-116">To capture error codes when using direct linking</span><span class="sxs-lookup"><span data-stu-id="3d757-116">To capture error codes when using direct linking</span></span>
+### <a name="to-capture-error-codes-when-using-direct-linking"></a><span data-ttu-id="1a84d-116">To capture error codes when using direct linking</span><span class="sxs-lookup"><span data-stu-id="1a84d-116">To capture error codes when using direct linking</span></span>
 
 
-1. <span data-ttu-id="3d757-p104">In the direct linking scenario, you won't need to add a Web reference to the Веб-службы Excel. However, you will need to add a reference to **System.Web.Services** namespace.</span><span class="sxs-lookup"><span data-stu-id="3d757-p104">In the direct linking scenario, you won't need to add a Web reference to the Excel Web Services. However, you will need to add a reference to **System.Web.Services** namespace.</span></span>
+1. <span data-ttu-id="1a84d-p104">In the direct linking scenario, you won't need to add a Web reference to the Веб-службы Excel. However, you will need to add a reference to **System.Web.Services** namespace.</span><span class="sxs-lookup"><span data-stu-id="1a84d-p104">In the direct linking scenario, you won't need to add a Web reference to the Excel Web Services. However, you will need to add a reference to **System.Web.Services** namespace.</span></span>
     
   
-2. <span data-ttu-id="3d757-119">After you add a reference, add the following **using** directive to your code so that you can use the **SoapException** class without having to qualify it with a full namespace:</span><span class="sxs-lookup"><span data-stu-id="3d757-119">After you add a reference, add the following **using** directive to your code so that you can use the **SoapException** class without having to qualify it with a full namespace:</span></span>
+2. <span data-ttu-id="1a84d-119">After you add a reference, add the following **using** directive to your code so that you can use the **SoapException** class without having to qualify it with a full namespace:</span><span class="sxs-lookup"><span data-stu-id="1a84d-119">After you add a reference, add the following **using** directive to your code so that you can use the **SoapException** class without having to qualify it with a full namespace:</span></span>
     
 ```cs
   
@@ -100,10 +99,10 @@ using System.Web.Services.Protocols;
   Imports System.Web.Services.Protocols
 ```
 
-3. <span data-ttu-id="3d757-120">Unlike using SOAP over HTTP, in the direct linking scenario, you won't need to set the SOAP protocol version.</span><span class="sxs-lookup"><span data-stu-id="3d757-120">Unlike using SOAP over HTTP, in the direct linking scenario, you won't need to set the SOAP protocol version.</span></span> 
+3. <span data-ttu-id="1a84d-120">Unlike using SOAP over HTTP, in the direct linking scenario, you won't need to set the SOAP protocol version.</span><span class="sxs-lookup"><span data-stu-id="1a84d-120">Unlike using SOAP over HTTP, in the direct linking scenario, you won't need to set the SOAP protocol version.</span></span> 
     
   
-4. <span data-ttu-id="3d757-121">To catch the error codes using the **SubCode** property, add a SOAP exception catch block to your code, for example:</span><span class="sxs-lookup"><span data-stu-id="3d757-121">To catch the error codes using the **SubCode** property, add a SOAP exception catch block to your code, for example:</span></span>
+4. <span data-ttu-id="1a84d-121">To catch the error codes using the **SubCode** property, add a SOAP exception catch block to your code, for example:</span><span class="sxs-lookup"><span data-stu-id="1a84d-121">To catch the error codes using the **SubCode** property, add a SOAP exception catch block to your code, for example:</span></span>
     
 ```cs
   catch (SoapException e)
@@ -124,9 +123,9 @@ End Try
 ```
 
 
-## <a name="example"></a><span data-ttu-id="3d757-122">Пример</span><span class="sxs-lookup"><span data-stu-id="3d757-122">Example</span></span>
+## <a name="example"></a><span data-ttu-id="1a84d-122">Пример</span><span class="sxs-lookup"><span data-stu-id="1a84d-122">Example</span></span>
 
-<span data-ttu-id="3d757-p105">The following program (a console application) uses the **SubCode** property to capture the error codes. The program takes different actions based on the error code that is caught. You can, for example, intentionally pass in a nonexistent sheet name to trigger a SOAP exception. In this case, the following SOAP exception message is returned:</span><span class="sxs-lookup"><span data-stu-id="3d757-p105">The following program (a console application) uses the **SubCode** property to capture the error codes. The program takes different actions based on the error code that is caught. You can, for example, intentionally pass in a nonexistent sheet name to trigger a SOAP exception. In this case, the following SOAP exception message is returned:</span></span>
+<span data-ttu-id="1a84d-p105">The following program (a console application) uses the **SubCode** property to capture the error codes. The program takes different actions based on the error code that is caught. You can, for example, intentionally pass in a nonexistent sheet name to trigger a SOAP exception. In this case, the following SOAP exception message is returned:</span><span class="sxs-lookup"><span data-stu-id="1a84d-p105">The following program (a console application) uses the **SubCode** property to capture the error codes. The program takes different actions based on the error code that is caught. You can, for example, intentionally pass in a nonexistent sheet name to trigger a SOAP exception. In this case, the following SOAP exception message is returned:</span></span>
   
     
     
@@ -344,58 +343,58 @@ End Namespace
 ```
 
 
-## <a name="robust-programming"></a><span data-ttu-id="3d757-127">Надежное программирование</span><span class="sxs-lookup"><span data-stu-id="3d757-127">Robust programming</span></span>
+## <a name="robust-programming"></a><span data-ttu-id="1a84d-127">Надежное программирование</span><span class="sxs-lookup"><span data-stu-id="1a84d-127">Robust programming</span></span>
 
-<span data-ttu-id="3d757-p106">Make sure that you add a Web reference to an Веб-службы Excel site that you have access to. Change the  `using SubCodeExample;` statement to point to the Web service site that you are referencing.</span><span class="sxs-lookup"><span data-stu-id="3d757-p106">Make sure that you add a Web reference to an Excel Web Services site that you have access to. Change the  `using SubCodeExample;` statement to point to the Web service site that you are referencing.</span></span>
+<span data-ttu-id="1a84d-p106">Make sure that you add a Web reference to an Веб-службы Excel site that you have access to. Change the  `using SubCodeExample;` statement to point to the Web service site that you are referencing.</span><span class="sxs-lookup"><span data-stu-id="1a84d-p106">Make sure that you add a Web reference to an Excel Web Services site that you have access to. Change the  `using SubCodeExample;` statement to point to the Web service site that you are referencing.</span></span>
   
     
     
-<span data-ttu-id="3d757-130">In addition, make changes to the workbook path, sheet name, and so on, as appropriate.</span><span class="sxs-lookup"><span data-stu-id="3d757-130">In addition, make changes to the workbook path, sheet name, and so on, as appropriate.</span></span>
+<span data-ttu-id="1a84d-130">In addition, make changes to the workbook path, sheet name, and so on, as appropriate.</span><span class="sxs-lookup"><span data-stu-id="1a84d-130">In addition, make changes to the workbook path, sheet name, and so on, as appropriate.</span></span>
   
     
     
 
-## <a name="see-also"></a><span data-ttu-id="3d757-131">См. также</span><span class="sxs-lookup"><span data-stu-id="3d757-131">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1a84d-131">См. также</span><span class="sxs-lookup"><span data-stu-id="1a84d-131">See also</span></span>
 
 
-#### <a name="tasks"></a><span data-ttu-id="3d757-132">Задачи</span><span class="sxs-lookup"><span data-stu-id="3d757-132">Tasks</span></span>
-
-
-  
-    
-    
- [<span data-ttu-id="3d757-133">How to: Catch Exceptions</span><span class="sxs-lookup"><span data-stu-id="3d757-133">How to: Catch Exceptions</span></span>](how-to-catch-exceptions.md)
-  
-    
-    
- [<span data-ttu-id="3d757-134">How to: Trust a Location</span><span class="sxs-lookup"><span data-stu-id="3d757-134">How to: Trust a Location</span></span>](how-to-trust-a-location.md)
-  
-    
-    
- [<span data-ttu-id="3d757-135">How to: Save from Excel Client to the Server</span><span class="sxs-lookup"><span data-stu-id="3d757-135">How to: Save from Excel Client to the Server</span></span>](how-to-save-from-excel-client-to-the-server.md)
-#### <a name="concepts"></a><span data-ttu-id="3d757-136">Основные понятия</span><span class="sxs-lookup"><span data-stu-id="3d757-136">Concepts</span></span>
+#### <a name="tasks"></a><span data-ttu-id="1a84d-132">Задачи</span><span class="sxs-lookup"><span data-stu-id="1a84d-132">Tasks</span></span>
 
 
   
     
     
- [<span data-ttu-id="3d757-137">Доступ к API SOAP</span><span class="sxs-lookup"><span data-stu-id="3d757-137">Accessing the SOAP API</span></span>](accessing-the-soap-api.md)
+ [<span data-ttu-id="1a84d-133">How to: Catch Exceptions</span><span class="sxs-lookup"><span data-stu-id="1a84d-133">How to: Catch Exceptions</span></span>](how-to-catch-exceptions.md)
   
     
     
- [<span data-ttu-id="3d757-138">Excel Services Alerts</span><span class="sxs-lookup"><span data-stu-id="3d757-138">Excel Services Alerts</span></span>](excel-services-alerts.md)
+ [<span data-ttu-id="1a84d-134">How to: Trust a Location</span><span class="sxs-lookup"><span data-stu-id="1a84d-134">How to: Trust a Location</span></span>](how-to-trust-a-location.md)
   
     
     
- [<span data-ttu-id="3d757-139">Excel Services Known Issues and Tips</span><span class="sxs-lookup"><span data-stu-id="3d757-139">Excel Services Known Issues and Tips</span></span>](excel-services-known-issues-and-tips.md)
-  
-    
-    
- [<span data-ttu-id="3d757-140">Loop-Back SOAP Calls and Direct Linking</span><span class="sxs-lookup"><span data-stu-id="3d757-140">Loop-Back SOAP Calls and Direct Linking</span></span>](loop-back-soap-calls-and-direct-linking.md)
-#### <a name="other-resources"></a><span data-ttu-id="3d757-141">Другие ресурсы</span><span class="sxs-lookup"><span data-stu-id="3d757-141">Other resources</span></span>
+ [<span data-ttu-id="1a84d-135">How to: Save from Excel Client to the Server</span><span class="sxs-lookup"><span data-stu-id="1a84d-135">How to: Save from Excel Client to the Server</span></span>](how-to-save-from-excel-client-to-the-server.md)
+#### <a name="concepts"></a><span data-ttu-id="1a84d-136">Основные понятия</span><span class="sxs-lookup"><span data-stu-id="1a84d-136">Concepts</span></span>
 
 
   
     
     
- [<span data-ttu-id="3d757-142">Пошаговое руководство. Разработка настраиваемого приложения с помощью веб-служб Excel</span><span class="sxs-lookup"><span data-stu-id="3d757-142">Walkthrough: Developing a Custom Application Using Excel Web Services</span></span>](walkthrough-developing-a-custom-application-using-excel-web-services.md)
+ [<span data-ttu-id="1a84d-137">Доступ к API SOAP</span><span class="sxs-lookup"><span data-stu-id="1a84d-137">Accessing the SOAP API</span></span>](accessing-the-soap-api.md)
+  
+    
+    
+ [<span data-ttu-id="1a84d-138">Excel Services Alerts</span><span class="sxs-lookup"><span data-stu-id="1a84d-138">Excel Services Alerts</span></span>](excel-services-alerts.md)
+  
+    
+    
+ [<span data-ttu-id="1a84d-139">Excel Services Known Issues and Tips</span><span class="sxs-lookup"><span data-stu-id="1a84d-139">Excel Services Known Issues and Tips</span></span>](excel-services-known-issues-and-tips.md)
+  
+    
+    
+ [<span data-ttu-id="1a84d-140">Loop-Back SOAP Calls and Direct Linking</span><span class="sxs-lookup"><span data-stu-id="1a84d-140">Loop-Back SOAP Calls and Direct Linking</span></span>](loop-back-soap-calls-and-direct-linking.md)
+#### <a name="other-resources"></a><span data-ttu-id="1a84d-141">Другие ресурсы</span><span class="sxs-lookup"><span data-stu-id="1a84d-141">Other resources</span></span>
+
+
+  
+    
+    
+ [<span data-ttu-id="1a84d-142">Пошаговое руководство. Разработка настраиваемого приложения с помощью веб-служб Excel</span><span class="sxs-lookup"><span data-stu-id="1a84d-142">Walkthrough: Developing a Custom Application Using Excel Web Services</span></span>](walkthrough-developing-a-custom-application-using-excel-web-services.md)
