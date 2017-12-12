@@ -2,11 +2,11 @@
 title: "Настройка «современный» списки и библиотеки"
 description: "Получите быстрее, интуитивно и быстро SharePoint Online взаимодействия с настройки списков и библиотек «современный» работы, с помощью пользовательских дополнительных действий и настраиваемый фирменный стиль."
 ms.date: 11/09/2017
-ms.openlocfilehash: 086485e4749fb6adbba5cd252415d5d62fbacc74
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 2d888eecadd410bb64baf9d01d888253f25d656a
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="customizing-modern-lists-and-libraries"></a>Настройка «современный» списки и библиотеки
 
@@ -426,7 +426,7 @@ GET _api/web/getfilebyserverrelativeurl('/sites/dev/ECMTest/Forms/AllItems.aspx'
 
 Постепенно описываются дополнительные параметры настройки для «современный» списка и библиотеки среды взаимодействия с пользователем. Эти способ выравнивания в выпуске дополнительные возможности среды SharePoint. На данный момент нет расписание не точное, но при выпуске новых возможностей взаимодействия «современный» статьи будут обновляться.
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 
 - [Настройка "современных" интерфейсов в SharePoint Online](modern-experience-customizations.md)
 - [Переключение интерфейса по умолчанию для списков или библиотек документов из новых или классический](https://support.office.com/en-us/article/Switch-the-default-experience-for-lists-or-document-libraries-from-new-or-classic-66dac24b-4177-4775-bf50-3d267318caa9)

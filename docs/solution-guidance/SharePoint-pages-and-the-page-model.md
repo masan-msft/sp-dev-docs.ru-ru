@@ -1,173 +1,176 @@
 ---
-title: "Модель страницы и страницы SharePoint"
+title: SharePoint pages and the page model
 ms.date: 11/03/2017
-ms.openlocfilehash: 74cb39e91919d872f1a5e8eda7b9b36b8ef67108
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 7e6b620d3c816692a26d10e4ebf07d66aa1d616a
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="sharepoint-pages-and-the-page-model"></a>Модель страницы и страницы SharePoint
+# <a name="sharepoint-pages-and-the-page-model"></a>SharePoint pages and the page model
 
-В этой статье описывается модель страницы SharePoint, включая главные страницы, страницы содержимого, части на странице SharePoint и типы файлов страницы по умолчанию. 
+This article introduces the SharePoint page model, including master pages, content pages, parts of a SharePoint page, and default page file types. 
 
 _**Область применения:** Office 365 | SharePoint 2013 | SharePoint Online_
 
-Отображаемой страницы SharePoint состоит из трех типов страниц: 
+A rendered SharePoint page is a combination of three page types: 
 
-- Главная страница, который управляет макет и внешний вид содержимого.
+- A master page, which controls the layout and appearance of the content.
     
-- Страница контента, который содержит элементы управления полей страницы.
+- A content page, which contains the page field controls.
     
-- Понятное разработки страница, являющийся, где пользователь добавляет содержимое.
+- A user-friendly authoring page, which is where the user adds content.
     
-В этой статье Обзор модели страниц SharePoint, включая типы страниц, файлов страницы по умолчанию, доступных в SharePoint 2013 и SharePoint Online и сведения о способах обработки страниц. 
+This article provides an overview of the SharePoint page model, including the page types, the default page files that are available in SharePoint 2013 and SharePoint Online, and information about how pages are processed. 
 
-## <a name="key-terms-and-concepts-related-to-the-sharepoint-page-model"></a>Ключевые термины и концепции, связанные с моделью страницы SharePoint
+## <a name="key-terms-and-concepts-related-to-the-sharepoint-page-model"></a>Key terms and concepts related to the SharePoint page model
 <a name="sectionSection0"> </a>
 
-|**Концепция или термин**|**Определение**|**Доступ через**|**Дополнительные сведения**|
+|**Term or concept**|**Определение**|**Access via**|**More information**|
 |:-----|:-----|:-----|:-----|
-|Сайт совместной работы|Сайт группы.|||
-|Заполнитель контента|Запись в главную страницу, которая резервирует для элементов управления или контент, который может быть программными средствами заменен более поздней версии.|Все главные страницы SharePoint|Заполнителей контента — это стандартные блоки главных страницах SharePoint.|
-|Главная страница|Страница, стандартизация поведение и презентация элементы навигации верхней и левой страницы SharePoint.|Файловая система SharePoint Коллекция главных страниц||
-|Коллекция главных страниц|Библиотека специальных документов в SharePoint 2013, где все элементы фирменной настройки - главные страницы, макеты страниц, файлы JavaScript, CSS и изображения — хранения по умолчанию. Каждый сайт имеет свой собственный Коллекция главных страниц.| **Параметры** > **Параметры сайта** > **главные страницы и макеты страниц**|Коллекция главных страниц содержит каталоги, в которых хранятся фирменной настройки активы, такие как главные страницы и CSS-файлов.<br/>**Совет**  При создании пользовательских элементов фирменной настройки хранения настраиваемых активов в структуре файла по умолчанию коллекции главных страниц.<br/>[Эталонные страницы, коллекция эталонных страниц и макеты страниц в SharePoint 2013](http://msdn.microsoft.com/library/80b9a360-bc2e-46c6-b0ca-1bc487b73db6.aspx)|
-|Стратегия минимальной загрузки (MDS)|Стратегия, которая позволяет сократить объем данных, который необходимо загрузить в браузере при переходе с одной страницы SharePoint в другую.|Параметры сайта|При активной MDS SharePoint передает все запросы на странице через `/_layouts/15/start.aspx` и проверяет наличие visual различия между новых запросов страниц и ранее загруженного страницы.<br/>[Оптимизация производительности страниц в SharePoint 2013](http://msdn.microsoft.com/library/262caeef-64fd-4e02-b947-d772faf01159.aspx)<br/>[Общие сведения о минимальной загрузки стратегия](http://msdn.microsoft.com/library/9caa7d99-1e74-4889-96c7-ba5a10772ad7.aspx)|
-|Navigation|Функциональные возможности, которая позволяет пользователям перемещаться по информационной архитектуры сайта SharePoint. Элементы навигации в SharePoint включают поиска, элементы управления дерева, кнопок, ленты, гиперссылки, вкладок, меню и таксономии.||[Класс навигации](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.navigation.aspx)<br/>[Класс NavigationNode](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.navigationnode.aspx)|
-|Образец Oslo|Главная страница по умолчанию в SharePoint 2013.|Файловая система SharePoint Коллекция главных страниц|В отличие от главной страницы seattle.master текущая структура навигации находится в той же позиции верхняя область переходов.|
-|Элемент управления содержимым страницы|Элемент управления на сайте публикации, где можно добавить веб-части.|||
-|Макет страницы|Шаблон оформления публикации страницы, которая обеспечивает согласованность представления содержимого.|Файловая система SharePoint Коллекция главных страниц| [Инструкции. Создание макета страницы в SharePoint 2013](http://msdn.microsoft.com/library/5447e6a1-2f14-4667-81d0-7514b468be80.aspx)|
-|Модель страницы|Файлы, содержимого и взаимодействия, которые ведут к страницу SharePoint, отображаемое для пользователей в браузере.|| [Обзор модели страниц в SharePoint 2013](http://msdn.microsoft.com/library/808b1af3-89ab-4f02-89cc-ea86cb1f9a6e.aspx)|
-|Страница публикации|Страница ASPX в публикации сайта.|| [Класс PublishingPage](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.publishing.publishingpage.aspx)|
-|Сайт публикации|Сайт SharePoint, можно получить доступ к публикации сайтов и страниц, которые включают макеты страниц, таксономия, управляемая навигация и Управление контентом других веб-контента управления и корпоративных функций. || [Класс PublishingWeb](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.publishing.publishingweb.aspx) [Что такое новые с разработки сайтов SharePoint 2013](https://msdn.microsoft.com/en-us/library/office/jj163942.aspx)|
-|Seattle.master|Главная страница по умолчанию в SharePoint 2013.|Файловая система SharePoint Коллекция главных страниц||
-|Сайт группы|Сайт, предназначенный для пользователей совместно работать над документами, вики-сайты, идеи, процессов и т. д.|||
-|Разметка текста|Определяет области контента, отображаемые на вики-страниц.|||
-|Элемент управления макет текста|Вики-сайт страницы элемента управления, которое может содержать текст, изображения, веб-частей и части приложения.|||
-|Сайт верхнего уровня|По умолчанию, предоставляемые сервером сайта верхнего уровня.|| [Создание сайта SharePoint](https://support.office.com/en-us/article/Create-a-SharePoint-site-4b1c153a-ec2b-45df-9dd9-e31d25563d1b?CorrelationId=ad2fc24e-9e3e-4da4-be0f-500d2e89fc64&amp;ui=en-US&amp;rs=en-US&amp;ad=US)|
-|Веб-части|На сервере элементы управления, которые выполняются в контексте веб-страниц.|| [Настраиваемые действия и записи контейнера свойства из приложения SharePoint](http://blogs.msdn.com/b/vesku/archive/2013/10/02/ftc-to-cam-custom-actions-and-property-bag-entries.aspx)|
-|Страница веб-частей|Страница содержимого, состоящих из зоны веб-частей, которые могут содержать веб-частей. Веб-частей на страницах веб-части представлены объекты [WebPartDefinition](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.webparts.webpartdefinition.aspx) .|| [Пространство имен Microsoft.SharePoint.Client.WebParts](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.webparts.aspx)|
-|Зона веб-частей|Область на странице которой можно добавить веб-части.|||
-|Вики-страниц|Страница содержимого, использующего шаблон корпоративного вики-сайта.|| [Пример приложения Provisioning.Pages](https://github.com/SharePoint/PnP/tree/master/Samples/Provisioning.Pages)|
+|Collaboration site|A team site.|||
+|Content placeholder|An entry in a master page that reserves a space for controls or content that can be programmatically replaced later.|All SharePoint master pages|Content placeholders are the building blocks of SharePoint master pages.|
+|Главная страница|A page that standardizes the behavior and presentation of the left and top navigation elements of a SharePoint page.|SharePoint file system Master Page Gallery||
+|Master page gallery|A special document library in SharePoint 2013 where all branding elements - master pages, page layouts, JavaScript files, CSS, and images - are stored by default. Every site has its own Master Page Gallery.| **Settings** > **Site Settings** > **Master Pages and Page Layouts**|The Master Page Gallery contains catalogs that store branding assets such as master pages and CSS files.<br/>**Tip**  When you create custom branding elements, store custom assets in the default Master Page Gallery file structure.<br/>[Эталонные страницы, коллекция эталонных страниц и макеты страниц в SharePoint 2013](http://msdn.microsoft.com/library/80b9a360-bc2e-46c6-b0ca-1bc487b73db6.aspx)|
+|Minimal Download Strategy (MDS)|A strategy that reduces the amount of data that the browser must download when users navigate from one SharePoint page to another.|Site settings|When MDS is active, SharePoint passes all page requests through  `/_layouts/15/start.aspx` and checks for visual differences between new page requests and the previously loaded page.<br/>[Optimize page performance in SharePoint 2013](http://msdn.microsoft.com/library/262caeef-64fd-4e02-b947-d772faf01159.aspx)<br/>[Общие сведения о минимальной загрузки стратегия](http://msdn.microsoft.com/library/9caa7d99-1e74-4889-96c7-ba5a10772ad7.aspx)|
+|Navigation|Functionality that enables users to move around the information architecture of a SharePoint site. Navigation elements in SharePoint include search, tree controls, buttons, the ribbon, hyperlinks, tabs, menus, and taxonomy.||[Navigation class](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.navigation.aspx)<br/>[NavigationNode class](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.navigationnode.aspx)|
+|Oslo master|A default master page in SharePoint 2013.|SharePoint file system Master Page Gallery|Unlike the seattle.master master page, the current navigation is in the same position as the top navigation area.|
+|Page content control|A control on a publishing site where a Web Part can be added.|||
+|Макет страницы|A template applied to a Publishing page that enforces the consistent presentation of content.|SharePoint file system Master Page Gallery| [Инструкции. Создание макета страницы в SharePoint 2013](http://msdn.microsoft.com/library/5447e6a1-2f14-4667-81d0-7514b468be80.aspx)|
+|Page model|The files, content, and interactions that result in a SharePoint page rendered to users in a browser.|| [Обзор модели страниц в SharePoint 2013](http://msdn.microsoft.com/library/808b1af3-89ab-4f02-89cc-ea86cb1f9a6e.aspx)|
+|Publishing page|An .aspx page in a Publishing site.|| [PublishingPage class](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.publishing.publishingpage.aspx)|
+|Publishing site|A SharePoint site that can access publishing sites and pages, which include page layouts, taxonomy, managed navigation, and other web content management and enterprise content management features. || [PublishingWeb class](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.publishing.publishingweb.aspx) [What's new with SharePoint 2013 site development](https://msdn.microsoft.com/en-us/library/office/jj163942.aspx)|
+|Seattle.master|A default master page in SharePoint 2013.|SharePoint file system Master Page Gallery||
+|Team site|A site designed for users to collaborate on documents, wikis, ideas, processes, and so on.|||
+|Text layout|Defines the content areas that appear on a Wiki page.|||
+|Text layout control|A wiki page control that can contain text, images, Web Parts, and App Parts.|||
+|Top-level site|The default, top-level site provided by the server.|| [Create a SharePoint site](https://support.office.com/en-us/article/Create-a-SharePoint-site-4b1c153a-ec2b-45df-9dd9-e31d25563d1b?CorrelationId=ad2fc24e-9e3e-4da4-be0f-500d2e89fc64&amp;ui=en-US&amp;rs=en-US&amp;ad=US)|
+|Web Part|Server-side controls that run inside the context of site pages.|| [Custom actions and property bag entries from a SharePoint app](http://blogs.msdn.com/b/vesku/archive/2013/10/02/ftc-to-cam-custom-actions-and-property-bag-entries.aspx)|
+|Web Part page|A content page made up of Web part zones, which can contain Web Parts. Web Parts are represented on Web Part pages by  [WebPartDefinition](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.webparts.webpartdefinition.aspx) objects.|| [Microsoft.SharePoint.Client.WebParts namespace](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.webparts.aspx)|
+|Web Part zone|An area on a page where a Web Part can be added.|||
+|Wiki page|A content page that uses the Enterprise Wiki site template.|| [Provisioning.Pages sample app](https://github.com/SharePoint/PnP/tree/master/Samples/Provisioning.Pages)|
 
-## <a name="sharepoint-master-pages"></a>Главные страницы SharePoint
+## <a name="sharepoint-master-pages"></a>SharePoint master pages
 <a name="sectionSection1"> </a>
 
-Главная страница представляет собой файл ASP.NET с расширением .master. Он содержит `<%@ Master` директивы и определяет верхнего уровня элементов HTML, таких как **HTML**, **Head**и **формы**. Сначала перечислены элементы управления и сборки и затем объявляет определение типа документа **тип документа**, который сообщает о способах отображения HTML-код браузера. SharePoint 2013 настраивается для работы с **XHTML 1.0** и **HTML5** DOCTYPES.
+A master page is an ASP.NET file with a .master extension. It includes a  `<%@ Master` directive, and defines the top-level HTML elements such as **HTML**,  **Head**, and  **Form**. It first lists controls and assemblies, and then declares a Document Type Definition of  **DOCTYPE**, which tells the browser how to render the HTML. SharePoint 2013 is tuned to work best with the  **XHTML 1.0** and **HTML5** DOCTYPES.
 
-По умолчанию SharePoint включает несколько главных страниц. Эти главные страницы обеспечивают структуры по умолчанию и chrome данной странице SharePoint, соответствующий SKU и тип сайта, где они находятся applicableâ€ «на верхней и левой стороны страницы. В таблице 2 перечислены по умолчанию SharePoint 2013 и SharePoint Online главных страниц.
+SharePoint includes several master pages by default. These master pages provide the default structure and chrome of a given SharePoint page that is appropriate for the SKU and site type, where these are applicableâ€”specifically, on the top and left sides of the page. Table 2 lists the default SharePoint 2013 and SharePoint Online master pages.
 
-**В таблице 2. Главные страницы SharePoint по умолчанию**
+**Table 2. Default SharePoint master pages**
 
-|**Главная страница**|**Описание**|
+|**Master page**|**Описание**|
 |:-----|:-----|
-|Custom.master|Система страниц, например формы и представления. Используется для всех SharePoint 2013 и SharePoint Online SKU.|
-|Default.master|В веб-сайтах публикации страниц сайта. Включены в все SharePoint 2013 и SharePoint Online SKU. Доступны при активации функции публикации.|
-|Application.master|Некоторые страницы системы, такие как scope.aspx и keyword.aspx. Включены в все SharePoint 2013 и SharePoint Online SKU.|
-|Minimal.master|Параметр главной страницы по умолчанию доступны во всех SKU SharePoint 2013.|
-|Seattle.master|Параметр главной страницы по умолчанию доступны во всех SharePoint 2013 и SharePoint Online SKU.|
-|Oslo.master|Параметр главной страницы по умолчанию доступны во всех SharePoint 2013 и SharePoint Online SKU.|
-|Kyoto.master|Главная страница, доступных в SharePoint Online. |
-|Berlin.master|Главная страница, доступных в SharePoint Online. |
-|Lyon.master|Главная страница, доступных в SharePoint Online. |
-|Mysite15.master|OneDrive для бизнеса сайтов (ранее: личного сайта, личные сайты или OneDrive Pro сайтов).|
-Каждый главной страницы SharePoint по умолчанию включает в себя элементы управления, которые необходимы для распространенных веб-программирования технологии, такие как HTML, CSS и JavaScript, функции в SharePoint.
+|Custom.master|System pages, such as forms and views. Used by all SharePoint 2013 and SharePoint Online SKUs.|
+|Default.master|Site pages in publishing sites. Included in all SharePoint 2013 and SharePoint Online SKUs. Available when the publishing feature is activated.|
+|Application.master|Some system pages, such as scope.aspx and keyword.aspx. Included in all SharePoint 2013 and SharePoint Online SKUs.|
+|Minimal.master|Available default master page option in all SharePoint 2013 SKUs.|
+|Seattle.master|Available default master page option in all SharePoint 2013 and SharePoint Online SKUs.|
+|Oslo.master|Available default master page option in all SharePoint 2013 and SharePoint Online SKUs.|
+|Kyoto.master|A master page available in SharePoint Online. |
+|Berlin.master|A master page available in SharePoint Online. |
+|Lyon.master|A master page available in SharePoint Online. |
+|Mysite15.master|OneDrive for Business sites (previously: My Site, personal sites, or OneDrive Pro sites).|
+Each default SharePoint master page includes controls that are required for common web programming technologies such as HTML, CSS, and JavaScript, to function in SharePoint.
 
-Заполнителей контента нажмите и удерживайте место для сведений, заданных на страницах содержимого. Заполнителей контента соответствуют области страницы. Каждой области в главную страницу определяется между несколько и сотни заполнителей контента.
+Content placeholders hold the place for information defined in content pages. Content placeholders correspond to areas of a page. Each area of a .master page is defined by between a few and hundreds of content placeholders.
 
-Главные страницы SharePoint сочетаются с ASP.NET ( `<asp:`) и SharePoint ( `<SharePoint:`) объявления. Текст после запятой в объявлении определяет функциональные возможности элемента управления; например `SharePoint:PlaceholderGlobalNavigation` внедряет глобальной навигации SharePoint, страница в соответствующих HTML тегов на этой странице. Элементы управления содержимым на главной странице привязка заполнителей контента контент с помощью **ContentPlaceHolderID**.
+SharePoint master pages use a mix of ASP.NET ( `<asp:`) and SharePoint ( `<SharePoint:`) declarations. The text after the colon in a declaration defines the control's functionality; for example,  `SharePoint:PlaceholderGlobalNavigation` embeds the global navigation of a SharePoint page into the relevant HTML tags on that page. Content controls in a master page bind content placeholders to content with the **ContentPlaceHolderID**.
 
-SharePoint предоставляет два типа главных страниц: система главных страниц andsite главных страниц. Система главные страницы, также применяются ко всем страниц форм и просмотр страниц на сайте SharePoint. Главные страницы сайта, с другой стороны, используемые всеми страницами публикации сайта. Чтобы узнать какого вида главной страницы сайта с помощью, открыв файл страницы .master и просмотр директиву **страницы** . Главная системная страница имеет директиву страницы следующим образом: `~masterurl/default.master`. Главная страница сайта имеет следующую директиву страницы: `~masterurl/custom.master`.
+SharePoint provides two types of master pages: system master pages andsite master pages. System master pages are applied to all form pages and view pages on a SharePoint site. Site master pages, on the other hand, are used by all pages in a Publishing site. You can tell which kind of master page a site is using by opening the .master page file and viewing the  **Page** directive. A system master page has a page directive as follows: `~masterurl/default.master`. A site master page has the following page directive:  `~masterurl/custom.master`.
 
-Вы можете использовать CSOM код для задания главной страницы propertiesâ€ «ориентирована на написание кода для [веб-](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.web.aspx) объект. Изменение главной страницы системы с помощью его свойство [MasterUrl](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.web.masterurl.aspx) и измените главную страницу сайта с помощью свойства объекта [CustomMasterUrl](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.web.custommasterurl.aspx) .
+You can use CSOM code to set master page propertiesâ€”mainly by writing code against the [Web](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.web.aspx) object. Change the system master page by using its [MasterUrl](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.web.masterurl.aspx) property, and change the site master page by using the object's [CustomMasterUrl](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.web.custommasterurl.aspx) property.
 
-Контента, что заполнители часто включают динамические маркеры, которые являются важные части кода, которые являются частью URL-адрес страницы SharePoint. SharePoint анализирует строки URL-адрес в соответствии с правилами протоколов, таких как HTTP, определяющие способ передачи гипертекста данных между сервером и на странице SharePoint. Как правило, заполнитель контента, который указывает на элемент управления CSS и темы будет использовать относительный URL-адрес, которым в сервере объектной модели SharePoint в виде `~SPUrl`.
+Content placeholders often include dynamic tokens, which are important pieces of code that form part of a SharePoint page URL. SharePoint parses URL strings according to the rules of protocols, such as HTTP, that define how hypertext information is transferred between the server and a SharePoint page. Usually, a content placeholder that points to a CSS or theme control will use a relative URL, which in the SharePoint server-side object model is represented as  `~SPUrl`.
 
-SharePoint использует динамические маркеры для привязки главной страницы к странице содержимого, которое определяется в `<asp:content>` объявления кода страницы .master. В таблице 3 перечислены динамические маркеры, которые находятся в главных страницах SharePoint и любого из свойства CSOM, замените их при обработке страницы или строки URL-адрес, который отображает SharePoint для этого заполнителя.
+SharePoint uses dynamic tokens to bind the master page to the content page, which is defined in  `<asp:content>` declaration of .master page code. Table 3 lists dynamic tokens that are found in SharePoint master pages, and either the CSOM properties that replace them when the page is processed, or the form of the URL string that SharePoint renders for that content placeholder.
 
-**В таблице 3. Динамические маркеры в главных страниц, вместо нее значений свойств**
+**Table 3. Dynamic tokens in master pages replaced by property values**
 
-|**Динамический токен**|**Заменить с помощью**|
+|**Dynamic token**|**Replaced with**|
 |:-----|:-----|
-|~MasterUrl/Default.master|SPWeb.MasterUrl|
-|~MasterUrl/Custom.master|SPWeb.CustomMasterUrl|
-|~Site/&lt;xyz&gt;.master|http://&lt;siteColl&gt;/&lt;subsite1&gt;/&lt;subsite2&gt;/&lt;xyz&gt;.master|
-|~SiteCollection/&lt;abc&gt;.master|http://&lt;siteColl&gt;/&lt;abc&gt;.master|
+|~masterurl/default.master|SPWeb.MasterUrl|
+|~masterurl/custom.master|SPWeb.CustomMasterUrl|
+|~site/&lt;xyz&gt;.master|http://&lt;siteColl&gt;/&lt;subsite1&gt;/&lt;subsite2&gt;/&lt;xyz&gt;.master|
+|~sitecollection/&lt;abc&gt;.master|http://&lt;siteColl&gt;/&lt;abc&gt;.master|
 
-**Примечание**  Динамические маркеры в заполнителей контента соответствуют на сервере API свойства и методы. При использовании удаленного подготовки, написание кода в REST или CSOM. Чтобы узнать больше о динамических маркеров и URL-адреса SharePoint, обратитесь к разделу [URL-адреса и маркеры в SharePoint 2013](http://msdn.microsoft.com/library/161418d7-8123-4c4e-91a1-97e43c17f0e6.aspx). Надстройки для SharePoint используют некоторые маркеры, которые применяются к URL-адреса сайтов.
+> [!NOTE] 
+> The dynamic tokens in content placeholders correspond to server-side API properties and methods. When using remote provisioning, write code in CSOM or REST.To learn more about dynamic tokens and SharePoint URLs, see  [URLs and Tokens in SharePoint 2013](http://msdn.microsoft.com/library/161418d7-8123-4c4e-91a1-97e43c17f0e6.aspx). Add-ins for SharePoint use some tokens that apply to site URLs.
 
-## <a name="web-part-pages-and-wiki-pages"></a>Вики-страниц и страниц веб-частей
+## <a name="web-part-pages-and-wiki-pages"></a>Web Part pages and Wiki pages
 <a name="sectionSection2"> </a>
 
-Страницы веб-частей может содержать структурированных и неструктурированных данных. Они состоят из зон веб-частей. Веб-частей, расположенные в зон веб-частей могут отображать данные из списков, результаты поиска и запросов и можно представить настраиваемых представлений данных из нескольких источников. Страница веб-частей содержит основные элементы стандартного сайта SharePoint Team. Заголовок может содержать название, заголовок, описание, логотип компании или другого изображения. Страницы веб-частей добавляются следующие элементы:
+Web Part pages can contain structured and unstructured information. They are made up of Web Part zones. Web Parts placed in Web Part zones can display data from lists, search results, and queries, and can present custom views of data from multiple sources. A Web Part page contains most of the same elements as a standard SharePoint Team site. The Title bar can contain a title, caption, description, company logo, or other image. The Web Part Page adds the following elements:
 
-- Меню страницы веб-частей, которое можно использовать для добавления или изменения веб-части, создать макет страницы и переключение между режимами личные и Общие.
+- A Web Part Page menu that can be used to add or modify Web Parts, design the page layout, and switch between personal and shared views.
     
-- Панель инструментов, используется для поиска и добавления веб-частей и изменить свойства, связанные с веб-части и страницы веб-части.
+- A tool pane used to find and add Web Parts and edit properties related to Web Parts and the Web Part page.
     
-По сравнению с страниц веб-частей, вики-страницы менее структурированы. Из-за их частично структурированных для неструктурированных формы упрощает для пользователей для создания контента и совместной работы друг с другом. По умолчанию SharePoint вывод времени первая страница вики-сайт, просмотреть новый сайт группы.
+Compared to Web Part pages, wiki pages are less structured. Because of their semi-structured to unstructured form, they make it easy for users to create content and collaborate with each other. By default, SharePoint displays a wiki page the first time you view a new Team site.
 
-Функциональные возможности корпоративного вики-сайта доступен во всех версиях SharePoint. Шаблон корпоративного вики-сайта позволяет создавать и использовать макетов страниц с помощью вики-страницы. При изменении вики-страниц веб-частей, текст и другое содержимое отображается в разметка текста. Разметка текста располагает области контента на вики-страниц.
+Enterprise wiki functionality is available in all versions of SharePoint. The Enterprise Wiki template makes it possible to create and use page layouts with wiki pages. When you edit a wiki page, Web Parts, text, and other content is displayed in the text layout. The text layout arranges content areas on a wiki page.
 
-Удаленный подготовки шаблон можно использовать для создания вики-страниц. Класс [WikiPageCreationInformation](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.utilities.wikipagecreationinformation.aspx) предоставляет методы, которые можно использовать для создания вики-страниц, хотя свойство **WikiHtmlContent** получает и задает HTML-содержимого на странице. [Служебная программа](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.utilities.utility.aspx) класс содержит метод **CreateWikiPageInContextWeb** , который использует SharePoint для создания вики-страниц в клиентским контекстом времени выполнения, используя параметры из класса **WikiPageCreationInformation** .
+You can use the remote provisioning pattern to create a wiki page. The [WikiPageCreationInformation](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.utilities.wikipagecreationinformation.aspx) class provides methods you can use to create the wiki page, while the **WikiHtmlContent** property gets and sets HTML content on the page. The [Utility](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.utilities.utility.aspx) class includes a **CreateWikiPageInContextWeb** method, which SharePoint uses to create the wiki page in the client runtime context using parameters from the **WikiPageCreationInformation** class.
 
-## <a name="page-layouts"></a>Макеты страниц
+## <a name="page-layouts"></a>Page layouts
 <a name="sectionSection3"> </a>
 
-Макет страницы — это страницы содержимого выбора для сайтов публикации. Макеты страниц, шаблоны, которые определяют различные виды страниц на сайте SharePoint, такие как статьи, путем настройки структуры основной части страницы. Так же, как страница веб-частей — это шаблон, который существует для размещения зон веб-частей и веб-частей на странице, макеты страниц существует для расположения полей на странице. Элементы управления полей, определенных в макет страницы будет содержать контент, автор создает и структура этого содержимого будет основана на макет страницы.
+The page layout is the content page of choice for Publishing sites. Page layouts are templates that define different kinds of pages in a SharePoint site, such as articles, by customizing the structure of the body of the page. Just as the Web Part page is a template that exists to arrange Web Part zones and Web Parts on a page, page layouts exist to arrange fields on a page. The field controls defined in a page layout will contain content that an author creates, and the structure of that content will be based on the page layout.
 
-**Примечание**  Макеты страниц могут включать зон веб-частей.
+> [!NOTE] 
+> Page layouts can include Web Part zones.
 
-Разработчики могут применить стили элементами управления полей страницы. Это позволяет разработчикам контролировать способ применения CSS для каждого поля, а также отображена, еще не позволяет пользователям для создания и управления контентом в каждом поле страницы.
+Designers can apply styles to page field controls. This gives designers control over how CSS is applied to each field and rendered, yet allows users to create and manage content in each page field.
 
-В SharePoint типов контента, для повторного использования семейств сайтов метаданных (также известной как столбцы) и поведение, которые определяют определенные элементы и документы. Например можно создать тип контента, который выглядит и ведет себя того, который вы думаете, что будет интерактивной журнальные статьи. Типы контента позволяют сделать это. Можно также создать другие уникальные типы контента, но повторное использование и совместно использовать характеристики одного типа контента в других пользователей. Каждый макет страницы основано на один тип контента. Каждый тип контента назначается уникальный [Идентификатор типа контента](https://msdn.microsoft.com/en-us/library/office/aa543822%28v=office.14%29.aspx).
+In SharePoint, content types are reusable collections of metadata (also known as columns) and behavior that define specific items and documents. For example, you might want to create a kind of content that looks and behaves the way you think an online magazine article would. Content types make it possible for you to do that. You might also want to create other unique kinds of content, but reuse and share characteristics of one content type in others. Every page layout is based on exactly one content type. Every content type is assigned a unique  [Content Type ID](https://msdn.microsoft.com/en-us/library/office/aa543822%28v=office.14%29.aspx).
 
-Для получения дополнительных сведений о типах контента, просмотрите [Общие сведения о типах контента](https://msdn.microsoft.com/en-us/library/office/ms472236%28v=office.14%29.aspx), [столбцы](https://msdn.microsoft.com/en-us/library/office/ms196085%28v=office.14%29.aspx)и [Настраиваемые сведения в типах контента](https://msdn.microsoft.com/en-us/library/office/ms468437%28v=office.14%29.aspx).
+To learn more about content types, see  [Introduction to Content Types](https://msdn.microsoft.com/en-us/library/office/ms472236%28v=office.14%29.aspx),  [Columns](https://msdn.microsoft.com/en-us/library/office/ms196085%28v=office.14%29.aspx), and  [Custom Information in Content Types](https://msdn.microsoft.com/en-us/library/office/ms468437%28v=office.14%29.aspx).
 
-**Важные**   На данный момент удаленного подготовки шаблон можно использовать для применения ожидания введите макетах страниц на сайте SharePoint. Несмотря на то, что вы можете подготовить настраиваемые типы контента сайта с помощью CSOM кода с помощью настраиваемой надстройки для кода SharePoint и задание настраиваемых **ContentTypeId** с помощью CSOM, поддерживаемых в SharePoint Online, параметр ContentTypeId для настраиваемого типа контента с помощью удаленного Подготовка на локальные сайты SharePoint в настоящее время не поддерживается. Дополнительные сведения можно [как: создать макет страницы в SharePoint 2013](http://msdn.microsoft.com/library/5447e6a1-2f14-4667-81d0-7514b468be80.aspx).
+**Important**   Currently, you can use the remote provisioning pattern to apply out-of-the-box page layouts to a SharePoint site. Although you can provision custom content types on a site by using CSOM code via custom add-ins for SharePoint code, and setting custom **ContentTypeId** via CSOM is supported in SharePoint Online, setting the ContentTypeId for a custom content type via remote provisioning on on-premises SharePoint sites is not currently supported. For more information, see [How to: Create a page layout in SharePoint 2013](http://msdn.microsoft.com/library/5447e6a1-2f14-4667-81d0-7514b468be80.aspx).
 
-## <a name="sharepoint-page-processing-model"></a>Модель обработки страницы SharePoint
+## <a name="sharepoint-page-processing-model"></a>SharePoint page processing model
 <a name="sectionSection4"> </a>
 
-SharePoint — это система отображения страницы на основе шаблона, который объединяет главные страницы, страницы содержимого и созданный контент для отображения страниц. Система отображения страниц называется [модель обработки страницы](https://msdn.microsoft.com/en-us/library/office/ms498550%28v=office.14%29.aspx). Главные страницы используются для всех экземпляров страницы на сайте, к которому они применяются и страницы контента используются для всех экземпляров страницы, основанные на эту страницу.
+SharePoint is a template-based page rendering system that combines master pages, content pages, and authored content to render pages. The page rendering system is known as the  [page processing model](https://msdn.microsoft.com/en-us/library/office/ms498550%28v=office.14%29.aspx). Master pages are used by all page instances in the site to which they are applied, and content pages are used by all instances of the page that are based on that content page.
 
-Модель обработки страницы интерпретирует и запускает все запросы, агенты пользователей, такие как веб-браузеры выполнения на сервере. Например рассмотрим пользователя, запрашивающего страница с именем contoso.aspx. Чтобы завершить запрос на модуль ASP.NET извлекает две страницы: страницы содержимого, связанные с contoso.aspx и Главная страница файл поставщика, с которым связан сайт SharePoint. Ядро также извлекаются из полей элементов управления полей и веб-части и отображает их на странице.
+The page processing model interprets and runs all the requests that user agents such as web browsers make to the server. For example, consider a user requesting a page called contoso.aspx. To complete the request, the ASP.NET engine retrieves two pages: the content page associated with contoso.aspx, and the master page that the file provider associated with the SharePoint site. The engine also retrieves the field controls and Web Parts from fields and renders them on the page.
 
-**Примечание**  Страница, логики обработки для группы сайтов и сайтов похож на том, что для публикации страницы. 
+> [!NOTE] 
+> The page processing logic for Team sites and sites is similar to that for Publishing pages. 
 
-### <a name="page-processing"></a>Обработки страницы
+### <a name="page-processing"></a>Page processing
 
-Когда пользователь SharePoint загружает страницу веб-частей, SharePoint возвращает его по синтаксический анализ пути шаблона, контент страницы и контекста. Также устанавливает веб-частей, связанных со страницей веб-части, присваивается [WebPartCollection](http://msdn2.microsoft.com/EN-US/library/k41e9930) экземпляр страницы и заполняет страницы веб-частей и веб-части с контентом.
+When a SharePoint user loads a Web Part page, SharePoint gets it by parsing the path to its template, page content, and context. It also sets the Web Parts associated with the Web Part page, assigns a  [WebPartCollection](http://msdn2.microsoft.com/EN-US/library/k41e9930) instance to the page, and populates the Web Part page and its Web Parts with content.
 
-При загрузке вики-страницы SharePoint пользователя (с помощью шаблона корпоративного вики-сайта на сайт группы или публикации сайта), SharePoint возвращает его по синтаксический анализ пути шаблона, контент страницы и контекста. Также задает управления разметки текста, связанного с вики-страниц и заполняет корпоративного вики-страниц и макета текста с контентом. Дополнительные сведения о том, как подготовить вики-страниц с помощью удаленного подготовки шаблон см [Provisioning.Pages](https://github.com/SharePoint/PnP/tree/master/Samples/Provisioning.Pages) .
+When a SharePoint user loads a wiki page (either by using the Enterprise Wiki template on a Team site or a Publishing site), SharePoint gets it by parsing the path to its template, page content, and context. It also sets the text layout control associated with the wiki page, and populates the enterprise wiki page and its text layout with content. To learn more about how to provision a wiki page by using the remote provisioning pattern, see the  [Provisioning.Pages](https://github.com/SharePoint/PnP/tree/master/Samples/Provisioning.Pages) sample.
 
-### <a name="minimal-download-strategy-and-ajaxdelta-controls"></a>Стратегия минимальной загрузки и <AjaxDelta> элементов управления
+### <a name="minimal-download-strategy-and-ajaxdelta-controls"></a>Minimal download strategy and <AjaxDelta> controls
 
-В SharePoint компонент стратегия минимальной загрузки управляет какие определенного содержимого на главную страницу для обновления до откроется страница. Когда она включена, содержимое, связанное с заполнителей контента в `<SharePoint:AjaxDelta>` тегов на главной странице обновляется до откроется страница. Заполнители не переносится в содержимого, и наоборот, `<SharePoint:AjaxDelta>` теги не отображаются при включенном стратегия минимальной загрузки.
+In SharePoint, the minimal download strategy feature manages which specific content on a master page to refresh before the page renders. When the strategy is enabled, the content associated with content placeholders wrapped in  `<SharePoint:AjaxDelta>` tags on the master page refreshes before the page renders. Conversely, content placeholders not wrapped in `<SharePoint:AjaxDelta>` tags does not render when the minimal download strategy is enabled.
 
-Можно включить или отключить стратегия минимальной загрузки через сайт центра администрирования или с помощью клиентской объектной модели SharePoint (CSOM). Можно включить функцию с помощью свойства [EnableMinimalDownload](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.web.enableminimaldownload.aspx) . [Стратегия минимальной загрузки](http://msdn.microsoft.com/library/9caa7d99-1e74-4889-96c7-ba5a10772ad7.aspx)Дополнительные сведения см. Дополнительные сведения об оптимизации главной страницы для работы, так и с стратегия минимальной загрузки можно [компоненты SharePoint, измените для MDS](http://msdn.microsoft.com/library/c967be7c-f29f-481a-9ce2-915ead315dcd.aspx).
+You can enable or disable the minimal download strategy through central site administration or by using the SharePoint client-side object model (CSOM). You can activate the feature by using the  [EnableMinimalDownload](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.web.enableminimaldownload.aspx) property. For more information, see [Minimal Download Strategy overview](http://msdn.microsoft.com/library/9caa7d99-1e74-4889-96c7-ba5a10772ad7.aspx). For more information about how to optimize a master page to work well with the minimal download strategy, see  [Modify SharePoint components for MDS](http://msdn.microsoft.com/library/c967be7c-f29f-481a-9ce2-915ead315dcd.aspx).
 
-Компонент стратегия минимальной загрузки по умолчанию включен в веб-сайтов групп SharePoint и отключен по умолчанию на сайтах публикации SharePoint и веб-сайтов групп SharePoint с поддержкой публикации.
+The minimal download strategy feature is enabled by default on SharePoint Team sites, and disabled by default on SharePoint Publishing sites and SharePoint Team sites with Publishing enabled.
 
-### <a name="creating-a-custom-master-page-based-on-seattlemaster"></a>Создание настраиваемой главной страницы на основании seattle.master
+### <a name="creating-a-custom-master-page-based-on-seattlemaster"></a>Creating a custom master page based on seattle.master
 
-Можно использовать удаленных подготовки к сайту подготовки фирменной символики элементы, например тем для сайта и JavaScript или CSS можно использовать для отображения или скрытия элементы или элементы управления страницы. Настройка главной страницы обеспечивает дополнительный уровень контроля над структура страницы. При создании настраиваемой главной страницы, не редактирование и сохраните главную pageby по умолчанию, с помощью его имя по умолчанию (например, seattle.master). Вместо этого создайте копию главной страницей по умолчанию, которую необходимо изменить и переименуйте его.
+You can use remote provisioning to provision site branding elements such as themes to a site, and you can use CSS or JavaScript to show or hide elements or page controls. Customizing a master page provides an additional level of control over the page structure. When you create a custom master page, do not edit and then save a default master pageby using its default name (for example, seattle.master). Instead, make a copy of the default master page you want to modify, and rename it.
 
-**Важные**   Из-за потенциальном влиянии долгосрочные затраты на поддержку и обслуживание рекомендуется не изменять структуру новой главной страницы. На главную страницу, которая поддерживает фирменной настройки, не влияют на структуры, такие как изменение цветов в заголовке, добавление цвет фона для определенных элементов страницы, или отображение или скрытие Эмблема сайта можно внести изменения. Если главную страницу по умолчанию, которые вы используете не структурный элемент нижнего колонтитула, который необходимо включить на странице, например, используйте различные ожидания введите главной страницы.
+**Important**   Because of the potential long-term impact of ongoing support costs and maintenance, we recommend that you do not change the structure of a new master page. You can make changes to the master page that support branding that don't affect the structure, such as changing colors in the header, adding a color background to specific elements of a page, or showing and hiding a site logo. If the default .master page you're using does not include a structural element, such as a footer, that you want to include on your page, use a different out-of-the-box master page.
 
-Чтобы обеспечить согласованность в настраиваемую главную страницу, выполните существующего шаблона кодирования. Например в области страницы, используйте таблицу, подчеркнуть шаблон кодирования с помощью таблиц. В областях, где `<DIV>` используются теги или HTML5, соответствуют любого пользовательского кода с помощью `<DIV>` теги или HTML5. В долгосрочной перспективе это сделает настраиваемых главных страниц, которые вам нужно создать простой в обслуживании и таким образом, менее дорогостоящих.
+To help maintain consistency in a custom master page, follow the existing coding pattern. For example, in areas of the page that use tables, reinforce the coding pattern by using tables. In areas where  `<DIV>` tags or HTML5 are used, match any custom code with `<DIV>` tags or HTML5. In the long run, this will make any custom master pages that you have to create easier to maintain, and therefore, less expensive.
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
--  [Фирменная символика и решения для SharePoint 2013 и SharePoint Online по подготовке сайта](Branding-and-site-provisioning-solutions-for-SharePoint.md)
+-  [Branding and site provisioning solutions for SharePoint 2013 and SharePoint Online](Branding-and-site-provisioning-solutions-for-SharePoint.md)
     
 -  [Эталонные страницы, коллекция эталонных страниц и макеты страниц в SharePoint 2013](http://msdn.microsoft.com/library/80b9a360-bc2e-46c6-b0ca-1bc487b73db6.aspx)
     
 -  [Инструкции. Создание макета страницы в SharePoint 2013](http://msdn.microsoft.com/library/5447e6a1-2f14-4667-81d0-7514b468be80.aspx)
     
--  [SharePoint 2013: Использование приложения для SharePoint для подготовки вики-страниц](https://code.msdn.microsoft.com/SharePoint-2013-Use-an-app-5db977e8)
+-  [SharePoint 2013: Use an app for SharePoint to provision a wiki page](https://code.msdn.microsoft.com/SharePoint-2013-Use-an-app-5db977e8)
     
 -  [Общие сведения о минимальной загрузки стратегия](http://msdn.microsoft.com/library/9caa7d99-1e74-4889-96c7-ba5a10772ad7.aspx)
     
--  [Введение в типы контента](https://msdn.microsoft.com/en-us/library/office/ms472236%28v=office.14%29.aspx)
+-  [Introduction to Content Types](https://msdn.microsoft.com/en-us/library/office/ms472236%28v=office.14%29.aspx)

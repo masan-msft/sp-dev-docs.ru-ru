@@ -1,11 +1,11 @@
 ---
 title: "Решения для поиска в SharePoint 2013 и SharePoint Online"
 ms.date: 11/03/2017
-ms.openlocfilehash: 549e899fb3f4994442040b0699ce1367bbdf787a
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 99e7c75c2cffe085b045d1eb1bfbaeae57a55978
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="search-solutions-in-sharepoint-2013-and-sharepoint-online"></a>Решения для поиска в SharePoint 2013 и SharePoint Online
 
@@ -319,7 +319,7 @@ HTML-файл, используемый для отображения шабло
 
 — Это следующего элемента `div` элемент. Это расположения любой HTML или скрипта, который требуется как часть шаблона отображения. Хороший способ ознакомиться со структурой шаблон отображения — загружать копии шаблоны отображения по умолчанию для результатов поиска, Control_SearchResults.html, шаблон отображения элемента управления и Item_Default.html, шаблон отображения элемента.
 
-#### <a name="additional-resources-for-result-types-and-display-templates"></a>Дополнительные ресурсы для типов результатов и шаблонов отображения
+#### <a name="see-also-for-result-types-and-display-templates"></a>Также содержатся типы результатов и шаблоны отображения
 
 Ниже приведены некоторые дополнительные ресурсы для шаблонов отображения и типы результатов.
 
@@ -437,7 +437,7 @@ using (var clientContext = spContext.CreateUserClientContextForSPHost())
 
 - [Настройки поиска для SharePoint](search-customizations-for-sharepoint.md)
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 - [Надстройки SharePoint](http://msdn.microsoft.com/library/cd1eda9e-8e54-4223-93a9-a6ea0d18df70%28Office.15%29.aspx)

@@ -1,11 +1,11 @@
 ---
 title: "Настройки поиска для SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: c8afb3e0589e65e100ca3512926e931e966e510a
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 3bf69aac7b506a68124f57f8c4eafcc3508307c5
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="search-customizations-for-sharepoint"></a>Настройки поиска для SharePoint
 
@@ -29,7 +29,8 @@ _**Применимо к:** Office 365 | SharePoint 2013 | Надстройки 
     
 Чтобы создать сайт каталога шаблонов отображения:
 
-**Примечание:**  В этой процедуре используются шаблоны отображения, связанные с сайта без изменений. Если вы хотите изменить способ отображения результатов каталог сайтов, изменять шаблоны отображения, созданные вами.
+> [!NOTE] 
+> В этой процедуре используются шаблоны отображения, связанные с сайта без изменений. Если вы хотите изменить способ отображения результатов каталог сайтов, изменять шаблоны отображения, созданные вами.
 
 1. Откройте сопоставление сетевого диска **Коллекции главных страниц**. Дополнительные сведения можно [как: сопоставление сетевого диска коллекции главных страниц SharePoint 2013](http://msdn.microsoft.com/en-us/library/office/jj733519%28v=office.15%29.aspx).
     
@@ -288,7 +289,8 @@ lblStatus2.Text = FormatResults(results);
 
 В следующей таблице перечислены файлы схемы, которые поддерживают конфигурации поиска. Сведения о формате схемы см [общий ресурс поиска параметры мобильности схемы](http://msdn.microsoft.com/en-us/library/office/dn627953%28v=office.15%29.aspx).
 
-**Примечание:**  Файлы схемы можно загрузить из [http://download.microsoft.com/download/1/2/2/12204CDE-56A6-4B2F-9719-4EA25FDA7743/SP15_search_settings_portability_schema.zip](http://download.microsoft.com/download/1/2/2/12204CDE-56A6-4B2F-9719-4EA25FDA7743/SP15_search_settings_portability_schema.zip). 
+> [!NOTE] 
+> Файлы схемы можно загрузить из [http://download.microsoft.com/download/1/2/2/12204CDE-56A6-4B2F-9719-4EA25FDA7743/SP15_search_settings_portability_schema.zip](http://download.microsoft.com/download/1/2/2/12204CDE-56A6-4B2F-9719-4EA25FDA7743/SP15_search_settings_portability_schema.zip). 
 
 **В таблице 2. Переносимость схем параметры поиска**
 
@@ -331,7 +333,7 @@ private static void ImportSearchSettings(ClientContext context, string settingsF
 }
 ```
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 - [Решения для поиска в SharePoint 2013 и SharePoint Online](search-solutions-in-sharepoint-2013-and-sharepoint-online.md)

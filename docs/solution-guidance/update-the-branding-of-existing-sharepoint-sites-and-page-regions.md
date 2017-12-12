@@ -1,11 +1,11 @@
 ---
 title: "Фирменная символика существующих сайтов SharePoint и области страницы обновления"
 ms.date: 11/03/2017
-ms.openlocfilehash: 13fc6929dfa4aedfd87bb772c3e7687f71ce135d
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 16a4e6aa21f267c008660837b765e2bd2e47a940
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="update-the-branding-of-existing-sharepoint-sites-and-page-regions"></a>Фирменная символика существующих сайтов SharePoint и области страницы обновления
 
@@ -316,7 +316,7 @@ public void AddCustomActions(ClientContext clientContext)
 
 При создании сайта публикации увидеть [как: создать макет страницы в SharePoint 2013](http://msdn.microsoft.com/library/5447e6a1-2f14-4667-81d0-7514b468be80%28Office.15%29.aspx) чтобы освоить основы. Макеты страниц зависят от доступности класса [ContentTypeId](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.contenttypeid.aspx) в CSOM. Как и для других элементов, которые не доступны в CSOM можно использовать службы Windows Communication Foundation (WCF) для работы с **ContentTypeId** как временное.
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 - [Решения для создания фирменного стиля и настройки страниц на сайтах SharePoint](SharePoint-site-branding-and-page-customization-solutions.md)
