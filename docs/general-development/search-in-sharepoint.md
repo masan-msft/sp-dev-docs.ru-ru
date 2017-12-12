@@ -3,11 +3,11 @@ title: "Поиск в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 59220f81-0e5e-4945-8056-cf0a116446cb
-ms.openlocfilehash: daf7d446efd7f20a8123b86e8325cc5f0253cd8d
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 06b5c8bda47a73b7a5df9d2c7b99fc98ad67d74e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="search-in-sharepoint"></a>Поиск в SharePoint
 Информация о расширяемости стандартных блоков в Поиск в SharePoint и об их использовании в подходящих для вас вариантах использования. Поиск в SharePoint позволяет пользователям еще легче и быстрее находить необходимую информацию и облегчает настройку возможностей поиска для администраторов поиска. Кроме того, он предоставляет несколько наборов интерфейсов API для расширенной настройки и решений.
@@ -307,7 +307,7 @@ ms.lasthandoff: 10/13/2017
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 
 
 -  [Отличия SharePoint 2010 от SharePoint](http://technet.microsoft.com/ru-RU/library/ff607742.aspx)

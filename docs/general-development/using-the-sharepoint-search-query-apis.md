@@ -3,11 +3,11 @@ title: "Использование API поисковых запросов Share
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: ae9d73ed-1140-430b-9287-01dbbe8ae7d1
-ms.openlocfilehash: 1a68b192b9b27040b68f8f4a5b95e3711ba57ba5
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 4e706bbc5c685ba637f6b02d4eb748de8889d6fb
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="using-the-sharepoint-search-query-apis"></a>Использование API поисковых запросов SharePoint
 Узнайте, какие API-интерфейсов запросов в SharePoint позволяют добавлять возможности поиска в пользовательские решения и приложения. 
@@ -83,7 +83,7 @@ using (ClientContext clientContext = new ClientContext("http://<serverName>/site
 }
 ```
 
-Чтобы скачать пример, изучите следующий пример кода, опубликованный  [Кори Ротом](http://mvp.microsoft.com/en-us/mvp/Corey%20Roth-4029260), специалистом MVP по SharePoint:  [SharePoint: поисковый с помощью управляемой клиентской объектной модели](http://code.msdn.microsoft.com/Query-Search-with-the-649f1bc1).
+Чтобы скачать пример, изучите следующий пример кода, опубликованный  [Кори Ротом](http://mvp.microsoft.com/ru-RU/mvp/Corey%20Roth-4029260), специалистом MVP по SharePoint:  [SharePoint: поисковый с помощью управляемой клиентской объектной модели](http://code.msdn.microsoft.com/Query-Search-with-the-649f1bc1).
   
     
     
@@ -113,7 +113,7 @@ var results = searchExecutor.executeQuery(keywordQuery);
 context.executeQueryAsync(onQuerySuccess, onQueryError);
 ```
 
-Чтобы скачать пример, изучите следующий пример кода, опубликованный  [Кори Ротом](http://mvp.microsoft.com/en-us/mvp/Corey%20Roth-4029260), специалистом MVP по SharePoint:  [SharePoint: поисковый запрос с помощью клиентской объектной модели JavaScript](http://code.msdn.microsoft.com/SharePoint-Querying-a629b53b).
+Чтобы скачать пример, изучите следующий пример кода, опубликованный  [Кори Ротом](http://mvp.microsoft.com/ru-RU/mvp/Corey%20Roth-4029260), специалистом MVP по SharePoint:  [SharePoint: поисковый запрос с помощью клиентской объектной модели JavaScript](http://code.msdn.microsoft.com/SharePoint-Querying-a629b53b).
   
     
     
@@ -166,12 +166,12 @@ using (SPSite siteCollection = new SPSite("<serverRelativeUrl>"))
 }
 ```
 
-Чтобы скачать пример, изучите следующий пример кода, опубликованный  [Кори Ротом](http://mvp.microsoft.com/en-us/mvp/Corey%20Roth-4029260), специалистом MVP по SharePoint:  [SharePoint: поисковый запрос с помощью класса KeywordQuery](http://code.msdn.microsoft.com/Query-Search-with-the-372139b5).
+Чтобы скачать пример, изучите следующий пример кода, опубликованный  [Кори Ротом](http://mvp.microsoft.com/ru-RU/mvp/Corey%20Roth-4029260), специалистом MVP по SharePoint:  [SharePoint: поисковый запрос с помощью класса KeywordQuery](http://code.msdn.microsoft.com/Query-Search-with-the-372139b5).
   
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

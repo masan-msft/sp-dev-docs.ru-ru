@@ -3,11 +3,11 @@ title: "Изменения в SharePoint Designer 2013"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: f1cd30c9-9a73-428d-9151-f1813b43b020
-ms.openlocfilehash: e336ccd9ad1a257ffa3c8bb44ed3b4933c8784ea
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 9f11714bff2ffe3c1052f37fa7a337f31ada9b42
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="whats-changed-in-sharepoint-designer-2013"></a>Изменения в SharePoint Designer 2013
 Узнайте о возможностях, которые устарели или удалены из SharePoint Designer 2013. Устаревшие возможности включены в выпуск SharePoint для совместимости с предыдущими версиями продуктов, но они будут удалены из будущих версий.
@@ -175,7 +175,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="WhatsChangedSharePointDesigner2013_AdditionalResources"> </a>
 
 

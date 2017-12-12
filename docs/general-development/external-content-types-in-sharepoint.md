@@ -3,11 +3,11 @@ title: "Внешние типы контента в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 11d7adb5-5388-4517-ae03-beb7be1c6981
-ms.openlocfilehash: 4b4f27d7a3e30da28eee1f68eea1faf958e5f678
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: beac2fcaea11c5998a2b8a96291e45dc1ae5313e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="external-content-types-in-sharepoint"></a>Внешние типы контента в SharePoint
 Прочитав эту статью, вы узнаете, что можно делать с внешними типами контента и что необходимо для их создания в SharePoint.
@@ -137,7 +137,7 @@ ms.lasthandoff: 10/13/2017
 | [Инструкции. Создание внешних типов контента для SQL Server в SharePoint](how-to-create-external-content-types-for-sql-server-in-sharepoint.md) <br/> |Узнайте, как создать внешний тип контента на основе базы данных SQL Server.  <br/> |
    
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15ectoverview_addres"> </a>
 
 

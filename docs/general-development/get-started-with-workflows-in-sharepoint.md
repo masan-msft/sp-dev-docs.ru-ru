@@ -5,11 +5,11 @@ keywords: vs.sharepointtools.workflow4.workflowlist,VS.SharePointTools.Workflow4
 f1_keywords: vs.sharepointtools.workflow4.workflowlist,VS.SharePointTools.Workflow4.WorkflowName
 ms.prod: sharepoint
 ms.assetid: a2643cd7-474d-4e4c-85bb-00f0b6685a1d
-ms.openlocfilehash: ae4354d1659ab4b70ea11a35f88c7fb8553e4048
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: b8b851327808bfa548a9d76bfc66d4127af57295
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="get-started-with-workflows-in-sharepoint"></a>Начало работы с рабочими процессами SharePoint
 Информация о недавно разработанном Workflow Manager Client 1.0, который обеспечивает инфраструктуру для рабочих процессов в SharePoint и метод интеграции рабочих процессов SharePoint с новой Модель для надстроек SharePoint.
@@ -162,7 +162,7 @@ Visual Studio 2012 имеет встроенные типы проектов р�
 
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="information"> </a>
 
 Более подробную информацию о **Надстройки SharePoint** можно найти в следующих статьях:
@@ -198,27 +198,22 @@ Visual Studio 2012 имеет встроенные типы проектов р�
     
     
 
--  
-  [Краткое описание Windows Workflow Foundation (WF) в .NET 4 для разработчика](http://msdn.microsoft.com/en-us/library/ee342461.aspx)
+-  [Краткое описание Windows Workflow Foundation (WF) в .NET 4 для разработчика](http://msdn.microsoft.com/ru-RU/library/ee342461.aspx)
     
   
--  
-  [Новые возможности в Windows Workflow Foundation](http://msdn.microsoft.com/en-us/library/dd489410%28v=vs.110%29.aspx)
+-  [Новые возможности в Windows Workflow Foundation](http://msdn.microsoft.com/ru-RU/library/dd489410%28v=vs.110%29.aspx)
     
   
--  [Первые шаги с Windows Workflow Foundation](http://msdn.microsoft.com/en-us/netframework/first-steps-with-wf.aspx)
+-  [Первые шаги с Windows Workflow Foundation](http://msdn.microsoft.com/ru-RU/netframework/first-steps-with-wf.aspx)
     
   
--  
-  [Путь рабочего процесса. Общие сведения о Windows Workflow Foundation](http://msdn.microsoft.com/en-us/library/dd851337.aspx)
+-  [Путь рабочего процесса. Общие сведения о Windows Workflow Foundation](http://msdn.microsoft.com/ru-RU/library/dd851337.aspx)
     
   
--  
-  [Общие сведения об обработчике правил для Windows Workflow Foundation](http://msdn.microsoft.com/en-us/library/dd554919.aspx)
+-  [Общие сведения об обработчике правил для Windows Workflow Foundation](http://msdn.microsoft.com/ru-RU/library/dd554919.aspx)
     
   
--  
-  [Интеграция Windows Workflow Foundation и Windows Communication Foundation](http://msdn.microsoft.com/en-us/library/cc626077.aspx)
+-  [Интеграция Windows Workflow Foundation и Windows Communication Foundation](http://msdn.microsoft.com/ru-RU/library/cc626077.aspx)
     
   
 

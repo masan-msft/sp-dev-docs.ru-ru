@@ -3,11 +3,11 @@ title: "Разработка веб-приложений Access"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 41131b27-d750-4d11-b3c7-c17ad4d666e2
-ms.openlocfilehash: be398709c93b4d8f86bffe6e8566349527f59126
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 39a559d2ca5cfe223d6ef84956e2af6604d23c0a
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="develop-access-web-apps"></a>Разработка веб-приложений Access
 Узнайте, как Microsoft Access 2013 упрощает создание и развертывание веб-приложений для совместной работы в локальной среде или в облаке, а также управление ними.
@@ -51,7 +51,7 @@ Access 2013 представляет новую модель приложени�
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="dk2_DevelopingAccess15WebApps_AdditionalResources"> </a>
 
 

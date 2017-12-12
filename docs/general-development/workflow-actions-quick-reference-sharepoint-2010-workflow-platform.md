@@ -3,11 +3,11 @@ title: "Краткий справочник по действиям рабоче
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: b033f79f-2179-4cfd-9d1c-7c04f83d4a4b
-ms.openlocfilehash: 44dc0d4d6216e63c1e37a35200af8ac31fe58608
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: bea32ac464cb45edc04f9781e465c965a6c7fec2
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="workflow-actions-quick-reference-sharepoint-2010-workflow-platform"></a>Краткий справочник по действиям рабочего процесса (платформа рабочих процессов SharePoint 2010)
 Сведения о действиях рабочих процессов, доступных на платформе рабочих процессов SharePoint 2010 в Microsoft SharePoint Designer 2013. Используйте эту статью, *только* если вы работаете в SharePoint Designer 2013, но хотите и далее использовать платформу рабочих процессов SharePoint 2010. Если вы хотите использовать платформу рабочих процессов SharePoint, см. статью [Краткий справочник по действиям рабочего процесса (платформа рабочих процессов SharePoint)](workflow-actions-quick-reference-sharepoint-workflow-platform.md), а также другие статьи о новых функциях этой платформы, указанные в разделе "Дополнительные ресурсы". Чтобы приступить к созданию рабочего процесса с помощью платформы рабочих процессов SharePoint 2010, выберите элемент **Рабочий процесс SharePoint 2010** в поле **Тип платформы** диалогового окна **Создание рабочего процесса**.
@@ -276,7 +276,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

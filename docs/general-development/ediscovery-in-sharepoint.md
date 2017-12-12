@@ -3,11 +3,11 @@ title: "Обнаружение электронных данных в SharePoint
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 45cb324a-75f5-444d-a0fa-5c223df19016
-ms.openlocfilehash: c7e70fe8acf2d6c3c7f69beb58cb39618b296235
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 6e2a2d0d2088d8acb62aab9d16a13daad5fb8236
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="ediscovery-in-sharepoint"></a>Обнаружение электронных данных в SharePoint
 Сведения о возможности обнаружения электронных данных в SharePoint. Обнаружение электронных данных можно использовать для предоставления возможности для обнаружения контента в формате электронных litigators.
@@ -116,7 +116,7 @@ SharePoint предоставляет программирование моде�
 | [SourceValidation](https://msdn.microsoft.com/library/Microsoft.Office.Server.Discovery.SourceValidation.aspx) <br/> |Указывает, является ли допустимый источник.  <br/> |
    
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15_eDiscoveryInSP_AdditionalResources"> </a>
 
 

@@ -2,11 +2,11 @@
 title: "Как определить URI конечных точек службы REST в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 4ed85227dda62357f080c9bfc01ab68d84028189
-ms.sourcegitcommit: 61f26b4fe41d3cd80622d9950d8f6599df48f26f
+ms.openlocfilehash: efe42ece3ee16ebff3f69d71e1e1b1fb7aabf209
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="determine-sharepoint-rest-service-endpoint-uris"></a>Как определить URI конечных точек службы REST в SharePoint
 В этой статье представлены общие инструкции, позволяющие определить URI конечных точек REST в SharePoint, используя подписи соответствующих API клиентской объектной модели.
@@ -221,7 +221,7 @@ SharePoint расширяет спецификацию OData, позволяя �
 Служба SharePoint REST поддерживает широкий набор операторов строки запроса OData, позволяющих выбирать, фильтровать и упорядочивать данные, запрошенные у конечной точки. 
  
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Знакомство со службой REST в SharePoint](get-to-know-the-sharepoint-rest-service.md)

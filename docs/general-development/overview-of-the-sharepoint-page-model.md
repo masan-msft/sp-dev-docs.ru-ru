@@ -3,11 +3,11 @@ title: "Обзор модели страниц в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 808b1af3-89ab-4f02-89cc-ea86cb1f9a6e
-ms.openlocfilehash: 68d0fb01999767ad2697928d6d5f715e1dcef941
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: c4b92c40cf047d33b7617fc5cba214ce1832cbb6
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="overview-of-the-sharepoint-page-model"></a>Обзор модели страниц в SharePoint
 Информация о пересмотренной модели страницы (включая эталонные страницы и макеты страниц), модернизированной для SharePoint.
@@ -611,7 +611,7 @@ SharePoint использует макеты, чтобы определить и
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_AdditionalResources"> </a>
 
 

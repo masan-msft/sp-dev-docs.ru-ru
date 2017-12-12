@@ -3,11 +3,11 @@ title: "Ознакомление с визуальным конструктор�
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: ff9b0314-eea1-47e4-87c7-53ed4de98c30
-ms.openlocfilehash: 5fbd5c93c9f3b47ea0d2d5a79f766444fc0fb3f2
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: aaf343fbfdcc984e6f63c09ea24b6b3c419e9e5d
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="getting-familiar-with-visual-designer-for-workflow-in-sharepoint-designer-2013"></a>Ознакомление с визуальным конструктором для рабочих процессов в SharePoint Designer 2013
 Изучите основные возможности визуального конструктора в SharePoint Designer 2013.
@@ -126,11 +126,11 @@ SharePoint Designer 2013 включает в себя новую поверхн�
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 
--  [Рабочий процесс в SharePoint](http://technet.microsoft.com/en-us/sharepoint/jj556245.aspx)
+-  [Рабочий процесс в SharePoint](http://technet.microsoft.com/ru-RU/sharepoint/jj556245.aspx)
     
   
 -  [Новые возможности рабочих процессов SharePoint](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)

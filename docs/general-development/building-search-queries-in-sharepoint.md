@@ -3,11 +3,11 @@ title: "Создание поисковых запросов в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c4372fcc-4574-4c81-a345-a1bb282ca8f7
-ms.openlocfilehash: 6c9b131e0d57fee63902ba2ce6d5d94862736153
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: d2dfcbbe782057d012f72ca05328316638db635f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="building-search-queries-in-sharepoint"></a>Создание поисковых запросов в SharePoint
 Узнайте о синтаксисе поиска, который поддерживается в SharePoint для создания правил запроса и поисковых запросов.
@@ -45,7 +45,7 @@ FQL  это язык SQL, поддерживающий расширенные о
 - Замените строку преобразования запроса на эквивалентную строку на языке FQL, например `{?andnot({searchTerms},filter(contentclass:"urn:content-class:SPSPeople*"))}`.
     
   
-Дополнительные сведения об источниках результатов и принципах их использования см. в статьях [Источники результатов](http://office.microsoft.com/en-us/support/sharepoint/sharepointsearch/understanding-result-sources-HA102848849.aspx) и [Настройка источников результатов для поиска в SharePoint](http://technet.microsoft.com/en-us/library/jj683115%28v=office.15%29.aspx).
+Дополнительные сведения об источниках результатов и принципах их использования см. в статьях [Источники результатов](http://office.microsoft.com/ru-RU/support/sharepoint/sharepointsearch/understanding-result-sources-HA102848849.aspx) и [Настройка источников результатов для поиска в SharePoint](http://technet.microsoft.com/ru-RU/library/jj683115%28v=office.15%29.aspx).
   
     
     
@@ -64,17 +64,17 @@ FQL  это язык SQL, поддерживающий расширенные о
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15Buildquery_addlresources"> </a>
 
 
 -  [Поиск в SharePoint](search-in-sharepoint.md)
     
   
--  [Планирование преобразования запросов и упорядочивания результатов в SharePoint](http://technet.microsoft.com/en-us/library/jj219620%28v=office.15%29.aspx)
+-  [Планирование преобразования запросов и упорядочивания результатов в SharePoint](http://technet.microsoft.com/ru-RU/library/jj219620%28v=office.15%29.aspx)
     
   
--  [Переменные запроса в SharePoint](http://technet.microsoft.com/en-us/library/jj683123.aspx)
+-  [Переменные запроса в SharePoint](http://technet.microsoft.com/ru-RU/library/jj683123.aspx)
     
   
 

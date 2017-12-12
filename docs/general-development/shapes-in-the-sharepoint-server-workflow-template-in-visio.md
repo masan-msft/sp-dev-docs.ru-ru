@@ -3,11 +3,11 @@ title: "Фигуры в шаблонах рабочих процессов Share
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: f35bdf5d-c102-4e2d-8a23-1d2df17155b9
-ms.openlocfilehash: 0ef12568c05e15ea3bf65ab48cff095128e3f96f
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 6a30d5d67e40299eaeb96b0bcb4870ee559f8acc
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="shapes-in-the-sharepoint-server-workflow-template-in-visio"></a>Фигуры в шаблонах рабочих процессов SharePoint Server в Visio
 Сведения о фигурах шаблона "Рабочий процесс SharePoint" в Visio 2013.
@@ -122,7 +122,7 @@ ms.lasthandoff: 10/13/2017
 |Окончание параллельного действия  <br/> |**Параллельный блок** <br/> |Недоступно  <br/> ||
    
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="VSSPD_Additional"> </a>
 
 

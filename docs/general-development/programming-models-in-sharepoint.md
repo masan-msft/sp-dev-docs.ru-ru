@@ -3,11 +3,11 @@ title: "Модели программирования в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 061985ec-6129-4e91-991b-a72488ce1d34
-ms.openlocfilehash: cce12394144f3ca00ec5b0d3efdd69918c0fdf38
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 1c699feb8890d3d171d1c5e251c4417347f3a313
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="programming-models-in-sharepoint"></a>Модели программирования в SharePoint
 
@@ -94,7 +94,7 @@ ms.lasthandoff: 10/13/2017
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15devinSP_addlresources"> </a>
 
 

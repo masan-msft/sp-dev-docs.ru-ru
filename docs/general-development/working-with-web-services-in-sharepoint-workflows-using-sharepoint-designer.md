@@ -3,11 +3,11 @@ title: "Работа с веб-службами в рабочих процесс
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: bc8769c6-ae71-4519-abf3-c1b6fb071059
-ms.openlocfilehash: 48d3bf14b701c93416c15f5832eb36bff65a1129
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 6b71169e69d11483b91af196364ad5c1053fc765
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="working-with-web-services-in-sharepoint-workflows-using-sharepoint-designer-2013"></a>Работа с веб-службами в рабочих процессах SharePoint с помощью SharePoint Designer 2013
 Узнайте, как использовать веб-службы в рабочих процессах SharePoint Designer 2013. **Материалы предоставил** [Andrew Connell](http://social.msdn.microsoft.com/profile/andrew%20connell%20%5bmvp%5d/) ([www.AndrewConnell.com](http://www.andrewconnell.com)).
@@ -378,7 +378,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

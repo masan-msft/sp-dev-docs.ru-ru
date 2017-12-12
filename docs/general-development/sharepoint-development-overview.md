@@ -3,11 +3,11 @@ title: "Обзор платформы разработки SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: f86e2695-4d7a-4fc5-bc23-689de96c4b06
-ms.openlocfilehash: afff0116f8c5af2127a15c39885591ef22d482db
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 4ff45a8c37940dbe2ce9bcc356ffc17d2db6eb47
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-development-overview"></a>Обзор платформы разработки SharePoint
 SharePoint  это платформа для разработки Надстройки SharePoint и решения ферм. Ознакомьтесь с возможностями и функциями платформы SharePoint, чтобы приступить к разработке.
@@ -121,7 +121,7 @@ SharePoint  это универсальная платформа разраб�
 | [Знакомство с созданием надстроек SharePoint с размещением в SharePoint](http://msdn.microsoft.com/library/1b992485-6efe-4ea4-a18c-221689b0b66f%28Office.15%29.aspx) <br/> |Содержит пошаговые инструкции по созданию базового Надстройка SharePoint, размещаемого на сайте SharePoint.  <br/> |
    
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_additionalresources"> </a>
 
 

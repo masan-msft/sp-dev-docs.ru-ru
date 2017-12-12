@@ -3,11 +3,11 @@ title: "Авторизация, пользователи, группы и объ
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: aacf3398-f0b5-48cb-9071-440b4c3a9dd1
-ms.openlocfilehash: 70f5b96aebe55e0e79ca55da9cd35ad7d75bccb6
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: fb24b9c14101b16145ed588ac86766e297bec5c7
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="authorization-users-groups-and-the-object-model-in-sharepoint"></a>Авторизация, пользователи, группы и объектные модели в SharePoint
 
@@ -70,7 +70,8 @@ ms.lasthandoff: 10/13/2017
     
     
 
-> **Примечание.** Роли политики центрального администрирования отличаются от определений ролей для семейства веб-сайтов. 
+> [!NOTE]
+> Роли политики центрального администрирования отличаются от определений ролей для семейства веб-сайтов. 
   
     
     
@@ -185,7 +186,7 @@ ACL  это двоичный объект, который определяет �
 -  [Microsoft.SharePoint.SPRoleCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPRoleCollection.aspx)
     
   
-Чтобы назначить пользователей на роли, используйте члены классов  [Microsoft.SharePoint.SPRoleAssignment](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPRoleAssignment.aspx) и [Microsoft.SharePoint.SPRoleAssignmentCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPRoleAssignmentCollection.aspx) . Перечисление [SPBasePermisssions](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.spbasepermissions.aspx) , которое заменило [SPRights](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPRights.aspx) , включает дополнительные разрешения. Перечисление [SPBasePermisssions](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.spbasepermissions.aspx) также включает устаревшие разрешения, которые сопоставляются с теми же постоянными значениями, что и предыдущие разрешения в [SPRights](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPRights.aspx) . Концепция группы SharePoint сопоставляется с существующими объектами [SPGroup](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPGroup.aspx) и [SPGroupCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPGroupCollection.aspx) , которые представляют межсайтовые группы.
+Чтобы назначить пользователей на роли, используйте члены классов  [Microsoft.SharePoint.SPRoleAssignment](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPRoleAssignment.aspx) и [Microsoft.SharePoint.SPRoleAssignmentCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPRoleAssignmentCollection.aspx) . Перечисление [SPBasePermisssions](https://msdn.microsoft.com/ru-RU/library/office/microsoft.sharepoint.spbasepermissions.aspx) , которое заменило [SPRights](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPRights.aspx) , включает дополнительные разрешения. Перечисление [SPBasePermisssions](https://msdn.microsoft.com/ru-RU/library/office/microsoft.sharepoint.spbasepermissions.aspx) также включает устаревшие разрешения, которые сопоставляются с теми же постоянными значениями, что и предыдущие разрешения в [SPRights](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPRights.aspx) . Концепция группы SharePoint сопоставляется с существующими объектами [SPGroup](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPGroup.aspx) и [SPGroupCollection](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPGroupCollection.aspx) , которые представляют межсайтовые группы.
   
     
     
@@ -247,7 +248,7 @@ ACL  это двоичный объект, который определяет �
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15_AuthorizationUsersGroupsAndObjectModel_AdditionalResources"> </a>
 
 

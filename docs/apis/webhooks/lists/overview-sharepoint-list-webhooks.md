@@ -2,11 +2,11 @@
 title: "Веб-перехватчики для списков SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 81657f3bcaf45eeea4e0999d3c6eb6dfad0407b1
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2b3543885de7fcce75694d368667f17dd690592f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-list-webhooks"></a>Веб-перехватчики для списков SharePoint
 
@@ -37,6 +37,6 @@ ms.lasthandoff: 10/13/2017
 
 Веб-перехватчики не поддерживают синхронные события.
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 
 * [Обзор веб-перехватчиков SharePoint](../overview-sharepoint-webhooks.md)

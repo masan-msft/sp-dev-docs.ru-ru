@@ -3,11 +3,11 @@ title: "Распространенные сообщения об ошибках 
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: e9bf6878-c722-4b1f-b5b5-b302ae0ea4da
-ms.openlocfilehash: b3f5a874e0cfc86bc957ea9a1a4e4a28c4646fd1
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: b838b41869ab9f8ff44309fe34b3b3b7ba72c052
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="common-error-messages-in-sharepoint-workflow-development"></a>Распространенные сообщения об ошибках при разработке рабочих процессов SharePoint
 Список распространенных сообщений об ошибках, которые могут возникнуть при разработке рабочих процессов SharePoint, и указания по устранению исходной проблемы.
@@ -97,7 +97,7 @@ Add-pssnapin microsoft.sharepoint.powershell
 ### <a name="the-worker-process-handling-this-request-was-ended-because-it-exceeded-the-resource-0"></a>Рабочий процесс, выполняющий этот запрос, завершен из-за превышения нормы ресурса {0}
 <a name="bkmk_error03"> </a>
 
-Значение  `{0}` в строке ошибки является заполнителем для конкретного ресурса, норма которого была превышена. Чтобы устранить эту проблему, необходимо изменить код так, чтобы он не превышал норму ресурса. Эти значения указаны в статье [Ограничения на использование ресурсов для изолированных решений](http://msdn.microsoft.com/en-us/library/gg615462%28v=office.14%29.aspx).
+Значение  `{0}` в строке ошибки является заполнителем для конкретного ресурса, норма которого была превышена. Чтобы устранить эту проблему, необходимо изменить код так, чтобы он не превышал норму ресурса. Эти значения указаны в статье [Ограничения на использование ресурсов для изолированных решений](http://msdn.microsoft.com/ru-RU/library/gg615462%28v=office.14%29.aspx).
   
     
     
@@ -113,7 +113,7 @@ Add-pssnapin microsoft.sharepoint.powershell
 ### <a name="this-workflow-could-not-run-because-the-sandbox-failed-could-not-get-a-process-from-the-process-pool"></a>Не удалось запустить рабочий процесс из-за ошибки песочницы: не удалось получить процесс из пула процессов
 <a name="bkmk_error05"> </a>
 
-Конфигурацию песочницы содержит ошибку. Сведения о настройке изолированного решения см. в статье  [Изолированные решения в SharePoint](http://msdn.microsoft.com/en-us/library/ee536577%28v=office.14%29.aspx).
+Конфигурацию песочницы содержит ошибку. Сведения о настройке изолированного решения см. в статье  [Изолированные решения в SharePoint](http://msdn.microsoft.com/ru-RU/library/ee536577%28v=office.14%29.aspx).
   
     
     
@@ -121,7 +121,7 @@ Add-pssnapin microsoft.sharepoint.powershell
 ### <a name="this-workflow-could-not-run-because-the-sandbox-failed-the-sandboxed-code-worker-process-exited-unexpectedly"></a>Не удалось запустить рабочий процесс из-за ошибки песочницы: неожиданный выход из рабочего процесса изолированного кода
 <a name="bkmk_error06"> </a>
 
-Конфигурацию песочницы содержит ошибку. Сведения о настройке изолированного решения см. в статье  [Изолированные решения в SharePoint](http://msdn.microsoft.com/en-us/library/ee536577%28v=office.14%29.aspx).
+Конфигурацию песочницы содержит ошибку. Сведения о настройке изолированного решения см. в статье  [Изолированные решения в SharePoint](http://msdn.microsoft.com/ru-RU/library/ee536577%28v=office.14%29.aspx).
   
     
     
@@ -200,7 +200,7 @@ Add-pssnapin microsoft.sharepoint.powershell
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

@@ -2,11 +2,11 @@
 title: "Навигация по структуре данных SharePoint, представленной в службе REST"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 21d0326e9729a0cdb16f03211fae76a76859e5ab
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: f4cd8be2a34150e72c476194956dd3e8527ab8a9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="navigate-the-sharepoint-data-structure-represented-in-the-rest-service"></a>Навигация по структуре данных SharePoint, представленной в службе REST
 Узнайте, как с помощью конечной точки REST в элементе SharePoint получить доступ к связанным элементам, например родительским сайтам или структуре библиотеки, в которой находится этот элемент. 
@@ -98,7 +98,7 @@ ms.lasthandoff: 10/13/2017
 |**Title**|Получает или задает название сайта.|
 |**WebTemplateId**|Получает идентификатор шаблона сайта.|
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Знакомство со службой REST в SharePoint](get-to-know-the-sharepoint-rest-service.md)

@@ -3,11 +3,11 @@ title: "Новые возможности рабочих процессов дл
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 1d51421b-61ac-46b6-a865-52f968ddc5b3
-ms.openlocfilehash: d17537f93cd1636e8399d0713801c975f3e7f042
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: bf9347b0c0120d2cb8317a16be3406aaed388009
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="whats-new-in-workflows-for-sharepoint"></a>Новые возможности рабочих процессов для SharePoint
 Узнайте о новых возможностях и функциях рабочих процессов в SharePoint. В SharePoint существенно изменилась инфраструктура рабочих процессов. В разделах ниже кратко описаны наиболее важные обновления и улучшения в инфраструктуре рабочих процессов.
@@ -19,7 +19,7 @@ ms.lasthandoff: 10/13/2017
 ## <a name="completely-redesigned-workflow-infrastructure"></a>Полностью обновленная инфраструктура рабочих процессов
 <a name="SP15Whatsnewinworflow_infrastructure"> </a>
 
-Рабочие процессы SharePoint основаны на платформе Windows Workflow Foundation 4 (WF), которая значительно отличается от предыдущих версий. Платформа Windows Workflow Foundation, в свою очередь, основана на функциональности обмена сообщениями  [Windows Communication Foundation (WCF)](http://msdn.microsoft.com/en-us/netframework/aa663324).
+Рабочие процессы SharePoint основаны на платформе Windows Workflow Foundation 4 (WF), которая значительно отличается от предыдущих версий. Платформа Windows Workflow Foundation, в свою очередь, основана на функциональности обмена сообщениями  [Windows Communication Foundation (WCF)](http://msdn.microsoft.com/ru-RU/netframework/aa663324).
   
     
     
@@ -128,7 +128,7 @@ ms.lasthandoff: 10/13/2017
 |Присвоить это значение этому полю в проекте [Microsoft Project]  <br/> |Задает значение корпоративного настраиваемого поля для указанного проекта.  <br/> |
    
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15Whatsnewinworflow_Addresources"> </a>
 
 
