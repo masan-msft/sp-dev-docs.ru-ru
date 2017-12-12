@@ -2,14 +2,14 @@
 title: "Использование решения \"Функции Azure\" с веб-перехватчиками SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 48464f24c4889d793fcde5f75c1e437fbee1d384
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ea3ed94dd41c6da41b2cbeb6b5291211804c4dfc
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="using-azure-functions-with-sharepoint-webhooks"></a>Использование решения "Функции Azure" с веб-перехватчиками SharePoint
-Благодаря решению [Функции Azure](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview) доступен удобный способ размещать веб-перехватчики SharePoint. Достаточно добавить код веб-перехватчика на языке C# или JavaScript через браузер, и Azure займется размещением и масштабированием функции. В этом руководстве показано, как настроить и использовать функции Azure для веб-перехватчиков.
+Благодаря решению [Функции Azure](https://docs.microsoft.com/ru-RU/azure/azure-functions/functions-overview) доступен удобный способ размещать веб-перехватчики SharePoint. Достаточно добавить код веб-перехватчика на языке C# или JavaScript через браузер, и Azure займется размещением и масштабированием функции. В этом руководстве показано, как настроить и использовать функции Azure для веб-перехватчиков.
 
 ## <a name="create-a-an-azure-function-app"></a>Создание приложения-функции Azure
 Для начала необходимо создать приложение-функцию Azure — специальный вид веб-приложений Azure, предназначенный для размещения функций в Azure. Перейдите на сайт [https://portal.azure.com](https://portal.azure.com), нажмите "Создать" и найдите элемент "Приложение-функция".
@@ -29,7 +29,7 @@ ms.lasthandoff: 10/13/2017
 
 ![Выбор шаблона функции Azure](../../images/webhook-azure-function3.png)
 
->**Примечание.**
+> [!NOTE]
 > - В настоящее время шаблон **GenericWebHook** не работает с веб-перехватчиками SharePoint, но команда разработчиков SharePoint знает об этой проблеме и исправит ее.
 > - Если при использовании веб-перехватчика на основе функции Azure возникают ошибки "Не удалось проверить URL-адрес уведомления", установите уровень авторизации **Функция** и настройте анонимный доступ для функции.
 
