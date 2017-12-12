@@ -1,11 +1,11 @@
 ---
 title: "Решения пользовательского профиля для SharePoint 2013 и SharePoint Online"
 ms.date: 11/03/2017
-ms.openlocfilehash: bf67fbb6a36901618e0ea2590443a569ebf16d12
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: cb210ab9a66e5eb799c027316357d5a1f51397a6
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="user-profile-solutions-for-sharepoint-2013-and-sharepoint-online"></a>Решения пользовательского профиля для SharePoint 2013 и SharePoint Online
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 11/06/2017
 |Настройка образца результаты поиска SharePoint Add-in|[Search.PersonalizedResults](https://github.com/SharePoint/PnP/tree/dev/Samples/Search.PersonalizedResults)|Настройка SharePoint, путем фильтрации данных на основе значения свойства профиля пользователя. 
 |Загрузить пример изображения профилей пользователей SharePoint надстройки|[Core.ProfilePictureUploader](https://github.com/SharePoint/PnP/tree/dev/Samples/Core.ProfilePictureUploader)|Выполните массовая отправка данных профилей пользователей из общей папки или URL-адрес SharePoint Online и связать свойства профиля пользователя загруженного изображения.
 
-## <a name="additional-resources"></a>Дополнительные ресурсы 
+## <a name="see-also"></a>См. также 
 
 * [Шаблоны и рекомендации решений разработки Office 365](Office-365-development-patterns-and-practices-solution-guidance.md)
 * [Центр для разработчиков шаблоны и рекомендации](http://dev.office.com/patterns-and-practices)

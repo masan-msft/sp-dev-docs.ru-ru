@@ -1,11 +1,11 @@
 ---
 title: "Повышенными привилегиями в SharePoint надстройки"
 ms.date: 11/03/2017
-ms.openlocfilehash: 8102a3acc77efbc492c9ef7e62649851b5388954
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 1408ea8317d59a9e1408a2e7ebd1b88946cf0042
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="elevated-privileges-in-sharepoint-add-ins"></a>Повышенными привилегиями в SharePoint надстройки
 
@@ -29,7 +29,8 @@ _**Применимо к:** приложений для SharePoint | SharePoint 
 
 Для получения дополнительных сведений см [типы политик авторизации приложений в SharePoint 2013](https://msdn.microsoft.com/library/office/fp179892.aspx).
 
-**Примечание:** Политика только для приложений доступен только для провайдера надстройками SharePoint хостингом надстроек, что доступ к хост-сети необходимо использовать для пользователя и политики приложения.
+> [!NOTE] 
+> Политика только для приложений доступен только для провайдера надстройками SharePoint хостингом надстроек, что доступ к хост-сети необходимо использовать для пользователя и политики приложения.
 
 Преимущества использования политики только для приложений в вашей надстройки include:
 
@@ -63,9 +64,11 @@ _**Применимо к:** приложений для SharePoint | SharePoint 
 
 2. Используйте TokenHelper.GetClientContextWithAccessToken, чтобы получить объект ClientContext.
 
-**Примечание:** Файл TokenHelper является исходный код, созданное инструменты разработчика Microsoft Office для Visual Studio. Нет справочной документации по его не, но есть широкое комментарии в класс TokenHelper. Чтобы просмотреть комментарии в коде, создания у поставщика надстройки в Visual Studio.
+> [!NOTE] 
+> Файл TokenHelper является исходный код, созданное инструменты разработчика Microsoft Office для Visual Studio. Нет справочной документации по его не, но есть широкое комментарии в класс TokenHelper. Чтобы просмотреть комментарии в коде, создания у поставщика надстройки в Visual Studio.
 
-**Примечание:** Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
+> [!NOTE] 
+> он кода в этой статье предоставляется-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
 
 ```cs
 Uri siteUrl = new Uri(ConfigurationManager.AppSettings["MySiteUrl"]);
@@ -112,7 +115,8 @@ catch (Exception ex)
 
 * Прежде чем добавлять в можно выполнить действие на сайте, учетные записи служб сначала необходимо предоставить разрешение для доступа к сайту.
 
-**Примечание:** Надстройки, приобретенных у магазина Office нельзя использовать учетные записи служб.
+> [!NOTE] 
+> Надстройки, приобретенных у магазина Office нельзя использовать учетные записи служб.
 
 Ниже показано, как выполнить проверку подлинности с помощью [SharePointOnlineCredentials](https://msdn.microsoft.com/en-us/library/office/microsoft.sharepoint.client.sharepointonlinecredentials.aspx) с учетной записью службы.
 
@@ -128,10 +132,8 @@ using (ClientContext context = new ClientContext("https://contoso.sharepoint.com
 }
 ```
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 
-[Office 365 development шаблоны и рекомендации руководство по решениям](Office-365-development-patterns-and-practices-solution-guidance.md).
-
-[Add-in типы политик авторизации в SharePoint 2013](https://msdn.microsoft.com/en-us/library/office/fp179892.aspx).
-
-[Использовать сайт Office 365 SharePoint для авторизации у поставщика надстройки на сайте SharePoint в локальной](https://msdn.microsoft.com/en-us/library/office/dn155905.aspx).
+- [Office 365 development шаблоны и рекомендации руководство по решениям](Office-365-development-patterns-and-practices-solution-guidance.md).
+- [Add-in типы политик авторизации в SharePoint 2013](https://msdn.microsoft.com/en-us/library/office/fp179892.aspx).
+- [Использовать сайт Office 365 SharePoint для авторизации у поставщика надстройки на сайте SharePoint в локальной](https://msdn.microsoft.com/en-us/library/office/dn155905.aspx).

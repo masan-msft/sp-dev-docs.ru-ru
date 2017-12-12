@@ -1,11 +1,11 @@
 ---
 title: "Безопасность и производительность"
 ms.date: 11/03/2017
-ms.openlocfilehash: f59b4de84742f9c8fc82bf0ccc7a0891860833e8
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 2e7cd37db5251e50edb099135b1e65a489266006
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="security-and-performance"></a>Безопасность и производительность
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 11/06/2017
 |[Обработка регулирования в SharePoint Online](Handle-SharePoint-Online-throttling-by-using-exponential-back-off.md) | Узнайте, как обрабатывать регулирования в SharePoint Online с помощью метода экспоненциальное отсрочки. |
 |[Шаблоны JavaScript и производительности](javascript-patterns-and-performance.md)| Узнайте, какие методы JavaScript, можно использовать для повышения производительности надстроек.
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 - [Шаблоны и рекомендации решений разработки Office 365](Office-365-development-patterns-and-practices-solution-guidance.md)

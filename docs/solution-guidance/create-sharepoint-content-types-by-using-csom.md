@@ -1,11 +1,11 @@
 ---
 title: "Создание типов контента SharePoint с помощью CSOM"
 ms.date: 11/03/2017
-ms.openlocfilehash: 6a0e7eff44bffbc6b2de3cc181fe9b2d09df1117
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 05d32f9c1ec1d48a128216116515eb106c221274
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-sharepoint-content-types-by-using-csom"></a>Создание типов контента SharePoint с помощью CSOM
 
@@ -23,7 +23,8 @@ _**Применимо к:** Office 365 | SharePoint 2013 | Надстройки 
 
 В следующем примере кода показано, как создать тип контента с помощью класса **ContentTypeCreationInformation** , включая установку с идентификатором.
 
-**Примечание:**  Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
+> [!NOTE] 
+> Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
 
 ```C#
 ContentTypeCollection contentTypes = web.ContentTypes;
@@ -156,7 +157,7 @@ ContentType ct = web.ContentTypes.GetById("0x0101009189AB5D3D2647B580F011DA2F356
 
 ```
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 - [Решения по подготовке сайтов SharePoint](sharepoint-site-provisioning-solutions.md)

@@ -1,11 +1,11 @@
 ---
 title: "Изолированная преобразования руководство по решениям для-получатели компонентов."
 ms.date: 11/03/2017
-ms.openlocfilehash: 4072e7d7b920bcb2347d40d1f1ff25cd2935b3c4
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 91430d1523ad40acba163b86d369958f7273f219
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sandbox-solution-transformation-guidance---feature-receivers"></a>Изолированная преобразования руководство по решениям для-получатели компонентов. 
 Преобразования или преобразования на основе кода изолированных решений в объектная модель SharePoint. Сведения о стратегии преобразования существующей функциональности объектная модель SharePoint или альтернативных решений и параметры.
@@ -95,7 +95,7 @@ web.SetComposedLookByUrl("Green");
 При отключении существующего изолированного решения с сайтов, все файлы развернуты с помощью декларативных параметров не будут удалены, однако или активы компонента автоматически быть отключена. Выполнение кода в приемник компонента, зависит от времени при отключении изолированные решения. 
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 -  [Удаление на основе кода изолированных решений в SharePoint Online](http://dev.office.com/blogs/removing-code-based-sandbox-solutions-in-sharepoint-online)
 -  [Руководство по преобразованию изолированных решений](https://msdn.microsoft.com/en-us/pnp_articles/sandbox-solution-transformation-guidance)

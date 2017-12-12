@@ -1,17 +1,18 @@
 ---
 title: "Советы и рекомендации по развертыванию порталов SharePoint Online"
 ms.date: 11/03/2017
-ms.openlocfilehash: c4dddb0b318b64f3f04d51d5be85d3a6e2c10e40
-ms.sourcegitcommit: 3276e9b281b227fb2f1a131ab4ac54ae212ce5cf
+ms.openlocfilehash: 996ab833afffc5849bb70e99b624c13842cbfca9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="best-practices-for-rolling-out-sharepoint-online-portals"></a>Советы и рекомендации по развертыванию порталов SharePoint Online
 
 После уже долгое времени и энергии в здании, которое вы хотите, чтобы получить его портала на основе нового SharePoint live как можно скорее..., но бы хороший модели для этого? В этой статье будут рассмотрены следующие вопросы рекомендованной моделью развертывания портала для конечных пользователей.
 
->**Примечание**: несмотря на то, что данное руководство предназначен для SharePoint Online большая часть он также распространяется на порталов, размещенных в локальной среде SharePoint.
+> [!NOTE] 
+> Несмотря на то, что данное руководство предназначен для SharePoint Online большая часть он также распространяется на порталов, размещенных в локальной среде SharePoint.
 
 
 _**Применимо к:** SharePoint Online_
@@ -43,7 +44,7 @@ _**Применимо к:** SharePoint Online_
 
 Время необходимо выделить свои отзывы и предложения и внести в портал при необходимости выше поэтапный подход, но как измерения и результатов по производительности в процессе это этапам развертывания? Рекомендуемый подход для этого является внедрение портала телеметрии в реализации, как описано в [разделе телеметрии в статье производительности](https://msdn.microsoft.com/en-us/pnp_articles/portal-performance#telemetry). Наличие непрерывный поток данных портала производительности поможет вам понять, если портала производительности изменяется, когда растет число пользователей, а также когда вы в будущем сделать изменяется на портале.
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 - [Capacity planning and load testing SharePoint Online](https://support.office.com/en-us/article/Capacity-planning-and-load-testing-SharePoint-Online-c932bd9b-fb9a-47ab-a330-6979d03688c0?ui=en-US&rs=en-US&ad=US)

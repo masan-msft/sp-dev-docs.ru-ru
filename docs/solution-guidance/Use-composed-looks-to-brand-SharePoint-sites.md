@@ -1,115 +1,116 @@
 ---
-title: "Использование состоит выполняет на сайты SharePoint торговая марка"
+title: Use composed looks to brand SharePoint sites
 ms.date: 11/03/2017
-ms.openlocfilehash: ebf4fa0e503cb8c811c6e7ac549d1b89998c1a7d
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: a3c9450690227785cb368f09a299fc769168ce89
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="use-composed-looks-to-brand-sharepoint-sites"></a>Использование состоит выполняет на сайты SharePoint торговая марка
+# <a name="use-composed-looks-to-brand-sharepoint-sites"></a>Use composed looks to brand SharePoint sites
 
-Применение вариантов оформления, включая цвета, шрифты и фонового изображения, к сайтам SharePoint 2013 и SharePoint Online с помощью модуля темы SharePoint.
+Apply composed looks, including colors, fonts, and a background image, to your SharePoint 2013 and SharePoint Online sites by using the SharePoint theming engine.
 
 _**Область применения:** Office 365 | SharePoint 2013 | SharePoint Online_
 
-Вариантов оформления можно применить к сайтам SharePoint. Вариантов оформления, ожидания введите тем, которые включены в SharePoint 2013 и SharePoint Online. Чтобы применить вариант оформления на сайт SharePoint, выберите **Параметры сайта** > **внешний вид и функции** > **Изменение внешнего вида**. Затем можно использовать изменение внешнего вида мастера настройки цвета, шрифты, главные страницы и фонового изображения вариант оформления. Изменение внешнего вида мастер копирует, преобразует и сохраняет CSS в базе данных контента SharePoint. Также recolors изображения и сохраняет их в базе данных контента. 
+You can apply composed looks to your SharePoint sites. Composed looks are out-of-the-box themes that are included in SharePoint 2013 and SharePoint Online. To apply a composed look to a SharePoint site, select **Site Settings** > **Look and Feel** > **Change the look**. You can then use the Change the look wizard to customize the colors, fonts, master page, and background image of a composed look. The Change the look wizard copies, transforms, and stores CSS in SharePoint's content database. It also recolors images and stores them in the content database. 
 
-## <a name="sharepoint-theming-engine"></a>Модуль темы SharePoint
+## <a name="sharepoint-theming-engine"></a>SharePoint theming engine
 <a name="sectionSection0"> </a>
 
-Модуль SharePoint 2013 темы можно использовать для применения цвета, шрифты и фонового изображения на сайт с помощью сопоставления этих элементов с главной страницы.
+You can use the SharePoint 2013 theming engine to apply colors, fonts, and a background image to a site by associating those elements with a master page.
 
-В SharePoint 2013 и SharePoint Online темы — подключенных набор файлов определений XML, файл изображения и связанную главную страницу, которые можно использовать для применения настраиваемых CSS к сайту. Следующие XML-файлы определения слотами цвета и слотами шрифта, которые определяют сведения о конкретных цветовое оформление и шрифты, как они в случае применены стили: 
+In SharePoint 2013 and SharePoint Online, a theme is a connected set of XML definition files, an image file, and an associated master page that you can use to apply custom CSS to a site. The following XML files define color slots and font slots that define the details of specific colors and fonts as they're applied to styles: 
 
 - .spcolor
     
 - .spfont
     
-Можно создать собственные файлы шрифтов и цветов в любого текстового редактора.
+You can create your own color and font files in your favorite text editor.
 
-В следующей таблице перечислены элементы вариант оформления.
+The following table lists the elements of a composed look.
 
-|**Элемент**|**Файл или файлы**|**Где хранится**|**Обязательность**|
+|**Элемент**|**File or files**|**Where it's stored**|**Обязательность**|
 |:-----|:-----|:-----|:-----|
-|Цветовая палитра|.spcolor|Папка Gallery\15 темы|Да|
-|Схемы шрифтов|.spfont|Папка Gallery\15 темы|Нет|
-|Макет сайта|<p>.master</p><p>.Preview</p>|Коллекция главных страниц|Да|
-|Фоновое изображение|<p>.jpg</p><p>.bmp</p><p>.PNG</p><p>.gif</p>|Активы сайта|Нет|
-Пользователи могут выбрать вариантов оформления с помощью изменения внешнего вида мастера (**Параметры узла** > **внешний вид и функции** > **Изменение внешнего вида**), начало работы пользовательского интерфейса, или непосредственно в меню Действия сайта. Когда пользователь выбирает вариант оформления, модуль темы применяется цвета, шрифты, фоновые рисунки, связанные главную страницу и файл .preview, связанный с главную страницу на сайте. 
+|Цветовая палитра|.spcolor|Theme Gallery\15 folder|Да|
+|Font scheme|.spfont|Theme Gallery\15 folder|Нет|
+|Site layout|<p>.master</p><p>.preview</p>|Master Page Gallery|Да|
+|Background image|<p>.jpg</p><p>.bmp</p><p>.png</p><p>.gif</p>|Site assets|Нет|
+Users can select composed looks by using the Change the look wizard (**Site Settings** > **Look and Feel** > **Change the Look**), the Getting Started UI, or directly in the site actions menu. When a user selects a composed look, the theming engine applies colors, fonts, background images, the associated .master page, and the .preview file associated with the .master page to the site. 
 
-### <a name="color-palettes"></a>Палитры цветов
+### <a name="color-palettes"></a>Color palettes
 
-Модуль темы сохраняет цветов в цветовой палитры, определенные в файле .spcolor, как показано на рисунке 1. Цветовой палитры, хранятся в коллекцию тем корневого сайта. Цветовой палитры является редактирования XML-файла включает в себя определения цветовой палитры и слотами цвет. Цветовой палитры метаданных ( `<s:colorPalette>`) определяет следующее:
+The theming engine stores colors in color palettes defined by the .spcolor file, as shown in Figure 1. Color palettes are stored in the Theme Gallery of the root site. A color palette is an editable XML file made up of color palette definitions and color slots. Color palette metadata ( `<s:colorPalette>`) defines the following:
 
-- Три Предварительный просмотр области, которые определяют цвет разъемов для использования в области просмотра вариант оформления.
+- Three preview slots that define what color slots to use in composed look previews.
     
-- Это свойство **isInverted** , которое позволяет указать, будет ли темы Обращенный конструктора палитры (темный фон на светло текст).
+- An  **isInverted** property that lets the palette designer specify whether the theme is inverted (dark background with light text).
     
-- Пространство имен XML, связанные с темой.
+- The XML namespace associated with the theme.
     
-Цвет слотами определяются два attributesâ€ «цвет имени и valueâ€», определите имя цвета и его значение RGB. Цвет имеется семантических имена, например BodyText или SiteTitle, помогает идентифицировать какие слоты соответствуют область страницы SharePoint.
+Color slots are defined by two attributesâ€”color name and valueâ€”that define a name for the color and its RGB value. Color slots have semantic names, such as BodyText or SiteTitle, that help you identify which slots correspond to a region of a SharePoint page.
 
 `<s:color name="BodyText" value="444444" />`
 
-**На рисунке 1. файл .spcolor**
+**Figure 1. .spcolor file**
 
-![Снимок экрана с отображением имени и значения атрибутов цвета .spcolor-файла](media/16de0716-2e21-471f-b9e5-f461a33b397b.png)
+![Screenshot of an .spcolor file showing color name and value attributes](media/16de0716-2e21-471f-b9e5-f461a33b397b.png)
 
-Строка 2 .spcolor-файла определяет пространство имен XML слотами предварительного просмотра и ли Обращенный цвета (у них быстрое переднего плана на темный фон вместо темный переднего плана на светлый фон). 
+Line 2 of the .spcolor file defines the XML namespace, preview slots, and whether colors are inverted (they have a light foreground on a dark background instead of a dark foreground on a light background). 
 
-Файл .spcolor содержит 89 слотами цвет. Цвет слотами можно использовать для определения функционального аспектов цвет, включая непрозрачность, с помощью 8-значного шестнадцатеричные значения. Например, если зеленый будет вида RRGGBB 00FF00, соответствующее 70 процентов непрозрачный является AARRGGBB 7F00FF00. Если SharePoint использует область, которая не был определен, любой CSS, которая ссылается на него не будет изменить цвет. Если область определен, никогда не содержит ссылку на CSS, цвет никогда не отображается в пользовательском Интерфейсе.
+The .spcolor file contains 89 color slots. You can use color slots to define richer aspects of color, including opacity, by using 8-digit hexadecimal values. For example, if green is RRGGBB 00FF00, a 70 percent opaque green is AARRGGBB 7F00FF00. If SharePoint uses a slot that you don't define, any CSS that references it won't change color. If a slot is defined that is never referenced in CSS, the color is never shown in the UI.
 
-Можно изменить файл .spcolor в "Блокнот". Его нельзя изменить в Microsoft PowerPoint.
+You can edit the .spcolor file in Notepad. You cannot edit it in PowerPoint.
 
-### <a name="color-palette-tool"></a>Средство цветовой палитры
+### <a name="color-palette-tool"></a>Color palette tool
 
-Можно использовать [средство цветовой палитры](http://www.microsoft.com/en-us/download/details.aspx?id=38182) для визуализации цвета темы и как они работают вместе на странице. Используйте его для определения цвета сведения можно использовать в слотами цвет файла .spcolor и цвета для сайта SharePoint без изменения любого CSS в ходе процесса.
+You can use the  [color palette tool](http://www.microsoft.com/en-us/download/details.aspx?id=38182) to visualize theme colors and how they work together on the page. Use it to identify color information you can use in the color slots of the .spcolor file, and apply colors to a SharePoint site without changing any CSS as part of the process.
 
-Появится цвета в шестнадцатеричном формате, поэтому можно легко скопируйте и вставьте значение цвета в соответствующий элемент в файле .spcolor. Можно также использовать средство цветовой палитры для размещения фонового изображения в макете и переключение между seattle.master и oslo.master главных страниц. 
+The tool displays the colors in hexadecimal format, so you can easily copy and paste the color value into the appropriate element in your .spcolor file. You can also use the color palette tool to fit a background image into a mockup and toggle between the seattle.master and oslo.master master pages. 
 
 
-**На рисунке 2. Средство цветовой палитры**
+**Figure 2. Color palette tool**
 
-![Снимок экрана средства палитры цветов](media/407d8095-20cd-4d9b-be53-493d95b4653c.png)
+![Screenshot of the color palette tool](media/407d8095-20cd-4d9b-be53-493d95b4653c.png)
 
-Файл .spcolor — это единственный файл, который необходим для новой темы, но может потребоваться добавить некоторые объявления пользовательских шрифтов, в зависимости от глубины к проекту. Для этого необходимо получить доступ к файлу .spfont.
+The .spcolor file is the only file that is required for a new theme, but you might need to add some custom font declarations, depending on the depth of your design. To do that, you need to access the .spfont file.
 
-### <a name="font-schemes"></a>Схемы шрифтов
+### <a name="font-schemes"></a>Font schemes
 
-Так же, как определить, что палитры цветов использование цветов в вариантов оформления схемы шрифтов определения шрифтов в вариантов оформления. 
+In the same way that color palettes define how colors are used in composed looks, font schemes define the fonts in composed looks. 
 
-Схемы шрифтов определены в файле .spfont, хранящиеся в коллекцию тем. Файл .spfont включает в себя следующие слотами шрифта, которые определяют имя, гарнитуры и скрипт значения вариант оформления:
+Font schemes are defined in the .spfont file stored in the Theme Gallery. The .spfont file includes the following font slots that define the name, typeface, and script values of a composed look:
 
 - Заголовок
     
 - Navigation
     
-- Заголовок небольшим
+- Small-heading
     
-- Заголовок
+- Heading
     
-- Large заголовок
+- Large-heading
     
 - Body
     
 - Large-body
     
-Шрифты дальнейшей области по типу сценария (например, латиница, арабский, кириллица). Поддержка шрифты Web включен в четырех типов файлов:
+Fonts are further scoped by script type (for example, Latin, Arabic, Cyrillic). Web fonts support is included in four file types:
 
-- Тип внедренного open (EOT)
+- Embedded open type (EOT)
     
-- Файл в формате open шрифта Web (WOFF)
+- Web open font format file (WOFF)
     
-- Шрифтов TrueType (TTF)
+- TrueType font (TTF)
     
-- Масштабируемой векторной графики (SVG)
+- Scalable vector graphics (SVG)
     
-Схемы шрифтов определяется изображения для предварительного просмотра и изображения для малых предварительного просмотра. Они необходимы только для веб-шрифты.
+The font scheme defines a large preview image and a small preview image. They are required only for web fonts.
 
-**Примечание**  Можно изменить файл .spfont в "Блокнот". Его нельзя изменить в Microsoft PowerPoint.
+> [!NOTE] 
+> You can edit the .spfont file in Notepad. You cannot edit it in PowerPoint.
 
-Ниже приведен пример файла .spfont.
+The following is an example of an .spfont file.
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -132,137 +133,140 @@ _**Область применения:** Office 365 | SharePoint 2013 | SharePo
 </s:fontScheme>
 ```
 
-### <a name="site-layout-master-pages-and-corresponding-preview-files"></a>Макет сайта: главные страницы и соответствующие файлы предварительного просмотра
+### <a name="site-layout-master-pages-and-corresponding-preview-files"></a>Site layout: master pages and corresponding preview files
 
-Модуль темы определяет макет сайта вариант оформления на основе .master главной страницы и соответствующего файла .preview. Например если главная страница, определенных для вариант оформления seattle.master, Главная страница определяет макет сайта.
+The theming engine defines the site layout of a composed look based on the .master master page and its corresponding .preview file. For example, if the master page defined for the composed look is seattle.master, that master page defines the layout of the site.
 
-Макет сайта извлечено из коллекции главных страниц главных страницах, которые имеют сопутствующие файлы .preview. Файл .preview является обязательным для главной страницы на отображается в качестве параметра в разделе **Изменение внешнего вида** пользовательского интерфейса (**Параметры узла** > **внешний вид и функции** > **Изменение внешнего вида**).
+The site layout is pulled from the Master Page Gallery of any master pages that have accompanying .preview files. A .preview file is required for a master page to appear as an option in the **Change the look** UI (**Site Settings** > **Look and Feel** > **Change the look**).
 
-Создавать главную страницу, доступные в раскрывающемся меню Макет сайта, создайте файл .preview, соответствующий главную страницу. Файл .preview отображение эскизов вариант оформления и в разделе Просмотр справа от параметры **изменения внешнего вида** страницы designbuilder.aspx.
+To make a master page available from the Site Layout drop-down menu, create a .preview file that corresponds to the .master page. The .preview file displays thumbnail images for the composed look and the preview section to the right of the **Change the look** options on the designbuilder.aspx page.
 
-### <a name="background-image"></a>Фоновое изображение
+### <a name="background-image"></a>Background image
 
-Фоновое изображение вариант оформления можно изменить, выбрав **Изменить**. Откроется диалоговое окно Отправка, которые можно использовать для передачи файла изображения. Также можно перетащить собственное изображение на просмотр фона.
+You can change the background image of a composed look by choosing **Change**. This opens an upload dialog box that you can use to upload an image file. You can also drag your own image onto the background preview.
 
-## <a name="create-custom-themes"></a>Создание пользовательских тем
+## <a name="create-custom-themes"></a>Create custom themes
 <a name="sectionSection1"> </a>
 
-Для создания пользовательской темы:
+To create a custom theme:
 
-1. Перейти к **параметрам сайта**и под заголовком коллекции веб-дизайнера, выберите **тем** > **15**. Появится список файлов .spcolor и .spfont, как показано на рисунке 3.
+1. Go to **Site settings**, and under the Web Designer Galleries heading, select **Themes** > **15**. A list of .spcolor and .spfont files appears, as shown in Figure 3.
     
-    **На рисунке 3. Коллекция тем**
+    **Figure 3. Theme Gallery**
 
-    ![Снимок экрана из коллекции тем, показывающий файлы fontscheme и палитры](media/76e9b4f3-5838-4cd8-9f2f-33a0c94bfddd.png)
+    ![Screenshot of the Theme Gallery showing fontscheme and pallette files](media/76e9b4f3-5838-4cd8-9f2f-33a0c94bfddd.png)
 
-2. Загрузить копию один из файлов .spcolor (например, Palette001.spcolor) и откройте его в текстовом редакторе. 
+2. Download a copy of one of the .spcolor files (for example, Palette001.spcolor) and open it in a text editor. 
     
-3. Редактирование файла скопированной .spcolor в соответствии с требованиями к разработки. Например, при наличии черного шрифта для основной текст, отредактируйте файл, чтобы измените строку `<s:color name="BodyText" value="444444" />` для `<s:color name="BodyText" value="000000" />`.
+3. Edit the copied .spcolor file to reflect your design guidelines. For example, if you have a black font for main body text, edit the file to change the line  `<s:color name="BodyText" value="444444" />` to `<s:color name="BodyText" value="000000" />`.
     
-4. Для каждого элемента HTML добавьте цвета. 
+4. For each HTML element, add your color. 
     
-5. Закончив, отправьте файл .spcolor **Параметры сайта** > **темы** > **15** папки.
+5. When you are done, upload the .spcolor file to the **Site settings** > **Theme** > **15** folder.
     
-    **Примечание**  Сохраните файл под новым именем файла (например, custom_palette1.spcolor).
+    > [!NOTE] 
+    > Save the file with a new file name (for example, custom_palette1.spcolor).
 
-   В следующей таблице сопоставлены цветовое оформление и элементы страниц в код в файле .spcolor. Он является частью сопоставления, доступные в файле .spcolor.
+   The following table maps colors and page elements to their code in the .spcolor file. It is a subset of the mappings that are available in the .spcolor file.
     
 
     |**Элемент**|**Цвет**|**Код**|
     |:-----|:-----|:-----|
-    |Основной текст|Черный| `<s:color name="BodyText" value="000000" />`|
-    |Фон глобальной навигации|Синий| `<s:color name="HeaderBackground" value="018dff" />`|
-    |Текст глобальной навигации|Белый| `<s:color name="HeaderNavigationText" value="ffffff" />`|
-    |Текущий фон навигации|Красный| `<s:color name="NavigationHoverBackground" value="e51400" />`|
-    |Текущий текст навигации|Белый| `<s:color name="Navigation" value="ffffff" />`|
-    |Заголовок|Белый| `<s:color name="SiteTitle" value="FFFFFF" />`|
-    |Нижний колонтитул фона|Черный| `<s:color name="FooterBackground" value="000000" />`|
+    |Body text|Black| `<s:color name="BodyText" value="000000" />`|
+    |Global navigation background|Blue| `<s:color name="HeaderBackground" value="018dff" />`|
+    |Global navigation text|White| `<s:color name="HeaderNavigationText" value="ffffff" />`|
+    |Current navigation background|Red| `<s:color name="NavigationHoverBackground" value="e51400" />`|
+    |Current navigation text|White| `<s:color name="Navigation" value="ffffff" />`|
+    |Заголовок|White| `<s:color name="SiteTitle" value="FFFFFF" />`|
+    |Footer background|Black| `<s:color name="FooterBackground" value="000000" />`|
 
-6. Чтобы настроить .spfont, загрузить копию файла .spfont и откройте его в текстовом редакторе. Обратите внимание на то, немного иначе, чем .spcolor макета в файл .spfont, однако, что оба файла совместно использовать аналогичную структуру. 
+6. To customize .spfont, download a copy of a .spfont file and open it in a text editor. Notice that the .spfont file is laid out a bit differently than .spcolor, but that both files share a similar structure. 
     
-    **На рисунке 4. файл .spfont**
+    **Figure 4. .spfont file**
 
-    ![Снимок экрана, на котором отображается содержимое файла .spfont](media/893f905a-34d9-4dbd-a012-03797084f9e6.png)
+    ![Screenshot that shows the contents of the .spfont file](media/893f905a-34d9-4dbd-a012-03797084f9e6.png)
 
-7. Изменение каждого `<s:fontSlot />` раздела для настройки шрифта SharePoint относятся к разъем указанного шрифта на странице. Например, обратите внимание на то первой записи `<s:fontSlot name="title">`. В этой записи описывает шрифт SharePoint с помощью стиля заголовка страницы. В этом разделе также определяет, какой шрифт будет использоваться для различных языков.
+7. Edit each  `<s:fontSlot />` section to customize the font SharePoint applies to the specified font slot on the page. For example, notice the first entry, `<s:fontSlot name="title">`. This entry describes which font SharePoint uses to style the title of the page. This section also specifies which font will be used for different languages.
     
-    **Примечание**  Можно загрузить пользовательских шрифтов в SharePoint и выберите пункт в каждую запись настраиваемого файла .eot, .woff, .ttf и .svg. 
+    > [!NOTE] 
+    > You can upload custom fonts to SharePoint and point each entry to a custom .eot, .woff, .ttf, and .svg file. 
 
-8. Передача файла **параметров сайта** > **темы** > **15** папки.
+8. Upload the file to the **Site settings** > **Theme** > **15** folder.
     
-    **Примечание**  Сохраните файл под новым именем файла (например, custom_font.spfont).
+    > [!NOTE] 
+    > Save the file with a new file name (for example, custom_font.spfont).
 
-    В следующей таблице показаны элементы страницы на шрифты, как они определены в файле .spfont.
+    The following table maps page elements to fonts as they're defined in the .spfont file.
 
 |**Элемент**|**Шрифт**|**Код**|
 |:-----|:-----|:-----|
-|Заголовок|Открыть Sans| `<s:cs typeface="Open Sans" />`|
+|Заголовок|Open Sans| `<s:cs typeface="Open Sans" />`|
 |Navigation|Roboto| `<s:cs typeface="Roboto" />`|
-|Заголовки|Trajan Pro| `<s:cs typeface="Trajan Pro" />`|
-|Body|Открыть Sans| `<s:cs typeface="Open Sans" />`|
+|Headings|Trajan Pro| `<s:cs typeface="Trajan Pro" />`|
+|Body|Open Sans| `<s:cs typeface="Open Sans" />`|
 
-Возможно, чтобы убедиться, что некоторые настраиваемые шрифты доступны в браузерах пользователей. Например если заголовки обращайтесь к Trajan специалистов шрифта, которая редко на компьютерах большинства пользователей, добавьте следующие объявления шрифтов в верхней части объявления < s:fontSlot >. Это гарантирует, что отображаются правильные шрифта. 
+You might have to ensure that some custom fonts are available to users' browsers. For example, if the headings refer to a Trajan Pro font, which is uncommon on most users' computers, add the following font declarations at the top of the <s:fontSlot> declaration. This will ensure that the correct font is displayed. 
 
 ```XML
 <s:latin typeface=" Trajan Pro" eotsrc="/SiteAssets/Trajan Pro.eot" woffsrc="/SiteAssets/Trajan Pro.woff" ttfsrc="/SiteAssets/Trajan Pro.ttf" svgsrc="/SiteAssets/Trajan Pro.svg"  />
 ```
 
-## <a name="add-a-custom-theme-to-sharepoint"></a>Добавление пользовательской темы в SharePoint
+## <a name="add-a-custom-theme-to-sharepoint"></a>Add a custom theme to SharePoint
 <a name="sectionSection2"> </a>
 
-После настройки главной страницей, .spcolor и .spfont файлы, добавьте их в каталог вариантов оформления, чтобы доступ к ним SharePoint. 
+After you make your customizations to the master page, .spcolor, and .spfont files, add them to the Composed Looks directory so that SharePoint can access them. 
 
-1. Перейти к **параметрам сайта**и в разделе **Коллекции веб-дизайнера**, выберите **Вариантов оформления**. 
+1. Go to **Site settings**, and under **Web Designer Galleries**, select **Composed Looks**. 
     
-2. Выберите ссылку **Создать элемент** в верхней левой. Откроется окно, как показано на рисунке 5.
+2. Choose the **new item** link at the top left. A window opens, as shown in Figure 5.
     
-    **На рисунке 5. Вариантов оформления**
+    **Figure 5. Composed looks**
 
-    ![Снимок экрана, которая показана страница новый вариант оформления](media/8155ba5d-9492-473d-b153-c3db566cbdec.png)
+    ![Screenshot that shows the new composed look page](media/8155ba5d-9492-473d-b153-c3db566cbdec.png)
 
-3. Добавьте заголовок и имя для вариант оформления.
+3. Add a title and a name for your composed look.
     
-4. Заполните оставшиеся поля.
+4. Complete the remaining field:
     
-    - В поле **URL-адрес главной страницы** добавьте URL-адрес, предоставляемых темы, используемой главной страницы.
+    - In the **Master Page URL** field, add the URL of the master page you would like the theme to use.
     
-    - В поле **URL-адрес темы** добавьте URL-адрес файла .spcolor.
+    - In the **Theme URL** field, add the URL of the .spcolor file.
     
-    - В поле **URL-адрес изображения** включите URL-адрес изображения, которое вы хотите использовать в качестве фона. Это не требуется, если данный проект не вызываться для фонового изображения.
+    - In the **Image URL** field, include the URL of an image that you want to use as a background. This is not required if your design doesn't call for a background image.
     
-    - В поле **URL-адрес схемы шрифтов** включите URL-адрес файла .spfont.
+    - In the **Font Scheme URL** field, include the URL of the .spfont file.
     
-    - В поле **Порядок отображения** укажите порядок, в котором должен отображаться вариант оформления.
+    - In the **Display Order** field, indicate the order in which the composed look should be displayed.
     
-5. Нажмите кнопку **Сохранить**. Запись темы теперь будет отображаться в списке **Вариантов оформления** .
+5. Нажмите кнопку **Сохранить**. Your theme entry will now appear in the  **Composed Looks** list.
     
-После добавления пользовательской темы в качестве вариант оформления, темы доступа пользователей и его применения к сайту, перейдя к **параметрам сайта** > **внешний вид и функции** > **Изменение внешнего вида**. На рисунке 6 показан пример раздела **Изменение внешнего вида** в **Настройках сайта**.
+After you add your custom theme to as a composed look, users can access the theme and apply it to a site by going to **Site settings** > **Look and Feel** > **Change the look**. Figure 6 shows an example of a **Change the look** section in **Site Settings**.
 
-**На рисунке 6. Вариантов оформления, доступные в изменение внешнего вида**
+**Figure 6. Composed looks available in Change the look**
 
-![Снимок экрана, показывающий состоять выглядит доступны в настройках сайта > Изменение внешнего вида](media/11acb4ea-cff6-483c-890f-8c574e14f29d.png)
+![Screenshot that shows the composed looks that are available in Site Settings > Change the look](media/11acb4ea-cff6-483c-890f-8c574e14f29d.png)
 
-## <a name="what-does-the-theming-engine-do-when-a-user-applies-a-composed-look"></a>Что такое модуль темы? при включении вариант оформления
+## <a name="what-does-the-theming-engine-do-when-a-user-applies-a-composed-look"></a>What does the theming engine do when a user applies a composed look?
 <a name="sectionSection3"> </a>
 
-Когда пользователь применяет вариант оформления, SharePoint копирует, преобразует и сохраняет CSS в базе данных контента. Также recolors и хранятся изображения в базе данных контента. Как часть процесса Применение темы к сайту модуль темы извлекает шрифта и цвет значениями, полученными из указанного цветовая схема палитры и шрифта, обнаруженных в коллекцию тем корневого сайта. Чтобы применить главную страницу и файл .preview главной страницы (макет сайта), модуль темы извлекает главных страниц в коллекции главных страниц, которые имеют соответствующий файл .preview. 
+When a user applies a composed look, SharePoint copies, transforms, and stores CSS in the content database. It also recolors and stores images in the content database. As part of the process of applying a theme to a site, the theming engine pulls color and font values from the specified color palette and font scheme found in the Theme Gallery of the root site. To apply .master page and the master page .preview file (the site layout), the theming engine pulls master pages in the Master Page Gallery that have a corresponding .preview file. 
 
-Когда он применяется вариант оформления, ядро сопоставляет параметры, указанные с определенным комментарии CSS, определяет модуль темы. На кухню engine темы сохраняет фонового изображения в ресурсах сайта, шкал и сжимает JPG и BMP изображений и ограничивает размер изображения GIF и PNG. 
+When it applies a composed look, the engine maps the settings specified by specific CSS comments that the theming engine defines. Under the hood, the theming engine saves the background image to Site Assets, scales and compresses JPG and BMP images, and limits the size of GIF and PNG images. 
 
-Когда вариант оформления применяется к сайту SharePoint, SharePoint, поиск и замена маркеры комментариев CSS путем внедрения значения, производные от вариант оформления в следующей строке в CSS-файл после маркера. Это значение применяется к сайту SharePoint.
+When a composed look is applied to a SharePoint site, SharePoint finds and replaces CSS comment tokens by embedding a value derived from the composed look in the next line in the CSS file after the token. This new value is applied to the SharePoint site.
 
-В следующей таблице перечислены маркеры комментариев CSS.
+The following table lists the CSS comment tokens.
 
-|**Маркер**|**Описание**|**Соответствующий параметр ApplyTheme**|
+|**Маркер**|**Описание**|**Corresponding ApplyTheme parameter**|
 |:-----|:-----|:-----|
-|/ * ReplaceBGImage * /|Текущее фоновое изображение swaps с изображением в назначенный состоит внешний вид URL-адрес изображения.|backgroundImageUrl|
-|/ * ReplaceFont * /|Меняет местами текущего шрифта с одним из шрифтов в URL-адрес схемы шрифтов из назначенного вариант оформления.|fontSchemeUrl|
-|/ * ReplaceColor * /|Меняет местами текущего цвета с одним из цветами, указанными в ячейку цвет в цветовой палитры URL-адрес назначенный вариант оформления.|colorPaletteUrl|
-|/ * RecolorImage * /|Recolors изображений с помощью оттенки или заполнения. ||
+|/* ReplaceBGImage */|Swaps current background image with the image in the assigned composed look image URL.|backgroundImageUrl|
+|/* ReplaceFont */|Swaps the current font with one of the fonts found in the font scheme URL of the assigned composed look.|fontSchemeUrl|
+|/* ReplaceColor */|Swaps the current color with one of the colors specified in a color slot in the color palette URL of the assigned composed look.|colorPaletteUrl|
+|/* RecolorImage */|Recolors images using tinting or filling. ||
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Решения для создания фирменного стиля и настройки страниц на сайтах SharePoint](SharePoint-site-branding-and-page-customization-solutions.md)
     
--  [Фирменная символика и решения для SharePoint 2013 и SharePoint Online по подготовке сайта](Branding-and-site-provisioning-solutions-for-SharePoint.md)
+-  [Branding and site provisioning solutions for SharePoint 2013 and SharePoint Online](Branding-and-site-provisioning-solutions-for-SharePoint.md)

@@ -1,11 +1,11 @@
 ---
 title: "Изолированная преобразования руководство по решениям для-веб-частей"
 ms.date: 11/03/2017
-ms.openlocfilehash: 3c93765118827db986e0830dba870aee6002eeb1
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: e15cc7d7677019b3f60e75a2dd6a81398c0d5db1
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sandbox-solution-transformation-guidance---web-parts"></a>Изолированная преобразования руководство по решениям для-веб-частей
 Преобразования или преобразования на основе кода изолированных решений в объектная модель SharePoint. Сведения о стратегии преобразования существующей функциональности объектная модель SharePoint или альтернативных решений и параметры.
@@ -54,7 +54,7 @@ _**Применимо к:** Add-ins for SharePoint | SharePoint 2013 | SharePoin
 <a name="sectionSection3"></a> При отключении существующего изолированного решения из сайтов любого активы или файлы, развернутые с помощью декларативных параметров, удаляется тем не менее, функции в изолированном решении будут автоматически отключены и будут приемника событий удалены.
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 -  [Удаление на основе кода изолированных решений в SharePoint Online](http://dev.office.com/blogs/removing-code-based-sandbox-solutions-in-sharepoint-online)
 -  [Руководство по преобразованию изолированных решений](https://msdn.microsoft.com/en-us/pnp_articles/sandbox-solution-transformation-guidance)

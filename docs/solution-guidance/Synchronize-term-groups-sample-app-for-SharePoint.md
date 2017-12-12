@@ -1,11 +1,11 @@
 ---
 title: "Синхронизация терминов групп образец надстройки для SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: adab11d4e63975ce0f44cf1b701c9b84f94334e3
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 4d78f316ad42639db4e8932515c574d867d421fc
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="synchronize-term-groups-sample-add-in-for-sharepoint"></a>Синхронизация терминов групп образец надстройки для SharePoint
 
@@ -88,7 +88,8 @@ _**Область применения:** Office 365 | SharePoint 2013 | SharePo
 
 В следующем коде показан методы **CopyNewTermGroups** и **CreateNewTargetTermGroup** в MMSSyncManager.cs.
 
-**Примечание**  Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
+> [!NOTE] 
+> Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
 
 ```C#
 public bool CopyNewTermGroups(ClientContext sourceContext, ClientContext targetContext, List<string> termGroupExclusions = null, string termGroupToCopy = null)
@@ -263,7 +264,8 @@ private void CreateNewTargetTermGroup(ClientContext sourceClientContext, ClientC
 
 При выборе **Изменения процесса**надстройки предлагается ввести группу терминов для синхронизации, а затем вызывает метод **ProcessChanges** в MMSSyncManager.cs. **ProcessChanges** используется метод **GetChanges** класса **ChangedInformation** для получения все изменения, внесенные в группы, наборы терминов и термины в службе источника управляемых метаданных. Затем изменения применяются к службе конечного управляемых метаданных.
 
-**Примечание**  Этот документ содержит только некоторые части метод **ProcessChanges** . Чтобы просмотреть весь метод, откройте решение Core.MMSSync в Visual Studio.
+> [!NOTE] 
+> Этот документ содержит только некоторые части метод **ProcessChanges** . Чтобы просмотреть весь метод, откройте решение Core.MMSSync в Visual Studio.
 
 Метод **ProcessChanges** начинается с создания объект **TaxonomySession** .
 
@@ -343,7 +345,7 @@ foreach (ChangedItem _changeItem in termStoreChanges)
 
 ```
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Управление корпоративным информационным содержимым решений для SharePoint 2013 и SharePoint Online](Enterprise-Content-Management-solutions-for-SharePoint-2013-and-SharePoint-Online.md)

@@ -1,11 +1,11 @@
 ---
 title: "Авторизации у поставщика надстройки пользователей во время выполнения с помощью OAuth"
 ms.date: 11/03/2017
-ms.openlocfilehash: bf89754b71a892bef15b3ec05bf60b7f5bd39b5d
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 45d76f2f005361e3d8fe5ce73355b5c139e87c9e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="authorize-provider-hosted-add-in-users-at-run-time-by-using-oauth"></a>Авторизации у поставщика надстройки пользователей во время выполнения с помощью OAuth
 
@@ -58,7 +58,8 @@ _**Применимо к:** SharePoint 2013 | Надстройки SharePoint | 
     
 3. Если требуется предоставить разрешения для разрешения, которые требуется добавить в, выберите **Доверять**. Обратите внимание на то, что вы будете перенаправлены на страницу /_layouts/15/OAuthAuthorize.aspx. 
     
-    **Примечание:**  Ваше пользователь должен иметь разрешения на **Управление** для предоставления разрешения для разрешения, которые требуется добавить в. Дополнительные сведения в [процесс авторизации OAuth кода для SharePoint надстройки](http://msdn.microsoft.com/library/e89e91c7-ea39-49b9-af5a-7f047a7e2ab7%28Office.15%29.aspx).
+    > [!NOTE] 
+    > Ваше пользователь должен иметь разрешения на **Управление** для предоставления разрешения для разрешения, которые требуется добавить в. Дополнительные сведения в [процесс авторизации OAuth кода для SharePoint надстройки](http://msdn.microsoft.com/library/e89e91c7-ea39-49b9-af5a-7f047a7e2ab7%28Office.15%29.aspx).
 
 4. В **успешно установлено в домен Contoso**введите имя нового списка для создания и затем выберите **Создать список**.
     
@@ -66,7 +67,8 @@ _**Применимо к:** SharePoint 2013 | Надстройки SharePoint | 
     
 При выборе **подключение** на **подключение к Office 365**, **подключение** в Controllers\HomeController.cs вызывается, который затем вызывает **TokenRepository.Connect** . URL-адрес, введенный пользователем на **подключение к Office 365** передается **TokenRepository.Connect** как **hostUrl**.
 
-**Примечание:**  Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
+> [!NOTE] 
+> Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
 
 ```C#
  public ActionResult Connect(string hostUrl)
@@ -79,7 +81,8 @@ _**Применимо к:** SharePoint 2013 | Надстройки SharePoint | 
 
 **TokenRepository.Connect** вызывает **TokenHelper.GetAuthorizationUrl** . **TokenHelper.GetAuthorizationUrl** возвращает URL-адрес перенаправления OAuthAuthorize.aspx с помощью **hostUrl** и необходимые разрешения на ресурс SharePoint. OAuthAuthorize.aspx используется для авторизации пользователей, использующих OAuth. При перенаправлении OAuthorize.aspx, пользователь должен войти в Office 365 и затем соглашаетесь с разрешениями надстройки запрашивает или управления безопасностью. Требуемое разрешение на ресурс SharePoint — **Web.Manage** . После проверки подлинности пользователя пример кода создает списки на сайте SharePoint. Для создания списков на сайте SharePoint, пользователи должны иметь разрешения **Web.Manage** .
 
-**Примечание:** Возвращает URL-адрес формы **TokenHelper.GetAuthorizationUrl** **https://contoso.sharepoint.com/_layouts/15/OAuthAuthorize.aspx?IsDlg=1&amp;client_id =<Client ID>&amp;scope=Web.Manage&amp;response_type = код** , где ** &lt;идентификатор клиента&gt; ** добавить в идентификатор клиента. Если надстройка зарегистрирована через панель мониторинга продаж, любого сайта Office 365 можно установить надстройку. Если надстройка не зарегистрирован через панель мониторинга продавца, необходимо зарегистрировать надстройки с помощью appregnew.aspx и обновите Core.DynamicPermissionsWeb\web.config. Для получения дополнительных сведений см[Регистрация надстройки SharePoint 2013](http://msdn.microsoft.com/library/be41a5dc-2af9-4fd9-bf4e-ad6dfa849524%28Office.15%29.aspx).
+> [!NOTE] 
+> Возвращает URL-адрес формы **TokenHelper.GetAuthorizationUrl** **https://contoso.sharepoint.com/_layouts/15/OAuthAuthorize.aspx?IsDlg=1&amp;client_id =<Client ID>&amp;scope=Web.Manage&amp;response_type = код** , где ** &lt;идентификатор клиента&gt; ** добавить в идентификатор клиента. Если надстройка зарегистрирована через панель мониторинга продаж, любого сайта Office 365 можно установить надстройку. Если надстройка не зарегистрирован через панель мониторинга продавца, необходимо зарегистрировать надстройки с помощью appregnew.aspx и обновите Core.DynamicPermissionsWeb\web.config. Для получения дополнительных сведений см[Регистрация надстройки SharePoint 2013](http://msdn.microsoft.com/library/be41a5dc-2af9-4fd9-bf4e-ad6dfa849524%28Office.15%29.aspx).
 
 ```C#
  public void Connect(string hostUrl)
@@ -131,7 +134,7 @@ public void Callback(string code)
 
 Добавьте в теперь имеет маркер доступа для этого пользователя и можно перейти к Создание списков на сайте SharePoint. 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 - [Office 365 development шаблоны и рекомендации руководство по решениям](Office-365-development-patterns-and-practices-solution-guidance.md).

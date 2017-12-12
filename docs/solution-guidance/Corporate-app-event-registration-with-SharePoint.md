@@ -1,11 +1,11 @@
 ---
 title: "Корпоративный события приложения интеграция с SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: 53f996055c6d15de74683e22d310cee6739bc82a
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 959fea4e8fcdfe5c73a9a53e6c5da09c325d781d
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="corporate-event-app-integration-with-sharepoint"></a>Корпоративный события приложения интеграция с SharePoint
 
@@ -289,7 +289,7 @@ public void Save(Web web) {
 
 ```
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Надстройки составного бизнеса для SharePoint 2013 и SharePoint Online](Composite-buisness-apps-for-SharePoint.md)

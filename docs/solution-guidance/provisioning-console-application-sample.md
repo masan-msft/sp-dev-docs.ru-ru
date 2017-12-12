@@ -1,11 +1,11 @@
 ---
 title: "Подготовка пример консольного приложения"
 ms.date: 11/03/2017
-ms.openlocfilehash: 29d14151ccea3bebec3c7e1a899bdf8067321193
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: f55962b55972312a421b8e153221f8b73bcf76b8
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="provisioning-console-application-sample"></a>Подготовка пример консольного приложения
 
@@ -21,7 +21,8 @@ ms.lasthandoff: 11/06/2017
     
 - Применение шаблона подготовки к семейства нового или существующего веб-сайтов.
     
-**Примечание:**  В этом пошаговом руководстве пример является companion для примера, в настоящее время недоступен на репозиториев: [Приступая к работе с PnP модуля подготовки](https://github.com/SharePoint/PnP/tree/master/Samples/Provisioning.Framework.Console). Код (Program.cs) и файлы решений для примера доступны для загрузки. Также имеется 20-минутный видео презентации этого процесса (с кодом немного отличаться) на сайте Microsoft канала 9: [Приступая к работе с PnP модуля подготовки](https://channel9.msdn.com/blogs/OfficeDevPnP/Getting-Started-with-PnP-Provisioning-Engine).
+> [!NOTE] 
+> В этом пошаговом руководстве пример является companion для примера, в настоящее время недоступен на репозиториев: [Приступая к работе с PnP модуля подготовки](https://github.com/SharePoint/PnP/tree/master/Samples/Provisioning.Framework.Console). Код (Program.cs) и файлы решений для примера доступны для загрузки. Также имеется 20-минутный видео презентации этого процесса (с кодом немного отличаться) на сайте Microsoft канала 9: [Приступая к работе с PnP модуля подготовки](https://channel9.msdn.com/blogs/OfficeDevPnP/Getting-Started-with-PnP-Provisioning-Engine).
 
 ## <a name="remote-provisioning-walkthrough"></a>Удаленный подготовки Пошаговое руководство
 
@@ -37,7 +38,8 @@ ms.lasthandoff: 11/06/2017
     
 4. Загрузка и установка PnP основной библиотеки, доступные в виде пакета NuGet: [OfficeDevPnP.Core пакетов](https://www.nuget.org/profiles/officedevpnp).
     
-    **Примечание:**  Существует две версии основной библиотеки. Одна версия — это библиотека **OfficeDevPnP.Core** , которая относится SharePoint Online и Office 365. Второй версии — **OfficeDevPnP.Core (локально)**, который предназначен для SharePoint 2013 в локальной. Вот снимок из доступных вариантов.
+    > [!NOTE] 
+    > Существует две версии основной библиотеки. Одна версия — это библиотека **OfficeDevPnP.Core** , которая относится SharePoint Online и Office 365. Второй версии — **OfficeDevPnP.Core (локально)**, который предназначен для SharePoint 2013 в локальной. Вот снимок из доступных вариантов.
 
     ![Два варианта загрузки библиотеки ядра](media/provisioning-console-application-sample/5b1adb8d-52e5-4c67-8792-6ef0ae41d655.png)
 
@@ -198,7 +200,8 @@ ms.lasthandoff: 11/06/2017
     
 4. Создание объекта файловой системы соединителя, чтобы сохранить копию временной подготовки шаблона, который мы собираемся для применения к другой сайт.
     
-    **Примечание:**  Этот шаг является необязательным. Это не является обязательным, сериализации подготовки шаблон XML. На этом этапе шаблон — это просто кода C#. Не только сериализация является необязательным, но также можно использовать любой формат сериализации, вам следует.
+    > [!NOTE] 
+    > Этот шаг является необязательным. Это не является обязательным, сериализации подготовки шаблон XML. На этом этапе шаблон — это просто кода C#. Не только сериализация является необязательным, но также можно использовать любой формат сериализации, вам следует.
 
 5. Выполнение извлечения подготовки шаблона с помощью этой одной строки кода.      `ProvisioningTemplate template = ctx.Web.GetProvisioningTemplate(ptci);`
     
@@ -257,7 +260,7 @@ ms.lasthandoff: 11/06/2017
         web.ApplyProvisioningTemplate(template, ptai);
     ```
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 - [PnP подготовки framework](pnp-provisioning-framework.md)

@@ -1,11 +1,11 @@
 ---
 title: "Компоненты взаимодействия с пользователями в SharePoint 2013 и SharePoint Online"
 ms.date: 11/03/2017
-ms.openlocfilehash: 5f332273e1b2c60b3c46ca1e55260b80de6a1777
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: aa78ba8feb6783b7cd442e8af718808867182435
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="ux-components-in-sharepoint-2013-and-sharepoint-online"></a>Компоненты взаимодействия с пользователями в SharePoint 2013 и SharePoint Online
 
@@ -22,7 +22,7 @@ _**Область применения:** Office 365 | SharePoint 2013 | SharePo
 |[Отображать сведения о из сайта узла с помощью веб-виджеты Office](display-information-from-a-host-site-by-using-office-web-widgets.md)|Использование экспериментального [пакетов NuGet виджетов Office Web](http://msdn.microsoft.com/en-us/library/office/dn636913%28v=office.15%29.aspx) надстроек размещением у поставщика. Сюда входят средства выбора людей и виджетов представления списка.|
 |[Улучшения производительности в SharePoint размещение у поставщика в надстройках](improve-performance-in-sharepoint-provider-hosted-add-ins.md)|Использование файлов cookie HTML5 и HTTP для кэширования данных и сократить число вызовов служб SharePoint.|
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 - [Фирменная символика и решения для SharePoint 2013 и SharePoint Online по подготовке сайта](Branding-and-site-provisioning-solutions-for-SharePoint.md)

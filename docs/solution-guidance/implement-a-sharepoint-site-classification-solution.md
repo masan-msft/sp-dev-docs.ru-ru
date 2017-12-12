@@ -1,11 +1,11 @@
 ---
 title: "Реализация решения SharePoint классификации"
 ms.date: 11/03/2017
-ms.openlocfilehash: e1ab5cde87390d51a648815cce427ae4930aab85
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 366b09990039dcb23ad21bf3259d3cafe1c9cee9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="implement-a-sharepoint-site-classification-solution"></a>Реализация решения SharePoint классификации
 
@@ -47,7 +47,8 @@ _**Применимо к:** Office 365 | SharePoint 2013 | Надстройки 
 
 Можно добавить настраиваемое действие для классификации сайта на странице " **Параметры** " и значок **устройства SharePoint** . Это действие доступно только для пользователей с разрешением на **ManageWeb** . Для получения дополнительных сведений см [по умолчанию расположений пользовательских действий и идентификаторы](http://msdn.microsoft.com/en-us/library/office/bb802730%28v=office.15%29.aspx).
 
-**Примечание:**  Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
+> [!NOTE] 
+> Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
 
 ```C#
 /// <summary>
@@ -218,7 +219,8 @@ try {
 }
 ```
 
-**Примечание:**  Для получения дополнительных сведений см. [Создание списка на веб-сайт, когда надстройки SharePoint установлен и удаляет его из списка последних (en)](http://blogs.technet.com/b/speschka/archive/2014/05/07/create-a-list-in-the-host-web-when-your-sharepoint-app-is-installed-and-remove-it-from-the-recent-stuff-list.aspx).
+> [!NOTE] 
+> Для получения дополнительных сведений см. [Создание списка на веб-сайт, когда надстройки SharePoint установлен и удаляет его из списка последних (en)](http://blogs.technet.com/b/speschka/archive/2014/05/07/create-a-list-in-the-host-web-when-your-sharepoint-app-is-installed-and-remove-it-from-the-recent-stuff-list.aspx).
 
 ## <a name="add-a-classification-indicator-to-site-page"></a>Добавить индикатор классификации страницу сайта
 
@@ -277,7 +279,7 @@ function setClassifier() {
 
 Метод расширения **Web.AddIndexedPropertyBagKey** в файле ObjectPropertyBagEntry.cs в[OfficeDevPnP.Core](https://github.com/SharePoint/PnP/tree/96eff6153389d6d21358480878de9cc8fa21abab/OfficeDevPnP.Core) можно использовать для хранения значения классификации в контейнеры свойств узла вместо списка. Этот метод позволяет контейнеры свойств для обхода или с возможностью поиска.
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 - [Решения по подготовке сайтов SharePoint](sharepoint-site-provisioning-solutions.md)

@@ -1,11 +1,11 @@
 ---
 title: "Настраивать несколькими географически примера приложения"
 ms.date: 11/03/2017
-ms.openlocfilehash: 3151ffe7353aff021bc4a4113f0738ec7f21d5ee
-ms.sourcegitcommit: 26a4fb9cfe1ffcd266313c16f2afabfc841fdb71
+ms.openlocfilehash: 5974998440e13f99fb7b025d1dcd70d84c2edd06
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="set-up-your-multi-geo-sample-applications"></a>Настраивать несколькими географически примера приложения
 
@@ -146,7 +146,8 @@ using (ClientContext cc = TokenHelper.GetClientContextWithAccessToken(tenantAdmi
 ```
 
 
->**Примечание:** Можно легко вставить `TokenHelper.cs` в проекте, добавив пакет **AppForSharePointOnlineWebToolkit** nuget для решения.
+> [!NOTE] 
+> Можно легко вставить `TokenHelper.cs` в проекте, добавив пакет **AppForSharePointOnlineWebToolkit** nuget для решения.
 
 ## <a name="my-application-needs-to-be-able-to-be-able-to-discover-the-multi-geo-configuration"></a>Мои приложение должно иметь возможность обнаруживать несколькими географически конфигурации
 ### <a name="im-using-the-microsoft-graph-api"></a>Я использую Microsoft Graph API

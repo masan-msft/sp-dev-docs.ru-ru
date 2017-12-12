@@ -1,11 +1,11 @@
 ---
 title: "Настройка поиска результаты пример надстройки для SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: f29604a72bd9346cccf548c928812b7e55703849
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: e2190e8d60bbca5f3353662823c921c1f59d1c27
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="personalize-search-results-sample-add-in-for-sharepoint"></a>Настройка поиска результаты пример надстройки для SharePoint
 
@@ -85,7 +85,8 @@ _**Область применения:** Office 365 | SharePoint 2013 | SharePo
     
 - Вызывает метод **FormatResults** для форматирования результатов поиска в HTML-таблицы.
     
-**Примечание**  Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
+> [!NOTE] 
+> Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
 
 ```
 protected void btnPersonalizedSearch_Click(object sender, EventArgs e)
@@ -127,7 +128,7 @@ private ClientResult<ResultTableCollection> ProcessQuery(ClientContext ctx, stri
         }
 ```
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Решения пользовательского профиля для SharePoint 2013 и SharePoint Online](user-profile-solutions-for-sharepoint.md)

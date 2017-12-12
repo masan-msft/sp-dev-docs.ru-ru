@@ -2,11 +2,11 @@
 title: "Подготовка веб-сайтов «современный» групп программными средствами"
 description: "Подготовка сайта группы из пользовательского интерфейса или с помощью PnP основных CSOM или PnP PowerShell."
 ms.date: 11/08/2017
-ms.openlocfilehash: 65b9637167045b4fa92728ab3266c336fdfe6ad2
-ms.sourcegitcommit: 4ea7e9cb1efb53f89da236282002956739d77418
+ms.openlocfilehash: 137629c7d1e9aaf55ac7709b07c4ad478202bfdc
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="provisioning-modern-team-sites-programmatically"></a>Подготовка веб-сайтов «современный» групп программными средствами
 
@@ -125,7 +125,7 @@ $web.WebTemplate + "#" + $web.Configuration
 
 «Современный» веб-сайтов групп не отображаются в пользовательском Интерфейсе администрирования SharePoint. Список веб-сайтов «современный» групп можно получить доступ с Office 365 Admin групп пользовательского интерфейса на портал администрирования Office 365. Интерфейс пользователя SharePoint Online администрирования только приведены «классический» сайты SharePoint. Это же ограничение не применяется к клиенту API; Этот интерфейс API можно использовать для перечисления веб-сайтов групп «современный» вместе с веб-сайтов «классический» групп. Для получения списка только веб-сайтов «современный» групп, можно использовать группы конечную точку из Microsoft Graph API.
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 
 - [Настройка "современных" интерфейсов в SharePoint Online](modern-experience-customizations.md)
 - [Что такое на сайте группы SharePoint?](https://support.office.com/en-US/article/What-is-a-SharePoint-team-site-75545757-36c3-46a7-beed-0aaa74f0401e?ui=en-US&rs=en-US&ad=US)

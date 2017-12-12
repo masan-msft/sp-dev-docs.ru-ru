@@ -1,11 +1,11 @@
 ---
 title: "Использование Microsoft Azure WebJobs с Office 365"
 ms.date: 11/03/2017
-ms.openlocfilehash: 0b3eb304efb291dfa4c0bb7c0809f2c5b044d28f
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: e0b45676beaab11122a15c61ed0a426e9888d75d
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="use-microsoft-azure-webjobs-with-office-365"></a>Использование Microsoft Azure WebJobs с Office 365
 
@@ -78,7 +78,8 @@ _**Применимо к:** надстройки для SharePoint | SharePoint 
 
 В файле Program.cs добавьте следующий код в консольное приложение.
 
-**Примечание**  Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
+> [!NOTE] 
+> Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
 
 
 1. Добавьте операторы **using** .
@@ -185,7 +186,7 @@ _**Применимо к:** надстройки для SharePoint | SharePoint 
     
 - Просмотр журналов на WebJob подробные сведения для вашей WebJob Azure. Запустите позволяет журналы WebJob сведений, просмотрите при выполнении задания, успешное или неудачное задания, вывод из WebJob (например, когда Console.WriteLine вызван) и другие сведения о запустите задание. Для получения дополнительных сведений обратитесь к разделу Просмотр журнала заданий на [Запуск фоновых задач с WebJobs](http://azure.microsoft.com/documentation/articles/web-sites-create-web-jobs/).
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Office 365 development шаблоны и рекомендации руководство по решениям](Office-365-development-patterns-and-practices-solution-guidance.md).

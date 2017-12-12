@@ -1,11 +1,11 @@
 ---
 title: "Массовая отправка документов пример надстройки для SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: 67b30e8bbff64e09c193fe714ac7f71dd87567db
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 3dce2044fa25e5ec1f231c6511b2186f6c9191d8
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="bulk-upload-documents-sample-add-in-for-sharepoint"></a>Массовая отправка документов пример надстройки для SharePoint
 
@@ -13,7 +13,8 @@ ms.lasthandoff: 11/06/2017
     
 _**Область применения:** Office 365 | SharePoint 2013 | SharePoint Online_
 
-**Примечание**  Пример отправляет один файл в библиотеку документов. Отправить несколько файлов, вам потребуются для расширения примера.
+> [!NOTE] 
+> Пример отправляет один файл в библиотеку документов. Отправить несколько файлов, вам потребуются для расширения примера.
 
 Эта надстройка используется консольное приложение для загрузки файлов с помощью вызовов интерфейса API REST. Параметры конфигурации задаются в XML и CSV-файл. Если вы хотите используйте этого решения:
 
@@ -57,7 +58,8 @@ _**Область применения:** Office 365 | SharePoint 2013 | SharePo
 
 В методе **Main** в Program.cs метод **RecurseActions** вызывает метод **Run** в OneDriveMapper.cs. Метод **Run** Получает расположение файлов для загрузки из SharePointSites.csv и затем вызывает метод **IterateCollection** .
 
-**Примечание**  Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
+> [!NOTE] 
+> Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
 
 ```C#
 public override void Run(BaseAction parentAction, DateTime CurrentTime, LogHelper logger)
@@ -84,7 +86,8 @@ public override void Run(BaseAction parentAction, DateTime CurrentTime, LogHelpe
     
 4. Выполняется отправка файла.
 
-**Примечание**  Имя файла перезаписывается со значением **FileUploadName** , указанное в OneDriveUploader.xml.
+> [!NOTE] 
+> Имя файла перезаписывается со значением **FileUploadName** , указанное в OneDriveUploader.xml.
 
 ```C#
 public override void IterateCollection(Collection<string> entries, LogHelper logger)
@@ -213,10 +216,9 @@ public override void IterateCollection(Collection<string> entries, LogHelper log
 
 ```
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
--  [Управление корпоративным информационным содержимым решений для SharePoint 2013 и SharePoint Online](Enterprise-Content-Management-solutions-for-SharePoint-2013-and-SharePoint-Online.md)
-    
+-  [Управление корпоративным информационным содержимым решений для SharePoint 2013 и SharePoint Online](Enterprise-Content-Management-solutions-for-SharePoint-2013-and-SharePoint-Online.md)   
 -  [Пример Core.LargeFileUpload](https://github.com/SharePoint/PnP/tree/master/Samples/Core.LargeFileUpload)
     

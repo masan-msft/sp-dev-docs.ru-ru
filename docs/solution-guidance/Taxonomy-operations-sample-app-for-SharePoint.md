@@ -1,11 +1,11 @@
 ---
 title: "Таксономия операции примера приложения для SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: c50bfe1afada0cfe907c4e11c4d2d6c6eb772b41
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 32e7b535103dd20a988c1253afe7f505d6c0e6f0
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="taxonomy-operations-sample-app-for-sharepoint"></a>Таксономия операции примера приложения для SharePoint
 
@@ -49,7 +49,8 @@ _**Область применения:** Office 365 | SharePoint 2013 | SharePo
 
 После указать URL-адрес SharePoint и учетные данные, происходит проверка подлинности пользователя. Следующий код выполняет проверку подлинности пользователя в SharePoint Online.
     
-**Примечание**  Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
+> [!NOTE] 
+> Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
 
 ```C#
 ClientContext cc = new ClientContext(siteUrl);
@@ -160,7 +161,7 @@ private static void GetMMSTermsFromCloud(ClientContext cc)
 
 ![Снимок экрана центра администрирования SharePoint с банк терминов таксономии были развернуты.](media/9e623deb-569b-457a-ad1c-fa6d0d4d0a38.png)
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Управление корпоративным информационным содержимым решений для SharePoint 2013 и SharePoint Online](Enterprise-Content-Management-solutions-for-SharePoint-2013-and-SharePoint-Online.md)

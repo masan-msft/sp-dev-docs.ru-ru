@@ -1,11 +1,11 @@
 ---
 title: "Обработка SharePoint Online регулирования с помощью экспоненциальное пассивный режим"
 ms.date: 11/03/2017
-ms.openlocfilehash: 5fe327f1d80ba38c67e82bfa82f4743c13e65510
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 092b5072ae26f7f815eaa6133512865512129874
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="handle-sharepoint-online-throttling-by-using-exponential-back-off"></a>Обработка SharePoint Online регулирования с помощью экспоненциальное пассивный режим
 
@@ -21,7 +21,7 @@ SharePoint Online с помощью регулирования запретит�
 
 Кроме того в образце [ClientContextExtensions.cs](https://github.com/SharePoint/PnP/blob/dev/Samples/Core.Throttling/Core.Throttling/ClientContextExtensions.cs) извлечь метод расширения ExecuteQueryImplementation. ExecuteQueryImplementation включен в [OfficeDevPnP.Core](https://github.com/SharePoint/PnP-Sites-Core/tree/master/Core/OfficeDevPnP.Core).    
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Руководство по решениям](Office-365-development-patterns-and-practices-solution-guidance.md)

@@ -1,11 +1,11 @@
 ---
 title: "Перенос форм InfoPath в SharePoint 2013"
 ms.date: 11/03/2017
-ms.openlocfilehash: f53ff1c78524e1a18e7082317dc9bc5c0aa56cdf
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 9efe83a8e3b5e37c091b2ea9d92bad401ebd0e7b
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="migrate-infopath-forms-to-sharepoint-2013"></a>Перенос форм InfoPath в SharePoint 2013
 
@@ -33,7 +33,7 @@ _**Область применения:** Office 365 | SharePoint 2013 | SharePo
 |Использование Microsoft потока и Microsoft PowerApps|Это наш рекомендуемый подход для расширения списков SharePoint опытных пользователей.|
 |Новые надстройки модели и клиента со стороны разработки |Можно преобразовать сложных форм, управляемых с помощью с много кода на стороне провайдера, надстройки или веб-частей со стороны клиента. Этот параметр требует ресурсы для разработчиков.|
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Шаблоны и рекомендации по InfoPath преобразования](https://github.com/SharePoint/PnP-Transformation/tree/master/InfoPath) 

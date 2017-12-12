@@ -1,11 +1,11 @@
 ---
 title: "Управление корпоративным информационным содержимым решений для SharePoint 2013 и SharePoint Online"
 ms.date: 11/03/2017
-ms.openlocfilehash: dfba11eac28c91bae7862e40f482278fcb4a7ec9
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: a1a5552bb744981ff467ad482bd9726405193e29
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="enterprise-content-management-solutions-for-sharepoint-2013-and-sharepoint-online"></a>Управление корпоративным информационным содержимым решений для SharePoint 2013 и SharePoint Online
 
@@ -29,7 +29,7 @@ _**Область применения:** Office 365 | SharePoint 2013 | SharePo
 |[Синхронизация групп терминов](Synchronize-term-groups-sample-app-for-SharePoint.md)|[Core.MMSSync](https://github.com/SharePoint/PnP/tree/master/Samples/Core.MMSSync) | Синхронизация групп терминов несколько банков терминов.|
 |[Поддержка % и # в файлах и папках с помощью API ResourcePath](supporting-and-in-file-and-folder-with-the-resourcepath-api.md)| - | Руководство для разработчиков на обновленный поддержка % и # в файлов и папок.|
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Шаблоны и рекомендации решений разработки Office 365](Office-365-development-patterns-and-practices-solution-guidance.md)

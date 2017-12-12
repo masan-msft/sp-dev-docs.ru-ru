@@ -1,11 +1,11 @@
 ---
 title: "Использование удаленного обеспечения марки страницах SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: 195d5e183850625d732ae696447cbc9a56ab1e8b
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: e06c83261af951070f37320917afcae544fbf95f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="use-remote-provisioning-to-brand-sharepoint-pages"></a>Использование удаленного обеспечения марки страницах SharePoint
 
@@ -47,7 +47,8 @@ public void ApplyTheme(
     
 - shareGenerated — логическое значение. **Значение true,** Если созданных файлов темы, которые должны применяться к корневого веб-узла; **значение false,** если они находятся в текущем веб-узле.
 
-**Примечание**  Параметр shareGenerated определяет, будет ли темой выходные файлы хранятся в папку, доступную через семейства веб-сайтов или веб-узла. Мы рекомендуем оставьте значение по умолчанию для соответствующего типа сайта.
+> [!NOTE] 
+> Параметр shareGenerated определяет, будет ли темой выходные файлы хранятся в папку, доступную через семейства веб-сайтов или веб-узла. Мы рекомендуем оставьте значение по умолчанию для соответствующего типа сайта.
 
 ## <a name="themeinfo-class"></a>Класс ThemeInfo
 <a name="sectionSection1"> </a>
@@ -279,7 +280,7 @@ namespace ApplyThemeAppWeb.Pages
 }
 ```
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Решения для создания фирменного стиля и настройки страниц на сайтах SharePoint](SharePoint-site-branding-and-page-customization-solutions.md)

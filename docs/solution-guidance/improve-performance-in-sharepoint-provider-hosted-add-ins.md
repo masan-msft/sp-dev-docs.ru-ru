@@ -1,11 +1,11 @@
 ---
 title: "Улучшения производительности в SharePoint размещение у поставщика в надстройках"
 ms.date: 11/03/2017
-ms.openlocfilehash: 495d4900418447ccb1738a0a33020dc9940389d8
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: d876d0a14eebdcef940c6d22997f96182b51af28
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="improve-performance-in-sharepoint-provider-hosted-add-ins"></a>Улучшения производительности в SharePoint размещение у поставщика в надстройках
 
@@ -122,7 +122,7 @@ function setLocalStorageKeyExpiry(key) {
 
 Прежде чем ищете информацию, содержащуюся в ключ локального хранилища, используется код, **isKeyExpired** работать определить истек срок действия ключа. Дополнительные сведения содержатся в разделе [Настройка пользовательского интерфейса с помощью SharePoint у поставщика надстроек](customize-the-ux-by-using-sharepoint-provider-hosted-add-ins.md).
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 - [Компоненты взаимодействия с пользователями в SharePoint 2013 и SharePoint Online](ux-components-in-sharepoint-2013-and-sharepoint-online.md)

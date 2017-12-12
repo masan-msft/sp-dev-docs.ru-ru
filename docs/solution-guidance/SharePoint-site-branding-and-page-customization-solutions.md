@@ -1,11 +1,11 @@
 ---
 title: "Сайт фирменной символики и страница центра развертывания решений SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: 6d522af8f85a750656ef53b00785591bac4f93b4
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: f2779fa66451fd6fb477cde3d9294271ebfe0600
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-site-branding-and-page-customization-solutions"></a>Сайт фирменной символики и страница центра развертывания решений SharePoint
 
@@ -70,7 +70,7 @@ _**Область применения:** Office 365 | SharePoint 2013 | SharePo
 | [Фирменная символика существующих сайтов SharePoint и области страницы обновления](update-the-branding-of-existing-sharepoint-sites-and-page-regions.md) | Настройка, а затем обновите фирменной настройки существующих сайтов SharePoint или областей страниц SharePoint, включая ленту, структуры переходов сайта, в меню Параметры, представлении дерева и содержимого страницы.
 |[Настройка OneDrive для бизнеса фирменного стиля сайтов](Customization-Options-For-OD4B-Sites.md)| Настройка OneDrive для бизнеса сайтов в Office 365 или с помощью модели надстройки, в зависимости от требований вашей организации.|
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Фирменная символика и решения для SharePoint 2013 и SharePoint Online по подготовке сайта](Branding-and-site-provisioning-solutions-for-SharePoint.md)

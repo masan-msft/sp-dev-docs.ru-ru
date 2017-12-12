@@ -1,11 +1,11 @@
 ---
 title: "Составные бизнес-приложений для SharePoint 2013 и SharePoint Online"
 ms.date: 11/03/2017
-ms.openlocfilehash: 47f819f8d9066b9f82d925c56da0a2f751d3baba
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 73bd4b9fd9d37cd72271cdce38320c8fdb3c67eb
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="composite-business-apps-for-sharepoint-2013-and-sharepoint-online"></a>Составные бизнес-приложений для SharePoint 2013 и SharePoint Online
 
@@ -41,7 +41,7 @@ _**Область применения:** Office 365 | SharePoint 2013 | SharePo
 |[Корпоративный события надстройки интеграции с SharePoint](Corporate-app-event-registration-with-SharePoint.md)|[BusinessApps.CorporateEventsApp](https://github.com/SharePoint/PnP/tree/master/Solutions/BusinessApps.CorporateEventsApp)|Используйте размещение у поставщика в надстройке для реализации сложных бизнес-задач.|
 |[Вызов веб-служб из рабочих процессов SharePoint](Call-web-services-from-SharePoint-workflows.md)|<p>[Workflow.CallCustomService](https://github.com/SharePoint/PnP/tree/master/Samples/Workflow.CallCustomService)</p><p>[Workflow.CallServiceUpdateSPViaProxy](https://github.com/SharePoint/PnP/tree/master/Samples/Workflow.CallServiceUpdateSPViaProxy)</p><p>[Workflow.AssociateToHostWeb](https://github.com/SharePoint/PnP/tree/master/Samples/Workflow.AssociateToHostWeb)</p>|Используйте автоматически размещаемых приложениях для вызова удаленной веб-служб, которые содержат бизнес-данных.|
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Шаблоны и рекомендации решений разработки Office 365](Office-365-development-patterns-and-practices-solution-guidance.md)

@@ -1,11 +1,11 @@
 ---
 title: "Отправка пользовательского профиля изображения пример надстройки для SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: 0897ded60ef98f019450e73860685d014afc7834
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: ac6787f528d3f611d9eaecb415e8f48d7b392f53
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="upload-user-profile-pictures-sample-add-in-for-sharepoint"></a>Отправка пользовательского профиля изображения пример надстройки для SharePoint
 
@@ -122,7 +122,8 @@ _**Область применения:** Office 365 | SharePoint 2013 | SharePo
     
 - Вызывает **SetAdditionalProfileProperties** для установки дополнительных свойств в профиле пользователя после отправки файла изображения.
 
-**Примечание**  Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
+> [!NOTE] 
+> Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
 
 ```C#
 static void Main(string[] args)
@@ -425,7 +426,7 @@ static void SetAdditionalProfileProperties(string UserName)
 
 ```
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Решения пользовательского профиля для SharePoint 2013 и SharePoint Online](user-profile-solutions-for-sharepoint.md)

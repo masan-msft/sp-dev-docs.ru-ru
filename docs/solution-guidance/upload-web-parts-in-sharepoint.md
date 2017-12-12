@@ -1,11 +1,11 @@
 ---
 title: "Отправка веб-частей в SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: c7e6e7a4bc6d843661ecd7c27d71381f47254ca9
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 81cac6a20f7907a0a15edcd81bf393b896e82153
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="upload-web-parts-in-sharepoint"></a>Отправка веб-частей в SharePoint
 
@@ -53,7 +53,8 @@ _**Применимо к:** SharePoint 2013 | Надстройки SharePoint | 
     
     Обратите внимание на то, что ссылки атрибут **src** на JavaScript файла на удаленный веб. ** &lt;СЦЕНАРИЙ&gt; ** элемент задается свойство **содержимого** в Core.AppScriptPartWeb\userprofileinformation.webpart, как показано в следующем примере. Файл JavaScript, связанный с помощью атрибута **src** — Core.AppScriptPartWeb\Scripts\userprofileinformation.js. Userprofileinformation.js считывает сведения о текущем пользователе профилей из службы профилей пользователей, а затем отображает эти сведения в веб-части.
     
-     **Примечание:** Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
+    > [!NOTE] 
+    > Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
 
   ```XML
   <property name="Content" type="string">&amp;lt;script type="text/javascript" src="https://localhost:44361/scripts/userprofileinformation.js"&amp;gt;&amp;lt;/script&amp;gt;
@@ -65,7 +66,8 @@ _**Применимо к:** SharePoint 2013 | Надстройки SharePoint | 
     
 9. Нажмите кнопку **Сохранить**.
 
-**Примечание:** Если изображения профилей пользователей не отображается, откройте OneDrive для бизнеса сайта и затем вернуться на хост-сайта.
+> [!NOTE] 
+> Если изображения профилей пользователей не отображается, откройте OneDrive для бизнеса сайта и затем вернуться на хост-сайта.
 
 В Core.AppScriptPartWeb\Pages\Default.aspx **Запустите сценарий** работает **btnScenario_Click**, который выполняет следующие:
 
@@ -121,7 +123,7 @@ protected void btnScenario_Click(object sender, EventArgs e)
         }
 ```
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 - [Шаблоны и рекомендации решений разработки Office 365](Office-365-development-patterns-and-practices-solution-guidance.md)

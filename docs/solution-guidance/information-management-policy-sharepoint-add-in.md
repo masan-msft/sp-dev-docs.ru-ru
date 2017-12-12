@@ -1,11 +1,11 @@
 ---
 title: "Политики управления сведениями в объектная модель SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: f395b7fa40f4798b2184bd637ca752c468b9289d
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 6b98c863dd21c5769ee03f3898970c90ee46e08c
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 <a name="information-management-policy-in-the-sharepoint-add-in-model"></a>Политики управления сведениями в объектная модель SharePoint
 ============================================================
@@ -29,7 +29,8 @@ ms.lasthandoff: 11/06/2017
 - Убедитесь, что вы не нарушают пределы регулирования Office 365 SharePoint API при работе с большими наборами данных и рекурсивный обходит как проверять артефактов на веб-сайтах SharePoint и применение политик управления сведениями для них соответствующим образом.
     + [Core.Throttling (Pnp образец O365)](https://github.com/SharePoint/PnP/tree/master/Samples/Core.Throttling) показано, как создавать intelligent код для обработки регулирования Office 365 SharePoint API.
 
-**Примечание:** В настоящее время CSOM не имеет методов, чтобы задать хранения для типов контента (только на сайтах).
+> [!NOTE] 
+> В настоящее время CSOM не имеет методов, чтобы задать хранения для типов контента (только на сайтах).
 
 **Приступая к работе**
 

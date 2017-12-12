@@ -1,11 +1,11 @@
 ---
 title: "Создание задания таймера удаленные в SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: 12f4abd507328afd19da562c8dbb569118bc91a9
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: e9cf373ef4ba81b66c9bfa340b650dd71548f006
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-remote-timer-jobs-in-sharepoint"></a>Создание задания таймера удаленные в SharePoint
 
@@ -25,7 +25,8 @@ _**Применимо к:** SharePoint 2013 | Надстройки SharePoint | 
 
 Чтобы начать использование Core.TimerJobs.Samples решения, необходимо выбрать запускаемый проект, например проект SimpleJob, откройте контекстное меню (щелкнув правой кнопкой мыши) **Core.TimerJobs.Samples.SimpleJob**, а затем выбрать **задаются в виде Запускаемый проект**.
 
-**Примечание:**  При создании нового проекта в Visual Studio для создания вашего нового задания таймера удаленного, добавьте в проект пакетов NuGet **OfficeDevPnP.Core** . В Visual Studio выберите в меню **Сервис** > **Диспетчер пакетов NuGet** > **Управление пакетами NuGet для решения**.
+> [!NOTE] 
+> При создании нового проекта в Visual Studio для создания вашего нового задания таймера удаленного, добавьте в проект пакетов NuGet **OfficeDevPnP.Core** . В Visual Studio выберите в меню **Сервис** > **Диспетчер пакетов NuGet** > **Управление пакетами NuGet для решения**.
 
 ## <a name="schedule-your-remote-timer-job"></a>Задания таймера удаленного
 
@@ -43,7 +44,8 @@ _**Применимо к:** SharePoint 2013 | Надстройки SharePoint | 
     
 4. Выводит сведения о задания таймера и запускается задание таймера с помощью **PrintJobSettingsAndRunJob**.
 
-**Примечание:**  Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
+> [!NOTE] 
+> Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
 
 ```C#
  static void Main(string[] args)
@@ -295,7 +297,7 @@ void SiteGovernanceJob_TimerJobRun(object o, TimerJobRunEventArgs e)
         }
 ```
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 - [Шаблоны и рекомендации решений разработки Office 365](Office-365-development-patterns-and-practices-solution-guidance.md)

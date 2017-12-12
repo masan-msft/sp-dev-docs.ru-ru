@@ -1,11 +1,11 @@
 ---
 title: "Каким образом можно обеспечить клиента только добавить в приложение административных разрешений в SharePoint Online"
 ms.date: 11/03/2017
-ms.openlocfilehash: a1d00ef42547116af8dfa569681566ac40cd97fc
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 48104bb22245a27be487685f8f668b0de2c559b5
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 <a name="how-to-provide-add-in-app-only-tenant-administrative-permissions-in-sharepoint-online"></a>Каким образом можно обеспечить клиента только добавить в приложение административных разрешений в SharePoint Online
 ================================================
@@ -26,7 +26,7 @@ ms.lasthandoff: 11/06/2017
 Обратите внимание, что эта операция должна выполняться в разделе сайт администрирования клиентов и учетная запись, используемая для выполнения этих операций необходимо иметь права администратора клиента. Если нужно предоставить разрешения на нижнем уровне для надстройки, следует выполнить те, в разделе URL-адреса семейства обычный сайт с разрешениями более низкого уровня. 
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 - [Регистрация надстроек для SharePoint](https://msdn.microsoft.com/en-us/library/office/jj687469.aspx)

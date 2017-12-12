@@ -1,11 +1,11 @@
 ---
 title: "Управление SharePoint пользователями и группами"
 ms.date: 11/03/2017
-ms.openlocfilehash: 9f287515faede9c92aa172c947f6b1826efc0fa1
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 06c47217b185aec190e818f1a67ce98cc5bbc63f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="manage-sharepoint-users-and-groups"></a>Управление SharePoint пользователями и группами
 
@@ -23,7 +23,8 @@ _**Применимо к:** Office 365 | SharePoint 2013 | Надстройки 
 
 Следующем примере показано, как добавлять группы и добавление пользователей в группу.
 
-**Примечание:**  Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
+> [!NOTE] 
+> Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
 
 ```C#
 cc.Load(cc.Web, web => web.CurrentUser);
@@ -101,7 +102,7 @@ Microsoft.SharePoint.Client.User currentUser = cc.Web.CurrentUser;
 cc.Web.RemovePermissionLevelFromUser(currentUser.LoginName, RoleType.Reader);
 ```
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 - [Решения по подготовке сайтов SharePoint](sharepoint-site-provisioning-solutions.md)

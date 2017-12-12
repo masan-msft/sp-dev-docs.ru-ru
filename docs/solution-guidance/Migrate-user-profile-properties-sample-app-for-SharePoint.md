@@ -1,11 +1,11 @@
 ---
 title: "Перенос пользователей профиля свойств пример надстройки для SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: 70b8fec69c22a0394184f6af969714d922b4c25a
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 03a7591b21531387e1cd1312be76f1f6e916c41e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="migrate-user-profile-properties-sample-add-in-for-sharepoint"></a>Перенос пользователей профиля свойств пример надстройки для SharePoint
 
@@ -105,7 +105,8 @@ _**Область применения:** Office 365 | SharePoint 2013 | SharePo
     
 - Использует **UserProfileCollection.Save** для сериализации **userData** в XML-файл. XML-файл сохраняется в путь к файлу, указанному в файле App.config.
 
-**Примечание**  Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
+> [!NOTE] 
+> Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
 
 ```C#
 static void Main(string[] args)
@@ -383,7 +384,7 @@ static void SetSingleProfileProperty(string UserName, string PropertyName, strin
 
 ```
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Решения пользовательского профиля для SharePoint 2013 и SharePoint Online](user-profile-solutions-for-sharepoint.md)

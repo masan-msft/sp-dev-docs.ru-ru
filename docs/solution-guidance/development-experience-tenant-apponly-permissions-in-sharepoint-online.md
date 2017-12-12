@@ -1,11 +1,11 @@
 ---
 title: "Разработка с помощью клиента разрешения с помощью только для приложений в SharePoint Online"
 ms.date: 11/03/2017
-ms.openlocfilehash: 7e4080cf1847a1dcf98d1dbb19149a4bbfa8edd5
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: fb603d082296cd7a9793c6958bdd8b44befe05d1
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="developing-using-tenant-permissions-with-app-only-in-sharepoint-online"></a>Разработка с помощью клиента разрешения с помощью только для приложений в SharePoint Online
 
@@ -71,13 +71,14 @@ _**Применимо к:** Поставщик Add-ins for SharePoint Online_
 
 ![](http://i.imgur.com/Y5vAlDr.png)
 
->**Примечание**
+> [!NOTE] 
 > - Если для какой-либо причине приложение упаковать файл изменений необходимо снова развернуть ее в каталог приложений и повторно установить для семейства веб-сайтов разработки
 > - Если вы надстройки имеет приемника событий appinstalled, необходимо убедиться, что вы сделали шаг 6, прежде чем шаг 5
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
+
 - [Надстройка только клиента административные разрешения для приложений в SharePoint Online](https://msdn.microsoft.com/en-us/pnp_articles/how-to-provide-add-in-app-only-tenant-administrative-permissions-in-sharepoint-online)
 - [Разрешения для надстроек в SharePoint 2013](https://msdn.microsoft.com/en-us/library/office/fp142383.aspx)
 - [Изучите структуру манифеста надстройки и пакет надстройки для SharePoint](https://msdn.microsoft.com/en-us/library/office/fp179918.aspx)

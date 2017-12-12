@@ -1,11 +1,11 @@
 ---
 title: "Документ библиотеки шаблонов пример надстройки для SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: ef53fbf5f15a3c82245b2842c1460a7d2dcad5f9
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 405e5863bbbfdb7740a93e33f9ed8b80f136d39b
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="document-library-templates-sample-add-in-for-sharepoint"></a>Документ библиотеки шаблонов пример надстройки для SharePoint
 
@@ -57,7 +57,8 @@ private bool DoesUserHavePermission()
 
 Когда пользователи выберите **Создать**, с помощью метода **CreateLibrary_Click** в файле Default.aspx.cs проверяет шаблон выбранные по умолчанию и вызывает метод либо **CreateITDocumentLibrary** , либо **CreateContosoDocumentLibrary** в ContentTypeManager.cs, как показано в следующем коде.
     
-**Примечание**  Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
+> [!NOTE] 
+> Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
 
 ```C#
 protected void CreateLibrary_Click(object sender, EventArgs e)
@@ -287,7 +288,7 @@ private void CreateLibrary(ClientContext ctx, Library library, string associateC
 
 ![Снимок экрана на странице Параметры библиотеки документов, с помощью поля имя, веб-адрес и описание с выделением.](media/aedf5107-bacb-4872-8ad4-8e66b1afead8.png)
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Управление корпоративным информационным содержимым решений для SharePoint 2013 и SharePoint Online](Enterprise-Content-Management-solutions-for-SharePoint-2013-and-SharePoint-Online.md)

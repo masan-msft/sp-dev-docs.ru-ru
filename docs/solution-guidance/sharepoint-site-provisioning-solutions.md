@@ -1,11 +1,11 @@
 ---
 title: "Решения по подготовке сайтов SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: 559de89e1b82f9a56d78cb1b8c1a5d062c5ac762
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 236423647190f655097f6203db4ff72ae5ef207b
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-site-provisioning-solutions"></a>Решения по подготовке сайтов SharePoint
 
@@ -25,7 +25,7 @@ _**Применимо к:** Office 365 | SharePoint 2013 | Надстройки 
 |[Изменить разрешения для сайта SharePoint и получить сведения о состоянии внешних общего доступа](modify-sharepoint-site-permissions-and-get-external-sharing-status.md)|[Core.SitePermissions](https://github.com/SharePoint/PnP/tree/dev/Scenarios/Core.SitePermissions)|Изменение свойств Администраторы семейства сайтов с использованием CSOM кода и получить состояние внешних общего доступа и внешние пользователи семейства веб-сайтов или клиента.|
 |[Управление SharePoint пользователями и группами](manage-sharepoint-users-and-groups.md)|[Core.GroupManagement](https://github.com/SharePoint/PnP/tree/dev/Scenarios/Core.GroupManagement)|Управление пользователями, группами и разрешения в семействе сайтов SharePoint.|
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 - [Фирменная символика и решения для SharePoint 2013 и SharePoint Online по подготовке сайта](Branding-and-site-provisioning-solutions-for-SharePoint.md)

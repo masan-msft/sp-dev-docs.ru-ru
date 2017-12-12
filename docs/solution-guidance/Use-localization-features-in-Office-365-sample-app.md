@@ -1,11 +1,11 @@
 ---
 title: "Используйте возможности локализации в Office 365 пример надстройки"
 ms.date: 11/03/2017
-ms.openlocfilehash: 83ced206837c555fc644715c77a1fa070ad23e9e
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: e3f6644f841f53b8e62e95ed626477aef0b0ac6b
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="use-localization-features-in-office-365-sample-add-in"></a>Используйте возможности локализации в Office 365 пример надстройки
 
@@ -19,7 +19,8 @@ _**Область применения:** Office 365 | SharePoint 2013 | SharePo
     
 - Локализация типа контента, столбец сайта, списка и сайта, предоставленный пользователем.
 
-**Примечание**  Локализация компонентов, описанных в этой статье доступны только в Office 365. Сведения о возможности локализации, доступные в Office 365 выделенных или SharePoint Server 2013 в локальной можно [как: локализация надстроек для SharePoint](http://msdn.microsoft.com/library/907a9189-7ce3-469a-8c87-4cef26f03c73.aspx) и [решений SharePoint локализации](https://msdn.microsoft.com/en-us/library/ee696750.aspx).
+> [!NOTE] 
+> Локализация компонентов, описанных в этой статье доступны только в Office 365. Сведения о возможности локализации, доступные в Office 365 выделенных или SharePoint Server 2013 в локальной можно [как: локализация надстроек для SharePoint](http://msdn.microsoft.com/library/907a9189-7ce3-469a-8c87-4cef26f03c73.aspx) и [решений SharePoint локализации](https://msdn.microsoft.com/en-us/library/ee696750.aspx).
 
 ## <a name="before-you-begin"></a>Перед началом работы
 <a name="sectionSection0"> </a>
@@ -50,7 +51,8 @@ _**Область применения:** Office 365 | SharePoint 2013 | SharePo
     
       e. Выберите команду **Сохранить все и закрыть**.
 
-**Примечание**  Выполнение может занять несколько минут для сайта отобразить в выбранные языки. 
+> [!NOTE] 
+> Выполнение может занять несколько минут для сайта отобразить в выбранные языки. 
 
 **На рисунке 1. Языковые параметры для сайта**
 
@@ -93,7 +95,8 @@ _**Область применения:** Office 365 | SharePoint 2013 | SharePo
     
 - Установить разные локализованные значения для заголовок и описание сайта, с помощью метода **SetValueForUICulture** на **TitleResource** и **DescriptionResource** свойств объекта **поля** .
     
-**Примечание**  Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
+> [!NOTE] 
+> Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
 
 ```C#
 private static void LocalizeSiteAndList(ClientContext cc, Web web)
@@ -165,7 +168,7 @@ private static void LocalizeContentTypeAndField(ClientContext cc, Web web)
 
 ![Снимок экрана заголовка обновленные настраиваемая страница](media/14471283-f7b6-49ca-a507-a3e28e43ee22.png)
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Локализация решения для SharePoint 2013 и SharePoint Online](localization-solutions-for-sharepoint-2013-and-sharepoint-online.md)

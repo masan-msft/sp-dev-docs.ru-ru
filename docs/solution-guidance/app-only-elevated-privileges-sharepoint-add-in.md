@@ -1,11 +1,11 @@
 ---
 title: "Права только для приложений и с повышенными привилегиями в объектная модель SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: 126e9e578d517c3076b9b6e7153df81506538dc0
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 9bcdbe3f5bb31e0c01fac300bb237bf0134c84a1
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 <a name="app-only-and-elevated-privileges-in-the-sharepoint-add-in-model"></a>Права только для приложений и с повышенными привилегиями в объектная модель SharePoint
 ===============================================================
@@ -25,7 +25,11 @@ ms.lasthandoff: 11/06/2017
 - AllowAppOnlyPolicy не работает с 
     + Поиск — Если целевой объект локальная версия SharePoint. SharePoint Online поддержка добавлена ([запись в блоге](https://blogs.msdn.microsoft.com/vesku/2016/03/07/using-add-in-only-app-only-permissions-with-search-queries-in-sharepoint-online/))
     + Операции CSOM профиля пользователя, за исключением того, что можно использовать API обновления массового профилей пользователей с разрешениями только для приложений
-    + Обновление записей службы таксономии (запись) — чтение works **Примечание:** в следующих ситуациях, необходимо использовать учетную запись службы.
+    + Обновление записей службы таксономии (запись) — чтение works
+    
+    > [!NOTE] 
+    > В следующих ситуациях необходимо использовать учетную запись службы.
+
 - AllowAppOnlyPolicy аналогично RunWithElevatedPrivileges, но не точно так же.
     + AllowAppOnlyPolicy выполняет код на основании разрешения, предоставленные для SharePoint надстройки, не от имени другого пользователя, который имеет соответствующие разрешения на выполнение операции.
 

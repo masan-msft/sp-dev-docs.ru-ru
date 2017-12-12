@@ -2,11 +2,11 @@
 title: "Настройка «современный» каждый раз в SharePoint Online"
 description: "Обзором, чтобы приступить к работе с «современный» каждый раз в SharePoint Online."
 ms.date: 11/08/2017
-ms.openlocfilehash: 542949a350ed6b3a36c81fcb8a30c56dfbd8bf32
-ms.sourcegitcommit: 4ea7e9cb1efb53f89da236282002956739d77418
+ms.openlocfilehash: aa1bbf607dbe1a38944a0912a28e85fede8422e1
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="customizing-the-modern-experiences-in-sharepoint-online"></a>Настройка «современный» каждый раз в SharePoint Online
 
@@ -62,7 +62,7 @@ SharePoint Online запущен постепенного введение «с�
 SharePoint, которые «современный» среды взаимодействия с пользователем, в настоящее время недоступны для SharePoint локально. В составе пакета дополнительных компонентов SharePoint 2016 «современный» каждый раз будет вводиться в OneDrive для бизнеса взаимодействия и могут воспользоваться преимуществами платформой SharePoint со стороны клиента веб-частей в качества классический страницы.
 
 <a name="bk_addresources"> </a>
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 
 -  [Создание связи сайтов группы SharePoint Online в секундах](https://blogs.office.com/en-us/2016/11/08/create-connected-sharepoint-online-team-sites-in-seconds/)
 -  [Новые возможности в SharePoint Online сайты групп, включая интеграцию с группами Office 365](https://blogs.office.com/en-us/2016/08/31/new-capabilities-in-sharepoint-online-team-sites-including-integration-with-office-365-groups/)

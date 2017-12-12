@@ -1,11 +1,11 @@
 ---
 title: "PnP удаленного подготовки"
 ms.date: 11/03/2017
-ms.openlocfilehash: 89ddf3be57d2aec6099afc2bd3452bc11ead0868
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: bab282ab37204db3fd312f8bb27c247392309d61
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="pnp-remote-provisioning"></a>PnP удаленного подготовки
 
@@ -26,7 +26,7 @@ Microsoft SharePoint 2013 и новой моделью надстройки по
 |[OfficeDevPnP.Core](https://github.com/SharePoint/PnP-Sites-Core/tree/master/Core)|PnP компонент основной Office 365 для разработчиков — расширение, инкапсулирующий часто используемых удаленных операций CSOM/REST как методы расширения для повторного использования для поддержки подготовки объектов CSOM.|
 |[Внутри PnP подготовки схемы](https://channel9.msdn.com/blogs/OfficeDevPnP/Deep-dive-to-PnP-provisioning-engine-schema)|Введение аудио и видео Microsoft Channel 9 PnP подготовки схемы, предоставляемых Paolo Pialorsi.|
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 - [Шаблоны и рекомендации решений разработки Office 365](Office-365-development-patterns-and-practices-solution-guidance.md)

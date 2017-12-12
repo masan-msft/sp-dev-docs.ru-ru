@@ -1,11 +1,11 @@
 ---
 title: "Расширения управления записями пример приложения для SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: 34184d4f1b7f2c75c7167d86cc1cf90e1a40323e
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: cfc4269c4510b5bb9207e45458affcd99a9a2eab
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="records-management-extensions-sample-app-for-sharepoint"></a>Расширения управления записями пример приложения для SharePoint
 
@@ -68,7 +68,8 @@ _**Область применения:** Office 365 | SharePoint 2013 | SharePo
 
 Приведенный ниже код активирует или деактивирует компонента управления записями на месте в коллекции веб-сайтов. Методы **DisableInPlaceRecordsManagementFeature** и **EnableSiteForInPlaceRecordsManagement** являются частью файла AppModelExtensions\RecordsManagementExtensions.cs в [OfficeDevPnP.Core](https://github.com/SharePoint/PnP/tree/master/OfficeDevPnP.Core).
     
-**Примечание**  Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
+> [!NOTE] 
+> Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
 
 ```C#
 protected void btnToggleIPRStatus_Click(object sender, EventArgs e)
@@ -159,7 +160,8 @@ public static void SetRecordRestrictions(this Site site, EcmSiteRecordRestrictio
 
 Сценарий 2 показано, как взаимодействовать с записями на месте параметры управления для списков. При установке приложения, он создает библиотеки документов, называется IPRTest. При использовании этого приложения для изменения и сохранения параметров управления записями на месте, эти изменения применяются к IPRTest. 
 
-**Примечание**  Чтобы использовать параметры управления записями на месте для списка, необходимо активировать компонент управления записями на месте в семействе веб-сайтов, как показано на рисунке 1 ранее в этой статье. 
+> [!NOTE] 
+> Чтобы использовать параметры управления записями на месте для списка, необходимо активировать компонент управления записями на месте в семействе веб-сайтов, как показано на рисунке 1 ранее в этой статье. 
 
 Следующий код в файле Default.aspx.cs выполняется, если пользователь выбирает кнопку **Сохранить изменения** .
 
@@ -305,7 +307,7 @@ public static void SetListAutoRecordDeclaration(this List list, bool autoDeclare
         }
 ```
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Управление корпоративным информационным содержимым решений для SharePoint 2013 и SharePoint Online](Enterprise-Content-Management-solutions-for-SharePoint-2013-and-SharePoint-Online.md)

@@ -1,11 +1,11 @@
 ---
 title: "Использование асинхронной операции в SharePoint надстройки"
 ms.date: 11/03/2017
-ms.openlocfilehash: 3bf311c7084c6dba5e4faecb2ebfbd9edd6e4f86
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: c2144297453a47ae4b4ee718b5a9682181f20f5e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="use-asynchronous-operations-in-sharepoint-add-ins"></a>Использование асинхронной операции в SharePoint надстройки
 
@@ -45,7 +45,8 @@ _**Применимо к:** SharePoint 2013 | Надстройки SharePoint | 
     
 4. Azure WebJob запускает настраиваемых бизнес-логики на веб-узле SharePoint Online. 
     
-**Примечание:**  Добавление сообщения в очередь хранилища Azure использует процесс отличается от процесса, на котором выполняется Azure WebJob. Таким образом надстройка можно реализовать асинхронной операции путем добавления новых сообщений в очередь с использованием одного процесса, а затем с помощью Azure WebJob для обработки этих сообщений в другом процессе. 
+> [!NOTE] 
+> Добавление сообщения в очередь хранилища Azure использует процесс отличается от процесса, на котором выполняется Azure WebJob. Таким образом надстройка можно реализовать асинхронной операции путем добавления новых сообщений в очередь с использованием одного процесса, а затем с помощью Azure WebJob для обработки этих сообщений в другом процессе. 
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
@@ -116,7 +117,8 @@ _**Применимо к:** SharePoint 2013 | Надстройки SharePoint | 
 || **AzureWebJobsStorage**| Замените **[YourAccount]** имя учетной записи хранилища, скопированные из портала управления Azure.|
 ||| Замените **[YourKey]** с ключом доступа основной, скопированные из портала управления Azure.|
 
-**Примечание:**  Если **ClientId** и **ClientSecret** в Core.QueueWebJobUsageWeb обновляется, например, при увеличить номер версии файла AppManifest.XML, убедитесь, что обновление **ClientId** и **ClientSecret** в Core.QueueWebJobUsage.Job\app.config.
+> [!NOTE] 
+> Если **ClientId** и **ClientSecret** в Core.QueueWebJobUsageWeb обновляется, например, при увеличить номер версии файла AppManifest.XML, убедитесь, что обновление **ClientId** и **ClientSecret** в Core.QueueWebJobUsage.Job\app.config.
 
 ## <a name="using-the-corequeuewebjobusage-add-in"></a>С помощью надстройки Core.QueueWebJobUsage
 
@@ -138,7 +140,8 @@ _**Применимо к:** SharePoint 2013 | Надстройки SharePoint | 
     
 3. Вызывает **SiteManager(). AddAsyncOperationRequestToQueue** для добавления сообщения в очередь хранилища Azure.
     
-**Примечание:**  Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
+> [!NOTE] 
+> Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
 
 ```C#
 protected void btnAsync_Click(object sender, EventArgs e)
@@ -254,7 +257,7 @@ public static void ProcessQueueMessage(
         }
 ```
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 - [Office 365 development шаблоны и рекомендации руководство по решениям](Office-365-development-patterns-and-practices-solution-guidance.md).

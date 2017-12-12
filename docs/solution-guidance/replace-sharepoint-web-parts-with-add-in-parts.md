@@ -1,11 +1,11 @@
 ---
 title: "Замените надстройки части веб-частей SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: 3c65234be92b9757f3ed0894e0e8e7d11b6a2187
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: af8c3eb1d5f314332542247f811b9a25daf0702a
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="replace-sharepoint-web-parts-with-add-in-parts"></a>Замените надстройки части веб-частей SharePoint
 
@@ -59,7 +59,8 @@ _**Применимо к:** SharePoint 2013 | Надстройки SharePoint | 
     
 10. Выберите файл надстройки часть, который был загружен и выберите команду **Открыть** для просмотра определение части надстройки.
     
-**Примечание:**  Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
+> [!NOTE] 
+> Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
 
 ```XML
 <webParts>
@@ -244,7 +245,7 @@ private static void ReplaceWebPart(Web web, ListItem item, LimitedWebPartManager
   }
 ```
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 - [Преобразование решений ферм для модели надстроек SharePoint](Transform-farm-solutions-to-the-SharePoint-app-model.md)

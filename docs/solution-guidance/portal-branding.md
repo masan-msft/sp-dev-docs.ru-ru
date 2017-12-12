@@ -1,17 +1,18 @@
 ---
 title: "Используйте проверенные методы для SharePoint Online портала фирменного стиля"
 ms.date: 11/03/2017
-ms.openlocfilehash: 4546bf4e04aa985d5e75201ba19bcdac546e518e
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 9d56f027541f69f12c1d487f2a97b1dd47c61373
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="proven-practices-for-sharepoint-online-portal-branding"></a>Используйте проверенные методы для SharePoint Online портала фирменного стиля
 
 Возможность применения настраиваемых торговых марок на портале является важных возможностей и в этой статье описываются Обзор фирменной символики параметры и рекомендации по фирменной символики.
 
->**Примечание**: несмотря на то, что данное руководство предназначен для SharePoint Online большая часть он также распространяется на порталов, размещенных в локальной среде SharePoint.
+> [!NOTE] 
+> Несмотря на то, что данное руководство предназначен для SharePoint Online большая часть он также распространяется на порталов, размещенных в локальной среде SharePoint.
 
 
 _**Применимо к:** SharePoint Online_
@@ -117,7 +118,7 @@ _**Применимо к:** SharePoint Online_
 - [Использование сети доставки содержимого с помощью SharePoint Online](https://support.office.com/en-gb/article/Using-content-delivery-networks-with-SharePoint-Online-9a64268c-0b74-4eaa-b971-fb6380b1b165)
 - [Диспетчер CDN](https://github.com/SharePoint/PnP/tree/master/Solutions/Core.CDNManager)
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 - [Фирменный стиль сайтов SharePoint в объектная модель SharePoint](branding-sharepoint-sites-sharepoint-add-in.md)

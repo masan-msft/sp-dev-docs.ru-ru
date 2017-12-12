@@ -1,11 +1,11 @@
 ---
 title: "Задайте внешний общий доступ через семейств веб-сайтов в Office 365"
 ms.date: 11/03/2017
-ms.openlocfilehash: 62ff660a139d3453ac619a62b66a174725296c96
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: d98140a1502efce34ebe60112dfc201aa3336785
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="set-external-sharing-on-site-collections-in-office-365"></a>Задайте внешний общий доступ через семейств веб-сайтов в Office 365
 
@@ -19,7 +19,8 @@ _**Применимо к:** надстройки для SharePoint | SharePoint 
     
 - Подготовка семейства веб-сайтов для общего доступа с внешними пользователями.
 
-**Примечание:** Параметры внешнего совместного доступа доступны только в Office 365.
+> [!NOTE] 
+> Параметры внешнего совместного доступа доступны только в Office 365.
 
 ## <a name="before-you-begin"></a>Перед началом работы
 <a name="sectionSection0"> </a>
@@ -69,7 +70,8 @@ _**Применимо к:** надстройки для SharePoint | SharePoint 
     
 - Вызывает **SetSiteSharing**.
 
-**Примечание**  Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
+> [!NOTE] 
+> Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
 
 ```C#
  static void Main(string[] args)
@@ -181,7 +183,7 @@ public static void SetSiteSharing(ClientContext adminCC, string siteCollectionUR
         }
 ```
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Шаблоны и рекомендации решений разработки Office 365](Office-365-development-patterns-and-practices-solution-guidance.md)

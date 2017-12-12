@@ -1,11 +1,11 @@
 ---
 title: "Работа с сайтами, в среде с несколькими географически"
 ms.date: 11/03/2017
-ms.openlocfilehash: c4fc583fd0d13dfc16d5b1b514b48cf29addbf0e
-ms.sourcegitcommit: 26a4fb9cfe1ffcd266313c16f2afabfc841fdb71
+ms.openlocfilehash: cd7b3889a7299916d96e4e80bb65126c41733494
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="work-with-sites-in-a-multi-geo-environment"></a>Работа с сайтами, в среде с несколькими географически
 
@@ -31,7 +31,8 @@ ms.lasthandoff: 11/08/2017
 
 Для получения дополнительных сведений см [MultiGeo.SiteEnumeration](https://github.com/SharePoint/PnP/tree/dev/Samples/MultiGeo.SiteEnumeration) .
 
->**Примечание:** Дополнительные сведения о разрешениях и настройке приложения см [несколькими географически примера приложения](multigeo-sampleapplicationsetup.md).
+> [!NOTE] 
+> Дополнительные сведения о разрешениях и настройке приложения см [несколькими географически примера приложения](multigeo-sampleapplicationsetup.md).
 
 ## <a name="performing-tenant-level-operations"></a>Для выполнения операций на уровне клиента
 `Tenant` Объекта также используется для настройки параметры на уровне клиента, таких как параметры CDN и параметры сайта на уровне клиента, такие как **ограничение географически расположение узла**. Для выполнения операций на уровне клиента:

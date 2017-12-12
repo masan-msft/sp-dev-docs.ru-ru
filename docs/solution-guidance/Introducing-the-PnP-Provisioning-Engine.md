@@ -1,11 +1,11 @@
 ---
 title: "Краткие сведения о PnP модуля подготовки"
 ms.date: 11/03/2017
-ms.openlocfilehash: 5f27bf0ad8eb45d8af78f1be0bc46a99858c9254
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 5ffce93158a74f43b6428ba9ab04143eebd68c48
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="introducing-the-pnp-provisioning-engine"></a>Краткие сведения о PnP модуля подготовки
 
@@ -250,7 +250,7 @@ _**Применимо к:** SharePoint 2013 | SharePoint Online | Office 365_
 Пожалуйста Поэкспериментируйте с PnP модуля подготовки, отзыв и находят истинное наслаждение будущее модели надстройки SharePoint и удаленных подготовки!
 
 <a name="bk_addresources"> </a>
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 
 -  [Шаблоны разработки Office 365 и рекомендации на репозиториев](https://github.com/SharePoint/PnP/)
 -  [Группы разработчиков SharePoint](http://aka.ms/sppnp-community) в Microsoft Tech сообщества

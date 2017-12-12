@@ -1,11 +1,11 @@
 ---
 title: "Работа с профилями пользователей в SharePoint несколькими-географически клиентов"
 ms.date: 11/03/2017
-ms.openlocfilehash: 85362f0bd67c1e148d8c75d691a67033e880c722
-ms.sourcegitcommit: 4ea7e9cb1efb53f89da236282002956739d77418
+ms.openlocfilehash: 75880f9811d299cd14a66467fac73439aefa1818
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="work-with-user-profiles-in-a-sharepoint-multi-geo-tenant"></a>Работа с профилями пользователей в SharePoint несколькими-географически клиентов
 
@@ -72,7 +72,8 @@ GET https://graph.microsoft.com/v1.0/users/bert@contoso.onmicrosoft.com?$select=
 
 При наличии URL-адрес узла личного сайта, который можно использовать для получения URL-адрес сайта администрирования клиента для географического расположения, на котором размещается в профиле пользователя наряду со сведениями о [несколькими географически обнаружения](multigeo-discovery.md) .
 
->**Примечание:** Если у пользователя нет личного сайта, этот способ не работает. Вместо этого следует использовать API профилей пользователей SharePoint.
+> [!NOTE] 
+> Если у пользователя нет личного сайта, этот способ не работает. Вместо этого следует использовать API профилей пользователей SharePoint.
 
 Для получения дополнительных сведений см [MultiGeo.UserProfileUpdates](https://github.com/SharePoint/PnP/tree/dev/Samples/MultiGeo.UserProfileUpdates) .
 

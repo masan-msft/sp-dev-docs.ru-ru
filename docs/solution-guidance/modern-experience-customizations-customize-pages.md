@@ -2,11 +2,11 @@
 title: "Настройка страниц сайта «современный»"
 description: "Использовать настраиваемый фирменный стиль в SharePoint Online, добавления «современный» страницы программными средствами и добавление, удаление или обновление со стороны клиента веб-частей на страницах «современный»."
 ms.date: 11/09/2017
-ms.openlocfilehash: 28a6c8739d5ac47bb182f2fa5bc347c0dd3e947d
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: b22eabf437eab007a1f58a3ebfcb9c8b830805f8
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="customizing-modern-site-pages"></a>Настройка страниц сайта «современный»
 
@@ -278,7 +278,7 @@ p.Delete();
 
 Постепенно описываются дополнительные параметры настройки для взаимодействия пользователя со страницы «современный». Эти параметры способ выравнивания в выпуске дополнительные возможности среды SharePoint. На данный момент нет расписание не точное, но при выпуске новых возможностей взаимодействия «современный» статьи будут обновляться.
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 
 - [Настройка "современных" интерфейсов в SharePoint Online](modern-experience-customizations.md)
 - [Разрешить или запретить создание современных веб-страниц конечными пользователями](https://support.office.com/en-us/article/Allow-or-prevent-creation-of-modern-site-pages-by-end-users-c41d9cc8-c5c0-46b4-8b87-ea66abc6e63b?ui=en-US&rs=en-US&ad=US)

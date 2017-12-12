@@ -2,11 +2,11 @@
 title: "Настройка веб-сайтов «современный» групп"
 description: "Применение пользовательской темы на сайте команды «современный» в SharePoint Online."
 ms.date: 11/08/2017
-ms.openlocfilehash: 4341876f6ee07018325c5cc089cc28728538ab10
-ms.sourcegitcommit: 4ea7e9cb1efb53f89da236282002956739d77418
+ms.openlocfilehash: 18c557f3edb192e3336589a59f24522113bd1d9c
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="customizing-modern-team-sites"></a>Настройка веб-сайтов «современный» групп
 
@@ -165,7 +165,7 @@ public static bool IsNoScriptSite(Web web)
 
 Постепенно описываются дополнительные параметры настройки для сайтов «современный» групп, которые способ выравнивания в выпуске дополнительные возможности среды SharePoint. В настоящее время недоступен расписание не точное, но при выпуске новых возможностей взаимодействия «современный» статьи будут обновляться.
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 
 - [Настройка "современных" интерфейсов в SharePoint Online](modern-experience-customizations.md)
 - [PnP удаленного подготовки](https://msdn.microsoft.com/en-us/pnp_articles/pnp-remote-provisioning)

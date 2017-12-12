@@ -1,11 +1,11 @@
 ---
 title: "Надстройка SharePoint рецептов"
 ms.date: 11/03/2017
-ms.openlocfilehash: e2df4e463fe9a1c4433b0b99649d89034f8db381
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 2f6d8046a2356fb9bd10efeb1b1724acff392466
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-add-in-recipes"></a>Надстройка SharePoint рецептов
 
@@ -50,7 +50,7 @@ ms.lasthandoff: 11/06/2017
 |[Рабочие процессы, действия (действия), события и форм](workflows-actions-events-and-forms-sharepoint-add-in.md)|Реализация рабочих процессов и их связанных компонентов.|
 |[Интеграция Yammer](yammer-integration-sharepoint-add-in.md)|Интеграция Yammer с SharePoint.|
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 - [Шаблоны и рекомендации решений разработки Office 365](Office-365-development-patterns-and-practices-solution-guidance.md)

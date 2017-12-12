@@ -1,11 +1,11 @@
 ---
 title: "Настройка страницы SharePoint с помощью удаленного подготовки и CSS"
 ms.date: 11/03/2017
-ms.openlocfilehash: 7287c1d4375f37f1047ab299dbe04f012f0fa297
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 6cf2eb2044af5a8659e19fea94e009824e7ec9d2
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="customize-a-sharepoint-page-by-using-remote-provisioning-and-css"></a>Настройка страницы SharePoint с помощью удаленного подготовки и CSS
 
@@ -32,7 +32,8 @@ _**Область применения:** Office 365 | SharePoint 2013 | SharePo
 
 Настройка зоны веб-частей с помощью CSS, используйте редактор сценариев веб-части. Для получения дополнительных сведений см. [как использовать редактор сценариев веб-части в SharePoint 2013](http://community.bamboosolutions.com/blogs/sharepoint-2013/archive/2013/05/20/how-to-use-script-editor-web-part-in-sharepoint-2013.aspx).
 
-**Примечание**  При использовании SharePoint Online и функцию NoScript веб-часть редактора скриптов отключена. 
+> [!NOTE] 
+> При использовании SharePoint Online и функцию NoScript веб-часть редактора скриптов отключена. 
 
 В следующем примере кода отправляет настраиваемого CSS в библиотеку активов, применяется ссылку на URL-адрес CSS с настраиваемым действием и затем создается настраиваемое действие для построения ссылка на файл CSS.
 
@@ -130,7 +131,7 @@ namespace AlternateCSSAppAutohostedWeb.Services
 
 ```
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Решения для создания фирменного стиля и настройки страниц на сайтах SharePoint](SharePoint-site-branding-and-page-customization-solutions.md)
