@@ -1,39 +1,24 @@
 ---
-title: "Инструкции. Создание рабочих процессов SharePoint с помощью Visual Studio"
+title: "Создание рабочих процессов в SharePoint с помощью Visual Studio"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 739af178-96b3-4630-bbc0-5def02065eeb
-ms.openlocfilehash: cd88dd212f9d025cf53293f5bea980443b9e8595
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2fcfd7a42984ccd1505cff600d75612e80b18f69
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-sharepoint-workflows-using-visual-studio"></a>Инструкции. Создание рабочих процессов SharePoint с помощью Visual Studio
-Ознакомьтесь с основами создания рабочего процесса SharePoint на новой платформе рабочих процессов SharePoint. **Автор:** [Эндрю Коннел (Andrew Connell)](http://social.msdn.microsoft.com/profile/andrew%20connell%20%5bmvp%5d/), [AndrewConnell.com](http://www.andrewconnell.com)
-  
-    
-    
+# <a name="create-sharepoint-workflows-using-visual-studio"></a>Создание рабочих процессов в SharePoint с помощью Visual Studio
 
+Ознакомьтесь с основами создания рабочего процесса SharePoint на новой платформе рабочих процессов SharePoint.
 
-  
-    
-    
+**Автор:** [Andrew Connell](http://social.msdn.microsoft.com/profile/andrew%20connell%20%5bmvp%5d/), [AndrewConnell.com](http://www.andrewconnell.com)
 
 > **Примечание.** К этой статье прилагается пример законченного кода, который можно просматривать во время чтения или брать за основу при создании собственных проектов рабочих процессов SharePoint. Код можно скачать здесь: ССЫЛКА. 
-  
-    
-    
-
-
-  
-    
-    
-
-  
-    
     
 Корпорация Майкрософт применила к рабочим процессам в SharePoint не такой подход, как в предыдущих версиях. Теперь рабочие процессы SharePoint основаны на Windows Workflow Foundation 4, а их выполнение управляется новым компонентом под названием Workflow Manager, который запускается независимо от SharePoint.Workflow Manager выступает в роли ведущего приложения с высоким уровнем доступа и масштабирования для среды выполнения Windows Workflow Foundation и всех необходимых служб. Он использует служебную шину для обеспечения производительности и масштабируемости, а при развертывании выполняется в локальной среде так же, как и в облачной службе, например Office 365, поскольку он поручает выполнение всех рабочих процессов и сопутствующие задачи ферме Workflow Manager.Резкое изменение архитектуры рабочих процессов потребовало некоторых изменений двух основных средств создания настраиваемых рабочих процессов  Visual Studio и SharePoint Designer. В этой статье рассматривается использование Visual Studio 2012 в качестве средства создания настраиваемых рабочих процессов для использования в развертываниях **sp15allshort**  локальных или Office 365
+
 ## <a name="types-of-workflows-in-visual-studio-2012"></a>Типы рабочих процессов в Visual Studio 2012
 <a name="bm1"> </a>
 
