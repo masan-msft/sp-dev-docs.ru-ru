@@ -25,7 +25,7 @@ False
 * **Get-SPOTheme** &mdash; получает параметры существующей темы;
 * **Remove-SPOTheme** &mdash; удаляет тему из коллекции;
 * **Set-HideDefaultThemes** &mdash; указывает, доступны ли стандартные темы;
-* **Get-HideDefaultThemes** &mdash; запрашивает текущий параметр HideDefaultThemes.
+* **Get-HideDefaultThemes**, который запрашивает текущий параметр HideDefaultThemes.
 
 ## <a name="add-spotheme"></a>Add-SPOTheme
 
@@ -143,8 +143,6 @@ _ПРИМЕЧАНИЕ. Этот командлет будет называтьс
 Set-HideDefaultThemes $true
 ```
 Если после создания темы Custom Cyan скрыть стандартные темы, в списке тем в разделе **Изменение оформления** останется только одна специальная тема.
-
-![Поле "Изменение оформления" со скрытыми стандартными темами и специальной темой Cyan](../../images/theme-hidedefaults.png)
 
 Чтобы восстановить стандартные темы в списке выбора тем, используйте следующий командлет:
 ```powershell

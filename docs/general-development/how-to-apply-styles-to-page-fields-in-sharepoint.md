@@ -1,15 +1,15 @@
 ---
-title: "Как применение стилей поля страниц в SharePoint"
+title: "Применение стилей к полям страницы в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: e227613d-0e4d-4312-924d-bb55e1fe4293
-ms.openlocfilehash: f8651a073c67d67e5a20a805c6bb9a2356141ae8
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 9804ef7fe338f668dd843f3c79c6a77d92310f17
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-apply-styles-to-page-fields-in-sharepoint"></a>Как: применение стилей поля страниц в SharePoint
+# <a name="apply-styles-to-page-fields-in-sharepoint"></a>Применение стилей к полям страницы в SharePoint
 В макете страницы можно применить стили для поля страницы, и эти стили, применяются к любое содержимое, добавленные в окончательную авторы контента при создании страницы из макета страницы. Кроме того вы имеют параметры для управления стилями содержимого в поле страницы RichHtmlField.
 ## <a name="introduction-to-applying-styles-to-page-fields"></a>Общие сведения о применение стилей поля страниц
 <a name="Introduction"> </a>
@@ -107,7 +107,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
-В поле страницы RichHtmlField содержит 28 различных **Allow** свойства. Дополнительные сведения о какой элемент управления определенных свойств [Свойства RichHtmlField](http://msdn.microsoft.com/en-us/library/microsoft.sharepoint.publishing.webcontrols.richhtmlfield_properties) более подробные сведения добавлении и настройке фрагменты кода, посмотрите [Фрагменты кода дизайнер SharePoint](sharepoint-design-manager-snippets.md).
+В поле страницы RichHtmlField содержит 28 различных **Allow** свойства. Дополнительные сведения о какой элемент управления определенных свойств [Свойства RichHtmlField](http://msdn.microsoft.com/ru-RU/library/microsoft.sharepoint.publishing.webcontrols.richhtmlfield_properties) более подробные сведения добавлении и настройке фрагменты кода, посмотрите [Фрагменты кода дизайнер SharePoint](sharepoint-design-manager-snippets.md).
   
     
     

@@ -1,16 +1,18 @@
 ---
-title: "Как преобразовать HTML-файл в эталонную страницу SharePoint"
+title: "Преобразование HTML-файла в эталонную страницу SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: a76ab289-3256-45de-ac63-d5112a74e3c7
-ms.openlocfilehash: e8dbc28be842cfc2b39d8cfb81ab00fced22368a
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: df93a6b57fc719e83f337b061e575b7caa97eba6
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-convert-an-html-file-into-a-master-page-in-sharepoint"></a>Инструкции. Преобразование HTML-файла в эталонную страницу SharePoint
+# <a name="convert-an-html-file-into-a-master-page-in-sharepoint"></a>Преобразование HTML-файла в эталонную страницу SharePoint
+
 Благодаря Дизайнеру вы можете конвертировать HTML-файл в эталонную страницу SharePoint  MASTER-файл. После преобразования HTML-файл и эталонная страница будут связаны, чтобы при редактировании и сохранении HTML-файла эти изменения синхронизировались со связанной эталонной страницей.
+
 ## <a name="introduction-to-converting-a-master-page"></a>Общие сведения о преобразовании эталонной страницы
 <a name="Introduction"> </a>
 

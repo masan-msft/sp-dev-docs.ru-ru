@@ -1,16 +1,18 @@
 ---
-title: "Инструкции. Добавление фрагмента зоны веб-частей в SharePoint"
+title: "Добавление фрагмента кода \"Зона веб-частей\" в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 7583b217-200c-4569-8f88-fe975c8ebd72
-ms.openlocfilehash: 5085f1a8fa2a79e78cc8c337bab0e03fe924f65d
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: e30c323a5f168a30e749f73d4b34da6d5b0ad3d7
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-add-a-web-part-zone-snippet-in-sharepoint"></a>Инструкции. Добавление фрагмента зоны веб-частей в SharePoint
+# <a name="add-a-web-part-zone-snippet-in-sharepoint"></a>Добавление фрагмента кода "Зона веб-частей" в SharePoint
+
 Зона веб-частей  это фрагмент, который можно добавить к макету страницы, чтобы авторы контента могли добавлять, редактировать и удалять веб-части в этой зоне.
+
 ## <a name="introduction-to-the-web-part-zone-snippet"></a>Общие сведения о фрагменте зоны веб-частей
 <a name="Introduction"> </a>
 

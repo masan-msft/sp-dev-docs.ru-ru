@@ -1,16 +1,18 @@
 ---
-title: "Инструкции. Работа с профилями пользователей и организации с использованием объектной модели сервера в SharePoint"
+title: "Работа с профилями пользователей и организации с использованием серверной объектной модели в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 13f16dc3-f652-4fb3-996b-5f2166236d2b
-ms.openlocfilehash: bbafd85e96f16d89481a3d1dba3ed06893b56c92
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 242d2692b87433f5e33969d6d2dbfb037b366fdf
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-work-with-user-profiles-and-organization-profiles-by-using-the-server-object-model-in-sharepoint"></a>Инструкции. Работа с профилями пользователей и организации с использованием объектной модели сервера в SharePoint
+# <a name="work-with-user-profiles-and-organization-profiles-by-using-the-server-object-model-in-sharepoint"></a>Работа с профилями пользователей и организации с использованием серверной объектной модели в SharePoint
+
 Узнайте, как программно создать, восстановить и изменить профиль пользователя SharePoint и свойства профиля с помощью серверной объектной модели SharePoint.
+
 ## <a name="what-are-user-profiles-in-sharepoint"></a>Профили пользователей в SharePoint
 
 В SharePoint профили представляют пользователей SharePoint. Свойства профиля представляют сведения о пользователях, а также о самих свойствах. Например, к свойствам относятся имя учетной записи или электронный адрес пользователя и тип данных свойства. С помощью серверной объектной модели вы можете программными средствами создавать, получать и изменять профили пользователей, подтипы и свойства профилей.

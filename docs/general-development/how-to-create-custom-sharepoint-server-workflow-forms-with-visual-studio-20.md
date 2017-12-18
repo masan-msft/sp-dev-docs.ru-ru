@@ -1,25 +1,23 @@
 ---
-title: "Как создавать настраиваемые формы рабочих процессов SharePoint с помощью Visual Studio 2012"
+title: "Создание настраиваемых форм рабочих процессов SharePoint с помощью Visual Studio 2012"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 26873259-330c-493f-b935-297a7a5a086d
-ms.openlocfilehash: 2a7b764a58e41ed8001da6bc5fde3fc1c398ed81
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 6a6c2666c51b051bb715f2053cda41b441e8f8a9
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-custom-sharepoint-workflow-forms-with-visual-studio-2012"></a>Инструкции. Создание настраиваемых форм рабочих процессов SharePoint с помощью Visual Studio 2012
+# <a name="create-custom-sharepoint-workflow-forms-with-visual-studio-2012"></a>Создание настраиваемых форм рабочих процессов SharePoint с помощью Visual Studio 2012
+
 Представление форм рабочих процессов в SharePoint. При написании этой статьи использовались Инструменты разработчика Office для Visual Studio 2012 и SharePoint с общедоступным обновлением за март 2013 г. Все представленные в этой статье сведения применимы как к локальным развертываниям SharePoint, так и к Office 365.
- **Автор:** [Эндрю Коннел (Andrew Connell)](http://social.msdn.microsoft.com/profile/andrew%20connell%20%5bmvp%5d/), [www.AndrewConnell.com](http://www.andrewconnell.com)
-  
-    
-    
+
+**Автор:** [Эндрю Коннел (Andrew Connell)](http://social.msdn.microsoft.com/profile/andrew%20connell%20%5bmvp%5d/), [www.AndrewConnell.com](http://www.andrewconnell.com)
 
 С момента выпуска Microsoft SharePoint 2007 платформа SharePoint поддерживает рабочие процессы для автоматизации бизнес-процессов. Платформа рабочих процессов SharePoint основана на Windows Workflow Foundation, части .NET Framework. Хотя Workflow Foundation предоставляет множество возможностей для создания настраиваемых рабочих процессов и управления автоматизированными бизнес-процессами, в SharePoint также добавлена возможность интеграции конечных пользователей, которая реализуется в виде двух частей: 
 - **задачи**, назначаемые пользователям и группам, которых рабочие процессы могут создавать и отслеживать;
-    
-  
+
 - **формы**, которые собирают данные от пользователей, если рабочие процессы связаны с типом контента (например, сайтом, списком или библиотекой) или если запускается рабочий процесс.
     
   
@@ -663,8 +661,7 @@ wfParams['SomeRandomString'] = strInputValue
 <a name="sec7"> </a>
 
 
--  
-  [Формы сопоставления и запуска рабочих процессов (SharePoint Foundation)](http://msdn.microsoft.com/en-us/library/office/ms481192%28v=office.14%29.aspx)
+-  [Формы сопоставления и запуска рабочих процессов (SharePoint Foundation)](http://msdn.microsoft.com/ru-RU/library/office/ms481192%28v=office.14%29.aspx)
     
   
 -  [Работа с клиентской объектной моделью служб рабочих процессов в SharePoint](working-with-the-sharepoint-workflow-services-client-side-object-model.md)

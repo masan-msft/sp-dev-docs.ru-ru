@@ -1,16 +1,18 @@
 ---
-title: "Инструкции. Получение свойств профиля пользователя с помощью объектной модели JavaScript в SharePoint"
+title: "Получение свойств профилей пользователей с помощью объектной модели JavaScript в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c6e1ca38-134f-428a-8d21-b8b2615b161b
-ms.openlocfilehash: a308df72d1aa24e853b38a5dacf4b7f8d1a21e3b
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 364e948834758c1fda52afebd2b1648d0e726b0b
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-retrieve-user-profile-properties-by-using-the-javascript-object-model-in-sharepoint"></a>Инструкции. Получение свойств профиля пользователя с помощью объектной модели JavaScript в SharePoint
+# <a name="retrieve-user-profile-properties-by-using-the-javascript-object-model-in-sharepoint"></a>Получение свойств профилей пользователей с помощью объектной модели JavaScript в SharePoint
+
 Узнайте, как программно восстановить свойства и профиль пользователя с помощью объектной модели JavaScript для SharePoint.
+
 ## <a name="what-are-user-properties-and-user-profile-properties-in-sharepoint"></a>Что такое свойства пользователей и их профилей в SharePoint?
 <a name="bkmk_WhatIs"> </a>
 

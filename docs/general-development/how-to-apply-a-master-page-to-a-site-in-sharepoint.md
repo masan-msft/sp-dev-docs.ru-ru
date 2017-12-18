@@ -1,15 +1,15 @@
 ---
-title: "Инструкции. Применение эталонной страницы к сайту в SharePoint"
+title: "Применение эталонной страницы к сайту в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 04861390-84d5-40ea-b0db-6c0748eff196
-ms.openlocfilehash: a015d4d276933219a548693e11e6e67671cef983
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 8ee3d32510e02ffd6874dda5bbad9846e5a16442
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-apply-a-master-page-to-a-site-in-sharepoint"></a>Инструкции. Применение эталонной страницы к сайту в SharePoint
+# <a name="apply-a-master-page-to-a-site-in-sharepoint"></a>Применение эталонной страницы к сайту в SharePoint
 Узнайте, как назначить эталонную страницу для сайта SharePoint.
 ## <a name="mapping-a-master-page-to-a-site"></a>Назначение эталонной страницы для сайта
 

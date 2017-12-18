@@ -1,16 +1,18 @@
 ---
-title: "Инструкции. Создание макета страницы в SharePoint"
+title: "Создание макета страницы в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 5447e6a1-2f14-4667-81d0-7514b468be80
-ms.openlocfilehash: b00f4d5982a854596cc9e57b7a2f2e132f3826c1
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: d339ad79d6cc0aff74fe3e01dc4a310b32769f0a
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-a-page-layout-in-sharepoint"></a>Инструкции. Создание макета страницы в SharePoint
-При построении макета страницы с помощью Дизайнера создаются два файла: ASPX-файл, который использует SharePoint, и HTML-версия этого макета, которую можно изменять в редакторе HTML. HTML-файл и макет страницы связаны друг с другом, поэтому при каждом редактировании и сохранении HTML-файла изменения синхронизируются со связанным макетом страницы.
+# <a name="create-a-page-layout-in-sharepoint"></a>Создание макета страницы в SharePoint
+
+При построении макета страницы с помощью Дизайнера создаются два файла: ASPX-файл, который использует SharePoint, и HTML-версия этого макета страницы, которую можно редактировать в редакторе HTML. HTML-файл и макет страницы связаны друг с другом, поэтому при каждом редактировании и сохранении HTML-файла изменения синхронизируются со связанным макетом страницы.
+
 ## <a name="introduction-to-page-layouts"></a>Общие сведения о макетах страниц
 <a name="Introduction"> </a>
 

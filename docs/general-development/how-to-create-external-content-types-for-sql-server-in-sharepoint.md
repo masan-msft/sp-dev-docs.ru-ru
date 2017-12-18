@@ -1,16 +1,19 @@
 ---
-title: "Инструкции. Создание внешних типов контента для SQL Server в SharePoint"
+title: "Создание внешних типов контента для SQL Server в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 7fe2fbf0-546b-4a16-b02e-a0960bfb3842
-ms.openlocfilehash: c8640567852751db426ebad7e6e2cfd0e3b93231
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: df39aa0e0f31f8252756b63b4d9ec2f2fcc83bc3
+ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="how-to-create-external-content-types-for-sql-server-in-sharepoint"></a>Инструкции. Создание внешних типов контента для SQL Server в SharePoint
-Информация о создании внешнего типа контента для SQL Server в SharePoint. Создание внешнего типа контента  это ключевая задача при работе с внешними данными. Внешний тип контента содержит важную информацию о подключениях, доступе, методах операции, столбцах, фильтрах и других метаданных, которые используются для получения данных из внешнего источника данных.
+# <a name="create-external-content-types-for-sql-server-in-sharepoint"></a>Создание внешних типов контента для SQL Server в SharePoint
+
+Узнайте, как создать внешний тип контента для SQL Server в SharePoint.
+
+Создание внешнего типа контента — это ключевая задача при работе с внешними данными. Внешний тип контента содержит важную информацию о подключениях, доступе, методах операции, столбцах, фильтрах и других метаданных, которые используются для получения данных из внешнего источника данных.
   
     
     
