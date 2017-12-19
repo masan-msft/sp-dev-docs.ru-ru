@@ -1,21 +1,35 @@
 ---
 title: "Подготовка веб-сайтов «современный» групп программными средствами"
 description: "Подготовка сайта группы из пользовательского интерфейса или с помощью PnP основных CSOM или PnP PowerShell."
-ms.date: 11/08/2017
-ms.openlocfilehash: 137629c7d1e9aaf55ac7709b07c4ad478202bfdc
-ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
+ms.date: 12/19/2017
+ms.openlocfilehash: f9016d6798eb3cda98eb7a801340b7c438c63ab5
+ms.sourcegitcommit: bf4bc1e80c6ef1a0ff479039ef9ae0ee84d5f6b4
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 12/19/2017
 ---
 # <a name="provisioning-modern-team-sites-programmatically"></a>Подготовка веб-сайтов «современный» групп программными средствами
 
-«Современный» веб-сайтов групп были представлены в SharePoint Online в 2016 и использовать их можно управлять на уровне клиента. В этой статье обсуждаются различные параметры и рекомендации для подготовки веб-сайтов «современный» групп в SharePoint Online.
+«Современный» сайты были представлены в SharePoint Online во время осени 2016 и использовать их можно управлять на уровне клиента. В этой статье обсуждаются различные параметры и рекомендации для подготовки «современный» сайтов в SharePoint Online. В частности в статье описаны способы создания веб-сайтов групп «современный» и «современный» связи сайтов.
 
 > [!IMPORTANT]
 > Мы в случае неподдерживаемые взаимодействия «классический»; будет сосуществовать «классический» и «современный».
 
-## <a name="provisioning-a-modern-team-site-from-the-user-interface"></a>Подготовка сайта «современный» группы из пользовательского интерфейса
+## <a name="comparing-modern-team-sites-and-modern-communication-sites"></a>Сравнение веб-сайтов групп «современный» и «современный» связи сайтов
+Прежде чем детали более подробно о том, как подготовить «современный» сайты, давайте рассмотрим немного о двух основных типов доступных: сайты рабочих групп и связи сайтов.
+
+Сайт группы «современный» — это место, где группа людей могут работать вместе, совместной работы, совместное использование документов и сообщений. Каждый сайт группы «современный» имеет резервного группы Office 365, чтобы улучшить работу в общей совместной работы. На самом деле благодаря группы Office 365, участники группы смогут извлечь пользу из службы, такие как планировщик работы, общий календарь, общих OneDrive для бизнеса хранилища, настраиваемых соединителей Office 365, и т.д. На сайте «современный» группы обычно члены могут способствовать контента (чтение/запись). Кроме того группа Office 365, резервного сайта группы «современный» может быть частный или общедоступный и по умолчанию является открытым.
+
+Сайт «современный» связи — это место, где можно обмениваться новости, демонстрирующие статьи, широковещательные сообщения. Представление о связи сайтов является несколько редакторов, создание и обслуживание содержимого и большой аудитории, в котором используется, что содержимое. Сайт связи не имеет резервного группы Office 365. Пользователям целевом сайте обмена данными с хорошо известных набор разрешений из других сайтов SharePoint и по умолчанию каждый сайт связи закрытый.
+
+Таким образом Если для создания сайта для совместной работы группы, вероятнее всего сайта группы «современный» — это правильный выбор. С другой стороны Если вы хотите общаться что-то широкий набор людей, вероятно, сайт связи является лучшим выбором.
+
+## <a name="provisioning-modern-team-sites"></a>Подготовка веб-сайтов «современный» групп
+
+
+Теперь в этом разделе вы узнаете, как для подготовки сайта группы «современный», и доступные параметры для этого.
+
+### <a name="provisioning-a-modern-team-site-from-the-user-interface"></a>Подготовка сайта «современный» группы из пользовательского интерфейса
 
 Существует множество маршрутов для сайта группы «современный» для получения подготовить к работе. Можно начать подготовки непосредственно с сайта SharePoint Online, или в качестве альтернативы подготовить группу Office 365 из других местоположений (например, от Outlook), который затем также запускает подготовки сайта группы «современный». 
 
@@ -23,27 +37,91 @@ ms.lasthandoff: 12/07/2017
 
 - Также можно создать группу Office 365 с Office 365 Outlook, и при доступе к вкладке сайта эту группу land на сайте «современный» группы. 
 
-### <a name="control-default-provisioning-flow"></a>Элемент управления по умолчанию подготовки потока
+### <a name="how-to-control-default-provisioning-flow"></a>Способы управления подготовки поток по умолчанию
 
-Можно управлять процедуры создания сайтов SharePoint с параметрами администрирования SharePoint Online. Вы можете, если «современный» взаимодействия для конечных пользователей или если вы хотите продолжить использование «классический» качества. Дополнительные сведения см [Управление создания сайтов в SharePoint Online](https://support.office.com/en-US/article/Manage-site-creation-in-SharePoint-Online-e72844a3-0171-47c9-befb-e98b23e2dcf9).
+Можно управлять процедуры создания сайтов SharePoint в параметрах администрирования SharePoint Online. Вы можете, если «современный» взаимодействия для конечных пользователей или если вы хотите продолжить использование «классический» качества.
 
-*На рисунке 1. Параметры создания веб-сайтов из SharePoint Online*
+![Параметры создания веб-сайтов из пользовательского интерфейса SharePoint Online администратора](media/modern-experiences/site-creation-options-admin-ui.png)
 
-![Параметры создания веб-сайтов в пользовательском Интерфейсе администрирования SharePoint Online](media/modern-experiences/site-creation-options-admin-ui.png)
+В следующей статье поддержка по Office для получения дополнительных сведений:
+- Управление создания сайтов в SharePoint Online: https://support.office.com/en-US/article/Manage-site-creation-in-SharePoint-Online-e72844a3-0171-47c9-befb-e98b23e2dcf9
 
+### <a name="provisioning-a-modern-team-site-programmatically-via-sharepoint-online-rest-api"></a>Подготовка сайта группы «современный» программным путем с помощью SharePoint Online API-Интерфейс REST
 
-## <a name="provisioning-a-modern-team-site-programmatically"></a>Подготовка сайта группы «современный» программными средствами
+«Современный» веб-сайтов групп можно создать программным путем с помощью интерфейса API REST, предоставляемая SharePoint Online и используемые создать сайт пользовательского интерфейса из SharePoint Online, слишком.
 
-«Современный» веб-сайтов групп создаются путем создания [группы Office 365](https://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/group) с помощью Microsoft Graph программными средствами. При создании группы с Office 365 сайта группы «современный» автоматически подготавливаться для группы. URI сайта «современный» team основано на параметр **mailNickname** группы Office 365 и имеет следующую структуру по умолчанию. 
+#### <a name="provisioning-a-modern-team-site-using-the-pnp-csom-core-component"></a>Подготовка сайта «современный» группы с помощью компонент основной PnP CSOM
+
+В компонент основной PnP SharePoint — с момента выпуска 2017 октября (v. 2.19.1710.1) - имеется новый метод расширения для типа CSOM _ClientContext_ . Имя метода расширения _CreateSiteAsync_ и позволяет создать сайт группы «современный» в нескольких несколько секунд. В следующем фрагменте кода можно узнать, как использовать этот метод.
+
+```C#
+// Let's use the CreateSiteAsync extension method of PnP CSOM Core
+// to create the "modern" team site
+
+var targetTenantUrl = "https://[tenant].sharepoint.com/";
+
+using (var context = new ClientContext(targetTenantUrl))
+{
+    context.Credentials = OfficeDevPnP.Core.Utilities.CredentialManager.GetSharePointOnlineCredential("[Name-of-Your-Credentials]");
+
+    // Create new "modern" team site at the url
+    // https://[tenant].sharepoint.com/sites/mymodernteamsite
+    var teamContext = await context.CreateSiteAsync(
+        new TeamSiteCollectionCreationInformation
+        {
+            Alias = "mymodernteamsite", // Mandatory
+            DisplayName = "displayName", // Mandatory
+            Description = "description", // Optional
+            Classification = "classification", // Optional
+            IsPublic = true, // Optional, default true
+        });
+    teamContext.Load(teamContext.Web, w => w.Url);
+    teamContext.ExecuteQueryRetry();
+    Console.WriteLine(teamContext.Web.Url);
+}
+```
+
+> [!NOTE]
+> Дополнительно можно найти подробные сведения о аргумент _классификации_ [Официальная документация](https://msdn.microsoft.com/en-us/pnp_articles/modern-experience-site-classification)по.
+
+Как вы видите, метод расширения создает новый сайт «современный» группы и возвращает новый объект _ClientContext_ непосредственно подключена к только что созданный сайт.
+
+#### <a name="provisioning-a-modern-team-site-using-pnp-powershell"></a>Подготовка сайта «современный» группы с помощью PnP PowerShell
+
+Можно также создать «современный» сайты, использующие [PnP PowerShell](https://github.com/SharePoint/PnP-PowerShell/releases). Приведенный ниже сценарий будет создать сайт группы «современный» и верните фактический SharePoint URL-адрес сайта для дальнейшей обработки. Получив доступ к URL-адрес созданного сайта, можно использовать CSOM (с компонент основной PnP SharePoint) или SharePoint PnP PowerShell для автоматизации других операций на созданном веб-сайте.
+
+```ps
+# Connect to SharePoint Online
+# This command will prompt the sign-in UI to authenticate
+Connect-PnPOnline "https://[tenant].sharepoint.com/"
+
+# Create the new "modern" team site
+$teamSiteUrl = New-PnPSite -Type TeamSite -Title "displayName" -Alias "mymodernteamsite" -Description "description" -IsPublic -Classification "classification" 
+
+# Connect to the modern site using PnP PowerShell SP cmdlets
+# Since we are connecting now to SP side, credentials will be asked
+Connect-PnPOnline $teamSiteUrl
+
+# Now we have access on the SharePoint site for any operations
+$context = Get-PnPContext
+$web = Get-PnPWeb
+$context.Load($web, $web.WebTemplate)
+Execute-PnPQuery
+$web.WebTemplate + "#" + $web.Configuration
+```
+
+### <a name="provisioning-an-office-365-group-programmatically"></a>Наполнение группы с Office 365 программными средствами
+
+«Современный» веб-сайтов групп могут создаваться путем создания [группы Office 365](https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/resources/group) с помощью Microsoft Graph слишком программными средствами. На самом деле при создании группы с Office 365 сайта группы «современный» автоматически подготавливаться для группы. URI сайта «современный» группы будут основываться на параметр _mailNickname_ группы Office 365 и имеет следующую структуру по умолчанию. 
 
 ```
-https://[tenant].sharepoint.com/sites/[mailNickname]]
+https://[tenant].sharepoint.com/sites/[mailNickname]
 ``` 
 
 > [!NOTE]
-> Подробное описание создания группы с помощью Microsoft Graph доступен на [официальные документы](https://graph.microsoft.io/en-us/docs/api-reference/v1.0/api/group_post_groups).
+> Подробное описание создания группы с помощью Microsoft Graph доступен на [официальные документы](https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/group_post_groups).
 
-### <a name="provision-a-modern-team-site-using-the-pnp-csom-core-component"></a>Подготовка сайта «современный» группы с помощью компонента PnP основные CSOM
+#### <a name="provisioning-an-office-365-group-using-the-pnp-csom-core-component"></a>Подготовка группу Office 365, используя компонент основной PnP CSOM
 
 Компонент PnP основных CSOM как [пакет NuGet](https://www.nuget.org/packages/SharePointPnPCoreOnline)упрощенный методы обработки «современный» группы. 
 
@@ -82,11 +160,11 @@ public static void ManipulateModernTeamSite(string accessToken)
 }
 ```
 
-### <a name="provision-a-modern-team-site-using-pnp-powershell"></a>Подготовка сайта «современный» группы с помощью PnP PowerShell
+#### <a name="provisioning-an-office-365-group-using-pnp-powershell"></a>Подготовка группу Office 365, с помощью PnP PowerShell
 
-Также можно создать сайты «современный» с помощью [PnP PowerShell](https://github.com/SharePoint/PnP-PowerShell/releases), позволяющий легко выполнять проверку подлинности с помощью Microsoft Graph с помощью Azure Active Directory. Приведенный ниже сценарий создает сайт группы «современный» и возвращает фактический SharePoint URL-адрес сайта для дальнейшей обработки. После у вас есть доступ к URL-адрес созданного сайта, можно использовать CSOM (с компонент основной PnP SharePoint) или SharePoint PnP PowerShell для автоматизации других операций на созданном веб-сайте.
+Кроме того, можно создать группу Office 365, с помощью [PnP PowerShell](https://github.com/SharePoint/PnP-PowerShell/releases), которые вы можете легко выполнять проверку подлинности с помощью Microsoft Graph, с помощью Azure Active Directory. Приведенный ниже сценарий создаст группу Office 365 вместе с сайта группы «современный» и возвращается фактическая SharePoint URL-адрес сайта для дальнейшей обработки. Получив доступ к URL-адрес созданного сайта, можно использовать CSOM (с компонент основной PnP SharePoint) или SharePoint PnP PowerShell для автоматизации других операций на созданном веб-сайте.
 
-```PowerShell
+```ps
 # Connect to Azure AD and get back an OAuth 2.0 Access Token
 # This command will prompt the sign-in UI to authenticate
 Connect-PnPMicrosoftGraph -Scopes "Group.ReadWrite.All","User.Read.All"
@@ -115,15 +193,93 @@ $web.WebTemplate + "#" + $web.Configuration
 > [!NOTE]
 > В настоящее время не поддерживается для подготовки веб-сайтов «современный» групп с помощью [Консоли SharePoint Online](https://www.microsoft.com/en-us/download/details.aspx?id=35588).
 
+## <a name="provisioning-modern-communication-sites"></a>Подготовка «Современный» связи сайтов
+
+В этом разделе вы узнаете, как для подготовки сайта «современный» связи, и какие параметры доступны для этого.
+
+### <a name="provisioning-a-modern-communication-site-from-user-interface"></a>Подготовка сайта «современный» связи из пользовательского интерфейса
+
+Для подготовки сайта «современный» обмена данными с помощью пользовательского интерфейса — Если администратор этот параметр включен веб-сайтов «современный» групп в клиент - можно начать непосредственно из SharePoint Online домашней страницы. Нажмите кнопку «Создать сайт», выберите для создания «Связи сайта» выберите проект для веб-узла, предоставить имя и описание и сайта будут создаваться в зависит от нескольких секунд.
+Во время написания этой статьи приведены доступные разработки для связи сайтов:
+* **Тема**: используйте этот конструктор, если у вас есть много информации для совместного использования, например, новости, события и другие материалы.
+* **Демонстрация**: используйте этот конструктор для демонстрации продукта, группы или событие с помощью фотографий и изображений.
+* **Пустой**: начать с пустого сайта и разработки поступают в жизнь быстро и легко.
+
+### <a name="provisioning-a-modern-communication-site-programmatically"></a>Подготовка сайта «современный» обмена данными программными средствами
+
+По желанию вместо можно создать узел «современный» связи программным путем с помощью любого из CSOM и PnP, или PowerShell.
+
+#### <a name="provisioning-a-modern-communication-site-using-the-pnp-csom-core-component"></a>Подготовка сайта «современный» связи, с помощью компонент основной PnP CSOM
+
+Компонент PnP основных CSOM как [пакет NuGet](https://www.nuget.org/packages/SharePointPnPCoreOnline)имеет упрощенный методы для обработки «современный» сайтов. 
+
+```C#
+// Let's use the CreateSiteAsync extension method of PnP CSOM Core
+// to create the "modern" team site
+
+var targetTenantUrl = "https://[tenant].sharepoint.com/";
+
+using (var context = new ClientContext(targetTenantUrl))
+{
+    context.Credentials = OfficeDevPnP.Core.Utilities.CredentialManager.GetSharePointOnlineCredential("[Name-of-Your-Credentials]");
+
+    // Create new "modern" communication site at the url https://[tenant].sharepoint.com/sites/mymoderncommunicationsite
+    var communicationContext = await context.CreateSiteAsync(new CommunicationSiteCollectionCreationInformation {
+        Title = "title", // Mandatory
+        Description = "description", // Mandatory
+        Lcid = 1033, // Mandatory
+        AllowFileSharingForGuestUsers = false, // Optional
+        Classification = "classification", // Optional
+        SiteDesign = CommunicationSiteDesign.Topic, // Mandatory
+        Url = "https://[tenant].sharepoint.com/sites/mymoderncommunicationsite", // Mandatory
+    });
+    communicationContext.Load(communicationContext.Web, w => w.Url);
+    communicationContext.ExecuteQueryRetry();
+    Console.WriteLine(communicationContext.Web.Url);
+}
+```
+
+Как вы видите, метод расширения создает новый сайт «современный» связи и возвращает новый объект _ClientContext_ непосредственно подключена к только что созданный сайт.
+
+#### <a name="provisioning-a-modern-team-site-using-pnp-powershell"></a>Подготовка сайта «современный» группы с помощью PnP PowerShell
+
+Приведенный ниже сценарий будет создавать сайт «современный» связи и верните фактический SharePoint URL-адрес сайта для дальнейшей обработки, нужным образом, как и в предыдущем примере с помощью веб-сайтов «современный» групп.
+
+```ps
+# Connect to SharePoint Online
+# This command will prompt the sign-in UI to authenticate
+Connect-PnPOnline "https://[tenant].sharepoint.com/"
+
+# Create the new "modern" communication site
+$communicationSiteUrl = New-PnPSite -Type CommunicationSite -Title "displayName" -Url "https://[tenant].sharepoint.com/sites/mymoderncommunicationsite" -Description "description" -Classification "classification" -SiteDesign Topic
+
+# Connect to the modern site using PnP PowerShell SP cmdlets
+# Since we are connecting now to SP side, credentials will be asked
+Connect-PnPOnline $teamSiteUrl
+
+# Now we have access on the SharePoint site for any operations
+$context = Get-PnPContext
+$web = Get-PnPWeb
+$context.Load($web, $web.Title)
+Execute-PnPQuery
+$web.Title
+```
+
 ## <a name="additional-considerations"></a>Дополнительные сведения о выполнении
 
-### <a name="subsites-use-classic-templates"></a>Дочерние сайты используйте «классический» шаблоны
+### <a name="sub-sites-use-classic-templates"></a>Сайты Sub использовать шаблоны «классический»
 
-Если Подготовка дочернего сайта в разделе корневого сайта семейства «современный» веб-сайтов, дочерних сайтов будет использовать «классический» шаблоны. На данный момент нет «современный» дочерний сайт доступных шаблонов. «Классический» дочернего сайта для сайта группы «современный» можно изменять путем создания «современный» страницы на сайте и обновления странице Добро пожаловать на страницу только что созданный.  
+При предоставлении веб-узла в разделе корневого сайта семейства сайтов «современный» sub сайты будут использовать шаблоны «классический». Недоступны в настоящее время не шаблоны сайтов «современный» sub. «Классический» веб-узла на сайте «современный» команды можно изменять путем создания «современный» страницы на сайте и обновления странице Добро пожаловать на страницу только что созданный.  
 
-### <a name="sites-are-not-listed-in-the-sharepoint-admin-ui--tenant-api"></a>Сайты не указанные в пользовательском Интерфейсе администрирования SharePoint и API клиента
+Если не хотите разрешить пользователям создавать «классический» веб-узла в разделе семейства сайтов «современный», как администратор, перейдите в центр администрирования SharePoint, перейдите на страницу параметров и настройте параметр «Создание дочерних сайтов» для скрытия меню создания «дочерний сайт». На следующем рисунке отображена «Создание дочерних сайтов».
 
-«Современный» веб-сайтов групп не отображаются в пользовательском Интерфейсе администрирования SharePoint. Список веб-сайтов «современный» групп можно получить доступ с Office 365 Admin групп пользовательского интерфейса на портал администрирования Office 365. Интерфейс пользователя SharePoint Online администрирования только приведены «классический» сайты SharePoint. Это же ограничение не применяется к клиенту API; Этот интерфейс API можно использовать для перечисления веб-сайтов групп «современный» вместе с веб-сайтов «классический» групп. Для получения списка только веб-сайтов «современный» групп, можно использовать группы конечную точку из Microsoft Graph API.
+![Параметры создания дочернего сайта из пользовательского интерфейса SharePoint Online администратора](media/modern-experiences/subsite-creation-admin-setting.png)
+
+### <a name="sites-are-not-listed-in-the-classic-sharepoint-admin-ui--tenant-api"></a>Сайты не указанные в пользовательском Интерфейсе администрирования классический SharePoint / API клиента
+
+«Современный» веб-сайтов групп не отображаются в пользовательский Интерфейс администрирования SharePoint. Список веб-сайтов «современный» групп можно получить доступ с пользовательский интерфейс администрирования Office 365 группы в области портала администрирования Office 365. SharePoint Online пользовательский интерфейс администрирования только список «классический» сайты SharePoint. Это же ограничение не применяется к клиенту API: этот интерфейс API можно использовать для перечисления веб-сайтов групп «современный» вместе с веб-сайтов «классический» групп. Для получения списка только веб-сайтов групп «современный» можно также использовать конечных точек групп из Microsoft Graph API.
+
+Имеется также предстоящие новые Admin пользовательского интерфейса SharePoint, которая поддерживает управление нового семейства сайтов «современный», вместе с «классический» из них.
 
 ## <a name="see-also"></a>См. также
 
