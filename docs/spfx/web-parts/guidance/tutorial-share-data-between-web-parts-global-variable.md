@@ -2,79 +2,80 @@
 title: "Совместное использование данных разными веб-частями с применением глобальной переменной (руководство)"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 5ee1bf737bc3d78636e981092212e5f37d89d5bc
-ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.openlocfilehash: ec707d5183079bea9b0c3006c10a441a0e771344
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="share-data-between-web-parts-using-a-global-variable-tutorial"></a><span data-ttu-id="5318d-102">Совместное использование данных разными веб-частями с применением глобальной переменной (руководство)</span><span class="sxs-lookup"><span data-stu-id="5318d-102">Share Data Between Web Parts Using a Global Variable (Tutorial)</span></span>
+# <a name="share-data-between-web-parts-using-a-global-variable-tutorial"></a><span data-ttu-id="16219-102">Совместное использование данных разными веб-частями с применением глобальной переменной (руководство)</span><span class="sxs-lookup"><span data-stu-id="16219-102">Share Data Between Web Parts Using a Global Variable (Tutorial)</span></span>
 
-> <span data-ttu-id="5318d-103">Примечание. Эта статья еще не была проверена на общедоступной версии SPFx, поэтому у вас могут возникнуть трудности при использовании последнего выпуска.</span><span class="sxs-lookup"><span data-stu-id="5318d-103">Note: This article has not yet been verified with the SPFx GA version, so you might have challenges making this work as described using the latest release.</span></span>
+> <span data-ttu-id="16219-103">Примечание. Эта статья еще не была проверена на общедоступной версии SPFx, поэтому у вас могут возникнуть трудности при использовании последнего выпуска.</span><span class="sxs-lookup"><span data-stu-id="16219-103">Note: This article has not yet been verified with the SPFx GA version, so you might have challenges making this work as described using the latest release.</span></span>
 
-<span data-ttu-id="5318d-p101">При создании клиентских веб-частей можно загрузить данные один раз и повторно использовать их в разных веб-частях. Это ускорит загрузку страниц и уменьшит нагрузку на сеть. В этом пошаговом руководстве показано, как веб-части могут совместно использовать данные с помощью глобальной переменной.</span><span class="sxs-lookup"><span data-stu-id="5318d-p101">When building client-side web parts, loading data once and reusing it across different web parts will help improve the performance of your pages and decrease the load on your network. This tutorial illustrates step-by-step how to share data between web parts using a global variable.</span></span>
+<span data-ttu-id="16219-p101">При создании клиентских веб-частей можно загрузить данные один раз и повторно использовать их в разных веб-частях. Это ускорит загрузку страниц и уменьшит нагрузку на сеть. В этом пошаговом руководстве показано, как веб-части могут совместно использовать данные с помощью глобальной переменной.</span><span class="sxs-lookup"><span data-stu-id="16219-p101">When building client-side web parts, loading data once and reusing it across different web parts will help improve the performance of your pages and decrease the load on your network. This tutorial illustrates step-by-step how to share data between web parts using a global variable.</span></span>
 
-> <span data-ttu-id="5318d-106">**Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки клиентских веб-частей для SharePoint](../../set-up-your-development-environment.md).</span><span class="sxs-lookup"><span data-stu-id="5318d-106">**Note:** Before following the steps in this article, be sure to [set up your SharePoint client-side web part development environment](../../set-up-your-development-environment.md).</span></span>
+> [!NOTE] 
+> <span data-ttu-id="16219-106">Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки для создания клиентских веб-частей SharePoint](../../set-up-your-development-environment.md).</span><span class="sxs-lookup"><span data-stu-id="16219-106">[Note:](../../set-up-your-development-environment.md) Before following the steps in this article, be sure to set up your SharePoint client-side web part development environment.</span></span>
 
-## <a name="prepare-the-project"></a><span data-ttu-id="5318d-107">Подготовка проекта</span><span class="sxs-lookup"><span data-stu-id="5318d-107">Prepare the Project</span></span>
+## <a name="prepare-the-project"></a><span data-ttu-id="16219-107">Подготовка проекта</span><span class="sxs-lookup"><span data-stu-id="16219-107">Prepare the Project</span></span>
 
-### <a name="create-a-new-project"></a><span data-ttu-id="5318d-108">Создание проекта</span><span class="sxs-lookup"><span data-stu-id="5318d-108">Create a New Project</span></span>
+### <a name="create-a-new-project"></a><span data-ttu-id="16219-108">Создание проекта</span><span class="sxs-lookup"><span data-stu-id="16219-108">Create a New Project</span></span>
 
-<span data-ttu-id="5318d-109">С помощью командной строки создайте папку для проекта:</span><span class="sxs-lookup"><span data-stu-id="5318d-109">Using a command prompt, create a new folder for your project:</span></span>
+<span data-ttu-id="16219-109">С помощью командной строки создайте папку для проекта:</span><span class="sxs-lookup"><span data-stu-id="16219-109">Using a command prompt, create a new folder for your project:</span></span>
 
 ```sh
 md react-recentdocuments
 ```
 
-<span data-ttu-id="5318d-110">Перейдите в папку проекта.</span><span class="sxs-lookup"><span data-stu-id="5318d-110">Go into the project folder:</span></span>
+<span data-ttu-id="16219-110">Перейдите в папку проекта.</span><span class="sxs-lookup"><span data-stu-id="16219-110">Go into the project folder:</span></span>
 
 ```sh
 cd react-recentdocuments
 ```
 
-<span data-ttu-id="5318d-111">В папке проекта запустите генератор Yeoman для SharePoint Framework, чтобы сформировать шаблон проекта на платформе SharePoint Framework:</span><span class="sxs-lookup"><span data-stu-id="5318d-111">In the project folder, run the SharePoint Framework Yeoman generator to scaffold a new SharePoint Framework project:</span></span>
+<span data-ttu-id="16219-111">В папке проекта запустите генератор Yeoman для SharePoint Framework, чтобы сформировать шаблон проекта на платформе SharePoint Framework:</span><span class="sxs-lookup"><span data-stu-id="16219-111">In the project folder, run the SharePoint Framework Yeoman generator to scaffold a new SharePoint Framework project:</span></span>
 
 ```sh
 yo @microsoft/sharepoint
 ```
 
-<span data-ttu-id="5318d-112">Когда появится соответствующий запрос, укажите следующие значения:</span><span class="sxs-lookup"><span data-stu-id="5318d-112">When prompted, use the following values:</span></span>
+<span data-ttu-id="16219-112">Когда появится соответствующий запрос, укажите следующие значения:</span><span class="sxs-lookup"><span data-stu-id="16219-112">When prompted, use the following values:</span></span>
 
-- <span data-ttu-id="5318d-113">**WebPart** в качестве типа создаваемого клиентского компонента;</span><span class="sxs-lookup"><span data-stu-id="5318d-113">**WebPart** as the type of client-side component to create.</span></span>
-- <span data-ttu-id="5318d-114">**react-recentdocuments** в качестве имени решения;</span><span class="sxs-lookup"><span data-stu-id="5318d-114">**react-recentdocuments** as your solution name.</span></span>
-- <span data-ttu-id="5318d-115">**Use the current folder** (Использовать текущую папку) в качестве расположения файлов;</span><span class="sxs-lookup"><span data-stu-id="5318d-115">**Use the current folder** for the location to place the files.</span></span>
-- <span data-ttu-id="5318d-116">**Recent documents** (Последние документы) в качестве имени веб-части;</span><span class="sxs-lookup"><span data-stu-id="5318d-116">**Recent documents** as your web part name.</span></span>
-- <span data-ttu-id="5318d-117">**Shows recently modified documents** (Показывает недавно измененные документы) в качестве описания веб-части;</span><span class="sxs-lookup"><span data-stu-id="5318d-117">**Shows recently modified documents** as your web part description.</span></span>
-- <span data-ttu-id="5318d-118">**React** в качестве используемой платформы.</span><span class="sxs-lookup"><span data-stu-id="5318d-118">**React** as the framework to use.</span></span>
+- <span data-ttu-id="16219-113">**WebPart** в качестве типа создаваемого клиентского компонента;</span><span class="sxs-lookup"><span data-stu-id="16219-113">**WebPart** as the type of client-side component to create.</span></span>
+- <span data-ttu-id="16219-114">**react-recentdocuments** в качестве имени решения;</span><span class="sxs-lookup"><span data-stu-id="16219-114">**react-recentdocuments** as your solution name.</span></span>
+- <span data-ttu-id="16219-115">**Use the current folder** (Использовать текущую папку) в качестве расположения файлов;</span><span class="sxs-lookup"><span data-stu-id="16219-115">**Use the current folder** for the location to place the files.</span></span>
+- <span data-ttu-id="16219-116">**Recent documents** (Последние документы) в качестве имени веб-части;</span><span class="sxs-lookup"><span data-stu-id="16219-116">**Recent documents** as your web part name.</span></span>
+- <span data-ttu-id="16219-117">**Shows recently modified documents** (Показывает недавно измененные документы) в качестве описания веб-части;</span><span class="sxs-lookup"><span data-stu-id="16219-117">**Shows recently modified documents** as your web part description.</span></span>
+- <span data-ttu-id="16219-118">**React** в качестве используемой платформы.</span><span class="sxs-lookup"><span data-stu-id="16219-118">**React** as the framework to use.</span></span>
 
 ![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/tutorial-sharingdata-yo-sharepoint-recent-documents.png)
 
-<span data-ttu-id="5318d-120">После завершения скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:</span><span class="sxs-lookup"><span data-stu-id="5318d-120">Once the scaffolding completes, lock down the version of the project dependencies by running the following command:</span></span>
+<span data-ttu-id="16219-120">После завершения скаффолдинга блокируйте версию зависимостей проекта, выполнив следующую команду:</span><span class="sxs-lookup"><span data-stu-id="16219-120">Once the scaffolding completes, lock down the version of the project dependencies by running the following command:</span></span>
 
 ```sh
 npm shrinkwrap
 ```
 
-<span data-ttu-id="5318d-121">Далее откройте папку проекта в редакторе кода.</span><span class="sxs-lookup"><span data-stu-id="5318d-121">Next, open your project folder in your code editor.</span></span> <span data-ttu-id="5318d-122">В этой статье в инструкциях и на снимках экрана указан Visual Studio Code, но вы можете использовать любой редактор.</span><span class="sxs-lookup"><span data-stu-id="5318d-122">Once the scaffolding completes, open your project folder in your code editor. This article uses Visual Studio Code in the steps and screenshots but you can use any editor you prefer.</span></span>
+<span data-ttu-id="16219-121">Далее откройте папку проекта в редакторе кода.</span><span class="sxs-lookup"><span data-stu-id="16219-121">Next, open your project folder in your code editor.</span></span> <span data-ttu-id="16219-122">В этой статье в инструкциях и на снимках экрана указан Visual Studio Code, но вы можете использовать любой редактор.</span><span class="sxs-lookup"><span data-stu-id="16219-122">This article uses Visual Studio Code in the steps and screenshots, but you can use any editor you prefer.</span></span>
 
 ![Проект SharePoint Framework, открытый в Visual Studio Code](../../../images/tutorial-sharingdata-vscode.png)
 
-## <a name="show-the-recently-modified-documents"></a><span data-ttu-id="5318d-124">Отображение недавно измененных документов</span><span class="sxs-lookup"><span data-stu-id="5318d-124">Show the Recently Modified Documents</span></span>
+## <a name="show-the-recently-modified-documents"></a><span data-ttu-id="16219-124">Отображение недавно измененных документов</span><span class="sxs-lookup"><span data-stu-id="16219-124">Show the Recently Modified Documents</span></span>
 
-<span data-ttu-id="5318d-125">Веб-часть Recent documents (Последние документы) показывает сведения о последних измененных документах в виде карточек, используя Office UI Fabric.</span><span class="sxs-lookup"><span data-stu-id="5318d-125">The Recent documents web part shows information about the most recently modified documents displayed as cards using the Office UI Fabric.</span></span>
+<span data-ttu-id="16219-125">Веб-часть Recent documents (Последние документы) показывает сведения о последних измененных документах в виде карточек, используя Office UI Fabric.</span><span class="sxs-lookup"><span data-stu-id="16219-125">The Recent documents web part shows information about the most recently modified documents displayed as cards using the Office UI Fabric.</span></span>
 
 ![Веб-часть Recent documents (Последние документы) с тремя небольшими карточками документов, представляющими три последних измененных документа](../../../images/tutorial-sharingdata-recent-documents.png)
 
-### <a name="remove-the-standard-description-property"></a><span data-ttu-id="5318d-127">Удаление стандартного свойства _description_</span><span class="sxs-lookup"><span data-stu-id="5318d-127">Remove the Standard _description_ Property</span></span>
+### <a name="remove-the-standard-description-property"></a><span data-ttu-id="16219-127">Удаление стандартного свойства _description_</span><span class="sxs-lookup"><span data-stu-id="16219-127">Remove the Standard _description_ Property</span></span>
 
-<span data-ttu-id="5318d-p103">Для начала удалите стандартное свойство `description` из интерфейса `IRecentDocumentsWebPartProps`. В редакторе кода откройте файл **./src/webparts/recentDocuments/IRecentDocumentsWebPartProps.ts** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-p103">Start by removing the standard `description` property from the `IRecentDocumentsWebPartProps` interface. In the code editor, open the **./src/webparts/recentDocuments/IRecentDocumentsWebPartProps.ts** file and paste the following code:</span></span>
+<span data-ttu-id="16219-p103">Для начала удалите стандартное свойство `description` из интерфейса `IRecentDocumentsWebPartProps`. В редакторе кода откройте файл **./src/webparts/recentDocuments/IRecentDocumentsWebPartProps.ts** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-p103">Start by removing the standard `description` property from the `IRecentDocumentsWebPartProps` interface. In the code editor, open the **./src/webparts/recentDocuments/IRecentDocumentsWebPartProps.ts** file and paste the following code:</span></span>
 
 ```ts
 export interface IRecentDocumentsWebPartProps {
 }
 ```
 
-<span data-ttu-id="5318d-p104">Удалите стандартное свойство `description` из манифеста веб-части. Откройте файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.manifest.json** и удалите из свойства `properties` свойство `description`:</span><span class="sxs-lookup"><span data-stu-id="5318d-p104">Remove the standard `description` property from the web part manifest. Open the **./src/webparts/recentDocuments/RecentDocumentsWebPart.manifest.json** file, and from the `properties` property, remove the `description` property:</span></span>
+<span data-ttu-id="16219-p104">Удалите стандартное свойство `description` из манифеста веб-части. Откройте файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.manifest.json** и удалите из свойства `properties` свойство `description`:</span><span class="sxs-lookup"><span data-stu-id="16219-p104">Remove the standard `description` property from the web part manifest. Open the **./src/webparts/recentDocuments/RecentDocumentsWebPart.manifest.json** file, and from the `properties` property, remove the `description` property:</span></span>
 
 ```json
 {
@@ -98,7 +99,7 @@ export interface IRecentDocumentsWebPartProps {
 }
 ```
 
-<span data-ttu-id="5318d-p105">Наконец удалите стандартное свойство `description` из веб-части. Откройте в редакторе кода файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts**. Замените метод `render` на следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-p105">Finally, remove the standard `description` property from the web part. In the code editor, open the **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts** file. Replace its `render` method with the following code:</span></span>
+<span data-ttu-id="16219-p105">Наконец удалите стандартное свойство `description` из веб-части. Откройте в редакторе кода файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts**. Замените метод `render` на следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-p105">Finally, remove the standard `description` property from the web part. In the code editor, open the **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts** file. Replace its `render` method with the following code:</span></span>
 
 ```ts
 export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
@@ -116,7 +117,7 @@ export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecen
 }
 ```
 
-<span data-ttu-id="5318d-135">Затем замените метод `getPropertyPaneConfiguration` на следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-135">Then, replace its `getPropertyPaneConfiguration` method with the following code:</span></span>
+<span data-ttu-id="16219-135">Затем замените метод `getPropertyPaneConfiguration` на следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-135">Then, replace its `getPropertyPaneConfiguration` method with the following code:</span></span>
 
 ```ts
 export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
@@ -142,9 +143,9 @@ export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecen
 }
 ```
 
-### <a name="create-the-idocumentactivity-interface"></a><span data-ttu-id="5318d-136">Создание интерфейса IDocumentActivity</span><span class="sxs-lookup"><span data-stu-id="5318d-136">Create the IDocumentActivity Interface</span></span>
+### <a name="create-the-idocumentactivity-interface"></a><span data-ttu-id="16219-136">Создание интерфейса IDocumentActivity</span><span class="sxs-lookup"><span data-stu-id="16219-136">Create the IDocumentActivity Interface</span></span>
 
-<span data-ttu-id="5318d-137">В папке **./src/webparts/recentDocuments** создайте файл с именем **IDocumentActivity.ts** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-137">In the **./src/webparts/recentDocuments** folder, create a new file named **IDocumentActivity.ts** and paste the following code:</span></span>
+<span data-ttu-id="16219-137">В папке **./src/webparts/recentDocuments** создайте файл с именем **IDocumentActivity.ts** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-137">In the **./src/webparts/recentDocuments** folder, create a new file named **IDocumentActivity.ts** and paste the following code:</span></span>
 
 ```ts
 export interface IDocumentActivity {
@@ -154,11 +155,11 @@ export interface IDocumentActivity {
 }
 ```
 
-<span data-ttu-id="5318d-138">Этот интерфейс используется для отображения сведений о действиях с определенным документом на карточке.</span><span class="sxs-lookup"><span data-stu-id="5318d-138">This interface is used to display the activity information of a particular document on a card.</span></span>
+<span data-ttu-id="16219-138">Этот интерфейс используется для отображения сведений о действиях с определенным документом на карточке.</span><span class="sxs-lookup"><span data-stu-id="16219-138">This interface is used to display the activity information of a particular document on a card.</span></span>
 
-### <a name="create-the-idocument-interface"></a><span data-ttu-id="5318d-139">Создание интерфейса IDocument</span><span class="sxs-lookup"><span data-stu-id="5318d-139">Create the IDocument Interface</span></span>
+### <a name="create-the-idocument-interface"></a><span data-ttu-id="16219-139">Создание интерфейса IDocument</span><span class="sxs-lookup"><span data-stu-id="16219-139">Create the IDocument Interface</span></span>
 
-<span data-ttu-id="5318d-140">В папке **./src/webparts/recentDocuments** создайте файл с именем **IDocument.ts** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-140">In the **./src/webparts/recentDocuments** folder, create a new file named **IDocument.ts** and paste the following code:</span></span>
+<span data-ttu-id="16219-140">В папке **./src/webparts/recentDocuments** создайте файл с именем **IDocument.ts** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-140">In the **./src/webparts/recentDocuments** folder, create a new file named **IDocument.ts** and paste the following code:</span></span>
 
 ```ts
 import { IDocumentActivity } from './IDocumentActivity';
@@ -172,11 +173,11 @@ export interface IDocument {
 }
 ```
 
-<span data-ttu-id="5318d-141">Этот интерфейс представляет документ со всей необходимой информацией для отображения документа в качестве карточки.</span><span class="sxs-lookup"><span data-stu-id="5318d-141">This interface represents a document with all information necessary to display the document as a card.</span></span>
+<span data-ttu-id="16219-141">Этот интерфейс представляет документ со всей необходимой информацией для отображения документа в качестве карточки.</span><span class="sxs-lookup"><span data-stu-id="16219-141">This interface represents a document with all information necessary to display the document as a card.</span></span>
 
-### <a name="show-recent-documents-in-the-recentdocuments-react-component"></a><span data-ttu-id="5318d-142">Отображение последних документов в компоненте React RecentDocuments</span><span class="sxs-lookup"><span data-stu-id="5318d-142">Show Recent Documents in the RecentDocuments React Component</span></span>
+### <a name="show-recent-documents-in-the-recentdocuments-react-component"></a><span data-ttu-id="16219-142">Отображение последних документов в компоненте React RecentDocuments</span><span class="sxs-lookup"><span data-stu-id="16219-142">Show Recent Documents in the RecentDocuments React Component</span></span>
 
-<span data-ttu-id="5318d-p106">Добавьте свойство **documents** к интерфейсу **IRecentDocumentsProps**. В редакторе кода откройте файл **./src/webparts/recentDocuments/components/IRecentDocumentsProps.ts** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-p106">Add the **documents** property to the **IRecentDocumentsProps** interface. In the code editor, open the **./src/webparts/recentDocuments/components/IRecentDocumentsProps.ts** file, and paste the following code:</span></span>
+<span data-ttu-id="16219-p106">Добавьте свойство **documents** к интерфейсу **IRecentDocumentsProps**. В редакторе кода откройте файл **./src/webparts/recentDocuments/components/IRecentDocumentsProps.ts** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-p106">Add the **documents** property to the **IRecentDocumentsProps** interface. In the code editor, open the **./src/webparts/recentDocuments/components/IRecentDocumentsProps.ts** file, and paste the following code:</span></span>
 
 ```ts
 import { IDocument } from '../IDocument';
@@ -186,7 +187,7 @@ export interface IRecentDocumentsProps {
 }
 ```
 
-<span data-ttu-id="5318d-145">В редакторе кода откройте файл **./src/webparts/recentDocuments/components/RecentDocuments.tsx** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-145">In the code editor, open the **./src/webparts/recentDocuments/components/RecentDocuments.tsx** file and paste the following code:</span></span>
+<span data-ttu-id="16219-145">В редакторе кода откройте файл **./src/webparts/recentDocuments/components/RecentDocuments.tsx** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-145">In the code editor, open the **./src/webparts/recentDocuments/components/RecentDocuments.tsx** file and paste the following code:</span></span>
 
 ```tsx
 import * as React from 'react';
@@ -238,19 +239,19 @@ export default class RecentDocuments extends React.Component<IRecentDocumentsPro
 }
 ```
 
-<span data-ttu-id="5318d-p107">Для начала компонент просматривает документы, переданные с помощью свойства `documents`. Для каждого документа он создает [карточку документа Office UI Fabric](https://dev.office.com/fabric#/components/documentcard), заполняя ее свойства соответствующими сведениями о конкретном документе. После создания карточек для всех документов компонент добавляет их в основной текст и возвращает полную разметку.</span><span class="sxs-lookup"><span data-stu-id="5318d-p107">First, the component iterates through the documents passed using its `documents` property. For each document, it builds an [Office UI Fabric Document Card](https://dev.office.com/fabric#/components/documentcard) filling its properties with the relevant information about that particular document. Finally, when cards for all documents have been built, the component adds them to its body and returns the complete markup.</span></span>
+<span data-ttu-id="16219-p107">Для начала компонент просматривает документы, переданные с помощью свойства `documents`. Для каждого документа он создает [карточку документа Office UI Fabric](https://dev.office.com/fabric#/components/documentcard), заполняя ее свойства соответствующими сведениями о конкретном документе. После создания карточек для всех документов компонент добавляет их в основной текст и возвращает полную разметку.</span><span class="sxs-lookup"><span data-stu-id="16219-p107">First, the component iterates through the documents passed using its `documents` property. For each document, it builds an [Office UI Fabric Document Card](https://dev.office.com/fabric#/components/documentcard) filling its properties with the relevant information about that particular document. Finally, when cards for all documents have been built, the component adds them to its body and returns the complete markup.</span></span>
 
-### <a name="load-the-information-about-the-recent-documents"></a><span data-ttu-id="5318d-149">Загрузка сведений о последних документах</span><span class="sxs-lookup"><span data-stu-id="5318d-149">Load the Information About the Recent Documents</span></span>
+### <a name="load-the-information-about-the-recent-documents"></a><span data-ttu-id="16219-149">Загрузка сведений о последних документах</span><span class="sxs-lookup"><span data-stu-id="16219-149">Load the Information About the Recent Documents</span></span>
 
-<span data-ttu-id="5318d-p108">В этом примере сведения о недавно измененных документах загружаются из статического набора данных. Однако вы легко можете изменить эту реализацию, чтобы данные загружались из библиотеки документов SharePoint.</span><span class="sxs-lookup"><span data-stu-id="5318d-p108">In this example, the information about the recently modified documents is loaded from a static data set. You could, however, easily change this implementation to load the data from a SharePoint document library instead.</span></span>
+<span data-ttu-id="16219-p108">В этом примере сведения о недавно измененных документах загружаются из статического набора данных. Однако вы легко можете изменить эту реализацию, чтобы данные загружались из библиотеки документов SharePoint.</span><span class="sxs-lookup"><span data-stu-id="16219-p108">In this example, the information about the recently modified documents is loaded from a static data set. You could, however, easily change this implementation to load the data from a SharePoint document library instead.</span></span>
 
-<span data-ttu-id="5318d-p109">В редакторе кода откройте файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts**. Добавьте оператор импорта для интерфейса `IDocument` после других операторов импорта в начале файла, используя следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-p109">In the code editor, open the **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts** file. Add an import statement for the `IDocument` interface under the other import statements at the top of the file using the following code:</span></span>
+<span data-ttu-id="16219-p109">В редакторе кода откройте файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts**. Добавьте оператор импорта для интерфейса `IDocument` после других операторов импорта в начале файла, используя следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-p109">In the code editor, open the **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts** file. Add an import statement for the `IDocument` interface under the other import statements at the top of the file using the following code:</span></span>
 
 ```ts
 import { IDocument } from './IDocument';
 ```
 
-<span data-ttu-id="5318d-154">В классе `RecentDocumentsWebPart` добавьте новую частную переменную с именем `documents`, используя следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-154">In the `RecentDocumentsWebPart` class, add a new private variable named `documents` using the following code:</span></span>
+<span data-ttu-id="16219-154">В классе `RecentDocumentsWebPart` добавьте новую частную переменную с именем `documents`, используя следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-154">In the `RecentDocumentsWebPart` class, add a new private variable named `documents` using the following code:</span></span>
 
 ```ts
 export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
@@ -316,7 +317,7 @@ export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecen
 }
 ```
 
-<span data-ttu-id="5318d-155">Измените метод `render`, чтобы он загружал и отображал сведения о недавно измененных документах:</span><span class="sxs-lookup"><span data-stu-id="5318d-155">Change the `render` method to load and render the information about the recently modified documents:</span></span>
+<span data-ttu-id="16219-155">Измените метод `render`, чтобы он загружал и отображал сведения о недавно измененных документах:</span><span class="sxs-lookup"><span data-stu-id="16219-155">Change the `render` method to load and render the information about the recently modified documents:</span></span>
 
 ```ts
 export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
@@ -340,51 +341,51 @@ export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecen
 }
 ```
 
-<span data-ttu-id="5318d-156">Убедитесь, что веб-часть работает надлежащим образом и отображает сведения о трех последних измененных документах. Для этого с помощью командной строки выполните в каталоге проекта следующую команду:</span><span class="sxs-lookup"><span data-stu-id="5318d-156">Verify that the web part is working correctly and shows information about the three most recently modified documents by running the following command from a command prompt in your project directory:</span></span>
+<span data-ttu-id="16219-156">Убедитесь, что веб-часть работает надлежащим образом и отображает сведения о трех последних измененных документах. Для этого с помощью командной строки выполните в каталоге проекта следующую команду:</span><span class="sxs-lookup"><span data-stu-id="16219-156">Verify that the web part is working correctly and shows information about the three most recently modified documents by running the following command from a command prompt in your project directory:</span></span>
 
 ```sh
 gulp serve
 ```
 
-<span data-ttu-id="5318d-157">Добавьте веб-часть Recent Documents (Последние документы) на холст рабочего места SharePoint.</span><span class="sxs-lookup"><span data-stu-id="5318d-157">In the SharePoint workbench add the Recent Documents web part to the canvas.</span></span>
+<span data-ttu-id="16219-157">Добавьте веб-часть Recent Documents (Последние документы) на холст рабочего места SharePoint.</span><span class="sxs-lookup"><span data-stu-id="16219-157">In the SharePoint workbench add the Recent Documents web part to the canvas.</span></span>
 
 ![Веб-часть Recent Documents (Последние документы) с тремя недавно измененными документами в виде карточек документов](../../../images/tutorial-sharingdata-recent-documents.png)
 
-## <a name="show-the-most-recently-modified-document"></a><span data-ttu-id="5318d-159">Отображение последнего измененного документа</span><span class="sxs-lookup"><span data-stu-id="5318d-159">Show the Most Recently Modified Document</span></span>
+## <a name="show-the-most-recently-modified-document"></a><span data-ttu-id="16219-159">Отображение последнего измененного документа</span><span class="sxs-lookup"><span data-stu-id="16219-159">Show the Most Recently Modified Document</span></span>
 
-<span data-ttu-id="5318d-160">В веб-части Recent document (Последний документ) отображаются сведения о последнем измененном документе.</span><span class="sxs-lookup"><span data-stu-id="5318d-160">The Recent document web part shows information about the most recently modified document.</span></span>
+<span data-ttu-id="16219-160">В веб-части Recent document (Последний документ) отображаются сведения о последнем измененном документе.</span><span class="sxs-lookup"><span data-stu-id="16219-160">The Recent document web part shows information about the most recently modified document.</span></span>
 
 ![Веб-часть Recent document (Последний документ) с одной большой карточкой документа, содержащей сведения о последнем измененном документе](../../../images/tutorial-sharingdata-recent-document.png)
 
-### <a name="add-the-second-web-part"></a><span data-ttu-id="5318d-162">Добавление второй веб-части</span><span class="sxs-lookup"><span data-stu-id="5318d-162">Add the Second Web Part</span></span>
+### <a name="add-the-second-web-part"></a><span data-ttu-id="16219-162">Добавление второй веб-части</span><span class="sxs-lookup"><span data-stu-id="16219-162">Add the Second Web Part</span></span>
 
-<span data-ttu-id="5318d-163">Чтобы продемонстрировать совместное использование данных разными веб-частями, добавьте к проекту вторую веб-часть.</span><span class="sxs-lookup"><span data-stu-id="5318d-163">To illustrate sharing data between web parts, add a second web part to the project.</span></span>
+<span data-ttu-id="16219-163">Чтобы продемонстрировать совместное использование данных разными веб-частями, добавьте к проекту вторую веб-часть.</span><span class="sxs-lookup"><span data-stu-id="16219-163">To illustrate sharing data between web parts, add a second web part to the project.</span></span>
 
-<span data-ttu-id="5318d-164">С помощью командной строки запустите в папке проекта генератор Yeoman для SharePoint Framework.</span><span class="sxs-lookup"><span data-stu-id="5318d-164">Using a command prompt in the project folder, run the SharePoint Framework Yeoman generator.</span></span>
+<span data-ttu-id="16219-164">С помощью командной строки запустите в папке проекта генератор Yeoman для SharePoint Framework.</span><span class="sxs-lookup"><span data-stu-id="16219-164">Using a command prompt in the project folder, run the SharePoint Framework Yeoman generator.</span></span>
 
 ```sh
 yo @microsoft/sharepoint
 ```
 
-<span data-ttu-id="5318d-165">Когда появится соответствующий запрос, укажите следующие значения:</span><span class="sxs-lookup"><span data-stu-id="5318d-165">When prompted, enter the following values:</span></span>
+<span data-ttu-id="16219-165">Когда появится соответствующий запрос, укажите следующие значения:</span><span class="sxs-lookup"><span data-stu-id="16219-165">When prompted, enter the following values:</span></span>
 
 
-- <span data-ttu-id="5318d-166">**WebPart** в качестве типа создаваемого клиентского компонента;</span><span class="sxs-lookup"><span data-stu-id="5318d-166">**WebPart** as the type of client-side component to create.</span></span>
-- <span data-ttu-id="5318d-167">**Recent document** (Последний документ) в качестве имени веб-части;</span><span class="sxs-lookup"><span data-stu-id="5318d-167">**Recent document** as your web part name.</span></span>
-- <span data-ttu-id="5318d-168">**Shows information about the most recently modified document** (Показывает сведения о последнем измененном документе) в качестве описания веб-части.</span><span class="sxs-lookup"><span data-stu-id="5318d-168">**Shows information about the most recently modified document** as your web part description.</span></span>
+- <span data-ttu-id="16219-166">**WebPart** в качестве типа создаваемого клиентского компонента;</span><span class="sxs-lookup"><span data-stu-id="16219-166">**WebPart** as the type of client-side component to create.</span></span>
+- <span data-ttu-id="16219-167">**Recent document** (Последний документ) в качестве имени веб-части;</span><span class="sxs-lookup"><span data-stu-id="16219-167">**Recent document** as your web part name.</span></span>
+- <span data-ttu-id="16219-168">**Shows information about the most recently modified document** (Показывает сведения о последнем измененном документе) в качестве описания веб-части.</span><span class="sxs-lookup"><span data-stu-id="16219-168">**Shows information about the most recently modified document** as your web part description.</span></span>
 
 ![Генератор Yeoman для SharePoint Framework со сведениями для формирования второй веб-части](../../../images/tutorial-sharingdata-yo-sharepoint-recent-document.png)
 
-### <a name="remove-the-standard-description-property"></a><span data-ttu-id="5318d-170">Удаление стандартного свойства _description_</span><span class="sxs-lookup"><span data-stu-id="5318d-170">Remove the Standard _description_ Property</span></span>
+### <a name="remove-the-standard-description-property"></a><span data-ttu-id="16219-170">Удаление стандартного свойства _description_</span><span class="sxs-lookup"><span data-stu-id="16219-170">Remove the Standard _description_ Property</span></span>
 
-<span data-ttu-id="5318d-p110">Для начала удалите свойство `description` из интерфейса `IRecentDocumentWebPartProps`. В редакторе кода откройте файл **./src/webparts/recentDocument/IRecentDocumentWebPartProps.ts** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-p110">Start by removing the `description` property from the `IRecentDocumentWebPartProps` interface. In the code editor, open the **./src/webparts/recentDocument/IRecentDocumentWebPartProps.ts** file and paste the following code:</span></span>
+<span data-ttu-id="16219-p110">Для начала удалите свойство `description` из интерфейса `IRecentDocumentWebPartProps`. В редакторе кода откройте файл **./src/webparts/recentDocument/IRecentDocumentWebPartProps.ts** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-p110">Start by removing the `description` property from the `IRecentDocumentWebPartProps` interface. In the code editor, open the **./src/webparts/recentDocument/IRecentDocumentWebPartProps.ts** file and paste the following code:</span></span>
 
 ```ts
 export interface IRecentDocumentWebPartProps {
 }
 ```
 
-<span data-ttu-id="5318d-p111">Удалите стандартное свойство `description` из манифеста веб-части. Откройте файл **./src/webparts/recentDocument/RecentDocumentWebPart.manifest.json** и удалите из свойства `properties` свойство `description`:</span><span class="sxs-lookup"><span data-stu-id="5318d-p111">Remove the standard `description` property from the web part manifest. Open the **./src/webparts/recentDocument/RecentDocumentWebPart.manifest.json** file, and from the `properties` property, remove the `description` property:</span></span>
+<span data-ttu-id="16219-p111">Удалите стандартное свойство `description` из манифеста веб-части. Откройте файл **./src/webparts/recentDocument/RecentDocumentWebPart.manifest.json** и удалите из свойства `properties` свойство `description`:</span><span class="sxs-lookup"><span data-stu-id="16219-p111">Remove the standard `description` property from the web part manifest. Open the **./src/webparts/recentDocument/RecentDocumentWebPart.manifest.json** file, and from the `properties` property, remove the `description` property:</span></span>
 
 ```json
 {
@@ -408,7 +409,7 @@ export interface IRecentDocumentWebPartProps {
 }
 ```
 
-<span data-ttu-id="5318d-p112">Наконец, удалите стандартное свойство `description` из области свойств веб-части. Откройте в редакторе кода файл **./src/webparts/recentDocument/RecentDocumentWebPart.ts**. Замените метод `render` на следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-p112">Finally, remove the standard `description` property from the web part property pane. In the code editor, open the **./src/webparts/recentDocument/RecentDocumentWebPart.ts** file. Replace its `render` method with the following code:</span></span>
+<span data-ttu-id="16219-p112">Наконец, удалите стандартное свойство `description` из области свойств веб-части. Откройте в редакторе кода файл **./src/webparts/recentDocument/RecentDocumentWebPart.ts**. Замените метод `render` на следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-p112">Finally, remove the standard `description` property from the web part property pane. In the code editor, open the **./src/webparts/recentDocument/RecentDocumentWebPart.ts** file. Replace its `render` method with the following code:</span></span>
 
 ```ts
 export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecentDocumentWebPartProps> {
@@ -426,7 +427,7 @@ export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecent
 }
 ```
 
-<span data-ttu-id="5318d-178">Затем замените метод `getPropertyPaneConfiguration` на следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-178">Next, replace its `getPropertyPaneConfiguration` method with the following code:</span></span>
+<span data-ttu-id="16219-178">Затем замените метод `getPropertyPaneConfiguration` на следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-178">Next, replace its `getPropertyPaneConfiguration` method with the following code:</span></span>
 
 ```ts
 export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecentDocumentWebPartProps> {
@@ -452,19 +453,19 @@ export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecent
 }
 ```
 
-### <a name="reuse-the-idocument-and-idocumentactivity-interfaces"></a><span data-ttu-id="5318d-179">Повторное использование интерфейсов _IDocument_ и _IDocumentActivity_</span><span class="sxs-lookup"><span data-stu-id="5318d-179">Reuse the _IDocument_ and _IDocumentActivity_ Interfaces</span></span>
+### <a name="reuse-the-idocument-and-idocumentactivity-interfaces"></a><span data-ttu-id="16219-179">Повторное использование интерфейсов _IDocument_ и _IDocumentActivity_</span><span class="sxs-lookup"><span data-stu-id="16219-179">Reuse the _IDocument_ and _IDocumentActivity_ Interfaces</span></span>
 
-<span data-ttu-id="5318d-p113">Веб-части Recent document (Последний документ) и Recent documents (Последние документы) отображают сведения о последнем измененном документе по-разному, но они используют одну и ту же структуру данных для представления документа. Вместо того чтобы дублировать интерфейсы `IDocument` и `IDocumentActivity`, вы можете использовать их в обеих веб-частях.</span><span class="sxs-lookup"><span data-stu-id="5318d-p113">The Recent document web part displays information about the most recently modified document in a different way than the Recent documents web part, but both web parts use the same data structure representing a document. Instead of duplicating the `IDocument` and `IDocumentActivity` interfaces, you can reuse them across both web parts.</span></span>
+<span data-ttu-id="16219-p113">Веб-части Recent document (Последний документ) и Recent documents (Последние документы) отображают сведения о последнем измененном документе по-разному, но они используют одну и ту же структуру данных для представления документа. Вместо того чтобы дублировать интерфейсы `IDocument` и `IDocumentActivity`, вы можете использовать их в обеих веб-частях.</span><span class="sxs-lookup"><span data-stu-id="16219-p113">The Recent document web part displays information about the most recently modified document in a different way than the Recent documents web part, but both web parts use the same data structure representing a document. Instead of duplicating the `IDocument` and `IDocumentActivity` interfaces, you can reuse them across both web parts.</span></span>
 
-<span data-ttu-id="5318d-182">В Visual Studio Code откройте область обозревателя и в папке **./src/webparts/recentDocuments** переместите файлы **IDocument.ts** и **IDocumentActivity.ts** на один уровень выше, в папку **./src/webparts**.</span><span class="sxs-lookup"><span data-stu-id="5318d-182">In Visual Studio Code, activate the Explorer pane, and from the **./src/webparts/recentDocuments** folder, move the **IDocument.ts** and **IDocumentActivity.ts** files one level up, to the **./src/webparts** folder.</span></span>
+<span data-ttu-id="16219-182">В Visual Studio Code откройте область обозревателя и в папке **./src/webparts/recentDocuments** переместите файлы **IDocument.ts** и **IDocumentActivity.ts** на один уровень выше, в папку **./src/webparts**.</span><span class="sxs-lookup"><span data-stu-id="16219-182">In Visual Studio Code, activate the Explorer pane, and from the **./src/webparts/recentDocuments** folder, move the **IDocument.ts** and **IDocumentActivity.ts** files one level up, to the **./src/webparts** folder.</span></span>
 
 ![Область обозревателя Visual Studio Code с выделенными файлами IDocument.ts и IDocumentActivity.ts](../../../images/tutorial-sharingdata-interfaces.png)
 
-#### <a name="update-references-to-the-moved-files"></a><span data-ttu-id="5318d-184">Обновление ссылок на перемещенные файлы</span><span class="sxs-lookup"><span data-stu-id="5318d-184">Update References to the Moved Files</span></span>
+#### <a name="update-references-to-the-moved-files"></a><span data-ttu-id="16219-184">Обновление ссылок на перемещенные файлы</span><span class="sxs-lookup"><span data-stu-id="16219-184">Update References to the Moved Files</span></span>
 
-<span data-ttu-id="5318d-185">Переместив файлы в другую папку проекта, необходимо обновить пути в ссылках на них.</span><span class="sxs-lookup"><span data-stu-id="5318d-185">Having moved the files to another location in your project, you need to update the paths where they're referenced.</span></span>
+<span data-ttu-id="16219-185">Переместив файлы в другую папку проекта, необходимо обновить пути в ссылках на них.</span><span class="sxs-lookup"><span data-stu-id="16219-185">Having moved the files to another location in your project, you need to update the paths where they're referenced.</span></span>
 
-<span data-ttu-id="5318d-186">В редакторе кода откройте файл **./src/webparts/recentDocuments/components/IRecentDocumentsProps.ts** и измените его код на следующий:</span><span class="sxs-lookup"><span data-stu-id="5318d-186">In the code editor, open the **./src/webparts/recentDocuments/components/IRecentDocumentsProps.ts** file and change its code to:</span></span>
+<span data-ttu-id="16219-186">В редакторе кода откройте файл **./src/webparts/recentDocuments/components/IRecentDocumentsProps.ts** и измените его код на следующий:</span><span class="sxs-lookup"><span data-stu-id="16219-186">In the code editor, open the **./src/webparts/recentDocuments/components/IRecentDocumentsProps.ts** file and change its code to:</span></span>
 
 ```ts
 import { IDocument } from '../../IDocument';
@@ -474,21 +475,21 @@ export interface IRecentDocumentsProps {
 }
 ```
 
-<span data-ttu-id="5318d-187">Затем откройте файл **./src/webparts/recentDocuments/components/RecentDocuments.tsx** и замените оператор `import` в интерфейсе `IDocument` на следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-187">Next, open the **./src/webparts/recentDocuments/components/RecentDocuments.tsx** file and update the `import` statement of the `IDocument` interface to:</span></span>
+<span data-ttu-id="16219-187">Затем откройте файл **./src/webparts/recentDocuments/components/RecentDocuments.tsx** и замените оператор `import` в интерфейсе `IDocument` на следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-187">Next, open the **./src/webparts/recentDocuments/components/RecentDocuments.tsx** file and update the `import` statement of the `IDocument` interface to:</span></span>
 
 ```ts
 import { IDocument } from '../../IDocument';
 ```
 
-<span data-ttu-id="5318d-188">Наконец, откройте файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts** и замените оператор `import` в интерфейсе `IDocument` на следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-188">Finally, open the **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts** file and update the `import` statement of the `IDocument` interface to:</span></span>
+<span data-ttu-id="16219-188">Наконец, откройте файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts** и замените оператор `import` в интерфейсе `IDocument` на следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-188">Finally, open the **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts** file and update the `import` statement of the `IDocument` interface to:</span></span>
 
 ```ts
 import { IDocument } from '../IDocument';
 ```
 
-### <a name="show-the-most-recent-document-in-the-recentdocument-react-component"></a><span data-ttu-id="5318d-189">Отображение последнего документа в компоненте React RecentDocument</span><span class="sxs-lookup"><span data-stu-id="5318d-189">Show the Most Recent Document in the RecentDocument React Component</span></span>
+### <a name="show-the-most-recent-document-in-the-recentdocument-react-component"></a><span data-ttu-id="16219-189">Отображение последнего документа в компоненте React RecentDocument</span><span class="sxs-lookup"><span data-stu-id="16219-189">Show the Most Recent Document in the RecentDocument React Component</span></span>
 
-<span data-ttu-id="5318d-p114">Добавьте свойство `document` к интерфейсу `IRecentDocumentProps`. В редакторе кода откройте файл **./src/webparts/recentDocument/components/IRecentDocumentProps.ts** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-p114">Add the `document` property to the `IRecentDocumentProps` interface. In the code editor, open the **./src/webparts/recentDocument/components/IRecentDocumentProps.ts** file, and paste the following code:</span></span>
+<span data-ttu-id="16219-p114">Добавьте свойство `document` к интерфейсу `IRecentDocumentProps`. В редакторе кода откройте файл **./src/webparts/recentDocument/components/IRecentDocumentProps.ts** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-p114">Add the `document` property to the `IRecentDocumentProps` interface. In the code editor, open the **./src/webparts/recentDocument/components/IRecentDocumentProps.ts** file, and paste the following code:</span></span>
 
 ```ts
 import { IDocument } from '../../IDocument';
@@ -498,7 +499,7 @@ export interface IRecentDocumentProps {
 }
 ```
 
-<span data-ttu-id="5318d-192">В редакторе кода откройте файл **./src/webparts/recentDocument/components/RecentDocument.tsx** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-192">In the code editor, open the **./src/webparts/recentDocument/components/RecentDocument.tsx** file and paste the following code:</span></span>
+<span data-ttu-id="16219-192">В редакторе кода откройте файл **./src/webparts/recentDocument/components/RecentDocument.tsx** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-192">In the code editor, open the **./src/webparts/recentDocument/components/RecentDocument.tsx** file and paste the following code:</span></span>
 
 ```tsx
 import * as React from 'react';
@@ -548,19 +549,19 @@ export default class RecentDocument extends React.Component<IRecentDocumentProps
 }
 ```
 
-<span data-ttu-id="5318d-193">Компонент React `RecentDocument` использует сведения о последнем измененном документе, переданные в свойстве `document`, и отображает с их помощью карточки документа Office UI Fabric.</span><span class="sxs-lookup"><span data-stu-id="5318d-193">The `RecentDocument` React component uses the information about the most recently modified document passed in the `document` property and uses it to render an Office UI Fabric Document Card.</span></span>
+<span data-ttu-id="16219-193">Компонент React `RecentDocument` использует сведения о последнем измененном документе, переданные в свойстве `document`, и отображает с их помощью карточки документа Office UI Fabric.</span><span class="sxs-lookup"><span data-stu-id="16219-193">The `RecentDocument` React component uses the information about the most recently modified document passed in the `document` property and uses it to render an Office UI Fabric Document Card.</span></span>
 
-### <a name="load-the-information-about-the-recent-document"></a><span data-ttu-id="5318d-194">Загрузка сведений о последнем документе</span><span class="sxs-lookup"><span data-stu-id="5318d-194">Load the Information About the Recent Document</span></span>
+### <a name="load-the-information-about-the-recent-document"></a><span data-ttu-id="16219-194">Загрузка сведений о последнем документе</span><span class="sxs-lookup"><span data-stu-id="16219-194">Load the Information About the Recent Document</span></span>
 
-<span data-ttu-id="5318d-p115">В этом примере сведения о последнем измененном документе загружаются из статического набора данных. Однако вы легко можете изменить эту реализацию, чтобы данные загружались из библиотеки документов SharePoint.</span><span class="sxs-lookup"><span data-stu-id="5318d-p115">In this example, the information about the most recently modified document is loaded from a static data set. You could, however, easily change this implementation to load the data from a SharePoint document library instead.</span></span>
+<span data-ttu-id="16219-p115">В этом примере сведения о последнем измененном документе загружаются из статического набора данных. Однако вы легко можете изменить эту реализацию, чтобы данные загружались из библиотеки документов SharePoint.</span><span class="sxs-lookup"><span data-stu-id="16219-p115">In this example, the information about the most recently modified document is loaded from a static data set. You could, however, easily change this implementation to load the data from a SharePoint document library instead.</span></span>
 
-<span data-ttu-id="5318d-p116">В редакторе кода откройте файл **./src/webparts/recentDocument/RecentDocumentWebPart.ts**. Добавьте оператор импорта для интерфейса `IDocument` после других операторов импорта в начале файла, используя следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-p116">In the code editor, open the **./src/webparts/recentDocument/RecentDocumentWebPart.ts** file. Add an import statement for the `IDocument` interface under the other import statements at the top of the file using the following code:</span></span>
+<span data-ttu-id="16219-p116">В редакторе кода откройте файл **./src/webparts/recentDocument/RecentDocumentWebPart.ts**. Добавьте оператор импорта для интерфейса `IDocument` после других операторов импорта в начале файла, используя следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-p116">In the code editor, open the **./src/webparts/recentDocument/RecentDocumentWebPart.ts** file. Add an import statement for the `IDocument` interface under the other import statements at the top of the file using the following code:</span></span>
 
 ```ts
 import { IDocument } from '../IDocument';
 ```
 
-<span data-ttu-id="5318d-199">В классе `RecentDocumentWebPart` добавьте новую частную переменную с именем `document`, используя следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-199">In the `RecentDocumentWebPart` class, add a new private variable named `document` using the following code:</span></span>
+<span data-ttu-id="16219-199">В классе `RecentDocumentWebPart` добавьте новую частную переменную с именем `document`, используя следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-199">In the `RecentDocumentWebPart` class, add a new private variable named `document` using the following code:</span></span>
 
 ```ts
 export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecentDocumentWebPartProps> {
@@ -580,7 +581,7 @@ export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecent
 }
 ```
 
-<span data-ttu-id="5318d-200">Измените метод `render`, чтобы он загружал и отображал сведения о последнем измененном документе:</span><span class="sxs-lookup"><span data-stu-id="5318d-200">Change the `render` method to load and render the information about the most recently modified document:</span></span>
+<span data-ttu-id="16219-200">Измените метод `render`, чтобы он загружал и отображал сведения о последнем измененном документе:</span><span class="sxs-lookup"><span data-stu-id="16219-200">Change the `render` method to load and render the information about the most recently modified document:</span></span>
 
 ```ts
 export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
@@ -604,31 +605,31 @@ export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecen
 }
 ```
 
-<span data-ttu-id="5318d-201">Убедитесь, что веб-часть работает надлежащим образом и отображает сведения о последнем измененном документе. Для этого с помощью командной строки выполните в папке проекта следующую команду:</span><span class="sxs-lookup"><span data-stu-id="5318d-201">Verify that the web part is working correctly and shows information about the most recently modified document, by running the following command from a command prompt in your project folder:</span></span>
+<span data-ttu-id="16219-201">Убедитесь, что веб-часть работает надлежащим образом и отображает сведения о последнем измененном документе. Для этого с помощью командной строки выполните в папке проекта следующую команду:</span><span class="sxs-lookup"><span data-stu-id="16219-201">Verify that the web part is working correctly and shows information about the most recently modified document, by running the following command from a command prompt in your project folder:</span></span>
 
 ```sh
 gulp serve
 ```
 
-<span data-ttu-id="5318d-202">Добавьте веб-часть Recent document (Последний документ) на холст рабочего места SharePoint.</span><span class="sxs-lookup"><span data-stu-id="5318d-202">In the SharePoint workbench add the Recent document web part to the canvas.</span></span>
+<span data-ttu-id="16219-202">Добавьте веб-часть Recent document (Последний документ) на холст рабочего места SharePoint.</span><span class="sxs-lookup"><span data-stu-id="16219-202">In the SharePoint workbench add the Recent document web part to the canvas.</span></span>
 
 ![Веб-часть Recent document (Последний документ) с карточкой документа, содержащей сведения о последнем измененном документе](../../../images/tutorial-sharingdata-recent-document.png)
 
-<span data-ttu-id="5318d-p117">Текущая реализация — типичный пример независимой разработки двух веб-частей. Если они обе располагаются на одной странице и загружают данные из SharePoint, то для получения похожих сведений приходится выполнять два отдельных запроса. Если в тот или иной момент вам потребуется изменить источник, из которого загружаются данные о недавно измененных документах, то придется обновлять обе веб-части. Чтобы ускорить загрузку страницы и упростить работу с кодом веб-части, вы можете централизовать логику получения данных и сделать однажды полученные данные доступными обеим веб-частям.</span><span class="sxs-lookup"><span data-stu-id="5318d-p117">The current implementation is a typical example of two web parts being developed independently. If they were both placed on the same page and were loading data from SharePoint, they would execute two separate requests to retrieve similar information. If, at some point, you had to change where the information about the recently modified documents is loaded from, you would have to update both web parts. To improve the performance of loading the page and simplify maintaining the web part code, you can centralize the logic of retrieving the data and make the once retrieved data available to both web parts.</span></span>
+<span data-ttu-id="16219-p117">Текущая реализация — типичный пример независимой разработки двух веб-частей. Если они обе располагаются на одной странице и загружают данные из SharePoint, то для получения похожих сведений приходится выполнять два отдельных запроса. Если в тот или иной момент вам потребуется изменить источник, из которого загружаются данные о недавно измененных документах, то придется обновлять обе веб-части. Чтобы ускорить загрузку страницы и упростить работу с кодом веб-части, вы можете централизовать логику получения данных и сделать однажды полученные данные доступными обеим веб-частям.</span><span class="sxs-lookup"><span data-stu-id="16219-p117">The current implementation is a typical example of two web parts being developed independently. If they were both placed on the same page and were loading data from SharePoint, they would execute two separate requests to retrieve similar information. If, at some point, you had to change where the information about the recently modified documents is loaded from, you would have to update both web parts. To improve the performance of loading the page and simplify maintaining the web part code, you can centralize the logic of retrieving the data and make the once retrieved data available to both web parts.</span></span>
 
-## <a name="centralize-loading-data"></a><span data-ttu-id="5318d-208">Централизованная загрузка данных</span><span class="sxs-lookup"><span data-stu-id="5318d-208">Centralize Loading Data</span></span>
+## <a name="centralize-loading-data"></a><span data-ttu-id="16219-208">Централизованная загрузка данных</span><span class="sxs-lookup"><span data-stu-id="16219-208">Centralize Loading Data</span></span>
 
-<span data-ttu-id="5318d-209">Чтобы централизовать загрузку сведений о недавно измененных документах, создайте службу, на которую будут ссылаться обе веб-части.</span><span class="sxs-lookup"><span data-stu-id="5318d-209">To centralize loading the information about recently modified documents, build a service that will be referenced by both web parts.</span></span>
+<span data-ttu-id="16219-209">Чтобы централизовать загрузку сведений о недавно измененных документах, создайте службу, на которую будут ссылаться обе веб-части.</span><span class="sxs-lookup"><span data-stu-id="16219-209">To centralize loading the information about recently modified documents, build a service that will be referenced by both web parts.</span></span>
 
-### <a name="move-the-data-model-interfaces"></a><span data-ttu-id="5318d-210">Перемещение интерфейсов модели данных</span><span class="sxs-lookup"><span data-stu-id="5318d-210">Move the Data Model Interfaces</span></span>
+### <a name="move-the-data-model-interfaces"></a><span data-ttu-id="16219-210">Перемещение интерфейсов модели данных</span><span class="sxs-lookup"><span data-stu-id="16219-210">Move the Data Model Interfaces</span></span>
 
-<span data-ttu-id="5318d-p118">Создайте в папке проекта путь **./src/services/documentsService**. Переместите файлы **IDocument.ts** и **IDocumentActivity.ts** из папки **./src/webparts** в папку **./src/services/documentsService**.</span><span class="sxs-lookup"><span data-stu-id="5318d-p118">In the project folder create the **./src/services/documentsService** folder path. From the **./src/webparts** folder, move the **IDocument.ts** and **IDocumentActivity.ts** files to the **./src/services/documentsService** folder.</span></span>
+<span data-ttu-id="16219-p118">Создайте в папке проекта путь **./src/services/documentsService**. Переместите файлы **IDocument.ts** и **IDocumentActivity.ts** из папки **./src/webparts** в папку **./src/services/documentsService**.</span><span class="sxs-lookup"><span data-stu-id="16219-p118">In the project folder create the **./src/services/documentsService** folder path. From the **./src/webparts** folder, move the **IDocument.ts** and **IDocumentActivity.ts** files to the **./src/services/documentsService** folder.</span></span>
 
 ![Файлы IDocument.ts и IDocumentActivity.ts, выделенные в области обозревателя Visual Studio Code](../../../images/tutorial-sharingdata-interfaces-documentsservice.png)
 
-### <a name="build-the-data-access-service"></a><span data-ttu-id="5318d-214">Создание службы доступа к данным</span><span class="sxs-lookup"><span data-stu-id="5318d-214">Build the Data Access Service</span></span>
+### <a name="build-the-data-access-service"></a><span data-ttu-id="16219-214">Создание службы доступа к данным</span><span class="sxs-lookup"><span data-stu-id="16219-214">Build the Data Access Service</span></span>
 
-<span data-ttu-id="5318d-215">В папке **./src/services/documentsService** создайте файл с именем **DocumentsService.ts** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-215">In the **./src/services/documentsService** folder, create a new file named **DocumentsService.ts** and paste the following code:</span></span>
+<span data-ttu-id="16219-215">В папке **./src/services/documentsService** создайте файл с именем **DocumentsService.ts** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-215">In the **./src/services/documentsService** folder, create a new file named **DocumentsService.ts** and paste the following code:</span></span>
 
 ```ts
 import { IDocument } from './IDocument';
@@ -710,15 +711,15 @@ export class DocumentsService {
 }
 ```
 
-<span data-ttu-id="5318d-p119">Класс `DocumentsService` — это пример службы, загружающей сведения о последних документах. В этом примере используется статический набор данных, но вы легко можете изменить его реализацию, чтобы данные загружались из библиотеки документов SharePoint. На этом этапе класс `DocumentsService` уже предоставляет центральную точку доступа к данным для всех веб-частей, но еще не сохраняет ранее загруженные данные. Эту возможность мы реализуем позже.</span><span class="sxs-lookup"><span data-stu-id="5318d-p119">The `DocumentsService` class is a sample service that loads information about recent documents. In this example, it uses a static data set, but you could easily change its implementation to load its data from a SharePoint document library. At this stage, the `DocumentsService` class offers a centralized point for all web parts to access their data, but it doesn't store the previously loaded data. You will implement that later in this tutorial.</span></span>
+<span data-ttu-id="16219-p119">Класс `DocumentsService` — это пример службы, загружающей сведения о последних документах. В этом примере используется статический набор данных, но вы легко можете изменить его реализацию, чтобы данные загружались из библиотеки документов SharePoint. На этом этапе класс `DocumentsService` уже предоставляет центральную точку доступа к данным для всех веб-частей, но еще не сохраняет ранее загруженные данные. Эту возможность мы реализуем позже.</span><span class="sxs-lookup"><span data-stu-id="16219-p119">The `DocumentsService` class is a sample service that loads information about recent documents. In this example, it uses a static data set, but you could easily change its implementation to load its data from a SharePoint document library. At this stage, the `DocumentsService` class offers a centralized point for all web parts to access their data, but it doesn't store the previously loaded data. You will implement that later in this tutorial.</span></span>
 
-### <a name="create-a-barrel-for-the-service-files"></a><span data-ttu-id="5318d-220">Создание блока данных для системных файлов</span><span class="sxs-lookup"><span data-stu-id="5318d-220">Create a Barrel for the Service Files</span></span>
+### <a name="create-a-barrel-for-the-service-files"></a><span data-ttu-id="16219-220">Создание блока данных для системных файлов</span><span class="sxs-lookup"><span data-stu-id="16219-220">Create a Barrel for the Service Files</span></span>
 
-<span data-ttu-id="5318d-p120">Ссылаясь на файлы в проекте, вы указываете относительный путь. При изменении этого пути потребуется обновить все ссылки на соответствующий файл. Такие изменения очень вероятны на раннем этапе разработки, когда добавляются различные элементы, а окончательная структура проекта еще не определена. Во избежание частых изменений ссылок на файлы в проекте вы можете использовать блоки данных.</span><span class="sxs-lookup"><span data-stu-id="5318d-p120">When referencing files in a project you point to their relative path. Whenever that path changes, you have to update all references to the particular file. Such changes are very likely at the beginning of the project when the different elements are being added and the final project structure is unclear. To avoid frequent changes to file references in a project you can use barrels.</span></span>
+<span data-ttu-id="16219-p120">Ссылаясь на файлы в проекте, вы указываете относительный путь. При изменении этого пути потребуется обновить все ссылки на соответствующий файл. Такие изменения очень вероятны на раннем этапе разработки, когда добавляются различные элементы, а окончательная структура проекта еще не определена. Во избежание частых изменений ссылок на файлы в проекте вы можете использовать блоки данных.</span><span class="sxs-lookup"><span data-stu-id="16219-p120">When referencing files in a project you point to their relative path. Whenever that path changes, you have to update all references to the particular file. Such changes are very likely at the beginning of the project when the different elements are being added and the final project structure is unclear. To avoid frequent changes to file references in a project you can use barrels.</span></span>
 
-<span data-ttu-id="5318d-p121">Блок данных — это контейнер, объединяющий ряд экспортированных объектов. С их помощью вы можете абстрагировать точное расположение файлов от других элементов проекта, использующих их.</span><span class="sxs-lookup"><span data-stu-id="5318d-p121">A barrel is a container that combines a number of exported objects. By using barrels you can abstract away the exact location of files from other elements in the project using them.</span></span>
+<span data-ttu-id="16219-p121">Блок данных — это контейнер, объединяющий ряд экспортированных объектов. С их помощью вы можете абстрагировать точное расположение файлов от других элементов проекта, использующих их.</span><span class="sxs-lookup"><span data-stu-id="16219-p121">A barrel is a container that combines a number of exported objects. By using barrels you can abstract away the exact location of files from other elements in the project using them.</span></span>
 
-<span data-ttu-id="5318d-227">В папке **./src/services/documentsService** создайте файл с именем **index.ts** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-227">In the **./src/services/documentsService** folder create a new file named **index.ts** and paste the following code:</span></span>
+<span data-ttu-id="16219-227">В папке **./src/services/documentsService** создайте файл с именем **index.ts** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-227">In the **./src/services/documentsService** folder create a new file named **index.ts** and paste the following code:</span></span>
 
 ```ts
 export { IDocument } from './IDocument';
@@ -726,27 +727,27 @@ export { IDocumentActivity } from './IDocumentActivity';
 export { DocumentsService } from './DocumentsService';
 ```
 
-<span data-ttu-id="5318d-p122">После определения блока данных другие элементы проекта смогут ссылаться на любой из экспортированных типов по относительному пути к папке **./src/services/documentsService**, а не точному пути к отдельному файлу. Например, ссылка на интерфейс `IDocument` может быть такой:</span><span class="sxs-lookup"><span data-stu-id="5318d-p122">With this barrel defined, other elements in the project can reference any of the exported types using the relative path to the **./src/services/documentsService** folder instead of the exact path to the individual files. For example the `IDocument` interface can be referenced like this:</span></span>
+<span data-ttu-id="16219-p122">После определения блока данных другие элементы проекта смогут ссылаться на любой из экспортированных типов по относительному пути к папке **./src/services/documentsService**, а не точному пути к отдельному файлу. Например, ссылка на интерфейс `IDocument` может быть такой:</span><span class="sxs-lookup"><span data-stu-id="16219-p122">With this barrel defined, other elements in the project can reference any of the exported types using the relative path to the **./src/services/documentsService** folder instead of the exact path to the individual files. For example the `IDocument` interface can be referenced like this:</span></span>
 
 ```ts
 import { IDocument } from '../services/documentsService';
 ```
 
-<span data-ttu-id="5318d-230">а не такой:</span><span class="sxs-lookup"><span data-stu-id="5318d-230">instead of:</span></span>
+<span data-ttu-id="16219-230">а не такой:</span><span class="sxs-lookup"><span data-stu-id="16219-230">instead of:</span></span>
 
 ```ts
 import { IDocument } from '../services/documentsService/IDocument.ts';
 ```
 
-<span data-ttu-id="5318d-p123">Если в тот или иной момент вы решите, что предпочтительней переместить файл **IDocument.ts** во вложенную папку или объединить несколько файлов, изменить потребуется только путь к определению блока данных (**./src/services/documentsService/index.ts**). Все элементы проекта по-прежнему могут использовать тот же относительный путь к папке **documentsService**, чтобы ссылаться на интерфейс `IDocument`.</span><span class="sxs-lookup"><span data-stu-id="5318d-p123">If at some point you decided that it's better to move the **IDocument.ts** file to a subfolder or merge a few files together, the only thing that you would change is the path in the barrel definition (**./src/services/documentsService/index.ts**). All elements in the project could still use the exact same relative path to the **documentsService** folder to reference the `IDocument` interface.</span></span>
+<span data-ttu-id="16219-p123">Если в тот или иной момент вы решите, что предпочтительней переместить файл **IDocument.ts** во вложенную папку или объединить несколько файлов, изменить потребуется только путь к определению блока данных (**./src/services/documentsService/index.ts**). Все элементы проекта по-прежнему могут использовать тот же относительный путь к папке **documentsService**, чтобы ссылаться на интерфейс `IDocument`.</span><span class="sxs-lookup"><span data-stu-id="16219-p123">If at some point you decided that it's better to move the **IDocument.ts** file to a subfolder or merge a few files together, the only thing that you would change is the path in the barrel definition (**./src/services/documentsService/index.ts**). All elements in the project could still use the exact same relative path to the **documentsService** folder to reference the `IDocument` interface.</span></span>
 
-### <a name="update-references-to-the-moved-files-to-use-the-barrel"></a><span data-ttu-id="5318d-233">Обновление ссылок на перемещенные файлы для использования блока данных</span><span class="sxs-lookup"><span data-stu-id="5318d-233">Update References to the Moved Files to Use the Barrel</span></span>
+### <a name="update-references-to-the-moved-files-to-use-the-barrel"></a><span data-ttu-id="16219-233">Обновление ссылок на перемещенные файлы для использования блока данных</span><span class="sxs-lookup"><span data-stu-id="16219-233">Update References to the Moved Files to Use the Barrel</span></span>
 
-<span data-ttu-id="5318d-p124">Так как вы переместили файлы **IDocument.ts** и **IDocumentActivity.ts** в другое расположение, необходимо обновить ссылки на них. Благодаря блокам данных после этого вам не придется менять эти ссылки.</span><span class="sxs-lookup"><span data-stu-id="5318d-p124">As you have moved the **IDocument.ts** and **IDocumentActivity.ts** files to another location, you have to update their references. Thanks to the barrel, this will be the last time that you will have to do this.</span></span>
+<span data-ttu-id="16219-p124">Так как вы переместили файлы **IDocument.ts** и **IDocumentActivity.ts** в другое расположение, необходимо обновить ссылки на них. Благодаря блокам данных после этого вам не придется менять эти ссылки.</span><span class="sxs-lookup"><span data-stu-id="16219-p124">As you have moved the **IDocument.ts** and **IDocumentActivity.ts** files to another location, you have to update their references. Thanks to the barrel, this will be the last time that you will have to do this.</span></span>
 
-#### <a name="update-references-in-the-recent-documents-web-part"></a><span data-ttu-id="5318d-236">Обновление ссылок в веб-части Recent documents (Последние документы)</span><span class="sxs-lookup"><span data-stu-id="5318d-236">Update References in the Recent Documents Web Part</span></span>
+#### <a name="update-references-in-the-recent-documents-web-part"></a><span data-ttu-id="16219-236">Обновление ссылок в веб-части Recent documents (Последние документы)</span><span class="sxs-lookup"><span data-stu-id="16219-236">Update References in the Recent Documents Web Part</span></span>
 
-<span data-ttu-id="5318d-237">В редакторе кода откройте файл **./src/webparts/recentDocuments/components/IRecentDocumentsProps.ts** и измените его код на следующий:</span><span class="sxs-lookup"><span data-stu-id="5318d-237">In the code editor, open the **./src/webparts/recentDocuments/components/IRecentDocumentsProps.ts** file and change its code to:</span></span>
+<span data-ttu-id="16219-237">В редакторе кода откройте файл **./src/webparts/recentDocuments/components/IRecentDocumentsProps.ts** и измените его код на следующий:</span><span class="sxs-lookup"><span data-stu-id="16219-237">In the code editor, open the **./src/webparts/recentDocuments/components/IRecentDocumentsProps.ts** file and change its code to:</span></span>
 
 ```ts
 import { IDocument } from '../../../services/documentsService';
@@ -756,21 +757,21 @@ export interface IRecentDocumentsProps {
 }
 ```
 
-<span data-ttu-id="5318d-238">Затем откройте файл **./src/webparts/recentDocuments/components/RecentDocuments.tsx** и замените оператор `import` в интерфейсе `IDocument` на следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-238">Next, open the **./src/webparts/recentDocuments/components/RecentDocuments.tsx** file and change the `import` statement of the `IDocument` interface to:</span></span>
+<span data-ttu-id="16219-238">Затем откройте файл **./src/webparts/recentDocuments/components/RecentDocuments.tsx** и замените оператор `import` в интерфейсе `IDocument` на следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-238">Next, open the **./src/webparts/recentDocuments/components/RecentDocuments.tsx** file and change the `import` statement of the `IDocument` interface to:</span></span>
 
 ```ts
 import { IDocument } from '../../../services/documentsService';
 ```
 
-<span data-ttu-id="5318d-239">Затем откройте файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts** и замените оператор `import` в интерфейсе `IDocument` на следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-239">Then, open the **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts** file and change the `import` statement of the `IDocument` interface to:</span></span>
+<span data-ttu-id="16219-239">Затем откройте файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts** и замените оператор `import` в интерфейсе `IDocument` на следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-239">Then, open the **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts** file and change the `import` statement of the `IDocument` interface to:</span></span>
 
 ```ts
 import { IDocument } from '../../services/documentsService';
 ```
 
-#### <a name="update-references-in-the-recent-document-web-part"></a><span data-ttu-id="5318d-240">Обновление ссылок в веб-части Recent document (Последний документ)</span><span class="sxs-lookup"><span data-stu-id="5318d-240">Update References in the Recent Document Web Part</span></span>
+#### <a name="update-references-in-the-recent-document-web-part"></a><span data-ttu-id="16219-240">Обновление ссылок в веб-части Recent document (Последний документ)</span><span class="sxs-lookup"><span data-stu-id="16219-240">Update References in the Recent Document Web Part</span></span>
 
-<span data-ttu-id="5318d-241">В редакторе кода откройте файл **./src/webparts/recentDocument/components/IRecentDocumentProps.ts** и измените его код на следующий:</span><span class="sxs-lookup"><span data-stu-id="5318d-241">In the code editor, open the **./src/webparts/recentDocument/components/IRecentDocumentProps.ts** file and change its code to:</span></span>
+<span data-ttu-id="16219-241">В редакторе кода откройте файл **./src/webparts/recentDocument/components/IRecentDocumentProps.ts** и измените его код на следующий:</span><span class="sxs-lookup"><span data-stu-id="16219-241">In the code editor, open the **./src/webparts/recentDocument/components/IRecentDocumentProps.ts** file and change its code to:</span></span>
 
 ```ts
 import { IDocument } from '../../../services/documentsService';
@@ -780,19 +781,19 @@ export interface IRecentDocumentProps {
 }
 ```
 
-<span data-ttu-id="5318d-242">Затем откройте файл **./src/webparts/recentDocument/components/RecentDocument.tsx** и измените оператор `import` в интерфейсе `IDocument` на следующий:</span><span class="sxs-lookup"><span data-stu-id="5318d-242">Next, open the **./src/webparts/recentDocument/components/RecentDocument.tsx** file and change the `import` statement of the `IDocument` interface to:</span></span>
+<span data-ttu-id="16219-242">Затем откройте файл **./src/webparts/recentDocument/components/RecentDocument.tsx** и измените оператор `import` в интерфейсе `IDocument` на следующий:</span><span class="sxs-lookup"><span data-stu-id="16219-242">Next, open the **./src/webparts/recentDocument/components/RecentDocument.tsx** file and change the `import` statement of the `IDocument` interface to:</span></span>
 
 ```ts
 import { IDocument } from '../../../services/documentsService';
 ```
 
-<span data-ttu-id="5318d-243">Затем откройте файл **./src/webparts/recentDocument/RecentDocumentWebPart.ts** и замените оператор `import` в интерфейсе `IDocument` на следующий:</span><span class="sxs-lookup"><span data-stu-id="5318d-243">Then, open the **./src/webparts/recentDocument/RecentDocumentWebPart.ts** file and change the `import` statement of the `IDocument` interface to:</span></span>
+<span data-ttu-id="16219-243">Затем откройте файл **./src/webparts/recentDocument/RecentDocumentWebPart.ts** и замените оператор `import` в интерфейсе `IDocument` на следующий:</span><span class="sxs-lookup"><span data-stu-id="16219-243">Then, open the **./src/webparts/recentDocument/RecentDocumentWebPart.ts** file and change the `import` statement of the `IDocument` interface to:</span></span>
 
 ```ts
 import { IDocument } from '../../services/documentsService';
 ```
 
-<span data-ttu-id="5318d-244">Убедитесь, что ваши изменения работают надлежащим образом. Для этого с помощью командной строки выполните в папке проекта следующую команду:</span><span class="sxs-lookup"><span data-stu-id="5318d-244">Verify that your changes work as expected, by running the following command from a command prompt in your project folder:</span></span>
+<span data-ttu-id="16219-244">Убедитесь, что ваши изменения работают надлежащим образом. Для этого с помощью командной строки выполните в папке проекта следующую команду:</span><span class="sxs-lookup"><span data-stu-id="16219-244">Verify that your changes work as expected, by running the following command from a command prompt in your project folder:</span></span>
 
 ```sh
 gulp serve
@@ -800,19 +801,19 @@ gulp serve
 
 ![Веб-части Recent document (Последний документ) и Recent documents (Последние документы) с информацией о недавно измененных документах](../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
 
-### <a name="load-web-part-data-using-the-data-service"></a><span data-ttu-id="5318d-246">Загрузка данных веб-частей с помощью службы данных</span><span class="sxs-lookup"><span data-stu-id="5318d-246">Load Web Part Data Using the Data Service</span></span>
+### <a name="load-web-part-data-using-the-data-service"></a><span data-ttu-id="16219-246">Загрузка данных веб-частей с помощью службы данных</span><span class="sxs-lookup"><span data-stu-id="16219-246">Load Web Part Data Using the Data Service</span></span>
 
-<span data-ttu-id="5318d-247">Когда служба данных будет готова, необходимо выполнить рефакторинг обеих веб-частей, чтобы они загружали свои данные с помощью службы данных.</span><span class="sxs-lookup"><span data-stu-id="5318d-247">With the data service ready, the next step is to refactor both web parts to use the data service to load their data.</span></span>
+<span data-ttu-id="16219-247">Когда служба данных будет готова, необходимо выполнить рефакторинг обеих веб-частей, чтобы они загружали свои данные с помощью службы данных.</span><span class="sxs-lookup"><span data-stu-id="16219-247">With the data service ready, the next step is to refactor both web parts to use the data service to load their data.</span></span>
 
-#### <a name="load-information-about-the-recently-modified-documents"></a><span data-ttu-id="5318d-248">Загрузка информации о недавно измененных документах</span><span class="sxs-lookup"><span data-stu-id="5318d-248">Load Information About the Recently Modified Documents</span></span>
+#### <a name="load-information-about-the-recently-modified-documents"></a><span data-ttu-id="16219-248">Загрузка информации о недавно измененных документах</span><span class="sxs-lookup"><span data-stu-id="16219-248">Load Information About the Recently Modified Documents</span></span>
 
-<span data-ttu-id="5318d-p125">Откройте в редакторе кода файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts**. Замените оператор `import`, ссылающийся на интерфейс `IDocument`, на следующий оператор:</span><span class="sxs-lookup"><span data-stu-id="5318d-p125">In the code editor, open the **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts** file. Expand the `import` statement referencing the `IDocument` interface to:</span></span>
+<span data-ttu-id="16219-p125">Откройте в редакторе кода файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts**. Замените оператор `import`, ссылающийся на интерфейс `IDocument`, на следующий оператор:</span><span class="sxs-lookup"><span data-stu-id="16219-p125">In the code editor, open the **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts** file. Expand the `import` statement referencing the `IDocument` interface to:</span></span>
 
 ```ts
 import { IDocument, DocumentsService } from '../../services/documentsService';
 ```
 
-<span data-ttu-id="5318d-251">Затем обновите метод `render`, используя следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-251">Next, update the `render` method using the following code:</span></span>
+<span data-ttu-id="16219-251">Затем обновите метод `render`, используя следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-251">Next, update the `render` method using the following code:</span></span>
 
 ```ts
 export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
@@ -837,15 +838,15 @@ export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecen
 }
 ```
 
-#### <a name="load-information-about-the-most-recently-modified-document"></a><span data-ttu-id="5318d-252">Загрузка информации о последних измененных документах</span><span class="sxs-lookup"><span data-stu-id="5318d-252">Load Information About the Most Recently Modified Document</span></span>
+#### <a name="load-information-about-the-most-recently-modified-document"></a><span data-ttu-id="16219-252">Загрузка информации о последних измененных документах</span><span class="sxs-lookup"><span data-stu-id="16219-252">Load Information About the Most Recently Modified Document</span></span>
 
-<span data-ttu-id="5318d-p126">Откройте в редакторе кода файл **./src/webparts/recentDocument/RecentDocumentWebPart.ts**. Замените оператор `import`, ссылающийся на интерфейс `IDocument`, на следующий оператор:</span><span class="sxs-lookup"><span data-stu-id="5318d-p126">In the code editor, open the **./src/webparts/recentDocument/RecentDocumentWebPart.ts** file. Expand the `import` statement referencing the `IDocument` interface to:</span></span>
+<span data-ttu-id="16219-p126">Откройте в редакторе кода файл **./src/webparts/recentDocument/RecentDocumentWebPart.ts**. Замените оператор `import`, ссылающийся на интерфейс `IDocument`, на следующий оператор:</span><span class="sxs-lookup"><span data-stu-id="16219-p126">In the code editor, open the **./src/webparts/recentDocument/RecentDocumentWebPart.ts** file. Expand the `import` statement referencing the `IDocument` interface to:</span></span>
 
 ```ts
 import { IDocument, DocumentsService } from '../../services/documentsService';
 ```
 
-<span data-ttu-id="5318d-255">Затем обновите метод `render`, используя следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-255">Next, update the `render` method using the following code:</span></span>
+<span data-ttu-id="16219-255">Затем обновите метод `render`, используя следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-255">Next, update the `render` method using the following code:</span></span>
 
 ```ts
 export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecentDocumentWebPartProps> {
@@ -870,7 +871,7 @@ export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecent
 }
 ```
 
-<span data-ttu-id="5318d-256">Убедитесь, что обе веб-части работают надлежащим образом. Для этого с помощью командной строки выполните в папке проекта следующую команду:</span><span class="sxs-lookup"><span data-stu-id="5318d-256">Confirm that both web parts are working correctly by running the following command from a command prompt in your project folder:</span></span>
+<span data-ttu-id="16219-256">Убедитесь, что обе веб-части работают надлежащим образом. Для этого с помощью командной строки выполните в папке проекта следующую команду:</span><span class="sxs-lookup"><span data-stu-id="16219-256">Confirm that both web parts are working correctly by running the following command from a command prompt in your project folder:</span></span>
 
 ```sh
 gulp serve
@@ -878,11 +879,11 @@ gulp serve
 
 ![Веб-части Recent document (Последний документ) и Recent documents (Последние документы) с информацией о недавно измененных документах](../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
 
-### <a name="share-data-between-web-parts"></a><span data-ttu-id="5318d-258">Совместное использование данных разными веб-частями</span><span class="sxs-lookup"><span data-stu-id="5318d-258">Share Data Between Web Parts</span></span>
+### <a name="share-data-between-web-parts"></a><span data-ttu-id="16219-258">Совместное использование данных разными веб-частями</span><span class="sxs-lookup"><span data-stu-id="16219-258">Share Data Between Web Parts</span></span>
 
-<span data-ttu-id="5318d-259">Теперь, когда обе веб-части загружают свои данные с помощью службы данных, необходимо расширить службу данных так, чтобы она загружала данные только один раз и использовала их для обеих веб-частей.</span><span class="sxs-lookup"><span data-stu-id="5318d-259">Now that both web parts use the data service to load their data, the next step is to extend the data service so that it loads the data only once and reuses it for both web parts.</span></span>
+<span data-ttu-id="16219-259">Теперь, когда обе веб-части загружают свои данные с помощью службы данных, необходимо расширить службу данных так, чтобы она загружала данные только один раз и использовала их для обеих веб-частей.</span><span class="sxs-lookup"><span data-stu-id="16219-259">Now that both web parts use the data service to load their data, the next step is to extend the data service so that it loads the data only once and reuses it for both web parts.</span></span>
 
-<span data-ttu-id="5318d-260">Откройте в редакторе кода файл **./src/services/documentsService/DocumentsService.ts** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="5318d-260">In the code editor, open the **./src/services/documentsService/DocumentsService.ts** file and paste the following code:</span></span>
+<span data-ttu-id="16219-260">Откройте в редакторе кода файл **./src/services/documentsService/DocumentsService.ts** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="16219-260">In the code editor, open the **./src/services/documentsService/DocumentsService.ts** file and paste the following code:</span></span>
 
 ```ts
 import { IDocument } from './IDocument';
@@ -995,11 +996,11 @@ export class DocumentsService {
 }
 ```
 
-<span data-ttu-id="5318d-p127">Когда веб-часть впервые вызывает службу данных, чтобы загрузить свои данные, служба задает для глобальной переменной `loadingData` значение `true`. Это означает, что в данный момент данные загружаются. Это необходимо, чтобы данные не загружались несколько раз, например если другая веб-часть также запросит загрузку данных, в то время как изначальный запрос на загрузку данных еще не был выполнен. В этом примере данные загружаются из статического набора данных, но вы легко можете изменить реализацию, чтобы данные загружались из библиотеки документов SharePoint.</span><span class="sxs-lookup"><span data-stu-id="5318d-p127">The first time a web part calls the data service to load its data, the service will set the `loadingData` global variable to `true`. This indicates that data is currently being loaded. This is required to prevent data from being loaded multiple times should, for instance, another web part request loading its data while the initial request to load data has not yet completed. In this example, the data is loaded from a static data set, but you could easily change the implementation to load the data from a SharePoint document library.</span></span>
+<span data-ttu-id="16219-p127">Когда веб-часть впервые вызывает службу данных, чтобы загрузить свои данные, служба задает для глобальной переменной `loadingData` значение `true`. Это означает, что в данный момент данные загружаются. Это необходимо, чтобы данные не загружались несколько раз, например если другая веб-часть также запросит загрузку данных, в то время как изначальный запрос на загрузку данных еще не был выполнен. В этом примере данные загружаются из статического набора данных, но вы легко можете изменить реализацию, чтобы данные загружались из библиотеки документов SharePoint.</span><span class="sxs-lookup"><span data-stu-id="16219-p127">The first time a web part calls the data service to load its data, the service will set the `loadingData` global variable to `true`. This indicates that data is currently being loaded. This is required to prevent data from being loaded multiple times should, for instance, another web part request loading its data while the initial request to load data has not yet completed. In this example, the data is loaded from a static data set, but you could easily change the implementation to load the data from a SharePoint document library.</span></span>
 
-<span data-ttu-id="5318d-p128">После загрузки данные хранятся в глобальной переменной `loadedData`. Для переменной `loadingData` задается значение `false`, а обещание разрешается с помощью полученных данных. В следующий раз, когда веб-часть запросит свои данные, служба данных вернет ранее загруженные данные, не совершая никаких дополнительных запросов к удаленным API.</span><span class="sxs-lookup"><span data-stu-id="5318d-p128">Once the data is loaded, it is stored in the `loadedData` global variable. The value of the `loadingData` variable is set to `false` and the promise is resolved with the retrieved data. The next time a web part requests its data, the data service will return the data loaded previously eliminating any additional requests to the remote APIs.</span></span>
+<span data-ttu-id="16219-p128">После загрузки данные хранятся в глобальной переменной `loadedData`. Для переменной `loadingData` задается значение `false`, а обещание разрешается с помощью полученных данных. В следующий раз, когда веб-часть запросит свои данные, служба данных вернет ранее загруженные данные, не совершая никаких дополнительных запросов к удаленным API.</span><span class="sxs-lookup"><span data-stu-id="16219-p128">Once the data is loaded, it is stored in the `loadedData` global variable. The value of the `loadingData` variable is set to `false` and the promise is resolved with the retrieved data. The next time a web part requests its data, the data service will return the data loaded previously eliminating any additional requests to the remote APIs.</span></span>
 
-<span data-ttu-id="5318d-268">Убедитесь, что обе веб-части работают надлежащим образом. Для этого с помощью командной строки выполните в папке проекта следующую команду:</span><span class="sxs-lookup"><span data-stu-id="5318d-268">Confirm that both web parts are working correctly by running the following command from a command prompt in your project folder:</span></span>
+<span data-ttu-id="16219-268">Убедитесь, что обе веб-части работают надлежащим образом. Для этого с помощью командной строки выполните в папке проекта следующую команду:</span><span class="sxs-lookup"><span data-stu-id="16219-268">Confirm that both web parts are working correctly by running the following command from a command prompt in your project folder:</span></span>
 
 ```sh
 gulp serve
@@ -1007,10 +1008,10 @@ gulp serve
 
 ![Веб-части Recent document (Последний документ) и Recent documents (Последние документы) с информацией о недавно измененных документах](../../../images/tutorial-sharingdata-recent-document-recent-documents.png)
 
-<span data-ttu-id="5318d-270">Если добавить операторы ведения журнала в разных частях метода `DocumentsService.ensureRecentDocuments`, вы увидите, что данные загружаются один раз, после чего используются повторно.</span><span class="sxs-lookup"><span data-stu-id="5318d-270">If you were to add logging statements in the different parts of the `DocumentsService.ensureRecentDocuments` method, you would see that the data is loaded once and reused for the second web part!</span></span>
+<span data-ttu-id="16219-270">Если добавить операторы ведения журнала в разных частях метода `DocumentsService.ensureRecentDocuments`, вы увидите, что данные загружаются один раз, после чего используются повторно.</span><span class="sxs-lookup"><span data-stu-id="16219-270">If you were to add logging statements in the different parts of the `DocumentsService.ensureRecentDocuments` method, you would see that the data is loaded once and reused for the second web part!</span></span>
 
 ![Консоль разработчика с различными операторами ведения журнала в Microsoft Edge](../../../images/tutorial-sharingdata-console-log.png)
 
-## <a name="see-also"></a><span data-ttu-id="5318d-272">См. также</span><span class="sxs-lookup"><span data-stu-id="5318d-272">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="16219-272">См. также</span><span class="sxs-lookup"><span data-stu-id="16219-272">See Also</span></span>
 
-- [<span data-ttu-id="5318d-273">Совместное использование данных клиентскими веб-частями</span><span class="sxs-lookup"><span data-stu-id="5318d-273">Share Data Between Client-Side Web Parts</span></span>](./share-data-between-web-parts.md)
+- [<span data-ttu-id="16219-273">Совместное использование данных клиентскими веб-частями</span><span class="sxs-lookup"><span data-stu-id="16219-273">Share Data Between Client-Side Web Parts</span></span>](./share-data-between-web-parts.md)
