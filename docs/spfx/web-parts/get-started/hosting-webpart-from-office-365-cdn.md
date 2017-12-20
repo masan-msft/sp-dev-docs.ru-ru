@@ -1,170 +1,182 @@
 ---
 title: "Размещение клиентской веб-части в сети доставки содержимого Office 365"
-ms.date: 09/25/2017
+ms.date: 12/05/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 67eeaf7dbca7c9cc9cec31b87653c01addfafebc
-ms.sourcegitcommit: 64ea77c00eea763edc4c524b678af9226d5aba35
+ms.openlocfilehash: 79194b5da88f410be4b044e0277627b29b696d47
+ms.sourcegitcommit: 1f752afb40ff133e2fae14337e09392cc5d9d181
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/08/2017
 ---
-# <a name="hosting-client-side-web-part-from-office-365-cdn"></a><span data-ttu-id="0d257-102">Размещение клиентской веб-части в сети доставки содержимого Office 365</span><span class="sxs-lookup"><span data-stu-id="0d257-102">Hosting client-side web part from Office 365 CDN</span></span>
+# <a name="hosting-client-side-web-part-from-office-365-cdn"></a><span data-ttu-id="9b1af-102">Размещение клиентской веб-части в сети доставки содержимого Office 365</span><span class="sxs-lookup"><span data-stu-id="9b1af-102">Hosting client-side web part from Office 365 CDN</span></span>
 
-<span data-ttu-id="0d257-p101">В этой статье описано, как разместить клиентскую веб-часть в сети доставки содержимого Office 365. Сеть доставки содержимого Office 365 позволяет разместить ресурсы прямо в клиенте Office 365. В нем можно разместить любые статические ресурсы, используемые в SharePoint Online. Дополнительные сведения о CDN Office 365 вы найдете в указанной ниже записи блога.</span><span class="sxs-lookup"><span data-stu-id="0d257-p101">This article describes how to host your client-side web part from Office 365 CDN. Office 365 CDN provide you easy solution to host your assets directly from your own Office 365 tenant. It can be used for hosting any static assets, which are used in SharePoint Online. You can find more details around the Office 365 CDN capability from following blog post.</span></span>
+<span data-ttu-id="9b1af-p101">В этой статье описано размещение клиентской веб-части в сети доставки содержимого (CDN) Office 365. Это простое решение для размещения ресурсов непосредственно в собственном клиенте Office 365. В сетях CDN можно размещать любые статические ресурсы, используемые в SharePoint Online.</span><span class="sxs-lookup"><span data-stu-id="9b1af-p101">This article describes how to host your client-side web part from Office 365 CDN. Office 365 CDN provide you easy solution to host your assets directly from your own Office 365 tenant. It can be used for hosting any static assets, which are used in SharePoint Online. You can find more details around the Office 365 CDN capability from following blog post.</span></span> 
 
-* [<span data-ttu-id="0d257-107">Общедоступность сети доставки содержимого Office 365</span><span class="sxs-lookup"><span data-stu-id="0d257-107">General availability of Office 365 CDN</span></span>](https://dev.office.com/blogs/general-availability-of-office-365-cdn)
+> [!NOTE]
+> <span data-ttu-id="9b1af-106">Разместить ресурсы веб-части можно несколькими способами.</span><span class="sxs-lookup"><span data-stu-id="9b1af-106">There are multiple different hosting options for your web part assets.</span></span> <span data-ttu-id="9b1af-107">В этом руководстве описана сеть CDN Office 365, но можно также использовать [сеть доставки содержимого Azure](./deploy-web-part-to-cdn.md) или просто разместить ресурсы в библиотеке SharePoint из своего клиента.</span><span class="sxs-lookup"><span data-stu-id="9b1af-107">This tutorial concentrates on showing the Azure CDN option, but you could also use the [Office 365 CDN](./deploy-web-part-to-cdn.md) or simply host your assets from SharePoint library from your tenant.</span></span> <span data-ttu-id="9b1af-108">Последний вариант предоставляет такие же возможности, но уступает сетям CDN в производительности.</span><span class="sxs-lookup"><span data-stu-id="9b1af-108">In the latter case, you would not benefit from the CDN performance improvements, but that would also work from the functionality perspective.</span></span> <span data-ttu-id="9b1af-109">Ресурсы можно разместить в любом расположении, к которому пользователи могут получить доступ с помощью протокола HTTP(S).</span><span class="sxs-lookup"><span data-stu-id="9b1af-109">Any location which end users can access using HTTP would be technically suitable for hosting the assets for end users.</span></span>
 
-## <a name="enable-cdn-in-your-office-365-tenant"></a><span data-ttu-id="0d257-108">Включение сети доставки содержимого в клиенте Office 365</span><span class="sxs-lookup"><span data-stu-id="0d257-108">Enable CDN in your Office 365 tenant</span></span>
-<span data-ttu-id="0d257-109">Скачайте последнюю версию командной консоли SharePoint Online на [сайте загрузки Майкрософт](https://www.microsoft.com/en-us/download/details.aspx?id=35588).</span><span class="sxs-lookup"><span data-stu-id="0d257-109">Ensure that you have latest version of the SharePoint Online Management Shell by downloading it from [Microsoft Download site](https://www.microsoft.com/en-us/download/details.aspx?id=35588).</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="9b1af-110">Предварительные требования</span><span class="sxs-lookup"><span data-stu-id="9b1af-110">Prerequisites</span></span>
 
-<span data-ttu-id="0d257-110">Подключитесь к клиенту SharePoint Online с помощью PowerShell.</span><span class="sxs-lookup"><span data-stu-id="0d257-110">Connect to your SharePoint Online tenant with PowerShell session.</span></span>
+<span data-ttu-id="9b1af-111">Прежде чем приступать к работе, убедитесь, что выполнены следующие задачи:</span><span class="sxs-lookup"><span data-stu-id="9b1af-111">Make sure that you have completed the following tasks before you begin:</span></span>
+
+* [<span data-ttu-id="9b1af-112">Создание первой клиентской веб-части</span><span class="sxs-lookup"><span data-stu-id="9b1af-112">Build your first client-side web part</span></span>](./build-a-hello-world-web-part.md)
+* [<span data-ttu-id="9b1af-113">Подключение клиентской веб-части к SharePoint</span><span class="sxs-lookup"><span data-stu-id="9b1af-113">Connect your client-side web part to SharePoint</span></span>](./connect-to-sharepoint.md)
+* [<span data-ttu-id="9b1af-114">Развертывание клиентской веб-части на классической странице SharePoint</span><span class="sxs-lookup"><span data-stu-id="9b1af-114">Deploy your client-side web part to a classic SharePoint page</span></span>](./serve-your-web-part-in-a-sharepoint-page.md)
+
+
+<span data-ttu-id="9b1af-115">Указанные ниже действия также показаны в видео [канала SharePoint PnP на сайте YouTube](https://www.youtube.com/watch?v=AIb7s_Y02K8&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=5).</span><span class="sxs-lookup"><span data-stu-id="9b1af-115">You can also follow follow these steps by watching the video on the [SharePoint PnP YouTube Channel](https://www.youtube.com/watch?v=AIb7s_Y02K8&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=5).</span></span> 
+
+<a href="https://www.youtube.com/watch?v=AIb7s_Y02K8&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=5">
+<img src="../../../images/spfx-youtube-tutorial4.png" alt="Screenshot of the YouTube video player for this tutorial" />
+</a>
+
+
+
+## <a name="enable-cdn-in-your-office-365-tenant"></a><span data-ttu-id="9b1af-116">Включение сети доставки содержимого в клиенте Office 365</span><span class="sxs-lookup"><span data-stu-id="9b1af-116">Enable CDN in your Office 365 tenant</span></span>
+<span data-ttu-id="9b1af-117">Скачайте последнюю версию командной консоли SharePoint Online на [сайте загрузки Майкрософт](https://www.microsoft.com/en-us/download/details.aspx?id=35588).</span><span class="sxs-lookup"><span data-stu-id="9b1af-117">Ensure that you have latest version of the SharePoint Online Management Shell by downloading it from [Microsoft Download site](https://www.microsoft.com/en-us/download/details.aspx?id=35588).</span></span>
+
+> [!TIP]
+> <span data-ttu-id="9b1af-118">Командную консоль SPO невозможно использовать на компьютерах без Windows.</span><span class="sxs-lookup"><span data-stu-id="9b1af-118">If you are using non-Windows machine, you cannot use the SPO Management Shell.</span></span> <span data-ttu-id="9b1af-119">Однако вы можете управлять этими параметрами с помощью [интерфейса командной строки Office 365](https://sharepoint.github.io/office365-cli/).</span><span class="sxs-lookup"><span data-stu-id="9b1af-119">You can however manage these settings using [Office 365 CLI](https://sharepoint.github.io/office365-cli/).</span></span>
+
+<span data-ttu-id="9b1af-120">Подключитесь к клиенту SharePoint Online с помощью сеанса PowerShell.</span><span class="sxs-lookup"><span data-stu-id="9b1af-120">Connect to your SharePoint Online tenant with PowerShell session.</span></span>
 ```
 Connect-SPOService -Url https://contoso-admin.sharepoint.com
 ```
 
-<span data-ttu-id="0d257-111">Чтобы узнать текущее состояние настроек общедоступной CDN для клиента, поочередно выполните указанные ниже команды.</span><span class="sxs-lookup"><span data-stu-id="0d257-111">Get current status of public CDN settings from tenant level by executing following commands one-by-one.</span></span> 
+<span data-ttu-id="9b1af-121">Чтобы узнать текущее состояние настроек общедоступной CDN для клиента, поочередно выполните указанные ниже команды.</span><span class="sxs-lookup"><span data-stu-id="9b1af-121">Get current status of public CDN settings from tenant level by executing following commands one-by-one.</span></span> 
 ```
 Get-SPOTenantCdnEnabled -CdnType Public
 Get-SPOTenantCdnOrigins -CdnType Public
 Get-SPOTenantCdnPolicies -CdnType Public
 ```
-<span data-ttu-id="0d257-112">Включите общедоступную сеть доставки содержимого в клиенте.</span><span class="sxs-lookup"><span data-stu-id="0d257-112">Enable public CDN in the tenant</span></span>
+<span data-ttu-id="9b1af-122">Включите общедоступную сеть доставки содержимого в клиенте.</span><span class="sxs-lookup"><span data-stu-id="9b1af-122">Enable public CDN in the tenant</span></span>
 ```
 Set-SPOTenantCdnEnabled -CdnType Public
 ```
-<span data-ttu-id="0d257-p102">Теперь в клиенте включена общедоступная CDN с использованием разрешенной конфигурации типов файлов по умолчанию. Это означает, что поддерживаются следующие типы файлов: CSS, EOT, GIF, ICO, JPEG, JPG, JS, MAP, PNG, SVG, TTF, WOFF.</span><span class="sxs-lookup"><span data-stu-id="0d257-p102">Now public CDN has been enabled in the tenant using the default file type configuration allowed. This means that the following file type extensions are supported: "CSS,EOT,GIF,ICO,JPEG,JPG,JS,MAP,PNG,SVG,TTF,WOFF".</span></span>
+<span data-ttu-id="9b1af-123">Чтобы подтвердить настройки, введите "Y" и нажмите клавишу **ВВОД**.</span><span class="sxs-lookup"><span data-stu-id="9b1af-123">Confirm settings by selecting 'Y' and pressing **Enter**</span></span>
 
-<span data-ttu-id="0d257-p103">Откройте браузер и перейдите к семейству веб-сайтов, в котором вы хотите разместить свою библиотеку CDN. Это может быть любое семейство веб-сайтов в клиенте. Это руководство описывает создание библиотеки CDN, но вы также можете использовать отдельную папку в любой существующей библиотеке документов как конечную точку CDN.</span><span class="sxs-lookup"><span data-stu-id="0d257-p103">Open up a browser and move to a site collection where you'd like to host your CDN library. This could be any site collection in your tenant. In this tutorial, we create a specific library to act as your CDN library, but you can also use a specific folder in any existing document library as the CDN endpoint.</span></span>
+![Включение общедоступной сети доставки содержимого в клиенте](../../../images/cdn-enable-o365-public-cdn.png)
 
-<span data-ttu-id="0d257-118">В семействе веб-сайтов создайте библиотеку документов **CDN** и добавьте в нее папку **helloworld**.</span><span class="sxs-lookup"><span data-stu-id="0d257-118">Create a new document library on your site collection called **CDN** and add a folder called **helloworld** to it.</span></span>
+<span data-ttu-id="9b1af-p104">Теперь в клиенте включена общедоступная CDN с использованием разрешенной конфигурации типов файлов по умолчанию. Это означает, что поддерживаются следующие типы файлов: CSS, EOT, GIF, ICO, JPEG, JPG, JS, MAP, PNG, SVG, TTF, WOFF.</span><span class="sxs-lookup"><span data-stu-id="9b1af-p104">Now public CDN has been enabled in the tenant using the default file type configuration allowed. This means that the following file type extensions are supported: "CSS,EOT,GIF,ICO,JPEG,JPG,JS,MAP,PNG,SVG,TTF,WOFF".</span></span>
 
-![Папка helloworld-webpart в библиотеке CDN](../../../images/cdn-helloworld-folder.png) 
+<span data-ttu-id="9b1af-127">Решения SharePoint Framework могут автоматически использовать общедоступную сеть CDN Office 365, если она включена в клиенте.</span><span class="sxs-lookup"><span data-stu-id="9b1af-127">SharePoint Framework solutions can automatically benefit from the Office 365 Public CDN as long as it's enabled in your tenant.</span></span> <span data-ttu-id="9b1af-128">Если сеть CDN включена, источник `*/CLIENTSIDEASSETS` автоматически добавляется как допустимый.</span><span class="sxs-lookup"><span data-stu-id="9b1af-128">When CDN is enabled, `*/CLIENTSIDEASSETS` origin is automatically added as valid a valid origin.</span></span>
 
-<span data-ttu-id="0d257-p104">Вернитесь к консоли PowerShell и добавьте новый источник CDN. Обновите указанный ниже URL-адрес в соответствии с собственной средой.</span><span class="sxs-lookup"><span data-stu-id="0d257-p104">Move back to your PowerShell console and add a new CDN origin. Update the provided URL below to match your own environment.</span></span> 
-```
-Add-SPOTenantCdnOrigin -CdnType Public -OriginUrl sites/cdn/cdn
-```
-<span data-ttu-id="0d257-122">Выполните указанную ниже команду, чтобы получить список источников CDN клиента.</span><span class="sxs-lookup"><span data-stu-id="0d257-122">Execute the following command to get the list of CDN origins from your tenant</span></span>
+> [!NOTE]
+> <span data-ttu-id="9b1af-129">Если вы уже включали общедоступную сеть доставки содержимого Office 365, ее следует заново включить, чтобы запись `*/CLIENTSIDEASSETS` была добавлена как допустимый источник общедоступной сети CDN.</span><span class="sxs-lookup"><span data-stu-id="9b1af-129">If you have previously enabled Office 365 CDN, you should re-enable the public CDN, so that you will have the `*/CLIENTSIDEASSETS`entry added as valid CDN origin for public CDN.</span></span>
+
+<span data-ttu-id="9b1af-130">Вы можете проверить текущую конфигурацию конечных точек. Выполните приведенную ниже команду, чтобы получить список источников сетей CDN из клиента.</span><span class="sxs-lookup"><span data-stu-id="9b1af-130">You can double check the current setup of your end-points.Execute the following command to get the list of CDN origins from your tenant</span></span>
 ```
 Get-SPOTenantCdnOrigins -CdnType Public
 ```
-<span data-ttu-id="0d257-p105">Обратите внимание, что новый источник указан как допустимый источник CDN. Настройка источника займет некоторое время (приблизительно 15 минут), поэтому мы пока можем создать тестовую веб-часть, которая будет размещена в источнике, когда развертывание будет завершено.</span><span class="sxs-lookup"><span data-stu-id="0d257-p105">Notice that your newly added origin is listed as a valid CDN origin. Final configuration of the origin will take a while (approximately 15 minutes), so we can continue by creating your test web part, which will be hosted from the origin, when the deployment is completed.</span></span> 
+<span data-ttu-id="9b1af-p106">Обратите внимание, что новый источник указан как допустимый источник CDN. Настройка источника займет некоторое время (приблизительно 15 минут), поэтому мы пока можем создать тестовую веб-часть, которая будет размещена в источнике, когда развертывание будет завершено.</span><span class="sxs-lookup"><span data-stu-id="9b1af-p106">Notice that your newly added origin is listed as a valid CDN origin. Final configuration of the origin will take a while (approximately 15 minutes), so we can continue by creating your test web part, which will be hosted from the origin, when the deployment is completed.</span></span> 
 
 ![Список общедоступных источников в клиенте](../../../images/cdn-public-origins.png)
 
-> <span data-ttu-id="0d257-126">Если рядом с названием источника нет уведомления о *настройке в состоянии ожидания*, он готов к использованию в клиенте.</span><span class="sxs-lookup"><span data-stu-id="0d257-126">When origin is listed without the *(configuration pending)* text, it is ready to be used in your tenant. This is indicating on-going configuration between SharePoint Online and CDN system.</span></span> <span data-ttu-id="0d257-127">Это указывает на выполняющуюся настройку SharePoint Online и системы CDN.</span><span class="sxs-lookup"><span data-stu-id="0d257-127">When origin is listed without the (configuration pending) text, it is ready to be used in your tenant. This is the indication of an on-going configuration between SharePoint Online and CDN system.</span></span> 
+> [!NOTE]
+> <span data-ttu-id="9b1af-134">Если рядом с названием источника нет уведомления о *настройке в состоянии ожидания*, он готов к использованию в клиенте.</span><span class="sxs-lookup"><span data-stu-id="9b1af-134">When origin is listed without the *(configuration pending)* text, it is ready to be used in your tenant.</span></span> <span data-ttu-id="9b1af-135">Это означает, что выполняется настройка SharePoint Online и системы CDN.</span><span class="sxs-lookup"><span data-stu-id="9b1af-135">This is the indication of an on-going configuration between SharePoint Online and CDN system.</span></span> 
 
-## <a name="creating-a-new-web-part-project"></a><span data-ttu-id="0d257-128">Создание проекта веб-части</span><span class="sxs-lookup"><span data-stu-id="0d257-128">Creating a new Web Part project</span></span>
 
-<span data-ttu-id="0d257-129">Создайте каталог проекта в удобном для вас расположении:</span><span class="sxs-lookup"><span data-stu-id="0d257-129">Create a new project directory in your preferred location:</span></span>
+## <a name="project-directory"></a><span data-ttu-id="9b1af-136">Каталог проекта</span><span class="sxs-lookup"><span data-stu-id="9b1af-136">Project directory</span></span>
 
-```
-md sphosted-webpart
-```
-    
-<span data-ttu-id="0d257-130">Перейдите к каталогу проекта:</span><span class="sxs-lookup"><span data-stu-id="0d257-130">Go to the project directory:</span></span>
+<span data-ttu-id="9b1af-137">Переключитесь на консоль и убедитесь, что по-прежнему выбран каталог проекта, который использовался для настройки проекта веб-части.</span><span class="sxs-lookup"><span data-stu-id="9b1af-137">Switch to console and make sure you are still in the project directory you used to set up your web part project.</span></span>
+
+<span data-ttu-id="9b1af-138">Завершите задачу **gulp serve** (если она выполняется), нажав клавиши **CTRL+C**, и убедитесь, что выбран каталог проекта:</span><span class="sxs-lookup"><span data-stu-id="9b1af-138">End the possible **gulp serve** task by choosing **Ctrl+C** and ensure that you are in your project directory:</span></span>
 
 ```
-cd sphosted-webpart
+cd helloworld-webpart
 ```
 
-<span data-ttu-id="0d257-131">Создайте решение SharePoint Framework, запустив генератор Yeoman для SharePoint:</span><span class="sxs-lookup"><span data-stu-id="0d257-131">Create a new SharePoint Framework solution by running Yeoman SharePoint Generator:</span></span>
+# <a name="review-solution-settings"></a><span data-ttu-id="9b1af-139">Проверка параметров решения</span><span class="sxs-lookup"><span data-stu-id="9b1af-139">Review solution settings</span></span> 
+
+<span data-ttu-id="9b1af-140">Откройте проект веб-части **HelloWorldWebPart** в Visual Studio Code или другой среде IDE.</span><span class="sxs-lookup"><span data-stu-id="9b1af-140">Open the **HelloWorldWebPart** web part project in Visual Studio Code, or your preferred IDE.</span></span>
+
+<span data-ttu-id="9b1af-141">Откройте файл **package-solution.json** в папке **config**.</span><span class="sxs-lookup"><span data-stu-id="9b1af-141">Open **package-solution.json** from the **config** folder.</span></span>
+
+<span data-ttu-id="9b1af-142">В файле **package-solution.json** определяются метаданные пакета, как показано в следующем фрагменте кода:</span><span class="sxs-lookup"><span data-stu-id="9b1af-142">The **package-solution.json** file defines the package metadata as shown in the following code:</span></span>
+
+```json
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "helloworld-webpart-client-side-solution",
+    "id": "4432f33b-5845-4ca0-827e-a8ae68c7b945",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true
+  },
+  "paths": {
+    "zippedPackage": "solution/helloworld-webpart.sppkg"
+  }
+}
 
 ```
-yo @microsoft/sharepoint
-```
-    
-<span data-ttu-id="0d257-132">Когда появится запрос:</span><span class="sxs-lookup"><span data-stu-id="0d257-132">When prompted:</span></span>
 
-* <span data-ttu-id="0d257-133">Оставьте имя по умолчанию **sphosted-webpart** для своего решения и нажмите клавишу **ВВОД**.</span><span class="sxs-lookup"><span data-stu-id="0d257-133">Accept the default **sphosted-webpart** as your solution name and choose **Enter**.</span></span>
-* <span data-ttu-id="0d257-134">Выберите **Только SharePoint Online (новая версия)** и нажмите клавишу **ВВОД**.</span><span class="sxs-lookup"><span data-stu-id="0d257-134">Choose **SharePoint Online only (latest)**, and press **Enter**.</span></span>
-* <span data-ttu-id="0d257-135">Выберите вариант **Использовать текущую папку** для размещения файлов.</span><span class="sxs-lookup"><span data-stu-id="0d257-135">Select **Use the current folder** for where to place the files.</span></span>
-* <span data-ttu-id="0d257-136">Выберите **N**, чтобы сделать установку расширения обязательной на каждом сайте при его использовании.</span><span class="sxs-lookup"><span data-stu-id="0d257-136">Choose **N** to require the extension to be installed on each site explicitly when it's being used.</span></span> 
-* <span data-ttu-id="0d257-137">Выберите **Webpart** в качестве типа создаваемого клиентского компонента.</span><span class="sxs-lookup"><span data-stu-id="0d257-137">Choose **Webpart** as the client-side component type to be created.</span></span> 
-* <span data-ttu-id="0d257-138">Оставьте имя по умолчанию **HelloWorld** для своей веб-части и нажмите клавишу **ВВОД**.</span><span class="sxs-lookup"><span data-stu-id="0d257-138">Accept the default **HelloWorld** as your web part name and choose **Enter**.</span></span>
-* <span data-ttu-id="0d257-139">Оставьте **описание HelloWorld** по умолчанию для своей веб-части и нажмите клавишу **ВВОД**.</span><span class="sxs-lookup"><span data-stu-id="0d257-139">Accept the default **HelloWorld description** as your web part description and choose **Enter**.</span></span>
-* <span data-ttu-id="0d257-140">Оставьте параметр по умолчанию **Не использовать платформу веб-решений на базе JavaScript** и нажмите клавишу **ВВОД**.</span><span class="sxs-lookup"><span data-stu-id="0d257-140">Accept the default **No javascript web framework** as the framework you would like to use and choose **Enter**.</span></span>
+<span data-ttu-id="9b1af-143">По умолчанию для параметра **includeClientSideAssets** задано значение `true`. Это означает, что статические ресурсы автоматически упаковываются в *SPPKG*-файлы, а ресурсы не требуется отдельно размещать во внешней системе.</span><span class="sxs-lookup"><span data-stu-id="9b1af-143">Default value for the **includeClientSideAssets** is `true`, which means that static assets are packaged automatically inside of the *.sppkg* files and you do not need to separately host your assets from external system.</span></span> 
 
-![Вопросы генератора Yeoman о новой веб-части](../../../images/cdn-create-webpart-yo.png)
+<span data-ttu-id="9b1af-144">Если *сеть доставки содержимого Office 365* включена, она будет автоматически использоваться с параметрами по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="9b1af-144">If *Office 365 CDN* is enabled, it will be used automatically with default settings.</span></span> <span data-ttu-id="9b1af-145">Если *сеть доставки содержимого Office 365* не включена, ресурсы будут предоставляться из семейства веб-сайтов с каталогом приложений.</span><span class="sxs-lookup"><span data-stu-id="9b1af-145">If *Office 365 CDN* is not enabled, assets will be served from app catalog site collection.</span></span> 
 
-<span data-ttu-id="0d257-p107">После этого Yeoman выполнит скаффолдинг файлов решения и установит требуемые зависимости. Это может занять несколько минут. При этом Yeoman также включит в проект вашу веб-часть.</span><span class="sxs-lookup"><span data-stu-id="0d257-p107">At this point, Yeoman will scaffold the solution files and install the required dependencies. This might take a few minutes. Yeoman will scaffold the project to include your custom web part as well.</span></span>
+> [!NOTE]
+> <span data-ttu-id="9b1af-146">Начиная с SharePoint Framework версии 1.4, статические ресурсы по умолчанию упаковываются в SPPKG-файлы.</span><span class="sxs-lookup"><span data-stu-id="9b1af-146">Starting from the SharePoint Framework v1.4, static assets are by default packaged inside of the sppkg package.</span></span> <span data-ttu-id="9b1af-147">При развертывании пакета в каталоге приложений он автоматически размещается в сети CDN Office 365 (если она включена) или по URL-адресу каталога приложений.</span><span class="sxs-lookup"><span data-stu-id="9b1af-147">When package is deployed in app catalog, they are automatically being hosted either from Office 365 CDN (if enabled) or from app catalog URL.</span></span> <span data-ttu-id="9b1af-148">Вы можете управлять этим поведением с помощью параметра `includeClientSideAssets` в файле `package-solution.json`.</span><span class="sxs-lookup"><span data-stu-id="9b1af-148">You can control this behavior with the `includeClientSideAssets` setting in `package-solution.json` file.</span></span>
 
-<span data-ttu-id="0d257-145">После скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:</span><span class="sxs-lookup"><span data-stu-id="0d257-145">Once the scaffolding completes, lock down the version of the project dependencies by running the following command:</span></span>
+## <a name="prepare-web-part-assets-to-deploy"></a><span data-ttu-id="9b1af-149">Подготовка ресурсов веб-части к развертыванию</span><span class="sxs-lookup"><span data-stu-id="9b1af-149">Prepare web part assets to deploy</span></span>
 
-```sh
-npm shrinkwrap
-```
-
-<span data-ttu-id="0d257-146">Далее введите следующий код, чтобы открыть проект веб-части в Visual Studio Code:</span><span class="sxs-lookup"><span data-stu-id="0d257-146">In the console, type the following to open the web part project in Visual Studio Code:</span></span>
-
-```
-code .
-```
-<span data-ttu-id="0d257-147">Обновите файл *write-manifestests.json* в папке *config* указанным ниже способом, чтобы указать на конечную точку CDN.</span><span class="sxs-lookup"><span data-stu-id="0d257-147">Update the *write-manifests.json* file (under *config* folder) as follow to point to your CDN endpoint.</span></span> 
-- <span data-ttu-id="0d257-148">Укажите префикс publiccdn.sharepointonline.com и добавьте к URL-адресу путь в клиенте.</span><span class="sxs-lookup"><span data-stu-id="0d257-148">You will need to use the publiccdn.sharepointonline.com as the prefix and then extend the URL with the actual path in your tenant</span></span>
-* <span data-ttu-id="0d257-149">Формат URL-адреса для сети доставки содержимого:</span><span class="sxs-lookup"><span data-stu-id="0d257-149">Format of the CDN URL is as follows</span></span>
-```
-https://publiccdn.sharepointonline.com/<tenant host name>/sites/site/library/folder
-```
-
-![Путь к конечной точке CDN в манифесте записи](../../../images/cdn-write-manifest-json.png)
-
-<span data-ttu-id="0d257-151">Сохраните изменения.</span><span class="sxs-lookup"><span data-stu-id="0d257-151">Save your changes.</span></span>
-
-<span data-ttu-id="0d257-152">Выполните приведенные ниже задачи для упаковки решения.</span><span class="sxs-lookup"><span data-stu-id="0d257-152">Execute the following tasks to bundle your solution</span></span>
-* <span data-ttu-id="0d257-153">При этом будет собрана конечная версия проекта с использованием URL-адреса CDN, указанного в файле **writer-manifest.json**.</span><span class="sxs-lookup"><span data-stu-id="0d257-153">This will execute a release build of your project using CDN URL specified in the **writer-manifest.json** file.</span></span> <span data-ttu-id="0d257-154">Результат будет помещен в папку **./temp/deploy**.</span><span class="sxs-lookup"><span data-stu-id="0d257-154">Output of the execution will be located in the **./temp/deploy** folder.</span></span> <span data-ttu-id="0d257-155">Эти файлы нужно будет добавить в папку SharePoint, представляющую собой конечную точку CDN.</span><span class="sxs-lookup"><span data-stu-id="0d257-155">These are the files which you will need to upload to the SharePoint folder acting as your CDN endpoint.</span></span> 
+<span data-ttu-id="9b1af-150">Выполните приведенные ниже задачи, чтобы упаковать решение.</span><span class="sxs-lookup"><span data-stu-id="9b1af-150">Execute the following tasks to bundle your solution</span></span>
+* <span data-ttu-id="9b1af-151">При этом будет выполнена сборка выпуска проекта с использованием динамической метки в качестве URL-адреса для размещения ресурсов.</span><span class="sxs-lookup"><span data-stu-id="9b1af-151">This will execute a release build of your project by using a dynamic label as the host URL for your assets.</span></span> <span data-ttu-id="9b1af-152">Этот URL-адрес будет автоматически обновляться в соответствии с параметрами CDN, заданными для клиента.</span><span class="sxs-lookup"><span data-stu-id="9b1af-152">This URL will be automatically updated based on your tenant CDN settings.</span></span>
 
 ```
 gulp bundle --ship
 ```
 
-<span data-ttu-id="0d257-156">Выполните указанную ниже задачу, чтобы упаковать свое решение.</span><span class="sxs-lookup"><span data-stu-id="0d257-156">Execute the following task to package your solution</span></span>
+<span data-ttu-id="9b1af-153">Выполните указанную ниже задачу, чтобы упаковать решение.</span><span class="sxs-lookup"><span data-stu-id="9b1af-153">Execute the following task to package your solution</span></span>
 
 ```
 gulp package-solution --ship
 ```
 
-<span data-ttu-id="0d257-157">Эта команда создаст пакет **sphosted-webpart.sppkg** в папке **sharepoint/solution**, а также подготовит ресурсы в папке **temp/deploy** к развертыванию в CDN.</span><span class="sxs-lookup"><span data-stu-id="0d257-157">This command will create a **sphosted-webpart.sppkg** package on the **sharepoint/solution** folder and also prepare the assets on the **temp/deploy folder** to be deployed to the CDN.</span></span>
+<span data-ttu-id="9b1af-154">Эта команда создаст обновленный пакет **helloworld-webpart.sppkg** в папке **sharepoint/solution**.</span><span class="sxs-lookup"><span data-stu-id="9b1af-154">This command will create an updated **helloworld-webpart.sppkg** package on the **sharepoint/solution** folder.</span></span>
 
-<span data-ttu-id="0d257-158">Добавьте или перетащите новый пакет клиентского решения в каталог приложений в клиенте.</span><span class="sxs-lookup"><span data-stu-id="0d257-158">Upload or drag & drop the newly created client-side solution package to the app catalog in your tenant.</span></span> 
+> [!NOTE]
+> <span data-ttu-id="9b1af-155">Если вам интересно, какие именно ресурсы упаковываются в SPPKG-файл, ознакомьтесь с содержимым папки **sharepoint/solution/debug**.</span><span class="sxs-lookup"><span data-stu-id="9b1af-155">If you are interested on what actually got packaged inside of the sppkg file, you can have a look omn the content of the **sharepoint/solution/debug** folder.</span></span>
 
-![Всплывающее окно при установке решения SPFx в каталоге приложений](../../../images/cdn-upload-solution-to-app-catalog.png)
+<span data-ttu-id="9b1af-156">Добавьте или перетащите новый пакет клиентского решения в каталог приложений в клиенте.</span><span class="sxs-lookup"><span data-stu-id="9b1af-156">Upload or drag & drop the newly created client-side solution package to the app catalog in your tenant.</span></span> 
 
-<span data-ttu-id="0d257-160">Выберите элемент **Развернуть**.</span><span class="sxs-lookup"><span data-stu-id="0d257-160">Choose **Deploy**</span></span>
+<span data-ttu-id="9b1af-157">Так как вы уже развернули пакет, вам будет предложено заменить существующий пакет.</span><span class="sxs-lookup"><span data-stu-id="9b1af-157">Because you already  deployed the package, you will be prompted as to whether to replace the existing package.</span></span>
 
-<span data-ttu-id="0d257-161">Перейдите к семейству веб-сайтов, в котором вы создали библиотеку **CDN** согласно вышеприведенным инструкциям этого руководства.</span><span class="sxs-lookup"><span data-stu-id="0d257-161">Move to the site collection where the **CDN** library was created earlier in this tutorial.</span></span>
+![Переопределение существующего решения](../../../images/cdn-override-helloworld-webpart-package.png)
 
-<span data-ttu-id="0d257-162">Отправьте все файлы из папки **temp/deploy** в папку **CDN/helloworld** семейства веб-сайтов.</span><span class="sxs-lookup"><span data-stu-id="0d257-162">Upload all files from **temp/deploy** folder to the **CDN/helloworld** folder in your site collection.</span></span> 
+<span data-ttu-id="9b1af-159">Нажмите "Заменить".</span><span class="sxs-lookup"><span data-stu-id="9b1af-159">Choose Replace It.</span></span>
 
-![Папка helloworld в клиенте SPO с ресурсами веб-части, скопированными из папки temp/deploy](../../../images/cdn-web-part-files-in-folder.png)
+![Всплывающее окно при установке решения SPFx в каталоге приложений](../../../images/cnd-trust-helloworld-webpart-solution.png)
 
-<span data-ttu-id="0d257-164">Веб-часть готова к использованию на странице.</span><span class="sxs-lookup"><span data-stu-id="0d257-164">At this point the web part is ready to be used on a page</span></span>
+<span data-ttu-id="9b1af-161">Обратите внимание, что в списке **доменов** указана среда *SharePoint Online*.</span><span class="sxs-lookup"><span data-stu-id="9b1af-161">Notice how the **domain** list in the prompt is saying *SharePoint Online*.</span></span> <span data-ttu-id="9b1af-162">Это вызвано тем, что контент предоставляется либо из сети CDN Office 365, либо из каталога приложений (в зависимости от параметров клиента).</span><span class="sxs-lookup"><span data-stu-id="9b1af-162">This is since the content is either served from the Office 365 CDN or from app catalog, depending on the tenant settings.</span></span>
 
-<span data-ttu-id="0d257-165">Откройте сайт, на котором вы хотите протестировать веб-часть, и перейдите к его странице **Содержимое сайта**.</span><span class="sxs-lookup"><span data-stu-id="0d257-165">Open a site where you want to test the web part and go the **Site contents** page of the site.</span></span>
+<span data-ttu-id="9b1af-163">Нажмите кнопку **Развернуть**</span><span class="sxs-lookup"><span data-stu-id="9b1af-163">Choose **Deploy**</span></span>
 
-<span data-ttu-id="0d257-166">Выберите элементы **"Создать" и "Приложение"** на панели инструментов, затем выберите приложение **sphosted-webpart-client-side-solution** для установки на сайте.</span><span class="sxs-lookup"><span data-stu-id="0d257-166">Choose **Add – App** from the toolbar and choose the **sphosted-webpart-client-side-solution** app to be installed on the site</span></span>
+<span data-ttu-id="9b1af-164">Откройте сайт, где ранее было установлено решение **helloworld-webpart-client-side-solution**, или установите решение на новом сайте.</span><span class="sxs-lookup"><span data-stu-id="9b1af-164">Open a site where previously installed the **helloworld-webpart-client-side-solution** solution or install solution to a new site.</span></span>
 
-![Добавление веб-части на сайт](../../../images/cdn-add-webpart-to-site.png)
+<span data-ttu-id="9b1af-165">Когда решение будет установлено, в меню со значком *шестеренки* выберите пункт **Добавление страницы**, затем в окне выбора веб-частей для современной страницы нажмите **HelloWorld**, чтобы добавить настраиваемую веб-часть на страницу.</span><span class="sxs-lookup"><span data-stu-id="9b1af-165">After the solution has been installed, chose **Add a page** from the *gear* menu and pick **HelloWorld** from the modern page web part picker</span></span>
 
-<span data-ttu-id="0d257-168">Когда решение будет установлено, в меню *шестеренки* выберите пункт **Добавление страницы**, затем в окне выбора веб-частей для современной страницы укажите **HelloWorld**.</span><span class="sxs-lookup"><span data-stu-id="0d257-168">After the solution has been installed, chose **Add a page** from the *gear* menu and pick **HelloWorld** from the modern page web part picker</span></span>
+![Веб-часть HelloWorld в средстве выбора веб-частей для современной страницы](../../../images/cdn-web-part-picker.png)
 
-![Веб-часть HelloWorld в окне выбора веб-частей для современной страницы](../../../images/cdn-web-part-picker.png)
-
-<span data-ttu-id="0d257-170">Обратите внимание: веб-часть отображается, несмотря на то что служба node.js не запущена локально.</span><span class="sxs-lookup"><span data-stu-id="0d257-170">Notice how the web part is rendered even though you are not running the node.js service locally.</span></span> 
+<span data-ttu-id="9b1af-167">Обратите внимание: веб-часть отображается, несмотря на то что служба node.js не запущена локально.</span><span class="sxs-lookup"><span data-stu-id="9b1af-167">Notice how the web part is rendered even though you are not running the node.js service locally.</span></span> 
 
 ![Веб-часть HelloWorld на современной странице в режиме редактирования](../../../images/cdn-web-part-rendering.png)
 
-<span data-ttu-id="0d257-172">Сохраните изменения на странице с веб-частью.</span><span class="sxs-lookup"><span data-stu-id="0d257-172">Save changes on the page with web part on it.</span></span>
+<span data-ttu-id="9b1af-169">Сохраните изменения на странице с веб-частью.</span><span class="sxs-lookup"><span data-stu-id="9b1af-169">Save changes on the page with web part on it.</span></span>
 
-<span data-ttu-id="0d257-173">Нажмите клавишу **F12**, чтобы открыть инструменты разработчика.</span><span class="sxs-lookup"><span data-stu-id="0d257-173">Press **F12** to open up developer tools.</span></span>
+<span data-ttu-id="9b1af-170">Нажмите клавишу **F12**, чтобы открыть инструменты разработчика.</span><span class="sxs-lookup"><span data-stu-id="9b1af-170">Press **F12** to open up developer tools.</span></span>
 
-<span data-ttu-id="0d257-174">Разверните узел **publiccdn.sharepointonline.com** на вкладке "Sources" (Источники) и обратите внимание на то, что файл **hello-world.bundle** загружен из конечной точки CDN, определение которой описано ранее в этом руководстве.</span><span class="sxs-lookup"><span data-stu-id="0d257-174">Extend **publiccdn.sharepointonline.com** under the source and notice how the **hello-world.bundle** file is loaded from the CDN endpoint which we defined earlier in this tutorial.</span></span>
+<span data-ttu-id="9b1af-171">Разверните узел **publiccdn.sharepointonline.com** в источнике и обратите внимание, что файл **hello-world-web-part** загружается с URL-адреса общедоступной сети доставки содержимого, динамически указывающего на библиотеку, расположенную в семействе веб-сайтов каталога приложений.</span><span class="sxs-lookup"><span data-stu-id="9b1af-171">Extend **publiccdn.sharepointonline.com** under the source and notice how the **hello-world-web-part** file is loaded from the Public CDN URL pointing dynamically to a library located under the app catalog site collection.</span></span>
 
-![Пакет веб-части HelloWorld из общедоступной CDN по указанному URL-адресу, отображенный на вкладке "Sources" (Источники) в области инструментов разработчика Chrome](../../../images/cdn-web-part-f12-source.png)
+![Пакет веб-части HelloWorld из общедоступной сети CDN по указанному URL-адресу на вкладке "Источники" в области инструментов разработчика Chrome](../../../images/cdn-web-part-f12-source.png)
 
-<span data-ttu-id="0d257-176">Поздравляем! Вы развернули свою веб-часть в SharePoint Online, разместив ее в сети доставки содержимого Office 365.</span><span class="sxs-lookup"><span data-stu-id="0d257-176">Now you have deployed your custom web part to SharePoint Online and it's being hosted from the Office 365 CDN.</span></span> 
+> [!NOTE]
+> <span data-ttu-id="9b1af-173">Если в вашем клиенте не включена сеть CDN, а в файле **package-solution.json** для параметра `includeClientSideAssets` задано значение `true`, то URL-адрес для загрузки ресурсов будет динамически обновляться и указывать непосредственно на папку ClientSideAssets, расположенную в семействе веб-сайтов с каталогом приложений.</span><span class="sxs-lookup"><span data-stu-id="9b1af-173">If you would not have CDN enabled in your tenant and the `includeClientSideAssets` setting would be `true`in the **package-solution.json**, loading URL for the assets would be dynamically updated and pointing directly to the ClientSideAssets folder located in the app catalog site collection.</span></span> <span data-ttu-id="9b1af-174">В данном случае используется URL-адрес `https://sppnp.microsoft.com/sites/apps/ClientSideAssets/`.</span><span class="sxs-lookup"><span data-stu-id="9b1af-174">In this example case, URL would be `https://sppnp.microsoft.com/sites/apps/ClientSideAssets/`.</span></span>
 
-## <a name="additional-resources"></a><span data-ttu-id="0d257-177">Дополнительные ресурсы</span><span class="sxs-lookup"><span data-stu-id="0d257-177">Additional resources</span></span>
+<span data-ttu-id="9b1af-175">Поздравляем! Вы развернули веб-часть в SharePoint Online, автоматически разместив ее в сети доставки содержимого Office 365.</span><span class="sxs-lookup"><span data-stu-id="9b1af-175">Now you have deployed your custom web part to SharePoint Online and it's being hosted from the Office 365 CDN.</span></span>
 
-- [<span data-ttu-id="0d257-178">Общедоступность сети доставки содержимого Office 365</span><span class="sxs-lookup"><span data-stu-id="0d257-178">General availability of Office 365 CDN</span></span>](https://dev.office.com/blogs/general-availability-of-office-365-cdn)
-- [<span data-ttu-id="0d257-179">Как автоматизировать публикацию скриптов SharePoint Framework в общедоступной сети доставки содержимого Office 365</span><span class="sxs-lookup"><span data-stu-id="0d257-179">Automate publishing of your SharePoint Framework scripts to Office 365 public CDN</span></span>](https://www.eliostruyf.com/automate-publishing-of-your-sharepoint-framework-scripts-to-office-365-public-cdn)
+## <a name="next-steps"></a><span data-ttu-id="9b1af-176">Дальнейшие действия</span><span class="sxs-lookup"><span data-stu-id="9b1af-176">Next steps</span></span>
+
+<span data-ttu-id="9b1af-177">Вы можете загрузить jQuery и jQuery UI, а затем собрать веб-часть jQuery Accordion.</span><span class="sxs-lookup"><span data-stu-id="9b1af-177">You can load jQuery, jQuery UI and build a jQuery Accordion web part.</span></span> <span data-ttu-id="9b1af-178">Дальнейшие указания см. в статье [Добавление элемента "аккордеон" jQueryUI в клиентскую веб-часть](./add-jqueryui-accordion-to-web-part.md).</span><span class="sxs-lookup"><span data-stu-id="9b1af-178">To continue, see [Add jQueryUI Accordion to your client-side web part](./add-jqueryui-accordion-to-web-part.md).</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="9b1af-179">Если вы обнаружили ошибку в документации или SharePoint Framework, сообщите о ней разработчикам SharePoint, указав в [списке проблем для репозитория sp-dev-docs](https://github.com/SharePoint/sp-dev-docs/issues).</span><span class="sxs-lookup"><span data-stu-id="9b1af-179">If you find an issue in the documentation or in the SharePoint Framework, please report that to SharePoint engineering using the [issue list at sp-dev-docs repository](https://github.com/SharePoint/sp-dev-docs/issues).</span></span> <span data-ttu-id="9b1af-180">Заранее спасибо!</span><span class="sxs-lookup"><span data-stu-id="9b1af-180">Thanks for your input advance.</span></span>
