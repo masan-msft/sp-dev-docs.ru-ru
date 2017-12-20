@@ -1,20 +1,20 @@
 ---
 title: "Подключение клиентской веб-части к SharePoint (Hello world, часть 2)"
-ms.date: 09/25/2017
+ms.date: 12/05/2017
 ms.prod: sharepoint
-ms.openlocfilehash: eababc970e28ac857293c51337adc55959599df1
-ms.sourcegitcommit: 64ea77c00eea763edc4c524b678af9226d5aba35
+ms.openlocfilehash: 50ba50db6da70ab271d61db1c8f894fd091270c2
+ms.sourcegitcommit: 1f752afb40ff133e2fae14337e09392cc5d9d181
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/08/2017
 ---
 # <a name="connect-your-client-side-web-part-to-sharepoint-hello-world-part-2"></a>Подключение клиентской веб-части к SharePoint (Hello world, часть 2)
 
 Подключите веб-часть к SharePoint для доступа к функциям и данным SharePoint, а также более интегрированного процесса работы для конечных пользователей. В этой статье мы продолжим работу с веб-частью Hello world, созданной в предыдущей статье [Создание первой веб-части](./build-a-hello-world-web-part.md).
 
-Указанные ниже действия также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=9VMwjb2pbQ8&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq). 
+Указанные ниже действия также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=hYrP6D4FaaU&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=3). 
 
-<a href="https://www.youtube.com/watch?v=9VMwjb2pbQ8&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
+<a href="https://www.youtube.com/watch?v=hYrP6D4FaaU&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=3">
 <img src="../../../images/spfx-youtube-tutorial2.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
@@ -372,4 +372,7 @@ import {
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Поздравляем: вы подключили веб-часть к данным списков SharePoint! Из следующей статьи, которая называется [Развертывание веб-части на странице SharePoint](./serve-your-web-part-in-a-sharepoint-page.md), вы узнаете, как развернуть и просмотреть веб-часть Hello World на классической серверной странице SharePoint.
+Поздравляем: вы подключили веб-часть к данным списков SharePoint! Из следующей статьи, которая называется [Развертывание веб-части на странице SharePoint](./serve-your-web-part-in-a-sharepoint-page.md), вы узнаете, как развернуть и просмотреть веб-часть Hello World на странице SharePoint.
+
+> [!NOTE]
+> Если вы обнаружили ошибку в документации или SharePoint Framework, сообщите о ней разработчикам SharePoint, указав в [списке проблем для репозитория sp-dev-docs](https://github.com/SharePoint/sp-dev-docs/issues). Заранее спасибо!

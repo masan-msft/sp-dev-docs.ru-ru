@@ -2,17 +2,18 @@
 title: "Подключение к SharePoint с помощью объектной модели JavaScript (JSOM)"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: cbaaf3811d6975b6fb94d14b451722f396f10cc0
-ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.openlocfilehash: fdd500431679e34298abd7ac55b3aa4af519e10e
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="connect-to-sharepoint-using-the-javascript-object-model-jsom"></a>Подключение к SharePoint с помощью объектной модели JavaScript (JSOM)
 
 В прошлом при создании модификаций для SharePoint вы могли использовать объектную модель JavaScript (JSOM) для связи с SharePoint. Это больше не является рекомендуемым подходом (см. раздел **Замечания** ниже), но все еще приемлемо в некоторых случаях, например при переносе кода. В этой статье показано, как использовать SharePoint JSOM при создании решений на платформе SharePoint Framework.
 
-> **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки SharePoint Framework](../../set-up-your-development-environment.md).
+> [!NOTE] 
+> Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки SharePoint Framework](../../set-up-your-development-environment.md).
 
 ## <a name="create-a-new-project"></a>Создание проекта
 
@@ -45,13 +46,13 @@ yo @microsoft/sharepoint
 
 ![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/tutorial-spjsom-yo-sharepoint.png)
 
-После завершения скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
+После завершения скаффолдинга блокируйте версию зависимостей проекта, выполнив следующую команду:
 
 ```sh
 npm shrinkwrap
 ```
 
-Далее откройте папку проекта в редакторе кода. В этой статье в инструкциях и на снимках экрана указан Visual Studio Code, но вы можете использовать любой редактор.
+Далее откройте папку проекта в редакторе кода. В инструкциях и на снимках экрана из этой статьи указан Visual Studio Code, но вы можете использовать любой редактор.
 
 ![Проект SharePoint Framework, открытый в Visual Studio Code](../../../images/tutorial-spjsom-vscode.png)
 

@@ -1,12 +1,12 @@
 ---
 title: "Добавление элемента Accordion jQueryUI в клиентскую веб-часть SharePoint"
-ms.date: 09/25/2017
+ms.date: 12/05/2017
 ms.prod: sharepoint
-ms.openlocfilehash: fb93d06b47d54a2836c33f832440a054475e563d
-ms.sourcegitcommit: 64ea77c00eea763edc4c524b678af9226d5aba35
+ms.openlocfilehash: ddce5ea3ef89b9cecfb19b57428ee762b58b0d85
+ms.sourcegitcommit: 1f752afb40ff133e2fae14337e09392cc5d9d181
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/08/2017
 ---
 # <a name="add-jqueryui-accordion-to-your-sharepoint-client-side-web-part"></a>Добавление элемента Accordion jQueryUI в клиентскую веб-часть SharePoint
 
@@ -14,9 +14,9 @@ ms.lasthandoff: 10/31/2017
 
 ![Снимок экрана: веб-часть, включающая элемент Accordion jQuery](../../../images/jquery-accordion-wb.png)
 
-Эти действия также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=-3m__hRQxEI&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq). 
+Эти действия также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=7UOxTbMMPrQ&index=6&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq). 
 
-<a href="https://www.youtube.com/watch?v=-3m__hRQxEI&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
+<a href="https://www.youtube.com/watch?v=7UOxTbMMPrQ&index=6&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
 <img src="../../../images/spfx-youtube-tutorial5.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
@@ -60,7 +60,7 @@ yo @microsoft/sharepoint
 * Выберите **Только SharePoint Online (новая версия)** и нажмите клавишу **ВВОД**.
 * Выберите вариант **Использовать текущую папку** для размещения файлов.
 * Выберите **N**, чтобы сделать установку расширения обязательной на каждом сайте при его использовании. 
-* Выберите **Webpart** в качестве типа создаваемого клиентского компонента. 
+* Выберите **WebPart** в качестве типа создаваемого клиентского компонента. 
 
 Далее потребуется указать определенные сведения о веб-части:
 
@@ -349,3 +349,6 @@ Gulp выполнит задачи и откроет локальную рабо
 ![Снимок экрана: веб-часть, включающая элемент Accordion jQuery](../../../images/jquery-accordion-wb.png)
 
 В консоли, в которой запущена команда `gulp serve`, нажмите клавиши **CTRL+C**, чтобы завершить задачу.
+
+> [!NOTE]
+> Если вы обнаружили ошибку в документации или SharePoint Framework, сообщите о ней разработчикам SharePoint в [репозитории sp-dev-docs](https://github.com/SharePoint/sp-dev-docs/issues). Заранее благодарим за ваш вклад.

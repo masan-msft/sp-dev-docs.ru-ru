@@ -2,11 +2,11 @@
 title: "План развития SharePoint Framework"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: a5097e0f7d465ab00c5c7a76a8ee78e10f737d7d
-ms.sourcegitcommit: 11d9185437fc819ab41421c0f4fe06aa300b9d28
+ms.openlocfilehash: 18203d5be8cb3d5497362ae41c4e846daab7a2f8
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-framework-roadmap"></a>План развития SharePoint Framework
 
@@ -16,10 +16,11 @@ ms.lasthandoff: 10/25/2017
 - [Поддержка локальной среды для SharePoint 2016 (пакет дополнительных компонентов 2)](./sharepoint-2016-support.md)
 - [Расширения SharePoint Framework](./extensions/overview-extensions.md)
 - [Свойства клиента](./tenant-properties.md)
+- [API ALM для решений и надстроек SharePoint Framework](../apis/alm-api-for-spfx-add-ins.md)
 
 
 > [!NOTE]
-> Это список областей, над которыми работают инженеры SharePoint. Элементы и разделы из этого списка будут постепенно находить воплощение в будущих выпусках SharePoint Framework (**необязательно** все идеи будут реализованы).
+> Это список задач, над которыми работают инженеры SharePoint. Элементы и разделы из этого списка будут постепенно находить воплощение в будущих выпусках SharePoint Framework (**необязательно** все идеи будут реализованы).
 
 ## <a name="general-improvements"></a>Общие улучшения
 
@@ -46,13 +47,10 @@ ms.lasthandoff: 10/25/2017
 - Упрощенная процедура утверждения: больше не нужно знать администратора клиента.
     - Владелец инициирует процедуру утверждения.
     - Администратор клиента автоматически получает уведомление. 
-    - Параметры управления процедурой утверждения по умолчанию.
+    - Параметры для управления процедурой утверждения по умолчанию.
 
-- ALM REST API — развертывание, активация, удаление и обновление приложений и надстроек.
-- Предполагается, что ALM REST API будут поддерживать *все* объекты в каталоге приложений, в том числе надстройки.
 - Автоматическое размещение кода в CDN.
     - Добавление пакета JavaScript в пакет приложения, который затем автоматически развертывается в библиотеке, размещаемой в сети CDN Office 365 клиента.
-
 
 ## <a name="developer-experience"></a>Удобство для разработчиков
 - SharePoint Framework Workbench 2.0: сведения о развертывании касательно расширений SharePoint Framework
@@ -61,7 +59,13 @@ ms.lasthandoff: 10/25/2017
 
 ## <a name="already-shipped-capabilities"></a>Возможности, которые уже обеспечены
 
-В приведенных ниже разделах указаны более старые элементы страницы с планом развития, которые уже доступны.
+Ниже перечислены возможности, которые уже реализованы.
+
+### <a name="alm-rest-apis"></a>REST API ALM
+
+- REST API ALM — развертывание, активация, удаление и обновление приложений и надстроек.
+- REST API ALM, поддерживающие *все* объекты в каталоге приложений, в том числе надстройки.
+- CSOM и командлеты PowerShell, выпущенные по инициативе сообщества с открытым исходным кодом
 
 ### <a name="javascript-embedding-support-jslink-user-custom-actions"></a>Поддержка внедрения JavaScript (JSLink, дополнительные действия пользователей) 
 
@@ -79,7 +83,7 @@ ms.lasthandoff: 10/25/2017
 - Ориентация на версию SharePoint 2016 в 2017 г.
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 Узнавайте о новых выпусках и возможностях SharePoint Framework из следующих ресурсов.
 
 * [dev.office.com blog](https://dev.office.com/blogs)

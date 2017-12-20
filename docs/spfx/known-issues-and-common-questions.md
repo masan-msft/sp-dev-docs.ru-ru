@@ -2,11 +2,11 @@
 title: "Известные проблемы и часто задаваемые вопросы"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 9621898741763ed6adf9b967e8c300932bee139a
-ms.sourcegitcommit: 11d9185437fc819ab41421c0f4fe06aa300b9d28
+ms.openlocfilehash: 1208a2a19432fdda3597efe81a84bf8a7abfb16f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="known-issues-and-frequently-asked-questions"></a>Известные проблемы и часто задаваемые вопросы
 
@@ -38,9 +38,9 @@ ms.lasthandoff: 10/25/2017
 
 - *Дата: 6 июня.*
 
-Клиентские веб-части SharePoint Framework на классических страницах выпущены для SharePoint 2016 в составе пакета дополнительных компонентов 2 (FP2). Мы пока не планируем добавлять возможности SharePoint Framework в SharePoint 2013. Готового списка возможностей SharePoint Framework, которые будут включены в выпуск SharePoint 2019, нет.
+Клиентские веб-части SharePoint Framework на классических страницах выпущены для SharePoint 2016 в составе пакета дополнительных компонентов 2 (FP2). Мы пока не планируем добавлять возможности SharePoint Framework в SharePoint 2013. Полного списка возможностей SharePoint Framework, которые будут включены в выпуск SharePoint 2019, нет.
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 Используйте указанные ниже ресурсы, чтобы отправлять отзывы, комментарии и вопросы, касающиеся разработки решений для SharePoint. 
 
 * [Список проблем в репозитории sp-dev-docs на сайте GitHub](https://github.com/SharePoint/sp-dev-docs/issues)

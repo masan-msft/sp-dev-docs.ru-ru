@@ -2,11 +2,11 @@
 title: "Настройка клиента Office 365"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 3f9b57d55b0e23c3acb4587552a2fad5626bbbd0
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 77de8b0b91c0c67cb9149bd5bbc38b21c1e432f9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="set-up-your-office-365-tenant"></a>Настройка клиента Office 365
 
@@ -15,9 +15,10 @@ ms.lasthandoff: 10/13/2017
 ## <a name="sign-up-for-an-office-365-tenant"></a>Регистрация клиента Office 365
 Если у вас уже есть клиент Office 365, переходите к разделу [Создание сайта каталога приложений](#create-app-catalog-site).
 
-В противном случае вы можете создать клиент пробной версии или принять участие в [программе для разработчиков Office](https://profile.microsoft.com/RegSysProfileCenter/wizardnp.aspx?wizid=7a6e3d71-b057-49cc-b2aa-158ff23432f3&lcid=1033&culture=en-us&dir=LTR). На ваш электронный адрес будет отправлено сообщение с приветствием и ссылкой, позволяющей получить клиент разработчика приложений для Office 365. 
+В противном случае вы можете создать клиент пробной версии или принять участие в [программе для разработчиков Office](https://profile.microsoft.com/RegSysProfileCenter/wizardnp.aspx?wizid=7a6e3d71-b057-49cc-b2aa-158ff23432f3&lcid=1033&culture=en-us&dir=LTR). Вам будет отправлено письмо со ссылкой, позволяющей получить клиент Office 365 для разработчиков. 
 
->**Примечание.** Прежде чем переходить по ссылке, выйдите из всех имеющихся клиентов Office 365.
+> [!NOTE] 
+> Перед регистрацией убедитесь, что вы вышли из всех имеющихся клиентов Office 365.
 
 ## <a name="create-app-catalog-site"></a>Создание сайта каталога приложений
 Для отправки и развертывания веб-частей необходим каталог приложений. Если вы уже настроили каталог приложений, переходите к разделу [Создание коллекции сайтов разработчиков](#create-a-new-developer-site-collection).  

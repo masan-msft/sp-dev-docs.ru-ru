@@ -2,11 +2,11 @@
 title: "Общие сведения о SharePoint Framework"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: afb4f919b242e7409141cf771c88711025f9fdbb
-ms.sourcegitcommit: 11d9185437fc819ab41421c0f4fe06aa300b9d28
+ms.openlocfilehash: e0614bc85a914178a01d0030748461901aa0b563
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="overview-of-the-sharepoint-framework"></a>Общие сведения о SharePoint Framework
 
@@ -65,7 +65,7 @@ SharePoint появился в 2001 г. Изначально он был пре
 
 Вы также можете задавать вопросы и оставлять отзывы о документах и платформе SharePoint Framework в нашем [репозитории GitHub](https://github.com/SharePoint/sp-dev-docs/issues).
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 
 - [Обзор клиентских веб-частей SharePoint](./web-parts/overview-client-side-web-parts.md)
 - [Обзор расширений SharePoint Framework](./extensions/overview-extensions.md)

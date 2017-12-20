@@ -2,11 +2,11 @@
 title: "Примечания к упаковке решений"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 41baeeed27f08f155b425d7886f1f54aae4e670d
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 10bc8317561516a03ab1c212f66f34aeb7f509ff
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="notes-on-solution-packaging"></a>Примечания к упаковке решений
 
@@ -52,7 +52,8 @@ interface ISolution {
 
 Кроме того, определение решения может включать список определений компонентов SharePoint.
 
-> **Примечание.** Если он не указан или пуст, задача создает по одному компоненту для каждого элемента (сопоставление 1:1).
+> [!NOTE] 
+> Если он отсутствует или пуст, задача создает по одному компоненту для каждого элемента (сопоставление 1:1).
 
 ### <a name="feature-definition-ifeature"></a>Определение компонента (_IFeature_)
 

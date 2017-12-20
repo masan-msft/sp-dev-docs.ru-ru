@@ -49,6 +49,20 @@
               href: spfx/extensions/get-started/building-simple-field-customizer.md
             - name: Создание набора команд ListView
               href: spfx/extensions/get-started/building-simple-cmdset-with-dialog-api.md
+        - name: Основы
+          items:
+            - name: Настройка значка расширения
+              href: spfx/extensions/basics/configure-extension-icon.md
+        - name: Понятия
+          items:
+            - name: Перенос имеющихся модификаций
+              items:
+                - name: Элемент меню ECB (блока элементов управления "Поле ввода")
+                  href: spfx/extensions/guidance/migrate-from-ecb-to-spfx-extensions.md
+                - name: Клиентская обработка (JSLink)
+                  href: spfx/extensions/guidance/migrate-from-jslink-to-spfx-extensions.md
+                - name: Внедрение JavaScript (UserCustomAction)
+                  href: spfx/extensions/guidance/migrate-from-usercustomactions-to-spfx-extensions.md
     - name: Веб-части
       href: spfx/web-parts/overview-client-side-web-parts.md
       items:

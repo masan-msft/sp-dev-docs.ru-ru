@@ -2,17 +2,18 @@
 title: "Проверка значений свойств веб-части"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 290fea0bf884e16b266ab2d2f7f493174374d350
-ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.openlocfilehash: d2e042743a2c374a811fce9bc54f4e6dfd5ea3d2
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="validate-web-part-property-values"></a>Проверка значений свойств веб-части
 
 Пользователи могут настраивать веб-части в соответствии со своими потребностями с помощью свойств. Проверяйте указанные значения конфигурации, чтобы пользователям было проще настроить веб-часть и удобнее с ней работать. Из этой статьи вы узнаете, как проверять значения свойств клиентских веб-частей в SharePoint Framework.
 
-> **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment.md) для создания решений на платформе SharePoint Framework.
+> [!NOTE] 
+> Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment.md) для создания решений на платформе SharePoint Framework.
 
 ## <a name="create-new-project"></a>Создание проекта
 
@@ -44,13 +45,13 @@ yo @microsoft/sharepoint
 
 ![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/property-validation-yeoman-generator.png)
 
-После завершения скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
+После завершения скаффолдинга блокируйте версию зависимостей проекта, выполнив следующую команду:
 
 ```sh
 npm shrinkwrap
 ```
 
-Далее откройте папку проекта в редакторе кода. В этой статье в инструкциях и на снимках экрана указан Visual Studio Code, но вы можете использовать любой редактор.
+Далее откройте папку проекта в редакторе кода. В этой статье инструкции и снимки экрана основаны на Visual Studio Code, но вы можете использовать любой редактор.
 
 ![Проект SharePoint Framework, открытый в Visual Studio Code](../../../images/property-validation-visual-studio-code.png)
 

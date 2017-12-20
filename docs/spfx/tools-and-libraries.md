@@ -2,11 +2,11 @@
 title: "Библиотеки и средства разработки платформы SharePoint Framework"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 2df6ebaaf1d56b20e2ae96063c9d6bff339603c5
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: a8a75e7161cce1de606161bd589042a9a38e26c4
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-framework-development-tools-and-libraries"></a>Библиотеки и средства разработки платформы SharePoint Framework
 
@@ -109,7 +109,7 @@ SharePoint Framework — клиентская платформа, поэтому
 
 Благодаря проекту [Office Dev Patterns and Practices / SharePoint Pattern and Practices (PnP)](http://aka.ms/officedevpnp) доступны примеры кодов, шаблоны и другие ресурсы, которые помогут преобразовать существующее решение в решение на базе SharePoint Framework. Обязательно ознакомьтесь с этими примерами кодов и рекомендациями.
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 
 * [SharePoint Framework](sharepoint-framework-overview.md)
 * [Создание клиентской веб-части Hello World](web-parts/get-started/build-a-hello-world-web-part.md)

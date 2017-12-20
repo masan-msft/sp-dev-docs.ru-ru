@@ -2,11 +2,11 @@
 title: "Использование каскадных раскрывающихся меню для свойств веб-частей"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: aecede48a431e42fa2edc3b1040e03d839022907
-ms.sourcegitcommit: 61f26b4fe41d3cd80622d9950d8f6599df48f26f
+ms.openlocfilehash: 9bb9a2e5677827d66e56502dd20f23d912c9ff9c
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="use-cascading-dropdowns-in-web-part-properties"></a>Использование каскадных раскрывающихся меню для свойств веб-частей
 
@@ -16,7 +16,8 @@ ms.lasthandoff: 10/26/2017
 
 Исходный код рабочей веб-части доступен на сайте GitHub по адресу [https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-custompropertypanecontrols](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-custompropertypanecontrols).
 
-> **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки клиентских веб-частей для SharePoint](../../set-up-your-development-environment.md).
+> [!NOTE] 
+> Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки для создания клиентских веб-частей SharePoint](../../set-up-your-development-environment.md).
 
 ## <a name="create-new-project"></a>Создание проекта
 
@@ -48,7 +49,7 @@ yo @microsoft/sharepoint
 
 ![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/react-cascading-dropdowns-yo-sharepoint.png)
 
-После скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
+После завершения скаффолдинга блокируйте версию зависимостей проекта, выполнив следующую команду:
 
 ```sh
 npm shrinkwrap
@@ -666,7 +667,8 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
 
 Когда элементы выбранного списка загрузятся, они будут назначены переменной класса **items**, с помощью которой раскрывающееся меню сможет их использовать. Когда сведения о доступных элементах списка загрузятся, включится раскрывающееся меню, в котором пользователи смогут выбрать элемент. Индикатор загрузки удаляется, в результате чего очищается тело веб-части. Следовательно, веб-часть должна быть отрисована повторно. Наконец обновляется панель свойств веб-части для отображения последних изменений.
 
-> **Примечание.** В выпуске 6 SharePoint Framework допущена ошибка в компоненте Office UI Fabric React Dropdown, из-за которой раскрывающееся меню работает неправильно. Чтобы временно решить эту проблему, измените строку **12027** в файле **node_modules/@microsoft/office-ui-fabric-react-bundle/dist/office-ui-fabric-react.bundle.js**. Исходный вариант:
+> [!NOTE] 
+> В выпуске 6 SharePoint Framework присутствует ошибка в компоненте Office UI Fabric React Dropdown, из-за которой раскрывающееся меню работает неправильно. Для временного решения проблемы измените строку **12027** в файле **node_modules/@microsoft/office-ui-fabric-react-bundle/dist/office-ui-fabric-react.bundle.js** с:
 > 
 > ```js
 > isDisabled: this.props.isDisabled !== undefined ? this.props.isDisabled : this.props.disabled

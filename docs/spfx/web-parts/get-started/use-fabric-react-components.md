@@ -1,12 +1,12 @@
 ---
 title: "Использование компонентов Office UI Fabric React в клиентской веб-части SharePoint"
-ms.date: 09/25/2017
+ms.date: 12/05/2017
 ms.prod: sharepoint
-ms.openlocfilehash: ba0c27ed1feeefd8a7762fbf1979c291d33879ff
-ms.sourcegitcommit: 64ea77c00eea763edc4c524b678af9226d5aba35
+ms.openlocfilehash: c522ec86e6c15886f82661ff9f4edec7427ce40f
+ms.sourcegitcommit: 1f752afb40ff133e2fae14337e09392cc5d9d181
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/08/2017
 ---
 # <a name="use-office-ui-fabric-react-components-in-your-sharepoint-client-side-web-part"></a>Использование компонентов Office UI Fabric React в клиентской веб-части SharePoint
 
@@ -16,16 +16,14 @@ ms.lasthandoff: 10/31/2017
 
 ![Изображение компонента DocumentCard Fabric в рабочей среде SharePoint](../../../images/fabric-components-doc-card-view-ex.png)
 
-Указанные ниже действия также показаны в видео на [канале SharePoint PnP на YouTube](https://www.youtube.com/watch?v=1N6kNvLxyg4&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq). 
+Указанные ниже действия также показаны в видео на [канале SharePoint PnP на YouTube](https://www.youtube.com/watch?v=1YRu4-nZot4&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=7). 
 
-<a href="https://www.youtube.com/watch?v=1N6kNvLxyg4&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
+<a href="https://www.youtube.com/watch?v=1YRu4-nZot4&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=7">
 <img src="../../../images/spfx-youtube-tutorial6.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
 
 ## <a name="creating-a-new-web-part-project"></a>Создание проекта веб-части
-
-Убедитесь, что вы используете последнюю версию. Выполните команду `yo` и следуйте инструкциям на экране, чтобы создать скелет проекта.
 
 Создайте каталог проекта в любом расположении:
 
@@ -51,7 +49,7 @@ yo @microsoft/sharepoint
 * Выберите **Только SharePoint Online (новая версия)** и нажмите клавишу **ВВОД**.
 * Выберите вариант **Использовать текущую папку** для размещения файлов.
 * Выберите **N**, чтобы сделать установку расширения обязательной на каждом сайте при его использовании. 
-* Выберите **Webpart** в качестве типа создаваемого клиентского компонента. 
+* Выберите **WebPart** в качестве типа создаваемого клиентского компонента. 
 
 Далее потребуется указать определенные сведения о веб-части:
 
@@ -124,7 +122,7 @@ export default class DocumentCardExample extends React.Component<IDocumentCardEx
 Так как при создании решения мы выбрали платформу React, генератор установил также правильную версию Office UI Fabric React. Можно напрямую импортировать компоненты Fabric в компоненты React без дополнительных усилий. 
 
 > [!NOTE]
-> С первым выпуском SharePoint Framework рекомендуем использовать Office UI Fabric и Office UI Fabric React, поставляемые с генератором. Не рекомендуем обновлять пакеты Office UI Fabric и Office UI Fabric React отдельно, так как возможен конфликт с уже имеющейся версией в SharePoint, из-за чего веб-часть может не работать должным образом.
+> С текущим выпуском SharePoint Framework рекомендуем использовать Office UI Fabric и Office UI Fabric React, поставляемые с генератором. Не рекомендуем обновлять пакеты Office UI Fabric и Office UI Fabric React отдельно, так как возможен конфликт с уже имеющейся версией в SharePoint, из-за чего веб-часть может не работать должным образом.
 
 Откройте **DocumentCardExample.tsx** в папке **src\webparts\documentCardExample\components**. 
 
@@ -215,21 +213,22 @@ build.configureWebpack.mergeConfig({
 
 const gulp = require('gulp');
 const build = require('@microsoft/sp-build-web');
+build.addSuppression(`Warning - [sass] The local CSS class 'ms-Grid' is not camelCase and will not be type-safe.`);
 
-build.configureWebpack.mergeConfig({  
-    additionalConfiguration: (generatedConfiguration) => {
-        if (build.getConfig().production) {
-            var basePath = build.writeManifests.taskConfig.cdnBasePath;
-            if (!basePath.endsWith('/')) {
-                basePath += '/';
-            }
-            generatedConfiguration.output.publicPath = basePath;
-        }
-        else {
-            generatedConfiguration.output.publicPath = "/dist/";
-        }
-        return generatedConfiguration;
-    }
+build.configureWebpack.mergeConfig({
+  additionalConfiguration: (generatedConfiguration) => {
+      if (build.getConfig().production) {
+          var basePath = build.writeManifests.taskConfig.cdnBasePath;
+          if (!basePath.endsWith('/')) {
+              basePath += '/';
+          }
+          generatedConfiguration.output.publicPath = basePath;
+      }
+      else {
+          generatedConfiguration.output.publicPath = "/dist/";
+      }
+      return generatedConfiguration;
+  }
 });
 
 build.initialize(gulp);
@@ -254,4 +253,7 @@ gulp serve
     
 На панели элементов выберите веб-часть `DocumentCardExample` для добавления:
     
-![Изображение компонента DocumentCard Fabric в рабочей среде SharePoint](../../../images/fabric-components-doc-card-view-ex.png)
+![Изображение компонента DocumentCard Fabric в среде разработки SharePoint](../../../images/fabric-components-doc-card-view-ex.png)
+
+> [!NOTE]
+> Если вы обнаружили ошибку в документации или SharePoint Framework, сообщите о ней разработчикам SharePoint, указав в [списке проблем для репозитория sp-dev-docs](https://github.com/SharePoint/sp-dev-docs/issues). Заранее спасибо!

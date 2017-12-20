@@ -1,12 +1,12 @@
 ---
 title: "Создание первой клиентской веб-части SharePoint (Hello World, часть 1)"
-ms.date: 09/25/2017
+ms.date: 12/05/2017
 ms.prod: sharepoint
-ms.openlocfilehash: de8b72f32fa4e6539edf9b818169d7a13828a651
-ms.sourcegitcommit: 3276e9b281b227fb2f1a131ab4ac54ae212ce5cf
+ms.openlocfilehash: 672824cfb2d9a8881c09a18c871bf6ea2a60ac2d
+ms.sourcegitcommit: 1f752afb40ff133e2fae14337e09392cc5d9d181
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2017
+ms.lasthandoff: 12/08/2017
 ---
 # <a name="build-your-first-sharepoint-client-side-web-part-hello-world-part-1"></a>Создание первой клиентской веб-части SharePoint (Hello World, часть 1)
 
@@ -20,9 +20,9 @@ ms.lasthandoff: 11/24/2017
 > [!NOTE]
 > Прежде чем выполнять действия, описанные в этой статье, обязательно [настройте среду разработки](../../set-up-your-development-environment.md).
 
-Эти действия также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=QbDtsMg88Js&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq). 
+Эти действия также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=YqUIX2pMUzg&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=2). 
 
-<a href="https://www.youtube.com/watch?v=QbDtsMg88Js&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
+<a href="https://www.youtube.com/watch?v=YqUIX2pMUzg&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=2">
 <img src="../../../images/spfx-youtube-tutorial1.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
@@ -105,8 +105,6 @@ gulp serve
 * компиляция файлов SASS в CSS;
 * компиляция файлов TypeScript в JavaScript.
 
-Если вы только начали работу с Gulp, прочтите статью [Использование Gulp](http://docs.asp.net/en/latest/client-side/using-gulp.html), в которой описывается, как использовать этот набор средств в Visual Studio при создании проектов на базе ASP.NET 5.
-
 Visual Studio Code поддерживает Gulp и другие средства запуска задач. Нажмите клавиши **CTRL+SHIFT+B** в Windows или **CMD+SHIFT+B** в Mac OS для отладки и просмотра веб-части. 
 
 ### <a name="sharepoint-workbench"></a>SharePoint Workbench
@@ -120,9 +118,9 @@ SharePoint Workbench — это рабочая область конструир
    
 Выберите пункт **HelloWorld**, чтобы добавить эту веб-часть на страницу:
    
-![Веб-часть HelloWorld в рабочей области SharePoint](../../../images/sp-workbench-helloworld-wp.png)
+![Веб-часть HelloWorld в SharePoint Workbench](../../../images/sp-workbench-helloworld-wp.png)
 
-Поздравляем! Вы только что добавили свою первую клиентскую веб-часть на клиентскую страницу.
+**Поздравляем!** Вы только что добавили свою первую клиентскую веб-часть на клиентскую страницу.
    
 Теперь выберите значок карандаша в крайнем левом углу веб-части, чтобы открыть панель свойств веб-части.
    
@@ -159,9 +157,9 @@ TypeScript — это основной язык для создания клие
 
 Этот класс обеспечивает минимальную функциональность, необходимую для создания веб-части. Он также предоставляет много параметров для проверки и доступа к свойствам только для чтения, например **displayMode**, другим свойствам веб-частей, контексту веб-частей, а также **instanceId** и **domElement**.
 
-Обратите внимание, что класс веб-части определяется как принимающий тип свойства **IHelloWorldWebPartProps**.
+Обратите внимание на то, что класс веб-части определяется как принимающий тип свойства **IHelloWorldWebPartProps**.
 
-Тип свойства определяется как интерфейс перед **HelloWorldWebPart**.
+Тип свойства определяется как интерфейс перед классом **HelloWorldWebPart** в файле **HelloWorldWebPart.ts**.
 
 ```ts
 export interface IHelloWorldWebPartProps {
@@ -169,7 +167,7 @@ export interface IHelloWorldWebPartProps {
 }
 ```
 
-Это определение свойства используется для определения пользовательских типов свойств для веб-части. Дополнительные сведения см. в разделе, посвященном панели свойств, ниже. 
+Это определение свойства используется для определения типов настраиваемых свойств для веб-части. Дополнительные сведения см. в разделе, посвященном области свойств, ниже. 
 
 #### <a name="web-part-render-method"></a>Метод отрисовки веб-части
 Элемент DOM, в котором должна отрисовываться веб-часть, доступен в методе **render**. Этот метод используется для отрисовки веб-части в этом элементе DOM. В веб-части **HelloWorld** элемент DOM присвоен переменной DIV. Параметры метода включают режим отображения (чтение или редактирование) и настроенные свойства веб-части, если они есть: 
@@ -364,7 +362,7 @@ gulp serve
 
 В SharePoint размещается рабочая область SharePoint Workbench, чтобы вы могли просматривать и проверять локальные веб-части, которые находятся в разработке. Ее основное преимущество состоит в том, что веб-части запускаются в контексте SharePoint, и вы можете работать с данными SharePoint.
 
-Перейдите по такому URL-адресу: https://your-sharepoint-site/_layouts/workbench.aspx
+Перейдите по такому URL-адресу: "https://your-sharepoint-tenant.sharepoint.com/_layouts/workbench.aspx".
 
 > [!NOTE]
 > Если у вас не установлен сертификат разработчика SPFx, рабочая область сообщит вам, что она не загружает сценарии из localhost. Остановите процесс, выполняющийся в данный момент в окне консоли, выполните команду `gulp trust-dev-cert` в консоли каталога проекта, чтобы установить сертификат разработчика, а затем запустите команду `gulp serve` еще раз.
@@ -387,4 +385,7 @@ gulp serve
 Так как ваша веб-часть по-прежнему находится на этапе разработки и тестирования, ее не нужно упаковывать и развертывать в SharePoint. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Поздравляем с запуском вашей первой веб-части Hello World! Теперь стоит ознакомиться со статьей [Подключение к SharePoint](./connect-to-sharepoint.md). В ней описано, как расширить возможности Hello World, обеспечив взаимодействие с REST API списков SharePoint. Обратите внимание, что команда `gulp serve` по-прежнему запущена в окне консоли (или в Visual Studio Code, если вы используете editor.md). Можете переходить к следующей статье, не останавливая ее.
+Поздравляем с запуском вашей первой веб-части Hello World! Теперь стоит ознакомиться со статьей [Подключение к SharePoint](./connect-to-sharepoint.md). В ней описано, как расширить возможности Hello World, обеспечив взаимодействие с REST API списков SharePoint. Обратите внимание на то, что команда `gulp serve` по-прежнему запущена в окне консоли (или в Visual Studio Code, если вы используете этот редактор). Можете переходить к следующей статье, не останавливая ее.
+
+> [!NOTE]
+> Если вы обнаружили ошибку в документации или SharePoint Framework, сообщите о ней разработчикам SharePoint, указав в [списке проблем для репозитория sp-dev-docs](https://github.com/SharePoint/sp-dev-docs/issues). Заранее спасибо!

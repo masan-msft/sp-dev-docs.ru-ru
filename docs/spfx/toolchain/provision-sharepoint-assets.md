@@ -2,11 +2,11 @@
 title: "Подготовка ресурсов SharePoint с пакетом решения"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 9da564c257f513b40fc036b9656d11972d5dc530
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 6eccc159dc5fbe47b23de477914c46e05dee5457
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="provision-sharepoint-assets-with-your-solution-package"></a>Подготовка ресурсов SharePoint с пакетом решения
 
@@ -271,7 +271,8 @@ gulp package-solution
 
 Приведенная выше команда упакует один или несколько манифестов клиентских решений, таких как веб-части, вместе с XML-файлами компонента, на которые ссылается файл конфигурации `package-solution.json`.
 
->**ПРИМЕЧАНИЕ.** Вы можете использовать флаг `--ship`, чтобы упаковать минимальные версии решений. 
+> [!NOTE] 
+> Вы можете упаковать минифицированные версии компонентов, используя флаг `--ship`. 
 
 #### <a name="upgrade-sharepoint-items"></a>Обновление элементов SharePoint
 
@@ -327,7 +328,7 @@ gulp package-solution
 
 Задает диапазон версий, к которым применяются указанные действия по обновлению.
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Веб-трансляция SharePoint PnP: подготовка ресурсов SharePoint для решения SPFx](https://www.youtube.com/watch?v=r-UdJhhHlEQ&list=PLR9nK3mnD-OUnJytlXlO84fQnYt50iTmS)

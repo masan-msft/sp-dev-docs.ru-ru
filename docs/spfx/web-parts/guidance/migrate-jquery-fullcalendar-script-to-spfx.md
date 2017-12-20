@@ -2,11 +2,11 @@
 title: "Перенос решения с jQuery и FullCalendar, созданного с помощью веб-части редактора скриптов, на платформу SharePoint Framework"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 7df585424fb5a0e4f056c791385e6a7214e28b3c
-ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.openlocfilehash: ac4bf6d8b975c99693f6a9cd5f15e30ba8718b1c
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="migrate-jquery-and-fullcalendar-solution-built-using-script-editor-web-part-to-sharepoint-framework"></a>Перенос решения с jQuery и FullCalendar, созданного с помощью веб-части редактора скриптов, на платформу SharePoint Framework
 
@@ -163,7 +163,8 @@ $filter=((DueDate ge '" + startDate + "' and DueDate le '" + endDate + "')or(Sta
 
 ## <a name="migrate-the-tasks-calendar-solution-from-the-script-editor-web-part-to-the-sharepoint-framework"></a>Перенос решения для просмотра календаря задач из веб-части редактора скриптов на платформу SharePoint Framework
 
-> **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment.md) для создания решений на платформе SharePoint Framework.
+> [!NOTE] 
+> Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment.md) для создания решений на платформе SharePoint Framework.
 
 Преобразование модификации на основе веб-части редактора скриптов для платформы SharePoint Framework предоставляет ряд преимуществ, таких как удобство настройки и централизованное управление решением. Ниже представлено пошаговое руководство по переносу решения на платформу SharePoint Framework. Для начала мы перенесем решение на платформу SharePoint Framework, внося как можно меньше изменений в исходный код. Затем мы преобразуем код решения в TypeScript, чтобы воспользоваться функциями обеспечения безопасности типов во время разработки, а также заменим некоторые фрагменты кода для применения API SharePoint Framework, чтобы сделать доступными возможности этой платформы и сделать решение еще проще.
 
@@ -199,7 +200,7 @@ yo @microsoft/sharepoint
 
 ![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/fullcalendar-yeoman.png)
 
-После завершения скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
+После завершения скаффолдинга блокируйте версию зависимостей проекта, выполнив следующую команду:
 
 ```sh
 npm shrinkwrap

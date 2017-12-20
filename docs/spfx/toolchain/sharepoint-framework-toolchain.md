@@ -2,11 +2,11 @@
 title: "Цепочка инструментов SharePoint Framework"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: cf62390105b5e32f9255cb8b35d8f660a249f9fc
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 86ce7d63cf0cf9206e9e4a2dafcfebf841186774
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-framework-toolchain"></a>Цепочка инструментов SharePoint Framework
 
@@ -152,7 +152,8 @@ npm i
 gulp serve
 ```
 
->**Примечание.** Нельзя выполнять несколько задач одновременно.
+> [!NOTE] 
+> Нельзя выполнять несколько задач одновременно.
 
 Задача `serve` выполняет различные задачи и открывает SharePoint Workbench.
 

@@ -2,11 +2,11 @@
 title: "Создание пользовательских элементов управления для области свойств"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 42b3b6858626ab110aa03202819ea174c0c3fd62
-ms.sourcegitcommit: 3276e9b281b227fb2f1a131ab4ac54ae212ce5cf
+ms.openlocfilehash: cb32315eb070b9e199bba8bb38fcb01d45454de3
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="build-custom-controls-for-the-property-pane"></a>Создание пользовательских элементов управления для области свойств
 
@@ -18,7 +18,8 @@ ms.lasthandoff: 11/24/2017
 
 Исходный код рабочей веб-части доступен на сайте GitHub по адресу [https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-custompropertypanecontrols](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-custompropertypanecontrols).
 
-> **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment.md) для создания решений на платформе SharePoint Framework.
+> [!NOTE] 
+> Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment.md) для создания решений на платформе SharePoint Framework.
 
 ## <a name="create-new-project"></a>Создание проекта
 
@@ -50,7 +51,7 @@ yo @microsoft/sharepoint
 
 ![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/custom-property-pane-control-yeoman.png)
 
-После скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
+После завершения скаффолдинга блокируйте версию зависимостей проекта, выполнив следующую команду:
 
 ```sh
 npm shrinkwrap
@@ -193,7 +194,8 @@ gulp serve
 
 Оно состоит из класса, который регистрирует элемент управления в веб-части, и компонента React в SharePoint Framework, который отрисовывает раскрывающееся меню и управляет его данными.
 
-> **Примечание.** В выпуске 6 SharePoint Framework в компоненте Office UI Fabric React Dropdown есть ошибка, из-за которой элемент управления, создаваемый в этой статье, работает неправильно. Чтобы временно решить эту проблему, измените строку **12027** в файле **node_modules/@microsoft/office-ui-fabric-react-bundle/dist/office-ui-fabric-react.bundle.js** с:
+> [!NOTE] 
+> В выпуске 6 SharePoint Framework присутствует ошибка в компоненте Office UI Fabric React Dropdown, из-за которой элемент управления, создаваемый в этой статье, работает неправильно. Для временного решения проблемы измените строку **12027** в файле **node_modules/@microsoft/office-ui-fabric-react-bundle/dist/office-ui-fabric-react.bundle.js** с:
 > 
 > ```js
 > isDisabled: this.props.isDisabled !== undefined ? this.props.isDisabled : this.props.disabled

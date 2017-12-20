@@ -56,7 +56,8 @@
 
 4. Измените файл **AppCustomizer.module.scss** следующим образом:
 
-    >**Примечание.** Это стили, которые будут использоваться в выходном HTML-коде для верхнего и нижнего колонтитулов.
+    > [!NOTE] 
+    > Это стили, которые будут использоваться в выходном HTML-коде для верхнего и нижнего колонтитулов.
 
       ```css
       .app {
@@ -84,7 +85,8 @@
 
 5. Вернитесь к файлу **HelloWorldApplicationCustomizer.ts** и измените интерфейс **IHelloWorldApplicationCustomizerProperties**, добавив к нему свойства Header и Footer, как показано ниже.
 
-      **Примечание.** Если ваш набор команд использует входные данные ClientSideComponentProperties в формате JSON, он будет десериализован в объект `BaseExtension.properties`. Вы можете определить интерфейс для его описания.
+    > [!NOTE] 
+    > Если ваш набор команд использует входные данные ClientSideComponentProperties в формате JSON, он будет десериализован в объект `BaseExtension.properties`. Вы можете определить интерфейс для его описания.
 
     ```ts
     export interface IHelloWorldApplicationCustomizerProperties {
@@ -245,3 +247,6 @@ contoso.sharepoint.com/Lists/Contoso/AllItems.aspx?loadSPFX=true&debugManifestsF
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Поздравляем, вы создали собственные верхний и нижний колонтитулы с помощью настройщика приложений! Далее см. статью [Развертывание расширения в SharePoint (Hello World, часть 3)](./serving-your-extension-from-sharepoint.md). Вы узнаете, как развернуть и просмотреть расширение Hello World в семействе веб-сайтов SharePoint, не используя параметры запроса **Debug**. 
+
+> [!NOTE]
+> Если вы обнаружили ошибку в документации или SharePoint Framework, сообщите о ней разработчикам SharePoint в [репозитории sp-dev-docs](https://github.com/SharePoint/sp-dev-docs/issues). Заранее благодарим за ваш вклад.

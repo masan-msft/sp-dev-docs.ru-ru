@@ -2,11 +2,11 @@
 title: "Создание клиентских веб-частей SharePoint Framework с помощью AngularJS"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: dea4a6c45f08228c57c4cd4f821cdcca7c12d713
-ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.openlocfilehash: c5ff6b791ec15f9aa89e65d27e305a0bc7085283
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="build-sharepoint-framework-client-side-web-parts-with-angularjs"></a>Создание клиентских веб-частей SharePoint Framework с помощью AngularJS
 
@@ -16,7 +16,8 @@ ms.lasthandoff: 10/20/2017
 
 Исходный код рабочей веб-части доступен на сайте GitHub по адресу [https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo).
 
-> **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment.md) для создания решений на платформе SharePoint Framework.
+> [!NOTE] 
+> Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment.md) для создания решений на платформе SharePoint Framework.
 
 ## <a name="create-new-project"></a>Создание проекта
 
@@ -47,7 +48,7 @@ yo @microsoft/sharepoint
 
 ![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/ng-intro-yeoman-generator.png)
 
-После завершения скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
+После завершения скаффолдинга блокируйте версию зависимостей проекта, выполнив следующую команду:
 
 ```sh
 npm shrinkwrap

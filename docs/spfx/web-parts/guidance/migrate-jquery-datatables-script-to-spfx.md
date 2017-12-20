@@ -2,11 +2,11 @@
 title: "Перенос решения с jQuery и DataTables, созданного с помощью веб-части редактора скриптов, на платформу SharePoint Framework"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: a50a56f3b433d9152e047bd51525747abf9d2865
-ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.openlocfilehash: 4a7092759ceb458b5f3036a627dd3e4411bec147
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="migrate-jquery-and-datatables-solution-built-using-script-editor-web-part-to-sharepoint-framework"></a>Перенос решения с jQuery и DataTables, созданного с помощью веб-части редактора скриптов, на платформу SharePoint Framework
 
@@ -127,7 +127,8 @@ $(document).ready(function() {
 
 ## <a name="migrate-the-it-requests-overview-solution-from-the-script-editor-web-part-to-the-sharepoint-framework"></a>Перенос решения для просмотра запросов в службу поддержки из веб-части редактора скриптов на платформу SharePoint Framework
 
-> **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment.md) для создания решений на платформе SharePoint Framework.
+> [!NOTE] 
+> Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment.md) для создания решений на платформе SharePoint Framework.
 
 Преобразование этой модификации для платформы SharePoint Framework предоставляет ряд преимуществ, таких как удобство настройки и централизованное управление решением. Ниже представлено пошаговое руководство по переносу решения на платформу SharePoint Framework. Для начала мы перенесем решение на платформу SharePoint Framework, внося как можно меньше изменений в исходный код. Затем мы преобразуем код решения в TypeScript, чтобы воспользоваться функциями обеспечения безопасности типов во время разработки.
 
@@ -162,7 +163,7 @@ yo @microsoft/sharepoint
 
 ![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/datatables-yeoman.png)
 
-После завершения скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
+После завершения скаффолдинга блокируйте версию зависимостей проекта, выполнив следующую команду:
 
 ```sh
 npm shrinkwrap
@@ -289,7 +290,8 @@ export default class ItRequestsWebPart extends BaseClientSideWebPart<IItRequests
 import './moment-plugin';
 ```
 
-> **Примечание.** Ссылаясь на другие файлы, не следует указывать расширение **.js**. SharePoint Framework автоматически определит расширение.
+> [!NOTE] 
+> Ссылаясь на другие файлы, не нужно включать расширение **.js**. SharePoint Framework автоматически определит расширение.
 
 ### <a name="initiate-datatables-and-load-data"></a>Инициализация модуля DataTables и загрузка данных
 

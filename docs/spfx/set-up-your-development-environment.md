@@ -2,11 +2,11 @@
 title: "Настройка среды разработки клиентских веб-частей SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: c7e48ed9dfc32d4e7aa04502507d0df532e8ed50
-ms.sourcegitcommit: 53385f08de7c705ba76c6e4985c33d27ee76307e
+ms.openlocfilehash: e43d49cdcad92833bce84151962df6a33605b21a
+ms.sourcegitcommit: 1f752afb40ff133e2fae14337e09392cc5d9d181
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 12/08/2017
 ---
 # <a name="set-up-your-sharepoint-client-side-web-part-development-environment"></a>Как настроить среду разработки клиентских веб-частей SharePoint
 
@@ -14,9 +14,9 @@ ms.lasthandoff: 11/08/2017
 
 >**Примечание.** Прежде чем выполнять действия, указанные в этой статье, обязательно [настройте клиент Office 365](./set-up-your-developer-tenant.md).
 
-Эти действия также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=_fxYexlUhe0&t=5s&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=1).
+Эти действия также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=MvlOEzTASXU&index=1&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq).
 
-<a href="https://www.youtube.com/watch?v=_fxYexlUhe0&t=5s&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq"> <img src="../images/spfx-youtube-tutorial0.png" alt="Screenshot of the YouTube video player for this tutorial" />
+<a href="https://www.youtube.com/watch?v=MvlOEzTASXU&index=1&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq"> <img src="../images/spfx-youtube-tutorial0.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
 ## <a name="install-developer-tools"></a>Установка средств разработчика
@@ -96,3 +96,6 @@ npm install @microsoft/generator-sharepoint --save-dev
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь вы готовы [создать свою первую клиентскую веб-часть](web-parts/get-started/build-a-hello-world-web-part.md)!
+
+> [!NOTE]
+> Если вы обнаружили ошибку в документации или SharePoint Framework, сообщите о ней разработчикам SharePoint в [репозитории sp-dev-docs](https://github.com/SharePoint/sp-dev-docs/issues). Заранее благодарим за ваш вклад.
