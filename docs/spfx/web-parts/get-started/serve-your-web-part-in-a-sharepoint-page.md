@@ -1,25 +1,25 @@
 ---
 title: "Развертывание клиентской веб-части на странице SharePoint (Hello World, часть 3)"
-ms.date: 09/25/2017
+ms.date: 12/05/2017
 ms.prod: sharepoint
-ms.openlocfilehash: a2cb54bbf984f18e74c07ec2dd44af73c8d715f1
-ms.sourcegitcommit: 64ea77c00eea763edc4c524b678af9226d5aba35
+ms.openlocfilehash: 60d205a9c4acddb72cf4b14deebf9e1c37543771
+ms.sourcegitcommit: 1f752afb40ff133e2fae14337e09392cc5d9d181
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2017
+ms.lasthandoff: 12/08/2017
 ---
 # <a name="deploy-your-client-side-web-part-to-a-sharepoint-page-hello-world-part-3"></a>Развертывание клиентской веб-части на странице SharePoint (Hello World, часть 3)
 
-Из этой статьи вы узнаете, как развернуть клиентскую веб-часть в SharePoint и проверить ее работу на современной серверной странице SharePoint. В этой статье рассматривается веб-часть Hello World, создание которой описано в предыдущей статье [Подключение клиентской веб-части к SharePoint](./connect-to-sharepoint.md).
+Из этой статьи вы узнаете, как развернуть клиентскую веб-часть в SharePoint и проверить ее работу на современной странице SharePoint. В этой статье рассматривается веб-часть Hello World, создание которой описано в предыдущей статье — [Подключение клиентской веб-части к SharePoint](./connect-to-sharepoint.md).
 
 Перед началом работы убедитесь, что вы выполнили процедуры, описанные в предыдущих статьях:
 
 * [Создание первой клиентской веб-части SharePoint](./build-a-hello-world-web-part.md)
 * [Подключение клиентской веб-части к SharePoint](./connect-to-sharepoint.md)
 
-Эти инструкции также изложены в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=asmQIfgaKSw&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq). 
+Эти инструкции также изложены в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=BpJ01ahxbiY&index=4&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq). 
 
-<a href="https://www.youtube.com/watch?v=asmQIfgaKSw&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
+<a href="https://www.youtube.com/watch?v=BpJ01ahxbiY&index=4&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
 <img src="../../../images/spfx-youtube-tutorial3.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
@@ -48,7 +48,8 @@ cd helloworld-webpart
   "solution": {
     "name": "helloworld-webpart-client-side-solution",
     "id": "4432f33b-5845-4ca0-827e-a8ae68c7b945",
-    "version": "1.0.0.0"
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true
   },
   "paths": {
     "zippedPackage": "solution/helloworld-webpart.sppkg"
@@ -77,9 +78,13 @@ helloworld-webpart.sppkg
 
 Вы можете просмотреть необработанное содержимое пакета в папке **sharepoint/debug**. 
 
-Затем содержимое упаковывается в **SPPKG**-файл. Формат пакета во многом аналогичен пакетам надстроек SharePoint. Для упаковки решения используются Microsoft Open Packaging Conventions. 
+Затем содержимое упаковывается в **SPPKG**-файл. Формат пакета во многом аналогичен формату пакетов надстроек SharePoint. Для упаковки решения используются правила спецификации Microsoft Open Packaging Conventions. 
 
-Файлы JavaScript, CSS и другие активы не упаковываются. Их потребуется развернуть во внешнем расположении, например в сети CDN. Для тестирования веб-части во время разработки можно загрузить все активы с локального компьютера. 
+Файлы JavaScript, CSS и другие ресурсы также включаются в пакет при использовании параметра `--ship`. Однако в этом случае мы сначала проверим развертывание и возможности, разместив файлы JavaScript в localhost. Этот способ развертывания рассматривается в следующем руководстве. 
+
+> [!NOTE]
+> Начиная с SharePoint Framework версии 1.4, статические ресурсы по умолчанию упаковываются в SPPKG-файлы. При развертывании пакета в каталоге приложений он автоматически размещается в сети CDN Office 365 (если она включена) или по URL-адресу каталога приложений. Вы можете управлять этим поведением с помощью параметра `includeClientSideAssets` в файле `package-solution.json`.
+
 
 ## <a name="deploy-the-helloworld-package-to-app-catalog"></a>Развертывание пакета HelloWorld в каталоге приложений
 
@@ -109,7 +114,7 @@ helloworld-webpart.sppkg
     
 Выберите приложение **helloworld-webpart-client-side-solution**, чтобы установить его на сайте.
     
-![Доверие приложению](../../../images/app-installed-your-site.png) 
+![Доверие приложению](../../../images/app-installed-your-site.png)
 
 Теперь клиентское решение и веб-часть установлены на сайте разработчика.
 
@@ -142,11 +147,11 @@ gulp serve --nobrowser
 
 ## <a name="add-the-helloworld-web-part-to-modern-page"></a>Добавление веб-части HelloWorld на современную страницу
 
-Перейдите к семейству веб-сайтов в браузере.
+В браузере перейдите на сайт, где только что было установлено решение.
     
-Нажмите значок шестеренки на верхней панели навигации справа и выберите **Добавить страницу**.
+Нажмите значок шестеренки на верхней панели навигации справа и выберите пункт **Добавить страницу**.
     
-Откройте средство выбора веб-частей и выберите веб-часть **HelloWorld**.
+**Измените** страницу. Откройте средство выбора веб-частей и выберите веб-часть **HelloWorld**.
         
 Активы веб-части будут загружены из локальной среды. Чтобы загрузить сценарии, размещенные на локальном компьютере, необходимо разрешить в браузере выполнение небезопасных сценариев. Убедитесь, что в вашем браузере включено выполнение небезопасных сценариев для данного сеанса.
     
@@ -174,4 +179,7 @@ gulp serve --nobrowser
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Поздравляем! Вы развернули клиентскую веб-часть на современной странице SharePoint. Вы можете продолжить разработку веб-части Hello World, прочитав следующую статью — [Развертывание источника клиентской веб-части в CDN](./deploy-web-part-to-cdn.md). Из нее вы узнаете, как развернуть и загрузить ресурсы веб-части из сети CDN, а не из localhost.
+Поздравляем! Вы развернули клиентскую веб-часть на современной странице SharePoint. Вы можете продолжить разработку веб-части Hello World, прочитав следующую статью — [Размещение клиентской веб-части в сети доставки содержимого Office 365](./hosting-webpart-from-office-365-cdn.md). Из нее вы узнаете, как развернуть и загрузить ресурсы веб-части из сети CDN Office 365, а не из localhost.
+
+> [!NOTE]
+> Если вы обнаружили ошибку в документации или SharePoint Framework, сообщите о ней разработчикам SharePoint, указав в [списке проблем для репозитория sp-dev-docs](https://github.com/SharePoint/sp-dev-docs/issues). Заранее спасибо!
