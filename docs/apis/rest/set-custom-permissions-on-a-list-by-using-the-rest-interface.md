@@ -2,13 +2,13 @@
 title: "Назначение настраиваемых разрешений для списка с помощью интерфейса REST"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 20e1b305fb19a010e8a5b60ab12ffb43cff61cf5
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2fe15a33964aadcae0c1aa3495251a2475335c3f
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="set-custom-permissions-on-a-list-by-using-the-rest-interface"></a>Настройка специальных разрешений для списка с помощью интерфейса REST
+# <a name="set-custom-permissions-on-a-list-by-using-the-rest-interface"></a>Назначение настраиваемых разрешений для списка с помощью интерфейса REST
 Узнайте, как определять детальные настраиваемые разрешения для списка SharePoint с помощью интерфейса REST и JavaScript.
 
 Сайты, списки и элементы списков SharePoint относятся к типу **SecurableObject**. По умолчанию защищаемый объект наследует разрешения от родительского объекта. Чтобы задать настраиваемые разрешения для объекта, необходимо прервать его наследование, чтобы он перестал наследовать разрешения от родительского объекта, а затем определить новые разрешения, добавив или удалив назначения ролей.
@@ -268,7 +268,7 @@ function errorHandler(xhr, ajaxOptions, thrownError) {
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Знакомство со службой REST в SharePoint](get-to-know-the-sharepoint-rest-service.md) 
@@ -285,9 +285,9 @@ function errorHandler(xhr, ajaxOptions, thrownError) {
     
  
 - Статьи TechNet:
-     - [Справочник по детальным разрешениям для SharePoint Server 2013](http://technet.microsoft.com/en-us/library/dn169567.aspx)
-     - [Рекомендации по использованию детальных разрешений в SharePoint Server 2013](http://technet.microsoft.com/en-us/library/gg128955.aspx)
-     - [Разрешения пользователей и уровни разрешений в SharePoint 2013](http://technet.microsoft.com/en-us/library/cc721640.aspx)
+     - [Справочник по детальным разрешениям для SharePoint Server 2013](http://technet.microsoft.com/ru-RU/library/dn169567.aspx)
+     - [Рекомендации по использованию детальных разрешений в SharePoint Server 2013](http://technet.microsoft.com/ru-RU/library/gg128955.aspx)
+     - [Разрешения пользователей и уровни разрешений в SharePoint 2013](http://technet.microsoft.com/ru-RU/library/cc721640.aspx)
     
  
 

@@ -2,11 +2,11 @@
 title: "Знакомство со службой REST в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 9e00064652e04941c578c82754191836c38d2449
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 09d2ed5800e7a16cc005f37c3e83c0b99cdec76c
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="get-to-know-the-sharepoint-rest-service"></a>Знакомство со службой REST в SharePoint
 Основы использования службы REST в SharePoint для чтения и изменения данных в SharePoint по веб-протоколам REST и OData.
@@ -114,8 +114,8 @@ List.GetByTitle(listname)
 
 Служба REST в SharePoint Online (а также локальной среде SharePoint 2016 или более поздней версии) поддерживает объединение нескольких запросов в один при вызове службы с помощью параметра запроса OData `$batch`. Подробные сведения и ссылки на примеры кода см. в статье [Выполнение пакетных запросов с помощью REST API](make-batch-requests-with-the-rest-apis.md).
  
-## <a name="additional-resources"></a>Дополнительные ресурсы
-<a name="bk_learnmore"> </a> В перечисленных ниже статьях вы найдете дополнительные сведения об использовании службы REST в SharePoint.
+## <a name="see-also"></a>См. также
+<a name="bk_learnmore"> </a> В перечисленных ниже статьях вы найдете дополнительные сведения об использовании службы REST SharePoint.
  
 |||
 |:-----|:-----|
@@ -136,9 +136,8 @@ List.GetByTitle(listname)
 ## <a name="odata-resources"></a>Материалы по OData
 <a name="SP15startREST_bk_addlresources"> </a>
 
--  [Знакомство с OData](http://msdn.microsoft.com/en-us/data/hh237663) 
--  
-  [Примеры для протокола Open Data Protocol](http://msdn.microsoft.com/en-us/library/ff478141.aspx)
+-  [Знакомство с OData](http://msdn.microsoft.com/ru-RU/data/hh237663) 
+-  [Примеры для протокола Open Data Protocol](http://msdn.microsoft.com/ru-RU/library/ff478141.aspx)
 -  [Open Data Protocol](http://www.odata.org/)
 -  [Соглашения об URI для протокола OData](http://www.odata.org/documentation/odata-version-2-0/uri-conventions/)
 -  [Адресация для операций службы](http://www.odata.org/documentation/odata-version-2-0/uri-conventions#AddressingServiceOperations)

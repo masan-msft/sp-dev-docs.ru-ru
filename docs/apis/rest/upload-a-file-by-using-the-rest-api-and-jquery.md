@@ -2,11 +2,11 @@
 title: "Отправка файла с помощью REST API и jQuery"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 891b9682406188b0c5dff9f07161c1da8ca25739
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 58b1dfdee85d3f476285f7486e150d8c79d49e59
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="upload-a-file-by-using-the-rest-api-and-jquery"></a>Отправка файла с помощью REST API и jQuery
 Узнайте, как добавить локальный файл в папку SharePoint с помощью REST API и AJAX-запросов jQuery.
@@ -28,9 +28,10 @@ ms.lasthandoff: 10/13/2017
 ## <a name="running-the-code-examples"></a>Выполнение примеров кода
 <a name="RunTheExamples"> </a> В обоих примерах кода в этой статье показано, как с помощью REST API и AJAX-запросов jQuery отправить файл в библиотеку **Общие документы**, а затем изменить свойства элемента списка. В первом примере вызовы выполняются между доменами SharePoint с помощью метода **SP.AppContextSite**. Аналогичный код используется надстройкой, размещенной в SharePoint, при отправке файлов на хост-сайт. Во втором примере вызовы выполняются в пределах домена. Аналогичный код используется серверным решением и надстройкой, размещенной в SharePoint, и при отправке файлов на сайт.
 
- **Примечание.** Размещенные у поставщика надстройки, написанные на JavaScript, для отправки запросов в домен SharePoint должны использовать междоменную библиотеку SP.RequestExecutor. [Пример добавления файла с помощью междоменной библиотеки](http://msdn.microsoft.com/library/2c3d2545-1cd7-497e-b535-12199d8edfbb%28Office.15%29.aspx#bk_FileCollectionAdd)
+> [!NOTE]
+> Размещаемые у поставщика надстройки, написанные на JavaScript, для отправки запросов в домен SharePoint должны использовать междоменную библиотеку SP.RequestExecutor. [Пример добавления файла с помощью междоменной библиотеки](http://msdn.microsoft.com/library/2c3d2545-1cd7-497e-b535-12199d8edfbb%28Office.15%29.aspx#bk_FileCollectionAdd).
  
-Чтобы воспользоваться примерами, описанными в этой статье, вам потребуются:
+Чтобы воспользоваться примерами, описанными в этой статье, вам потребуется следующее:
  
 - SharePoint Server 2013, 2016 или SharePoint Online.
 -  Разрешения на **запись** в библиотеку **Документы** для пользователя, который запускает код. Если вы разрабатываете надстройку SharePoint, то можете указать разрешения на **запись** на уровне **списка**.
@@ -224,7 +225,7 @@ function getQueryStringParameter(paramToRetrieve) {
 ## <a name="code-example-2-upload-a-file-in-the-same-domain-by-using-the-rest-api-and-jquery"></a>Пример кода 2. Отправка файла в пределах домена с помощью REST API и jQuery
 <a name="UploadFile"> </a> В следующем примере кода показано, как с помощью REST API SharePoint и AJAX-запросов jQuery отправить файл в библиотеку **Документы** и изменить свойства элемента списка, представляющего этот файл. Аналогичный код можно найти в серверном решении и размещенной в SharePoint надстройке, которая отправляет файлы на сайт.
  
-Чтобы воспользоваться этим примером, ваша среда должна соответствовать [этим требованиям](upload-a-file-by-using-the-rest-api-and-jquery.md#RunTheExamples).
+Чтобы вы могли воспользоваться этим примером, нужно соблюдение [этих требований](upload-a-file-by-using-the-rest-api-and-jquery.md#RunTheExamples).
  
 ```javascript
 'use strict';
@@ -363,7 +364,7 @@ function onError(error) {
 }
 ```
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Знакомство со службой REST в SharePoint](get-to-know-the-sharepoint-rest-service.md)

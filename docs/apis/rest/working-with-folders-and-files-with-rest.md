@@ -2,11 +2,11 @@
 title: "Работа с папками и файлами в службе REST"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: e73431770902a5cfca0d5192f335091f39419f73
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: dd1d975f35dd92ab23a351a19dc52b0a04fa15a6
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="working-with-folders-and-files-with-rest"></a>Работа с папками и файлами в службе REST
 Узнайте, как выполнять базовые операции CRUD (создание, чтение, обновление и удаление) с папками и файлами с помощью интерфейса REST в SharePoint 2013.
@@ -122,7 +122,8 @@ Headers:
 
 В следующем примере показано, как **обновить** файл, используя метод **PUT**.
 
- **Примечание.** Обновлять файлы можно только с помощью метода **PUT**. Использовать метод **MERGE** запрещено.
+> [!NOTE]
+> Обновлять файлы можно только с помощью метода **PUT**. Использовать метод **MERGE** запрещено.
 
 ```
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/$value
@@ -245,9 +246,10 @@ headers:
     content-length:length of post body
 ```
 
-В следующем примере показано, как **изменить** вложение на элемент списка с помощью метода **PUT**.
+В следующем примере показано, как **заменить** вложенный файл на элемент списка с помощью метода **PUT**.
 
- **Примечание.** Обновлять файлы можно только с помощью метода **PUT**. Использовать метод **MERGE** запрещено.
+> [!NOTE]
+> Обновлять файлы можно только с помощью метода **PUT**. Использовать метод **MERGE** запрещено.
  
 ```
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles('file name')/$value
@@ -259,7 +261,7 @@ headers:
     X-RequestDigest: form digest value
     content-length:length of post body
 ```
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Выполнение базовых операций с использованием конечных точек SharePoint REST](../../sp-add-ins/complete-basic-operations-using-sharepoint-rest-endpoints.md)

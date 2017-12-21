@@ -2,11 +2,11 @@
 title: "Синхронизация элементов SharePoint с помощью службы REST"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: ed16442556103b74c820b0d67ea4bbcc0667f7ea
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 0bd8d21dd7eb124afa0049bd3705d1592ee430ee
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="synchronize-sharepoint-items-using-the-rest-service"></a>Синхронизация элементов SharePoint с помощью службы REST
 Узнайте, как синхронизировать элементы между SharePoint и надстройками или службами с помощью ресурса **GetListItemChangesSinceToken**, входящего в состав службы REST в SharePoint.
@@ -59,12 +59,12 @@ ms.lasthandoff: 10/13/2017
 |:-----|:-----|
 |**ListName**|Строка, которая содержит название или GUID для списка. При запросе таблицы UserInfo строка содержит UserInfo. Использование GUID приводит к повышению производительности.|
 |**ViewName**|Строка, содержащая GUID представления, которое необходимо использовать для атрибутов по умолчанию, представленных параметрами _Query_, _viewFields_ и _rowLimit_. Если этот аргумент не указан, используется представление по умолчанию. Если указано, значение параметра _Query_, _viewFields_ или _rowLimit_ переопределяет соответствующее значение в представлении. Например, если в представлении, заданном с помощью параметра _viewFields_, установлено ограничение на количество строк 100, но параметр _rowLimit_ содержит значение 1000, то в ответе будет 1000 строк.|
-|**Query**|Элемент [Query](http://msdn.microsoft.com/en-us/library/ms471093.aspx), содержащий запрос, который определяет, какие записи возвращаются и в каком порядке.|
+|**Query**|Элемент [Query](http://msdn.microsoft.com/ru-RU/library/ms471093.aspx), содержащий запрос, который определяет, какие записи возвращаются и в каком порядке.|
 |**QueryOptions**|Фрагмент XML следующей формы, содержащий отдельные узлы для различных свойств объекта **SPQuery**.|
-|**ChangeToken**|Строка, содержащая токен изменений для запроса. Описание формата этой строки см. в статье [Обзор журнала изменений](http://msdn.microsoft.com/en-us/library/bb417456.aspx). Если передается значение null, то возвращаются все элементы списка.|
-|**Contains**|Элемент [Contains](http://msdn.microsoft.com/en-us/library/ms196501.aspx), который определяет настройки фильтрации для запроса.|
+|**ChangeToken**|Строка, содержащая токен изменений для запроса. Описание формата этой строки см. в статье [Обзор журнала изменений](http://msdn.microsoft.com/ru-RU/library/bb417456.aspx). Если передается значение null, то возвращаются все элементы списка.|
+|**Contains**|Элемент [Contains](http://msdn.microsoft.com/ru-RU/library/ms196501.aspx), который определяет настройки фильтрации для запроса.|
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Знакомство со службой REST в SharePoint](get-to-know-the-sharepoint-rest-service.md)

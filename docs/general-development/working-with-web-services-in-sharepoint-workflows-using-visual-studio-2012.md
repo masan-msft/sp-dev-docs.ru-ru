@@ -3,24 +3,17 @@ title: "Работа с веб-службами в рабочих процесс
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 5ffaa585-a872-4e14-bc0e-4a38c6a16b04
-ms.openlocfilehash: ead2960605db22556f711a0715874a9832d1c7c2
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: f981ecc14fedcec1b682c472ebccf823ad610605
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="working-with-web-services-in-sharepoint-workflows-using-visual-studio-2012"></a>Работа с веб-службами в рабочих процессах SharePoint с помощью Visual Studio 2012
 Узнайте, как использовать веб-службы в рабочих процессах SharePoint с помощью Visual Studio 2012. **Автор:** [Эндрю Коннел (Andrew Connell)](http://social.msdn.microsoft.com/profile/andrew%20connell%20%5bmvp%5d/), [AndrewConnell.com](http://www.andrewconnell.com)
   
-    
-    
-
-
-  
-    
-    
-
-> **Примечание.** К этой статье прилагается пример законченного кода, который можно просматривать во время чтения или брать за основу при создании собственных проектов рабочих процессов SharePoint. Вы можете скачать код из коллекции исходного кода MSDN на следующей странице: [Работа с веб-службами в рабочих процессах SharePoint с помощью Visual Studio 2012](http://code.msdn.microsoft.com/Working-with-Web-in-46148199). 
+> [!NOTE] 
+> К этой статье прилагается пример законченного кода, который можно просматривать во время чтения или брать за основу при создании собственных проектов рабочих процессов SharePoint. Вы можете скачать код из коллекции кода MSDN на странице [Работа с веб-службами в рабочих процессах SharePoint с помощью Visual Studio 2012](http://code.msdn.microsoft.com/Working-with-Web-in-46148199). 
   
     
     
@@ -239,7 +232,9 @@ OData  это протокол для создания и использован
     
   - **CustomerItemProperties** (тип данных = **DynamicValue**; область = **Init**). Эта переменная используется для хранения результирующего набора, возвращаемого действием, которое получает все свойства из элемента списка.
     
-    > **Примечание.** Тип данных **DynamicValue** не отображается по умолчанию. Чтобы найти его, выберите команду **Выбор типов** в столбце **Тип переменной**. В поле поиска в верхней части диалогового окна введите **DynamicValue**, а затем выберите **Microsoft.Activities.DynamicValue**. 
+    > [!NOTE] 
+    > Тип данных **DynamicValue** не отображается по умолчанию. Чтобы найти его, выберите **Выбор типов** в столбце **Тип переменной**. В поле поиска в верхней части диалогового окна введите **DynamicValue**, а затем выберите **Microsoft.Activities.DynamicValue**. 
+
   - **CustomerId** (тип данных — **String**, область — **Root**): эта переменная используется для хранения идентификатора клиента, указанного пользователем.
     
   
@@ -456,7 +451,7 @@ OData  это протокол для создания и использован
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

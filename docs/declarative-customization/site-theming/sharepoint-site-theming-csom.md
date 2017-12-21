@@ -4,8 +4,8 @@
 
 ## <a name="prerequisites"></a>Предварительные требования
 Прежде чем приступить к работе, убедитесь, что вы знакомы с понятиями, описанными в следующих статьях:
-- [Использование клиентской объектной модели](https://msdn.microsoft.com/en-us/library/ff798388.aspx)
-- [Общие задачи программирования](https://msdn.microsoft.com/en-us/library/ee537013.aspx)
+- [Использование клиентской объектной модели](https://msdn.microsoft.com/ru-RU/library/ff798388.aspx)
+- [Общие задачи программирования](https://msdn.microsoft.com/ru-RU/library/ee537013.aspx)
 
 Вам также потребуется добавить ссылку на пакет NuGet [Microsoft.SharePointOnline.CSOM](https://www.nuget.org/packages/Microsoft.SharePointOnline.CSOM/) (версия 16.1.6906.1200 или более поздняя).
 
@@ -13,10 +13,10 @@
 
 В приведенном ниже примере показано, как создать объект __Microsoft.Online.SharePoint.TenantAdministration.Tenant__ и вызвать метод __GetAllTenantThemes__, чтобы вернуть список тем. 
 
->**Примечание.**
->* URL-адрес, используемый для создания объекта контекста, включает суффикс _-admin_, так как методы **TenantAdministration** работают с сайтом администрирования.
->* Создайте экземпляр объекта __Tenant__ с помощью [конструктора Tenant](https://msdn.microsoft.com/en-us/library/dn174852.aspx), а затем вызывайте методы в этом экземпляре.
->* Вы можете использовать тот же подход для вызова других методов управления темами.
+> [!NOTE]
+> * URL-адрес, используемый для создания объекта контекста, включает суффикс _-admin_, так как методы **TenantAdministration** работают с сайтом администрирования.
+> * Создайте экземпляр объекта __Tenant__ с помощью [конструктора Tenant](https://msdn.microsoft.com/ru-RU/library/dn174852.aspx), а затем вызывайте методы в этом экземпляре.
+> * Вы можете использовать тот же подход для вызова других методов управления темами.
 
 ```C#
 using System.Security;
@@ -80,43 +80,43 @@ public class SPOTheme
 ### <a name="addtenanttheme-public-method"></a>Общедоступный метод AddTenantTheme
 Добавляет тему к клиенту.
 
-__Пространство имен:__ Microsoft.Online.SharePoint.TenantAdministration.Tenant<br/>
-__Параметры:__ string name, string themeJson<br/>
-__Тип возвращаемых данных:__ ClientResult<bool>
+__Пространство имен:__ Microsoft.Online.SharePoint.TenantAdministration.Tenant.<br/>
+__Параметры:__ string name, string themeJson.<br/>
+__Тип возвращаемых данных:__ ClientResult<bool>.
 
 ### <a name="deletetenanttheme-public-method"></a>Общедоступный метод DeleteTenantTheme
 Удаляет тему из клиента.
 
-__Пространство имен:__ Microsoft.Online.SharePoint.TenantAdministration.Tenant<br/>
-__Параметры:__ string name<br/>
-__Тип возвращаемых данных:__ void
+__Пространство имен:__ Microsoft.Online.SharePoint.TenantAdministration.Tenant.<br/>
+__Параметры:__ string name.<br/>
+__Тип возвращаемых данных:__ void.
 
 ### <a name="getalltenantthemes-public-method"></a>Общедоступный метод GetAllTenantThemes
 Получает все темы, доступные в клиенте на данный момент, в том числе все добавленные настраиваемые темы. Стандартные темы включаются, только если свойству __HideDefaultThemes__ задано значение __false__ (оно используется по умолчанию).
 
-__Пространство имен:__ Microsoft.Online.SharePoint.TenantAdministration.Tenant<br/>
-__Параметры:__ нет<br/>
-__Тип возвращаемых данных:__ ClientObjectList<ThemeProperties>
+__Пространство имен:__ Microsoft.Online.SharePoint.TenantAdministration.Tenant.<br/>
+__Параметры:__ нет.<br/>
+__Тип возвращаемых данных:__ ClientObjectList<ThemeProperties>.
 
 ### <a name="gettenanttheme-public-method"></a>Общедоступный метод GetTenantTheme
 Получает тему по имени.
 
-__Пространство имен:__ Microsoft.Online.SharePoint.TenantAdministration.Tenant<br/>
-__Параметры:__ string name<br/>
-__Тип возвращаемых данных:__ ThemeProperties
+__Пространство имен:__ Microsoft.Online.SharePoint.TenantAdministration.Tenant.<br/>
+__Параметры:__ string name.<br/>
+__Тип возвращаемых данных:__ ThemeProperties.
 
 ### <a name="hidedefaultthemes-public-property"></a>Общедоступное свойство HideDefaultThemes
 Это свойство указывает, доступны ли стандартные темы в пользовательском интерфейсе выбора тем. По умолчанию задано значение __false__ (стандартные темы доступны), но вы можете задать для этого свойства значение __true__ после определения настраиваемых тем, чтобы разрешить использование только определенных тем.
 
-__Пространство имен:__ Microsoft.Online.SharePoint.TenantAdministration.Tenant<br/>
-__Тип:__ Boolean
+__Пространство имен:__ Microsoft.Online.SharePoint.TenantAdministration.Tenant.<br/>
+__Тип:__ Boolean.
 
 ### <a name="updatetenanttheme-public-method"></a>Общедоступный метод UpdateTenantTheme
 Обновляет параметры имеющейся темы.
 
-__Пространство имен:__ Microsoft.Online.SharePoint.TenantAdministration.Tenant<br/>
-__Параметры:__ string name, string themeJson<br/>
-__Тип возвращаемых данных:__ ClientResult<bool>
+__Пространство имен:__ Microsoft.Online.SharePoint.TenantAdministration.Tenant.<br/>
+__Параметры:__ string name, string themeJson.<br/>
+__Тип возвращаемых данных:__ ClientResult<bool>.
 
 ## <a name="methods-of-the-microsoftonlinesharepointtenantmanagementtenant-class"></a>Методы класса Microsoft.Online.SharePoint.TenantManagement.Tenant
 
@@ -125,50 +125,50 @@ __Тип возвращаемых данных:__ ClientResult<bool>
 ### <a name="addtenanttheme-public-method"></a>Общедоступный метод AddTenantTheme
 Добавляет тему к клиенту.
 
-__Пространство имен:__ Microsoft.Online.SharePoint.TenantManagement.Tenant<br/>
-__Параметры:__ string name, string themeJson<br/>
-__Тип возвращаемых данных:__ ClientResult<bool>
+__Пространство имен:__ Microsoft.Online.SharePoint.TenantManagement.Tenant.<br/>
+__Параметры:__ string name, string themeJson.<br/>
+__Тип возвращаемых данных:__ ClientResult<bool>.
 
 ### <a name="getalltenantthemes-public-method"></a>Общедоступный метод GetAllTenantThemes
 Получает все темы, доступные в клиенте на данный момент, в том числе все добавленные настраиваемые темы. Стандартные темы включаются, только если свойству __HideDefaultThemes__ задано значение __false__ (оно используется по умолчанию).
 
-__Пространство имен:__ Microsoft.Online.SharePoint.TenantManagement.Tenant<br/>
-__Параметры:__ нет<br/>
-__Тип возвращаемых данных:__ ClientObjectList<ThemeProperties>
+__Пространство имен:__ Microsoft.Online.SharePoint.TenantManagement.Tenant.<br/>
+__Параметры:__ нет.<br/>
+__Тип возвращаемых данных:__ ClientObjectList<ThemeProperties>.
 
 ### <a name="gethidedefaultthemes-public-method"></a>Общедоступный метод GetHideDefaultThemes
 Считывает текущее значение параметра для скрытия стандартных тем в пользовательском интерфейсе выбора темы.
 
-__Пространство имен:__ Microsoft.Online.SharePoint.TenantManagement.Tenant<br/>
-__Параметры:__ нет<br/>
-__Тип возвращаемых данных:__ ClientResult<bool>
+__Пространство имен:__ Microsoft.Online.SharePoint.TenantManagement.Tenant.<br/>
+__Параметры:__ нет.<br/>
+__Тип возвращаемых данных:__ ClientResult<bool>.
 
 ### <a name="gettenanttheme-public-method"></a>Общедоступный метод GetTenantTheme
 Получает тему по имени.
 
-__Пространство имен:__ Microsoft.Online.SharePoint.TenantManagement.Tenant<br/>
-__Параметры:__ string name<br/>
-__Тип возвращаемых данных:__ ThemeProperties
+__Пространство имен:__ Microsoft.Online.SharePoint.TenantManagement.Tenant.<br/>
+__Параметры:__ string name.<br/>
+__Тип возвращаемых данных:__ ThemeProperties.
 
 ### <a name="sethidedefaultthemes-public-method"></a>Общедоступный метод SetHideDefaultThemes
 Указывает, следует ли скрывать стандартные темы в пользовательском интерфейсе выбора тем.
 
-__Пространство имен:__ Microsoft.Online.SharePoint.TenantManagement.Tenant<br/>
-__Параметры:__ Boolean<br/>
-__Тип возвращаемых данных:__ void
+__Пространство имен:__ Microsoft.Online.SharePoint.TenantManagement.Tenant.<br/>
+__Параметры:__ Boolean.<br/>
+__Тип возвращаемых данных:__ void.
 
 ### <a name="updatetenanttheme-public-method"></a>Общедоступный метод UpdateTenantTheme
 Обновляет параметры имеющейся темы.
 
-__Пространство имен:__ Microsoft.Online.SharePoint.TenantManagement.Tenant<br/>
-__Параметры:__ string name, string themeJson<br/>
-__Тип возвращаемых данных:__ ClientResult<bool>
+__Пространство имен:__ Microsoft.Online.SharePoint.TenantManagement.Tenant.<br/>
+__Параметры:__ string name, string themeJson.<br/>
+__Тип возвращаемых данных:__ ClientResult<bool>.
 
 ## <a name="see-also"></a>См. также
 
-* [Обзор настройки тем для сайтов SharePoint](sharepoint-site-theming-overview.md)
+* [Настройка тем для сайтов SharePoint: обзор](sharepoint-site-theming-overview.md)
 * [Настройка тем для сайтов SharePoint: схема JSON](sharepoint-site-theming-json-schema.md)
 * [Настройка тем для сайтов SharePoint: командлеты PowerShell](sharepoint-site-theming-powershell.md)
 * [Настройка тем для сайтов SharePoint: REST API](sharepoint-site-theming-rest-api.md)
-* [Использование клиентской объектной модели](https://msdn.microsoft.com/en-us/library/ff798388.aspx)
-* [Общие задачи программирования](https://msdn.microsoft.com/en-us/library/ee537013.aspx)
+* [Использование клиентской объектной модели](https://msdn.microsoft.com/ru-RU/library/ff798388.aspx)
+* [Общие задачи программирования](https://msdn.microsoft.com/ru-RU/library/ee537013.aspx)

@@ -3,11 +3,11 @@ title: "Отладка рабочих процессов SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: a5adf39b-8640-4871-be60-b786dcf9fafc
-ms.openlocfilehash: c8bbf5be25d073bdc08cbccfe2642411269a25e1
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 49dd0e9ee38d6c1211af4dd813d1e932f480e830
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="debugging-sharepoint-workflows"></a>Отладка рабочих процессов SharePoint
 В этой статье описываются обработка рабочих процессов SharePoint и управление ими в Workflow Manager 1.0, а также способы отладки.
@@ -380,9 +380,8 @@ Fiddler может перехватывать трафик HTTPS и расшиф
     
 ![Рис. 7. Вкладка "HTTPS"](../images/ngDebuggingSP2013Workflows07.png)
   
-    
-    
- >**Примечание.** Если появится предупреждение системы безопасности с указанием не доверять сертификату Fiddler, нажмите кнопку **Yes** (Да), чтобы продолжить установку сертификата.
+> [!NOTE]
+> Если появится предупреждение системы безопасности с указанием не доверять сертификату Fiddler, нажмите кнопку **Yes** (Да), чтобы продолжить установку сертификата.
   
     
     
@@ -554,7 +553,7 @@ PS C:\\> net start WorkflowServiceBackend
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

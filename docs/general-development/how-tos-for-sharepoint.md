@@ -1,14 +1,14 @@
 ---
 title: "Инструкции для SharePoint"
 description: "Найдите статьи с инструкциями и связанные примеры кода, поясняющие, как выполнять основные задачи разработки в SharePoint, включая настройку среды разработки и начало создания сайтов, мобильных приложений и Надстройки SharePoint."
-ms.date: 11/10/2017
+ms.date: 11/30/2017
 ms.prod: sharepoint
 ms.assetid: ca78b080-0be4-4da4-b112-b86b1bde66e4
-ms.openlocfilehash: e88a4c269eaa29aa5f69768de948725210212302
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 8d6979d77a3a33446889b4774eef2e7e0f3c17eb
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="how-tos-for-sharepoint"></a>Инструкции для SharePoint
 
@@ -23,15 +23,12 @@ ms.lasthandoff: 11/15/2017
 |:-----|:-----|
 | [Настройка локальной среды разработки надстроек SharePoint](../sp-add-ins/set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md) <br/> |Узнайте, как настроить специальную среду разработки надстроек SharePoint с локальной установкой SharePoint.  <br/> |
 | [Знакомство с созданием надстроек SharePoint с размещением у поставщика](../sp-add-ins/get-started-creating-provider-hosted-sharepoint-add-ins.md) <br/> |Узнайте, как создавать базовое Надстройка SharePoint, размещенное у поставщика, с помощью Инструменты разработчика Office для Visual Studio 2012, как взаимодействовать с сайтами SharePoint с помощью SharePoint CSOM и как реализовать OAuth в Надстройка SharePoint.  <br/> |
-| [Знакомство с созданием надстроек SharePoint с размещением в SharePoint](../sp-add-ins/get-started-creating-sharepoint-hosted-sharepoint-add-ins.md) <br/> |Узнайте, как создавать базовое Надстройка SharePoint, размещенное в SharePoint, с помощью Инструменты разработчика Office для Visual Studio 2012.  <br/> |
+| [Знакомство с созданием надстроек SharePoint с размещением в SharePoint](../sp-add-ins/get-started-creating-sharepoint-hosted-sharepoint-add-ins.md) <br/> |Узнайте, как создать базовую надстройку SharePoint, размещаемую в SharePoint, с помощью набора "Инструменты разработчика Office для Visual Studio 2012".  <br/> |
    
-
-## <a name="development-how-tos-for-sharepoint-add-ins"></a>Инструкции по разработке для Надстройки SharePoint
 <a name="bk_devhowtos"> </a>
+## <a name="development-how-tos-for-sharepoint-add-ins"></a>Инструкции по разработке надстроек SharePoint
 
-
-
-|**Title**|**Описание**|
+|**Заголовок**|**Описание**|
 |:-----|:-----|
 | [Выполнение базовых операций с использованием кода библиотеки клиента в SharePoint](../sp-add-ins/complete-basic-operations-using-sharepoint-client-library-code.md) <br/> |Узнайте, как создавать код для выполнения основных операций с клиентской объектной моделью SharePoint .NET Framework (CSOM).  <br/> |
 | [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](../sp-add-ins/complete-basic-operations-using-javascript-library-code-in-sharepoint.md) <br/> |Узнайте, как писать код для выполнения базовых операций с помощью клиентской объектной модели JavaScript в SharePoint.  <br/> |
@@ -53,58 +50,46 @@ ms.lasthandoff: 11/15/2017
 | [Создание надстроек с высоким уровнем доверия для SharePoint](../sp-add-ins/create-high-trust-sharepoint-add-ins.md) <br/> |Узнайте, как создать приложение для SharePoint с высоким уровнем доверия. Приложения с высоким уровнем доверия  это приложения, размещаемое у поставщика, предназначенное для локального использования по протоколу S2S.  <br/> |
 | [Упаковка и публикация надстроек с высоким уровнем доверия для SharePoint](../sp-add-ins/package-and-publish-high-trust-sharepoint-add-ins.md) <br/> |Узнайте, как упаковать и опубликовать надстройку SharePoint с высоким уровнем доверия для локального использования.  <br/> |
    
-
-## <a name="publishing-how-tos-for-office-and-sharepoint-add-ins"></a>Инструкции по публикации для Надстройки Office и SharePoint
 <a name="bk_pubhowtos"> </a>
+## <a name="publishing-how-tos-for-office-and-sharepoint-add-ins"></a>Инструкции по публикации для Надстройки Office и SharePoint
 
-
-
-|**Title**|**Описание**|
+|**Заголовок**|**Описание**|
 |:-----|:-----|
-| [Публикация надстройки для SharePoint с помощью Visual Studio](http://msdn.microsoft.com/library/8137d0fa-52e2-4771-8639-60af80f693bb%28Office.15%29.aspx) <br/> |Узнайте, как упаковать свое Надстройка SharePoint с помощью Visual Studio 2012.  <br/> |
-| [Создание или редактирование учетной записи продавца в Панели мониторинга продаж и добавление сведений о выплатах](http://msdn.microsoft.com/library/6bd49ce6-c428-499c-96bb-6c857e48ecab%28Office.15%29.aspx) <br/> |Панель мониторинга продаж Майкрософт  это центральное место, куда разработчики приложений могут отправлять Надстройки Office и SharePoint. Узнайте, как создать учетную запись продавца, включая маркетинговый профиль, чтобы отправлять приложения в Магазин Office.  <br/> |
-| [Создание или обновление идентификаторов и секретов клиентов на Панели мониторинга продаж](http://msdn.microsoft.com/library/f7852781-922f-4499-9dd4-c266907a8c14%28Office.15%29.aspx) <br/> |Узнайте, как создавать идентификаторы и секреты клиентов и сопоставлять их с вашими приложениями в инструменте Панель мониторинга продаж, чтобы включить службу авторизации Open Authorization (OAuth) в ваших Надстройки Office и SharePoint.  <br/> |
-| [Отправка надстроек Office и SharePoint и приложений для Office 365 в Магазин Office с помощью Панели мониторинга продаж](http://msdn.microsoft.com/library/260ef238-0be4-42d6-ba15-1249a8e2ff12%28Office.15%29.aspx) <br/> |Панель мониторинга продаж Майкрософт позволяет разработчикам программного обеспечения отправлять приложения для SharePoint и Office в Магазин Office. Узнайте, как отправить ваши приложения для утверждения и добавления в Магазин Office.  <br/> |
-| [Создание эффективных приложений и надстроек Магазина Office](http://msdn.microsoft.com/library/c66a6e6b-2e96-458f-8f8c-2a499fe942c9%28Office.15%29.aspx) <br/> |Получите рекомендации о том, как создать эффективное описание для Магазин Office: присвоить приложению подходящее имя, написать убедительное и привлекательное описание, а также добавить подходящие, правильно отформатированные логотипы с изображением вашего приложения на Панель мониторинга продаж.  <br/> |
+| [Публикация надстройки для SharePoint с помощью Visual Studio](../sp-add-ins/publish-sharepoint-add-ins-by-using-visual-studio.md) <br/> |Узнайте, как упаковать свое Надстройка SharePoint с помощью Visual Studio 2012.  <br/> |
+| [Создание или редактирование учетной записи продавца в Панели мониторинга продаж и добавление сведений о выплатах](https://developer.microsoft.com/ru-RU/store/register) <br/> |Панель мониторинга продаж Майкрософт  это центральное место, куда разработчики приложений могут отправлять Надстройки Office и SharePoint. Узнайте, как создать учетную запись продавца, включая маркетинговый профиль, чтобы отправлять приложения в Магазин Office.  <br/> |
+| [Создание или обновление идентификаторов и секретов клиентов на Панели мониторинга продаж](https://docs.microsoft.com/ru-RU/office/dev/store/create-or-update-client-ids-and-secrets) <br/> |Узнайте, как создавать идентификаторы и секреты клиентов и сопоставлять их с вашими приложениями в инструменте Панель мониторинга продаж, чтобы включить службу авторизации Open Authorization (OAuth) в ваших Надстройки Office и SharePoint.  <br/> |
+| [Отправка надстроек Office и SharePoint и приложений для Office 365 в Магазин Office с помощью Панели мониторинга продаж](https://docs.microsoft.com/ru-RU/office/dev/store/use-the-seller-dashboard-to-submit-to-the-office-store) <br/> |Панель мониторинга продаж Майкрософт позволяет разработчикам программного обеспечения отправлять приложения для SharePoint и Office в Магазин Office. Узнайте, как отправить ваши приложения для утверждения и добавления в Магазин Office.  <br/> |
+| [Создание эффективных приложений и надстроек Магазина Office](https://docs.microsoft.com/ru-RU/office/dev/store/create-effective-office-store-listings) <br/> |Получите рекомендации о том, как создать эффективное описание для Магазин Office: присвоить приложению подходящее имя, написать убедительное и привлекательное описание, а также добавить подходящие, правильно отформатированные логотипы с изображением вашего приложения на Панель мониторинга продаж.  <br/> |
    
-
-## <a name="licensing-how-tos-for-office-and-sharepoint-add-ins"></a>Инструкции по лицензированию для Надстройки Office и SharePoint
 <a name="bk_lichowtos"> </a>
+## <a name="licensing-how-tos-for-office-and-sharepoint-add-ins"></a>Инструкции по лицензированию для Надстройки Office и SharePoint
 
-
-
-|**Title**|**Описание**|
+|**Заголовок**|**Описание**|
 |:-----|:-----|
-| [Практическое руководство по добавлению проверок лицензии в приложение для Office](http://msdn.microsoft.com/library/996c5f3c-2cb0-474f-b452-0d835949bdf7%28Office.15%29.aspx) <br/> |Узнайте, как добавить в Надстройка Office код, который проверяет допустимость лицензии приложения пользователя и выполняет действия на основе свойств лицензии. Скачайте тестовые маркеры лицензии приложения, чтобы протестировать свой код проверки лицензии.  <br/> |
-| [Добавление проверок лицензии в надстройки Office и SharePoint](http://msdn.microsoft.com/library/eec76f9d-134a-4e88-b0c8-3d3067da2f61%28Office.15%29.aspx) <br/> |Узнайте, как добавить в ваше Надстройка SharePoint код, который проверяет допустимость лицензии приложения пользователя и принимает меры на основе свойств лицензии. Скачайте тестовые маркеры лицензии приложения, чтобы протестировать ваш код проверки лицензии.  <br/> |
+| [Практическое руководство по добавлению проверок лицензии в приложение для Office](https://msdn.microsoft.com/library/fp161347.aspx) <br/> |Узнайте, как добавить в Надстройка Office код, который проверяет допустимость лицензии приложения пользователя и выполняет действия на основе свойств лицензии. Скачайте тестовые маркеры лицензии приложения, чтобы протестировать свой код проверки лицензии.  <br/> |
+| [Добавление проверок лицензии в надстройки Office и SharePoint](https://docs.microsoft.com/ru-RU/office/dev/store/add-license-checks-to-office-and-sharepoint-add-ins) <br/> |Узнайте, как добавить в ваше Надстройка SharePoint код, который проверяет допустимость лицензии приложения пользователя и принимает меры на основе свойств лицензии. Скачайте тестовые маркеры лицензии приложения, чтобы протестировать ваш код проверки лицензии.  <br/> |
    
-
-## <a name="setting-up-your-dev-environment-how-tos-for-developing-sites-and-solutions-in-sharepoint"></a>Инструкции по настройке среды разработки для создания сайтов и решений в SharePoint
 <a name="bk_setuphowtos"> </a>
+## <a name="setting-up-your-dev-environment-how-tos-for-developing-sites-and-solutions-in-sharepoint"></a>Инструкции по настройке среды разработки для создания сайтов и решений в SharePoint
 
-
-|**Title**|**Сводка**|
+|**Заголовок**|**Сводка**|
 |:-----|:-----|
 | [Определение установленных SKU SharePoint](how-to-detect-the-installed-sku-of-sharepoint.md) <br/> |Если поведение ваших решений зависит от локально установленного SKU для SharePoint или Project Server 2013, используйте примеры кода из данной статьи, чтобы найти необходимую информацию о SKU.  <br/> |
 | [Настройка среды разработки мобильных приложений для SharePoint](how-to-set-up-an-environment-for-developing-mobile-apps-for-sharepoint.md) <br/> |Узнайте о требованиях к системе и настройке среды разработки для мобильных проектов SharePoint.  <br/> |
    
-
-## <a name="customization-how-tos-for-sharepoint"></a>Инструкции по настройке для SharePoint
 <a name="bk_customhowtos"> </a>
+## <a name="customization-how-tos-for-sharepoint"></a>Инструкции по настройке для SharePoint
 
-
-|**Title**|**Сводка**|
+|**Заголовок**|**Сводка**|
 |:-----|:-----|
 | [Настройка типа поля с помощью клиентской обработки](how-to-customize-a-field-type-using-client-side-rendering.md) <br/> |Узнайте, как настроить тип поля с помощью технологии клиентской обработки в SharePoint.  <br/> |
 | [Настройка запросов на обработку элементов списков и фильтрация данных для приложений Windows Phone](how-to-customize-list-item-queries-and-filter-data-for-windows-phone-apps.md) <br/> |Настройте запросы на получение данных, лежащие в основе представлений в приложении Windows Phone.  <br/> |
-| [Настройка пользовательского интерфейса для приложения списка SharePoint на устройстве с Windows Phone](how-to-customize-the-user-interface-of-a-sharepoint-list-app-for-windows-ph.md) <br/> |Настройте пользовательский интерфейс Windows Phone, созданный с помощью шаблона приложения списка SharePoint для Windows Phone.  <br/> |
+| [Настройка пользовательского интерфейса для приложения списка SharePoint на устройстве с Windows Phone](how-to-customize-the-user-interface-of-a-sharepoint-list-app-for-windows-ph.md) <br/> |Настройте пользовательский интерфейс Windows Phone, созданный с использованием шаблона приложения списка SharePoint для Windows Phone.  <br/> |
    
-
-## <a name="building-mobile-apps-how-tos-for-sharepoint"></a>Инструкции по созданию мобильных приложений для SharePoint
 <a name="bk_mobilehowtos"> </a>
+## <a name="building-mobile-apps-how-tos-for-sharepoint"></a>Инструкции по созданию мобильных приложений для SharePoint
 
-
-|**Title**|**Сводка**|
+|**Заголовок**|**Сводка**|
 |:-----|:-----|
 | [Настройка среды разработки мобильных приложений для SharePoint](how-to-set-up-an-environment-for-developing-mobile-apps-for-sharepoint.md) <br/> |Узнайте о требованиях к системе и настройке среды разработки для мобильных проектов SharePoint.  <br/> |
 | [Создание приложения списка SharePoint для Windows Phone](how-to-create-a-windows-phone-sharepoint-list-app.md) <br/> |Создайте приложение Windows Phone в Visual Studio на основе шаблона приложения списка SharePoint для Windows Phone.  <br/> |
@@ -120,13 +105,10 @@ ms.lasthandoff: 11/15/2017
 | [Создание мобильных приложений, ориентированных на поиск, с помощью интерфейсов навигации и ведения журнала событий REST](how-to-build-search-driven-mobile-apps-with-the-navigation-and-event-logging-res.md) <br/> |В SharePoint реализованы интерфейсы навигации и ведения журнала событий REST, позволяющие создать ориентированное на поиск мобильное приложение для телефонов и планшетов под управлением операционных систем, отличных от Windows (например, Android и iOS).  <br/> |
 | [Экспорт поля "Имя" из списка "Библиотека документов" в мобильное приложение](how-to-export-the-name-field-in-a-document-library-list-to-a-mobile-app.md) <br/> |Экспортируйте в мобильное приложение поле "Имя" из списка библиотеки документов с помощью мастера создания списков SharePoint для Visual Studio. Когда пользователь создает мобильное приложение для библиотеки документов в SharePoint, это поле не отображается автоматически.  <br/> |
    
-
-## <a name="building-sites-using-design-manager-how-tos-for-sharepoint"></a>Инструкции для SharePoint по созданию сайтов с помощью Дизайнера
 <a name="bk_buildsiteshowtos"> </a>
+## <a name="building-sites-using-design-manager-how-tos-for-sharepoint"></a>Инструкции для SharePoint по созданию сайтов с помощью Дизайнера
 
-
-
-|**Title**|**Сводка**|
+|**Заголовок**|**Сводка**|
 |:-----|:-----|
 | [Закрепление терминов в наборах терминов навигации в SharePoint с помощью кода](how-to-use-code-to-pin-terms-to-navigation-term-sets-in-sharepoint.md) <br/> |Узнайте, как использовать код, чтобы закрепить термины в наборах терминов навигации.  <br/> |
 | [Создание каналов устройств в SharePoint](http://msdn.microsoft.com/library/339c7dba-95ee-46e0-8c76-0fe1adb6f366.aspx) <br/> |Узнайте, как создать, изменить и удалить канал устройств, а также изменить порядок этих каналов в SharePoint.  <br/> |
@@ -141,26 +123,20 @@ ms.lasthandoff: 11/15/2017
 | [Как добавить фрагмент кода "Зона веб-частей" в SharePoint](how-to-add-a-web-part-zone-snippet-in-sharepoint.md) <br/> |Зона веб-частей  это фрагмент, который можно добавить к макету страницы, чтобы авторы контента могли добавлять, редактировать и удалять веб-части в этой зоне.  <br/> |
 | [Как добавить фрагмент кода "Фильтрация по ролям безопасности" в SharePoint](how-to-add-a-security-trim-snippet-in-sharepoint.md) <br/> |Вы можете использовать фрагмент фильтрации по ролям безопасности, чтобы отображать контент только для указанных пользователей, имеющих специальное разрешение и прошедших или не прошедших (анонимные пользователи) проверку подлинности.  <br/> |
 | [Дизайнер SharePoint изображений](sharepoint-design-manager-image-renditions.md) <br/> |Узнайте, как создавать, изменять или удалять представления изображений. Представление изображения определяет размеры, которые используются для отображения изображений на сайтах публикации SharePoint.  <br/> |
-| [Как: Добавление преобразованной копии изображения на страницу SharePoint](http://msdn.microsoft.com/library/ddf54c98-5ebc-4171-bcbe-927cc982bca5.aspx) <br/> |Узнайте, как использовать представления изображений на сайте публикации SharePoint.  <br/> |
-| [Как: обрезать представление изображения в SharePoint](http://msdn.microsoft.com/library/3a6efae9-b18f-4032-b0db-809e611ce9b7.aspx) <br/> |Узнайте, как использовать в представлении изображения указанную часть изображения.  <br/> |
+| [Как: Добавление преобразованной копии изображения на страницу SharePoint](https://msdn.microsoft.com/library/fp161347.aspx) <br/> |Узнайте, как использовать представления изображений на сайте публикации SharePoint.  <br/> |
+| [Как: обрезать представление изображения в SharePoint](https://msdn.microsoft.com/library/fp161347.aspx) <br/> |Узнайте, как использовать в представлении изображения указанную часть изображения.  <br/> |
    
-
-## <a name="workflow-how-tos-for-sharepoint"></a>Инструкции для SharePoint, касающиеся рабочих процессов
 <a name="bk_workflowshowtos"> </a>
+## <a name="workflow-how-tos-for-sharepoint"></a>Инструкции для SharePoint, касающиеся рабочих процессов
 
-
-
-|**Title**|**Сводка**|
+|**Заголовок**|**Сводка**|
 |:-----|:-----|
 | [Создание и развертывание дополнительных действий рабочего процесса](how-to-build-and-deploy-workflow-custom-actions.md) <br/> |Узнайте, как моделировать бизнес-процессы, требования которых не соблюдаются существующей библиотекой действий бизнес-процессов в SharePoint Designer, путем создания пользовательских бизнес-процессов в SharePoint.  <br/> |
    
-
-## <a name="social-and-collaboration-how-tos-for-sharepoint"></a>Инструкции для SharePoint по социальным сетям и совместной работе
 <a name="bk_socialhowtos"> </a>
+## <a name="social-and-collaboration-how-tos-for-sharepoint"></a>Инструкции для SharePoint по социальным сетям и совместной работе
 
-
-
-|**Title**|**Сводка**|
+|**Заголовок**|**Сводка**|
 |:-----|:-----|
 | [Чтение и запись в веб-каналах социальных медиа при помощи клиентской объектной модели .NET в SharePoint](how-to-learn-to-read-and-write-to-the-social-feed-by-using-the-net-client-object.md) <br/> |Создайте консольное приложение, которое читает канал социальных медиа и пишет в него с помощью клиентской объектной модели .NET для SharePoint.  <br/> |
 | [Чтение и запись в веб-каналах социальных медиа при помощи службы REST в SharePoint](how-to-learn-to-read-and-write-to-the-social-feed-by-using-the-rest-service-in-s.md) <br/> |Создайте приложение, размещаемое в SharePoint, которое использует службу REST для публикации записи и получения личного веб-канала для текущего пользователя.  <br/> |
@@ -168,7 +144,7 @@ ms.lasthandoff: 11/15/2017
 | [Как создавать и удалять записи, а также получать веб-каналы социальных медиа, используя объектную модель JavaScript в SharePoint](how-to-create-and-delete-posts-and-retrieve-the-social-feed-by-using-the-javascr.md) <br/> |Узнайте, как создавать и удалять записи микроблогов, а также получать веб-каналы социальных медиа, используя объектную модель JavaScript для SharePoint.  <br/> |
 | [Как добавлять в записи упоминания, теги и ссылки на сайты и документы в SharePoint](how-to-include-mentions-tags-and-links-to-sites-and-documents-in-posts-in-sharep.md) <br/> |Узнайте, как добавлять в записи микроблога объекты [SocialDataItem](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialDataItem.aspx), которые обрабатываются в веб-каналах социальных медиа SharePoint как упоминания, теги или ссылки. <br/> |
 | [Как внедрять в записи изображения, видео и документы в SharePoint](how-to-embed-images-videos-and-documents-in-posts-in-sharepoint-server.md) <br/> |Узнайте, как добавлять в записи микроблога объекты [SocialAttachment](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialAttachment.aspx), которые обрабатываются в веб-каналах социальных медиа SharePoint как внедренные рисунки, видео и документы. <br/> |
-| [Как подписываться на пользователей, используя клиентскую объектную модель .NET в SharePoint](how-to-follow-people-by-using-the-net-client-object-model-in-sharepoint.md) <br/> |Узнайте, как применять возможности подписки на пользователей, используя клиентскую объектную модель .NET в SharePoint.  <br/> |
+| [Как подписываться на пользователей, применяя клиентскую объектную модель .NET в SharePoint](how-to-follow-people-by-using-the-net-client-object-model-in-sharepoint.md) <br/> |Узнайте, как применять возможности подписки на пользователей, используя клиентскую объектную модель .NET в SharePoint.  <br/> |
 | [Как подписываться на пользователей, используя объектную модель JavaScript в SharePoint](how-to-follow-people-by-using-the-javascript-object-model-in-sharepoint.md) <br/> |Узнайте, как применять возможности подписки на пользователей с помощью объектной модели JavaScript для SharePoint.  <br/> |
 | [Как подписываться на документы и сайты, используя клиентскую объектную модель .NET в SharePoint](how-to-follow-documents-and-sites-by-using-the-net-client-object-model-in-sharep.md) <br/> |Узнайте, как применять возможности подписки на контент, используя клиентскую объектную модель .NET в SharePoint.  <br/> |
 | [Как подписываться на документы, сайты и теги, используя службу REST в SharePoint](how-to-follow-documents-sites-and-tags-by-using-the-rest-service-in-sharepoint-2.md) <br/> |Узнайте, как применять возможности подписки на контент, используя службу REST в SharePoint.  <br/> |
@@ -176,24 +152,19 @@ ms.lasthandoff: 11/15/2017
 | [Как получать свойства профилей пользователей, используя объектную модель JavaScript в SharePoint](how-to-retrieve-user-profile-properties-by-using-the-javascript-object-model-in.md) <br/> |Узнайте, как программно получить свойства пользователя и его профиля с помощью объектной модели JavaScript для SharePoint.  <br/> |
 | [Работа с профилями пользователей и организации с использованием серверной объектной модели в SharePoint](how-to-work-with-user-profiles-and-organization-profiles-by-using-the-server-obj.md) <br/> |Узнайте, как программно создавать, получать и изменять профили пользователей SharePoint и свойства этих профилей с помощью серверной объектной модели SharePoint.  <br/> |
    
-
-## <a name="integrating-location-and-map-functionality-how-tos-for-sharepoint"></a>Инструкции по интеграции местонахождения и функционала карт для SharePoint
 <a name="bk_locationhowtos"> </a>
+## <a name="integrating-location-and-map-functionality-how-tos-for-sharepoint"></a>Инструкции по интеграции местонахождения и функционала карт для SharePoint
 
-
-|**Title**|**Сводка**|
+|**Заголовок**|**Сводка**|
 |:-----|:-----|
 | [Программный способ добавления столбца "Географическое положение" в список SharePoint](how-to-add-a-geolocation-column-to-a-list-programmatically-in-sharepoint.md) <br/> |Узнайте, как программно добавить в список в SharePoint столбец о географическом положении. Интегрируйте в список SharePoint и веб-сайты, зависимые от местоположения, информацию о местонахождении и карты с помощью нового поля о географическом положении, создающего собственные типы поля на основе географического положения.  <br/> |
 | [Настройка ключа службы "Карты Bing" в SharePoint на уровне фермы и веб-сайта](how-to-set-the-bing-maps-key-at-the-web-and-farm-level-in-sharepoint.md) <br/> |Узнайте, как программно задать ключ Карт Bing на веб-уровне и уровне фермы с помощью клиентской объектной модели SharePoint и Windows PowerShell, чтобы включить функционал Карт Bing в списке SharePoint, а также в веб-приложениях и мобильных приложениях на основе местоположения.  <br/> |
 | [Дополнение типа поля "Географическое положение" с использованием клиентской обработки](how-to-extend-the-geolocation-field-type-using-client-side-rendering.md) <br/> |Узнайте, как программно настроить тип поля "Географическое положение" в SharePoint с использованием клиентской обработки.  <br/> |
    
-
-## <a name="search-how-tos-for-sharepoint"></a>Инструкции по поиску для SharePoint
 <a name="bk_searchhowtos"> </a>
+## <a name="search-how-tos-for-sharepoint"></a>Инструкции по поиску для SharePoint
 
-
-
-|**Title**|**Сводка**|
+|**Заголовок**|**Сводка**|
 |:-----|:-----|
 | [Как выполнять обход связанных внешних типов контента в SharePoint](how-to-crawl-associated-external-content-types-in-sharepoint.md) <br/> |Узнайте, как использовать определенные свойства поиска в модели метаданных Служба подключения к бизнес-данным (BDC) для обхода связей и различные доступные способы взаимодействия с пользователем.  <br/> |
 | [Как выполнять обход больших двоичных объектов в SharePoint](how-to-crawl-binary-large-objects-blobs-in-sharepoint.md) <br/> |Узнайте, как можно модифицировать файл модели BCS для соединителя индексации BCS базы данных, чтобы включить программу-обходчик для Поиск в SharePoint для обхода больших двоичных объектов (BLOB), хранимых в базе данных SQL Server.  <br/> |
@@ -201,12 +172,10 @@ ms.lasthandoff: 11/15/2017
 | [Использование вызова веб-службы обогащения контента для SharePoint Server](how-to-use-the-content-enrichment-web-service-callout-for-sharepoint-server.md) <br/> |Узнайте, как сделать так, чтобы веб-служба обогащения контента в SharePoint изменяла управляемые свойства обойденных элементов перед их индексацией.  <br/> |
 | [Использование специального триммера безопасности для результатов поиска в SharePoint Server](how-to-use-a-custom-security-trimmer-for-sharepoint-server-search-results.md) <br/> |Узнайте, как создать, развернуть и зарегистрировать пользовательский триммер безопасности для службы поиска в SharePoint, используя Visual Studio 2010.  <br/> |
    
-
-## <a name="bcs-how-tos-for-sharepoint"></a>Руководства по BCS для SharePoint
 <a name="bk_bcshowtos"> </a>
+## <a name="bcs-how-tos-for-sharepoint"></a>Руководства по BCS для SharePoint
 
-
-|**Title**|**Сводка**|
+|**Заголовок**|**Сводка**|
 |:-----|:-----|
 | [Как создавать внешние типы контента для SQL Server в SharePoint](how-to-create-external-content-types-for-sql-server-in-sharepoint.md) <br/> |Узнайте, как создать внешний тип контента для SQL Server в SharePoint.  <br/> |
 | [Как создать внешний тип контента из источника OData в SharePoint](how-to-create-an-external-content-type-from-an-odata-source-in-sharepoint.md) <br/> |Узнайте, как использовать Visual Studio 2012 для обнаружения опубликованных источников OData и создания внешнего типа контента для многократного использования в BCS в SharePoint.  <br/> |
@@ -216,13 +185,10 @@ ms.lasthandoff: 11/15/2017
 | [Доступ к внешним данным с помощью REST в SharePoint](how-to-access-external-data-with-rest-in-sharepoint.md) <br/> |Узнайте, как получить доступ к внешним данным из SharePoint с использованием URL-адресов REST для BCS.  <br/> |
 | [Доступ к внешним данным с помощью библиотеки клиентского кода в SharePoint](how-to-use-the-client-code-library-to-access-external-data-in-sharepoint.md) <br/> |Узнайте, как использовать клиентскую объектную модель SharePoint для работы с объектами BCS в SharePoint с помощью написания скриптов для браузера.  <br/> |
    
-
-## <a name="office-and-sharepoint-application-services-how-tos-for-sharepoint"></a>Инструкции по службам приложений Office и SharePoint для SharePoint
 <a name="bk_appservhowtos"> </a>
+## <a name="office-and-sharepoint-application-services-how-tos-for-sharepoint"></a>Инструкции по службам приложений Office и SharePoint для SharePoint
 
-
-
-|**Title**|**Сводка**|
+|**Заголовок**|**Сводка**|
 |:-----|:-----|
 | [Создание отрисовщиков отчетов для PerformancePoint Services в SharePoint](how-to-create-report-renderers-for-performancepoint-services-in-sharepoint.md) <br/> |Узнайте, как создать компонент отрисовщика в расширении специальных отчетов для PerformancePoint Services.  <br/> |
 | [Создание редакторов отчетов для PerformancePoint Services в SharePoint](how-to-create-report-editors-for-performancepoint-services-in-sharepoint.md) <br/> |Узнайте, как создать компонент редактора расширения специальных отчетов для PerformancePoint Services.  <br/> |
@@ -232,23 +198,20 @@ ms.lasthandoff: 11/15/2017
 | [Создание редакторов источников табличных данных для PerformancePoint Services в SharePoint](how-to-create-tabular-data-source-editors-for-performancepoint-services-in-share.md) <br/> |Узнайте, как создать компонент редактора в расширении источника специальных табличных данных для PerformancePoint Services.  <br/> |
 | [Как создать преобразования системы показателей для PerformancePoint Services в SharePoint](how-to-create-scorecard-transforms-for-performancepoint-services-in-sharepoint-2.md) <br/> |Узнайте, как создать специальные преобразования системы показателей для PerformancePoint Services в SharePoint.  <br/> |
    
-
-## <a name="authentication-authorization-and-security-how-tos-in-sharepoint"></a>Руководства по аутентификации, авторизации и безопасности в SharePoint
 <a name="bk_authhowtos"> </a>
+## <a name="authentication-authorization-and-security-how-tos-in-sharepoint"></a>Руководства по аутентификации, авторизации и безопасности в SharePoint
 
-|**Title**|**Сводка**|
+|**Заголовок**|**Сводка**|
 |:-----|:-----|
 | [Создание поставщика утверждений в SharePoint](how-to-create-a-claims-provider-in-sharepoint.md) <br/> |Узнайте, как создать и реализовать поставщика утверждений SharePoint, который соответствует требованиям по дополнению и отбору утверждений.  <br/> |
-| [Развертывание поставщика утверждений в SharePoint](how-to-deploy-a-claims-provider-in-sharepoint.md) <br/> |Узнайте, как развернуть поставщика утверждений SharePoint с использованием инфраструктуры функций и созданием класса, наследуемого из [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx). <br/> |
+| [Развертывание поставщика утверждений в SharePoint](how-to-deploy-a-claims-provider-in-sharepoint.md) <br/> |Узнайте, как развернуть поставщика утверждений SharePoint, используя инфраструктуру функций и создав класс, наследуемый от [SPClaimProviderFeatureReceiver](https://msdn.microsoft.com/library/Microsoft.SharePoint.Administration.Claims.SPClaimProviderFeatureReceiver.aspx). <br/> |
    
-
-## <a name="additional-resources"></a>Дополнительные ресурсы
 <a name="bk_addresc_howtos"> </a>
+## <a name="see-also"></a>См. также
 
--  [Общая разработка SharePoint](http://msdn.microsoft.com/library/fc829689-7cef-469d-a04c-4a433e49828a%28Office.15%29.aspx)
+-  [Общие сведения, касающиеся разработки для SharePoint](https://msdn.microsoft.com/ru-RU/library/office/mt674607.aspx)
 -  [Примеры кода для SharePoint](code-samples-for-sharepoint.md)
--  [Центр разработки для SharePoint](http://msdn.microsoft.com/ru-RU/sharepoint)
--  [Примеры кода SharePoint](http://code.msdn.microsoft.com/sharepoint) (в Центре разработки SharePoint)
--  [Блог команды Microsoft SharePoint](http://sharepoint.microsoft.com/blog/Pages/default.aspx)
+-  [Примеры кода для SharePoint](http://code.msdn.microsoft.com/sharepoint) (в Центре разработки для SharePoint)
+-  [Блог команды Microsoft SharePoint](https://blogs.office.com/ru-RU/sharepoint/)
     
   

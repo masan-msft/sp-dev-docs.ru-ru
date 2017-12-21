@@ -2,11 +2,11 @@
 title: "Работа со списками и элементами списков в службе REST"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 66e9b7f7e622fe3df661c102fc1d62fde421f31e
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ec63b7dcf294e4a6248ca5c6014b6807f116f655
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="working-with-lists-and-list-items-with-rest"></a>Работа со списками и элементами списков в службе REST
 Узнайте, как выполнять базовые операции CRUD (создание, чтение, обновление и удаление) со списками и элементами списков с помощью интерфейса REST в SharePoint.
@@ -27,7 +27,8 @@ Headers:
     accept: "application/json;odata=verbose" or "application/atom+xml"
 
 ```
- **Примечание.** Если вы хотите получить ответ в формате JSON, укажите `application/json;odata=verbose` в заголовке `accept`. Если вы хотите получить ответ в формате Atom, укажите `application/atom+xml` в заголовке `accept`.
+> [!NOTE]
+> Укажите `application/json;odata=verbose` в заголовке `accept`, если хотите получить отклик в формате JSON. Укажите `application/atom+xml` в заголовке `accept`, если хотите получить отклик в формате Atom.
  
 В следующем примере показано, как **получить** определенный список, если вы знаете его название.
 
@@ -84,7 +85,8 @@ Headers:
     </m:properties>
   </content>
 ```
- **Примечание.** Свойство **ListItemEntityTypeFullName** (в предыдущем примере — **SP.Data.ProjectPolicyItemListItem**) особенно важно, если вы хотите создать и обновить элементы списка. Это значение должно передаваться в виде свойства **type** в тексте HTTP-запроса каждый раз, когда вы создаете и обновляете элементы списка.
+> [!NOTE]
+> Свойство **ListItemEntityTypeFullName** (в предыдущем примере — **SP.Data.ProjectPolicyItemListItem**) особенно важно, если вы хотите создать и обновить элементы списка. Это значение должно передаваться как свойство **type** в метаданных тела HTTP-запроса каждый раз, когда вы создаете и обновляете элементы списка.
 
 ## <a name="working-with-lists-by-using-rest"></a>Работа со списками с помощью REST
 <a name="WorkLists"> </a> В следующем примере показано, как **создать** список.
@@ -146,7 +148,8 @@ Headers:
 ## <a name="working-with-list-items-by-using-rest"></a>Работа с элементами списка с помощью REST
 <a name="ListItems"> </a> В следующем примере показано, как **получить** все элементы списка.
  
- **Примечание.** Параметр запроса OData $skip не работает при запросе элементов списка. Обычно вместо него можно использовать параметр [$skiptoken](http://msdn.microsoft.com/library/4dda9434-c2c5-4577-8e01-7bf9e822d90a.aspx).
+> [!NOTE]
+> Параметр запроса OData $skip не работает при запрашивании элементов списка. Вместо него в большинстве случаев можете использовать параметр [$skiptoken](http://msdn.microsoft.com/library/4dda9434-c2c5-4577-8e01-7bf9e822d90a.aspx).
 
 ```
 url: http://site url/_api/web/lists/GetByTitle('Test')/items
@@ -191,7 +194,8 @@ headers:
 
 В следующем примере показано, как **создать** элемент списка.
 
- **Примечание.** Чтобы выполнить эту операцию, необходимо знать свойство **ListItemEntityTypeFullName** списка и передать его как значение **type** в тексте HTTP-запроса.
+> [!NOTE]
+> Для выполнения этой операции вам необходимо знать свойство **ListItemEntityTypeFullName** списка и передать его как значение **type** в теле HTTP-запроса.
 
 ```
 url: http://site url/_api/web/lists/GetByTitle('Test')/items
@@ -207,7 +211,8 @@ headers:
 
 В следующем примере показано, как **обновить** элемент списка.
 
- **Примечание.** Чтобы выполнить эту операцию, необходимо знать свойство **ListItemEntityTypeFullName** списка и передать его как значение **type** в тексте HTTP-запроса.
+> [!NOTE]
+> Для выполнения этой операции вам необходимо знать свойство **ListItemEntityTypeFullName** списка и передать его как значение **type** в теле HTTP-запроса.
 
 ```
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
@@ -247,7 +252,7 @@ headers:
     
 В SharePoint значения ETag применяются только к спискам SharePoint и элементам списков.
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Выполнение базовых операций с использованием конечных точек SharePoint REST](complete-basic-operations-using-sharepoint-rest-endpoints.md)

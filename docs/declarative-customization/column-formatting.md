@@ -10,6 +10,9 @@
 
 ![Список SharePoint с тремя отформатированными столбцами](../images/sp-columnformatting-all.png)
 
+> [!TIP]
+> Примеры из этой статьи, а также многочисленные другие примеры с сайта сообщества есть в репозитории GitHub, посвященном определениям форматирования столбцов в открытом доступе. Вы можете найти эти примеры в репозитории [sp-dev-column-formatting](https://github.com/SharePoint/sp-dev-column-formatting) организации [SharePoint](https://github.com/SharePoint) на сайте GitHub.
+
 ## <a name="how-is-column-formatting-different-than-the-field-customizer"></a>Чем форматирование столбцов отличается от применения расширения Field Customizer?
 Применяя как форматирование столбцов, так и расширения типа [Field Customizer в SharePoint Framework](https://docs.microsoft.com/ru-RU/sharepoint/dev/spfx/extensions/get-started/building-simple-field-customizer), можно настраивать отображение полей в списках SharePoint. Настройщик полей — универсальный инструмент, так как позволяет создавать любой код для управления отображением поля. Форматирование столбцов проще и доступнее, но не так универсально, так как не позволяет создавать пользовательский код и поддерживает только предопределенные элементы и атрибуты. 
 

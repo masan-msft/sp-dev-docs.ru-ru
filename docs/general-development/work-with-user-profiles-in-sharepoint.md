@@ -3,11 +3,11 @@ title: "Работа с профилями пользователей в SharePo
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 7437a7a8-85cb-4233-84af-1eec30dd54b2
-ms.openlocfilehash: 4561b7e5f0cab4370c01421f19edc50bd803bd5d
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: ba2c4023a1a164ca4313d3adc10ce0a0abbbfa85
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="work-with-user-profiles-in-sharepoint"></a>Работа с профилями пользователей в SharePoint
 Узнайте о распространенных задачах программирования для работы с профилями пользователей в SharePoint.
@@ -41,20 +41,16 @@ ms.lasthandoff: 10/13/2017
   
 Согласно передовой практике в разработке SharePoint, используйте клиентские интерфейсы API, когда это возможно. Клиентские интерфейсы API включают клиентскую объектную модель .NET, объектную модель JavaScript и службу REST. Более подробную информацию об интерфейсах API в SharePoint и их использовании можно узнать в статье  [Выбор правильного набора API в SharePoint](choose-the-right-api-set-in-sharepoint.md).
   
-    
-    
-
-> **Примечание.** Не все функции, включенные в сборку **Microsoft.Office.Server.UserProfiles**, доступны в клиентских API. Например, для создания и изменения профилей пользователей необходимо использовать серверную объектную модель, так как они доступны только для чтения в клиентских API (за исключением аватара пользователя). Кроме того, со стороны клиента невозможно получить доступ к некоторым пространствам имен, например [Microsoft.Office.Server.Audience](https://msdn.microsoft.com/library/Microsoft.Office.Server.Audience.aspx), [Microsoft.Office.Server.ReputationModel](https://msdn.microsoft.com/library/Microsoft.Office.Server.ReputationModel.aspx) или [Microsoft.Office.Server.SocialData](https://msdn.microsoft.com/library/Microsoft.Office.Server.SocialData.aspx). Сведения о том, какие функции поддерживаются клиентскими API, см. в статьях [Microsoft.SharePoint.Client.Social](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.aspx) и [Microsoft.SharePoint.Client.UserProfiles](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.aspx).
+> [!NOTE] 
+> Не все функции, включенные в сборку **Microsoft.Office.Server.UserProfiles**, доступны в клиентских API. Например, для создания и изменения профилей пользователей необходимо использовать серверную объектную модель, так как они доступны только для чтения в клиентских API (за исключением аватара пользователя). Кроме того, со стороны клиента невозможно получить доступ к некоторым пространствам имен, например [Microsoft.Office.Server.Audience](https://msdn.microsoft.com/library/Microsoft.Office.Server.Audience.aspx), [Microsoft.Office.Server.ReputationModel](https://msdn.microsoft.com/library/Microsoft.Office.Server.ReputationModel.aspx) или [Microsoft.Office.Server.SocialData](https://msdn.microsoft.com/library/Microsoft.Office.Server.SocialData.aspx). Сведения о том, какие функции поддерживаются клиентскими API, см. в статьях [Microsoft.SharePoint.Client.Social](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.aspx) и [Microsoft.SharePoint.Client.UserProfiles](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.aspx).
   
     
     
 
 Каждый интерфейс API включает диспетчер объектов, который можно использовать для выполнения основных задач, связанных с профилем. В таблице 1 приведен диспетчер и другие ключевые объекты (или источники REST) в интерфейсах API, а также библиотека классов (или точка доступа), где их можно найти.
   
-    
-    
-
-> **Примечание.** Клиентские объектные модели для Silverlight и мобильных устройств не представлены в таблицах 1 и 2, так как они предоставляют те же основные функции, что и клиентская объектная модель .NET, и используют те же подписи. Клиентская объектная модель Silverlight определена в библиотеке Microsoft.SharePoint.Client.UserProfiles.Silverlight.dll, а клиентская объектная модель для мобильных устройств — в библиотеке Microsoft.SharePoint.Client.UserProfiles.Phone.dll. 
+> [!NOTE] 
+> [!Примечание] Модель Silverlight и мобильная клиентская объектная модель не включены в таблицу 1 или таблицу 2, так как они предоставляют такой же основной функционал, как и клиентская объектная модель .NET, и одинаковые подписи. Клиентская объектная модель Silverlight определена в Microsoft.SharePoint.Client.UserProfiles.Silverlight.dll, а мобильная клиентская объектная модель  в Microsoft.SharePoint.Client.UserProfiles.Phone.dll. 
   
     
     
@@ -108,20 +104,19 @@ SharePoint содержит следующие новые объекты, кот
 - Объекты [SocialActor](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialActor.aspx) и [SocialActorInfo](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.Social.SocialActorInfo.aspx) представляют пользователей (а также документы, сайты и задачи) для действий с веб-каналами и подписками.
     
   
-- Новый клиентский объект  [UserProfile](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.UserProfile.aspx) , предоставляющий методы для создания личных веб-сайтов для текущего пользователя. Однако данный объект содержит не все свойства, имеющиеся в объекте [UserProfile](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.UserProfile.aspx) .
+- Новый клиентский объект [UserProfile](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.UserProfile.aspx) , предоставляющий методы для создания личных веб-сайтов для текущего пользователя. Однако данный объект содержит не все свойства, имеющиеся в объекте [UserProfile](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.UserProfile.aspx).
     
   
-- Объект  [PersonProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.aspx) содержит общие свойства пользователей, и его свойство [UserProfileProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.UserProfileProperties.aspx) содержит свойства профилей пользователей. [PersonProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.aspx) является основным интерфейсом API, предназначенным для доступа к свойствам пользователя из кода на стороне клиента.
+- Объект [PersonProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.aspx) содержит общие свойства пользователей, и его свойство [UserProfileProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.UserProfileProperties.aspx) содержит свойства профилей пользователей. [PersonProperties](https://msdn.microsoft.com/library/Microsoft.SharePoint.Client.UserProfiles.PersonProperties.aspx) является основным интерфейсом API, предназначенным для доступа к свойствам пользователя из кода на стороне клиента.
     
+> [!NOTE] 
+> В серверной объектной модели им соответствуют объекты [SPSocialActor](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialActor.aspx) и [PersonProperties](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.PersonProperties.aspx).
   
-
-> **Примечание.** В серверной объектной модели им соответствуют объекты [SPSocialActor](https://msdn.microsoft.com/library/Microsoft.Office.Server.Social.SPSocialActor.aspx) и [PersonProperties](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.PersonProperties.aspx).
-  
     
     
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bkmk_AdditionalResources"> </a>
 
 

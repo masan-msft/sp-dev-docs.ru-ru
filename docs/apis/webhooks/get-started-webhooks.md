@@ -2,11 +2,11 @@
 title: "Начало работы с веб-перехватчиками SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 7692a59f944a302bffed2d33bc31d8fe4b9a0318
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 57bdb8406760d8951900353418e6794e9cdf45c9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="get-started-with-sharepoint-webhooks"></a>Начало работы с веб-перехватчиками SharePoint
 
@@ -32,7 +32,7 @@ ms.lasthandoff: 10/13/2017
 
 Для доступа к SharePoint Online важно предоставить приложению Azure AD разрешения на доступ к приложению **Office 365 SharePoint Online** и выбрать разрешение **Чтение и запись элементов и списков во всех семействах веб-сайтов**.
 
-> Дополнительные сведения о добавлении приложения Azure AD и предоставлении разрешений приложениям см. в разделе [Добавление приложения](https://azure.microsoft.com/en-us/documentation/articles/active-directory-integrating-applications/#adding-an-application). 
+> Дополнительные сведения о добавлении приложения Azure AD и предоставлении разрешений приложениям см. в разделе [Добавление приложения](https://azure.microsoft.com/ru-RU/documentation/articles/active-directory-integrating-applications/#adding-an-application). 
 
 Введите указанную ниже конечную точку в качестве URL-адреса ответа (перенаправления) для приложения. Это конечная точка, на которую Azure AD будет отправлять ответ на запрос аутентификации, в том числе маркер доступа при успешной аутентификации.
 
@@ -62,7 +62,8 @@ https://www.getpostman.com/oauth2/callback
 * Нажмите кнопку **Изменить способ проверки подлинности** и выберите **Без проверки подлинности**.
 * Нажмите кнопку **ОК**, чтобы создать проект веб-API.
 
-> **Примечание.** Вы можете снять флажок **Разместить в облаке**, так как этот проект не будет развертываться в облаке.
+> [!NOTE]
+> Вы можете снять флажок **Разместить в облаке**, так как этот проект не будет развертываться в облаке.
 
 Visual Studio создаст ваш проект.
 
@@ -475,7 +476,7 @@ if (queryStringParams.AllKeys.Contains("validationtoken"))
 
 Этот проект просто записывает сведения в журнал трассировки. Однако в вашем приемнике эти сведения будут отправляться в таблицу или очередь, которая может обрабатывать полученные данные для получения сведений из SharePoint. 
 
-С помощью этих данных вы можете составить URL-адрес и использовать API [GetChanges](https://msdn.microsoft.com/EN-US/library/office/dn531433.aspx#bk_ListGetChanges) для просмотра последних изменений.
+С помощью этих данных вы можете составить URL-адрес и использовать API [GetChanges](https://msdn.microsoft.com/ru-RU/library/office/dn531433.aspx#bk_ListGetChanges) для просмотра последних изменений.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

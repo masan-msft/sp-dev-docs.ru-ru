@@ -3,22 +3,19 @@ title: "REST API для служб Excel"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 32033fea-873c-4781-900a-6946906066b0
-ms.openlocfilehash: 9672a0013f82b2878cda45a8936cade24aa29412
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 634ef9fb8e4e097af4f98539e66344410a256bb9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="excel-services-rest-api"></a>REST API для служб Excel
 
 Этот раздел содержит информацию об API передачи репрезентативного состояния (REST) в службах Excel и его использовании.
   
-    
-    
-
-
-> **Примечание.** REST API служб Excel применим к локальным развертываниям SharePoint и SharePoint 2016. Для учетных записей Office 365 для образования, Office 365 бизнес и Office 365 корпоративный используйте REST API Excel, входящие в состав конечной точки [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
-> ).
+> [!NOTE]
+> REST API служб Excel применим к локальным развертываниям SharePoint и SharePoint 2016. Для учетных записей Office 365 для образования, Office 365 бизнес и Office 365 корпоративный используйте REST API для Excel, входящие в состав конечной точки [Microsoft Graph](http://graph.microsoft.io/en-us/docs/api-reference/v1.0/resources/excel
+).
   
     
     

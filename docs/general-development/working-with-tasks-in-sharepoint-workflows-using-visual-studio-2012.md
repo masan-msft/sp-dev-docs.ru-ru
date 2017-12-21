@@ -3,31 +3,17 @@ title: "Работа с задачами в рабочих процессах Sh
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: f5869fe2-1bef-4e6f-bfdc-3e109501d260
-ms.openlocfilehash: 8bc35420c588eb0e8fb56a08cd39e886b50d563b
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: b2bf0f48f395d96cdfe39ba54d0cec0dba622bb7
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="working-with-tasks-in-sharepoint-workflows-using-visual-studio-2012"></a>Работа с задачами в рабочих процессах SharePoint с помощью Visual Studio 2012
 Сведения о новой и измененной платформе задач рабочего процесса, представленной в SharePoint на базе новой версии Workflow Manager. **Кто предоставил:** [Эндрю Коннелл](http://social.msdn.microsoft.com/profile/andrew%20connell%20%5bmvp%5d/),  [AndrewConnell.com](http://www.andrewconnell.com)
   
-    
-    
-
-
-  
-    
-    
-
-> **Примечание.** К этой статье прилагается пример законченного кода, который можно просматривать во время чтения или брать за основу при создании собственных проектов рабочих процессов SharePoint. Код можно скачать [здесь](http://assets.andrewconnell.com/media/Default/Downloads/SP2013Wf-CustomTasks.zip). 
-  
-    
-    
-
-
-  
-    
+> [!NOTE] 
+> К этой статье прилагается пример законченного кода, который можно просматривать во время чтения или брать за основу при создании собственных проектов рабочих процессов SharePoint. Код можно скачать [здесь](http://assets.andrewconnell.com/media/Default/Downloads/SP2013Wf-CustomTasks.zip). 
     
 Одно из крупнейших преимуществ SharePoint для Windows Workflow Foundation  реализация новой и улучшенной платформы управления задачами, которая включает в себя новую версию Workflow Manager как среду внешнего размещения.
 ## <a name="reviewing-workflow-tasks-in-sharepoint-2007-and-sharepoint-2010"></a>Просмотр задач рабочего процесса в SharePoint 2007 и SharePoint 2010
@@ -741,7 +727,7 @@ ms.lasthandoff: 10/13/2017
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 
