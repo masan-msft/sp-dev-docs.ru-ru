@@ -1,8 +1,9 @@
 # <a name="overview-of-sharepoint-framework-extensions"></a>Обзор расширений SharePoint Framework
 
-Расширить возможности взаимодействия с пользователями SharePoint можно с помощью расширений SharePoint Framework. Благодаря расширениям SharePoint Framework вы можете настроить больше аспектов SharePoint, в том числе области уведомлений, панели инструментов, а также представления данных списков. Расширения SharePoint Framework доступны во всех клиентах Office 365 для использования в рабочей среде. 
+Расширить возможности взаимодействия с пользователями SharePoint можно с помощью расширений SharePoint Framework. Благодаря расширениям SharePoint Framework вы можете настроить больше аспектов SharePoint, в том числе области уведомлений, панели инструментов, а также представления данных списков. Расширения SharePoint Framework доступны во всех клиентах Office 365 для производственного использования. 
 
-> **Примечание.** Вы можете бесплатно получить клиент разработчика приложений для Office 365, приняв участие в [программе для разработчиков приложений для Office 365](http://dev.office.com/devprogram).
+> [!NOTE] 
+> Вы можете бесплатно получить клиент Office 365 для разработчиков, приняв участие в [специальной программе](http://dev.office.com/devprogram).
 
 Расширения SharePoint Framework позволяют дополнять пользовательский интерфейс SharePoint на современных страницах и в библиотеках документов, используя знакомые библиотеки и средства SharePoint Framework для клиентской разработки. SharePoint Framework включает три новых типа расширений:
 
@@ -41,7 +42,7 @@ npm install -g @microsoft/generator-sharepoint
 * [UserVoice разработчиков SharePoint](https://sharepoint.uservoice.com/forums/329220-sharepoint-dev-platform) (здесь можно предложить добавить новые возможности и функции).
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 
 - [Обзор платформы SharePoint Framework](../sharepoint-framework-overview.md)
 - [Средства разработки и библиотеки платформы SharePoint Framework](../tools-and-libraries.md)

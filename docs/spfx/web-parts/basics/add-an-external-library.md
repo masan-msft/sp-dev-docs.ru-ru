@@ -2,11 +2,11 @@
 title: "Добавление внешней библиотеки в клиентскую веб-часть SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 1dd951a3f2e07c263ae1b5d8fba697365bf454c8
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: c811190ac84b97273f16cafea60ca0882846be2d
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="add-an-external-library-to-your-sharepoint-client-side-web-part"></a>Добавление внешней библиотеки в клиентскую веб-часть SharePoint
 
@@ -26,11 +26,13 @@ ms.lasthandoff: 10/13/2017
 npm install validator --save
 ```
 
->**Примечание.** Так как вы используете TypeScript, для добавляемого пакета нужны определения типов. Это очень важно при написании кода, так как TypeScript — это просто расширенная версия JavaScript. При компиляции код TypeScript преобразуется в код JavaScript. Для поиска определений типов можно использовать **npm**, например: `npm install @types/{package} --save`.
+> [!NOTE] 
+> Так как вы используете TypeScript, для добавляемого пакета нужны определения типов. Это очень важно при написании кода, так как TypeScript — это просто расширенная версия JavaScript. При компиляции код TypeScript преобразуется в код JavaScript. Для поиска определений типов можно использовать **npm**, например `npm install @types/{package} --save`.
 
 Создайте в папке веб-части файл с именем `validator.d.ts` и добавьте приведенный ниже код.
 
->**Примечание.** У некоторых библиотек нет определений типов. Для библиотеки Validator есть [предоставленный сообществом файл определений типов](https://www.npmjs.com/package/@types/validator), но для данного сценария предположим, что это не так. В этом случае вам потребуется задать собственный файл определений типов `.d.ts` для библиотеки. Ниже представлен пример кода.
+> [!NOTE] 
+> Для некоторых библиотек нет определений типов. Предположим, что [сообщество еще не создало файл определений типов](https://www.npmjs.com/package/@types/validator) для библиотеки Validator. В этом случае вам нужно создать собственный файл `.d.ts` для этой библиотеки. Ниже показан пример.
 
 ```typescript
 declare module "validator" {

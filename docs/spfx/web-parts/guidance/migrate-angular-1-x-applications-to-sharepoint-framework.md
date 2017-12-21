@@ -2,11 +2,11 @@
 title: "Перенос приложений AngularJS на платформу SharePoint Framework"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: cd07f02873ed476e298dcbbc17014cbc2443639b
-ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.openlocfilehash: ba1ec27694ea9a38afdbd4f173fbcd0d74618b37
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="migrate-angularjs-applications-to-sharepoint-framework"></a>Перенос приложений AngularJS на платформу SharePoint Framework
 
@@ -18,7 +18,8 @@ ms.lasthandoff: 10/20/2017
 
 Исходный код приложения AngularJS, перенесенного на платформу SharePoint Framework, доступен на сайте GitHub по адресу [https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo).
 
-> **Примечание.** Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](http://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment) для создания решений на платформе SharePoint Framework.
+> [!NOTE] 
+> Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](http://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment) для создания решений на платформе SharePoint Framework.
 
 ## <a name="setup-project"></a>Настройка проекта
 
