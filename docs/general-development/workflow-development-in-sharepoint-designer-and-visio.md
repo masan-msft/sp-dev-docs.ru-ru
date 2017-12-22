@@ -3,11 +3,11 @@ title: "Разработка рабочих процессов в SharePoint Des
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 496780d5-47d6-4a43-bf14-70aefb8d820c
-ms.openlocfilehash: 7a6e5e4d3cff0289930a34da749fd8fa7ce10585
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 79d3cf98b6468697d1c1cecbd37ea63017761780
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="workflow-development-in-sharepoint-designer-and-visio"></a>Разработка рабочих процессов в SharePoint Designer и Visio
 Узнайте, как использовать Visio 2013 и SharePoint Designer 2013, чтобы создавать и публиковать рабочие процессы для сайта SharePoint без какого-либо кода.
@@ -16,10 +16,8 @@ ms.lasthandoff: 10/13/2017
 
 Visio 2013 и SharePoint Designer 2013 упрощают совместную работу и создание рабочих процессов для бизнес-аналитиков, консультантов и ИТ-специалистов. И Visio профессиональный 2013, и визуальный конструктор в SharePoint Designer 2013 используют расширенное представление рабочих процессов в формате, понятном программистов и далеким от программирования пользователям.
   
-    
-    
-
-> **Примечание.** Инструкции по установке и настройке SharePoint и сервера Workflow Manager см. в статье [Настройка рабочих процессов в SharePoint](http://technet.microsoft.com/ru-RU/library/jj658586.aspx). 
+> [!NOTE] 
+> Инструкции по установке и настройке SharePoint, а также сервера Workflow Manager см. в статье [Настройка рабочих процессов в SharePoint](http://technet.microsoft.com/en-us/library/jj658586.aspx). 
   
     
     
@@ -302,10 +300,8 @@ Visio 2013 и SharePoint Designer 2013 поддерживают два типа 
   
 После открытия VSDX-файла в SharePoint Designer 2013 он отображается в визуальном конструкторе, элементе управления ActiveX Visio, который размещен в SharePoint Designer. Схема Visio 2013 сохраняет все фигуры и текст фигур, который был создан в Visio. 
   
-    
-    
-
-> **Примечание.** Для переключения между визуальным и декларативным конструкторами в SharePoint Designer 2013 в группе **Управление** на вкладке **Рабочий процесс** щелкните **Вид**. Этот процесс может занять несколько секунд, так как SharePoint Designer 2013 проверяет рабочий процесс, а затем преобразовывает его данные из одного формата в другой. Во время этого процесса выполняется другая проверка на уровне фигур. Если будут обнаружены ошибки схемы, они будут отображаться в области ошибок (в нижней части полотна) точно так же, как в Visio. 
+> [!NOTE] 
+> Чтобы можно было переходить между визуальным и декларативным конструкторами в SharePoint Designer 2013, откройте вкладку **Рабочий процесс** и в группе **Управление** выберите **Представления**. Этот процесс может занять несколько секунд, так как SharePoint Designer 2013 проверяет рабочий процесс, а затем преобразовывает его данные из одного формата в другой. Во время этого процесса выполняется другая проверка на уровне фигур. Если будут обнаружены ошибки схемы, они будут отображаться в области ошибок (в нижней части полотна) точно так же, как в Visio. 
   
     
     
@@ -316,10 +312,8 @@ Visio 2013 и SharePoint Designer 2013 поддерживают два типа 
     
 Например, с фигурой **Отправить сообщение электронной почты** связано два свойства: **Создать сообщение электронной почты** и **Свойства**. Если выбрать свойство **Создать сообщение электронной почты**, откроется диалоговое окно **Определение сообщения электронной почты**, в котором можно создать сообщение, отправляемое действием. Если выбрать **Свойство** откроется диалоговое окно **Свойства отправки сообщения электронной почты**, в котором отображаются все параметры действия.
   
-    
-    
-
-> **Примечание.** Дополнительные сведения об отдельных действиях, фигурах и их свойствах см. в статьях [Фигуры в шаблоне рабочих процессов SharePoint Server в Visio](shapes-in-the-sharepoint-server-workflow-template-in-visio.md) и [Краткий справочник по действиям рабочих процессов (платформа рабочих процессов в SharePoint)](workflow-actions-quick-reference-sharepoint-workflow-platform.md). 
+> [!NOTE] 
+> Дополнительные сведения об отдельных действиях, фигурах и их свойствах см. в статьях [Фигуры в шаблоне рабочих процессов SharePoint Server в Visio](shapes-in-the-sharepoint-server-workflow-template-in-visio.md) и [Краткий справочник по действиям рабочих процессов (платформа рабочих процессов SharePoint)](workflow-actions-quick-reference-sharepoint-workflow-platform.md). 
   
     
     
@@ -353,7 +347,7 @@ Visio 2013 и SharePoint Designer 2013 поддерживают два типа 
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="VSSPD_Additional"> </a>
 
 Дополнительные сведения см. в следующих источниках:
@@ -370,13 +364,13 @@ Visio 2013 и SharePoint Designer 2013 поддерживают два типа 
 -  [Диагностика ошибок проверки рабочих процессов SharePoint Server в Visio](troubleshooting-sharepoint-server-workflow-validation-errors-in-visio.md)
     
   
--  [Создание, импорт и экспорт рабочих процессов SharePoint в Visio 2010](http://office.microsoft.com/ru-RU/visio-help/create-import-and-export-sharepoint-workflows-in-visio-HA101888007.aspx)
+-  [Создание, импорт и экспорт рабочих процессов SharePoint в Visio 2010](http://office.microsoft.com/en-us/visio-help/create-import-and-export-sharepoint-workflows-in-visio-HA101888007.aspx)
     
   
--  [Центр по разработке для SharePoint](http://msdn.microsoft.com/ru-RU/sharepoint/default.aspx)
+-  [Центр по разработке для SharePoint](http://msdn.microsoft.com/en-us/sharepoint/default.aspx)
     
   
--  [Центр по разработке для Visio](http://msdn.microsoft.com/ru-RU/office/aa905478)
+-  [Центр по разработке для Visio](http://msdn.microsoft.com/en-us/office/aa905478)
     
   
 

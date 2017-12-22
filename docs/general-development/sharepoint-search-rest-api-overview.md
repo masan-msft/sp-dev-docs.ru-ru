@@ -2,11 +2,11 @@
 title: "Общие сведения об API службы поиска REST для SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: d0684be67a04f79cea059564390918be084d9eaf
-ms.sourcegitcommit: d68d6cf927d69696a3561f7d8ffe9a3ed9dbd03c
+ms.openlocfilehash: bddd1291f134e3b0a57f6b6fb74bcc6858865134
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-search-rest-api-overview"></a>Общие сведения об API REST для службы поиска SharePoint
 Добавление функций поиска в клиентские и мобильные приложения с помощью службы поиска REST в SharePoint и любой технологии, поддерживающей веб-запросы REST.
@@ -1083,8 +1083,8 @@ http:// _server_/_api/search/query?querytext='sharepoint'&amp;properties='termid
 }
 ```
 
-
-> **Примечание.** [QueryPropertyValueType](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.QueryPropertyValueType.aspx) указывает тип свойства. Каждому типу соответствует определенное значение индекса.
+> [!NOTE]
+> [QueryPropertyValueType](https://msdn.microsoft.com/library/Microsoft.Office.Server.Search.Query.QueryPropertyValueType.aspx) указывает тип свойства. Каждый тип имеет определенное значение индекса.
   
     
     
@@ -1653,7 +1653,7 @@ http:// _server_/_api/search/query?querytext='sharepoint'&amp;summarylength=150
     
   
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 
