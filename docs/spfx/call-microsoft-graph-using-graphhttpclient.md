@@ -16,7 +16,7 @@
   mkdir hellograph-webpart
   ```
 
-2. Перейдите в каталог проекта.
+2. Перейдите к каталогу проекта.
 
   ```
   cd hellograph-webpart

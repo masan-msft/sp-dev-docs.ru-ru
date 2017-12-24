@@ -2,15 +2,15 @@
 title: "Особенности системы управления для решений SharePoint Framework"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 3f0173062302a301cc5d1b0e9ed8c043f863cefa
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2fa5399cd2a6b36ca51991bc1abe9ed95c5f7a0f
+ms.sourcegitcommit: 8384d549db4ff023aacac273d74786928ebdeece
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/11/2017
 ---
 # <a name="sharepoint-framework-solutions-governance-considerations"></a>Особенности системы управления для решений SharePoint Framework
 
-С помощью SharePoint Framework ваша организация может легко создавать решения, которые позволяют без усилий интегрировать возможности SharePoint и Office 365. Решения SharePoint Framework совместимы с современными веб-технологиями и работают на различных мобильных устройствах, поэтому вы можете создавать полезные компоненты и адаптивные приложения, готовые к работе на мобильных устройствах. Чтобы максимально использовать преимущества решений SharePoint Framework, организациям понадобится эффективный план применения системы управления, охватывающий наиболее важные аспекты управления проектами.
+С помощью SharePoint Framework ваша организация может легко создавать решения, которые позволяют без усилий интегрировать возможности SharePoint и Office 365. Решения SharePoint Framework совместимы с современными веб-технологиями и работают на различных мобильных устройствах, поэтому вы можете создавать полезные компоненты и адаптивные приложения, готовые к работе на мобильных устройствах. Чтобы получить максимум от решений SharePoint Framework, нужен конкретный план, охватывающий наиболее важные аспекты управления проектами.
 
 ## <a name="anatomy-of-sharepoint-framework-solutions"></a>Структура решений SharePoint Framework
 
