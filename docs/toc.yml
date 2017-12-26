@@ -55,13 +55,17 @@
               href: spfx/extensions/basics/configure-extension-icon.md
         - name: Понятия
           items:
-            - name: Перенос имеющихся модификаций
+            - name: Перенос существующих настроек
               items:
-                - name: Элемент меню ECB (блока элементов управления "Поле ввода")
-                  href: spfx/extensions/guidance/migrate-from-ecb-to-spfx-extensions.md
-                - name: Клиентская обработка (JSLink)
-                  href: spfx/extensions/guidance/migrate-from-jslink-to-spfx-extensions.md
+                - name: Обработка на стороне клиента (JSLink)
+                  href: spfx/extensions/guidance/migrate-jslink-to-spfx-extensions.md
                 - name: Внедрение JavaScript (UserCustomAction)
+                  href: spfx/extensions/guidance/migrate-user-customactions-to-spfx-extensions.md
+                - name: Руководство по элементу меню ECB (блок элементов управления для редактирования)
+                  href: spfx/extensions/guidance/migrate-from-ecb-to-spfx-extensions.md
+                - name: Руководство по обработке на стороне клиента (JSLink)
+                  href: spfx/extensions/guidance/migrate-from-jslink-to-spfx-extensions.md
+                - name: Руководство по внедрению JavaScript (UserCustomAction)
                   href: spfx/extensions/guidance/migrate-from-usercustomactions-to-spfx-extensions.md
     - name: Веб-части
       href: spfx/web-parts/overview-client-side-web-parts.md
@@ -77,16 +81,16 @@
               href: spfx/web-parts/get-started/connect-to-sharepoint.md
             - name: Развертывание веб-части на странице SharePoint
               href: spfx/web-parts/get-started/serve-your-web-part-in-a-sharepoint-page.md
-            - name: Развертывание в сети доставки содержимого Azure
-              href: spfx/web-parts/get-started/deploy-web-part-to-cdn.md
+            - name: Развертывание в сети доставки содержимого Office 365
+              href: spfx/web-parts/get-started/hosting-webpart-from-office-365-cdn.md
             - name: Добавление элемента Accordion jQueryUI
               href: spfx/web-parts/get-started/add-jqueryui-accordion-to-web-part.md
             - name: Использование компонентов React Office UI Fabric
               href: spfx/web-parts/get-started/use-fabric-react-components.md
             - name: Подготовка ресурсов из решения
               href: spfx/web-parts/get-started/provision-sp-assets-from-package.md
-            - name: Развертывание в сети доставки содержимого Office 365
-              href: spfx/web-parts/get-started/hosting-webpart-from-office-365-cdn.md
+            - name: Развертывание в сети доставки содержимого Azure
+              href: spfx/web-parts/get-started/deploy-web-part-to-cdn.md
         - name: Основы
           items:
             - name: Настраиваемые свойства
@@ -99,7 +103,7 @@
               href: spfx/web-parts/guidance/validate-web-part-property-values.md
         - name: Понятия
           items:
-            - name: Перенос имеющихся модификаций
+            - name: Перенос существующих настроек
               items:
                 - name: Работа с __REQUESTDIGEST
                   href: spfx/web-parts/basics/working-with-requestdigest.md
@@ -248,7 +252,7 @@
       items:
         - name: Обзор
           href: declarative-customization/site-theming/sharepoint-site-theming-overview.md
-        - name: Справочник по схеме JSON
+        - name: Справочные материалы по схеме JSON
           href: declarative-customization/site-theming/sharepoint-site-theming-json-schema.md
         - name: Командлеты PowerShell
           href: declarative-customization/site-theming/sharepoint-site-theming-powershell.md
@@ -258,6 +262,23 @@
           href: declarative-customization/site-theming/sharepoint-site-theming-csom.md
     - name: Форматирование столбцов
       href: declarative-customization/column-formatting.md
+    - name: Дизайн сайта
+      href: declarative-customization/site-design-overview.md
+      items:
+        - name: Начало работы
+          href: declarative-customization/get-started-create-site-design.md
+        - name: Задание области
+          href: declarative-customization/site-design-scoping.md
+        - name: Настройка дизайна сайта по умолчанию
+          href: declarative-customization/customize-default-site-design.md
+        - name: Справочные материалы по схеме JSON
+          href: declarative-customization/site-design-json-schema.md
+        - name: Командлеты PowerShell
+          href: declarative-customization/site-design-powershell.md
+        - name: REST API
+          href: declarative-customization/site-design-rest-api.md
+        - name: Вызов модуля подготовки PnP
+          href: declarative-customization/site-design-pnp-provisioning.md
 - name: API SharePoint
   items:
     - name: Создание сайтов для общения
@@ -585,7 +606,7 @@
                   href: general-development/how-to-learn-to-read-and-write-to-the-social-feed-by-using-the-net-client-object.md
                 - name: Чтение и запись в веб-каналах социальных медиа при помощи службы REST
                   href: general-development/how-to-learn-to-read-and-write-to-the-social-feed-by-using-the-rest-service-in-s.md
-                - name: Справочник по REST API для веб-каналов социальных медиа
+                - name: Справочные материалы по REST API для веб-каналов социальных медиа
                   href: general-development/social-feed-rest-api-reference-for-sharepoint.md
                 - name: Руководство по REST API для отслеживания пользователей и контента
                   href: general-development/following-people-and-content-rest-api-reference-for-sharepoint.md
@@ -1007,7 +1028,11 @@
       href: general-development/code-samples-for-sharepoint.md
     - name: Выбор правильного набора API в SharePoint
       href: general-development/choose-the-right-api-set-in-sharepoint.md
-    - name: Установка и настройка диспетчера рабочих процессов SharePoint
+    - name: Использование каталога приложений семейства веб-сайтов
+      href: general-development/site-collection-app-catalog.md
+    - name: Режим обслуживания клиентских веб-частей
+      href: general-development/client-side-web-parts-maintenance-mode.md
+    - name: Установка и настройка SharePoint Workflow Manager
       href: general-development/set-up-and-configure-sharepoint-workflow-manager.md
     - name: Управление жизненным циклом приложений SharePoint Server
       href: general-development/sharepoint-server-application-lifecycle-management.md
@@ -1335,6 +1360,8 @@
           href: solution-guidance/modern-experience-customizations-customize-lists-and-libraries.md
         - name: Настройка "современных" страниц сайтов
           href: solution-guidance/modern-experience-customizations-customize-pages.md
+        - name: Классификация "современных" сайтов SharePoint
+          href: solution-guidance/modern-experience-site-classification.md
     - name: Руководство по клиентам SharePoint с поддержкой нескольких регионов
       href: solution-guidance/multigeo-introduction.md
       items:
@@ -1429,9 +1456,11 @@
               href: solution-guidance/security-apponly-azuread.md
             - name: Использование модели предоставления доступа только для приложений в SharePoint
               href: solution-guidance/security-apponly-azureacs.md
-        - name: Реализация альтернативы использованию политики веб-приложений
+        - name: Реализация альтернативы политики веб-приложений
           href: solution-guidance/security-webapppolicies.md
-        - name: 'Авторизация пользователей надстроек, размещаемых у поставщика, во время выполнения'
+        - name: Переход на строгую модель открытия файлов
+          href: solution-guidance/security-permissivesetting.md
+        - name: Авторизация пользователей надстроек с размещением у поставщика во время выполнения
           href: solution-guidance/authorize-provider-hosted-add-in-users-at-run-time-by-using-oauth.md
         - name: 'Междоменные изображения в надстройках SharePoint, размещаемых у поставщика'
           href: solution-guidance/cross-domain-images-in-sharepoint-provider-hosted-add-ins.md
@@ -1589,7 +1618,7 @@
           href: solution-guidance/create-remote-timer-jobs-in-sharepoint.md
         - name: Начало работы с веб-заданиями ("заданиями таймера")
           href: solution-guidance/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites.md
-    - name: Справочник по основному API сайтов PnP
+    - name: Справочные материалы по основному API сайтов PnP
       href: 'https://msdn.microsoft.com/en-us/pnp_sites_core/pnp-sites-core-overview'
-    - name: Справочник по PnP PowerShell
+    - name: Справочные материалы по PnP PowerShell
       href: 'https://msdn.microsoft.com/en-us/pnp_powershell/pnp-powershell-overview'

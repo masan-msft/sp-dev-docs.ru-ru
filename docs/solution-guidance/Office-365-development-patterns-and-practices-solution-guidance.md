@@ -1,11 +1,11 @@
 ---
 title: "Руководство PnP по разработке для Office 365 и SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: c3619b494f7ea633002e3a35a196a33d36ebd2fd
-ms.sourcegitcommit: 6cc109dd6921d4df24d8dedb500d9c639b48c4a0
+ms.openlocfilehash: 6fd8b41dc38257f67d9a8e09b4c3f28f4a1efe64
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="solution-guidance"></a>Руководство по решениям
 
@@ -34,7 +34,7 @@ _**Область применения:** Office 365 | SharePoint 2016 | SharePo
 |[Платформа удаленных заданий таймера PnP](pnp-remote-timer-job-framework.md)|Описание заданий таймера, представляющих собой фоновые задачи, работающие на сайтах SharePoint.|
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Шаблоны и рекомендации по разработке решений для Office 365 на сайте GitHub](https://github.com/SharePoint/PnP)
