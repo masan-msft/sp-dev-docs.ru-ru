@@ -3,11 +3,11 @@ title: "Создание настраиваемых форм рабочих пр
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 26873259-330c-493f-b935-297a7a5a086d
-ms.openlocfilehash: 6a6c2666c51b051bb715f2053cda41b441e8f8a9
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 5b24361802c0f153563e3bfd099d7b0cc744cab2
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-custom-sharepoint-workflow-forms-with-visual-studio-2012"></a>Создание настраиваемых форм рабочих процессов SharePoint с помощью Visual Studio 2012
 
@@ -461,9 +461,8 @@ if (strInputValue) {
   
 - Обновите блок JavaScript по умолчанию, чтобы получать значения, введенные пользователем, из обновленной формы и сопоставить имена свойств с именами аргументов, которые мы создали в рабочем процессе.
     
-  
-
-> **Примечание.** Обратите внимание, что в исходном файле первый заполнитель содержимого ASP.NET, **PlaceHolderAdditionalPageHead**, содержит ссылки на библиотеку CSOM служб рабочих процессов (**sp.workflowservices.js**) и основные библиотеки CSOM SharePoint (**sp.js** и **sp.runtime.js**). Сразу после этого раздела кода находится серверный комментарий с закомментированным примечанием. Помните, что это примечание, показанное на рис. 10, не имеет для нас значения, и его следует игнорировать.
+> [!NOTE]
+> Обратите внимание на то, что в исходном файле первый заполнитель содержимого ASP.NET, **PlaceHolderAdditionalPageHead**, содержит ссылки на библиотеку CSOM служб рабочих процессов (**sp.workflowservices.js**) и основные библиотеки CSOM SharePoint (**sp.js** и **sp.runtime.js**). Сразу после этого раздела кода находится комментарий на стороне сервера с закомментированным примечанием. Помните, что это примечание, показанное на рис. 10, не имеет для нас значения, и его следует игнорировать.
   
     
     
@@ -657,7 +656,7 @@ wfParams['SomeRandomString'] = strInputValue
     
     
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="sec7"> </a>
 
 

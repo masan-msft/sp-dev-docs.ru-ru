@@ -3,11 +3,11 @@ title: "Развертывание пользовательской темы в 
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: f703df24-8e56-4e6a-bc37-95acbb3c83e8
-ms.openlocfilehash: 0f292d4d51cdce69b5828bdbd39c3514cc7ece27
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 79f8fe2d2f364ebf29d4c7252d7687e6e5caafab
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="deploy-a-custom-theme-in-sharepoint"></a>Развертывание пользовательской темы в SharePoint
 
@@ -55,9 +55,11 @@ ms.lasthandoff: 11/15/2017
   
 - **Библиотека стилей**. Содержит пользовательские файлы CSS, необходимые при работе с темами. Чтобы перейти непосредственно к библиотеке стилей, замените  _ИмяСемействаСайтов_ и _язык_ в этом URL-адресе: http:// _ИмяСемействаСайтов_/Style Library/ _язык_/Themable/.
     
-    > **Примечание.** Сохраняйте пользовательские CSS-файлы в папке Themable в библиотеке стилей, а не в коллекции эталонных страниц. Обработчик тем распознает только CSS-файлы, сохраненные в папке Themable в библиотеке стилей. 
+    > [!NOTE]
+    > Поместите пользовательские файлы CSS в папку Themable, которая находится в библиотеке стилей, а не в коллекции эталонных страниц. Обработчик тем распознает только файлы CSS, хранящиеся в папке Themable в библиотеке стилей. 
 
-> **Примечание.** Если для коллекции эталонных страниц и коллекции тем включено управление версиями, чтобы обработчик тем мог использовать файлы оформления, их необходимо опубликовать. 
+> [!NOTE]
+> Если в коллекции эталонных страниц и коллекции тем включено управление версиями, необходимо также опубликовать файлы для оформления прежде, чем обработчик тем сможет их использовать. 
   
     
     
@@ -68,10 +70,8 @@ ms.lasthandoff: 11/15/2017
 
 Вариант оформления, или макет, включает в себя цветовую палитру, схему шрифтов, фоновое изображение и эталонную страницу, которые определяют внешний вид сайта. Список вариантов оформления содержит те из них, которые доступны в коллекции макетов. Чтобы создать макет, добавьте элемент в список вариантов оформления и укажите для него эталонную страницу, цветовую палитру, схему шрифтов и фоновое изображение.
   
-    
-    
-
-> **Примечание.** Чтобы эталонная страница была доступна в коллекции макетов, требуется файл предварительного просмотра. 
+> [!NOTE]
+> Если вы хотите, чтобы эталонная страница была доступна в коллекции макетов, потребуется файл предварительного просмотра эталонной страницы. 
   
     
     
@@ -112,8 +112,10 @@ ms.lasthandoff: 11/15/2017
   
 11. Нажмите **Сохранить**.
     
-    > **Примечание.** Если возникнет проблема со значениями, вариант оформления не будет добавлен в библиотеку макетов (без записи в файлах журнала). Если не удается добавить вариант оформления, это может быть вызвано одной из следующих причин: не удается найти файл, возникла проблема с форматом одного из файлов или SharePoint не может получить доступ к файлам. 
-      > Теперь вы можете использовать библиотеку макетов, чтобы применить новый дизайн. Дополнительные сведения см. в статье [Выбор темы для сайта публикации](http://office.microsoft.com/ru-RU/office365-sharepoint-online-enterprise-help/choose-a-theme-for-your-publishing-site-HA102891580.aspx).
+    > [!NOTE]
+    > Если в значениях варианта оформления допущена ошибка, он не будет добавлен в коллекцию макетов, а в файлах журнала не появится соответствующая запись. Вот некоторые из возможных причин, по которым вариант оформления не может быть добавлен: не удалось найти файл, возникла проблема с форматированием одного из файлов либо SharePoint не удалось получить доступ к файлам. 
+
+Теперь вы можете использовать библиотеку макетов, чтобы применить новый дизайн. Дополнительные сведения см. в статье [Выбор темы для сайта публикации](http://office.microsoft.com/ru-RU/office365-sharepoint-online-enterprise-help/choose-a-theme-for-your-publishing-site-HA102891580.aspx).
   
     
     
@@ -134,7 +136,7 @@ ms.lasthandoff: 11/15/2017
   
 2. В методе  [FeatureActivated](https://msdn.microsoft.com/library/Microsoft.SharePoint.SPFeatureReceiver.FeatureActivated.aspx) создайте объект [SPTheme](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPTheme.aspx) , использующий нужную цветовую палитру и схему шрифтов, а затем примените тему к своему сайту.
     
-    Ниже показано, как развернуть собственную цветовую палитру и шрифтовую схему на сайте.
+    Ниже показано, как развернуть дополнительную цветовую палитру и шрифтовую схему на сайте.
     
 
 
@@ -170,8 +172,8 @@ theme.ApplyTo(Web, true);
 ```
 
 
-    > **Note:**
-      > The  _shareGenerated_ parameter in the **ApplyTo** method specifies whether the themed files can be shared across sites in a site collection. In general, it is set to **true** for SharePoint Server and SharePoint Online sites and set to **false** for SharePoint Foundation sites. The _shareGenerated_ parameter must be set to **true** if you intend the themed files to be shared. For more information, see [ApplyTo(SPWeb, Boolean)](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPTheme.ApplyTo.aspx) .
+    > [!NOTE]
+    > The  _shareGenerated_ parameter in the **ApplyTo** method specifies whether the themed files can be shared across sites in a site collection. In general, it is set to **true** for SharePoint Server and SharePoint Online sites and set to **false** for SharePoint Foundation sites. The _shareGenerated_ parameter must be set to **true** if you intend the themed files to be shared. For more information, see [ApplyTo(SPWeb, Boolean)](https://msdn.microsoft.com/library/Microsoft.SharePoint.Utilities.SPTheme.ApplyTo.aspx) .
 
     When a user applies a theme in the **Change the look** wizard, the wizard also updates a theme named Current in the Composed Looks list and the design gallery. When you apply a theme programmatically, you have to update the Current theme manually. The following example shows how to update the Current theme.
     
@@ -225,7 +227,7 @@ currentItem.Update();
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

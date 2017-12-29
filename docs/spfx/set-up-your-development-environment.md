@@ -1,22 +1,22 @@
 ---
-title: "Настройка среды разработки клиентских веб-частей SharePoint"
-ms.date: 09/25/2017
+title: "Как настроить среду разработки SharePoint Framework"
+ms.date: 12/11/2017
 ms.prod: sharepoint
-ms.openlocfilehash: e43d49cdcad92833bce84151962df6a33605b21a
-ms.sourcegitcommit: 1f752afb40ff133e2fae14337e09392cc5d9d181
+ms.openlocfilehash: 1259ceae3b13efdd0d359734fef6d080696a2c6a
+ms.sourcegitcommit: 6018dbb696faef5f60ebf0f79f830385fab2a4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2017
+ms.lasthandoff: 12/11/2017
 ---
-# <a name="set-up-your-sharepoint-client-side-web-part-development-environment"></a>Как настроить среду разработки клиентских веб-частей SharePoint
+# <a name="set-up-your-sharepoint-framework-development-environment"></a>Как настроить среду разработки SharePoint Framework
 
-Для создания клиентских веб-частей SharePoint можно использовать Visual Studio или другую среду разработки. Вы можете использовать компьютер Mac либо компьютер под управлением Windows или Linux.
+Создавать решения SharePoint Framework можно в Visual Studio или другой среде разработки. Вы можете использовать компьютер Mac либо компьютер под управлением Windows или Linux.
 
 >**Примечание.** Прежде чем выполнять действия, указанные в этой статье, обязательно [настройте клиент Office 365](./set-up-your-developer-tenant.md).
 
-Эти действия также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=MvlOEzTASXU&index=1&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq).
+Эти действия также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=WX9FL0BjE0I&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq).
 
-<a href="https://www.youtube.com/watch?v=MvlOEzTASXU&index=1&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq"> <img src="../images/spfx-youtube-tutorial0.png" alt="Screenshot of the YouTube video player for this tutorial" />
+<a href="https://www.youtube.com/watch?v=WX9FL0BjE0I&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq"> <img src="../images/spfx-youtube-tutorial0.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
 ## <a name="install-developer-tools"></a>Установка средств разработчика
@@ -98,4 +98,4 @@ npm install @microsoft/generator-sharepoint --save-dev
 Теперь вы готовы [создать свою первую клиентскую веб-часть](web-parts/get-started/build-a-hello-world-web-part.md)!
 
 > [!NOTE]
-> Если вы обнаружили ошибку в документации или SharePoint Framework, сообщите о ней разработчикам SharePoint в [репозитории sp-dev-docs](https://github.com/SharePoint/sp-dev-docs/issues). Заранее благодарим за ваш вклад.
+> Если вы обнаружили ошибку в документации или SharePoint Framework, сообщите о ней разработчикам SharePoint в [репозитории sp-dev-docs](https://github.com/SharePoint/sp-dev-docs/issues). Заранее спасибо!

@@ -1,12 +1,12 @@
 ---
 title: "План развития SharePoint Framework"
-ms.date: 09/25/2017
+ms.date: 12/15/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 18203d5be8cb3d5497362ae41c4e846daab7a2f8
-ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
+ms.openlocfilehash: fd8577a51c3a16ffec94cca3958c8853a8ea9dcb
+ms.sourcegitcommit: 202dd467c8e5b62c6469808226ad334061f70aa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 12/15/2017
 ---
 # <a name="sharepoint-framework-roadmap"></a>План развития SharePoint Framework
 
@@ -16,7 +16,9 @@ ms.lasthandoff: 12/07/2017
 - [Поддержка локальной среды для SharePoint 2016 (пакет дополнительных компонентов 2)](./sharepoint-2016-support.md)
 - [Расширения SharePoint Framework](./extensions/overview-extensions.md)
 - [Свойства клиента](./tenant-properties.md)
-- [API ALM для решений и надстроек SharePoint Framework](../apis/alm-api-for-spfx-add-ins.md)
+- [API ALM для решений и надстроек SPFx](../apis/alm-api-for-spfx-add-ins.md)
+- [Поддержка Office UI Fabric Core](https://dev.office.com/blogs/improved-support-for-office-ui-fabric-core)
+- [Каталог приложений семейства веб-сайтов и упаковка ресурсов](../general-development/site-collection-app-catalog.md)
 
 
 > [!NOTE]
@@ -24,22 +26,20 @@ ms.lasthandoff: 12/07/2017
 
 ## <a name="general-improvements"></a>Общие улучшения
 
-- Удобство вызова API Graph для доступа к данным пользователей (GraphHttpClient в предварительной версии)
-- Каталог приложений семейства веб-сайтов с управлением на уровне клиента для обеспечения более простого развертывания решений к концу 2017 года
-- Веб-перехватчики уровня сайта
-- Поддержка Office UI Fabric Core
+- Удобство вызова API Graph для доступа к данным пользователей (GraphHttpClient в предварительной версии).
+- Веб-перехватчики уровня сайта.
 
 ## <a name="client-side-web-parts-and-add-ins"></a>Клиентские веб-части++ и надстройки
 
-- Поддержка более сложных сценариев и взаимодействий с веб-частями
-    - Обмен данными между веб-частями
-    - Изоляция платформы JS
-    - Модель "разработчик-любитель" для простых задач разработки
+- Поддержка более сложных сценариев и взаимодействий с веб-частями.
+    - Обмен данными между веб-частями.
+    - Изоляция платформы JS.
+    - Модель "разработчик-любитель" для простых задач разработки.
 
 - Реализация современных технологий оформления веб-частей. 
-    - Регистрация в Azure AD
-    - Встроенная поддержка адаптивного дизайна
-    - Создание надстроек с помощью SharePoint Framework
+    - Регистрация в Azure AD.
+    - Встроенная поддержка адаптивного дизайна.
+    - Создание надстроек с помощью SharePoint Framework.
 
 
 ## <a name="application-lifecycle-management"></a>Управление жизненным циклом приложений
@@ -49,11 +49,9 @@ ms.lasthandoff: 12/07/2017
     - Администратор клиента автоматически получает уведомление. 
     - Параметры для управления процедурой утверждения по умолчанию.
 
-- Автоматическое размещение кода в CDN.
-    - Добавление пакета JavaScript в пакет приложения, который затем автоматически развертывается в библиотеке, размещаемой в сети CDN Office 365 клиента.
 
 ## <a name="developer-experience"></a>Удобство для разработчиков
-- SharePoint Framework Workbench 2.0: сведения о развертывании касательно расширений SharePoint Framework
+- SharePoint Framework Workbench 2.0: сведения о развертывании касательно расширений SharePoint Framework.
 - Компоненты цепочки инструментов.
 - Дополнительные шаблоны Yeoman.
 
@@ -61,11 +59,15 @@ ms.lasthandoff: 12/07/2017
 
 Ниже перечислены возможности, которые уже реализованы.
 
+### <a name="asset-packaging"></a>Упаковка ресурсов
+
+- Автоматическое размещение кода в CDN. Добавление пакета JavaScript в пакет приложения, который затем автоматически развертывается в библиотеке, размещаемой в сети CDN Office 365 клиента.
+
 ### <a name="alm-rest-apis"></a>REST API ALM
 
 - REST API ALM — развертывание, активация, удаление и обновление приложений и надстроек.
 - REST API ALM, поддерживающие *все* объекты в каталоге приложений, в том числе надстройки.
-- CSOM и командлеты PowerShell, выпущенные по инициативе сообщества с открытым исходным кодом
+- CSOM и командлеты PowerShell, выпущенные по инициативе сообщества разработчиков ПО с открытым исходным кодом.
 
 ### <a name="javascript-embedding-support-jslink-user-custom-actions"></a>Поддержка внедрения JavaScript (JSLink, дополнительные действия пользователей) 
 

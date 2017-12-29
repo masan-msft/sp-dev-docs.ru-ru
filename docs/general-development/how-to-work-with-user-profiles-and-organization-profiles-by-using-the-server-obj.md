@@ -3,11 +3,11 @@ title: "Работа с профилями пользователей и орг�
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 13f16dc3-f652-4fb3-996b-5f2166236d2b
-ms.openlocfilehash: 242d2692b87433f5e33969d6d2dbfb037b366fdf
-ms.sourcegitcommit: f6ea922341c38e700d0697961f8df9a454a03cba
+ms.openlocfilehash: 0ce295896fc03140ca4330f6ca598a6fe0bc99c9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="work-with-user-profiles-and-organization-profiles-by-using-the-server-object-model-in-sharepoint"></a>Работа с профилями пользователей и организации с использованием серверной объектной модели в SharePoint
 
@@ -17,10 +17,8 @@ ms.lasthandoff: 11/15/2017
 
 В SharePoint профили представляют пользователей SharePoint. Свойства профиля представляют сведения о пользователях, а также о самих свойствах. Например, к свойствам относятся имя учетной записи или электронный адрес пользователя и тип данных свойства. С помощью серверной объектной модели вы можете программными средствами создавать, получать и изменять профили пользователей, подтипы и свойства профилей.
   
-    
-    
-
-> **Примечание.** Дополнительную информацию о распространенных задачах программирования для работы с профилями пользователей и API для их выполнения см. в [этой статье](work-with-user-profiles-in-sharepoint.md). 
+> [!NOTE]
+> Дополнительные сведения о распространенных задачах программирования для работы с профилями пользователей и интерфейсах API для их выполнения см. в статье [Работа с профилями пользователей в SharePoint](work-with-user-profiles-in-sharepoint.md). 
   
     
     
@@ -91,10 +89,8 @@ ms.lasthandoff: 11/15/2017
     
 Следующий пример кода создает объект  [UserProfile](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.UserProfile.aspx) , связанный с подтипом профиля пользователя по умолчанию. Некоторые свойства профилей пользователей автоматически заполняются данными, импортированными из каталога, который содержит учетные записи пользователей, например Доменные службы Active Directory. Пример кода, создающий настраиваемый подтип, см. в разделе [ProfileSubtype](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.ProfileSubtype.aspx) .
   
-    
-    
-
-> **Примечание.** Измените значения заполнителей domain\\username и servername перед запуском кода.
+> [!NOTE]
+> Измените значения заполнителей domain\\username и servername перед запуском кода.
   
     
     
@@ -161,10 +157,8 @@ namespace UserProfilesSSOM
     
 Следующий пример кода создает объект  [CoreProperty](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.CoreProperty.aspx) с типом данных URL-адреса (или, при необходимости, [CoreProperty](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.CoreProperty.aspx) с многозначным строковым типом данных). Кроме того, он создает объекты [ProfileTypeProperty](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.ProfileTypeProperty.aspx) и [ProfileTypeProperty](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.ProfileTypeProperty.aspx) , определяющие параметры доступности, конфиденциальности и другие параметры свойства. Свойство [ProfileSubtypeProperty.DefaultPrivacy](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.ProfileSubtypeProperty.DefaultPrivacy.aspx) позволяет контролировать видимость свойства и другого контента личного сайта. Полный список возможных типов данных для значений свойств профиля см. в разделе [PropertyDataType](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.PropertyDataType.aspx) .
   
-    
-    
-
-> **Примечание.** Измените значение заполнителя servername перед запуском кода.
+> [!NOTE]
+> Измените значение заполнителя servername перед запуском кода.
   
     
     
@@ -256,10 +250,8 @@ namespace UserProfilesSSOM
 
 Следующий пример кода возвращает все профили пользователей в контексте и изменяет значение свойства  [DisplayName](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.UserProfile.DisplayName.aspx) пользователя. Доступ к большинству свойств профилей осуществляется с помощью [UserProfile.Item](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.UserProfile.Item.aspx) .
   
-    
-    
-
-> **Примечание.** Измените значения заполнителей domain\\username и servername перед запуском кода.
+> [!NOTE]
+> Измените значения заполнителей domain\\username и servername перед запуском кода.
   
     
     
@@ -328,10 +320,8 @@ namespace UserProfilesSSOM
 
 Следующий пример кода получает набор свойств, представляющий определенное свойство пользователя и его атрибуты, а затем изменяет атрибуты  [CoreProperty.DisplayName](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.CoreProperty.DisplayName.aspx) , [ProfileTypeProperty.IsVisibleOnViewer](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.ProfileTypeProperty.IsVisibleOnViewer.aspx) и [ProfileSubtypeProperty.PrivacyPolicy](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.ProfileSubtypeProperty.PrivacyPolicy.aspx) . Эти изменения применяются к набору свойств глобально. [ProfileSubtypeProperty.PrivacyPolicy](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.ProfileSubtypeProperty.PrivacyPolicy.aspx) определяет, должны ли пользователи указывать значение свойства. [PrivacyPolicy](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.ProfileSubtypeProperty.PrivacyPolicy.aspx) применяется только к свойствам профиля пользователя.
   
-    
-    
-
-> **Примечание.** Измените значение заполнителя servername перед запуском кода.
+> [!NOTE]
+> Измените значение заполнителя servername перед запуском кода.
   
     
     
@@ -405,10 +395,8 @@ namespace UserProfilesSSOM
 
 Следующий пример кода возвращает все свойства типа **UserProfile** и извлекает значения свойств для определенного пользователя. Затем он изменяет значение одного свойства [PictureUrl](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.PropertyConstants.PictureUrl.aspx) и свойство [PastProjects](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.PropertyConstants.PastProjects.aspx) с множественным значением. Полный список констант имен свойства профилей см. в разделе [PropertyConstants](https://msdn.microsoft.com/library/Microsoft.Office.Server.UserProfiles.PropertyConstants.aspx) .
   
-    
-    
-
-> **Примечание.** Измените значения заполнителей domain\\username, http://servername/docLib/pic.jpg и servername перед запуском кода.
+> [!NOTE]
+> Измените значения заполнителей domain\\username, http://servername/docLib/pic.jpg и servername перед запуском кода.
   
     
     
@@ -494,7 +482,7 @@ namespace UserProfilesSSOM
 ```
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 

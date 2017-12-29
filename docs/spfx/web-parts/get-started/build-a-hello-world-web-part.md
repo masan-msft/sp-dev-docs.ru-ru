@@ -2,11 +2,11 @@
 title: "Создание первой клиентской веб-части SharePoint (Hello World, часть 1)"
 ms.date: 12/05/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 672824cfb2d9a8881c09a18c871bf6ea2a60ac2d
-ms.sourcegitcommit: 1f752afb40ff133e2fae14337e09392cc5d9d181
+ms.openlocfilehash: 9a5fefeb0e5dac79958534dd4819a905ff608635
+ms.sourcegitcommit: 6018dbb696faef5f60ebf0f79f830385fab2a4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2017
+ms.lasthandoff: 12/11/2017
 ---
 # <a name="build-your-first-sharepoint-client-side-web-part-hello-world-part-1"></a>Создание первой клиентской веб-части SharePoint (Hello World, часть 1)
 

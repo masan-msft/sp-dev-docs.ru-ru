@@ -2,11 +2,11 @@
 title: "Известные проблемы и часто задаваемые вопросы"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 1208a2a19432fdda3597efe81a84bf8a7abfb16f
-ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
+ms.openlocfilehash: 6fba3eac7cca5200b7593dd51243df41211f6bc1
+ms.sourcegitcommit: 8384d549db4ff023aacac273d74786928ebdeece
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 12/11/2017
 ---
 # <a name="known-issues-and-frequently-asked-questions"></a>Известные проблемы и часто задаваемые вопросы
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 12/07/2017
 
 - *Дата: 6 июня.*
 
-Расширения SharePoint с дополнительными возможностями настройки для SharePoint Online теперь доступны в SharePoint Online. Дополнительные сведения о расширениях SharePoint Framework можно найти в соответствующей документации.
+Расширения SharePoint Framework с дополнительными возможностями настройки теперь доступны в SharePoint Online. Дополнительные сведения о расширениях SharePoint Framework можно найти в соответствующей документации.
 
 - [Обзор расширений SharePoint Framework](./extensions/overview-extensions.md)
 - [Руководство по расширениям SharePoint Framework](./extensions/get-started/build-a-hello-world-extension.md)

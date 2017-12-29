@@ -2,11 +2,11 @@
 title: "Обновление пакетов SharePoint Framework"
 ms.date: 11/29/2017
 ms.prod: sharepoint
-ms.openlocfilehash: decc266ab1f5d06e3e3a804ba65b06bfac8ac9c3
-ms.sourcegitcommit: 46d5fee38ab8849df2d47541ee53b4dd71a613db
+ms.openlocfilehash: 665c22ffea27a8b62d433cfb4932625664638e0a
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="update-sharepoint-framework-packages"></a>Обновление пакетов SharePoint Framework
 
@@ -121,7 +121,7 @@ npm install @microsoft/generator-sharepoint@latest -g
 npm ls @microsoft/generator-sharepoint -g --depth=0
 ```
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 
 * [Обновление проектов SharePoint Framework (руководство для команды разработчиков)](https://docs.microsoft.com/ru-RU/sharepoint/dev/spfx/team-based-development-on-sharepoint-framework#upgrading-sharepoint-framework-projects)
 * [Обновление элементов SharePoint (Подготовка ресурсов SharePoint)](https://docs.microsoft.com/ru-RU/sharepoint/dev/spfx/toolchain/provision-sharepoint-assets#upgrade-sharepoint-items)

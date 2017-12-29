@@ -1,16 +1,16 @@
 ---
 title: "Размещение клиентской веб-части в сети доставки содержимого Office 365"
-ms.date: 12/05/2017
+ms.date: 12/11/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 79194b5da88f410be4b044e0277627b29b696d47
-ms.sourcegitcommit: 1f752afb40ff133e2fae14337e09392cc5d9d181
+ms.openlocfilehash: 3abc6748269fe9709678c6b02b514662cc156587
+ms.sourcegitcommit: 6018dbb696faef5f60ebf0f79f830385fab2a4d8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2017
+ms.lasthandoff: 12/11/2017
 ---
-# <a name="hosting-client-side-web-part-from-office-365-cdn"></a>Размещение клиентской веб-части в сети доставки содержимого Office 365
+# <a name="hosting-client-side-web-part-from-office-365-cdn-hello-world-part-4"></a>Размещение клиентской веб-части в сети доставки содержимого Office 365 (Hello World, часть 4)
 
-В этой статье описано размещение клиентской веб-части в сети доставки содержимого (CDN) Office 365. Это простое решение для размещения ресурсов непосредственно в собственном клиенте Office 365. В сетях CDN можно размещать любые статические ресурсы, используемые в SharePoint Online. 
+В данной статье описано размещение клиентской веб-части в сети CDN Office 365. Эта сеть представляет собой простое решение для размещения ресурсов непосредственно в собственном клиенте Office 365. В ней можно размещать любые статические ресурсы, используемые в SharePoint Online. 
 
 > [!NOTE]
 > Разместить ресурсы веб-части можно несколькими способами. В этом руководстве описана сеть CDN Office 365, но можно также использовать [сеть доставки содержимого Azure](./deploy-web-part-to-cdn.md) или просто разместить ресурсы в библиотеке SharePoint из своего клиента. Последний вариант предоставляет такие же возможности, но уступает сетям CDN в производительности. Ресурсы можно разместить в любом расположении, к которому пользователи могут получить доступ с помощью протокола HTTP(S).
@@ -24,9 +24,9 @@ ms.lasthandoff: 12/08/2017
 * [Развертывание клиентской веб-части на классической странице SharePoint](./serve-your-web-part-in-a-sharepoint-page.md)
 
 
-Указанные ниже действия также показаны в видео [канала SharePoint PnP на сайте YouTube](https://www.youtube.com/watch?v=AIb7s_Y02K8&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=5). 
+Эти действия также показаны в видео [канала SharePoint PnP на сайте YouTube](https://www.youtube.com/watch?v=MEZMs8VMVQ0&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq).
 
-<a href="https://www.youtube.com/watch?v=AIb7s_Y02K8&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=5">
+<a href="https://www.youtube.com/watch?v=MEZMs8VMVQ0&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq">
 <img src="../../../images/spfx-youtube-tutorial4.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
