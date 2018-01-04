@@ -1,14 +1,20 @@
+---
+title: "Учебник: переход с JSLink на расширения SharePoint Framework"
+ms.date: 12/19/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 85e6801645da5cc1de0d49505a35b5fa8b68b820
+ms.sourcegitcommit: bf4bc1e80c6ef1a0ff479039ef9ae0ee84d5f6b4
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/19/2017
+---
 # <a name="migrating-from-jslink-to-sharepoint-framework-extensions"></a>Переход с JSLink на расширения SharePoint Framework
 
 После выпуска Microsoft SharePoint 2013 в большинстве корпоративных решений, основанных на Office 365 и SharePoint Online, для настройки полей использовалось свойство _JSLink_ полей и представлений списков. Однако на данный момент, с появлением "современного" пользовательского интерфейса SharePoint Online, большинство таких модификаций недоступно. К счастью, с помощью новых расширений SharePoint Framework вы можете реализовать практически идентичные функции в "современном" пользовательском интерфейсе. Из данного руководства вы узнаете, как перейти от старых ("классических") модификаций к новой модели, основанной на расширениях SharePoint Framework.
 
-> [!IMPORTANT]
-> "Классический" интерфейс не объявляется устаревшим — он будет сосуществовать с "современным".
-
-_**Область применения:** SharePoint Online_
-
 ## <a name="understanding-sharepoint-framework-extensions"></a>Общие сведения о расширениях SharePoint Framework
-<a name="spfxExtensions"> </a> Для начала рассмотрим доступные разработчикам варианты расширений SharePoint Framework:
+
+Для начала рассмотрим доступные разработчикам варианты расширений SharePoint Framework:
 
 * **Настройщик приложений**. Расширьте встроенный "современный" пользовательский интерфейс SharePoint Online, добавив пользовательские элементы HTML и клиентский код в заранее определенные заполнители на "современных" страницах. На момент написания этой статьи заполнители доступны в верхнем и нижнем колонтитулах каждой "современной" страницы.
 * **Набор команд**. Позволяет добавлять пользовательские пункты меню ECB и настраиваемые кнопки на панель команд или в представление списка или библиотеки. С этими командами можно связать любое действие JavaScript (TypeScript).
@@ -17,10 +23,11 @@ _**Область применения:** SharePoint Online_
 Как вы могли понять из приведенных выше описаний, в нашем случае наиболее удобным вариантом будет расширение "Настройщик полей".
 
 > [!NOTE]
-> Дополнительные сведения о расширениях SharePoint Framework см. в статье ["Обзор расширений SharePoint Framework"](https://docs.microsoft.com/ru-RU/sharepoint/dev/spfx/extensions/overview-extensions).
+> Дополнительные сведения о расширениях SharePoint Framework см. в статье ["Обзор расширений SharePoint Framework"]((https://docs.microsoft.com/ru-RU/sharepoint/dev/spfx/extensions/overview-extensions)).
 
 ## <a name="migrating-a-jslink-to-an-spfx-field-customizer"></a>Переход с JSLink на настройщик полей SPFx
-<a name="FromJSLinktoFieldCustomizer"> </a> Предположим, используется среда SharePoint Online, в которой есть настраиваемый список с настраиваемым полем Color, относящимся к типу _Choice_ и принимающим следующие значения: _Red_, _Green_, _Blue_, _Yellow_. Допустим, что у вас есть пользовательское значение для свойства _JSLink_ веб-части, отображающей представление настраиваемого списка. Ниже представлен фрагмент кода JavaScript, на который ссылается свойство _JSLink_ (_customColorRendering.js_).
+
+Предположим, используется среда SharePoint Online, в которой есть настраиваемый список с настраиваемым полем Color, относящимся к типу _Choice_ и принимающим следующие значения: _Red_, _Green_, _Blue_, _Yellow_. Допустим, что у вас есть пользовательское значение для свойства _JSLink_ веб-части, отображающей представление настраиваемого списка. Ниже представлен фрагмент кода JavaScript, на который ссылается свойство _JSLink_ (_customColorRendering.js_).
 
 ```JavaScript
 // Define a namespace for the custom rendering code
@@ -98,7 +105,8 @@ customJSLinkRendering.CustomizeFieldRendering();
 Чтобы перенести представленное выше решение на платформу SharePoint Framework, необходимо выполнить указанные ниже действия.
 
 ### <a name="create-a-new-sharepoint-framework-solution"></a>Создание решения SharePoint Framework
-<a name="CreateFieldCustomizer"> </a> Подготовив среду разработки к созданию решений SharePoint Framework, вы можете приступить к созданию расширения SharePoint Framework, выполнив действия, описанные в статье ["Как настроить среду разработки клиентских веб-частей SharePoint"](https://docs.microsoft.com/ru-RU/sharepoint/dev/spfx/set-up-your-development-environment).
+
+ Подготовив среду разработки к созданию решений SharePoint Framework, вы можете приступить к созданию расширения SharePoint Framework, выполнив действия, описанные в статье ["Как настроить среду разработки клиентских веб-частей SharePoint"]((https://docs.microsoft.com/ru-RU/sharepoint/dev/spfx/set-up-your-development-environment)).
 
 1. Откройте любое средство командной строки (PowerShell, CMD.EXE, Cmder и т. д.), создайте папку для решения (назовите ее _spfx-custom-field-extension_) и создайте решение SharePoint Framework, запустив генератор Yeoman с помощью следующей команды:
 
@@ -137,7 +145,8 @@ code .
 ```
 
 ### <a name="define-the-new-field-customizer-with-javascript"></a>Определение нового настройщика полей с помощью JavaScript
-<a name="DefineFieldCustomizerWithJavaScript"> </a> Чтобы воспроизвести такое поведение отрисовки настраиваемого поля _JSLink_, достаточно реализовать такую же логику с помощью клиентского кода в новом решении SharePoint Framework. Чтобы выполнить эту задачу, сделайте следующее:
+
+ Чтобы воспроизвести такое поведение отрисовки настраиваемого поля _JSLink_, достаточно реализовать такую же логику с помощью клиентского кода в новом решении SharePoint Framework. Чтобы выполнить эту задачу, сделайте следующее:
 
 1. Для начала откройте файл _CustomColorFieldFieldCustomizer.manifest.json_ в папке _src/extensions/customColorField_. Скопируйте значение свойства _id_ и сохраните его в надежном месте, так как оно потребуется позже.
 
@@ -233,7 +242,8 @@ export default class CustomColorFieldFieldCustomizer
 ![Настройщик полей в "современном" списке](../../../images/spfx-custom-field-extension-output.png)
 
 ### <a name="test-the-solution-in-debug-mode"></a>Тестирование решения в режиме отладки
-<a name="DebugFieldCustomizer"> </a> Теперь все готово к тестированию решения в режиме отладки. 
+
+Теперь все готово к тестированию решения в режиме отладки. 
 
 1. Вернитесь к окну консоли и выполните следующую команду:
 
@@ -254,7 +264,8 @@ gulp serve --nobrowser
 Обратите внимание, что при выполнении запроса страницы появится окно с предупреждающим сообщением "Разрешить скрипты отладки?", где из соображений безопасности спрашивается ваше согласие на запуск кода с localhost. Конечно, если вы хотите отладить и протестировать решение локально, потребуется разрешить загрузку скриптов отладки.
 
 ### <a name="define-the-new-field-customizer-with-typescript"></a>Определение нового настройщика полей с помощью TypeScript
-<a name="DefineFieldCustomizerWithTypeScript"> </a> Теперь вы можете заменить код JavaScript на TypeScript, чтобы воспользоваться преимуществами полностью типизированного подхода, реализованного в TypeScript.
+
+Теперь вы можете заменить код JavaScript на TypeScript, чтобы воспользоваться преимуществами полностью типизированного подхода, реализованного в TypeScript.
 
 1. Откройте файл _CustomColorFieldFieldCustomizer.module.scss_ в папке _src/extensions/customColorField_. Это файл Sassy CSS, представляющий стиль пользовательского интерфейса настройщика полей. Замените содержимое файла SCSS на приведенный ниже код.
 
@@ -335,7 +346,8 @@ switch(colorField)
 3. Еще раз запустите настройщик полей в режиме отладки и ознакомьтесь с результатом.
 
 ### <a name="package-and-host-the-solution"></a>Упаковка и размещение решения
-<a name="PackageAndHostCommandSet"> </a> Если вы довольны результатом, теперь можно упаковать решение и разместить его в настоящей инфраструктуре.
+
+Если вы довольны результатом, теперь можно упаковать решение и разместить его в настоящей инфраструктуре.
 Прежде чем собирать пакет, необходимо объявить XML-файл платформы функций для подготовки расширения.
 
 #### <a name="review-feature-framework-elements"></a>Обзор элементов платформы функций
@@ -389,6 +401,7 @@ switch(colorField)
 ```
 
 #### <a name="enable-the-cdn-in-your-office-365-tenant"></a>Включение сети доставки содержимого (CDN) в клиенте Office 365
+
 Теперь необходимо разместить расширение в среде внешнего размещения. Сеть доставки содержимого Office 365 — самый простой способ размещать решения SharePoint непосредственно из их клиента, пользуясь при этом преимуществами службы сетей доставки содержимого (CDN) для сокращения времени загрузки ресурсов.
 
 1. Скачайте [командную консоль SharePoint Online](https://www.microsoft.com/en-us/download/details.aspx?id=35588), чтобы убедиться, что у вас установлена последняя версия.
@@ -425,7 +438,7 @@ switch(colorField)
     Add-SPOTenantCdnOrigin -CdnType Public -OriginUrl */cdn
     ```
     
-8. Выполните следующую команду, чтобы получить список источников сетей CDN из клиента:
+8. Выполните указанную ниже команду, чтобы получить список источников сети доставки содержимого клиента:
     
     ```
     Get-SPOTenantCdnOrigins -CdnType Public
@@ -438,17 +451,18 @@ switch(colorField)
 Если рядом с названием источника нет уведомления `(configuration pending)`, он готов к использованию в клиенте. Это указывает на выполняющуюся настройку SharePoint Online и системы CDN. 
 
 #### <a name="update-the-solution-settings-and-publish-it-on-the-cdn"></a>Обновление параметров решения и его публикация в сети доставки содержимого
+
 Теперь необходимо обновить решение для использования только что созданной сети CDN в качестве среды внешнего размещения и опубликовать в ней пакет решения. Чтобы выполнить эту задачу, выполните указанные ниже действия.
 
 1. Вернитесь к ранее созданному решению, чтобы внести необходимые изменения в URL-адреса.
     
-2. Обновите файл _write-manifestests.json_ (в папке _config_), как показано ниже, чтобы он указывал на конечную точку CDN. Используйте префикс `publiccdn.sharepointonline.com`, а затем дополните URL-адрес фактическим путем к вашему клиенту. Формат URL-адреса для сети доставки содержимого:
+2. Обновите файл _write-manifestests.json_ (в папке _config_), как показано ниже, чтобы он указывал на конечную точку CDN. Используйте `publiccdn.sharepointonline.com` в качестве префикса, а затем дополните URL-адрес фактическим путем к вашему клиенту. Формат URL-адреса для сети доставки содержимого:
     
     ```
     https://publiccdn.sharepointonline.com/[tenant host name]/sites/[site]/[library]/[folder]
     ```
     
-    ![Обновленный манифест записи с путем к конечной точке CDN](../../../images/spfx-custom-field-extension-manifest.png)
+    ![Путь к конечной точке CDN в манифесте записи](../../../images/spfx-custom-field-extension-manifest.png)
 
 3. Сохраните изменения.
 
@@ -471,7 +485,8 @@ switch(colorField)
 7. Отправьте или перетащите файлы из папки _temp/deploy_ в созданную ранее папку _CDN/customcolorfield_.
 
 ### <a name="install-and-run-the-solution"></a>Установка и запуск решения
-<a name="InstallFieldCustomizer"> </a> Теперь вы можете установить решения на любом целевом "современном" сайте.
+
+Теперь вы можете установить решения на любом целевом "современном" сайте.
 
 1. Откройте браузер и перейдите на любой "современный" сайт.
 

@@ -1,11 +1,16 @@
+---
+title: "Учебник: перенос пункта меню Edit Control Block (ECB) в расширения SharePoint Framework"
+ms.date: 12/19/2017
+ms.prod: sharepoint
+ms.openlocfilehash: f285cdbe3ac5e771b0afc0286dcaedd361e643e2
+ms.sourcegitcommit: bf4bc1e80c6ef1a0ff479039ef9ae0ee84d5f6b4
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/19/2017
+---
 # <a name="migrating-from-edit-control-block-ecb-menu-item-to-sharepoint-framework-extensions"></a>Перенос пункта меню Edit Control Block (ECB) в расширения SharePoint Framework
 
 За последние несколько лет в большинстве корпоративных решений на основе Office 365 и SharePoint Online для расширения пользовательского интерфейса страниц использовалась возможность _CustomAction_ для сайтов на платформе функций SharePoint. Однако на данный момент, с появлением "современного" пользовательского интерфейса SharePoint Online, большинство таких модификаций недоступно. К счастью, с помощью новых расширений SharePoint Framework вы можете реализовать подобные функции в "современном" пользовательском интерфейсе. Из данного руководства вы узнаете, как перейти от старых ("классических") модификаций к новой модели, основанной на расширениях SharePoint Framework.
-
-> [!IMPORTANT]
-> "Классический" интерфейс не объявляется устаревшим — он будет сосуществовать с "современным".
-
-_**Область применения:** SharePoint Online_
 
 ## <a name="understanding-sharepoint-framework-extensions"></a>Общие сведения о расширениях SharePoint Framework
 <a name="spfxExtensions"> </a> Для начала рассмотрим доступные разработчикам варианты расширений SharePoint Framework:
@@ -17,7 +22,7 @@ _**Область применения:** SharePoint Online_
 Как вы могли понять из приведенных выше описаний, в нашем случае наиболее удобным вариантом будет расширение "Набор команд".
 
 > [!NOTE]
-> Дополнительные сведения о расширениях SharePoint Framework см. в статье ["Обзор расширений SharePoint Framework"](https://docs.microsoft.com/ru-RU/sharepoint/dev/spfx/extensions/overview-extensions).
+> Дополнительные сведения о расширениях SharePoint Framework см. в статье ["Обзор расширений SharePoint Framework"]((https://docs.microsoft.com/ru-RU/sharepoint/dev/spfx/extensions/overview-extensions)).
 
 ## <a name="migrating-a-ecb-to-an-spfx-command-set"></a>Переход от ECB к набору команд SPFx
 <a name="FromECBtoCommandSet"> </a> Предположим, у вас есть элемент _CustomAction_ в SharePoint Online, необходимый для создания пункта меню ECB для документов в библиотеке. Назначение пункта меню ECB — открытие настраиваемой страницы с предоставлением идентификаторов списка и выбранного в текущий момент пункта в строке запроса целевой страницы.
@@ -49,7 +54,7 @@ _**Область применения:** SharePoint Online_
 Чтобы перенести представленное выше решение на платформу SharePoint Framework, необходимо выполнить указанные ниже действия.
 
 ### <a name="create-a-new-sharepoint-framework-solution"></a>Создание решения SharePoint Framework
-<a name="CreateCommandSet"> </a> Подготовив среду разработки к созданию решений SharePoint Framework, вы можете приступить к созданию расширения SharePoint Framework, выполнив действия, описанные в статье ["Как настроить среду разработки клиентских веб-частей SharePoint"](https://docs.microsoft.com/ru-RU/sharepoint/dev/spfx/set-up-your-development-environment).
+<a name="CreateCommandSet"> </a> Подготовив среду разработки к созданию решений SharePoint Framework, вы можете приступить к созданию расширения SharePoint Framework, выполнив действия, описанные в статье ["Как настроить среду разработки клиентских веб-частей SharePoint"]((https://docs.microsoft.com/ru-RU/sharepoint/dev/spfx/set-up-your-development-environment)).
 
 1. Откройте любое средство командной строки (PowerShell, CMD.EXE, Cmder и т. д.), создайте папку для решения (назовите ее _spfx-ecb-extension_) и создайте решение SharePoint Framework, запустив генератор Yeoman с помощью следующей команды:
 
@@ -155,7 +160,7 @@ export default class CustomEcbCommandSet extends BaseListViewCommandSet<ICustomE
 Перенаправление на целевой URL-адрес выполняется с помощью классического кода JavaScript и функции _window.location.replace_. Конечно, вы можете написать любой код TypeScript в методе _onExecute_. В качестве примера можно использовать платформу диалоговых окон SharePoint Framework, чтобы открыть новое диалоговое окно и взаимодействовать с пользователями.
 
 > [!NOTE]
-> Дополнительные сведения о платформе диалоговых окон SharePoint Framework см. в документе [Использование настраиваемых диалоговых окон с расширениями SharePoint Framework](https://docs.microsoft.com/ru-RU/sharepoint/dev/spfx/extensions/guidance/using-custom-dialogs-with-spfx).
+> Дополнительные сведения о платформе диалоговых окон SharePoint Framework см. в документе [Использование настраиваемых диалоговых окон с расширениями SharePoint Framework]((https://docs.microsoft.com/ru-RU/sharepoint/dev/spfx/extensions/guidance/using-custom-dialogs-with-spfx)).
 
 На приведенном ниже рисунке показаны выходные данные.
 
@@ -277,7 +282,7 @@ gulp serve --nobrowser
     Add-SPOTenantCdnOrigin -CdnType Public -OriginUrl */cdn
     ```
     
-8. Выполните следующую команду, чтобы получить список источников сетей CDN из клиента:
+8. Выполните указанную ниже команду, чтобы получить список источников сети доставки содержимого клиента:
     
     ```
     Get-SPOTenantCdnOrigins -CdnType Public
@@ -294,13 +299,13 @@ gulp serve --nobrowser
 
 1. Вернитесь к ранее созданному решению, чтобы внести необходимые изменения в URL-адреса.
     
-2. Обновите файл _write-manifestests.json_ (в папке _config_), как показано ниже, чтобы он указывал на конечную точку CDN. Используйте префикс `publiccdn.sharepointonline.com`, а затем дополните URL-адрес фактическим путем к вашему клиенту. Формат URL-адреса для сети доставки содержимого:
+2. Обновите файл _write-manifestests.json_ (в папке _config_), как показано ниже, чтобы он указывал на конечную точку CDN. Используйте `publiccdn.sharepointonline.com` в качестве префикса, а затем дополните URL-адрес фактическим путем к вашему клиенту. Формат URL-адреса для сети доставки содержимого:
     
     ```
     https://publiccdn.sharepointonline.com/[tenant host name]/sites/[site]/[library]/[folder]
     ```
     
-    ![Обновленный манифест записи с путем к конечной точке CDN](../../../images/spfx-ecb-extension-write-manifest.png)
+    ![Путь к конечной точке CDN в манифесте записи](../../../images/spfx-ecb-extension-write-manifest.png)
 
 3. Сохраните изменения.
 

@@ -2,11 +2,11 @@
 title: "Развертывание клиентской веб-части SharePoint в CDN"
 ms.date: 12/05/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 5999958169ec6d94d5e8eca29a4d8458a6a77dea
-ms.sourcegitcommit: 1f752afb40ff133e2fae14337e09392cc5d9d181
+ms.openlocfilehash: 2ac3b6e8b091fdbd8223e902aec70860ae25ecfd
+ms.sourcegitcommit: c57fc0e802661b0771f8b022964b6956ab4f6caf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="deploy-your-sharepoint-client-side-web-part-to-azure-cdn"></a>Развертывание клиентской веб-части SharePoint в CDN Azure
 
@@ -19,11 +19,11 @@ ms.lasthandoff: 12/08/2017
 
 Настройте учетную запись хранения Azure и интегрируйте ее с CDN.
 
-Вы можете выполнить действия, описанные в статье [Интеграция учетной записи хранения с CDN](https://azure.microsoft.com/ru-RU/documentation/articles/cdn-create-a-storage-account-with-cdn/), а также подробные указания из этой статьи, чтобы создать учетную запись хранения Azure и интегрировать ее с CDN. Вам потребуются следующие сведения:
+Вы можете выполнить действия, описанные в статье [Интеграция учетной записи хранения с CDN]((https://azure.microsoft.com/ru-RU/documentation/articles/cdn-create-a-storage-account-with-cdn/)), а также подробные указания из этой статьи, чтобы создать учетную запись хранения Azure и интегрировать ее с CDN. Вам потребуются следующие сведения:
 
 ### <a name="storage-account-name"></a>Имя учетной записи хранения
 
-Это имя, используемое для создания учетной записи хранения, как описано в разделе [Шаг 1. Создание учетной записи хранения](https://azure.microsoft.com/ru-RU/documentation/articles/cdn-create-a-storage-account-with-cdn/#step-1-create-a-storage-account).
+Это имя, используемое для создания учетной записи хранения, как описано в разделе [Шаг 1. Создание учетной записи хранения]((https://azure.microsoft.com/ru-RU/documentation/articles/cdn-create-a-storage-account-with-cdn/)#step-1-create-a-storage-account).
 
 Например, на приведенном ниже снимке экрана **spfxsamples** — это имя учетной записи хранения.
 
@@ -55,13 +55,13 @@ ms.lasthandoff: 12/08/2017
 
 Создайте профиль CDN и свяжите конечную точку CDN с этим контейнером BLOB-объектов.
 
-Создание профиля CDN описывается в разделе [Шаг 2. Создание нового профиля сети CDN](https://azure.microsoft.com/ru-RU/documentation/articles/cdn-create-a-storage-account-with-cdn/#step-2-create-a-new-cdn-profile).
+Создание профиля CDN описывается в разделе [Шаг 2. Создание нового профиля сети CDN]((https://azure.microsoft.com/ru-RU/documentation/articles/cdn-create-a-storage-account-with-cdn/)#step-2-create-a-new-cdn-profile).
 
 Например, на следующем снимке экрана **spfxwebparts** — это имя профиля CDN.
 
 ![Снимок экрана при создании профиля CDN](../../../images/deploy-create-cdn-profile.png)
 
-Создание конечной точки CDN описывается в разделе [Шаг 3. Создание новой конечной точки сети CDN](https://azure.microsoft.com/ru-RU/documentation/articles/cdn-create-a-storage-account-with-cdn/#step-3-create-a-new-cdn-endpoint).
+Создание конечной точки CDN описывается в разделе [Шаг 3. Создание новой конечной точки сети CDN]((https://azure.microsoft.com/ru-RU/documentation/articles/cdn-create-a-storage-account-with-cdn/)#step-3-create-a-new-cdn-endpoint).
 
 Например, на следующем снимке экрана **spfxsamples** — это имя конечной точки, **Storage** — это тип источника, а **spfxsamples.blob.core.windows.net** — это учетная запись хранения.
 
@@ -125,7 +125,7 @@ code .
 
 ## <a name="configure-solution-not-to-use-default-settings"></a>Изменение параметров решения, заданных по умолчанию
 
-Откройте файл **deploy-azure-storage.json** в папке **config**.
+Откройте файл **package-solution.json** в папке **config**.
 
 Он используется для управления упаковкой решения.
 
@@ -296,4 +296,4 @@ gulp bundle --ship
 Если вы обновляете **cdnBasePath** соответствующим образом, файлы загружаются правильно.
 
 > [!NOTE]
-> Если вы обнаружили ошибку в документации или SharePoint Framework, сообщите о ней разработчикам SharePoint, указав в [списке проблем для репозитория sp-dev-docs](https://github.com/SharePoint/sp-dev-docs/issues). Заранее спасибо!
+> Если вы обнаружили ошибку в документации или SharePoint Framework, сообщите о ней разработчикам SharePoint, указав в [списке проблем для репозитория sp-dev-docs]((https://github.com/SharePoint/sp-dev-docs/issues)). Заранее спасибо!

@@ -1,3 +1,14 @@
+---
+title: "API управления жизненным циклом приложений (ALM)"
+ms.date: 12/19/2017
+ms.prod: sharepoint
+ms.assetid: fdf7ecb2-8851-425b-b058-3285fba77b68
+ms.openlocfilehash: 6baa3e3aa2f29df62c20b30e8e2a392af5f278a7
+ms.sourcegitcommit: 31f793b42ec75679f01e1a024d0375a2bc7b5ec7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/19/2017
+---
 # <a name="application-lifecycle-management-alm-apis"></a>API управления жизненным циклом приложений (ALM)  
 
 API управления жизненным циклом приложений — простые API-интерфейсы для управления развертыванием решений и надстроек SharePoint Framework в клиенте. Эти API поддерживают приведенные ниже возможности.
@@ -14,9 +25,12 @@ API управления жизненным циклом приложений м
 - При выполнении соответствующих операций происходят события установки и удаления надстроек, размещаемых у поставщика.
 - API ALM поддерживают операции только для приложений.
 
-API ALM изначально предоставляются с использованием REST API, но есть дополнительные расширения CSOM и командлеты PowerShell, доступные благодаря SharePoint PnP. 
+API ALM изначально предоставляются с использованием REST API, но есть дополнительные расширения CSOM и командлеты PowerShell, доступные благодаря SharePoint PnP.
 
-## <a name="rest-api"></a>REST API
+> [!NOTE] 
+> API управления жизненным циклом приложений для [каталога приложений семейства сайтов](../general-development/site-collection-app-catalog.md) в настоящее время не поддерживаются. Поддержка будет добавлена в начале 2018 г.
+
+## <a name="rest-api"></a>API REST
 
 ### <a name="add-solution-package-to-tenant-app-catalog"></a>Добавление пакета решения в каталог приложений клиента 
 
@@ -112,7 +126,7 @@ method: POST
 
 ## <a name="sharepoint-pnp-powershell-cmdlets-to-programmatically-add-and-deploy-sharepoint-apps"></a>Командлеты PnP PowerShell SharePoint для добавления и развертывания приложений SharePoint программным способом
 
-При помощи [PnP PowerShell](https://msdn.microsoft.com/ru-RU/pnp_powershell/pnp-powershell-overview) вы можете автоматизировать развертывание, публикацию, установку, обновление и отзыв приложений. Дополнительные сведения об этих командлетах вы найдете в приведенном ниже разделе.
+При помощи [PnP PowerShell]((https://msdn.microsoft.com/ru-RU/pnp_powershell/pnp-powershell-overview)) вы можете автоматизировать развертывание, публикацию, установку, обновление и отзыв приложений. Дополнительные сведения об этих командлетах вы найдете в приведенном ниже разделе.
 
 ### <a name="adding-and-publishing-your-app-to-the-app-catalog"></a>Добавление и публикация приложения в каталоге приложений
 Добавление приложения (.sppkg, .app) в каталог приложений клиента является обязательным условием для дальнейшего использования этого приложения на сайтах SharePoint. Это можно сделать с помощью приведенного ниже простого командлета.

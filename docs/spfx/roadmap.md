@@ -2,11 +2,11 @@
 title: "План развития SharePoint Framework"
 ms.date: 12/15/2017
 ms.prod: sharepoint
-ms.openlocfilehash: fd8577a51c3a16ffec94cca3958c8853a8ea9dcb
-ms.sourcegitcommit: 202dd467c8e5b62c6469808226ad334061f70aa2
+ms.openlocfilehash: 23629009d1322634c7e5855e3e590694f4caed74
+ms.sourcegitcommit: 6f2b3b5bd81c2de4f761e10ed5e2f0b9c3c485bf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="sharepoint-framework-roadmap"></a>План развития SharePoint Framework
 
@@ -17,7 +17,7 @@ ms.lasthandoff: 12/15/2017
 - [Расширения SharePoint Framework](./extensions/overview-extensions.md)
 - [Свойства клиента](./tenant-properties.md)
 - [API ALM для решений и надстроек SPFx](../apis/alm-api-for-spfx-add-ins.md)
-- [Поддержка Office UI Fabric Core](https://dev.office.com/blogs/improved-support-for-office-ui-fabric-core)
+- [Поддержка Office UI Fabric Core](((https://dev.office.com/blogs)/improved-support-for-office-ui-fabric-core))
 - [Каталог приложений семейства веб-сайтов и упаковка ресурсов](../general-development/site-collection-app-catalog.md)
 
 
@@ -27,7 +27,8 @@ ms.lasthandoff: 12/15/2017
 ## <a name="general-improvements"></a>Общие улучшения
 
 - Удобство вызова API Graph для доступа к данным пользователей (GraphHttpClient в предварительной версии).
-- Веб-перехватчики уровня сайта.
+- Веб-перехватчики уровня сайта
+- Обновленные сведения о хранении при поддержке SharePoint Framework
 
 ## <a name="client-side-web-parts-and-add-ins"></a>Клиентские веб-части++ и надстройки
 
@@ -88,5 +89,5 @@ ms.lasthandoff: 12/15/2017
 ## <a name="see-also"></a>См. также
 Узнавайте о новых выпусках и возможностях SharePoint Framework из следующих ресурсов.
 
-* [dev.office.com blog](https://dev.office.com/blogs)
-* [Учетная запись OfficeDev в Твиттере](https://twitter.com/officedev)
+* [dev.office.com blog]((https://dev.office.com/blogs))
+* [Учетная запись OfficeDev в Твиттере]((https://twitter.com/officedev))

@@ -1,14 +1,24 @@
+---
+title: "Учебник: использование настраиваемых диалоговых окон с расширениями SharePoint Framework"
+ms.date: 12/19/2017
+ms.prod: sharepoint
+ms.openlocfilehash: 0d79aac6e1765e08cc6e950a321f96f8c61fa0ce
+ms.sourcegitcommit: bf4bc1e80c6ef1a0ff479039ef9ae0ee84d5f6b4
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/19/2017
+---
 # <a name="use-custom-dialog-boxes-with-sharepoint-framework-extensions"></a>Использование настраиваемых диалоговых окон с расширениями SharePoint Framework
 
 Вы можете использовать настраиваемые диалоговые окна, доступные в пакете **@microsoft/sp-dialog**, в контексте расширений SharePoint Framework или клиентских веб-частей. 
 
 В этой статье описываются создание настраиваемого диалогового окна и его использование в контексте расширения ListView Command Set.
 
-Пример кода, рассматриваемый в этой статье, можно найти в репозитории [sp-dev-fx-extensions](https://github.com/SharePoint/sp-dev-fx-extensions/tree/master/samples/react-command-dialog).
+Пример кода, рассматриваемый в этой статье, можно найти в репозитории [sp-dev-fx-extensions]((https://github.com/SharePoint/sp-dev-fx-extensions/tree/master/samples/react-command-dialog)).
 
 ## <a name="set-up-your-development-environment"></a>Настройка среды разработки
 
-Чтобы создать настраиваемое диалоговое окно, необходимо выполнить действия, описанные в статье [Настройка среды разработки](https://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment). Убедитесь, что вы используете последние версии шаблонов Yeoman для SharePoint Framework.
+Чтобы создать настраиваемое диалоговое окно, необходимо выполнить действия, описанные в статье [Настройка среды разработки]((https://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment)). Убедитесь, что вы используете последние версии шаблонов Yeoman для SharePoint Framework.
 
 ## <a name="create-a-new-project"></a>Создание проекта
 
@@ -277,4 +287,4 @@ gulp serve
 ![Диалоговое окно со сведениями о выбранном цвете](../../../images/ext-com-dialog-oob-alert-dialog.png)
 
 > [!NOTE]
-> Если вы обнаружили ошибку в документации или SharePoint Framework, сообщите о ней разработчикам SharePoint, указав в [списке проблем для репозитория sp-dev-docs](https://github.com/SharePoint/sp-dev-docs/issues). Заранее спасибо!
+> Если вы обнаружили ошибку в документации или SharePoint Framework, сообщите о ней разработчикам SharePoint, указав в [списке проблем для репозитория sp-dev-docs]((https://github.com/SharePoint/sp-dev-docs/issues)). Заранее спасибо!
