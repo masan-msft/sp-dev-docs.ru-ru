@@ -2,11 +2,11 @@
 title: "Командлеты PowerShell для макетов и скриптов сайтов SharePoint"
 description: "Узнайте, как создавать, получать и удалять макеты и скрипты сайтов с помощью командлетов PowerShell."
 ms.date: 12/14/2017
-ms.openlocfilehash: d28a487c20970973cd11a26532068b54c095d939
-ms.sourcegitcommit: 8e63066ad9591e51bbda419b1b9527452111081b
+ms.openlocfilehash: e6f9f0324cb0879317d04aa9873ad168072073cc
+ms.sourcegitcommit: 6f2b3b5bd81c2de4f761e10ed5e2f0b9c3c485bf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="powershell-cmdlets-for-sharepoint-site-designs-and-site-scripts"></a>Командлеты PowerShell для макетов и скриптов сайтов SharePoint
 
@@ -71,7 +71,7 @@ Add-SPOSiteDesign
 |[-Description]         | Отображаемое описание макета сайта. |
 |[-PreviewImageUrl]     | URL-адрес изображения для предварительного просмотра. Если он не указан, в SharePoint будет использоваться стандартное изображение. |
 |[-PreviewImageAltText] | Замещающий текст с описанием изображения для специальных возможностей. |
-|[-IsDefault]           | Если указан этот параметр, макет сайта применяется к шаблону сайта по умолчанию. <!-- For more information see [Applying a site design to a default SharePoint template](site-design-apply-default-template.md) --> |
+|[-IsDefault]           | Если указан этот параметр, макет сайта применяется к шаблону сайта по умолчанию. Дополнительные сведения см. в статье [Настройка стандартного макета сайта](customize-default-site-design.md) |
 
 Ниже представлен пример создания макета сайта.
 
@@ -82,13 +82,12 @@ C:\> Add-SPOSiteDesign `
   -SiteScripts "<ID>" `
   -Description "Tracks key customer data in a list" `
   -PreviewImageUrl "https://contoso.sharepoint.com/SiteAssets/site-preview.png" `
-  -PreviewImageAltText "site preview" `
-  -IsDefault $false
+  -PreviewImageAltText "site preview"
 ```
 
 ## <a name="add-spositescript"></a>**Add-SPOSiteScript**
 
-Отправляет новый скрипт сайта в коллекцию для использования напрямую или в макете сайта. Этот командлет будет поддерживать файл встроенного скрипта.
+Отправляет новый скрипт сайта для использования напрямую или в макете сайта.
 
 ```powershell
 Add-SPOSiteScript
@@ -139,9 +138,7 @@ Get-SPOSiteDesign
 
 ```powershell
 PS C:\> Get-SPOSiteDesign 44252d09-62c4-4913-9eb0-a2a8b8d7f863
-```
 
-```
 Id                  : 44252d09-62c4-4913-9eb0-a2a8b8d7f863
 Title               : Contoso - Team Project
 WebTemplate         : 64
@@ -170,12 +167,10 @@ Get-SPOSiteDesignRights
 
 ```powershell
 PS C:\> Get-SPOSiteDesignRights 607aed52-6d61-490a-b692-c0f58a6981a1
-```
 
-```
 DisplayName  PrincipalName                                      Rights
 -----------  -------------                                      ------
-Nestor Wilke i:0#.f|membership|nestorw@contoso.sharepoint.com   View
+Nestor Wilke i:0#.f|membership|nestorw@contoso.onmicrosoft.com   View
 ```
 
 ## <a name="get-spositescript"></a>Get-SPOSiteScript
@@ -192,7 +187,29 @@ Get-SPOSiteScript
 
 |Параметр     | Описание  |
 |--------------|--------------|
-| [-Identity]  | ИД скрипта сайта, сведения о котором требуется получить. |
+| [-Identity]  | Идентификатор скрипта сайта, сведения о котором требуется получить. |
+
+В примере ниже показано, как получить сведения о скрипте для определенного идентификатора скрипта.
+
+```powershell
+PS C:\scripts> Get-SPOSiteScript 07702c07-0485-426f-b710-4704241caad9
+
+Id          : 07702c07-0485-426f-b710-4704241caad9
+Title       : Contoso theme
+Description :
+Content     : {
+                  "$schema": "schema.json",
+                      "actions": [
+                          {
+                             "verb": "applyTheme",
+                             "themeName": "Custom Cyan"
+                          }
+                      ],
+                          "bindata": { },
+                  "version": 1
+              }
+Version     : 1
+```
 
 ## <a name="grant-spositedesignrights"></a>Grant-SPOSiteDesignRights
 
@@ -219,7 +236,7 @@ Grant-SPOSiteDesignRights
 ```powershell
 PS C:\> Grant-SPOSiteDesignRights `
          -Identity 44252d09-62c4-4913-9eb0-a2a8b8d7f863 `
-         -Principals "nestorw@contoso.sharepoint.com" `
+         -Principals "nestorw@contoso.onmicrosoft.com" `
          -Rights View
 ```
 
@@ -237,7 +254,13 @@ PS C:\> Grant-SPOSiteDesignRights `
 
 |Параметр     | Описание  |
 |--------------|--------------|
-| [-Identity]  | ИД макета сайта, который требуется удалить. |
+| [-Identity]  | Идентификатор макета сайта, который требуется удалить. |
+
+Ниже приведен пример удаления макета сайта.
+
+```powershell
+
+```
 
 ## <a name="remove-spositescript"></a>Remove-SPOSiteScript
 
@@ -254,6 +277,10 @@ Remove-SPOSiteScript
 |Параметр     | Описание  |
 |--------------|--------------|
 | [-Identity]  | ИД скрипта сайта, который требуется удалить. |
+
+```powershell
+C:\> Remove-SPOSiteDesign 21209d88-38de-4844-9823-f1f600a1179a
+```
 
 ## <a name="revoke-spositedesignrights"></a>Revoke-SPOSiteDesignRights
 
@@ -273,12 +300,20 @@ Revoke-SPOSiteDesignRights
 | [-Identity]  | ИД макета сайта, для которого требуется отозвать права. |
 | -Principals  | Один или несколько субъектов, для которых требуется отозвать права доступа к указанному макету сайта. |
 
+В примере ниже показано, как отозвать права на макет сайта для пользователя Nestor.
+
+```powershell
+PS C:\> Revoke-SPOSiteDesignRights 44252d09-62c4-4913-9eb0-a2a8b8d7f863 `
+   -Principals "nestorw@contoso.onmicrosoft.com"
+```
+
 <!--
 ## Set-SPOSiteDesign (TBD)
 
 ## Set-SPOSiteScript (TBD)
 -->
 
-Разработчики могут также использовать [REST API](site-design-rest-api.md) SharePoint для управления темами.
+## <a name="see-also"></a>См. также
 
-Сведения об определении и сохранении тем см. в [справочнике по схеме JSON](site-design-json-schema.md).
+- [Справочные материалы по схеме JSON](site-design-json-schema.md)
+- [REST API](site-design-rest-api.md)Применение области к макету сайта](site-design-scoping.md)

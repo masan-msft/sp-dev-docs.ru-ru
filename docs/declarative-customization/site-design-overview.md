@@ -2,11 +2,11 @@
 title: "Общие сведения о макетах и скриптах сайтов SharePoint"
 description: "Узнайте, как автоматизировать подготовку новых сайтов SharePoint с пользовательскими конфигурациями, используя скрипты и макеты сайтов SharePoint."
 ms.date: 12/14/2017
-ms.openlocfilehash: 0bb98ccfd79e6bf0fccf605570912ec6551cbcff
-ms.sourcegitcommit: 8e63066ad9591e51bbda419b1b9527452111081b
+ms.openlocfilehash: 5821c4a48ecccbfc23ff5eaaf1c7941c6026d06e
+ms.sourcegitcommit: 31f793b42ec75679f01e1a024d0375a2bc7b5ec7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 12/19/2017
 ---
 # <a name="sharepoint-site-design-and-site-script-overview"></a>Общие сведения о макетах и скриптах сайтов SharePoint
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 12/14/2017
 
 1. Выберите **Сайт для общения**.
 
-    На сайте для общения есть поле **Выберите оформление**, где по умолчанию доступны следующие три макета:
+    На сайте общения есть поле **Выберите оформление**, где по умолчанию доступны следующие три макета:
 
     - "Статья";
     - "Демонстрация";
@@ -38,7 +38,7 @@ ms.lasthandoff: 12/14/2017
 
 ![Стандартные заголовок, описание и изображение макета в шаблоне сайта для общения](images/site-designs-listed-on-communication-site-template.png)
 
-Шаблон сайта группы содержит только один стандартный макет с именем **Сайт группы**. <!-- For additional information on how you can change the default site designs, see [Applying a site design to a default SharePoint template](site-design-apply-default-template.md). -->
+Шаблон сайта группы содержит только один стандартный макет с именем **Сайт группы**. Дополнительные сведения о том, как можно изменить стандартные макеты сайта, см. в статье [Настройка стандартного макета сайта](customize-default-site-design.md).
 
 После выбора макета сайта SharePoint создает новый сайт и выполняет скрипты для его макета. В скриптах сайта описываются такие задачи, как создание списков или применение темы. После выполнения действий из скриптов SharePoint выводит подробные сведения о результатах этих действий в области выполнения.
 
@@ -234,13 +234,13 @@ RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScri
 ```powershell
 Grant-SPOSiteDesignRights `
   -Identity 44252d09-62c4-4913-9eb0-a2a8b8d7f863 `
-  -Principals "nestorw@contoso.sharepoint.com" `
+  -Principals "nestorw@contoso.onmicrosoft.com" `
   -Rights View
 ```
 
 <!--
 ```javascript
-RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.GrantSiteDesignRights", {id:"44252d09-62c4-4913-9eb0-a2a8b8d7f863", principalNames:["nestorw@contoso.sharepoint.com”], grantedRights:1});
+RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.GrantSiteDesignRights", {id:"44252d09-62c4-4913-9eb0-a2a8b8d7f863", principalNames:["nestorw@contoso.onmicrosoft.com”], grantedRights:1});
 ```
 -->
 Дополнительные сведения о работе с областями см. в статье [Определение области доступа к макетами сайтов](site-design-scoping.md).
@@ -252,3 +252,4 @@ RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScri
 - [Схема JSON для макета сайта](site-design-json-schema.md)
 - [Командлеты PowerShell для макетов и скриптов сайтов SharePoint](site-design-powershell.md)
 - [REST API макетов и скриптов сайтов](site-design-rest-api.md)
+- [Примеры макетов сайта]((https://github.com/SharePoint/sp-dev-site-scripts))
