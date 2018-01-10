@@ -1,12 +1,12 @@
 ---
 title: "Размещение клиентской веб-части в сети доставки содержимого Office 365"
-ms.date: 12/11/2017
+ms.date: 1/2/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 3abc6748269fe9709678c6b02b514662cc156587
-ms.sourcegitcommit: 6018dbb696faef5f60ebf0f79f830385fab2a4d8
+ms.openlocfilehash: acc9e6249a8a0ae8cf8ea4a1a3a012d73a3c6a91
+ms.sourcegitcommit: 469ce248552201a47ebea1b6c85bc5c90a97c7ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2017
+ms.lasthandoff: 01/02/2018
 ---
 # <a name="hosting-client-side-web-part-from-office-365-cdn-hello-world-part-4"></a>Размещение клиентской веб-части в сети доставки содержимого Office 365 (Hello World, часть 4)
 
@@ -15,7 +15,10 @@ ms.lasthandoff: 12/11/2017
 > [!NOTE]
 > Разместить ресурсы веб-части можно несколькими способами. В этом руководстве описана сеть CDN Office 365, но можно также использовать [сеть доставки содержимого Azure](./deploy-web-part-to-cdn.md) или просто разместить ресурсы в библиотеке SharePoint из своего клиента. Последний вариант предоставляет такие же возможности, но уступает сетям CDN в производительности. Ресурсы можно разместить в любом расположении, к которому пользователи могут получить доступ с помощью протокола HTTP(S).
 
-## <a name="prerequisites"></a>Предварительные требования
+> [!IMPORTANT]
+> В этой статье упоминается атрибут `includeClientSideAssets`, представленный в SPFx 1.4. Эта версия не поддерживается в **SharePoint 2016 с пакетом дополнительных компонентов 2**. Если вы используете локально установленный экземпляр, необходимо отдельно определить расположение CDN. Можно просто размещать файлы JavaScript в централизованной библиотеке локальной среды SharePoint, к которой у пользователей есть доступ. Просмотрите дополнительные сведения в [соответствующем руководстве по SharePoint 2016](../../sharepoint-2016-support.md).
+
+## <a name="prerequisites"></a>Необходимые компоненты
 
 Прежде чем приступать к работе, убедитесь, что выполнены следующие задачи:
 
@@ -36,7 +39,7 @@ ms.lasthandoff: 12/11/2017
 Скачайте последнюю версию командной консоли SharePoint Online на [сайте загрузки Майкрософт](https://www.microsoft.com/en-us/download/details.aspx?id=35588).
 
 > [!TIP]
-> Командную консоль SPO невозможно использовать на компьютерах без Windows. Однако вы можете управлять этими параметрами с помощью [интерфейса командной строки Office 365](https://sharepoint.github.io/office365-cli/).
+> Командную консоль SPO невозможно использовать на компьютерах без Windows. Однако вы можете управлять этими параметрами с помощью [интерфейса командной строки Office 365]((https://sharepoint.github.io/office365-cli/)).
 
 Подключитесь к клиенту SharePoint Online с помощью сеанса PowerShell.
 ```
@@ -179,4 +182,4 @@ gulp package-solution --ship
 Вы можете загрузить jQuery и jQuery UI, а затем собрать веб-часть jQuery Accordion. Дальнейшие указания см. в статье [Добавление элемента "аккордеон" jQueryUI в клиентскую веб-часть](./add-jqueryui-accordion-to-web-part.md).
 
 > [!NOTE]
-> Если вы обнаружили ошибку в документации или SharePoint Framework, сообщите о ней разработчикам SharePoint, указав в [списке проблем для репозитория sp-dev-docs](https://github.com/SharePoint/sp-dev-docs/issues). Заранее спасибо!
+> Если вы обнаружили ошибку в документации или SharePoint Framework, сообщите о ней разработчикам SharePoint, указав в [списке проблем для репозитория sp-dev-docs]((https://github.com/SharePoint/sp-dev-docs/issues)). Заранее спасибо!

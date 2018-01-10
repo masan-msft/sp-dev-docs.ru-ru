@@ -1,11 +1,11 @@
 ---
 title: "Разработка для SharePoint Framework с использованием SharePoint 2016 с пакетом дополнительных компонентов 2"
-ms.date: 09/25/2017
-ms.openlocfilehash: 6841d1a2df002bdf7c7a280c76bb0f21bc7a1d26
-ms.sourcegitcommit: d68d6cf927d69696a3561f7d8ffe9a3ed9dbd03c
+ms.date: 1/2/2018
+ms.openlocfilehash: 40ed480d1784052aa75d375fdf586fd38a675cc5
+ms.sourcegitcommit: 469ce248552201a47ebea1b6c85bc5c90a97c7ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/02/2018
 ---
 # <a name="sharepoint-framework-development-with-sharepoint-2016-feature-pack-2"></a>Разработка для SharePoint Framework с использованием SharePoint 2016 с пакетом дополнительных компонентов 2
 
@@ -23,7 +23,10 @@ SharePoint 2016 с пакетом дополнительных компонен
 
 Если вы планируете применять одни и те же клиентские веб-части и в SharePoint 2016, и в SharePoint Online, то в качестве базовой версии вам придется использовать SharePoint Framework версии 1.1.0, чтобы веб-части работали в обеих средах.
 
-Начиная с версии 1.3, генератор Yeoman для SharePoint Framework поддерживает решения для формирования шаблонов, в которых используется последняя версия SharePoint Framework, предназначенная для SharePoint Online, а также решения, которые можно использовать с локальным SharePoint, в котором применяется SharePoint Framework версии 1.1.0. Вам не нужно устанавливать отдельную версию генератора Yeoman для SharePoint Framework для решений формирования шаблонов, предназначенных для работы с локальным SharePoint.
+Начиная с версии 1.3, генератор Yeoman для SharePoint Framework поддерживает решения для формирования шаблонов, в которых используется последняя версия SharePoint Framework, предназначенная для SharePoint Online, а также решения, которые можно использовать с локальным SharePoint, в котором применяется SharePoint Framework версии 1.1.0. Вам не нужно устанавливать отдельную версию генератора Yeoman для SharePoint Framework, чтобы выполнять скаффолдинг решений, предназначенных для работы в локальной среде SharePoint.
+
+> [!IMPORTANT]
+> Начиная с версии 1.4, генератор Yeoman для SharePoint Framework поддерживает новый атрибут `includeClientSideAssets`, который позволяет указать на необходимость включения ресурсов в пакет *sppkg*. Но эта возможность сейчас поддерживается только в SharePoint Online. Когда решение предназначено для локальной среды, этот атрибут в `package-solution.json` должен обновляться как `false`.
 
 ## <a name="hosting-your-sharepoint-framework-solution-for-on-premises-deployment"></a>Размещение решения SharePoint Framework для локального развертывания
 
@@ -38,7 +41,7 @@ SharePoint 2016 с пакетом дополнительных компонен
 - **Локальный сервер в вашей сети**: сервер, на котором размещены файлы JavaScript для вашей корпоративной сети. В этом случае может использоваться любая необходимая технология, так как доступ к файлам можно получить с помощью HTTP-запросов.
 - **SharePoint 2016**: вы также можете размещать свои файлы в локальной ферме SharePoint. Например, вы можете задать стандартизированный сайт в своей ферме, на котором будут размещены все ресурсы SharePoint Framework. Тем не менее обратите внимание, что по умолчанию не разрешено отправлять JSON-файлы в библиотеки SharePoint 2016. Таким образом, при использовании этого варианта необходимо настроить параметры уровня фермы.
 
-> Дополнительные сведения о блокированных типах файлов в SharePoint 2016 см. в справочной статье [Типы файлов, которые невозможно добавить в список или библиотеку](https://support.office.com/ru-RU/article/Types-of-files-that-cannot-be-added-to-a-list-or-library-30be234d-e551-4c2a-8de8-f8546ffbf5b3#ID0EAADAAA=2016)
+> Дополнительные сведения о блокированных типах файлов в SharePoint 2016 см. в справочной статье [Типы файлов, которые невозможно добавить в список или библиотеку](https://support.office.com/en-us/article/Types-of-files-that-cannot-be-added-to-a-list-or-library-30be234d-e551-4c2a-8de8-f8546ffbf5b3#ID0EAADAAA=2016)
 
 ## <a name="development-environment-considerations"></a>Вопросы, связанные со средой разработки
 
