@@ -2,11 +2,11 @@
 title: "Приступая к созданию макетов и скриптов сайтов SharePoint"
 description: "Узнайте, как приступить к созданию макетов и скриптов сайтов SharePoint, с помощью которых пользователи смогут создавать собственные сайты."
 ms.date: 12/14/2017
-ms.openlocfilehash: 81879d169c9f82aed3e93bf2eda598dacc184b5f
-ms.sourcegitcommit: 8e63066ad9591e51bbda419b1b9527452111081b
+ms.openlocfilehash: eddc4455695e014899b268456ee501e956639b98
+ms.sourcegitcommit: db303a21b5f83c8c2f9c2028a271c9aae0ac0515
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/07/2018
 ---
 # <a name="get-started-creating-site-designs-and-site-scripts"></a>Приступая к созданию макетов и скриптов сайтов
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 12/14/2017
 1. Подключитесь к клиенту SharePoint, следуя инструкциям в статье [Подключение к PowerShell в SharePoint Online]((https://technet.microsoft.com/ru-RU/library/fp161372.aspx)).
 1. Создайте код JSON с описанием нового скрипта и назначьте его переменной, как показано в приведенном ниже фрагменте кода PowerShell.
 
-```powershell
+ ```powershell
 $site_script = @'
 {
     "$schema": "schema.json",
@@ -77,7 +77,7 @@ $site_script = @'
 '@
 ```
 
-Приведенный выше скрипт создаст список SharePoint с именем Customer Tracking. Он задаст описание, а также добавит в список четыре поля.
+Приведенный выше скрипт создаст список SharePoint с именем Customer Tracking. Он задаст описание, а также добавит в список четыре поля. Обратите внимание на то, что все они считаются действиями. Скрипты сайта ограничены 30 кумулятивными действиями (для одного или нескольких скриптов, которые могут быть вызваны в макете сайта).
 
 ## <a name="add-the-site-script"></a>Добавление скрипта сайта
 

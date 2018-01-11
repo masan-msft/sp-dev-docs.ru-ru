@@ -3,11 +3,11 @@ title: "Руководство по синтаксису языка запрос
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: bd98a41b-623c-41d4-a15d-26c0d4ba4311
-ms.openlocfilehash: 861199598dc650932416a5537dd3f5a3af47a1cd
-ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
+ms.openlocfilehash: 345cfd53f535d49bee92377aa1191b82df83c40c
+ms.sourcegitcommit: 215ba2e6c1eb40cc5a4e07f87d11ade98df4ffd2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 12/29/2017
 ---
 # <a name="fast-query-language-fql-syntax-reference"></a>Справочник по синтаксису языка запросов FAST (FQL)
 Узнайте, как создавать сложные поисковые запросы для службы поиска в SharePoint с помощью языка запросов FAST (FQL). В этом справочнике описываются элементы запроса FQL и использование спецификаций свойств, выражений с маркерами и операторов в запросах FQL.
@@ -1170,11 +1170,11 @@ RANGE
 
 #### <a name="examples"></a>Примеры
 
-STARTS-WITH
+Приведенное ниже выражение соответствует свойству описания, начинающегося с фразы "big accomplishments", которая встречается в элементах с размером по крайней мере 10 000 байтов.
   
     
     
- `and(size:range(10000, max), description:starts-with("olympic games"))`
+ `and(size:range(10000, max), description:starts-with("big accomplishments"))`
   
     
     
