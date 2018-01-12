@@ -1,0 +1,60 @@
+---
+title: "Настройка стандартных дизайнов сайтов в SharePoint"
+description: "Настройка стандартных дизайнов сайтов в шаблоне сайта группы или сайта для общения в SharePoint"
+ms.date: 12/18/2017
+ms.openlocfilehash: 8b5506877f5e7938c16ce2d2dacb928ae57e24f9
+ms.sourcegitcommit: 31f793b42ec75679f01e1a024d0375a2bc7b5ec7
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/19/2017
+---
+# <a name="customize-a-default-site-design"></a><span data-ttu-id="6aec8-103">Настройка стандартного дизайна сайта</span><span class="sxs-lookup"><span data-stu-id="6aec8-103">Customize a default site design</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="6aec8-104">Дизайны и скрипты сайтов в настоящий момент пересматриваются и могут быть изменены.</span><span class="sxs-lookup"><span data-stu-id="6aec8-104">Site designs and site scripts are currently in preview and are subject to change.</span></span> <span data-ttu-id="6aec8-105">Сейчас они не поддерживаются для использования в рабочих средах.</span><span class="sxs-lookup"><span data-stu-id="6aec8-105">They are currently not supported for use in production environments.</span></span>
+
+<span data-ttu-id="6aec8-106">В SharePoint есть несколько дизайнов сайтов, доступных в шаблонах сайтов SharePoint Online.</span><span class="sxs-lookup"><span data-stu-id="6aec8-106">SharePoint contains several site designs already available in the SharePoint Online site templates.</span></span> <span data-ttu-id="6aec8-107">Это стандартные дизайны сайтов.</span><span class="sxs-lookup"><span data-stu-id="6aec8-107">These are the default site designs.</span></span> <span data-ttu-id="6aec8-108">Вы можете изменить их с помощью PowerShell или REST API для контролирования всего процесса подготовки сайта.</span><span class="sxs-lookup"><span data-stu-id="6aec8-108">You can modify them using PowerShell or the REST APIs to control the entire site provisioning experience.</span></span> <span data-ttu-id="6aec8-109">Например, вы можете сделать так, чтобы тема организации применялась к каждому создаваемому сайту.</span><span class="sxs-lookup"><span data-stu-id="6aec8-109">For example, you can ensure that your company theme is applied to every site that gets created.</span></span> <span data-ttu-id="6aec8-110">Вы также можете обеспечить обязательное ведение журнала независимо от того, какой дизайн сайта выбран.</span><span class="sxs-lookup"><span data-stu-id="6aec8-110">Or you can make sure a logging mechanism always runs regardless of which site design is chosen.</span></span>
+
+## <a name="apply-a-site-design-to-the-default-site-designs"></a><span data-ttu-id="6aec8-111">Применение к стандартным дизайнам сайтов другого дизайна сайта</span><span class="sxs-lookup"><span data-stu-id="6aec8-111">Apply a site design to the default site designs</span></span>
+
+<span data-ttu-id="6aec8-112">Чтобы настроить стандартные дизайны сайтов, примените новый дизайн с помощью командлета Powershell **Add-SPOSiteDesign** или REST API **CreateSiteDesign**.</span><span class="sxs-lookup"><span data-stu-id="6aec8-112">To customize the default site designs, apply a new one with the Powershell **Add-SPOSiteDesign** cmdlet, or the **CreateSiteDesign** REST API.</span></span> <span data-ttu-id="6aec8-113">Укажите параметр **IsDefault**, чтобы применить дизайн сайта в качестве стандартного.</span><span class="sxs-lookup"><span data-stu-id="6aec8-113">Specify the **IsDefault** switch to apply the site design as default.</span></span>
+
+<span data-ttu-id="6aec8-114">В приведенном ниже примере показано, как с помощью параметра **IsDefault** применить тему организации Contoso к стандартным дизайнам сайта.</span><span class="sxs-lookup"><span data-stu-id="6aec8-114">The following example shows how to use the **IsDefault** switch to apply the Contoso company theme to the default site designs.</span></span> <span data-ttu-id="6aec8-115">Скрипт сайта, на который можно ссылаться по ИД, содержит скрипт JSON для применения правильной темы.</span><span class="sxs-lookup"><span data-stu-id="6aec8-115">The site script referenced by ID contains the JSON script to apply the correct theme.</span></span>
+
+```powershell
+C:\> Add-SPOSiteDesign `
+  -Title "Contoso company theme" `
+  -WebTemplate "68" `
+  -SiteScripts "89516c6d-9f4d-4a57-ae79-36b0c95a817b" `
+  -Description "Applies standard company theme to site" `
+  -IsDefault
+```
+```javascript
+RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.CreateSiteDesign", {info:{Title:"Contoso company theme", Description:"Applies standard company theme to site", SiteScriptIds:["89516c6d-9f4d-4a57-ae79-36b0c95a817b"],  WebTemplate:"68", IsDefault: true}});
+```
+
+## <a name="which-default-site-designs-are-updated"></a><span data-ttu-id="6aec8-116">Какие стандартные дизайны сайта обновляются?</span><span class="sxs-lookup"><span data-stu-id="6aec8-116">Which default site designs are updated?</span></span>
+
+<span data-ttu-id="6aec8-117">В предыдущем примере значение 68 для параметра **WebTemplate** относится к шаблону сайта SharePoint Online для общения.</span><span class="sxs-lookup"><span data-stu-id="6aec8-117">In the previous example, the **WebTemplate** value of "68" refers to the SharePoint Online communication site template.</span></span> <span data-ttu-id="6aec8-118">Этот шаблон содержит следующие дизайны сайта по умолчанию:</span><span class="sxs-lookup"><span data-stu-id="6aec8-118">That template contains the following default site designs:</span></span>
+
+- <span data-ttu-id="6aec8-119">"Тема";</span><span class="sxs-lookup"><span data-stu-id="6aec8-119">Topic</span></span>
+- <span data-ttu-id="6aec8-120">"Демонстрация";</span><span class="sxs-lookup"><span data-stu-id="6aec8-120">Showcase: 6142d2a0-63a5-4ba0-aede-d9fefca2c767</span></span>
+- <span data-ttu-id="6aec8-121">"Пустой".</span><span class="sxs-lookup"><span data-stu-id="6aec8-121">(Blank)</span></span>
+
+<span data-ttu-id="6aec8-122">Применяя новый дизайн сайта, вы одновременно обновляете все три дизайна сайта, используемые по умолчанию.</span><span class="sxs-lookup"><span data-stu-id="6aec8-122">When you apply a new site design, it will update all three of the default site designs at the same time.</span></span>
+
+<span data-ttu-id="6aec8-123">Шаблон сайта группы SharePoint Online содержит только один стандартный дизайн с именем **Группа**.</span><span class="sxs-lookup"><span data-stu-id="6aec8-123">The SharePoint Online team site template contains only one default site design named **Team**.</span></span> <span data-ttu-id="6aec8-124">В этом случае при применении стандартного дизайна сайта обновляется только дизайн сайта **Группа**.</span><span class="sxs-lookup"><span data-stu-id="6aec8-124">In this case when you apply a default site design, only the **Team** site design is updated.</span></span>
+
+## <a name="restoring-the-default-site-designs"></a><span data-ttu-id="6aec8-125">Восстановление стандартных дизайнов сайтов</span><span class="sxs-lookup"><span data-stu-id="6aec8-125">Restoring the default site designs</span></span>
+
+<span data-ttu-id="6aec8-126">Чтобы восстановить стандартный дизайн сайта, удалите примененный дизайн сайта.</span><span class="sxs-lookup"><span data-stu-id="6aec8-126">To restore a site design to the defaults, remove the site design you applied.</span></span> <span data-ttu-id="6aec8-127">Если бы в предыдущем примере у созданного дизайна сайта был ИД db752673-18fd-44db-865a-aa3e0b28698e, его можно было бы удалить так, как показано в следующем примере.</span><span class="sxs-lookup"><span data-stu-id="6aec8-127">In the previous example, if the site design created had the ID db752673-18fd-44db-865a-aa3e0b28698e, you would remove it as shown in the following example.</span></span>
+
+```powershell
+C:\> Remove-SPOSiteDesign db752673-18fd-44db-865a-aa3e0b28698e
+```
+```javascript
+RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.DeleteSiteDesign", {id:"db752673-18fd-44db-865a-aa3e0b28698e"});
+```
+
+> [!NOTE]
+> <span data-ttu-id="6aec8-128">Если вы не знаете, какой дизайн сайта используется по умолчанию, запустите командлет **Get-SPOSiteDesign**.</span><span class="sxs-lookup"><span data-stu-id="6aec8-128">If you're not sure which site design is the default, run the **Get-SPOSiteDesign** cmdlet.</span></span> <span data-ttu-id="6aec8-129">Он перечислит все дизайны сайтов и укажет, какие из них стандартные.</span><span class="sxs-lookup"><span data-stu-id="6aec8-129">It will list all site designs, and indicates which ones are defaults.</span></span>
