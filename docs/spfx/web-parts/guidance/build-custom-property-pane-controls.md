@@ -1,192 +1,194 @@
 ---
 title: "Создание пользовательских элементов управления для области свойств"
-ms.date: 09/25/2017
+description: "Создайте пользовательское раскрывающееся меню, которое асинхронно загружает данные из внешней службы, не блокируя пользовательский интерфейс клиентской веб-части SharePoint."
+ms.date: 01/10/2018
 ms.prod: sharepoint
-ms.openlocfilehash: cb32315eb070b9e199bba8bb38fcb01d45454de3
-ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
+ms.openlocfilehash: 0e17ad3d494ec24608ff167539018919591c9688
+ms.sourcegitcommit: 1f1044e59d987d878bb8bc403413e3090234ad44
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="build-custom-controls-for-the-property-pane"></a>Создание пользовательских элементов управления для области свойств
 
-Платформа SharePoint Framework содержит набор стандартных элементов управления для области свойств, но иногда нужны дополнительные функции. Вам может понадобиться асинхронное обновление данных в элементе управления или определенный пользовательский интерфейс. Создайте пользовательский элемент управления для области свойств, чтобы получить необходимые функции.
+SharePoint Framework содержит набор стандартных элементов управления для области свойств, но иногда нужны дополнительные функции. Вам может понадобиться асинхронное обновление данных в элементе управления или определенный пользовательский интерфейс. Создайте пользовательский элемент управления для области свойств, чтобы получить необходимые функции.
 
-В этой статье описано, как создать пользовательский элемент управления для области свойств. Вы создадите пользовательское раскрывающееся меню, которое асинхронно загружает данные из внешней службы, не блокируя пользовательский интерфейс веб-части.
+В этой статье показано, как создать пользовательское раскрывающееся меню, которое асинхронно загружает данные из внешней службы, не блокируя пользовательский интерфейс веб-части.
 
 ![Раскрывающееся меню элементов загружает доступные элементы после выбора списка в раскрывающемся меню списков](../../../images/custom-property-pane-control-cascading-loading-items.png)
 
-Исходный код рабочей веб-части доступен на сайте GitHub по адресу [https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-custompropertypanecontrols](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-custompropertypanecontrols).
+Исходный код рабочей веб-части доступен на сайте GitHub по адресу [sp-dev-fx-webparts/samples/react-custompropertypanecontrols/](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-custompropertypanecontrols).
 
 > [!NOTE] 
 > Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment.md) для создания решений на платформе SharePoint Framework.
 
 ## <a name="create-new-project"></a>Создание проекта
 
-Для начала создайте папку проекта.
+1. Для начала создайте папку проекта.
 
-```sh
-md react-custompropertypanecontrol
-```
+  ```sh
+  md react-custompropertypanecontrol
+  ```
 
-Перейдите в папку проекта.
+2. Перейдите к папке проекта:
 
-```sh
-cd react-custompropertypanecontrol
-```
+  ```sh
+  cd react-custompropertypanecontrol
+  ```
 
-В папке проекта запустите генератор Yeoman для SharePoint Framework, чтобы сформировать шаблон проекта на платформе SharePoint Framework.
+3. В папке проекта запустите генератор Yeoman для SharePoint Framework, чтобы сформировать шаблон проекта на платформе SharePoint Framework:
 
-```sh
-yo @microsoft/sharepoint
-```
+  ```sh
+  yo @microsoft/sharepoint
+  ```
 
-Введите следующие значения:
+4. Когда отобразится соответствующий запрос, введите следующие значения:
 
-- имя решения — **react-custompropertypanecontrol**
-- расположение файлов — **Use the current folder** (Использовать текущую папку)
-- имя веб-части **List items** (Элементы списка)
-- описание веб-части — **Shows list items from the selected list** (Показывает элементы списка из выбранного списка)
-- отправная точка создания веб-части — **React**
+  - имя решения — **react-custompropertypanecontrol**
+  - расположение файлов — **Use the current folder** (Использовать текущую папку)
+  - имя веб-части **List items** (Элементы списка)
+  - описание веб-части — **Shows list items from the selected list** (Показывает элементы списка из выбранного списка)
+  - отправная точка создания веб-части — **React**
 
-![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/custom-property-pane-control-yeoman.png)
+  ![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/custom-property-pane-control-yeoman.png)
 
-После завершения скаффолдинга блокируйте версию зависимостей проекта, выполнив следующую команду:
+5. После завершения скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
 
-```sh
-npm shrinkwrap
-```
+  ```sh
+  npm shrinkwrap
+  ```
 
-Далее откройте папку проекта в редакторе кода. В этой статье инструкции и снимки экрана основаны на Visual Studio Code, но вы можете использовать любой редактор.
+6. Откройте папку проекта в редакторе кода. В этой статье в инструкциях и на снимках экрана указывается Visual Studio Code, но вы можете использовать любой другой редактор.
 
-![Проект SharePoint Framework, открытый в Visual Studio Code](../../../images/custom-property-pane-control-visual-studio-code.png)
+  ![Проект SharePoint Framework, открытый в Visual Studio Code](../../../images/custom-property-pane-control-visual-studio-code.png)
 
 ## <a name="define-web-part-property-for-storing-the-selected-list"></a>Определение свойства веб-части для хранения выбранного списка
 
 В веб-части, которую вы создаете, появятся элементы из выбранного списка SharePoint. Пользователи смогут выбрать список в свойствах веб-части. Для хранения выбранного списка создайте свойство веб-части с именем **listName**.
 
-В редакторе кода откройте файл **src/webparts/listItems/ListItemsWebPartManifest.json**. Замените свойство по умолчанию **description** на новое свойство `listName`.
+1. В редакторе кода откройте файл **src/webparts/listItems/ListItemsWebPartManifest.json**. Замените свойство по умолчанию **description** на новое свойство `listName`.
 
-![Манифест веб-части с выделенным свойством listName](../../../images/custom-property-pane-control-list-property-web-part-manifest.png)
+  ![Манифест веб-части с выделенным свойством listName](../../../images/custom-property-pane-control-list-property-web-part-manifest.png)
 
-Далее откройте файл **src/webparts/listItems/IListItemsWebPartProps.ts** и замените его содержимое на следующее:
+2. Откройте файл **src/webparts/listItems/IListItemsWebPartProps.ts** и замените его содержимое следующим:
 
-```ts
-export interface IListItemsWebPartProps {
-  listName: string;
-}
-```
-
-В файле **src/webparts/listItems/ListItemsWebPart.ts** измените метод **render** следующим образом:
-
-```ts
-export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
-  // ...
-  public render(): void {
-    const element: React.ReactElement<IListItemsProps> = React.createElement(ListItems, {
-      listName: this.properties.listName
-    });
-
-    ReactDom.render(element, this.domElement);
+  ```ts
+  export interface IListItemsWebPartProps {
+    listName: string;
   }
-  // ...
-}
-```
+  ```
 
-Обновите метод **getPropertyPaneConfiguration** следующим образом:
+3. В файле **src/webparts/listItems/ListItemsWebPart.ts** замените метод **render** на следующий:
 
-```ts
-export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
-  // ...
-  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
+  ```ts
+  export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
+    // ...
+    public render(): void {
+      const element: React.ReactElement<IListItemsProps> = React.createElement(ListItems, {
+        listName: this.properties.listName
+      });
+
+      ReactDom.render(element, this.domElement);
+    }
+    // ...
+  }
+  ```
+
+4. Обновите метод **getPropertyPaneConfiguration** следующим образом:
+
+  ```ts
+  export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
+    // ...
+    protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
+      return {
+        pages: [
+          {
+            header: {
+              description: strings.PropertyPaneDescription
+            },
+            groups: [
+              {
+                groupName: strings.BasicGroupName,
+                groupFields: [
+                  PropertyPaneTextField('listName', {
+                    label: strings.ListFieldLabel
+                  })
+                ]
+              }
+            ]
+          }
+        ]
+      };
+    }
+    // ...
+  }
+  ```
+
+5. В файле **src/webparts/listItems/loc/mystrings.d.ts** измените интерфейс **IListItemsWebPartStrings** следующим образом:
+
+  ```ts
+  declare interface IListItemsWebPartStrings {
+    PropertyPaneDescription: string;
+    BasicGroupName: string;
+    ListFieldLabel: string;
+  }
+  ```
+
+6. В файле **src/webparts/listItems/loc/en-us.js** добавьте отсутствующее определение для строки **ListFieldLabel**.
+
+  ```js
+  define([], function() {
     return {
-      pages: [
-        {
-          header: {
-            description: strings.PropertyPaneDescription
-          },
-          groups: [
-            {
-              groupName: strings.BasicGroupName,
-              groupFields: [
-                PropertyPaneTextField('listName', {
-                  label: strings.ListFieldLabel
-                })
-              ]
-            }
-          ]
-        }
-      ]
-    };
-  }
-  // ...
-}
-```
+      "PropertyPaneDescription": "Description",
+      "BasicGroupName": "Group Name",
+      "ListFieldLabel": "List"
+    }
+  });
+  ```
 
-В файле **src/webparts/listItems/loc/mystrings.d.ts** измените интерфейс **IListItemsWebPartStrings** следующим образом:
+7. В файле **src/webparts/listItems/components/ListItems.tsx** замените содержимое метода **render** следующим:
 
-```ts
-declare interface IListItemsWebPartStrings {
-  PropertyPaneDescription: string;
-  BasicGroupName: string;
-  ListFieldLabel: string;
-}
-```
-
-В файле **src/webparts/listItems/loc/en-us.js** добавьте отсутствующее определение для строки **ListFieldLabel**.
-
-```js
-define([], function() {
-  return {
-    "PropertyPaneDescription": "Description",
-    "BasicGroupName": "Group Name",
-    "ListFieldLabel": "List"
-  }
-});
-```
-
-В файле **src/webparts/listItems/components/ListItems.tsx** измените содержимое метода **render** следующим образом:
-
-```tsx
-export default class ListItems extends React.Component<IListItemsProps, {}> {
-  public render(): React.ReactElement<IListItemsProps> {
-    return (
-      <div className={styles.listItems}>
-        <div className={styles.container}>
-          <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
-            <div className="ms-Grid-col ms-lg10 ms-xl8 ms-xlPush2 ms-lgPush1">
-              <span className="ms-font-xl ms-fontColor-white">Welcome to SharePoint!</span>
-              <p className="ms-font-l ms-fontColor-white">Customize SharePoint experiences using Web Parts.</p>
-              <p className="ms-font-l ms-fontColor-white">{escape(this.props.listName)}</p>
-              <a href="https://aka.ms/spfx" className={styles.button}>
-                <span className={styles.label}>Learn more</span>
-              </a>
+  ```tsx
+  export default class ListItems extends React.Component<IListItemsProps, {}> {
+    public render(): React.ReactElement<IListItemsProps> {
+      return (
+        <div className={styles.listItems}>
+          <div className={styles.container}>
+            <div className={`ms-Grid-row ms-bgColor-themeDark ms-fontColor-white ${styles.row}`}>
+              <div className="ms-Grid-col ms-lg10 ms-xl8 ms-xlPush2 ms-lgPush1">
+                <span className="ms-font-xl ms-fontColor-white">Welcome to SharePoint!</span>
+                <p className="ms-font-l ms-fontColor-white">Customize SharePoint experiences using Web Parts.</p>
+                <p className="ms-font-l ms-fontColor-white">{escape(this.props.listName)}</p>
+                <a href="https://aka.ms/spfx" className={styles.button}>
+                  <span className={styles.label}>Learn more</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
-}
-```
+  ```
 
-После этого откройте файл **src/webparts/listItems/components/IListItemsProps.ts** и замените его содержимое следующим кодом:
+8. Откройте файл **src/webparts/listItems/components/IListItemsProps.ts** и замените его содержимое следующим кодом:
 
-```ts
-export interface IListItemsProps {
-  listName: string;
-}
-```
+  ```ts
+  export interface IListItemsProps {
+    listName: string;
+  }
+  ```
 
-Чтобы убедиться, что проект работает, выполните следующую команду:
+9. Чтобы убедиться, что проект работает, выполните следующую команду:
 
-```sh
-gulp serve
-```
+  ```sh
+  gulp serve
+  ```
 
-В веб-браузере добавьте веб-часть **List items** на полотно и откройте ее свойства. Убедитесь, что значение свойства **List** отображается в теле веб-части.
+10. В веб-браузере добавьте веб-часть **List items** на полотно и откройте ее свойства. Убедитесь, что значение свойства **List** отображается в теле веб-части.
 
-![Веб-часть, в которой отображается значение свойства listName](../../../images/custom-property-pane-control-web-part-first-run.png)
+  ![Веб-часть, в которой отображается значение свойства listName](../../../images/custom-property-pane-control-web-part-first-run.png)
+
 
 ## <a name="create-asynchronous-dropdown-property-pane-control"></a>Создание асинхронного раскрывающегося меню области свойств
 
@@ -195,13 +197,13 @@ gulp serve
 Оно состоит из класса, который регистрирует элемент управления в веб-части, и компонента React в SharePoint Framework, который отрисовывает раскрывающееся меню и управляет его данными.
 
 > [!NOTE] 
-> В выпуске 6 SharePoint Framework присутствует ошибка в компоненте Office UI Fabric React Dropdown, из-за которой элемент управления, создаваемый в этой статье, работает неправильно. Для временного решения проблемы измените строку **12027** в файле **node_modules/@microsoft/office-ui-fabric-react-bundle/dist/office-ui-fabric-react.bundle.js** с:
+> В выпуске 6 SharePoint Framework в компоненте Office UI Fabric React Dropdown есть ошибка, из-за которой элемент управления, создаваемый в этой статье, работает неправильно. Чтобы временно решить эту проблему, измените строку **12027** в файле **node_modules/@microsoft/office-ui-fabric-react-bundle/dist/office-ui-fabric-react.bundle.js**. Исходный вариант:
 > 
 > ```js
 > isDisabled: this.props.isDisabled !== undefined ? this.props.isDisabled : this.props.disabled
 > ```
 >
-> на значение:
+> Целевой вариант:
 > 
 > ```js
 > isDisabled: newProps.isDisabled !== undefined ? newProps.isDisabled : newProps.disabled
@@ -209,271 +211,277 @@ gulp serve
 
 ### <a name="add-asynchronous-dropdown-property-pane-control-react-component"></a>Добавление компонента React асинхронного раскрывающегося меню области свойств
 
-#### <a name="create-components-folder"></a>Создание папки компонентов
+1. Создайте папку компонентов. В папке проекта **src** создайте иерархию из трех новых папок, чтобы получилась следующая структура: **src/controls/PropertyPaneAsyncDropdown/components**.
 
-В папке проекта **src** создайте иерархию из трех новых папок, чтобы получилась следующая структура: **src/controls/PropertyPaneAsyncDropdown/components**.
+  ![Папка компонентов, выделенная в Visual Studio Code](../../../images/custom-property-pane-control-components-folder.png)
 
-![Папка компонентов, выделенная в Visual Studio Code](../../../images/custom-property-pane-control-components-folder.png)
+2. Определите свойства компонента React асинхронного раскрывающегося меню. В папке **src/controls/PropertyPaneAsyncDropdown/components** создайте файл **IAsyncDropdownProps.ts** и введите следующий код:
 
-#### <a name="define-asynchronous-dropdown-react-component-properties"></a>Определение свойств компонента React асинхронного раскрывающегося меню
+  ```ts
+  import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
 
-В папке **src/controls/PropertyPaneAsyncDropdown/components** создайте файл **IAsyncDropdownProps.ts** и введите следующий код:
-
-```ts
-import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
-
-export interface IAsyncDropdownProps {
-  label: string;
-  loadOptions: () => Promise<IDropdownOption[]>;
-  onChanged: (option: IDropdownOption, index?: number) => void;
-  selectedKey: string | number;
-  disabled: boolean;
-  stateKey: string;
-}
-```
-
-Класс **IAsyncDropdownProps** определяет свойства, которые можно настроить в компоненте React, используемом пользовательским элементом управления области свойства. Свойство **label** указывает подпись для раскрывающегося меню. Для загрузки доступных параметров элемент управления вызывает функцию, связанную с делегатом **loadOptions**. После выбора параметра в раскрывающемся меню вызывается функция, связанная с делегатом **onChanged**. Свойство **selectedKey** указывает выбранное значение, которое может быть строкой или числом. Свойство **disabled** указывает, отключено ли раскрывающееся меню. Свойство **stateKey** используется для принудительной повторной отрисовки.
-
-#### <a name="define-asynchronous-dropdown-react-component-interface"></a>Определение интерфейса компонента React "асинхронное раскрывающееся меню"
-
-В папке **src/controls/PropertyPaneAsyncDropdown/components** создайте файл **IAsyncDropdownState.ts** и введите следующий код:
-
-```ts
-import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
-
-export interface IAsyncDropdownState {
-  loading: boolean;
-  options: IDropdownOption[];
-  error: string;
-}
-```
-
-Интерфейс **IAsyncDropdownState** описывает состояние компонента React. Свойство **loading** определяет, загружает ли компонент параметры в данный момент. Свойство **options** содержит все доступные параметры. Если произойдет ошибка, она будет назначена свойству **error**, из которого она будет передана пользователю.
-
-#### <a name="define-the-asynchronous-dropdown-react-component"></a>Определение компонента React асинхронного раскрывающегося меню
-
-В папке **src/controls/PropertyPaneAsyncDropdown/components** создайте файл **AsyncDropdown.tsx** и введите следующий код:
-
-```tsx
-import * as React from 'react';
-import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
-import { Spinner } from 'office-ui-fabric-react/lib/components/Spinner';
-import { IAsyncDropdownProps } from './IAsyncDropdownProps';
-import { IAsyncDropdownState } from './IAsyncDropdownState';
-
-export default class AsyncDropdown extends React.Component<IAsyncDropdownProps, IAsyncDropdownState> {
-  private selectedKey: React.ReactText;
-
-  constructor(props: IAsyncDropdownProps, state: IAsyncDropdownState) {
-    super(props);
-    this.selectedKey = props.selectedKey;
-
-    this.state = {
-      loading: false,
-      options: undefined,
-      error: undefined
-    };
+  export interface IAsyncDropdownProps {
+    label: string;
+    loadOptions: () => Promise<IDropdownOption[]>;
+    onChanged: (option: IDropdownOption, index?: number) => void;
+    selectedKey: string | number;
+    disabled: boolean;
+    stateKey: string;
   }
+  ```
 
-  public componentDidMount(): void {
-    this.loadOptions();
+  Класс **IAsyncDropdownProps** определяет свойства, которые можно настроить в компоненте React, используемом пользовательским элементом управления области свойств. 
+  - Свойство **label** указывает подпись для раскрывающегося меню. 
+  - Для загрузки доступных параметров элемент управления вызывает функцию, связанную с делегатом **loadOptions**. 
+  - После выбора параметра в раскрывающемся меню вызывается функция, связанная с делегатом **onChanged**. 
+  - Свойство **selectedKey** указывает выбранное значение, которое может быть строкой или числом. 
+  - Свойство **disabled** указывает, отключено ли раскрывающееся меню. 
+  - Свойство **stateKey** используется для принудительной повторной отрисовки компонента React.
+
+3. Определите интерфейс компонента React для асинхронного раскрывающегося меню. В папке **src/controls/PropertyPaneAsyncDropdown/components** создайте файл **IAsyncDropdownState.ts** и введите следующий код:
+
+  ```ts
+  import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
+
+  export interface IAsyncDropdownState {
+    loading: boolean;
+    options: IDropdownOption[];
+    error: string;
   }
+  ```
 
-  public componentDidUpdate(prevProps: IAsyncDropdownProps, prevState: IAsyncDropdownState): void {
-    if (this.props.disabled !== prevProps.disabled ||
-      this.props.stateKey !== prevProps.stateKey) {
+  Интерфейс **IAsyncDropdownState** описывает состояние компонента React.
+  - Свойство **loading** определяет, загружает ли компонент параметры в данный момент. 
+  - Свойство **options** содержит все доступные параметры. 
+  - Если произойдет ошибка, она будет назначена свойству **error**, из которого она будет передана пользователю.
+
+4. Определите компонент React асинхронного раскрывающегося меню. В папке **src/controls/PropertyPaneAsyncDropdown/components** создайте файл **AsyncDropdown.tsx** и введите следующий код:
+
+  ```tsx
+  import * as React from 'react';
+  import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
+  import { Spinner } from 'office-ui-fabric-react/lib/components/Spinner';
+  import { IAsyncDropdownProps } from './IAsyncDropdownProps';
+  import { IAsyncDropdownState } from './IAsyncDropdownState';
+
+  export default class AsyncDropdown extends React.Component<IAsyncDropdownProps, IAsyncDropdownState> {
+    private selectedKey: React.ReactText;
+
+    constructor(props: IAsyncDropdownProps, state: IAsyncDropdownState) {
+      super(props);
+      this.selectedKey = props.selectedKey;
+
+      this.state = {
+        loading: false,
+        options: undefined,
+        error: undefined
+      };
+    }
+
+    public componentDidMount(): void {
       this.loadOptions();
     }
-  }
 
-  private loadOptions(): void {
-    this.setState({
-      loading: true,
-      error: undefined,
-      options: undefined
-    });
-
-    this.props.loadOptions()
-      .then((options: IDropdownOption[]): void => {
-        this.setState({
-          loading: false,
-          error: undefined,
-          options: options
-        });
-      }, (error: any): void => {
-        this.setState((prevState: IAsyncDropdownState, props: IAsyncDropdownProps): IAsyncDropdownState => {
-          prevState.loading = false;
-          prevState.error = error;
-          return prevState;
-        });
-      });
-  }
-
-  public render(): JSX.Element {
-    const loading: JSX.Element = this.state.loading ? <div><Spinner label={'Loading options...'} /></div> : <div />;
-    const error: JSX.Element = this.state.error !== undefined ? <div className={'ms-TextField-errorMessage ms-u-slideDownIn20'}>Error while loading items: {this.state.error}</div> : <div />;
-
-    return (
-      <div>
-        <Dropdown label={this.props.label}
-          disabled={this.props.disabled || this.state.loading || this.state.error !== undefined}
-          onChanged={this.onChanged.bind(this)}
-          selectedKey={this.selectedKey}
-          options={this.state.options} />
-        {loading}
-        {error}
-      </div>
-    );
-  }
-
-  private onChanged(option: IDropdownOption, index?: number): void {
-    this.selectedKey = option.key;
-    // reset previously selected options
-    const options: IDropdownOption[] = this.state.options;
-    options.forEach((o: IDropdownOption): void => {
-      if (o.key !== option.key) {
-        o.selected = false;
+    public componentDidUpdate(prevProps: IAsyncDropdownProps, prevState: IAsyncDropdownState): void {
+      if (this.props.disabled !== prevProps.disabled ||
+        this.props.stateKey !== prevProps.stateKey) {
+        this.loadOptions();
       }
-    });
-    this.setState((prevState: IAsyncDropdownState, props: IAsyncDropdownProps): IAsyncDropdownState => {
-      prevState.options = options;
-      return prevState;
-    });
-    if (this.props.onChanged) {
-      this.props.onChanged(option, index);
+    }
+
+    private loadOptions(): void {
+      this.setState({
+        loading: true,
+        error: undefined,
+        options: undefined
+      });
+
+      this.props.loadOptions()
+        .then((options: IDropdownOption[]): void => {
+          this.setState({
+            loading: false,
+            error: undefined,
+            options: options
+          });
+        }, (error: any): void => {
+          this.setState((prevState: IAsyncDropdownState, props: IAsyncDropdownProps): IAsyncDropdownState => {
+            prevState.loading = false;
+            prevState.error = error;
+            return prevState;
+          });
+        });
+    }
+
+    public render(): JSX.Element {
+      const loading: JSX.Element = this.state.loading ? <div><Spinner label={'Loading options...'} /></div> : <div />;
+      const error: JSX.Element = this.state.error !== undefined ? <div className={'ms-TextField-errorMessage ms-u-slideDownIn20'}>Error while loading items: {this.state.error}</div> : <div />;
+
+      return (
+        <div>
+          <Dropdown label={this.props.label}
+            disabled={this.props.disabled || this.state.loading || this.state.error !== undefined}
+            onChanged={this.onChanged.bind(this)}
+            selectedKey={this.selectedKey}
+            options={this.state.options} />
+          {loading}
+          {error}
+        </div>
+      );
+    }
+
+    private onChanged(option: IDropdownOption, index?: number): void {
+      this.selectedKey = option.key;
+      // reset previously selected options
+      const options: IDropdownOption[] = this.state.options;
+      options.forEach((o: IDropdownOption): void => {
+        if (o.key !== option.key) {
+          o.selected = false;
+        }
+      });
+      this.setState((prevState: IAsyncDropdownState, props: IAsyncDropdownProps): IAsyncDropdownState => {
+        prevState.options = options;
+        return prevState;
+      });
+      if (this.props.onChanged) {
+        this.props.onChanged(option, index);
+      }
     }
   }
-}
-```
+  ```
 
-Класс **AsyncDropdown** представляет компонент React, используемый для отрисовки асинхронного раскрывающегося меню области свойств. При первой загрузке компонента изменится метод **componentDidMount** или его свойство **disabled** или **stateKey**, и он загрузит доступные параметры, вызвав метод **loadOptions**, переданный через свойства. После загрузки параметров компонент показывает доступные параметры. Раскрывающееся меню отрисовывается с помощью [компонента Office UI Fabric React Dropdown](http://dev.office.com/fabric#/components/dropdown). Когда компонент загружает доступные параметры, он показывает индикатор, используя [компонент индикатора работы Office UI Fabric React](http://dev.office.com/fabric#/components/spinner).
+  Класс **AsyncDropdown** представляет компонент React, используемый для отрисовки асинхронного раскрывающегося меню области свойств.
 
-### <a name="add-asynchronous-dropdown-property-pane-control"></a>Добавление асинхронного раскрывающегося меню области свойств
+  - При первой загрузке компонента изменится метод **componentDidMount** или его свойство (**disabled** либо **stateKey**), и он загрузит доступные параметры, вызвав метод **loadOptions**, переданный через свойства. 
+  - После загрузки параметров компонент показывает доступные параметры. 
+  - Раскрывающееся меню отрисовывается с помощью [компонента раскрывающегося меню на базе Office UI Fabric React](https://developer.microsoft.com/ru-RU/fabric#/components/dropdown). 
+  - Когда компонент загружает доступные параметры, он показывает вертушку, используя [компонент вертушки на базе Office UI Fabric React](https://developer.microsoft.com/ru-RU/fabric#/components/spinner).
+
 
 Далее необходимо определить пользовательский элемент управления области свойств. Этот элемент управления используется в веб-части при определении свойств в области свойств и отрисовывается с помощью заданного компонента React.
 
-#### <a name="define-asynchronous-dropdown-property-pane-control-properties"></a>Определение свойств асинхронного раскрывающегося меню области свойств
+### <a name="add-asynchronous-dropdown-property-pane-control"></a>Как добавить асинхронное раскрывающееся меню области свойств
 
-У пользовательского элемента управления области свойств есть два набора свойств. Первый из них доступен для всех и используется для определения свойства веб-части. К этим свойства компонента относятся подпись, которая отображается рядом с элементом управления, минимальное и максимальное значения для индикатора и доступные параметры раскрывающегося меню. При определении пользовательского элемента управления области свойств тип, описывающий эти свойства, необходимо передавать как тип **TProperties** при реализации интерфейса **IPropertyPaneField<TProperties>**.
+1. Определите свойства асинхронного раскрывающегося меню области свойств. У пользовательского элемента управления области свойств есть два набора свойств. 
+  
+  Первый из них доступен для всех и используется для определения свойства веб-части. К этим свойствам компонента относятся подпись, которая отображается рядом с элементом управления, минимальное и максимальное значения вертушки и доступные параметры раскрывающегося меню. Если добавляете пользовательский элемент управления области свойств, тип, описывающий эти свойства, необходимо передавать как тип **TProperties** при реализации интерфейса `IPropertyPaneField<TProperties>`.
 
-Второй набор состоит из личных свойств, которые используются в пользовательском элементе управления области свойств. Для правильной отрисовки пользовательского элемента управления эти свойства должны соответствовать требованиям API SharePoint Framework. Эти свойства должны использовать интерфейс **IPropertyPaneCustomFieldProps** из пакета **@microsoft/sp-webpart-base**.
+  Второй набор состоит из личных свойств, которые используются в пользовательском элементе управления области свойств. Для правильной отрисовки пользовательского элемента управления эти свойства должны соответствовать требованиям API SharePoint Framework. Эти свойства должны использовать интерфейс **IPropertyPaneCustomFieldProps** из пакета **@microsoft/sp-webpart-base**.
 
-##### <a name="define-the-public-properties-for-the-asynchronous-dropdown-property-pane-control"></a>Определение общедоступных свойств для асинхронного раскрывающегося меню области свойств
+2. Определите общедоступные свойства для асинхронного раскрывающегося меню области свойств. В папке **src/controls/PropertyPaneAsyncDropdown** создайте файл **IPropertyPaneAsyncDropdownProps.ts** и введите следующий код:
 
-В папке **src/controls/PropertyPaneAsyncDropdown** создайте файл **IPropertyPaneAsyncDropdownProps.ts** и введите следующий код:
+  ```ts
+  import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
 
-```ts
-import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
-
-export interface IPropertyPaneAsyncDropdownProps {
-  label: string;
-  loadOptions: () => Promise<IDropdownOption[]>;
-  onPropertyChange: (propertyPath: string, newValue: any) => void;
-  selectedKey: string | number;
-  disabled?: boolean;
-}
-```
-
-Свойство **label** определяет подпись, которая отображается рядом с раскрывающимся списком. Делегат **loadOptions** определяет метод, который вызывается для загрузки доступных параметров раскрывающегося меню. Делегат **onPropertyChange** определяет метод, который вызывается, когда пользователь выбирает значение в раскрывающемся меню. Свойство **selectedKey** возвращает выбранное значение раскрывающегося меню. Свойство **disabled** указывает, отключен ли элемент управления.
-
-##### <a name="define-the-internal-properties-for-the-asynchronous-dropdown-property-pane-control"></a>Определение внутренних свойств для асинхронного раскрывающегося меню области свойств
-
-В папке **src/controls/PropertyPaneAsyncDropdown** создайте файл **IPropertyPaneAsyncDropdownInternalProps.ts** и введите следующий код:
-
-```ts
-import { IPropertyPaneCustomFieldProps } from '@microsoft/sp-webpart-base';
-import { IPropertyPaneAsyncDropdownProps } from './IPropertyPaneAsyncDropdownProps';
-
-export interface IPropertyPaneAsyncDropdownInternalProps extends IPropertyPaneAsyncDropdownProps, IPropertyPaneCustomFieldProps {
-}
-```
-
-Интерфейс **IPropertyPaneAsyncDropdownInternalProps** не определяет новые свойства, но он объединяет свойства из заданного интерфейса **IPropertyPaneAsyncDropdownProps** и стандартного интерфейса SharePoint Framework **IPropertyPaneCustomFieldProps**, что необходимо для правильной работы пользовательского элемента управления.
-
-#### <a name="define-the-asynchronous-dropdown-property-pane-control"></a>Определение асинхронного раскрывающегося меню области свойств
-
-В папке **src/controls/PropertyPaneAsyncDropdown** создайте файл **PropertyPaneAsyncDropdown.ts** и введите следующий код:
-
-```ts
-import * as React from 'react';
-import * as ReactDom from 'react-dom';
-import {
-  IPropertyPaneField,
-  PropertyPaneFieldType
-} from '@microsoft/sp-webpart-base';
-import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
-import { IPropertyPaneAsyncDropdownProps } from './IPropertyPaneAsyncDropdownProps';
-import { IPropertyPaneAsyncDropdownInternalProps } from './IPropertyPaneAsyncDropdownInternalProps';
-import AsyncDropdown from './components/AsyncDropdown';
-import { IAsyncDropdownProps } from './components/IAsyncDropdownProps';
-
-export class PropertyPaneAsyncDropdown implements IPropertyPaneField<IPropertyPaneAsyncDropdownProps> {
-  public type: PropertyPaneFieldType = PropertyPaneFieldType.Custom;
-  public targetProperty: string;
-  public properties: IPropertyPaneAsyncDropdownInternalProps;
-  private elem: HTMLElement;
-
-  constructor(targetProperty: string, properties: IPropertyPaneAsyncDropdownProps) {
-    this.targetProperty = targetProperty;
-    this.properties = {
-      key: properties.label,
-      label: properties.label,
-      loadOptions: properties.loadOptions,
-      onPropertyChange: properties.onPropertyChange,
-      selectedKey: properties.selectedKey,
-      disabled: properties.disabled,
-      onRender: this.onRender.bind(this)
-    };
+  export interface IPropertyPaneAsyncDropdownProps {
+    label: string;
+    loadOptions: () => Promise<IDropdownOption[]>;
+    onPropertyChange: (propertyPath: string, newValue: any) => void;
+    selectedKey: string | number;
+    disabled?: boolean;
   }
+  ```
 
-  public render(): void {
-    if (!this.elem) {
-      return;
+  В интерфейсе **IPropertyPaneAsyncDropdownProps**:
+  - Свойство **label** определяет подпись, которая отображается рядом с раскрывающимся меню. 
+  - Делегат **loadOptions** определяет метод, который вызывается для загрузки доступных параметров раскрывающегося меню. 
+  - Делегат **onPropertyChange** определяет метод, который вызывается, когда пользователь выбирает значение в раскрывающемся меню. 
+  - Свойство **selectedKey** возвращает выбранное значение раскрывающегося меню. 
+  - Свойство **disabled** указывает, отключен ли элемент управления.
+
+3. Определите внутренние свойства для асинхронного раскрывающегося меню области свойств. В папке **src/controls/PropertyPaneAsyncDropdown** создайте файл **IPropertyPaneAsyncDropdownInternalProps.ts** и введите следующий код:
+
+  ```ts
+  import { IPropertyPaneCustomFieldProps } from '@microsoft/sp-webpart-base';
+  import { IPropertyPaneAsyncDropdownProps } from './IPropertyPaneAsyncDropdownProps';
+
+  export interface IPropertyPaneAsyncDropdownInternalProps extends IPropertyPaneAsyncDropdownProps, IPropertyPaneCustomFieldProps {
+  }
+  ```
+
+  Интерфейс **IPropertyPaneAsyncDropdownInternalProps** не определяет новые свойства, но он объединяет свойства из заданного интерфейса **IPropertyPaneAsyncDropdownProps** и стандартного интерфейса SharePoint Framework **IPropertyPaneCustomFieldProps**, что необходимо для правильной работы пользовательского элемента управления.
+
+4. Определите асинхронное раскрывающееся меню области свойств. В папке **src/controls/PropertyPaneAsyncDropdown** создайте файл **PropertyPaneAsyncDropdown.ts** и введите следующий код:
+
+  ```ts
+  import * as React from 'react';
+  import * as ReactDom from 'react-dom';
+  import {
+    IPropertyPaneField,
+    PropertyPaneFieldType
+  } from '@microsoft/sp-webpart-base';
+  import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
+  import { IPropertyPaneAsyncDropdownProps } from './IPropertyPaneAsyncDropdownProps';
+  import { IPropertyPaneAsyncDropdownInternalProps } from './IPropertyPaneAsyncDropdownInternalProps';
+  import AsyncDropdown from './components/AsyncDropdown';
+  import { IAsyncDropdownProps } from './components/IAsyncDropdownProps';
+
+  export class PropertyPaneAsyncDropdown implements IPropertyPaneField<IPropertyPaneAsyncDropdownProps> {
+    public type: PropertyPaneFieldType = PropertyPaneFieldType.Custom;
+    public targetProperty: string;
+    public properties: IPropertyPaneAsyncDropdownInternalProps;
+    private elem: HTMLElement;
+
+    constructor(targetProperty: string, properties: IPropertyPaneAsyncDropdownProps) {
+      this.targetProperty = targetProperty;
+      this.properties = {
+        key: properties.label,
+        label: properties.label,
+        loadOptions: properties.loadOptions,
+        onPropertyChange: properties.onPropertyChange,
+        selectedKey: properties.selectedKey,
+        disabled: properties.disabled,
+        onRender: this.onRender.bind(this)
+      };
     }
 
-    this.onRender(this.elem);
-  }
+    public render(): void {
+      if (!this.elem) {
+        return;
+      }
 
-  private onRender(elem: HTMLElement): void {
-    if (!this.elem) {
-      this.elem = elem;
+      this.onRender(this.elem);
     }
 
-    const element: React.ReactElement<IAsyncDropdownProps> = React.createElement(AsyncDropdown, {
-      label: this.properties.label,
-      loadOptions: this.properties.loadOptions,
-      onChanged: this.onChanged.bind(this),
-      selectedKey: this.properties.selectedKey,
-      disabled: this.properties.disabled,
-      // required to allow the component to be re-rendered by calling this.render() externally
-      stateKey: new Date().toString()
-    });
-    ReactDom.render(element, elem);
+    private onRender(elem: HTMLElement): void {
+      if (!this.elem) {
+        this.elem = elem;
+      }
+
+      const element: React.ReactElement<IAsyncDropdownProps> = React.createElement(AsyncDropdown, {
+        label: this.properties.label,
+        loadOptions: this.properties.loadOptions,
+        onChanged: this.onChanged.bind(this),
+        selectedKey: this.properties.selectedKey,
+        disabled: this.properties.disabled,
+        // required to allow the component to be re-rendered by calling this.render() externally
+        stateKey: new Date().toString()
+      });
+      ReactDom.render(element, elem);
+    }
+
+    private onChanged(option: IDropdownOption, index?: number): void {
+      this.properties.onPropertyChange(this.targetProperty, option.key);
+    }
   }
+  ```
 
-  private onChanged(option: IDropdownOption, index?: number): void {
-    this.properties.onPropertyChange(this.targetProperty, option.key);
-  }
-}
-```
+  Класс **PropertyPaneAsyncDropdown** реализует стандартный интерфейс SharePoint Framework **IPropertyPaneField**, используя интерфейс **IPropertyPaneAsyncDropdownProps** как контракт для общедоступных свойств, которые можно настроить в веб-части. Класс содержит следующие три общедоступные свойства, определяемые интерфейсом **IPropertyPaneField**:
 
-Класс **PropertyPaneAsyncDropdown** реализует стандартный интерфейс SharePoint Framework **IPropertyPaneField**, используя интерфейс **IPropertyPaneAsyncDropdownProps** как контракт для общедоступных свойств, которые можно настроить в веб-части. Класс содержит следующие три общедоступные свойства, определяемые интерфейсом **IPropertyPaneField**:
+  - **type**. Для пользовательского элемента управления области свойств необходимо использовать значение **PropertyPaneFieldType.Custom**.
+  - **targetProperty**: позволяет указать имя свойства веб-части, которое необходимо использовать с элементом управления.
+  - **properties**. Позволяет определить свойства элемента управления.
 
-- **type**: для пользовательского элемента управления области свойств необходимо использовать значение **PropertyPaneFieldType.Custom**.
-- **targetProperty**: позволяет указать имя свойства веб-части, которое необходимо использовать с элементом управления.
-- **properties**: позволяет определить свойства элемента управления.
+  Обратите внимание на то, что свойство **properties** относится к внутреннему типу **IPropertyPaneAsyncDropdownInternalProps**, а не к общедоступному интерфейсу **IPropertyPaneAsyncDropdownProps**, реализованному классом. Это сделано для того, чтобы свойство **properties** могло определять метод **onRender**, необходимый для SharePoint Framework. Если бы метод **onRender** был частью общедоступного интерфейса **IPropertyPaneAsyncDropdownProps**, при использовании асинхронного раскрывающегося меню в веб-части вам потребовалось бы назначить ему значение в веб-части, что нежелательно.
 
-Обратите внимание, что свойство **properties** относится к внутреннему типу **IPropertyPaneAsyncDropdownInternalProps**, а не к общедоступному интерфейсу **IPropertyPaneAsyncDropdownProps**, реализованному классом. Это сделано для того, чтобы свойство **properties** могло определять метод **onRender**, необходимый для SharePoint Framework. Если бы метод **onRender** был частью общедоступного интерфейса **IPropertyPaneAsyncDropdownProps**, при использовании асинхронного раскрывающегося меню в веб-части, вам потребовалось бы назначить ему значение в веб-части, что нежелательно.
+  Класс **PropertyPaneAsyncDropdown** определяет общедоступный метод **render**, который можно использовать для обновления элемента управления. Это удобно при наличии каскадных раскрывающихся меню, когда значение, выбранное в одном, определяет параметры, доступные в другом. Вызов метода **render** после выбора элемента позволяет зависимому раскрывающемуся меню загрузить доступные параметры. Чтобы это работало, компонент React должен обнаружить, что элемент управления изменен. Для этого установите текущую дату для свойства **stateKey**. В результате при каждом вызове метода **onRender** компонент будет не только заново отрисовываться, но и обновлять доступные параметры.
 
-Класс **PropertyPaneAsyncDropdown** определяет общедоступный метод **render**, который можно использовать для обновления элемента управления. Это удобно при наличии каскадных раскрывающихся меню, когда значение, выбранное в одном, определяет параметры, доступные в другом. Вызов метода **render** после выбора элемента позволяет зависимому раскрывающемуся меню загрузить доступные параметры. Чтобы это работало, компонент React должен обнаружить, что элемент управления изменен. Для этого установите текущую дату для свойства **stateKey**. В результате при каждом вызове метода **onRender** компонент будет не только заново отрисовываться, но и обновлять доступные параметры.
+## <a name="use-the-asynchronous-dropdown-property-pane-control-in-the-web-part"></a>Как использовать асинхронное раскрывающееся меню области свойств в веб-части
 
-## <a name="use-the-asynchronous-dropdown-property-pane-control-in-the-web-part"></a>Использование асинхронного раскрывающегося меню в веб-части
-
-Теперь, когда асинхронный элемент управления области свойств готов, необходимо использовать его в веб-части, чтобы пользователи могли выбрать список.
+Теперь, когда асинхронное раскрывающееся меню области свойств готово, необходимо использовать его в веб-части, чтобы пользователи могли выбрать список.
 
 ### <a name="add-list-info-interface"></a>Добавление интерфейса сведений о списке
 
-Чтобы передавать сведения о доступных списках, определите интерфейс, который будет представлять сведения о списке. В папке **src/webparts/listItems** создайте файл **IListInfo.ts** и введите следующий код:
+Чтобы передавать сведения о доступных списках согласованно, определите интерфейс, который будет представлять сведения о списке. В папке **src/webparts/listItems** создайте файл **IListInfo.ts** и введите следующий код:
 
 ```ts
 export interface IListInfo {
@@ -482,194 +490,194 @@ export interface IListInfo {
 }
 ```
 
-### <a name="use-the-asynchronous-dropdown-property-pane-control-to-render-the-listname-web-part-property"></a>Использование асинхронного раскрывающегося меню для отрисовки свойства веб-части listName
+### <a name="use-the-asynchronous-dropdown-property-pane-control-to-render-the-listname-web-part-property"></a>Как использовать асинхронное раскрывающееся меню области свойств для отрисовки свойства веб-части listName
 
-#### <a name="reference-required-types"></a>Обязательные типы для ссылки
+1. Добавьте ссылку на обязательные типы. В верхней части файла **src/webparts/listItems/ListItemsWebPart.ts** импортируйте созданный класс **PropertyPaneAsyncDropdown**, добавив следующее:
 
-В верхней части файла **src/webparts/listItems/ListItemsWebPart.ts** импортируйте созданный класс **PropertyPaneAsyncDropdown**, добавив:
+  ```ts
+  import { PropertyPaneAsyncDropdown } from '../../controls/PropertyPaneAsyncDropdown/PropertyPaneAsyncDropdown';
+  ```
 
-```ts
-import { PropertyPaneAsyncDropdown } from '../../controls/PropertyPaneAsyncDropdown/PropertyPaneAsyncDropdown';
-```
+2. После этого кода добавьте ссылку на интерфейс **IDropdownOption** и две вспомогательные функции, необходимые для работы со свойствами веб-части.
 
-После этого кода добавьте ссылку на интерфейс **IDropdownOption** и две вспомогательные функции, необходимые для работы со свойствами веб-части.
+  ```ts
+  import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
+  import { update, get } from '@microsoft/sp-lodash-subset';
+  ```
 
-```ts
-import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
-import { update, get } from '@microsoft/sp-lodash-subset';
-```
+  <br/>
 
-![Ссылки на класс PropertyPaneAsyncDropdown и интерфейс IDropdownOption, выделенные в Visual Studio Code](../../../images/custom-property-pane-control-web-part-imports.png)
+  ![Ссылки на класс PropertyPaneAsyncDropdown и интерфейс IDropdownOption, выделенные в Visual Studio Code](../../../images/custom-property-pane-control-web-part-imports.png)
 
-#### <a name="add-method-to-load-available-lists"></a>Добавление метода для загрузки доступных списков
+3. Добавьте метод для загрузки доступных списков. В классе **ListItemsWebPart** добавьте метод для загрузки доступных списков. В этой статье используются фиктивные данные, но вы также можете вызвать REST API для SharePoint, чтобы извлечь список доступных списков из текущего веб-сайта. Для имитации загрузки параметров из внешней службы метод использует двухсекундную задержку.
 
-В классе **ListItemsWebPart** добавьте метод для загрузки доступных списков. В этой статье используются фиктивные данные, но вы также можете вызвать REST API SharePoint, чтобы извлечь список доступных списков из текущего веб-сайта. Для имитации загрузки параметров из внешней службы метод использует двухсекундную задержку.
-
-```ts
-export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
-  // ...
-  private loadLists(): Promise<IDropdownOption[]> {
-    return new Promise<IDropdownOption[]>((resolve: (options: IDropdownOption[]) => void, reject: (error: any) => void) => {
-      setTimeout(() => {
-        resolve([{
-          key: 'sharedDocuments',
-          text: 'Shared Documents'
-        },
-          {
-            key: 'myDocuments',
-            text: 'My Documents'
-          }]);
-      }, 2000);
-    });
-  }
-}
-```
-
-#### <a name="add-method-to-handle-the-change-of-the-value-in-the-dropdown"></a>Добавление метода для обработки изменения значения в раскрывающемся меню
-
-В классе **ListItemsWebPart** добавьте метод **onListChange**.
-
-```ts
-export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
-  // ...
-  private onListChange(propertyPath: string, newValue: any): void {
-    const oldValue: any = get(this.properties, propertyPath);
-    // store new value in web part properties
-    update(this.properties, propertyPath, (): any => { return newValue; });
-    // refresh web part
-    this.render();
-  }
-}
-```
-
-После выбора списка в раскрывающемся меню выбранное значение следует сохранять в свойствах веб-части, а веб-часть обновлять с учетом выбранного свойства.
-
-#### <a name="render-the-list-web-part-property-using-the-asynchronous-dropdown-property-pane-control"></a>Отрисовка свойства веб-части list с помощью асинхронного раскрывающегося меню области свойств
-
-В классе **ListItemsWebPart** измените метод **getPropertyPaneConfiguration** так, чтобы он использовал асинхронное раскрывающееся меню области свойств для отрисовки свойства веб-части **listName**.
-
-```ts
-export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
-  // ...
-  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
-    return {
-      pages: [
-        {
-          header: {
-            description: strings.PropertyPaneDescription
+  ```ts
+  export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
+    // ...
+    private loadLists(): Promise<IDropdownOption[]> {
+      return new Promise<IDropdownOption[]>((resolve: (options: IDropdownOption[]) => void, reject: (error: any) => void) => {
+        setTimeout(() => {
+          resolve([{
+            key: 'sharedDocuments',
+            text: 'Shared Documents'
           },
-          groups: [
             {
-              groupName: strings.BasicGroupName,
-              groupFields: [
-                new PropertyPaneAsyncDropdown('listName', {
-                  label: strings.ListFieldLabel,
-                  loadOptions: this.loadLists.bind(this),
-                  onPropertyChange: this.onListChange.bind(this),
-                  selectedKey: this.properties.listName
-                })
-              ]
-            }
-          ]
-        }
-      ]
-    };
+              key: 'myDocuments',
+              text: 'My Documents'
+            }]);
+        }, 2000);
+      });
+    }
   }
-  // ...
-}
-```
+  ```
 
-Теперь вы сможете выбрать список, используя новое асинхронное раскрывающееся меню области свойств. Чтобы убедиться, что элемент управления работает должным образом, откройте командную строку и выполните следующую команду:
+4. Добавьте метод для обработки изменения значения в раскрывающемся меню. В классе **ListItemsWebPart** добавьте метод **onListChange**.
 
-```sh
-gulp serve
-```
+  ```ts
+  export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
+    // ...
+    private onListChange(propertyPath: string, newValue: any): void {
+      const oldValue: any = get(this.properties, propertyPath);
+      // store new value in web part properties
+      update(this.properties, propertyPath, (): any => { return newValue; });
+      // refresh web part
+      this.render();
+    }
+  }
+  ```
 
-![Асинхронное раскрывающееся меню загружает параметры, не блокируя пользовательский интерфейс веб-части](../../../images/custom-property-pane-control-loading-options.png)
+  После выбора списка в раскрывающемся меню следует сохранять выбранное значение в свойствах веб-части, а веб-часть — отрисовывать повторно для отображения выбранного свойства.
 
-![Выбор одного из параметров в асинхронном раскрывающемся меню области свойств](../../../images/custom-property-pane-control-selecting-option.png)
+5. Выполните отрисовку свойства веб-части списка с помощью асинхронного раскрывающегося меню области свойств. В классе **ListItemsWebPart** измените метод **getPropertyPaneConfiguration** так, чтобы он использовал асинхронное раскрывающееся меню области свойств для отрисовки свойства веб-части **listName**.
 
-## <a name="implement-cascading-dropdowns-using-the-asynchronous-dropdown-property-pane-control"></a>Реализация каскадных раскрывающихся списков с помощью элемента управления области свойств
+  ```ts
+  export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
+    // ...
+    protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
+      return {
+        pages: [
+          {
+            header: {
+              description: strings.PropertyPaneDescription
+            },
+            groups: [
+              {
+                groupName: strings.BasicGroupName,
+                groupFields: [
+                  new PropertyPaneAsyncDropdown('listName', {
+                    label: strings.ListFieldLabel,
+                    loadOptions: this.loadLists.bind(this),
+                    onPropertyChange: this.onListChange.bind(this),
+                    selectedKey: this.properties.listName
+                  })
+                ]
+              }
+            ]
+          }
+        ]
+      };
+    }
+    // ...
+  }
+  ```
 
-При создании веб-частей SharePoint Framework может понадобиться реализовать сценарий, при котором доступные параметры зависят от другого параметра, выбранного ранее. Например, сделать так, чтобы сначала пользователи выбирали список, а затем элемент из этого списка. Список доступных элементов будет зависеть от выбранного списка. Ниже описано, как реализовать такой сценарий с помощью асинхронного раскрывающегося меню, реализованного на предыдущих шагах.
+6. Теперь вы сможете выбрать список, используя новое асинхронное раскрывающееся меню области свойств. Чтобы убедиться, что элемент управления работает должным образом, откройте командную строку и выполните следующую команду:
+
+  ```sh
+  gulp serve
+  ```
+
+  <br/>
+
+  ![Асинхронное раскрывающееся меню загружает параметры, не блокируя пользовательский интерфейс веб-части](../../../images/custom-property-pane-control-loading-options.png)
+
+  <br/>
+
+  ![Выбор одного из параметров в асинхронном раскрывающемся меню области свойств](../../../images/custom-property-pane-control-selecting-option.png)
+
+## <a name="implement-cascading-dropdowns-using-the-asynchronous-dropdown-property-pane-control"></a>Реализация каскадных раскрывающихся списков с помощью раскрывающегося меню области свойств
+
+При создании веб-частей SharePoint Framework может понадобиться реализовать конфигурацию, при которой доступные параметры зависят от другого параметра, выбранного ранее. Например, сделать так, чтобы сначала пользователи выбирали список, а затем — элемент из этого списка. Список доступных элементов будет зависеть от выбранного списка. Ниже описано, как реализовать такой сценарий, используя асинхронное раскрывающееся меню области свойств, реализованное на предыдущих шагах.
 
 ### <a name="add-item-web-part-property"></a>Добавление свойства веб-части item
 
-В редакторе кода откройте файл **src/webparts/listItems/ListItemsWebPart.manifest.json**. В разделе **properties** добавьте свойство **item**, чтобы оно выглядело следующим образом:
+1. В редакторе кода откройте файл **src/webparts/listItems/ListItemsWebPart.manifest.json**. В разделе **properties** добавьте свойство **item**, чтобы оно выглядело следующим образом:
 
-```ts
-// ...
-"properties": {
-   "listName": "",
-   "item": ""
-}
-// ...
-```
-
-![Манифест веб-части с выделенным свойством веб-части item](../../../images/custom-property-pane-control-item-property-web-part-manifest.png)
-
-Измените код в файле **src/webparts/listItems/IListItemsWebPartProps.ts** следующим образом:
-
-```ts
-export interface IListItemsWebPartProps {
-  listName: string;
-  item: string;
-}
-```
-
-Измените содержимое файла **src/webparts/listItems/components/IListItemsProps.ts** следующим образом:
-
-```ts
-export interface IListItemsProps {
-  listName: string;
-  item: string;
-}
-```
-
-В файле **src/webparts/listItems/ListItemsWebPart.ts** измените код метода **render** следующим образом:
-
-```ts
-export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
+  ```ts
   // ...
-  public render(): void {
-    const element: React.ReactElement<IListItemsProps> = React.createElement(ListItems, {
-      listName: this.properties.listName,
-      item: this.properties.item
-    });
-
-    ReactDom.render(element, this.domElement);
+  "properties": {
+    "listName": "",
+    "item": ""
   }
   // ...
-}
-```
+  ```
 
-В файле **src/webparts/listItems/loc/mystrings.d.ts** измените интерфейс **IListItemsWebPartStrings** следующим образом:
+  <br/>
 
-```ts
-declare interface IListItemsWebPartStrings {
-  PropertyPaneDescription: string;
-  BasicGroupName: string;
-  ListFieldLabel: string;
-  ItemFieldLabel: string;
-}
-```
+  ![Манифест веб-части с выделенным свойством веб-части item](../../../images/custom-property-pane-control-item-property-web-part-manifest.png)
 
-В файле **src/webparts/listItems/loc/en-us.js** добавьте отсутствующее определение для строки **ItemFieldLabel**.
+2. Измените код в файле **src/webparts/listItems/IListItemsWebPartProps.ts** следующим образом:
 
-```js
-define([], function() {
-  return {
-    "PropertyPaneDescription": "Description",
-    "BasicGroupName": "Group Name",
-    "ListFieldLabel": "List",
-    "ItemFieldLabel": "Item"
+  ```ts
+  export interface IListItemsWebPartProps {
+    listName: string;
+    item: string;
   }
-});
-```
+  ```
+
+3. Измените содержимое файла **src/webparts/listItems/components/IListItemsProps.ts** следующим образом:
+
+  ```ts
+  export interface IListItemsProps {
+    listName: string;
+    item: string;
+  }
+  ```
+
+4. В файле **src/webparts/listItems/ListItemsWebPart.ts** замените код метода **render** следующим:
+
+  ```ts
+  export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
+    // ...
+    public render(): void {
+      const element: React.ReactElement<IListItemsProps> = React.createElement(ListItems, {
+        listName: this.properties.listName,
+        item: this.properties.item
+      });
+
+      ReactDom.render(element, this.domElement);
+    }
+    // ...
+  }
+  ```
+
+5. В файле **src/webparts/listItems/loc/mystrings.d.ts** измените интерфейс **IListItemsWebPartStrings** следующим образом:
+
+  ```ts
+  declare interface IListItemsWebPartStrings {
+    PropertyPaneDescription: string;
+    BasicGroupName: string;
+    ListFieldLabel: string;
+    ItemFieldLabel: string;
+  }
+  ```
+
+6. В файле **src/webparts/listItems/loc/en-us.js** добавьте отсутствующее определение для строки **ItemFieldLabel**.
+
+  ```js
+  define([], function() {
+    return {
+      "PropertyPaneDescription": "Description",
+      "BasicGroupName": "Group Name",
+      "ListFieldLabel": "List",
+      "ItemFieldLabel": "Item"
+    }
+  });
+  ```
 
 ### <a name="render-the-value-of-the-item-web-part-property"></a>Отрисовка значения свойства веб-части item
 
-В файле **src/webparts/listItems/components/ListItems.tsx** измените метод **render** на следующий:
+В файле **src/webparts/listItems/components/ListItems.tsx** замените метод **render** на следующий:
 
 ```tsx
 export default class ListItems extends React.Component<IListItemsProps, {}> {
@@ -697,7 +705,7 @@ export default class ListItems extends React.Component<IListItemsProps, {}> {
 
 ### <a name="add-method-to-load-list-items"></a>Добавление метода для загрузки элементов списка
 
-В файле **src/webparts/listItems/ListItemsWebPart.ts** в классе **ListItemsWebPart** добавьте метод для загрузки доступных элементов из выбранного списка. Как и для загрузки доступных списков, здесь используются фиктивные данные.
+В файле **src/webparts/listItems/ListItemsWebPart.ts** добавьте метод в классе **ListItemsWebPart** для загрузки доступных элементов из выбранного списка. Как и для загрузки доступных списков, здесь используются фиктивные данные. В зависимости от того, какой список выбран ранее, метод **loadItems** возвращает фиктивные элементы списка. Если список не выбран, метод разрешает обещание без данных.
 
 ```ts
 export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
@@ -741,11 +749,11 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
 }
 ```
 
-В зависимости от выбранного ранее списка метод **loadItems** возвращает фиктивные элементы списка. Если список не выбран, метод разрешает обещание без данных.
+
 
 ### <a name="add-method-to-handle-the-selection-of-an-item"></a>Добавление метода для обработки выбора элемента
 
-В классе **ListItemsWebPart** добавьте метод **onListItemChange**.
+В классе **ListItemsWebPart** добавьте метод **onListItemChange**. После выбора элемента в раскрывающемся меню веб-часть должна сохранить новое значение в свойствах и обновиться с учетом изменений в пользовательском интерфейсе.
 
 ```ts
 export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
@@ -760,117 +768,130 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
 }
 ```
 
-После выбора элемента в раскрывающемся меню веб-часть должна сохранить новое значение в свойствах и обновиться с учетом изменений в пользовательском интерфейсе.
 
 ### <a name="render-the-item-web-part-property-in-the-property-pane"></a>Отрисовка свойства веб-части item в области свойств
 
-В классе **ListItemsWebPart** добавьте свойство класса **itemsDropdown**.
+1. В классе **ListItemsWebPart** добавьте свойство класса **itemsDropdown**.
 
-```ts
-export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
-  private itemsDropDown: PropertyPaneAsyncDropdown;
-  // ...
-}
-```
-
-После этого измените код метода **getPropertyPaneConfiguration** следующим образом:
-
-```ts
-export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
-  // ...
-  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
-    // reference to item dropdown needed later after selecting a list
-    this.itemsDropDown = new PropertyPaneAsyncDropdown('item', {
-      label: strings.ItemFieldLabel,
-      loadOptions: this.loadItems.bind(this),
-      onPropertyChange: this.onListItemChange.bind(this),
-      selectedKey: this.properties.item,
-      // should be disabled if no list has been selected
-      disabled: !this.properties.listName
-    });
-
-    return {
-      pages: [
-        {
-          header: {
-            description: strings.PropertyPaneDescription
-          },
-          groups: [
-            {
-              groupName: strings.BasicGroupName,
-              groupFields: [
-                new PropertyPaneAsyncDropdown('listName', {
-                  label: strings.ListFieldLabel,
-                  loadOptions: this.loadLists.bind(this),
-                  onPropertyChange: this.onListChange.bind(this),
-                  selectedKey: this.properties.listName
-                }),
-                this.itemsDropDown
-              ]
-            }
-          ]
-        }
-      ]
-    };
+  ```ts
+  export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
+    private itemsDropDown: PropertyPaneAsyncDropdown;
+    // ...
   }
-  // ...
-}
-```
+  ```
 
-Раскрывающееся меню для свойства item инициализируется так же, как раскрывающееся меню для свойства listName. Единственное отличие состоит в том, что после выбора списка раскрывающееся меню элементов должно обновиться, экземпляр элемента управления должен быть назначен переменной класса.
+2. Замените код метода **getPropertyPaneConfiguration** на такой:
+
+  ```ts
+  export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
+    // ...
+    protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
+      // reference to item dropdown needed later after selecting a list
+      this.itemsDropDown = new PropertyPaneAsyncDropdown('item', {
+        label: strings.ItemFieldLabel,
+        loadOptions: this.loadItems.bind(this),
+        onPropertyChange: this.onListItemChange.bind(this),
+        selectedKey: this.properties.item,
+        // should be disabled if no list has been selected
+        disabled: !this.properties.listName
+      });
+
+      return {
+        pages: [
+          {
+            header: {
+              description: strings.PropertyPaneDescription
+            },
+            groups: [
+              {
+                groupName: strings.BasicGroupName,
+                groupFields: [
+                  new PropertyPaneAsyncDropdown('listName', {
+                    label: strings.ListFieldLabel,
+                    loadOptions: this.loadLists.bind(this),
+                    onPropertyChange: this.onListChange.bind(this),
+                    selectedKey: this.properties.listName
+                  }),
+                  this.itemsDropDown
+                ]
+              }
+            ]
+          }
+        ]
+      };
+    }
+    // ...
+  }
+  ```
+
+  Раскрывающееся меню для свойства item инициализируется так же, как раскрывающееся меню для свойства listName. Единственное отличие состоит в том, что после выбора списка раскрывающееся меню должно обновиться, экземпляр элемента управления должен быть назначен переменной класса.
 
 ### <a name="load-items-for-the-selected-list"></a>Загрузка элементов выбранного списка
 
-Раскрывающееся меню элементов становится доступным после выбора списка. После этого он также загружает элементы списка. Чтобы реализовать эту логику, дополните ранее заданный метод **onListChange**:
+Раскрывающееся меню становится доступным после выбора списка. После выбора списка загружаются элементы этого списка в раскрывающемся меню. 
 
-```ts
-export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
-  // ...
-  private onListChange(propertyPath: string, newValue: any): void {
-    const oldValue: any = get(this.properties, propertyPath);
-    // store new value in web part properties
-    update(this.properties, propertyPath, (): any => { return newValue; });
-    // reset selected item
-    this.properties.item = undefined;
-    // store new value in web part properties
-    update(this.properties, 'item', (): any => { return this.properties.item; });
-    // refresh web part
-    this.render();
-    // reset selected values in item dropdown
-    this.itemsDropDown.properties.selectedKey = this.properties.item;
-    // allow to load items
-    this.itemsDropDown.properties.disabled = false;
-    // load items and re-render items dropdown
-    this.itemsDropDown.render();
+1. Чтобы реализовать эту логику, дополните ранее заданный метод **onListChange**:
+
+  ```ts
+  export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
+    // ...
+    private onListChange(propertyPath: string, newValue: any): void {
+      const oldValue: any = get(this.properties, propertyPath);
+      // store new value in web part properties
+      update(this.properties, propertyPath, (): any => { return newValue; });
+      // reset selected item
+      this.properties.item = undefined;
+      // store new value in web part properties
+      update(this.properties, 'item', (): any => { return this.properties.item; });
+      // refresh web part
+      this.render();
+      // reset selected values in item dropdown
+      this.itemsDropDown.properties.selectedKey = this.properties.item;
+      // allow to load items
+      this.itemsDropDown.properties.disabled = false;
+      // load items and re-render items dropdown
+      this.itemsDropDown.render();
+    }
+    // ...
   }
-  // ...
-}
-```
+  ```
 
-После выбора списка выбранный элемент сбрасывается, сохраняется в свойствах веб-части и сбрасывается в раскрывающемся меню элементов. Раскрывающееся меню для выбора элемента становится доступным и обновляется для загрузки параметров.
+  После выбора списка выбранный элемент сбрасывается, сохраняется в свойствах веб-части и сбрасывается в раскрывающемся меню элементов. Раскрывающееся меню для выбора элемента становится доступным и обновляется для загрузки параметров.
 
-Чтобы убедиться, что все работает должным образом, в командной строке выполните следующую команду:
+2. Чтобы убедиться, что все работает должным образом, в командной строке выполните следующую команду:
 
-```sh
-gulp serve
-```
+  ```sh
+  gulp serve
+  ```
 
-После первого добавления веб-части на страницу и открытия ее области свойств вы увидите, что оба раскрывающихся меню отключены и загружают параметры.
+  После первого добавления веб-части на страницу и открытия ее области свойств вы увидите, что оба раскрывающихся меню отключены и загружают параметры.
 
-![Раскрывающиеся меню в области свойств веб-части загружают данные](../../../images/custom-property-pane-control-cascading-loading-lists.png)
+  ![Раскрывающиеся меню в области свойств веб-части загружают данные](../../../images/custom-property-pane-control-cascading-loading-lists.png)
 
-После загрузки параметров становится доступным раскрывающееся меню списков. Так как список еще не выбран, раскрывающееся меню элементов остается отключенным.
+  <br/>
 
-![Раскрывающееся меню списков в области свойств веб-части активно. Раскрывающееся меню элементов отключено](../../../images/custom-property-pane-control-cascading-lists-loaded-items-disabled.png)
+  После загрузки параметров становится доступным раскрывающееся меню списков. Так как список еще не выбран, раскрывающееся меню элементов остается отключенным.
 
-После выбора списка раскрывающееся меню элементов загрузит элементы, доступные в этом списке.
+  ![Раскрывающееся меню списков в области свойств веб-части активно. Раскрывающееся меню элементов отключено](../../../images/custom-property-pane-control-cascading-lists-loaded-items-disabled.png)
 
-![Раскрывающееся меню элементов загружает доступные элементы после выбора списка в раскрывающемся меню списков](../../../images/custom-property-pane-control-cascading-loading-items.png)
+   <br/>
 
-После загрузки доступных элементов станет доступным раскрывающееся меню элементов.
+  После выбора списка раскрывающееся меню элементов загрузит элементы, доступные в этом списке.
 
-![Выбор элемента в раскрывающемся меню элементов в области свойств веб-части](../../../images/custom-property-pane-control-cascading-items-loaded-enabled.png)
+  ![Раскрывающееся меню элементов загружает доступные элементы после выбора списка в раскрывающемся меню списков](../../../images/custom-property-pane-control-cascading-loading-items.png)
 
-После выбора элемента в раскрывающемся меню элементов веб-часть обновляется для отображения выбранного элемента.
+   <br/>
 
-![Выбранные список и элемент в веб-части](../../../images/custom-property-pane-control-cascading-selected-list-item.png)
+  После загрузки доступных элементов станет доступным раскрывающееся меню элементов.
+
+  ![Выбор элемента в раскрывающемся меню элементов в области свойств веб-части](../../../images/custom-property-pane-control-cascading-items-loaded-enabled.png)
+
+   <br/>
+
+  После выбора элемента в раскрывающемся меню элементов веб-часть обновляется для отображения выбранного элемента.
+
+  ![Выбранные список и элемент в веб-части](../../../images/custom-property-pane-control-cascading-selected-list-item.png)
+
+## <a name="see-also"></a>См. также
+
+- [Использование каскадных раскрывающихся меню для свойств веб-частей](./use-cascading-dropdowns-in-web-part-properties.md)
