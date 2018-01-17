@@ -116,4 +116,4 @@ Remove-SPOSiteCollectionAppCatalog -Site $site
 
 ## <a name="see-also"></a><span data-ttu-id="31bb4-157">См. также</span><span class="sxs-lookup"><span data-stu-id="31bb4-157">See also</span></span>
 
-- <span data-ttu-id="31bb4-158">[Управление каталогом приложений для семейства веб-сайтов]((https://support.office.com/ru-RU/article/Manage-the-Site-Collection-App-Catalog-928b9b61-a9de-4563-a7d1-6231aa9d4d19))</span><span class="sxs-lookup"><span data-stu-id="31bb4-158">[Manage the Site Collection App Catalog]((https://support.office.com/ru-RU/article/Manage-the-Site-Collection-App-Catalog-928b9b61-a9de-4563-a7d1-6231aa9d4d19))</span></span>
+- <span data-ttu-id="31bb4-158">[Управление каталогом приложений для семейства веб-сайтов](https://support.office.com/ru-RU/article/Manage-the-Site-Collection-App-Catalog-928b9b61-a9de-4563-a7d1-6231aa9d4d19)</span><span class="sxs-lookup"><span data-stu-id="31bb4-158">[Manage the Site Collection App Catalog](https://support.office.com/ru-RU/article/Manage-the-Site-Collection-App-Catalog-928b9b61-a9de-4563-a7d1-6231aa9d4d19)</span></span>

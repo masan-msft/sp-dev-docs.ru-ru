@@ -89,5 +89,5 @@ ms.lasthandoff: 12/21/2017
 ## <a name="see-also"></a><span data-ttu-id="a9690-156">См. также</span><span class="sxs-lookup"><span data-stu-id="a9690-156">See also</span></span>
 <span data-ttu-id="a9690-157">Узнавайте о новых выпусках и возможностях SharePoint Framework из следующих ресурсов.</span><span class="sxs-lookup"><span data-stu-id="a9690-157">Please use following resources to stay up to date on the new releases and capabilities being released for SharePoint Framework.</span></span>
 
-* <span data-ttu-id="a9690-158">[dev.office.com blog]((https://dev.office.com/blogs))</span><span class="sxs-lookup"><span data-stu-id="a9690-158">[dev.office.com blog]((https://dev.office.com/blogs))</span></span>
-* <span data-ttu-id="a9690-159">[Учетная запись OfficeDev в Твиттере]((https://twitter.com/officedev))</span><span class="sxs-lookup"><span data-stu-id="a9690-159">[OfficeDev Twitter account]((https://twitter.com/officedev))</span></span>
+* <span data-ttu-id="a9690-158">[dev.office.com blog](https://dev.office.com/blogs)</span><span class="sxs-lookup"><span data-stu-id="a9690-158">[dev.office.com blog](https://dev.office.com/blogs)</span></span>
+* <span data-ttu-id="a9690-159">[Учетная запись OfficeDev в Твиттере](https://twitter.com/officedev)</span><span class="sxs-lookup"><span data-stu-id="a9690-159">[OfficeDev Twitter account](https://twitter.com/officedev)</span></span>
