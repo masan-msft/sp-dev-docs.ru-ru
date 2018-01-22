@@ -1,73 +1,76 @@
 ---
 title: "Перенос приложений AngularJS на платформу SharePoint Framework"
-ms.date: 09/25/2017
+description: "Преобразование приложения AngularJS со стилем на основе ngOfficeUIFabric в клиентскую веб-часть SharePoint Framework."
+ms.date: 01/09/2018
 ms.prod: sharepoint
-ms.openlocfilehash: ba1ec27694ea9a38afdbd4f173fbcd0d74618b37
-ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
+ms.openlocfilehash: 637a35881870b84303b052cdb5564fef26adff4b
+ms.sourcegitcommit: 1f1044e59d987d878bb8bc403413e3090234ad44
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 01/11/2018
 ---
-# <a name="migrate-angularjs-applications-to-sharepoint-framework"></a><span data-ttu-id="a4c9d-102">Перенос приложений AngularJS на платформу SharePoint Framework</span><span class="sxs-lookup"><span data-stu-id="a4c9d-102">Migrate AngularJS applications to SharePoint Framework</span></span>
+# <a name="migrate-angularjs-applications-to-sharepoint-framework"></a><span data-ttu-id="7296f-103">Перенос приложений AngularJS на платформу SharePoint Framework</span><span class="sxs-lookup"><span data-stu-id="7296f-103">Migrate AngularJS applications to SharePoint Framework</span></span>
 
-<span data-ttu-id="a4c9d-103">Раньше во многих организациях решения для SharePoint создавались с помощью AngularJS.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-103">Many organizations have been using AngularJS for building SharePoint solutions in the past.</span></span> <span data-ttu-id="a4c9d-104">В этой статье показано, как перенести имеющееся приложение AngularJS, стиль которого создан с помощью [ngOfficeUIFabric](http://ngofficeuifabric.com) (директив AngularJS для Office UI Fabric), в клиентскую веб-часть SharePoint Framework.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-104">This article shows how to migrate an existing AngularJS application styled using [ngOfficeUIFabric](http://ngofficeuifabric.com) - AngularJS directives for Office UI Fabric, to a SharePoint Framework client-side web part.</span></span> <span data-ttu-id="a4c9d-105">Приложение, используемое в этом руководстве, управляет элементами списка дел, сохраненными в списке SharePoint.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-105">The sample application used for this tutorial manages to do items stored in a SharePoint list.</span></span>
+<span data-ttu-id="7296f-104">Раньше во многих организациях решения для SharePoint создавались с помощью AngularJS.</span><span class="sxs-lookup"><span data-stu-id="7296f-104">Many organizations have been using AngularJS for building SharePoint solutions in the past.</span></span> <span data-ttu-id="7296f-105">В этой статье показано, как перенести имеющееся приложение AngularJS, стиль которого создан с помощью [ngOfficeUIFabric](http://ngofficeuifabric.com) (директив AngularJS для Office UI Fabric), в клиентскую веб-часть SharePoint Framework.</span><span class="sxs-lookup"><span data-stu-id="7296f-105">This article shows how to migrate an existing AngularJS application styled using [ngOfficeUIFabric](http://ngofficeuifabric.com) - AngularJS directives for Office UI Fabric, to a SharePoint Framework client-side web part.</span></span> <span data-ttu-id="7296f-106">Приложение, используемое в этом руководстве, управляет элементами списка дел, хранящимися в списке SharePoint.</span><span class="sxs-lookup"><span data-stu-id="7296f-106">The sample application used for this tutorial manages to do items stored in a SharePoint list.</span></span>
 
-![Приложение AngularJS для управления элементами списка дел, сохраненными в списке SharePoint](../../../images/ng-migration-original-angular-application.png)
+<img alt="AngularJS application for managing To Do items stored in a SharePoint list" src="../../../images/ng-migration-original-angular-application.png" width="800">
 
-<span data-ttu-id="a4c9d-107">Исходный код приложения AngularJS доступен на сайте GitHub по адресу [https://github.com/SharePoint/sp-dev-fx-webparts/tree/dev/samples/angular-migration/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/dev/samples/angular-migration/angular-todo).</span><span class="sxs-lookup"><span data-stu-id="a4c9d-107">The source of the AngularJS application is available on GitHub at [https://github.com/SharePoint/sp-dev-fx-webparts/tree/dev/samples/angular-migration/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/dev/samples/angular-migration/angular-todo).</span></span>
+<span data-ttu-id="7296f-107">Исходный код приложения AngularJS доступен в репозитории [angular-migration/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/dev/samples/angular-migration/angular-todo) на сайте GitHub.</span><span class="sxs-lookup"><span data-stu-id="7296f-107">The source of the AngularJS application is available on GitHub at [https://github.com/SharePoint/sp-dev-fx-webparts/tree/dev/samples/angular-migration/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/dev/samples/angular-migration/angular-todo).</span></span>
 
-<span data-ttu-id="a4c9d-108">Исходный код приложения AngularJS, перенесенного на платформу SharePoint Framework, доступен на сайте GitHub по адресу [https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo).</span><span class="sxs-lookup"><span data-stu-id="a4c9d-108">The source of the AngularJS application migrated to SharePoint Framework is available on GitHub at [https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo).</span></span>
+<span data-ttu-id="7296f-108">Исходный код приложения AngularJS, перенесенного на платформу SharePoint Framework, доступен в репозитории [samples/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo) на сайте GitHub.</span><span class="sxs-lookup"><span data-stu-id="7296f-108">The source of the AngularJS application migrated to SharePoint Framework is available on GitHub at [https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo).</span></span>
 
 > [!NOTE] 
-> <span data-ttu-id="a4c9d-109">Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](http://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment) для создания решений на платформе SharePoint Framework.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-109">[Note:](http://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment) Before following the steps in this article, be sure to set up your development environment for building SharePoint Framework solutions.</span></span>
+> <span data-ttu-id="7296f-109">Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment.md) для создания решений на платформе SharePoint Framework.</span><span class="sxs-lookup"><span data-stu-id="7296f-109">Before following the steps in this article, be sure to [set up your development environment](../../set-up-your-development-environment.md) for building SharePoint Framework solutions.</span></span>
 
-## <a name="setup-project"></a><span data-ttu-id="a4c9d-110">Настройка проекта</span><span class="sxs-lookup"><span data-stu-id="a4c9d-110">Setup project</span></span>
+## <a name="set-up-project"></a><span data-ttu-id="7296f-110">Настройка проекта</span><span class="sxs-lookup"><span data-stu-id="7296f-110">Set up the starter project</span></span>
 
-<span data-ttu-id="a4c9d-111">Прежде чем приступить к переносу приложения AngularJS, создайте и настройте новый проект на платформе SharePoint Framework для размещения приложения AngularJS.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-111">Before you start migrating your AngularJS application, create and setup new SharePoint Framework project to host the AngularJS application.</span></span>
+<span data-ttu-id="7296f-111">Прежде чем приступить к переносу приложения AngularJS, создайте и настройте новый проект на платформе SharePoint Framework для размещения приложения AngularJS.</span><span class="sxs-lookup"><span data-stu-id="7296f-111">Before you start migrating your AngularJS application, create and setup new SharePoint Framework project to host the AngularJS application.</span></span>
 
-### <a name="create-new-project"></a><span data-ttu-id="a4c9d-112">Создание проекта</span><span class="sxs-lookup"><span data-stu-id="a4c9d-112">Create new project</span></span>
+### <a name="create-new-project"></a><span data-ttu-id="7296f-112">Создание проекта</span><span class="sxs-lookup"><span data-stu-id="7296f-112">Create new project</span></span>
 
-<span data-ttu-id="a4c9d-113">Для начала создайте папку проекта.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-113">Start by creating a new folder for your project</span></span>
+1. <span data-ttu-id="7296f-113">Создайте папку для проекта:</span><span class="sxs-lookup"><span data-stu-id="7296f-113">Start by creating a new folder for your project</span></span>
 
-```sh
-md angular-todo
-```
+  ```sh
+  md angular-todo
+  ```
 
-<span data-ttu-id="a4c9d-114">Перейдите в папку проекта:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-114">Navigate to the project folder:</span></span>
+2. <span data-ttu-id="7296f-114">Перейдите в папку проекта:</span><span class="sxs-lookup"><span data-stu-id="7296f-114">Go to the project folder:</span></span>
 
-```sh
-cd angular-todo
-```
+  ```sh
+  cd angular-todo
+  ```
 
-<span data-ttu-id="a4c9d-115">В папке проекта запустите генератор Yeoman для SharePoint Framework, чтобы сформировать шаблон проекта на платформе SharePoint Framework:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-115">In the project folder run the SharePoint Framework Yeoman generator to scaffold a new SharePoint Framework project:</span></span>
+3. <span data-ttu-id="7296f-115">В папке проекта запустите генератор Yeoman для SharePoint Framework, чтобы сформировать шаблон проекта на платформе SharePoint Framework:</span><span class="sxs-lookup"><span data-stu-id="7296f-115">In the project folder, run the SharePoint Framework Yeoman generator to scaffold a new SharePoint Framework project:</span></span>
 
-```sh
-yo @microsoft/sharepoint
-```
+  ```sh
+  yo @microsoft/sharepoint
+  ```
 
-<span data-ttu-id="a4c9d-116">Определите значения следующим образом:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-116">When prompted, define values as follows:</span></span>
+4. <span data-ttu-id="7296f-116">Определите значения следующим образом:</span><span class="sxs-lookup"><span data-stu-id="7296f-116">When prompted, define values as follows:</span></span>
 
-- <span data-ttu-id="a4c9d-117">**angular-todo** как имя решения</span><span class="sxs-lookup"><span data-stu-id="a4c9d-117">**angular-todo** as your solution name</span></span>
-- <span data-ttu-id="a4c9d-118">расположение файлов — **Use the current folder** (Использовать текущую папку)</span><span class="sxs-lookup"><span data-stu-id="a4c9d-118">**Use the current folder** for the location to place the files</span></span>
-- <span data-ttu-id="a4c9d-119">имя веб-части — **To do** (Текущие дела)</span><span class="sxs-lookup"><span data-stu-id="a4c9d-119">**To do** as your web part name</span></span>
-- <span data-ttu-id="a4c9d-120">описание веб-части — **Simple management of to do tasks** (Простое управление задачами)</span><span class="sxs-lookup"><span data-stu-id="a4c9d-120">**Simple management of to do tasks** as your web part description</span></span>
-- <span data-ttu-id="a4c9d-121">отправная точка создания веб-части — **No JavaScript web framework** (Без веб-платформы JavaScript).</span><span class="sxs-lookup"><span data-stu-id="a4c9d-121">**No JavaScript web framework** as the starting point to build the web part</span></span>
+  - <span data-ttu-id="7296f-117">**angular-todo** как имя решения</span><span class="sxs-lookup"><span data-stu-id="7296f-117">**angular-todo** as your solution name</span></span>
+  - <span data-ttu-id="7296f-118">расположение файлов — **Use the current folder** (Использовать текущую папку)</span><span class="sxs-lookup"><span data-stu-id="7296f-118">**Use the current folder** for the location to place the files</span></span>
+  - <span data-ttu-id="7296f-119">имя веб-части — **To do** (Текущие дела)</span><span class="sxs-lookup"><span data-stu-id="7296f-119">**To do** as your web part name</span></span>
+  - <span data-ttu-id="7296f-120">описание веб-части — **Simple management of to do tasks** (Простое управление задачами)</span><span class="sxs-lookup"><span data-stu-id="7296f-120">**Simple management of to do tasks** as your web part description</span></span>
+  - <span data-ttu-id="7296f-121">отправная точка создания веб-части — **No JavaScript web framework** (Без веб-платформы JavaScript).</span><span class="sxs-lookup"><span data-stu-id="7296f-121">**No JavaScript web framework** as the starting point to build the web part</span></span>
 
-![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/ng-migration-yeoman-generator.png)
+  ![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/ng-migration-yeoman-generator.png)
 
-<span data-ttu-id="a4c9d-123">После завершения скаффолдинга блокируйте версию зависимостей проекта, выполнив следующую команду:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-123">Once the scaffolding completes, lock down the version of the project dependencies by running the following command:</span></span>
+5. <span data-ttu-id="7296f-123">По завершении формирования шаблона заблокируйте версию зависимостей проекта, выполнив следующую команду:</span><span class="sxs-lookup"><span data-stu-id="7296f-123">After the scaffolding completes, lock down the version of the project dependencies by running the following command:</span></span>
 
-```sh
-npm shrinkwrap
-```
+  ```sh
+  npm shrinkwrap
+  ```
 
-<span data-ttu-id="a4c9d-124">Далее откройте папку проекта в редакторе кода.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-124">Next, open your project folder in your code editor.</span></span> <span data-ttu-id="a4c9d-125">В этом руководстве используется Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-125">In this tutorial, you will use Visual Studio Code.</span></span>
+6. <span data-ttu-id="7296f-124">Откройте папку проекта в редакторе кода.</span><span class="sxs-lookup"><span data-stu-id="7296f-124">Next, open your project folder in your code editor.</span></span> <span data-ttu-id="7296f-125">В этом руководстве используется Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="7296f-125">In this tutorial, you will use Visual Studio Code.</span></span>
 
-![Проект SharePoint Framework, открытый в Visual Studio Code](../../../images/ng-migration-project-visual-studio-code.png)
+  ![Проект SharePoint Framework, открытый в Visual Studio Code](../../../images/ng-migration-project-visual-studio-code.png)
 
-### <a name="add-angularjs-and-ngofficeuifabric"></a><span data-ttu-id="a4c9d-127">Добавление AngularJS и ngOfficeUIFabric</span><span class="sxs-lookup"><span data-stu-id="a4c9d-127">Add AngularJS and ngOfficeUIFabric</span></span>
+### <a name="add-angularjs-and-ngofficeuifabric"></a><span data-ttu-id="7296f-127">Добавление AngularJS и ngOfficeUIFabric</span><span class="sxs-lookup"><span data-stu-id="7296f-127">Add AngularJS and ngOfficeUIFabric</span></span>
 
-<span data-ttu-id="a4c9d-128">В этом руководстве AngularJS и ngOfficeUIFabric загружаются из CDN.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-128">In this tutorial you will load both AngularJS and ngOfficeUIFabric from CDN.</span></span> <span data-ttu-id="a4c9d-129">Для этого откройте в редакторе кода файл **config/config.json** и добавьте следующие строки в свойстве **externals**:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-129">To do that, in the code editor, open the **config/config.json** file and in the **externals** property add the following lines:</span></span>
+<span data-ttu-id="7296f-128">В этом руководстве AngularJS и ngOfficeUIFabric загружаются из сети доставки содержимого.</span><span class="sxs-lookup"><span data-stu-id="7296f-128">In this tutorial you will load both AngularJS and ngOfficeUIFabric from CDN.</span></span> 
+
+<span data-ttu-id="7296f-129">Откройте в редакторе кода файл **config/config.json** и добавьте следующие строки в свойстве **externals**:</span><span class="sxs-lookup"><span data-stu-id="7296f-129">To do that, in the code editor, open the **config/config.json** file and in the **externals** property add the following lines:</span></span>
 
 ```json
 "angular": {
@@ -77,105 +80,106 @@ npm shrinkwrap
 "ng-office-ui-fabric": "https://cdnjs.cloudflare.com/ajax/libs/ngOfficeUiFabric/0.12.3/ngOfficeUiFabric.js"
 ```
 
-### <a name="add-angularjs-typings-for-typescript"></a><span data-ttu-id="a4c9d-130">Добавление определений типа AngularJS для TypeScript</span><span class="sxs-lookup"><span data-stu-id="a4c9d-130">Add AngularJS typings for TypeScript</span></span>
+### <a name="add-angularjs-typings-for-typescript"></a><span data-ttu-id="7296f-130">Добавление определений типов AngularJS для TypeScript</span><span class="sxs-lookup"><span data-stu-id="7296f-130">Add AngularJS typings for TypeScript</span></span>
 
-<span data-ttu-id="a4c9d-131">Так как в коде веб-части вы будете ссылаться на AngularJS, вам также потребуются определения типов AngularJS для TypeScript.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-131">Because you will be referencing AngularJS in your web part's code, you also need AngularJS typings for TypeScript.</span></span> <span data-ttu-id="a4c9d-132">Чтобы установить их, выполните в командной строке следующую команду:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-132">To install them run in the command line:</span></span>
+<span data-ttu-id="7296f-131">Так как в коде веб-части вы ссылаетесь на AngularJS, вам также нужны определения типов AngularJS для TypeScript.</span><span class="sxs-lookup"><span data-stu-id="7296f-131">Because you will be referencing AngularJS in your web part's code, you also need AngularJS typings for TypeScript.</span></span> <span data-ttu-id="7296f-132">Чтобы установить их, выполните в командной строке следующую команду:</span><span class="sxs-lookup"><span data-stu-id="7296f-132">To install them run in the command line:</span></span>
 
 ```sh
-npm install @types/angular --save-dev
+  npm install @types/angular --save-dev
 ```
 
-## <a name="migrate-the-angularjs-application-as-is"></a><span data-ttu-id="a4c9d-133">Перенос приложения AngularJS "как есть"</span><span class="sxs-lookup"><span data-stu-id="a4c9d-133">Migrate the AngularJS application as-is</span></span>
+## <a name="migrate-the-angularjs-application-as-is"></a><span data-ttu-id="7296f-133">Перенос приложения AngularJS без изменений</span><span class="sxs-lookup"><span data-stu-id="7296f-133">Migrate the AngularJS application as-is</span></span>
 
-<span data-ttu-id="a4c9d-134">Для начала мы перенесем приложение AngularJS с минимальными изменениями кода.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-134">Start with migrating the AngularJS application with only the minimal code changes.</span></span> <span data-ttu-id="a4c9d-135">Позже мы обновим обычный код JavaScript приложения до TypeScript и улучшим его интеграцию с клиентской веб-частью.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-135">Later, you will upgrade the application's plain JavaScript code to TypeScript and improve its integration with the client-side web part.</span></span>
+<span data-ttu-id="7296f-134">Для начала мы перенесем приложение AngularJS с минимальными изменениями кода.</span><span class="sxs-lookup"><span data-stu-id="7296f-134">Start with migrating the AngularJS application with only the minimal code changes.</span></span> <span data-ttu-id="7296f-135">Позже мы обновим обычный код JavaScript приложения до TypeScript и улучшим его интеграцию с клиентской веб-частью.</span><span class="sxs-lookup"><span data-stu-id="7296f-135">Later, you will upgrade the application's plain JavaScript code to TypeScript and improve its integration with the client-side web part.</span></span>
 
-### <a name="create-sharepoint-list"></a><span data-ttu-id="a4c9d-136">Создание списка SharePoint</span><span class="sxs-lookup"><span data-stu-id="a4c9d-136">Create SharePoint list</span></span>
+### <a name="create-sharepoint-list"></a><span data-ttu-id="7296f-136">Создание списка SharePoint</span><span class="sxs-lookup"><span data-stu-id="7296f-136">Create SharePoint list</span></span>
 
-<span data-ttu-id="a4c9d-137">Создайте на сайте SharePoint новый список под названием **Todo** (Список дел).</span><span class="sxs-lookup"><span data-stu-id="a4c9d-137">In your SharePoint site create a new list called **Todo**.</span></span> <span data-ttu-id="a4c9d-138">Добавьте в список новый столбец вариантов под названием **Status** (Состояние).</span><span class="sxs-lookup"><span data-stu-id="a4c9d-138">In the list add a new choice column called **Status**.</span></span> <span data-ttu-id="a4c9d-139">Укажите следующие варианты:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-139">As available choices enter:</span></span>
+<span data-ttu-id="7296f-137">Создайте на сайте SharePoint список под названием **Todo** (Список дел).</span><span class="sxs-lookup"><span data-stu-id="7296f-137">In your SharePoint site create a new list called **Todo**.</span></span> <span data-ttu-id="7296f-138">Добавьте в список новый столбец вариантов под названием **Status** (Состояние).</span><span class="sxs-lookup"><span data-stu-id="7296f-138">In the list add a new choice column called **Status**.</span></span> <span data-ttu-id="7296f-139">Укажите следующие варианты:</span><span class="sxs-lookup"><span data-stu-id="7296f-139">As available choices enter:</span></span>
 
 ```text
-Not started
-In progress
-Completed
+  Not started
+  In progress
+  Completed
 ```
+
+<br/>
 
 ![Список дел в SharePoint](../../../images/ng-migration-todo-list.png)
 
-### <a name="copy-angularjs-application-files-to-the-web-part-project"></a><span data-ttu-id="a4c9d-141">Копирование файлов приложения AngularJS в проект веб-части</span><span class="sxs-lookup"><span data-stu-id="a4c9d-141">Copy AngularJS application files to the web part project</span></span>
+### <a name="copy-angularjs-application-files-to-the-web-part-project"></a><span data-ttu-id="7296f-141">Копирование файлов приложения AngularJS в проект веб-части</span><span class="sxs-lookup"><span data-stu-id="7296f-141">Copy AngularJS application files to the web part project</span></span>
 
-<span data-ttu-id="a4c9d-142">В проекте веб-части создайте в папке **src/webparts/toDo** дочернюю папку с именем `app`.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-142">In the web part project, in the **src/webparts/toDo** folder create a new folder called `app`.</span></span>
+1. <span data-ttu-id="7296f-142">В проекте веб-части создайте в папке **src/webparts/toDo** дочернюю папку с именем `app`.</span><span class="sxs-lookup"><span data-stu-id="7296f-142">In the web part project, in the **src/webparts/toDo** folder create a new folder called `app`.</span></span>
 
-![Папка приложения, выделенная в области обозревателя Visual Studio Code](../../../images/ng-migration-app-folder-visual-studio-code.png)
+  ![Папка приложения, выделенная в области обозревателя Visual Studio Code](../../../images/ng-migration-app-folder-visual-studio-code.png)
 
-<span data-ttu-id="a4c9d-144">Скопируйте содержимое папки **app** из исходного приложения в новую папку **app** проекта веб-части.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-144">From the source application copy the contents of the **app** folder, to the newly created **app** folder in the web part project.</span></span>
+2. <span data-ttu-id="7296f-144">Скопируйте содержимое папки **app** из исходного приложения в новую папку **app** проекта веб-части.</span><span class="sxs-lookup"><span data-stu-id="7296f-144">From the source application copy the contents of the **app** folder, to the newly created **app** folder in the web part project.</span></span>
 
-![Файлы приложения, выделенные в области обозревателя Visual Studio Code](../../../images/ng-migration-app-files-visual-studio-code.png)
+  ![Файлы приложения, выделенные в области обозревателя Visual Studio Code](../../../images/ng-migration-app-files-visual-studio-code.png)
 
-### <a name="load-the-angularjs-application-in-the-client-side-web-part"></a><span data-ttu-id="a4c9d-146">Загрузка приложения AngularJS в клиентской веб-части</span><span class="sxs-lookup"><span data-stu-id="a4c9d-146">Load the AngularJS application in the client-side web part</span></span>
 
-<span data-ttu-id="a4c9d-147">В редакторе кода откройте файл **./src/webparts/toDo/ToDoWebPart.ts**.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-147">In the code editor open the **./src/webparts/toDo/ToDoWebPart.ts** file.</span></span>
+### <a name="load-the-angularjs-application-in-the-client-side-web-part"></a><span data-ttu-id="7296f-146">Загрузка приложения AngularJS в клиентской веб-части</span><span class="sxs-lookup"><span data-stu-id="7296f-146">Load the AngularJS application in the client-side web part</span></span>
 
-<span data-ttu-id="a4c9d-148">После последнего оператора `import` добавьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-148">After the last `import` statement add the following code:</span></span>
+1. <span data-ttu-id="7296f-147">В редакторе кода откройте файл **./src/webparts/toDo/ToDoWebPart.ts**.</span><span class="sxs-lookup"><span data-stu-id="7296f-147">In the code editor open the **./src/webparts/toDo/ToDoWebPart.ts** file.</span></span> <span data-ttu-id="7296f-148">После последнего оператора `import` добавьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="7296f-148">After the last `import` statement add the following code:</span></span>
 
-```ts
-import * as angular from 'angular';
-import 'ng-office-ui-fabric';
-```
+  ```ts
+  import * as angular from 'angular';
+  import 'ng-office-ui-fabric';
+  ```
 
-<span data-ttu-id="a4c9d-149">Замените содержимое метода **render** на следующий код:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-149">Change the contents of the **render** method to:</span></span>
+2. <span data-ttu-id="7296f-149">Замените содержимое метода **render** на следующий код:</span><span class="sxs-lookup"><span data-stu-id="7296f-149">Change the contents of the **render** method to:</span></span>
 
-```ts
-export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
-  // ...
-  public render(): void {
-    if (this.renderedOnce === false) {
-      require('./app/app.module');
-      require('./app/app.config');
-      require('./app/data.service');
-      require('./app/home.controller');
+  ```ts
+  export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
+    // ...
+    public render(): void {
+      if (this.renderedOnce === false) {
+        require('./app/app.module');
+        require('./app/app.config');
+        require('./app/data.service');
+        require('./app/home.controller');
 
-      this.domElement.innerHTML = `
-        <div class="${styles.toDo}">
-          <div data-ng-controller="homeController as vm">
-            <div class="${styles.loading}" ng-show="vm.isLoading">
-              <uif-spinner>Loading...</uif-spinner>
+        this.domElement.innerHTML = `
+          <div class="${styles.toDo}">
+            <div data-ng-controller="homeController as vm">
+              <div class="${styles.loading}" ng-show="vm.isLoading">
+                <uif-spinner>Loading...</uif-spinner>
+              </div>
+              <div class="entryform" ng-show="vm.isLoading === false">
+                <uif-textfield uif-label="New to do:" uif-underlined ng-model="vm.newItem" ng-keydown="vm.todoKeyDown($event)"></uif-textfield>
+              </div>
+              <uif-list class="items" ng-show="vm.isLoading === false" >
+                <uif-list-item ng-repeat="todo in vm.todoCollection" uif-item="todo" ng-class="{'done': todo.done}">
+                  <uif-list-item-primary-text>{{todo.title}}</uif-list-item-primary-text>
+                  <uif-list-item-actions>
+                    <uif-list-item-action ng-click="vm.completeTodo(todo)" ng-show="todo.done === false">
+                      <uif-icon uif-type="check"></uif-icon>
+                    </uif-list-item-action>
+                    <uif-list-item-action ng-click="vm.undoTodo(todo)" ng-show="todo.done">
+                      <uif-icon uif-type="reactivate"></uif-icon>
+                    </uif-list-item-action>
+                    <uif-list-item-action ng-click="vm.deleteTodo(todo)">
+                      <uif-icon uif-type="trash"></uif-icon>
+                    </uif-list-item-action>
+                  </uif-list-item-actions>
+                </uif-list-item>
+              </uif-list>
             </div>
-            <div class="entryform" ng-show="vm.isLoading === false">
-              <uif-textfield uif-label="New to do:" uif-underlined ng-model="vm.newItem" ng-keydown="vm.todoKeyDown($event)"></uif-textfield>
-            </div>
-            <uif-list class="items" ng-show="vm.isLoading === false" >
-              <uif-list-item ng-repeat="todo in vm.todoCollection" uif-item="todo" ng-class="{'done': todo.done}">
-                <uif-list-item-primary-text>{{todo.title}}</uif-list-item-primary-text>
-                <uif-list-item-actions>
-                  <uif-list-item-action ng-click="vm.completeTodo(todo)" ng-show="todo.done === false">
-                    <uif-icon uif-type="check"></uif-icon>
-                  </uif-list-item-action>
-                  <uif-list-item-action ng-click="vm.undoTodo(todo)" ng-show="todo.done">
-                    <uif-icon uif-type="reactivate"></uif-icon>
-                  </uif-list-item-action>
-                  <uif-list-item-action ng-click="vm.deleteTodo(todo)">
-                    <uif-icon uif-type="trash"></uif-icon>
-                  </uif-list-item-action>
-                </uif-list-item-actions>
-              </uif-list-item>
-            </uif-list>
-          </div>
-        </div>`;
+          </div>`;
 
-      angular.bootstrap(this.domElement, ['todoapp']);
+        angular.bootstrap(this.domElement, ['todoapp']);
+      }
     }
+    // ...
   }
-  // ...
-}
-```
+  ```
 
-### <a name="update-site-path"></a><span data-ttu-id="a4c9d-150">Обновление пути к сайту</span><span class="sxs-lookup"><span data-stu-id="a4c9d-150">Update site path</span></span>
+### <a name="update-site-path"></a><span data-ttu-id="7296f-150">Обновление пути к сайту</span><span class="sxs-lookup"><span data-stu-id="7296f-150">Update site path</span></span>
 
-<span data-ttu-id="a4c9d-151">Откройте в редакторе кода файл **./src/webparts/toDo/app/app.config.js**.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-151">In the code editor open the **./src/webparts/toDo/app/app.config.js** file.</span></span> <span data-ttu-id="a4c9d-152">Замените значение константы **sharepointApi** на относительный касательно сервера URL-адрес для сайта SharePoint, на котором создан список дел, и добавьте к нему строку `/_api/`.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-152">Change the value of the **sharepointApi** constant to the server-relative URL of the SharePoint site where you created the Todo list, followed by `/_api/`.</span></span>
+<span data-ttu-id="7296f-151">Откройте в редакторе кода файл **./src/webparts/toDo/app/app.config.js**.</span><span class="sxs-lookup"><span data-stu-id="7296f-151">In the code editor open the **./src/webparts/toDo/app/app.config.js** file.</span></span> <span data-ttu-id="7296f-152">Замените значение константы **sharepointApi** на относительный (от сервера) URL-адрес сайта SharePoint, на котором создан список дел, и добавьте к нему строку `/_api/`.</span><span class="sxs-lookup"><span data-stu-id="7296f-152">Change the value of the **sharepointApi** constant to the server-relative URL of the SharePoint site where you created the Todo list, followed by `/_api/`.</span></span>
 
-### <a name="add-css-styles"></a><span data-ttu-id="a4c9d-153">Добавление стилей CSS</span><span class="sxs-lookup"><span data-stu-id="a4c9d-153">Add CSS styles</span></span>
+### <a name="add-css-styles"></a><span data-ttu-id="7296f-153">Добавление стилей CSS</span><span class="sxs-lookup"><span data-stu-id="7296f-153">Add CSS styles</span></span>
 
-<span data-ttu-id="a4c9d-154">Кроме того, необходимо реализовать стили CSS, которые вы используете с шаблоном.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-154">You also need to implement CSS styles that you are using the template.</span></span> <span data-ttu-id="a4c9d-155">В редакторе кода откройте файл **ToDoWebPart.module.scss** и замените его содержимое на следующие строки:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-155">In the code editor open the **ToDoWebPart.module.scss** file and replace its contents with:</span></span>
+<span data-ttu-id="7296f-154">Кроме того, необходимо реализовать стили CSS, которые вы используете с шаблоном.</span><span class="sxs-lookup"><span data-stu-id="7296f-154">You also need to implement CSS styles that you are using the template.</span></span> <span data-ttu-id="7296f-155">В редакторе кода откройте файл **ToDoWebPart.module.scss** и замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-155">In the code editor open the **ToDoWebPart.module.scss** file and replace its contents with:</span></span>
 
 ```scss
 .toDo {
@@ -186,103 +190,103 @@ export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps
 }
 ```
 
-### <a name="trust-the-development-certificate"></a><span data-ttu-id="a4c9d-156">Доверие сертификату разработки</span><span class="sxs-lookup"><span data-stu-id="a4c9d-156">Trust the development certificate</span></span>
+### <a name="trust-the-development-certificate"></a><span data-ttu-id="7296f-156">Доверие сертификату разработки</span><span class="sxs-lookup"><span data-stu-id="7296f-156">Trust the development certificate</span></span>
 
-<span data-ttu-id="a4c9d-p109">По умолчанию сертификат разработки, необходимый для загрузки рабочей области SharePoint и ее ресурсов по протоколу HTTPS, не является доверенным, и при ее запуске в веб-браузере появляется предупреждение. В некоторых веб-браузерах рабочая область SharePoint не загружается, если SSL-сертификат не является доверенным. Чтобы избежать этой проблемы, следует одобрить сертификат разработки, предоставленный вместе с платформой SharePoint Framework.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-p109">By default the development certificate required to load SharePoint workbench and its resources over HTTPS is not trusted and causes the web browser to show a warning when navigating to the SharePoint workbench. In situations when you want to run SharePoint workbench in the context of SharePoint, some web browsers prevent the workbench from loading if the SSL certificate isn't trusted. To avoid this issue you should trust the development certificate provided with the SharePoint Framework.</span></span>
+<span data-ttu-id="7296f-p109">По умолчанию сертификат разработки, необходимый для загрузки рабочей области SharePoint Workbench и ее ресурсов по протоколу HTTPS, не является доверенным, и при ее запуске в веб-браузере появляется предупреждение. В некоторых веб-браузерах SharePoint Workbench не загружается, если SSL-сертификат не является доверенным. Чтобы избежать этой проблемы, следует одобрить сертификат разработки, предоставленный вместе с платформой SharePoint Framework.</span><span class="sxs-lookup"><span data-stu-id="7296f-p109">By default the development certificate required to load SharePoint workbench and its resources over HTTPS is not trusted and causes the web browser to show a warning when navigating to the SharePoint workbench. In situations when you want to run SharePoint workbench in the context of SharePoint, some web browsers prevent the workbench from loading if the SSL certificate isn't trusted. To avoid this issue you should trust the development certificate provided with the SharePoint Framework.</span></span>
 
-<span data-ttu-id="a4c9d-160">Выполните в командной строке следующую команду:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-160">In the command line execute:</span></span>
+<span data-ttu-id="7296f-160">Выполните в командной строке следующую команду:</span><span class="sxs-lookup"><span data-stu-id="7296f-160">In the command line execute:</span></span>
 
 ```sh
 gulp trust-dev-cert
 ```
 
-### <a name="preview-web-part-in-the-hosted-workbench"></a><span data-ttu-id="a4c9d-161">Просмотр веб-части в размещенной системе разработки</span><span class="sxs-lookup"><span data-stu-id="a4c9d-161">Preview web part in the hosted workbench</span></span>
+### <a name="preview-web-part-in-the-hosted-workbench"></a><span data-ttu-id="7296f-161">Просмотр веб-части в размещенной версии Workbench</span><span class="sxs-lookup"><span data-stu-id="7296f-161">Preview web part in the hosted workbench</span></span>
 
-<span data-ttu-id="a4c9d-162">Выполните в командной строке следующую команду:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-162">In the command line execute:</span></span>
+1. <span data-ttu-id="7296f-162">Выполните в командной строке следующую команду:</span><span class="sxs-lookup"><span data-stu-id="7296f-162">In the command line execute:</span></span>
 
-```sh
-gulp serve --nobrowser
-```
+  ```sh
+  gulp serve --nobrowser
+  ```
 
-<span data-ttu-id="a4c9d-163">К URL-адресу сайта SharePoint добавьте `/_layouts/workbench.aspx`, например</span><span class="sxs-lookup"><span data-stu-id="a4c9d-163">To the URL of your SharePoint site, add `/_layouts/workbench.aspx`, eg.</span></span> <span data-ttu-id="a4c9d-164">`https://contoso.sharepoint.com/_layouts/workbench.aspx`, а затем перейдите по этому адресу в веб-браузере.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-164">`https://contoso.sharepoint.com/_layouts/workbench.aspx`, and navigate to it in the web browser.</span></span>
+2. <span data-ttu-id="7296f-163">Добавьте к URL-адресу сайта SharePoint строку `/_layouts/workbench.aspx` (например, `https://contoso.sharepoint.com/_layouts/workbench.aspx`) и перейдите по этому адресу в браузере.</span><span class="sxs-lookup"><span data-stu-id="7296f-163">To the URL of your SharePoint site, add `/_layouts/workbench.aspx`, for example, `https://contoso.sharepoint.com/_layouts/workbench.aspx`, and navigate to it in the web browser.</span></span>
 
-<span data-ttu-id="a4c9d-165">Если вы правильно выполнили все действия, в браузере должна появиться веб-часть с формой для добавления элементов в список дел.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-165">If you followed all steps correctly, you should see the web part in the browser showing the form to add to do items.</span></span>
+  <span data-ttu-id="7296f-164">Если вы правильно выполнили все действия, в браузере должна появиться веб-часть с формой для добавления элементов в список дел.</span><span class="sxs-lookup"><span data-stu-id="7296f-164">If you followed all steps correctly, you should see the web part in the browser showing the form to add to do items.</span></span>
 
-![Перенесенное приложение AngularJS в системе разработки SharePoint (отправлено в SharePoint)](../../../images/ng-migration-first-run.png)
+  ![Перенесенное приложение AngularJS в SharePoint Workbench, отправленное в SharePoint](../../../images/ng-migration-first-run.png)
 
-<span data-ttu-id="a4c9d-167">Добавьте несколько элементов списка дел, чтобы проверить работу веб-части.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-167">Add a few todo items to verify that the web part is working as expected.</span></span>
+3. <span data-ttu-id="7296f-166">Добавьте несколько элементов в список дел, чтобы проверить работу веб-части.</span><span class="sxs-lookup"><span data-stu-id="7296f-166">Add a few todo items to verify that the web part is working as expected.</span></span>
 
-![Перенесенное приложение AngularJS с неправильным стилем](../../../images/ng-migration-old-office-ui-fabric.png)
+  ![Перенесенное приложение AngularJS с неправильным стилем](../../../images/ng-migration-old-office-ui-fabric.png)
 
-### <a name="fix-web-part-styling"></a><span data-ttu-id="a4c9d-169">Исправление стиля веб-части</span><span class="sxs-lookup"><span data-stu-id="a4c9d-169">Fix web part styling</span></span>
+### <a name="fix-web-part-styling"></a><span data-ttu-id="7296f-168">Исправление стиля веб-части</span><span class="sxs-lookup"><span data-stu-id="7296f-168">Fix web part styling</span></span>
 
-<span data-ttu-id="a4c9d-170">Веб-часть работает правильно, но выглядит не так, как исходное приложение AngularJS.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-170">Although the web part is working correctly, it doesn't look the same as the AngularJS application you started with.</span></span> <span data-ttu-id="a4c9d-171">Это связано с тем, что ngOfficeUIFabric использует более раннюю версию Office UI Fabric, чем система разработки SharePoint.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-171">This is caused because ngOfficeUIFabric uses an older version of Office UI Fabric than the one available in the SharePoint workbench.</span></span> <span data-ttu-id="a4c9d-172">Ситуацию легко исправить, загрузив стили CSS, используемые в ngOfficeUIFabric.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-172">The easy fix would be to load the CSS styles used by ngOfficeUIFabric.</span></span> <span data-ttu-id="a4c9d-173">Но эти стили будут конфликтовать со стилями Office UI Fabric, используемыми в рабочей области SharePoint. В результате изменится ее пользовательский интерфейс.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-173">The problem with that is, that these styles would collide with the Office UI Fabric styles used by the SharePoint workbench, breaking its user interface.</span></span> <span data-ttu-id="a4c9d-174">Более эффективное решение — добавить стили, необходимые определенным компонентам, к стилям веб-части.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-174">A better solution is to add the styles required by the specific components to the web part styles.</span></span>
+<span data-ttu-id="7296f-169">Веб-часть работает правильно, но выглядит не так, как исходное приложение AngularJS.</span><span class="sxs-lookup"><span data-stu-id="7296f-169">Although the web part is working correctly, it doesn't look the same as the AngularJS application you started with.</span></span> <span data-ttu-id="7296f-170">Это связано с тем, что ngOfficeUIFabric использует более раннюю версию Office UI Fabric, чем SharePoint Workbench.</span><span class="sxs-lookup"><span data-stu-id="7296f-170">This is caused because ngOfficeUIFabric uses an older version of Office UI Fabric than the one available in the SharePoint workbench.</span></span> <span data-ttu-id="7296f-171">Ситуацию легко исправить, загрузив стили CSS, используемые в ngOfficeUIFabric.</span><span class="sxs-lookup"><span data-stu-id="7296f-171">The easy fix would be to load the CSS styles used by ngOfficeUIFabric.</span></span> <span data-ttu-id="7296f-172">Но эти стили будут конфликтовать со стилями Office UI Fabric, используемыми SharePoint Workbench. В результате изменится пользовательский интерфейс веб-части.</span><span class="sxs-lookup"><span data-stu-id="7296f-172">The problem with that is, that these styles would collide with the Office UI Fabric styles used by the SharePoint workbench, breaking its user interface.</span></span> <span data-ttu-id="7296f-173">Лучше добавить стили, необходимые определенным компонентам, к стилям веб-части.</span><span class="sxs-lookup"><span data-stu-id="7296f-173">A better solution is to add the styles required by the specific components to the web part styles.</span></span>
 
-<span data-ttu-id="a4c9d-175">Откройте в редакторе кода файл **./src/webparts/toDo/ToDoWebPart.module.scss**.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-175">In the code editor open the **./src/webparts/toDo/ToDoWebPart.module.scss** file.</span></span> <span data-ttu-id="a4c9d-176">Замените его содержимое следующим:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-176">Change its contents to:</span></span>
+1. <span data-ttu-id="7296f-174">Откройте в редакторе кода файл **./src/webparts/toDo/ToDoWebPart.module.scss**.</span><span class="sxs-lookup"><span data-stu-id="7296f-174">In the code editor open the **./src/webparts/toDo/ToDoWebPart.module.scss** file.</span></span> <span data-ttu-id="7296f-175">Замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-175">Change its contents to:</span></span>
 
-```scss
-.toDo {
-  .loading {
-    margin: 0 auto;
-    width: 6em;
+  ```scss
+  .toDo {
+    .loading {
+      margin: 0 auto;
+      width: 6em;
+    }
+
+    .done :global .ms-ListItem-primaryText {
+      text-decoration: line-through;
+    }
+
+    ul, li {
+      margin: 0;
+      padding: 0;
+    }
+
+    :global {
+      .ms-Spinner{position:relative;height:20px}.ms-Spinner.ms-Spinner--large{height:28px}.ms-Spinner.ms-Spinner--large .ms-Spinner-label{left:34px;top:6px}.ms-Spinner-circle{position:absolute;border-radius:100px;background-color:#0078d7;opacity:0}@media screen and (-ms-high-contrast:active){.ms-Spinner-circle{background-color:#fff}}@media screen and (-ms-high-contrast:black-on-white){.ms-Spinner-circle{background-color:#000}}.ms-Spinner-label{position:relative;color:#333;font-family:Segoe UI Regular WestEuropean,Segoe UI,Tahoma,Arial,sans-serif;font-size:12px;font-weight:400;color:#0078d7;left:28px;top:2px}
+      .ms-TextField{color:#333;font-family:Segoe UI Regular WestEuropean,Segoe UI,Tahoma,Arial,sans-serif;font-size:14px;font-weight:400;box-sizing:border-box;margin:0;padding:0;box-shadow:none;margin-bottom:8px}.ms-TextField.is-disabled .ms-TextField-field{background-color:#f4f4f4;border-color:#f4f4f4;pointer-events:none;cursor:default}.ms-TextField.is-disabled:-moz-placeholder,.ms-TextField.is-disabled:-ms-input-placeholder,.ms-TextField.is-disabled::-moz-placeholder,.ms-TextField.is-disabled::-webkit-input-placeholder{color:#a6a6a6}.ms-TextField.is-required .ms-Label:after{content:' *';color:#a80000}.ms-TextField.is-required:-moz-placeholder:after,.ms-TextField.is-required:-ms-input-placeholder:after,.ms-TextField.is-required::-moz-placeholder:after,.ms-TextField.is-required::-webkit-input-placeholder:after{content:' *';color:#a80000}.ms-TextField.is-active{border-color:#0078d7}.ms-TextField-field{box-sizing:border-box;margin:0;padding:0;box-shadow:none;border:1px solid #c8c8c8;border-radius:0;font-family:Segoe UI Semilight WestEuropean,Segoe UI Semilight,Segoe UI,Tahoma,Arial,sans-serif;font-size:12px;color:#333;height:32px;padding:6px 10px 8px;width:100%;min-width:180px;outline:0}.ms-TextField-field:hover{border-color:#767676}.ms-TextField-field:focus{border-color:#0078d7}@media screen and (-ms-high-contrast:active){.ms-TextField-field:focus,.ms-TextField-field:hover{border-color:#1aebff}}@media screen and (-ms-high-contrast:black-on-white){.ms-TextField-field:focus,.ms-TextField-field:hover{border-color:#37006e}}.ms-TextField-field:-moz-placeholder,.ms-TextField-field:-ms-input-placeholder,.ms-TextField-field::-moz-placeholder,.ms-TextField-field::-webkit-input-placeholder{color:#666}.ms-TextField-description{color:#767676;font-size:11px}.ms-TextField.ms-TextField--placeholder{position:relative}.ms-TextField.ms-TextField--placeholder .ms-Label{position:absolute;font-family:Segoe UI Semilight WestEuropean,Segoe UI Semilight,Segoe UI,Tahoma,Arial,sans-serif;font-size:12px;color:#666;padding:7px 0 7px 10px}.ms-TextField.ms-TextField--placeholder.is-disabled,.ms-TextField.ms-TextField--placeholder.is-disabled .ms-Label{color:#a6a6a6}@media screen and (-ms-high-contrast:active){.ms-TextField.ms-TextField--placeholder.is-disabled .ms-Label{color:#0f0}}@media screen and (-ms-high-contrast:black-on-white){.ms-TextField.ms-TextField--placeholder.is-disabled .ms-Label{color:#600000}}.ms-TextField.ms-TextField--underlined{border-bottom:1px solid #c8c8c8;display:table;width:100%;min-width:180px}.ms-TextField.ms-TextField--underlined:hover{border-color:#767676}@media screen and (-ms-high-contrast:active){.ms-TextField.ms-TextField--underlined:hover{border-color:#1aebff}}@media screen and (-ms-high-contrast:black-on-white){.ms-TextField.ms-TextField--underlined:hover{border-color:#37006e}}.ms-TextField.ms-TextField--underlined:active,.ms-TextField.ms-TextField--underlined:focus{border-color:#0078d7}.ms-TextField.ms-TextField--underlined .ms-Label{font-size:12px;margin-right:8px;display:table-cell;vertical-align:bottom;padding-left:12px;padding-bottom:5px;height:32px;width:1%;white-space:nowrap}.ms-TextField.ms-TextField--underlined .ms-TextField-field{border:0;float:left;display:table-cell;text-align:left;padding-top:8px;padding-bottom:2px}.ms-TextField.ms-TextField--underlined .ms-TextField-field:active,.ms-TextField.ms-TextField--underlined .ms-TextField-field:focus,.ms-TextField.ms-TextField--underlined .ms-TextField-field:hover{outline:0}.ms-TextField.ms-TextField--underlined.is-disabled{border-bottom-color:#eaeaea}.ms-TextField.ms-TextField--underlined.is-disabled .ms-Label{color:#a6a6a6}@media screen and (-ms-high-contrast:active){.ms-TextField.ms-TextField--underlined.is-disabled .ms-Label{color:#0f0}}@media screen and (-ms-high-contrast:black-on-white){.ms-TextField.ms-TextField--underlined.is-disabled .ms-Label{color:#600000}}.ms-TextField.ms-TextField--underlined.is-disabled .ms-TextField-field{background-color:transparent;color:#a6a6a6}.ms-TextField.ms-TextField--underlined.is-active{border-color:#0078d7}@media screen and (-ms-high-contrast:active){.ms-TextField.ms-TextField--underlined.is-active{border-color:#1aebff}}@media screen and (-ms-high-contrast:black-on-white){.ms-TextField.ms-TextField--underlined.is-active{border-color:#37006e}}.ms-TextField.ms-TextField--multiline .ms-TextField-field{line-height:17px;min-height:60px;min-width:260px;padding-top:6px;overflow:auto}.ms-Label,.ms-TextField.ms-TextField--multiline .ms-TextField-field{color:#333;font-family:Segoe UI Regular WestEuropean,Segoe UI,Tahoma,Arial,sans-serif;font-size:12px;font-weight:400}
+      .ms-Label{margin:0;padding:0;box-shadow:none;box-sizing:border-box;display:block;padding:5px 0}.ms-Label.is-required:after{content:' *';color:#a80000}.ms-Label.is-disabled{color:#a6a6a6}@media screen and (-ms-high-contrast:active){.ms-Label.is-disabled{color:#0f0}}@media screen and (-ms-high-contrast:black-on-white){.ms-Label.is-disabled{color:#600000}}.is-disabled .ms-Label{color:#a6a6a6}@media screen and (-ms-high-contrast:active){.is-disabled .ms-Label{color:#0f0}}@media screen and (-ms-high-contrast:black-on-white){.is-disabled .ms-Label{color:#600000}}.ms-Toggle{color:#333;font-family:Segoe UI Regular WestEuropean,Segoe UI,Tahoma,Arial,sans-serif;font-size:14px;font-weight:400;box-sizing:border-box;margin:0;padding:0;box-shadow:none;position:relative;display:block;margin-bottom:26px}.ms-Toggle .ms-Label{position:relative;padding:0 0 0 62px;font-size:12px}.ms-Toggle:hover .ms-Label{color:#000}.ms-Toggle:active .ms-Label{color:#333}.ms-Toggle.is-disabled .ms-Label{color:#a6a6a6}@media screen and (-ms-high-contrast:active){.ms-Toggle.is-disabled .ms-Label{color:#0f0}}@media screen and (-ms-high-contrast:black-on-white){.ms-Toggle.is-disabled .ms-Label{color:#600000}}
+      .ms-ListItem{font-family:"Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;box-sizing:border-box;margin:0;padding:0;box-shadow:none;padding:9px 28px 3px;position:relative;display:block}.ms-ListItem::after,.ms-ListItem::before{display:table;content:"";line-height:0}.ms-ListItem::after{clear:both}.ms-ListItem-primaryText,.ms-ListItem-secondaryText,.ms-ListItem-tertiaryText{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block}.ms-ListItem-primaryText{font-family:"Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;font-size:21px;font-weight:100;padding-right:80px;position:relative;top:-4px}.ms-ListItem-secondaryText{font-family:"Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;line-height:25px;position:relative;top:-7px;padding-right:30px}.ms-ListItem-tertiaryText{font-family:"Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;position:relative;top:-9px;margin-bottom:-4px;padding-right:30px}.ms-ListItem-metaText{font-family:"Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;font-size:11px;font-weight:400;position:absolute;right:30px;top:39px}.ms-ListItem-image{float:left;height:70px;margin-left:-8px;margin-right:10px;width:70px}.ms-ListItem-selectionTarget{display:none}.ms-ListItem-actions{max-width:80px;position:absolute;right:30px;text-align:right;top:10px}.ms-ListItem-action{color:#a6a6a6;display:inline-block;font-size:15px;position:relative;text-align:center;top:3px;cursor:pointer;height:16px;width:16px}.ms-ListItem-action .ms-Icon{vertical-align:top}.ms-ListItem-action:hover{color:#666666;outline:1px solid transparent}.ms-ListItem.is-unread{border-left:3px solid #0078d7;padding-left:27px}.ms-ListItem.is-unread .ms-ListItem-metaText,.ms-ListItem.is-unread .ms-ListItem-secondaryText{color:#0078d7;font-weight:600}.ms-ListItem.is-unseen:after{border-right:10px solid transparent;border-top:10px solid #0078d7;left:0;position:absolute;top:0}.ms-ListItem.is-selectable .ms-ListItem-selectionTarget{display:block;height:20px;left:6px;position:absolute;top:13px;width:20px}.ms-ListItem.is-selectable .ms-ListItem-image{margin-left:0}.ms-ListItem.is-selectable:hover{background-color:#eaeaea;cursor:pointer;outline:1px solid transparent}.ms-ListItem.is-selectable:hover:before{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-family:FabricMDL2Icons;font-style:normal;font-weight:400;speak:none;position:absolute;top:12px;left:6px;height:15px;width:15px;border:1px solid #767676}.ms-ListItem.is-selected:before{border:1px solid transparent}.ms-ListItem.is-selected:before,.ms-ListItem.is-selected:hover:before{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-family:FabricMDL2Icons;font-style:normal;font-weight:400;speak:none;content:'\e041';font-size:15px;color:#767676;position:absolute;top:12px;left:6px}.ms-ListItem.is-selected:hover{background-color:#c7e0f4;outline:1px solid transparent}.ms-ListItem.ms-ListItem--document{padding:0}.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon{width:70px;height:70px;float:left;text-align:center}.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon .ms-Icon{font-size:38px;line-height:70px;color:#666666}.ms-ListItem.ms-ListItem--document .ms-ListItem-primaryText{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;padding-top:15px;padding-right:0;position:static}.ms-ListItem.ms-ListItem--document .ms-ListItem-secondaryText{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:"Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;font-size:11px;font-weight:400;padding-top:6px}.MailList{overflow-y:auto;-webkit-overflow-scrolling:touch;max-height:500px}.MailTile{margin-bottom:5px;padding:10px;background:red}
+    }
   }
+  ```
 
-  .done :global .ms-ListItem-primaryText {
-    text-decoration: line-through;
-  }
+2. <span data-ttu-id="7296f-176">В файле **./src/webparts/toDo/ToDoWebPart.ts** найдите метод **render** и добавьте в шаблон отрисовки приложения новые значки Office UI Fabric.</span><span class="sxs-lookup"><span data-stu-id="7296f-176">In the **./src/webparts/toDo/ToDoWebPart.ts** file, in the **render** method change the application rendering template to use new Office UI Fabric icons.</span></span>
 
-  ul, li {
-    margin: 0;
-    padding: 0;
-  }
+  ```ts
+  export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
+    // ...
+    public render(): void {
+      if (this.renderedOnce === false) {
+        require('./app/app.module');
+        require('./app/app.config');
+        require('./app/data.service');
+        require('./app/home.controller');
 
-  :global {
-    .ms-Spinner{position:relative;height:20px}.ms-Spinner.ms-Spinner--large{height:28px}.ms-Spinner.ms-Spinner--large .ms-Spinner-label{left:34px;top:6px}.ms-Spinner-circle{position:absolute;border-radius:100px;background-color:#0078d7;opacity:0}@media screen and (-ms-high-contrast:active){.ms-Spinner-circle{background-color:#fff}}@media screen and (-ms-high-contrast:black-on-white){.ms-Spinner-circle{background-color:#000}}.ms-Spinner-label{position:relative;color:#333;font-family:Segoe UI Regular WestEuropean,Segoe UI,Tahoma,Arial,sans-serif;font-size:12px;font-weight:400;color:#0078d7;left:28px;top:2px}
-    .ms-TextField{color:#333;font-family:Segoe UI Regular WestEuropean,Segoe UI,Tahoma,Arial,sans-serif;font-size:14px;font-weight:400;box-sizing:border-box;margin:0;padding:0;box-shadow:none;margin-bottom:8px}.ms-TextField.is-disabled .ms-TextField-field{background-color:#f4f4f4;border-color:#f4f4f4;pointer-events:none;cursor:default}.ms-TextField.is-disabled:-moz-placeholder,.ms-TextField.is-disabled:-ms-input-placeholder,.ms-TextField.is-disabled::-moz-placeholder,.ms-TextField.is-disabled::-webkit-input-placeholder{color:#a6a6a6}.ms-TextField.is-required .ms-Label:after{content:' *';color:#a80000}.ms-TextField.is-required:-moz-placeholder:after,.ms-TextField.is-required:-ms-input-placeholder:after,.ms-TextField.is-required::-moz-placeholder:after,.ms-TextField.is-required::-webkit-input-placeholder:after{content:' *';color:#a80000}.ms-TextField.is-active{border-color:#0078d7}.ms-TextField-field{box-sizing:border-box;margin:0;padding:0;box-shadow:none;border:1px solid #c8c8c8;border-radius:0;font-family:Segoe UI Semilight WestEuropean,Segoe UI Semilight,Segoe UI,Tahoma,Arial,sans-serif;font-size:12px;color:#333;height:32px;padding:6px 10px 8px;width:100%;min-width:180px;outline:0}.ms-TextField-field:hover{border-color:#767676}.ms-TextField-field:focus{border-color:#0078d7}@media screen and (-ms-high-contrast:active){.ms-TextField-field:focus,.ms-TextField-field:hover{border-color:#1aebff}}@media screen and (-ms-high-contrast:black-on-white){.ms-TextField-field:focus,.ms-TextField-field:hover{border-color:#37006e}}.ms-TextField-field:-moz-placeholder,.ms-TextField-field:-ms-input-placeholder,.ms-TextField-field::-moz-placeholder,.ms-TextField-field::-webkit-input-placeholder{color:#666}.ms-TextField-description{color:#767676;font-size:11px}.ms-TextField.ms-TextField--placeholder{position:relative}.ms-TextField.ms-TextField--placeholder .ms-Label{position:absolute;font-family:Segoe UI Semilight WestEuropean,Segoe UI Semilight,Segoe UI,Tahoma,Arial,sans-serif;font-size:12px;color:#666;padding:7px 0 7px 10px}.ms-TextField.ms-TextField--placeholder.is-disabled,.ms-TextField.ms-TextField--placeholder.is-disabled .ms-Label{color:#a6a6a6}@media screen and (-ms-high-contrast:active){.ms-TextField.ms-TextField--placeholder.is-disabled .ms-Label{color:#0f0}}@media screen and (-ms-high-contrast:black-on-white){.ms-TextField.ms-TextField--placeholder.is-disabled .ms-Label{color:#600000}}.ms-TextField.ms-TextField--underlined{border-bottom:1px solid #c8c8c8;display:table;width:100%;min-width:180px}.ms-TextField.ms-TextField--underlined:hover{border-color:#767676}@media screen and (-ms-high-contrast:active){.ms-TextField.ms-TextField--underlined:hover{border-color:#1aebff}}@media screen and (-ms-high-contrast:black-on-white){.ms-TextField.ms-TextField--underlined:hover{border-color:#37006e}}.ms-TextField.ms-TextField--underlined:active,.ms-TextField.ms-TextField--underlined:focus{border-color:#0078d7}.ms-TextField.ms-TextField--underlined .ms-Label{font-size:12px;margin-right:8px;display:table-cell;vertical-align:bottom;padding-left:12px;padding-bottom:5px;height:32px;width:1%;white-space:nowrap}.ms-TextField.ms-TextField--underlined .ms-TextField-field{border:0;float:left;display:table-cell;text-align:left;padding-top:8px;padding-bottom:2px}.ms-TextField.ms-TextField--underlined .ms-TextField-field:active,.ms-TextField.ms-TextField--underlined .ms-TextField-field:focus,.ms-TextField.ms-TextField--underlined .ms-TextField-field:hover{outline:0}.ms-TextField.ms-TextField--underlined.is-disabled{border-bottom-color:#eaeaea}.ms-TextField.ms-TextField--underlined.is-disabled .ms-Label{color:#a6a6a6}@media screen and (-ms-high-contrast:active){.ms-TextField.ms-TextField--underlined.is-disabled .ms-Label{color:#0f0}}@media screen and (-ms-high-contrast:black-on-white){.ms-TextField.ms-TextField--underlined.is-disabled .ms-Label{color:#600000}}.ms-TextField.ms-TextField--underlined.is-disabled .ms-TextField-field{background-color:transparent;color:#a6a6a6}.ms-TextField.ms-TextField--underlined.is-active{border-color:#0078d7}@media screen and (-ms-high-contrast:active){.ms-TextField.ms-TextField--underlined.is-active{border-color:#1aebff}}@media screen and (-ms-high-contrast:black-on-white){.ms-TextField.ms-TextField--underlined.is-active{border-color:#37006e}}.ms-TextField.ms-TextField--multiline .ms-TextField-field{line-height:17px;min-height:60px;min-width:260px;padding-top:6px;overflow:auto}.ms-Label,.ms-TextField.ms-TextField--multiline .ms-TextField-field{color:#333;font-family:Segoe UI Regular WestEuropean,Segoe UI,Tahoma,Arial,sans-serif;font-size:12px;font-weight:400}
-    .ms-Label{margin:0;padding:0;box-shadow:none;box-sizing:border-box;display:block;padding:5px 0}.ms-Label.is-required:after{content:' *';color:#a80000}.ms-Label.is-disabled{color:#a6a6a6}@media screen and (-ms-high-contrast:active){.ms-Label.is-disabled{color:#0f0}}@media screen and (-ms-high-contrast:black-on-white){.ms-Label.is-disabled{color:#600000}}.is-disabled .ms-Label{color:#a6a6a6}@media screen and (-ms-high-contrast:active){.is-disabled .ms-Label{color:#0f0}}@media screen and (-ms-high-contrast:black-on-white){.is-disabled .ms-Label{color:#600000}}.ms-Toggle{color:#333;font-family:Segoe UI Regular WestEuropean,Segoe UI,Tahoma,Arial,sans-serif;font-size:14px;font-weight:400;box-sizing:border-box;margin:0;padding:0;box-shadow:none;position:relative;display:block;margin-bottom:26px}.ms-Toggle .ms-Label{position:relative;padding:0 0 0 62px;font-size:12px}.ms-Toggle:hover .ms-Label{color:#000}.ms-Toggle:active .ms-Label{color:#333}.ms-Toggle.is-disabled .ms-Label{color:#a6a6a6}@media screen and (-ms-high-contrast:active){.ms-Toggle.is-disabled .ms-Label{color:#0f0}}@media screen and (-ms-high-contrast:black-on-white){.ms-Toggle.is-disabled .ms-Label{color:#600000}}
-    .ms-ListItem{font-family:"Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;box-sizing:border-box;margin:0;padding:0;box-shadow:none;padding:9px 28px 3px;position:relative;display:block}.ms-ListItem::after,.ms-ListItem::before{display:table;content:"";line-height:0}.ms-ListItem::after{clear:both}.ms-ListItem-primaryText,.ms-ListItem-secondaryText,.ms-ListItem-tertiaryText{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block}.ms-ListItem-primaryText{font-family:"Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;font-size:21px;font-weight:100;padding-right:80px;position:relative;top:-4px}.ms-ListItem-secondaryText{font-family:"Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;line-height:25px;position:relative;top:-7px;padding-right:30px}.ms-ListItem-tertiaryText{font-family:"Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;font-size:14px;font-weight:400;position:relative;top:-9px;margin-bottom:-4px;padding-right:30px}.ms-ListItem-metaText{font-family:"Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;font-size:11px;font-weight:400;position:absolute;right:30px;top:39px}.ms-ListItem-image{float:left;height:70px;margin-left:-8px;margin-right:10px;width:70px}.ms-ListItem-selectionTarget{display:none}.ms-ListItem-actions{max-width:80px;position:absolute;right:30px;text-align:right;top:10px}.ms-ListItem-action{color:#a6a6a6;display:inline-block;font-size:15px;position:relative;text-align:center;top:3px;cursor:pointer;height:16px;width:16px}.ms-ListItem-action .ms-Icon{vertical-align:top}.ms-ListItem-action:hover{color:#666666;outline:1px solid transparent}.ms-ListItem.is-unread{border-left:3px solid #0078d7;padding-left:27px}.ms-ListItem.is-unread .ms-ListItem-metaText,.ms-ListItem.is-unread .ms-ListItem-secondaryText{color:#0078d7;font-weight:600}.ms-ListItem.is-unseen:after{border-right:10px solid transparent;border-top:10px solid #0078d7;left:0;position:absolute;top:0}.ms-ListItem.is-selectable .ms-ListItem-selectionTarget{display:block;height:20px;left:6px;position:absolute;top:13px;width:20px}.ms-ListItem.is-selectable .ms-ListItem-image{margin-left:0}.ms-ListItem.is-selectable:hover{background-color:#eaeaea;cursor:pointer;outline:1px solid transparent}.ms-ListItem.is-selectable:hover:before{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-family:FabricMDL2Icons;font-style:normal;font-weight:400;speak:none;position:absolute;top:12px;left:6px;height:15px;width:15px;border:1px solid #767676}.ms-ListItem.is-selected:before{border:1px solid transparent}.ms-ListItem.is-selected:before,.ms-ListItem.is-selected:hover:before{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-family:FabricMDL2Icons;font-style:normal;font-weight:400;speak:none;content:'\e041';font-size:15px;color:#767676;position:absolute;top:12px;left:6px}.ms-ListItem.is-selected:hover{background-color:#c7e0f4;outline:1px solid transparent}.ms-ListItem.ms-ListItem--document{padding:0}.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon{width:70px;height:70px;float:left;text-align:center}.ms-ListItem.ms-ListItem--document .ms-ListItem-itemIcon .ms-Icon{font-size:38px;line-height:70px;color:#666666}.ms-ListItem.ms-ListItem--document .ms-ListItem-primaryText{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px;padding-top:15px;padding-right:0;position:static}.ms-ListItem.ms-ListItem--document .ms-ListItem-secondaryText{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:"Segoe UI WestEuropean","Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased;font-size:11px;font-weight:400;padding-top:6px}.MailList{overflow-y:auto;-webkit-overflow-scrolling:touch;max-height:500px}.MailTile{margin-bottom:5px;padding:10px;background:red}
-  }
-}
-```
-
-<span data-ttu-id="a4c9d-177">В файле **./src/webparts/toDo/ToDoWebPart.ts** найдите метод **render** и измените шаблон отрисовки приложения так, чтобы использовались новые значки Office UI Fabric.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-177">In the **./src/webparts/toDo/ToDoWebPart.ts** file, in the **render** method change the application rendering template to use new Office UI Fabric icons.</span></span>
-
-```ts
-export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
-  // ...
-  public render(): void {
-    if (this.renderedOnce === false) {
-      require('./app/app.module');
-      require('./app/app.config');
-      require('./app/data.service');
-      require('./app/home.controller');
-
-      this.domElement.innerHTML = `
-        <div class="${styles.toDo}">
-          <div data-ng-controller="homeController as vm">
-            <div class="${styles.loading}" ng-show="vm.isLoading">
-              <uif-spinner>Loading...</uif-spinner>
+        this.domElement.innerHTML = `
+          <div class="${styles.toDo}">
+            <div data-ng-controller="homeController as vm">
+              <div class="${styles.loading}" ng-show="vm.isLoading">
+                <uif-spinner>Loading...</uif-spinner>
+              </div>
+              <div id="entryform" ng-show="vm.isLoading === false">
+                <uif-textfield uif-label="New to do:" uif-underlined ng-model="vm.newItem" ng-keydown="vm.todoKeyDown($event)"></uif-textfield>
+              </div>
+              <uif-list id="items" ng-show="vm.isLoading === false" >
+                <uif-list-item ng-repeat="todo in vm.todoCollection" uif-item="todo" ng-class="{'${styles.done}': todo.done}">
+                  <uif-list-item-primary-text>{{todo.title}}</uif-list-item-primary-text>
+                  <uif-list-item-actions>
+                    <uif-list-item-action ng-click="vm.completeTodo(todo)" ng-show="todo.done === false">
+                      <i class="ms-Icon ms-Icon--CheckMark" aria-hidden="true"></i>
+                    </uif-list-item-action>
+                    <uif-list-item-action ng-click="vm.undoTodo(todo)" ng-show="todo.done">
+                      <i class="ms-Icon ms-Icon--RevToggleKey" aria-hidden="true"></i>
+                    </uif-list-item-action>
+                    <uif-list-item-action ng-click="vm.deleteTodo(todo)">
+                      <i class="ms-Icon ms-Icon--Delete" aria-hidden="true"></i>
+                    </uif-list-item-action>
+                  </uif-list-item-actions>
+                </uif-list-item>
+              </uif-list>
             </div>
-            <div id="entryform" ng-show="vm.isLoading === false">
-              <uif-textfield uif-label="New to do:" uif-underlined ng-model="vm.newItem" ng-keydown="vm.todoKeyDown($event)"></uif-textfield>
-            </div>
-            <uif-list id="items" ng-show="vm.isLoading === false" >
-              <uif-list-item ng-repeat="todo in vm.todoCollection" uif-item="todo" ng-class="{'${styles.done}': todo.done}">
-                <uif-list-item-primary-text>{{todo.title}}</uif-list-item-primary-text>
-                <uif-list-item-actions>
-                  <uif-list-item-action ng-click="vm.completeTodo(todo)" ng-show="todo.done === false">
-                    <i class="ms-Icon ms-Icon--CheckMark" aria-hidden="true"></i>
-                  </uif-list-item-action>
-                  <uif-list-item-action ng-click="vm.undoTodo(todo)" ng-show="todo.done">
-                    <i class="ms-Icon ms-Icon--RevToggleKey" aria-hidden="true"></i>
-                  </uif-list-item-action>
-                  <uif-list-item-action ng-click="vm.deleteTodo(todo)">
-                    <i class="ms-Icon ms-Icon--Delete" aria-hidden="true"></i>
-                  </uif-list-item-action>
-                </uif-list-item-actions>
-              </uif-list-item>
-            </uif-list>
-          </div>
         </div>`;
 
       angular.bootstrap(this.domElement, ['todoapp']);
@@ -292,17 +296,19 @@ export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps
 }
 ```
 
-<span data-ttu-id="a4c9d-178">Когда вы обновите страницу веб-части в браузере, стиль станет правильным.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-178">If you refresh the web part in the web browser, you will see that it is now correctly styled.</span></span>
+<br/>
+
+<span data-ttu-id="7296f-177">Обновите страницу веб-части в браузере, и стиль станет правильным.</span><span class="sxs-lookup"><span data-stu-id="7296f-177">If you refresh the web part in the web browser, you will see that it is now correctly styled.</span></span>
 
 ![Перенесенное приложение AngularJS с правильной пометкой выполненных задач в веб-части](../../../images/ng-migration-correct-styling.png)
 
-## <a name="upgrade-the-angularjs-application-to-typescript"></a><span data-ttu-id="a4c9d-180">Обновление приложения AngularJS до TypeScript</span><span class="sxs-lookup"><span data-stu-id="a4c9d-180">Upgrade the AngularJS application to TypeScript</span></span>
+## <a name="upgrade-the-angularjs-application-to-typescript"></a><span data-ttu-id="7296f-179">Преобразование приложения AngularJS в TypeScript</span><span class="sxs-lookup"><span data-stu-id="7296f-179">Upgrade the AngularJS application to TypeScript</span></span>
 
-<span data-ttu-id="a4c9d-181">Исходное приложение AngularJS написано на обычном JavaScript, из-за чего в нем могут возникать ошибки.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-181">The original AngularJS application is written in plain JavaScript which makes maintaining it error-prone.</span></span> <span data-ttu-id="a4c9d-182">При создании клиентских веб-частей на платформе SharePoint Framework можно использовать TypeScript и его функции обеспечения безопасности типа во время разработки.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-182">When building SharePoint Framework client-side web parts you can use TypeScript and benefit of its design-time type safety features.</span></span> <span data-ttu-id="a4c9d-183">На этом этапе мы преобразуем обычный код JavaScript AngularJS в TypeScript.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-183">In this part of this you will migrate the plain JavaScript AngularJS code to TypeScript.</span></span>
+<span data-ttu-id="7296f-180">Исходное приложение AngularJS написано на обычном JavaScript, из-за чего в нем могут возникать ошибки.</span><span class="sxs-lookup"><span data-stu-id="7296f-180">The original AngularJS application is written in plain JavaScript which makes maintaining it error-prone.</span></span> <span data-ttu-id="7296f-181">При создании клиентских веб-частей SharePoint Framework можно использовать TypeScript и его функции обеспечения безопасности типа во время разработки.</span><span class="sxs-lookup"><span data-stu-id="7296f-181">When building SharePoint Framework client-side web parts you can use TypeScript and benefit of its design-time type safety features.</span></span> <span data-ttu-id="7296f-182">В следующем разделе мы преобразуем обычный код JavaScript AngularJS в TypeScript.</span><span class="sxs-lookup"><span data-stu-id="7296f-182">In this part of this you will migrate the plain JavaScript AngularJS code to TypeScript.</span></span>
 
-### <a name="upgrade-application-configuration"></a><span data-ttu-id="a4c9d-184">Обновление конфигурации приложения</span><span class="sxs-lookup"><span data-stu-id="a4c9d-184">Upgrade application configuration</span></span>
+### <a name="upgrade-application-configuration"></a><span data-ttu-id="7296f-183">Обновление конфигурации приложения</span><span class="sxs-lookup"><span data-stu-id="7296f-183">Upgrade application configuration</span></span>
 
-<span data-ttu-id="a4c9d-185">В проекте переименуйте файл **./src/webparts/toDo/app/app.config.js** в `app.config.ts`.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-185">In your project rename the **./src/webparts/toDo/app/app.config.js** file to `app.config.ts`.</span></span> <span data-ttu-id="a4c9d-186">Измените его содержимое на следующее:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-186">Change its contents to:</span></span>
+<span data-ttu-id="7296f-184">В проекте переименуйте файл **./src/webparts/toDo/app/app.config.js** в `app.config.ts`.</span><span class="sxs-lookup"><span data-stu-id="7296f-184">In your project rename the **./src/webparts/toDo/app/app.config.js** file to `app.config.ts`.</span></span> <span data-ttu-id="7296f-185">Замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-185">Change its contents to:</span></span>
 
 ```ts
 import * as angular from 'angular';
@@ -315,9 +321,9 @@ export default function() {
 }
 ```
 
-### <a name="upgrade-data-service"></a><span data-ttu-id="a4c9d-187">Обновление службы данных</span><span class="sxs-lookup"><span data-stu-id="a4c9d-187">Upgrade data service</span></span>
+### <a name="upgrade-data-service"></a><span data-ttu-id="7296f-186">Обновление службы данных</span><span class="sxs-lookup"><span data-stu-id="7296f-186">Upgrade data service</span></span>
 
-<span data-ttu-id="a4c9d-188">В проекте переименуйте файл **./src/webparts/toDo/app/data.service.js** в `DataService.ts`.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-188">In your project rename the **./src/webparts/toDo/app/data.service.js** file to `DataService.ts`.</span></span> <span data-ttu-id="a4c9d-189">Измените его содержимое на следующее:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-189">Change its contents to:</span></span>
+<span data-ttu-id="7296f-187">В проекте переименуйте файл **./src/webparts/toDo/app/data.service.js** в `DataService.ts`.</span><span class="sxs-lookup"><span data-stu-id="7296f-187">In your project rename the **./src/webparts/toDo/app/data.service.js** file to `DataService.ts`.</span></span> <span data-ttu-id="7296f-188">Замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-188">Change its contents to:</span></span>
 
 ```ts
 import * as angular from 'angular';
@@ -506,9 +512,9 @@ export default class DataService implements IDataService {
 }
 ```
 
-### <a name="upgrade-home-controller"></a><span data-ttu-id="a4c9d-190">Обновление контроллера домашней страницы</span><span class="sxs-lookup"><span data-stu-id="a4c9d-190">Upgrade home controller</span></span>
+### <a name="upgrade-home-controller"></a><span data-ttu-id="7296f-189">Обновление контроллера домашней страницы</span><span class="sxs-lookup"><span data-stu-id="7296f-189">Upgrade home controller</span></span>
 
-<span data-ttu-id="a4c9d-191">В проекте переименуйте файл **./src/webparts/toDo/app/home.controller.js** в `HomeController.ts`.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-191">In your project rename the **./src/webparts/toDo/app/home.controller.js** file to `HomeController.ts`.</span></span> <span data-ttu-id="a4c9d-192">Измените его содержимое на следующее:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-192">Change its contents to:</span></span>
+<span data-ttu-id="7296f-190">В проекте измените имя файла **./src/webparts/toDo/app/home.controller.js** на `HomeController.ts`.</span><span class="sxs-lookup"><span data-stu-id="7296f-190">In your project rename the **./src/webparts/toDo/app/home.controller.js** file to `HomeController.ts`.</span></span> <span data-ttu-id="7296f-191">Замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-191">Change its contents to:</span></span>
 
 ```ts
 import * as angular from 'angular';
@@ -603,9 +609,9 @@ export default class HomeController {
 }
 ```
 
-### <a name="upgrade-application-module"></a><span data-ttu-id="a4c9d-193">Обновление модуля приложения</span><span class="sxs-lookup"><span data-stu-id="a4c9d-193">Upgrade application module</span></span>
+### <a name="upgrade-application-module"></a><span data-ttu-id="7296f-192">Обновление модуля приложения</span><span class="sxs-lookup"><span data-stu-id="7296f-192">Upgrade application module</span></span>
 
-<span data-ttu-id="a4c9d-194">В проекте переименуйте файл **./src/webparts/toDo/app/app.module.js** в `app.module.ts`.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-194">In your project rename the **./src/webparts/toDo/app/app.module.js** file to `app.module.ts`.</span></span> <span data-ttu-id="a4c9d-195">Замените его содержимое следующим:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-195">Change its contents to:</span></span>
+<span data-ttu-id="7296f-193">В проекте измените имя файла **./src/webparts/toDo/app/app.module.js** на `app.module.ts`.</span><span class="sxs-lookup"><span data-stu-id="7296f-193">In your project rename the **./src/webparts/toDo/app/app.module.js** file to `app.module.ts`.</span></span> <span data-ttu-id="7296f-194">Замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-194">Change its contents to:</span></span>
 
 ```ts
 import * as angular from 'angular';
@@ -627,174 +633,174 @@ todoapp
   .service('DataService', DataService);
 ```
 
-### <a name="update-reference-to-angularjs-application-in-the-web-part"></a><span data-ttu-id="a4c9d-196">Обновление ссылки на приложение AngularJS в веб-части</span><span class="sxs-lookup"><span data-stu-id="a4c9d-196">Update reference to AngularJS application in the web part</span></span>
+### <a name="update-reference-to-angularjs-application-in-the-web-part"></a><span data-ttu-id="7296f-195">Обновление ссылки на приложение AngularJS в веб-части</span><span class="sxs-lookup"><span data-stu-id="7296f-195">Update reference to AngularJS application in the web part</span></span>
 
-<span data-ttu-id="a4c9d-197">Теперь, когда приложение AngularJS написано на TypeScript, а его фрагменты ссылаются друг на друга, веб-части больше не требуется ссылаться на все фрагменты приложения.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-197">Now that the AngularJS application is built using TypeScript and its different pieces reference each other, it's no longer necessary for the web part to reference all pieces of the application.</span></span> <span data-ttu-id="a4c9d-198">Ей достаточно загрузить главный модуль, который загрузит все остальные элементы приложения AngularJS.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-198">Instead it only needs to load the main module, which in result will load all other elements that build up the AngularJS application.</span></span>
+<span data-ttu-id="7296f-196">Теперь, когда приложение AngularJS написано на TypeScript, а его фрагменты ссылаются друг на друга, веб-части больше не требуется ссылаться на все фрагменты приложения.</span><span class="sxs-lookup"><span data-stu-id="7296f-196">Now that the AngularJS application is built using TypeScript and its different pieces reference each other, it's no longer necessary for the web part to reference all pieces of the application.</span></span> <span data-ttu-id="7296f-197">Ей достаточно загрузить главный модуль, который загрузит все остальные элементы приложения AngularJS.</span><span class="sxs-lookup"><span data-stu-id="7296f-197">Instead it only needs to load the main module, which in result will load all other elements that build up the AngularJS application.</span></span>
 
-<span data-ttu-id="a4c9d-199">В редакторе кода откройте файл **./src/webparts/toDo/ToDoWebPart.ts**.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-199">In the code editor open the **./src/webparts/toDo/ToDoWebPart.ts** file.</span></span> <span data-ttu-id="a4c9d-200">Замените метод **render** следующим:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-200">Change the **render** method to:</span></span>
+1. <span data-ttu-id="7296f-198">В редакторе кода откройте файл **./src/webparts/toDo/ToDoWebPart.ts**.</span><span class="sxs-lookup"><span data-stu-id="7296f-198">In the code editor open the **./src/webparts/toDo/ToDoWebPart.ts** file.</span></span> <span data-ttu-id="7296f-199">Замените метод **render** следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-199">Change the **render** method to:</span></span>
 
-```ts
-export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
-  // ...
-  public render(): void {
-    if (this.renderedOnce === false) {
-      require('./app/app.module');
+  ```ts
+  export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
+    // ...
+    public render(): void {
+      if (this.renderedOnce === false) {
+        require('./app/app.module');
 
-      this.domElement.innerHTML = `
-        <div class="${styles.toDo}">
-          <div data-ng-controller="HomeController as vm">
-            <div class="${styles.loading}" ng-show="vm.isLoading">
-              <uif-spinner>Loading...</uif-spinner>
+        this.domElement.innerHTML = `
+          <div class="${styles.toDo}">
+            <div data-ng-controller="HomeController as vm">
+              <div class="${styles.loading}" ng-show="vm.isLoading">
+                <uif-spinner>Loading...</uif-spinner>
+              </div>
+              <div id="entryform" ng-show="vm.isLoading === false">
+                <uif-textfield uif-label="New to do:" uif-underlined ng-model="vm.newItem" ng-keydown="vm.todoKeyDown($event)"></uif-textfield>
+              </div>
+              <uif-list id="items" ng-show="vm.isLoading === false" >
+                <uif-list-item ng-repeat="todo in vm.todoCollection" uif-item="todo" ng-class="{'${styles.done}': todo.done}">
+                  <uif-list-item-primary-text>{{todo.title}}</uif-list-item-primary-text>
+                  <uif-list-item-actions>
+                    <uif-list-item-action ng-click="vm.completeTodo(todo)" ng-show="todo.done === false">
+                      <i class="ms-Icon ms-Icon--CheckMark" aria-hidden="true"></i>
+                    </uif-list-item-action>
+                    <uif-list-item-action ng-click="vm.undoTodo(todo)" ng-show="todo.done">
+                      <i class="ms-Icon ms-Icon--RevToggleKey" aria-hidden="true"></i>
+                    </uif-list-item-action>
+                    <uif-list-item-action ng-click="vm.deleteTodo(todo)">
+                      <i class="ms-Icon ms-Icon--Delete" aria-hidden="true"></i>
+                    </uif-list-item-action>
+                  </uif-list-item-actions>
+                </uif-list-item>
+              </uif-list>
             </div>
-            <div id="entryform" ng-show="vm.isLoading === false">
-              <uif-textfield uif-label="New to do:" uif-underlined ng-model="vm.newItem" ng-keydown="vm.todoKeyDown($event)"></uif-textfield>
-            </div>
-            <uif-list id="items" ng-show="vm.isLoading === false" >
-              <uif-list-item ng-repeat="todo in vm.todoCollection" uif-item="todo" ng-class="{'${styles.done}': todo.done}">
-                <uif-list-item-primary-text>{{todo.title}}</uif-list-item-primary-text>
-                <uif-list-item-actions>
-                  <uif-list-item-action ng-click="vm.completeTodo(todo)" ng-show="todo.done === false">
-                    <i class="ms-Icon ms-Icon--CheckMark" aria-hidden="true"></i>
-                  </uif-list-item-action>
-                  <uif-list-item-action ng-click="vm.undoTodo(todo)" ng-show="todo.done">
-                    <i class="ms-Icon ms-Icon--RevToggleKey" aria-hidden="true"></i>
-                  </uif-list-item-action>
-                  <uif-list-item-action ng-click="vm.deleteTodo(todo)">
-                    <i class="ms-Icon ms-Icon--Delete" aria-hidden="true"></i>
-                  </uif-list-item-action>
-                </uif-list-item-actions>
-              </uif-list-item>
-            </uif-list>
-          </div>
-        </div>`;
+          </div>`;
 
-      angular.bootstrap(this.domElement, ['todoapp']);
+        angular.bootstrap(this.domElement, ['todoapp']);
+      }
     }
+    // ...
   }
-  // ...
-}
-```
+  ```
 
-<span data-ttu-id="a4c9d-201">Чтобы убедиться, что код успешно обновлен до TypeScript, выполните в командной строке следующую команду:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-201">To verify that the upgrade to TypeScript has been successful, in the command line run</span></span>
+2. <span data-ttu-id="7296f-200">Чтобы убедиться, что код успешно изменен на TypeScript, выполните в командной строке следующую команду:</span><span class="sxs-lookup"><span data-stu-id="7296f-200">To verify that the upgrade to TypeScript has been successful, in the command line run</span></span>
 
-```sh
-gulp serve --nobrowser
-```
+  ```sh
+  gulp serve --nobrowser
+  ```
 
-<span data-ttu-id="a4c9d-202">Обновите страницу системы разработки SharePoint в веб-браузере. Веб-часть должна отображаться так же, как и раньше.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-202">In the web browser refresh the SharePoint workbench which should display your web part just as previously.</span></span>
+3. <span data-ttu-id="7296f-201">Обновите страницу SharePoint Workbench в веб-браузере. Веб-часть должна отображаться так же, как и раньше.</span><span class="sxs-lookup"><span data-stu-id="7296f-201">In the web browser refresh the SharePoint workbench which should display your web part just as previously.</span></span>
 
-![Перенесенное приложение AngularJS с правильной пометкой выполненных задач в веб-части](../../../images/ng-migration-correct-styling.png)
+  ![Перенесенное приложение AngularJS с правильной пометкой выполненных задач в веб-части](../../../images/ng-migration-correct-styling.png)
 
-<span data-ttu-id="a4c9d-p120">Внешний вид веб-части не изменился, но ее код стал лучше. Если вы захотите ее обновить, вам будет проще проверять правильность и целостность кода во время разработки.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-p120">Even though the way the web part works hasn't changed, your code is improved. In case of a future update you can more easily verify the correctness and integrity of your code already during development.</span></span>
+<span data-ttu-id="7296f-203">Внешний вид веб-части не изменился, но ее код стал лучше.</span><span class="sxs-lookup"><span data-stu-id="7296f-203">Even though the way the web part works hasn't changed, your code is improved.</span></span> <span data-ttu-id="7296f-204">Если вы захотите ее обновить, вам будет проще проверять правильность и целостность кода во время разработки.</span><span class="sxs-lookup"><span data-stu-id="7296f-204">Even though the way the web part works hasn't changed, your code is improved. In case of a future update you can more easily verify the correctness and integrity of your code already during development.</span></span>
 
-## <a name="improve-integration-of-the-angularjs-application-with-the-sharepoint-framework"></a><span data-ttu-id="a4c9d-206">Улучшение интеграции приложения AngularJS с платформой SharePoint Framework</span><span class="sxs-lookup"><span data-stu-id="a4c9d-206">Improve integration of the AngularJS application with the SharePoint Framework</span></span>
+## <a name="improve-integration-of-the-angularjs-application-with-the-sharepoint-framework"></a><span data-ttu-id="7296f-205">Улучшение интеграции приложения AngularJS с платформой SharePoint Framework</span><span class="sxs-lookup"><span data-stu-id="7296f-205">Improve integration of the AngularJS application with the SharePoint Framework</span></span>
 
-<span data-ttu-id="a4c9d-207">На этом этапе приложение AngularJS работает правильно и заключено в клиентскую веб-часть на платформе SharePoint Framework.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-207">At this point the AngularJS application works correctly and is wrapped in a SharePoint Framework client-side web part.</span></span> <span data-ttu-id="a4c9d-208">Пользователи могут добавить веб-часть на страницу, но не могут настроить ее работу.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-208">While users can add the web part to the page, they cannot however configure how the web part should work.</span></span> <span data-ttu-id="a4c9d-209">Все значения конфигурации внедрены в код приложения AngularJS.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-209">All of the configuration is embedded in the AngularJS application's code.</span></span> <span data-ttu-id="a4c9d-210">В этом разделе показано расширение веб-части, позволяющее пользователям указывать имя списка дел и управлять отображением выполненных задач.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-210">In this section you will extend the web part to allow configuration of the name of the list where the todo items are stored and whether the web part should show finished tasks or not.</span></span>
+<span data-ttu-id="7296f-206">На этом шаге приложение AngularJS работает правильно и заключено в клиентскую веб-часть на платформе SharePoint Framework.</span><span class="sxs-lookup"><span data-stu-id="7296f-206">At this point the AngularJS application works correctly and is wrapped in a SharePoint Framework client-side web part.</span></span> <span data-ttu-id="7296f-207">Пользователи могут добавлять веб-часть на страницу, но не могут настраивать ее работу.</span><span class="sxs-lookup"><span data-stu-id="7296f-207">While users can add the web part to the page, they cannot however configure how the web part should work.</span></span> <span data-ttu-id="7296f-208">Все значения конфигурации внедрены в код приложения AngularJS.</span><span class="sxs-lookup"><span data-stu-id="7296f-208">All of the configuration is embedded in the AngularJS application's code.</span></span> <span data-ttu-id="7296f-209">В этом разделе показано, как расширить веб-часть, чтобы пользователи могли указывать имя списка дел и управлять отображением выполненных задач.</span><span class="sxs-lookup"><span data-stu-id="7296f-209">In this section you will extend the web part to allow configuration of the name of the list where the todo items are stored and whether the web part should show finished tasks or not.</span></span>
 
-### <a name="define-web-part-properties"></a><span data-ttu-id="a4c9d-211">Определение свойств веб-части</span><span class="sxs-lookup"><span data-stu-id="a4c9d-211">Define web part properties</span></span>
+### <a name="define-web-part-properties"></a><span data-ttu-id="7296f-210">Определение свойств веб-части</span><span class="sxs-lookup"><span data-stu-id="7296f-210">Define web part properties</span></span>
 
-<span data-ttu-id="a4c9d-212">В редакторе кода откройте файл **./src/webparts/toDo/ToDoWebPart.manifest.json**.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-212">In the code editor open the **./src/webparts/toDo/ToDoWebPart.manifest.json** file.</span></span> <span data-ttu-id="a4c9d-213">Замените раздел **properties** следующим:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-213">Change the **properties** section to:</span></span>
+1. <span data-ttu-id="7296f-211">В редакторе кода откройте файл **./src/webparts/toDo/ToDoWebPart.manifest.json**.</span><span class="sxs-lookup"><span data-stu-id="7296f-211">In the code editor open the **./src/webparts/toDo/ToDoWebPart.manifest.json** file.</span></span> <span data-ttu-id="7296f-212">Замените раздел **properties** следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-212">Change the **properties** section to:</span></span>
 
-```json
-"properties": {
-  "todoListName": "Todo",
-  "hideFinishedTasks": false
-}
-```
+  ```json
+  "properties": {
+    "todoListName": "Todo",
+    "hideFinishedTasks": false
+  }
+  ```
 
-<span data-ttu-id="a4c9d-214">В файле **./src/webparts/toDo/ToDoWebPart.ts** замените определение интерфейса `IToDoWebPartProps` следующим:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-214">In the **./src/webparts/toDo/ToDoWebPart.ts** file, change the definition of the `IToDoWebPartProps` interface to:</span></span>
+2. <span data-ttu-id="7296f-213">В файле **./src/webparts/toDo/ToDoWebPart.ts** замените определение интерфейса `IToDoWebPartProps` следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-213">In the **./src/webparts/toDo/ToDoWebPart.ts** file, change the definition of the `IToDoWebPartProps` interface to:</span></span>
 
-```ts
-export interface IToDoWebPartProps {
-  todoListName: string;
-  hideFinishedTasks: boolean;
-}
-```
+  ```ts
+  export interface IToDoWebPartProps {
+    todoListName: string;
+    hideFinishedTasks: boolean;
+  }
+  ```
 
-<span data-ttu-id="a4c9d-215">В файле **./src/webparts/toDo/ToDoWebPart.ts** замените первый оператор импорта на следующий:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-215">In the **./src/webparts/toDo/ToDoWebPart.ts** file change the first import statement to:</span></span>
+3. <span data-ttu-id="7296f-214">В файле **./src/webparts/toDo/ToDoWebPart.ts** замените первый оператор импорта следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-214">In the **./src/webparts/toDo/ToDoWebPart.ts** file change the first import statement to:</span></span>
 
-```ts
-import {
-  BaseClientSideWebPart,
-  IPropertyPaneSettings,
-  PropertyPaneTextField,
-  PropertyPaneToggle
-} from '@microsoft/sp-webpart-base';
-```
+  ```ts
+  import {
+    BaseClientSideWebPart,
+    IPropertyPaneSettings,
+    PropertyPaneTextField,
+    PropertyPaneToggle
+  } from '@microsoft/sp-webpart-base';
+  ```
 
-<span data-ttu-id="a4c9d-216">После этого в файле примера измените замените метод **getPropertyPaneConfiguration** следующим:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-216">Next, in the same file, change the **getPropertyPaneConfiguration** method to:</span></span>
+4. <span data-ttu-id="7296f-215">В том же файле замените метод **getPropertyPaneConfiguration** следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-215">Next, in the same file, change the **getPropertyPaneConfiguration** method to:</span></span>
 
-```ts
-export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
-  // ...
-  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
+  ```ts
+  export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
+    // ...
+    protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
+      return {
+        pages: [
+          {
+            header: {
+              description: strings.PropertyPaneDescription
+            },
+            groups: [
+              {
+                groupName: strings.BasicGroupName,
+                groupFields: [
+                  PropertyPaneTextField('todoListName', {
+                    label: strings.ListNameFieldLabel
+                  }),
+                  PropertyPaneToggle('hideFinishedTasks', {
+                    label: strings.HideFinishedTasksFieldLabel
+                  })
+                ]
+              }
+            ]
+          }
+        ]
+      };
+    }
+    // ...
+  }
+  ```
+
+5. <span data-ttu-id="7296f-216">Добавьте недостающие строки ресурсов, заменив содержимое файла **./src/webparts/toDo/loc/mystrings.d.ts** следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-216">Add the missing resource strings, by changing the **./src/webparts/toDo/loc/mystrings.d.ts** file contents to:</span></span>
+
+  ```ts
+  declare interface IToDoWebPartStrings {
+    PropertyPaneDescription: string;
+    BasicGroupName: string;
+    ListNameFieldLabel: string;
+    HideFinishedTasksFieldLabel: string;
+  }
+
+  declare module 'ToDoWebPartStrings' {
+    const strings: IToDoWebPartStrings;
+    export = strings;
+  }
+  ```
+
+6. <span data-ttu-id="7296f-217">В файле **./src/webparts/toDo/loc/en-us.js** добавьте переводы для новых строк:</span><span class="sxs-lookup"><span data-stu-id="7296f-217">In the **./src/webparts/toDo/loc/en-us.js** file add translations for the newly added strings:</span></span>
+
+  ```js
+  define([], function() {
     return {
-      pages: [
-        {
-          header: {
-            description: strings.PropertyPaneDescription
-          },
-          groups: [
-            {
-              groupName: strings.BasicGroupName,
-              groupFields: [
-                PropertyPaneTextField('todoListName', {
-                  label: strings.ListNameFieldLabel
-                }),
-                PropertyPaneToggle('hideFinishedTasks', {
-                  label: strings.HideFinishedTasksFieldLabel
-                })
-              ]
-            }
-          ]
-        }
-      ]
-    };
-  }
-  // ...
-}
-```
+      "PropertyPaneDescription": "Description",
+      "BasicGroupName": "Group Name",
+      "ListNameFieldLabel": "List name",
+      "HideFinishedTasksFieldLabel": "Hide finished tasks"
+    }
+  });
+  ```
 
-<span data-ttu-id="a4c9d-217">Добавьте недостающие строки ресурсов, заменив содержимое файла **./src/webparts/toDo/loc/mystrings.d.ts** на следующее:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-217">Add the missing resource strings, by changing the **./src/webparts/toDo/loc/mystrings.d.ts** file contents to:</span></span>
+### <a name="pass-web-part-properties-values-to-the-angularjs-application"></a><span data-ttu-id="7296f-218">Передача значений свойств веб-части в приложение AngularJS</span><span class="sxs-lookup"><span data-stu-id="7296f-218">Pass web part properties values to the AngularJS application</span></span>
 
-```ts
-declare interface IToDoWebPartStrings {
-  PropertyPaneDescription: string;
-  BasicGroupName: string;
-  ListNameFieldLabel: string;
-  HideFinishedTasksFieldLabel: string;
-}
+<span data-ttu-id="7296f-219">Сейчас пользователи могут настраивать работу веб-части, но приложение AngularJS не использует эти значения.</span><span class="sxs-lookup"><span data-stu-id="7296f-219">At this moment users can configure how the web part should work, but the AngularJS application isn't using these values.</span></span> <span data-ttu-id="7296f-220">В следующих разделах мы расширим приложение AngularJS, чтобы оно использовало значения конфигурации, указанные пользователем в области свойств веб-части.</span><span class="sxs-lookup"><span data-stu-id="7296f-220">In this section you will extend the AngularJS application to use the configuration values provided by users through the web part property pane.</span></span> <span data-ttu-id="7296f-221">Для этого можно транслировать событие AngularJS в методе **render** и подписаться на это событие в контроллере, используемом веб-частью.</span><span class="sxs-lookup"><span data-stu-id="7296f-221">One way to do that is to broadcast an AngularJS event in the **render** method and subscribe to this event in the controller used in the web part.</span></span>
 
-declare module 'ToDoWebPartStrings' {
-  const strings: IToDoWebPartStrings;
-  export = strings;
-}
-```
+### <a name="delete-angularjs-configuration-file"></a><span data-ttu-id="7296f-222">Удаление файла конфигурации AngularJS</span><span class="sxs-lookup"><span data-stu-id="7296f-222">Delete AngularJS configuration file</span></span>
 
-<span data-ttu-id="a4c9d-218">В файле **./src/webparts/toDo/loc/en-us.js** добавьте переводы для новых строк:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-218">In the **./src/webparts/toDo/loc/en-us.js** file add translations for the newly added strings:</span></span>
+<span data-ttu-id="7296f-223">Удалите из проекта файл **./src/webparts/toDo/app/app.config.ts**.</span><span class="sxs-lookup"><span data-stu-id="7296f-223">In your project delete the **./src/webparts/toDo/app/app.config.ts** file.</span></span> <span data-ttu-id="7296f-224">Позже мы обновим приложение, чтобы оно получало значения конфигурации из свойств веб-части.</span><span class="sxs-lookup"><span data-stu-id="7296f-224">In the following steps you will update the application to get the configuration values from web part properties.</span></span>
 
-```js
-define([], function() {
-  return {
-    "PropertyPaneDescription": "Description",
-    "BasicGroupName": "Group Name",
-    "ListNameFieldLabel": "List name",
-    "HideFinishedTasksFieldLabel": "Hide finished tasks"
-  }
-});
-```
+### <a name="remove-reference-to-configuration"></a><span data-ttu-id="7296f-225">Удаление ссылки на конфигурацию</span><span class="sxs-lookup"><span data-stu-id="7296f-225">Remove reference to configuration</span></span>
 
-### <a name="pass-web-part-properties-values-to-the-angularjs-application"></a><span data-ttu-id="a4c9d-219">Передача значений свойств веб-части в приложение AngularJS</span><span class="sxs-lookup"><span data-stu-id="a4c9d-219">Pass web part properties values to the AngularJS application</span></span>
-
-<span data-ttu-id="a4c9d-220">На этом этапе пользователи могут настраивать работу веб-части, но приложение AngularJS не использует эти значения.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-220">At this moment users can configure how the web part should work, but the AngularJS application isn't using these values.</span></span> <span data-ttu-id="a4c9d-221">В этом разделе мы расширим приложение AngularJS, чтобы оно использовало значения конфигурации, указанные пользователем в области свойств веб-части.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-221">In this section you will extend the AngularJS application to use the configuration values provided by users through the web part property pane.</span></span> <span data-ttu-id="a4c9d-222">Для этого можно транслировать событие AngularJS в методе **render** и подписаться на это событие в контроллере, используемом веб-частью.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-222">One way to do that is to broadcast an AngularJS event in the **render** method and subscribe to this event in the controller used in the web part.</span></span>
-
-#### <a name="delete-angularjs-configuration-file"></a><span data-ttu-id="a4c9d-223">Удаление файла конфигурации AngularJS</span><span class="sxs-lookup"><span data-stu-id="a4c9d-223">Delete AngularJS configuration file</span></span>
-
-<span data-ttu-id="a4c9d-224">Удалите из проекта файл **./src/webparts/toDo/app/app.config.ts**.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-224">In your project delete the **./src/webparts/toDo/app/app.config.ts** file.</span></span> <span data-ttu-id="a4c9d-225">Позже мы обновим приложение, чтобы оно получало значения конфигурации из свойств веб-части.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-225">In the following steps you will update the application to get the configuration values from web part properties.</span></span>
-
-#### <a name="remove-reference-to-configuration"></a><span data-ttu-id="a4c9d-226">Удаление ссылки на конфигурацию</span><span class="sxs-lookup"><span data-stu-id="a4c9d-226">Remove reference to configuration</span></span>
-
-<span data-ttu-id="a4c9d-227">В файле **./src/webparts/toDo/app/app.module.ts** удалите ссылку на конфигурацию AngularJS, заменив его содержимое следующим:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-227">In the **./src/webparts/toDo/app/app.module.ts** file remove the reference to the AngularJS configuration by changing its contents to:</span></span>
+<span data-ttu-id="7296f-226">В файле **./src/webparts/toDo/app/app.module.ts** удалите ссылку на конфигурацию AngularJS, заменив его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-226">In the **./src/webparts/toDo/app/app.module.ts** file remove the reference to the AngularJS configuration by changing its contents to:</span></span>
 
 ```ts
 import * as angular from 'angular';
@@ -813,11 +819,11 @@ todoapp
   .service('DataService', DataService);
 ```
 
-#### <a name="update-data-service-to-accept-configuration-value-in-method-parameters"></a><span data-ttu-id="a4c9d-228">Обновление службы данных для принятия значений конфигурации в параметрах методов</span><span class="sxs-lookup"><span data-stu-id="a4c9d-228">Update data service to accept configuration value in method parameters</span></span>
+### <a name="update-data-service-to-accept-configuration-value-in-method-parameters"></a><span data-ttu-id="7296f-227">Обновление службы данных для принятия значений конфигурации в параметрах методов</span><span class="sxs-lookup"><span data-stu-id="7296f-227">Update data service to accept configuration value in method parameters</span></span>
 
-<span data-ttu-id="a4c9d-229">Изначально служба данных получала свою конфигурацию из констант, определенных в файле **app.config.ts**.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-229">Originally the data service retrieved its configuration from the constants defined in the **app.config.ts** file.</span></span> <span data-ttu-id="a4c9d-230">Чтобы использовать вместо них значения конфигурации, настроенные в свойствах веб-части, определенные методы должны принимать параметры.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-230">In order to use the configuration values configured in web part properties instead, the specific methods must accept parameters.</span></span>
+<span data-ttu-id="7296f-228">Изначально служба данных получала свою конфигурацию из констант, определенных в файле **app.config.ts**.</span><span class="sxs-lookup"><span data-stu-id="7296f-228">Originally the data service retrieved its configuration from the constants defined in the **app.config.ts** file.</span></span> <span data-ttu-id="7296f-229">Чтобы использовать вместо них значения конфигурации, настроенные в свойствах веб-части, определенные методы должны принимать параметры.</span><span class="sxs-lookup"><span data-stu-id="7296f-229">In order to use the configuration values configured in web part properties instead, the specific methods must accept parameters.</span></span>
 
-<span data-ttu-id="a4c9d-231">Откройте в редакторе кода файл **./src/webparts/toDo/app/DataService.ts** и замените его содержимое на следующее:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-231">In the code editor open the **./src/webparts/toDo/app/DataService.ts** file and change its contents to:</span></span>
+<span data-ttu-id="7296f-230">Откройте в редакторе кода файл **./src/webparts/toDo/app/DataService.ts** и замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-230">In the code editor open the **./src/webparts/toDo/app/DataService.ts** file and change its contents to:</span></span>
 
 ```ts
 import * as angular from 'angular';
@@ -1002,201 +1008,226 @@ export default class DataService implements IDataService {
 }
 ```
 
-#### <a name="broadcast-properties-change-event"></a><span data-ttu-id="a4c9d-232">Трансляция события изменения свойств</span><span class="sxs-lookup"><span data-stu-id="a4c9d-232">Broadcast properties change event</span></span>
 
-<span data-ttu-id="a4c9d-233">В файле **./src/webparts/toDo/ToDoWebPart.ts** добавьте к классу **ToDoWebPart** новое свойство под названием `$injector`:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-233">In the **./src/webparts/toDo/ToDoWebPart.ts** file, to the **ToDoWebPart** class add a new property called `$injector`:</span></span>
 
-```ts
-export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
-  private $injector: angular.auto.IInjectorService;
-  // ...
-}
-```
+### <a name="broadcast-properties-change-event"></a><span data-ttu-id="7296f-231">Трансляция события изменения свойств</span><span class="sxs-lookup"><span data-stu-id="7296f-231">Broadcast properties change event</span></span>
 
-<span data-ttu-id="a4c9d-234">В том же файле измените метод **render** так:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-234">In the same file, update the **render** method to:</span></span>
+1. <span data-ttu-id="7296f-232">В файле **./src/webparts/toDo/ToDoWebPart.ts** добавьте к классу **ToDoWebPart** новое свойство под названием `$injector`:</span><span class="sxs-lookup"><span data-stu-id="7296f-232">In the **./src/webparts/toDo/ToDoWebPart.ts** file, to the **ToDoWebPart** class add a new property called `$injector`:</span></span>
 
-```ts
-export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
-  // ...
-  public render(): void {
-    if (this.renderedOnce === false) {
-      require('./app/app.module');
+  ```ts
+  export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
+    private $injector: angular.auto.IInjectorService;
+    // ...
+  }
+  ```
 
-      this.domElement.innerHTML = `
-        <div class="${styles.toDo}">
-          <div data-ng-controller="HomeController as vm">
-            <div class="${styles.configurationNeeded}" ng-show="vm.configurationNeeded">
-              Please configure the web part
-            </div>
-            <div ng-show="vm.configurationNeeded === false">
-              <div id="loading" ng-show="vm.isLoading">
-                <uif-spinner>Loading...</uif-spinner>
+2. <span data-ttu-id="7296f-233">В том же файле замените метод **render** следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-233">In the same file, update the **render** method to:</span></span>
+
+  ```ts
+  export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
+    // ...
+    public render(): void {
+      if (this.renderedOnce === false) {
+        require('./app/app.module');
+
+        this.domElement.innerHTML = `
+          <div class="${styles.toDo}">
+            <div data-ng-controller="HomeController as vm">
+              <div class="${styles.configurationNeeded}" ng-show="vm.configurationNeeded">
+                Please configure the web part
               </div>
-              <div id="entryform" ng-show="vm.isLoading === false">
-                <uif-textfield uif-label="New to do:" uif-underlined ng-model="vm.newItem" ng-keydown="vm.todoKeyDown($event)"></uif-textfield>
+              <div ng-show="vm.configurationNeeded === false">
+                <div id="loading" ng-show="vm.isLoading">
+                  <uif-spinner>Loading...</uif-spinner>
+                </div>
+                <div id="entryform" ng-show="vm.isLoading === false">
+                  <uif-textfield uif-label="New to do:" uif-underlined ng-model="vm.newItem" ng-keydown="vm.todoKeyDown($event)"></uif-textfield>
+                </div>
+                <uif-list id="items" ng-show="vm.isLoading === false" >
+                  <uif-list-item ng-repeat="todo in vm.todoCollection" uif-item="todo" ng-class="{'${styles.done}': todo.done}">
+                    <uif-list-item-primary-text>{{todo.title}}</uif-list-item-primary-text>
+                    <uif-list-item-actions>
+                      <uif-list-item-action ng-click="vm.completeTodo(todo)" ng-show="todo.done === false">
+                        <i class="ms-Icon ms-Icon--CheckMark" aria-hidden="true"></i>
+                      </uif-list-item-action>
+                      <uif-list-item-action ng-click="vm.undoTodo(todo)" ng-show="todo.done">
+                        <i class="ms-Icon ms-Icon--RevToggleKey" aria-hidden="true"></i>
+                      </uif-list-item-action>
+                      <uif-list-item-action ng-click="vm.deleteTodo(todo)">
+                        <i class="ms-Icon ms-Icon--Delete" aria-hidden="true"></i>
+                      </uif-list-item-action>
+                    </uif-list-item-actions>
+                  </uif-list-item>
+                </uif-list>
               </div>
-              <uif-list id="items" ng-show="vm.isLoading === false" >
-                <uif-list-item ng-repeat="todo in vm.todoCollection" uif-item="todo" ng-class="{'${styles.done}': todo.done}">
-                  <uif-list-item-primary-text>{{todo.title}}</uif-list-item-primary-text>
-                  <uif-list-item-actions>
-                    <uif-list-item-action ng-click="vm.completeTodo(todo)" ng-show="todo.done === false">
-                      <i class="ms-Icon ms-Icon--CheckMark" aria-hidden="true"></i>
-                    </uif-list-item-action>
-                    <uif-list-item-action ng-click="vm.undoTodo(todo)" ng-show="todo.done">
-                      <i class="ms-Icon ms-Icon--RevToggleKey" aria-hidden="true"></i>
-                    </uif-list-item-action>
-                    <uif-list-item-action ng-click="vm.deleteTodo(todo)">
-                      <i class="ms-Icon ms-Icon--Delete" aria-hidden="true"></i>
-                    </uif-list-item-action>
-                  </uif-list-item-actions>
-                </uif-list-item>
-              </uif-list>
             </div>
-          </div>
-        </div>`;
+          </div>`;
 
-      this.$injector = angular.bootstrap(this.domElement, ['todoapp']);
-    }
+        this.$injector = angular.bootstrap(this.domElement, ['todoapp']);
+      }
 
-    this.$injector.get('$rootScope').$broadcast('configurationChanged', {
-      sharePointApi: this.context.pageContext.web.absoluteUrl + '/_api/',
-      todoListName: this.properties.todoListName,
-      hideFinishedTasks: this.properties.hideFinishedTasks
-    });
-  }
-  // ...
-}
-```
-
-<span data-ttu-id="a4c9d-235">В файле **./src/webparts/toDo/ToDoWebPart.module.scss** добавьте недостающие стили для класса **.configurationNeeded**:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-235">In the **./src/webparts/toDo/ToDoWebPart.module.scss** file add the missing styles for the **.configurationNeeded** class:</span></span>
-
-```scss
-.toDo {
-  /* ... */
-  .configurationNeeded {
-    margin: 0 auto;
-    width: 100%;
-    text-align: center;
-  }
-  /* ... */
-}
-```
-
-#### <a name="subscribe-to-the-properties-changed-event"></a><span data-ttu-id="a4c9d-236">Подписка на событие изменения свойств</span><span class="sxs-lookup"><span data-stu-id="a4c9d-236">Subscribe to the properties changed event</span></span>
-
-<span data-ttu-id="a4c9d-237">Откройте в редакторе кода файл **./src/webparts/toDo/app/HomeController.ts**.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-237">In the code editor open the **./src/webparts/toDo/app/HomeController.ts** file.</span></span>
-
-<span data-ttu-id="a4c9d-238">Добавьте в класс **HomeController** следующие свойства:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-238">In the **HomeController** class add the following properties:</span></span>
-
-```ts
-export default class HomeController {
-  // ...
-  private sharePointApi: string = undefined;
-  private todoListName: string = undefined;
-  private hideFinishedTasks: boolean = false;
-  private configurationNeeded: boolean = true;
-  // ...
-}
-```
-
-<span data-ttu-id="a4c9d-239">Расширьте конструктор класса **HomeController**, внедрив службу корневой области, и замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-239">Extend the constructor of the **HomeController** class with injecting the root scope service and change its contents to:</span></span>
-
-```ts
-export default class HomeController {
-  // ...
-  public static $inject: string[] = ['DataService', '$window', '$rootScope'];
-
-  constructor(private dataService: IDataService,
-    private $window: angular.IWindowService,
-    $rootScope: angular.IRootScopeService) {
-    const vm: HomeController = this;
-    this.init(undefined, undefined);
-
-    $rootScope.$on('configurationChanged',
-      (event: angular.IAngularEvent,
-       args: {
-         sharePointApi: string;
-         todoListName: string;
-         hideFinishedTasks: boolean;
-        }): void => {
-      vm.init(args.sharePointApi, args.todoListName, args.hideFinishedTasks);
-    });
-  }
-
-  // ...
-}
-```
-
-<span data-ttu-id="a4c9d-240">Добавьте в класс **HomeController** метод **init**:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-240">To the **HomeController** class add the **init** method:</span></span>
-
-```ts
-export default class HomeController {
-  // ...
-  private init(sharePointApi: string, todoListName: string, hideFinishedTasks?: boolean): void {
-    if (sharePointApi !== undefined && sharePointApi.length > 0 &&
-      todoListName !== undefined && todoListName.length > 0) {
-      this.sharePointApi = sharePointApi;
-      this.todoListName = todoListName;
-      this.hideFinishedTasks = hideFinishedTasks;
-      this.loadTodos();
-      this.configurationNeeded = false;
-    }
-    else {
-      this.configurationNeeded = true;
-    }
-  }
-  // ...
-}
-```
-
-<span data-ttu-id="a4c9d-241">Обновите все остальные методы класса **HomeController**, чтобы в них использовались значения конфигурации из свойств класса:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-241">Update all remaining methods in the **HomeController** class to use the configuration values from the class properties:</span></span>
-
-```ts
-export default class HomeController {
-  // ...
-  private loadTodos(): void {
-    this.isLoading = true;
-    this.dataService.getTodos(this.sharePointApi, this.todoListName, this.hideFinishedTasks)
-      .then((todos: ITodo[]): void => {
-        this.todoCollection = todos;
-      })
-      .finally((): void => {
-        this.isLoading = false;
+      this.$injector.get('$rootScope').$broadcast('configurationChanged', {
+        sharePointApi: this.context.pageContext.web.absoluteUrl + '/_api/',
+        todoListName: this.properties.todoListName,
+        hideFinishedTasks: this.properties.hideFinishedTasks
       });
+    }
+    // ...
   }
+  ```
 
-  public todoKeyDown($event: KeyboardEvent): void {
-    if ($event.keyCode === 13 && this.newItem.length > 0) {
-      $event.preventDefault();
+3. <span data-ttu-id="7296f-234">В файле **./src/webparts/toDo/ToDoWebPart.module.scss** добавьте недостающие стили для класса **.configurationNeeded**:</span><span class="sxs-lookup"><span data-stu-id="7296f-234">In the **./src/webparts/toDo/ToDoWebPart.module.scss** file add the missing styles for the **.configurationNeeded** class:</span></span>
 
-      this.todoCollection.unshift({ id: -1, title: this.newItem, done: false });
+  ```scss
+  .toDo {
+    /* ... */
+    .configurationNeeded {
+      margin: 0 auto;
+      width: 100%;
+      text-align: center;
+    }
+    /* ... */
+  }
+  ```
 
-      this.dataService.addTodo(this.newItem, this.sharePointApi, this.todoListName)
-        .then((): void => {
-          this.newItem = null;
-          this.dataService.getTodos(this.sharePointApi, this.todoListName, this.hideFinishedTasks)
-            .then((todos: ITodo[]): void => {
-              this.todoCollection = todos;
-            });
+### <a name="subscribe-to-the-properties-changed-event"></a><span data-ttu-id="7296f-235">Подписка на событие изменения свойств</span><span class="sxs-lookup"><span data-stu-id="7296f-235">Subscribe to the properties changed event</span></span>
+
+1. <span data-ttu-id="7296f-236">Откройте в редакторе кода файл **./src/webparts/toDo/app/HomeController.ts**.</span><span class="sxs-lookup"><span data-stu-id="7296f-236">In the code editor open the **./src/webparts/toDo/app/HomeController.ts** file.</span></span> <span data-ttu-id="7296f-237">Добавьте в класс **HomeController** следующие свойства:</span><span class="sxs-lookup"><span data-stu-id="7296f-237">In the **HomeController** class add the following properties:</span></span>
+
+  ```ts
+  export default class HomeController {
+    // ...
+    private sharePointApi: string = undefined;
+    private todoListName: string = undefined;
+    private hideFinishedTasks: boolean = false;
+    private configurationNeeded: boolean = true;
+    // ...
+  }
+  ```
+
+2. <span data-ttu-id="7296f-238">Расширьте конструктор класса **HomeController**, внедрив службу корневой области, и замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-238">Extend the constructor of the **HomeController** class with injecting the root scope service and change its contents to:</span></span>
+
+  ```ts
+  export default class HomeController {
+    // ...
+    public static $inject: string[] = ['DataService', '$window', '$rootScope'];
+
+    constructor(private dataService: IDataService,
+      private $window: angular.IWindowService,
+      $rootScope: angular.IRootScopeService) {
+      const vm: HomeController = this;
+      this.init(undefined, undefined);
+
+      $rootScope.$on('configurationChanged',
+        (event: angular.IAngularEvent,
+        args: {
+          sharePointApi: string;
+          todoListName: string;
+          hideFinishedTasks: boolean;
+          }): void => {
+        vm.init(args.sharePointApi, args.todoListName, args.hideFinishedTasks);
+      });
+    }
+
+    // ...
+  }
+  ```
+
+3. <span data-ttu-id="7296f-239">Добавьте в класс **HomeController** метод **init**:</span><span class="sxs-lookup"><span data-stu-id="7296f-239">To the **HomeController** class add the **init** method:</span></span>
+
+  ```ts
+  export default class HomeController {
+    // ...
+    private init(sharePointApi: string, todoListName: string, hideFinishedTasks?: boolean): void {
+      if (sharePointApi !== undefined && sharePointApi.length > 0 &&
+        todoListName !== undefined && todoListName.length > 0) {
+        this.sharePointApi = sharePointApi;
+        this.todoListName = todoListName;
+        this.hideFinishedTasks = hideFinishedTasks;
+        this.loadTodos();
+        this.configurationNeeded = false;
+      }
+      else {
+        this.configurationNeeded = true;
+      }
+    }
+    // ...
+  }
+  ```
+
+4. <span data-ttu-id="7296f-240">Обновите все остальные методы класса **HomeController**, чтобы в них использовались значения конфигурации из свойств класса:</span><span class="sxs-lookup"><span data-stu-id="7296f-240">Update all remaining methods in the **HomeController** class to use the configuration values from the class properties:</span></span>
+
+  ```ts
+  export default class HomeController {
+    // ...
+    private loadTodos(): void {
+      this.isLoading = true;
+      this.dataService.getTodos(this.sharePointApi, this.todoListName, this.hideFinishedTasks)
+        .then((todos: ITodo[]): void => {
+          this.todoCollection = todos;
+        })
+        .finally((): void => {
+          this.isLoading = false;
         });
     }
-  }
 
-  public deleteTodo(todo: ITodo): void {
-    if (this.$window.confirm('Are you sure you want to delete this todo item?')) {
-      let index: number = -1;
-      for (let i: number = 0; i < this.todoCollection.length; i++) {
-        if (this.todoCollection[i].id === todo.id) {
-          index = i;
-          break;
+    public todoKeyDown($event: KeyboardEvent): void {
+      if ($event.keyCode === 13 && this.newItem.length > 0) {
+        $event.preventDefault();
+
+        this.todoCollection.unshift({ id: -1, title: this.newItem, done: false });
+
+        this.dataService.addTodo(this.newItem, this.sharePointApi, this.todoListName)
+          .then((): void => {
+            this.newItem = null;
+            this.dataService.getTodos(this.sharePointApi, this.todoListName, this.hideFinishedTasks)
+              .then((todos: ITodo[]): void => {
+                this.todoCollection = todos;
+              });
+          });
+      }
+    }
+
+    public deleteTodo(todo: ITodo): void {
+      if (this.$window.confirm('Are you sure you want to delete this todo item?')) {
+        let index: number = -1;
+        for (let i: number = 0; i < this.todoCollection.length; i++) {
+          if (this.todoCollection[i].id === todo.id) {
+            index = i;
+            break;
+          }
         }
-      }
 
-      if (index > -1) {
-        this.todoCollection.splice(index, 1);
-      }
+        if (index > -1) {
+          this.todoCollection.splice(index, 1);
+        }
 
-      this.dataService.deleteTodo(todo, this.sharePointApi, this.todoListName)
+        this.dataService.deleteTodo(todo, this.sharePointApi, this.todoListName)
+          .then((): void => {
+            this.dataService.getTodos(this.sharePointApi, this.todoListName, this.hideFinishedTasks)
+              .then((todos: ITodo[]): void => {
+                this.todoCollection = todos;
+              });
+          });
+      }
+    }
+
+    public completeTodo(todo: ITodo): void {
+      todo.done = true;
+
+      this.dataService.setTodoStatus(todo, true, this.sharePointApi, this.todoListName)
+        .then((): void => {
+          this.dataService.getTodos(this.sharePointApi, this.todoListName, this.hideFinishedTasks)
+            .then((todos: ITodo[]): void => {
+              this.todoCollection = todos;
+            });
+        });
+    }
+
+    public undoTodo(todo: ITodo): void {
+      todo.done = false;
+
+      this.dataService.setTodoStatus(todo, false, this.sharePointApi, this.todoListName)
         .then((): void => {
           this.dataService.getTodos(this.sharePointApi, this.todoListName, this.hideFinishedTasks)
             .then((todos: ITodo[]): void => {
@@ -1205,39 +1236,14 @@ export default class HomeController {
         });
     }
   }
+  ```
 
-  public completeTodo(todo: ITodo): void {
-    todo.done = true;
+5. <span data-ttu-id="7296f-241">Проверьте работу веб-части, выполнив в командной строке следующую команду:</span><span class="sxs-lookup"><span data-stu-id="7296f-241">Verify that the web part is working correctly by executing in the command line:</span></span>
 
-    this.dataService.setTodoStatus(todo, true, this.sharePointApi, this.todoListName)
-      .then((): void => {
-        this.dataService.getTodos(this.sharePointApi, this.todoListName, this.hideFinishedTasks)
-          .then((todos: ITodo[]): void => {
-            this.todoCollection = todos;
-          });
-      });
-  }
+  ```sh
+  gulp serve --nobrowser
+  ```
 
-  public undoTodo(todo: ITodo): void {
-    todo.done = false;
+6. <span data-ttu-id="7296f-242">В веб-браузере откройте SharePoint Workbench и добавьте веб-часть на холст.</span><span class="sxs-lookup"><span data-stu-id="7296f-242">In your web browser navigate to the SharePoint workbench and add the web part to canvas.</span></span> <span data-ttu-id="7296f-243">Если переместить переключатель **Hide finished tasks** (Скрыть выполненные задачи), выполненные задачи будут показаны или скрыты.</span><span class="sxs-lookup"><span data-stu-id="7296f-243">If you toggle the **Hide finished tasks** option you should see completed tasks being displayed or hidden accordingly.</span></span>
 
-    this.dataService.setTodoStatus(todo, false, this.sharePointApi, this.todoListName)
-      .then((): void => {
-        this.dataService.getTodos(this.sharePointApi, this.todoListName, this.hideFinishedTasks)
-          .then((todos: ITodo[]): void => {
-            this.todoCollection = todos;
-          });
-      });
-  }
-}
-```
-
-<span data-ttu-id="a4c9d-242">Проверьте работу веб-части, выполнив в командной строке следующую команду:</span><span class="sxs-lookup"><span data-stu-id="a4c9d-242">Verify that the web part is working correctly by executing in the command line:</span></span>
-
-```sh
-gulp serve --nobrowser
-```
-
-<span data-ttu-id="a4c9d-243">В веб-браузере откройте рабочую область SharePoint и добавьте веб-часть на холст.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-243">In your web browser navigate to the SharePoint workbench and add the web part to canvas.</span></span> <span data-ttu-id="a4c9d-244">Если переместить переключатель **Hide finished tasks** (Скрыть выполненные задачи), выполненные задачи будут показаны или скрыты.</span><span class="sxs-lookup"><span data-stu-id="a4c9d-244">If you toggle the **Hide finished tasks** option you should see completed tasks being displayed or hidden accordingly.</span></span>
-
-![Приложение AngularJS со скрытыми выполненными задачами](../../../images/ng-migration-finished-tasks-hidden.png)
+  ![Приложение AngularJS со скрытыми выполненными задачами](../../../images/ng-migration-finished-tasks-hidden.png)
