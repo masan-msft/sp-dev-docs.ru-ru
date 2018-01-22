@@ -1,18 +1,19 @@
 ---
-title: "Подключение клиентской веб-части к SharePoint (Hello world, часть 2)"
-ms.date: 12/05/2017
+title: "Подключение клиентской веб-части к SharePoint (Hello World, часть 2)"
+description: "Получите доступ к функциям и данным SharePoint и предоставьте больше интегрированных возможностей для пользователей."
+ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 50ba50db6da70ab271d61db1c8f894fd091270c2
-ms.sourcegitcommit: 1f752afb40ff133e2fae14337e09392cc5d9d181
+ms.openlocfilehash: 123c1478a415fc30b788409e119286ecc2dcb802
+ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2017
+ms.lasthandoff: 01/10/2018
 ---
-# <a name="connect-your-client-side-web-part-to-sharepoint-hello-world-part-2"></a>Подключение клиентской веб-части к SharePoint (Hello world, часть 2)
+# <a name="connect-your-client-side-web-part-to-sharepoint-hello-world-part-2"></a>Подключение клиентской веб-части к SharePoint (Hello World, часть 2)
 
-Подключите веб-часть к SharePoint для доступа к функциям и данным SharePoint, а также более интегрированного процесса работы для конечных пользователей. В этой статье мы продолжим работу с веб-частью Hello world, созданной в предыдущей статье [Создание первой веб-части](./build-a-hello-world-web-part.md).
+Подключите веб-часть к SharePoint, чтобы получить доступ к функциям и данным SharePoint и предоставить больше интегрированных возможностей для пользователей. В этой статье мы продолжим работу с веб-частью Hello World, создание которой показано в предыдущей статье, [Создание первой веб-части](./build-a-hello-world-web-part.md).
 
-Указанные ниже действия также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=hYrP6D4FaaU&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=3). 
+Эти действия также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=hYrP6D4FaaU&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=3). 
 
 <a href="https://www.youtube.com/watch?v=hYrP6D4FaaU&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=3">
 <img src="../../../images/spfx-youtube-tutorial2.png" alt="Screenshot of the YouTube video player for this tutorial" />
@@ -21,205 +22,214 @@ ms.lasthandoff: 12/08/2017
 
 ## <a name="run-gulp-serve"></a>Запуск команды gulp serve
 
-Убедитесь, что команда `gulp serve` запущена. В противном случае перейдите в каталог проекта **helloworld-webpart** и запустите ее с помощью указанных ниже команд.
+Убедитесь, что команда `gulp serve` запущена. В противном случае перейдите в каталог проекта **helloworld-webpart** и запустите ее, используя указанные ниже команды.
 
 ```
 cd helloworld-webpart
 gulp serve
 ```
 
-## <a name="get-access-to-page-context"></a>Доступ к контексту страницы
+## <a name="get-access-to-page-context"></a>Получение доступа к контексту страницы
 
-Когда рабочая область размещается на локальном компьютере, вам не доступен контекст страницы SharePoint. И все же веб-часть можно проверить различными способами. Например, вы можете сосредоточиться на пользовательском интерфейсе веб-части и использовать фиктивные данные для имитации взаимодействия с SharePoint.
+Когда Workbench размещается на локальном компьютере, вам не доступен контекст страницы SharePoint. И все же веб-часть можно проверить различными способами. Например, вы можете сосредоточиться на создании удобной веб-части и использовать фиктивные данные для имитации взаимодействия с SharePoint.
 
-Но когда рабочая область размещается в SharePoint, вы получаете доступ к контексту страницы с различными ключевыми свойствами, такими как:
+Однако когда Workbench размещается в SharePoint, вы получаете доступ к контексту страницы с различными ключевыми свойствами, такими как:
 
 * название сайта;
 * абсолютный URL-адрес сайта;
-* относительный URL-адрес веб-сервера;
+* URL-адрес относительно веб-сервера;
 * имя пользователя для входа.
 
-Доступ к контексту страницы можно получить с помощью следующей переменной в классе веб-части:
+### <a name="to-get-access-to-the-page-context"></a>Получение доступа к контексту страницы
 
-```ts
-this.context.pageContext
-```
+1. Используйте следующую переменную в своем классе веб-частей:
 
-Перейдите в Visual Studio Code (или другую интегрированную среду разработки) и откройте файл **src\webparts\helloWorld\HelloWorldWebPart.ts**.
+  ```ts
+  this.context.pageContext
+  ```
 
-Замените блок кода **innerHTML** в методе **render** на следующий код:
+2. Перейдите в Visual Studio Code (или другую интегрированную среду разработки) и откройте файл **src\webparts\helloWorld\HelloWorldWebPart.ts**.
 
-```ts
-    this.domElement.innerHTML = `
-      <div class="${ styles.helloWorld }">
-        <div class="${ styles.container }">
-          <div class="${ styles.row }">
-            <div class="${ styles.column }">
-              <span class="${ styles.title }">Welcome to SharePoint!</span>
-              <p class="${ styles.subTitle }">Customize SharePoint experiences using Web Parts.</p>
-              <p class="${ styles.description }">${escape(this.properties.description)}</p>
-              <p class="${ styles.description }">${escape(this.properties.test)}</p>
-              <p class="${ styles.description }">Loading from ${escape(this.context.pageContext.web.title)}</p>
-              <a href="https://aka.ms/spfx" class="${ styles.button }">
-                <span class="${ styles.label }">Learn more</span>
-              </a>
+3. Замените блок кода **innerHTML** в методе **render** на следующий код:
+
+  ```HTML
+      this.domElement.innerHTML = `
+        <div class="${ styles.helloWorld }">
+          <div class="${ styles.container }">
+            <div class="${ styles.row }">
+              <div class="${ styles.column }">
+                <span class="${ styles.title }">Welcome to SharePoint!</span>
+                <p class="${ styles.subTitle }">Customize SharePoint experiences using Web Parts.</p>
+                <p class="${ styles.description }">${escape(this.properties.description)}</p>
+                <p class="${ styles.description }">${escape(this.properties.test)}</p>
+                <p class="${ styles.description }">Loading from ${escape(this.context.pageContext.web.title)}</p>
+                <a href="https://aka.ms/spfx" class="${ styles.button }">
+                  <span class="${ styles.label }">Learn more</span>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      </div>`;
-```
+        </div>`;
+  ```
 
-Обратите внимание, что для вывода значения переменной в блоке HTML используется `${ }`. Дополнительный HTML `p` используется для отображения `this.context.pageContext.web.title`. Так как эта веб-часть загружается из локальной среды, в заголовке будет указано **Локальная рабочая область**.
+4. Обратите внимание, что для вывода значения переменной в блоке HTML используется `${ }`. Дополнительный HTML `p` используется для отображения `this.context.pageContext.web.title`. Так как эта веб-часть загружается из локальной среды, в заголовке будет указано **Local Workbench**.
 
-Сохраните файл. Команда `gulp serve`, запущенная в консоли, определит эту операцию и:
+5. Сохраните файл. Команда `gulp serve`, запущенная в консоли, определит эту операцию и сделает следующее:
 
-* выполнит сборку обновленного кода и объединит его в пакет автоматически;
-* Обновите страницу локальной рабочей области (так как код веб-части необходимо перезагрузить).
+  - выполнит сборку обновленного кода и объединит его в пакет автоматически;
+  - обновит страницу локальной версии Workbench (так как код веб-части необходимо перезагрузить).
 
-> [!NOTE]
-> Поместите окно консоли рядом с окном VS Code, чтобы видеть, как gulp автоматически выполняет компиляцию при сохранении изменений в VS Code.
+  > [!NOTE]
+  > Поместите окно консоли рядом с окном Visual Studio Code, чтобы видеть, как gulp автоматически выполняет компиляцию при сохранении изменений в Visual Studio Code.
 
-В браузере откройте вкладку локальной рабочей области SharePoint Workbench. URL-адрес этой вкладки: `https://localhost:4321/temp/workbench.html` (на случай, если вы ее закрыли).
+6. В браузере откройте вкладку локальной версии **SharePoint Workbench**. URL-адрес этой вкладки: `https://localhost:4321/temp/workbench.html` (на случай, если вы ее закрыли).
 
-Веб-часть должна выглядеть следующим образом:
+  Веб-часть должна выглядеть следующим образом:
 
-![Контекст страницы SharePoint на localhost](../../../images/sp-mock-localhost-wp.png)
+  ![Контекст страницы SharePoint на localhost](../../../images/sp-mock-localhost-wp.png)
 
-Теперь перейдите к рабочей области SharePoint Workbench, размещенной в SharePoint. Полный URL-адрес: `https://your-sharepoint-site-url/_layouts/workbench.aspx`. Обратите внимание, что на стороне SharePoint Online необходимо обновить страницу, чтобы увидеть внесенные изменения.
+7. Перейдите к версии SharePoint Workbench, размещенной в SharePoint. Полный URL-адрес: `https://your-sharepoint-site-url/_layouts/workbench.aspx`. Обратите внимание на то, что на стороне SharePoint Online необходимо обновить страницу, чтобы увидеть внесенные изменения.
 
-> [!NOTE]
-> Если у вас не установлен сертификат разработчика SPFx, рабочая область сообщит вам, что она не загружает сценарии из localhost. Выполните команду `gulp trust-dev-cert` в консоли каталога проекта, чтобы установить сертификат разработчика.
+  > [!NOTE]
+  > Если у вас не установлен сертификат разработчика SPFx, Workbench сообщит вам, что он не загружает скрипты из localhost. Выполните команду `gulp trust-dev-cert` в консоли каталога проекта, чтобы установить сертификат разработчика.
 
-Теперь, когда веб-части доступен контекст страницы, в ней появится название сайта SharePoint.
+  Теперь, когда веб-части доступен контекст страницы, в ней появится название сайта SharePoint.
 
-![Контекст страницы SharePoint на сайте SharePoint](../../../images/sp-lists-spsiteurl-wp.png)
+  ![Контекст страницы SharePoint на сайте SharePoint](../../../images/sp-lists-spsiteurl-wp.png)
 
 ## <a name="define-list-model"></a>Определение модели списка
+
 Чтобы начать работу с данными списка SharePoint, нужна модель списка. Для получения списков нужны две модели. 
 
-Откройте Visual Studio Code и перейдите к файлу **src\webparts\helloWorld\HelloWorldWebPart.ts**.
+1. Откройте Visual Studio Code и перейдите к файлу **src\webparts\helloWorld\HelloWorldWebPart.ts**.
 
-Определите следующие модели `interface` над классом **HelloWorldWebPart**:
+2. Определите следующие модели `interface` над классом **HelloWorldWebPart**:
 
-```ts
-export interface ISPLists {
+  ```ts
+  export interface ISPLists {
     value: ISPList[];
-}
+  }
 
-export interface ISPList {
+  export interface ISPList {
     Title: string;
     Id: string;
-}
-```
+  }
+  ```
 
-Интерфейс **ISPList** содержит данные списков SharePoint, к которым мы подключаемся. 
+  Интерфейс **ISPList** содержит данные списков SharePoint, к которым мы подключаемся. 
 
 ## <a name="retrieve-lists-from-mock-store"></a>Получение списков из фиктивного магазина
 
-Для проверки веб-части в локальной рабочей области нужен фиктивный магазин, который возвращает фиктивные данные.
+Для проверки веб-части в локальной версии Workbench нужен фиктивный магазин, который возвращает фиктивные данные.
 
-Создайте файл **MockHttpClient.ts** в папке **src\webparts\helloWorld**.
+### <a name="to-create-a-mock-store"></a>Создание фиктивного магазина
 
-Скопируйте следующий код в файл **MockHttpClient.ts**:
+1. Создайте файл **MockHttpClient.ts** в папке **src\webparts\helloWorld**.
 
-```ts
-import { ISPList } from './HelloWorldWebPart';
+2. Скопируйте следующий код в файл **MockHttpClient.ts**:
 
-export default class MockHttpClient  {
+  ```ts
+  import { ISPList } from './HelloWorldWebPart';
 
-    private static _items: ISPList[] = [{ Title: 'Mock List', Id: '1' },
-                                        { Title: 'Mock List 2', Id: '2' },
-                                        { Title: 'Mock List 3', Id: '3' }];
-    
-    public static get(): Promise<ISPList[]> {
-    return new Promise<ISPList[]>((resolve) => {
-            resolve(MockHttpClient._items);
-        });
-    }
-}
-```
+  export default class MockHttpClient  {
 
-Вот что нужно знать о коде:
+      private static _items: ISPList[] = [{ Title: 'Mock List', Id: '1' },
+                                          { Title: 'Mock List 2', Id: '2' },
+                                          { Title: 'Mock List 3', Id: '3' }];
+      
+      public static get(): Promise<ISPList[]> {
+      return new Promise<ISPList[]>((resolve) => {
+              resolve(MockHttpClient._items);
+          });
+      }
+  }
+  ```
 
-* Так как в файле **HelloWorldWebPart.ts** несколько операций экспорта, операция импорта указана с помощью скобок `{ }`. В этом случае требуется только модель данных `ISPList`.
-* При импорте из модуля по умолчанию (в данном случае — **HelloWorldWebPart**) не нужно вводить расширение файла. 
-* Он экспортирует класс **MockHttpClient** как модуль по умолчанию, чтобы его можно было импортировать в другие файлы.
-* Он создает исходный фиктивный массив `ISPList` и выходные данные.
+  Вот что нужно знать о коде:
 
-Сохраните файл.
+  - Так как в файле **HelloWorldWebPart.ts** несколько операций экспорта, операция импорта указана с помощью скобок `{ }`. В этом случае требуется только модель данных `ISPList`.
+  - При импорте из модуля по умолчанию (в данном случае — **HelloWorldWebPart**) не нужно вводить расширение файла. 
+  - Класс **MockHttpClient** экспортируется как модуль по умолчанию, чтобы его можно было импортировать в другие файлы.
+  - Он создает исходный фиктивный массив `ISPList` и выходные данные.
+
+3. Сохраните файл.
 
 Теперь вы можете использовать класс **MockHttpClient** в классе **HelloWorldWebPart**. Сначала нужно импортировать модуль **MockHttpClient**.
 
-Откройте файл **HelloWorldWebPart.ts**.
+### <a name="to-import-the-mockhttpclient-module"></a>Импорт модуля **MockHttpClient**
 
-Скопируйте следующий код и вставьте его под разделом `import * as strings from 'HelloWorldWebPartStrings';`.
+1. Откройте файл **HelloWorldWebPart.ts**.
 
-```ts
-import MockHttpClient from './MockHttpClient';
-```
+2. Скопируйте приведенный ниже код и вставьте его под оператором `import * as strings from 'HelloWorldWebPartStrings';`.
+
+  ```ts
+  import MockHttpClient from './MockHttpClient';
+  ```
  
-Добавьте приведенный ниже частный метод, имитирующий извлечение списков, в класс **HelloWorldWebPart**.
+3. Добавьте приведенный ниже частный метод, имитирующий извлечение списков, в класс **HelloWorldWebPart**.
 
-```ts
-  private _getMockListData(): Promise<ISPLists> {
-    return MockHttpClient.get()
-      .then((data: ISPList[]) => {
-        var listData: ISPLists = { value: data };
-        return listData;
-      }) as Promise<ISPLists>;
-  }
-```
+  ```ts
+    private _getMockListData(): Promise<ISPLists> {
+      return MockHttpClient.get()
+        .then((data: ISPList[]) => {
+          var listData: ISPLists = { value: data };
+          return listData;
+        }) as Promise<ISPLists>;
+    }
+  ```
 
-Сохраните файл.
+4. Сохраните файл.
 
 ## <a name="retrieve-lists-from-sharepoint-site"></a>Получение списков с сайта SharePoint
 
-Далее нужно получить списки с текущего сайта. Чтобы получить списки с сайта https://yourtenantprefix.sharepoint.com/_api/web/lists, нужно использовать REST API SharePoint.
+Далее нужно получить списки с текущего сайта. Чтобы получить списки с сайта `https://yourtenantprefix.sharepoint.com/_api/web/lists`, нужно использовать REST API SharePoint.
 
 Платформа SharePoint Framework включает вспомогательный класс **spHttpClient** для выполнения запросов REST API к SharePoint. Он добавляет заголовки, управляет дайджестом, необходимым для записи, и собирает данные телеметрии, которые помогают службе отслеживать производительность приложения.
 
-Чтобы использовать этот вспомогательный класс, необходимо сначала импортировать его из модуля **@microsoft/sp-http**.
+### <a name="to-use-this-helper-class-import-them-from-the-microsoftsp-http-module"></a>Чтобы использовать этот вспомогательный класс, импортируйте его из модуля @microsoft/sp-http
 
-Прокрутите к началу файла **HelloWorldWebPart.ts**. 
+1. Прокрутите к началу файла **HelloWorldWebPart.ts**. 
 
-Скопируйте следующий код и вставьте его под разделом `import MockHttpClient from './MockHttpClient';`:
+2. Скопируйте приведенный ниже код и вставьте его под оператором `import MockHttpClient from './MockHttpClient';`.
 
-```ts
-import {
-  SPHttpClient,
-  SPHttpClientResponse   
-} from '@microsoft/sp-http';
-```
+  ```ts
+  import {
+    SPHttpClient,
+    SPHttpClientResponse   
+  } from '@microsoft/sp-http';
+  ```
 
-Добавьте приведенный ниже частный метод для получения списков из SharePoint в класс **HelloWorldWebPart**.
+3. Добавьте приведенный ниже частный метод для получения списков из SharePoint в класс **HelloWorldWebPart**.
 
-```ts
-private _getListData(): Promise<ISPLists> {
-  return this.context.spHttpClient.get(this.context.pageContext.web.absoluteUrl + `/_api/web/lists?$filter=Hidden eq false`, SPHttpClient.configurations.v1)
-    .then((response: SPHttpClientResponse) => {
-      return response.json();
-    });
-}
-```
+  ```ts
+  private _getListData(): Promise<ISPLists> {
+    return this.context.spHttpClient.get(this.context.pageContext.web.absoluteUrl + `/_api/web/lists?$filter=Hidden eq false`, SPHttpClient.configurations.v1)
+      .then((response: SPHttpClientResponse) => {
+        return response.json();
+      });
+  }
+  ```
 
-Этот метод использует вспомогательный класс **spHttpClient** и отправляет запрос `get`. Он использует модель **ISPLists**, а также применяет фильтр, чтобы не получать скрытые списки.
+  Этот метод использует вспомогательный класс **spHttpClient** и отправляет запрос `get`. Он использует модель **ISPLists**, а также применяет фильтр, чтобы не получать скрытые списки.
 
-Сохраните файл. 
+4. Сохраните файл. 
 
-Перейдите в окно консоли, в котором запущена команда `gulp serve`, и проверьте наличие ошибок. Если gulp сообщил об ошибках, их нужно исправить.
+5. Перейдите в окно консоли, в котором запущена команда `gulp serve`, и проверьте наличие ошибок. Если gulp сообщит об ошибках, их нужно исправить.
 
 ## <a name="add-new-styles"></a>Добавление новых стилей
 
-Платформа SharePoint Framework использует [Sass](http://sass-lang.com/) в качестве препроцессора CSS и, в частности, использует [синтаксис SCSS](http://sass-lang.com/documentation/file.SCSS_FOR_SASS_USERS.html), который полностью совместим со стандартным синтаксисом CSS. Sass расширяет язык CSS и позволяет использовать такие функции, как переменные, вложенные правила и встроенные операции импорта, для упорядочения и создания эффективных таблиц стилей для веб-частей. Платформа SharePoint Framework включает компилятор SCSS, который преобразует файлы Sass в обычные CSS-файлы, а также типизированную версию для использования во время разработки.
+Платформа SharePoint Framework использует [Sass](http://sass-lang.com/) в качестве препроцессора CSS и [синтаксис SCSS](http://sass-lang.com/documentation/file.SCSS_FOR_SASS_USERS.html), который полностью совместим со стандартным синтаксисом CSS. Sass расширяет язык CSS и позволяет использовать такие возможности, как переменные, вложенные правила и встроенные операции импорта, для упорядочения и создания эффективных таблиц стилей для веб-частей. Платформа SharePoint Framework предусматривает наличие компилятора SCSS, который преобразует файлы Sass в обычные CSS-файлы, а также типизированной версии для использования во время разработки.
 
-Чтобы добавить новые стили, откройте файл **HelloWorld.module.scss**. В этом SCSS-файле можно задавать стили.
+### <a name="to-add-new-styles"></a>Добавление новых стилей
 
-По умолчанию стили действуют на уровне веб-части. Это видно, так как стили задаются в разделе **.helloWorld**.
+1. Откройте **HelloWorld.module.scss**. В этом SCSS-файле можно задавать стили.
 
-Добавьте следующие стили после стиля `.button` в главном разделе стилей `.helloWorld`:
+  По умолчанию стили действуют на уровне веб-части. Это видно, так как стили задаются в разделе **.helloWorld**.
 
-```css
-.list {
+2. Добавьте следующие стили после стиля `.button` в главном разделе стилей `.helloWorld`:
+
+  ```css
+  .list {
     color: #333333;
     font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
     font-size: 14px;
@@ -230,9 +240,9 @@ private _getListData(): Promise<ISPLists> {
     line-height: 50px;
     list-style-type: none;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
-}
+  }
 
-.listItem {
+  .listItem {
     color: #333333;
     vertical-align: center;
     font-family: 'Segoe UI Regular WestEuropean', 'Segoe UI', Tahoma, Arial, sans-serif;
@@ -245,134 +255,139 @@ private _getListData(): Promise<ISPLists> {
     *zoom: 1;
     padding: 9px 28px 3px;
     position: relative;
-}
-``` 
+  }
+  ``` 
 
-Сохраните файл.
+3. Сохраните файл.
 
-gulp перестраивает код в консоли, как только вы сохраняете файл. При этом создаются соответствующие определения типов в файле **HelloWorld.module.scss.ts**. После компиляции для typescript вы можете импортировать эти стили и ссылаться на них в коде веб-части.
+  Средство gulp перестраивает код в консоли, как только вы сохраняете файл. При этом создаются соответствующие определения типов в файле **HelloWorld.module.scss.ts**. После компиляции для TypeScript вы можете импортировать эти стили и ссылаться на них в коде веб-части.
 
-Это видно в методе **render** веб-части:
+  Это видно в методе **render** веб-части:
 
-```html
-<div class="${styles.row}">
-```
+  ```html
+  <div class="${styles.row}">
+  ```
 
-## <a name="method-to-render-lists-information"></a>Метод отрисовки данных списков
+## <a name="render-lists-information"></a>Отрисовка данных списков
 
 Перейдите к классу **HelloWorldWebPart**.
 
 SharePoint Workbench можно использовать для проверки веб-частей в локальной среде и на сайте SharePoint. Платформа SharePoint Framework показывает, в какой среде запущена веб-часть, с помощью модуля **EnvironmentType**. 
 
-Чтобы использовать модуль, сначала необходимо импортировать модули **Environment** и ***EnvironmentType** из пакета **@microsoft/sp-core-library**. Добавьте его в раздел **import** вверху, как показано в следующем фрагменте кода:
+### <a name="to-use-the-environmenttype-module"></a>Использование модуля EnvironmentType
 
-```ts
-import {
-  Environment,
-  EnvironmentType
-} from '@microsoft/sp-core-library';
-```
+1. Импортируйте модули **Environment** и **EnvironmentType** из пакета **@microsoft/sp-core-library**. Добавьте в раздел **import** вверху, как показано в следующем фрагменте кода:
 
-Добавьте следующий частный метод в класс **HelloWorldWebPart** для вызова соответствующих методов и получения данных списков:
+  ```ts
+  import {
+    Environment,
+    EnvironmentType
+  } from '@microsoft/sp-core-library';
+  ```
 
-```ts
-  private _renderListAsync(): void {
-    // Local environment
-    if (Environment.type === EnvironmentType.Local) {
-      this._getMockListData().then((response) => {
-        this._renderList(response.value);
-      });
-    }
-    else if (Environment.type == EnvironmentType.SharePoint || 
-              Environment.type == EnvironmentType.ClassicSharePoint) {
-      this._getListData()
-        .then((response) => {
+2. Добавьте следующий частный метод в класс **HelloWorldWebPart** для вызова соответствующих методов и получения данных списков:
+
+  ```ts
+    private _renderListAsync(): void {
+      // Local environment
+      if (Environment.type === EnvironmentType.Local) {
+        this._getMockListData().then((response) => {
           this._renderList(response.value);
         });
+      }
+      else if (Environment.type == EnvironmentType.SharePoint || 
+                Environment.type == EnvironmentType.ClassicSharePoint) {
+        this._getListData()
+          .then((response) => {
+            this._renderList(response.value);
+          });
+      }
     }
-  }
-```
+  ```
 
-Вот что нужно знать о hostType в методе **_renderListAsync**:
+  Вот что нужно знать о hostType в методе **_renderListAsync**:
 
-* Свойство `Environment.type` поможет вам проверить, в какой среде вы находитесь (локальной или SharePoint).
-* В зависимости от того, где размещается рабочая область, вызывается нужный метод.
+  - Свойство `Environment.type` поможет вам проверить, в какой среде вы находитесь (локальной или SharePoint).
+  - В зависимости от того, где размещается Workbench, вызывается нужный метод.
 
-Сохраните файл.
+3. Сохраните файл.
 
-Теперь данные списков нужно отрисовать при помощи значения, полученного из REST API.
+  Теперь данные списков нужно отрисовать при помощи значения, полученного из REST API.
 
-Добавьте следующий метод private в класс **HelloWorldWebPart**:
+4. Добавьте следующий метод private в класс **HelloWorldWebPart**:
 
-```ts
-  private _renderList(items: ISPList[]): void {
-    let html: string = '';
-    items.forEach((item: ISPList) => {
-      html += `
-        <ul class="${styles.list}">
-            <li class="${styles.listItem}">
-                <span class="ms-font-l">${item.Title}</span>
-            </li>
-        </ul>`;
-    });
+  ```ts
+    private _renderList(items: ISPList[]): void {
+      let html: string = '';
+      items.forEach((item: ISPList) => {
+        html += `
+      <ul class="${styles.list}">
+        <li class="${styles.listItem}">
+          <span class="ms-font-l">${item.Title}</span>
+        </li>
+      </ul>`;
+      });
 
-    const listContainer: Element = this.domElement.querySelector('#spListContainer');
-    listContainer.innerHTML = html;
-  }
-```
+      const listContainer: Element = this.domElement.querySelector('#spListContainer');
+      listContainer.innerHTML = html;
+    }
+  ```
 
-Предыдущий метод ссылается на новые стили CSS, добавленные с помощью переменной **styles**. 
+  Предыдущий метод ссылается на новые стили CSS, добавленные с помощью переменной **styles**. 
 
-Сохраните файл.
+5. Сохраните файл.
+
 
 ## <a name="retrieve-list-data"></a>Получение данных списков
 
-Замените код в методе **render** следующим кодом:
+1. Замените код в методе **render** следующим кодом:
 
-```ts
-    this.domElement.innerHTML = `
-      <div class="${ styles.helloWorld }">
-        <div class="${ styles.container }">
-          <div class="${ styles.row }">
-            <div class="${ styles.column }">
-              <span class="${ styles.title }">Welcome to SharePoint!</span>
-              <p class="${ styles.subTitle }">Customize SharePoint experiences using Web Parts.</p>
-              <p class="${ styles.description }">${escape(this.properties.description)}</p>
-              <p class="${ styles.description }">${escape(this.properties.test)}</p>
-              <p class="${ styles.description }">Loading from ${escape(this.context.pageContext.web.title)}</p>
-              <a href="https://aka.ms/spfx" class="${ styles.button }">
-                <span class="${ styles.label }">Learn more</span>
-              </a>
+  ```ts
+      this.domElement.innerHTML = `
+        <div class="${ styles.helloWorld }">
+          <div class="${ styles.container }">
+            <div class="${ styles.row }">
+              <div class="${ styles.column }">
+                <span class="${ styles.title }">Welcome to SharePoint!</span>
+                <p class="${ styles.subTitle }">Customize SharePoint experiences using Web Parts.</p>
+                <p class="${ styles.description }">${escape(this.properties.description)}</p>
+                <p class="${ styles.description }">${escape(this.properties.test)}</p>
+                <p class="${ styles.description }">Loading from ${escape(this.context.pageContext.web.title)}</p>
+                <a href="https://aka.ms/spfx" class="${ styles.button }">
+                  <span class="${ styles.label }">Learn more</span>
+                </a>
+              </div>
             </div>
+            <div id="spListContainer" />
           </div>
-          <div id="spListContainer" />
-        </div>
-      </div>`;
+        </div>`;
 
-      this._renderListAsync();
-```
+        this._renderListAsync();
+  ```
 
-Сохраните файл.
+2. Сохраните файл.
 
-В окне консоли вы заметите, что `gulp serve` перестраивает код. Убедитесь, что нет ошибок.
+  В окне консоли вы заметите, что `gulp serve` перестраивает код. Убедитесь, что нет ошибок.
 
-Перейдите в локальную рабочую область и добавьте веб-часть HelloWorld.
+3. Перейдите в локальную версию Workbench и добавьте веб-часть HelloWorld.
 
-Должны появиться фиктивные данные.
+  Должны появиться фиктивные данные.
 
-![Отрисовка данных списков из localhost](../../../images/sp-lists-render-localhost.png)
+  ![Отрисовка данных списков из localhost](../../../images/sp-lists-render-localhost.png)
 
-Перейдите в рабочую область, размещенную в SharePoint. Обновите страницу и добавьте веб-часть HelloWorld.
+4. Перейдите в версию Workbench, размещенную в SharePoint. Обновите страницу и добавьте веб-часть HelloWorld.
 
-Должны появиться списки с текущего сайта.
+  Должны появиться списки с текущего сайта.
 
-![Отрисовка данных списков из SharePoint](../../../images/sp-lists-render-spsite.png)
+  ![Отрисовка данных списков из SharePoint](../../../images/sp-lists-render-spsite.png)
 
-Теперь вы можете остановить работу сервера. Перейдите в консоль и остановите команду `gulp serve`. Нажмите клавиши `Ctrl+C`, чтобы завершить задачу gulp.
+5. Теперь вы можете остановить работу сервера. Перейдите в консоль и остановите команду `gulp serve`. Нажмите клавиши Ctrl+C, чтобы завершить задачу gulp.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Поздравляем: вы подключили веб-часть к данным списков SharePoint! Из следующей статьи, которая называется [Развертывание веб-части на странице SharePoint](./serve-your-web-part-in-a-sharepoint-page.md), вы узнаете, как развернуть и просмотреть веб-часть Hello World на странице SharePoint.
+Поздравляем: вы подключили веб-часть к данным списков SharePoint! 
+
+Из следующей статьи, которая называется [Развертывание веб-части на странице SharePoint](./serve-your-web-part-in-a-sharepoint-page.md), вы узнаете, как развернуть и просмотреть веб-часть Hello World на странице SharePoint.
 
 > [!NOTE]
 > Если вы обнаружили ошибку в документации или SharePoint Framework, сообщите о ней разработчикам SharePoint, указав в [списке проблем для репозитория sp-dev-docs](https://github.com/SharePoint/sp-dev-docs/issues). Заранее спасибо!

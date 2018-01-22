@@ -2,11 +2,11 @@
 title: "Общие сведения о макетах и скриптах сайтов SharePoint"
 description: "Узнайте, как автоматизировать подготовку новых сайтов SharePoint с пользовательскими конфигурациями, используя скрипты и макеты сайтов SharePoint."
 ms.date: 12/14/2017
-ms.openlocfilehash: 5821c4a48ecccbfc23ff5eaaf1c7941c6026d06e
-ms.sourcegitcommit: 31f793b42ec75679f01e1a024d0375a2bc7b5ec7
+ms.openlocfilehash: 347be667a9b4bd7cfecdf8c8b962da7a1b98eefa
+ms.sourcegitcommit: db303a21b5f83c8c2f9c2028a271c9aae0ac0515
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/07/2018
 ---
 # <a name="sharepoint-site-design-and-site-script-overview"></a>Общие сведения о макетах и скриптах сайтов SharePoint
 
@@ -81,7 +81,7 @@ ms.lasthandoff: 12/19/2017
         },
         {
           "verb": "addSPField",
-          "fieldType": "User",
+           "fieldType": "User",
           "displayName": "Contact",
           "addToDefaultView": true,
           "isRequired": true
@@ -106,12 +106,11 @@ ms.lasthandoff: 12/19/2017
 
 - создание списка;
 - применение темы;
-- создание страницы;
 - установка логотипа сайта;
 - добавление навигации;
 - запуск потока Microsoft Flow.
 
-Скрипты сайта можно повторно запускать на том же сайте после подготовки. Это можно делать только программным способом. Скрипты сайтов являются неразрушающими, то есть при повторном запуске они гарантируют, что сайт соответствует конфигурации из скрипта. Например, если на сайте уже есть список с таким же именем, как у создаваемого скриптом, то скрипт только добавит недостающие поля в имеющийся список.
+Скрипты сайта можно повторно запускать на том же сайте после подготовки. Это можно делать только программным способом. Скрипты сайтов являются неразрушающими, то есть при повторном запуске они гарантируют, что сайт соответствует конфигурации из скрипта. Например, если на сайте уже есть список с таким же именем, как у создаваемого скриптом, то скрипт только добавит недостающие поля в имеющийся список. Обратите также внимание на то, что скрипты сайта ограничены 30 кумулятивными действиями (для одного или нескольких скриптов, которые могут быть вызваны в макете сайта).
 
 ## <a name="using-powershell-or-rest-to-work-with-site-designs-and-site-scripts"></a>Работа с макетами и скриптами сайтов с помощью PowerShell или REST
 
@@ -188,7 +187,7 @@ var site_script = {
   "version": 1
 };
 
-RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.CreateSiteScript(Title=@title)?@title='Contoso theme and list'", site_script);
+RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.CreateSiteScript(Title=@title,Description=@desc)?@title='Contoso theme and list'&@desc='this script creates a list named customer tracking and sets the contoso explorers company theme'", site_script);
 
 RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.CreateSiteDesign",{
   info:{
@@ -252,4 +251,4 @@ RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScri
 - [Схема JSON для макета сайта](site-design-json-schema.md)
 - [Командлеты PowerShell для макетов и скриптов сайтов SharePoint](site-design-powershell.md)
 - [REST API макетов и скриптов сайтов](site-design-rest-api.md)
-- [Примеры макетов сайта]((https://github.com/SharePoint/sp-dev-site-scripts))
+- [Примеры макетов сайта](https://github.com/SharePoint/sp-dev-site-scripts)
