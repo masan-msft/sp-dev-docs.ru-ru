@@ -1,477 +1,492 @@
 ---
 title: "Подготовка ресурсов SharePoint из клиентской веб-части SharePoint"
-ms.date: 12/05/2017
+description: "Ресурсы SharePoint можно добавлять в решения SharePoint Framework и развертывать на сайтах SharePoint при установке решения."
+ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: fd30a3ac9b9233a97c6e60d64ffd3b1f579140ec
-ms.sourcegitcommit: 1179be65397bc49f60b5f5877c4de349a900c5b0
+ms.openlocfilehash: 73fc74a900be49b6647506f84ed04b06286bad8c
+ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/10/2018
 ---
-# <a name="provisioning-sharepoint-assets-from-your-sharepoint-client-side-web-part"></a>Подготовка ресурсов SharePoint из клиентской веб-части SharePoint
+# <a name="provision-sharepoint-assets-from-your-sharepoint-client-side-web-part"></a>Подготовка ресурсов SharePoint из клиентской веб-части SharePoint
 
-В этой статье описывается подготовка ресурсов SharePoint в составе решения SharePoint Framework. Эти ресурсы развертываются на сайтах SharePoint при установке решения. Кроме того, в этой статье рассматриваются необходимые действия для установки возможных обновлений в составе новых версий пакета. Этот процесс идентичен обновлению надстроек.
+Ресурсы SharePoint можно добавлять в решения SharePoint Framework и развертывать на сайтах SharePoint при установке решения. 
 
-Указанные ниже действия также показаны в видео [канала SharePoint PnP на сайте YouTube](https://www.youtube.com/watch?v=qAqNk_X82QM&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=8). 
+Прежде чем начинать, выполните следующие действия, чтобы получить базовые навыки создания клиентской веб-части:
+
+* [Создайте свою первую веб-часть](build-a-hello-world-web-part.md).
+* [Подключите веб-часть к SharePoint](connect-to-sharepoint.md). 
+
+Эти действия также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=qAqNk_X82QM&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=8). 
 
 <a href="https://www.youtube.com/watch?v=qAqNk_X82QM&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq&index=8">
 <img src="../../../images/spfx-youtube-tutorial7.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
-## <a name="prerequisites"></a>Предварительные условия
-Прежде чем изучать базовый порядок создания собственной клиентской веб-части, выполните следующие действия:
-
-* [Создайте свою первую веб-часть](build-a-hello-world-web-part.md).
-* [Подключитесь к SharePoint](connect-to-sharepoint.md). 
-
-## <a name="resources"></a>Ресурсы
-В приведенных ниже ресурсах вы найдете дополнительные сведения на темы, рассматриваемые в данном руководстве.
-
-* [Подготовка ресурсов SharePoint с пакетом решения](../../toolchain/provision-sharepoint-assets.md)
-* [Пример решения: развертывание ресурсов SharePoint в составе пакета SPFx](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-feature-framework)
 
 ## <a name="create-a-new-web-part-project"></a>Создание проекта веб-части
 
-Создайте каталог проекта в любом расположении:
+1. Создайте каталог проекта в любом расположении:
 
-```
-md asset-deployment-webpart
-```
+  ```
+  md asset-deployment-webpart
+  ```
 
-Перейдите к каталогу проекта:
+2. Перейдите к каталогу проекта:
 
-```
-cd asset-deployment-webpart
-```
+  ```
+  cd asset-deployment-webpart
+  ```
     
-Создайте клиентскую веб-часть с помощью генератора Yeoman для SharePoint:
+3. Создайте клиентскую веб-часть с помощью генератора Yeoman для SharePoint:
 
-```
-yo @microsoft/sharepoint
-```
+  ```
+  yo @microsoft/sharepoint
+  ```
 
-Когда появится запрос:
+4. Когда появится запрос:
 
-* Оставьте имя по умолчанию (**asset-deployment-webpart**) для своего решения и нажмите клавишу **ВВОД**.
-* Выберите **SharePoint Online only (latest)** (Только SharePoint Online, последняя версия) и нажмите клавишу **ВВОД**.
-* Выберите вариант **Use the current folder** (Использовать текущую папку) для размещения файлов.
-* Выберите **N**, чтобы сделать установку расширения обязательной на каждом сайте при его использовании. 
-* Выберите **WebPart** в качестве типа создаваемого клиентского компонента. 
+  * Оставьте имя по умолчанию (**asset-deployment-webpart**) для своего решения и нажмите клавишу **ВВОД**.
+  * Выберите **SharePoint Online only (latest)** (Только SharePoint Online, последняя версия) и нажмите клавишу **ВВОД**.
+  * Выберите вариант **Use the current folder** (Использовать текущую папку) для размещения файлов.
+  * Выберите **N**, чтобы сделать установку расширения обязательной на каждом сайте при его использовании. 
+  * Выберите **WebPart** в качестве типа создаваемого клиентского компонента. 
 
-Далее вам потребуется указать определенные сведения о веб-части:
+5. Ниже требуется указать информацию о веб-части:
 
-* Введите имя **AssetDeployment** для веб-части и нажмите клавишу **ВВОД**.
-* Введите описание веб-части **AssetDeployment Web Part** (Веб-часть AssetDeployment) и нажмите клавишу **ВВОД**. 
-* Оставьте вариант **No JavaScipt web framework** (Не использовать веб-платформу JavaScript) по умолчанию и нажмите клавишу **ВВОД**, чтобы продолжить.
+  * Введите **AssetDeployment** в качестве имени веб-части и нажмите клавишу **ВВОД**.
+  * Введите описание веб-части **AssetDeployment Web Part** (Веб-часть AssetDeployment) и нажмите клавишу **ВВОД**. 
+  * Оставьте вариант **No JavaScript web framework** (Не использовать веб-платформу JavaScript) по умолчанию и нажмите клавишу **ВВОД**, чтобы продолжить.
 
-![Запросы Yeoman](../../../images/asset-deployment-yeoman.png)
+  ![Запросы Yeoman](../../../images/asset-deployment-yeoman.png)
 
-После этого Yeoman установит необходимые зависимости и сформирует шаблоны файлов решения. Это может занять несколько минут. При этом Yeoman также включит в проект веб-часть **AssetDeployment**.
+  После этого Yeoman устанавливает необходимые зависимости и формирует шаблоны файлов решения. Это может занять несколько минут. При этом Yeoman также включает в проект веб-часть **AssetDeployment**.
 
-После завершения скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
+6. После завершения скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
 
-```sh
-npm shrinkwrap
-```
+  ```sh
+  npm shrinkwrap
+  ```
 
-Далее введите следующий код, чтобы открыть проект веб-части в Visual Studio Code:
+7. Затем введите следующую команду, чтобы открыть проект веб-части в Visual Studio Code:
 
-```
-code .
-```
+  ```
+  code .
+  ```
 
 ## <a name="create-folder-structure-for-your-sharepoint-assets"></a>Создание структуры папок для ресурсов SharePoint
 
 Для начала необходимо создать папку **assets**, в которую мы поместим все ресурсы платформы компонентов, используемые для подготовки структур SharePoint при установке пакета.
 
-* Создайте папку **sharepoint** в корневой папке решения.
-* Создайте папку **assets**, вложенную в только что созданную папку **sharepoint**.
+1. Создайте папку **sharepoint** в корневой папке решения.
 
-Структура решения должна быть такой, как на рисунке ниже.
+2. Создайте папку **assets** в новой папке **sharepoint**.
 
-![Снимок экрана с папкой assets, вложенной в папку sharepoint, в структуре решения](../../../images/tutorial-feature-solution-initial-structure.png)
+  Структура решения должна быть примерно такой, как на следующем рисунке:
+
+  ![Снимок экрана с папкой assets, вложенной в папку sharepoint, в структуре решения](../../../images/tutorial-feature-solution-initial-structure.png)
+
 
 ## <a name="create-feature-framework-files-for-initial-deployment"></a>Создание файлов платформы компонентов для начального развертывания
-Для подготовки ресурсов SharePoint на сайтах с элементами платформы компонентов необходимо создать нужные XML-файлы в папке ресурсов. Пакеты решений SharePoint Framework поддерживают следующие элементы:
+
+Чтобы подготовить ресурсы SharePoint для сайтов с элементами платформы компонентов, необходимо создать нужные XML-файлы в папке ресурсов. Пакеты решений SharePoint Framework поддерживают следующие элементы:
 
 * поля и столбцы сайтов;
 * типы контента;
 * экземпляры списков;
-* экземпляры списков с настраиваемой схемой.
+* экземпляры списков с особой схемой.
 
-На следующих этапах мы определим подготавливаемую структуру.
+Ниже описано, как определить подготавливаемую структуру.
 
-### <a name="add-elementxml-file-for-sharepoint-definitions"></a>Добавление файла element.xml для определений SharePoint
-Создайте в папке **sharepoint\assets** файл **elements.xml**.
+### <a name="to-add-an-elementxml-file-for-sharepoint-definitions"></a>Добавление файла element.xml для определений SharePoint
 
-Скопируйте следующую структуру XML в файл **elements.xml**:
+1. Создайте в папке **sharepoint\assets** файл **elements.xml**.
 
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+2. Скопируйте следующую структуру XML в файл **elements.xml**:
 
-    <Field ID="{060E50AC-E9C1-4D3C-B1F9-DE0BCAC300F6}"
-            Name="SPFxAmount"
-            DisplayName="Amount"
-            Type="Currency"
-            Decimals="2"
-            Min="0"
-            Required="FALSE"
-            Group="SPFx Columns" />
+  ```xml
+  <?xml version="1.0" encoding="utf-8"?>
+  <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
 
-    <Field ID="{943E7530-5E2B-4C02-8259-CCD93A9ECB18}"
-            Name="SPFxCostCenter"
-            DisplayName="Cost Center"
-            Type="Choice"
-            Required="FALSE"
-            Group="SPFx Columns">
-        <CHOICES>
-        <CHOICE>Administration</CHOICE>
-        <CHOICE>Information</CHOICE>
-        <CHOICE>Facilities</CHOICE>
-        <CHOICE>Operations</CHOICE>
-        <CHOICE>Sales</CHOICE>
-        <CHOICE>Marketing</CHOICE>
-        </CHOICES>
-    </Field>
+      <Field ID="{060E50AC-E9C1-4D3C-B1F9-DE0BCAC300F6}"
+              Name="SPFxAmount"
+              DisplayName="Amount"
+              Type="Currency"
+              Decimals="2"
+              Min="0"
+              Required="FALSE"
+              Group="SPFx Columns" />
 
-    <ContentType ID="0x010042D0C1C200A14B6887742B6344675C8B" 
-            Name="Cost Center" 
-            Group="SPFx Content Types" 
-            Description="Sample content types from web part solution">
-        <FieldRefs>
-            <FieldRef ID="{060E50AC-E9C1-4D3C-B1F9-DE0BCAC300F6}" /> 
-            <FieldRef ID="{943E7530-5E2B-4C02-8259-CCD93A9ECB18}" />
-        </FieldRefs>
-    </ContentType> 
+      <Field ID="{943E7530-5E2B-4C02-8259-CCD93A9ECB18}"
+              Name="SPFxCostCenter"
+              DisplayName="Cost Center"
+              Type="Choice"
+              Required="FALSE"
+              Group="SPFx Columns">
+          <CHOICES>
+          <CHOICE>Administration</CHOICE>
+          <CHOICE>Information</CHOICE>
+          <CHOICE>Facilities</CHOICE>
+          <CHOICE>Operations</CHOICE>
+          <CHOICE>Sales</CHOICE>
+          <CHOICE>Marketing</CHOICE>
+          </CHOICES>
+      </Field>
 
-    <ListInstance 
-            CustomSchema="schema.xml"
-            FeatureId="00bfea71-de22-43b2-a848-c05709900100"
-            Title="SPFx List" 
-            Description="SPFx List"
-            TemplateType="100"
-            Url="Lists/SPFxList">
-    </ListInstance>
+      <ContentType ID="0x010042D0C1C200A14B6887742B6344675C8B" 
+              Name="Cost Center" 
+              Group="SPFx Content Types" 
+              Description="Sample content types from web part solution">
+          <FieldRefs>
+              <FieldRef ID="{060E50AC-E9C1-4D3C-B1F9-DE0BCAC300F6}" /> 
+              <FieldRef ID="{943E7530-5E2B-4C02-8259-CCD93A9ECB18}" />
+          </FieldRefs>
+      </ContentType> 
 
-</Elements>
-```
+      <ListInstance 
+              CustomSchema="schema.xml"
+              FeatureId="00bfea71-de22-43b2-a848-c05709900100"
+              Title="SPFx List" 
+              Description="SPFx List"
+              TemplateType="100"
+              Url="Lists/SPFxList">
+      </ListInstance>
 
-Сведения об этой структуре XML.
-* Мы подготавливаем на сайте два поля, тип контента и экземпляр списка с настраиваемой схемой.
-* Определения используют стандартную схему платформы компонентов, хорошо знакомую разработчикам SharePoint.
-* Добавляемый тип контента ссылается на настраиваемые поля.
-* Мы используем атрибут **CustomSchema** в элементе **ListInstance**, чтобы определить файл schema.xml file для подготовки списка. Таким образом, список все еще основан на стандартном шаблоне списка (в данном случае это обычный настраиваемый список 100), но мы можем создать альтернативное определение во время начальной подготовки.
+  </Elements>
+  ```
 
-> Дополнительные сведения об используемых структурах схемы см. в [документации по платформе компонентов](https://msdn.microsoft.com/en-us/library/office/ms460318(v=office.14).aspx) на сайте MSDN.
+  Обратите внимание на следующие особенности вставленной структуры XML:
+  * Мы подготавливаем для сайта два поля, тип контента и экземпляр списка с особой схемой.
+  * В определениях используется стандартная схема Feature Framework, хорошо знакомая разработчикам решений для SharePoint.
+  * Добавляемый тип контента ссылается на настраиваемые поля.
+  * Мы используем атрибут **CustomSchema** в элементе **ListInstance**, чтобы определить файл schema.xml для подготовки списка. Так в основе списка по-прежнему будет лежать стандартный шаблон (в данном случае — обычный настраиваемый список 100), но мы можем создать альтернативное определение во время начальной подготовки.
 
-### <a name="add-schemaxml-file-for-defining-list-structure"></a>Добавление файла schema.xml для определения структуры списка
-На предыдущем этапе мы ссылались на файл **schema.xml** в атрибуте **CustomSchema** элемента **ListInstance**, поэтому его потребуется включить в наш пакет. 
+  Дополнительные сведения об используемых структурах схемы см. в статье [Использование компонентов в SharePoint Foundation](https://msdn.microsoft.com/en-us/library/office/ms460318(v=office.14).aspx) на сайте MSDN.
 
-Создайте в папке **sharepoint\assets** файл **schema.xml**.
+### <a name="to-add-a-schemaxml-file-for-defining-list-structure"></a>Добавление файла schema.xml для определения структуры списка
 
-Скопируйте следующую структуру XML в файл **schema.xml**:
+Выполняя предыдущий шаг, мы ссылались на файл **schema.xml** в атрибуте **CustomSchema** элемента **ListInstance**, поэтому нам нужно включить его в наш пакет. 
 
-```xml
-<List xmlns:ows="Microsoft SharePoint" Title="Basic List" EnableContentTypes="TRUE" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/Basic List" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
-  <MetaData>
-    <ContentTypes>
-      <ContentTypeRef ID="0x010042D0C1C200A14B6887742B6344675C8B" />
-    </ContentTypes>
-    <Fields></Fields>
-    <Views>
-      <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/images/generic.png" Url="AllItems.aspx">
-        <XslLink Default="TRUE">main.xsl</XslLink>
-        <JSLink>clienttemplates.js</JSLink>
-        <RowLimit Paged="TRUE">30</RowLimit>
-        <Toolbar Type="Standard" />
-        <ViewFields>
-          <FieldRef Name="LinkTitle"></FieldRef>
-          <FieldRef Name="SPFxAmount"></FieldRef>
-          <FieldRef Name="SPFxCostCenter"></FieldRef>
-        </ViewFields>
-        <Query>
-          <OrderBy>
-            <FieldRef Name="ID" />
-          </OrderBy>
-        </Query>
-      </View>
-    </Views>
-    <Forms>
-      <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
-      <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
-      <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
-    </Forms>
-  </MetaData>
-</List>
-```
+1. Создайте в папке **sharepoint\assets** файл **schema.xml**.
 
-Сведения о включенной структуре XML.
+2. Скопируйте приведенную ниже структуру XML в файл **schema.xml**.
+
+  ```xml
+  <List xmlns:ows="Microsoft SharePoint" Title="Basic List" EnableContentTypes="TRUE" FolderCreation="FALSE" Direction="$Resources:Direction;" Url="Lists/Basic List" BaseType="0" xmlns="http://schemas.microsoft.com/sharepoint/">
+    <MetaData>
+      <ContentTypes>
+        <ContentTypeRef ID="0x010042D0C1C200A14B6887742B6344675C8B" />
+      </ContentTypes>
+      <Fields></Fields>
+      <Views>
+        <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/images/generic.png" Url="AllItems.aspx">
+          <XslLink Default="TRUE">main.xsl</XslLink>
+          <JSLink>clienttemplates.js</JSLink>
+          <RowLimit Paged="TRUE">30</RowLimit>
+          <Toolbar Type="Standard" />
+          <ViewFields>
+            <FieldRef Name="LinkTitle"></FieldRef>
+            <FieldRef Name="SPFxAmount"></FieldRef>
+            <FieldRef Name="SPFxCostCenter"></FieldRef>
+          </ViewFields>
+          <Query>
+            <OrderBy>
+              <FieldRef Name="ID" />
+            </OrderBy>
+          </Query>
+        </View>
+      </Views>
+      <Forms>
+        <Form Type="DisplayForm" Url="DispForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+        <Form Type="EditForm" Url="EditForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+        <Form Type="NewForm" Url="NewForm.aspx" SetupPath="pages\form.aspx" WebPartZoneID="Main" />
+      </Forms>
+    </MetaData>
+  </List>
+  ```
+
+Обратите внимание на следующие особенности вставленной структуры XML:
 * Элемент **ContentTypeRef** ссылается на настраиваемый тип контента, развертываемый с помощью файла **elements.xml**.
 * Элемент **FieldRef** ссылается на настраиваемые поля **SPFxAmount** и **SPFxCostCenter**.
 
-> Дополнительные сведения об используемых структурах схемы можно найти в статье [Общие сведения о файлах Schema.xml](https://msdn.microsoft.com/en-us/library/office/ms459356(v=office.14).aspx) на сайте MSDN.
+Дополнительные сведения об используемых структурах схемы см. в статье [Общие сведения о файлах Schema.xml](https://msdn.microsoft.com/en-us/library/office/ms459356(v=office.14).aspx) на сайте MSDN.
 
-## <a name="ensure-that-definitions-are-taken-into-use-in-build-pipeline"></a>Обеспечение использования определений в конвейере сборки
-Теперь мы создали необходимые структуры для автоматической подготовки ресурсов SharePoint при развертывании решения. Далее необходимо убедиться, что эти XML-файлы упакованы в файле решения.
+## <a name="ensure-that-definitions-are-taken-into-use-in-build-pipeline"></a>Добавление определений в пакет решения
 
-Откройте файл **package-solution.json** из папки config. В файле **package-solution.json** определяются метаданные пакета, как показано в следующем фрагменте кода:
+Теперь мы создали необходимые структуры для автоматической подготовки ресурсов SharePoint при развертывании решения. Далее необходимо сделать так, чтобы эти XML-файлы были упакованы в файле решения.
 
-```json
-{
-  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
-  "solution": {
-    "name": "asset-deployment-webpart-client-side-solution",
-    "id": "6690f11b-012f-4268-bc33-3086eb2dd287",
-    "version": "1.0.0.0",
-    "includeClientSideAssets": true
-  },
-  "paths": {
-    "zippedPackage": "solution/asset-deployment-webpart.sppkg"
-  }
-}
+1. Откройте файл **package-solution.json** из папки config.
 
-```
+  В файле **package-solution.json** определяются метаданные пакета, как показано в следующем фрагменте кода:
 
-Чтобы убедиться, что новые файлы платформы компонентов учитываются при упаковке решения, необходимо включить определение компонента для пакета решения. Добавим определение JSON для нужного компонента в структуру решения, как показано в приведенном ниже фрагменте кода.
-
-```json
-{
-  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
-  "solution": {
-    "name": "asset-deployment-webpart-client-side-solution",
-    "id": "6690f11b-012f-4268-bc33-3086eb2dd287",
-    "version": "1.0.0.0",
-    "includeClientSideAssets": true,
-    "features": [{
-      "title": "asset-deployment-webpart-client-side-solution",
-      "description": "asset-deployment-webpart-client-side-solution",
-      "id": "523fe887-ced5-4036-b564-8dad5c6c6e24",
+  ```json
+  {
+    "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+    "solution": {
+      "name": "asset-deployment-webpart-client-side-solution",
+      "id": "6690f11b-012f-4268-bc33-3086eb2dd287",
       "version": "1.0.0.0",
-      "assets": {
-        "elementManifests": [
-          "elements.xml"
-        ],
-        "elementFiles":[
-          "schema.xml"
-        ]
-      }
-    }]
-  },
-  "paths": {
-    "zippedPackage": "solution/asset-deployment-webpart.sppkg"
+      "includeClientSideAssets": true
+    },
+    "paths": {
+      "zippedPackage": "solution/asset-deployment-webpart.sppkg"
+    }
   }
-}
-```
 
-Сведения о добавленных определениях JSON.
-* В принципе, пакет может включать несколько компонентов, так как объект **features** является коллекцией, но это не рекомендуется.
+  ```
+
+2. Чтобы новые файлы Feature Framework учитывались при упаковке решения, необходимо включить определение компонента Feature Framework для пакета решения. Добавим определение JSON для нужного компонента в структуру решения, как показано в приведенном ниже фрагменте кода.
+
+  ```json
+  {
+    "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+    "solution": {
+      "name": "asset-deployment-webpart-client-side-solution",
+      "id": "6690f11b-012f-4268-bc33-3086eb2dd287",
+      "version": "1.0.0.0",
+      "includeClientSideAssets": true,
+      "features": [{
+        "title": "asset-deployment-webpart-client-side-solution",
+        "description": "asset-deployment-webpart-client-side-solution",
+        "id": "523fe887-ced5-4036-b564-8dad5c6c6e24",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml"
+          ],
+          "elementFiles":[
+            "schema.xml"
+          ]
+        }
+      }]
+    },
+    "paths": {
+      "zippedPackage": "solution/asset-deployment-webpart.sppkg"
+    }
+  }
+  ```
+
+Обратите внимание на следующие особенности добавленных определений json:
+
+* В принципе, пакет может включать несколько компонентов, так как объект **features** является коллекцией, однако это не рекомендуется.
+
 * В разделе elementManifests мы ссылаемся на файл **elements.xml**, чтобы он был правильно упакован в фактической структуре XML компонента как файл манифеста элемента.
+
 * Определение может включать несколько файлов element.xml, которые будут выполняться в том же порядке, в котором они упоминаются в определении JSON. Как правило, не рекомендуется использовать несколько файлов element.xml, так как это сильно усложняет разработку. Вы можете определить все необходимые ресурсы в файле element.xml.
 
 ## <a name="deploy-and-test-asset-provisioning"></a>Развертывание и тестирование подготовки ресурсов
-Теперь все готово к развертыванию решения в SharePoint. Так как в данном случае мы подготавливаем ресурсы непосредственно на сайтах SharePoint при установке решения, эту возможность невозможно протестировать на локальном или сетевом рабочем месте.
 
-Чтобы упаковать клиентское решение, содержащее веб-часть, и получить базовую структуру, готовую к упаковке, введите в окне консоли указанную команду:
+Теперь все готово к развертыванию решения в SharePoint. Так как мы подготавливаем ресурсы прямо на сайтах SharePoint при установке решения, эту возможность невозможно протестировать в локальной или сетевой версии Workbench.
 
-```
-gulp bundle
-```
-Затем выполните следующую команду, чтобы создать пакет решения:
+1. Чтобы упаковать клиентское решение, содержащее веб-часть, и получить базовую структуру, готовую к упаковке, введите в окне консоли указанную команду:
 
-```
-gulp package-solution
-```
-Эта команда создаст пакет в папке `sharepoint/solution`:
+  ```
+  gulp bundle
+  ```
 
-```
-asset-deployment-webpart.sppkg
-```
+2. Выполните следующую команду, чтобы создать пакет решения:
 
-Прежде чем тестировать пакет в SharePoint, взглянем на стандартные структуры, созданные для пакета в определенных элементах платформы компонентов. Вернитесь к Visual Studio Code и разверните папку `sharepoint/solution/debug`, которая содержит необработанные структуры XML, включаемые в фактический пакет **sppkg**.
+  ```
+  gulp package-solution
+  ```
 
-![Снимок экрана с папкой debug, вложенной в папку sharepoint, в структуре решения](../../../images/tutorial-feature-solution-debug-folder.png)
+  Эта команда создает пакет в папке `sharepoint/solution`:
 
-Далее вам потребуется развернуть созданный пакет в каталоге приложений.
+  ```
+  asset-deployment-webpart.sppkg
+  ```
 
-Перейдите к каталогу приложений вашего клиента.
+3. Прежде чем тестировать пакет в SharePoint, взглянем на стандартные структуры, созданные для пакета в определенных элементах платформы компонентов. Вернитесь к Visual Studio Code и разверните папку `sharepoint/solution/debug`, которая содержит необработанные структуры XML, включаемые в фактический пакет **sppkg**.
 
-Отправьте или перетащите файл asset-deployment-webpart.sppkg из папки `sharepoint/solution` в каталог приложений. В SharePoint откроется диалоговое окно с запросом на подтверждение доверия клиентскому решению, которое развертывается.
+  ![Снимок экрана с папкой debug, вложенной в папку sharepoint, в структуре решения](../../../images/tutorial-feature-solution-debug-folder.png)
 
-![Диалоговое окно с запросом на подтверждение доверия для развертывания пакета решения](../../../images/tutorial-feature-solution-trust-app-catalog.png)
+4. Разверните пакет, созданный в каталоге приложений. Перейдите в каталог приложений вашего клиента.
 
-> [!NOTE]
-> SharePoint проверяет опубликованный пакет при его развертывании, а диалоговое окно с запросом на подтверждение доверия открывается, только если пакет допускается к развертыванию. Вы также можете просмотреть состояние этой проверки в столбце "Допустимый пакет приложения" каталога приложений.
+5. Отправьте или перетащите файл asset-deployment-webpart.sppkg из папки `sharepoint/solution` в каталог приложений. Откроется диалоговое окно для подтверждения доверия клиентскому решению.
 
-Перейдите на тот сайт, где требуется проверить подготовку ресурсов SharePoint. Это может быть любое семейство веб-сайтов в клиенте, где развернут пакет решения.
+  ![Диалоговое окно для подтверждения доверия развертываемому пакету решения](../../../images/tutorial-feature-solution-trust-app-catalog.png)
 
-Нажмите значок шестеренки на верхней панели навигации справа и выберите команду **Добавить приложение**, чтобы перейти к странице "Приложения".
+  > [!NOTE]
+  > SharePoint проверяет опубликованный пакет при его развертывании, а диалоговое окно для подтверждения доверия открывается, только если пакет действителен. Вы также можете просмотреть состояние этой проверки в столбце "Допустимый пакет приложения" каталога приложений.
 
-В поле **Поиск** введите **deployment** и нажмите клавишу **ВВОД**, чтобы отфильтровать приложения.
+6. Перейдите на тот сайт, где требуется проверить подготовку ресурсов SharePoint. Это может быть любое семейство веб-сайтов в клиенте, где развернут пакет решения.
 
-![Поиск приложения на сайте](../../../images/tutorial-feature-solution-add-app.png)
+7. Нажмите значок шестеренки на верхней панели навигации справа и выберите **Добавить приложение**, чтобы перейти на страницу "Приложения".
 
-Выберите приложение **asset-deployment-webpart-client-side-solution**, чтобы установить его на сайте. По завершении установки обновите страницу, нажав клавишу **F5**.
+8. В поле **Поиск** введите **deployment**, а затем нажмите клавишу **ВВОД**, чтобы отфильтровать приложения.
 
-![Новый список SPFx List и приложение на странице содержимого сайта после подготовки решения](../../../images/tutorial-feature-solution-provision-app.png)
+  ![Поиск приложения на сайте](../../../images/tutorial-feature-solution-add-app.png)
 
-Обратите внимание, что настраиваемый список **SPFx List** также был подготовлен на сайте при развертывании пакета решения.
+9. Выберите приложение **asset-deployment-webpart-client-side-solution**, чтобы установить его на сайте. После установки обновите страницу, нажав клавишу **F5**. Обратите внимание на то, что при развертывании пакета решения на сайте был подготовлен настраиваемый список **SPFx List**.
 
-Выберите **SPFx List**, чтобы перейти к списку.
+  ![Новый список SPFx List и приложение на странице содержимого сайта после подготовки решения](../../../images/tutorial-feature-solution-provision-app.png)
 
-![Представление по умолчанию для настраиваемого списка с дополнительными стандартными полями](../../../images/tutorial-feature-solution-list-view.png)
 
-Обратите внимание, что настраиваемые поля **Amount** и **Cost Center** автоматически отображаются в представлении списка по умолчанию. 
+10. Выберите **SPFx List**, чтобы перейти к списку. Обратите внимание на то, что настраиваемые поля **Amount** (Количество) и **Cost Center** (Место возникновения затрат) отображаются в списке по умолчанию. 
+
+  ![Настраиваемый список с дополнительными полями, отображаемыми по умолчанию](../../../images/tutorial-feature-solution-list-view.png)
+
 
 ## <a name="define-upgrade-actions-for-new-version"></a>Определение действий по обновлению для новой версии
+
 При создании новой версии решения SharePoint Framework может потребоваться внести некоторые изменения в подготовленные ресурсы SharePoint. При развертывании новой версии пакета вы можете воспользоваться поддержкой действий по обновлению, которую предоставляет платформа компонентов. 
 
-Решения SharePoint Framework поддерживают следующие определения действий по обновлению из платформы компонентов:
+Решения SharePoint Framework поддерживают следующие определения действий Feature Framework по обновлению:
+
 * ApplyElementManifest
 * AddContentTypeField
 
 > [!TIP]
-> Дополнительные сведения об определениях действий по обновлению в платформе компонентов см. в статье [Процедура обновления надстроек для SharePoint](https://msdn.microsoft.com/ru-RU/library/office/fp179904.aspx) на сайте MSDN.
+> Дополнительные сведения об определениях действий Feature Framework по обновлению см. в статье [Процедура обновления надстроек для SharePoint](../../../sp-add-ins/sharepoint-add-ins-update-process.md).
 
-### <a name="add-new-elementxml-file-for-the-new-version"></a>Добавление нового файла element.xml для новой версии
-Вернитесь к своему решению в Visual Studio Code.
+### <a name="to-add-a-new-elementxml-file-for-the-new-version"></a>Добавление нового файла element.xml для новой версии
 
-Создайте в папке **sharepoint\assets** файл **elements-v2.xml**.
+1. Вернитесь к своему решению в Visual Studio Code.
 
-Скопируйте приведенную ниже структуру XML в файл **elements-v2.xml**, в котором определяется новый подготавливаемый список SharePoint под названием **New List**.
+2. Создайте в папке **sharepoint\assets** файл **elements-v2.xml**.
 
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+3. Скопируйте приведенную ниже структуру XML в файл **elements-v2.xml**, в котором определяется новый подготавливаемый список SharePoint под названием **New List** (Новый список).
 
-    <ListInstance 
-            FeatureId="00bfea71-de22-43b2-a848-c05709900100"
-            Title="New List" 
-            Description="New list provisioned from v2"
-            TemplateType="100"
-            Url="Lists/NewList">
-    </ListInstance>
+  ```xml
+  <?xml version="1.0" encoding="utf-8"?>
+  <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
 
-</Elements>
-```
-Нам также потребуется определение фактических действий по обновлению платформы компонентов, поэтому создайте в папке **sharepoint\assets** файл **upgrade-actions-v2.xml**
+      <ListInstance 
+              FeatureId="00bfea71-de22-43b2-a848-c05709900100"
+              Title="New List" 
+              Description="New list provisioned from v2"
+              TemplateType="100"
+              Url="Lists/NewList">
+      </ListInstance>
 
-Скопируйте следующую структуру XML в файл **upgrade-actions-v2.xml**: Обратите внимание, что ссылка на GUID компонента в пути указывает на автоматически созданную папку, вложенную в папку `sharepoint/solution/debug`, и ее следует изменить в соответствии с вашим решением. Этот GUID также совпадает с идентификатором GUID компонента, который мы определили в файле **package-solution.json**.
+  </Elements>
+  ```
 
-```xml
-<ApplyElementManifests>
-      <ElementManifest Location="523fe887-ced5-4036-b564-8dad5c6c6e24\elements-v2.xml" />
-</ApplyElementManifests>
+4. Нам также потребуется определение фактических действий Feature Framework по обновлению, поэтому создайте в папке **sharepoint\assets** файл **upgrade-actions-v2.xml**.
 
-```
+5. Скопируйте следующую структуру XML в файл **upgrade-actions-v2.xml**: Обратите внимание на то, что ссылка на GUID компонента в пути указывает на автоматически созданную папку, вложенную в папку `sharepoint/solution/debug`, и зависит от конкретного решения. Этот GUID также совпадает с идентификатором GUID компонента, который мы определили в файле **package-solution.json**.
 
-### <a name="deploy-new-version-to-sharepoint"></a>Развертывание новой версии в SharePoint
+  ```xml
+  <ApplyElementManifests>
+        <ElementManifest Location="523fe887-ced5-4036-b564-8dad5c6c6e24\elements-v2.xml" />
+  </ApplyElementManifests>
 
-Далее нам потребуется обновить версии решения и компонента, ответственного за подготовку ресурсов.
+  ```
+
+### <a name="to-deploy-the-new-version-to-sharepoint"></a>Развертывание новой версии в SharePoint
+
+Далее нам нужно обновить версию решения и версию компонента, ответственного за подготовку ресурсов.
 
 > [!IMPORTANT]
-> Номер версии решения указывает среде SharePoint, что доступна новая версия решения SharePoint Framework. Увеличение версии гарантирует, что действия по обновлению будут выполнены надлежащим образом при обновлении пакета решения на существующих сайтах.
+> Номер версии решения указывает среде SharePoint, что доступна новая версия решения SharePoint Framework. Обновление версии гарантирует выполнение соответствующих действий при обновлении пакета решения на существующих сайтах.
 
-Откройте файл **package-solution.json** из папки config и измените значения версий решения и компонента на "2.0.0.0". Кроме того, необходимо включить файл **elements-v2.xml** в раздел elementManifest и добавить элемент upgradeActions с указателем на только что созданный файл **upgrade-actions-v2.xml**.
+1. Откройте файл **package-solution.json** из папки config и замените значения версий решения и компонента на "2.0.0.0". 
 
-Ниже полностью представлен файл **package-solution.json** с необходимыми изменениями. Обратите внимание, что идентификаторы в вашем решении могут слегка отличаться от представленных здесь, так что сосредоточьтесь только на добавлении недостающих элементов.
+2. Кроме того, необходимо включить файл **elements-v2.xml** в раздел elementManifest и добавить элемент upgradeActions с указателем на новый файл **upgrade-actions-v2.xml**.
 
-```json
-{
-  "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
-  "solution": {
-    "name": "asset-deployment-webpart-client-side-solution",
-    "id": "6690f11b-012f-4268-bc33-3086eb2dd287",
-    "version": "2.0.0.0",
-    "includeClientSideAssets": true,
-    "features": [{
-      "title": "asset-deployment-webpart-client-side-solution",
-      "description": "asset-deployment-webpart-client-side-solution",
-      "id": "523fe887-ced5-4036-b564-8dad5c6c6e24",
+  Ниже полностью представлен файл **package-solution.json** с необходимыми изменениями. Обратите внимание, что идентификаторы в вашем решении могут слегка отличаться от представленных здесь, так что сосредоточьтесь только на добавлении недостающих элементов.
+
+  ```json
+  {
+    "$schema": "https://dev.office.com/json-schemas/spfx-build/package-solution.schema.json",
+    "solution": {
+      "name": "asset-deployment-webpart-client-side-solution",
+      "id": "6690f11b-012f-4268-bc33-3086eb2dd287",
       "version": "2.0.0.0",
-      "assets": {
-        "elementManifests": [
-          "elements.xml",
-          "elements-v2.xml"
-        ],
-        "elementFiles":[
-          "schema.xml"
-        ],
-        "upgradeActions":[
-          "upgrade-actions-v2.xml"
-        ]
-      }
-    }]
-  },
-  "paths": {
-    "zippedPackage": "solution/asset-deployment-webpart.sppkg"
+      "includeClientSideAssets": true,
+      "features": [{
+        "title": "asset-deployment-webpart-client-side-solution",
+        "description": "asset-deployment-webpart-client-side-solution",
+        "id": "523fe887-ced5-4036-b564-8dad5c6c6e24",
+        "version": "2.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml",
+            "elements-v2.xml"
+          ],
+          "elementFiles":[
+            "schema.xml"
+          ],
+          "upgradeActions":[
+            "upgrade-actions-v2.xml"
+          ]
+        }
+      }]
+    },
+    "paths": {
+      "zippedPackage": "solution/asset-deployment-webpart.sppkg"
+    }
   }
-}
-```
+  ```
 
-> [!IMPORTANT]
-> Обратите внимание, что мы также добавили файл **elements-v2.xml** в раздел elementManifest. Это гарантирует, что при установке пакета версии 2.0 на чистом сайте результат будет таким же, как и при обновлении пакетов.
+  > [!IMPORTANT]
+  > Обратите внимание на то, что мы также добавили файл **elements-v2.xml** в раздел elementManifest. Благодаря этому при установке пакета версии 2.0 на чистом сайте результат будет таким же, как и при обновлении пакетов.
 
-Чтобы повторно упаковать клиентское решение, содержащее веб-часть, и получить базовую структуру, готовую к упаковке, введите в окне консоли указанную команду:
+3. Чтобы повторно упаковать клиентское решение, содержащее веб-часть, и получить базовую структуру, готовую к упаковке, введите в окне консоли указанную команду.
 
-```
-gulp bundle
-```
-Затем выполните следующую команду, чтобы создать пакет решения:
+  ```
+  gulp bundle
+  ```
+4. Выполните следующую команду, чтобы создать пакет решения:
 
-```
-gulp package-solution
-```
+  ```
+  gulp package-solution
+  ```
 
-Эта команда создаст новую версию пакета решения в папке `sharepoint/solution`. Обратите внимание: заглянув в папку `sharepoint/solution/debug`, вы можете легко убедиться, что обновленные XML-файлы включены в пакет решения.
+  Эта команда создает новую версию пакета решения в папке `sharepoint/solution`. Обратите внимание: заглянув в папку `sharepoint/solution/debug`, вы можете легко убедиться, что обновленные XML-файлы включены в пакет решения.
 
-Далее вам потребуется развернуть новую версию в каталоге приложений.
+5. Далее необходимо развернуть новую версию, созданную в каталоге приложений. Перейдите к каталогу приложений вашего клиента.
 
-Перейдите к каталогу приложений вашего клиента.
+6. Отправьте или перетащите файл asset-deployment-webpart.sppkg из папки `sharepoint/solution` в каталог приложений. SharePoint предложит вам подтвердить переопределение текущей версии.
 
-Отправьте или перетащите файл asset-deployment-webpart.sppkg из папки `sharepoint/solution` в каталог приложений. SharePoint предложит вам подтвердить переопределение текущей версии.
+  ![Вопрос о замене в каталоге приложений](../../../images/tutorial-feature-solution-override-sppkg.png)
 
-![Вопрос о замене в каталоге приложений](../../../images/tutorial-feature-solution-override-sppkg.png)
+7. Выберите **Заменить**, чтобы добавить последнюю версию в каталог приложений.
 
-Выберите **Заменить**, чтобы добавить последнюю версию в каталог приложений.
+8. Выберите **Развернуть**, чтобы *подтвердить доверие* к последней версии.
 
-Выберите **Развернуть**, чтобы *подтвердить доверие* также последней версии.
+  Обратите внимание на то, что в столбце "Версия приложения" для решения **asset-deployment-webpart-client-side-solution** теперь отображается значение "2.0.0.0".
 
-Обратите внимание на то, что в столбце "Версия приложения" для решения **asset-deployment-webpart-client-side-solution** теперь отображается значение "2.0.0.0".
+  ![Увеличенная строка решения в каталоге приложений с обновленным номером версии](../../../images/tutorial-feature-solution-version-2.png)
 
-![Увеличенная строка решения в каталоге приложений с обновленным номером версии](../../../images/tutorial-feature-solution-version-2.png)
+### <a name="to-update-an-existing-instance-in-the-site"></a>Обновление существующего экземпляра на сайте
 
-### <a name="update-existing-instance-in-the-site"></a>Обновление существующего экземпляра на сайте
 Теперь, когда пакет в каталоге приложений обновлен, мы можем перейти к фактическому сайту с содержимым SharePoint и обновить существующий экземпляр.
 
-Перейдите на сайт, где вы развернули первую версию решения SharePoint Framework.
+1. Перейдите на сайт, где вы развернули первую версию решения SharePoint Framework.
 
-Откройте страницу **Содержимое сайта**.
+2. Перейдите на страницу **Содержимое сайта**.
 
-Выберите пункт **Сведения** в контекстном меню решения **asset-deployment-webpart-client-side-solution**.
+3. Выберите **Сведения** в контекстном меню решения **asset-deployment-webpart-client-side-solution**.
 
-![Контекстное меню существующего пакета на сайте](../../../images/tutorial-feature-solution-hover-menu.png)
+  ![Контекстное меню существующего пакета на сайте](../../../images/tutorial-feature-solution-hover-menu.png)
 
-Вы увидите текущие сведения об установленном решении SharePoint Framework. На этой странице также отображается текст "*Доступна новая версия этого приложения. Получите ее сейчас*", указывающий на наличие новой версии.
+  Вы увидите текущие сведения об установленном решении SharePoint Framework. На этой странице теперь также отображается текст *Доступна новая версия этого приложения. Получите ее сейчас*.
 
-![Контекстное меню существующего пакета на сайте](../../../images/tutorial-feature-solution-app-details.png)
+  ![Контекстное меню существующего пакета на сайте](../../../images/tutorial-feature-solution-app-details.png)
 
-Нажмите кнопку **ПОЛУЧИТЬ**, чтобы приступить к обновлению пакета.
+4. Нажмите кнопку **ПОЛУЧИТЬ**, чтобы приступить к обновлению пакета.
 
-![Состояние приложения на странице содержимого сайта меняется на "Обновление"](../../../images/tutorial-feature-solution-updating-app.png)
+  ![Состояние приложения на странице содержимого сайта меняется на "Обновление"](../../../images/tutorial-feature-solution-updating-app.png)
 
-Если вы станете использовать классический интерфейс, вы сможете увидеть больше сведений о фактическом действии обновления, которое применяется к решению SharePoint Framework. 
+  Если вы перейдете в классический интерфейс, то увидите больше сведений о действии обновления, применяемом к решению SharePoint Framework. 
 
-![Состояние приложения на странице содержимого сайта меняется на "Обновление"](../../../images/tutorial-feature-solution-updating-app-classic.png)
+  ![Состояние приложения на странице содержимого сайта меняется на "Обновление"](../../../images/tutorial-feature-solution-updating-app-classic.png)
 
-> [!NOTE]
-> Так как SharePoint Framework использует ту же инфраструктуру приложений, что и надстройки SharePoint, состояние обновления указывает на то, что обновляется надстройка или приложение. 
+  > [!NOTE]
+  > Так как SharePoint Framework использует ту же инфраструктуру приложений, что и надстройки SharePoint, состояние обновления указывает на возможность обновления надстройки или приложения. 
 
-Обновление может занять некоторое время, но когда состояние решения снова станет обычным, вы можете нажать клавишу **F5**, чтобы обновить страницу содержимого сайта и убедиться, что новый список *`New List`* успешно подготовлен при обновлении.
+  Обновление может занять некоторое время, но когда состояние решения снова станет обычным, вы можете нажать клавишу **F5**, чтобы обновить страницу содержимого сайта и убедиться, что новый список *New List* был успешно подготовлен при обновлении.
 
-![Страница содержимого сайта с дополнительным создаваемым списком New List (Новый список)](../../../images/tutorial-feature-solution-new-list.png)
+  ![Страница содержимого сайта с дополнительным создаваемым списком "New List" (Новый список)](../../../images/tutorial-feature-solution-new-list.png)
 
-Теперь мы успешно обновили этот экземпляр до последней версии. Платформа компонентов используется для подготовки ресурсов SharePoint практически так же, как и для модели надстроек SharePoint. Основное отличие заключается в том, что ресурсы подготавливаются непосредственно на обычном сайте SharePoint, так как в решениях SharePoint Framework нет таких понятий, как приложение и сайт приложения.
+  Теперь мы успешно обновили этот экземпляр до последней версии. Этот способ подготовки ресурсов SharePoint с помощью Feature Framework похож на тот, что используется для модели надстроек SharePoint. Основное отличие заключается в том, что ресурсы подготавливаются непосредственно на обычном сайте SharePoint, так как в решениях SharePoint Framework нет такого понятия, как приложение или сайт приложения.
 
 > [!NOTE]
 > Если вы обнаружили ошибку в документации или SharePoint Framework, сообщите о ней разработчикам SharePoint, указав в [списке проблем для репозитория sp-dev-docs](https://github.com/SharePoint/sp-dev-docs/issues). Заранее спасибо!
+
+## <a name="see-also"></a>См. также
+
+- [Подготовка ресурсов SharePoint с пакетом решения](../../toolchain/provision-sharepoint-assets.md)
+- [Пример решения: развертывание ресурсов SharePoint в составе пакета SPFx](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/react-feature-framework)
