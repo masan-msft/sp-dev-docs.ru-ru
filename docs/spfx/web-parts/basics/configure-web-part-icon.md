@@ -3,11 +3,11 @@ title: "Настройка значка веб-части"
 description: "Доступные варианты настройки значка для клиентских веб-частей SharePoint."
 ms.date: 01/09/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 084a5b3aebcaa500c8e7a8c321e2f1e07428983b
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: b7bcb7f91d78ce8b82f0b13b105b0e0ffeb79e88
+ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="configure-web-part-icon"></a>Настройка значка веб-части
 

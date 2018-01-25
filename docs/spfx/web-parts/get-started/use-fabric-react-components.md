@@ -3,11 +3,11 @@ title: "Использование компонентов Office UI Fabric React
 description: "Создайте простую веб-часть на базе компонента DocumentCard, доступного в Office UI Fabric React."
 ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: b36054c7d0cfebbf306fe63f40c982c9fefa7a24
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: 6dca176399de46565511ba6ae252408f22e515ef
+ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="use-office-ui-fabric-react-components-in-your-sharepoint-client-side-web-part"></a>Использование компонентов Office UI Fabric React в клиентской веб-части SharePoint
 
@@ -44,19 +44,19 @@ ms.lasthandoff: 01/10/2018
   yo @microsoft/sharepoint
   ```
     
-4. Когда появится запрос:
+4. Когда появится запрос, сделайте следующее:
 
-  * Оставьте имя по умолчанию (**documentcardexample-webpart**) для своего решения и нажмите клавишу **ВВОД**.
-  * Выберите **SharePoint Online only (latest)** (Только SharePoint Online, последняя версия) и нажмите клавишу **ВВОД**.
+  * Оставьте имя по умолчанию (**doc2umentcardexample-webpart**) для своего решения и нажмите клавишу ВВОД.
+  * Выберите **SharePoint Online only (latest)** (Только SharePoint Online, последняя версия) и нажмите клавишу ВВОД.
   * Выберите вариант **Use the current folder** (Использовать текущую папку) для размещения файлов.
   * Выберите **N**, чтобы сделать установку расширения, выполняемую напрямую, обязательной на каждом сайте при его использовании. 
   * Выберите **WebPart** в качестве типа создаваемого клиентского компонента. 
 
-5. Далее вам потребуется указать определенные сведения о веб-части:
+5. Ниже требуется указать информацию о веб-части:
 
-  * Укажите **DocumentCardExample** в качестве имени своей веб-части и нажмите клавишу **ВВОД**.
-  * Оставьте **описание DocumentCardExample** по умолчанию и нажмите клавишу **ВВОД**.
-  * Выберите **React** в качестве платформы и нажмите клавишу **ВВОД**.
+  * Укажите **DocumentCardExample** в качестве имени своей веб-части и нажмите клавишу ВВОД.
+  * Оставьте **описание DocumentCardExample** по умолчанию и нажмите клавишу ВВОД.
+  * Выберите **React** в качестве платформы и нажмите клавишу ВВОД.
 
   После этого Yeoman установит необходимые зависимости и сформирует шаблоны файлов решения. Это может занять несколько минут. Yeoman также включит в проект веб-часть DocumentCardExample, применяя к нему скаффолдинг.
 
