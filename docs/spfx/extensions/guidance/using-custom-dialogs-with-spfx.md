@@ -1,12 +1,13 @@
 ---
 title: "Учебник: использование настраиваемых диалоговых окон с расширениями SharePoint Framework"
-ms.date: 12/19/2017
+description: 
+ms.date: 01/11/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 0d79aac6e1765e08cc6e950a321f96f8c61fa0ce
-ms.sourcegitcommit: bf4bc1e80c6ef1a0ff479039ef9ae0ee84d5f6b4
+ms.openlocfilehash: db766ec08568781b119cf9688c3e89b042a8f20b
+ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="use-custom-dialog-boxes-with-sharepoint-framework-extensions"></a>Использование настраиваемых диалоговых окон с расширениями SharePoint Framework
 
@@ -14,11 +15,11 @@ ms.lasthandoff: 12/19/2017
 
 В этой статье описываются создание настраиваемого диалогового окна и его использование в контексте расширения ListView Command Set.
 
-Пример кода, рассматриваемый в этой статье, можно найти в репозитории [sp-dev-fx-extensions]((https://github.com/SharePoint/sp-dev-fx-extensions/tree/master/samples/react-command-dialog)).
+Пример кода, рассматриваемый в этой статье, можно найти в репозитории [sp-dev-fx-extensions](https://github.com/SharePoint/sp-dev-fx-extensions/tree/master/samples/react-command-dialog).
 
 ## <a name="set-up-your-development-environment"></a>Настройка среды разработки
 
-Чтобы создать настраиваемое диалоговое окно, необходимо выполнить действия, описанные в статье [Настройка среды разработки]((https://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment)). Убедитесь, что вы используете последние версии шаблонов Yeoman для SharePoint Framework.
+Чтобы создать настраиваемое диалоговое окно, необходимо выполнить действия, описанные в статье [Настройка среды разработки](https://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment). Убедитесь, что вы используете последние версии шаблонов Yeoman для SharePoint Framework.
 
 ## <a name="create-a-new-project"></a>Создание проекта
 
@@ -40,19 +41,19 @@ cd dialog-cmd
 yo @microsoft/sharepoint
 ```
 
-Когда появится запрос, выполните указанные ниже действия.
+Когда появится запрос:
 
-* Оставьте значение по умолчанию (**dialog-cmd**) для имени решения и нажмите клавишу **ВВОД**.
-* Выберите **SharePoint Online only (latest)** (Только SharePoint Online, последняя версия) и нажмите клавишу **ВВОД**.
-* Выберите **Use the current folder** (Использовать текущую папку) и нажмите клавишу **ВВОД**.
+* Оставьте значение по умолчанию (**dialog-cmd**) для имени решения и нажмите клавишу ВВОД.
+* Выберите **SharePoint Online only (latest)** (Только SharePoint Online, последняя версия) и нажмите клавишу ВВОД.
+* Выберите **Use the current folder** (Использовать текущую папку) и нажмите клавишу ВВОД.
 * Выберите **N**, чтобы сделать установку расширения, выполняемую напрямую, обязательной на каждом сайте при его использовании.
 * Выберите **Extension** (Расширение) в качестве типа создаваемого клиентского компонента. 
 * Выберите для создаваемого расширения тип **ListView Command Set**.
 
 Далее вам потребуется указать определенные сведения о расширении.
 
-* Используйте значение **DialogDemo** для имени решения и нажмите клавишу **ВВОД**.
-* Оставьте значение по умолчанию (**DialogDemo description**) для описания решения и нажмите клавишу **ВВОД**.
+* Используйте значение **DialogDemo** для имени решения и нажмите клавишу ВВОД.
+* Оставьте значение по умолчанию (**DialogDemo description**) для описания решения и нажмите клавишу ВВОД.
 
 ![Генератор Yeoman для SharePoint предлагает создать решение расширения](../../../images/ext-com-dialog-yeoman-prompts.png)
 
@@ -287,4 +288,8 @@ gulp serve
 ![Диалоговое окно со сведениями о выбранном цвете](../../../images/ext-com-dialog-oob-alert-dialog.png)
 
 > [!NOTE]
-> Если вы обнаружили ошибку в документации или SharePoint Framework, сообщите о ней разработчикам SharePoint, указав в [списке проблем для репозитория sp-dev-docs]((https://github.com/SharePoint/sp-dev-docs/issues)). Заранее спасибо!
+> Если вы обнаружили ошибку в документации или SharePoint Framework, сообщите о ней разработчикам SharePoint, указав в [списке проблем для репозитория sp-dev-docs](https://github.com/SharePoint/sp-dev-docs/issues). Заранее спасибо!
+
+## <a name="see-also"></a>См. также
+
+- [Обзор расширений SharePoint Framework](../overview-extensions.md)

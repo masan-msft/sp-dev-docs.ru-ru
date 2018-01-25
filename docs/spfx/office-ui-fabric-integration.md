@@ -2,11 +2,11 @@
 title: "Использование Office UI Fabric Core и Fabric React в SharePoint Framework"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: e1e9ac646257d8875de4097b65b19e680e1f9f25
-ms.sourcegitcommit: 3276e9b281b227fb2f1a131ab4ac54ae212ce5cf
+ms.openlocfilehash: b8555a4bb87bc5961d94dd32e51bb03a6af4fd52
+ms.sourcegitcommit: 9f492519d4eeb3f62a1fddc71cdca79263651a56
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="using-office-ui-fabric-core-and-fabric-react-in-sharepoint-framework"></a>Использование Office UI Fabric Core и Fabric React в SharePoint Framework
 
