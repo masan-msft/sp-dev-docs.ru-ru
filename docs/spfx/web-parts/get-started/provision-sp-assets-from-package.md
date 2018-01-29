@@ -3,11 +3,11 @@ title: "Подготовка ресурсов SharePoint из клиентско
 description: "Ресурсы SharePoint можно добавлять в решения SharePoint Framework и развертывать на сайтах SharePoint при установке решения."
 ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 73fc74a900be49b6647506f84ed04b06286bad8c
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: 48a5262c322c74028abc10054b321bff104a3b24
+ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="provision-sharepoint-assets-from-your-sharepoint-client-side-web-part"></a>Подготовка ресурсов SharePoint из клиентской веб-части SharePoint
 
@@ -45,19 +45,19 @@ ms.lasthandoff: 01/10/2018
   yo @microsoft/sharepoint
   ```
 
-4. Когда появится запрос:
+4. Когда появится запрос, сделайте следующее:
 
-  * Оставьте имя по умолчанию (**asset-deployment-webpart**) для своего решения и нажмите клавишу **ВВОД**.
-  * Выберите **SharePoint Online only (latest)** (Только SharePoint Online, последняя версия) и нажмите клавишу **ВВОД**.
+  * Оставьте имя по умолчанию (**asset-deployment-webpart**) для своего решения и нажмите клавишу ВВОД.
+  * Выберите **SharePoint Online only (latest)** (Только SharePoint Online, последняя версия) и нажмите клавишу ВВОД.
   * Выберите вариант **Use the current folder** (Использовать текущую папку) для размещения файлов.
   * Выберите **N**, чтобы сделать установку расширения обязательной на каждом сайте при его использовании. 
   * Выберите **WebPart** в качестве типа создаваемого клиентского компонента. 
 
-5. Ниже требуется указать информацию о веб-части:
+5. Далее требуется указать информацию о веб-части:
 
-  * Введите **AssetDeployment** в качестве имени веб-части и нажмите клавишу **ВВОД**.
-  * Введите описание веб-части **AssetDeployment Web Part** (Веб-часть AssetDeployment) и нажмите клавишу **ВВОД**. 
-  * Оставьте вариант **No JavaScript web framework** (Не использовать веб-платформу JavaScript) по умолчанию и нажмите клавишу **ВВОД**, чтобы продолжить.
+  * Введите **AssetDeployment** в качестве имени веб-части и нажмите клавишу ВВОД.
+  * Введите описание веб-части **AssetDeployment Web Part** (Веб-часть AssetDeployment) и нажмите клавишу ВВОД. 
+  * Оставьте выбранным параметр **No JavaScript web framework** (Не использовать платформу веб-решений JavaScript) и нажмите клавишу ВВОД, чтобы продолжить.
 
   ![Запросы Yeoman](../../../images/asset-deployment-yeoman.png)
 
@@ -314,7 +314,7 @@ ms.lasthandoff: 01/10/2018
 
 7. Нажмите значок шестеренки на верхней панели навигации справа и выберите **Добавить приложение**, чтобы перейти на страницу "Приложения".
 
-8. В поле **Поиск** введите **deployment**, а затем нажмите клавишу **ВВОД**, чтобы отфильтровать приложения.
+8. В поле **Поиск** введите **deployment**, а затем нажмите клавишу ВВОД, чтобы отфильтровать приложения.
 
   ![Поиск приложения на сайте](../../../images/tutorial-feature-solution-add-app.png)
 

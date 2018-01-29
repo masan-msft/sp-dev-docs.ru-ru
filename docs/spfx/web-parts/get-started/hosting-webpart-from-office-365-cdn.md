@@ -3,11 +3,11 @@ title: "Размещение клиентской веб-части в сети 
 description: "Простое решение для размещения ресурсов прямо в клиенте Office 365. В нем можно разместить любые статические ресурсы, используемые в SharePoint Online."
 ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 8185ed59e443fc33c263ca227da437da373ff618
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: 3a17c4004724a21857e542bd5eb6fb73d84f2a7d
+ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="host-your-client-side-web-part-from-office-365-cdn-hello-world-part-4"></a>Размещение клиентской веб-части в сети доставки содержимого Office 365 (Hello World, часть 4)
 
@@ -61,7 +61,7 @@ ms.lasthandoff: 01/10/2018
   Set-SPOTenantCdnEnabled -CdnType Public
   ```
 
-5. Чтобы подтвердить настройки, введите `Y` и нажмите клавишу **ВВОД**.
+5. Чтобы подтвердить настройки, выберите `Y` и нажмите клавишу ВВОД.
 
   ![Включение общедоступной сети доставки содержимого в клиенте](../../../images/cdn-enable-o365-public-cdn.png)
 
