@@ -1,16 +1,19 @@
 ---
 title: "Настройка службы OneDrive для бизнеса узлы #"
 ms.date: 11/03/2017
-ms.openlocfilehash: 82fe71f4974ce83d7d08e78d8835e5ace8e8d219
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 493c4a8f265127bcf647967374d1b7fb6d7d65a8
+ms.sourcegitcommit: 86625a7b8efe74f2ace5c32a301197c5b7ee695f
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="customization-of-onedrive-for-business-sites"></a>Настройка OneDrive для бизнеса сайтов #
 
 ### <a name="summary"></a>Summary ###
 OneDrive для бизнеса сайтов можно настроить в Office 365 или с помощью модели приложения в целом, в соответствии с требованиями организации. Фактические методы для выполнения этой настройки отличаются от в локальной, так как можно использовать только методы модели приложения. На этой странице приведены сведения о фактических шаблоны, которые можно использовать с mdoel приложение для настройки OneDrive для бизнеса сайтов. 
+
+> [!IMPORTANT]
+> В этом **только** применяется к *классической* OneDrive для бизнеса программой в SharePoint Online. При использовании интерфейса по умолчанию «новый» это действие не поддерживается. Современный или новые интерфейсы OneDrive для бизнеса не поддерживает настраиваемый фирменный стиль. Администраторы клиента можно управлять из SharePoint Online административных параметров интерфейса по умолчанию.
 
 # <a name="why-would-you-customize-onedrive-for-business-sites"></a>Почему бы настроить OneDrive для бизнеса сайтов #
 
