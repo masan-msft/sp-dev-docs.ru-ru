@@ -1,11 +1,11 @@
 ---
 title: "Специальные возможности при разработке веб-части SharePoint"
 ms.date: 11/21/2017
-ms.openlocfilehash: b1c2e0819d15e470d1502deee79f8d6ab9254213
-ms.sourcegitcommit: 068729a51c9e2c1a83e7e33d28149ab79bfbd06e
+ms.openlocfilehash: f308f8d1cbe1fabc274e8c83af9cf1b6e8d43177
+ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/18/2018
 ---
 <!--Based on how rough this content is in it's current state, i'm going to pull it from this initial release so we can edit and better prepare. -->
 
@@ -88,7 +88,7 @@ The third tab is the navigation.
 
 ### <a name="run-a-control"></a>Запуск элемента управления
 
-Нажмите клавишу **ВВОД**, чтобы запустить элемент управления.
+Нажмите клавишу ВВОД, чтобы запустить элемент управления.
 
 *Рис. 4. Нажатие клавиши ВВОД для запуска элемента управления*
 

@@ -2,25 +2,25 @@
 title: "REST API для работы с макетами сайтов SharePoint"
 description: "Узнайте, как работать с макетами сайтов SharePoint при помощи интерфейса REST для SharePoint, выполняя базовые операции создания, чтения, обновления и удаления (CRUD)."
 ms.date: 12/14/2017
-ms.openlocfilehash: 618f8b0bb7eed7a3bf60bdd86363e095fb0a8221
-ms.sourcegitcommit: 6f2b3b5bd81c2de4f761e10ed5e2f0b9c3c485bf
+ms.openlocfilehash: 978a5c2b58e418ae9f7d99783a95352cdd3977a5
+ms.sourcegitcommit: 9f492519d4eeb3f62a1fddc71cdca79263651a56
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="site-design-and-site-script-rest-api"></a>REST API для работы с макетами и скриптами сайтов
 
 > [!NOTE]
-> Макеты и скрипты сайтов в настоящий момент пересматриваются и могут быть изменены. Сейчас они не поддерживаются для использования в рабочих средах.
+> Макеты и скрипты сайтов находятся на стадии тестирования и могут меняться. В настоящее время в рабочих средах их можно использовать только в выпуске Targeted.
 
 При помощи интерфейса REST для SharePoint можно выполнять операции CRUD (создание, чтение, обновление и удаление) с макетами и скриптами сайтов.
 
-Служба REST в SharePoint Online (а также локальной среде SharePoint 2016 или более поздней версии) поддерживает объединение нескольких запросов в один вызов службы с помощью параметра запроса OData $batch. Подробные сведения и ссылки на примеры кода см. в статье [Отправка пакетных запросов с помощью интерфейсов REST API]((https://dev.office.com/sharepoint/docs/apis/rest/make-batch-requests-with-the-rest-apis.md)).
+Служба REST в SharePoint Online (а также локальной среде SharePoint 2016 или более поздней версии) поддерживает объединение нескольких запросов в один вызов службы с помощью параметра запроса OData $batch. Подробные сведения и ссылки на примеры кода см. в статье [Отправка пакетных запросов с помощью интерфейсов REST API](https://dev.office.com/sharepoint/docs/apis/rest/make-batch-requests-with-the-rest-apis.md).
 
 ## <a name="prerequisites"></a>Необходимые условия
 Прежде чем приступить к работе, убедитесь, что вы знакомы с понятиями, описанными в следующих статьях:
-- [Знакомство со службой REST в SharePoint]((https://dev.office.com/sharepoint/docs/apis/rest/get-to-know-the-sharepoint-rest-service.md)); 
-- [Выполнение базовых операций с использованием конечных точек REST SharePoint]((https://dev.office.com/sharepoint/docs/apis/rest/complete-basic-operations-using-sharepoint-rest-endpoints.md))
+- [Знакомство со службой REST в SharePoint](https://dev.office.com/sharepoint/docs/apis/rest/get-to-know-the-sharepoint-rest-service.md); 
+- [Выполнение базовых операций с использованием конечных точек REST SharePoint](https://dev.office.com/sharepoint/docs/apis/rest/complete-basic-operations-using-sharepoint-rest-endpoints.md)
 
 ## <a name="rest-commands"></a>Команды REST
 

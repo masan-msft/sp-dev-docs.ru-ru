@@ -1,17 +1,17 @@
 ---
 title: "Командлеты PowerShell для макетов и скриптов сайтов SharePoint"
 description: "Узнайте, как создавать, получать и удалять макеты и скрипты сайтов с помощью командлетов PowerShell."
-ms.date: 12/14/2017
-ms.openlocfilehash: 81048173e6fa8933a9cfdcb668f0c8ba362d2e86
-ms.sourcegitcommit: d9372f6009de1c1e48e272fd3629a99aed7fef9f
+ms.date: 01/08/2018
+ms.openlocfilehash: 2c6ca90ee37c978a715e708e16e027dff52f82c1
+ms.sourcegitcommit: 9f492519d4eeb3f62a1fddc71cdca79263651a56
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="powershell-cmdlets-for-sharepoint-site-designs-and-site-scripts"></a>Командлеты PowerShell для макетов и скриптов сайтов SharePoint
 
 > [!NOTE]
-> Макеты и скрипты сайтов в настоящий момент пересматриваются и могут быть изменены. Сейчас они не поддерживаются для использования в рабочих средах.
+> Макеты и скрипты сайтов находятся на стадии тестирования и могут меняться. В настоящее время в рабочих средах их можно использовать только в выпуске Targeted.
 
 Узнайте, как создавать, получать и удалять макеты и скрипты сайтов с помощью командлетов PowerShell.
 
@@ -37,7 +37,6 @@ ms.lasthandoff: 01/09/2018
 - **Remove-SPOSiteDesign**
 - **Remove-SPOSiteScript**
 - **Revoke-SPOSiteDesignRights**
-
 <!--
 - **Set-SPOSiteDesign**
 - **Set-SPOSiteScript**
@@ -309,8 +308,9 @@ PS C:\> Revoke-SPOSiteDesignRights 44252d09-62c4-4913-9eb0-a2a8b8d7f863 `
 
 <!--
 ## Set-SPOSiteDesign (TBD)
-
+Updates a previously uploaded site design.
 ## Set-SPOSiteScript (TBD)
+Updates a previously uploaded site script.
 -->
 
 ## <a name="see-also"></a>См. также
