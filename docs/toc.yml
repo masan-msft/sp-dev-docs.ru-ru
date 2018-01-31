@@ -989,6 +989,8 @@
       href: general-development/code-samples-for-sharepoint.md
     - name: Выбор правильного набора API
       href: general-development/choose-the-right-api-set-in-sharepoint.md
+    - name: Использование сети доставки содержимого (CDN) Office 365
+      href: general-development/office-365-cdn.md
     - name: Использование каталога приложений в семействе веб-сайтов
       href: general-development/site-collection-app-catalog.md
     - name: Режим обслуживания клиентских веб-частей
