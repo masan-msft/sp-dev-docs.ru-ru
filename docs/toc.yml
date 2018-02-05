@@ -136,8 +136,6 @@
               items:
                 - name: Руководство
                   href: spfx/call-microsoft-graph-using-graphhttpclient.md
-        - name: Оптимизация сборок для производства
-          href: spfx/toolchain/optimize-builds-for-production.md
         - name: Настройка и развертывание
           items:
             - name: Упаковка решения
@@ -154,48 +152,49 @@
               href: spfx/sharepoint-2016-support.md
             - name: Подготовка ресурсов SharePoint
               href: spfx/toolchain/provision-sharepoint-assets.md
-        - name: Руководство по оформлению
-          href: design/design-guidance-overview.md
-          items:
-            - name: Разработка страниц
-              href: design/authoring-pages.md
-            - name: Разработка веб-части
-              href: design/design-a-web-part.md
-              items:
-                - name: Реактивные и нереактивные веб-части
-                  href: design/reactive-and-nonreactive-web-parts.md
-                - name: Адаптивный дизайн
-                  href: design/grid-and-responsive-design.md
-                - name: Названия и описания
-                  href: design/web-part-titles-and-descriptions.md
-                - name: Текст пользовательского интерфейса
-                  href: design/ui-text-for-web-parts.md
-                - name: Темы и цвета
-                  href: design/themes-colors.md
-                - name: Заполнители и резервные элементы
-                  href: design/placeholders-and-fallbacks.md
-                - name: Специальные возможности
-                  href: design/accessibility.md
-                - name: Демонстрация веб-части
-                  href: design/showcase-web-part.md
-            - name: Особенности проектирования
-              href: spfx/web-parts/basics/design-considerations-for-web-parts.md
-            - name: Настраиваемые диалоговые окна
-              href: spfx/extensions/guidance/using-custom-dialogs-with-spfx.md
-            - name: Работа с CSS
-              href: spfx/css-recommendations.md
-            - name: Использование тем
-              href: spfx/use-theme-colors-in-your-customizations.md
-            - name: Интеграция с Office UI Fabric
-              href: spfx/office-ui-fabric-integration.md
+        - name: Оптимизация сборок для производства
+          href: spfx/toolchain/optimize-builds-for-production.md
         - name: Локализация
           href: spfx/web-parts/guidance/localize-web-parts.md
         - name: Свойства клиента
           href: spfx/tenant-properties.md
-    - name: Архитектура платформы
+    - name: Дизайн
+      href: design/design-guidance-overview.md
       items:
-        - name: Инструменты и библиотеки
-          href: spfx/tools-and-libraries.md
+        - name: Дизайн веб-части
+          href: design/design-a-web-part.md
+          items:
+            - name: Реактивные и нереактивные веб-части
+              href: design/reactive-and-nonreactive-web-parts.md
+            - name: Адаптивный дизайн
+              href: design/grid-and-responsive-design.md
+            - name: Названия и описания
+              href: design/web-part-titles-and-descriptions.md
+            - name: Текст пользовательского интерфейса
+              href: design/ui-text-for-web-parts.md
+            - name: Темы и цвета
+              href: design/themes-colors.md
+            - name: Заполнители и резервные элементы
+              href: design/placeholders-and-fallbacks.md
+            - name: Специальные возможности
+              href: design/accessibility.md
+            - name: Демонстрация веб-части
+              href: design/showcase-web-part.md
+        - name: Разработка страниц
+          href: design/authoring-pages.md
+        - name: Особенности дизайна
+          href: spfx/web-parts/basics/design-considerations-for-web-parts.md
+        - name: Настраиваемые диалоговые окна
+          href: spfx/extensions/guidance/using-custom-dialogs-with-spfx.md
+        - name: Работа с CSS
+          href: spfx/css-recommendations.md
+        - name: Использование тем
+          href: spfx/use-theme-colors-in-your-customizations.md
+        - name: Интеграция с Office UI Fabric
+          href: spfx/office-ui-fabric-integration.md
+    - name: Инструменты и библиотеки
+      href: spfx/tools-and-libraries.md
+      items:
         - name: Цепочка инструментов
           href: spfx/toolchain/sharepoint-framework-toolchain.md
         - name: Генератор Yeoman
