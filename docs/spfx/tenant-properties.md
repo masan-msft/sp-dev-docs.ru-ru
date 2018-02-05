@@ -1,9 +1,6 @@
 # <a name="sharepoint-online-tenant-properties"></a>Свойства клиента SharePoint Online
 
-> [!NOTE]
-> Функция управления свойствами клиента доступна в первом выпуске в формате предварительной версии и может быть изменена. Сейчас она не поддерживается для рабочих сред.
-
-С помощью свойств клиента администраторы клиента могут добавлять свойства в каталог приложений для различных компонентов SharePoint Framework. Для управления свойствами клиента администраторы клиента используют [командную консоль Microsoft SharePoint Online]((https://technet.microsoft.com/ru-RU/library/fp161372.aspx)). Это модуль PowerShell для управления подпиской SharePoint Online в Office 365.
+Свойства клиента позволяют администраторам добавлять свойства в каталог приложений для различных компонентов SharePoint Framework. Для управления свойствами клиента администраторы клиента используют [командную консоль Microsoft SharePoint Online](https://technet.microsoft.com/ru-RU/library/fp161372.aspx). Это модуль PowerShell для управления подпиской SharePoint Online в Office 365.
 
 ## <a name="manage-tenant-properties"></a>Управление свойствами клиента
 

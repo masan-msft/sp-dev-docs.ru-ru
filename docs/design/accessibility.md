@@ -1,15 +1,16 @@
 ---
 title: "Специальные возможности при разработке веб-части SharePoint"
-ms.date: 11/21/2017
-ms.openlocfilehash: f308f8d1cbe1fabc274e8c83af9cf1b6e8d43177
-ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+description: "Рекомендации по добавлению в веб-часть специальных возможностей."
+ms.date: 01/23/2018
+ms.openlocfilehash: 0a1b4aa88771b07b9f4060906ddf4062d2281dcd
+ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 01/29/2018
 ---
-<!--Based on how rough this content is in it's current state, i'm going to pull it from this initial release so we can edit and better prepare. -->
+<!--Based on how rough this content is in its current state, i'm going to pull it from this initial release so we can edit and better prepare. -->
 
-# <a name="accessibility-in-sharepoint-web-part-design"></a>Специальные возможности при разработке веб-части SharePoint
+# <a name="accessibility-in-sharepoint-web-part-design"></a>Специальные возможности в макете веб-части SharePoint
 
 При разработке веб-части SharePoint важно создать одинаковые возможности для всех пользователей, в том числе для пользователей с ограничениями зрения, слуха, подвижности, речи и способности к восприятию информации. Специальные возможности нужны не только людям с ограничениями, но и в тех ситуациях, когда использование устройства затруднено. Если они обеспечены, разработка выполнена качественно.
 
@@ -21,7 +22,7 @@ ms.lasthandoff: 01/18/2018
 
 <!-- Fabric components are not designed to be accessible already? And, shouldn't components that aren't based on Fabric also be accessible? -->
 
-Если вы создаете диалоговое окно, средство выбора файлов или любой другой компонент [Office UI Fabric](https://dev.office.com/fabric#/components), следуйте инструкциям из этой статьи для обеспечения специальных возможностей в отношении содержимого. 
+Если вы создаете диалоговое окно, средство выбора файлов или любой другой компонент [Office UI Fabric](https://developer.microsoft.com/ru-RU/fabric#/components), следуйте инструкциям из этой статьи для обеспечения специальных возможностей в отношении содержимого. 
 
 <!-- Not sure why we have that link? It currently goes to the OneNote file. Where is the Common UI Controls content? Is that related to accessibility? [v-licapu] - I agree; we shouldn't be linking to this unless it's live to external audiences; even I can't access it. I moved it to within the comment: 
 [Common UI Controls](https://microsoft.sharepoint.com/teams/STS/_layouts/OneNote.aspx?id=%2Fteams%2FSTS%2FShared%20Documents%2FSP%20Accessibility%2FAccessibility%20Guidance&wd=target%28Accessibility%20101.one%7C0005C142-938C-4411-B543-B9F4199E19B3%2FEverything%20you%20need%20to%20know%20about%20Accessibility%7CE099AFE3-8804-4E1F-BA50-99493AB8A3D0%2F%29 "Link to Common UI Controls") -->
@@ -54,7 +55,7 @@ When suppliers test with JAWS, we ask them to repro identified bugs with Narrato
 
 - Обычно первая позиция табуляции — это верхняя левая область элемента управления, а последняя позиция — его нижняя правая область.
 - На модальных поверхностях последней позицией табуляции должны быть действия фиксации.
-- Для списков первая позиция табуляции должна быть первым элементом списка, далее должны следовать команды, а затем — элементы навигации, настройки и т. д.
+- В списках первая позиция табуляции должна быть первым элементом списка, далее идут команды, а затем — навигация, настройки и т. д.
 
 <!-- We should make sure the content in the accessibility topic is accessibible. ;) Please describe the information that the image conveys; something like this (also consider making the image an actual screen shot, that might be more clear):
 
@@ -64,9 +65,10 @@ The second tab is the command.
 The third tab is the navigation.
 -->
 
-*Рис. 1. Позиции табуляции на странице SharePoint*
 
 ![Изображение, на котором показаны позиции табуляции на странице SharePoint](https://i.imgur.com/Vn3VosN.png)
+
+<br/>
 
 ### <a name="navigation-within-a-control"></a>Навигация в элементе управления
 
@@ -74,50 +76,47 @@ The third tab is the navigation.
 
 <!-- This image is not very clear. Do you need to have the "blank" list box on the left? -->
 
-*Рис. 2. Использование клавиш со стрелками для навигации в элементе управления*
-
 ![Использование клавиш со стрелками для навигации в элементе управления](https://i.imgur.com/vF0Nk73.png)
+
+<br/>
 
 ### <a name="selecting-the-current-item"></a>Выбор текущего элемента
 
 Используйте клавишу пробела, чтобы выбрать или отменить выбор элемента, который в настоящее время находится в фокусе в элементе управления.
 
-*Рис. 3. Выбор элемента списка при помощи клавиши пробела*
-
 ![Выбор элемента списка при помощи клавиши пробела](https://i.imgur.com/j3fBKPl.png)
+
+<br/>
 
 ### <a name="run-a-control"></a>Запуск элемента управления
 
 Нажмите клавишу ВВОД, чтобы запустить элемент управления.
 
-*Рис. 4. Нажатие клавиши ВВОД для запуска элемента управления*
-
 ![Нажатие клавиши ВВОД для запуска элемента управления](https://i.imgur.com/s0nMPdT.png)
+
+<br/>
 
 ### <a name="leave-a-control"></a>Выход из элемента управления
 
 Нажмите клавишу **ESC**, чтобы выйти из элемента управления и вернуться к контейнеру.
 
-*Рис. 5. Нажатие клавиши ESC для выхода из элемента управления и возвращения к контейнеру*
-
 ![Выход из элемента управления и возвращение к контейнеру с помощью клавиши ESC](https://i.imgur.com/uD99zIX.png)
+
+<br/>
 
 ### <a name="go-to-the-first-or-last-item"></a>Переход к первому или последнему элементу
 
 Нажмите клавишу **HOME** или **END**, чтобы перейти сразу к первому или последнему элементу списка, меню и т. д.
 
-*Рис. 6. Переход к первому или последнему элементу списка с помощью клавиши HOME или END*
-
 ![Переход к первому или последнему элементу списка с помощью клавиши HOME или END](https://i.imgur.com/gGKsh74.png)
 
+<br/>
 
 ## <a name="screen-reader-navigation"></a>Навигация при помощи средства чтения с экрана
 
 Пользователи с нарушениями зрения полагаются на средства чтения с экрана для навигации по пользовательскому интерфейсу сайта. 
 
 <!-- Narrator isn't a third-party product. This image needs more text/explanation; please also clarify the alt text. Is this section important, or can it be removed, given the previous mention of testing with Narrator and JAWS? Again, the intent/target audience for this information isn't clear - is it for the user, or the designer? Can you explain why this information is important from the designer's POV? -->
-
-*Рис. 7. Навигация при помощи средства чтения с экрана на странице SharePoint*
 
 ![Навигация при помощи средства чтения с экрана на странице SharePoint](https://i.imgur.com/ar23o3X.png)
 
@@ -133,12 +132,15 @@ The third tab is the navigation.
 
 Минимальный уровень контрастности необходим, чтобы помочь пользователям с нарушениями зрения ознакомиться с содержимым страницы. Важно также улучшить читаемость в условиях низкой освещенности и бликов. 
 
-<!-- Convert this image into a table, for accessibility. ;) -->
-<!-- ![Neutral, Theme, and Alert colors for minimum readable contrast](https://i.imgur.com/L7pSF1w.png)-->
+<!--Original image ![Neutral, Theme, and Alert colors for minimum readable contrast](https://i.imgur.com/L7pSF1w.png)-->
 
 ![Цвета минимальной контрастности для читаемости](../images/wcag-2aa-compliance-colors.png)
 
-### <a name="theme-colors-blue-and-neutral-colors"></a>Цвета темы (синий) и нейтральные цвета
+### <a name="theme-colors-blue-with-neutral-colors-followed-by-alert-colors"></a>Цвета темы (синяя) с нейтральными цветами и цвета оповещений
+
+![Цвета темы (синяя) с нейтральными цветами и цвета оповещений](../images/accessibility-blue-theme-and-alert-colors.png)
+
+<br/>
 
 <table>
 <tr>
@@ -185,7 +187,7 @@ The third tab is the navigation.
 </tr>
 </table>
 
-### <a name="alert-colors"></a>Цвета оповещений
+<br/>
 
 <table>
 <tr>
@@ -210,17 +212,21 @@ The third tab is the navigation.
 </tr>
 </table>
 
+
 ## <a name="high-contrast"></a>Высокая контрастность
 
 При выборе цвета компонентов и состояний на сайте ориентируйтесь на высококонтрастные цвета. Компьютеры с Windows могут только определить, работает ли ПК с высокой контрастностью или с высокой контрастностью белого. По этой причине используйте по умолчанию высокую контрастность черного для высококонтрастной темы любого цвета, кроме белого.
 
 <!-- In the left part of the image, I think the title should be "High Contrast Black". -->
 
-*Рис. 8. Параметры высококонтрастного черного и высококонтрастного белого*
-
 ![Параметры высококонтрастного черного и высококонтрастного белого](https://i.imgur.com/qvTFzd4.png)
 
+<br/>
 
+## <a name="see-also"></a>См. также
+
+- [Темы и цвета SharePoint](themes-colors.md)
+- [Принципы дизайна SharePoint](design-guidance-overview.md)
 
 
 

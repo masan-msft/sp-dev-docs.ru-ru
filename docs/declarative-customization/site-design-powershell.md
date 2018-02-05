@@ -2,18 +2,18 @@
 title: "Командлеты PowerShell для макетов и скриптов сайтов SharePoint"
 description: "Узнайте, как создавать, получать и удалять макеты и скрипты сайтов с помощью командлетов PowerShell."
 ms.date: 01/08/2018
-ms.openlocfilehash: 2c6ca90ee37c978a715e708e16e027dff52f82c1
-ms.sourcegitcommit: 9f492519d4eeb3f62a1fddc71cdca79263651a56
+ms.openlocfilehash: 24c49a9b7e6ae19cd6118573d11720803adc4c94
+ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="powershell-cmdlets-for-sharepoint-site-designs-and-site-scripts"></a>Командлеты PowerShell для макетов и скриптов сайтов SharePoint
 
 > [!NOTE]
 > Макеты и скрипты сайтов находятся на стадии тестирования и могут меняться. В настоящее время в рабочих средах их можно использовать только в выпуске Targeted.
 
-Узнайте, как создавать, получать и удалять макеты и скрипты сайтов с помощью командлетов PowerShell.
+Создавайте, получайте, обновляйте и удаляйте макеты и скрипты сайтов, используя командлеты PowerShell.
 
 ## <a name="getting-started"></a>Начало работы
 
@@ -37,10 +37,8 @@ ms.lasthandoff: 01/19/2018
 - **Remove-SPOSiteDesign**
 - **Remove-SPOSiteScript**
 - **Revoke-SPOSiteDesignRights**
-<!--
 - **Set-SPOSiteDesign**
 - **Set-SPOSiteScript**
--->
 
 <!-- TBD document pipe bind parameters -->
 
@@ -72,7 +70,7 @@ Add-SPOSiteDesign
 |[-PreviewImageAltText] | Замещающий текст с описанием изображения для специальных возможностей. |
 |[-IsDefault]           | Если указан этот параметр, макет сайта применяется к шаблону сайта по умолчанию. Дополнительные сведения см. в статье [Настройка стандартного макета сайта](customize-default-site-design.md). |
 
-Приведенный ниже пример кода создает макет сайта.
+Приведенный ниже код создает макет сайта.
 
 ```powershell
 C:\> Add-SPOSiteDesign `
@@ -84,7 +82,7 @@ C:\> Add-SPOSiteDesign `
   -PreviewImageAltText "site preview"
 ```
 
-## <a name="add-spositescript"></a>**Add-SPOSiteScript**
+## <a name="add-spositescript"></a>Add-SPOSiteScript
 
 Отправляет новый скрипт сайта для использования напрямую или в макете сайта.
 
@@ -299,7 +297,7 @@ Revoke-SPOSiteDesignRights
 | [-Identity]  | ИД макета сайта, для которого требуется отозвать права. |
 | -Principals  | Один или несколько субъектов, для которых требуется отозвать права доступа к указанному макету сайта. |
 
-Приведенный ниже пример кода отзывает права на доступ к макету сайта для пользователя Nestor.
+В приведенном ниже примере показано, как отозвать права на доступ к макету сайта для пользователя Nestor.
 
 ```powershell
 PS C:\> Revoke-SPOSiteDesignRights 44252d09-62c4-4913-9eb0-a2a8b8d7f863 `
@@ -312,6 +310,99 @@ Updates a previously uploaded site design.
 ## Set-SPOSiteScript (TBD)
 Updates a previously uploaded site script.
 -->
+
+## <a name="set-spositedesign"></a>Set-SPOSiteDesign
+
+Обновляет загруженный ранее макет сайта. 
+
+```powershell
+Set-SPOSiteDesign
+  -Identity <SPOSiteDesignPipeBind[]>
+  [-Title <string>]
+  [-WebTemplate <string>]
+  [-SiteScripts <SPOSiteScriptPipeBind[]>]
+  [-Description <string>]
+  [-PreviewImageUrl <string>]
+  [-PreviewImageAltText <string>]
+  [-IsDefault]
+  [<CommonParameters>]
+```
+
+### <a name="parameters"></a>Параметры
+
+|Параметр  | Описание  |
+|-----------|--------------|
+|-Title                 | Отображаемое имя макета сайта. |
+|-WebTemplate           | Указывает, к какому базовому шаблону будет добавлен макет. Значение **64** обозначает шаблон сайта группы, а значение **68** — шаблон сайта для общения. |
+|-SiteScripts           | Массив из одного или нескольких скриптов сайта. Каждый из них определяется по идентификатору. Скрипты будут выполняться в указанном порядке. |
+|[-Description]         | Отображаемое описание макета сайта. |
+|[-PreviewImageUrl]     | URL-адрес изображения для предварительного просмотра. Если он не указан, в SharePoint будет использоваться стандартное изображение. |
+|[-PreviewImageAltText] | Замещающий текст с описанием изображения для специальных возможностей. |
+|[-IsDefault]           | Если указан этот параметр, макет сайта применяется к шаблону сайта по умолчанию. Дополнительные сведения см. в статье [Настройка стандартного макета сайта](customize-default-site-design.md). |
+
+Приведенный ниже код обновляет созданный ранее макет сайта.
+
+```powershell
+C:\> Set-SPOSiteDesign `
+  -Title "Contoso customer tracking - version 2" `
+  -WebTemplate "68" `
+  -Description "Updated site design for list schema that tracks key customer data in a list" `
+  -PreviewImageUrl "https://contoso.sharepoint.com/SiteAssets/site-preview.png" `
+  -PreviewImageAltText "site preview - version 2"
+```
+## <a name="set-spositescript"></a>Set-SPOSiteScript
+
+Обновляет загруженный ранее скрипт сайта.
+
+```powershell
+Set-SPOSiteScript
+  -Title <string>
+  -Content <string>
+  [-Description <string>]
+  [<CommonParameters>]
+```
+
+### <a name="parameters"></a>Параметры
+
+|Параметр     | Описание  |
+|--------------|--------------|
+| -Title       | Отображаемое имя макета сайта. |
+| -Content     | Значение JSON, описывающее скрипт. Дополнительные сведения см. в [справочнике по JSON](site-design-json-schema.md).|
+| -Description | Описание скрипта. |
+
+Приведенный ниже код обновляет созданный ранее скрипт сайта. Все макеты сайтов с ним будут выполнять обновленный скрипт. 
+
+```json
+{
+    "$schema": "schema.json",
+        "actions": [
+            {
+                "verb": "addNavLink",
+                "url": "/Custom Library",
+                "displayName": "Custom Library Updated",
+                "isWebRelative": true
+            },
+            {
+                "verb": "addNavLink",
+                "url": "/Lists/Custom List",
+                "displayName": "Custom List Updated",
+                "isWebRelative": true
+            },
+            {
+                "verb": "applyTheme",
+                themeName: "Contoso Explorers"
+            }
+        ],
+            "bindata": { },
+    "version": 2
+}
+```
+Скопируйте в буфер
+
+```powershell
+C:\> $script = Get-Clipboard -Raw
+C:\> Set-SPOSiteScript -Identity 7647d3d6-1046-41fe-a798-4ff66b099d12 -Content $script -Description "Update site script to change links and apply Contoso Explorers theme"
+```
 
 ## <a name="see-also"></a>См. также
 

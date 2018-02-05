@@ -2,11 +2,11 @@
 title: "Схема JSON для макетов сайтов"
 description: "Справочник по схеме JSON для создания макетов сайтов SharePoint."
 ms.date: 12/14/2017
-ms.openlocfilehash: e5495608c10bac18ee98f858736d117a02c5f2a5
-ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.openlocfilehash: ed952df480601945f1214282658c55d5eb63b5a9
+ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="site-design-json-schema"></a>Схема JSON для макетов сайтов
 
@@ -209,7 +209,7 @@ ms.lasthandoff: 01/18/2018
 
 ## <a name="apply-a-theme"></a>Применение темы
 
-Чтобы добавить на сайт тему, используйте команду **applyTheme**. Дополнительные сведения о темах см. в статье [Настройка тем для сайтов SharePoint](site-theming/sharepoint-site-theming-overview.md).
+Чтобы добавить на сайт собственную тему, используйте команду **applyTheme**. Дополнительные сведения о создании и добавлении тем см. в статье [Настройка тем SharePoint](site-theming/sharepoint-site-theming-overview.md). Обратите внимание, что эта команда подходит только для применения собственных тем. Чтобы применить одну из встроенных тем SharePoint, скопируйте ее и добавьте ссылку на копию.
 
 Значение JSON:
 

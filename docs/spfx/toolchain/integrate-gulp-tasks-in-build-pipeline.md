@@ -2,11 +2,11 @@
 title: "Интеграция задач gulp в цепочку инструментов SharePoint Framework"
 ms.date: 09/25/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 6dd97e3d939228969c86e0ab7272008b40c3bf31
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: bbcda74a98b91e02ab681d0d3777cf6c7e5be869
+ms.sourcegitcommit: e4bf60eabffe63dc07f96824167d249c0678db82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="integrate-gulp-tasks-in-sharepoint-framework-toolchain"></a>Интеграция задач gulp в цепочку инструментов SharePoint Framework
 
@@ -89,13 +89,13 @@ gulp hello-world
 Задачи SharePoint Framework доступны на платформе сборки по умолчанию. Платформа сборки — это коллекция задач, определенных для конкретной цели. В нашем случае это создание клиентских пакетов. Доступ к платформе по умолчанию, а также к функциям выполнения до и после задачи можно получить с помощью объекта `build.rig`.
  
 ```js
-//execute before the typescript subtask
+// execute before the TypeScript subtask
 build.rig.addPreBuildTask(helloWorldTask);
 
-// execute after TypeScript task
+// execute after TypeScript subtask
 build.rig.addPostTypescriptTask(helloWorldTask);
 
-//execute after all tasks
+// execute after all tasks
 build.rig.addPostBuildTask(helloWorldTask);
 ```
 

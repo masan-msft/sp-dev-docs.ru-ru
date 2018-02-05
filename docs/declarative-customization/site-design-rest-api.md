@@ -2,11 +2,11 @@
 title: "REST API для работы с макетами сайтов SharePoint"
 description: "Узнайте, как работать с макетами сайтов SharePoint при помощи интерфейса REST для SharePoint, выполняя базовые операции создания, чтения, обновления и удаления (CRUD)."
 ms.date: 12/14/2017
-ms.openlocfilehash: 978a5c2b58e418ae9f7d99783a95352cdd3977a5
-ms.sourcegitcommit: 9f492519d4eeb3f62a1fddc71cdca79263651a56
+ms.openlocfilehash: 7a1079bbf620f5a2fe5997b176507bd26b63ab46
+ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="site-design-and-site-script-rest-api"></a>REST API для работы с макетами и скриптами сайтов
 
@@ -176,7 +176,7 @@ RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScri
 
 ## <a name="updatesitescript"></a>UpdateSiteScript
 
-Обновляет скрипт сайта с использованием новых значений.
+Обновляет скрипт сайта. В вызове REST единственным обязательным параметром является идентификатор скрипта сайта.
 
 ### <a name="parameters"></a>Параметры
 
@@ -373,7 +373,7 @@ RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScri
 
 ## <a name="updatesitedesign"></a>UpdateSiteDesign
 
-Обновляет макет сайта с использованием новых значений.
+Обновляет макет сайта. В вызове REST единственным обязательным параметром является идентификатор скрипта сайта. ПРИМЕЧАНИЕ. Если вы присвоили параметру IsDefault значение TRUE и хотите, чтобы это значение сохранилось, передайте этот параметр еще раз (иначе будет восстановлено значение FALSE). 
 
 ### <a name="parameters"></a>Параметры
 
