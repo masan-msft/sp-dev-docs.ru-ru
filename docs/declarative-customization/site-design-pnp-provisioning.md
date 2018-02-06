@@ -2,11 +2,11 @@
 title: "Создание полноценного макета сайта SharePoint с помощью модуля подготовки PnP"
 description: "Создание полноценного макета сайта SharePoint с помощью модуля подготовки PnP"
 ms.date: 01/08/2018
-ms.openlocfilehash: 102eec9fa09afa28bbdc5b40f73a9e254dd52bce
-ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.openlocfilehash: da2c12a0a4dcbe4f6a9e2e8674139e9244e1cebf
+ms.sourcegitcommit: e4bf60eabffe63dc07f96824167d249c0678db82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="calling-the-pnp-provisioning-engine-from-a-site-script"></a>Вызов модуля подготовки PnP из скрипта на сайте
 
@@ -189,6 +189,7 @@ Invoke-RestMethod -Uri $uri -Method Post -ContentType "application/json" -Body $
     ```powershell
     Save-Module -Name SharePointPnPPowerShellOnline -Path [pathtoyourfolder]
     ```
+
 Файлы модуля PowerShell скачаются в папку в созданной папке. 
 
 После этого загрузите файлы, чтобы функция Azure могла использовать модуль.
@@ -257,24 +258,24 @@ Get-SPOSiteDesign
 
     `https://prod-27.westus.logic.azure.com:443/workflows/ef7434cf0d704dd48ef5fb6...oke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun`
 
-        ```json
+    ```json
+    {
+        "$schema": "schema.json",
+        "actions": [
         {
-            "$schema": "schema.json",
-            "actions": [
-            {
-                    "verb": "triggerFlow",
-                    "url": "[paste the workflow trigger URL here]",
-                    "name": "Apply Template",
-                    "parameters": {
-                        "event":"",
-                        "product":""
-                    }
-            }
-            ],
-            "bindata": {},
-            "version": 1
+                "verb": "triggerFlow",
+                "url": "[paste the workflow trigger URL here]",
+                "name": "Apply Template",
+                "parameters": {
+                    "event":"",
+                    "product":""
+                }
         }
-        ```
+        ],
+        "bindata": {},
+        "version": 1
+    }
+    ```
 
 1. Еще раз выделите JSON и скопируйте его в буфер обмена.
 1. Откройте консоль PowerShell и введите следующую команду, чтобы скопировать скрипт в переменную и создать скрипт сайта:

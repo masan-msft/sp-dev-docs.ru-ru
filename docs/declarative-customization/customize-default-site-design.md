@@ -1,8 +1,14 @@
- ---
-название: Настройка стандартных макетов сайтов в SharePoint описание: Настраивайте стандартные макеты сайтов в шаблоне сайта группы или сайта для общения SharePoint ms.date: 18.12.2017
 ---
-
-# <a name="customize-a-default-site-design"></a>Настройка стандартного макета сайта
+title: "Настройка стандартных дизайнов сайтов в SharePoint"
+description: "Настройка стандартных дизайнов сайтов в шаблоне сайта группы или сайта для общения в SharePoint"
+ms.date: 12/18/2017
+ms.openlocfilehash: b4e9b4bb4d9bbcab01d5514d498045016d51a4c8
+ms.sourcegitcommit: e4bf60eabffe63dc07f96824167d249c0678db82
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/30/2018
+---
+# <a name="customize-a-default-site-design"></a>Настройка дизайна сайта по умолчанию
 
 > [!NOTE]
 > Макеты и скрипты сайтов находятся на стадии тестирования и могут меняться. В настоящее время в рабочих средах их можно использовать только в выпуске Targeted.

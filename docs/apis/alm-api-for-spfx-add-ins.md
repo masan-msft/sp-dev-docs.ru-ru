@@ -3,11 +3,11 @@ title: "API управления жизненным циклом приложе�
 ms.date: 12/19/2017
 ms.prod: sharepoint
 ms.assetid: fdf7ecb2-8851-425b-b058-3285fba77b68
-ms.openlocfilehash: 967ff4d456ee839f347c07605ec90adff7d3b2fc
-ms.sourcegitcommit: 6bc4c8e43c260deabc60d41d633586bfa3e6024a
+ms.openlocfilehash: 59d930854720f75879d38449d93811bfd80e1cc7
+ms.sourcegitcommit: e4bf60eabffe63dc07f96824167d249c0678db82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="application-lifecycle-management-alm-apis"></a>API управления жизненным циклом приложений (ALM)  
 
@@ -37,7 +37,7 @@ API ALM изначально предоставляются с использо�
 Добавление решения в каталог приложений клиента. Этот API разработан для выполнения в контексте сайта каталога приложений клиента.
 
 ```
-/_api/web/tenantappcatalog/Add(overwrite=true, url='test.txt')";
+url: /_api/web/tenantappcatalog/Add(overwrite=true, url='test.txt')
 method: POST
 binaryStringRequestBody: true
 body: 'byte array of the file'
@@ -48,7 +48,7 @@ body: 'byte array of the file'
 Обеспечение возможности установить решение на определенных сайтах. Этот API разработан для выполнения в контексте сайта каталога приложений клиента.
 
 ```
-/_api/web/tenantappcatalog/AvailableApps/GetById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')/Deploy";
+url: /_api/web/tenantappcatalog/AvailableApps/GetById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')/Deploy
 ```
 
 > [!NOTE]
@@ -59,7 +59,7 @@ body: 'byte array of the file'
 Отзыв решения для отмены его доступности на сайтах. Этот API разработан для выполнения в контексте сайта каталога приложений клиента.
 
 ```
-/_api/web/tenantappcatalog/AvailableApps/GetById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')/Retract";
+url: /_api/web/tenantappcatalog/AvailableApps/GetById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')/Retract
 ```
 
 > [!NOTE]
@@ -70,7 +70,7 @@ body: 'byte array of the file'
 Удаляет пакет решения из каталога приложений клиента. Этот API разработан для выполнения в контексте сайта каталога приложений клиента.
 
 ```
-/_api/web/tenantappcatalog/AvailableApps/GetById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')/Remove";
+url: /_api/web/tenantappcatalog/AvailableApps/GetById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')/Remove
 ```
 
 > [!NOTE]
@@ -99,7 +99,7 @@ method: GET
 Установка пакета решения с определенным идентификатором из каталога приложений клиента на сайте с учетом контекста URL-адреса. Вызов REST может быть выполнен в контексте сайта, на котором должна выполняться операция установки.
 
 ```
-url: /_api/web/tenantappcatalog/AvailableApps/GetById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')/Install";
+url: /_api/web/tenantappcatalog/AvailableApps/GetById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')/Install
 method: POST
 ```
 
@@ -108,7 +108,7 @@ method: POST
 Обновление пакета решения с сайта до более новой версии, доступной в каталоге приложений клиента. Вызов REST может быть выполнен в контексте сайта, на котором должна выполняться операция обновления.
 
 ```
-url: /_api/web/tenantappcatalog/AvailableApps/GetById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')/Upgrade";
+url: /_api/web/tenantappcatalog/AvailableApps/GetById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')/Upgrade
 method: POST
 ```
 
@@ -117,7 +117,7 @@ method: POST
 Удаление пакета решения с сайта. Вызов REST может быть выполнен в контексте сайта, на котором должна выполняться операция удаления.
 
 ```
-url: /_api/web/tenantappcatalog/AvailableApps/GetById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')/Uninstall";
+url: /_api/web/tenantappcatalog/AvailableApps/GetById('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx')/Uninstall
 method: POST
 ```
 > [!NOTE]
@@ -126,13 +126,13 @@ method: POST
 
 ## <a name="sharepoint-pnp-powershell-cmdlets-to-programmatically-add-and-deploy-sharepoint-apps"></a>Командлеты PnP PowerShell SharePoint для добавления и развертывания приложений SharePoint программным способом
 
-При помощи [PnP PowerShell]((https://msdn.microsoft.com/ru-RU/pnp_powershell/pnp-powershell-overview)) вы можете автоматизировать развертывание, публикацию, установку, обновление и отзыв приложений. Дополнительные сведения об этих командлетах вы найдете в приведенном ниже разделе.
+При помощи [PnP PowerShell](https://msdn.microsoft.com/ru-RU/pnp_powershell/pnp-powershell-overview) вы можете автоматизировать развертывание, публикацию, установку, обновление и отзыв приложений. Дополнительные сведения об этих командлетах вы найдете в приведенном ниже разделе.
 
 ### <a name="adding-and-publishing-your-app-to-the-app-catalog"></a>Добавление и публикация приложения в каталоге приложений
 Добавление приложения (.sppkg, .app) в каталог приложений клиента является обязательным условием для дальнейшего использования этого приложения на сайтах SharePoint. Это можно сделать с помощью приведенного ниже простого командлета.
 
 ```PowerShell
-Add-PnPApp -Path ./myapp.sppkg"
+Add-PnPApp -Path ./myapp.sppkg
 ```
 
 Следующий после добавления шаг — публикация приложения. Так оно будет доступно пользователям вашего клиента. Ниже на примере командлета PnP PowerShell показано, как это можно сделать.
