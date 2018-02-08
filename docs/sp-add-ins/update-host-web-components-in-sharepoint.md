@@ -3,11 +3,11 @@ title: "Обновление компонентов хост-сайта в Share
 description: "Обновление дополнительных действий и частей надстроек на хост-сайте надстройки SharePoint."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 5f7c24eb69e1107f9b3271edce6e6f07ae7db059
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: 88396b03d4c45385c866947388fadc71966ff815
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="update-host-web-components-in-sharepoint"></a>Обновление компонентов хост-сайта в SharePoint
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 11/03/2017
 -  [Создание обработчика событий обновления для надстроек SharePoint](create-a-handler-for-the-update-event-in-sharepoint-add-ins.md)
 -  [Обновление удаленных компонентов в надстройках SharePoint](update-remote-components-in-sharepoint-add-ins.md) 
  
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Обновление надстроек SharePoint](update-sharepoint-add-ins.md)

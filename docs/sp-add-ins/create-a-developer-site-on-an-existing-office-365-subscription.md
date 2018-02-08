@@ -3,11 +3,11 @@ title: "Создание сайта разработчика с использо
 description: "Узнайте, как настроить сайт разработчика Office 365 для надстроек SharePoint."
 ms.date: 11/03/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 00dab905fc61250c775fb2156a0f2bf76728539f
-ms.sourcegitcommit: 074f3a7983a7b253f56f8c670a0290c27bb7734b
+ms.openlocfilehash: aeebd4b5b59388e5d4240d623ecd18862e98b68d
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-a-developer-site-on-an-existing-office-365-subscription"></a>Создание сайта разработчика с использованием имеющейся подписки на Office 365
 
@@ -67,7 +67,7 @@ ms.lasthandoff: 11/06/2017
 
    ![Подготовка нового семейства веб-сайтов](../images/SPAdminCenter_newSiteCollection_provisioning.png)
  
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Надстройки SharePoint](sharepoint-add-ins.md)

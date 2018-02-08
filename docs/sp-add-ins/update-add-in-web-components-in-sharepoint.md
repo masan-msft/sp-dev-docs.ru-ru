@@ -3,11 +3,11 @@ title: "Обновление компонентов сайта с надстро
 description: "Обновление страниц, списков, типов контента и других компонентов сайта в надстройке SharePoint."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 6ca3450e48d62d3327dfe6302fcf58e7d9cbf84c
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: 19692bcf7cea9d077b5eeaa9a78097f365207b0b
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="update-add-in-web-components-in-sharepoint"></a>Обновление компонентов сайта с надстройкой в SharePoint
 
@@ -342,10 +342,10 @@ ms.lasthandoff: 11/03/2017
 Вернитесь к разделу [Основные шаги по обновлению надстройки](update-sharepoint-add-ins.md#MajorAppUpgradeSteps) или перейдите непосредственно к одной из указанных ниже статей, чтобы узнать, как обновить компоненты надстройки SharePoint.
 
 -  [Обновление компонентов хост-сайта с надстройкой в SharePoint](update-host-web-components-in-sharepoint.md)
--  [Создание обработчика для события обновления надстройки SharePoint](create-a-handler-for-the-update-event-in-sharepoint-add-ins.md)
+-  [Создание обработчика событий обновления в надстройках SharePoint](create-a-handler-for-the-update-event-in-sharepoint-add-ins.md)
 -  [Обновление удаленных компонентов в надстройках SharePoint](update-remote-components-in-sharepoint-add-ins.md) 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Обновление надстроек SharePoint](update-sharepoint-add-ins.md)

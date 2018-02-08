@@ -3,11 +3,11 @@ title: "Обновление удаленных компонентов в над
 description: "Узнайте, как обновлять удаленные веб-приложения и базы данных в надстройках SharePoint."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 756d6d58b32924bdfb491e1aa04805f9877c9366
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: c8d74f691253b882846411d671ac808f67bcd057
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="update-remote-components-in-sharepoint-add-ins"></a>Обновление удаленных компонентов в надстройках SharePoint
 
@@ -25,13 +25,13 @@ ms.lasthandoff: 11/03/2017
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Вернитесь к разделу [Основные действия при обновлении надстройки](update-sharepoint-add-ins.md#MajorAppUpgradeSteps) или перейдите непосредственно к одной из указанных ниже статей, чтобы узнать, как обновить следующий важный компонент надстройки SharePoint.
+Вернитесь к разделу [Основные шаги по обновлению надстройки](update-sharepoint-add-ins.md#MajorAppUpgradeSteps) или перейдите непосредственно к одной из указанных ниже статей, чтобы узнать, как обновить компоненты надстройки SharePoint.
 
 -  [Обновление компонентов сайта надстройки в SharePoint](update-add-in-web-components-in-sharepoint.md)
 -  [Обновление компонентов хост-сайта в SharePoint](update-host-web-components-in-sharepoint.md)
--  [Создание обработчика событий обновления для надстроек SharePoint](create-a-handler-for-the-update-event-in-sharepoint-add-ins.md)
+-  [Создание обработчика событий обновления в надстройках SharePoint](create-a-handler-for-the-update-event-in-sharepoint-add-ins.md)
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 
 -  [Обновление надстроек SharePoint](update-sharepoint-add-ins.md)
 -  [Процесс обновления надстроек SharePoint](sharepoint-add-ins-update-process.md) 

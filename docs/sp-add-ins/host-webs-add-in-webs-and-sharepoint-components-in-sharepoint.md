@@ -3,11 +3,11 @@ title: "Хост-сайты, сайты надстроек и компонент
 description: "Узнайте, какие компоненты SharePoint можно включить в надстройку SharePoint, какие из них развертываются на хост-сайте, а какие на сайте надстройки, и как сайт надстройки развертывается в изолированном домене."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: a22b66a30a04c1a8ae2ad456c458b5dcf0e37f2a
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: 71012cfa78c88ce62f1da0023c9510aa5658d746
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="host-webs-add-in-webs-and-sharepoint-components-in-sharepoint"></a>Хост-сайты, сайты надстроек и компоненты SharePoint в SharePoint
 
@@ -120,7 +120,7 @@ ms.lasthandoff: 11/03/2017
 
    Дополнительные сведения о конфигурациях определений сайта и шаблонах веб-сайтов см. в статье [Работа с шаблонами и определениями](http://msdn.microsoft.com/library/1edf6d4d-eddb-4cb5-9034-ed394e8a3e01%28Office.15%29.aspx).
     
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15hostedwebs_bk_addlresources"> </a>
 
 - [Важные аспекты разработки и архитектуры для надстроек SharePoint](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md)

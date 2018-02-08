@@ -3,11 +3,11 @@ title: "Создание обработчика для события обнов
 description: "Узнайте, как создать и использовать обработчик и применить логику отката для события обновления надстройки SharePoint."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 52d88501ca0918a676588115b81807df4a61bc9b
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: 8c781f0c03b6d2fa46a2def5ed9eef8026771b1d
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-a-handler-for-the-update-event-in-sharepoint-add-ins"></a>Создание обработчика для события обновления надстройки SharePoint
 
@@ -202,7 +202,7 @@ catch (Exception e)
 -  [Обновление компонентов хост-сайта в SharePoint](update-host-web-components-in-sharepoint.md)
 -  [Обновление удаленных компонентов в надстройках SharePoint](update-remote-components-in-sharepoint-add-ins.md) 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 
 -  [Обновление надстроек SharePoint](update-sharepoint-add-ins.md)
 -  [Элемент UpgradedEventEndpoint (PropertiesDefinition complexType, манифест надстройки SharePoint)](http://msdn.microsoft.com/library/09a93d44-d295-47bb-f91c-d243178b0f53%28Office.15%29.aspx)

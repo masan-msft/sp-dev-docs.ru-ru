@@ -3,11 +3,11 @@ title: "Настройка локальной среды разработки н
 description: "Установка операционной системы и необходимых компонентов, а также настройка служб и изолированного домена надстройки."
 ms.date: 11/03/2017
 ms.prod: sharepoint
-ms.openlocfilehash: fb44b2809e6af3b66f7069d2dd1d7a875214ab71
-ms.sourcegitcommit: 074f3a7983a7b253f56f8c670a0290c27bb7734b
+ms.openlocfilehash: 9d5ed586e02b108ada842518f54a90df6513f1f7
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="set-up-an-on-premises-development-environment-for-sharepoint-add-ins"></a>Настройка локальной среды разработки надстроек SharePoint
 
@@ -224,7 +224,7 @@ ms.lasthandoff: 11/06/2017
 > Когда вы развернете размещаемую в SharePoint надстройку в среде установки и попробуете запустить эту надстройку, вам может быть предложено войти со своими учетными данными. Чтобы такие предложения больше не появлялись, отключите проверки замыкания на себя. Инструкции по отключению таких проверок см. в статье [При просмотре веб-сайта, использующего встроенную проверку подлинности и размещенного на сервере IIS 5.1 или более поздней версии, появляется сообщение об ошибке 401.1](http://support.microsoft.com/kb/896861).
  
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15SetupSPO365_bk_addlresources"> </a>
 
 - [Надстройки SharePoint](sharepoint-add-ins.md)

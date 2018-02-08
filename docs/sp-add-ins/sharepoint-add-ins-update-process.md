@@ -3,11 +3,11 @@ title: "Процесс обновления надстроек SharePoint"
 description: "Обновление и перенос надстроек SharePoint."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: c165f6861aa30e181db998c5e198edb614d7962d
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: adfc516328e5c20cbd8c6a7da82a158b6df9d2c9
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="sharepoint-add-ins-update-process"></a>Процесс обновления надстроек SharePoint
 
@@ -79,7 +79,7 @@ ms.lasthandoff: 11/03/2017
 
 Если и старая, и новая надстройки включают сайт надстройки, при установке новой надстройки следует создать для него новый сайт. По этой причине не следует использовать разметку XML, связанную с обновлением, в схеме компонентов SharePoint. Эта разметка не работает, поскольку существующие компоненты SharePoint не обновляются: имеющаяся надстройка заменяется новой.
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15appupgrade_addlresources"> </a>
 
 -  [Обновление надстроек SharePoint](update-sharepoint-add-ins.md)

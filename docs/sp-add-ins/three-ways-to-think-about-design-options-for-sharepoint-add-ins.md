@@ -3,11 +3,11 @@ title: "Что следует рассмотреть, прежде чем при
 description: "Общие сведения о разработке надстроек SharePoint и параметрах их архитектуры."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 1ae0c7a5bdbbfba488db8d7cca6b567c47aea7b2
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 452200e1f76d8aeeda28a3abf082ca5ea6dfef0b
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="three-ways-to-think-about-design-options-for-sharepoint-add-ins"></a>Что следует рассмотреть, прежде чем приступать к разработке надстроек SharePoint
 
@@ -40,7 +40,7 @@ ms.lasthandoff: 11/06/2017
     
    - Кроме того, надстройка SharePoint может получить доступ к внешним данным через службы Business Connectivity Services (BCS) или прокси-сервер веб-службы. Подробнее см. в статьях [Business Connectivity Services в SharePoint](http://msdn.microsoft.com/library/64b7d032-4b83-4e9e-bc08-f0a161af5457%28Office.15%29.aspx) и [Отправка запросов удаленной службе с помощью веб-прокси в SharePoint](query-a-remote-service-using-the-web-proxy-in-sharepoint.md).
 
-   Дополнительные сведения о хранении данных и доступа к ним в надстройках SharePoint см. в разделе [Хранение данных в надстройках SharePoint](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscape.md#Data), а также в статьях [Безопасный доступ к данным и клиентские объектные модели для надстроек SharePoint](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md) и [Работа с внешними данными в SharePoint](work-with-external-data-in-sharepoint.md).
+   Дополнительные сведения о хранении данных и доступа к ним в надстройках SharePoint см. в разделе [Хранение данных в надстройках SharePoint](important-aspects-of-the-sharepoint-add-in-architecture-and-development-landscap.md#data-storage-in-sharepoint-add-ins), а также в статьях [Безопасный доступ к данным и клиентские объектные модели для надстроек SharePoint](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md) и [Работа с внешними данными в SharePoint](work-with-external-data-in-sharepoint.md).
 
 - **Пользовательский интерфейс.** Три способа отобразить Надстройка SharePoint в SharePoint: как минимум, все надстройки полностью отображаются на веб-странице. При необходимости надстройка может отображаться как часть целого, а также с помощью элемента меню или кнопки ленты. Дополнительные сведения см. в статье [Проектирование пользовательского интерфейса для надстроек SharePoint](ux-design-for-sharepoint-add-ins.md).
     
@@ -96,7 +96,7 @@ ms.lasthandoff: 11/06/2017
 
 - Кроме того, вы должны учитывать ваши уже имеющиеся навыки и опыт группы разработчиков. Например, если вы обладаете опытом разработчика ASP.NET, то его можно было бы использовать для создания удаленного веб-приложения и отображения данных списка SharePoint в таблице на странице ASP.NET. С другой стороны, если вы являетесь опытным разработчиков SharePoint, то могли бы использовать пользовательский список SharePoint и страницу сайта, а также выполнить обработку с помощью JavaScript.
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="AdditionalResources"> </a>
 
 -  [Проектирование надстроек SharePoint](design-sharepoint-add-ins.md)

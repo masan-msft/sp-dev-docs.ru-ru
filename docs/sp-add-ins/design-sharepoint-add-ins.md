@@ -3,11 +3,11 @@ title: "Проектирование надстроек SharePoint"
 description: "В этой статье содержатся общие сведения о вариантах конструкций и архитектуры, которые можно использовать в надстройках SharePoint, и о том, как принимать правильные решения, чтобы упростить разработку надстройки."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: e33f97d9d19d277020094c739ada08133b53d297
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: 72d5553510f60dad83afecde04be7218a233b228
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="design-sharepoint-add-ins"></a>Проектирование надстроек SharePoint
 
@@ -58,7 +58,7 @@ ms.lasthandoff: 11/03/2017
 - [Разработка надстроек SharePoint](develop-sharepoint-add-ins.md): в этой статье рассказывается о расширенных концепциях и возможностях модели надстройки.
 - [Публикация надстроек SharePoint](publish-sharepoint-add-ins.md): в этой статье описан процесс публикации надстроек SharePoint и необходимые для него требования.
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15Design_AddRes"> </a>
 
 -  [Пример пакета надстроек SharePoint](http://code.msdn.microsoft.com/office/Apps-for-SharePoint-sample-64c80184)

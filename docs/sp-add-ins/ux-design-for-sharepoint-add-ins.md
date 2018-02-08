@@ -3,11 +3,11 @@ title: "Разработка пользовательского интерфей
 description: "Варианты пользовательского интерфейса, которые можно использовать при создании надстроек в SharePoint, включая сценарии пользовательского интерфейса в надстройках, размещаемых в облаке и в SharePoint."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 5ea61be47617322028714ca46990d2096650413f
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: a3f8a82a843769376a90a73948c5cafbb9599dcf
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="ux-design-for-sharepoint-add-ins"></a>Разработка пользовательского интерфейса для надстроек SharePoint
 
@@ -77,7 +77,7 @@ ms.lasthandoff: 11/03/2017
 
 ![Ресурсы пользовательского интерфейса для хост-сайта](../images/AppUX_hostweb.png)
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15_UXdesignapps_addresources"> </a>
 
 -  [Проектирование надстроек SharePoint](design-sharepoint-add-ins.md)
