@@ -3,74 +3,74 @@ title: "Перенос приложений AngularJS на платформу Sh
 description: "Преобразование приложения AngularJS со стилем на основе ngOfficeUIFabric в клиентскую веб-часть SharePoint Framework."
 ms.date: 01/09/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 637a35881870b84303b052cdb5564fef26adff4b
-ms.sourcegitcommit: 1f1044e59d987d878bb8bc403413e3090234ad44
+ms.openlocfilehash: e97a3728e6adf7bb2b9e740b686c1de35670fc34
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 02/05/2018
 ---
-# <a name="migrate-angularjs-applications-to-sharepoint-framework"></a><span data-ttu-id="7296f-103">Перенос приложений AngularJS на платформу SharePoint Framework</span><span class="sxs-lookup"><span data-stu-id="7296f-103">Migrate AngularJS applications to SharePoint Framework</span></span>
+# <a name="migrate-angularjs-applications-to-sharepoint-framework"></a><span data-ttu-id="1e969-103">Перенос приложений AngularJS на платформу SharePoint Framework</span><span class="sxs-lookup"><span data-stu-id="1e969-103">Migrate AngularJS applications to SharePoint Framework</span></span>
 
-<span data-ttu-id="7296f-104">Раньше во многих организациях решения для SharePoint создавались с помощью AngularJS.</span><span class="sxs-lookup"><span data-stu-id="7296f-104">Many organizations have been using AngularJS for building SharePoint solutions in the past.</span></span> <span data-ttu-id="7296f-105">В этой статье показано, как перенести имеющееся приложение AngularJS, стиль которого создан с помощью [ngOfficeUIFabric](http://ngofficeuifabric.com) (директив AngularJS для Office UI Fabric), в клиентскую веб-часть SharePoint Framework.</span><span class="sxs-lookup"><span data-stu-id="7296f-105">This article shows how to migrate an existing AngularJS application styled using [ngOfficeUIFabric](http://ngofficeuifabric.com) - AngularJS directives for Office UI Fabric, to a SharePoint Framework client-side web part.</span></span> <span data-ttu-id="7296f-106">Приложение, используемое в этом руководстве, управляет элементами списка дел, хранящимися в списке SharePoint.</span><span class="sxs-lookup"><span data-stu-id="7296f-106">The sample application used for this tutorial manages to do items stored in a SharePoint list.</span></span>
+<span data-ttu-id="1e969-104">Раньше во многих организациях решения для SharePoint создавались с помощью AngularJS.</span><span class="sxs-lookup"><span data-stu-id="1e969-104">Many organizations have been using AngularJS for building SharePoint solutions in the past.</span></span> <span data-ttu-id="1e969-105">В этой статье показано, как перенести имеющееся приложение AngularJS, стиль которого создан с помощью [ngOfficeUIFabric](http://ngofficeuifabric.com) (директив AngularJS для Office UI Fabric), в клиентскую веб-часть SharePoint Framework.</span><span class="sxs-lookup"><span data-stu-id="1e969-105">This article shows how to migrate an existing AngularJS application styled using [ngOfficeUIFabric](http://ngofficeuifabric.com) - AngularJS directives for Office UI Fabric, to a SharePoint Framework client-side web part.</span></span> <span data-ttu-id="1e969-106">Приложение, используемое в этом руководстве, управляет элементами списка дел, хранящимися в списке SharePoint.</span><span class="sxs-lookup"><span data-stu-id="1e969-106">The sample application used for this tutorial manages To Do items stored in a SharePoint list.</span></span>
 
 <img alt="AngularJS application for managing To Do items stored in a SharePoint list" src="../../../images/ng-migration-original-angular-application.png" width="800">
 
-<span data-ttu-id="7296f-107">Исходный код приложения AngularJS доступен в репозитории [angular-migration/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/dev/samples/angular-migration/angular-todo) на сайте GitHub.</span><span class="sxs-lookup"><span data-stu-id="7296f-107">The source of the AngularJS application is available on GitHub at [https://github.com/SharePoint/sp-dev-fx-webparts/tree/dev/samples/angular-migration/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/dev/samples/angular-migration/angular-todo).</span></span>
+<span data-ttu-id="1e969-107">Исходный код приложения AngularJS доступен в репозитории [angular-migration/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/dev/samples/angular-migration/angular-todo) на сайте GitHub.</span><span class="sxs-lookup"><span data-stu-id="1e969-107">The source of the AngularJS application is available on GitHub at [angular-migration/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/dev/samples/angular-migration/angular-todo).</span></span>
 
-<span data-ttu-id="7296f-108">Исходный код приложения AngularJS, перенесенного на платформу SharePoint Framework, доступен в репозитории [samples/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo) на сайте GitHub.</span><span class="sxs-lookup"><span data-stu-id="7296f-108">The source of the AngularJS application migrated to SharePoint Framework is available on GitHub at [https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo).</span></span>
+<span data-ttu-id="1e969-108">Исходный код приложения AngularJS, перенесенного на платформу SharePoint Framework, доступен в репозитории [samples/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo) на сайте GitHub.</span><span class="sxs-lookup"><span data-stu-id="1e969-108">The source of the AngularJS application migrated to SharePoint Framework is available on GitHub at [samples/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo).</span></span>
 
 > [!NOTE] 
-> <span data-ttu-id="7296f-109">Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment.md) для создания решений на платформе SharePoint Framework.</span><span class="sxs-lookup"><span data-stu-id="7296f-109">Before following the steps in this article, be sure to [set up your development environment](../../set-up-your-development-environment.md) for building SharePoint Framework solutions.</span></span>
+> <span data-ttu-id="1e969-109">Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment.md) для создания решений на платформе SharePoint Framework.</span><span class="sxs-lookup"><span data-stu-id="1e969-109">Before following the steps in this article, be sure to [set up your development environment](../../set-up-your-development-environment.md) for building SharePoint Framework solutions.</span></span>
 
-## <a name="set-up-project"></a><span data-ttu-id="7296f-110">Настройка проекта</span><span class="sxs-lookup"><span data-stu-id="7296f-110">Set up the starter project</span></span>
+## <a name="set-up-project"></a><span data-ttu-id="1e969-110">Настройка проекта</span><span class="sxs-lookup"><span data-stu-id="1e969-110">Set up project</span></span>
 
-<span data-ttu-id="7296f-111">Прежде чем приступить к переносу приложения AngularJS, создайте и настройте новый проект на платформе SharePoint Framework для размещения приложения AngularJS.</span><span class="sxs-lookup"><span data-stu-id="7296f-111">Before you start migrating your AngularJS application, create and setup new SharePoint Framework project to host the AngularJS application.</span></span>
+<span data-ttu-id="1e969-111">Прежде чем приступить к переносу приложения AngularJS, создайте и настройте новый проект на платформе SharePoint Framework для размещения приложения AngularJS.</span><span class="sxs-lookup"><span data-stu-id="1e969-111">Before you start migrating your AngularJS application, create and set up a new SharePoint Framework project to host the AngularJS application.</span></span>
 
-### <a name="create-new-project"></a><span data-ttu-id="7296f-112">Создание проекта</span><span class="sxs-lookup"><span data-stu-id="7296f-112">Create new project</span></span>
+### <a name="create-new-project"></a><span data-ttu-id="1e969-112">Создание проекта</span><span class="sxs-lookup"><span data-stu-id="1e969-112">Create new project</span></span>
 
-1. <span data-ttu-id="7296f-113">Создайте папку для проекта:</span><span class="sxs-lookup"><span data-stu-id="7296f-113">Start by creating a new folder for your project</span></span>
+1. <span data-ttu-id="1e969-113">Создайте папку для проекта:</span><span class="sxs-lookup"><span data-stu-id="1e969-113">Create a new folder for your project:</span></span>
 
   ```sh
   md angular-todo
   ```
 
-2. <span data-ttu-id="7296f-114">Перейдите в папку проекта:</span><span class="sxs-lookup"><span data-stu-id="7296f-114">Go to the project folder:</span></span>
+2. <span data-ttu-id="1e969-114">Перейдите в папку проекта:</span><span class="sxs-lookup"><span data-stu-id="1e969-114">Go to the project folder:</span></span>
 
   ```sh
   cd angular-todo
   ```
 
-3. <span data-ttu-id="7296f-115">В папке проекта запустите генератор Yeoman для SharePoint Framework, чтобы сформировать шаблон проекта на платформе SharePoint Framework:</span><span class="sxs-lookup"><span data-stu-id="7296f-115">In the project folder, run the SharePoint Framework Yeoman generator to scaffold a new SharePoint Framework project:</span></span>
+3. <span data-ttu-id="1e969-115">В папке проекта запустите генератор Yeoman для SharePoint Framework, чтобы сформировать шаблон проекта на платформе SharePoint Framework:</span><span class="sxs-lookup"><span data-stu-id="1e969-115">In the project folder, run the SharePoint Framework Yeoman generator to scaffold a new SharePoint Framework project:</span></span>
 
   ```sh
   yo @microsoft/sharepoint
   ```
 
-4. <span data-ttu-id="7296f-116">Определите значения следующим образом:</span><span class="sxs-lookup"><span data-stu-id="7296f-116">When prompted, define values as follows:</span></span>
+4. <span data-ttu-id="1e969-116">Определите значения следующим образом:</span><span class="sxs-lookup"><span data-stu-id="1e969-116">When prompted, define values as follows:</span></span>
 
-  - <span data-ttu-id="7296f-117">**angular-todo** как имя решения</span><span class="sxs-lookup"><span data-stu-id="7296f-117">**angular-todo** as your solution name</span></span>
-  - <span data-ttu-id="7296f-118">расположение файлов — **Use the current folder** (Использовать текущую папку)</span><span class="sxs-lookup"><span data-stu-id="7296f-118">**Use the current folder** for the location to place the files</span></span>
-  - <span data-ttu-id="7296f-119">имя веб-части — **To do** (Текущие дела)</span><span class="sxs-lookup"><span data-stu-id="7296f-119">**To do** as your web part name</span></span>
-  - <span data-ttu-id="7296f-120">описание веб-части — **Simple management of to do tasks** (Простое управление задачами)</span><span class="sxs-lookup"><span data-stu-id="7296f-120">**Simple management of to do tasks** as your web part description</span></span>
-  - <span data-ttu-id="7296f-121">отправная точка создания веб-части — **No JavaScript web framework** (Без веб-платформы JavaScript).</span><span class="sxs-lookup"><span data-stu-id="7296f-121">**No JavaScript web framework** as the starting point to build the web part</span></span>
+  - <span data-ttu-id="1e969-117">**angular-todo** как имя решения</span><span class="sxs-lookup"><span data-stu-id="1e969-117">**angular-todo** as your solution name</span></span>
+  - <span data-ttu-id="1e969-118">расположение файлов — **Use the current folder** (Использовать текущую папку)</span><span class="sxs-lookup"><span data-stu-id="1e969-118">**Use the current folder** for the location to place the files</span></span>
+  - <span data-ttu-id="1e969-119">имя веб-части — **To do** (Текущие дела)</span><span class="sxs-lookup"><span data-stu-id="1e969-119">**To do** as your web part name</span></span>
+  - <span data-ttu-id="1e969-120">описание веб-части — **Simple management of to do tasks** (Простое управление задачами)</span><span class="sxs-lookup"><span data-stu-id="1e969-120">**Simple management of to do tasks** as your web part description</span></span>
+  - <span data-ttu-id="1e969-121">отправная точка создания веб-части — **No JavaScript web framework** (Без веб-платформы JavaScript).</span><span class="sxs-lookup"><span data-stu-id="1e969-121">**No JavaScript web framework** as the starting point to build the web part</span></span>
 
   ![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/ng-migration-yeoman-generator.png)
 
-5. <span data-ttu-id="7296f-123">По завершении формирования шаблона заблокируйте версию зависимостей проекта, выполнив следующую команду:</span><span class="sxs-lookup"><span data-stu-id="7296f-123">After the scaffolding completes, lock down the version of the project dependencies by running the following command:</span></span>
+5. <span data-ttu-id="1e969-123">По завершении скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:</span><span class="sxs-lookup"><span data-stu-id="1e969-123">After the scaffolding completes, lock down the version of the project dependencies by running the following command:</span></span>
 
   ```sh
   npm shrinkwrap
   ```
 
-6. <span data-ttu-id="7296f-124">Откройте папку проекта в редакторе кода.</span><span class="sxs-lookup"><span data-stu-id="7296f-124">Next, open your project folder in your code editor.</span></span> <span data-ttu-id="7296f-125">В этом руководстве используется Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="7296f-125">In this tutorial, you will use Visual Studio Code.</span></span>
+6. <span data-ttu-id="1e969-124">Откройте папку проекта в редакторе кода.</span><span class="sxs-lookup"><span data-stu-id="1e969-124">Open your project folder in your code editor.</span></span> <span data-ttu-id="1e969-125">В этом руководстве используется Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="1e969-125">In this tutorial, you will use Visual Studio Code.</span></span>
 
   ![Проект SharePoint Framework, открытый в Visual Studio Code](../../../images/ng-migration-project-visual-studio-code.png)
 
-### <a name="add-angularjs-and-ngofficeuifabric"></a><span data-ttu-id="7296f-127">Добавление AngularJS и ngOfficeUIFabric</span><span class="sxs-lookup"><span data-stu-id="7296f-127">Add AngularJS and ngOfficeUIFabric</span></span>
+### <a name="add-angularjs-and-ngofficeuifabric"></a><span data-ttu-id="1e969-127">Добавление AngularJS и ngOfficeUIFabric</span><span class="sxs-lookup"><span data-stu-id="1e969-127">Add AngularJS and ngOfficeUIFabric</span></span>
 
-<span data-ttu-id="7296f-128">В этом руководстве AngularJS и ngOfficeUIFabric загружаются из сети доставки содержимого.</span><span class="sxs-lookup"><span data-stu-id="7296f-128">In this tutorial you will load both AngularJS and ngOfficeUIFabric from CDN.</span></span> 
+<span data-ttu-id="1e969-128">В этом руководстве AngularJS и ngOfficeUIFabric загружаются из сети доставки содержимого.</span><span class="sxs-lookup"><span data-stu-id="1e969-128">In this tutorial you load both AngularJS and ngOfficeUIFabric from CDN.</span></span> 
 
-<span data-ttu-id="7296f-129">Откройте в редакторе кода файл **config/config.json** и добавьте следующие строки в свойстве **externals**:</span><span class="sxs-lookup"><span data-stu-id="7296f-129">To do that, in the code editor, open the **config/config.json** file and in the **externals** property add the following lines:</span></span>
+<span data-ttu-id="1e969-129">Откройте в редакторе кода файл **config/config.json** и добавьте следующие строки в свойстве **externals**:</span><span class="sxs-lookup"><span data-stu-id="1e969-129">In the code editor, open the **config/config.json** file, and in the **externals** property, add the following lines:</span></span>
 
 ```json
 "angular": {
@@ -80,21 +80,21 @@ ms.lasthandoff: 01/11/2018
 "ng-office-ui-fabric": "https://cdnjs.cloudflare.com/ajax/libs/ngOfficeUiFabric/0.12.3/ngOfficeUiFabric.js"
 ```
 
-### <a name="add-angularjs-typings-for-typescript"></a><span data-ttu-id="7296f-130">Добавление определений типов AngularJS для TypeScript</span><span class="sxs-lookup"><span data-stu-id="7296f-130">Add AngularJS typings for TypeScript</span></span>
+### <a name="add-angularjs-typings-for-typescript"></a><span data-ttu-id="1e969-130">Добавление определений типов AngularJS для TypeScript</span><span class="sxs-lookup"><span data-stu-id="1e969-130">Add AngularJS typings for TypeScript</span></span>
 
-<span data-ttu-id="7296f-131">Так как в коде веб-части вы ссылаетесь на AngularJS, вам также нужны определения типов AngularJS для TypeScript.</span><span class="sxs-lookup"><span data-stu-id="7296f-131">Because you will be referencing AngularJS in your web part's code, you also need AngularJS typings for TypeScript.</span></span> <span data-ttu-id="7296f-132">Чтобы установить их, выполните в командной строке следующую команду:</span><span class="sxs-lookup"><span data-stu-id="7296f-132">To install them run in the command line:</span></span>
+<span data-ttu-id="1e969-131">Так как в коде веб-части вы ссылаетесь на AngularJS, вам также нужны определения типов AngularJS для TypeScript.</span><span class="sxs-lookup"><span data-stu-id="1e969-131">Because you are referencing AngularJS in your web part's code, you also need AngularJS typings for TypeScript.</span></span> <span data-ttu-id="1e969-132">Чтобы установить их, выполните в командной строке следующую команду:</span><span class="sxs-lookup"><span data-stu-id="1e969-132">To install them run the following in the command line:</span></span>
 
 ```sh
   npm install @types/angular --save-dev
 ```
 
-## <a name="migrate-the-angularjs-application-as-is"></a><span data-ttu-id="7296f-133">Перенос приложения AngularJS без изменений</span><span class="sxs-lookup"><span data-stu-id="7296f-133">Migrate the AngularJS application as-is</span></span>
+## <a name="migrate-the-angularjs-application-as-is"></a><span data-ttu-id="1e969-133">Перенос приложения AngularJS без изменений</span><span class="sxs-lookup"><span data-stu-id="1e969-133">Migrate the AngularJS application as-is</span></span>
 
-<span data-ttu-id="7296f-134">Для начала мы перенесем приложение AngularJS с минимальными изменениями кода.</span><span class="sxs-lookup"><span data-stu-id="7296f-134">Start with migrating the AngularJS application with only the minimal code changes.</span></span> <span data-ttu-id="7296f-135">Позже мы обновим обычный код JavaScript приложения до TypeScript и улучшим его интеграцию с клиентской веб-частью.</span><span class="sxs-lookup"><span data-stu-id="7296f-135">Later, you will upgrade the application's plain JavaScript code to TypeScript and improve its integration with the client-side web part.</span></span>
+<span data-ttu-id="1e969-134">Для начала мы перенесем приложение AngularJS с минимальными изменениями кода.</span><span class="sxs-lookup"><span data-stu-id="1e969-134">Start with migrating the AngularJS application with only the minimal code changes.</span></span> <span data-ttu-id="1e969-135">Позже мы обновим обычный код JavaScript приложения до TypeScript и улучшим его интеграцию с клиентской веб-частью.</span><span class="sxs-lookup"><span data-stu-id="1e969-135">Later, you will upgrade the application's plain JavaScript code to TypeScript and improve its integration with the client-side web part.</span></span>
 
-### <a name="create-sharepoint-list"></a><span data-ttu-id="7296f-136">Создание списка SharePoint</span><span class="sxs-lookup"><span data-stu-id="7296f-136">Create SharePoint list</span></span>
+### <a name="create-sharepoint-list"></a><span data-ttu-id="1e969-136">Создание списка SharePoint</span><span class="sxs-lookup"><span data-stu-id="1e969-136">Create SharePoint list</span></span>
 
-<span data-ttu-id="7296f-137">Создайте на сайте SharePoint список под названием **Todo** (Список дел).</span><span class="sxs-lookup"><span data-stu-id="7296f-137">In your SharePoint site create a new list called **Todo**.</span></span> <span data-ttu-id="7296f-138">Добавьте в список новый столбец вариантов под названием **Status** (Состояние).</span><span class="sxs-lookup"><span data-stu-id="7296f-138">In the list add a new choice column called **Status**.</span></span> <span data-ttu-id="7296f-139">Укажите следующие варианты:</span><span class="sxs-lookup"><span data-stu-id="7296f-139">As available choices enter:</span></span>
+<span data-ttu-id="1e969-137">Создайте на сайте SharePoint список под названием **Todo** (Список дел).</span><span class="sxs-lookup"><span data-stu-id="1e969-137">In your SharePoint site, create a new list called **Todo**.</span></span> <span data-ttu-id="1e969-138">Добавьте в список новый столбец вариантов под названием **Status** (Состояние).</span><span class="sxs-lookup"><span data-stu-id="1e969-138">In the list, add a new choice column called **Status**.</span></span> <span data-ttu-id="1e969-139">Укажите следующие варианты:</span><span class="sxs-lookup"><span data-stu-id="1e969-139">As available choices enter:</span></span>
 
 ```text
   Not started
@@ -106,29 +106,29 @@ ms.lasthandoff: 01/11/2018
 
 ![Список дел в SharePoint](../../../images/ng-migration-todo-list.png)
 
-### <a name="copy-angularjs-application-files-to-the-web-part-project"></a><span data-ttu-id="7296f-141">Копирование файлов приложения AngularJS в проект веб-части</span><span class="sxs-lookup"><span data-stu-id="7296f-141">Copy AngularJS application files to the web part project</span></span>
+### <a name="copy-angularjs-application-files-to-the-web-part-project"></a><span data-ttu-id="1e969-141">Копирование файлов приложения AngularJS в проект веб-части</span><span class="sxs-lookup"><span data-stu-id="1e969-141">Copy AngularJS application files to the web part project</span></span>
 
-1. <span data-ttu-id="7296f-142">В проекте веб-части создайте в папке **src/webparts/toDo** дочернюю папку с именем `app`.</span><span class="sxs-lookup"><span data-stu-id="7296f-142">In the web part project, in the **src/webparts/toDo** folder create a new folder called `app`.</span></span>
+1. <span data-ttu-id="1e969-142">В проекте веб-части создайте в папке **src/webparts/toDo** дочернюю папку с именем `app`.</span><span class="sxs-lookup"><span data-stu-id="1e969-142">In the web part project, in the **src/webparts/toDo** folder, create a new folder called `app`.</span></span>
 
   ![Папка приложения, выделенная в области обозревателя Visual Studio Code](../../../images/ng-migration-app-folder-visual-studio-code.png)
 
-2. <span data-ttu-id="7296f-144">Скопируйте содержимое папки **app** из исходного приложения в новую папку **app** проекта веб-части.</span><span class="sxs-lookup"><span data-stu-id="7296f-144">From the source application copy the contents of the **app** folder, to the newly created **app** folder in the web part project.</span></span>
+2. <span data-ttu-id="1e969-144">Скопируйте содержимое папки **app** из исходного приложения в новую папку **app** проекта веб-части.</span><span class="sxs-lookup"><span data-stu-id="1e969-144">From the source application, copy the contents of the **app** folder to the newly created **app** folder in the web part project.</span></span>
 
   ![Файлы приложения, выделенные в области обозревателя Visual Studio Code](../../../images/ng-migration-app-files-visual-studio-code.png)
 
 
-### <a name="load-the-angularjs-application-in-the-client-side-web-part"></a><span data-ttu-id="7296f-146">Загрузка приложения AngularJS в клиентской веб-части</span><span class="sxs-lookup"><span data-stu-id="7296f-146">Load the AngularJS application in the client-side web part</span></span>
+### <a name="load-the-angularjs-application-in-the-client-side-web-part"></a><span data-ttu-id="1e969-146">Загрузка приложения AngularJS в клиентской веб-части</span><span class="sxs-lookup"><span data-stu-id="1e969-146">Load the AngularJS application in the client-side web part</span></span>
 
-1. <span data-ttu-id="7296f-147">В редакторе кода откройте файл **./src/webparts/toDo/ToDoWebPart.ts**.</span><span class="sxs-lookup"><span data-stu-id="7296f-147">In the code editor open the **./src/webparts/toDo/ToDoWebPart.ts** file.</span></span> <span data-ttu-id="7296f-148">После последнего оператора `import` добавьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="7296f-148">After the last `import` statement add the following code:</span></span>
+1. <span data-ttu-id="1e969-147">В редакторе кода откройте файл **./src/webparts/toDo/ToDoWebPart.ts**.</span><span class="sxs-lookup"><span data-stu-id="1e969-147">In the code editor, open the **./src/webparts/toDo/ToDoWebPart.ts** file.</span></span> <span data-ttu-id="1e969-148">После последнего оператора `import` добавьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="1e969-148">After the last `import` statement, add the following code:</span></span>
 
-  ```ts
+  ```typescript
   import * as angular from 'angular';
   import 'ng-office-ui-fabric';
   ```
 
-2. <span data-ttu-id="7296f-149">Замените содержимое метода **render** на следующий код:</span><span class="sxs-lookup"><span data-stu-id="7296f-149">Change the contents of the **render** method to:</span></span>
+2. <span data-ttu-id="1e969-149">Замените содержимое метода **render** на следующий код:</span><span class="sxs-lookup"><span data-stu-id="1e969-149">Change the contents of the **render** method to:</span></span>
 
-  ```ts
+  ```typescript
   export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
     // ...
     public render(): void {
@@ -173,13 +173,13 @@ ms.lasthandoff: 01/11/2018
   }
   ```
 
-### <a name="update-site-path"></a><span data-ttu-id="7296f-150">Обновление пути к сайту</span><span class="sxs-lookup"><span data-stu-id="7296f-150">Update site path</span></span>
+### <a name="update-site-path"></a><span data-ttu-id="1e969-150">Обновление пути к сайту</span><span class="sxs-lookup"><span data-stu-id="1e969-150">Update site path</span></span>
 
-<span data-ttu-id="7296f-151">Откройте в редакторе кода файл **./src/webparts/toDo/app/app.config.js**.</span><span class="sxs-lookup"><span data-stu-id="7296f-151">In the code editor open the **./src/webparts/toDo/app/app.config.js** file.</span></span> <span data-ttu-id="7296f-152">Замените значение константы **sharepointApi** на относительный (от сервера) URL-адрес сайта SharePoint, на котором создан список дел, и добавьте к нему строку `/_api/`.</span><span class="sxs-lookup"><span data-stu-id="7296f-152">Change the value of the **sharepointApi** constant to the server-relative URL of the SharePoint site where you created the Todo list, followed by `/_api/`.</span></span>
+<span data-ttu-id="1e969-151">Откройте в редакторе кода файл **./src/webparts/toDo/app/app.config.js**.</span><span class="sxs-lookup"><span data-stu-id="1e969-151">In the code editor, open the **./src/webparts/toDo/app/app.config.js** file.</span></span> <span data-ttu-id="1e969-152">Замените значение константы **sharepointApi** на относительный (от сервера) URL-адрес сайта SharePoint, на котором создан список дел, и добавьте к нему строку `/_api/`.</span><span class="sxs-lookup"><span data-stu-id="1e969-152">Change the value of the **sharepointApi** constant to the server-relative URL of the SharePoint site where you created the Todo list, followed by `/_api/`.</span></span>
 
-### <a name="add-css-styles"></a><span data-ttu-id="7296f-153">Добавление стилей CSS</span><span class="sxs-lookup"><span data-stu-id="7296f-153">Add CSS styles</span></span>
+### <a name="add-css-styles"></a><span data-ttu-id="1e969-153">Добавление стилей CSS</span><span class="sxs-lookup"><span data-stu-id="1e969-153">Add CSS styles</span></span>
 
-<span data-ttu-id="7296f-154">Кроме того, необходимо реализовать стили CSS, которые вы используете с шаблоном.</span><span class="sxs-lookup"><span data-stu-id="7296f-154">You also need to implement CSS styles that you are using the template.</span></span> <span data-ttu-id="7296f-155">В редакторе кода откройте файл **ToDoWebPart.module.scss** и замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-155">In the code editor open the **ToDoWebPart.module.scss** file and replace its contents with:</span></span>
+<span data-ttu-id="1e969-154">Кроме того, необходимо реализовать стили CSS, которые вы используете с шаблоном.</span><span class="sxs-lookup"><span data-stu-id="1e969-154">You also need to implement CSS styles that you are using the template.</span></span> <span data-ttu-id="1e969-155">В редакторе кода откройте файл **ToDoWebPart.module.scss** и замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="1e969-155">In the code editor, open the **ToDoWebPart.module.scss** file and replace its contents with:</span></span>
 
 ```scss
 .toDo {
@@ -190,39 +190,39 @@ ms.lasthandoff: 01/11/2018
 }
 ```
 
-### <a name="trust-the-development-certificate"></a><span data-ttu-id="7296f-156">Доверие сертификату разработки</span><span class="sxs-lookup"><span data-stu-id="7296f-156">Trust the development certificate</span></span>
+### <a name="trust-the-development-certificate"></a><span data-ttu-id="1e969-156">Доверие сертификату разработки</span><span class="sxs-lookup"><span data-stu-id="1e969-156">Trust the development certificate</span></span>
 
-<span data-ttu-id="7296f-p109">По умолчанию сертификат разработки, необходимый для загрузки рабочей области SharePoint Workbench и ее ресурсов по протоколу HTTPS, не является доверенным, и при ее запуске в веб-браузере появляется предупреждение. В некоторых веб-браузерах SharePoint Workbench не загружается, если SSL-сертификат не является доверенным. Чтобы избежать этой проблемы, следует одобрить сертификат разработки, предоставленный вместе с платформой SharePoint Framework.</span><span class="sxs-lookup"><span data-stu-id="7296f-p109">By default the development certificate required to load SharePoint workbench and its resources over HTTPS is not trusted and causes the web browser to show a warning when navigating to the SharePoint workbench. In situations when you want to run SharePoint workbench in the context of SharePoint, some web browsers prevent the workbench from loading if the SSL certificate isn't trusted. To avoid this issue you should trust the development certificate provided with the SharePoint Framework.</span></span>
+<span data-ttu-id="1e969-p109">По умолчанию сертификат разработки, необходимый для загрузки рабочей области SharePoint Workbench и ее ресурсов по протоколу HTTPS, не является доверенным, и при ее запуске в веб-браузере появляется предупреждение. В некоторых веб-браузерах SharePoint Workbench не загружается, если SSL-сертификат не является доверенным. Чтобы избежать этой проблемы, следует одобрить сертификат разработки, предоставленный вместе с платформой SharePoint Framework.</span><span class="sxs-lookup"><span data-stu-id="1e969-p109">By default, the development certificate required to load SharePoint Workbench and its resources over HTTPS is not trusted, and causes the web browser to show a warning when navigating to the SharePoint Workbench. In situations when you want to run SharePoint Workbench in the context of SharePoint, some web browsers prevent the Workbench from loading if the SSL certificate isn't trusted. To avoid this issue, you should trust the development certificate provided with the SharePoint Framework.</span></span>
 
-<span data-ttu-id="7296f-160">Выполните в командной строке следующую команду:</span><span class="sxs-lookup"><span data-stu-id="7296f-160">In the command line execute:</span></span>
+<span data-ttu-id="1e969-160">Выполните в командной строке следующую команду:</span><span class="sxs-lookup"><span data-stu-id="1e969-160">In the command line, execute:</span></span>
 
 ```sh
 gulp trust-dev-cert
 ```
 
-### <a name="preview-web-part-in-the-hosted-workbench"></a><span data-ttu-id="7296f-161">Просмотр веб-части в размещенной версии Workbench</span><span class="sxs-lookup"><span data-stu-id="7296f-161">Preview web part in the hosted workbench</span></span>
+### <a name="preview-web-part-in-the-hosted-workbench"></a><span data-ttu-id="1e969-161">Просмотр веб-части в размещенной версии Workbench</span><span class="sxs-lookup"><span data-stu-id="1e969-161">Preview web part in the hosted Workbench</span></span>
 
-1. <span data-ttu-id="7296f-162">Выполните в командной строке следующую команду:</span><span class="sxs-lookup"><span data-stu-id="7296f-162">In the command line execute:</span></span>
+1. <span data-ttu-id="1e969-162">Выполните в командной строке следующую команду:</span><span class="sxs-lookup"><span data-stu-id="1e969-162">In the command line, execute:</span></span>
 
   ```sh
   gulp serve --nobrowser
   ```
 
-2. <span data-ttu-id="7296f-163">Добавьте к URL-адресу сайта SharePoint строку `/_layouts/workbench.aspx` (например, `https://contoso.sharepoint.com/_layouts/workbench.aspx`) и перейдите по этому адресу в браузере.</span><span class="sxs-lookup"><span data-stu-id="7296f-163">To the URL of your SharePoint site, add `/_layouts/workbench.aspx`, for example, `https://contoso.sharepoint.com/_layouts/workbench.aspx`, and navigate to it in the web browser.</span></span>
+2. <span data-ttu-id="1e969-163">Добавьте к URL-адресу сайта SharePoint строку `/_layouts/workbench.aspx` (например, `https://contoso.sharepoint.com/_layouts/workbench.aspx`) и перейдите по этому адресу в браузере.</span><span class="sxs-lookup"><span data-stu-id="1e969-163">To the URL of your SharePoint site, add `/_layouts/workbench.aspx`, for example, `https://contoso.sharepoint.com/_layouts/workbench.aspx`, and navigate to it in the web browser.</span></span>
 
-  <span data-ttu-id="7296f-164">Если вы правильно выполнили все действия, в браузере должна появиться веб-часть с формой для добавления элементов в список дел.</span><span class="sxs-lookup"><span data-stu-id="7296f-164">If you followed all steps correctly, you should see the web part in the browser showing the form to add to do items.</span></span>
+  <span data-ttu-id="1e969-164">Если вы правильно выполнили все действия, в браузере должна появиться веб-часть с формой для добавления элементов в список дел.</span><span class="sxs-lookup"><span data-stu-id="1e969-164">If you followed all steps correctly, you should see the web part in the browser showing the form to add To Do items.</span></span>
 
   ![Перенесенное приложение AngularJS в SharePoint Workbench, отправленное в SharePoint](../../../images/ng-migration-first-run.png)
 
-3. <span data-ttu-id="7296f-166">Добавьте несколько элементов в список дел, чтобы проверить работу веб-части.</span><span class="sxs-lookup"><span data-stu-id="7296f-166">Add a few todo items to verify that the web part is working as expected.</span></span>
+3. <span data-ttu-id="1e969-166">Добавьте несколько элементов в список дел, чтобы проверить работу веб-части.</span><span class="sxs-lookup"><span data-stu-id="1e969-166">Add a few To Do items to verify that the web part is working as expected.</span></span>
 
   ![Перенесенное приложение AngularJS с неправильным стилем](../../../images/ng-migration-old-office-ui-fabric.png)
 
-### <a name="fix-web-part-styling"></a><span data-ttu-id="7296f-168">Исправление стиля веб-части</span><span class="sxs-lookup"><span data-stu-id="7296f-168">Fix web part styling</span></span>
+### <a name="fix-web-part-styling"></a><span data-ttu-id="1e969-168">Исправление стиля веб-части</span><span class="sxs-lookup"><span data-stu-id="1e969-168">Fix web part styling</span></span>
 
-<span data-ttu-id="7296f-169">Веб-часть работает правильно, но выглядит не так, как исходное приложение AngularJS.</span><span class="sxs-lookup"><span data-stu-id="7296f-169">Although the web part is working correctly, it doesn't look the same as the AngularJS application you started with.</span></span> <span data-ttu-id="7296f-170">Это связано с тем, что ngOfficeUIFabric использует более раннюю версию Office UI Fabric, чем SharePoint Workbench.</span><span class="sxs-lookup"><span data-stu-id="7296f-170">This is caused because ngOfficeUIFabric uses an older version of Office UI Fabric than the one available in the SharePoint workbench.</span></span> <span data-ttu-id="7296f-171">Ситуацию легко исправить, загрузив стили CSS, используемые в ngOfficeUIFabric.</span><span class="sxs-lookup"><span data-stu-id="7296f-171">The easy fix would be to load the CSS styles used by ngOfficeUIFabric.</span></span> <span data-ttu-id="7296f-172">Но эти стили будут конфликтовать со стилями Office UI Fabric, используемыми SharePoint Workbench. В результате изменится пользовательский интерфейс веб-части.</span><span class="sxs-lookup"><span data-stu-id="7296f-172">The problem with that is, that these styles would collide with the Office UI Fabric styles used by the SharePoint workbench, breaking its user interface.</span></span> <span data-ttu-id="7296f-173">Лучше добавить стили, необходимые определенным компонентам, к стилям веб-части.</span><span class="sxs-lookup"><span data-stu-id="7296f-173">A better solution is to add the styles required by the specific components to the web part styles.</span></span>
+<span data-ttu-id="1e969-169">Веб-часть работает правильно, но выглядит не так, как исходное приложение AngularJS.</span><span class="sxs-lookup"><span data-stu-id="1e969-169">Although the web part is working correctly, it doesn't look the same as the AngularJS application you started with.</span></span> <span data-ttu-id="1e969-170">Это связано с тем, что ngOfficeUIFabric использует более раннюю версию Office UI Fabric, чем SharePoint Workbench.</span><span class="sxs-lookup"><span data-stu-id="1e969-170">This is caused because ngOfficeUIFabric uses an older version of Office UI Fabric than the one available in the SharePoint Workbench.</span></span> <span data-ttu-id="1e969-171">Ситуацию легко исправить, загрузив стили CSS, используемые в ngOfficeUIFabric.</span><span class="sxs-lookup"><span data-stu-id="1e969-171">The easy fix would be to load the CSS styles used by ngOfficeUIFabric.</span></span> <span data-ttu-id="1e969-172">Но эти стили будут конфликтовать со стилями Office UI Fabric, используемыми SharePoint Workbench. В результате изменится пользовательский интерфейс веб-части.</span><span class="sxs-lookup"><span data-stu-id="1e969-172">The problem with that is that these styles would collide with the Office UI Fabric styles used by the SharePoint Workbench, breaking its user interface.</span></span> <span data-ttu-id="1e969-173">Лучше добавить стили, необходимые определенным компонентам, к стилям веб-части.</span><span class="sxs-lookup"><span data-stu-id="1e969-173">A better solution is to add the styles required by the specific components to the web part styles.</span></span>
 
-1. <span data-ttu-id="7296f-174">Откройте в редакторе кода файл **./src/webparts/toDo/ToDoWebPart.module.scss**.</span><span class="sxs-lookup"><span data-stu-id="7296f-174">In the code editor open the **./src/webparts/toDo/ToDoWebPart.module.scss** file.</span></span> <span data-ttu-id="7296f-175">Замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-175">Change its contents to:</span></span>
+1. <span data-ttu-id="1e969-174">Откройте в редакторе кода файл **./src/webparts/toDo/ToDoWebPart.module.scss**.</span><span class="sxs-lookup"><span data-stu-id="1e969-174">In the code editor, open the **./src/webparts/toDo/ToDoWebPart.module.scss** file.</span></span> <span data-ttu-id="1e969-175">Замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="1e969-175">Change its contents to:</span></span>
 
   ```scss
   .toDo {
@@ -249,9 +249,9 @@ gulp trust-dev-cert
   }
   ```
 
-2. <span data-ttu-id="7296f-176">В файле **./src/webparts/toDo/ToDoWebPart.ts** найдите метод **render** и добавьте в шаблон отрисовки приложения новые значки Office UI Fabric.</span><span class="sxs-lookup"><span data-stu-id="7296f-176">In the **./src/webparts/toDo/ToDoWebPart.ts** file, in the **render** method change the application rendering template to use new Office UI Fabric icons.</span></span>
+2. <span data-ttu-id="1e969-176">В файле **./src/webparts/toDo/ToDoWebPart.ts** найдите метод **render** и добавьте в шаблон отрисовки приложения новые значки Office UI Fabric.</span><span class="sxs-lookup"><span data-stu-id="1e969-176">In the **./src/webparts/toDo/ToDoWebPart.ts** file, in the **render** method, change the application rendering template to use new Office UI Fabric icons.</span></span>
 
-  ```ts
+  ```typescript
   export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
     // ...
     public render(): void {
@@ -298,19 +298,19 @@ gulp trust-dev-cert
 
 <br/>
 
-<span data-ttu-id="7296f-177">Обновите страницу веб-части в браузере, и стиль станет правильным.</span><span class="sxs-lookup"><span data-stu-id="7296f-177">If you refresh the web part in the web browser, you will see that it is now correctly styled.</span></span>
+<span data-ttu-id="1e969-177">Обновите страницу веб-части в браузере, и стиль станет правильным.</span><span class="sxs-lookup"><span data-stu-id="1e969-177">If you refresh the web part in the web browser, you see that it is now correctly styled.</span></span>
 
 ![Перенесенное приложение AngularJS с правильной пометкой выполненных задач в веб-части](../../../images/ng-migration-correct-styling.png)
 
-## <a name="upgrade-the-angularjs-application-to-typescript"></a><span data-ttu-id="7296f-179">Преобразование приложения AngularJS в TypeScript</span><span class="sxs-lookup"><span data-stu-id="7296f-179">Upgrade the AngularJS application to TypeScript</span></span>
+## <a name="upgrade-the-angularjs-application-to-typescript"></a><span data-ttu-id="1e969-179">Преобразование приложения AngularJS в TypeScript</span><span class="sxs-lookup"><span data-stu-id="1e969-179">Upgrade the AngularJS application to TypeScript</span></span>
 
-<span data-ttu-id="7296f-180">Исходное приложение AngularJS написано на обычном JavaScript, из-за чего в нем могут возникать ошибки.</span><span class="sxs-lookup"><span data-stu-id="7296f-180">The original AngularJS application is written in plain JavaScript which makes maintaining it error-prone.</span></span> <span data-ttu-id="7296f-181">При создании клиентских веб-частей SharePoint Framework можно использовать TypeScript и его функции обеспечения безопасности типа во время разработки.</span><span class="sxs-lookup"><span data-stu-id="7296f-181">When building SharePoint Framework client-side web parts you can use TypeScript and benefit of its design-time type safety features.</span></span> <span data-ttu-id="7296f-182">В следующем разделе мы преобразуем обычный код JavaScript AngularJS в TypeScript.</span><span class="sxs-lookup"><span data-stu-id="7296f-182">In this part of this you will migrate the plain JavaScript AngularJS code to TypeScript.</span></span>
+<span data-ttu-id="1e969-180">Исходное приложение AngularJS написано на обычном JavaScript, из-за чего в нем могут возникать ошибки.</span><span class="sxs-lookup"><span data-stu-id="1e969-180">The original AngularJS application is written in plain JavaScript, which makes maintaining it error-prone.</span></span> <span data-ttu-id="1e969-181">При создании клиентских веб-частей SharePoint Framework можно использовать TypeScript и его функции обеспечения безопасности типа во время разработки.</span><span class="sxs-lookup"><span data-stu-id="1e969-181">When building SharePoint Framework client-side web parts, you can use TypeScript and benefit from its design-time type safety features.</span></span> <span data-ttu-id="1e969-182">В следующем разделе мы преобразуем обычный код JavaScript AngularJS в TypeScript.</span><span class="sxs-lookup"><span data-stu-id="1e969-182">In the next section, you will migrate the plain JavaScript AngularJS code to TypeScript.</span></span>
 
-### <a name="upgrade-application-configuration"></a><span data-ttu-id="7296f-183">Обновление конфигурации приложения</span><span class="sxs-lookup"><span data-stu-id="7296f-183">Upgrade application configuration</span></span>
+### <a name="upgrade-application-configuration"></a><span data-ttu-id="1e969-183">Обновление конфигурации приложения</span><span class="sxs-lookup"><span data-stu-id="1e969-183">Upgrade application configuration</span></span>
 
-<span data-ttu-id="7296f-184">В проекте переименуйте файл **./src/webparts/toDo/app/app.config.js** в `app.config.ts`.</span><span class="sxs-lookup"><span data-stu-id="7296f-184">In your project rename the **./src/webparts/toDo/app/app.config.js** file to `app.config.ts`.</span></span> <span data-ttu-id="7296f-185">Замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-185">Change its contents to:</span></span>
+<span data-ttu-id="1e969-184">В проекте переименуйте файл **./src/webparts/toDo/app/app.config.js** в `app.config.ts`.</span><span class="sxs-lookup"><span data-stu-id="1e969-184">In your project, rename the **./src/webparts/toDo/app/app.config.js** file to `app.config.ts`.</span></span> <span data-ttu-id="1e969-185">Замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="1e969-185">Change its contents to:</span></span>
 
-```ts
+```typescript
 import * as angular from 'angular';
 
 export default function() {
@@ -321,11 +321,11 @@ export default function() {
 }
 ```
 
-### <a name="upgrade-data-service"></a><span data-ttu-id="7296f-186">Обновление службы данных</span><span class="sxs-lookup"><span data-stu-id="7296f-186">Upgrade data service</span></span>
+### <a name="upgrade-data-service"></a><span data-ttu-id="1e969-186">Обновление службы данных</span><span class="sxs-lookup"><span data-stu-id="1e969-186">Upgrade data service</span></span>
 
-<span data-ttu-id="7296f-187">В проекте переименуйте файл **./src/webparts/toDo/app/data.service.js** в `DataService.ts`.</span><span class="sxs-lookup"><span data-stu-id="7296f-187">In your project rename the **./src/webparts/toDo/app/data.service.js** file to `DataService.ts`.</span></span> <span data-ttu-id="7296f-188">Замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-188">Change its contents to:</span></span>
+<span data-ttu-id="1e969-187">В проекте переименуйте файл **./src/webparts/toDo/app/data.service.js** в `DataService.ts`.</span><span class="sxs-lookup"><span data-stu-id="1e969-187">In your project, rename the **./src/webparts/toDo/app/data.service.js** file to `DataService.ts`.</span></span> <span data-ttu-id="1e969-188">Замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="1e969-188">Change its contents to:</span></span>
 
-```ts
+```typescript
 import * as angular from 'angular';
 
 export interface ITodo {
@@ -512,11 +512,11 @@ export default class DataService implements IDataService {
 }
 ```
 
-### <a name="upgrade-home-controller"></a><span data-ttu-id="7296f-189">Обновление контроллера домашней страницы</span><span class="sxs-lookup"><span data-stu-id="7296f-189">Upgrade home controller</span></span>
+### <a name="upgrade-home-controller"></a><span data-ttu-id="1e969-189">Обновление контроллера домашней страницы</span><span class="sxs-lookup"><span data-stu-id="1e969-189">Upgrade home controller</span></span>
 
-<span data-ttu-id="7296f-190">В проекте измените имя файла **./src/webparts/toDo/app/home.controller.js** на `HomeController.ts`.</span><span class="sxs-lookup"><span data-stu-id="7296f-190">In your project rename the **./src/webparts/toDo/app/home.controller.js** file to `HomeController.ts`.</span></span> <span data-ttu-id="7296f-191">Замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-191">Change its contents to:</span></span>
+<span data-ttu-id="1e969-190">В проекте измените имя файла **./src/webparts/toDo/app/home.controller.js** на `HomeController.ts`.</span><span class="sxs-lookup"><span data-stu-id="1e969-190">In your project, rename the **./src/webparts/toDo/app/home.controller.js** file to `HomeController.ts`.</span></span> <span data-ttu-id="1e969-191">Замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="1e969-191">Change its contents to:</span></span>
 
-```ts
+```typescript
 import * as angular from 'angular';
 import { IDataService, ITodo } from './DataService';
 
@@ -609,11 +609,11 @@ export default class HomeController {
 }
 ```
 
-### <a name="upgrade-application-module"></a><span data-ttu-id="7296f-192">Обновление модуля приложения</span><span class="sxs-lookup"><span data-stu-id="7296f-192">Upgrade application module</span></span>
+### <a name="upgrade-application-module"></a><span data-ttu-id="1e969-192">Обновление модуля приложения</span><span class="sxs-lookup"><span data-stu-id="1e969-192">Upgrade application module</span></span>
 
-<span data-ttu-id="7296f-193">В проекте измените имя файла **./src/webparts/toDo/app/app.module.js** на `app.module.ts`.</span><span class="sxs-lookup"><span data-stu-id="7296f-193">In your project rename the **./src/webparts/toDo/app/app.module.js** file to `app.module.ts`.</span></span> <span data-ttu-id="7296f-194">Замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-194">Change its contents to:</span></span>
+<span data-ttu-id="1e969-193">В проекте измените имя файла **./src/webparts/toDo/app/app.module.js** на `app.module.ts`.</span><span class="sxs-lookup"><span data-stu-id="1e969-193">In your project, rename the **./src/webparts/toDo/app/app.module.js** file to `app.module.ts`.</span></span> <span data-ttu-id="1e969-194">Замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="1e969-194">Change its contents to:</span></span>
 
-```ts
+```typescript
 import * as angular from 'angular';
 import config from './app.config';
 import HomeController from './HomeController';
@@ -633,13 +633,13 @@ todoapp
   .service('DataService', DataService);
 ```
 
-### <a name="update-reference-to-angularjs-application-in-the-web-part"></a><span data-ttu-id="7296f-195">Обновление ссылки на приложение AngularJS в веб-части</span><span class="sxs-lookup"><span data-stu-id="7296f-195">Update reference to AngularJS application in the web part</span></span>
+### <a name="update-reference-to-angularjs-application-in-the-web-part"></a><span data-ttu-id="1e969-195">Обновление ссылки на приложение AngularJS в веб-части</span><span class="sxs-lookup"><span data-stu-id="1e969-195">Update reference to AngularJS application in the web part</span></span>
 
-<span data-ttu-id="7296f-196">Теперь, когда приложение AngularJS написано на TypeScript, а его фрагменты ссылаются друг на друга, веб-части больше не требуется ссылаться на все фрагменты приложения.</span><span class="sxs-lookup"><span data-stu-id="7296f-196">Now that the AngularJS application is built using TypeScript and its different pieces reference each other, it's no longer necessary for the web part to reference all pieces of the application.</span></span> <span data-ttu-id="7296f-197">Ей достаточно загрузить главный модуль, который загрузит все остальные элементы приложения AngularJS.</span><span class="sxs-lookup"><span data-stu-id="7296f-197">Instead it only needs to load the main module, which in result will load all other elements that build up the AngularJS application.</span></span>
+<span data-ttu-id="1e969-196">Теперь, когда приложение AngularJS написано на TypeScript, а его фрагменты ссылаются друг на друга, веб-части больше не требуется ссылаться на все фрагменты приложения.</span><span class="sxs-lookup"><span data-stu-id="1e969-196">Now that the AngularJS application is built using TypeScript, and its different pieces reference each other, it's no longer necessary for the web part to reference all pieces of the application.</span></span> <span data-ttu-id="1e969-197">Ей достаточно загрузить главный модуль, который загрузит все остальные элементы приложения AngularJS.</span><span class="sxs-lookup"><span data-stu-id="1e969-197">Instead, it only needs to load the main module, which in turn loads all other elements that build up the AngularJS application.</span></span>
 
-1. <span data-ttu-id="7296f-198">В редакторе кода откройте файл **./src/webparts/toDo/ToDoWebPart.ts**.</span><span class="sxs-lookup"><span data-stu-id="7296f-198">In the code editor open the **./src/webparts/toDo/ToDoWebPart.ts** file.</span></span> <span data-ttu-id="7296f-199">Замените метод **render** следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-199">Change the **render** method to:</span></span>
+1. <span data-ttu-id="1e969-198">В редакторе кода откройте файл **./src/webparts/toDo/ToDoWebPart.ts**.</span><span class="sxs-lookup"><span data-stu-id="1e969-198">In the code editor, open the **./src/webparts/toDo/ToDoWebPart.ts** file.</span></span> <span data-ttu-id="1e969-199">Замените метод **render** следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="1e969-199">Change the **render** method to:</span></span>
 
-  ```ts
+  ```typescript
   export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
     // ...
     public render(): void {
@@ -681,25 +681,25 @@ todoapp
   }
   ```
 
-2. <span data-ttu-id="7296f-200">Чтобы убедиться, что код успешно изменен на TypeScript, выполните в командной строке следующую команду:</span><span class="sxs-lookup"><span data-stu-id="7296f-200">To verify that the upgrade to TypeScript has been successful, in the command line run</span></span>
+2. <span data-ttu-id="1e969-200">Чтобы убедиться, что код успешно изменен на TypeScript, выполните в командной строке следующую команду:</span><span class="sxs-lookup"><span data-stu-id="1e969-200">To verify that the upgrade to TypeScript has been successful, in the command line, run:</span></span>
 
   ```sh
   gulp serve --nobrowser
   ```
 
-3. <span data-ttu-id="7296f-201">Обновите страницу SharePoint Workbench в веб-браузере. Веб-часть должна отображаться так же, как и раньше.</span><span class="sxs-lookup"><span data-stu-id="7296f-201">In the web browser refresh the SharePoint workbench which should display your web part just as previously.</span></span>
+3. <span data-ttu-id="1e969-201">Обновите страницу SharePoint Workbench в веб-браузере. Веб-часть должна отображаться так же, как и раньше.</span><span class="sxs-lookup"><span data-stu-id="1e969-201">In the web browser, refresh the SharePoint Workbench, which should display your web part as previously.</span></span>
 
   ![Перенесенное приложение AngularJS с правильной пометкой выполненных задач в веб-части](../../../images/ng-migration-correct-styling.png)
 
-<span data-ttu-id="7296f-203">Внешний вид веб-части не изменился, но ее код стал лучше.</span><span class="sxs-lookup"><span data-stu-id="7296f-203">Even though the way the web part works hasn't changed, your code is improved.</span></span> <span data-ttu-id="7296f-204">Если вы захотите ее обновить, вам будет проще проверять правильность и целостность кода во время разработки.</span><span class="sxs-lookup"><span data-stu-id="7296f-204">Even though the way the web part works hasn't changed, your code is improved. In case of a future update you can more easily verify the correctness and integrity of your code already during development.</span></span>
+<span data-ttu-id="1e969-203">Внешний вид веб-части не изменился, но ее код стал лучше.</span><span class="sxs-lookup"><span data-stu-id="1e969-203">Even though the way the web part works hasn't changed, your code is improved.</span></span> <span data-ttu-id="1e969-204">Если вы захотите ее обновить, вам будет проще проверять правильность и целостность кода во время разработки.</span><span class="sxs-lookup"><span data-stu-id="1e969-204">In case of a future update, you can more easily verify the correctness and integrity of your code already during development.</span></span>
 
-## <a name="improve-integration-of-the-angularjs-application-with-the-sharepoint-framework"></a><span data-ttu-id="7296f-205">Улучшение интеграции приложения AngularJS с платформой SharePoint Framework</span><span class="sxs-lookup"><span data-stu-id="7296f-205">Improve integration of the AngularJS application with the SharePoint Framework</span></span>
+## <a name="improve-integration-of-the-angularjs-application-with-the-sharepoint-framework"></a><span data-ttu-id="1e969-205">Улучшение интеграции приложения AngularJS с платформой SharePoint Framework</span><span class="sxs-lookup"><span data-stu-id="1e969-205">Improve integration of the AngularJS application with the SharePoint Framework</span></span>
 
-<span data-ttu-id="7296f-206">На этом шаге приложение AngularJS работает правильно и заключено в клиентскую веб-часть на платформе SharePoint Framework.</span><span class="sxs-lookup"><span data-stu-id="7296f-206">At this point the AngularJS application works correctly and is wrapped in a SharePoint Framework client-side web part.</span></span> <span data-ttu-id="7296f-207">Пользователи могут добавлять веб-часть на страницу, но не могут настраивать ее работу.</span><span class="sxs-lookup"><span data-stu-id="7296f-207">While users can add the web part to the page, they cannot however configure how the web part should work.</span></span> <span data-ttu-id="7296f-208">Все значения конфигурации внедрены в код приложения AngularJS.</span><span class="sxs-lookup"><span data-stu-id="7296f-208">All of the configuration is embedded in the AngularJS application's code.</span></span> <span data-ttu-id="7296f-209">В этом разделе показано, как расширить веб-часть, чтобы пользователи могли указывать имя списка дел и управлять отображением выполненных задач.</span><span class="sxs-lookup"><span data-stu-id="7296f-209">In this section you will extend the web part to allow configuration of the name of the list where the todo items are stored and whether the web part should show finished tasks or not.</span></span>
+<span data-ttu-id="1e969-206">На этом шаге приложение AngularJS работает правильно и заключено в клиентскую веб-часть на платформе SharePoint Framework.</span><span class="sxs-lookup"><span data-stu-id="1e969-206">At this point the AngularJS application works correctly and is wrapped in a SharePoint Framework client-side web part.</span></span> <span data-ttu-id="1e969-207">Пользователи могут добавлять веб-часть на страницу, но не могут настраивать ее работу.</span><span class="sxs-lookup"><span data-stu-id="1e969-207">While users can add the web part to the page, they cannot configure how the web part should work.</span></span> <span data-ttu-id="1e969-208">Все значения конфигурации внедрены в код приложения AngularJS.</span><span class="sxs-lookup"><span data-stu-id="1e969-208">All of the configuration is embedded in the AngularJS application's code.</span></span> <span data-ttu-id="1e969-209">В этом разделе показано, как расширить веб-часть, чтобы пользователи могли указывать имя списка дел и управлять отображением выполненных задач.</span><span class="sxs-lookup"><span data-stu-id="1e969-209">In this section, you will extend the web part to allow configuration of the name of the list where the To Do items are stored and whether the web part should show finished tasks or not.</span></span>
 
-### <a name="define-web-part-properties"></a><span data-ttu-id="7296f-210">Определение свойств веб-части</span><span class="sxs-lookup"><span data-stu-id="7296f-210">Define web part properties</span></span>
+### <a name="define-web-part-properties"></a><span data-ttu-id="1e969-210">Определение свойств веб-части</span><span class="sxs-lookup"><span data-stu-id="1e969-210">Define web part properties</span></span>
 
-1. <span data-ttu-id="7296f-211">В редакторе кода откройте файл **./src/webparts/toDo/ToDoWebPart.manifest.json**.</span><span class="sxs-lookup"><span data-stu-id="7296f-211">In the code editor open the **./src/webparts/toDo/ToDoWebPart.manifest.json** file.</span></span> <span data-ttu-id="7296f-212">Замените раздел **properties** следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-212">Change the **properties** section to:</span></span>
+1. <span data-ttu-id="1e969-211">В редакторе кода откройте файл **./src/webparts/toDo/ToDoWebPart.manifest.json**.</span><span class="sxs-lookup"><span data-stu-id="1e969-211">In the code editor, open the **./src/webparts/toDo/ToDoWebPart.manifest.json** file.</span></span> <span data-ttu-id="1e969-212">Замените раздел **properties** следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="1e969-212">Change the **properties** section to:</span></span>
 
   ```json
   "properties": {
@@ -708,18 +708,18 @@ todoapp
   }
   ```
 
-2. <span data-ttu-id="7296f-213">В файле **./src/webparts/toDo/ToDoWebPart.ts** замените определение интерфейса `IToDoWebPartProps` следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-213">In the **./src/webparts/toDo/ToDoWebPart.ts** file, change the definition of the `IToDoWebPartProps` interface to:</span></span>
+2. <span data-ttu-id="1e969-213">В файле **./src/webparts/toDo/ToDoWebPart.ts** замените определение интерфейса `IToDoWebPartProps` следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="1e969-213">In the **./src/webparts/toDo/ToDoWebPart.ts** file, change the definition of the `IToDoWebPartProps` interface to:</span></span>
 
-  ```ts
+  ```typescript
   export interface IToDoWebPartProps {
     todoListName: string;
     hideFinishedTasks: boolean;
   }
   ```
 
-3. <span data-ttu-id="7296f-214">В файле **./src/webparts/toDo/ToDoWebPart.ts** замените первый оператор импорта следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-214">In the **./src/webparts/toDo/ToDoWebPart.ts** file change the first import statement to:</span></span>
+3. <span data-ttu-id="1e969-214">В файле **./src/webparts/toDo/ToDoWebPart.ts** замените первый оператор импорта следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="1e969-214">In the **./src/webparts/toDo/ToDoWebPart.ts** file, change the first import statement to:</span></span>
 
-  ```ts
+  ```typescript
   import {
     BaseClientSideWebPart,
     IPropertyPaneSettings,
@@ -728,9 +728,9 @@ todoapp
   } from '@microsoft/sp-webpart-base';
   ```
 
-4. <span data-ttu-id="7296f-215">В том же файле замените метод **getPropertyPaneConfiguration** следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-215">Next, in the same file, change the **getPropertyPaneConfiguration** method to:</span></span>
+4. <span data-ttu-id="1e969-215">В том же файле замените метод **getPropertyPaneConfiguration** следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="1e969-215">In the same file, change the **getPropertyPaneConfiguration** method to:</span></span>
 
-  ```ts
+  ```typescript
   export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
     // ...
     protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
@@ -761,9 +761,9 @@ todoapp
   }
   ```
 
-5. <span data-ttu-id="7296f-216">Добавьте недостающие строки ресурсов, заменив содержимое файла **./src/webparts/toDo/loc/mystrings.d.ts** следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-216">Add the missing resource strings, by changing the **./src/webparts/toDo/loc/mystrings.d.ts** file contents to:</span></span>
+5. <span data-ttu-id="1e969-216">Добавьте недостающие строки ресурсов, заменив содержимое файла **./src/webparts/toDo/loc/mystrings.d.ts** следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="1e969-216">Add the missing resource strings by changing the **./src/webparts/toDo/loc/mystrings.d.ts** file contents to:</span></span>
 
-  ```ts
+  ```typescript
   declare interface IToDoWebPartStrings {
     PropertyPaneDescription: string;
     BasicGroupName: string;
@@ -777,7 +777,7 @@ todoapp
   }
   ```
 
-6. <span data-ttu-id="7296f-217">В файле **./src/webparts/toDo/loc/en-us.js** добавьте переводы для новых строк:</span><span class="sxs-lookup"><span data-stu-id="7296f-217">In the **./src/webparts/toDo/loc/en-us.js** file add translations for the newly added strings:</span></span>
+6. <span data-ttu-id="1e969-217">В файле **./src/webparts/toDo/loc/en-us.js** добавьте переводы для новых строк:</span><span class="sxs-lookup"><span data-stu-id="1e969-217">In the **./src/webparts/toDo/loc/en-us.js** file, add translations for the newly added strings:</span></span>
 
   ```js
   define([], function() {
@@ -790,19 +790,19 @@ todoapp
   });
   ```
 
-### <a name="pass-web-part-properties-values-to-the-angularjs-application"></a><span data-ttu-id="7296f-218">Передача значений свойств веб-части в приложение AngularJS</span><span class="sxs-lookup"><span data-stu-id="7296f-218">Pass web part properties values to the AngularJS application</span></span>
+### <a name="pass-web-part-properties-values-to-the-angularjs-application"></a><span data-ttu-id="1e969-218">Передача значений свойств веб-части в приложение AngularJS</span><span class="sxs-lookup"><span data-stu-id="1e969-218">Pass web part properties values to the AngularJS application</span></span>
 
-<span data-ttu-id="7296f-219">Сейчас пользователи могут настраивать работу веб-части, но приложение AngularJS не использует эти значения.</span><span class="sxs-lookup"><span data-stu-id="7296f-219">At this moment users can configure how the web part should work, but the AngularJS application isn't using these values.</span></span> <span data-ttu-id="7296f-220">В следующих разделах мы расширим приложение AngularJS, чтобы оно использовало значения конфигурации, указанные пользователем в области свойств веб-части.</span><span class="sxs-lookup"><span data-stu-id="7296f-220">In this section you will extend the AngularJS application to use the configuration values provided by users through the web part property pane.</span></span> <span data-ttu-id="7296f-221">Для этого можно транслировать событие AngularJS в методе **render** и подписаться на это событие в контроллере, используемом веб-частью.</span><span class="sxs-lookup"><span data-stu-id="7296f-221">One way to do that is to broadcast an AngularJS event in the **render** method and subscribe to this event in the controller used in the web part.</span></span>
+<span data-ttu-id="1e969-219">Сейчас пользователи могут настраивать работу веб-части, но приложение AngularJS не использует эти значения.</span><span class="sxs-lookup"><span data-stu-id="1e969-219">At this moment users can configure how the web part should work, but the AngularJS application isn't using these values.</span></span> <span data-ttu-id="1e969-220">В следующих разделах мы расширим приложение AngularJS, чтобы оно использовало значения конфигурации, указанные пользователем в области свойств веб-части.</span><span class="sxs-lookup"><span data-stu-id="1e969-220">In the following sections, you will extend the AngularJS application to use the configuration values provided by users through the web part property pane.</span></span> <span data-ttu-id="1e969-221">Для этого можно транслировать событие AngularJS в методе **render** и подписаться на это событие в контроллере, используемом веб-частью.</span><span class="sxs-lookup"><span data-stu-id="1e969-221">One way to do that is to broadcast an AngularJS event in the **render** method and subscribe to this event in the controller used in the web part.</span></span>
 
-### <a name="delete-angularjs-configuration-file"></a><span data-ttu-id="7296f-222">Удаление файла конфигурации AngularJS</span><span class="sxs-lookup"><span data-stu-id="7296f-222">Delete AngularJS configuration file</span></span>
+### <a name="delete-angularjs-configuration-file"></a><span data-ttu-id="1e969-222">Удаление файла конфигурации AngularJS</span><span class="sxs-lookup"><span data-stu-id="1e969-222">Delete AngularJS configuration file</span></span>
 
-<span data-ttu-id="7296f-223">Удалите из проекта файл **./src/webparts/toDo/app/app.config.ts**.</span><span class="sxs-lookup"><span data-stu-id="7296f-223">In your project delete the **./src/webparts/toDo/app/app.config.ts** file.</span></span> <span data-ttu-id="7296f-224">Позже мы обновим приложение, чтобы оно получало значения конфигурации из свойств веб-части.</span><span class="sxs-lookup"><span data-stu-id="7296f-224">In the following steps you will update the application to get the configuration values from web part properties.</span></span>
+<span data-ttu-id="1e969-223">Удалите из проекта файл **./src/webparts/toDo/app/app.config.ts**.</span><span class="sxs-lookup"><span data-stu-id="1e969-223">In your project, delete the **./src/webparts/toDo/app/app.config.ts** file.</span></span> <span data-ttu-id="1e969-224">Позже мы обновим приложение, чтобы оно получало значения конфигурации из свойств веб-части.</span><span class="sxs-lookup"><span data-stu-id="1e969-224">In the following steps you will update the application to get the configuration values from web part properties.</span></span>
 
-### <a name="remove-reference-to-configuration"></a><span data-ttu-id="7296f-225">Удаление ссылки на конфигурацию</span><span class="sxs-lookup"><span data-stu-id="7296f-225">Remove reference to configuration</span></span>
+### <a name="remove-reference-to-configuration"></a><span data-ttu-id="1e969-225">Удаление ссылки на конфигурацию</span><span class="sxs-lookup"><span data-stu-id="1e969-225">Remove reference to configuration</span></span>
 
-<span data-ttu-id="7296f-226">В файле **./src/webparts/toDo/app/app.module.ts** удалите ссылку на конфигурацию AngularJS, заменив его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-226">In the **./src/webparts/toDo/app/app.module.ts** file remove the reference to the AngularJS configuration by changing its contents to:</span></span>
+<span data-ttu-id="1e969-226">В файле **./src/webparts/toDo/app/app.module.ts** удалите ссылку на конфигурацию AngularJS, заменив его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="1e969-226">In the **./src/webparts/toDo/app/app.module.ts** file, remove the reference to the AngularJS configuration by changing its contents to:</span></span>
 
-```ts
+```typescript
 import * as angular from 'angular';
 import HomeController from './HomeController';
 import DataService from './DataService';
@@ -819,13 +819,13 @@ todoapp
   .service('DataService', DataService);
 ```
 
-### <a name="update-data-service-to-accept-configuration-value-in-method-parameters"></a><span data-ttu-id="7296f-227">Обновление службы данных для принятия значений конфигурации в параметрах методов</span><span class="sxs-lookup"><span data-stu-id="7296f-227">Update data service to accept configuration value in method parameters</span></span>
+### <a name="update-data-service-to-accept-configuration-value-in-method-parameters"></a><span data-ttu-id="1e969-227">Обновление службы данных для принятия значений конфигурации в параметрах методов</span><span class="sxs-lookup"><span data-stu-id="1e969-227">Update data service to accept configuration value in method parameters</span></span>
 
-<span data-ttu-id="7296f-228">Изначально служба данных получала свою конфигурацию из констант, определенных в файле **app.config.ts**.</span><span class="sxs-lookup"><span data-stu-id="7296f-228">Originally the data service retrieved its configuration from the constants defined in the **app.config.ts** file.</span></span> <span data-ttu-id="7296f-229">Чтобы использовать вместо них значения конфигурации, настроенные в свойствах веб-части, определенные методы должны принимать параметры.</span><span class="sxs-lookup"><span data-stu-id="7296f-229">In order to use the configuration values configured in web part properties instead, the specific methods must accept parameters.</span></span>
+<span data-ttu-id="1e969-228">Изначально служба данных получала свою конфигурацию из констант, определенных в файле **app.config.ts**.</span><span class="sxs-lookup"><span data-stu-id="1e969-228">Originally the data service retrieved its configuration from the constants defined in the **app.config.ts** file.</span></span> <span data-ttu-id="1e969-229">Чтобы использовать вместо них значения конфигурации, настроенные в свойствах веб-части, определенные методы должны принимать параметры.</span><span class="sxs-lookup"><span data-stu-id="1e969-229">To use the configuration values configured in the web part properties instead, the specific methods must accept parameters.</span></span>
 
-<span data-ttu-id="7296f-230">Откройте в редакторе кода файл **./src/webparts/toDo/app/DataService.ts** и замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-230">In the code editor open the **./src/webparts/toDo/app/DataService.ts** file and change its contents to:</span></span>
+<span data-ttu-id="1e969-230">Откройте в редакторе кода файл **./src/webparts/toDo/app/DataService.ts** и замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="1e969-230">In the code editor, open the **./src/webparts/toDo/app/DataService.ts** file, and change its contents to:</span></span>
 
-```ts
+```typescript
 import * as angular from 'angular';
 
 export interface ITodo {
@@ -1010,20 +1010,20 @@ export default class DataService implements IDataService {
 
 
 
-### <a name="broadcast-properties-change-event"></a><span data-ttu-id="7296f-231">Трансляция события изменения свойств</span><span class="sxs-lookup"><span data-stu-id="7296f-231">Broadcast properties change event</span></span>
+### <a name="broadcast-properties-change-event"></a><span data-ttu-id="1e969-231">Трансляция события изменения свойств</span><span class="sxs-lookup"><span data-stu-id="1e969-231">Broadcast properties change event</span></span>
 
-1. <span data-ttu-id="7296f-232">В файле **./src/webparts/toDo/ToDoWebPart.ts** добавьте к классу **ToDoWebPart** новое свойство под названием `$injector`:</span><span class="sxs-lookup"><span data-stu-id="7296f-232">In the **./src/webparts/toDo/ToDoWebPart.ts** file, to the **ToDoWebPart** class add a new property called `$injector`:</span></span>
+1. <span data-ttu-id="1e969-232">В файле **./src/webparts/toDo/ToDoWebPart.ts** добавьте к классу **ToDoWebPart** новое свойство под названием `$injector`:</span><span class="sxs-lookup"><span data-stu-id="1e969-232">In the **./src/webparts/toDo/ToDoWebPart.ts** file, to the **ToDoWebPart** class, add a new property called `$injector`:</span></span>
 
-  ```ts
+  ```typescript
   export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
     private $injector: angular.auto.IInjectorService;
     // ...
   }
   ```
 
-2. <span data-ttu-id="7296f-233">В том же файле замените метод **render** следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-233">In the same file, update the **render** method to:</span></span>
+2. <span data-ttu-id="1e969-233">В том же файле замените метод **render** следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="1e969-233">In the same file, update the **render** method to:</span></span>
 
-  ```ts
+  ```typescript
   export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
     // ...
     public render(): void {
@@ -1076,7 +1076,7 @@ export default class DataService implements IDataService {
   }
   ```
 
-3. <span data-ttu-id="7296f-234">В файле **./src/webparts/toDo/ToDoWebPart.module.scss** добавьте недостающие стили для класса **.configurationNeeded**:</span><span class="sxs-lookup"><span data-stu-id="7296f-234">In the **./src/webparts/toDo/ToDoWebPart.module.scss** file add the missing styles for the **.configurationNeeded** class:</span></span>
+3. <span data-ttu-id="1e969-234">В файле **./src/webparts/toDo/ToDoWebPart.module.scss** добавьте недостающие стили для класса **.configurationNeeded**:</span><span class="sxs-lookup"><span data-stu-id="1e969-234">In the **./src/webparts/toDo/ToDoWebPart.module.scss** file, add the missing styles for the **.configurationNeeded** class:</span></span>
 
   ```scss
   .toDo {
@@ -1090,11 +1090,11 @@ export default class DataService implements IDataService {
   }
   ```
 
-### <a name="subscribe-to-the-properties-changed-event"></a><span data-ttu-id="7296f-235">Подписка на событие изменения свойств</span><span class="sxs-lookup"><span data-stu-id="7296f-235">Subscribe to the properties changed event</span></span>
+### <a name="subscribe-to-the-properties-changed-event"></a><span data-ttu-id="1e969-235">Подписка на событие изменения свойств</span><span class="sxs-lookup"><span data-stu-id="1e969-235">Subscribe to the properties changed event</span></span>
 
-1. <span data-ttu-id="7296f-236">Откройте в редакторе кода файл **./src/webparts/toDo/app/HomeController.ts**.</span><span class="sxs-lookup"><span data-stu-id="7296f-236">In the code editor open the **./src/webparts/toDo/app/HomeController.ts** file.</span></span> <span data-ttu-id="7296f-237">Добавьте в класс **HomeController** следующие свойства:</span><span class="sxs-lookup"><span data-stu-id="7296f-237">In the **HomeController** class add the following properties:</span></span>
+1. <span data-ttu-id="1e969-236">Откройте в редакторе кода файл **./src/webparts/toDo/app/HomeController.ts**.</span><span class="sxs-lookup"><span data-stu-id="1e969-236">In the code editor, open the **./src/webparts/toDo/app/HomeController.ts** file.</span></span> <span data-ttu-id="1e969-237">Добавьте в класс **HomeController** следующие свойства:</span><span class="sxs-lookup"><span data-stu-id="1e969-237">In the **HomeController** class, add the following properties:</span></span>
 
-  ```ts
+  ```typescript
   export default class HomeController {
     // ...
     private sharePointApi: string = undefined;
@@ -1105,9 +1105,9 @@ export default class DataService implements IDataService {
   }
   ```
 
-2. <span data-ttu-id="7296f-238">Расширьте конструктор класса **HomeController**, внедрив службу корневой области, и замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="7296f-238">Extend the constructor of the **HomeController** class with injecting the root scope service and change its contents to:</span></span>
+2. <span data-ttu-id="1e969-238">Расширьте конструктор класса **HomeController**, внедрив службу корневой области, и замените его содержимое следующим кодом:</span><span class="sxs-lookup"><span data-stu-id="1e969-238">Extend the constructor of the **HomeController** class with injecting the root scope service, and change its contents to:</span></span>
 
-  ```ts
+  ```typescript
   export default class HomeController {
     // ...
     public static $inject: string[] = ['DataService', '$window', '$rootScope'];
@@ -1133,9 +1133,9 @@ export default class DataService implements IDataService {
   }
   ```
 
-3. <span data-ttu-id="7296f-239">Добавьте в класс **HomeController** метод **init**:</span><span class="sxs-lookup"><span data-stu-id="7296f-239">To the **HomeController** class add the **init** method:</span></span>
+3. <span data-ttu-id="1e969-239">Добавьте в класс **HomeController** метод **init**:</span><span class="sxs-lookup"><span data-stu-id="1e969-239">To the **HomeController** class, add the **init** method:</span></span>
 
-  ```ts
+  ```typescript
   export default class HomeController {
     // ...
     private init(sharePointApi: string, todoListName: string, hideFinishedTasks?: boolean): void {
@@ -1155,9 +1155,9 @@ export default class DataService implements IDataService {
   }
   ```
 
-4. <span data-ttu-id="7296f-240">Обновите все остальные методы класса **HomeController**, чтобы в них использовались значения конфигурации из свойств класса:</span><span class="sxs-lookup"><span data-stu-id="7296f-240">Update all remaining methods in the **HomeController** class to use the configuration values from the class properties:</span></span>
+4. <span data-ttu-id="1e969-240">Обновите все остальные методы класса **HomeController**, чтобы в них использовались значения конфигурации из свойств класса:</span><span class="sxs-lookup"><span data-stu-id="1e969-240">Update all remaining methods in the **HomeController** class to use the configuration values from the class properties:</span></span>
 
-  ```ts
+  ```typescript
   export default class HomeController {
     // ...
     private loadTodos(): void {
@@ -1238,12 +1238,12 @@ export default class DataService implements IDataService {
   }
   ```
 
-5. <span data-ttu-id="7296f-241">Проверьте работу веб-части, выполнив в командной строке следующую команду:</span><span class="sxs-lookup"><span data-stu-id="7296f-241">Verify that the web part is working correctly by executing in the command line:</span></span>
+5. <span data-ttu-id="1e969-241">Проверьте работу веб-части, выполнив в командной строке следующую команду:</span><span class="sxs-lookup"><span data-stu-id="1e969-241">Verify that the web part is working correctly by executing the following in the command line:</span></span>
 
   ```sh
   gulp serve --nobrowser
   ```
 
-6. <span data-ttu-id="7296f-242">В веб-браузере откройте SharePoint Workbench и добавьте веб-часть на холст.</span><span class="sxs-lookup"><span data-stu-id="7296f-242">In your web browser navigate to the SharePoint workbench and add the web part to canvas.</span></span> <span data-ttu-id="7296f-243">Если переместить переключатель **Hide finished tasks** (Скрыть выполненные задачи), выполненные задачи будут показаны или скрыты.</span><span class="sxs-lookup"><span data-stu-id="7296f-243">If you toggle the **Hide finished tasks** option you should see completed tasks being displayed or hidden accordingly.</span></span>
+6. <span data-ttu-id="1e969-242">В веб-браузере откройте SharePoint Workbench и добавьте веб-часть на холст.</span><span class="sxs-lookup"><span data-stu-id="1e969-242">In your web browser, go to the SharePoint Workbench and add the web part to canvas.</span></span> <span data-ttu-id="1e969-243">Если переместить переключатель **Hide finished tasks** (Скрыть выполненные задачи), выполненные задачи будут показаны или скрыты.</span><span class="sxs-lookup"><span data-stu-id="1e969-243">If you toggle the **Hide finished tasks** option, you should see completed tasks being displayed or hidden accordingly.</span></span>
 
   ![Приложение AngularJS со скрытыми выполненными задачами](../../../images/ng-migration-finished-tasks-hidden.png)
