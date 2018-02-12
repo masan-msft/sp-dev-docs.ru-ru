@@ -3,11 +3,11 @@ title: "Проверка значений свойств веб-части"
 description: "Проверяйте значения свойств клиентских веб-частей SharePoint Framework непосредственно в коде веб-части или путем вызова внешнего API."
 ms.date: 01/09/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 99c5c09899a826c2cbabc2b9b3d3ee08f6847b42
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: fc0fded963d11143c628fb0a3bfb09760299e471
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="validate-web-part-property-values"></a>Проверка значений свойств веб-части
 
@@ -46,7 +46,7 @@ ms.lasthandoff: 01/10/2018
 
   ![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/property-validation-yeoman-generator.png)
 
-5. По завершении формирования шаблона заблокируйте версию зависимостей проекта, выполнив следующую команду:
+5. По завершении скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
 
   ```sh
   npm shrinkwrap
@@ -74,7 +74,7 @@ ms.lasthandoff: 01/10/2018
 
 1. В редакторе кода откройте файл **./src/webparts/listInfo/ListInfoWebPart.ts**. В классе **ListInfoWebPart** добавьте метод **validateDescription** со следующим кодом:
 
-  ```ts
+  ```typescript
   export default class ListInfoWebPart extends BaseClientSideWebPart<IListInfoWebPartProps> {
     // ...
 
@@ -97,7 +97,7 @@ ms.lasthandoff: 01/10/2018
 
 2. Свяжите метод **validateDescription** со свойством **Description** веб-части. В классе **ListInfoWebPart** замените код метода **getPropertyPaneConfiguration** следующим кодом:
 
-  ```ts
+  ```typescript
   export default class ListInfoWebPart extends BaseClientSideWebPart<IListInfoWebPartProps> {
     // ...
 
@@ -189,7 +189,7 @@ ms.lasthandoff: 01/10/2018
 
 2. В редакторе кода откройте файл **./src/webparts/listInfo/IListInfoWebPartProps.ts** и расширьте определение интерфейса, добавив свойство **listName** строкового типа.
 
-  ```ts
+  ```typescript
   export interface IListInfoWebPartProps {
     description: string;
     listName: string;
@@ -198,7 +198,7 @@ ms.lasthandoff: 01/10/2018
 
 3. Чтобы завершить добавление нового свойства веб-части, откройте файл **./src/webparts/listInfo/ListInfoWebPart.ts** в редакторе кода и замените код метода **getPropertyPaneConfiguration** следующим кодом:
 
-  ```ts
+  ```typescript
   export default class ListInfoWebPart extends BaseClientSideWebPart<IListInfoWebPartProps> {
     // ...
 
@@ -234,7 +234,7 @@ ms.lasthandoff: 01/10/2018
 
 4. Добавьте недостающую строку ресурса **ListNameFieldLabel**. Для этого измените код в файле **./src/webparts/listInfo/loc/mystrings.d.ts** на следующий:
 
-  ```ts
+  ```typescript
   declare interface IListInfoStrings {
     PropertyPaneDescription: string;
     BasicGroupName: string;
@@ -277,14 +277,14 @@ ms.lasthandoff: 01/10/2018
 
 1. В редакторе кода откройте файл **./src/webparts/listInfo/ListInfoWebPart.ts** и добавьте следующие ссылки:
 
-  ```ts
+  ```typescript
   import { SPHttpClient, SPHttpClientResponse } from '@microsoft/sp-http';
   import { escape } from '@microsoft/sp-lodash-subset';
   ```
 
 2. В классе **ListInfoWebPart** добавьте метод **validateListName** со следующим кодом:
 
-  ```ts
+  ```typescript
   export default class ListInfoWebPart extends BaseClientSideWebPart<IListInfoWebPartProps> {
     // ...
 
@@ -329,7 +329,7 @@ ms.lasthandoff: 01/10/2018
   
 3. В классе **ListInfoWebPart** замените код метода **getPropertyPaneConfiguration** на следующий:
 
-  ```ts
+  ```typescript
   export default class ListInfoWebPart extends BaseClientSideWebPart<IListInfoWebPartProps> {
     // ...
 
@@ -400,7 +400,7 @@ ms.lasthandoff: 01/10/2018
 
 1. В редакторе кода откройте файл **./src/webparts/listInfo/ListInfoWebPart.ts**. Замените код метода **getPropertyPaneConfiguration** следующим кодом:
 
-  ```ts
+  ```typescript
   export default class ListInfoWebPart extends BaseClientSideWebPart<IListInfoWebPartProps> {
     // ...
 

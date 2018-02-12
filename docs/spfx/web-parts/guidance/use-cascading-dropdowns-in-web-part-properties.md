@@ -3,11 +3,11 @@ title: "Использование каскадных раскрывающихс
 description: "Создавайте каскадные раскрывающиеся меню в области свойств клиентских веб-частей SharePoint, не создавая собственный элемент управления."
 ms.date: 01/10/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 284c5747a95efd3a9149226827195d9b38a22105
-ms.sourcegitcommit: 1f1044e59d987d878bb8bc403413e3090234ad44
+ms.openlocfilehash: 5c163108968bdf45b4847c3487bf275b371b1380
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="use-cascading-dropdowns-in-web-part-properties"></a>Использование каскадных раскрывающихся меню для свойств веб-частей
 
@@ -50,7 +50,7 @@ ms.lasthandoff: 01/11/2018
 
   ![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/react-cascading-dropdowns-yo-sharepoint.png)
 
-5. По завершении формирования шаблона заблокируйте версию зависимостей проекта, выполнив следующую команду:
+5. По завершении скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
 
   ```sh
   npm shrinkwrap
@@ -70,7 +70,7 @@ ms.lasthandoff: 01/11/2018
 
 2. Откройте файл **src/webparts/listItems/IListItemsWebPartProps.ts** и замените его содержимое следующим кодом:
 
-  ```ts
+  ```typescript
   export interface IListItemsWebPartProps {
     listName: string;
   }
@@ -78,7 +78,7 @@ ms.lasthandoff: 01/11/2018
 
 3. В файле **src/webparts/listItems/ListItemsWebPart.ts** замените метод **render** следующим кодом:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     public render(): void {
@@ -94,7 +94,7 @@ ms.lasthandoff: 01/11/2018
 
 4. Замените содержимое метода **propertyPaneSettings** следующим кодом:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
@@ -124,7 +124,7 @@ ms.lasthandoff: 01/11/2018
 
 5. В файле **src/webparts/listItems/loc/mystrings.d.ts** замените интерфейс **IListItemsStrings** следующим кодом:
 
-  ```ts
+  ```typescript
   declare interface IListItemsStrings {
     PropertyPaneDescription: string;
     BasicGroupName: string;
@@ -171,7 +171,7 @@ ms.lasthandoff: 01/11/2018
 
 8. В файле **src/webparts/listItems/components/IListItemsProps.ts** замените интерфейс **IListItemsProps** следующим:
 
-  ```ts
+  ```typescript
   export interface IListItemsProps {
     listName: string;
   }
@@ -197,7 +197,7 @@ ms.lasthandoff: 01/11/2018
 
 1. В классе **ListItemsWebPart** добавьте ссылку на класс **PropertyPaneDropdown** в верхнем разделе кода веб-части. Замените предложение импорта, загружающее класс **PropertyPaneTextField**, следующим кодом:
 
-  ```ts
+  ```typescript
   import {
     BaseClientSideWebPart,
     IPropertyPaneConfiguration,
@@ -209,7 +209,7 @@ ms.lasthandoff: 01/11/2018
 
 2. В классе **ListItemsWebPart** добавьте новую переменную **lists** для хранения сведений обо всех доступных списках на текущем сайте.
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     private lists: IPropertyPaneDropdownOption[];
     // ...
@@ -218,7 +218,7 @@ ms.lasthandoff: 01/11/2018
 
 3. Добавьте новую переменную класса **listsDropdownDisabled**. Она определяет, включено ли раскрывающееся меню со списками. Пока веб-часть не получит сведения о доступных списках на текущем сайте, раскрывающееся меню должно быть отключено.
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     private listsDropdownDisabled: boolean = true;
@@ -228,7 +228,7 @@ ms.lasthandoff: 01/11/2018
 
 4. Измените метод получения **propertyPaneSettings** так, чтобы он использовал раскрывающееся меню для отрисовки свойства **listName**.
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     protected get propertyPaneSettings(): IPropertyPaneSettings {
@@ -272,7 +272,7 @@ ms.lasthandoff: 01/11/2018
 
 1. В классе **ListItemsWebPart** добавьте метод для загрузки доступных списков. Мы используем фиктивные данные, но вы также можете вызвать REST API SharePoint, чтобы получить список доступных списков с текущего веб-сайта. Для имитации загрузки параметров из внешней службы метод создает двухсекундную задержку.
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     private loadLists(): Promise<IPropertyPaneDropdownOption[]> {
@@ -294,7 +294,7 @@ ms.lasthandoff: 01/11/2018
 
 2. Загрузите сведения о доступных списках в раскрывающееся меню со списками. В классе **ListItemsWebPart** переопределите метод **onPropertyPaneConfigurationStart**, используя следующий код:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     protected onPropertyPaneConfigurationStart(): void {
@@ -371,7 +371,7 @@ ms.lasthandoff: 01/11/2018
 
 2. Замените код в файле **src/webparts/listItems/IListItemsWebPartProps.ts** следующим:
 
-  ```ts
+  ```typescript
   export interface IListItemsWebPartProps {
     listName: string;
     itemName: string;
@@ -380,7 +380,7 @@ ms.lasthandoff: 01/11/2018
 
 3. Замените код в файле **src/webparts/listItems/components/IListItemsProps.ts** следующим:
 
-  ```ts
+  ```typescript
   export interface IListItemsProps {
     listName: string;
     itemName: string;
@@ -389,7 +389,7 @@ ms.lasthandoff: 01/11/2018
 
 4. В файле **src/webparts/listItems/ListItemsWebPart.ts** замените код метода **render** следующим:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     public render(): void {
@@ -406,7 +406,7 @@ ms.lasthandoff: 01/11/2018
 
 5. В файле **src/webparts/listItems/loc/mystrings.d.ts** измените интерфейс **IListItemsStrings** на следующий:
 
-  ```ts
+  ```typescript
   declare interface IListItemsStrings {
     PropertyPaneDescription: string;
     BasicGroupName: string;
@@ -462,7 +462,7 @@ export default class ListItems extends React.Component<IListItemsProps, {}> {
 
 1. В классе **ListItemsWebPart** добавьте новую переменную **items** для хранения информации обо всех доступных элементах в выбранном списке.
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     private items: IPropertyPaneDropdownOption[];
@@ -472,7 +472,7 @@ export default class ListItems extends React.Component<IListItemsProps, {}> {
 
 2. Добавьте новую переменную класса **itemsDropdownDisabled**. Она определяет, следует ли включать раскрывающееся меню. У пользователей должна появиться возможность выбора элемента только после выбора соответствующего списка.
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     private itemsDropdownDisabled: boolean = true;
@@ -482,7 +482,7 @@ export default class ListItems extends React.Component<IListItemsProps, {}> {
 
 3. Измените метод считывания **propertyPaneSettings** так, чтобы он использовал раскрывающееся меню для отрисовки свойства **itemName**.
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
@@ -532,7 +532,7 @@ export default class ListItems extends React.Component<IListItemsProps, {}> {
 
 1. Добавьте метод для загрузки элементов списка. В файле **src/webparts/listItems/ListItemsWebPart.ts** добавьте метод в классе **ListItemsWebPart** для загрузки доступных элементов из выбранного списка. Как и при загрузке доступных списков, здесь используются фиктивные данные.
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     private loadItems(): Promise<IPropertyPaneDropdownOption[]> {
@@ -578,7 +578,7 @@ export default class ListItems extends React.Component<IListItemsProps, {}> {
 
 2. Загрузите сведения о доступных элементах в раскрывающееся меню. В классе **ListItemsWebPart** измените метод **onPropertyPaneConfigurationStart** так, чтобы он загружал элементы выбранного списка:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     protected onPropertyPaneConfigurationStart(): void {
@@ -628,7 +628,7 @@ export default class ListItems extends React.Component<IListItemsProps, {}> {
 
   Откройте файл **ListItemsWebPart.ts** и переопределите в классе **ListItemsWebPart** метод **onPropertyPaneFieldChanged**, добавив следующий код:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     protected onPropertyPaneFieldChanged(propertyPath: string, oldValue: any, newValue: any): void {

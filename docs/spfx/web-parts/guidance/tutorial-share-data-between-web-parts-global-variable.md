@@ -3,11 +3,11 @@ title: "Использование одних данных в разных ве�
 description: "Пошаговые инструкции по использованию одних данных в разных клиентских веб-частях SharePoint."
 ms.date: 01/10/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 16450969e6e4d87e51b437884782dc54679a4861
-ms.sourcegitcommit: 1f1044e59d987d878bb8bc403413e3090234ad44
+ms.openlocfilehash: edc0ee05ebdc92c540b7b8bb64b29dae04718dd5
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="share-data-between-web-parts-by-using-a-global-variable-tutorial"></a>Использование одних данных в разных веб-частях с применением глобальной переменной (руководство)
 
@@ -47,7 +47,7 @@ ms.lasthandoff: 01/11/2018
 
   ![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/tutorial-sharingdata-yo-sharepoint-recent-documents.png)
 
-5. По завершении формирования шаблонов заблокируйте версию зависимостей проекта, выполнив следующую команду:
+5. После завершения скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
 
   ```sh
   npm shrinkwrap
@@ -71,7 +71,7 @@ ms.lasthandoff: 01/11/2018
 
 1. Удалите стандартное свойство `description` из интерфейса `IRecentDocumentsWebPartProps`. В редакторе кода откройте файл **./src/webparts/recentDocuments/IRecentDocumentsWebPartProps.ts** и вставьте следующий код:
 
-  ```ts
+  ```typescript
   export interface IRecentDocumentsWebPartProps {
   }
   ```
@@ -102,7 +102,7 @@ ms.lasthandoff: 01/11/2018
 
 3. Удалите стандартное свойство `description` из веб-части. В редакторе кода откройте файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts** и замените метод `render` следующим кодом:
 
-  ```ts
+  ```typescript
   export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
     // ...
     public render(): void {
@@ -120,7 +120,7 @@ ms.lasthandoff: 01/11/2018
 
 4. Замените метод `getPropertyPaneConfiguration` следующим кодом:
 
-  ```ts
+  ```typescript
   export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
     // ...
 
@@ -150,7 +150,7 @@ ms.lasthandoff: 01/11/2018
 
 В папке **./src/webparts/recentDocuments** создайте файл с именем **IDocumentActivity.ts** и вставьте следующий код:
 
-```ts
+```typescript
 export interface IDocumentActivity {
     title: string;
     actorName: string;
@@ -164,7 +164,7 @@ export interface IDocumentActivity {
 
 В папке **./src/webparts/recentDocuments** создайте файл с именем **IDocument.ts** и вставьте следующий код:
 
-```ts
+```typescript
 import { IDocumentActivity } from './IDocumentActivity';
 
 export interface IDocument {
@@ -180,7 +180,7 @@ export interface IDocument {
 
 1. Добавьте свойство **documents** к интерфейсу **IRecentDocumentsProps**. В редакторе кода откройте файл **./src/webparts/recentDocuments/components/IRecentDocumentsProps.ts** и вставьте следующий код:
 
-  ```ts
+  ```typescript
   import { IDocument } from '../IDocument';
 
   export interface IRecentDocumentsProps {
@@ -250,13 +250,13 @@ export interface IDocument {
 
 1. Откройте в редакторе кода файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts**. Добавьте оператор импорта для интерфейса `IDocument` под другими операторами импорта в начале файла, используя следующий код:
 
-  ```ts
+  ```typescript
   import { IDocument } from './IDocument';
   ```
 
 2. В классе `RecentDocumentsWebPart` добавьте новую частную переменную с именем `documents`, используя следующий код:
 
-  ```ts
+  ```typescript
   export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
       private static documents: IDocument[] = [
           {
@@ -324,7 +324,7 @@ export interface IDocument {
 
 3. Измените метод `render`, чтобы он загружал и отображал сведения о недавно измененных документах:
 
-  ```ts
+  ```typescript
   export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
     // ...
     public render(): void {
@@ -384,7 +384,7 @@ export interface IDocument {
 
 1. Удалите свойство `description` из интерфейса `IRecentDocumentWebPartProps`. В редакторе кода откройте файл **./src/webparts/recentDocument/IRecentDocumentWebPartProps.ts** и вставьте следующий код:
 
-  ```ts
+  ```typescript
   export interface IRecentDocumentWebPartProps {
   }
   ```
@@ -415,7 +415,7 @@ export interface IDocument {
 
 3. Удалите стандартное свойство `description` из области свойств веб-части. В редакторе кода откройте файл **./src/webparts/recentDocument/RecentDocumentWebPart.ts** и замените метод `render` следующим кодом:
 
-  ```ts
+  ```typescript
   export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecentDocumentWebPartProps> {
     // ...
     public render(): void {
@@ -433,7 +433,7 @@ export interface IDocument {
 
 4. Замените метод `getPropertyPaneConfiguration` следующим кодом:
 
-  ```ts
+  ```typescript
   export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecentDocumentWebPartProps> {
     // ...
 
@@ -471,7 +471,7 @@ export interface IDocument {
 
 2. В редакторе кода откройте файл **./src/webparts/recentDocuments/components/IRecentDocumentsProps.ts** и измените код в нем на следующий:
 
-  ```ts
+  ```typescript
   import { IDocument } from '../../IDocument';
 
   export interface IRecentDocumentsProps {
@@ -481,13 +481,13 @@ export interface IDocument {
 
 3. Откройте файл **./src/webparts/recentDocuments/components/RecentDocuments.tsx** и замените оператор `import` в интерфейсе `IDocument` следующим кодом:
 
-  ```ts
+  ```typescript
   import { IDocument } from '../../IDocument';
   ```
 
 4. Откройте файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts** и замените оператор `import` в интерфейсе `IDocument` следующим кодом:
 
-  ```ts
+  ```typescript
   import { IDocument } from '../IDocument';
   ```
 
@@ -495,7 +495,7 @@ export interface IDocument {
 
 1. Добавьте свойство `document` к интерфейсу `IRecentDocumentProps`. В редакторе кода откройте файл **./src/webparts/recentDocument/components/IRecentDocumentProps.ts** и вставьте следующий код:
 
-  ```ts
+  ```typescript
   import { IDocument } from '../../IDocument';
 
   export interface IRecentDocumentProps {
@@ -505,7 +505,7 @@ export interface IDocument {
 
 2. В редакторе кода откройте файл **./src/webparts/recentDocument/components/RecentDocument.tsx** и вставьте следующий код:
 
-  ```tsx
+  ```typescriptx
   import * as React from 'react';
   import {
     DocumentCard,
@@ -563,13 +563,13 @@ export interface IDocument {
 
 1. Откройте в редакторе кода файл **./src/webparts/recentDocument/RecentDocumentWebPart.ts**. Добавьте оператор импорта для интерфейса `IDocument` под другими операторами импорта в начале файла, используя следующий код:
 
-  ```ts
+  ```typescript
   import { IDocument } from '../IDocument';
   ```
 
 2. В классе `RecentDocumentWebPart` добавьте новую частную переменную с именем `document`, используя следующий код:
 
-  ```ts
+  ```typescript
   export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecentDocumentWebPartProps> {
       private static document: IDocument = {
           title: 'Proposal for Jacksonville Expansion Ad Campaign',
@@ -589,7 +589,7 @@ export interface IDocument {
 
 3. Измените метод `render`, чтобы он загружал и отображал сведения о последнем измененном документе:
 
-  ```ts
+  ```typescript
   export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
     // ...
     public render(): void {
@@ -644,7 +644,7 @@ export interface IDocument {
 
 В папке **./src/services/documentsService** создайте файл с именем **DocumentsService.ts** и вставьте следующий код:
 
-```ts
+```typescript
 import { IDocument } from './IDocument';
 
 export class DocumentsService {
@@ -734,7 +734,7 @@ export class DocumentsService {
 
 В папке **./src/services/documentsService** создайте файл с именем **index.ts** и вставьте следующий код:
 
-```ts
+```typescript
 export { IDocument } from './IDocument';
 export { IDocumentActivity } from './IDocumentActivity';
 export { DocumentsService } from './DocumentsService';
@@ -742,13 +742,13 @@ export { DocumentsService } from './DocumentsService';
 
 После определения блока данных другие элементы проекта смогут ссылаться на любой из экспортированных типов по относительному пути к папке **./src/services/documentsService**, а не точному пути к отдельному файлу. Например, ссылка на интерфейс `IDocument` может быть такой:
 
-```ts
+```typescript
 import { IDocument } from '../services/documentsService';
 ```
 
 а не такой:
 
-```ts
+```typescript
 import { IDocument } from '../services/documentsService/IDocument.ts';
 ```
 
@@ -763,7 +763,7 @@ import { IDocument } from '../services/documentsService/IDocument.ts';
 
 1. В редакторе кода откройте файл **./src/webparts/recentDocuments/components/IRecentDocumentsProps.ts** и измените код в нем на следующий:
 
-  ```ts
+  ```typescript
   import { IDocument } from '../../../services/documentsService';
 
   export interface IRecentDocumentsProps {
@@ -773,13 +773,13 @@ import { IDocument } from '../services/documentsService/IDocument.ts';
 
 2. Откройте файл **./src/webparts/recentDocuments/components/RecentDocuments.tsx** и замените оператор `import` в интерфейсе `IDocument` следующим кодом:
 
-  ```ts
+  ```typescript
   import { IDocument } from '../../../services/documentsService';
   ```
 
 3. Откройте файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts** и замените оператор `import` в интерфейсе `IDocument` следующим кодом:
 
-  ```ts
+  ```typescript
   import { IDocument } from '../../services/documentsService';
   ```
 
@@ -787,7 +787,7 @@ import { IDocument } from '../services/documentsService/IDocument.ts';
 
 1. В редакторе кода откройте файл **./src/webparts/recentDocument/components/IRecentDocumentProps.ts** и измените его код на следующий:
 
-  ```ts
+  ```typescript
   import { IDocument } from '../../../services/documentsService';
 
   export interface IRecentDocumentProps {
@@ -797,13 +797,13 @@ import { IDocument } from '../services/documentsService/IDocument.ts';
 
 2. Откройте файл **./src/webparts/recentDocument/components/RecentDocument.tsx** и измените оператор `import` в интерфейсе `IDocument` на следующий:
 
-  ```ts
+  ```typescript
   import { IDocument } from '../../../services/documentsService';
   ```
 
 3. Откройте файл **./src/webparts/recentDocument/RecentDocumentWebPart.ts** и замените оператор `import` в интерфейсе `IDocument` на следующий:
 
-  ```ts
+  ```typescript
   import { IDocument } from '../../services/documentsService';
   ```
 
@@ -825,13 +825,13 @@ import { IDocument } from '../services/documentsService/IDocument.ts';
 
 1. Откройте в редакторе кода файл **./src/webparts/recentDocuments/RecentDocumentsWebPart.ts**. Замените оператор `import`, ссылающийся на интерфейс `IDocument`, на следующий оператор:
 
-  ```ts
+  ```typescript
   import { IDocument, DocumentsService } from '../../services/documentsService';
   ```
 
 2. Обновите метод `render`, используя следующий код:
 
-  ```ts
+  ```typescript
   export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
     // ...
     public render(): void {
@@ -858,13 +858,13 @@ import { IDocument } from '../services/documentsService/IDocument.ts';
 
 1. Откройте в редакторе кода файл **./src/webparts/recentDocument/RecentDocumentWebPart.ts**. Замените оператор `import`, ссылающийся на интерфейс `IDocument`, на следующий оператор:
 
-  ```ts
+  ```typescript
   import { IDocument, DocumentsService } from '../../services/documentsService';
   ```
 
 2. Обновите метод `render`, используя следующий код:
 
-  ```ts
+  ```typescript
   export default class RecentDocumentWebPart extends BaseClientSideWebPart<IRecentDocumentWebPartProps> {
     // ...
     public render(): void {
@@ -903,7 +903,7 @@ import { IDocument } from '../services/documentsService/IDocument.ts';
 
 1. Откройте в редакторе кода файл **./src/services/documentsService/DocumentsService.ts** и вставьте следующий код:
 
-  ```ts
+  ```typescript
   import { IDocument } from './IDocument';
 
   export class DocumentsService {

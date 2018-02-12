@@ -3,11 +3,11 @@ title: "Интеграция свойств веб-части в SharePoint"
 description: "Используйте возможности, упрощающие управление значениями свойств веб-части, и интегрируйте их со службой поиска SharePoint при создании клиентских веб-частей SharePoint Framework."
 ms.date: 01/10/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 381ccc6862088e9388df61283175c12835781ccb
-ms.sourcegitcommit: 1f1044e59d987d878bb8bc403413e3090234ad44
+ms.openlocfilehash: 17beb9335654f7f5a35209005b101e5fca287d4c
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="integrate-web-part-properties-with-sharepoint"></a>Интеграция свойств веб-части с SharePoint
 
@@ -38,7 +38,7 @@ ms.lasthandoff: 01/11/2018
 
 Чтобы указать конфигурацию для свойств веб-части, в классе веб-части переопределите метод получения **propertiesMetadata**:
 
-```ts
+```typescript
 import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,

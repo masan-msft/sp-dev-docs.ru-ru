@@ -3,11 +3,11 @@ title: "Создание первого расширения для настро
 description: "Создайте проект, а затем напишите и отладьте расширение, используя расширения SharePoint Framework (SPFx)."
 ms.date: 01/11/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 42387ca54e230bb843d327f31a130d8c5395c558
-ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.openlocfilehash: 127c2290ab4379aca35f950bc46b2be48aa7ff9c
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="build-your-first-field-customizer-extension"></a>Создание первого расширения для настройки полей
 
@@ -97,7 +97,7 @@ ms.lasthandoff: 01/18/2018
 
 Обратите внимание, что базовый класс для настройщика полей импортируется из пакета **sp-listview-extensibility**, который содержит код платформы SharePoint Framework, необходимый для настройщика полей.
 
-```ts
+```typescript
 import { Log } from '@microsoft/sp-core-library';
 import { override } from '@microsoft/decorators';
 import {
@@ -114,7 +114,7 @@ import {
 
 Ниже представлено содержимое методов **onRenderCell()** и **onDisposeCell()** в решении по умолчанию.
 
-```ts
+```typescript
 @override
   public onRenderCell(event: IFieldCustomizerCellEventParameters): void {
     // Use this method to perform your custom cell rendering.
@@ -231,7 +231,7 @@ import {
     
 2. Откройте файл **HelloWorldFieldCustomizer.ts** в папке **src\extensions\helloWorld** и измените метод **onRednerCell**, как показано ниже.
 
-    ```ts
+    ```typescript
         @override
         public onRenderCell(event: IFieldCustomizerCellEventParameters): void {
 

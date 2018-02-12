@@ -3,11 +3,11 @@ title: "Упрощенное добавление веб-частей с пом�
 description: "Используйте предварительно настроенные записи в клиентской веб-части SharePoint Framework, чтобы предоставлять пользователям уже настроенные версии веб-части."
 ms.date: 01/09/2018
 ms.prod: sharepoint
-ms.openlocfilehash: a77add94c3a099dc8c81123a0a7defd8f9ee370a
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: 68ba1a0501a4a9154874ea15d01859369ab05577
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="simplify-adding-web-parts-with-preconfigured-entries"></a>Упрощенное добавление веб-частей с помощью предварительно настроенных записей
 
@@ -148,7 +148,7 @@ ms.lasthandoff: 01/10/2018
 
   ![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/preconfiguredentries-yeoman.png)
 
-5. По завершении формирования шаблона заблокируйте версию зависимостей проекта, выполнив следующую команду:
+5. По завершении скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
 
   ```sh
   npm shrinkwrap
@@ -191,7 +191,7 @@ ms.lasthandoff: 01/10/2018
   
 3. Откройте в редакторе кода файл **./src/webparts/gallery/IGalleryWebPartProps.ts**. Измените его код на следующий:
 
-  ```ts
+  ```typescript
   export interface IGalleryWebPartProps {
     listName: string;
     order: string;
@@ -204,7 +204,7 @@ ms.lasthandoff: 01/10/2018
   
 4. Откройте в редакторе кода файл **./src/webparts/gallery/GalleryWebPart.ts**. Замените содержимое метода **render** следующим кодом:
 
-  ```ts
+  ```typescript
   export default class GalleryWebPart extends BaseClientSideWebPart<IGalleryWebPartProps> {
     // ...
     public render(): void {
@@ -223,7 +223,7 @@ ms.lasthandoff: 01/10/2018
 
 5. Измените главный компонент React так, чтобы отображались значения свойств. Если веб-часть не настроена, должен отображаться стандартный заполнитель веб-части. Откройте в редакторе кода файл **./src/webparts/gallery/components/Gallery.tsx** и измените его код на следующий:
 
-  ```ts
+  ```typescript
   import * as React from 'react';
   import styles from './Gallery.module.scss';
   import { IGalleryProps } from './IGalleryProps';
@@ -290,7 +290,7 @@ ms.lasthandoff: 01/10/2018
 
 6. Обновите интерфейс основного компонента React в соответствии со свойством веб-части Interface, так как мы обходим все свойства веб-части для этого компонента. Откройте в редакторе кода файл **./src/webparts/gallery/components/IGalleryProps.ts** и измените его код на следующий:
 
-  ```ts
+  ```typescript
   import { IGalleryWebPartProps } from '../IGalleryWebPartProps';
 
   export interface IGalleryProps extends IGalleryWebPartProps {
@@ -303,7 +303,7 @@ ms.lasthandoff: 01/10/2018
 
 1. Откройте в редакторе кода файл **./src/webparts/gallery/GalleryWebPart.ts**. В верхнем разделе файла замените оператор импорта **@microsoft/sp-webpart-base** следующим кодом:
 
-  ```ts
+  ```typescript
   import {
     BaseClientSideWebPart,
     IPropertyPaneConfiguration,
@@ -315,7 +315,7 @@ ms.lasthandoff: 01/10/2018
 
 2. Замените содержимое метода **propertyPaneSettings** следующим кодом:
 
-  ```ts
+  ```typescript
   export default class GalleryWebPart extends BaseClientSideWebPart<IGalleryWebPartProps> {
     // ...
     protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
@@ -386,7 +386,7 @@ ms.lasthandoff: 01/10/2018
 
 1. Откройте в редакторе кода файл **./src/webparts/gallery/loc/mystrings.d.ts**. Измените его код на следующий:
 
-  ```ts
+  ```typescript
   declare interface IGalleryStrings {
     PropertyPaneDescription: string;
     BasicGroupName: string;

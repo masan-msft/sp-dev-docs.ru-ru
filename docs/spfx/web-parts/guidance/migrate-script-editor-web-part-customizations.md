@@ -3,11 +3,11 @@ title: "Перенос существующих модификаций на ос
 description: "Преимущества переноса клиентских настроек на платформу SharePoint Framework и факторы, которые следует учитывать при его планировании."
 ms.date: 01/09/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 5bd6bce189bf56ce892ba066974fa4b2cdd59bd3
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: 815827ad2e3d201444c29c92ab67d684d07e65cc
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="migrate-existing-script-editor-web-part-customizations-to-the-sharepoint-framework"></a>Перенос настроек на основе веб-части "Редактор скриптов" в SharePoint Framework
 
@@ -188,7 +188,7 @@ module.exports = {
 
 Затем вы сможете сослаться на скрипт в классе веб-части и вызвать функцию **greeting**:
 
-```ts
+```typescript
 public render(): void {  
   this.domElement.innerHTML = `
     <input type="button" value="Click me"/>`;
@@ -204,7 +204,7 @@ public render(): void {
 
 В SharePoint Framework есть два клиента HTTP: [SPHttpClient](https://docs.microsoft.com/ru-RU/javascript/api/sp-application-base), предназначенный для отправки запросов REST API SharePoint, и [HttpClient](https://docs.microsoft.com/ru-RU/javascript/api/sp-application-base), предназначенный для отправки веб-запросов других REST API. Вот как выполнить вызов, используя SPHttpClient для получения заголовка текущего сайта SharePoint:
 
-```ts
+```typescript
 this.context.spHttpClient.get(`${this.context.pageContext.web.absoluteUrl}/_api/web?$select=Title`,
 SPHttpClient.configurations.v1,
 {

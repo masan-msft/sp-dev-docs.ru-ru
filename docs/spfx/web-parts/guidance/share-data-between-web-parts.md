@@ -3,11 +3,11 @@ title: "Совместное использование данных клиен�
 description: "Узнайте, какие подходы можно использовать для совместного использования и хранения полученных данных в нескольких веб-частях SharePoint."
 ms.date: 01/10/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 0d058b7f87b29f49683c9aec62d3d569d47c0d80
-ms.sourcegitcommit: 1f1044e59d987d878bb8bc403413e3090234ad44
+ms.openlocfilehash: a9b423c5bf55ebe14f1b7c77c92b2c532750707e
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="share-data-between-client-side-web-parts"></a>Совместное использование данных клиентскими веб-частями
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 01/11/2018
 
 Служба, отвечающая за загрузку данных, может выглядеть примерно так:
 
-```ts
+```typescript
 import { IDocument } from './IDocument';
 
 export class DocumentsService {
@@ -47,7 +47,7 @@ export class DocumentsService {
 
 Клиентские веб-части SharePoint Framework используют эту службу с помощью следующего кода:
 
-```ts
+```typescript
 import { DocumentsService, IDocument } from '../../services';
 
 export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
@@ -86,7 +86,7 @@ export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecen
 
 Представленную выше службу доступа к данным можно изменить следующим образом:
 
-```ts
+```typescript
 import { IDocument } from './IDocument';
 
 export class DocumentsService {
@@ -162,7 +162,7 @@ export class DocumentsService {
 
 Подход с использованием файлов cookie напоминает сохранение данных в глобальной переменной. Единственное отличие состоит в том, что фактические данные будут сохранены в файле cookie.
 
-```ts
+```typescript
 import { IDocument } from './IDocument';
 import * as Cookies from 'js-cookie';
 
@@ -255,7 +255,7 @@ export class DocumentsService {
 
 Приведенную выше реализацию службы доступа к данным на основе файлов cookie можно легко адаптировать к использованию локального хранилища.
 
-```ts
+```typescript
 import { IDocument } from './IDocument';
 
 export class DocumentsService {
@@ -324,7 +324,7 @@ export class DocumentsService {
 
 Во-первых, нужно реализовать интерфейс с операциями и свойствами, которые она поддерживает.
 
-```ts
+```typescript
 export interface IDocumentsService {
     getRecentDocument(): Promise<IDocument>;
     getRecentDocuments(startFrom: number): Promise<IDocument[]>;
@@ -339,7 +339,7 @@ export class DocumentsService implements IDocumentsService {
 
 Затем нужно указать [ключ службы](https://docs.microsoft.com/ru-RU/javascript/api/sp-core-library/servicekey), необходимый для регистрации службы в SharePoint Framework, и обеспечить его использование из веб-частей.
 
-```ts
+```typescript
 import { ServiceScope, ServiceKey } from '@microsoft/sp-core-library';
 
 export class DocumentsService implements IDocumentsService {
@@ -375,7 +375,7 @@ export class DocumentsService implements IDocumentsService {
 
 Когда все будет готово, вы сможете использовать службу SharePoint Framework в веб-части, ссылаясь на пакет службы и обращаясь к службе по ее ключу.
 
-```ts
+```typescript
 // ...
 import { DocumentsService, IDocumentsService, IDocument } from 'react-recentdocuments-service';
 import { ServiceScope } from '@microsoft/sp-core-library';

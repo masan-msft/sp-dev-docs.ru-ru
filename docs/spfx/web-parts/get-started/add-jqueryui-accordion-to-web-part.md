@@ -3,11 +3,11 @@ title: "Добавление элемента Accordion jQueryUI в клиент
 description: "Чтобы добавить в проект веб-части элемент \"аккордеон\" jQueryUI, требуется создать новую веб-часть."
 ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: ac0eb1ca71d3aca2a948ed1f46c5896f975687bc
-ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.openlocfilehash: 3c692687133db378dd23842d1ef28ad202e733eb
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="add-jqueryui-accordion-to-your-sharepoint-client-side-web-part"></a>Добавление элемента "аккордеон" jQueryUI в клиентскую веб-часть SharePoint
 
@@ -244,7 +244,7 @@ ms.lasthandoff: 01/18/2018
 
 2. В верхней части файла, где указаны другие операции импорта, добавьте следующий код:
 
-  ```ts
+  ```typescript
   import MyAccordionTemplate from './MyAccordionTemplate';
   ```
 
@@ -252,20 +252,20 @@ ms.lasthandoff: 01/18/2018
 
 1. Вы можете импортировать jQuery в свою веб-часть так же, как импортировали MyAccordionTemplate. В верхней части файла, где указаны другие операции импорта, добавьте следующий код:
 
-  ```ts
+  ```typescript
   import * as jQuery from 'jquery';
   import 'jqueryui';
   ```
 
 2. Загрузите внешние CSS-файлы, используя загрузчик модулей. Добавьте следующую операцию импорта:
 
-  ```ts
+  ```typescript
   import { SPComponentLoader } from '@microsoft/sp-loader';
   ```
 
 3. Загрузите стили jQueryUI в классе `JQueryWebPart` веб-части, добавив конструктор и используя импортированный ранее SPComponentLoader. Добавьте в веб-часть следующий конструктор: 
 
-  ```ts
+  ```typescript
     public constructor() {
       super();
 
@@ -285,13 +285,13 @@ ms.lasthandoff: 01/18/2018
 
 2. Укажите отрисовку HTML-кода элемента "аккордеон" во внутреннем HTML-коде веб-части:
 
-  ```ts
+  ```typescript
   this.domElement.innerHTML = MyAccordionTemplate.templateHtml;
   ```
 
 3. Настроить элемент "аккордеон" jQueryUI можно несколькими способами. Задайте несколько параметров для элемента "аккордеон" прямо под оператором `this.domElement.innerHTML = MyAccordionTemplate.templateHtml;`:
 
-  ```ts
+  ```typescript
   const accordionOptions: JQueryUI.AccordionOptions = {
     animate: true,
     collapsible: false,
@@ -308,7 +308,7 @@ ms.lasthandoff: 01/18/2018
 
 4. Инициализируйте элемент "аккордеон":
 
-  ```ts
+  ```typescript
   jQuery('.accordion', this.domElement).accordion(accordionOptions);
   ```
 
@@ -316,7 +316,7 @@ ms.lasthandoff: 01/18/2018
 
   Метод `render` полностью выглядит так:
 
-  ```ts
+  ```typescript
   public render(): void {
     this.domElement.innerHTML = MyAccordionTemplate.templateHtml;
 

@@ -3,11 +3,11 @@ title: "Создание пользовательских элементов у�
 description: "Создайте пользовательское раскрывающееся меню, которое асинхронно загружает данные из внешней службы, не блокируя пользовательский интерфейс клиентской веб-части SharePoint."
 ms.date: 01/10/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 0e17ad3d494ec24608ff167539018919591c9688
-ms.sourcegitcommit: 1f1044e59d987d878bb8bc403413e3090234ad44
+ms.openlocfilehash: e4b38566a0e6425db8756288c98d8c88f6d89780
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="build-custom-controls-for-the-property-pane"></a>Создание пользовательских элементов управления для области свойств
 
@@ -24,13 +24,13 @@ SharePoint Framework содержит набор стандартных элем
 
 ## <a name="create-new-project"></a>Создание проекта
 
-1. Для начала создайте папку проекта.
+1. Для начала создайте папку проекта:
 
   ```sh
   md react-custompropertypanecontrol
   ```
 
-2. Перейдите к папке проекта:
+2. Перейдите в папку проекта:
 
   ```sh
   cd react-custompropertypanecontrol
@@ -52,13 +52,13 @@ SharePoint Framework содержит набор стандартных элем
 
   ![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/custom-property-pane-control-yeoman.png)
 
-5. После завершения скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
+5. По завершении скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
 
   ```sh
   npm shrinkwrap
   ```
 
-6. Откройте папку проекта в редакторе кода. В этой статье в инструкциях и на снимках экрана указывается Visual Studio Code, но вы можете использовать любой другой редактор.
+6. Откройте папку проекта в редакторе кода. В инструкциях и на снимках экрана из этой статьи используется Visual Studio Code, но вы можете использовать любой другой редактор.
 
   ![Проект SharePoint Framework, открытый в Visual Studio Code](../../../images/custom-property-pane-control-visual-studio-code.png)
 
@@ -72,7 +72,7 @@ SharePoint Framework содержит набор стандартных элем
 
 2. Откройте файл **src/webparts/listItems/IListItemsWebPartProps.ts** и замените его содержимое следующим:
 
-  ```ts
+  ```typescript
   export interface IListItemsWebPartProps {
     listName: string;
   }
@@ -80,7 +80,7 @@ SharePoint Framework содержит набор стандартных элем
 
 3. В файле **src/webparts/listItems/ListItemsWebPart.ts** замените метод **render** на следующий:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     public render(): void {
@@ -96,7 +96,7 @@ SharePoint Framework содержит набор стандартных элем
 
 4. Обновите метод **getPropertyPaneConfiguration** следующим образом:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
@@ -126,7 +126,7 @@ SharePoint Framework содержит набор стандартных элем
 
 5. В файле **src/webparts/listItems/loc/mystrings.d.ts** измените интерфейс **IListItemsWebPartStrings** следующим образом:
 
-  ```ts
+  ```typescript
   declare interface IListItemsWebPartStrings {
     PropertyPaneDescription: string;
     BasicGroupName: string;
@@ -173,7 +173,7 @@ SharePoint Framework содержит набор стандартных элем
 
 8. Откройте файл **src/webparts/listItems/components/IListItemsProps.ts** и замените его содержимое следующим кодом:
 
-  ```ts
+  ```typescript
   export interface IListItemsProps {
     listName: string;
   }
@@ -217,7 +217,7 @@ SharePoint Framework содержит набор стандартных элем
 
 2. Определите свойства компонента React асинхронного раскрывающегося меню. В папке **src/controls/PropertyPaneAsyncDropdown/components** создайте файл **IAsyncDropdownProps.ts** и введите следующий код:
 
-  ```ts
+  ```typescript
   import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
 
   export interface IAsyncDropdownProps {
@@ -240,7 +240,7 @@ SharePoint Framework содержит набор стандартных элем
 
 3. Определите интерфейс компонента React для асинхронного раскрывающегося меню. В папке **src/controls/PropertyPaneAsyncDropdown/components** создайте файл **IAsyncDropdownState.ts** и введите следующий код:
 
-  ```ts
+  ```typescript
   import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
 
   export interface IAsyncDropdownState {
@@ -257,7 +257,7 @@ SharePoint Framework содержит набор стандартных элем
 
 4. Определите компонент React асинхронного раскрывающегося меню. В папке **src/controls/PropertyPaneAsyncDropdown/components** создайте файл **AsyncDropdown.tsx** и введите следующий код:
 
-  ```tsx
+  ```typescriptx
   import * as React from 'react';
   import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
   import { Spinner } from 'office-ui-fabric-react/lib/components/Spinner';
@@ -369,7 +369,7 @@ SharePoint Framework содержит набор стандартных элем
 
 2. Определите общедоступные свойства для асинхронного раскрывающегося меню области свойств. В папке **src/controls/PropertyPaneAsyncDropdown** создайте файл **IPropertyPaneAsyncDropdownProps.ts** и введите следующий код:
 
-  ```ts
+  ```typescript
   import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
 
   export interface IPropertyPaneAsyncDropdownProps {
@@ -390,7 +390,7 @@ SharePoint Framework содержит набор стандартных элем
 
 3. Определите внутренние свойства для асинхронного раскрывающегося меню области свойств. В папке **src/controls/PropertyPaneAsyncDropdown** создайте файл **IPropertyPaneAsyncDropdownInternalProps.ts** и введите следующий код:
 
-  ```ts
+  ```typescript
   import { IPropertyPaneCustomFieldProps } from '@microsoft/sp-webpart-base';
   import { IPropertyPaneAsyncDropdownProps } from './IPropertyPaneAsyncDropdownProps';
 
@@ -402,7 +402,7 @@ SharePoint Framework содержит набор стандартных элем
 
 4. Определите асинхронное раскрывающееся меню области свойств. В папке **src/controls/PropertyPaneAsyncDropdown** создайте файл **PropertyPaneAsyncDropdown.ts** и введите следующий код:
 
-  ```ts
+  ```typescript
   import * as React from 'react';
   import * as ReactDom from 'react-dom';
   import {
@@ -483,7 +483,7 @@ SharePoint Framework содержит набор стандартных элем
 
 Чтобы передавать сведения о доступных списках согласованно, определите интерфейс, который будет представлять сведения о списке. В папке **src/webparts/listItems** создайте файл **IListInfo.ts** и введите следующий код:
 
-```ts
+```typescript
 export interface IListInfo {
   Id: string;
   Title: string;
@@ -494,13 +494,13 @@ export interface IListInfo {
 
 1. Добавьте ссылку на обязательные типы. В верхней части файла **src/webparts/listItems/ListItemsWebPart.ts** импортируйте созданный класс **PropertyPaneAsyncDropdown**, добавив следующее:
 
-  ```ts
+  ```typescript
   import { PropertyPaneAsyncDropdown } from '../../controls/PropertyPaneAsyncDropdown/PropertyPaneAsyncDropdown';
   ```
 
 2. После этого кода добавьте ссылку на интерфейс **IDropdownOption** и две вспомогательные функции, необходимые для работы со свойствами веб-части.
 
-  ```ts
+  ```typescript
   import { IDropdownOption } from 'office-ui-fabric-react/lib/components/Dropdown';
   import { update, get } from '@microsoft/sp-lodash-subset';
   ```
@@ -511,7 +511,7 @@ export interface IListInfo {
 
 3. Добавьте метод для загрузки доступных списков. В классе **ListItemsWebPart** добавьте метод для загрузки доступных списков. В этой статье используются фиктивные данные, но вы также можете вызвать REST API для SharePoint, чтобы извлечь список доступных списков из текущего веб-сайта. Для имитации загрузки параметров из внешней службы метод использует двухсекундную задержку.
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     private loadLists(): Promise<IDropdownOption[]> {
@@ -533,7 +533,7 @@ export interface IListInfo {
 
 4. Добавьте метод для обработки изменения значения в раскрывающемся меню. В классе **ListItemsWebPart** добавьте метод **onListChange**.
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     private onListChange(propertyPath: string, newValue: any): void {
@@ -550,7 +550,7 @@ export interface IListInfo {
 
 5. Выполните отрисовку свойства веб-части списка с помощью асинхронного раскрывающегося меню области свойств. В классе **ListItemsWebPart** измените метод **getPropertyPaneConfiguration** так, чтобы он использовал асинхронное раскрывающееся меню области свойств для отрисовки свойства веб-части **listName**.
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
@@ -603,7 +603,7 @@ export interface IListInfo {
 
 1. В редакторе кода откройте файл **src/webparts/listItems/ListItemsWebPart.manifest.json**. В разделе **properties** добавьте свойство **item**, чтобы оно выглядело следующим образом:
 
-  ```ts
+  ```typescript
   // ...
   "properties": {
     "listName": "",
@@ -618,7 +618,7 @@ export interface IListInfo {
 
 2. Измените код в файле **src/webparts/listItems/IListItemsWebPartProps.ts** следующим образом:
 
-  ```ts
+  ```typescript
   export interface IListItemsWebPartProps {
     listName: string;
     item: string;
@@ -627,7 +627,7 @@ export interface IListInfo {
 
 3. Измените содержимое файла **src/webparts/listItems/components/IListItemsProps.ts** следующим образом:
 
-  ```ts
+  ```typescript
   export interface IListItemsProps {
     listName: string;
     item: string;
@@ -636,7 +636,7 @@ export interface IListInfo {
 
 4. В файле **src/webparts/listItems/ListItemsWebPart.ts** замените код метода **render** следующим:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     public render(): void {
@@ -653,7 +653,7 @@ export interface IListInfo {
 
 5. В файле **src/webparts/listItems/loc/mystrings.d.ts** измените интерфейс **IListItemsWebPartStrings** следующим образом:
 
-  ```ts
+  ```typescript
   declare interface IListItemsWebPartStrings {
     PropertyPaneDescription: string;
     BasicGroupName: string;
@@ -707,7 +707,7 @@ export default class ListItems extends React.Component<IListItemsProps, {}> {
 
 В файле **src/webparts/listItems/ListItemsWebPart.ts** добавьте метод в классе **ListItemsWebPart** для загрузки доступных элементов из выбранного списка. Как и для загрузки доступных списков, здесь используются фиктивные данные. В зависимости от того, какой список выбран ранее, метод **loadItems** возвращает фиктивные элементы списка. Если список не выбран, метод разрешает обещание без данных.
 
-```ts
+```typescript
 export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
   // ...
   private loadItems(): Promise<IDropdownOption[]> {
@@ -755,7 +755,7 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
 
 В классе **ListItemsWebPart** добавьте метод **onListItemChange**. После выбора элемента в раскрывающемся меню веб-часть должна сохранить новое значение в свойствах и обновиться с учетом изменений в пользовательском интерфейсе.
 
-```ts
+```typescript
 export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
   // ...
   private onListItemChange(propertyPath: string, newValue: any): void {
@@ -773,7 +773,7 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
 
 1. В классе **ListItemsWebPart** добавьте свойство класса **itemsDropdown**.
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     private itemsDropDown: PropertyPaneAsyncDropdown;
     // ...
@@ -782,7 +782,7 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
 
 2. Замените код метода **getPropertyPaneConfiguration** на такой:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
@@ -832,7 +832,7 @@ export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWe
 
 1. Чтобы реализовать эту логику, дополните ранее заданный метод **onListChange**:
 
-  ```ts
+  ```typescript
   export default class ListItemsWebPart extends BaseClientSideWebPart<IListItemsWebPartProps> {
     // ...
     private onListChange(propertyPath: string, newValue: any): void {

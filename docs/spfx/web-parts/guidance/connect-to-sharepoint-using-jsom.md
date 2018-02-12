@@ -3,11 +3,11 @@ title: "Подключение к SharePoint с помощью объектно�
 description: "Узнайте, как использовать JSOM SharePoint при создании решений на платформе SharePoint Framework."
 ms.date: 01/09/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 9baa9eff13769a93239eb56bdda50139ecf391a4
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: df37c25ce3e2fabb82c44a90e0e7391226e07c9a
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="connect-to-sharepoint-using-the-javascript-object-model-jsom"></a>Подключение к SharePoint с помощью объектной модели JavaScript (JSOM)
 
@@ -155,7 +155,7 @@ ms.lasthandoff: 01/10/2018
 
 Откройте в редакторе кода файл **./src/webparts/sharePointLists/components/SharePointLists.tsx**. После последнего оператора `import` добавьте следующий код:
 
-```ts
+```typescript
   require('sp-init');
   require('microsoft-ajax');
   require('sp-runtime');
@@ -172,7 +172,7 @@ ms.lasthandoff: 01/10/2018
 
 1. Откройте в редакторе кода файл **./src/webparts/sharePointLists/components/ISharePointListsProps.ts** и добавьте к интерфейсу `ISharePointListsProps` свойство `siteUrl`:
 
-  ```ts
+  ```typescript
   export interface ISharePointListsProps {
     description: string;
     siteUrl: string;
@@ -181,7 +181,7 @@ ms.lasthandoff: 01/10/2018
 
 2. Чтобы передать компоненту URL-адрес текущего сайта, откройте файл **./src/webparts/sharePointLists/SharePointListsWebPart.ts** и измените метод `render` следующим образом:
 
-  ```ts
+  ```typescript
   export default class SharePointListsWebPart extends BaseClientSideWebPart<ISharePointListsWebPartProps> {
     public render(): void {
       const element: React.ReactElement<ISharePointListsProps > = React.createElement(
@@ -205,7 +205,7 @@ ms.lasthandoff: 01/10/2018
 
 С помощью редактора кода создайте в папке **./src/webparts/sharePointLists/components** файл **ISharePointListsState.ts** и вставьте следующий текст:
 
-```ts
+```typescript
 export interface ISharePointListsState {
     listTitles: string[];
     loadingLists: boolean;
@@ -219,13 +219,13 @@ export interface ISharePointListsState {
 
 1. Откройте в редакторе кода файл **./src/webparts/sharePointLists/components/SharePointLists.tsx**. Под имеющимися операторами `import` добавьте следующее:
 
-  ```ts
+  ```typescript
   import { ISharePointListsState } from './ISharePointListsState';
   ```
 
 2. Измените подпись класса `SharePointLists` следующим образом:
 
-  ```ts
+  ```typescript
   export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
     // ...
   }
@@ -233,7 +233,7 @@ export interface ISharePointListsState {
 
 3. В классе `SharePointLists` добавьте конструктор со значением состояния по умолчанию:
 
-  ```ts
+  ```typescript
   export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
     constructor(props?: ISharePointListsProps, context?: any) {
       super();
@@ -257,7 +257,7 @@ export interface ISharePointListsState {
 
 1. Откройте в редакторе кода файл **./src/webparts/sharePointLists/components/SharePointLists.tsx**. В классе `SharePointLists` добавьте метод `getListsTitles`:
 
-  ```ts
+  ```typescript
   export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
     constructor(props?: ISharePointListsProps, context?: any) {
       super();
@@ -280,7 +280,7 @@ export interface ISharePointListsState {
 
 2. Чтобы обеспечить правильное определение области метода, мы привяжем его к веб-части в конструкторе. Используйте JSOM SharePoint в методе `getListsTitles`, чтобы загрузить названия списков SharePoint на текущем сайте:
 
-  ```ts
+  ```typescript
   export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
     // ...
     private getListsTitles(): void {
@@ -424,7 +424,7 @@ export interface ISharePointListsState {
 
 1. Откройте в редакторе кода файл **./src/webparts/sharePointLists/components/ISharePointListsState.ts** и вставьте следующий код:
 
-  ```ts
+  ```typescript
   export interface ISharePointListsState {
       listTitles: string[];
       loadingLists: boolean;
@@ -435,7 +435,7 @@ export interface ISharePointListsState {
 
 2. Добавьте новое свойство к определениям состояний в компоненте React. Откройте в редакторе кода файл **./src/webparts/sharePointLists/components/SharePointLists.tsx**. Обновите конструктор, вставив следующий код:
 
-  ```ts
+  ```typescript
   export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
     constructor(props?: ISharePointListsProps, context?: any) {
       super();
@@ -455,7 +455,7 @@ export interface ISharePointListsState {
 
 3. В том же файле замените код метода `getListsTitles` на следующий:
 
-  ```ts
+  ```typescript
   export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {
     // ...
     private getListsTitles(): void {
@@ -558,7 +558,7 @@ export interface ISharePointListsState {
 
 1. Откройте в редакторе кода файл **./src/webparts/sharePointLists/components/SharePointLists.tsx**. Добавьте в начале файла оператор `import`, ссылающийся на класс `SPComponentLoader`. Добавьте метод `componentDidMount` в класс `SharePointLists`:
 
-  ```ts
+  ```typescript
   import { SPComponentLoader } from '@microsoft/sp-loader';
 
   export default class SharePointLists extends React.Component<ISharePointListsProps, ISharePointListsState> {

@@ -3,11 +3,11 @@ title: "Создание первой клиентской веб-части Sha
 description: "Создание и предварительный просмотр проекта веб-части."
 ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 454611f051ea34072a9196b42da41632cb993c4d
-ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.openlocfilehash: 259689c87365b6e1c70686b1cd1108549318f9b0
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="build-your-first-sharepoint-client-side-web-part-hello-world-part-1"></a>Создание первой клиентской веб-части SharePoint (Hello World, часть 1)
 
@@ -172,7 +172,7 @@ TypeScript — это основной язык для создания клие
 
 Тип свойства определяется как интерфейс перед классом **HelloWorldWebPart** в файле **HelloWorldWebPart.ts**.
 
-```ts
+```typescript
 export interface IHelloWorldWebPartProps {
     description: string;
 }
@@ -183,7 +183,7 @@ export interface IHelloWorldWebPartProps {
 #### <a name="web-part-render-method"></a>Метод отрисовки веб-части
 Элемент DOM, в котором должна отрисовываться веб-часть, доступен в методе **render**. Этот метод используется для отрисовки веб-части в этом элементе DOM. В веб-части **HelloWorld** элемент DOM присвоен переменной DIV. Параметры метода включают режим отображения (чтение или редактирование) и настроенные свойства веб-части, если они есть: 
 
-```ts
+```typescript
   public render(): void {
     this.domElement.innerHTML = `
       <div class="${ styles.helloWorld }">
@@ -211,7 +211,7 @@ export interface IHelloWorldWebPartProps {
 
 Когда свойства заданы, вы можете получить к ним доступ в веб-части, используя строку `this.properties.<property-value>`, как показано в примере с методом **render**:
 
-```ts
+```typescript
 <p class="${styles.description}">${escape(this.properties.description)}</p>
 ```
 
@@ -221,7 +221,7 @@ export interface IHelloWorldWebPartProps {
 
 1. Перейдите к верхней части файла и добавьте приведенный ниже код в раздел импорта из `@microsoft/sp-webpart-base`.
 
-  ```ts
+  ```typescript
   PropertyPaneCheckbox,
   PropertyPaneDropdown,
   PropertyPaneToggle
@@ -229,7 +229,7 @@ export interface IHelloWorldWebPartProps {
 
   Полный раздел импорта выглядит следующим образом:
 
-  ```ts
+  ```typescript
   import {
     BaseClientSideWebPart,
     IPropertyPaneConfiguration,
@@ -244,7 +244,7 @@ export interface IHelloWorldWebPartProps {
 
 3. Замените интерфейс **IHelloWorldWebPartProps** на приведенный ниже код.
 
-  ```ts
+  ```typescript
   export interface IHelloWorldWebPartProps {
       description: string;
       test: string;
@@ -258,7 +258,7 @@ export interface IHelloWorldWebPartProps {
 
 5. Замените метод **getPropertyPaneConfiguration** указанным ниже кодом, который добавляет новые поля области свойств и сопоставляет их с соответствующими типизированными объектами.
 
-  ```ts
+  ```typescript
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {
       pages: [
@@ -304,7 +304,7 @@ export interface IHelloWorldWebPartProps {
 
 6. После добавления свойств веб-части к ним можно получить доступ так же, как к свойству **description**:
 
-  ```ts
+  ```typescript
   <p class="${ styles.description }">${escape(this.properties.test)}</p>
   ```
 
@@ -312,7 +312,7 @@ export interface IHelloWorldWebPartProps {
 
 7. Откройте файл `HelloWorldWebPart.manifest.json` и замените `properties` следующим кодом:
 
-  ```ts
+  ```typescript
   "properties": {
     "description": "HelloWorld",
     "test": "Multi-line text field",

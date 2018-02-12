@@ -3,11 +3,11 @@ title: "Создание первого расширения с набором �
 description: "Создайте проект, а затем напишите и отладьте расширение, используя расширения SharePoint Framework (SPFx)."
 ms.date: 01/11/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 5c6936f980669b09335e88ce31240fea1924dd6d
-ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.openlocfilehash: b5faa39c3d81178e067ddf5ebe933f593385a77d
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="build-your-first-listview-command-set-extension"></a>Создание первого расширения с набором команд ListView
 
@@ -98,7 +98,7 @@ ms.lasthandoff: 01/18/2018
 
 Обратите внимание на то, что базовый класс для ListView Command Set импортируется из пакета **sp-listview-extensibility**, который содержит код SharePoint Framework, необходимый для ListView Command Set.
 
-```ts
+```typescript
 import { override } from '@microsoft/decorators';
 import { Log } from '@microsoft/sp-core-library';
 import {
@@ -116,7 +116,7 @@ import { Dialog } from '@microsoft/sp-dialog';
 
 При использовании метода `tryGetCommand` вы получаете объект Command, который представляет собой команду, отображаемую в пользовательском интерфейсе. Вы можете изменить его значения, такие как `title` или `visible`, чтобы изменить элемент пользовательского интерфейса. SPFx использует эту информацию при повторной отрисовке команд. Состояние объектов, полученное при последней отрисовке, сохраняется. То есть если команде присвоено значение `visible = false`, она будет оставаться невидимой, пока ей снова не будет задано значение `visible = true`.
 
-```ts
+```typescript
   @override
   public onListViewUpdated(event: IListViewCommandSetListViewUpdatedParameters): void {
     const compareOneCommand: Command = this.tryGetCommand('COMMAND_1');
@@ -130,7 +130,7 @@ import { Dialog } from '@microsoft/sp-dialog';
 Метод **OnExecute()** определяет то, что происходит при выполнении команды (например, выбирается элемент меню). В стандартной реализации отображаются разные сообщения в зависимости от того, какая кнопка нажата. 
 
 
-```ts
+```typescript
   @override
   public onExecute(event: IListViewCommandSetExecuteEventParameters): void {
     switch (event.itemId) {
@@ -222,7 +222,7 @@ import { Dialog } from '@microsoft/sp-dialog';
 
 5. Измените метод **onExecute** следующим образом:
     
-    ```ts
+    ```typescript
       @override
       public onExecute(event: IListViewCommandSetExecuteEventParameters): void {
         switch (event.commandId) {

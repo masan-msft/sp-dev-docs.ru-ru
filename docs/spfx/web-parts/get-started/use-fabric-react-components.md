@@ -3,11 +3,11 @@ title: "Использование компонентов Office UI Fabric React
 description: "Создайте простую веб-часть на базе компонента DocumentCard, доступного в Office UI Fabric React."
 ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 6dca176399de46565511ba6ae252408f22e515ef
-ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.openlocfilehash: b9db6665c214b81bf24d1a225a00ffb85b62b224
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="use-office-ui-fabric-react-components-in-your-sharepoint-client-side-web-part"></a>Использование компонентов Office UI Fabric React в клиентской веб-части SharePoint
 
@@ -78,7 +78,7 @@ ms.lasthandoff: 01/18/2018
 
   Как вы видите, метод `render` создает элемент React и обрабатывает его в элементе DOM веб-части.
 
-  ```ts
+  ```typescript
     public render(): void {
       const element: React.ReactElement<IDocumentCardExampleProps > = React.createElement(
         DocumentCardExample,
@@ -131,7 +131,7 @@ ms.lasthandoff: 01/18/2018
 
 2. Добавьте оператор `import` в верхнюю часть файла, чтобы импортировать нужные компоненты Fabric React.
 
-  ```ts
+  ```typescript
   import {
     DocumentCard,
     DocumentCardPreview,
@@ -143,7 +143,7 @@ ms.lasthandoff: 01/18/2018
 
 3. Удалите текущий метод `render` и добавьте следующий обновленный метод `render`:
 
-  ```ts
+  ```typescript
     public render(): JSX.Element {
       const previewProps: IDocumentCardPreviewProps = {
         previewImages: [

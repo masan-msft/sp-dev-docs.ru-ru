@@ -3,11 +3,11 @@ title: "Перенос приложений AngularJS на платформу Sh
 description: "Преобразование приложения AngularJS со стилем на основе ngOfficeUIFabric в клиентскую веб-часть SharePoint Framework."
 ms.date: 01/09/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 637a35881870b84303b052cdb5564fef26adff4b
-ms.sourcegitcommit: 1f1044e59d987d878bb8bc403413e3090234ad44
+ms.openlocfilehash: e97a3728e6adf7bb2b9e740b686c1de35670fc34
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="migrate-angularjs-applications-to-sharepoint-framework"></a>Перенос приложений AngularJS на платформу SharePoint Framework
 
@@ -56,7 +56,7 @@ ms.lasthandoff: 01/11/2018
 
   ![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/ng-migration-yeoman-generator.png)
 
-5. По завершении формирования шаблона заблокируйте версию зависимостей проекта, выполнив следующую команду:
+5. По завершении скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
 
   ```sh
   npm shrinkwrap
@@ -121,14 +121,14 @@ ms.lasthandoff: 01/11/2018
 
 1. В редакторе кода откройте файл **./src/webparts/toDo/ToDoWebPart.ts**. После последнего оператора `import` добавьте следующий код:
 
-  ```ts
+  ```typescript
   import * as angular from 'angular';
   import 'ng-office-ui-fabric';
   ```
 
 2. Замените содержимое метода **render** на следующий код:
 
-  ```ts
+  ```typescript
   export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
     // ...
     public render(): void {
@@ -251,7 +251,7 @@ gulp trust-dev-cert
 
 2. В файле **./src/webparts/toDo/ToDoWebPart.ts** найдите метод **render** и добавьте в шаблон отрисовки приложения новые значки Office UI Fabric.
 
-  ```ts
+  ```typescript
   export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
     // ...
     public render(): void {
@@ -310,7 +310,7 @@ gulp trust-dev-cert
 
 В проекте переименуйте файл **./src/webparts/toDo/app/app.config.js** в `app.config.ts`. Замените его содержимое следующим кодом:
 
-```ts
+```typescript
 import * as angular from 'angular';
 
 export default function() {
@@ -325,7 +325,7 @@ export default function() {
 
 В проекте переименуйте файл **./src/webparts/toDo/app/data.service.js** в `DataService.ts`. Замените его содержимое следующим кодом:
 
-```ts
+```typescript
 import * as angular from 'angular';
 
 export interface ITodo {
@@ -516,7 +516,7 @@ export default class DataService implements IDataService {
 
 В проекте измените имя файла **./src/webparts/toDo/app/home.controller.js** на `HomeController.ts`. Замените его содержимое следующим кодом:
 
-```ts
+```typescript
 import * as angular from 'angular';
 import { IDataService, ITodo } from './DataService';
 
@@ -613,7 +613,7 @@ export default class HomeController {
 
 В проекте измените имя файла **./src/webparts/toDo/app/app.module.js** на `app.module.ts`. Замените его содержимое следующим кодом:
 
-```ts
+```typescript
 import * as angular from 'angular';
 import config from './app.config';
 import HomeController from './HomeController';
@@ -639,7 +639,7 @@ todoapp
 
 1. В редакторе кода откройте файл **./src/webparts/toDo/ToDoWebPart.ts**. Замените метод **render** следующим кодом:
 
-  ```ts
+  ```typescript
   export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
     // ...
     public render(): void {
@@ -710,7 +710,7 @@ todoapp
 
 2. В файле **./src/webparts/toDo/ToDoWebPart.ts** замените определение интерфейса `IToDoWebPartProps` следующим кодом:
 
-  ```ts
+  ```typescript
   export interface IToDoWebPartProps {
     todoListName: string;
     hideFinishedTasks: boolean;
@@ -719,7 +719,7 @@ todoapp
 
 3. В файле **./src/webparts/toDo/ToDoWebPart.ts** замените первый оператор импорта следующим кодом:
 
-  ```ts
+  ```typescript
   import {
     BaseClientSideWebPart,
     IPropertyPaneSettings,
@@ -730,7 +730,7 @@ todoapp
 
 4. В том же файле замените метод **getPropertyPaneConfiguration** следующим кодом:
 
-  ```ts
+  ```typescript
   export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
     // ...
     protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
@@ -763,7 +763,7 @@ todoapp
 
 5. Добавьте недостающие строки ресурсов, заменив содержимое файла **./src/webparts/toDo/loc/mystrings.d.ts** следующим кодом:
 
-  ```ts
+  ```typescript
   declare interface IToDoWebPartStrings {
     PropertyPaneDescription: string;
     BasicGroupName: string;
@@ -802,7 +802,7 @@ todoapp
 
 В файле **./src/webparts/toDo/app/app.module.ts** удалите ссылку на конфигурацию AngularJS, заменив его содержимое следующим кодом:
 
-```ts
+```typescript
 import * as angular from 'angular';
 import HomeController from './HomeController';
 import DataService from './DataService';
@@ -825,7 +825,7 @@ todoapp
 
 Откройте в редакторе кода файл **./src/webparts/toDo/app/DataService.ts** и замените его содержимое следующим кодом:
 
-```ts
+```typescript
 import * as angular from 'angular';
 
 export interface ITodo {
@@ -1014,7 +1014,7 @@ export default class DataService implements IDataService {
 
 1. В файле **./src/webparts/toDo/ToDoWebPart.ts** добавьте к классу **ToDoWebPart** новое свойство под названием `$injector`:
 
-  ```ts
+  ```typescript
   export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
     private $injector: angular.auto.IInjectorService;
     // ...
@@ -1023,7 +1023,7 @@ export default class DataService implements IDataService {
 
 2. В том же файле замените метод **render** следующим кодом:
 
-  ```ts
+  ```typescript
   export default class ToDoWebPart extends BaseClientSideWebPart<IToDoWebPartProps> {
     // ...
     public render(): void {
@@ -1094,7 +1094,7 @@ export default class DataService implements IDataService {
 
 1. Откройте в редакторе кода файл **./src/webparts/toDo/app/HomeController.ts**. Добавьте в класс **HomeController** следующие свойства:
 
-  ```ts
+  ```typescript
   export default class HomeController {
     // ...
     private sharePointApi: string = undefined;
@@ -1107,7 +1107,7 @@ export default class DataService implements IDataService {
 
 2. Расширьте конструктор класса **HomeController**, внедрив службу корневой области, и замените его содержимое следующим кодом:
 
-  ```ts
+  ```typescript
   export default class HomeController {
     // ...
     public static $inject: string[] = ['DataService', '$window', '$rootScope'];
@@ -1135,7 +1135,7 @@ export default class DataService implements IDataService {
 
 3. Добавьте в класс **HomeController** метод **init**:
 
-  ```ts
+  ```typescript
   export default class HomeController {
     // ...
     private init(sharePointApi: string, todoListName: string, hideFinishedTasks?: boolean): void {
@@ -1157,7 +1157,7 @@ export default class DataService implements IDataService {
 
 4. Обновите все остальные методы класса **HomeController**, чтобы в них использовались значения конфигурации из свойств класса:
 
-  ```ts
+  ```typescript
   export default class HomeController {
     // ...
     private loadTodos(): void {

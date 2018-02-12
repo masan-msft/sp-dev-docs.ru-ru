@@ -3,11 +3,11 @@ title: "Подключение клиентской веб-части к SharePo
 description: "Получите доступ к функциям и данным SharePoint и предоставьте больше интегрированных возможностей для пользователей."
 ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 123c1478a415fc30b788409e119286ecc2dcb802
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: 04cd665f9bb3c09373de297d56a730220be5be78
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="connect-your-client-side-web-part-to-sharepoint-hello-world-part-2"></a>Подключение клиентской веб-части к SharePoint (Hello World, часть 2)
 
@@ -44,7 +44,7 @@ gulp serve
 
 1. Используйте следующую переменную в своем классе веб-частей:
 
-  ```ts
+  ```typescript
   this.context.pageContext
   ```
 
@@ -105,7 +105,7 @@ gulp serve
 
 2. Определите следующие модели `interface` над классом **HelloWorldWebPart**:
 
-  ```ts
+  ```typescript
   export interface ISPLists {
     value: ISPList[];
   }
@@ -128,7 +128,7 @@ gulp serve
 
 2. Скопируйте следующий код в файл **MockHttpClient.ts**:
 
-  ```ts
+  ```typescript
   import { ISPList } from './HelloWorldWebPart';
 
   export default class MockHttpClient  {
@@ -162,13 +162,13 @@ gulp serve
 
 2. Скопируйте приведенный ниже код и вставьте его под оператором `import * as strings from 'HelloWorldWebPartStrings';`.
 
-  ```ts
+  ```typescript
   import MockHttpClient from './MockHttpClient';
   ```
  
 3. Добавьте приведенный ниже частный метод, имитирующий извлечение списков, в класс **HelloWorldWebPart**.
 
-  ```ts
+  ```typescript
     private _getMockListData(): Promise<ISPLists> {
       return MockHttpClient.get()
         .then((data: ISPList[]) => {
@@ -192,7 +192,7 @@ gulp serve
 
 2. Скопируйте приведенный ниже код и вставьте его под оператором `import MockHttpClient from './MockHttpClient';`.
 
-  ```ts
+  ```typescript
   import {
     SPHttpClient,
     SPHttpClientResponse   
@@ -201,7 +201,7 @@ gulp serve
 
 3. Добавьте приведенный ниже частный метод для получения списков из SharePoint в класс **HelloWorldWebPart**.
 
-  ```ts
+  ```typescript
   private _getListData(): Promise<ISPLists> {
     return this.context.spHttpClient.get(this.context.pageContext.web.absoluteUrl + `/_api/web/lists?$filter=Hidden eq false`, SPHttpClient.configurations.v1)
       .then((response: SPHttpClientResponse) => {
@@ -278,7 +278,7 @@ SharePoint Workbench можно использовать для проверки
 
 1. Импортируйте модули **Environment** и **EnvironmentType** из пакета **@microsoft/sp-core-library**. Добавьте в раздел **import** вверху, как показано в следующем фрагменте кода:
 
-  ```ts
+  ```typescript
   import {
     Environment,
     EnvironmentType
@@ -287,7 +287,7 @@ SharePoint Workbench можно использовать для проверки
 
 2. Добавьте следующий частный метод в класс **HelloWorldWebPart** для вызова соответствующих методов и получения данных списков:
 
-  ```ts
+  ```typescript
     private _renderListAsync(): void {
       // Local environment
       if (Environment.type === EnvironmentType.Local) {
@@ -316,7 +316,7 @@ SharePoint Workbench можно использовать для проверки
 
 4. Добавьте следующий метод private в класс **HelloWorldWebPart**:
 
-  ```ts
+  ```typescript
     private _renderList(items: ISPList[]): void {
       let html: string = '';
       items.forEach((item: ISPList) => {
@@ -342,7 +342,7 @@ SharePoint Workbench можно использовать для проверки
 
 1. Замените код в методе **render** следующим кодом:
 
-  ```ts
+  ```typescript
       this.domElement.innerHTML = `
         <div class="${ styles.helloWorld }">
           <div class="${ styles.container }">

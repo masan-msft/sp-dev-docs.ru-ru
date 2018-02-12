@@ -3,11 +3,11 @@ title: "Использование заполнителей страниц из 
 description: "Разрешите расширению Hello World изменять заполнители страниц, используя расширения SharePoint Framework (SPFx)."
 ms.date: 01/11/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 8957a230f2ed649dca25725cdb6af4ed2795f71c
-ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.openlocfilehash: bb3782a816f0d3038f8e96d7eefe0c0d45aa6b7d
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="use-page-placeholders-from-application-customizer-hello-world-part-2"></a>Использование заполнителей страниц из настройщика заполнителей (Hello World, часть 2)
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 01/18/2018
 
 Расширения "Настройщик заполнителей" поддерживаются в областях `Site`, `Web` и `List`. Вы можете контролировать место и способ регистрации настройщика заполнителей в клиенте SharePoint. Когда настройщик заполнителей существует в области и отображается, вы можете использовать следующий метод, чтобы получить доступ к заполнителю. 
 
-```ts
+```typescript
     // Handling the Bottom placeholder
     if (!this._bottomPlaceholder) {
       this._bottomPlaceholder =
@@ -48,7 +48,7 @@ ms.lasthandoff: 01/18/2018
 
 2. Добавьте объекты `PlaceholderContent` и `PlaceholderName` к оператору импорта из `@microsoft/sp-application-base`, изменив его следующим образом:
 
-    ```ts
+    ```typescript
         import {
             BaseApplicationCustomizer, 
             PlaceholderContent,
@@ -58,7 +58,7 @@ ms.lasthandoff: 01/18/2018
     
     Кроме того, добавьте следующие операторы импорта после кода импорта `strings` в начале файла:
 
-    ```ts
+    ```typescript
         import styles from './AppCustomizer.module.scss';
         import { escape } from '@microsoft/sp-lodash-subset'; 
     ```
@@ -101,7 +101,7 @@ ms.lasthandoff: 01/18/2018
     > [!NOTE] 
     > Если ваш набор команд использует входные данные ClientSideComponentProperties в формате JSON, он десериализируется в объект `BaseExtension.properties`. Вы можете определить интерфейс для его описания.
 
-    ```ts
+    ```typescript
         export interface IHelloWorldApplicationCustomizerProperties {
             Top: string;
             Bottom: string;
@@ -110,7 +110,7 @@ ms.lasthandoff: 01/18/2018
 
 6. Добавьте следующие частные переменные в класс **HelloWorldApplicationCustomizer**. В этом случае это могут быть локальные переменные в методе `onRender`, но если вы хотите, чтобы они были доступны другим объектам, определите их как частные переменные. 
 
-    ```ts
+    ```typescript
         export default class HelloWorldApplicationCustomizer
             extends BaseApplicationCustomizer<IHelloWorldApplicationCustomizerProperties> {
 
@@ -122,7 +122,7 @@ ms.lasthandoff: 01/18/2018
 
 7. Обновите код метода `onInit` как показано ниже.
 
-    ```ts
+    ```typescript
             @override
             public onInit(): Promise<void> {
                 Log.info(LOG_SOURCE, `Initialized ${strings.Title}`);
@@ -138,7 +138,7 @@ ms.lasthandoff: 01/18/2018
 
 8. Создайте новый частный метод `_renderPlaceHolders` со следующим кодом:
 
-    ```ts
+    ```typescript
         private _renderPlaceHolders(): void {
 
           console.log('HelloWorldApplicationCustomizer._renderPlaceHolders()');
@@ -217,7 +217,7 @@ ms.lasthandoff: 01/18/2018
 
 9. Добавьте приведенный ниже метод после метода `_renderPlaceHolders`. В этом случае вы просто выводите сообщение в консоли, когда расширение удаляется со страницы. 
 
-    ```ts
+    ```typescript
         private _onDispose(): void {
           console.log('[HelloWorldApplicationCustomizer._onDispose] Disposed custom top and bottom placeholders.');
         }
@@ -250,7 +250,7 @@ ms.lasthandoff: 01/18/2018
         contoso.sharepoint.com/Lists/Contoso/AllItems.aspx?loadSPFX=true&debugManifestsFile=https://localhost:4321/temp/manifests.js&customActions={"e5625e23-5c5a-4007-a335-e6c2c3afa485":{"location":"ClientSideExtension.ApplicationCustomizer","properties":{"Top":"Top area of the page","Bottom":"Bottom area in the page"}}}
     ```
 
-3. Выберите **Загрузить скрипты отладки**, чтобы продолжить загрузку скриптов с локального узла.
+3. Выберите **Загрузить скрипты отладки**, чтобы продолжить загрузку скриптов с домена localhost.
 
     ![Запрос разрешения на отладку манифеста на странице](../../../images/ext-app-debug-manifest-message.png)
 

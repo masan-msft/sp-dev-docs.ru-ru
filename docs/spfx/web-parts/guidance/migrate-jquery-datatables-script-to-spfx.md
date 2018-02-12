@@ -3,11 +3,11 @@ title: "Перенос решения с jQuery и DataTables, созданно�
 description: "Узнайте, как перенести модификацию SharePoint с DataTables для создания подробных обзоров данных, поступающих из SharePoint и внешних API."
 ms.date: 01/09/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 49f57f5019fd0380525ff891fc46341bbc78fb39
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: eae130d79f29e1bf29cd309895d0ebddd41ffc9b
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="migrate-jquery-and-datatables-solution-built-using-script-editor-web-part-to-sharepoint-framework"></a>Перенос решения с jQuery или DataTables, созданного при помощи веб-части редактора скриптов, в SharePoint Framework
 
@@ -202,7 +202,7 @@ $(document).ready(function() {
 
 2. Откройте файл **./src/webparts/itRequests/ItRequestsWebPart.ts** и после последнего оператора **import** добавьте следующий код:
 
-    ```ts
+    ```typescript
     import 'jquery';
     import 'datatables.net';
     import 'moment';
@@ -214,7 +214,7 @@ $(document).ready(function() {
 
 Откройте в редакторе кода файл **./src/webparts/itRequests/ItRequestsWebPart.ts** и замените метод **render** на следующий код:
 
-```ts
+```typescript
     export default class ItRequestsWebPart extends BaseClientSideWebPart<IItRequestsWebPartProps> {
     public render(): void {
         this.domElement.innerHTML = `
@@ -301,7 +301,7 @@ $(document).ready(function() {
 
 2. Чтобы загрузить подключаемый модуль, веб-часть должна ссылаться на новый файл **moment-plugin.js**. Откройте в редакторе кода файл **./src/webparts/itRequests/ItRequestsWebPart.ts** и после последнего оператора **import** добавьте следующий код:
 
-    ```ts
+    ```typescript
     import './moment-plugin';
     ```
 
@@ -343,7 +343,7 @@ $(document).ready(function() {
 
 2. Чтобы сослаться на этот файл в веб-части, откройте в редакторе кода файл **./src/webparts/itRequests/ItRequestsWebPart.ts** и замените метод **render** на следующий код:
 
-    ```ts
+    ```typescript
     export default class ItRequestsWebPart extends BaseClientSideWebPart<IItRequestsWebPartProps> {
     public render(): void {
         this.domElement.innerHTML = `
@@ -391,7 +391,7 @@ $(document).ready(function() {
 
 2. Обновите интерфейс свойств веб-части, чтобы применить изменения манифеста. В редакторе кода откройте файл **./src/webparts/itRequests/IItRequestsWebPartProps.ts** и замените его содержимое на следующий код:
 
-    ```ts
+    ```typescript
     export interface IItRequestsWebPartProps {
     listName: string;
     }
@@ -399,7 +399,7 @@ $(document).ready(function() {
 
 3. Обновите метки отображения для свойства **listName**. Откройте файл **./src/webparts/itRequests/loc/mystrings.d.ts** и замените его содержимое на следующее:
 
-    ```ts
+    ```typescript
     declare interface IItRequestsStrings {
     PropertyPaneDescription: string;
     BasicGroupName: string;
@@ -426,7 +426,7 @@ $(document).ready(function() {
 
 5. Обновите веб-часть, чтобы использовалось новое свойство. В редакторе кода откройте файл **./src/webparts/itRequests/ItRequestsWebPart.ts** и замените код метода **getPropertyPaneConfiguration** на следующий:
 
-    ```ts
+    ```typescript
     export default class ItRequestsWebPart extends BaseClientSideWebPart<IItRequestsWebPartProps> {
     // ...
     protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
@@ -465,7 +465,7 @@ $(document).ready(function() {
 
 1. Откройте в редакторе кода файл **./src/webparts/itRequests/ItRequestsWebPart.ts** и замените метод **render** на следующий код:
 
-    ```ts
+    ```typescript
     var $: any = (window as any).$;
 
     export default class ItRequestsWebPart extends BaseClientSideWebPart<IItRequestsWebPartProps> {
@@ -561,13 +561,13 @@ $(document).ready(function() {
 
 1. В редакторе кода откройте файл **./src/webparts/itRequests/ItRequestsWebPart.ts** и замените оператор `import 'jquery';` на следующий код:
 
-    ```ts
+    ```typescript
     import * as $ from 'jquery';
     ```
 
 2. Определив **$** как jQuery, вы можете удалить добавленное ранее локальное определение **$**:
 
-    ```ts
+    ```typescript
     var $: any = (window as any).$;
     ```
 
@@ -598,7 +598,7 @@ $(document).ready(function() {
 
 1. Определите интерфейс для сведений, касающихся запросов о технической поддержке, получаемых из списка SharePoint. В редакторе кода откройте файл **./src/webparts/itRequests/ItRequestsWebPart.ts** и непосредственно над классом веб-части добавьте следующий фрагмент кода:
 
-    ```ts
+    ```typescript
     interface IRequestItem {
     ID: number;
     BusinessUnit: string;
@@ -611,7 +611,7 @@ $(document).ready(function() {
 
 2. Затем в классе веб-части замените метод **render** на следующий код:
 
-    ```ts
+    ```typescript
     export default class ItRequestsWebPart extends BaseClientSideWebPart<IItRequestsWebPartProps> {
     public render(): void {
         this.domElement.innerHTML = `
@@ -669,7 +669,7 @@ $(document).ready(function() {
 
 2. Откройте файл **moment-plugin.ts** в редакторе кода и замените его содержимое на следующий код:
 
-    ```ts
+    ```typescript
     import * as $ from 'jquery';
     import * as moment from 'moment';
 
