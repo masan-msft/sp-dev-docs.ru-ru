@@ -1,66 +1,73 @@
 ---
-title: "Создание клиентских веб-частей SharePoint Framework с помощью AngularJS"
-ms.date: 09/25/2017
+title: "Руководство. Создание клиентских веб-частей SharePoint Framework с помощью AngularJS"
+description: "Создание клиентской веб-части для управления элементами списков дел с использованием AngularJS и выбор ее стиля с помощью Office UI Fabric."
+ms.date: 01/29/2018
 ms.prod: sharepoint
-ms.openlocfilehash: c5ff6b791ec15f9aa89e65d27e305a0bc7085283
-ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
+ms.openlocfilehash: 2feb8705dac3223c7249acd31070ae46a11dd271
+ms.sourcegitcommit: e4bf60eabffe63dc07f96824167d249c0678db82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="build-sharepoint-framework-client-side-web-parts-with-angularjs"></a><span data-ttu-id="ce40a-102">Создание клиентских веб-частей SharePoint Framework с помощью AngularJS</span><span class="sxs-lookup"><span data-stu-id="ce40a-102">Build SharePoint Framework client-side web parts with AngularJS</span></span>
+# <a name="build-sharepoint-framework-client-side-web-parts-with-angularjs"></a><span data-ttu-id="80a5e-103">Создание клиентских веб-частей SharePoint Framework с помощью AngularJS</span><span class="sxs-lookup"><span data-stu-id="80a5e-103">Build SharePoint Framework client-side web parts with AngularJS</span></span>
 
-<span data-ttu-id="ce40a-103">Популярную платформу AngularJS также можно использовать для создания клиентских веб-частей.</span><span class="sxs-lookup"><span data-stu-id="ce40a-103">If you are familiar with AngularJS, you can also use this extremely popular framework to build client-side web parts.</span></span> <span data-ttu-id="ce40a-104">Благодаря модульности с ее помощью можно создавать что-угодно — от сложных одностраничных приложений с различными представлениями до небольших компонентов, таких как веб-части.</span><span class="sxs-lookup"><span data-stu-id="ce40a-104">Thanks to its modularity, it can be used for anything ranging from complex multi-view Single Page Applications to smaller components such as web parts.</span></span> <span data-ttu-id="ce40a-105">Раньше во многих организациях решения для SharePoint создавались с помощью AngularJS.</span><span class="sxs-lookup"><span data-stu-id="ce40a-105">Many organizations have been using AngularJS for building SharePoint solutions in the past.</span></span> <span data-ttu-id="ce40a-106">В этой статье описано, как с помощью AngularJS создать клиентскую веб-часть SharePoint Framework, а также выбрать для нее стиль, используя [Office UI Fabric](http://dev.office.com/fabric).</span><span class="sxs-lookup"><span data-stu-id="ce40a-106">This article shows how to use AngularJS to build a SharePoint Framework client-side web part and have it styled using [Office UI Fabric](http://dev.office.com/fabric).</span></span> <span data-ttu-id="ce40a-107">Работая с этим руководством, вы создадите простую веб-часть, которая управляет элементами списка дел.</span><span class="sxs-lookup"><span data-stu-id="ce40a-107">During this tutorial you will build a simple web part that manages to do items.</span></span>
+<span data-ttu-id="80a5e-104">Популярную платформу AngularJS также можно использовать для создания клиентских веб-частей.</span><span class="sxs-lookup"><span data-stu-id="80a5e-104">If you are familiar with AngularJS, you can also use this extremely popular framework to build client-side web parts.</span></span> <span data-ttu-id="80a5e-105">Благодаря модульности с ее помощью можно создавать что-угодно — от сложных одностраничных приложений с различными представлениями до небольших компонентов, таких как веб-части.</span><span class="sxs-lookup"><span data-stu-id="80a5e-105">Thanks to its modularity, it can be used for anything ranging from complex multi-view Single Page Applications to smaller components such as web parts.</span></span> <span data-ttu-id="80a5e-106">Раньше во многих организациях решения для SharePoint создавались с помощью AngularJS.</span><span class="sxs-lookup"><span data-stu-id="80a5e-106">Many organizations have been using AngularJS for building SharePoint solutions in the past.</span></span> <span data-ttu-id="80a5e-107">В этой статье описано, как с помощью AngularJS создать клиентскую веб-часть SharePoint Framework, а также выбрать для нее стиль, используя [Office UI Fabric](https://developer.microsoft.com/ru-RU/fabric).</span><span class="sxs-lookup"><span data-stu-id="80a5e-107">This article shows how to use AngularJS to build a SharePoint Framework client-side web part and have it styled using [Office UI Fabric](https://developer.microsoft.com/ru-RU/fabric).</span></span> 
+
+<span data-ttu-id="80a5e-108">Работая с этим руководством, вы создадите простую веб-часть для управления элементами списка дел.</span><span class="sxs-lookup"><span data-stu-id="80a5e-108">During this tutorial you will build a simple web part that manages to do items.</span></span>
 
 ![Клиентская веб-часть SharePoint Framework, созданная на основе AngularJS, в системе разработки SharePoint](../../../images/ng-intro-hide-finished-tasks.png)
 
-<span data-ttu-id="ce40a-109">Исходный код рабочей веб-части доступен на сайте GitHub по адресу [https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo).</span><span class="sxs-lookup"><span data-stu-id="ce40a-109">The source of the working web part is available on GitHub at [https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo).</span></span>
+<span data-ttu-id="80a5e-110">Исходный код рабочей веб-части доступен на сайте GitHub по адресу [samples/angular-todo/](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo).</span><span class="sxs-lookup"><span data-stu-id="80a5e-110">The source of the working web part is available on GitHub at [https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/angular-todo).</span></span>
 
 > [!NOTE] 
-> <span data-ttu-id="ce40a-110">Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment.md) для создания решений на платформе SharePoint Framework.</span><span class="sxs-lookup"><span data-stu-id="ce40a-110">[Note:](../../set-up-your-development-environment.md) Before following the steps in this article, be sure to set up your development environment for building SharePoint Framework solutions.</span></span>
+> <span data-ttu-id="80a5e-111">Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки](../../set-up-your-development-environment.md) для создания решений на платформе SharePoint Framework.</span><span class="sxs-lookup"><span data-stu-id="80a5e-111">Before following the steps in this article, be sure to [set up your development environment](../../set-up-your-development-environment.md) for building SharePoint Framework solutions.</span></span>
 
-## <a name="create-new-project"></a><span data-ttu-id="ce40a-111">Создание проекта</span><span class="sxs-lookup"><span data-stu-id="ce40a-111">Create new project</span></span>
+## <a name="create-a-new-project"></a><span data-ttu-id="80a5e-112">Создание проекта</span><span class="sxs-lookup"><span data-stu-id="80a5e-112">Create a new project</span></span>
 
-<span data-ttu-id="ce40a-112">Для начала создайте папку проекта.</span><span class="sxs-lookup"><span data-stu-id="ce40a-112">Start by creating a new folder for your project</span></span>
+1. <span data-ttu-id="80a5e-113">Создайте папку для проекта.</span><span class="sxs-lookup"><span data-stu-id="80a5e-113">Create a new folder for your project:</span></span>
 
-```sh
-md angular-todo
-```
+  ```sh
+  md angular-todo
+  ```
 
-<span data-ttu-id="ce40a-113">Перейдите в папку проекта:</span><span class="sxs-lookup"><span data-stu-id="ce40a-113">Navigate to the project folder:</span></span>
+2. <span data-ttu-id="80a5e-114">Перейдите в папку проекта:</span><span class="sxs-lookup"><span data-stu-id="80a5e-114">Navigate to the project folder:</span></span>
 
-```sh
-cd angular-todo
-```
+  ```sh
+  cd angular-todo
+  ```
 
-<span data-ttu-id="ce40a-114">В папке проекта запустите генератор Yeoman для SharePoint Framework, чтобы сформировать шаблон проекта на платформе SharePoint Framework:</span><span class="sxs-lookup"><span data-stu-id="ce40a-114">In the project folder run the SharePoint Framework Yeoman generator to scaffold a new SharePoint Framework project:</span></span>
+3. <span data-ttu-id="80a5e-115">В папке проекта запустите генератор Yeoman для SharePoint Framework, чтобы выполнить скаффолдинг нового проекта на платформе SharePoint Framework:</span><span class="sxs-lookup"><span data-stu-id="80a5e-115">In the project folder, run the SharePoint Framework Yeoman generator to scaffold a new SharePoint Framework project:</span></span>
 
-```sh
-yo @microsoft/sharepoint
-```
+  ```sh
+  yo @microsoft/sharepoint
+  ```
 
-<span data-ttu-id="ce40a-115">Определите значения следующим образом:</span><span class="sxs-lookup"><span data-stu-id="ce40a-115">When prompted, define values as follows:</span></span>
-- <span data-ttu-id="ce40a-116">**angular-todo** как имя решения</span><span class="sxs-lookup"><span data-stu-id="ce40a-116">**angular-todo** as your solution name</span></span>
-- <span data-ttu-id="ce40a-117">**Use the current folder** (Использовать текущую папку) как расположение файлов</span><span class="sxs-lookup"><span data-stu-id="ce40a-117">**Use the current folder** for the location to place the files</span></span>
-- <span data-ttu-id="ce40a-118">**No JavaScript web framework** (Без веб-платформы JavaScript) как отправная точка создания веб-части</span><span class="sxs-lookup"><span data-stu-id="ce40a-118">**No JavaScript web framework** as the starting point to build the web part</span></span>
-- <span data-ttu-id="ce40a-119">**To do** (Текущие дела) как имя веб-части</span><span class="sxs-lookup"><span data-stu-id="ce40a-119">**To do** as your web part name</span></span>
-- <span data-ttu-id="ce40a-120">**Simple management of to do tasks** (Простое управление задачами) как описание веб-части</span><span class="sxs-lookup"><span data-stu-id="ce40a-120">**Simple management of to do tasks** as your web part description</span></span>
+4. <span data-ttu-id="80a5e-116">Определите значения следующим образом:</span><span class="sxs-lookup"><span data-stu-id="80a5e-116">When prompted, define values as follows:</span></span>
 
-![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/ng-intro-yeoman-generator.png)
+  - <span data-ttu-id="80a5e-117">**angular-todo** как имя решения</span><span class="sxs-lookup"><span data-stu-id="80a5e-117">**angular-todo** as your solution name</span></span>
+  - <span data-ttu-id="80a5e-118">**Use the current folder** (Использовать текущую папку) как расположение файлов</span><span class="sxs-lookup"><span data-stu-id="80a5e-118">**Use the current folder** for the location to place the files</span></span>
+  - <span data-ttu-id="80a5e-119">**No JavaScript web framework** (Без веб-платформы JavaScript) как отправная точка создания веб-части</span><span class="sxs-lookup"><span data-stu-id="80a5e-119">**No JavaScript web framework** as the starting point to build the web part</span></span>
+  - <span data-ttu-id="80a5e-120">**To do** (Текущие дела) как имя веб-части</span><span class="sxs-lookup"><span data-stu-id="80a5e-120">**To do** as your web part name</span></span>
+  - <span data-ttu-id="80a5e-121">**Simple management of to do tasks** (Простое управление задачами) как описание веб-части</span><span class="sxs-lookup"><span data-stu-id="80a5e-121">**Simple management of to do tasks** as your web part description</span></span>
 
-<span data-ttu-id="ce40a-122">После завершения скаффолдинга блокируйте версию зависимостей проекта, выполнив следующую команду:</span><span class="sxs-lookup"><span data-stu-id="ce40a-122">Once the scaffolding completes, lock down the version of the project dependencies by running the following command:</span></span>
+  ![Генератор Yeoman для платформы SharePoint Framework с параметрами по умолчанию](../../../images/ng-intro-yeoman-generator.png)
 
-```sh
-npm shrinkwrap
-```
+5. <span data-ttu-id="80a5e-123">По завершении скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:</span><span class="sxs-lookup"><span data-stu-id="80a5e-123">After the scaffolding completes, lock down the version of the project dependencies by running the following command:</span></span>
 
-<span data-ttu-id="ce40a-123">Далее откройте папку проекта в редакторе кода.</span><span class="sxs-lookup"><span data-stu-id="ce40a-123">Next, open your project folder in your code editor.</span></span> <span data-ttu-id="ce40a-124">В этом руководстве используется Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="ce40a-124">In this tutorial, you will use Visual Studio Code.</span></span>
+  ```sh
+  npm shrinkwrap
+  ```
 
-![Проект SharePoint Framework, открытый в Visual Studio Code](../../../images/ng-intro-project-visual-studio-code.png)
+6. <span data-ttu-id="80a5e-124">Откройте папку проекта в редакторе кода.</span><span class="sxs-lookup"><span data-stu-id="80a5e-124">Open your project folder in your code editor.</span></span> <span data-ttu-id="80a5e-125">В этом руководстве используется Visual Studio Code.</span><span class="sxs-lookup"><span data-stu-id="80a5e-125">In this tutorial, you will use Visual Studio Code.</span></span>
 
-## <a name="add-angularjs"></a><span data-ttu-id="ce40a-126">Добавление AngularJS</span><span class="sxs-lookup"><span data-stu-id="ce40a-126">Add AngularJS</span></span>
+  ![Проект SharePoint Framework, открытый в Visual Studio Code](../../../images/ng-intro-project-visual-studio-code.png)
 
-<span data-ttu-id="ce40a-127">В этом руководстве показано, как загрузить AngularJS из сети CDN.</span><span class="sxs-lookup"><span data-stu-id="ce40a-127">In this tutorial you will load AngularJS from CDN.</span></span> <span data-ttu-id="ce40a-128">Для этого откройте в редакторе кода файл **config/config.json** и добавьте следующие строки в свойстве **externals**:</span><span class="sxs-lookup"><span data-stu-id="ce40a-128">To do that, in the code editor, open the **config/config.json** file and in the **externals** property add the following lines:</span></span>
+
+## <a name="add-angularjs"></a><span data-ttu-id="80a5e-127">Добавление AngularJS</span><span class="sxs-lookup"><span data-stu-id="80a5e-127">Add AngularJS</span></span>
+
+<span data-ttu-id="80a5e-128">В этом руководстве показано, как загрузить AngularJS из сети CDN.</span><span class="sxs-lookup"><span data-stu-id="80a5e-128">In this tutorial you will load AngularJS from CDN.</span></span> 
+
+<span data-ttu-id="80a5e-129">Откройте в редакторе кода файл **config/config.json** и добавьте следующие строки в свойстве **externals**:</span><span class="sxs-lookup"><span data-stu-id="80a5e-129">In the code editor, open the **config/config.json** file, and in the **externals** property, add the following lines:</span></span>
 
 ```json
 "angular": {
@@ -69,27 +76,31 @@ npm shrinkwrap
 }
 ```
 
+<br/>
+
 ![AngularJS добавляется к файлу config.json](../../../images/ng-intro-angular-config.png)
 
-## <a name="add-angularjs-typings-for-typescript"></a><span data-ttu-id="ce40a-130">Добавление определений типа AngularJS для TypeScript</span><span class="sxs-lookup"><span data-stu-id="ce40a-130">Add AngularJS typings for TypeScript</span></span>
+## <a name="add-angularjs-typings-for-typescript"></a><span data-ttu-id="80a5e-131">Добавление определений типов AngularJS для TypeScript</span><span class="sxs-lookup"><span data-stu-id="80a5e-131">Add AngularJS typings for TypeScript</span></span>
 
-<span data-ttu-id="ce40a-131">Так как в коде веб-части вы будете ссылаться на AngularJS, вам также потребуются определения типов AngularJS для TypeScript.</span><span class="sxs-lookup"><span data-stu-id="ce40a-131">Because you will be referencing AngularJS in your web part's code, you also need AngularJS typings for TypeScript.</span></span> <span data-ttu-id="ce40a-132">Чтобы установить их, выполните в командной строке следующую команду:</span><span class="sxs-lookup"><span data-stu-id="ce40a-132">To install them run in the command line:</span></span>
+<span data-ttu-id="80a5e-132">Так как в коде веб-части вы ссылаетесь на AngularJS, вам также нужны определения типов AngularJS для TypeScript.</span><span class="sxs-lookup"><span data-stu-id="80a5e-132">Because you are referencing AngularJS in your web part's code, you also need AngularJS typings for TypeScript.</span></span> 
+
+<span data-ttu-id="80a5e-133">Чтобы установить их, выполните в командной строке следующую команду:</span><span class="sxs-lookup"><span data-stu-id="80a5e-133">To install them run the following in the command line:</span></span>
 
 ```sh
 npm install @types/angular --save-dev
 ```
 
-## <a name="implement-angularjs-application"></a><span data-ttu-id="ce40a-133">Реализация приложения AngularJS</span><span class="sxs-lookup"><span data-stu-id="ce40a-133">Implement AngularJS application</span></span>
+## <a name="implement-angularjs-application"></a><span data-ttu-id="80a5e-134">Реализация приложения AngularJS</span><span class="sxs-lookup"><span data-stu-id="80a5e-134">Implement AngularJS application</span></span>
 
-<span data-ttu-id="ce40a-134">Когда все необходимые компоненты будут установлены, можете начинать реализацию примера приложения AngularJS.</span><span class="sxs-lookup"><span data-stu-id="ce40a-134">With all prerequisites in place you can start implementing the sample AngularJS application.</span></span> <span data-ttu-id="ce40a-135">Так как этот пример будет состоять из нескольких файлов, создайте для него отдельную папку **app**.</span><span class="sxs-lookup"><span data-stu-id="ce40a-135">Because it will consist of a few files, create a separate folder for it called **app**.</span></span>
+<span data-ttu-id="80a5e-135">Установив все необходимые компоненты, можете начинать реализацию примера приложения AngularJS.</span><span class="sxs-lookup"><span data-stu-id="80a5e-135">With all prerequisites in place you can start implementing the sample AngularJS application.</span></span> <span data-ttu-id="80a5e-136">Так как этот пример состоит из нескольких файлов, создайте для него отдельную папку **app**.</span><span class="sxs-lookup"><span data-stu-id="80a5e-136">Because it will consist of a few files, create a separate folder for it called **app**.</span></span>
 
 ![Папка app, выделенная в Visual Studio Code](../../../images/ng-intro-app-folder.png)
 
-### <a name="implement-to-do-data-service"></a><span data-ttu-id="ce40a-137">Реализация службы данных о задачах</span><span class="sxs-lookup"><span data-stu-id="ce40a-137">Implement to do data service</span></span>
+### <a name="implement-to-do-data-service"></a><span data-ttu-id="80a5e-138">Реализация службы данных о задачах</span><span class="sxs-lookup"><span data-stu-id="80a5e-138">Implement to do data service</span></span>
 
-<span data-ttu-id="ce40a-138">Создайте файл **DataService.ts** в папке **app**.</span><span class="sxs-lookup"><span data-stu-id="ce40a-138">In the newly created **app** folder, create a new file called **DataService.ts**.</span></span> <span data-ttu-id="ce40a-139">В файле вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="ce40a-139">In the file paste the following code:</span></span>
+<span data-ttu-id="80a5e-139">Создайте файл **DataService.ts** в папке **app**.</span><span class="sxs-lookup"><span data-stu-id="80a5e-139">In the newly created **app** folder, create a new file called **DataService.ts**.</span></span> <span data-ttu-id="80a5e-140">В файле вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="80a5e-140">In the file paste the following code:</span></span>
 
-```ts
+```typescript
 export interface ITodo {
   id: number;
   title: string;
@@ -197,17 +208,26 @@ export default class DataService implements IDataService {
 }
 ```
 
+<br/>
+
 ![Файл DataService.ts, открытый в Visual Studio Code](../../../images/ng-intro-dataservice.png)
 
-<span data-ttu-id="ce40a-141">В предыдущем фрагменте кода реализуются три типа: интерфейс **ITodo**, который представляет элемент списка дел в приложении, интерфейс **IDataService**, который определяет подпись из службы данных, и класс**DataService**, который отвечает за получение элементов списка дел и управление ими.</span><span class="sxs-lookup"><span data-stu-id="ce40a-141">In the previous code snippet you implement three types: the **ITodo** interface which represents a to do item in your application, the **IDataService** interface which defines the signature of the data service and the **DataService** class which is responsible for retrieving and manipulating to do items.</span></span> <span data-ttu-id="ce40a-142">Служба данных реализует простые методы добавления и изменения элементов списка дел.</span><span class="sxs-lookup"><span data-stu-id="ce40a-142">The data service implements simple methods for adding and modifying to do items.</span></span> <span data-ttu-id="ce40a-143">Несмотря на то что операции происходят мгновенно, для единообразия каждая функция CRUD возвращает обещание.</span><span class="sxs-lookup"><span data-stu-id="ce40a-143">Even though the operations are instantaneous, for consistency each CRUD function returns a promise.</span></span>
+<span data-ttu-id="80a5e-142">В предыдущем фрагменте кода реализуются три типа:</span><span class="sxs-lookup"><span data-stu-id="80a5e-142">In the previous code snippet, you implement three types:</span></span> 
+- <span data-ttu-id="80a5e-143">интерфейс **ITodo**, который представляет элемент списка дел в приложении;</span><span class="sxs-lookup"><span data-stu-id="80a5e-143">The **ITodo** interface, which represents a To Do item in your application.</span></span>
+- <span data-ttu-id="80a5e-144">интерфейс **IDataService**, который определяет подпись службы данных;</span><span class="sxs-lookup"><span data-stu-id="80a5e-144">The **IDataService** interface, which defines the signature of the data service.</span></span>
+- <span data-ttu-id="80a5e-145">класс **DataService**, который отвечает за получение элементов списка дел и управление ими.</span><span class="sxs-lookup"><span data-stu-id="80a5e-145">The **DataService** class, which is responsible for retrieving and manipulating To Do items.</span></span> 
 
-<span data-ttu-id="ce40a-p108">В этом руководстве элементы списка дел хранятся в памяти. Но вы можете дополнить решение, чтобы хранить элементы в списке SharePoint, и использовать службу данных для взаимодействия с SharePoint при помощи REST API.</span><span class="sxs-lookup"><span data-stu-id="ce40a-p108">In this tutorial to do items are stored in memory. You could however easily extend the solution to store items in a SharePoint List and use the data service to communicate with SharePoint using its REST API.</span></span>
+<span data-ttu-id="80a5e-146">Служба данных реализует простые методы добавления и изменения элементов списка дел.</span><span class="sxs-lookup"><span data-stu-id="80a5e-146">The data service implements simple methods for adding and modifying to do items.</span></span> <span data-ttu-id="80a5e-147">Хотя операции происходят мгновенно, для единообразия каждая функция CRUD возвращает обещание.</span><span class="sxs-lookup"><span data-stu-id="80a5e-147">Even though the operations are instantaneous, for consistency each CRUD function returns a promise.</span></span>
 
-### <a name="implement-the-controller"></a><span data-ttu-id="ce40a-146">Реализация контроллера</span><span class="sxs-lookup"><span data-stu-id="ce40a-146">Implement the controller</span></span>
+<span data-ttu-id="80a5e-148">В этом руководстве элементы списка дел хранятся в памяти.</span><span class="sxs-lookup"><span data-stu-id="80a5e-148">In this tutorial, To Do items are stored in memory.</span></span> <span data-ttu-id="80a5e-149">Но вы можете дополнить решение, чтобы хранить элементы в списке SharePoint, и использовать службу данных для взаимодействия с SharePoint при помощи API REST.</span><span class="sxs-lookup"><span data-stu-id="80a5e-149">In this tutorial to do items are stored in memory. You could however easily extend the solution to store items in a SharePoint List and use the data service to communicate with SharePoint using its REST API.</span></span>
 
-<span data-ttu-id="ce40a-147">Далее реализуйте контроллер, который упростит взаимодействие между представлением и службой данных.</span><span class="sxs-lookup"><span data-stu-id="ce40a-147">Next, implement the controller that will facilitate communication between the view and the data service.</span></span> <span data-ttu-id="ce40a-148">В папке **app** создайте файл **HomeController.ts** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="ce40a-148">In the **app** folder create a new file named **HomeController.ts** and paste the following code:</span></span>
+### <a name="implement-the-controller"></a><span data-ttu-id="80a5e-150">Реализация контроллера</span><span class="sxs-lookup"><span data-stu-id="80a5e-150">Implement the controller</span></span>
 
-```ts
+<span data-ttu-id="80a5e-151">Далее реализуйте контроллер, который упрощает взаимодействие между представлением и службой данных.</span><span class="sxs-lookup"><span data-stu-id="80a5e-151">Next, implement the controller that will facilitate communication between the view and the data service.</span></span> 
+
+<span data-ttu-id="80a5e-152">В папке **app** создайте файл **HomeController.ts** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="80a5e-152">In the **app** folder create a new file named **HomeController.ts** and paste the following code:</span></span>
+
+```typescript
 import { IDataService, ITodo } from './DataService';
 
 export default class HomeController {
@@ -315,15 +335,19 @@ export default class HomeController {
 }
 ```
 
+<br/>
+
 ![Файл HomeController.ts, открытый в Visual Studio Code](../../../images/ng-intro-homecontroller.png)
 
-<span data-ttu-id="ce40a-150">Для начала загрузите реализованную ранее службу данных.</span><span class="sxs-lookup"><span data-stu-id="ce40a-150">You start by loading the previously implemented data service.</span></span> <span data-ttu-id="ce40a-151">Она нужна контроллеру для получения списка элементов и их изменения по запросу пользователя.</span><span class="sxs-lookup"><span data-stu-id="ce40a-151">The controller needs it in order to get the list of items and modify items as requested by the user.</span></span> <span data-ttu-id="ce40a-152">С помощью системы внедрения зависимостей AngularJS служба внедряется в контроллер.</span><span class="sxs-lookup"><span data-stu-id="ce40a-152">Using AngularJS's dependency injection the service is injected into the controller.</span></span> <span data-ttu-id="ce40a-153">Контроллер реализует ряд функций, доступных для модели представления, которые будут вызываться из шаблона.</span><span class="sxs-lookup"><span data-stu-id="ce40a-153">The controller implements a number of functions that are exposed to the view model and will be called from the template.</span></span> <span data-ttu-id="ce40a-154">С помощью этих функций пользователи смогут добавлять и удалять задачи, а также помечать их как завершенные и незавершенные.</span><span class="sxs-lookup"><span data-stu-id="ce40a-154">Using these functions users will be able to add new items, mark items as finished, to do, or delete items.</span></span>
+<span data-ttu-id="80a5e-154">Для начала загрузите реализованную ранее службу данных.</span><span class="sxs-lookup"><span data-stu-id="80a5e-154">You start by loading the previously implemented data service.</span></span> <span data-ttu-id="80a5e-155">Она нужна контроллеру для получения списка элементов и их изменения по запросу пользователя.</span><span class="sxs-lookup"><span data-stu-id="80a5e-155">The controller needs it in order to get the list of items and modify items as requested by the user.</span></span> <span data-ttu-id="80a5e-156">С помощью системы внедрения зависимостей AngularJS служба внедряется в контроллер.</span><span class="sxs-lookup"><span data-stu-id="80a5e-156">Using AngularJS's dependency injection the service is injected into the controller.</span></span> <span data-ttu-id="80a5e-157">Контроллер реализует ряд функций, доступных для модели представления, которые вызываются из шаблона.</span><span class="sxs-lookup"><span data-stu-id="80a5e-157">The controller implements a number of functions that are exposed to the view model and will be called from the template.</span></span> <span data-ttu-id="80a5e-158">С помощью этих функций пользователи могут добавлять и удалять задачи, а также помечать их как завершенные или незавершенные.</span><span class="sxs-lookup"><span data-stu-id="80a5e-158">Using these functions users will be able to add new items, mark items as finished, to do, or delete items.</span></span>
 
-### <a name="implement-the-main-module"></a><span data-ttu-id="ce40a-155">Реализация основного модуля</span><span class="sxs-lookup"><span data-stu-id="ce40a-155">Implement the main module</span></span>
+### <a name="implement-the-main-module"></a><span data-ttu-id="80a5e-159">Реализация основного модуля</span><span class="sxs-lookup"><span data-stu-id="80a5e-159">Implement the main module</span></span>
 
-<span data-ttu-id="ce40a-156">Далее определите основной модуль приложения и зарегистрируйте в нем службу данных и контроллер.</span><span class="sxs-lookup"><span data-stu-id="ce40a-156">With the data service and the controller ready, define the main module of your application and register the data service and controller with it.</span></span> <span data-ttu-id="ce40a-157">В папке **app** создайте файл **app-module.ts** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="ce40a-157">In the **app** folder create a new file called **app-module.ts** and paste the following contents:</span></span>
+<span data-ttu-id="80a5e-160">Далее определите основной модуль приложения и зарегистрируйте в нем службу данных и контроллер.</span><span class="sxs-lookup"><span data-stu-id="80a5e-160">With the data service and the controller ready, define the main module of your application and register the data service and controller with it.</span></span> 
 
-```ts
+<span data-ttu-id="80a5e-161">В папке **app** создайте файл **app-module.ts** и вставьте следующий код:</span><span class="sxs-lookup"><span data-stu-id="80a5e-161">In the **app** folder create a new file called **app-module.ts** and paste the following contents:</span></span>
+
+```typescript
 import * as angular from 'angular';
 import HomeController from './HomeController';
 import DataService from './DataService';
@@ -335,62 +359,69 @@ todoapp
   .service('DataService', DataService);
 ```
 
+<br/>
+
 ![Файл app-module.ts, открытый в Visual Studio Code](../../../images/ng-intro-app-module.png)
 
-<span data-ttu-id="ce40a-159">Для начала добавьте ссылки на AngularJS и загрузите реализованные ранее контроллер и службу данных.</span><span class="sxs-lookup"><span data-stu-id="ce40a-159">You start by referencing AngularJS and by loading previously implemented controller and data service.</span></span> <span data-ttu-id="ce40a-160">Далее определите модуль для приложения.</span><span class="sxs-lookup"><span data-stu-id="ce40a-160">Next, you define the module for your application.</span></span> <span data-ttu-id="ce40a-161">Наконец, зарегистрируйте в приложении контроллер и службу данных.</span><span class="sxs-lookup"><span data-stu-id="ce40a-161">Finally, you register the controller and data service with your application.</span></span>
+<span data-ttu-id="80a5e-163">Для начала добавьте ссылки на AngularJS и загрузите реализованные ранее контроллер и службу данных.</span><span class="sxs-lookup"><span data-stu-id="80a5e-163">You start by referencing AngularJS and by loading previously implemented controller and data service.</span></span> <span data-ttu-id="80a5e-164">Далее определите модуль для приложения.</span><span class="sxs-lookup"><span data-stu-id="80a5e-164">Next, you define the module for your application.</span></span> <span data-ttu-id="80a5e-165">Наконец, зарегистрируйте в приложении контроллер и службу данных.</span><span class="sxs-lookup"><span data-stu-id="80a5e-165">Finally, you register the controller and data service with your application.</span></span>
 
-<span data-ttu-id="ce40a-162">Вы создали приложение AngularJS для веб-части.</span><span class="sxs-lookup"><span data-stu-id="ce40a-162">Now you've built an AngularJS application for your web part.</span></span> <span data-ttu-id="ce40a-163">Далее необходимо зарегистрировать приложение AngularJS в веб-части и сделать его настраиваемым с помощью свойств веб-части.</span><span class="sxs-lookup"><span data-stu-id="ce40a-163">In the following steps you will register the AngularJS application with the web part and make it configurable using web part properties.</span></span>
+<span data-ttu-id="80a5e-166">Вы создали приложение AngularJS для веб-части.</span><span class="sxs-lookup"><span data-stu-id="80a5e-166">Now you've built an AngularJS application for your web part.</span></span> <span data-ttu-id="80a5e-167">Далее вы зарегистрируете приложение AngularJS в веб-части и сделаете его настраиваемым с помощью свойств веб-части.</span><span class="sxs-lookup"><span data-stu-id="80a5e-167">In the following steps you will register the AngularJS application with the web part and make it configurable using web part properties.</span></span>
 
-## <a name="register-angularjs-application-with-web-part"></a><span data-ttu-id="ce40a-164">Регистрация приложения AngularJS в веб-части</span><span class="sxs-lookup"><span data-stu-id="ce40a-164">Register AngularJS application with web part</span></span>
+## <a name="register-angularjs-application-with-web-part"></a><span data-ttu-id="80a5e-168">Регистрация приложения AngularJS в веб-части</span><span class="sxs-lookup"><span data-stu-id="80a5e-168">Register AngularJS application with web part</span></span>
 
-<span data-ttu-id="ce40a-165">Следующий шаг — добавление приложения AngularJS в веб-часть.</span><span class="sxs-lookup"><span data-stu-id="ce40a-165">Next step is to add AngularJS application to the web part.</span></span> <span data-ttu-id="ce40a-166">В редакторе кода откройте файл **ToDoWebPart.ts**.</span><span class="sxs-lookup"><span data-stu-id="ce40a-166">In the code editor open the **ToDoWebPart.ts** file.</span></span>
+<span data-ttu-id="80a5e-169">Следующий шаг — добавление приложения AngularJS в веб-часть.</span><span class="sxs-lookup"><span data-stu-id="80a5e-169">Next step is to add AngularJS application to the web part.</span></span> 
 
-<span data-ttu-id="ce40a-167">Перед определением класса добавьте следующие строки:</span><span class="sxs-lookup"><span data-stu-id="ce40a-167">Just before the class declaration, add the following lines:</span></span>
+1. <span data-ttu-id="80a5e-170">В редакторе кода откройте файл **ToDoWebPart.ts**.</span><span class="sxs-lookup"><span data-stu-id="80a5e-170">In the code editor open the **ToDoWebPart.ts** file.</span></span>
 
-```ts
-import * as angular from 'angular';
-import './app/app-module';
-```
+2. <span data-ttu-id="80a5e-171">Перед определением класса добавьте следующие строки:</span><span class="sxs-lookup"><span data-stu-id="80a5e-171">Just before the class declaration, add the following lines:</span></span>
 
-![Операторы импорта в файле ToDoWebPart.ts, выделенные в Visual Studio Code](../../../images/ng-intro-web-part-import-angular.png)
+  ```typescript
+  import * as angular from 'angular';
+  import './app/app-module';
+  ```
 
-<span data-ttu-id="ce40a-169">Это позволяет загрузить ссылку на AngularJS и приложение, которые нужны для запуска приложения AngularJS.</span><span class="sxs-lookup"><span data-stu-id="ce40a-169">This allows us to load a reference to AngularJS and your application, both of which you need to bootstrap your AngularJS application.</span></span>
+  <br/>
 
-<span data-ttu-id="ce40a-170">Измените функцию **render** веб-части, как показано ниже.</span><span class="sxs-lookup"><span data-stu-id="ce40a-170">Change the web part's **render** function to:</span></span>
+  ![Операторы импорта в файле ToDoWebPart.ts, выделенные в Visual Studio Code](../../../images/ng-intro-web-part-import-angular.png)
 
-```ts
-public render(): void {
-  if (this.renderedOnce === false) {
-    this.domElement.innerHTML = `
-<div class="${styles.toDo}">
-  <div data-ng-controller="HomeController as vm">
-    <div class="${styles.loading}" ng-show="vm.isLoading">
-      <div class="${styles.spinner}">
-        <div class="${styles.spinnerCircle} ${styles.spinnerLarge}"></div>
-        <div class="${styles.spinnerLabel}">Loading...</div>
+  <span data-ttu-id="80a5e-173">Это позволяет загрузить ссылку на AngularJS и приложение, которые нужны для запуска приложения AngularJS.</span><span class="sxs-lookup"><span data-stu-id="80a5e-173">This allows us to load a reference to AngularJS and your application, both of which you need to bootstrap your AngularJS application.</span></span>
+
+3. <span data-ttu-id="80a5e-174">Измените функцию **render** веб-части, как показано ниже.</span><span class="sxs-lookup"><span data-stu-id="80a5e-174">Change the web part's **render** function to:</span></span>
+
+  ```typescript
+  public render(): void {
+    if (this.renderedOnce === false) {
+      this.domElement.innerHTML = `
+  <div class="${styles.toDo}">
+    <div data-ng-controller="HomeController as vm">
+      <div class="${styles.loading}" ng-show="vm.isLoading">
+        <div class="${styles.spinner}">
+          <div class="${styles.spinnerCircle} ${styles.spinnerLarge}"></div>
+          <div class="${styles.spinnerLabel}">Loading...</div>
+        </div>
       </div>
-    </div>
-    <div ng-show="vm.isLoading === false">
-      <div class="${styles.textField} ${styles.underlined}" ng-class="{'${styles.isActive}': vm.newToDoActive}">
-        <label for="newToDo" class="${styles.label}">New to do:</label>
-        <input type="text" label="New to do:" id="newToDo" value="" class="${styles.field}" aria-invalid="false" ng-model="vm.newItem" ng-keydown="vm.todoKeyDown($event)" ng-focus="vm.newToDoActive = true" ng-blur="vm.newToDoActive = false">
+      <div ng-show="vm.isLoading === false">
+        <div class="${styles.textField} ${styles.underlined}" ng-class="{'${styles.isActive}': vm.newToDoActive}">
+          <label for="newToDo" class="${styles.label}">New to do:</label>
+          <input type="text" label="New to do:" id="newToDo" value="" class="${styles.field}" aria-invalid="false" ng-model="vm.newItem" ng-keydown="vm.todoKeyDown($event)" ng-focus="vm.newToDoActive = true" ng-blur="vm.newToDoActive = false">
+        </div>
       </div>
-    </div>
-    <div class="list" ng-show="vm.isLoading === false">
-      <div class="listSurface">
-        <div class="listPage">
-          <div class="listCell" ng-repeat="todo in vm.todoCollection" uif-item="todo" ng-class="{'${styles.done}': todo.done}">
-            <div class="${styles.listItem}">
-              <span class="${styles.listItemPrimaryText}">{{todo.title}}</span>
-              <div class="${styles.listItemActions}">
-                <div class="${styles.listItemAction}" ng-click="vm.completeTodo(todo)" ng-show="todo.done === false">
-                  <i class="${styles.icon} ${styles.iconCheckMark}"></i>
-                </div>
-                <div class="${styles.listItemAction}" ng-click="vm.undoTodo(todo)" ng-show="todo.done">
-                  <i class="${styles.icon} ${styles.iconUndo}"></i>
-                </div>
-                <div class="${styles.listItemAction}" ng-click="vm.deleteTodo(todo)">
-                  <i class="${styles.icon} ${styles.iconRecycleBin}"></i>
+      <div class="list" ng-show="vm.isLoading === false">
+        <div class="listSurface">
+          <div class="listPage">
+            <div class="listCell" ng-repeat="todo in vm.todoCollection" uif-item="todo" ng-class="{'${styles.done}': todo.done}">
+              <div class="${styles.listItem}">
+                <span class="${styles.listItemPrimaryText}">{{todo.title}}</span>
+                <div class="${styles.listItemActions}">
+                  <div class="${styles.listItemAction}" ng-click="vm.completeTodo(todo)" ng-show="todo.done === false">
+                    <i class="${styles.icon} ${styles.iconCheckMark}"></i>
+                  </div>
+                  <div class="${styles.listItemAction}" ng-click="vm.undoTodo(todo)" ng-show="todo.done">
+                    <i class="${styles.icon} ${styles.iconUndo}"></i>
+                  </div>
+                  <div class="${styles.listItemAction}" ng-click="vm.deleteTodo(todo)">
+                    <i class="${styles.icon} ${styles.iconRecycleBin}"></i>
+                  </div>
                 </div>
               </div>
             </div>
@@ -398,436 +429,460 @@ public render(): void {
         </div>
       </div>
     </div>
-  </div>
-</div>`;
+  </div>`;
 
-    angular.bootstrap(this.domElement, ['todoapp']);
-  }
-}
-```
-
-![Функция веб-части render в Visual Studio Code](../../../images/ng-intro-web-part-render-angular.png)
-
-<span data-ttu-id="ce40a-172">Код сначала присваивает шаблон приложения непосредственно элементу DOM веб-части.</span><span class="sxs-lookup"><span data-stu-id="ce40a-172">The code first assigns the template of your application directly to the web part's DOM element.</span></span> <span data-ttu-id="ce40a-173">В корневом элементе укажите имя контроллера, который будет обрабатывать события и привязку данных в шаблоне.</span><span class="sxs-lookup"><span data-stu-id="ce40a-173">On the root element you specify the name of the controller that will handle events and data binding in the template.</span></span> <span data-ttu-id="ce40a-174">Затем запустите приложение, указав имя **todoapp**, которое вы использовали при определении основного модуля.</span><span class="sxs-lookup"><span data-stu-id="ce40a-174">Then, you bootstrap your application using the **todoapp** name you used previously when declaring the main module.</span></span> <span data-ttu-id="ce40a-175">Свойство веб-части **renderedOnce** необходимо, чтобы запуск приложения AngularJS выполнялся только один раз.</span><span class="sxs-lookup"><span data-stu-id="ce40a-175">Using the **renderedOnce** web part property you ensure that your AngularJS application is bootstrapped only once.</span></span> <span data-ttu-id="ce40a-176">Без него при изменении одного из свойств веб-части функция **render** снова запустит приложение AngularJS, что приведет к ошибке.</span><span class="sxs-lookup"><span data-stu-id="ce40a-176">Without it, if you changed one of the web part's properties, the **render** function would be invoked again bootstrapping the AngularJS application again, which would lead to an error.</span></span>
-
-<span data-ttu-id="ce40a-177">Кроме того, необходимо реализовать стили CSS, которые вы используете с шаблоном.</span><span class="sxs-lookup"><span data-stu-id="ce40a-177">You also need to implement CSS styles that you are using the template.</span></span> <span data-ttu-id="ce40a-178">В редакторе кода откройте файл **ToDo.module.scss** и замените его содержимое на следующие строки:</span><span class="sxs-lookup"><span data-stu-id="ce40a-178">In the code editor open the **ToDo.module.scss** file and replace its contents with:</span></span>
-
-```css
-.toDo {
-  .loading {
-    margin: 0 auto;
-    width: 6em;
-
-    .spinner {
-      display: inline-block;
-      margin: 10px 0;
-
-      @-webkit-keyframes spinnerSpin {
-        0% {
-          -webkit-transform:rotate(0);
-          transform:rotate(0);
-        }
-        100% {
-          -webkit-transform:rotate(360deg);
-          transform:rotate(360deg);
-        }
-      }
-      @keyframes spinnerSpin {
-        0% {
-          -webkit-transform:rotate(0);
-          transform:rotate(0);
-        }
-        100% {
-          -webkit-transform:rotate(360deg);
-          transform:rotate(360deg);
-        }
-      }
-
-      .spinnerCircle {
-        margin: auto;
-        box-sizing: border-box;
-        border-radius: 50%;
-        width: 100%;
-        height: 100%;
-        border: 1.5px solid #c7e0f4;
-        border-top-color: #0078d7;
-        -webkit-animation: spinnerSpin 1.3s infinite cubic-bezier(.53, .21, .29, .67);
-        animation: spinnerSpin 1.3s infinite cubic-bezier(.53, .21, .29, .67);
-
-        &.spinnerLarge {
-          width: 28px;
-          height: 28px;
-        }
-      }
-
-      .spinnerLabel {
-        color: #0078d7;
-        margin-top: 10px;
-        text-align: center;
-      }
+      angular.bootstrap(this.domElement, ['todoapp']);
     }
   }
+  ```
 
-  .label {
-    font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    font-size: 14px;
-    font-weight: 400;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    box-shadow: none;
-    color: #333333;
-    box-sizing: border-box;
-    display: block;
-    padding: 5px 0
-  }
+  <br/>
 
-  .textField {
-    font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    box-shadow: none;
-    color: #333333;
-    font-size: 14px;
-    font-weight: 400;
-    margin-bottom: 8px;
+  ![Функция веб-части render в Visual Studio Code](../../../images/ng-intro-web-part-render-angular.png)
 
-    &.underlined {
-      border-bottom: 1px solid #c8c8c8;
-      display: table;
-      width: 100%;
+4. <span data-ttu-id="80a5e-176">Код сначала присваивает шаблон приложения непосредственно элементу DOM веб-части.</span><span class="sxs-lookup"><span data-stu-id="80a5e-176">The code first assigns the template of your application directly to the web part's DOM element.</span></span> <span data-ttu-id="80a5e-177">В корневом элементе укажите имя контроллера, который обрабатывает события и привязку данных в шаблоне.</span><span class="sxs-lookup"><span data-stu-id="80a5e-177">On the root element you specify the name of the controller that will handle events and data binding in the template.</span></span> 
 
-      &:hover {
-        border-color: #767676;
-      }
+5. <span data-ttu-id="80a5e-178">Запустите приложение, указав имя **todoapp**, которое вы использовали при определении основного модуля.</span><span class="sxs-lookup"><span data-stu-id="80a5e-178">Then, you bootstrap your application using the **todoapp** name you used previously when declaring the main module.</span></span> 
 
-      &.isActive, &:active {
-        border-color: #0078d7;
-      }
+6. <span data-ttu-id="80a5e-179">Свойство веб-части **renderedOnce** необходимо, чтобы запуск приложения AngularJS выполнялся только один раз.</span><span class="sxs-lookup"><span data-stu-id="80a5e-179">Using the **renderedOnce** web part property you ensure that your AngularJS application is bootstrapped only once.</span></span> <span data-ttu-id="80a5e-180">Без него при изменении одного из свойств веб-части функция **render** снова запустит приложение AngularJS, что приведет к ошибке.</span><span class="sxs-lookup"><span data-stu-id="80a5e-180">Without it, if you changed one of the web part's properties, the **render** function would be invoked again bootstrapping the AngularJS application again, which would lead to an error.</span></span>
 
-      .field {
-        border: 0;
-        display: table-cell;
-        padding-top: 8px;
-        padding-bottom: 3px
+7. <span data-ttu-id="80a5e-181">Реализуйте стили CSS, которые вы используете с шаблоном.</span><span class="sxs-lookup"><span data-stu-id="80a5e-181">You also need to implement CSS styles that you are using the template.</span></span> <span data-ttu-id="80a5e-182">В редакторе кода откройте файл **ToDo.module.scss** и замените его содержимое на следующие строки:</span><span class="sxs-lookup"><span data-stu-id="80a5e-182">In the code editor open the **ToDo.module.scss** file and replace its contents with:</span></span>
+
+  ```css
+  .toDo {
+    .loading {
+      margin: 0 auto;
+      width: 6em;
+
+      .spinner {
+        display: inline-block;
+        margin: 10px 0;
+
+        @-webkit-keyframes spinnerSpin {
+          0% {
+            -webkit-transform:rotate(0);
+            transform:rotate(0);
+          }
+          100% {
+            -webkit-transform:rotate(360deg);
+            transform:rotate(360deg);
+          }
+        }
+        @keyframes spinnerSpin {
+          0% {
+            -webkit-transform:rotate(0);
+            transform:rotate(0);
+          }
+          100% {
+            -webkit-transform:rotate(360deg);
+            transform:rotate(360deg);
+          }
+        }
+
+        .spinnerCircle {
+          margin: auto;
+          box-sizing: border-box;
+          border-radius: 50%;
+          width: 100%;
+          height: 100%;
+          border: 1.5px solid #c7e0f4;
+          border-top-color: #0078d7;
+          -webkit-animation: spinnerSpin 1.3s infinite cubic-bezier(.53, .21, .29, .67);
+          animation: spinnerSpin 1.3s infinite cubic-bezier(.53, .21, .29, .67);
+
+          &.spinnerLarge {
+            width: 28px;
+            height: 28px;
+          }
+        }
+
+        .spinnerLabel {
+          color: #0078d7;
+          margin-top: 10px;
+          text-align: center;
+        }
       }
     }
 
     .label {
-      padding-right: 0;
-      padding-left: 12px;
-      margin-right: 8px;
+      font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+      -webkit-font-smoothing: antialiased;
       font-size: 14px;
-      display: table-cell;
-      vertical-align: top;
-      padding-top: 9px;
-      height: 32px;
-      width: 1%;
-      white-space: nowrap;
       font-weight: 400;
-    }
-
-    .field {
-      text-align: left;
-      float: left;
       box-sizing: border-box;
       margin: 0;
       padding: 0;
       box-shadow: none;
-      font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-      -webkit-font-smoothing: antialiased;
-      border: 1px solid #c8c8c8;
-      border-radius: 0;
-      font-weight: 400;
-      font-size: 14px;
       color: #333333;
-      height: 32px;
-      padding: 0 12px 0 12px;
-      width: 100%;
-      outline: 0;
-      text-overflow: ellipsis;
+      box-sizing: border-box;
+      display: block;
+      padding: 5px 0
     }
 
-    .field:hover {
-      border-color: #767676;
-    }
-  }
-
-  .listItem {
-    font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    font-size: 14px;
-    font-weight: 400;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    box-shadow: none;
-    padding: 9px 28px 3px;
-    position: relative;
-    display: block;
-
-    &::before {
-      display: table;
-      content: "";
-      line-height: 0;
-    }
-
-    &::after {
-      display: table;
-      content: "";
-      line-height: 0;
-      clear: both;
-    }
-
-    .listItemPrimaryText {
+    .textField {
       font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
       -webkit-font-smoothing: antialiased;
-      font-size: 21px;
-      font-weight: 100;
-      padding-right: 80px;
-      position: relative;
-      top: -4px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      display: block;
-    }
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      color: #333333;
+      font-size: 14px;
+      font-weight: 400;
+      margin-bottom: 8px;
 
-    .listItemActions {
-      max-width: 80px;
-      position: absolute;
-      right: 30px;
-      text-align: right;
-      top: 10px;
-
-      .listItemAction {
-        color: #a6a6a6;
-        display: inline-block;
-        font-size: 15px;
-        position: relative;
-        text-align: center;
-        top: 3px;
-        cursor: pointer;
-        height: 16px;
-        width: 16px;
+      &.underlined {
+        border-bottom: 1px solid #c8c8c8;
+        display: table;
+        width: 100%;
 
         &:hover {
-          color: #666666;
-          outline: 1px solid transparent;
+          border-color: #767676;
         }
 
-        .icon {
-          vertical-align: top;
+        &.isActive, &:active {
+          border-color: #0078d7;
+        }
+
+        .field {
+          border: 0;
+          display: table-cell;
+          padding-top: 8px;
+          padding-bottom: 3px
+        }
+      }
+
+      .label {
+        padding-right: 0;
+        padding-left: 12px;
+        margin-right: 8px;
+        font-size: 14px;
+        display: table-cell;
+        vertical-align: top;
+        padding-top: 9px;
+        height: 32px;
+        width: 1%;
+        white-space: nowrap;
+        font-weight: 400;
+      }
+
+      .field {
+        text-align: left;
+        float: left;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        border: 1px solid #c8c8c8;
+        border-radius: 0;
+        font-weight: 400;
+        font-size: 14px;
+        color: #333333;
+        height: 32px;
+        padding: 0 12px 0 12px;
+        width: 100%;
+        outline: 0;
+        text-overflow: ellipsis;
+      }
+
+      .field:hover {
+        border-color: #767676;
+      }
+    }
+
+    .listItem {
+      font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      font-size: 14px;
+      font-weight: 400;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      padding: 9px 28px 3px;
+      position: relative;
+      display: block;
+
+      &::before {
+        display: table;
+        content: "";
+        line-height: 0;
+      }
+
+      &::after {
+        display: table;
+        content: "";
+        line-height: 0;
+        clear: both;
+      }
+
+      .listItemPrimaryText {
+        font-family: "Segoe UI WestEuropean", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        font-size: 21px;
+        font-weight: 100;
+        padding-right: 80px;
+        position: relative;
+        top: -4px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+      }
+
+      .listItemActions {
+        max-width: 80px;
+        position: absolute;
+        right: 30px;
+        text-align: right;
+        top: 10px;
+
+        .listItemAction {
+          color: #a6a6a6;
+          display: inline-block;
+          font-size: 15px;
+          position: relative;
+          text-align: center;
+          top: 3px;
+          cursor: pointer;
+          height: 16px;
+          width: 16px;
+
+          &:hover {
+            color: #666666;
+            outline: 1px solid transparent;
+          }
+
+          .icon {
+            vertical-align: top;
+          }
         }
       }
     }
-  }
 
-  .done {
-    text-decoration: line-through;
-  }
-
-  .icon {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    font-family: FabricMDL2Icons;
-    font-style: normal;
-    font-weight: 400;
-    speak: none;
-
-    &.iconCheckMark::before {
-      content: "\E73E";
+    .done {
+      text-decoration: line-through;
     }
 
-    &.iconUndo::before {
-      content: "\E7A7";
-    }
+    .icon {
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      display: inline-block;
+      font-family: FabricMDL2Icons;
+      font-style: normal;
+      font-weight: 400;
+      speak: none;
 
-    &.iconRecycleBin::before {
-      content: "\EF87";
+      &.iconCheckMark::before {
+        content: "\E73E";
+      }
+
+      &.iconUndo::before {
+        content: "\E7A7";
+      }
+
+      &.iconRecycleBin::before {
+        content: "\EF87";
+      }
     }
   }
-}
-```
+  ```
 
-![Файл ToDo.module.scss, открытый в Visual Studio Code](../../../images/ng-intro-web-part-css.png)
+  <br/>
 
-<span data-ttu-id="ce40a-180">Выполните следующую команду, чтобы убедиться, что все работает правильно:</span><span class="sxs-lookup"><span data-stu-id="ce40a-180">Run the following command to confirm that everything is working as expected:</span></span>
+  ![Файл ToDo.module.scss, открытый в Visual Studio Code](../../../images/ng-intro-web-part-css.png)
 
-```sh
-gulp serve
-```
+8. <span data-ttu-id="80a5e-184">Выполните следующую команду, чтобы убедиться, что всё работает правильно:</span><span class="sxs-lookup"><span data-stu-id="80a5e-184">Run the following command to confirm that everything is working as expected:</span></span>
 
-<span data-ttu-id="ce40a-181">В браузере должна появиться ваша веб-часть с элементами списка дел.</span><span class="sxs-lookup"><span data-stu-id="ce40a-181">In the browser you should see your To do web part showing to do items.</span></span>
+  ```sh
+  gulp serve
+  ```
 
-![Веб-часть с элементами списка дел, отрисованная с помощью Office UI Fabric](../../../images/ng-intro-workbench-office-ui-fabric.png)
+9. <span data-ttu-id="80a5e-185">В браузере должна появиться ваша веб-часть с элементами списка дел.</span><span class="sxs-lookup"><span data-stu-id="80a5e-185">In the browser you should see your To do web part showing to do items.</span></span>
 
-## <a name="make-web-part-configurable"></a><span data-ttu-id="ce40a-183">Как сделать веб-часть настраиваемой</span><span class="sxs-lookup"><span data-stu-id="ce40a-183">Make web part configurable</span></span>
+  ![Веб-часть с элементами списка дел, отрисованная с помощью Office UI Fabric](../../../images/ng-intro-workbench-office-ui-fabric.png)
 
-<span data-ttu-id="ce40a-p117">Сейчас в веб-части отображается неизменяемый список дел. Далее мы дополним ее, чтобы пользователи могли решать, показывать ли задачи, помеченные как завершенные.</span><span class="sxs-lookup"><span data-stu-id="ce40a-p117">At this point the To do web part shows a fixed list of to do items. Next, you will extend it with a configuration option to allow users to choose whether they want to see items that are marked as done or not.</span></span>
+## <a name="make-web-part-configurable"></a><span data-ttu-id="80a5e-187">Как сделать веб-часть настраиваемой</span><span class="sxs-lookup"><span data-stu-id="80a5e-187">Make web part configurable</span></span>
 
-### <a name="add-property-in-the-web-part-manifest"></a><span data-ttu-id="ce40a-186">Добавление свойства в манифест веб-части</span><span class="sxs-lookup"><span data-stu-id="ce40a-186">Add property in the web part manifest</span></span>
+<span data-ttu-id="80a5e-188">Сейчас в веб-части отображается неизменяемый список дел.</span><span class="sxs-lookup"><span data-stu-id="80a5e-188">At this point, the To Do web part shows a fixed list of To Do items.</span></span> <span data-ttu-id="80a5e-189">Далее мы дополним ее, чтобы пользователи могли решать, показывать ли задачи, помеченные как завершенные.</span><span class="sxs-lookup"><span data-stu-id="80a5e-189">At this point the To do web part shows a fixed list of to do items. Next, you will extend it with a configuration option to allow users to choose whether they want to see items that are marked as done or not.</span></span>
 
-<span data-ttu-id="ce40a-187">Для начала добавьте свойство настройки в манифест веб-части.</span><span class="sxs-lookup"><span data-stu-id="ce40a-187">Start by adding configuration property in the web part manifest.</span></span> <span data-ttu-id="ce40a-188">В редакторе кода откройте файл **ToDoWebPart.manifest.json**.</span><span class="sxs-lookup"><span data-stu-id="ce40a-188">In the code editor open the **ToDoWebPart.manifest.json** file.</span></span> <span data-ttu-id="ce40a-189">В разделе **preconfiguredEntries** перейдите к массиву **properties** и замените свойство **description** следующей строкой:</span><span class="sxs-lookup"><span data-stu-id="ce40a-189">In the **preconfiguredEntries** section, navigate to the **properties** array and replace the existing **description** property with the following line:</span></span>
+### <a name="add-property-in-the-web-part-manifest"></a><span data-ttu-id="80a5e-190">Добавление свойства в манифест веб-части</span><span class="sxs-lookup"><span data-stu-id="80a5e-190">Add property in the web part manifest</span></span>
+
+<span data-ttu-id="80a5e-191">Для начала добавьте свойство настройки в манифест веб-части.</span><span class="sxs-lookup"><span data-stu-id="80a5e-191">Start by adding configuration property in the web part manifest.</span></span> 
+
+<span data-ttu-id="80a5e-192">В редакторе кода откройте файл **ToDoWebPart.manifest.json**.</span><span class="sxs-lookup"><span data-stu-id="80a5e-192">In the code editor open the **ToDoWebPart.manifest.json** file.</span></span> <span data-ttu-id="80a5e-193">В разделе **preconfiguredEntries** перейдите к массиву **properties** и замените свойство **description** следующей строкой:</span><span class="sxs-lookup"><span data-stu-id="80a5e-193">In the **preconfiguredEntries** section, navigate to the **properties** array and replace the existing **description** property with the following line:</span></span>
 
 ```json
 "hideFinishedTasks": false
 ```
 
+<br/>
+
 ![Свойство hideFinishedTasks, выделенное в манифесте веб-части](../../../images/ng-intro-manifest-property.png)
 
-### <a name="update-the-signature-of-the-web-part-properties-interface"></a><span data-ttu-id="ce40a-191">Обновление подписи интерфейса свойств веб-части</span><span class="sxs-lookup"><span data-stu-id="ce40a-191">Update the signature of the web part properties interface</span></span>
+### <a name="update-the-signature-of-the-web-part-properties-interface"></a><span data-ttu-id="80a5e-195">Обновление подписи интерфейса свойств веб-части</span><span class="sxs-lookup"><span data-stu-id="80a5e-195">Update the signature of the web part properties interface</span></span>
 
-<span data-ttu-id="ce40a-192">Далее обновите подпись интерфейса свойств веб-части.</span><span class="sxs-lookup"><span data-stu-id="ce40a-192">Next, update the signature of the web part properties interface.</span></span>
+<span data-ttu-id="80a5e-196">Далее обновите подпись интерфейса свойств веб-части.</span><span class="sxs-lookup"><span data-stu-id="80a5e-196">Next, update the signature of the web part properties interface.</span></span>
 
-<span data-ttu-id="ce40a-193">В редакторе кода откройте файл **ToDoWebPart.ts** и обновите интерфейс `IToDoWebPartProps`, добавив следующее:</span><span class="sxs-lookup"><span data-stu-id="ce40a-193">In the code editor open the **ToDoWebPart.ts** file and update the `IToDoWebPartProps` interface to the following:</span></span>
+<span data-ttu-id="80a5e-197">В редакторе кода откройте файл **ToDoWebPart.ts** и обновите интерфейс `IToDoWebPartProps`, добавив следующее:</span><span class="sxs-lookup"><span data-stu-id="80a5e-197">In the code editor open the **ToDoWebPart.ts** file and update the `IToDoWebPartProps` interface to the following:</span></span>
 
-```ts
+```typescript
 export interface IToDoWebPartProps {
   hideFinishedTasks: boolean;
 }
 ```
 
+<br/>
+
 ![Файл IToDoWebPartProps.ts, открытый в Visual Studio Code](../../../images/ng-intro-property-interface.png)
 
-### <a name="add-the-property-to-the-web-part-property-pane"></a><span data-ttu-id="ce40a-195">Добавление свойства в панель свойств веб-части</span><span class="sxs-lookup"><span data-stu-id="ce40a-195">Add the property to the web part property pane</span></span>
+### <a name="add-the-property-to-the-web-part-property-pane"></a><span data-ttu-id="80a5e-199">Добавление свойства в панель свойств веб-части</span><span class="sxs-lookup"><span data-stu-id="80a5e-199">Add the property to the web part property pane</span></span>
 
-<span data-ttu-id="ce40a-196">Чтобы пользователи могли настраивать значение нового свойства, оно должно быть доступно на панели свойств веб-части.</span><span class="sxs-lookup"><span data-stu-id="ce40a-196">To allow users to configure the value of your newly added property, you have to expose it through the web part property pane.</span></span>
+<span data-ttu-id="80a5e-200">Чтобы пользователи могли настраивать значение нового свойства, оно должно быть доступно на панели свойств веб-части.</span><span class="sxs-lookup"><span data-stu-id="80a5e-200">To allow users to configure the value of your newly added property, you have to expose it through the web part property pane.</span></span>
 
-<span data-ttu-id="ce40a-197">В редакторе кода откройте файл **ToDoWebPart.ts**.</span><span class="sxs-lookup"><span data-stu-id="ce40a-197">In the code editor open the **ToDoWebPart.ts** file.</span></span> <span data-ttu-id="ce40a-198">В первом операторе `import` замените строку `PropertyPaneTextField` на строку `PropertyPaneToggle`:</span><span class="sxs-lookup"><span data-stu-id="ce40a-198">In the first `import` statement replace  `PropertyPaneTextField` with `PropertyPaneToggle`:</span></span>
+1. <span data-ttu-id="80a5e-201">В редакторе кода откройте файл **ToDoWebPart.ts**.</span><span class="sxs-lookup"><span data-stu-id="80a5e-201">In the code editor open the **ToDoWebPart.ts** file.</span></span> 
 
-```ts
-import {
-  BaseClientSideWebPart,
-  IPropertyPaneConfiguration,
-  PropertyPaneToggle
-} from '@microsoft/sp-webpart-base';
-```
+2. <span data-ttu-id="80a5e-202">В первом операторе `import` замените строку `PropertyPaneTextField` на строку `PropertyPaneToggle`:</span><span class="sxs-lookup"><span data-stu-id="80a5e-202">In the first `import` statement replace  `PropertyPaneTextField` with `PropertyPaneToggle`:</span></span>
 
-![Оператор импорта PropertyPaneToggle, выделенный в Visual Studio Code](../../../images/ng-intro-property-pane-toggle.png)
+  ```typescript
+  import {
+    BaseClientSideWebPart,
+    IPropertyPaneConfiguration,
+    PropertyPaneToggle
+  } from '@microsoft/sp-webpart-base';
+  ```
 
-<span data-ttu-id="ce40a-200">Измените функцию `propertyPaneSettings`, как показано ниже:</span><span class="sxs-lookup"><span data-stu-id="ce40a-200">Change the implementation of the `propertyPaneSettings` function to:</span></span>
+  <br/>
 
-```ts
-protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
-  return {
-    pages: [
-      {
-        header: {
-          description: strings.PropertyPaneDescription
-        },
-        groups: [
-          {
-            groupName: strings.ViewGroupName,
-            groupFields: [
-              PropertyPaneToggle('hideFinishedTasks', {
-                label: strings.HideFinishedTasksFieldLabel
-              })
-            ]
-          }
-        ]
-      }
-    ]
-  };
-}
-```
+  ![Оператор импорта PropertyPaneToggle, выделенный в Visual Studio Code](../../../images/ng-intro-property-pane-toggle.png)
 
-<span data-ttu-id="ce40a-201">Чтобы исправить ссылки на отсутствующие строки, сначала нужно изменить подпись строк.</span><span class="sxs-lookup"><span data-stu-id="ce40a-201">To fix the missing string references you first need to change the signature of your strings.</span></span> <span data-ttu-id="ce40a-202">В редакторе кода откройте файл **loc/mystrings.d.ts** и замените его содержимое на следующие строки:</span><span class="sxs-lookup"><span data-stu-id="ce40a-202">In the code editor open the **loc/mystrings.d.ts** file and change its contents to:</span></span>
+3. <span data-ttu-id="80a5e-204">Измените функцию `propertyPaneSettings`, как показано ниже:</span><span class="sxs-lookup"><span data-stu-id="80a5e-204">Change the implementation of the `propertyPaneSettings` function to:</span></span>
 
-```ts
-declare interface IToDoWebPartStrings {
-  PropertyPaneDescription: string;
-  BasicGroupName: string;
-  HideFinishedTasksFieldLabel: string;
-}
-
-declare module 'ToDoWebPartStrings' {
-  const strings: IToDoWebPartStrings;
-  export = strings;
-}
-```
-
-![Файл loc/mystrings.d.ts, открытый в Visual Studio Code](../../../images/ng-intro-strings-interface.png)
-
-<span data-ttu-id="ce40a-204">Далее нужно указать действительные значения для новых строк.</span><span class="sxs-lookup"><span data-stu-id="ce40a-204">Next, you need to provide the actual values for the newly defined strings.</span></span> <span data-ttu-id="ce40a-205">В редакторе кода откройте файл **loc/en-us.js** и замените его содержимое на следующие строки:</span><span class="sxs-lookup"><span data-stu-id="ce40a-205">In the code editor open the **loc/en-us.js** file and change its contents to:</span></span>
-
-```js
-define([], function() {
-  return {
-    "PropertyPaneDescription": "Manage configuration of the To do web part",
-    "ViewGroupName": "View",
-    "HideFinishedTasksFieldLabel": "Hide finished tasks"
+  ```typescript
+  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
+    return {
+      pages: [
+        {
+          header: {
+            description: strings.PropertyPaneDescription
+          },
+          groups: [
+            {
+              groupName: strings.ViewGroupName,
+              groupFields: [
+                PropertyPaneToggle('hideFinishedTasks', {
+                  label: strings.HideFinishedTasksFieldLabel
+                })
+              ]
+            }
+          ]
+        }
+      ]
+    };
   }
-});
-```
+  ```
 
-![Файл loc/en-us.js, открытый в Visual Studio Code](../../../images/ng-intro-strings.png)
+4. <span data-ttu-id="80a5e-205">Чтобы исправить ссылки на отсутствующие строки, сначала нужно изменить подпись строк.</span><span class="sxs-lookup"><span data-stu-id="80a5e-205">To fix the missing string references you first need to change the signature of your strings.</span></span> <span data-ttu-id="80a5e-206">В редакторе кода откройте файл **loc/mystrings.d.ts** и замените его содержимое на следующие строки:</span><span class="sxs-lookup"><span data-stu-id="80a5e-206">In the code editor open the **loc/mystrings.d.ts** file and change its contents to:</span></span>
 
-<span data-ttu-id="ce40a-207">Выполните следующую команду, чтобы убедиться, что всё работает правильно:</span><span class="sxs-lookup"><span data-stu-id="ce40a-207">Run the following command to confirm that everything is working as expected:</span></span>
+  ```typescript
+  declare interface IToDoWebPartStrings {
+    PropertyPaneDescription: string;
+    BasicGroupName: string;
+    HideFinishedTasksFieldLabel: string;
+  }
 
-```sh
-gulp serve
-```
+  declare module 'ToDoWebPartStrings' {
+    const strings: IToDoWebPartStrings;
+    export = strings;
+  }
+  ```
 
-<span data-ttu-id="ce40a-208">На панели свойств веб-части должен появиться выключатель для нового свойства.</span><span class="sxs-lookup"><span data-stu-id="ce40a-208">In the web part property pane you should see a toggle button for your newly defined property.</span></span>
+  <br/>
 
-![Выключатель в области свойств веб-части](../../../images/ng-intro-property-pane-toggle-browser.png)
+  ![Файл loc/mystrings.d.ts, открытый в Visual Studio Code](../../../images/ng-intro-strings-interface.png)
 
-<span data-ttu-id="ce40a-210">Сейчас выключатель не работает, так как он еще не подключен к AngularJS.</span><span class="sxs-lookup"><span data-stu-id="ce40a-210">At this point clicking the toggle button doesn't have any effect on your web part as it hasn't been connected to AngularJS.</span></span> <span data-ttu-id="ce40a-211">Это следующий шаг.</span><span class="sxs-lookup"><span data-stu-id="ce40a-211">You will do that in the next step.</span></span>
+5. <span data-ttu-id="80a5e-208">Укажите действительные значения для новых строк.</span><span class="sxs-lookup"><span data-stu-id="80a5e-208">Next, you need to provide the actual values for the newly defined strings.</span></span> <span data-ttu-id="80a5e-209">В редакторе кода откройте файл **loc/en-us.js** и замените его содержимое на следующие строки:</span><span class="sxs-lookup"><span data-stu-id="80a5e-209">In the code editor open the **loc/en-us.js** file and change its contents to:</span></span>
 
-### <a name="make-the-angularjs-application-configurable-using-web-part-properties"></a><span data-ttu-id="ce40a-212">Как сделать приложение AngularJS настраиваемым с помощью свойств веб-части</span><span class="sxs-lookup"><span data-stu-id="ce40a-212">Make the AngularJS application configurable using web part properties</span></span>
+  ```js
+  define([], function() {
+    return {
+      "PropertyPaneDescription": "Manage configuration of the To do web part",
+      "ViewGroupName": "View",
+      "HideFinishedTasksFieldLabel": "Hide finished tasks"
+    }
+  });
+  ```
 
-<span data-ttu-id="ce40a-213">Выполняя предыдущий шаг, вы определили свойство веб-части, которое позволяет пользователям решать, нужно ли показывать завершенные задачи.</span><span class="sxs-lookup"><span data-stu-id="ce40a-213">In the previous step you defined a web part property that allows users to choose whether to show completed tasks or not.</span></span> <span data-ttu-id="ce40a-214">Далее нужно передать выбранное пользователем значение в приложение AngularJS, чтобы оно могло загрузить соответствующие элементы.</span><span class="sxs-lookup"><span data-stu-id="ce40a-214">Next you will pass the value selected by the user into the AngularJS application so that it can load items accordingly.</span></span>
+  <br/>
 
-#### <a name="broadcast-angularjs-event-on-web-part-property-change"></a><span data-ttu-id="ce40a-215">Трансляция события AngularJS при изменении свойства веб-части</span><span class="sxs-lookup"><span data-stu-id="ce40a-215">Broadcast AngularJS event on web part property change</span></span>
+  ![Файл loc/en-us.js, открытый в Visual Studio Code](../../../images/ng-intro-strings.png)
 
-<span data-ttu-id="ce40a-216">В редакторе кода откройте файл **ToDoWebPart.ts**.</span><span class="sxs-lookup"><span data-stu-id="ce40a-216">In the code editor open the **ToDoWebPart.ts** file.</span></span> <span data-ttu-id="ce40a-217">Добавьте следующую строку перед конструктором веб-части:</span><span class="sxs-lookup"><span data-stu-id="ce40a-217">Right before web part's constructor add the following line:</span></span>
+6. <span data-ttu-id="80a5e-211">Выполните следующую команду, чтобы убедиться, что всё работает правильно:</span><span class="sxs-lookup"><span data-stu-id="80a5e-211">Run the following command to confirm that everything is working as expected:</span></span>
 
-```ts
-private $injector: angular.auto.IInjectorService;
-```
+  ```sh
+  gulp serve
+  ```
 
-![Переменная класса $injector, выделенная в Visual Studio Code](../../../images/ng-intro-injector-class-variable.png)
+7. <span data-ttu-id="80a5e-212">На панели свойств веб-части должен появиться выключатель для нового свойства.</span><span class="sxs-lookup"><span data-stu-id="80a5e-212">In the web part property pane you should see a toggle button for your newly defined property.</span></span>
 
-<span data-ttu-id="ce40a-219">Далее измените функцию **render** веб-части, как показано ниже.</span><span class="sxs-lookup"><span data-stu-id="ce40a-219">Next, change the web part's **render** function to the following:</span></span>
+  ![Выключатель в области свойств веб-части](../../../images/ng-intro-property-pane-toggle-browser.png)
 
-```ts
-public render(): void {
-  if (this.renderedOnce === false) {
-    this.domElement.innerHTML = `
-<div class="${styles.toDo}">
-  <div data-ng-controller="HomeController as vm">
-    <div class="${styles.loading}" ng-show="vm.isLoading">
-      <div class="${styles.spinner}">
-        <div class="${styles.spinnerCircle} ${styles.spinnerLarge}"></div>
-        <div class="${styles.spinnerLabel}">Loading...</div>
+  <span data-ttu-id="80a5e-214">Сейчас выключатель не работает, так как он еще не подключен к AngularJS.</span><span class="sxs-lookup"><span data-stu-id="80a5e-214">At this point clicking the toggle button doesn't have any effect on your web part as it hasn't been connected to AngularJS.</span></span> <span data-ttu-id="80a5e-215">Как это сделать, описано ниже.</span><span class="sxs-lookup"><span data-stu-id="80a5e-215">You will do that in the next step.</span></span>
+
+### <a name="make-the-angularjs-application-configurable-using-web-part-properties"></a><span data-ttu-id="80a5e-216">Как сделать приложение AngularJS настраиваемым с помощью свойств веб-части</span><span class="sxs-lookup"><span data-stu-id="80a5e-216">Make the AngularJS application configurable using web part properties</span></span>
+
+<span data-ttu-id="80a5e-217">Выполняя предыдущий шаг, вы определили свойство веб-части, которое позволяет пользователям решать, нужно ли показывать завершенные задачи.</span><span class="sxs-lookup"><span data-stu-id="80a5e-217">In the previous step you defined a web part property that allows users to choose whether to show completed tasks or not.</span></span> <span data-ttu-id="80a5e-218">Далее необходимо передать выбранное пользователем значение в приложение AngularJS, чтобы оно могло загрузить соответствующие элементы.</span><span class="sxs-lookup"><span data-stu-id="80a5e-218">Next you will pass the value selected by the user into the AngularJS application so that it can load items accordingly.</span></span>
+
+#### <a name="broadcast-angularjs-event-on-web-part-property-change"></a><span data-ttu-id="80a5e-219">Трансляция события AngularJS при изменении свойства веб-части</span><span class="sxs-lookup"><span data-stu-id="80a5e-219">Broadcast AngularJS event on web part property change</span></span>
+
+1. <span data-ttu-id="80a5e-220">В редакторе кода откройте файл **ToDoWebPart.ts**.</span><span class="sxs-lookup"><span data-stu-id="80a5e-220">In the code editor open the **ToDoWebPart.ts** file.</span></span> <span data-ttu-id="80a5e-221">Добавьте следующую строку перед конструктором веб-части:</span><span class="sxs-lookup"><span data-stu-id="80a5e-221">Right before web part's constructor add the following line:</span></span>
+
+  ```typescript
+  private $injector: angular.auto.IInjectorService;
+  ```
+
+  <br/>
+
+  ![Переменная класса $injector, выделенная в Visual Studio Code](../../../images/ng-intro-injector-class-variable.png)
+
+2. <span data-ttu-id="80a5e-223">Измените функцию **render** веб-части, как показано ниже.</span><span class="sxs-lookup"><span data-stu-id="80a5e-223">Next, change the web part's **render** function to the following:</span></span>
+
+  ```typescript
+  public render(): void {
+    if (this.renderedOnce === false) {
+      this.domElement.innerHTML = `
+  <div class="${styles.toDo}">
+    <div data-ng-controller="HomeController as vm">
+      <div class="${styles.loading}" ng-show="vm.isLoading">
+        <div class="${styles.spinner}">
+          <div class="${styles.spinnerCircle} ${styles.spinnerLarge}"></div>
+          <div class="${styles.spinnerLabel}">Loading...</div>
+        </div>
       </div>
-    </div>
-    <div ng-show="vm.isLoading === false">
-      <div class="${styles.textField} ${styles.underlined}" ng-class="{'${styles.isActive}': vm.newToDoActive}">
-        <label for="newToDo" class="${styles.label}">New to do:</label>
-        <input type="text" label="New to do:" id="newToDo" value="" class="${styles.field}" aria-invalid="false" ng-model="vm.newItem" ng-keydown="vm.todoKeyDown($event)" ng-focus="vm.newToDoActive = true" ng-blur="vm.newToDoActive = false">
+      <div ng-show="vm.isLoading === false">
+        <div class="${styles.textField} ${styles.underlined}" ng-class="{'${styles.isActive}': vm.newToDoActive}">
+          <label for="newToDo" class="${styles.label}">New to do:</label>
+          <input type="text" label="New to do:" id="newToDo" value="" class="${styles.field}" aria-invalid="false" ng-model="vm.newItem" ng-keydown="vm.todoKeyDown($event)" ng-focus="vm.newToDoActive = true" ng-blur="vm.newToDoActive = false">
+        </div>
       </div>
-    </div>
-    <div class="list" ng-show="vm.isLoading === false">
-      <div class="listSurface">
-        <div class="listPage">
-          <div class="listCell" ng-repeat="todo in vm.todoCollection" uif-item="todo" ng-class="{'${styles.done}': todo.done}">
-            <div class="${styles.listItem}">
-              <span class="${styles.listItemPrimaryText}">{{todo.title}}</span>
-              <div class="${styles.listItemActions}">
-                <div class="${styles.listItemAction}" ng-click="vm.completeTodo(todo)" ng-show="todo.done === false">
-                  <i class="${styles.icon} ${styles.iconCheckMark}"></i>
-                </div>
-                <div class="${styles.listItemAction}" ng-click="vm.undoTodo(todo)" ng-show="todo.done">
-                  <i class="${styles.icon} ${styles.iconUndo}"></i>
-                </div>
-                <div class="${styles.listItemAction}" ng-click="vm.deleteTodo(todo)">
-                  <i class="${styles.icon} ${styles.iconRecycleBin}"></i>
+      <div class="list" ng-show="vm.isLoading === false">
+        <div class="listSurface">
+          <div class="listPage">
+            <div class="listCell" ng-repeat="todo in vm.todoCollection" uif-item="todo" ng-class="{'${styles.done}': todo.done}">
+              <div class="${styles.listItem}">
+                <span class="${styles.listItemPrimaryText}">{{todo.title}}</span>
+                <div class="${styles.listItemActions}">
+                  <div class="${styles.listItemAction}" ng-click="vm.completeTodo(todo)" ng-show="todo.done === false">
+                    <i class="${styles.icon} ${styles.iconCheckMark}"></i>
+                  </div>
+                  <div class="${styles.listItemAction}" ng-click="vm.undoTodo(todo)" ng-show="todo.done">
+                    <i class="${styles.icon} ${styles.iconUndo}"></i>
+                  </div>
+                  <div class="${styles.listItemAction}" ng-click="vm.deleteTodo(todo)">
+                    <i class="${styles.icon} ${styles.iconRecycleBin}"></i>
+                  </div>
                 </div>
               </div>
             </div>
@@ -835,43 +890,49 @@ public render(): void {
         </div>
       </div>
     </div>
-  </div>
-</div>`;
+  </div>`;
 
-    this.$injector = angular.bootstrap(this.domElement, ['todoapp']);
+      this.$injector = angular.bootstrap(this.domElement, ['todoapp']);
+    }
+
+    this.$injector.get('$rootScope').$broadcast('configurationChanged', {
+      hideFinishedTasks: this.properties.hideFinishedTasks
+    });
   }
+  ```
 
-  this.$injector.get('$rootScope').$broadcast('configurationChanged', {
-    hideFinishedTasks: this.properties.hideFinishedTasks
-  });
-}
-```
+<span data-ttu-id="80a5e-224">Предыдущий пример кода при каждом изменении свойства веб-части транслирует событие AngularJS, на которое его подписывает приложение AngularJS.</span><span class="sxs-lookup"><span data-stu-id="80a5e-224">In the above code sample, every time the web part property is changed, it will broadcast an AngularJS event to which the AngularJS application will subscribe it.</span></span> <span data-ttu-id="80a5e-225">Когда приложение AngularJS получит событие, оно обработает его соответствующим образом.</span><span class="sxs-lookup"><span data-stu-id="80a5e-225">When event is received by the AngularJS application, it will then handle that accordingly.</span></span>
 
-<span data-ttu-id="ce40a-220">Приведенный выше пример кода при каждом изменении свойства веб-части будет транслировать событие AngularJS, на которое приложение AngularJS его подпишет.</span><span class="sxs-lookup"><span data-stu-id="ce40a-220">In the above code sample, every time the web part property is changed, it will broadcast an AngularJS event to which the AngularJS application will subscribe it.</span></span> <span data-ttu-id="ce40a-221">Когда приложение AngularJS получит событие, оно обработает его соответствующим образом.</span><span class="sxs-lookup"><span data-stu-id="ce40a-221">When event is received by the AngularJS application, it will then handle that accordingly.</span></span>
+#### <a name="subscribe-to-web-part-property-change-event-in-angularjs"></a><span data-ttu-id="80a5e-226">Подписка на событие изменения свойства веб-части в AngularJS</span><span class="sxs-lookup"><span data-stu-id="80a5e-226">Subscribe to web part property change event in AngularJS</span></span>
 
-#### <a name="subscribe-to-web-part-property-change-event-in-angularjs"></a><span data-ttu-id="ce40a-222">Подписка на событие изменения свойства веб-части в AngularJS</span><span class="sxs-lookup"><span data-stu-id="ce40a-222">Subscribe to web part property change event in AngularJS</span></span>
+1. <span data-ttu-id="80a5e-227">В редакторе кода откройте файл **app/HomeController.ts**.</span><span class="sxs-lookup"><span data-stu-id="80a5e-227">In the code editor open the **app/HomeController.ts** file.</span></span> <span data-ttu-id="80a5e-228">Дополните конструктор следующим образом:</span><span class="sxs-lookup"><span data-stu-id="80a5e-228">Extend the constructor as follows:</span></span>
 
-<span data-ttu-id="ce40a-223">В редакторе кода откройте файл **app/HomeController.ts**.</span><span class="sxs-lookup"><span data-stu-id="ce40a-223">In the code editor open the **app/HomeController.ts** file.</span></span> <span data-ttu-id="ce40a-224">Дополните конструктор следующим образом:</span><span class="sxs-lookup"><span data-stu-id="ce40a-224">Extend the constructor as follows:</span></span>
+  ```typescript
+  constructor(private dataService: IDataService, private $window: angular.IWindowService, private $rootScope: angular.IRootScopeService) {
+    const vm: HomeController = this;
+    this.init();
 
-```ts
-constructor(private dataService: IDataService, private $window: angular.IWindowService, private $rootScope: angular.IRootScopeService) {
-  const vm: HomeController = this;
-  this.init();
+    $rootScope.$on('configurationChanged', (event: angular.IAngularEvent, args: { hideFinishedTasks: boolean }): void => {
+      vm.init(args.hideFinishedTasks);
+    });
+  }
+  ```
 
-  $rootScope.$on('configurationChanged', (event: angular.IAngularEvent, args: { hideFinishedTasks: boolean }): void => {
-    vm.init(args.hideFinishedTasks);
-  });
-}
-```
+  <br/>
 
-![Определение конструктора в файле HomeController.ts, выделенное в Visual Studio Code](../../../images/ng-intro-homecontroller-event.png)
+  ![Определение конструктора в файле HomeController.ts, выделенное в Visual Studio Code](../../../images/ng-intro-homecontroller-event.png)
 
-<span data-ttu-id="ce40a-226">Чтобы убедиться, что приложение AngularJS работает без ошибок и правильно отвечает на изменение свойства, в командной строке выполните следующую команду:</span><span class="sxs-lookup"><span data-stu-id="ce40a-226">To verify that the AngularJS application is working as expected and correctly responds to property changed, in the command line run:</span></span>
+2. <span data-ttu-id="80a5e-230">Убедитесь, что приложение AngularJS работает без ошибок и правильно отвечает на изменение свойства. Для этого в командной строке выполните следующую команду:</span><span class="sxs-lookup"><span data-stu-id="80a5e-230">Verify that the AngularJS application is working as expected and correctly responding to the changed property by running the following in the command line:</span></span>
 
-```sh
-gulp serve
-```
+  ```sh
+  gulp serve
+  ```
 
-<span data-ttu-id="ce40a-227">Когда вы переместите переключатель **Hide finished tasks** (Скрыть завершенные задачи), веб-часть должна показать или скрыть завершенные задачи.</span><span class="sxs-lookup"><span data-stu-id="ce40a-227">If you toggle the value of the **Hide finished tasks** property, web part should show or hide finished tasks accordingly.</span></span>
+3. <span data-ttu-id="80a5e-231">Когда вы переключите значение свойства **Скрыть завершенные задачи**, веб-часть должна показать или скрыть завершенные задачи.</span><span class="sxs-lookup"><span data-stu-id="80a5e-231">If you toggle the value of the **Hide finished tasks** property, web part should show or hide finished tasks accordingly.</span></span>
 
-![В веб-части показаны только незавершенные задачи: параметр "Скрыть завершенные задачи" включен](../../../images/ng-intro-hide-finished-tasks.png)
+  ![В веб-части показаны только незавершенные задачи: параметр "Скрыть завершенные задачи" включен](../../../images/ng-intro-hide-finished-tasks.png)
+
+
+## <a name="see-also"></a><span data-ttu-id="80a5e-233">См. также</span><span class="sxs-lookup"><span data-stu-id="80a5e-233">See also</span></span>
+
+- [<span data-ttu-id="80a5e-234">Обзор SharePoint Framework</span><span class="sxs-lookup"><span data-stu-id="80a5e-234">SharePoint Framework Extensions Overview</span></span>](../../sharepoint-framework-overview.md)
