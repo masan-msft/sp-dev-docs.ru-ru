@@ -1,124 +1,128 @@
 ---
 title: "Использование sp-pnp-js с веб-частями SharePoint Framework"
-ms.date: 09/25/2017
+description: "Эта библиотека предоставляет текучий API, обеспечивающий интуитивно понятное составление запросов REST и поддержку пакетной обработки и кэширования."
+ms.date: 01/29/2018
 ms.prod: sharepoint
-ms.openlocfilehash: e0f86a7ed8d0c3c09e00087819b2608d8c67eccf
-ms.sourcegitcommit: 9c458121628425716442abddbc97a1f61f18a74c
+ms.openlocfilehash: 14103d1035ef6f3ddabc5095c8746a6300997a96
+ms.sourcegitcommit: e4bf60eabffe63dc07f96824167d249c0678db82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="use-sp-pnp-js-with-sharepoint-framework-web-parts"></a>Использование sp-pnp-js с веб-частями SharePoint Framework
 
-Вы можете использовать библиотеку [sp-pnp-js](https://www.npmjs.com/package/sp-pnp-js) при создании веб-частей SharePoint Framework (SPFx). Эта библиотека предоставляет текучий API, обеспечивающий интуитивно понятное составление запросов REST, а также поддерживает пакетную обработку и кэширование. Дополнительные сведения вы найдете на [домашней странице проекта](https://github.com/SharePoint/PnP-JS-Core), содержащей ссылки на документацию, примеры и другие ресурсы, которые помогут вам приступить к работе.
+Вы можете использовать библиотеку [sp-pnp-js](https://www.npmjs.com/package/sp-pnp-js) при сборке веб-частей SharePoint Framework (SPFx). Эта библиотека предоставляет текучий API, обеспечивающий интуитивно понятное составление запросов REST и поддержку пакетной обработки и кэширования. Подробнее см. на [домашней странице проекта](https://github.com/SharePoint/PnP-JS-Core), содержащей ссылки на документацию, примеры и другие ресурсы, которые помогут вам приступить к работе.
 
 Вы можете скачать [полный исходный код](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/knockout-sp-pnp-js) для этой статьи на сайте с примерами.
 
-## <a name="setup-your-environment"></a>Настройка среды
-
-Прежде чем выполнять действия, описанные в этом руководстве, [настройте среду](https://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment) для разработки с помощью SharePoint Framework.
+> [!NOTE] 
+> Прежде чем выполнять действия, описанные в этой статье, [настройте среду разработки для создания клиентских веб-частей SharePoint](../../set-up-your-development-environment.md).
 
 ## <a name="create-a-new-project"></a>Создание проекта
 
-Для начала создайте папку проекта с помощью любой консоли:
+1. Создайте папку проекта с помощью любой консоли:
 
-```sh
-md spfx-sp-pnp-js-example
-```
+  ```sh
+  md spfx-sp-pnp-js-example
+  ```
 
-Перейдите к этой папке:
+2. Перейдите в эту папку:
 
-```sh
-cd spfx-sp-pnp-js-example
-```
+  ```sh
+  cd spfx-sp-pnp-js-example
+  ```
 
-Запустите генератор Yeoman для SPFx:
+3. Запустите генератор Yeoman для SPFx:
 
-```sh
-yo @microsoft/sharepoint
-```
+  ```sh
+  yo @microsoft/sharepoint
+  ```
 
-Введите следующие значения при настройке нового проекта:
+4. Введите следующие значения при настройке нового проекта:
 
-- **spfx-sp-pnp-js-example** в качестве имени решения (оставьте значение по умолчанию);
-- **SharePoint Online only (latest)** (Только SharePoint Online, последняя версия) в качестве версии базовых пакетов;
-- **Current Folder** (Текущая папка) в качестве расположения решения;
-- **Y** для разрешения администратору клиента развертывать решение на всех сайтах;
-- **WebPart** в качестве компонента, который необходимо создать;
-- **SPPnPJSExample** в качестве имени веб-части;
-- **Example of using sp-pnp-js within SPFx** (Пример использования sp-pnp-js в SPFx) в качестве описания;
-- **Knockout** в качестве платформы.
+  - **spfx-sp-pnp-js-example** в качестве имени решения (оставьте значение по умолчанию);
+  - **SharePoint Online only (latest)** (Только SharePoint Online, последняя версия) в качестве версии базовых пакетов;
+  - **Current Folder** (Текущая папка) в качестве расположения решения;
+  - **Y** для разрешения администратору клиента развертывать решение на всех сайтах;
+  - **WebPart** в качестве компонента, который необходимо создать;
+  - **SPPnPJSExample** в качестве имени веб-части;
+  - **Example of using sp-pnp-js within SPFx** (Пример использования sp-pnp-js в SPFx) в качестве описания;
+  - **Knockout** в качестве платформы.
 
-![Скаффолдинг проекта завершен](../../../images/sp-pnp-js-guide-completed-setup.png)
+  ![Скаффолдинг проекта завершен](../../../images/sp-pnp-js-guide-completed-setup.png)
 
-После завершения скаффолдинга блокируйте версию зависимостей проекта, выполнив следующую команду:
+5. По завершении формирования шаблона заблокируйте версию зависимостей проекта, выполнив следующую команду:
 
-```sh
-npm shrinkwrap
-```
+  ```sh
+  npm shrinkwrap
+  ```
 
-Далее откройте проект в выбранном редакторе кода. На приведенных здесь снимках экрана показан [Visual Studio Code](https://code.visualstudio.com/). Чтобы открыть каталог в Visual Studio Code, введите следующее в консоль:
+6. Откройте проект в выбранном редакторе кода. На приведенных здесь снимках экрана показан [Visual Studio Code](https://code.visualstudio.com/). Чтобы открыть каталог в Visual Studio Code, введите следующее в консоль:
 
-```sh
-code .
-```
+  ```sh
+  code .
+  ```
 
-![Проект, впервые открытый в Visual Studio Code](../../../images/sp-pnp-js-guide-first-open.png)
+  ![Проект, впервые открытый в Visual Studio Code](../../../images/sp-pnp-js-guide-first-open.png)
 
-## <a name="install-and-setup-sp-pnp-js"></a>Установка и настройка sp-pnp-js
+## <a name="install-and-set-up-sp-pnp-js"></a>Установка и настройка sp-pnp-js
 
-После создания проекта необходимо установить и настроить sp-pnp-js, начиная с установки пакета. Эти инструкции применимы к проектам любых типов (React и т. д.).
+После создания проекта необходимо установить и настроить sp-pnp-js, начиная с установки пакета. Эти инструкции применимы к проектам любых типов (React и т. д.).
 
 ```sh
 npm install sp-pnp-js --save
 ```
 
-Библиотека sp-pnp-js составляет запросы REST, поэтому ей необходим URL-адрес для отправки этих запросов. Работая с классическими сайтами и страницами, мы можем воспользоваться глобальной переменной `_spPageContextInfo`. Но в случае SPFx применение этой переменной либо невозможно, либо может быть неправильным. Следовательно, нужно использовать объект [context](https://dev.office.com/sharepoint/reference/spfx/sp-webpart-base/iwebpartcontext), входящий в состав платформы. Убедиться в правильности настройки запросов можно [двумя способами](https://github.com/SharePoint/PnP-JS-Core/wiki/Using-sp-pnp-js-in-SharePoint-Framework#establish-context). В этом примере мы воспользуемся методом `onInit`.
+Библиотека sp-pnp-js составляет запросы REST, поэтому ей необходим URL-адрес для отправки этих запросов. Работая с классическими сайтами и страницами, мы можем воспользоваться глобальной переменной `_spPageContextInfo`. Но в случае SPFx применение этой переменной либо невозможно, либо может быть неправильным. Следовательно, нужно использовать объект [context](https://docs.microsoft.com/en-us/javascript/api/sp-webpart-base/webpartcontext), входящий в состав платформы. 
+
+Убедиться в правильной настройке запросов можно [двумя способами](https://github.com/SharePoint/PnP-JS-Core/wiki/Using-sp-pnp-js-in-SharePoint-Framework#establish-context). В этом примере мы воспользуемся методом `onInit`.
 
 ### <a name="update-oninit-in-sppnpjsexamplewebpartts"></a>Обновление метода onInit в файле SpPnPjsExampleWebPart.ts
 
-Откройте файл **src\webparts\spPnPjsExample\SpPnPjsExampleWebPart.ts** и добавьте оператор импорта для корневого объекта pnp.
+1. Откройте файл **src\webparts\spPnPjsExample\SpPnPjsExampleWebPart.ts** и добавьте оператор import для корневого объекта pnp:
 
-```TypeScript
-import pnp from "sp-pnp-js";
-```
+  ```TypeScript
+  import pnp from "sp-pnp-js";
+  ```
 
-Замените код метода `onInit` приведенным ниже. Мы добавляем блок после вызова метода `super.onInit()`. Это делается для того, чтобы платформа могла инициализировать все необходимое, а библиотека настраивалась после выполнения этих действий.
+2. Замените код метода `onInit` приведенным ниже. Добавьте блок после вызова метода `super.onInit()`. Это делается после вызова метода `super.onInit`, чтобы платформа могла инициализировать все необходимое, а библиотека настраивалась после выполнения этих действий.
 
-```TypeScript
-/**
- * Initialize the web part.
- */
-protected onInit(): Promise<void> {
-  this._id = _instance++;
+  ```TypeScript
+  /**
+  * Initialize the web part.
+  */
+  protected onInit(): Promise<void> {
+    this._id = _instance++;
 
-  const tagName: string = `ComponentElement-${this._id}`;
-  this._componentElement = this._createComponentElement(tagName);
-  this._registerComponent(tagName);
+    const tagName: string = `ComponentElement-${this._id}`;
+    this._componentElement = this._createComponentElement(tagName);
+    this._registerComponent(tagName);
 
-  // When the web part description is changed, notify the view model to update.
-  this._koDescription.subscribe((newValue: string) => {
-    this._shouter.notifySubscribers(newValue, 'description');
-  });
-
-  const bindings: ISpPnPjsExampleBindingContext = {
-    description: this.properties.description,
-    shouter: this._shouter
-  };
-
-  ko.applyBindings(bindings, this._componentElement);
-
-  return super.onInit().then(_ => {
-    pnp.setup({
-      spfxContext: this.context
+    // When the web part description is changed, notify the view model to update.
+    this._koDescription.subscribe((newValue: string) => {
+      this._shouter.notifySubscribers(newValue, 'description');
     });
-  });
-}
-```
+
+    const bindings: ISpPnPjsExampleBindingContext = {
+      description: this.properties.description,
+      shouter: this._shouter
+    };
+
+    ko.applyBindings(bindings, this._componentElement);
+
+    return super.onInit().then(_ => {
+      pnp.setup({
+        spfxContext: this.context
+      });
+    });
+  }
+  ```
 
 ## <a name="update-the-viewmodel"></a>Обновление модели ViewModel
 
-Затем необходимо заменить содержимое файла **SpPnPjsExampleViewModel.ts** приведенным ниже кодом. Мы добавляем операцию импорта элементов pnp, интерфейс для определения полей элемента списка, некоторые наблюдаемые объекты для отслеживания списка элементов и новой формы элемента, а также методы для считывания, добавления и удаления элементов. Мы также добавили метод `ensureList`, использующий метод `lists.ensure`, чтобы проверять наличие списка (и создавать его при необходимости). Подготавливать ресурсы можно множеством способов, но мы выбрали этот метод, чтобы продемонстрировать создание списка, поля и элементов с помощью пакетной обработки в одном методе.
+После этого замените содержимое файла **SpPnPjsExampleViewModel.ts** приведенным ниже кодом. Мы добавили оператор import для элементов pnp, интерфейс для определения полей элемента списка, некоторые наблюдаемые объекты для отслеживания списка элементов и новой формы элемента, а также методы для считывания, добавления и удаления элементов. 
+
+Мы также добавили метод `ensureList`, использующий метод sp-pnp-js `lists.ensure`, чтобы проверять наличие списка (и при необходимости создавать его). Подготавливать ресурсы можно множеством способов, но мы выбрали этот метод, чтобы показать, как создать список, поле и элементы с помощью пакетной обработки в одном методе.
 
 Из этого можно сделать вывод, что при использовании sp-pnp-js приходится писать намного меньше кода для обработки запросов, и вы можете сосредоточиться на бизнес-логике.
 
@@ -282,7 +286,7 @@ export default class SpPnPjsExampleViewModel {
 
 ## <a name="update-the-template"></a>Обновление шаблона
 
-Напоследок нам необходимо обновить шаблон в соответствии с функциями, добавленными в ViewModel. Скопируйте приведенный ниже код в файл **SpPnPjsExample.template.html**. Мы добавили строку заголовка, цикл foreach для коллекции элементов и форму, позволяющую добавлять новые элементы в список.
+Наконец, нам необходимо обновить шаблон в соответствии с функциями, добавленными в модель ViewModel. Скопируйте приведенный ниже код в файл **SpPnPjsExample.template.html**. Мы добавили строку заголовка, повторитель `foreach` для коллекции элементов и форму, позволяющую добавлять новые элементы в список.
 
 ```html
 <div data-bind="attr: {class:spPnPjsExampleClass}">
@@ -344,37 +348,40 @@ export default class SpPnPjsExampleViewModel {
 
 ## <a name="run-the-example"></a>Запуск примера
 
-Запустите пример и добавьте веб-часть в размещаемое рабочее место SharePoint (/_layouts/workbench.aspx), чтобы увидеть ее в действии.
+Запустите пример и добавьте веб-часть в размещаемое рабочее место SharePoint (/_layouts/workbench.aspx), чтобы просмотреть ее в действии.
 
 ```sh
 gulp serve --nobrowser
 ```
 
+<br/>
+
+Вы можете удалять имеющиеся элементы, щелкая значок урны, и добавлять новые, указывая значения в обоих полях и нажимая кнопку **Добавить**.
+
 ![Первый запуск проекта](../../../images/sp-pnp-js-guide-first-run.png)
 
-Вы можете удалять имеющиеся элементы, нажимая значок урны, и добавлять новые, указывая значения в обоих полях и нажимая кнопку добавления.
 
-## <a name="next-steps"></a>Дальнейшие действия
+### <a name="next-steps"></a>Дальнейшие действия
 
-Библиотека sp-pnp-js содержит огромный выбор функций и расширений. В [руководстве разработчика](https://github.com/SharePoint/PnP-JS-Core/wiki/Developer-Guide) вы найдете примеры, инструкции и советы по использованию и настройке библиотеки.
+Библиотека sp-pnp-js содержит огромный выбор функций и расширений. В [руководстве разработчика](https://github.com/SharePoint/PnP-JS-Core/wiki/Developer-Guide) вы найдете примеры, инструкции и советы по использованию и настройке библиотеки. 
 
-## <a name="production-deployment"></a>Развертывание в рабочей среде
+## <a name="deploy-to-production"></a>Развертывание в рабочей среде
 
-Когда вы будете готовы к развертыванию решения и захотите выполнить сборку с использованием флага `--ship`, отметьте sp-pnp-js как внешнюю библиотеку в конфигурации. Для этого обновите файл **config/config.js**, добавив следующую строку в раздел externals:
+Когда вы будете готовы развернуть решение и захотите выполнить сборку с использованием флага `--ship`, необходимо отметить sp-pnp-js как внешнюю библиотеку в конфигурации. Для этого необходимо обновить файл SPFx **config/config.js**, добавив следующую строку в раздел externals:
 
 ```json
 "sp-pnp-js": "https://cdnjs.cloudflare.com/ajax/libs/sp-pnp-js/2.0.1/pnp.min.js"
 ```
 
-В представленной выше конфигурации используется общедоступная сеть CDN, но URL-адрес может быть внутренним путем или другим расположением, которое требуется использовать. Измените номер версии в URL-адресе в соответствии с целевой версией.
+В этой конфигурации используется общедоступная сеть CDN, но URL-адрес может быть внутренним путем или указывать на другое расположение. Обязательно обновите номер версии в URL-адресе в соответствии с целевой версией.
 
-## <a name="improving-the-example---mock-data"></a>Улучшение примера: фиктивные данные
+## <a name="improve-the-mock-data-example"></a>Улучшение примера: фиктивные данные
 
-В идеале пример должен подходить как для локальной среды программирования, так и для такой, которая размещена в SharePoint. Чтобы обеспечить это, необходимо создать фиктивную модель ViewModel и обновить код веб-части, как показано ниже.
+В идеале пример должен работать как в локальной среде программирования, так и в такой, которая размещена в SharePoint. Для этого необходимо создать фиктивную модель ViewModel и обновить код веб-части, как показано в разделах ниже.
 
-### <a name="mock-viewmodel"></a>Фиктивная модель ViewModel
+### <a name="add-mock-viewmodel-file"></a>Добавление файла фиктивной модели ViewModel
 
-Добавьте новый файл с именем **MockSpPnPjsExampleViewModel.ts** к остальным файлам веб-части. Замените содержимое этого файла приведенным ниже кодом. При этом у вас будет тот же набор функций, но с решением можно будет работать в локальной среде, не рассчитывая на доступность SharePoint.
+Добавьте новый файл с именем **MockSpPnPjsExampleViewModel.ts** к остальным файлам веб-части. Обновите содержимое этого файла, используя приведенный ниже код. При этом у вас будет тот же набор функций, но с решением можно будет работать в локальной среде, не рассчитывая на доступность SharePoint.
 
 ```TypeScript
 import * as ko from 'knockout';
@@ -460,49 +467,52 @@ export default class MockSpPnPjsExampleViewModel {
 }
 ```
 
-### <a name="update-webpart"></a>Обновление веб-части
+### <a name="update-web-part"></a>Обновление веб-части
 
-Наконец, нам необходимо обновить веб-часть, чтобы она использовала фиктивные данные по мере необходимости. Откройте файл **SpPnPjsExampleWebPart.ts**. Импортируйте только что созданный фиктивный сайт ViewModel.
+Наконец, нам необходимо обновить веб-часть, чтобы она использовала фиктивные данные. 
 
-```TypeScript
-import MockSpPnPjsExampleViewModel from './MockSpPnPjsExampleViewModel';
-```
+1. Откройте файл **SpPnPjsExampleWebPart.ts** и импортируйте только что созданный фиктивный сайт ViewModel.
 
-Далее импортируйте типы `Environment` и `EnvironmentType`, которые вы будете использовать для определения типа среды, в которой запущена веб-часть:
+  ```TypeScript
+  import MockSpPnPjsExampleViewModel from './MockSpPnPjsExampleViewModel';
+  ```
 
-```ts
-import { Environment, EnvironmentType } from '@microsoft/sp-core-library';
-```
+2. Импортируйте типы `Environment` и `EnvironmentType`, которые используются для определения типа среды, в которой запущена веб-часть:
 
-Затем найдите метод `_registerComponent` и измените его, как показано ниже.
+  ```TypeScript
+  import { Environment, EnvironmentType } from '@microsoft/sp-core-library';
+  ```
 
-```TypeScript
-private _registerComponent(tagName: string): void {
-  ko.components.register(
-    tagName,
-    {
-      viewModel: Environment.type === EnvironmentType.Local ?
-        MockSpPnPjsExampleViewModel :
-        SpPnPjsExampleViewModel,
-      template: require('./SpPnPjsExample.template.html'),
-      synchronous: false
-    }
-  );
-}
-```
+3. Найдите метод `_registerComponent` и измените его, как показано ниже.
 
-Наконец, введите в консоли команду `gulp serve`, чтобы открыть локальную среду программирования, которая теперь будет работать с фиктивными данными. (Если у вас уже запущен сервер, остановите его работу с помощью клавиш CTRL+C, а затем снова запустите.)
+  ```TypeScript
+  private _registerComponent(tagName: string): void {
+    ko.components.register(
+      tagName,
+      {
+        viewModel: Environment.type === EnvironmentType.Local ?
+          MockSpPnPjsExampleViewModel :
+          SpPnPjsExampleViewModel,
+        template: require('./SpPnPjsExample.template.html'),
+        synchronous: false
+      }
+    );
+  }
+  ```
 
-```sh
-gulp serve
-```
+4. Введите в консоли команду `gulp serve`, чтобы открыть локальную среду программирования, которая теперь будет работать с фиктивными данными. (Если у вас уже запущен сервер, остановите его работу с помощью клавиш CTRL+C, а затем снова запустите.)
 
-![Проект, запущенный в локальной среде программирования с фиктивными данными](../../../images/sp-pnp-js-guide-with-mock-data.png)
+  ```sh
+  gulp serve
+  ```
 
-## <a name="download-full-example-code"></a>Полный пример кода
+  <br/>
 
-Помните, что вы можете скачать полный пример кода [здесь](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/knockout-sp-pnp-js).
+  ![Проект, запущенный в локальной среде программирования с фиктивными данными](../../../images/sp-pnp-js-guide-with-mock-data.png)
 
-## <a name="provide-feedback--report-issues"></a>Отзывы и отчеты о неполадках
 
-Если у вас есть отзывы или вы хотите сообщить о проблеме с библиотекой sp-pnp-js, воспользуйтесь [списком проблем](https://github.com/SharePoint/PnP-JS-Core/issues) в этом репозитории.
+## <a name="see-also"></a>См. также
+
+- [Скачать полный пример](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/samples/knockout-sp-pnp-js)
+- [Отзывы и отчеты о неполадках](https://github.com/SharePoint/PnP-JS-Core/issues)
+- [Обзор SharePoint Framework](../../sharepoint-framework-overview.md)
