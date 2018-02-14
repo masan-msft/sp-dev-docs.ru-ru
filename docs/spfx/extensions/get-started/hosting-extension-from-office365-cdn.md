@@ -1,11 +1,22 @@
-# <a name="host-extension-from-office-365-cdn-hello-world-part-4"></a>Размещение расширения из сети доставки содержимого Office 365 (Hello World, часть 4)
+---
+title: "Размещение расширения из сети доставки содержимого Office 365 (Hello World, часть 4)"
+description: "Разверните настройщик заполнителей SharePoint Framework в сети доставки содержимого Office 365, а затем разверните его в SharePoint для конечных пользователей."
+ms.date: 01/11/2018
+ms.prod: sharepoint
+ms.openlocfilehash: 95bf41477668d5848fccaafa586491fd36f2a7ca
+ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/18/2018
+---
+# <a name="host-extension-from-office-365-cdn-hello-world-part-4"></a>Размещение расширения в сети доставки содержимого Office 365 (Hello World, часть 4)
 
-В этой статье объясняется, как развернуть настройщик приложений SharePoint Framework для размещения в сети доставки содержимого Office 365 и как развернуть его в SharePoint для конечных пользователей. Эта статья описывает расширение Hello World, созданное в предыдущей статье [Развертывание расширения в SharePoint (Hello World, часть 3)](./serving-your-extension-from-sharepoint.md), в которой настройщик размещался в localhost.
+В этой статье объясняется, как развернуть настройщик заполнителей SharePoint Framework для размещения в сети доставки содержимого Office 365 и как развернуть его в SharePoint для конечных пользователей. 
 
-Перед началом работы убедитесь, что вы выполнили процедуры, описанные в предыдущих статьях:
+Перед началом работы необходимо выполнить процедуры, описанные в следующих статьях:
 
-* [Создание первого расширения SharePoint Framework (Hello World, часть 1)](./build-a-hello-world-extension.md)
-* [Использование заполнителей страниц из настройщика приложений (Hello World, часть 2)](./using-page-placeholder-with-extensions.md)
+* [Создание первого расширения SharePoint Framework (Hello World, часть 1)](./build-a-hello-world-extension.md)
+* [Использование заполнителей страниц из настройщика заполнителей (Hello World, часть 2)](./using-page-placeholder-with-extensions.md)
 * [Развертывание расширения в SharePoint (Hello World, часть 3)](./serving-your-extension-from-sharepoint.md)
 
 Эти действия также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=oOIHWamPr34&list=PLR9nK3mnD-OXtWO5AIIr7nCR3sWutACpV). 
@@ -15,19 +26,20 @@
 </a>
 
 ## <a name="enable-the-cdn-in-your-office-365-tenant"></a>Использование CDN в клиенте Office 365
+
 Сеть доставки содержимого Office 365 — самый простой способ размещать решения SharePoint непосредственно из их клиента, пользуясь при этом преимуществами службы сетей доставки содержимого (CDN) для сокращения времени загрузки ресурсов.
 
 1. Скачайте [командную консоль SharePoint Online](https://www.microsoft.com/en-us/download/details.aspx?id=35588), чтобы убедиться, что у вас установлена последняя версия.
 
 2. Подключитесь к клиенту SharePoint Online с помощью PowerShell:
     
-    ```
+    ```powershell
     Connect-SPOService -Url https://contoso-admin.sharepoint.com
     ```
     
 3. Чтобы узнать текущее состояние настроек общедоступной сети CDN для клиента, поочередно выполните указанные ниже команды. 
     
-    ```
+    ```powershell
     Get-SPOTenantCdnEnabled -CdnType Public
     Get-SPOTenantCdnOrigins -CdnType Public
     Get-SPOTenantCdnPolicies -CdnType Public
@@ -35,7 +47,7 @@
     
 4. Включите общедоступную сеть доставки содержимого в клиенте:
     
-    ```
+    ```powershell
     Set-SPOTenantCdnEnabled -CdnType Public
     ```
     
@@ -45,27 +57,27 @@
 
 6. В семействе веб-сайтов создайте библиотеку документов **CDN** и добавьте в нее папку **helloworld**.
     
-    ![Папка helloworld-extension в библиотеке сети доставки содержимого](../../../images/ext-app-cdn-folder-created.png) 
+    ![Папка helloworld-extension в библиотеке CDN](../../../images/ext-app-cdn-folder-created.png) 
     
     <br/>
     
 7. В консоли PowerShell добавьте новый источник сети доставки содержимого. В этом случае мы задаем источник `*/cdn`, то есть в качестве источника сети доставки содержимого будет выступать любая относительная папка с именем **cdn**.
     
-    ```
+    ```powershell
     Add-SPOTenantCdnOrigin -CdnType Public -OriginUrl */cdn
     ```
     
 8. Выполните указанную ниже команду, чтобы получить список источников сети доставки содержимого клиента:
     
-    ```
+    ```powershell
     Get-SPOTenantCdnOrigins -CdnType Public
     ```
     
-Обратите внимание, что новый источник указан как допустимый источник сети доставки содержимого. Настройка источника займет некоторое время (приблизительно 15 минут), поэтому мы пока можем создать тестовое расширение, которое будет размещено в источнике, когда развертывание будет завершено. 
+    Обратите внимание, что новый источник указан как допустимый источник CDN. Окончательная настройка источника занимает приблизительно 15 минут, поэтому мы можем продолжить создавать расширение, которое будет размещено в источнике после развертывания. 
 
-![Список общедоступных источников в клиенте](../../../images/ext-app-cdn-origins-pending.png)
+    ![Список общедоступных источников в клиенте](../../../images/ext-app-cdn-origins-pending.png)
 
-Если рядом с названием источника нет уведомления `(configuration pending)`, он готов к использованию в клиенте. Это указывает на выполняющуюся настройку SharePoint Online и системы CDN. 
+    Если рядом с названием источника нет уведомления `(configuration pending)`, он готов к использованию в клиенте. Это указывает на выполняющуюся настройку SharePoint Online и системы CDN. 
 
 ## <a name="update-your-solution-project-for-the-cdn-urls"></a>Обновление проекта решения для URL-адресов CDN
 
@@ -73,7 +85,7 @@
     
 2. Обновите файл **write-manifestests.json** (в папке **config**), как показано ниже, чтобы он указывал на конечную точку CDN. Используйте `publiccdn.sharepointonline.com` в качестве префикса, а затем дополните URL-адрес фактическим путем к вашему клиенту. Формат URL-адреса для сети доставки содержимого:
     
-    ```
+    ```json
     https://publiccdn.sharepointonline.com/<tenant host name>/sites/site/library/folder
     ```
     
@@ -87,25 +99,31 @@
     gulp bundle --ship
     ```
     
-5. Выполните указанную ниже задачу, чтобы упаковать свое решение. Эта команда создаст пакет **app-extension.sppkg** в папке **sharepoint/solution**, а также подготовит ресурсы в папке **temp/deploy** к развертыванию в CDN.
+5. Выполните указанную ниже команду, чтобы упаковать решение. Эта команда создает пакет **app-extension.sppkg** в папке **sharepoint/solution** и подготавливает ресурсы в папке **temp/deploy** к развертыванию в CDN.
     
     ```
     gulp package-solution --ship
     ```
     
-6. Добавьте или перетащите новый пакет клиентского решения в каталог приложений в клиенте. Нажмите кнопку **Развернуть**.
+6. Добавьте или перетащите новый пакет клиентского решения в каталог приложений в клиенте, а затем нажмите кнопку **Развернуть**.
 
-    ![Диалоговое окно доверия в каталоге приложений с путем к конечной точке CDN](../../../images/ext-app-approve-cdn-address.png)
+    ![Диалоговое окно подтверждения доверия в каталоге приложений со ссылкой на конечную точку CDN](../../../images/ext-app-approve-cdn-address.png)
 
 7. Отправьте или перетащите файлы из папки **temp/deploy** в созданную ранее папку **CDN/helloworld**.
 
-8. Установите новую версию решения на сайте и убедитесь, что она работает должным образом, если в *locahost* нет файла JavaScript.
+8. Установите новую версию решения на сайте и убедитесь, что она работает без файла JavaScript в домене *locahost*.
 
-    ![Пользовательские элементы верхнего и нижнего колонтитулов на странице](../../../images/ext-app-header-footer-visible.png)
+    ![Пользовательские верхний и нижний колонтитулы на странице](../../../images/ext-app-header-footer-visible.png)
 
 <br/>
 
 Поздравляем! Вы включили общедоступную сеть CDN в клиенте Office 365 и воспользовались ею в решении!
 
 > [!NOTE]
-> Если вы обнаружили ошибку в документации или SharePoint Framework, сообщите о ней разработчикам SharePoint в [репозитории sp-dev-docs](https://github.com/SharePoint/sp-dev-docs/issues). Заранее благодарим за ваш вклад.
+> Если вы обнаружили ошибку в документации или SharePoint Framework, сообщите о ней разработчикам SharePoint, указав в [списке проблем для репозитория sp-dev-docs](https://github.com/SharePoint/sp-dev-docs/issues). Заранее спасибо!
+
+## <a name="see-also"></a>См. также
+
+- [Создание первого набора команд ListView](./building-simple-cmdset-with-dialog-api.md)
+- [Создание первого расширения для настройки полей](./building-simple-field-customizer.md)
+- [Обзор расширений SharePoint Framework](../overview-extensions.md)

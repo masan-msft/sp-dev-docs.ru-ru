@@ -1,47 +1,52 @@
 ---
-title: "Известные проблемы и часто задаваемые вопросы"
-ms.date: 09/25/2017
+title: "SharePoint Framework: известные проблемы и часто задаваемые вопросы"
+description: "Здесь вы найдете ответы на проблемы и часто задаваемые вопросы, связанные с SharePoint Framework."
+ms.date: 01/12/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 6fba3eac7cca5200b7593dd51243df41211f6bc1
-ms.sourcegitcommit: 8384d549db4ff023aacac273d74786928ebdeece
+ms.openlocfilehash: 79b580fd263636ccab392f99f11983c24ac08e8b
+ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2017
+ms.lasthandoff: 01/29/2018
 ---
-# <a name="known-issues-and-frequently-asked-questions"></a>Известные проблемы и часто задаваемые вопросы
+# <a name="sharepoint-framework-known-issues-and-frequently-asked-questions"></a>SharePoint Framework: известные проблемы и часто задаваемые вопросы
 
 На этой странице представлены известные проблемы и ответы на часто задаваемые вопросы о SharePoint Framework. 
 
 ## <a name="known-issues"></a>Известные проблемы
 
-**Проблема с сертификатом разработчика в Chrome (версии 58 и новее)**
+### <a name="dev-certificate-issue-with-chrome-v58-"></a>Проблема с сертификатом разработчика в Chrome (версии 58 и новее)
 
-- *Дата: 28 апреля*
-- *Обновление: 2 мая*
+- *Дата: 28 апреля 2017 г.*
+- *Обновлено: 2 мая 2017 г.*
 
-Если вы используете браузер Chrome для разработки, у вас могут возникнуть проблемы с сертификатом разработчика независимо от того, выполняется ли команда `gulp trust-dev-cert`. В Chrome 58 изменилась модель проверки сертификатов, и во время доступа к локальной рабочей области может появиться такое сообщение: "Ваше подключение не защищено".
+Если вы используете браузер Chrome для разработки, у вас могут возникнуть проблемы с сертификатом разработчика независимо от того, выполняется ли команда `gulp trust-dev-cert`. В Chrome версии 58 и более новых изменилась модель проверки сертификатов, и во время доступа к локальной рабочей области может появиться такое сообщение: "Ваше подключение не защищено".
 
-Следует обновить пакеты шаблонов Yeoman. Мы обновили логику создания сертификатов в пакете *@microsoft/gulp-core-build-serve*. Для существующих решений вы можете просто удалить эту папку и выполнить `npm install`, чтобы получить обновленный пакет. Кроме того, вам понадобится выполнить команды `untrust-dev-cert` и `trust-dev-cert` на компьютере, чтобы устранить проблему с логикой создания сертификатов. 
+Следует обновить пакеты шаблонов Yeoman. Мы обновили логику создания сертификатов в пакете [*@microsoft/gulp-core-build-serve*](https://www.npmjs.com/package/@microsoft/gulp-core-build-serve). 
+
+Для существующих решений вы можете просто удалить эту папку и запустить `npm install`, чтобы получить обновленный пакет. Кроме того, необходимо выполнить команды `untrust-dev-cert` и `trust-dev-cert` на компьютере, чтобы устранить проблему с логикой создания сертификатов. 
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
-**Когда в SharePoint Framework будут доступны дополнительные действия и JSLink?**
+### <a name="when-will-custom-actions-and-jslink-be-available-in-the-sharepoint-framework"></a>Когда в SharePoint Framework будут доступны дополнительные действия и JSLink?
 
-- *Дата: 6 июня.*
+- *Дата: 6 июня 2017 г.*
 
-Расширения SharePoint Framework с дополнительными возможностями настройки теперь доступны в SharePoint Online. Дополнительные сведения о расширениях SharePoint Framework можно найти в соответствующей документации.
+Расширения SharePoint Framework с дополнительными возможностями настройки теперь доступны в SharePoint Online. Дополнительные сведения о расширениях SharePoint Framework можно найти в нашей документации:
 
 - [Обзор расширений SharePoint Framework](./extensions/overview-extensions.md)
-- [Руководство по расширениям SharePoint Framework](./extensions/get-started/build-a-hello-world-extension.md)
+- [Руководства по расширениям SharePoint Framework](./extensions/get-started/build-a-hello-world-extension.md)
 
-**Будет ли платформа SharePoint Framework доступна локально?**
+### <a name="will-sharepoint-framework-be-available-in-on-premises"></a>Будет ли платформа SharePoint Framework доступна локально?
 
-- *Дата: 6 июня.*
+- *Дата: 6 июня 2017 г.*
 
-Клиентские веб-части SharePoint Framework на классических страницах выпущены для SharePoint 2016 в составе пакета дополнительных компонентов 2 (FP2). Мы пока не планируем добавлять возможности SharePoint Framework в SharePoint 2013. Полного списка возможностей SharePoint Framework, которые будут включены в выпуск SharePoint 2019, нет.
+Клиентские веб-части SharePoint Framework на классических страницах выпущены для SharePoint 2016 в составе пакета дополнительных компонентов 2 (FP2). Мы пока не планируем добавлять возможности SharePoint Framework в SharePoint 2013. Полного списка возможностей SharePoint Framework, которые будут включены в выпуск SharePoint 2019, нет.
 
 ## <a name="see-also"></a>См. также
+
 Используйте указанные ниже ресурсы, чтобы отправлять отзывы, комментарии и вопросы, касающиеся разработки решений для SharePoint. 
 
-* [Список проблем в репозитории sp-dev-docs на сайте GitHub](https://github.com/SharePoint/sp-dev-docs/issues)
-* [Раздел, посвященный разработке решений для SharePoint, на сайте Microsoft Tech Community](https://aka.ms/sppnp-community)
+- [Проблемы с sp-dev-docs на сайте GitHub](https://github.com/SharePoint/sp-dev-docs/issues)
+- [Пространство в сообществе технических специалистов Майкрософт, в котором участвуют разработчики решений для SharePoint](https://aka.ms/sppnp-community)
+

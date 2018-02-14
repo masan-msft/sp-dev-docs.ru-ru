@@ -1,133 +1,135 @@
 ---
 title: "Добавление внешней библиотеки в клиентскую веб-часть SharePoint"
-ms.date: 09/25/2017
+description: "Добавление внешней библиотеки JavaScript в пакет и совместное использование библиотек."
+ms.date: 01/29/2018
 ms.prod: sharepoint
-ms.openlocfilehash: c811190ac84b97273f16cafea60ca0882846be2d
-ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
+ms.openlocfilehash: 7b5091f531ad16127aa71299f9c1951cbb2c853c
+ms.sourcegitcommit: e4bf60eabffe63dc07f96824167d249c0678db82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="add-an-external-library-to-your-sharepoint-client-side-web-part"></a>Добавление внешней библиотеки в клиентскую веб-часть SharePoint
 
 Вам может понадобиться добавить в веб-часть одну или несколько библиотек JavaScript. В этой статье описано, как добавить внешнюю библиотеку в пакет и использовать библиотеки в нескольких веб-частях.
 
-## <a name="bundling-a-script"></a>Добавление сценария в пакет
+## <a name="bundle-a-script"></a>Добавление сценария в пакет
 
-По умолчанию средство увязки веб-частей в пакеты автоматически добавляет те библиотеки, которые представляют собой зависимости для модуля веб-части. Это означает, что такие библиотеки будут развернуты в том же файле пакета JavaScript, что и веб-часть. Это удобно в случае небольших библиотек, которые не используются в нескольких веб-частях.
+По умолчанию средство увязки веб-частей в пакеты автоматически добавляет библиотеки, которые представляют собой зависимости для модуля веб-части. Это означает, что такие библиотеки развертываются в том же файле пакета JavaScript, что и веб-часть. Это удобно в случае небольших библиотек, которые не используются в нескольких веб-частях.
 
 ### <a name="example"></a>Пример
 
-Добавьте [библиотеку проверки](https://www.npmjs.com/package/validator) строк в веб-часть.
+1. Добавьте [библиотеку проверки](https://www.npmjs.com/package/validator) строк в веб-часть.
 
-Скачайте пакет средств проверки, используя npm:
+2. Скачайте пакет средств проверки, используя npm:
 
-```sh
-npm install validator --save
-```
+    ```sh
+    npm install validator --save
+    ```
 
-> [!NOTE] 
-> Так как вы используете TypeScript, для добавляемого пакета нужны определения типов. Это очень важно при написании кода, так как TypeScript — это просто расширенная версия JavaScript. При компиляции код TypeScript преобразуется в код JavaScript. Для поиска определений типов можно использовать **npm**, например `npm install @types/{package} --save`.
+    > [!NOTE] 
+    > Так как вы используете TypeScript, для добавляемого пакета нужны определения типов. Это очень важно при написании кода, так как TypeScript — это просто расширенная версия JavaScript. При компиляции код TypeScript преобразуется в код JavaScript. Для поиска определений типов можно использовать **npm**, например `npm install @types/{package} --save`.
 
-Создайте в папке веб-части файл с именем `validator.d.ts` и добавьте приведенный ниже код.
+3. Создайте в папке веб-части файл с именем `validator.d.ts` и добавьте приведенный ниже код.
 
-> [!NOTE] 
-> Для некоторых библиотек нет определений типов. Предположим, что [сообщество еще не создало файл определений типов](https://www.npmjs.com/package/@types/validator) для библиотеки Validator. В этом случае вам нужно создать собственный файл `.d.ts` для этой библиотеки. Ниже показан пример.
+    ```typescript
+    declare module "validator" {
+        export function isEmail(email: string): boolean;
+        export function isAscii(text: string): boolean;
+    }
+    ```
 
-```typescript
-declare module "validator" {
-    export function isEmail(email: string): boolean;
-    export function isAscii(text: string): boolean;
-}
-```
+    > [!NOTE] 
+    > Для некоторых библиотек нет определений типов. Предположим, что [сообщество еще не создало файл определений типов](https://www.npmjs.com/package/@types/validator) для библиотеки Validator. В этом случае нужно задать собственный файл определений типов `.d.ts` для библиотеки. Ниже приведен пример.
 
-Импортируйте определения типов в файле веб-части:
+4. Импортируйте определения типов в файле веб-части:
 
-```typescript
-import * as validator from 'validator';
-```
+    ```typescript
+    import * as validator from 'validator';
+    ```
 
-Укажите библиотеку проверки в коде веб-части:
+5. Укажите библиотеку проверки в коде веб-части:
 
-```typescript
-validator.isEmail('someone@example.com');
-```
+    ```typescript
+    validator.isEmail('someone@example.com');
+    ```
 
-## <a name="sharing-a-library-among-multiple-webparts"></a>Использование библиотеки несколькими веб-частями
+## <a name="share-a-library-among-multiple-web-parts"></a>Использование библиотеки несколькими веб-частями
 
 Клиентское решение может включать несколько веб-частей. Для них может потребоваться импортировать или использовать одну и ту же библиотеку. В таких случаях не добавляйте библиотеку в пакет, а включите ее в отдельный файл JavaScript, чтобы повысить эффективность и улучшить кэширование. Особенно это касается больших библиотек.
 
 ### <a name="example"></a>Пример
 
-В этом примере пакет [marked](https://www.npmjs.com/package/marked) (компилятор Markdown) помещается в отдельный пакет для совместного использования.
+В этом примере пакет [marked](https://www.npmjs.com/package/marked) (компилятор markdown) помещается в отдельный пакет для совместного использования.
 
-Скачайте пакет **marked** с помощью npm:
+1. Скачайте пакет **marked** с помощью npm:
 
-```sh
-npm install marked --save
-```
+    ```sh
+    npm install marked --save
+    ```
 
-Скачайте определения типов:
+2. Скачайте определения типов:
 
-```
-npm install @types/marked --save
-```
+    ```sh
+    npm install @types/marked --save
+    ```
 
-Измените **config/config.json** и добавьте запись в схему **externals**. В результате средство увязки поместит эту библиотеку в отдельный файл, а не добавит в пакет:
+3. Измените **config/config.json** и добавьте запись в схему **externals**. В результате средство увязки поместит эту библиотеку в отдельный файл, а не добавит в пакет:
 
-```json
-"marked": "node_modules/marked/marked.min.js"
-```
+    ```json
+    "marked": "node_modules/marked/marked.min.js"
+    ```
 
-Теперь, когда мы добавили пакет и определения типов для библиотеки, добавьте оператор для импорта библиотеки `marked` в веб-части:
+4. Теперь, когда мы добавили пакет и определения типов для библиотеки, добавьте оператор для импорта библиотеки `marked` в веб-части:
 
-```typescript
-import * as marked from 'marked';
-```
+    ```typescript
+    import * as marked from 'marked';
+    ```
 
-Укажите библиотеку в своей веб-части:
+5. Укажите библиотеку в своей веб-части:
 
-```typescript
-console.log(marked('I am using __markdown__.'));
-```
+    ```typescript
+    console.log(marked('I am using __markdown__.'));
+    ```
 
-## <a name="loading-a-script-from-a-cdn"></a>Загрузка сценария из CDN
+## <a name="load-a-script-from-a-cdn"></a>Загрузка сценария из сети CDN
 
-Вы можете не загружать библиотеку из пакета npm, а загрузить сценарий из CDN. Для этого измените файл **config.json**, чтобы обеспечить загрузку библиотеки с использованием URL-адреса CDN.
+Вы можете не загружать библиотеку из пакета npm, а загрузить сценарий из сети доставки содержимого (CDN). Для этого измените файл **config.json**, чтобы обеспечить загрузку библиотеки с использованием URL-адреса CDN.
 
 ### <a name="example"></a>Пример
 
 В этом примере из CDN загружается jQuery. Пакет npm устанавливать не нужно. Но определения типов все равно нужно установить.
 
-Установите определения типов для jQuery:
+1. Установите определения типов для jQuery:
 
-```sh
-npm install --save @types/jquery
-```
+    ```sh
+    npm install --save @types/jquery
+    ```
 
-Обновите файл `config.json` в папке `config` для загрузки jQuery из CDN. Добавьте запись в поле `externals`:
+2. Обновите файл `config.json` в папке `config` для загрузки jQuery из CDN. Добавьте запись в поле `externals`:
 
-```json
-"jquery": "https://code.jquery.com/jquery-3.1.0.min.js"
-```
+    ```json
+    "jquery": "https://code.jquery.com/jquery-3.1.0.min.js"
+    ```
 
-Импортируйте jQuery в веб-часть:
+3. Импортируйте jQuery в веб-часть:
 
-```typescript
-import * as $ from 'jquery';
-```
+    ```typescript
+    import * as $ from 'jquery';
+    ```
 
-Используйте jQuery в своей веб-части:
+4. Используйте jQuery в своей веб-части:
 
-```javascript
-alert( $('#foo').val() );
-```
+    ```javascript
+    alert( $('#foo').val() );
+    ```
 
-## <a name="loading-a-non-amd-module"></a>Загрузка модуля, отличного от AMD-модуля
+## <a name="load-a-non-amd-module"></a>Загрузка модуля, отличного от AMD-модуля
 
-Некоторые сценарии JavaScript предусматривают хранение библиотек в глобальном пространстве имен. Такой подход устарел. Сейчас используются модули [ES6](https://github.com/lukehoban/es6features/blob/master/README.md#modules), [UMD (Universal Module Definitions)](https://github.com/umdjs/umd)/[AMD (Asynchronous Module Definitions)](https://en.wikipedia.org/wiki/Asynchronous_module_definition). Возможно, вам потребуется загрузить такие библиотеки в веб-часть.
+Некоторые сценарии JavaScript предусматривают хранение библиотек в глобальном пространстве имен. Такой подход устарел. Сейчас используются модули [ES6](https://github.com/lukehoban/es6features/blob/master/README.md#modules), [UMD (Universal Module Definitions)](https://github.com/umdjs/umd) / [AMD (Asynchronous Module Definitions)](https://en.wikipedia.org/wiki/Asynchronous_module_definition). Возможно, вам потребуется загрузить такие библиотеки в веб-часть.
 
-> **Совет.** Трудно определить вручную, является ли сценарий, который вы пытаетесь загрузить, сценарием AMD или нет. Это особенно важно, если сценарий, который вы пытаетесь загрузить, будет уменьшен. Если ваш сценарий размещен по общедоступному URL-адресу, вы можете использовать бесплатный инструмент [Rencore SharePoint Framework Script Check](https://rencore.com/sharepoint-framework/script-check/), чтобы определить тип сценария для вас. Кроме того, этот инструмент позволит вам узнать, правильно ли настроено расположение размещения, с которого вы загружаете сценарий.
+> [!TIP] 
+> Трудно определить вручную, является ли загружаемый сценарий сценарием AMD, особенно если он минифицирован. Если ваш сценарий размещен по общедоступному URL-адресу, вы можете использовать бесплатный инструмент [Rencore SharePoint Framework Script Check](https://rencore.com/sharepoint-framework/script-check/), чтобы автоматически определить тип сценария. Кроме того, этот инструмент позволяет узнать, правильно ли настроен место размещения, с которого загружается сценарий.
 
 Чтобы загрузить модуль, созданный не с помощью AMD, добавьте дополнительное свойство в запись в файле **config.json**.
 
@@ -144,47 +146,50 @@ var ContosoJS = {
 };
 ```
 
-Создайте определения типов для сценария в файле **contoso.d.ts** из папки веб-части.
+<br/>
 
-```typescript
-declare module "contoso" {
-    interface IContoso {
-        say(text: string): void;
-        sayHello(name: string): void;
+1. Создайте определения типов для сценария в файле **contoso.d.ts** из папки веб-части.
+
+    ```typescript
+    declare module "contoso" {
+        interface IContoso {
+            say(text: string): void;
+            sayHello(name: string): void;
+        }
+        var contoso: IContoso;
+        export = contoso;
     }
-    var contoso: IContoso;
-    export = contoso;
-}
-```
+    ```
 
-Включите этот сценарий в файл **config.json**. Добавьте запись в схему **externals**:
+2. Включите этот сценарий в файл **config.json**. Добавьте запись в схему **externals**:
 
-```json
-{
-    "contoso": {
-        "path": "https://contoso.com/contoso.js",
-        "globalName": "ContosoJS"
+    ```json
+    {
+        "contoso": {
+            "path": "https://contoso.com/contoso.js",
+            "globalName": "ContosoJS"
+        }
     }
-}
-```
+    ```
 
-Добавьте операцию импорта в код веб-части:
+3. Добавьте операцию импорта в код веб-части:
 
-```typescript
-import contoso from 'contoso';
-```
+    ```typescript
+    import contoso from 'contoso';
+    ```
 
-Используйте библиотеку contoso в своем коде:
+4. Используйте библиотеку contoso в своем коде:
 
-```typescript
-contoso.sayHello(username);
-```
+    ```typescript
+    contoso.sayHello(username);
+    ```
 
-## <a name="loading-a-library-that-has-a-dependency-on-another-library"></a>Загрузка библиотеки с зависимостью от другой библиотеки
+## <a name="load-a-library-that-has-a-dependency-on-another-library"></a>Загрузка библиотеки с зависимостью от другой библиотеки
 
 Многие библиотеки содержат зависимости от другой библиотеки. Такие зависимости можно указать в файле **config.json** с помощью свойства **globalDependencies**.
 
-> **Важно.** Обратите внимание, что вам не нужно указывать это поле для модулей AMD, поскольку они будут правильно импортировать друг друга. Тем не менее, модуль, отличный от AMD, не может иметь модуль AMD в качестве зависимости. В некоторых случаях можно загрузить сценарий AMD в виде сценария, отличного от AMD. Это часто требуется при работе с библиотекой jQuery, которая сама по себе является сценарием AMD, и плагинами jQuery, которые в большинстве случаев распространяются как сценарии, отличные от AMD, и зависящие от jQuery.
+> [!IMPORTANT] 
+> Обратите внимание, что это поле не нужно указывать для AMD-модулей. Они импортируют друг друга правильно. Однако AMD-модуль не может зависеть от модуля, отличного от AMD. В некоторых случаях можно загрузить сценарий AMD в виде сценария, отличного от AMD. Это часто требуется при работе с библиотекой jQuery, которая сама по себе является сценарием AMD, и подключаемыми модулями jQuery, которые в большинстве случаев распространяются как сценарии, отличные от AMD, и зависят от jQuery.
 
 Ниже приведены два примера.
 
@@ -215,107 +220,112 @@ var Contoso = {
 };
 ```
 
-Добавьте или создайте определения типов для этого класса. В этом случае нужно создать файл `Contoso.d.ts`, который содержит определения типов для обоих файлов JavaScript.
+<br/>
 
-**contoso.d.ts**
+1. Добавьте или создайте определения типов для этого класса. В этом случае нужно создать файл `Contoso.d.ts`, который содержит определения типов для обоих файлов JavaScript.
 
-```typescript
-declare module "contoso" {
-    interface IEventList {
-        alert(): void;
+    **contoso.d.ts**
+
+    ```typescript
+    declare module "contoso" {
+        interface IEventList {
+            alert(): void;
+        }
+        interface IContoso {
+            getEvents(): string[];
+            EventList: IEventList;
+        }
+        var contoso: IContoso;
+        export = contoso;
     }
-    interface IContoso {
-        getEvents(): string[];
-        EventList: IEventList;
+    ```
+
+2. Обновите файл **config.json**. Добавьте две записи в **externals**:
+
+    ```json
+    {
+        "contoso": {
+            "path": "/src/ContosoCore.js",
+            "globalName": "Contoso"
+        },
+        "contoso-ui": {
+            "path": "/src/ContosoUI.js",
+            "globalName": "Contoso",
+            "globalDependencies": ["contoso"]
+        }
     }
-    var contoso: IContoso;
-    export = contoso;
-}
-```
+    ```
 
-Обновите файл **config.json**. Добавьте две записи в **externals**:
+3. Добавьте операции импорта для Contoso и ContosoUI:
 
-```json
-{
-     "contoso": {
-         "path": "/src/ContosoCore.js",
-         "globalName": "Contoso"
-     },
-     "contoso-ui": {
-         "path": "/src/ContosoUI.js",
-         "globalName": "Contoso",
-         "globalDependencies": ["contoso"]
-     }
-}
-```
+    ```typescript
+    import contoso = require('contoso');
+    require('contoso-ui');
+    ```
 
-Добавьте операции импорта для Contoso и ContosoUI:
+4. Укажите библиотеки в своем коде:
 
-```typescript
-import contoso = require('contoso');
-require('contoso-ui');
-```
+    ```typescript
+    contoso.EventList.alert();
+    ```
 
-Укажите библиотеки в своем коде:
-
-```typescript
-contoso.EventList.alert();
-```
-
-## <a name="loading-sharepoint-jsom"></a>Загрузка JSOM SharePoint
+## <a name="load-sharepoint-jsom"></a>Загрузка JSOM SharePoint
 
 Модели JSOM SharePoint загружаются практически так же, как сценарии с зависимостями, отличные от AMD-сценариев. Это значит, что используются параметры **globalName** и **globalDependency**.
 
-> **Важно.** Обратите внимание, что следующий подход вызовет ошибку на классических страницах SharePoint, где SharePoint JSOM уже загружен. Если нужно, чтобы ваша веб-часть работала как с классическими, так и с современными страницами, нужно сначала проверить, доступен ли SharePoint JSOM, а если нет, загрузить ее динамически с помощью **SPComponentLoader**.
+> [!IMPORTANT] 
+> Обратите внимание, что приведенный ниже подход вызовет ошибки на классических страницах SharePoint, где модель JSOM уже загружена. Если ваша веб-часть должна работать как с классическими, так и современными страницами, нужно сначала проверить, доступна ли модель JSOM, а если нет, загрузить ее динамически с помощью **SPComponentLoader**.
 
-Установите определения типов для Microsoft Ajax (зависимости для определений типов JSOM представлены ниже).
+<br/>
 
-```sh
-npm install @types/microsoft-ajax --save
-```
+1. Установите определения типов для Microsoft Ajax (зависимости для определений типов JSOM представлены ниже).
 
-Установите определения типов для JSOM:
+    ```sh
+    npm install @types/microsoft-ajax --save
+    ```
 
-```sh
-npm install @types/sharepoint --save
-```
+2. Установите определения типов для JSOM:
 
-Добавьте записи в файл `config.json`:
+    ```sh
+    npm install @types/sharepoint --save
+    ```
 
-```json
-{
-    "sp-init": {
-        "path": "https://CONTOSO.sharepoint.com/_layouts/15/init.js",
-        "globalName": "$_global_init"
-    },
-    "microsoft-ajax": {
-        "path": "https://CONTOSO.sharepoint.com/_layouts/15/MicrosoftAjax.js",
-        "globalName": "Sys",
-        "globalDependencies": [ "sp-init" ]
-    },
-    "sp-runtime": {
-        "path": "https://CONTOSO.sharepoint.com/_layouts/15/SP.Runtime.js",
-        "globalName": "SP",
-        "globalDependencies": [ "microsoft-ajax" ]
-    },
-    "sharepoint": {
-        "path": "https://CONTOSO.sharepoint.com/_layouts/15/SP.js",
-        "globalName": "SP",
-        "globalDependencies": [ "sp-runtime" ]
+3. Добавьте записи в файл `config.json`:
+
+    ```json
+    {
+        "sp-init": {
+            "path": "https://CONTOSO.sharepoint.com/_layouts/15/init.js",
+            "globalName": "$_global_init"
+        },
+        "microsoft-ajax": {
+            "path": "https://CONTOSO.sharepoint.com/_layouts/15/MicrosoftAjax.js",
+            "globalName": "Sys",
+            "globalDependencies": [ "sp-init" ]
+        },
+        "sp-runtime": {
+            "path": "https://CONTOSO.sharepoint.com/_layouts/15/SP.Runtime.js",
+            "globalName": "SP",
+            "globalDependencies": [ "microsoft-ajax" ]
+        },
+        "sharepoint": {
+            "path": "https://CONTOSO.sharepoint.com/_layouts/15/SP.js",
+            "globalName": "SP",
+            "globalDependencies": [ "sp-runtime" ]
+        }
     }
-}
-```
+    ```
 
-Добавьте в веб-часть оператор require:
+4. Добавьте в веб-часть операторы `require`:
 
-```typescript
-require('sp-init');
-require('microsoft-ajax');
-require('sp-runtime');
-require('sharepoint');
-```
+    ```typescript
+    require('sp-init');
+    require('microsoft-ajax');
+    require('sp-runtime');
+    require('sharepoint');
+    ```
 
-## <a name="load-localized-resources"></a>Загрузите локализованные ресурсы
+## <a name="load-localized-resources"></a>Загрузка локализованных ресурсов
 
 В файле **config.json** есть схема **localizedResources**, с помощью которой можно описать, как загружать локализованные ресурсы. Пути в этой схеме заданы относительно папки **lib** и не должны содержать начальную косую черту (**/**).
 
@@ -331,37 +341,43 @@ require('sharepoint');
   });
 ```
 
-Измените файл **config.json**. Добавьте запись в **localizedResources**. **{locale}** — это замещающий токен для имени языкового стандарта.
+<br/>
 
-```json
-{
-    "strings": "strings/{locale}.js"
-}
-```
+1. Измените файл **config.json**. Добавьте запись в схему **localizedResources**. `{locale}` — это замещающий токен для имени языкового стандарта.
 
-Добавьте определения типов для строк. В этом случае у вас есть файл **MyStrings.d.ts**:
+    ```json
+    {
+        "strings": "strings/{locale}.js"
+    }
+    ```
 
-```typescript
-declare interface IStrings {
-    webpartTitle: string;
-    initialPrompt: string;
-    exitPrompt: string;
-}
+2. Добавьте определения типов для строк. В этом случае у вас есть файл **MyStrings.d.ts**:
 
-declare module 'mystrings' {
-    const strings: IStrings;
-    export = strings;
-}
-```
+    ```typescript
+    declare interface IStrings {
+        webpartTitle: string;
+        initialPrompt: string;
+        exitPrompt: string;
+    }
 
-Добавьте операции импорта для строк в проекте:
+    declare module 'mystrings' {
+        const strings: IStrings;
+        export = strings;
+    }
+    ```
 
-```typescript
-import * as strings from 'mystrings';
-```
+3. Добавьте операции импорта для строк в проекте:
 
-Используйте строки в своем проекте:
+    ```typescript
+    import * as strings from 'mystrings';
+    ```
 
-```typescript
-alert(strings.initialPrompt);
-```
+4. Используйте строки в своем проекте:
+
+    ```typescript
+    alert(strings.initialPrompt);
+    ```
+
+## <a name="see-also"></a>См. также
+
+- [Обзор SharePoint Framework](../../sharepoint-framework-overview.md)
