@@ -1,25 +1,17 @@
 ---
 title: "Добавление пользовательской функции клиентской обработки в надстройку SharePoint, размещаемую в SharePoint"
 description: "Настройте отрисовку и проверку элементов управления на страницах надстройки, создайте и зарегистрируйте код JavaScript, запустите и протестируйте надстройку."
-ms.date: 11/02/2017
+ms.date: 12/04/2017
 ms.prod: sharepoint
-ms.openlocfilehash: a3bbe8333e4caef11a479d89627ff8307dde659f
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: 69b1b8348c94625219b0c0119a27449278e31859
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="add-custom-client-side-rendering-to-a-sharepoint-hosted-sharepoint-add-in"></a>Добавление пользовательской функции клиентской обработки в надстройку SharePoint, размещаемую в SharePoint
+# <a name="add-custom-client-side-rendering-to-a-sharepoint-hosted-sharepoint-add-in"></a>Добавление собственной клиентской обработки в надстройку с размещением в SharePoint
  
-Эта восьмая часть серии статей, посвященной основам разработки надстроек SharePoint, размещаемых в SharePoint. Для начала ознакомьтесь со статьей [Надстройки SharePoint](sharepoint-add-ins.md) и предыдущими статьями из этой серии.
- 
--  [Знакомство с созданием надстроек SharePoint с размещением в SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)
--  [Развертывание и установка надстроек SharePoint, размещаемых в SharePoint](deploy-and-install-a-sharepoint-hosted-sharepoint-add-in.md)
--  [Добавление настраиваемых столбцов в надстройку SharePoint, размещаемую в SharePoint](add-custom-columns-to-a-sharepoint-hosted-sharepoint-add-in.md)
--  [Добавление пользовательского типа контента в надстройку SharePoint, размещаемую в SharePoint](add-a-custom-content-type-to-a-sharepoint-hosted-sharepoint-add-in.md)
--  [Добавление веб-части на страницу в надстройке SharePoint, размещаемую в SharePoint](add-a-web-part-to-a-page-in-a-sharepoint-hosted-sharepoint-add-in.md)
--  [Добавление рабочего процесса в надстройку для SharePoint с размещением в SharePoint](add-a-workflow-to-a-sharepoint-hosted-sharepoint-add-in.md)
--  [Добавление настраиваемых страниц и стилей в надстройки SharePoint, размещаемые в SharePoint](add-a-custom-page-and-style-to-a-sharepoint-hosted-sharepoint-add-in.md)
+Это восьмая часть серии статей, посвященной основам разработки надстроек SharePoint, размещаемых в SharePoint. Для начала вам следует ознакомиться со статьей [Надстройки SharePoint](sharepoint-add-ins.md) и предыдущими статьями этой серии, представленными в разделе [Знакомство с созданием надстроек SharePoint, размещаемых в SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md#Nextsteps). 
 
 > [!NOTE]
 > Если вы изучали предыдущие статьи этой серии о надстройках, размещаемых в SharePoint, то у вас уже есть решение для Visual Studio, которое можно использовать для работы с этой статьей. Кроме того, вы можете скачать репозиторий на веб-странице [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) и открыть файл BeforeClientRenderedControl.sln.

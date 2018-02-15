@@ -1,19 +1,19 @@
 ---
 title: "Развертывание и установка надстроек SharePoint, размещаемых в SharePoint"
 description: "Создайте каталог надстроек, упакуйте надстройку и отправьте ее в каталог, установите и удалите надстройку."
-ms.date: 11/02/2017
+ms.date: 12/04/2017
 ms.prod: sharepoint
-ms.openlocfilehash: c11fb37232d433d41866d42d18322431902257ae
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: 58a1810d34d06b76a7e0e12b21792200bfe1bc93
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="deploy-and-install-a-sharepoint-hosted-sharepoint-add-in"></a>Развертывание и установка надстроек SharePoint, размещаемых в SharePoint
+# <a name="deploy-and-install-a-sharepoint-hosted-sharepoint-add-in"></a>Развертывание и установка надстроек с размещением в SharePoint
 
-Это вторая часть серии статей, посвященной основам разработки надстроек SharePoint, размещаемых в SharePoint. Для начала следует ознакомиться со статьей [Надстройки SharePoint](sharepoint-add-ins.md) и предыдущей статьей из этой серии.
+Это вторая часть серии статей, посвященной основам разработки надстроек SharePoint, размещаемых в SharePoint. Для начала следует ознакомиться со статьей [Надстройки SharePoint](sharepoint-add-ins.md) и обзорной статьей из этой серии.
 
--  [Начало работы по созданию надстроек SharePoint, размещаемых в SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)
+-  [Знакомство с созданием надстроек SharePoint, размещаемых в SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)
     
 > [!NOTE]
 > Если вы изучали предыдущие статьи этой серии о надстройках, размещаемых в SharePoint, то у вас уже есть решение для Visual Studio, которое можно использовать для работы с этой статьей. Кроме того, вы можете скачать репозиторий на веб-странице [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) и открыть файл BeforeColumns.sln.
@@ -81,7 +81,7 @@ ms.lasthandoff: 11/03/2017
 ## <a name="next-steps"></a>Дальнейшие действия
 <a name="Nextsteps"></a>
 
-Мы настоятельно рекомендуем продолжить изучение этой серии статей о надстройках, размещаемых в SharePoint, прежде чем перейти к более сложным темам. В статье [Добавление настраиваемых столбцов в надстройку SharePoint, размещаемую в SharePoint,](add-custom-columns-to-a-sharepoint-hosted-sharepoint-add-in.md) мы вернемся к написанию кода.
+Настоятельно рекомендуем продолжить изучение этой серии статей о надстройках, размещаемых в SharePoint, прежде чем переходить к более сложным темам. В статье [Добавление настраиваемых столбцов в надстройку SharePoint, размещаемую в SharePoint,](add-custom-columns-to-a-sharepoint-hosted-sharepoint-add-in.md) мы вернемся к написанию кода.
  
 
  

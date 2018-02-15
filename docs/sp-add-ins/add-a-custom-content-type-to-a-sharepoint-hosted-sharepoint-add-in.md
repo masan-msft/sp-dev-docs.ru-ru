@@ -1,21 +1,17 @@
 ---
 title: "Добавление настраиваемого типа контента в надстройку с размещением в SharePoint"
 description: "Создание настраиваемого типа контента, запуск и тестирование надстройки."
-ms.date: 11/02/2017
+ms.date: 12/04/2017
 ms.prod: sharepoint
-ms.openlocfilehash: b8e1552e0b4f902dd6fb616d82714446128edbb1
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: c6171e06ba9e3db26d043b9f31b2536967142184
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="add-a-custom-content-type-to-a-sharepoint-hosted-sharepoint-add-in"></a>Добавление настраиваемого типа контента в надстройку с размещением в SharePoint
+# <a name="add-a-custom-content-type-to-a-sharepoint-hosted-sharepoint-add-in"></a>Добавление собственного типа контента в надстройку с размещением в SharePoint
 
-Это четвертая часть серии статей, посвященной основам разработки надстроек SharePoint с размещением в SharePoint. Для начала вам необходимо ознакомиться со статьей [Надстройки SharePoint](sharepoint-add-ins.md) и предыдущими статьями этой серии:
-
--  [Знакомство с созданием надстроек SharePoint с размещением в SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)   
--  [Развертывание и установка надстроек SharePoint, размещаемых в SharePoint](deploy-and-install-a-sharepoint-hosted-sharepoint-add-in.md)
--  [Добавление настраиваемых столбцов в надстройку SharePoint, размещаемую в SharePoint](add-custom-columns-to-a-sharepoint-hosted-sharepoint-add-in.md)
+Это четвертая часть серии статей, посвященной основам разработки надстроек SharePoint, размещаемых в SharePoint. Для начала вам следует ознакомиться со статьей [Надстройки SharePoint](sharepoint-add-ins.md) и предыдущими статьями этой серии, представленными в разделе [Знакомство с созданием надстроек SharePoint, размещаемых в SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md#Nextsteps). 
     
 > [!NOTE]
 > Если вы изучали предыдущие статьи этой серии о надстройках, размещаемых в SharePoint, то у вас уже есть решение для Visual Studio, которое можно использовать для работы с этой статьей. Вы можете также скачать репозиторий на веб-странице [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) и открыть файл BeforeContentType.sln.

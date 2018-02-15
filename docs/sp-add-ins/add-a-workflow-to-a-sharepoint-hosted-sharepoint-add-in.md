@@ -1,24 +1,17 @@
 ---
 title: "Добавление рабочего процесса в надстройку с размещением в SharePoint"
 description: "Добавьте рабочий процесс в надстройку, сформируйте его, а затем запустите и протестируйте надстройку."
-ms.date: 11/02/2017
+ms.date: 12/04/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 31773951351ec718e5ce7826d5382ae1dbea72c0
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: f665c1809eb4892de54bfaa382615ec9dc9a6774
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="add-a-workflow-to-a-sharepoint-hosted-sharepoint-add-in"></a>Добавление рабочего процесса в надстройку SharePoint, размещаемую в SharePoint
+# <a name="add-a-workflow-to-a-sharepoint-hosted-sharepoint-add-in"></a>Добавление рабочего процесса в надстройку с размещением в SharePoint
 
-Это шестая статья серии статей, посвященных основам разработки надстроек SharePoint, размещаемых в SharePoint. Для начала вам следует ознакомиться со статьей [Надстройки SharePoint](sharepoint-add-ins.md) и предыдущими статьями из этой серии.
- 
-- [Начало работы по созданию надстроек SharePoint, размещаемых в SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)
-- [Развертывание и установка надстроек SharePoint, размещаемых в SharePoint](deploy-and-install-a-sharepoint-hosted-sharepoint-add-in.md)
-- [Добавление настраиваемых столбцов в надстройку SharePoint, размещаемую в SharePoint](add-custom-columns-to-a-sharepoint-hosted-sharepoint-add-in.md)
-- [Добавление пользовательского типа контента в надстройку SharePoint, размещаемую в SharePoint](add-a-custom-content-type-to-a-sharepoint-hosted-sharepoint-add-in.md)
-- [Добавление веб-части на страницу в надстройке SharePoint, размещаемой в SharePoint](add-a-web-part-to-a-page-in-a-sharepoint-hosted-sharepoint-add-in.md)
-
+Это шестая часть серии статей, посвященной основам разработки надстроек SharePoint, размещаемых в SharePoint. Для начала вам следует ознакомиться со статьей [Надстройки SharePoint](sharepoint-add-ins.md) и предыдущими статьями этой серии, представленными в разделе [Знакомство с созданием надстроек SharePoint, размещаемых в SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md#Nextsteps). 
 
 > [!NOTE]
 > Если вы изучали предыдущие статьи этой серии о надстройках, размещаемых в SharePoint, то у вас уже есть решение для Visual Studio, которое можно использовать для работы с этой статьей. Кроме того, вы можете скачать репозиторий на веб-странице [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) и открыть файл BeforeWorkflow.sln.
@@ -156,7 +149,7 @@ ms.lasthandoff: 11/03/2017
 
 4. Чтобы завершить сеанс отладки, закройте окно браузера или остановите отладку в Visual Studio. При каждом нажатии клавиши F5 Visual Studio будет отзывать предыдущую версию надстройки и устанавливать ее последнюю версию.
     
-5. Вы будете работать с этой надстройкой и решением Visual Studio при изучении других статей, поэтому при перерывах в работе рекомендуется отзывать надстройку. В **обозревателе решений** щелкните проект правой кнопкой мыши и выберите пункт **Отозвать**.
+5. Вы будете работать с этой надстройкой и решением Visual Studio при изучении других статей, поэтому при перерывах в работе рекомендуем отзывать надстройку. В **обозревателе решений** щелкните проект правой кнопкой мыши и выберите пункт **Отозвать**.
     
 
 ## <a name="next-steps"></a>Дальнейшие действия

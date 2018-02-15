@@ -1,26 +1,17 @@
 ---
 title: "Создание собственной кнопки ленты на хост-сайте надстройки SharePoint"
 description: "Подготовьте хост-сайт, добавьте дополнительное действие на ленте, проверьте компонент сайта надстройки, а затем запустите и протестируйте надстройку."
-ms.date: 11/02/2017
+ms.date: 12/04/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 43204bca15bff903c5c9f2596a2fe188b094a5c8
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: 7af64ad9f207c8fd43b7fa10039c61e76d06f083
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
-# <a name="create-a-custom-ribbon-button-in-the-host-web-of-a-sharepoint-add-in"></a>Создание настраиваемой кнопки ленты на хост-сайте надстройки SharePoint
+# <a name="create-a-custom-ribbon-button-in-the-host-web-of-a-sharepoint-add-in"></a>Создание собственной кнопки ленты на хост-сайте надстройки SharePoint
 
-Это девятая часть серии статей, посвященной основам разработки надстроек, размещаемых в SharePoint. Для начала вам следует ознакомиться со статьей [Надстройки SharePoint](sharepoint-add-ins.md) и предыдущими статьями из этой серии.
-
--  [Знакомство с созданием надстроек SharePoint с размещением в SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md)
--  [Развертывание и установка надстроек SharePoint, размещаемых в SharePoint](deploy-and-install-a-sharepoint-hosted-sharepoint-add-in.md)
--  [Добавление настраиваемых столбцов в надстройку SharePoint, размещаемую в SharePoint](add-custom-columns-to-a-sharepoint-hosted-sharepoint-add-in.md)
--  [Добавление пользовательского типа контента в надстройку SharePoint, размещаемую в SharePoint](add-a-custom-content-type-to-a-sharepoint-hosted-sharepoint-add-in.md)
--  [Добавление веб-части на страницу в надстройке SharePoint, размещаемую в SharePoint](add-a-web-part-to-a-page-in-a-sharepoint-hosted-sharepoint-add-in.md)
--  [Добавление рабочего процесса в надстройку для SharePoint с размещением в SharePoint](add-a-workflow-to-a-sharepoint-hosted-sharepoint-add-in.md)
--  [Добавление настраиваемой страницы и стиля для надстройки с размещением в SharePoint](add-a-custom-page-and-style-to-a-sharepoint-hosted-sharepoint-add-in.md)
--  [Добавление настраиваемой функции отрисовки в клиенте в надстройку SharePoint, размещаемую в SharePoint](add-custom-client-side-rendering-to-a-sharepoint-hosted-sharepoint-add-in.md)
+Это девятая часть серии статей, посвященной основам разработки надстроек SharePoint, размещаемых в SharePoint. Для начала вам следует ознакомиться со статьей [Надстройки SharePoint](sharepoint-add-ins.md) и предыдущими статьями этой серии, представленными в разделе [Знакомство с созданием надстроек SharePoint, размещаемых в SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md#Nextsteps). 
     
 > [!NOTE]
 > Если вы изучали предыдущие статьи этой серии о надстройках, размещаемых в SharePoint, то у вас уже есть решение для Visual Studio, которое можно использовать для работы с этой статьей. Кроме того, вы можете скачать репозиторий на веб-странице [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) и открыть файл BeforeRibbon.sln.

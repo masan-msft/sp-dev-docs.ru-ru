@@ -3,11 +3,11 @@ title: "Развертывание и установка надстроек Shar
 description: "Публикация, установка и удаление надстройки SharePoint."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: fdf17615e9019947da82102ecae4dce9a16e589e
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: ad167642401e4bef300897b6d26b4f56bda6624d
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="deploying-and-installing-sharepoint-add-ins-methods-and-options"></a>Развертывание и установка надстроек SharePoint: методы и параметры
 
@@ -68,7 +68,7 @@ ms.lasthandoff: 11/03/2017
 
 Веб-служба [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx), если она зарегистрирована в манифесте приложения, выполняется в начале процесса деинсталляции (это происходит, когда надстройка удаляется из второй корзины). Рекомендуется пользоваться веб-службой [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx), если вы также пользуетесь веб-службой [InstalledEventEndpoint](http://msdn.microsoft.com/library/af9f83d8-8325-3ede-d7b0-bb82c0445eb9%28Office.15%29.aspx), и настраивать службу [UninstallingEventEndpoint](http://msdn.microsoft.com/library/4194e44b-f2af-1db4-aad5-9b7b511b4348%28Office.15%29.aspx) так, чтобы она отменяла все действия, выполняемые службой [InstalledEventEndpoint](http://msdn.microsoft.com/library/af9f83d8-8325-3ede-d7b0-bb82c0445eb9%28Office.15%29.aspx). Дополнительные сведения см. в статье [Обработка событий в надстройках SharePoint](handle-events-in-sharepoint-add-ins.md).
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15deployinstallapps_addlresources"> </a>
 
 -  [Публикация надстроек SharePoint](publish-sharepoint-add-ins.md)

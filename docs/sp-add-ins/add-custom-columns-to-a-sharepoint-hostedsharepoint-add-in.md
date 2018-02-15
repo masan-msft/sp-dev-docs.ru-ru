@@ -3,18 +3,14 @@ title: "Добавление настраиваемых столбцов в на
 ms.date: 10/26/2017
 ms.prod: sharepoint
 redirect_url: https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/add-custom-columns-to-a-sharepoint-hosted-sharepoint-add-in/
-ms.openlocfilehash: 35e29bf1ef2d5d694db49fbfa574c6a6514ebb88
-ms.sourcegitcommit: 56dde2f5d7919cc9998846c8c137108ca326ba43
+ms.openlocfilehash: 98baa97c3782144dd1dd88e3d8ec8519dfee4fae
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="add-custom-columns-to-a-sharepoint-hostedsharepoint-add-in"></a>Добавление настраиваемых столбцов в надстройку с размещением в SharePoint
 В этой статье рассказывается, как добавить настраиваемый столбец в надстройку SharePoint.
- 
-
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
- 
 
 Это третья часть серии статей, посвященной основам разработки надстроек, размещаемых в SharePoint. Для начала вам следует ознакомиться со статьей [Надстройки SharePoint](sharepoint-add-ins.md) и предыдущими статьями из этой серии.
  
@@ -26,7 +22,8 @@ ms.lasthandoff: 10/30/2017
     
  
 
- **Примечание.** Если вы изучали предыдущие статьи этой серии о надстройках, размещаемых в SharePoint, то у вас уже есть решение Visual Studio, которое можно использовать для работы с данной статьей. Кроме того, вы можете скачать репозиторий [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) и открыть файл BeforeColumns.sln.
+> [!NOTE] 
+> Если вы изучали предыдущие статьи этой серии о надстройках, размещаемых в SharePoint, то у вас уже есть решение для Visual Studio, которое можно использовать для работы с этой статьей. Кроме того, вы можете скачать репозиторий [SharePoint_SP-hosted_Add-Ins_Tutorials](https://github.com/OfficeDev/SharePoint_SP-hosted_Add-Ins_Tutorials) и открыть файл BeforeColumns.sln.
  
 
 В этой статье мы вернемся к программированию и добавим несколько столбцов сайта в надстройку SharePoint Employee Orientation (Вводное обучение для сотрудников).
