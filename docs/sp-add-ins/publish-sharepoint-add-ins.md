@@ -3,11 +3,11 @@ title: "Публикация надстроек для SharePoint"
 description: "Выберите место для публикации надстроек SharePoint."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 90932407a963cae54511ff2c28967e5b0fd99c57
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: 49d66a8b82272537d92bdab40e361f9794914ee9
+ms.sourcegitcommit: 843caaf543cdc2cf43fbb783e95164fbf99a586a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 01/02/2018
 ---
 # <a name="publish-sharepoint-add-ins"></a>Публикация надстроек SharePoint
 
@@ -52,18 +52,15 @@ ms.lasthandoff: 11/03/2017
 |Пакет надстройки проверяется корпорацией Майкрософт на предмет соответствия политикам, касающимся содержимого и технических особенностей.|Пакет надстройки проверяется SharePoint при отправке надстройки.|
 |Чтобы отправлять надстройки, нужно зарегистрироваться на Панели мониторинга продаж (Майкрософт).|Регистрация на веб-сайте Майкрософт не требуется.|
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
--  [Создание и обновление идентификаторов и секретов клиентов на Панели мониторинга продаж](http://msdn.microsoft.com/library/create-or-update-client-ids-and-secrets-in-the-seller-dashboard%28Office.15%29.aspx)
--  [Отправка надстроек Office и SharePoint и приложений для Office 365 в Магазин Office с помощью Панели мониторинга продаж](http://msdn.microsoft.com/library/use-the-seller-dashboard-to-submit-office-and-sharepoint-add-ins-and-office-365-apps-to-the-office-store%28Office.15%29.aspx)
--  [Политики проверки для приложений и надстроек, отправленных в Магазин Office (версия 2.1)](http://msdn.microsoft.com/library/validation-policies-for-apps-and-add-ins-submitted-to-the-office-store-version-2-1%28Office.15%29.aspx)
+-  [Создание или обновление идентификаторов и секретов клиентов на Панели мониторинга продаж](https://docs.microsoft.com/ru-RU/office/dev/store/create-or-update-client-ids-and-secrets)
+-  [Отправка надстроек Office и SharePoint и приложений для Office 365 в Магазин Office с помощью Панели мониторинга продаж](https://docs.microsoft.com/ru-RU/office/dev/store/use-the-seller-dashboard-to-submit-to-the-office-store)
+-  [Политики проверки приложений и надстроек, отправляемых в Магазин Office](https://docs.microsoft.com/ru-RU/office/dev/store/validation-policies)
 -  [Начало создания надстроек Office и SharePoint](http://msdn.microsoft.com/library/187f8c8c-1b15-471c-80b5-69a40e67deea.aspx)
--  [Лицензирование надстроек Office и SharePoint](http://msdn.microsoft.com/library/license-your-office-and-sharepoint-add-ins%28Office.15%29.aspx)
+-  [Лицензирование надстроек Office и SharePoint](https://docs.microsoft.com/ru-RU/office/dev/store/license-your-add-ins)
 -  [Развертывание и установка надстроек SharePoint: методы и параметры](deploying-and-installing-sharepoint-add-ins-methods-and-options.md)
 -  [Области клиентов и области развертывания для надстроек SharePoint](tenancies-and-deployment-scopes-for-sharepoint-add-ins.md)
 -  [Публикация надстройки для SharePoint с помощью Visual Studio](publish-sharepoint-add-ins-by-using-visual-studio.md)
--  [Публикация надстроек Office в Магазине](http://social.msdn.microsoft.com/Forums/ru-RU/officestore)
-    
- 
-
+-  [Отправка решений в Магазин Office](https://docs.microsoft.com/ru-RU/office/dev/store/submit-to-the-office-store)

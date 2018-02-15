@@ -3,11 +3,11 @@ title: "Обновление надстроек SharePoint"
 description: "Создание и развертывание обновления надстройки SharePoint."
 ms.date: 11/02/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 31c1194450d8169cf61fe9cfab57c7203437546e
-ms.sourcegitcommit: 655e325aec73c8b7c6b5e3aaf71fbb4d2d223b5d
+ms.openlocfilehash: a1ff2202cba1fd9c85203ee335848f8894051f59
+ms.sourcegitcommit: c57fc0e802661b0771f8b022964b6956ab4f6caf
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="update-sharepoint-add-ins"></a>Обновление надстроек SharePoint
 
@@ -20,7 +20,7 @@ ms.lasthandoff: 11/03/2017
 Пользователь может установить обновление, не удаляя предыдущую версию. Инфраструктура обновления проверяет установку обновления и выполняет ее откат в случае каких-либо ошибок.
  
 > [!IMPORTANT]
-> С помощью системы обновления нельзя изменить *тип надстройки*. Например, надстройку с размещением в SharePoint нельзя преобразовать в надстройку с размещением у поставщика. Чтобы изменить тип, необходимо [перенести данные из старой надстройки в новую](sharepoint-add-ins-update-process.md#Major). В частности, так как [программа тестирования надстроек с автоматически размещением закрыта](http://blogs.office.com/2014/05/16/update-on-autohosted-apps-preview-program/.md), надстройку с автоматически размещением нельзя обновить до надстройки с размещением у поставщика. Преобразуйте надстройку согласно инструкциям в [этой статье](convert-an-autohosted-sharepoint-add-in-to-a-provider-hosted-add-in.md).
+> С помощью системы обновления нельзя изменить *тип надстройки*. Например, надстройку с размещением в SharePoint невозможно преобразовать в надстройку с размещением у поставщика. Чтобы изменить тип, необходимо [перенести данные из старой надстройки в новую](sharepoint-add-ins-update-process.md#Major). В частности, так как [программа тестирования надстроек с автоматически размещением закрыта](http://blogs.office.com/2014/05/16/update-on-autohosted-apps-preview-program/.md), надстройку с автоматически размещением нельзя обновить до надстройки с размещением у поставщика. Преобразуйте надстройку SharePoint согласно инструкциям в [этой статье](convert-an-autohosted-sharepoint-add-in-to-a-provider-hosted-add-in.md).
 
 <a name="Prerequisites"> </a>
 ## <a name="prerequisites-for-updating-a-sharepoint-add-in"></a>Необходимые условия для обновления надстройки SharePoint
@@ -34,8 +34,6 @@ ms.lasthandoff: 11/03/2017
 ### <a name="core-concepts-to-know-to-update-a-sharepoint-add-in"></a>Основные понятия, касающиеся обновления надстройки SharePoint
 
 Прежде чем обновлять надстройку, ознакомьтесь с понятиями в приведенной ниже таблице.
-
-**Таблица 1. Основные понятия, касающиеся обновления надстроек SharePoint**
 
 |**Название статьи**|**Описание**|
 |:-----|:-----|
@@ -142,10 +140,10 @@ ms.lasthandoff: 11/03/2017
 
 -  [Обновление компонентов сайта надстройки в SharePoint](update-add-in-web-components-in-sharepoint.md)
 -  [Обновление компонентов хост-сайта в SharePoint](update-host-web-components-in-sharepoint.md)
--  [Создание обработчика для события обновления надстройки SharePoint](create-a-handler-for-the-update-event-in-sharepoint-add-ins.md)
+-  [Создание обработчика событий обновления в надстройках SharePoint](create-a-handler-for-the-update-event-in-sharepoint-add-ins.md)
 -  [Обновление удаленных компонентов в надстройках SharePoint](update-remote-components-in-sharepoint-add-ins.md) 
     
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
 -  [Разработка надстроек SharePoint](develop-sharepoint-add-ins.md)

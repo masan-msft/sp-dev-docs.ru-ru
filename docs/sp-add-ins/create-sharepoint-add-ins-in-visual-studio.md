@@ -3,11 +3,11 @@ title: "Создание надстроек SharePoint в Visual Studio"
 description: "Разрабатывайте надстройки SharePoint, используя шаблоны и элементы проектов в Visual Studio."
 ms.date: 11/03/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 3155405b4cc07fadc4743d2deadb618da27aa39e
-ms.sourcegitcommit: 074f3a7983a7b253f56f8c670a0290c27bb7734b
+ms.openlocfilehash: 826498c45f6cb8a7cff0bd7c07a6ff3ebd339928
+ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 12/07/2017
 ---
 # <a name="create-sharepoint-add-ins-in-visual-studio"></a>Создание надстроек SharePoint в Visual Studio
 
@@ -33,12 +33,6 @@ ms.lasthandoff: 11/06/2017
 - Тип надстройки: с размещением у поставщика или в SharePoint. 
 
 Дополнительные сведения см. в статье [Надстройки SharePoint](sharepoint-add-ins.md).
-
-### <a name="cloud-business-add-in"></a>Облачная бизнес-надстройка
-
-Используя шаблон **Облачная бизнес-надстройка** в Visual Studio, вы можете создать надстройку с размещением в SharePoint для просмотра, добавления и обновления данных из удаленных источников с современных сенсорных устройств, таких как телефоны и планшеты. 
-
-Дополнительные сведения см. в статье [Создание облачных бизнес-надстроек](create-cloud-business-add-ins.md).
 
 <a name="SP15Projecttemplates_items"> </a>
 ## <a name="project-item-templates"></a>Шаблоны элементов проектов
@@ -141,7 +135,7 @@ ms.lasthandoff: 11/06/2017
 
 Дополнительные сведения см. в статье [Рабочие процессы в SharePoint](http://msdn.microsoft.com/library/e0602371-ae22-44be-8a7e-9e47e9f046d6%28Office.15%29.aspx).
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="SP15Projecttemplates_addlresources"> </a>
 
 - [Средства и среды для разработки надстроек SharePoint](tools-and-environments-for-developing-sharepoint-add-ins.md)
