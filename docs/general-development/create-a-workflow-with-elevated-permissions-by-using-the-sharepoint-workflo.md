@@ -4,11 +4,11 @@ description: "Создание рабочих процессов SharePoint, д�
 ms.date: 12/29/2017
 ms.prod: sharepoint
 ms.assetid: 4656f6a0-36fd-4b7d-898e-8cd4bdbbda57
-ms.openlocfilehash: 2efa1810d3d6a0c579daa356599ef9dfffda230f
-ms.sourcegitcommit: 469ce248552201a47ebea1b6c85bc5c90a97c7ac
+ms.openlocfilehash: ba094a98c47da4576a0a9a7ae8bc7401cc203d14
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="create-a-workflow-with-elevated-permissions-by-using-the-sharepoint-workflow-platform"></a>Создание рабочего процесса с повышенным уровнем разрешений при помощи платформы SharePoint Workflow
 
