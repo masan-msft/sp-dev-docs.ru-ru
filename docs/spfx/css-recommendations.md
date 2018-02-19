@@ -1,28 +1,29 @@
 ---
 title: "Рекомендации по работе с CSS в решениях SharePoint Framework"
-ms.date: 11/18/2017
+description: "Используйте CSS, чтобы описать, как должна выглядеть и работать настройка SharePoint Framework."
+ms.date: 1/24/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 0e65926fda0ff1a788388e23d1d7df2e4b9ea32a
-ms.sourcegitcommit: 0350850e0f46841a7eaadcc69d0fb90739fcd654
+ms.openlocfilehash: 38d74b4a84187b16a3085354a6dda19b60e2eb56
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 02/05/2018
 ---
-# <a name="recommendations-for-working-with-css-in-sharepoint-framework-solutions"></a><span data-ttu-id="02bc0-102">Рекомендации по работе с CSS в решениях SharePoint Framework</span><span class="sxs-lookup"><span data-stu-id="02bc0-102">Recommendations for working with CSS in SharePoint Framework solutions</span></span>
+# <a name="recommendations-for-working-with-css-in-sharepoint-framework-solutions"></a><span data-ttu-id="a09af-103">Рекомендации по работе с CSS в решениях SharePoint Framework</span><span class="sxs-lookup"><span data-stu-id="a09af-103">Recommendations for working with CSS in SharePoint Framework solutions</span></span>
 
-<span data-ttu-id="02bc0-p101">При создании решений SharePoint Framework можно использовать CSS для определения внешнего вида и функционала вашей настройки. Эта статья описывает, как лучше всего использовать возможности SharePoint Framework и легко создавать стили CSS.</span><span class="sxs-lookup"><span data-stu-id="02bc0-p101">When building SharePoint Framework solutions, you can use CSS to define how your customization should look like and behave. This article describes how you can make the best use of the capabilities provided with the SharePoint Framework and build your CSS styles in a robust way.</span></span>
+<span data-ttu-id="a09af-104">Вы можете использовать CSS, чтобы описать, как должна выглядеть и работать настройка SharePoint Framework.</span><span class="sxs-lookup"><span data-stu-id="a09af-104">When building SharePoint Framework solutions, you can use CSS to define how your customization should look and behave.</span></span> <span data-ttu-id="a09af-105">В этой статье описано, как лучше всего использовать возможности SharePoint Framework и с легкостью создавать стили CSS.</span><span class="sxs-lookup"><span data-stu-id="a09af-105">When building SharePoint Framework solutions, you can use CSS to define how your customization should look like and behave. This article describes how you can make the best use of the capabilities provided with the SharePoint Framework and build your CSS styles in a robust way.</span></span>
 
-## <a name="sharepoint-framework-customizations-are-part-of-the-page"></a><span data-ttu-id="02bc0-105">Настройка SharePoint Framework является частью страницы</span><span class="sxs-lookup"><span data-stu-id="02bc0-105">SharePoint Framework customizations are part of the page</span></span>
+## <a name="sharepoint-framework-customizations-are-part-of-the-page"></a><span data-ttu-id="a09af-106">Настройки SharePoint Framework являются частью страницы</span><span class="sxs-lookup"><span data-stu-id="a09af-106">SharePoint Framework customizations are part of the page</span></span>
 
-<span data-ttu-id="02bc0-p102">При создании настроек SharePoint с использованием модели надстройки решение изолируется от других элементов на странице. Вне зависимости от того, выполняется ли код в iframe в качестве надстройки либо как иммерсивное приложение, контролирующее всю страницу, на него не влияют другие элементы и стили, определенные на странице.</span><span class="sxs-lookup"><span data-stu-id="02bc0-p102">When building SharePoint customizations using the add-in model, the solution is isolated from other elements on the page. Your code is executed either in an iframe, as an add-in part, or as an immersive application taking control of the whole page. In both cases, your code is not affected by other elements and styles defined on the page.</span></span>
+<span data-ttu-id="a09af-107">Решения SharePoint, созданные по образцу надстройки, изолированы от других элементов на странице.</span><span class="sxs-lookup"><span data-stu-id="a09af-107">When building SharePoint customizations using the add-in model, the solution is isolated from other elements on the page.</span></span> <span data-ttu-id="a09af-108">Код может выполняться в iframe как часть надстройки или как иммерсивное приложение, контролирующее всю страницу.</span><span class="sxs-lookup"><span data-stu-id="a09af-108">Your code can be executed in an iframe as an add-in part, or as an immersive application that takes control of the whole page.</span></span> <span data-ttu-id="a09af-109">В любом случае на него не влияют другие элементы и стили, определенные на странице.</span><span class="sxs-lookup"><span data-stu-id="a09af-109">In both cases, your code is not affected by other elements and styles defined on the page.</span></span>
 
-<span data-ttu-id="02bc0-p103">Решения SharePoint Framework являются частью страницы и полностью интегрируются с моделью DOM этой страницы. И хотя это устраняет ряд ограничений, сопровождающих модель надстройки, ваше решение подвергается риску. Если эта часть страницы не будет явно изолирована, к ней будут применяться все стили CSS, присутствующие на странице, что потенциально может привести к нежелательным результатам. Чтобы избежать таких рисков, нужно определить свои стили CSS таким образом, чтобы они не влияли ни на что другое на странице, кроме вашей настройки.</span><span class="sxs-lookup"><span data-stu-id="02bc0-p103">SharePoint Framework solutions are a part of the page and integrate fully with the page's DOM. While this removes a number of restrictions that come with the add-in model, it exposes your solution to a risk. Because it's a part of the page, unless explicitly isolated, all CSS styles present on the page will apply to it, potentially resulting in an experience different from intended. To avoid such risks, you should define your CSS styles in such a way so that they won't affect anything else on the page other than your customization.</span></span>
+<span data-ttu-id="a09af-110">Решения SharePoint Framework являются частью страницы и полностью интегрируются с моделью DOM этой страницы.</span><span class="sxs-lookup"><span data-stu-id="a09af-110">SharePoint Framework solutions are a part of the page and integrate fully with the page's DOM.</span></span> <span data-ttu-id="a09af-111">Хотя это снимает ряд ограничений, связанных с моделью надстройки, ваше решение подвергается риску.</span><span class="sxs-lookup"><span data-stu-id="a09af-111">While this removes a number of restrictions that come with the add-in model, it exposes your solution to risk.</span></span> <span data-ttu-id="a09af-112">Если эта часть страницы не будет явно изолирована, к ней будут применяться все стили CSS, которые есть на странице, что может привести к нежелательным результатам.</span><span class="sxs-lookup"><span data-stu-id="a09af-112">Because it's a part of the page, unless explicitly isolated, all CSS styles present on the page apply to it, potentially resulting in an experience different from what you intended.</span></span> <span data-ttu-id="a09af-113">Чтобы избежать таких рисков, нужно определить стили CSS так, чтобы они не влияли ни на что другое на странице, кроме вашей настройки.</span><span class="sxs-lookup"><span data-stu-id="a09af-113">To avoid such risks, you should define your CSS styles in such a way so that they won't affect anything else on the page other than your customization.</span></span>
 
-## <a name="organize-css-files-in-your-solution"></a><span data-ttu-id="02bc0-113">Организация файлов CSS в вашем решении</span><span class="sxs-lookup"><span data-stu-id="02bc0-113">Organize CSS files in your solution</span></span>
+## <a name="organize-css-files-in-your-solution"></a><span data-ttu-id="a09af-114">Организация файлов CSS в решении</span><span class="sxs-lookup"><span data-stu-id="a09af-114">Organize CSS files in your solution</span></span>
 
-<span data-ttu-id="02bc0-p104">Пользовательский интерфейс решений часто состоит из нескольких стандартных блоков. Во многих библиотеках JavaScript эти стандартные блоки называются компонентами. Компонент может быть простым и определять только представление, либо он может быть более сложным и включать состояние и другие компоненты. Разделение решения на несколько компонентов позволяет упростить процесс разработки и облегчает их тестирование и повторное использование в решении.</span><span class="sxs-lookup"><span data-stu-id="02bc0-p104">The UI of your solutions often consists of multiple building blocks. In many JavaScript libraries these building blocks are called components. A component can be simple and define only the presentation or it can be more complex and include state and other components. Splitting your solution into multiple components allows you to simplify the development process and makes them easier to test and reuse in your solution.</span></span>
+<span data-ttu-id="a09af-115">Пользовательский интерфейс решений часто состоит из нескольких стандартных блоков.</span><span class="sxs-lookup"><span data-stu-id="a09af-115">The UI of your solutions often consists of multiple building blocks.</span></span> <span data-ttu-id="a09af-116">Во многих библиотеках JavaScript эти стандартные блоки называются компонентами.</span><span class="sxs-lookup"><span data-stu-id="a09af-116">In many JavaScript libraries, these building blocks are called components.</span></span> <span data-ttu-id="a09af-117">Компонент может быть простым и определять только представление или сложным и включать состояние и другие компоненты.</span><span class="sxs-lookup"><span data-stu-id="a09af-117">A component can be simple and define only the presentation, or it can be more complex and include state and other components.</span></span> <span data-ttu-id="a09af-118">Разделение решения на несколько компонентов позволяет упростить процесс разработки, а также облегчает их тестирование и повторное использование в решении.</span><span class="sxs-lookup"><span data-stu-id="a09af-118">Splitting your solution into multiple components allows you to simplify the development process and makes it easier to test and reuse the components in your solution.</span></span>
 
-<span data-ttu-id="02bc0-p105">Поскольку компоненты определяют представление, часто возникает потребность в стилях CSS. В идеале компоненты должны быть изолированы, чтобы их можно было использовать отдельно. Поэтому следует хранить стили CSS для конкретного компонента и все другие файлы активов вместе с компонентом. Ниже приведен пример структуры приложения React с несколькими компонентами вместе с их файлами CSS.</span><span class="sxs-lookup"><span data-stu-id="02bc0-p105">Because components have presentation, they often require CSS styles. Ideally, components should be isolated and be able to be used on their own. With that in mind, it makes perfect sense for you to store CSS styles for the particular component along with all other asset files next to the component. Following, is a sample structure of a React application with a number of components each with its own CSS file.</span></span>
+<span data-ttu-id="a09af-119">Так как компоненты определяют представление, часто возникает потребность в стилях CSS.</span><span class="sxs-lookup"><span data-stu-id="a09af-119">Because components have presentation, they often require CSS styles.</span></span> <span data-ttu-id="a09af-120">В идеале компоненты должны быть изолированы, чтобы их можно было использовать отдельно.</span><span class="sxs-lookup"><span data-stu-id="a09af-120">Ideally, components should be isolated and be able to be used on their own.</span></span> <span data-ttu-id="a09af-121">Поэтому следует хранить стили CSS для конкретного компонента и все другие файлы ресурсов вместе с компонентом.</span><span class="sxs-lookup"><span data-stu-id="a09af-121">With that in mind, it makes perfect sense for you to store CSS styles for the particular component along with all other asset files next to the component.</span></span> <span data-ttu-id="a09af-122">Ниже приведен пример структуры приложения React с несколькими компонентами вместе с их файлами CSS.</span><span class="sxs-lookup"><span data-stu-id="a09af-122">Following is a sample structure of a React application with a number of components, each with its own CSS file.</span></span>
 
 ```text
 todoWebPart\components
@@ -34,17 +35,21 @@ todoWebPart\components
                                \todoItem.module.scss
 ```
 
-## <a name="use-sass"></a><span data-ttu-id="02bc0-122">Использование SASS</span><span class="sxs-lookup"><span data-stu-id="02bc0-122">Use Sass</span></span>
+## <a name="use-sass"></a><span data-ttu-id="a09af-123">Использование SASS</span><span class="sxs-lookup"><span data-stu-id="a09af-123">Use Sass</span></span>
 
-<span data-ttu-id="02bc0-p106">В SharePoint Framework можно использовать и CSS, и SASS. SASS — это надмножество CSS, предлагающее ряд функций, таких как использование переменных, вставки селекторов или использование примесей — все это упрощает работу со стилями CSS и управление ими в долгосрочной перспективе. Полный набор функций см. на веб-сайте [SASS](http://sass-lang.com). Весь действующий CSS также является действительным SASS, что очень полезно, если вы еще не работали с SASS раньше и хотите постепенно изучить его возможности.</span><span class="sxs-lookup"><span data-stu-id="02bc0-p106">In the SharePoint Framework you can use both CSS and Sass. Sass is a superset of CSS and offers you a number of features such as using variables, nesting selectors or using mixins - all of which simplify working with and managing CSS styles over long term. For a complete set of features see the [Sass website](http://sass-lang.com). All valid CSS is also valid Sass which is very helpful if you haven't worked with Sass before and want to gradually learn its capabilities.</span></span>
+<span data-ttu-id="a09af-124">В SharePoint Framework можно использовать как CSS, так и SASS.</span><span class="sxs-lookup"><span data-stu-id="a09af-124">In SharePoint Framework, you can use both CSS and Sass.</span></span> <span data-ttu-id="a09af-125">SASS — это расширенная версия CSS, которая поддерживает переменные, вложение селекторов и примеси — все это упрощает работу со стилями CSS и управление ими в долгосрочной перспективе.</span><span class="sxs-lookup"><span data-stu-id="a09af-125">Sass is a superset of CSS and offers you a number of features such as variables, nesting selectors, or mixins, all of which simplify working with and managing CSS styles over the long term.</span></span> 
 
-## <a name="avoid-using-ids-in-markup"></a><span data-ttu-id="02bc0-127">Избегайте использования ИД в исправлениях</span><span class="sxs-lookup"><span data-stu-id="02bc0-127">Avoid using ID's in markup</span></span>
+<span data-ttu-id="a09af-126">Полный набор функций см. на [веб-сайте Sass](http://sass-lang.com).</span><span class="sxs-lookup"><span data-stu-id="a09af-126">For a complete set of features, see the [Sass website](http://sass-lang.com).</span></span> <span data-ttu-id="a09af-127">Синтаксис CSS полностью совместим с синтаксисом SASS, что очень полезно, если вы еще не работали с SASS раньше и хотите постепенно изучить его возможности.</span><span class="sxs-lookup"><span data-stu-id="a09af-127">All valid CSS is also valid Sass, which is very helpful if you haven't worked with Sass before and want to gradually learn its capabilities.</span></span>
 
-<span data-ttu-id="02bc0-p107">Используя SharePoint Framework, вы создаете настройки, которые конечные пользователи добавляют в SharePoint. Невозможно предугадать, сколько раз конкретная настройка будет использоваться на странице. Чтобы избежать проблем, важно всегда предполагать, что на одной странице есть несколько экземпляров вашей настройки. Имея это в виду, следует избегать использования любых ИД в исправлениях. ИД на странице должны быть уникальными, и если пользователь дважды добавит веб-часть на страницу, тем самым он нарушит эту предпосылку, что может привести к ошибкам.</span><span class="sxs-lookup"><span data-stu-id="02bc0-p107">Using the SharePoint Framework you build customizations that end-users add to SharePoint. It's impossible to tell upfront if the particular customization will be used only once on a page or if there will be multiple instances of it. To avoid issues, you should always assume that there are multiple instances of your customization on the same page. With that in mind, you should avoid using any ID's in your markup. ID's are meant to be unique on a page and if a user added your web part to the page twice, it would violate this premise possibly leading to errors.</span></span>
+## <a name="avoid-using-ids-in-markup"></a><span data-ttu-id="a09af-128">Не используйте идентификаторы в разметке</span><span class="sxs-lookup"><span data-stu-id="a09af-128">Avoid using ID's in markup</span></span>
 
-<span data-ttu-id="02bc0-133">**Не рекомендуем:**</span><span class="sxs-lookup"><span data-stu-id="02bc0-133">**Bad practice:**</span></span>
+<span data-ttu-id="a09af-129">Используя SharePoint Framework, вы создаете настройки, которые пользователи добавляют в SharePoint.</span><span class="sxs-lookup"><span data-stu-id="a09af-129">Using SharePoint Framework, you build customizations that end-users add to SharePoint.</span></span> <span data-ttu-id="a09af-130">Невозможно предугадать, сколько экземпляров конкретной настройки будет открыто на странице.</span><span class="sxs-lookup"><span data-stu-id="a09af-130">It's impossible to tell upfront if the particular customization is used only once on a page or if there are multiple instances of it.</span></span> 
 
-```ts
+<span data-ttu-id="a09af-131">Чтобы избежать проблем, всегда следует предполагать наличие нескольких экземпляров настройки на странице.</span><span class="sxs-lookup"><span data-stu-id="a09af-131">To avoid issues, you should always assume that there are multiple instances of your customization on the same page.</span></span> <span data-ttu-id="a09af-132">Именно поэтому не следует использовать идентификаторы в разметке.</span><span class="sxs-lookup"><span data-stu-id="a09af-132">With that in mind, you should avoid using any IDs in your markup.</span></span> <span data-ttu-id="a09af-133">Идентификаторы на странице должны быть уникальными, а добавление двух одинаковых веб-частей на страницу нарушает это условие и может привести к ошибкам.</span><span class="sxs-lookup"><span data-stu-id="a09af-133">IDs are meant to be unique on a page, and if a user adds your web part to the page twice, it violates this premise, possibly leading to errors.</span></span>
+
+#### <a name="bad-practice"></a><span data-ttu-id="a09af-134">Не рекомендуется</span><span class="sxs-lookup"><span data-stu-id="a09af-134">Bad practice:</span></span>
+
+```typescript
 // ...
 
 export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorldWebPartProps> {
@@ -60,9 +65,11 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
 }
 ```
 
-<span data-ttu-id="02bc0-134">**Рекомендуем:**</span><span class="sxs-lookup"><span data-stu-id="02bc0-134">**Good practice:**</span></span>
+<br/>
 
-```ts
+#### <a name="good-practice"></a><span data-ttu-id="a09af-135">Рекомендуется</span><span class="sxs-lookup"><span data-stu-id="a09af-135">Good practice:</span></span>
+
+```typescript
 // ...
 
 export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorldWebPartProps> {
@@ -78,15 +85,15 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
 }
 ```
 
-## <a name="use-css-modules-to-avoid-styling-conflicts"></a><span data-ttu-id="02bc0-135">Использование CSS-модулей для избежания конфликтов стилей</span><span class="sxs-lookup"><span data-stu-id="02bc0-135">Use CSS modules to avoid styling conflicts</span></span>
+## <a name="use-css-modules-to-avoid-styling-conflicts"></a><span data-ttu-id="a09af-136">Использование CSS-модулей для избежания конфликтов стилей</span><span class="sxs-lookup"><span data-stu-id="a09af-136">Use CSS modules to avoid styling conflicts</span></span>
 
-<span data-ttu-id="02bc0-p108">Решения SharePoint Framework являются частью страницы. Чтобы стили CSS для одного компонента не влияли на другие элементы на странице, нужно определить селекторы CSS таким образом, чтобы они применялись только к модели DOM вашего решения. Делать это вручную утомительно и потенциально подвержено ошибкам, но SharePoint Framework может сделать это для вас автоматически.</span><span class="sxs-lookup"><span data-stu-id="02bc0-p108">SharePoint Framework solutions are a part of the page. To ensure that CSS styles for one component don't affect other elements on the page, you should define your CSS selectors in such a way that they apply only to the DOM of your solution. It's tedious and error-prone to do this manually, but SharePoint Framework can do this automatically for you.</span></span>
+<span data-ttu-id="a09af-p110">Решения SharePoint Framework являются частью страницы. Чтобы стили CSS для одного компонента не влияли на другие элементы на странице, нужно определить селекторы CSS таким образом, чтобы они применялись только к модели DOM вашего решения. Делать это вручную утомительно и потенциально подвержено ошибкам, но SharePoint Framework может сделать это для вас автоматически.</span><span class="sxs-lookup"><span data-stu-id="a09af-p110">SharePoint Framework solutions are a part of the page. To ensure that CSS styles for one component don't affect other elements on the page, you should define your CSS selectors in such a way that they apply only to the DOM of your solution. It's tedious and error-prone to do this manually, but SharePoint Framework can do this automatically for you.</span></span>
 
-<span data-ttu-id="02bc0-p109">Чтобы избежать конфликтов стилей, SharePoint Framework использует [модули CSS](https://github.com/css-modules/css-modules). При создании проекта цепочка инструментов SharePoint Framework обрабатывает все файлы с расширением **.module.scss**. Для каждого файла SharePoint Framework считывает все селекторы классов и добавляет к ним уникальное хэш-значение. После этого он записывает обновленные селекторы в промежуточные файлы CSS, которые включены в сгенерированный пакет веб-частей.</span><span class="sxs-lookup"><span data-stu-id="02bc0-p109">To help you avoid stylings conflicts, SharePoint Framework uses [CSS modules](https://github.com/css-modules/css-modules). When building the project, the SharePoint Framework toolchain processes all files with the **.module.scss** extension. For each file, it reads all class selectors and appends a unique hash value to them. Once finished, it writes the updated selectors to intermediate CSS files that are included in the generated web part bundle.</span></span>
+<span data-ttu-id="a09af-140">Чтобы избежать конфликтов стилей, SharePoint Framework использует [модули CSS](https://github.com/css-modules/css-modules).</span><span class="sxs-lookup"><span data-stu-id="a09af-140">To help you avoid styling conflicts, SharePoint Framework uses [CSS modules](https://github.com/css-modules/css-modules).</span></span> <span data-ttu-id="a09af-141">При сборке проекта цепочка инструментов SharePoint Framework обрабатывает все файлы с расширением **.module.scss**.</span><span class="sxs-lookup"><span data-stu-id="a09af-141">When building the project, the SharePoint Framework toolchain processes all files with the **.module.scss** extension.</span></span> <span data-ttu-id="a09af-142">Для каждого файла SharePoint Framework считывает все селекторы классов и добавляет к ним уникальное хэш-значение.</span><span class="sxs-lookup"><span data-stu-id="a09af-142">For each file, it reads all class selectors and appends a unique hash value to them.</span></span> <span data-ttu-id="a09af-143">После этого он записывает обновленные селекторы в промежуточные файлы CSS, которые включаются в пакет веб-части.</span><span class="sxs-lookup"><span data-stu-id="a09af-143">After it's finished, it writes the updated selectors to intermediate CSS files that are included in the generated web part bundle.</span></span>
 
-<span data-ttu-id="02bc0-143">Следуя приведенному выше примеру, предположим, что имеются следующие два файла SASS:</span><span class="sxs-lookup"><span data-stu-id="02bc0-143">Following the example above, assume you had the following two Sass files:</span></span>
+<span data-ttu-id="a09af-144">В продолжение предыдущего примера, предположим, что у вас было два следующих файла SASS:</span><span class="sxs-lookup"><span data-stu-id="a09af-144">Following the example above, assume you had the following two Sass files:</span></span>
 
-<span data-ttu-id="02bc0-144">**todoList.module.scss:**</span><span class="sxs-lookup"><span data-stu-id="02bc0-144">**todoList.module.scss:**</span></span>
+#### <a name="todolistmodulescss"></a><span data-ttu-id="a09af-145">todoList.module.scss</span><span class="sxs-lookup"><span data-stu-id="a09af-145">todoList.module.scss:</span></span>
 
 ```scss
 .todoList {
@@ -99,7 +106,9 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
 }
 ```
 
-<span data-ttu-id="02bc0-145">**todoItem.module.scss:**</span><span class="sxs-lookup"><span data-stu-id="02bc0-145">**todoItem.module.scss:**</span></span>
+<br/>
+
+#### <a name="todoitemmodulescss"></a><span data-ttu-id="a09af-146">todoItem.module.scss</span><span class="sxs-lookup"><span data-stu-id="a09af-146">todoItem.module.scss:</span></span>
 
 ```scss
 .todoItem {
@@ -111,9 +120,11 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
 }
 ```
 
-<span data-ttu-id="02bc0-146">После создания проекта в папке **lib** появится два созданных файла CSS, представленных ниже (разрывы строк и отступы добавлены для лучшей читаемости):</span><span class="sxs-lookup"><span data-stu-id="02bc0-146">After building the project, in the **lib** folder you would see the following two CSS files generated (line breaks and indenting added for readability):</span></span>
+<br/>
 
-<span data-ttu-id="02bc0-147">**todoList.module.css:**</span><span class="sxs-lookup"><span data-stu-id="02bc0-147">**todoList.module.css:**</span></span>
+<span data-ttu-id="a09af-147">После создания проекта в папке **lib** появится два созданных файла CSS, представленных ниже (разрывы строк и отступы добавлены для лучшей читаемости):</span><span class="sxs-lookup"><span data-stu-id="a09af-147">After building the project, in the **lib** folder you would see the following two CSS files generated (line breaks and indenting added for readability):</span></span>
+
+#### <a name="todolistmodulecss"></a><span data-ttu-id="a09af-148">todoList.module.css</span><span class="sxs-lookup"><span data-stu-id="a09af-148">todoList.module.css:</span></span>
 
 ```css
 .todoList_3e9d35f0 {
@@ -126,7 +137,9 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
 }
 ```
 
-<span data-ttu-id="02bc0-148">**todoItem.module.css:**</span><span class="sxs-lookup"><span data-stu-id="02bc0-148">**todoItem.module.css:**</span></span>
+<br/>
+
+#### <a name="todoitemmodulecss"></a><span data-ttu-id="a09af-149">todoItem.module.css</span><span class="sxs-lookup"><span data-stu-id="a09af-149">todoItem.module.css:</span></span>
 
 ```css
 .todoItem_f7081cc4 {
@@ -138,11 +151,13 @@ export default class HelloWorldWebPart extends BaseClientSideWebPart<IHelloWorld
 }
 ```
 
-<span data-ttu-id="02bc0-149">Несмотря на то что в обоих файлах SASS был определен класс **.text**, в созданных файлах CSS к нему добавлены к нему два разных хэша, что делает его уникальным именем класса, характерным для каждого компонента.</span><span class="sxs-lookup"><span data-stu-id="02bc0-149">Even though there was a **.text** class defined in both Sass files, notice how in the generated CSS files it has two different hashes appended to it, becoming a unique class name specific to each component.</span></span>
+<br/>
 
-<span data-ttu-id="02bc0-p110">Имена классов CSS в модулях CSS генерируются динамически, что делает невозможным непосредственное обращение к ним в коде. Вместо этого при обработке модулей CSS цепочка инструментов SharePoint Framework генерирует файл JavaScript со ссылками на сгенерированные имена классов.</span><span class="sxs-lookup"><span data-stu-id="02bc0-p110">The CSS class names in CSS modules are generated dynamically, which makes it impossible for you to refer to them in your code directly. Instead, when processing CSS modules, the SharePoint Framework toolchain generates a JavaScript file with references to the generated class names.</span></span>
+<span data-ttu-id="a09af-150">Несмотря на то что в обоих файлах SASS был определен класс **.text**, в созданных файлах CSS к нему добавлены к нему два разных хэша, что делает его уникальным именем класса, характерным для каждого компонента.</span><span class="sxs-lookup"><span data-stu-id="a09af-150">Even though there was a **.text** class defined in both Sass files, notice how in the generated CSS files it has two different hashes appended to it, becoming a unique class name specific to each component.</span></span>
 
-<span data-ttu-id="02bc0-152">**todoList.module.scss.js:**</span><span class="sxs-lookup"><span data-stu-id="02bc0-152">**todoList.module.scss.js:**</span></span>
+<span data-ttu-id="a09af-p112">Имена классов CSS в модулях CSS генерируются динамически, что делает невозможным непосредственное обращение к ним в коде. Вместо этого при обработке модулей CSS цепочка инструментов SharePoint Framework генерирует файл JavaScript со ссылками на сгенерированные имена классов.</span><span class="sxs-lookup"><span data-stu-id="a09af-p112">The CSS class names in CSS modules are generated dynamically, which makes it impossible for you to refer to them in your code directly. Instead, when processing CSS modules, the SharePoint Framework toolchain generates a JavaScript file with references to the generated class names.</span></span>
+
+#### <a name="todolistmodulescssjs"></a><span data-ttu-id="a09af-153">todoList.module.scss.js</span><span class="sxs-lookup"><span data-stu-id="a09af-153">todoList.module.scss.js:</span></span>
 
 ```js
 "use strict";
@@ -159,9 +174,11 @@ exports.default = styles;
 //# sourceMappingURL=todoList.module.scss.js.map
 ```
 
-<span data-ttu-id="02bc0-153">Чтобы использовать сгенерированные имена классов в вашем коде, сначала импортируйте стили своего компонента, а затем используйте свойство, указывающее на конкретный класс.</span><span class="sxs-lookup"><span data-stu-id="02bc0-153">To use the generated class names in your code, you first import the styles of your component and then use the property pointing to the particular class:</span></span>
+<br/>
 
-```ts
+<span data-ttu-id="a09af-154">Чтобы использовать сгенерированные имена классов в своем коде, сначала импортируйте стили своего компонента, а затем используйте свойство, указывающее на конкретный класс:</span><span class="sxs-lookup"><span data-stu-id="a09af-154">To use the generated class names in your code, you first import the styles of your component and then use the property pointing to the particular class:</span></span>
+
+```typescript
 import styles from './todoList.module.scss';
 // ...
 
@@ -176,19 +193,23 @@ export default class TodoList extends React.Component<ITodoListProps, void> {
 }
 ```
 
-<span data-ttu-id="02bc0-154">Для правильной работы модулей CSS вам необходимо выполнить следующие условия:</span><span class="sxs-lookup"><span data-stu-id="02bc0-154">For the CSS modules to work correctly you have to meet the following conditions:</span></span>
+<br/>
 
-* <span data-ttu-id="02bc0-p111">Файлы SASS должны иметь расширение **.module.scss**. При использовании расширения **.scss** без **.module** в процессе сборки вы увидите предупреждение. Файл SASS будет передан в промежуточный файл CSS, но имена классов **не будут уникальными**. Этот сценарий можно выбрать, если необходимо переопределить сторонние стили CSS.</span><span class="sxs-lookup"><span data-stu-id="02bc0-p111">your Sass files must have the **.module.scss** extension. If you use the **.scss** extension without **.module**, you will see a warning in the build process. The Sass file will be transpiled to an intermediate CSS file but the class names **will not be made unique**. In cases, when you need to override 3rd party CSS styles, this might be intended</span></span>
-* <span data-ttu-id="02bc0-159">Имена классов CSS должны быть действительными именами переменных JavaScript. Например, они не могут содержать дефисы: `todoList` — правильно, а `todo-list` — неправильно.</span><span class="sxs-lookup"><span data-stu-id="02bc0-159">your CSS class names must be valid JavaScript variable names, so for example they cannot contain hyphens: `todoList` is correct but `todo-list` isn't</span></span>
-* <span data-ttu-id="02bc0-160">Рекомендуем указывать наименования camelCase для классов, но это не обязательно.</span><span class="sxs-lookup"><span data-stu-id="02bc0-160">camelCase naming for classes is recommended, but it's not enforced</span></span>
+<span data-ttu-id="a09af-155">Для правильной работы модулей CSS должны выполняться следующие условия:</span><span class="sxs-lookup"><span data-stu-id="a09af-155">For the CSS modules to work correctly you have to meet the following conditions:</span></span>
 
-## <a name="wrap-your-css-styles-in-a-class-named-after-the-component"></a><span data-ttu-id="02bc0-161">Перенос стилей CSS в класс, названный именем компонента</span><span class="sxs-lookup"><span data-stu-id="02bc0-161">Wrap your CSS styles in a class named after the component</span></span>
+* <span data-ttu-id="a09af-156">Файлы SASS должны иметь расширение **.module.scss**.</span><span class="sxs-lookup"><span data-stu-id="a09af-156">Your Sass files must have the **.module.scss** extension.</span></span> <span data-ttu-id="a09af-157">Если используется расширение **.scss** без **.module**, в ходе сборки отобразится предупреждение.</span><span class="sxs-lookup"><span data-stu-id="a09af-157">If you use the **.scss** extension without **.module**, you see a warning in the build process.</span></span> <span data-ttu-id="a09af-158">Файл SASS будет транспилирован в промежуточный файл CSS, но имена классов *не будут уникальными*.</span><span class="sxs-lookup"><span data-stu-id="a09af-158">The Sass file is transpiled to an intermediate CSS file, but the class names *will not be made unique*.</span></span> <span data-ttu-id="a09af-159">Расширение .module может не использоваться преднамеренно, когда необходимо переопределить сторонние стили CSS.</span><span class="sxs-lookup"><span data-stu-id="a09af-159">In cases when you need to override third-party CSS styles, this might be intended.</span></span>
 
-<span data-ttu-id="02bc0-162">Объединив модули CSS с поддержкой SASS наборов правил вложения, можно упростить стили CSS и убедиться, что они не повлияют на другие элементы на странице.</span><span class="sxs-lookup"><span data-stu-id="02bc0-162">By combining CSS modules with Sass' support for nesting rule sets you can simplify your CSS styles and ensure that they won't affect other elements on the page.</span></span>
+* <span data-ttu-id="a09af-160">Имена классов CSS должны быть действительными именами переменных JavaScript.</span><span class="sxs-lookup"><span data-stu-id="a09af-160">Your CSS class names must be valid JavaScript variable names.</span></span> <span data-ttu-id="a09af-161">Например, они не могут содержать дефисы: `todoList` — правильно, а `todo-list` — неправильно.</span><span class="sxs-lookup"><span data-stu-id="a09af-161">For example, they cannot contain hyphens: `todoList` is correct, but `todo-list` isn't.</span></span>
 
-<span data-ttu-id="02bc0-p112">При создании стилей CSS для компонента перенесите их в класс с именем компонента. Затем назначьте этот класс корневому элементу компонента.</span><span class="sxs-lookup"><span data-stu-id="02bc0-p112">When building CSS styles for a component, wrap them in a class named after the component. Then, in the component, assign that class to the component's root element.</span></span>
+* <span data-ttu-id="a09af-162">Рекомендуем указывать имена классов в верблюжьем регистре, но это не обязательно.</span><span class="sxs-lookup"><span data-stu-id="a09af-162">camelCase naming for classes is recommended, but it's not enforced</span></span>
 
-<span data-ttu-id="02bc0-165">**todoList.module.scss:**</span><span class="sxs-lookup"><span data-stu-id="02bc0-165">**todoList.module.scss:**</span></span>
+## <a name="wrap-your-css-styles-in-a-class-named-after-the-component"></a><span data-ttu-id="a09af-163">Упаковка стилей CSS в класс, названный именем компонента</span><span class="sxs-lookup"><span data-stu-id="a09af-163">Wrap your CSS styles in a class named after the component</span></span>
+
+<span data-ttu-id="a09af-164">Объединив модули CSS с поддержкой вложения наборов правил SASS, можно упростить стили CSS и убедиться, что они не повлияют на другие элементы на странице.</span><span class="sxs-lookup"><span data-stu-id="a09af-164">By combining CSS modules with Sass' support for nesting rule sets you can simplify your CSS styles and ensure that they won't affect other elements on the page.</span></span>
+
+<span data-ttu-id="a09af-165">Упакуйте стили CSS в класс, названный именем компонента, для которого они созданы.</span><span class="sxs-lookup"><span data-stu-id="a09af-165">When building CSS styles for a component, wrap them in a class named after the component. Then, in the component, assign that class to the component's root element.</span></span> <span data-ttu-id="a09af-166">Затем назначьте этот класс корневому элементу компонента.</span><span class="sxs-lookup"><span data-stu-id="a09af-166">In the component, assign that class to the component's root element.</span></span>
+
+#### <a name="todolistmodulescss"></a><span data-ttu-id="a09af-167">todoList.module.scss</span><span class="sxs-lookup"><span data-stu-id="a09af-167">todoList.module.scss:</span></span>
 
 ```scss
 .todoList {
@@ -198,7 +219,9 @@ export default class TodoList extends React.Component<ITodoListProps, void> {
 }
 ```
 
-<span data-ttu-id="02bc0-166">**TodoList.tsx:**</span><span class="sxs-lookup"><span data-stu-id="02bc0-166">**TodoList.tsx:**</span></span>
+<br/>
+
+#### <a name="todolisttsx"></a><span data-ttu-id="a09af-168">TodoList.tsx</span><span class="sxs-lookup"><span data-stu-id="a09af-168">TodoList.tsx:</span></span>
 
 ```tsx
 // ...
@@ -214,7 +237,9 @@ export default class TodoList extends React.Component<ITodoListProps, void> {
 }
 ```
 
-<span data-ttu-id="02bc0-167">Ниже представлен примерный вид созданного файла CSS после транспиляции:</span><span class="sxs-lookup"><span data-stu-id="02bc0-167">After transpilation, the generated CSS file will look similar to:</span></span>
+<br/>
+
+<span data-ttu-id="a09af-169">После транспиляции файл CSS будет выглядеть примерно так:</span><span class="sxs-lookup"><span data-stu-id="a09af-169">After transpilation, the generated CSS file will look similar to:</span></span>
 
 ```css
 .todoList_3e9d35f0 a {
@@ -222,12 +247,13 @@ export default class TodoList extends React.Component<ITodoListProps, void> {
 }
 ```
 
-<span data-ttu-id="02bc0-168">Поскольку селектор начинается с уникального имени класса, специфичного для компонента, альтернативная презентация будет применяться только к гиперссылкам внутри компонента.</span><span class="sxs-lookup"><span data-stu-id="02bc0-168">Because the selector begins with the unique class name, specific to your component, the alternative presentation will apply only to hyperlinks inside your component.</span></span>
+<span data-ttu-id="a09af-170">Так как селектор начинается с уникального имени класса, используемого для компонента, альтернативное представление применяется только к гиперссылкам внутри компонента.</span><span class="sxs-lookup"><span data-stu-id="a09af-170">Because the selector begins with the unique class name, specific to your component, the alternative presentation will apply only to hyperlinks inside your component.</span></span>
 
-## <a name="handling-of-css-vendor-prefix"></a><span data-ttu-id="02bc0-169">Обработка префикса поставщика CSS</span><span class="sxs-lookup"><span data-stu-id="02bc0-169">Handling of CSS vendor prefix</span></span>
-<span data-ttu-id="02bc0-170">В SASS- и CSS-файлах проекта на платформе SPFx не требуются свойства стиля с префиксом поставщика.</span><span class="sxs-lookup"><span data-stu-id="02bc0-170">In SPFx no vendor prefixed style properties are required in the SASS or CSS files of a project.</span></span> <span data-ttu-id="02bc0-171">Если в некоторых браузерах, поддерживающих платформу SPFx, требуются префиксы, то они автоматически добавляются после компиляции SASS в CSS.</span><span class="sxs-lookup"><span data-stu-id="02bc0-171">If some of the SPFx supported browsers require prefixes they were added after the SASS to CSS compilation automatically.</span></span> <span data-ttu-id="02bc0-172">Этот способ также называется автоматическим добавлением префикса и является фундаментальной составляющей цепочки сборки CSS в SPFx.</span><span class="sxs-lookup"><span data-stu-id="02bc0-172">This method is also known as auto-prefixing and is a fundamental part of the CSS build chain in SPFx.</span></span>
+## <a name="handling-of-css-vendor-prefix"></a><span data-ttu-id="a09af-171">Обработка префикса поставщика CSS</span><span class="sxs-lookup"><span data-stu-id="a09af-171">Handling of CSS vendor prefix</span></span>
 
-<span data-ttu-id="02bc0-173">В этом случае веб-часть должна использовать новую модель флексбоксов, определенную при объявлении `display: flex`.</span><span class="sxs-lookup"><span data-stu-id="02bc0-173">In case a web part should use the new flex box model defined by `display: flex` declaration.</span></span> <span data-ttu-id="02bc0-174">В некоторых браузерах на основе WebKit и старых версиях Internet Explorer требуется конкретный префикс поставщика, определенный в CSS.</span><span class="sxs-lookup"><span data-stu-id="02bc0-174">Some older WebKit-based and Internet Explorer versions require a particular vendor prefix defined in the CSS.</span></span>
+<span data-ttu-id="a09af-172">В SharePoint Framework не требуются свойства стиля с префиксом поставщика в SASS- и CSS-файлах проекта.</span><span class="sxs-lookup"><span data-stu-id="a09af-172">In SPFx no vendor prefixed style properties are required in the SASS or CSS files of a project.</span></span> <span data-ttu-id="a09af-173">Если в поддерживаемых браузерах требуются префиксы, они добавляются после компиляции SASS в CSS автоматически.</span><span class="sxs-lookup"><span data-stu-id="a09af-173">If some of the SPFx supported browsers require prefixes they were added after the SASS to CSS compilation automatically.</span></span> <span data-ttu-id="a09af-174">Этот способ также называется автоматическим добавлением префикса и является фундаментальной составляющей цепочки сборки CSS в SharePoint Framework.</span><span class="sxs-lookup"><span data-stu-id="a09af-174">This method is also known as auto-prefixing and is a fundamental part of the CSS build chain in SPFx.</span></span>
+
+<span data-ttu-id="a09af-175">Если веб-часть должна использовать новую модель адаптируемого блока (определяется объявлением `display: flex`), в некоторых старых браузерах на основе WebKit и Internet Explorer требуется определенный префикс поставщика в CSS.</span><span class="sxs-lookup"><span data-stu-id="a09af-175">In case a web part should use the new flex box model defined by the `display: flex` declaration, some older WebKit-based and Internet Explorer versions require a particular vendor prefix defined in the CSS.</span></span>
 
 ```css
 .container{
@@ -235,7 +261,9 @@ export default class TodoList extends React.Component<ITodoListProps, void> {
 }
 ```
 
-<span data-ttu-id="02bc0-175">В код SASS артефакта SPFx не требуется включать префиксы поставщиков.</span><span class="sxs-lookup"><span data-stu-id="02bc0-175">In the SASS code of the SPFx artefact does not need to have vendor prefixes included.</span></span> <span data-ttu-id="02bc0-176">Они автоматически добавляются после компиляции SASS в CSS. В итоге получается приведенное ниже объявление CSS.</span><span class="sxs-lookup"><span data-stu-id="02bc0-176">After the SASS-to-CSS compilation, those were added automatically resulting in the following CSS declaration.</span></span>
+<br/>
+
+<span data-ttu-id="a09af-176">В код SASS артефакта SharePoint не требуется включать префиксы поставщиков.</span><span class="sxs-lookup"><span data-stu-id="a09af-176">In the SASS code of the SPFx artefact does not need to have vendor prefixes included.</span></span> <span data-ttu-id="a09af-177">Они автоматически добавляются после компиляции SASS в CSS. В итоге получается приведенное ниже объявление CSS.</span><span class="sxs-lookup"><span data-stu-id="a09af-177">After the SASS-to-CSS compilation, those were added automatically resulting in the following CSS declaration.</span></span>
 
 ```css
 .container_7e976ae1 {
@@ -245,10 +273,13 @@ export default class TodoList extends React.Component<ITodoListProps, void> {
 }
 ```
 
-<span data-ttu-id="02bc0-177">Удаление уже примененных префиксов не только делает код артефакта проще.</span><span class="sxs-lookup"><span data-stu-id="02bc0-177">Removing already applied prefixes does not only make the code cleaner of the artefact.</span></span> <span data-ttu-id="02bc0-178">Это также делает код более удобочитаемым и упрощает его использование в будущем.</span><span class="sxs-lookup"><span data-stu-id="02bc0-178">It also makes it easier to read and future-ready.</span></span> <span data-ttu-id="02bc0-179">Кроме того, этот процесс обеспечивает поддержку только тех браузеров, которые совместимы с платформой SPFx, и защиту от ошибок.</span><span class="sxs-lookup"><span data-stu-id="02bc0-179">This process is also configured to support only SPFx supported browser and makes it more error safe.</span></span>
-<span data-ttu-id="02bc0-180">Если веб-часть уже содержит префиксы поставщиков в SASS-файлах, которые больше не требуются, этот процесс автоматически удаляет соответствующие объявления.</span><span class="sxs-lookup"><span data-stu-id="02bc0-180">In case a web part already has vendor prefixes included in the SASS files that are not needed anymore the same process removes those declarations automatically.</span></span>
+<br/>
 
-<span data-ttu-id="02bc0-181">В приведенном ниже примере используется свойство `border-radius`.</span><span class="sxs-lookup"><span data-stu-id="02bc0-181">The following example makes use of the `border-radius` property.</span></span> <span data-ttu-id="02bc0-182">Свойство, для которого не требуются префиксы поставщиков в поддерживаемых системах.</span><span class="sxs-lookup"><span data-stu-id="02bc0-182">A property that does not require vendor prefixes on the supported systems.</span></span>
+<span data-ttu-id="a09af-178">Удаление уже примененных префиксов не только делает код артефакта проще. Это также делает код более легким для чтения и упрощает его использование в будущем.</span><span class="sxs-lookup"><span data-stu-id="a09af-178">Removing already applied prefixes does not only make the code of the artefact cleaner, it also makes it easier to read and future-ready.</span></span> <span data-ttu-id="a09af-179">Кроме того, этот процесс обеспечивает поддержку только тех браузеров, которые совместимы с SharePoint Framework, и защиту от ошибок.</span><span class="sxs-lookup"><span data-stu-id="a09af-179">This process is also configured to support only SharePoint Framework-supported browsers and makes it more error-safe.</span></span>
+
+<span data-ttu-id="a09af-180">Если веб-часть уже содержит префиксы поставщиков в SASS-файлах, которые больше не требуются, этот процесс автоматически удаляет соответствующие объявления.</span><span class="sxs-lookup"><span data-stu-id="a09af-180">In case a web part already has vendor prefixes included in the SASS files that are not needed anymore the same process removes those declarations automatically.</span></span>
+
+<span data-ttu-id="a09af-181">В примере ниже используется свойство `border-radius`, для которого не требуются префиксы поставщиков в поддерживаемых системах.</span><span class="sxs-lookup"><span data-stu-id="a09af-181">The following example makes use of the `border-radius` property, which does not require vendor prefixes on the supported systems.</span></span>
 
 ```css
 .container {
@@ -261,7 +292,9 @@ export default class TodoList extends React.Component<ITodoListProps, void> {
 }
 ```
 
-<span data-ttu-id="02bc0-183">Полученная таблица CSS в пакете будет преобразована в приведенный ниже код.</span><span class="sxs-lookup"><span data-stu-id="02bc0-183">The resulting CSS in the package will be converted to the following code.</span></span>
+<br/>
+
+<span data-ttu-id="a09af-182">Полученная таблица CSS в пакете преобразовывается в приведенный ниже код.</span><span class="sxs-lookup"><span data-stu-id="a09af-182">The resulting CSS in the package will be converted to the following code.</span></span>
 
 ```css
 .container_9e54c0b0 {
@@ -269,12 +302,22 @@ export default class TodoList extends React.Component<ITodoListProps, void> {
 }
 ```
 
-<span data-ttu-id="02bc0-184">Дополнительные сведения об автоматическом добавлении префиксов см. в документации из репозитория [autoprefix](https://github.com/postcss/autoprefixer) на сайте GitHub.</span><span class="sxs-lookup"><span data-stu-id="02bc0-184">For more details on auto-prefixing look at the documentation in the '[autoprefix](https://github.com/postcss/autoprefixer)' GitHub repository.</span></span> <span data-ttu-id="02bc0-185">База данных с описанием этого процесса доступна на сайте [caniuse.com](https://caniuse.com).</span><span class="sxs-lookup"><span data-stu-id="02bc0-185">The databased throughout this process is available on [caniuse.com](https://caniuse.com).</span></span>
+<span data-ttu-id="a09af-183">Дополнительные сведения об автоматическом добавлении префиксов см. в документации из репозитория [autoprefixer](https://github.com/postcss/autoprefixer) на сайте GitHub.</span><span class="sxs-lookup"><span data-stu-id="a09af-183">For more information about auto-prefixing, see the [autoprefixer](https://github.com/postcss/autoprefixer) GitHub repository.</span></span> <span data-ttu-id="a09af-184">База данных с описанием этого процесса доступна на сайте [Can I use__?](https://caniuse.com).</span><span class="sxs-lookup"><span data-stu-id="a09af-184">The database for this process is available on [Can I use__?](https://caniuse.com).</span></span>
 
-## <a name="integrate-office-ui-fabric"></a><span data-ttu-id="02bc0-186">Интеграция с Office UI Fabric</span><span class="sxs-lookup"><span data-stu-id="02bc0-186">Integrate Office UI Fabric</span></span>
+## <a name="integrate-office-ui-fabric"></a><span data-ttu-id="a09af-185">Интеграция с Office UI Fabric</span><span class="sxs-lookup"><span data-stu-id="a09af-185">Integrate Office UI Fabric</span></span>
 
-<span data-ttu-id="02bc0-p119">Если внешний вид и функционал ваших настроек будут напоминать стандартные функции SharePoint и Office 365, это облегчит работу с ними конечным пользователям. Office UI Fabric предлагает набор элементов управления и стилей для использования в ваших настройках для удобной интеграции с существующим пользовательским интерфейсом. Для получения дополнительной информации об использовании Office UI Fabric в SharePoint Framework см. [руководство по интеграции Office UI Fabric](./office-ui-fabric-integration.md).</span><span class="sxs-lookup"><span data-stu-id="02bc0-p119">By making your customizations look and behave like the standard functionality of SharePoint and Office 365 you will make it easier for the end-users to work with them. Office UI Fabric offers you a set of controls and styles for use in your customizations to seamlessly integrate with the existing user experience. For more information on using Office UI Fabric in the SharePoint Framework, read the [Office UI Fabric integration guide](./office-ui-fabric-integration.md).</span></span>
+<span data-ttu-id="a09af-186">Если ваши настройки будут выглядеть и работать как стандартные функции SharePoint и Office 365, пользователям будет удобнее с ними работать.</span><span class="sxs-lookup"><span data-stu-id="a09af-186">By making your customizations look and behave like the standard functionality of SharePoint and Office 365 you will make it easier for the end-users to work with them.</span></span> <span data-ttu-id="a09af-187">В Office UI Fabric вы найдете набор элементов управления и стилей, при использовании которых ваши настройки будут идеально вписываться в существующий интерфейс.</span><span class="sxs-lookup"><span data-stu-id="a09af-187">Office UI Fabric offers you a set of controls and styles for use in your customizations to seamlessly integrate with the existing user experience.</span></span> 
 
-## <a name="use-theme-colors"></a><span data-ttu-id="02bc0-190">Использование цветов темы</span><span class="sxs-lookup"><span data-stu-id="02bc0-190">Use theme colors</span></span>
+<span data-ttu-id="a09af-188">Дополнительные сведения об использовании Office UI Fabric в SharePoint Framework см. в [этой статье](./office-ui-fabric-integration.md).</span><span class="sxs-lookup"><span data-stu-id="a09af-188">For more information about using Office UI Fabric in SharePoint Framework, see [Using Office UI Fabric Core and Fabric React in SharePoint Framework](./office-ui-fabric-integration.md).</span></span>
 
-<span data-ttu-id="02bc0-p120">SharePoint дает пользователям возможность выбирать цвет темы для своих сайтов. В настройках SharePoint Framework нужно следовать теме, выбранной пользователями, чтобы настройка выглядела как неотъемлемая часть сайта и излишне не выделялась. Поскольку тема задана пользователями на их сайте, невозможно предугадать, какие цвета вам следует использовать в настройках, но SharePoint Framework может быстро загружать для вас текущую активную цветовую схему автоматически. Для получения дополнительной информации об этой возможности см. [руководство по использованию цветов темы](./use-theme-colors-in-your-customizations.md).</span><span class="sxs-lookup"><span data-stu-id="02bc0-p120">SharePoint allows users to choose the theme color for their sites. In your SharePoint Framework customizations you should follow the theme selected by the users to make your customization look like an integral part of the site rather than unnecessarily stand out. Because the theme is set by users in their site, you cannot tell upfront which colors your customization should use, but SharePoint Framework can dynamically load the currently active color scheme automatically for you. For more information about this capability read the [guide on using theme colors](./use-theme-colors-in-your-customizations.md).</span></span>
+## <a name="use-theme-colors"></a><span data-ttu-id="a09af-189">Использование цветов темы</span><span class="sxs-lookup"><span data-stu-id="a09af-189">Use theme colors</span></span>
+
+<span data-ttu-id="a09af-190">SharePoint позволяет пользователям выбирать цвет темы для своих сайтов.</span><span class="sxs-lookup"><span data-stu-id="a09af-190">SharePoint allows users to choose the theme color for their sites.</span></span> <span data-ttu-id="a09af-191">Тема настройки SharePoint Framework должна соответствовать теме, выбранной пользователями, чтобы настройка выглядела как неотъемлемая часть сайта и излишне не выделялась.</span><span class="sxs-lookup"><span data-stu-id="a09af-191">In your SharePoint Framework customizations, you should follow the theme selected by the users to make your customization look like an integral part of the site rather than unnecessarily stand out.</span></span> 
+
+<span data-ttu-id="a09af-192">Так как пользователи выбирают тему на своем сайте, невозможно предугадать, какие цвета вам следует использовать в настройках, но SharePoint Framework может динамично загружать активную цветовую схему автоматически.</span><span class="sxs-lookup"><span data-stu-id="a09af-192">Because the theme is set by users on their site, you cannot tell upfront which colors your customization should use, but SharePoint Framework can dynamically load the currently active color scheme automatically for you.</span></span> 
+
+<span data-ttu-id="a09af-193">Дополнительные сведения об этой возможности см. в статье [Использование цветов темы в настройках SharePoint Framework](./use-theme-colors-in-your-customizations.md).</span><span class="sxs-lookup"><span data-stu-id="a09af-193">For more information about this capability, see [Use theme colors in your SharePoint Framework customizations](./use-theme-colors-in-your-customizations.md).</span></span>
+
+
+
+
