@@ -1,13 +1,13 @@
 ---
 title: "Учебник: использование настраиваемых диалоговых окон с расширениями SharePoint Framework"
-description: 
-ms.date: 01/11/2018
+description: "Создание настраиваемого диалогового окна и его использование в контексте расширения ListView Command Set."
+ms.date: 01/24/2018
 ms.prod: sharepoint
-ms.openlocfilehash: db766ec08568781b119cf9688c3e89b042a8f20b
-ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.openlocfilehash: f1b5209dcffea4be96c3478e650b3661a4ef8335
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="use-custom-dialog-boxes-with-sharepoint-framework-extensions"></a>Использование настраиваемых диалоговых окон с расширениями SharePoint Framework
 
@@ -19,63 +19,65 @@ ms.lasthandoff: 01/19/2018
 
 ## <a name="set-up-your-development-environment"></a>Настройка среды разработки
 
-Чтобы создать настраиваемое диалоговое окно, необходимо выполнить действия, описанные в статье [Настройка среды разработки](https://dev.office.com/sharepoint/docs/spfx/set-up-your-development-environment). Убедитесь, что вы используете последние версии шаблонов Yeoman для SharePoint Framework.
+Чтобы создать настраиваемое диалоговое окно, необходимо выполнить действия, описанные в статье [Настройка среды разработки](../../set-up-your-development-environment.md). Убедитесь, что вы используете последние версии шаблонов Yeoman для SharePoint Framework.
 
 ## <a name="create-a-new-project"></a>Создание проекта
 
-Создайте папку проекта с помощью любой консоли:
+1. Создайте папку проекта с помощью любой консоли:
 
-```sh
-md dialog-cmd
-```
+  ```sh
+  md dialog-cmd
+  ```
 
-Перейдите к этой папке:
+2. Перейдите в эту папку:
 
-```sh
-cd dialog-cmd
-```
+  ```sh
+  cd dialog-cmd
+  ```
 
-Запустите генератор Yeoman для SharePoint Framework.
+3. Запустите генератор Yeoman для SharePoint Framework:
 
-```sh
-yo @microsoft/sharepoint
-```
+  ```sh
+  yo @microsoft/sharepoint
+  ```
 
-Когда появится запрос:
+4. Когда появится запрос, выполните следующие действия:
 
-* Оставьте значение по умолчанию (**dialog-cmd**) для имени решения и нажмите клавишу ВВОД.
-* Выберите **SharePoint Online only (latest)** (Только SharePoint Online, последняя версия) и нажмите клавишу ВВОД.
-* Выберите **Use the current folder** (Использовать текущую папку) и нажмите клавишу ВВОД.
-* Выберите **N**, чтобы сделать установку расширения, выполняемую напрямую, обязательной на каждом сайте при его использовании.
-* Выберите **Extension** (Расширение) в качестве типа создаваемого клиентского компонента. 
-* Выберите для создаваемого расширения тип **ListView Command Set**.
+  * Оставьте значение по умолчанию (**dialog-cmd**) для имени решения, а затем нажмите клавишу ВВОД.
+  * Выберите **SharePoint Online only (latest)** (Только SharePoint Online, последняя версия) и нажмите клавишу ВВОД.
+  * Выберите **Use the current folder** (Использовать текущую папку), а затем нажмите клавишу ВВОД.
+  * Выберите **N**, чтобы сделать установку расширения обязательной на каждом сайте при его использовании.
+  * Выберите **Extension** (Расширение) в качестве типа создаваемого клиентского компонента. 
+  * Выберите для создаваемого расширения тип **ListView Command Set**.
 
-Далее вам потребуется указать определенные сведения о расширении.
+5. Далее вам потребуется указать определенные сведения о расширении:
 
-* Используйте значение **DialogDemo** для имени решения и нажмите клавишу ВВОД.
-* Оставьте значение по умолчанию (**DialogDemo description**) для описания решения и нажмите клавишу ВВОД.
+  * Используйте значение **DialogDemo** для имени решения, а затем нажмите клавишу ВВОД.
+  * Оставьте значение по умолчанию (**DialogDemo description**) для описания решения, а затем нажмите клавишу ВВОД.
 
-![Генератор Yeoman для SharePoint предлагает создать решение расширения](../../../images/ext-com-dialog-yeoman-prompts.png)
+  ![Генератор Yeoman для SharePoint предлагает создать решение расширения](../../../images/ext-com-dialog-yeoman-prompts.png)
 
-После этого Yeoman установит необходимые зависимости и сформирует файлы решения, а также расширение *DialogDemo*. Это может занять несколько минут.
+  После этого Yeoman установит необходимые зависимости и сформирует шаблоны файлов решения, а также расширение **DialogDemo**. Это может занять несколько минут.
 
-После успешного формирования должно появиться следующее сообщение:
+  Когда скаффолдинг успешно закончится, появится следующее сообщение:
 
-!["Скаффолдинг клиентского решения SharePoint успешно выполнен".](../../../images/ext-com-dialog-yeoman-complete.png)
+  ![Формирование шаблона клиентского решения SharePoint успешно выполнено](../../../images/ext-com-dialog-yeoman-complete.png)
 
-После скаффолдинга заблокируйте версию зависимостей проекта, выполнив следующую команду:
+6. По завершении формирования шаблона заблокируйте версию зависимостей проекта, выполнив следующую команду:
 
-```sh
-npm shrinkwrap
-```
+  ```sh
+  npm shrinkwrap
+  ```
 
-Далее откройте папку проекта в редакторе кода. В инструкциях и на снимках экрана из этой статьи указан Visual Studio Code, но вы можете использовать любой редактор. Чтобы открыть папку в Visual Studio Code, выполните следующую команду в консоли:
+7. Откройте папку проекта в редакторе кода. В этой статье в инструкциях и на снимках экрана используется Visual Studio Code, но вы можете использовать любой другой редактор. Чтобы открыть папку в Visual Studio Code, выполните следующую команду в консоли:
 
-```sh
-code .
-```
+  ```sh
+  code .
+  ```
 
-![Исходная структура Visual Studio Code после скаффолдинга](../../../images/ext-com-dialog-vs-code-initial.png)
+  <br/>
+
+  ![Исходная структура Visual Studio Code после скаффолдинга](../../../images/ext-com-dialog-vs-code-initial.png)
 
 ## <a name="modify-the-extension-manifest"></a>Изменение манифеста расширения
 
@@ -96,196 +98,197 @@ code .
 
 ## <a name="create-a-custom-dialog-box"></a>Создание настраиваемого диалогового окна
 
-Создайте файл с именем **ColorPickerDialog.tsx** в папке **./src/extensions/dialogDemo/**.
+1. Создайте файл с именем **ColorPickerDialog.tsx** в папке **./src/extensions/dialogDemo/**.
 
-Добавьте приведенный ниже оператор импорта в начале нового файла. Мы создаем настраиваемое диалоговое окно с помощью [компонентов Office UI Fabric React](https://dev.office.com/fabric#/components), поэтому реализация будет основана на React. 
+2. Добавьте приведенные ниже операторы импорта в начале нового файла. Вы создаете настраиваемое диалоговое окно с помощью [компонентов Office UI Fabric React](https://developer.microsoft.com/ru-RU/fabric#/components), поэтому реализация будет основана на React. 
 
+  ```typescript
+  import * as React from 'react';
+  import * as ReactDOM from 'react-dom';
+  import { BaseDialog, IDialogConfiguration } from '@microsoft/sp-dialog';
+  import {
+    autobind,
+    ColorPicker,
+    PrimaryButton,
+    Button,
+    DialogFooter,
+    DialogContent
+  } from 'office-ui-fabric-react';
 
-```ts
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import { BaseDialog, IDialogConfiguration } from '@microsoft/sp-dialog';
-import {
-  autobind,
-  ColorPicker,
-  PrimaryButton,
-  Button,
-  DialogFooter,
-  DialogContent
-} from 'office-ui-fabric-react';
+  ```
 
-```
+3. Добавьте приведенное ниже определение интерфейса сразу после операторов импорта. Оно будет использоваться для передачи сведений и функций между расширением ListView Command Set и настраиваемым диалоговым окном.
 
-Добавьте приведенное ниже определение интерфейса сразу после операторов импорта. Оно будет использоваться для передачи сведений и функций между набором команд ListView и настраиваемым диалоговым окном.
-
-```ts
-interface IColorPickerDialogContentProps {
-  message: string;
-  close: () => void;
-  submit: (color: string) => void;
-  defaultColor?: string;
-}
-```
-
-Добавьте приведенный ниже класс сразу после определения интерфейса. Этот класс React отвечает за отрисовку пользовательского интерфейса в настраиваемом диалоговом окне. Обратите внимание, что мы используем компоненты Office UI Fabric React для фактической отрисовки и просто передаем необходимые свойства.  
-
-```ts
-class ColorPickerDialogContent extends React.Component<IColorPickerDialogContentProps, {}> {
-  private _pickedColor: string;
-
-  constructor(props) {
-    super(props);
-    // Default Color
-    this._pickedColor = props.defaultColor || '#FFFFFF';
+  ```typescript
+  interface IColorPickerDialogContentProps {
+    message: string;
+    close: () => void;
+    submit: (color: string) => void;
+    defaultColor?: string;
   }
+  ```
 
-  public render(): JSX.Element {
-    return <DialogContent
-      title='Color Picker'
-      subText={this.props.message}
-      onDismiss={this.props.close}
-      showCloseButton={true}
-    >
-      <ColorPicker color={this._pickedColor} onColorChanged={this._onColorChange} />
-      <DialogFooter>
-        <Button text='Cancel' title='Cancel' onClick={this.props.close} />
-        <PrimaryButton text='OK' title='OK' onClick={() => { this.props.submit(this._pickedColor); }} />
-      </DialogFooter>
-    </DialogContent>;
-  }
+4. Добавьте приведенный ниже класс сразу после определения интерфейса. Этот класс React отвечает за отрисовку пользовательского интерфейса в настраиваемом диалоговом окне. Обратите внимание, что мы используем компоненты Office UI Fabric React для фактической отрисовки и просто передаем необходимые свойства.  
 
-  @autobind
-  private _onColorChange(color: string): void {
-    this._pickedColor = color;
-  }
-}
-```
-Добавьте приведенное ниже определение класса к настраиваемому диалоговому окну под только что добавленным классом `ColorPickerDialogContent`. Это фактическое настраиваемое диалоговое окно, которое будет вызываться по нажатию кнопки набору команд ListView и наследуется от объекта `BaseDialog`.
+  ```typescript
+  class ColorPickerDialogContent extends React.Component<IColorPickerDialogContentProps, {}> {
+    private _pickedColor: string;
 
-```ts
-export default class ColorPickerDialog extends BaseDialog {
-  public message: string;
-  public colorCode: string;
+    constructor(props) {
+      super(props);
+      // Default Color
+      this._pickedColor = props.defaultColor || '#FFFFFF';
+    }
 
-  public render(): void {
-    ReactDOM.render(<ColorPickerDialogContent
-      close={ this.close }
-      message={ this.message }
-      defaultColor={ this.colorCode }
-      submit={ this._submit }
-    />, this.domElement);
-  }
+    public render(): JSX.Element {
+      return <DialogContent
+        title='Color Picker'
+        subText={this.props.message}
+        onDismiss={this.props.close}
+        showCloseButton={true}
+      >
+        <ColorPicker color={this._pickedColor} onColorChanged={this._onColorChange} />
+        <DialogFooter>
+          <Button text='Cancel' title='Cancel' onClick={this.props.close} />
+          <PrimaryButton text='OK' title='OK' onClick={() => { this.props.submit(this._pickedColor); }} />
+        </DialogFooter>
+      </DialogContent>;
+    }
 
-  public getConfig(): IDialogConfiguration {
-    return {
-      isBlocking: false
-    };
-  }
-
-  @autobind
-  private _submit(color: string): void {
-    this.colorCode = color;
-    this.close();
-  }
-}
-```
-
-## <a name="associate-the-custom-dialog-box-with-the-listview-command-set-button-click"></a>Связывание настраиваемого диалогового окна с нажатием кнопки набора команд ListView
-Чтобы связать настраиваемое диалоговое окно с набором команд ListView, добавьте код инициализации диалогового окна в операцию нажатия кнопки.
-
-В редакторе кода откройте файл **DialogDemoCommandSet.ts** из папки **./src/extensions/dialogDemo/**.
-
-Добавьте приведенные ниже операторы импорта под имеющимся оператором импорта **strings**. Они предназначены для использования настраиваемого диалогового окна в контексте набора команд ListView. 
-
-```ts
-import ColorPickerDialog from './ColorPickerDialog';
-```
-
-Добавьте приведенное ниже определение переменной `_colorCode` над функцией `onInit` в классе `DialogDemoCommandSet`. Оно используется для хранения цвета, выбранного в диалоговом окне.
-
-```ts
-  private _colorCode: string;
-```
-
-Измените функцию `onExecute`, как показано ниже. Этот код:
-
-* инициализирует настраиваемое диалоговое окно;
-* передает диалоговому окну сообщение, которое будет использоваться в качестве заголовка;
-* передает код цвета диалоговому окну со значением по умолчанию, если оно еще не задано;
-* показывает настраиваемое диалоговое окно;
-* получает и сохраняет значение, возвращаемое диалоговым окном;
-* показывает полученное значение в диалоговом окне по умолчанию с помощью функции `Dialog.alert()`.
-
-```ts
-  @override
-  public onExecute(event: IListViewCommandSetExecuteEventParameters): void {
-    switch (event.itemId) {
-      case 'COMMAND_1':
-        const dialog: ColorPickerDialog = new ColorPickerDialog();
-        dialog.message = 'Pick a color:';
-        // Use 'EEEEEE' as the default color for first usage
-        dialog.colorCode = this._colorCode || '#EEEEEE';
-        dialog.show().then(() => {
-          this._colorCode = dialog.colorCode;
-          Dialog.alert(`Picked color: ${dialog.colorCode}`);
-        });
-        break;
-      default:
-        throw new Error('Unknown command');
+    @autobind
+    private _onColorChange(color: string): void {
+      this._pickedColor = color;
     }
   }
-```
+  ```
 
-## <a name="test-the-custom-dialog-box-in-your-tenant"></a>Тестирование настраиваемого диалогового окна в клиенте
+5. Добавьте приведенное ниже определение класса для настраиваемого диалогового окна под только что добавленным классом `ColorPickerDialogContent`. Это фактическое настраиваемое диалоговое окно, которое вызывается по нажатию кнопки "Набор команд ListView" и наследуется от объекта `BaseDialog`.
 
-Откройте файл **serve.json** в папке **./config/** и проверьте текущие параметры в нем. Этот файл призван упростить отладку расширений SharePoint Framework. Вы можете обновить содержимое файла в соответствии с данными клиента и сайта, на котором будет тестироваться расширение. В первую очередь следует изменить значение свойства `pageUrl` в определении JSON так, чтобы оно соответствовало вашему клиенту.
+  ```typescript
+  export default class ColorPickerDialog extends BaseDialog {
+    public message: string;
+    public colorCode: string;
 
-Измените свойство `pageUrl` так, чтобы оно указывало на URL-адрес списка, в котором нужно тестировать функции диалогового окна.
+    public render(): void {
+      ReactDOM.render(<ColorPickerDialogContent
+        close={ this.close }
+        message={ this.message }
+        defaultColor={ this.colorCode }
+        submit={ this._submit }
+      />, this.domElement);
+    }
 
-```sh
-  "serveConfigurations": {
-    "default": {
-      "pageUrl": "https://sppnp.sharepoint.com/sites/team/Shared%20Documents/Forms/AllItems.aspx",
-      "customActions": {
-        "9b98b919-fe5e-4758-ac91-6d62e582c4fe": {
-          "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
-          "properties": {
-            "sampleTextOne": "One item is selected in the list",
-            "sampleTextTwo": "This command is always visible."
+    public getConfig(): IDialogConfiguration {
+      return {
+        isBlocking: false
+      };
+    }
+
+    @autobind
+    private _submit(color: string): void {
+      this.colorCode = color;
+      this.close();
+    }
+  }
+  ```
+
+## <a name="associate-the-dialog-box-with-the-listview-command-set-button-click"></a>Связывание диалогового окна с нажатием кнопки "Набор команд ListView"
+
+Чтобы связать настраиваемое диалоговое окно с набором команд ListView, добавьте код инициализации диалогового окна в операцию нажатия кнопки.
+
+1. В редакторе кода откройте файл **DialogDemoCommandSet.ts** из папки **./src/extensions/dialogDemo/**.
+
+2. Добавьте приведенные ниже операторы импорта под имеющимся оператором импорта **strings**. Они предназначены для использования настраиваемого диалогового окна в контексте набора команд ListView. 
+
+  ```typescript
+  import ColorPickerDialog from './ColorPickerDialog';
+  ```
+
+3. Добавьте приведенное ниже определение переменной `_colorCode` над функцией `onInit` в классе `DialogDemoCommandSet`. Оно используется для хранения цвета, выбранного в диалоговом окне.
+
+  ```typescript
+    private _colorCode: string;
+  ```
+
+4. Измените функцию `onExecute`, как показано ниже. Этот код:
+
+  * инициализирует настраиваемое диалоговое окно;
+  * передает сообщение, используемое в качестве заголовка диалогового окна;
+  * передает код цвета диалогового окна со стандартным значением, если оно еще не задано;
+  * показывает настраиваемое диалоговое окно;
+  * получает и сохраняет значение, возвращаемое диалоговым окном;
+  * показывает полученное значение в стандартном диалоговом окне с помощью функции `Dialog.alert()`.
+
+  ```typescript
+    @override
+    public onExecute(event: IListViewCommandSetExecuteEventParameters): void {
+      switch (event.itemId) {
+        case 'COMMAND_1':
+          const dialog: ColorPickerDialog = new ColorPickerDialog();
+          dialog.message = 'Pick a color:';
+          // Use 'EEEEEE' as the default color for first usage
+          dialog.colorCode = this._colorCode || '#EEEEEE';
+          dialog.show().then(() => {
+            this._colorCode = dialog.colorCode;
+            Dialog.alert(`Picked color: ${dialog.colorCode}`);
+          });
+          break;
+        default:
+          throw new Error('Unknown command');
+      }
+    }
+  ```
+
+## <a name="test-the-dialog-box-in-your-tenant"></a>Тестирование диалогового окна в клиенте
+
+1. Откройте файл **serve.json** в папке **./config/** и обновите в нем текущие параметры. Этот файл призван упростить отладку расширений SharePoint Framework. Вы можете обновить содержимое файла в соответствии с данными клиента и сайта, на котором будет тестироваться расширение. В первую очередь следует изменить значение свойства `pageUrl` в определении JSON так, чтобы оно соответствовало вашему клиенту.
+
+2. Измените свойство `pageUrl` так, чтобы оно указывало на URL-адрес списка, в котором нужно тестировать функции диалогового окна.
+
+  ```sh
+    "serveConfigurations": {
+      "default": {
+        "pageUrl": "https://sppnp.sharepoint.com/sites/team/Shared%20Documents/Forms/AllItems.aspx",
+        "customActions": {
+          "9b98b919-fe5e-4758-ac91-6d62e582c4fe": {
+            "location": "ClientSideExtension.ListViewCommandSet.CommandBar",
+            "properties": {
+              "sampleTextOne": "One item is selected in the list",
+              "sampleTextTwo": "This command is always visible."
+            }
           }
         }
-      }
-    },
-```
+      },
+  ```
 
-> [!NOTE]
-> Уникальный идентификатор расширения автоматически обновляется для этого файла во время первоначального скаффолдинга. Если вы меняете свойства, которые будет использовать расширение, следует обновить файл **serve.json**, прежде чем приступать к отладке.
+  > [!NOTE]
+  > Уникальный идентификатор расширения автоматически обновляется для этого файла во время первоначального формирования шаблонов. Если вы обновляете свойства, которые используются расширением, следует обновить файл **serve.json**, прежде чем приступать к отладке.
 
-Вернитесь к консоли и выполните следующую команду:
+3. Вернитесь к консоли и выполните следующую команду:
 
-```sh
-gulp serve
-```
+  ```sh
+  gulp serve
+  ```
 
-Начнется упаковка решения, а полученный манифест станет доступен по адресу `localhost`. В соответствии с конфигурацией из файла **serve.json** в браузере откроется определенный URL-адрес, а параметры запроса будут автоматически заданы согласно конфигурации решения.
+  Начнется упаковка решения, а полученный манифест станет доступен по адресу `localhost`. В соответствии с конфигурацией из файла **serve.json** в браузере также откроется определенный URL-адрес, а параметры запроса будут автоматически заданы согласно конфигурации решения.
 
-Согласитесь на загрузку манифестов отладки, нажав кнопку **Загрузить скрипты отладки** при появлении соответствующего запроса.
+4. Согласитесь на загрузку манифестов отладки, нажав кнопку **Загрузить скрипты отладки** при появлении соответствующего запроса.
 
-![Предупреждение о разрешении скриптов отладки](../../../images/ext-com-dialog-debug-scripts.png)
+  ![Предупреждение о разрешении скриптов отладки](../../../images/ext-com-dialog-debug-scripts.png)
 
-Обратите внимание на то, что новая кнопка НЕ отображается на панели инструментов по умолчанию, так как стандартное решение требует выбора одного элемента списка. Если список или библиотека не содержит элементов, создайте элемент или отправьте документ. 
+  Обратите внимание, что новая кнопка *не* отображается на панели инструментов по умолчанию, так как стандартное решение требует выбора одного элемента списка. Если список или библиотека не содержит элементов, создайте элемент или отправьте документ. 
 
-Выберите элемент из списка или библиотеки. После этого на панели инструментов появится кнопка с текстом *Open Custom Dialog box* (Открыть настраиваемое диалоговое окно).
+5. Выберите элемент из списка или библиотеки. Обратите внимание, что на панели инструментов появится кнопка с текстом **Open Custom Dialog** (Открыть настраиваемое диалоговое окно).
 
-![Кнопка "Open Cusotm Dialog" (Открыть настраиваемое диалоговое окно) на панели инструментов](../../../images/ext-com-dialog-button-in-toolbar.png)
+  ![Кнопка "Open Custom Dialog" (Открыть настраиваемое диалоговое окно) на панели инструментов](../../../images/ext-com-dialog-button-in-toolbar.png)
 
-Нажмите кнопку *Open Custom Dialog box* (Открыть настраиваемое диалоговое окно), чтобы настраиваемое диалоговое окно отобразилось в представлении списка. 
+6. Нажмите кнопку **Open Custom Dialog** (Открыть настраиваемое диалоговое окно), чтобы настраиваемое диалоговое окно отобразилось в представлении списка. 
 
-![Палитра, отображаемая в режиме диалогового окна](../../../images/ext-com-dialog-visible-dialog.png)
+  ![Палитра, отображаемая в режиме диалогового окна](../../../images/ext-com-dialog-visible-dialog.png)
 
-Выберите цвет в *палитре* и нажмите кнопку **ОК**, чтобы проверить, как код возвращает вызывающей стороне выбранное значение, которое затем отображается в стандартном диалоговом окне предупреждения.
+7. Выберите цвет в **палитре** и нажмите кнопку **ОК**, чтобы проверить, как код возвращает вызывающей стороне выбранное значение, которое затем отображается в стандартном диалоговом окне предупреждения.
 
-![Диалоговое окно со сведениями о выбранном цвете](../../../images/ext-com-dialog-oob-alert-dialog.png)
+  ![Диалоговое окно со сведениями о выбранном цвете](../../../images/ext-com-dialog-oob-alert-dialog.png)
 
 > [!NOTE]
 > Если вы обнаружили ошибку в документации или SharePoint Framework, сообщите о ней разработчикам SharePoint, указав в [списке проблем для репозитория sp-dev-docs](https://github.com/SharePoint/sp-dev-docs/issues). Заранее спасибо!

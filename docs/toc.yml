@@ -34,6 +34,8 @@
               href: spfx/web-parts/get-started/deploy-web-part-to-cdn.md
         - name: Основы
           items:
+            - name: Интеграция свойств с SharePoint
+              href: spfx/web-parts/guidance/integrate-web-part-properties-with-sharepoint.md
             - name: Настройка свойств
               href: spfx/web-parts/basics/integrate-with-property-pane.md
             - name: Настройка значка веб-части
@@ -42,35 +44,31 @@
               href: spfx/web-parts/guidance/simplify-adding-web-parts-with-preconfigured-entries.md
             - name: Проверка свойств
               href: spfx/web-parts/guidance/validate-web-part-property-values.md
-        - name: Понятия
-          items:
-            - name: Перенос существующих настроек
-              items:
-                - name: Веб-часть "Редактор скриптов"
-                  href: spfx/web-parts/guidance/migrate-script-editor-web-part-customizations.md
-                - name: jQuery и DataTables
-                  href: spfx/web-parts/guidance/migrate-jquery-datatables-script-to-spfx.md
-                - name: jQuery и FullCalendar
-                  href: spfx/web-parts/guidance/migrate-jquery-fullcalendar-script-to-spfx.md
-                - name: Приложения AngularJS
-                  href: spfx/web-parts/guidance/migrate-angular-1-x-applications-to-sharepoint-framework.md
-                - name: Работа с __REQUESTDIGEST
-                  href: spfx/web-parts/basics/working-with-requestdigest.md
-                - name: Использование JSOM
-                  href: spfx/web-parts/guidance/connect-to-sharepoint-using-jsom.md
             - name: Совместное использование данных разными веб-частями
               href: spfx/web-parts/guidance/share-data-between-web-parts.md
               items:
                 - name: Руководство
                   href: spfx/web-parts/guidance/tutorial-share-data-between-web-parts-global-variable.md
-            - name: Интеграция свойств с SharePoint
-              href: spfx/web-parts/guidance/integrate-web-part-properties-with-sharepoint.md
             - name: Расширение области свойств
               items:
                 - name: Создание пользовательских элементов управления
                   href: spfx/web-parts/guidance/build-custom-property-pane-controls.md
                 - name: Использование каскадных раскрывающихся списков
                   href: spfx/web-parts/guidance/use-cascading-dropdowns-in-web-part-properties.md
+        - name: Перенос существующих настроек
+          items:
+            - name: Веб-часть "Редактор скриптов"
+              href: spfx/web-parts/guidance/migrate-script-editor-web-part-customizations.md
+            - name: jQuery и DataTables
+              href: spfx/web-parts/guidance/migrate-jquery-datatables-script-to-spfx.md
+            - name: jQuery и FullCalendar
+              href: spfx/web-parts/guidance/migrate-jquery-fullcalendar-script-to-spfx.md
+            - name: Приложения AngularJS
+              href: spfx/web-parts/guidance/migrate-angular-1-x-applications-to-sharepoint-framework.md
+            - name: Работа с __REQUESTDIGEST
+              href: spfx/web-parts/basics/working-with-requestdigest.md
+            - name: Использование JSOM
+              href: spfx/web-parts/guidance/connect-to-sharepoint-using-jsom.md
     - name: Расширения
       href: spfx/extensions/overview-extensions.md
       items:
@@ -85,12 +83,12 @@
               href: spfx/extensions/get-started/serving-your-extension-from-sharepoint.md
             - name: Размещение расширения из сети CDN
               href: spfx/extensions/get-started/hosting-extension-from-office365-cdn.md
+            - name: Настройка значка расширения
+              href: spfx/extensions/basics/configure-extension-icon.md
             - name: Создание настройщика полей
               href: spfx/extensions/get-started/building-simple-field-customizer.md
             - name: Создание набора команд ListView
               href: spfx/extensions/get-started/building-simple-cmdset-with-dialog-api.md
-        - name: Настройка значка расширения
-          href: spfx/extensions/basics/configure-extension-icon.md
         - name: Перенос существующих настроек
           items:
             - name: Клиентская обработка (JSLink)
@@ -103,62 +101,60 @@
               href: spfx/extensions/guidance/migrate-from-jslink-to-spfx-extensions.md
             - name: Руководство по внедрению JavaScript (UserCustomAction)
               href: spfx/extensions/guidance/migrate-from-usercustomactions-to-spfx-extensions.md
-    - name: Понятия
+    - name: Рекомендации
       items:
-        - name: Рекомендации
+        - name: Руководство для предприятий
+          href: spfx/enterprise-guidance.md
+        - name: Групповая разработка
+          href: spfx/team-based-development-on-sharepoint-framework.md
+        - name: Рекомендации по управлению
+          href: spfx/web-parts/guidance/governance-considerations.md
+    - name: Внешние библиотеки
+      items:
+        - name: Добавление внешних библиотек
+          href: spfx/web-parts/basics/add-an-external-library.md
+        - name: Библиотеки JavaScript
+          href: spfx/web-parts/guidance/use-existing-javascript-libraries.md
+        - name: Стили CSS
+          href: spfx/web-parts/guidance/reference-third-party-css-styles.md
+        - name: SP PnP JS
+          href: spfx/web-parts/guidance/use-sp-pnp-js-with-spfx-web-parts.md
+        - name: AngularJS
+          href: spfx/web-parts/guidance/build-client-side-web-parts-with-angular-1-x.md
+    - name: Подключение к API
+      items:
+        - name: 'Подключение к API, защищенным службой Azure AD'
+          href: spfx/web-parts/guidance/connect-to-api-secured-with-aad.md
+        - name: Вызов API Microsoft Graph с помощью OAuth
+          href: spfx/web-parts/guidance/call-microsoft-graph-from-your-web-part.md
+        - name: Microsoft Graph
+          href: spfx/overview-graphhttpclient.md
           items:
-            - name: Руководство для предприятий
-              href: spfx/enterprise-guidance.md
-            - name: Групповая разработка
-              href: spfx/team-based-development-on-sharepoint-framework.md
-            - name: Рекомендации по управлению
-              href: spfx/web-parts/guidance/governance-considerations.md
-        - name: Внешние библиотеки
-          items:
-            - name: Добавление внешних библиотек
-              href: spfx/web-parts/basics/add-an-external-library.md
-            - name: Библиотеки JavaScript
-              href: spfx/web-parts/guidance/use-existing-javascript-libraries.md
-            - name: Стили CSS
-              href: spfx/web-parts/guidance/reference-third-party-css-styles.md
-            - name: SP PnP JS
-              href: spfx/web-parts/guidance/use-sp-pnp-js-with-spfx-web-parts.md
-            - name: AngularJS
-              href: spfx/web-parts/guidance/build-client-side-web-parts-with-angular-1-x.md
-        - name: Подключение к API
-          items:
-            - name: 'Подключение к API, защищенным службой Azure AD'
-              href: spfx/web-parts/guidance/connect-to-api-secured-with-aad.md
-            - name: Вызов API Microsoft Graph с помощью OAuth
-              href: spfx/web-parts/guidance/call-microsoft-graph-from-your-web-part.md
-            - name: Microsoft Graph
-              href: spfx/overview-graphhttpclient.md
-              items:
-                - name: Руководство
-                  href: spfx/call-microsoft-graph-using-graphhttpclient.md
-        - name: Настройка и развертывание
-          items:
-            - name: Упаковка решения
-              href: spfx/web-parts/basics/notes-on-solution-packaging.md
-            - name: Пользовательские задачи сборки
-              href: spfx/toolchain/integrate-gulp-tasks-in-build-pipeline.md
-            - name: Расширение Webpack
-              href: spfx/toolchain/extending-webpack-in-build-pipeline.md
-            - name: Обновление пакетов
-              href: spfx/toolchain/update-latest-packages.md
-            - name: Развертывание на уровне клиента
-              href: spfx/tenant-scoped-deployment.md
-            - name: "Поддержка SharePoint\_2016"
-              href: spfx/sharepoint-2016-support.md
-            - name: Подготовка ресурсов SharePoint
-              href: spfx/toolchain/provision-sharepoint-assets.md
-        - name: Оптимизация сборок для производства
-          href: spfx/toolchain/optimize-builds-for-production.md
-        - name: Локализация
-          href: spfx/web-parts/guidance/localize-web-parts.md
+            - name: Руководство
+              href: spfx/call-microsoft-graph-using-graphhttpclient.md
+    - name: Настройка и развертывание
+      items:
+        - name: Упаковка решения
+          href: spfx/web-parts/basics/notes-on-solution-packaging.md
+        - name: Пользовательские задачи сборки
+          href: spfx/toolchain/integrate-gulp-tasks-in-build-pipeline.md
+        - name: Расширение Webpack
+          href: spfx/toolchain/extending-webpack-in-build-pipeline.md
+        - name: Обновление пакетов
+          href: spfx/toolchain/update-latest-packages.md
+        - name: Развертывание решения на уровне клиента
+          href: spfx/tenant-scoped-deployment.md
         - name: Свойства клиента
           href: spfx/tenant-properties.md
-    - name: Дизайн
+        - name: Подготовка ресурсов SharePoint
+          href: spfx/toolchain/provision-sharepoint-assets.md
+        - name: Оптимизация сборок для производства
+          href: spfx/toolchain/optimize-builds-for-production.md
+        - name: Локализация веб-частей
+          href: spfx/web-parts/guidance/localize-web-parts.md
+        - name: "Поддержка SharePoint\_2016"
+          href: spfx/sharepoint-2016-support.md
+    - name: Проектирование
       href: design/design-guidance-overview.md
       items:
         - name: Дизайн веб-части
