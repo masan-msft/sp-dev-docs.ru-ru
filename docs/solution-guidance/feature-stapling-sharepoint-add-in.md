@@ -1,11 +1,11 @@
 ---
 title: "Ассоциация в объектная модель SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: 0d88f1e87bb41a6e27883128fbaa6adcf1d34158
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: 204f53d47256b51ef6c2495deae4c69ce810fa23
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 02/19/2018
 ---
 <a name="feature-stapling-in-the-sharepoint-add-in-model"></a>Ассоциация в объектная модель SharePoint
 ===============================================

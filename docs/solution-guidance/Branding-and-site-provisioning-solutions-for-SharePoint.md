@@ -1,11 +1,11 @@
 ---
 title: "Фирменная символика и решения для SharePoint Server 2013, SharePoint Server 2016 и SharePoint Online по подготовке сайта"
 ms.date: 11/03/2017
-ms.openlocfilehash: 39542cd0fef6eb8328811e4759bb3a3e948f1e80
-ms.sourcegitcommit: 8384d549db4ff023aacac273d74786928ebdeece
+ms.openlocfilehash: dc9d13fa4ffe4593bcaacf6cc68cf87471091994
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="branding-and-site-provisioning-solutions-for-sharepoint-server-2013-sharepoint-server-2016-and-sharepoint-online"></a>Фирменная символика и решения для SharePoint Server 2013, SharePoint Server 2016 и SharePoint Online по подготовке сайта
 
