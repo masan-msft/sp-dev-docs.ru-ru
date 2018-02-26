@@ -3,11 +3,11 @@ title: "Знакомство с созданием надстроек SharePoint
 description: "Узнайте, как настроить среду разработки и создать свою первую надстройку SharePoint с размещением в SharePoint."
 ms.date: 12/04/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 6a2ed95aa06db5d6e4c6d9364cfcbfa8dc1b9f36
-ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
+ms.openlocfilehash: 35610e3d95841efa0d50c27e7b3751ff4f654bdf
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="get-started-creating-sharepoint-hosted-sharepoint-add-ins"></a>Знакомство с созданием надстроек SharePoint, размещаемых в SharePoint
 
@@ -50,7 +50,7 @@ ms.lasthandoff: 12/07/2017
 
 - Приобретите [подписку разработчика приложений для Office 365](https://portal.microsoftonline.com/Signup/MainSignUp.aspx?OfferId=C69E7747-2566-4897-8CBA-B998ED3BAB88&amp;DL=DEVELOPERPACK). 
 
-- Бесплатно зарегистрируйте учетную запись разработчика приложений для Office 365, действующую один год, через программу для разработчиков Office 365. [Ознакомьтесь с дополнительными сведениями](http://dev.office.com/devprogram) или перейдите к заполнению [регистрационной формы](https://profile.microsoft.com/RegSysProfileCenter/wizardnp.aspx?wizid=14b845d0-938c-45af-b061-f798fbb4d170). После регистрации в программе для разработчиков вы получите электронное сообщение со ссылкой для регистрации учетной записи разработчика. Следуйте приведенным ниже инструкциям.
+- Зарегистрируйте учетную запись разработчика на один год по специальной программе для разработчиков Office 365. Вы можете [узнать больше](http://dev.office.com/devprogram) или сразу заполнить [регистрационную форму](https://profile.microsoft.com/RegSysProfileCenter/wizardnp.aspx?wizid=14b845d0-938c-45af-b061-f798fbb4d170). После регистрации в программе для разработчиков вы получите электронное сообщение со ссылкой для регистрации учетной записи разработчика. Следуйте приведенным ниже инструкциям.
 
 > [!TIP]
 > Откройте страницы, на которые указывают эти ссылки, в новом окне или на новой вкладке, чтобы работать с ними было удобнее.

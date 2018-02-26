@@ -3,11 +3,11 @@ title: "Настройка среды разработки надстроек Sh
 description: "Установите Visual Studio и зарегистрируйте сайт разработчика Office 365."
 ms.date: 11/03/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 50f4544f10342d75f926ce9f4154f375416afca7
-ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
+ms.openlocfilehash: bc66c52d34e5e218d324502413d860c5b8a21ba2
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="set-up-a-development-environment-for-sharepoint-add-ins-on-office-365"></a>Настройка среды разработки надстроек SharePoint в Office 365
 
@@ -49,7 +49,7 @@ ms.lasthandoff: 12/07/2017
 
 - Приобретите [подписку разработчика приложений для Office 365](https://portal.microsoftonline.com/Signup/MainSignUp.aspx?OfferId=C69E7747-2566-4897-8CBA-B998ED3BAB88&amp;DL=DEVELOPERPACK). 
 
-- Бесплатно зарегистрируйте учетную запись разработчика приложений для Office 365, действующую один год, через программу для разработчиков Office 365. [Ознакомьтесь с дополнительными сведениями](http://dev.office.com/devprogram) или перейдите к заполнению [регистрационной формы](https://profile.microsoft.com/RegSysProfileCenter/wizardnp.aspx?wizid=14b845d0-938c-45af-b061-f798fbb4d170). После регистрации в программе для разработчиков вы получите электронное сообщение со ссылкой для регистрации учетной записи разработчика. Следуйте приведенным ниже инструкциям.
+- Зарегистрируйте учетную запись разработчика на один год по специальной программе для разработчиков Office 365. Вы можете [узнать больше](http://dev.office.com/devprogram) или сразу заполнить [регистрационную форму](https://profile.microsoft.com/RegSysProfileCenter/wizardnp.aspx?wizid=14b845d0-938c-45af-b061-f798fbb4d170). После регистрации в программе для разработчиков вы получите электронное сообщение со ссылкой для регистрации учетной записи разработчика. Следуйте приведенным ниже инструкциям.
 
 > [!TIP]
 > Откройте страницы, на которые указывают эти ссылки, в новом окне или на новой вкладке, чтобы работать с ними было удобнее.

@@ -3,11 +3,11 @@ title: "Настройка значка веб-части"
 description: "Доступные варианты настройки значка для клиентских веб-частей SharePoint."
 ms.date: 01/09/2018
 ms.prod: sharepoint
-ms.openlocfilehash: b7bcb7f91d78ce8b82f0b13b105b0e0ffeb79e88
-ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.openlocfilehash: 3d22bbf55bef80e0fa3218cba13abcbc238f651a
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="configure-web-part-icon"></a>Настройка значка веб-части
 
@@ -180,3 +180,7 @@ ms.lasthandoff: 01/18/2018
 У каждой веб-части должен быть значок. Если вы укажете значок веб-части, используя оба свойства (**officeFabricIconFontName** и **iconImageUrl**), будет использоваться значок, указанный в свойстве **officeFabricIconFontName**. 
 
 Если вы не используете значок Office UI Fabric, URL-адрес необходимо указать в свойстве **iconImageUrl**.
+
+## <a name="see-also"></a>См. также
+
+- [Обзор SharePoint Framework](../../sharepoint-framework-overview.md)
