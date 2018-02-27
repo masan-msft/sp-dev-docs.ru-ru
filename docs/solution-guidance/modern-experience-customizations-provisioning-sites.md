@@ -2,11 +2,11 @@
 title: "Подготовка веб-сайтов «современный» групп программными средствами"
 description: "Подготовка сайта группы из пользовательского интерфейса или с помощью PnP основных CSOM или PnP PowerShell."
 ms.date: 12/19/2017
-ms.openlocfilehash: 138b18ccea000bb75ac9bbe7e45f5df5cff2c8a0
-ms.sourcegitcommit: 7b6ce94b477d9b587beaa059eb9aa7cd6235efde
+ms.openlocfilehash: 16ce80d27ac6f610f609cdd227b5deb5ed11c2d3
+ms.sourcegitcommit: 4e65e89f3ad8ef1d953e2fdd04d7ab5c0e7df174
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2018
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="provisioning-modern-team-sites-programmatically"></a>Подготовка веб-сайтов «современный» групп программными средствами
 
@@ -223,7 +223,7 @@ using (var context = new ClientContext(targetTenantUrl))
 
 Как вы видите, метод расширения создает новый сайт «современный» связи и возвращает новый объект _ClientContext_ непосредственно подключена к только что созданный сайт.
 
-#### <a name="provisioning-a-modern-team-site-using-pnp-powershell"></a>Подготовка сайта «современный» группы с помощью PnP PowerShell
+#### <a name="provisioning-a-modern-communication-site-using-pnp-powershell"></a>Подготовка сайта «современный» связи, с помощью PnP PowerShell
 
 Приведенный ниже сценарий будет создавать сайт «современный» связи и верните фактический SharePoint URL-адрес сайта для дальнейшей обработки, нужным образом, как и в предыдущем примере с помощью веб-сайтов «современный» групп.
 
@@ -237,7 +237,7 @@ $communicationSiteUrl = New-PnPSite -Type CommunicationSite -Title "displayName"
 
 # Connect to the modern site using PnP PowerShell SP cmdlets
 # Since we are connecting now to SP side, credentials will be asked
-Connect-PnPOnline $teamSiteUrl
+Connect-PnPOnline $communicationSiteUrl
 
 # Now we have access on the SharePoint site for any operations
 $context = Get-PnPContext
