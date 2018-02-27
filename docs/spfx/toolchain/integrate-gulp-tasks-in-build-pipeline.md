@@ -1,12 +1,13 @@
 ---
 title: "Интеграция задач gulp в цепочку инструментов SharePoint Framework"
-ms.date: 09/25/2017
+description: "Интеграция настраиваемых задач gulp в конвейере сборки."
+ms.date: 02/02/2018
 ms.prod: sharepoint
-ms.openlocfilehash: bbcda74a98b91e02ab681d0d3777cf6c7e5be869
-ms.sourcegitcommit: e4bf60eabffe63dc07f96824167d249c0678db82
+ms.openlocfilehash: 2af62e4c0b06015d47a0dec137344a7a40507649
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="integrate-gulp-tasks-in-sharepoint-framework-toolchain"></a>Интеграция задач gulp в цепочку инструментов SharePoint Framework
 
@@ -17,7 +18,7 @@ ms.lasthandoff: 01/30/2018
 * компиляция файлов LESS или SASS в CSS;
 * компиляция файлов TypeScript в JavaScript.
 
-Одна из распространенных задач, которую нужно добавить в цепочку инструментов SharePoint Framework, — интеграция специальных задач gulp в конвейер сборки.
+Одна из распространенных задач, которую можно добавить в цепочку инструментов SharePoint Framework, — интеграция специальных задач gulp в конвейер сборки.
 
 ## <a name="gulp-tasks"></a>Задачи gulp
 Обычно задачи gulp определяются в `gulpfile.js` следующим образом:
@@ -28,23 +29,31 @@ gulp.task('somename', function() {
 });
 ```
 
+<br/>
+
 При работе с цепочкой инструментов SharePoint Framework необходимо определить задачи в конвейере сборки платформы. После определения и регистрации в конвейере задача добавляется в цепочку инструментов.
 
 В SharePoint Framework используется [обычная цепочка инструментов сборки](sharepoint-framework-toolchain.md#common-build-tool-packages), которая состоит из набора пакетов npm с общими задачами сборки. Поэтому задачи по умолчанию определяются в обычном пакете, в отличие от ситуации, когда используется `gulpfile.js` клиентского проекта. Чтобы просмотреть доступные задачи, выполните следующую команду в консоли для каталога проекта:
 
-```
+```js
 gulp --tasks
 ```
 
-При выполнении этой команды будет выведен список всех доступных задач.
+<br/>
+
+Эта команда перечисляет все доступные задачи.
 
 ![Доступные задачи gulp](../../images/gulp-tasks-available.png)
 
 ## <a name="custom-gulp-tasks"></a>Специальные задачи gulp
-Для добавления специальных задач нужно определить их в `gulpfile.js`. Откройте `gulpfile.js` в редакторе кода. Код по умолчанию инициализирует цепочку инструментов SharePoint Framework и глобальный экземпляр `gulp` для этой цепочки. Любые добавляемые специальные задачи необходимо определять до инициализации глобального экземпляра `gulp`.
+
+Для добавления специальных задач нужно определить их в `gulpfile.js`. 
+
+Откройте `gulpfile.js` в редакторе кода. Код по умолчанию инициализирует цепочку инструментов SharePoint Framework и глобальный экземпляр `gulp` для этой цепочки. Любые добавляемые специальные задачи необходимо определять до инициализации глобального экземпляра `gulp`.
 
 ### <a name="add-your-custom-task"></a>Добавление специальной задачи
-Для добавления специальной задачи gulp следует добавить новую подзадачу в конвейер сборки SharePoint Framework с помощью функции [`build.subTask`](https://github.com/Microsoft/gulp-core-build#defining-a-custom-task).
+
+Для добавления специальной задачи gulp добавьте новую подзадачу в конвейер сборки SharePoint Framework с помощью функции [`build.subTask`](https://github.com/Microsoft/gulp-core-build#defining-a-custom-task).
 
 ```js
 let helloWorldSubtask = build.subTask('log-hello-world-subtask', function(gulp, buildOptions, done) {
@@ -52,6 +61,8 @@ let helloWorldSubtask = build.subTask('log-hello-world-subtask', function(gulp, 
   // use functions from gulp task here  
 });
 ```
+
+<br/>
 
 Если используется поток, будет возвращен поток.
 
@@ -70,7 +81,10 @@ let helloWorldSubtask = build.subTask('log-hello-world-subtask', function(gulp, 
 let helloWorldTask = build.task('hello-world', helloWorldSubtask);
 ```
 
->Примечание. Любые добавляемые специальные задачи необходимо определять до инициализации глобального экземпляра `gulp`, т. е. перед такой строкой кода: `build.initialize(gulp);`.
+> [!NOTE] 
+> Любые добавляемые специальные задачи необходимо определять до инициализации глобального экземпляра `gulp`, т. е. перед такой строкой кода: `build.initialize(gulp);`.
+
+<br/>
 
 Теперь можно выполнить специальную команду в командной строке следующим образом:
 
@@ -78,15 +92,16 @@ let helloWorldTask = build.task('hello-world', helloWorldSubtask);
 gulp hello-world
 ```
 
->Примечание. Невозможно выполнить подзадачу, зарегистрированную с помощью функции `build.subTask`, непосредственно в командной строке. Можно выполнить только задачу, зарегистрированную с помощью функции `build.task`.
+> [!NOTE] 
+> Невозможно выполнить подзадачу, зарегистрированную с помощью функции `build.subTask`, непосредственно в командной строке. Можно выполнить только задачу, зарегистрированную с помощью функции `build.task`.
 
 ### <a name="execute-your-custom-task-before-or-after-available-tasks"></a>Выполнение специальной задачи до или после доступных задач
-Специальную задачу можно также добавить для выполнения до или после указанных доступных задач gulp. Следующие задачи gulp позволяют вставить специальную задачу до или после другой задачи:
+Специальную задачу можно также добавить для выполнения до или после указанных доступных задач gulp. Следующие задачи gulp позволяют вставить специальную задачу до или после такой задачи:
 
 - общая задача сборки (содержит все доступные задачи);
 - задача TypeScript.
 
-Задачи SharePoint Framework доступны на платформе сборки по умолчанию. Платформа сборки — это коллекция задач, определенных для конкретной цели. В нашем случае это создание клиентских пакетов. Доступ к платформе по умолчанию, а также к функциям выполнения до и после задачи можно получить с помощью объекта `build.rig`.
+Задачи SharePoint Framework доступны на платформе сборки по умолчанию. Платформа сборки — это коллекция задач, определенных для конкретной цели (в нашем случае это сборка пакетов на стороне клиента). Доступ к платформе по умолчанию, а также к функциям выполнения до и после задачи можно получить с помощью объекта `build.rig`.
  
 ```js
 // execute before the TypeScript subtask
@@ -100,9 +115,10 @@ build.rig.addPostBuildTask(helloWorldTask);
 ```
 
 ## <a name="example-custom-image-resize-task"></a>Пример. Специальная задача по изменению размера изображения
+
 В качестве примера используем [задачу gulp по изменению размера изображения](https://www.npmjs.com/package/gulp-image-resize).  Это простая задача по изменению размера изображения.
 
-Готовый образец можно скачать [здесь](https://aka.ms/spfx-extend-gulp-sample).
+Вы можете скачать готовый образец по ссылке [samples/js-extend-gulp/](https://aka.ms/spfx-extend-gulp-sample).
 
 В [документации к этой специальной задаче по изменению размера изображения](https://www.npmjs.com/package/gulp-image-resize#example) показано, как ее использовать.
 
@@ -122,7 +138,9 @@ gulp.task('default', function () {
 });
 ```
 
-Мы применим эти сведения для добавления данной задачи в проект с помощью функций `build.subTask` и `build.task`.
+<br/>
+
+Мы используем эти сведения для добавления данной задачи в проект с помощью функций `build.subTask` и `build.task`:
 
 ```js
 var imageResize = require('gulp-image-resize');
@@ -140,7 +158,9 @@ let imageResizeSubTask = build.subTask('image-resize-subtask', function(gulp, bu
 let imageResizeTask = build.task('resize-images', imageResizeSubTask);
 ```
 
-Так как мы определяем поток, будет возвращен поток в функции `build.subTask` для конвейера сборки. Затем конвейером сборки будет асинхронно выполнен поток gulp. 
+<br/>
+
+Так как мы определяем поток, будет возвращен поток в функции `build.subTask` для конвейера сборки. Затем конвейер сборки асинхронно выполняет этот поток gulp. 
 
 После этого можно выполнить задачу в командной строке gulp следующим образом:
 
@@ -148,11 +168,19 @@ let imageResizeTask = build.task('resize-images', imageResizeSubTask);
 gulp resize-images
 ```
 
+<br/>
+
 ![image-resize-task](../../images/gulp-extend-image-resize-task.png)
 
-Эта задача `resize-images` отобразится также в списке доступных задач проекта при выполнении `gulp --tasks`.
+<br/>
+
+Эта задача `resize-images` отображается также в списке доступных задач проекта при выполнении `gulp --tasks`.
 
 ![image-resize-task with available tasks](../../images/gulp-extend-image-resize-available-tasks.png)
+
+## <a name="see-also"></a>См. также
+
+- [Обзор SharePoint Framework](../sharepoint-framework-overview.md)
 
 
 

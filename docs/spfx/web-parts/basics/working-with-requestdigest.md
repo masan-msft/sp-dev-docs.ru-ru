@@ -3,11 +3,11 @@ title: "Работа с __REQUESTDIGEST"
 description: "Добавляйте действительный дайджест к каждому запросу API SharePoint, отличному от GET REST."
 ms.date: 01/09/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 8a357c2a199566dbbf24f209c18b5f4673bd8b1a
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: 6c87b14440dca67ad544316b45486cf716abf470
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="work-with-requestdigest"></a>Работа с __REQUESTDIGEST
 
@@ -57,7 +57,7 @@ SharePoint Framework упрощает этот процесс, позволяя 
 
 1. Импортируйте типы **DigestCache** и **IDigestCache** из пакета **@microsoft/sp-http**:
 
-  ```ts
+  ```typescript
   // ...
   import { IDigestCache, DigestCache } from '@microsoft/sp-http';
 
@@ -68,7 +68,7 @@ SharePoint Framework упрощает этот процесс, позволяя 
 
 2. Когда вам понадобится действительный дайджест-токен запроса, получите ссылку на службу DigestCache и вызовите ее метод **fetchDigest**:
 
-  ```ts
+  ```typescript
   // ...
   import { IDigestCache, DigestCache } from '@microsoft/sp-http';
 
@@ -86,3 +86,7 @@ SharePoint Framework упрощает этот процесс, позволяя 
     // ...
   }
   ```
+
+  ## <a name="see-also"></a>См. также
+
+- [Обзор SharePoint Framework](../../sharepoint-framework-overview.md)

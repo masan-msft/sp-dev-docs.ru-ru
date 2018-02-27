@@ -3,11 +3,11 @@ title: "Перенос решения с jQuery и FullCalendar, созданн�
 description: "Узнайте, как перенести модификацию SharePoint с использованием модуля FullCalendar, созданную в веб-части редактора скриптов, на платформу SharePoint Framework."
 ms.date: 01/09/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 5127e9f8598ff087bdbc34f9f1e678226bd127da
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: 313fd63a223d0fb2d7913f18bafab70b2159ab9f
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="migrate-jquery-and-fullcalendar-solution-built-using-script-editor-web-part-to-sharepoint-framework"></a>Перенос решения с jQuery и FullCalendar, созданного с помощью веб-части редактора скриптов, на платформу SharePoint Framework
 
@@ -223,7 +223,7 @@ $filter=((DueDate ge '" + startDate + "' and DueDate le '" + endDate + "')or(Sta
 
 Как и в исходном решении, созданном с помощью веб-части редактора скриптов, сначала необходимо загрузить библиотеки JavaScript, необходимые решению. Как правило, в SharePoint Framework этот процесс состоит из двух этапов: указания URL-адреса, с которого загружаются библиотеки, и обращения к библиотеке в коде.
 
-1. Укажите URL-адреса, с которых следует загружать библиотеки. Откройте в редакторе кода файл **./config/config.json** и замените код в разделе **externals** на следующий:
+1. Укажите URL-адрес, с которого следует загружать библиотеки. В редакторе кода откройте файл **./config/config.json** и замените раздел **externals** на следующий код:
 
   ```json
   {
@@ -237,7 +237,7 @@ $filter=((DueDate ge '" + startDate + "' and DueDate le '" + endDate + "')or(Sta
 
 2. Откройте файл **./src/webparts/tasksCalendar/TasksCalendarWebPart.ts** и после последнего оператора **import** добавьте следующий код:
 
-  ```ts
+  ```typescript
   import 'jquery';
   import 'moment';
   import 'fullcalendar';
@@ -249,7 +249,7 @@ $filter=((DueDate ge '" + startDate + "' and DueDate le '" + endDate + "')or(Sta
 
 В редакторе кода откройте файл **./src/webparts/tasksCalendar/TasksCalendarWebPart.ts** и замените код метода **render** на следующий:
 
-```ts
+```typescript
   export default class ItRequestsWebPart extends BaseClientSideWebPart<IItRequestsWebPartProps> {
     public render(): void {
       this.domElement.innerHTML = `
@@ -401,7 +401,7 @@ $filter=((DueDate ge '" + startDate + "' and DueDate le '" + endDate + "')or(Sta
 
 2. Чтобы сослаться на этот файл в веб-части, откройте в редакторе кода файл **./src/webparts/tasksCalendar/TasksCalendarWebPart.ts** и замените метод **render** на следующий код:
 
-  ```ts
+  ```typescript
   export default class ItRequestsWebPart extends BaseClientSideWebPart<IItRequestsWebPartProps> {
     public render(): void {
       this.domElement.innerHTML = `
@@ -443,7 +443,7 @@ $filter=((DueDate ge '" + startDate + "' and DueDate le '" + endDate + "')or(Sta
 
 2. Обновите интерфейс свойств веб-части, чтобы применить изменения манифеста. В редакторе кода откройте файл **./src/webparts/tasksCalendar/ITasksCalendarWebPartProps.ts** и замените его содержимое на следующий код:
 
-  ```ts
+  ```typescript
   export interface ITasksCalendarWebPartProps {
     listName: string;
   }
@@ -451,7 +451,7 @@ $filter=((DueDate ge '" + startDate + "' and DueDate le '" + endDate + "')or(Sta
 
 3. Обновите метки отображения для свойства **listName**. Откройте файл **./src/webparts/tasksCalendar/loc/mystrings.d.ts** и замените его содержимое на следующее:
 
-  ```ts
+  ```typescript
   declare interface ITasksCalendarStrings {
     PropertyPaneDescription: string;
     BasicGroupName: string;
@@ -478,7 +478,7 @@ $filter=((DueDate ge '" + startDate + "' and DueDate le '" + endDate + "')or(Sta
 
 5. Обновите веб-часть, чтобы использовалось новое свойство. В редакторе кода откройте файл **./src/webparts/tasksCalendar/TasksCalendarWebPart.ts** и замените код метода **getPropertyPaneConfiguration** на следующий:
 
-  ```ts
+  ```typescript
   export default class TasksCalendarWebPart extends BaseClientSideWebPart<ITasksCalendarWebPartProps> {
     // ...
     protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
@@ -519,7 +519,7 @@ $filter=((DueDate ge '" + startDate + "' and DueDate le '" + endDate + "')or(Sta
 
 2. Измените оператор импорта для загрузки необходимых библиотек:
 
-  ```ts
+  ```typescript
   var $: any = require('jquery');
   var moment: any = require('moment');
 
@@ -534,7 +534,7 @@ $filter=((DueDate ge '" + startDate + "' and DueDate le '" + endDate + "')or(Sta
 
 3. Скопируйте функции **displayTasks** и **updateTask** из файла **script.js** и вставьте их в класс **TasksCalendarWebPart**, как показано ниже.
 
-  ```ts
+  ```typescript
   export default class TasksCalendarWebPart extends BaseClientSideWebPart<ITasksCalendarWebPartProps> {
     // ...
 
@@ -666,7 +666,7 @@ $filter=((DueDate ge '" + startDate + "' and DueDate le '" + endDate + "')or(Sta
 
 4. Напоследок измените метод **render**, чтобы он вызывал новый метод **displayTasks**:
 
-  ```ts
+  ```typescript
   export default class TasksCalendarWebPart extends BaseClientSideWebPart<ITasksCalendarWebPartProps> {
     public render(): void {
       this.domElement.innerHTML = `
@@ -721,7 +721,7 @@ $filter=((DueDate ge '" + startDate + "' and DueDate le '" + endDate + "')or(Sta
 
 В редакторе кода откройте файл **./src/webparts/tasksCalendar/TasksCalendarWebPart.ts** и замените операторы импорта на следующий код:
 
-```ts
+```typescript
 import * as $ from 'jquery';
 import 'fullcalendar';
 import * as moment from 'moment';
@@ -733,7 +733,7 @@ import * as moment from 'moment';
 
 1. Определите интерфейс для задачи, получаемой из списка SharePoint. В редакторе кода откройте файл **./src/webparts/tasksCalendar/TasksCalendarWebPart.ts** и непосредственно над классом веб-части добавьте следующий фрагмент кода:
 
-  ```ts
+  ```typescript
   interface ITask {
     ID: number;
     Title: string;
@@ -745,7 +745,7 @@ import * as moment from 'moment';
 
 2. В классе веб-части замените методы **displayTasks** и **updateTask** на следующий код:
 
-  ```ts
+  ```typescript
   export default class TasksCalendarWebPart extends BaseClientSideWebPart<ITasksCalendarWebPartProps> {
     private readonly colors: string[] = ['#466365', '#B49A67', '#93B7BE', '#E07A5F', '#849483', '#084C61', '#DB3A34'];
 
@@ -891,7 +891,7 @@ import * as moment from 'moment';
 
   Сравните его со следующим кодом:
 
-  ```ts
+  ```typescript
   const restQuery: string = `/_api/Web/Lists/GetByTitle('${escape(this.properties.listName)}')/items?$select=ID,Title,\
   Status,StartDate,DueDate,AssignedTo/Title&$expand=AssignedTo&\
   $filter=((DueDate ge '${startDate}' and DueDate le '${endDate}')or(StartDate ge '${startDate}' and StartDate le '${endDate}'))`;
@@ -911,7 +911,7 @@ import * as moment from 'moment';
 
 В данный момент решение использует вызовы AJAX jQuery для связи с REST API SharePoint. Для обычных запросов GET так же удобно использовать API AJAX jQuery, как и SPHttpClient на платформе SharePoint Framework. Разница становится заметна при выполнении запросов POST, таких как следующий запрос на обновление события:
 
-```ts
+```typescript
 $.ajax({
   url: this.context.pageContext.web.absoluteUrl + '/_api/contextinfo',
   type: 'POST',
@@ -947,7 +947,7 @@ $.ajax({
 
 Класс SPHttpClient платформы SharePoint Framework упрощает связь с SharePoint, автоматически определяя запросы POST, которым требуется действительный токен дайджеста. Для таких запросов SPHttpClient автоматически получает токен из SharePoint и добавляет его к запросу. Для сравнения, аналогичный запрос, отправленный с использованием SPHttpClient, будет выглядеть так:
 
-```ts
+```typescript
 this.context.spHttpClient.post(`${this.context.pageContext.web.absoluteUrl}\
 /_api/Web/Lists/getByTitle('${escape(this.properties.listName)}')/Items(${id})`, SPHttpClient.configurations.v1, {
   body: JSON.stringify({
@@ -970,13 +970,13 @@ this.context.spHttpClient.post(`${this.context.pageContext.web.absoluteUrl}\
 
 1. Чтобы заменить исходные вызовы AJAX jQuery на API SPHttpClient платформы SharePoint Framework, в редакторе кода откройте файл **./src/webparts/tasksCalendar/TasksCalendarWebPart.ts**. В список импорта добавьте следующее:
 
-  ```ts
+  ```typescript
   import { SPHttpClient, SPHttpClientResponse } from '@microsoft/sp-http';
   ```
 
 2. В классе **TasksCalendarWebPart** замените методы **displayTasks** и **updateTask** на следующий код:
 
-  ```ts
+  ```typescript
   export default class TasksCalendarWebPart extends BaseClientSideWebPart<ITasksCalendarWebPartProps> {
     // ...
 
