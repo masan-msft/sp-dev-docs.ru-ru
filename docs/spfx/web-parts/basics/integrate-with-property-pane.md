@@ -3,11 +3,11 @@ title: "Сделайте клиентскую веб-часть SharePoint на�
 description: "Настройте дополнительные свойства в веб-части, используя область свойств."
 ms.date: 01/09/2018
 ms.prod: sharepoint
-ms.openlocfilehash: cfb2686d46058cd1bf97321c7928576ba96cf875
-ms.sourcegitcommit: 1f1044e59d987d878bb8bc403413e3090234ad44
+ms.openlocfilehash: 4e9035d53391539a50810776be739136ee8b4f11
+ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="make-your-sharepoint-client-side-web-part-configurable"></a>Сделайте клиентскую веб-часть SharePoint настраиваемой
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 01/11/2018
 
 В приведенном ниже примере кода инициализируется и настраивается область свойств для веб-части. Переопределяется метод **getPropertyPaneConfiguration** и возвращается коллекция страниц области свойств.
 
-```ts
+```typescript
 protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
   return {
     pages: [
@@ -70,7 +70,7 @@ protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
 
 Типы полей доступны в виде модулей в **sp-client-platform**. Прежде чем использовать их в коде, их необходимо импортировать.
 
-```ts
+```typescript
 import {
   PropertyPaneTextField,
   PropertyPaneCheckbox,
@@ -84,7 +84,7 @@ import {
 
 Метод определения каждого типа поля приведен ниже (для примера используется тип **PropertyPaneTextField**).
 
-```ts
+```typescript
 PropertyPaneTextField('targetProperty',{
   //field properties are defined here
 })
@@ -94,7 +94,7 @@ PropertyPaneTextField('targetProperty',{
 
 Чтобы назначить типы этим свойствам, определите в классе веб-части интерфейс, включающий одно или несколько целевых свойств.
 
-```ts
+```typescript
 export interface IHelloWorldWebPartProps {
     targetProperty: string
 }
@@ -102,7 +102,7 @@ export interface IHelloWorldWebPartProps {
 
 В веб-части можно получить к нему доступ с помощью свойства **this.properties.targetProperty**.
 
-```ts
+```typescript
 <p class="ms-font-l ms-fontColor-white">${this.properties.description}</p>
 ```
 
@@ -121,7 +121,7 @@ export interface IHelloWorldWebPartProps {
 
 Чтобы включить нереактивный режим, добавьте в веб-часть следующий код:
 
-```ts 
+```typescript 
 protected get disableReactivePropertyChanges(): boolean { 
   return true; 
 }
@@ -130,3 +130,7 @@ protected get disableReactivePropertyChanges(): boolean {
 ## <a name="custom-property-pane-controls"></a>Пользовательские элементы управления для области свойств
 
 SharePoint Framework содержит набор стандартных элементов управления для области свойств, но иногда нужны дополнительные функции. SharePoint Framework позволяет создать пользовательские элементы управления для добавления необходимой функции. Дополнительные сведения см. в статье [Создание пользовательских элементов управления для области свойств](../guidance/build-custom-property-pane-controls.md).
+
+## <a name="see-also"></a>См. также
+
+- [Обзор SharePoint Framework](../../sharepoint-framework-overview.md)
