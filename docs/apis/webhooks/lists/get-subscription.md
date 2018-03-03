@@ -1,81 +1,82 @@
 ---
 title: "Получение подписок"
-ms.date: 09/25/2017
+description: "Возвращает одну или несколько подписок на веб-перехватчики в списке SharePoint."
+ms.date: 02/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 6dea5da88388c0787c9295141cee2fed50a5fa65
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: d56b69691eed234f65c2fac25e934a9fe6e00d33
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 02/19/2018
 ---
-# <a name="get-subscriptions"></a><span data-ttu-id="8d1a2-102">Получение подписок</span><span class="sxs-lookup"><span data-stu-id="8d1a2-102">Get subscriptions</span></span>
+# <a name="get-subscriptions"></a><span data-ttu-id="a2fda-103">Получение подписок</span><span class="sxs-lookup"><span data-stu-id="a2fda-103">Get subscriptions</span></span>
 
-<span data-ttu-id="8d1a2-103">Возвращает одну или несколько подписок на веб-перехватчики в списке SharePoint.</span><span class="sxs-lookup"><span data-stu-id="8d1a2-103">Gets one or more webhook subscriptions on a SharePoint list.</span></span>
+<span data-ttu-id="a2fda-104">Возвращает одну или несколько подписок на веб-перехватчики в списке SharePoint.</span><span class="sxs-lookup"><span data-stu-id="a2fda-104">Gets one or more webhook subscriptions on a SharePoint list.</span></span>
 
-## <a name="permissions"></a><span data-ttu-id="8d1a2-104">Разрешения</span><span class="sxs-lookup"><span data-stu-id="8d1a2-104">Permissions</span></span>
+## <a name="permissions"></a><span data-ttu-id="a2fda-105">Разрешения</span><span class="sxs-lookup"><span data-stu-id="a2fda-105">Permissions</span></span>
 
-### <a name="get-a-single-subscription"></a><span data-ttu-id="8d1a2-105">Получение одной подписки</span><span class="sxs-lookup"><span data-stu-id="8d1a2-105">Get a single subscription</span></span>
+### <a name="get-a-single-subscription"></a><span data-ttu-id="a2fda-106">Получение одной подписки</span><span class="sxs-lookup"><span data-stu-id="a2fda-106">Get a single subscription</span></span>
 
-<span data-ttu-id="8d1a2-106">У приложения должно быть разрешение на изменение списка SharePoint, из которого извлекается подписка.</span><span class="sxs-lookup"><span data-stu-id="8d1a2-106">The application must have at least edit permissions to the SharePoint list where the subscription will be retreived.</span></span>
+<span data-ttu-id="a2fda-107">У приложения должно быть по крайней мере разрешение на изменение списка SharePoint, из которого извлекается подписка.</span><span class="sxs-lookup"><span data-stu-id="a2fda-107">The application must have at least edit permissions to the SharePoint list where the subscription will be retreived.</span></span>
 
-<span data-ttu-id="8d1a2-107">**Для приложения Microsoft Azure Active Directory (AD):**</span><span class="sxs-lookup"><span data-stu-id="8d1a2-107">**If your application is a Microsoft Azure Active Directory (AD) application:**</span></span>
+#### <a name="if-your-application-is-a-microsoft-azure-active-directory-azure-ad-application"></a><span data-ttu-id="a2fda-108">Если приложение является приложением Microsoft Azure Active Directory (AD)</span><span class="sxs-lookup"><span data-stu-id="a2fda-108">If your application is a Microsoft Azure Active Directory (AD) application:</span></span>
 
-<span data-ttu-id="8d1a2-p101">Приложению Azure AD необходимо предоставить разрешения, указанные в таблице ниже. Подписку можно получить только из создавшего ее приложения Azure AD.</span><span class="sxs-lookup"><span data-stu-id="8d1a2-p101">You must grant the Azure AD application the permissions specified in the following table. A subscription can only be retrieved by the Azure AD application that created it.</span></span> 
+<span data-ttu-id="a2fda-p101">Приложению Azure AD необходимо предоставить разрешения, указанные в таблице ниже. Подписку можно получить только из создавшего ее приложения Azure AD.</span><span class="sxs-lookup"><span data-stu-id="a2fda-p101">You must grant the Azure AD application the permissions specified in the following table. A subscription can only be retrieved by the Azure AD application that created it.</span></span> 
 
-<span data-ttu-id="8d1a2-110">Приложение</span><span class="sxs-lookup"><span data-stu-id="8d1a2-110">Application</span></span> | <span data-ttu-id="8d1a2-111">Разрешение</span><span class="sxs-lookup"><span data-stu-id="8d1a2-111">Permission</span></span> 
+<span data-ttu-id="a2fda-111">Приложение</span><span class="sxs-lookup"><span data-stu-id="a2fda-111">Application</span></span> | <span data-ttu-id="a2fda-112">Разрешение</span><span class="sxs-lookup"><span data-stu-id="a2fda-112">Permission</span></span> 
 ------------|------------
-<span data-ttu-id="8d1a2-112">SharePoint Online в Office 365</span><span class="sxs-lookup"><span data-stu-id="8d1a2-112">Office 365 SharePoint Online</span></span>|<span data-ttu-id="8d1a2-113">Чтение и запись элементов и списков во всех семействах веб-сайтов.</span><span class="sxs-lookup"><span data-stu-id="8d1a2-113">Read and write items and lists in all site collections.</span></span>
+<span data-ttu-id="a2fda-113">SharePoint Online в Office 365</span><span class="sxs-lookup"><span data-stu-id="a2fda-113">Office 365 SharePoint Online</span></span>|<span data-ttu-id="a2fda-114">Чтение и запись элементов и списков во всех семействах веб-сайтов.</span><span class="sxs-lookup"><span data-stu-id="a2fda-114">Read and write items and lists in all site collections.</span></span>
 
-<span data-ttu-id="8d1a2-114">**Для надстройки SharePoint**:</span><span class="sxs-lookup"><span data-stu-id="8d1a2-114">**If your application is a SharePoint add-in:**</span></span>
+#### <a name="if-your-application-is-a-sharepoint-add-in"></a><span data-ttu-id="a2fda-115">Если приложение является надстройкой SharePoint</span><span class="sxs-lookup"><span data-stu-id="a2fda-115">If your application is a SharePoint add-in:</span></span>
 
-<span data-ttu-id="8d1a2-p102">Надстройке SharePoint необходимо предоставить по крайней мере указанные ниже разрешения. Подписку можно получить только из создавшей ее надстройки SharePoint.</span><span class="sxs-lookup"><span data-stu-id="8d1a2-p102">You must grant the SharePoint add-in the following permission(s) or higher. A subscription can only be retrieved by the SharePoint add-in that created it.</span></span> 
+<span data-ttu-id="a2fda-116">Надстройке SharePoint необходимо предоставить по крайней мере указанные ниже разрешения.</span><span class="sxs-lookup"><span data-stu-id="a2fda-116">You must grant the SharePoint add-in the following permission(s) or higher:</span></span> <span data-ttu-id="a2fda-117">Подписку можно получить только из создавшей ее надстройки SharePoint.</span><span class="sxs-lookup"><span data-stu-id="a2fda-117">You must grant the SharePoint add-in the following permission(s) or higher. A subscription can only be retrieved by the SharePoint add-in that created it.</span></span> 
 
-<span data-ttu-id="8d1a2-117">Область</span><span class="sxs-lookup"><span data-stu-id="8d1a2-117">Scope</span></span> | <span data-ttu-id="8d1a2-118">Разрешения</span><span class="sxs-lookup"><span data-stu-id="8d1a2-118">Permission Rights</span></span> 
+<span data-ttu-id="a2fda-118">Область</span><span class="sxs-lookup"><span data-stu-id="a2fda-118">Scope</span></span> | <span data-ttu-id="a2fda-119">Разрешения</span><span class="sxs-lookup"><span data-stu-id="a2fda-119">Permission Rights</span></span> 
 ------|------------
-<span data-ttu-id="8d1a2-119">Список</span><span class="sxs-lookup"><span data-stu-id="8d1a2-119">List</span></span>|<span data-ttu-id="8d1a2-120">Управление</span><span class="sxs-lookup"><span data-stu-id="8d1a2-120">Manage</span></span>
+<span data-ttu-id="a2fda-120">Список</span><span class="sxs-lookup"><span data-stu-id="a2fda-120">List</span></span>|<span data-ttu-id="a2fda-121">Управление</span><span class="sxs-lookup"><span data-stu-id="a2fda-121">Manage</span></span>
 
-### <a name="get-all-subscriptions"></a><span data-ttu-id="8d1a2-121">Получение всех подписок</span><span class="sxs-lookup"><span data-stu-id="8d1a2-121">Get all subscriptions</span></span>
+### <a name="get-all-subscriptions"></a><span data-ttu-id="a2fda-122">Получение всех подписок</span><span class="sxs-lookup"><span data-stu-id="a2fda-122">Get all subscriptions</span></span>
 
-<span data-ttu-id="8d1a2-122">У приложения должны быть разрешения на управление списком SharePoint, из которого извлекается подписка.</span><span class="sxs-lookup"><span data-stu-id="8d1a2-122">The application must have manage list permissions to the SharePoint list where the subscription will be retrieved.</span></span>
+<span data-ttu-id="a2fda-123">У приложения должны быть разрешения на управление списком SharePoint, из которого извлекается подписка.</span><span class="sxs-lookup"><span data-stu-id="a2fda-123">The application must have manage list permissions to the SharePoint list where the subscription will be retrieved.</span></span>
 
-<span data-ttu-id="8d1a2-123">**Для приложения Microsoft Azure Active Directory (AD):**</span><span class="sxs-lookup"><span data-stu-id="8d1a2-123">**If your application is a Microsoft Azure Active Directory (AD) application:**</span></span>
+#### <a name="if-your-application-is-an-azure-ad-application"></a><span data-ttu-id="a2fda-124">Если ваше приложение является приложением Azure AD</span><span class="sxs-lookup"><span data-stu-id="a2fda-124">If your application is an Microsoft Azure Active Directory (AD) application:</span></span>
 
-<span data-ttu-id="8d1a2-124">Приложению Azure AD необходимо предоставить разрешения, указанные в таблице ниже.</span><span class="sxs-lookup"><span data-stu-id="8d1a2-124">You must grant the Azure AD app the permissions specified in the following table.</span></span> 
+<span data-ttu-id="a2fda-125">Приложению Azure AD App необходимо предоставить разрешения, указанные в таблице ниже.</span><span class="sxs-lookup"><span data-stu-id="a2fda-125">You must grant the Azure AD app the permissions specified in the following table.</span></span> 
 
-<span data-ttu-id="8d1a2-125">Приложение</span><span class="sxs-lookup"><span data-stu-id="8d1a2-125">Application</span></span> | <span data-ttu-id="8d1a2-126">Разрешение</span><span class="sxs-lookup"><span data-stu-id="8d1a2-126">Permission</span></span> 
+<span data-ttu-id="a2fda-126">Приложение</span><span class="sxs-lookup"><span data-stu-id="a2fda-126">Application</span></span> | <span data-ttu-id="a2fda-127">Разрешение</span><span class="sxs-lookup"><span data-stu-id="a2fda-127">Permission</span></span> 
 ------------|------------
-<span data-ttu-id="8d1a2-127">SharePoint Online в Office 365</span><span class="sxs-lookup"><span data-stu-id="8d1a2-127">Office 365 SharePoint Online</span></span>|<span data-ttu-id="8d1a2-128">Полный доступ ко всем семействам веб-сайтов.</span><span class="sxs-lookup"><span data-stu-id="8d1a2-128">Have full control of all site collections.</span></span>
+<span data-ttu-id="a2fda-128">SharePoint Online в Office 365</span><span class="sxs-lookup"><span data-stu-id="a2fda-128">Office 365 SharePoint Online</span></span>|<span data-ttu-id="a2fda-129">Полный доступ ко всем семействам веб-сайтов.</span><span class="sxs-lookup"><span data-stu-id="a2fda-129">Have full control of all site collections.</span></span>
 
-<span data-ttu-id="8d1a2-129">**Для надстройки SharePoint**:</span><span class="sxs-lookup"><span data-stu-id="8d1a2-129">**If your application is a SharePoint add-in:**</span></span>
+#### <a name="if-your-application-is-a-sharepoint-add-in"></a><span data-ttu-id="a2fda-130">Если приложение является надстройкой SharePoint</span><span class="sxs-lookup"><span data-stu-id="a2fda-130">If your application is a SharePoint add-in:</span></span>
 
-<span data-ttu-id="8d1a2-130">Надстройке SharePoint необходимо предоставить по крайней мере указанные ниже разрешения.</span><span class="sxs-lookup"><span data-stu-id="8d1a2-130">You must grant the SharePoint add-in the following permission(s) or higher.</span></span> 
+<span data-ttu-id="a2fda-131">Надстройке SharePoint необходимо предоставить по крайней мере указанные ниже разрешения.</span><span class="sxs-lookup"><span data-stu-id="a2fda-131">You must grant the SharePoint add-in the following permission(s) or higher:</span></span> 
 
-<span data-ttu-id="8d1a2-131">Область</span><span class="sxs-lookup"><span data-stu-id="8d1a2-131">Scope</span></span> | <span data-ttu-id="8d1a2-132">Разрешения</span><span class="sxs-lookup"><span data-stu-id="8d1a2-132">Permission Rights</span></span> 
+<span data-ttu-id="a2fda-132">Область</span><span class="sxs-lookup"><span data-stu-id="a2fda-132">Scope</span></span> | <span data-ttu-id="a2fda-133">Разрешения</span><span class="sxs-lookup"><span data-stu-id="a2fda-133">Permission Rights</span></span> 
 ------|------------
-<span data-ttu-id="8d1a2-133">Список</span><span class="sxs-lookup"><span data-stu-id="8d1a2-133">List</span></span>|<span data-ttu-id="8d1a2-134">Полный доступ</span><span class="sxs-lookup"><span data-stu-id="8d1a2-134">Full control</span></span>
+<span data-ttu-id="a2fda-134">Список</span><span class="sxs-lookup"><span data-stu-id="a2fda-134">List</span></span>|<span data-ttu-id="a2fda-135">Полный доступ</span><span class="sxs-lookup"><span data-stu-id="a2fda-135">Full control</span></span>
 
-## <a name="http-request"></a><span data-ttu-id="8d1a2-135">HTTP-запрос</span><span class="sxs-lookup"><span data-stu-id="8d1a2-135">HTTP request</span></span>
+## <a name="http-request"></a><span data-ttu-id="a2fda-136">HTTP-запрос</span><span class="sxs-lookup"><span data-stu-id="a2fda-136">HTTP request</span></span>
 
-### <a name="get-a-single-subscription"></a><span data-ttu-id="8d1a2-136">Получение одной подписки</span><span class="sxs-lookup"><span data-stu-id="8d1a2-136">Get a single subscription</span></span>
+### <a name="get-a-single-subscription"></a><span data-ttu-id="a2fda-137">Получение одной подписки</span><span class="sxs-lookup"><span data-stu-id="a2fda-137">Get a single subscription</span></span>
 
-#### <a name="list-webhook"></a><span data-ttu-id="8d1a2-137">Веб-перехватчик списка</span><span class="sxs-lookup"><span data-stu-id="8d1a2-137">List webhook</span></span>
+#### <a name="list-webhook"></a><span data-ttu-id="a2fda-138">Веб-перехватчик списка</span><span class="sxs-lookup"><span data-stu-id="a2fda-138">List webhook</span></span>
 ```
 GET _api/web/lists('list-id')/subscriptions('id')
 ```
 
-##### <a name="example"></a><span data-ttu-id="8d1a2-138">Пример</span><span class="sxs-lookup"><span data-stu-id="8d1a2-138">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="a2fda-139">Пример</span><span class="sxs-lookup"><span data-stu-id="a2fda-139">Example</span></span>
 
 ```http
 GET _api/web/lists('5C77031A-9621-4DFC-BB5D-57803A94E91D')/subscriptions('6D77031A-2345-5GRT-BV3D-55234B56FR43')
 ```
 
-#### <a name="request-body"></a><span data-ttu-id="8d1a2-139">Текст запроса</span><span class="sxs-lookup"><span data-stu-id="8d1a2-139">Request body</span></span>
+#### <a name="request-body"></a><span data-ttu-id="a2fda-140">Текст запроса</span><span class="sxs-lookup"><span data-stu-id="a2fda-140">Request body</span></span>
 
-<span data-ttu-id="8d1a2-140">Не указывайте тело запроса для этого метода.</span><span class="sxs-lookup"><span data-stu-id="8d1a2-140">Do not supply a request body for this method.</span></span>
+<span data-ttu-id="a2fda-141">Не указывайте тело запроса для этого метода.</span><span class="sxs-lookup"><span data-stu-id="a2fda-141">Do not supply a request body for this method.</span></span>
 
-##### <a name="response"></a><span data-ttu-id="8d1a2-141">Отклик</span><span class="sxs-lookup"><span data-stu-id="8d1a2-141">Response</span></span>
+#### <a name="response"></a><span data-ttu-id="a2fda-142">Отклик</span><span class="sxs-lookup"><span data-stu-id="a2fda-142">Response</span></span>
 
-<span data-ttu-id="8d1a2-142">Возвращает подписку, которую можно просмотреть в приложении, отправившем вызов.</span><span class="sxs-lookup"><span data-stu-id="8d1a2-142">This returns the subscription viewable by the calling application.</span></span>
+<span data-ttu-id="a2fda-143">Возвращает подписку, которую можно просмотреть в приложении, отправившем вызов.</span><span class="sxs-lookup"><span data-stu-id="a2fda-143">This returns the subscription viewable by the calling application.</span></span>
 
 ```http
 HTTP/1.1 200 OK
@@ -93,26 +94,26 @@ Content-Type: application/json
 }
 ```
 
-### <a name="get-all-subscriptions"></a><span data-ttu-id="8d1a2-143">Получение всех подписок</span><span class="sxs-lookup"><span data-stu-id="8d1a2-143">Get all subscriptions</span></span>
+### <a name="get-all-subscriptions"></a><span data-ttu-id="a2fda-144">Получение всех подписок</span><span class="sxs-lookup"><span data-stu-id="a2fda-144">Get all subscriptions</span></span>
 
-#### <a name="list-webhook"></a><span data-ttu-id="8d1a2-144">Веб-перехватчик списка</span><span class="sxs-lookup"><span data-stu-id="8d1a2-144">List webhook</span></span>
+#### <a name="list-webhook"></a><span data-ttu-id="a2fda-145">Веб-перехватчик списка</span><span class="sxs-lookup"><span data-stu-id="a2fda-145">List webhook</span></span>
 ```
 GET _api/web/lists('list-id')/subscriptions
 ```
 
-##### <a name="example"></a><span data-ttu-id="8d1a2-145">Пример</span><span class="sxs-lookup"><span data-stu-id="8d1a2-145">Example</span></span>
+##### <a name="example"></a><span data-ttu-id="a2fda-146">Пример</span><span class="sxs-lookup"><span data-stu-id="a2fda-146">Example</span></span>
 
 ```http
 GET _api/web/lists('5C77031A-9621-4DFC-BB5D-57803A94E91D')/subscriptions
 ```
 
-#### <a name="request-body"></a><span data-ttu-id="8d1a2-146">Текст запроса</span><span class="sxs-lookup"><span data-stu-id="8d1a2-146">Request body</span></span>
+#### <a name="request-body"></a><span data-ttu-id="a2fda-147">Текст запроса</span><span class="sxs-lookup"><span data-stu-id="a2fda-147">Request body</span></span>
 
-<span data-ttu-id="8d1a2-147">Не указывайте тело запроса для этого метода.</span><span class="sxs-lookup"><span data-stu-id="8d1a2-147">Do not supply a request body for this method.</span></span>
+<span data-ttu-id="a2fda-148">Не указывайте тело запроса для этого метода.</span><span class="sxs-lookup"><span data-stu-id="a2fda-148">Do not supply a request body for this method.</span></span>
 
-##### <a name="response"></a><span data-ttu-id="8d1a2-148">Отклик</span><span class="sxs-lookup"><span data-stu-id="8d1a2-148">Response</span></span>
+#### <a name="response"></a><span data-ttu-id="a2fda-149">Отклик</span><span class="sxs-lookup"><span data-stu-id="a2fda-149">Response</span></span>
 
-<span data-ttu-id="8d1a2-149">Возвращает коллекцию всех подписок в ресурсе SharePoint.</span><span class="sxs-lookup"><span data-stu-id="8d1a2-149">This returns a collection of all subscriptions on a SharePoint resource.</span></span> 
+<span data-ttu-id="a2fda-150">Возвращает коллекцию всех подписок на ресурсе SharePoint.</span><span class="sxs-lookup"><span data-stu-id="a2fda-150">This returns a collection of all subscriptions on a SharePoint resource.</span></span> 
 
 ```http
 HTTP/1.1 200 OK
@@ -134,3 +135,8 @@ Content-Type: application/json
   ]
 }
 ```
+
+## <a name="see-also"></a><span data-ttu-id="a2fda-151">См. также</span><span class="sxs-lookup"><span data-stu-id="a2fda-151">See also</span></span>
+
+- [<span data-ttu-id="a2fda-152">Веб-перехватчики для списков SharePoint</span><span class="sxs-lookup"><span data-stu-id="a2fda-152">SharePoint list webhooks</span></span>](overview-sharepoint-list-webhooks.md)
+- [<span data-ttu-id="a2fda-153">Обзор веб-перехватчиков SharePoint</span><span class="sxs-lookup"><span data-stu-id="a2fda-153">Overview of SharePoint webhooks</span></span>](../overview-sharepoint-webhooks.md)
