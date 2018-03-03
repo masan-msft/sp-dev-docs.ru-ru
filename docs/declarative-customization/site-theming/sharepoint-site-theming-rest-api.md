@@ -2,12 +2,12 @@
 
 С помощью интерфейса REST SharePoint можно выполнять операции CRUD (создание, чтение, обновление и удаление) с темами сайтов.
 
-Служба REST в SharePoint Online (а также локальной среде SharePoint 2016 или более поздней версии) поддерживает объединение нескольких запросов в один вызов службы с помощью параметра запроса OData $batch. Подробные сведения и ссылки на примеры кода см. в статье [Отправка пакетных запросов с помощью интерфейсов REST API](https://dev.office.com/sharepoint/docs/apis/rest/make-batch-requests-with-the-rest-apis).
+Служба REST в SharePoint Online (а также локальной среде SharePoint 2016 или более поздней версии) поддерживает объединение нескольких запросов в один вызов службы с помощью параметра запроса OData $batch. Подробные сведения и ссылки на примеры кода см. в статье [Отправка пакетных запросов с помощью интерфейсов REST API](../../sp-add-ins/make-batch-requests-with-the-rest-apis.md).
 
 ## <a name="prerequisites"></a>Необходимые условия
 Прежде чем приступить к работе, убедитесь, что вы знакомы с понятиями, описанными в следующих статьях:
-- [Знакомство со службой REST в SharePoint](https://dev.office.com/sharepoint/docs/apis/rest/get-to-know-the-sharepoint-rest-service) 
-- [Выполнение базовых операций с использованием конечных точек REST SharePoint](https://dev.office.com/sharepoint/docs/apis/rest/complete-basic-operations-using-sharepoint-rest-endpoints)
+- [Знакомство со службой REST в SharePoint](../../sp-add-ins/get-to-know-the-sharepoint-rest-service.md) 
+- [Выполнение базовых операций с использованием конечных точек SharePoint REST](../../sp-add-ins/complete-basic-operations-using-sharepoint-rest-endpoints.md)
 
 ## <a name="rest-commands-for-site-themes"></a>Команды REST для тем сайтов
 
@@ -131,6 +131,5 @@ RestRequest("/_api/thememanager/GetTenantThemingOptions");
 * [Настройка тем для сайтов SharePoint: схема JSON](sharepoint-site-theming-json-schema.md)
 * [Настройка тем для сайтов SharePoint: командлеты PowerShell](sharepoint-site-theming-powershell.md)
 * [Настройка тем для сайтов SharePoint: CSOM](sharepoint-site-theming-csom.md)
-* [Выполнение базовых операций с использованием конечных точек REST SharePoint](https://dev.office.com/sharepoint/docs/apis/rest/complete-basic-operations-using-sharepoint-rest-endpoints)
-* [Выполнение вызовов REST при помощи C# и JavaScript для SharePoint 2013](http://www.microsoft.com/resources/msdn/en-us/office/media/video/video.mdl?cid=sdc&from=mscomsdc&VideoID=4e4cc094-ff69-405b-852f-2ac7c41293c5)
+* [Выполнение вызовов REST на языках C# и JavaScript для SharePoint 2013](http://www.microsoft.com/resources/msdn/en-us/office/media/video/video.mdl?cid=sdc&from=mscomsdc&VideoID=4e4cc094-ff69-405b-852f-2ac7c41293c5)
 

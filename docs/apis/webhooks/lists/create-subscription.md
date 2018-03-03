@@ -1,12 +1,13 @@
 ---
 title: "Создание подписки"
-ms.date: 09/25/2017
+description: "Создает подписку на веб-перехватчики в списке SharePoint."
+ms.date: 02/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 374200568aa1151e58b9ae76fc48fb2465921af7
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 8a93bdd5c7891ac275e18c1c9f50620c44b760af
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="create-a-new-subscription"></a>Создание подписки 
 
@@ -16,7 +17,7 @@ ms.lasthandoff: 10/13/2017
 
 У приложения должно быть разрешение на изменение списка SharePoint, в котором создается подписка.
 
-**Если приложение является приложением Microsoft Azure Active Directory (AD):**
+### <a name="if-your-application-is-a-microsoft-azure-active-directory-azure-ad-application"></a>Если приложение является приложением Microsoft Azure Active Directory (AD)
 
 Приложению Azure AD необходимо предоставить разрешения, указанные в следующей таблице:
 
@@ -24,7 +25,7 @@ ms.lasthandoff: 10/13/2017
 ------------|------------
 SharePoint Online в Office 365|Чтение и запись элементов и списков во всех семействах веб-сайтов.
 
-**Если приложение является надстройкой SharePoint:**
+### <a name="if-your-application-is-a-sharepoint-add-in"></a>Если приложение является надстройкой SharePoint
 
 Надстройке SharePoint необходимо предоставить по крайней мере следующие разрешения:
 
@@ -47,7 +48,7 @@ POST /_api/web/lists('list-id')/subscriptions
 resource|строка|URL-адрес списка для получения уведомлений.
 notificationUrl|строка|URL-адрес службы для отправки уведомлений.
 expirationDateTime|дата|Срок хранения уведомления.
-client-clientState|string|Необязательный. Непрозрачная строка, которая передаются клиенту со всеми уведомлениями. Ее можно использовать для проверки уведомлений и маркировки различных подписок.
+client-clientState|строка|Необязательный. Непрозрачная строка, которая передается клиенту со всеми уведомлениями.<br/>Ее можно использовать для проверки уведомлений или маркировки различных подписок.
 
 
 ### <a name="example"></a>Пример
@@ -66,7 +67,7 @@ Content-Type: application/json
 
 ## <a name="response"></a>Ответ
 
-Когда вы добавляете подписку, возвращается ответ `201 Created`, который включает новый объект подписки.
+Если подписка добавлена, возвращается ответ `201 Created`, который содержит новый объект подписки.
 
 ### <a name="example"></a>Пример
 
@@ -84,6 +85,11 @@ Content-Type: application/json
 
 ## <a name="url-validation"></a>Проверка URL-адреса
 
-Перед созданием подписки SharePoint отправит запрос с токеном проверки на указанный URL-адрес службы. Служба должна ответить на него, вернув токен проверки.
+Перед созданием подписки SharePoint отправляет запрос с токеном проверки на указанный URL-адрес службы. Служба должна ответить на него, вернув токен проверки.
 
-В противном случае подписка не будет создана. Дополнительные сведения см. в статье [Обзор веб-перехватчиков SharePoint](../overview-sharepoint-webhooks.md).
+В противном случае подписка не создается.
+
+## <a name="see-also"></a>См. также
+
+- [Веб-перехватчики для списков SharePoint](overview-sharepoint-list-webhooks.md)
+- [Обзор веб-перехватчиков SharePoint](../overview-sharepoint-webhooks.md)

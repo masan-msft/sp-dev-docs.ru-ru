@@ -1,12 +1,13 @@
 ---
 title: "Обновление подписки"
-ms.date: 09/25/2017
+description: "Обновляет подписку на веб-перехватчики для списка SharePoint."
+ms.date: 02/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 6638ad3f3919f9e14497adb7dacc1c1a09c139f6
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: fe8a0960f597d50d77b22a29f14f21afec20c422
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="update-a-subscription"></a>Обновление подписки
 
@@ -14,9 +15,9 @@ ms.lasthandoff: 10/13/2017
 
 ## <a name="permissions"></a>Разрешения
 
-У приложения должно быть разрешение на изменение списка SharePoint, в котором обновляется подписка.  
+Приложение должно иметь по крайней мере разрешение на изменение списка SharePoint, в котором обновляется подписка.  
 
-**Если приложение является приложением Microsoft Azure Active Directory (AD)**:
+### <a name="if-your-application-is-a-microsoft-azure-active-directory-azure-ad-application"></a>Если приложение является приложением Microsoft Azure Active Directory (AD)
 
 Приложению Azure AD необходимо предоставить разрешения, указанные в таблице ниже. Подписку можно обновить только из приложения Azure AD, в котором она создана.
 
@@ -24,7 +25,7 @@ ms.lasthandoff: 10/13/2017
 ------------|------------
 SharePoint Online в Office 365|Чтение и запись элементов и списков во всех семействах веб-сайтов. 
 
-**Для надстройки SharePoint**:
+### <a name="if-your-application-is-a-sharepoint-add-in"></a>Если приложение является надстройкой SharePoint
 
 Надстройке SharePoint необходимо предоставить по крайней мере указанные ниже разрешения. Подписку можно обновить только из надстройки SharePoint, в которой она создана.
 
@@ -58,15 +59,20 @@ Content-Type: application/json
 -----|------|------------
 notificationUrl|строка|URL-адрес службы для отправки уведомлений.
 expirationDateTime|дата|Срок хранения уведомления.
-client-clientState|string|Необязательный. Непрозрачная строка, которая передается клиенту со всеми уведомлениями. Ее можно использовать для проверки уведомлений и маркировки различных подписок.
+client-clientState|строка|Необязательный. Непрозрачная строка, которая передается клиенту со всеми уведомлениями.<br/>Ее можно использовать для проверки уведомлений или маркировки различных подписок.
 
 
-## <a name="response"></a>Отклик
+## <a name="response"></a>Ответ
 
-Если подписка найдена и обновление выполнено успешно, возвращается отклик `204 No Content`.
+Если подписка найдена и успешно обновлена, возвращается ответ `204 No Content`.
 
 ### <a name="example"></a>Пример
 
 ```http
 HTTP/1.1 204 No Content
 ```
+
+## <a name="see-also"></a>См. также
+
+- [Веб-перехватчики для списков SharePoint](overview-sharepoint-list-webhooks.md)
+- [Обзор веб-перехватчиков SharePoint](../overview-sharepoint-webhooks.md)

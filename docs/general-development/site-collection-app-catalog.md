@@ -3,11 +3,11 @@ title: "Использование каталога приложений в се
 ms.date: 12/14/2017
 ms.prod: sharepoint
 ms.assetid: fdf7ecb1-9951-475b-b058-3285fba77b68
-ms.openlocfilehash: 2a2e17f0f33bb6f801872965289663fbcca4e28e
-ms.sourcegitcommit: 1845925102fabc55de2c6c60b47c20303b22b173
+ms.openlocfilehash: 28d98344b8cab6334b86394aa190eca2cf32cb65
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="use-the-site-collection-app-catalog"></a>Использование каталога приложений в семействе веб-сайтов
 
@@ -116,4 +116,4 @@ Remove-SPOSiteCollectionAppCatalog -Site $site
 
 ## <a name="see-also"></a>См. также
 
-- [Управление каталогом приложений для семейства веб-сайтов]((https://support.office.com/ru-RU/article/Manage-the-Site-Collection-App-Catalog-928b9b61-a9de-4563-a7d1-6231aa9d4d19))
+- [Управление каталогом приложений для семейства веб-сайтов](https://support.office.com/ru-RU/article/Manage-the-Site-Collection-App-Catalog-928b9b61-a9de-4563-a7d1-6231aa9d4d19)

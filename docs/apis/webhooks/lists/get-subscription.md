@@ -1,12 +1,13 @@
 ---
 title: "Получение подписок"
-ms.date: 09/25/2017
+description: "Возвращает одну или несколько подписок на веб-перехватчики в списке SharePoint."
+ms.date: 02/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 6dea5da88388c0787c9295141cee2fed50a5fa65
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: d56b69691eed234f65c2fac25e934a9fe6e00d33
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="get-subscriptions"></a>Получение подписок
 
@@ -16,9 +17,9 @@ ms.lasthandoff: 10/13/2017
 
 ### <a name="get-a-single-subscription"></a>Получение одной подписки
 
-У приложения должно быть разрешение на изменение списка SharePoint, из которого извлекается подписка.
+У приложения должно быть по крайней мере разрешение на изменение списка SharePoint, из которого извлекается подписка.
 
-**Для приложения Microsoft Azure Active Directory (AD):**
+#### <a name="if-your-application-is-a-microsoft-azure-active-directory-azure-ad-application"></a>Если приложение является приложением Microsoft Azure Active Directory (AD)
 
 Приложению Azure AD необходимо предоставить разрешения, указанные в таблице ниже. Подписку можно получить только из создавшего ее приложения Azure AD. 
 
@@ -26,7 +27,7 @@ ms.lasthandoff: 10/13/2017
 ------------|------------
 SharePoint Online в Office 365|Чтение и запись элементов и списков во всех семействах веб-сайтов.
 
-**Для надстройки SharePoint**:
+#### <a name="if-your-application-is-a-sharepoint-add-in"></a>Если приложение является надстройкой SharePoint
 
 Надстройке SharePoint необходимо предоставить по крайней мере указанные ниже разрешения. Подписку можно получить только из создавшей ее надстройки SharePoint. 
 
@@ -38,15 +39,15 @@ SharePoint Online в Office 365|Чтение и запись элементов 
 
 У приложения должны быть разрешения на управление списком SharePoint, из которого извлекается подписка.
 
-**Для приложения Microsoft Azure Active Directory (AD):**
+#### <a name="if-your-application-is-an-azure-ad-application"></a>Если ваше приложение является приложением Azure AD
 
-Приложению Azure AD необходимо предоставить разрешения, указанные в таблице ниже. 
+Приложению Azure AD App необходимо предоставить разрешения, указанные в таблице ниже. 
 
 Приложение | Разрешение 
 ------------|------------
 SharePoint Online в Office 365|Полный доступ ко всем семействам веб-сайтов.
 
-**Для надстройки SharePoint**:
+#### <a name="if-your-application-is-a-sharepoint-add-in"></a>Если приложение является надстройкой SharePoint
 
 Надстройке SharePoint необходимо предоставить по крайней мере указанные ниже разрешения. 
 
@@ -73,7 +74,7 @@ GET _api/web/lists('5C77031A-9621-4DFC-BB5D-57803A94E91D')/subscriptions('6D7703
 
 Не указывайте тело запроса для этого метода.
 
-##### <a name="response"></a>Отклик
+#### <a name="response"></a>Отклик
 
 Возвращает подписку, которую можно просмотреть в приложении, отправившем вызов.
 
@@ -110,9 +111,9 @@ GET _api/web/lists('5C77031A-9621-4DFC-BB5D-57803A94E91D')/subscriptions
 
 Не указывайте тело запроса для этого метода.
 
-##### <a name="response"></a>Отклик
+#### <a name="response"></a>Отклик
 
-Возвращает коллекцию всех подписок в ресурсе SharePoint. 
+Возвращает коллекцию всех подписок на ресурсе SharePoint. 
 
 ```http
 HTTP/1.1 200 OK
@@ -134,3 +135,8 @@ Content-Type: application/json
   ]
 }
 ```
+
+## <a name="see-also"></a>См. также
+
+- [Веб-перехватчики для списков SharePoint](overview-sharepoint-list-webhooks.md)
+- [Обзор веб-перехватчиков SharePoint](../overview-sharepoint-webhooks.md)
