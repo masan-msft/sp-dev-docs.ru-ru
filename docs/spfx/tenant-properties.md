@@ -3,21 +3,21 @@ title: "Свойства клиента SharePoint Online"
 description: "Управляйте свойствами клиента, которые позволяют администраторам добавлять свойства в каталог приложений для различных компонентов SharePoint Framework."
 ms.date: 02/02/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 391d2860a25c2eec553c8ce034bbf100bdb3c82c
-ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
+ms.openlocfilehash: bd1fcff023d79dcfa06318b8c4e9e18061357a6d
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="sharepoint-online-tenant-properties"></a>Свойства клиента SharePoint Online
 
-Свойства клиента позволяют администраторам добавлять свойства в каталог приложений для различных компонентов SharePoint Framework. Для управления свойствами клиента администраторы клиента используют [командную консоль Microsoft SharePoint Online](https://technet.microsoft.com/ru-RU/library/fp161372.aspx). Это модуль PowerShell для управления подпиской SharePoint Online в Office 365.
+Свойства клиента позволяют администраторам добавлять свойства в каталог приложений для различных компонентов SharePoint Framework. Для управления свойствами клиента администраторы клиента используют [командную консоль Microsoft SharePoint Online](https://technet.microsoft.com/ru-RU/library/fp161372.aspx). Это модуль PowerShell для управления подпиской на SharePoint Online в Office 365.
 
 ## <a name="manage-tenant-properties"></a>Управление свойствами клиента
 
 С помощью [командной консоли Microsoft SharePoint Online](https://www.microsoft.com/en-us/download/details.aspx?id=35588) администраторы клиента могут добавлять и удалять свойства клиента через PowerShell. 
 
-Эти командлеты PowerShell доступны для управления свойствами клиента: Так как свойства клиента хранятся в каталоге приложений клиента, в командлетах ниже нужно указать URL-адрес семейства веб-сайтов каталога приложений клиента.
+Ниже приведены командлеты PowerShell для управления свойствами клиента. Так как свойства клиента хранятся в каталоге приложений клиента, в командлетах ниже нужно указать URL-адрес семейства веб-сайтов каталога приложений клиента.
 
 ### <a name="get-spostorageentity"></a>Get-SPOStorageEntity
 
