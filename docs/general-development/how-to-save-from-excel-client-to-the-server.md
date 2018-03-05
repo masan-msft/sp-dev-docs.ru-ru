@@ -2,7 +2,8 @@
 title: "Сохранение на сервере данных из клиента Excel"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto
-f1_keywords: how to,howdoi,howto
+f1_keywords:
+- how to,howdoi,howto
 ms.prod: sharepoint
 ms.assetid: 28716ba5-0774-44df-833b-0034d2c63319
 ms.openlocfilehash: 18868cec79119123cf8262b9b93e9fd7eca1571f
@@ -39,7 +40,7 @@ ms.lasthandoff: 12/07/2017
 2. <span data-ttu-id="ef18a-113">In cell A1, type 8.</span><span class="sxs-lookup"><span data-stu-id="ef18a-113">In cell A1, type 8.</span></span>
     
   
-3. <span data-ttu-id="ef18a-114">In cell A2, type =3*A1.</span><span class="sxs-lookup"><span data-stu-id="ef18a-114">In cell A2, type =3*A1.</span></span>
+3. <span data-ttu-id="ef18a-114">In cell A2, type =3\*A1.</span><span class="sxs-lookup"><span data-stu-id="ef18a-114">In cell A2, type =3\*A1.</span></span>
     
   
 4. <span data-ttu-id="ef18a-115">To make cell A1 editable in Веб-клиент Excel, you must first make cell A1 into a named range:</span><span class="sxs-lookup"><span data-stu-id="ef18a-115">To make cell A1 editable in Excel Web Access, you must first make cell A1 into a named range:</span></span> 

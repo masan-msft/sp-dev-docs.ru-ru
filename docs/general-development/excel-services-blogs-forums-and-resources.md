@@ -2,7 +2,8 @@
 title: "Блоги, форумы и ресурсы для служб Excel"
 ms.date: 09/25/2017
 keywords: blogger
-f1_keywords: blogger
+f1_keywords:
+- blogger
 ms.prod: sharepoint
 ms.assetid: c0b137cd-126d-4c74-a3f7-eb9debe3c35f
 ms.openlocfilehash: c9e7ea6b76fddd51cd5b04333eb57e8c70f27850
@@ -38,8 +39,8 @@ ms.lasthandoff: 10/13/2017
 |<span data-ttu-id="eb9d8-121">**Дополнительные материалы**</span><span class="sxs-lookup"><span data-stu-id="eb9d8-121">**Additional Resources**</span></span>|<span data-ttu-id="eb9d8-122">**Ссылки**</span><span class="sxs-lookup"><span data-stu-id="eb9d8-122">**Links**</span></span>|
 |:-----|:-----|
 |<span data-ttu-id="eb9d8-123">Центр ресурсов служб Excel</span><span class="sxs-lookup"><span data-stu-id="eb9d8-123">Excel Services Resource Center</span></span>  <br/> | [<span data-ttu-id="eb9d8-124">Центр ресурсов служб Excel в MSDN (Возможно, на английском языке)</span><span class="sxs-lookup"><span data-stu-id="eb9d8-124">Excel Services Resource Center on MSDN</span></span>](http://msdn.microsoft.com/en-us/office/bb203828.aspx) <br/> |
-|<span data-ttu-id="eb9d8-125">Документация для ИТ-специалистов и администраторов</span><span class="sxs-lookup"><span data-stu-id="eb9d8-125">IT Pro \\ Administration Documentation</span></span>  <br/> | [<span data-ttu-id="eb9d8-126">TechNet</span><span class="sxs-lookup"><span data-stu-id="eb9d8-126">TechNet</span></span>](http://technet.microsoft.com/ru-ru/library/ee424401%28office.14%29.aspx) <br/> |
-|<span data-ttu-id="eb9d8-127">Microsoft Excel Online, частью Office Online также поддерживает книги Excel в браузере.</span><span class="sxs-lookup"><span data-stu-id="eb9d8-127">Microsoft Excel Online, part of Office Online, also supports Excel workbooks in the browser.</span></span>  <br/> |<span data-ttu-id="eb9d8-128">Дополнительные сведения о Excel Online можно  [документации](https://technet.microsoft.com/ru-ru/library/ee855124.aspx) на сайте Technet.</span><span class="sxs-lookup"><span data-stu-id="eb9d8-128">For more information about Excel Online, see the  [documentation](https://technet.microsoft.com/ru-ru/library/ee855124.aspx) on Technet.</span></span> <br/> |
+|<span data-ttu-id="eb9d8-125">Документация для ИТ-специалистов и администраторов</span><span class="sxs-lookup"><span data-stu-id="eb9d8-125">IT Pro \\ Administration Documentation</span></span>  <br/> | [<span data-ttu-id="eb9d8-126">TechNet</span><span class="sxs-lookup"><span data-stu-id="eb9d8-126">TechNet</span></span>](http://technet.microsoft.com/en-us/library/ee424401%28office.14%29.aspx) <br/> |
+|<span data-ttu-id="eb9d8-127">Microsoft Excel Online, частью Office Online также поддерживает книги Excel в браузере.</span><span class="sxs-lookup"><span data-stu-id="eb9d8-127">Microsoft Excel Online, part of Office Online, also supports Excel workbooks in the browser.</span></span>  <br/> |<span data-ttu-id="eb9d8-128">Дополнительные сведения о Excel Online можно  [документации](https://technet.microsoft.com/en-us/library/ee855124.aspx) на сайте Technet.</span><span class="sxs-lookup"><span data-stu-id="eb9d8-128">For more information about Excel Online, see the  [documentation](https://technet.microsoft.com/en-us/library/ee855124.aspx) on Technet.</span></span> <br/> |
    
 
 ## <a name="see-also"></a><span data-ttu-id="eb9d8-129">См. также</span><span class="sxs-lookup"><span data-stu-id="eb9d8-129">See also</span></span>

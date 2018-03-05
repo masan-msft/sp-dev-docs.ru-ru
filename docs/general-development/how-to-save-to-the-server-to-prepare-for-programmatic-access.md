@@ -2,7 +2,8 @@
 title: "Сохранение данных на сервере для подготовки к программному доступу"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto
-f1_keywords: how to,howdoi,howto
+f1_keywords:
+- how to,howdoi,howto
 ms.prod: sharepoint
 ms.assetid: 80b34a29-3d40-4d11-9ba1-b4886ffcfd42
 ms.openlocfilehash: 47d2d9cd97c6fff52de770b4701f2c77d830e7ed

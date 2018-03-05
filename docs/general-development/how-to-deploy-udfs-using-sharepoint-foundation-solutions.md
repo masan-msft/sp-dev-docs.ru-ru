@@ -2,7 +2,8 @@
 title: "Развертывание пользовательских функций с помощью решений SharePoint Foundation"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto,udf list,WSS Solutions
-f1_keywords: how to,howdoi,howto,udf list,WSS Solutions
+f1_keywords:
+- how to,howdoi,howto,udf list,WSS Solutions
 ms.prod: sharepoint
 ms.assetid: 97751a6c-ef73-4d95-a3c4-98014d84ba48
 ms.openlocfilehash: e731eee138d97bd80cea236f78fd760cf7af2e7a

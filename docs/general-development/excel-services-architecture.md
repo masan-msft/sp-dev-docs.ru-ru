@@ -2,7 +2,8 @@
 title: "Архитектура служб Excel"
 ms.date: 09/25/2017
 keywords: excel services design
-f1_keywords: excel services design
+f1_keywords:
+- excel services design
 ms.prod: sharepoint
 ms.assetid: e0349b4a-2d52-46c4-a167-801e9c24eaca
 ms.openlocfilehash: 3202d7163ad080462e98dd73fb05bf3f60eae7cd

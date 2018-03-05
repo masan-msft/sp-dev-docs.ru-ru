@@ -2,7 +2,8 @@
 title: "Оповещения для служб Excel"
 ms.date: 09/25/2017
 keywords: "ошибки"
-f1_keywords: errors
+f1_keywords:
+- errors
 ms.prod: sharepoint
 ms.assetid: a4e7030b-05c2-484e-b21f-46cba937b803
 ms.openlocfilehash: 044d7ee1f89cf16d567c8ae949eb58c0c9b2accd

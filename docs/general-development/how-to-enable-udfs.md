@@ -2,7 +2,8 @@
 title: "Включение пользовательских функций"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto,UDF list
-f1_keywords: how to,howdoi,howto,UDF list
+f1_keywords:
+- how to,howdoi,howto,UDF list
 ms.prod: sharepoint
 ms.assetid: 8c1af2eb-bb22-45e1-82de-a2b4b53d7a26
 ms.openlocfilehash: e413bb036e33d905751d7fae0066242d6910c0b5

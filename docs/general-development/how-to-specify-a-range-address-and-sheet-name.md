@@ -2,7 +2,8 @@
 title: "Указание адреса диапазона и имени листа"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto,set range
-f1_keywords: how to,howdoi,howto,set range
+f1_keywords:
+- how to,howdoi,howto,set range
 ms.prod: sharepoint
 ms.assetid: 8bfefc48-1fbc-4b65-8156-1b7d0a8453ee
 ms.openlocfilehash: 803f786e522bc70753459e5a3d18d1d7f5b50efc

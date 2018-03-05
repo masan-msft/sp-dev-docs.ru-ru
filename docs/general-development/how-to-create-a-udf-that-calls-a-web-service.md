@@ -2,7 +2,8 @@
 title: "Создание пользовательской функции, которая вызывает веб-службу"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto,UDF
-f1_keywords: how to,howdoi,howto,UDF
+f1_keywords:
+- how to,howdoi,howto,UDF
 ms.prod: sharepoint
 ms.assetid: 360c5766-4b5d-4a48-9f23-8955036924ce
 ms.openlocfilehash: 37202a89818446d1a3730d09012469a7f7e110d4
