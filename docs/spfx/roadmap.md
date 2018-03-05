@@ -3,11 +3,11 @@ title: "План развития SharePoint Framework"
 description: "Современные возможности настройки, выпущенные после выхода общедоступной версии."
 ms.date: 01/12/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 8b50c0a6ec81f27001d9abafc5e8a9e0a2fa957e
-ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
+ms.openlocfilehash: 8d3f750b278715a49269d5db2a57f6a839d6b2f2
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="sharepoint-framework-roadmap"></a>План развития SharePoint Framework
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 01/29/2018
 - [Свойства клиента](./tenant-properties.md)
 - [API управления жизненным циклом приложений для решений и надстроек SPFx](../apis/alm-api-for-spfx-add-ins.md)
 - [Поддержка Office UI Fabric Core](https://dev.office.com/blogs/improved-support-for-office-ui-fabric-core)
-- [Упаковка ресурсов и каталог приложений для семейства веб-сайтов](../general-development/site-collection-app-catalog.md)
+- [Каталог приложений семейства веб-сайтов и упаковка ресурсов](../general-development/site-collection-app-catalog.md)
 
 
 > [!NOTE]

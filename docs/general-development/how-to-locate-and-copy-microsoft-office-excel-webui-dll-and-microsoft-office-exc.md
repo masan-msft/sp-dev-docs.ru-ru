@@ -2,7 +2,8 @@
 title: "Обнаружение и копирование Microsoft.Office.Excel.WebUI.dll и Microsoft.Office.Excel.WebUI.Internal.dll"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto,WebUI DLL
-f1_keywords: how to,howdoi,howto,WebUI DLL
+f1_keywords:
+- how to,howdoi,howto,WebUI DLL
 ms.prod: sharepoint
 ms.assetid: 09ad5d5e-1678-45e4-8159-23ef56f84215
 ms.openlocfilehash: 227d8f98a7ab49d090612ed6411b44865a4d2ea8

@@ -3,11 +3,11 @@ title: "Особенности системы управления для реш
 description: "Чтобы получить максимум от решений SharePoint Framework, нужен конкретный план, охватывающий наиболее важные аспекты управления проектами."
 ms.date: 01/26/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 7e00979261ba23a58352d6f963e8cddd6dfc1357
-ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
+ms.openlocfilehash: b5afe5709d10ef45ca5453ba182e7c4a3d7dd386
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="sharepoint-framework-solutions-governance-considerations"></a>Особенности системы управления для решений SharePoint Framework
 

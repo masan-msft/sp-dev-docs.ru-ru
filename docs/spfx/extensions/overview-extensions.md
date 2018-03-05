@@ -3,18 +3,18 @@ title: "Обзор расширений SharePoint Framework (SPFx)"
 description: "Используйте расширения SPFx, чтобы настроить области уведомлений, панели инструментов, представления данных списков и другие аспекты SharePoint."
 ms.date: 01/11/2018
 ms.prod: sharepoint
-ms.openlocfilehash: a39bfdc82e3557fb791c43db21e889448f75b785
-ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.openlocfilehash: ad06c2cda5bd6b3ad21049164a58b70cc9dbf93d
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="overview-of-sharepoint-framework-extensions"></a>Обзор расширений SharePoint Framework
 
-Используя расширения SharePoint Framework (SPFx), можно сделать SharePoint удобнее для пользователей. Используя расширения SharePoint Framework, можно настроить области уведомлений, панели инструментов, представления данных списков и другие аспекты SharePoint. Расширения SharePoint Framework доступны во всех клиентах Office 365 для производственного использования. 
+Используя расширения SharePoint Framework (SPFx), можно сделать SharePoint удобнее для пользователей. Используя расширения SharePoint Framework, можно настроить области уведомлений, панели инструментов, представления данных списков и другие аспекты SharePoint. Расширения SharePoint Framework доступны во всех клиентах Office 365 для использования в рабочей среде. 
 
 > [!NOTE] 
-> Вы можете бесплатно получить клиент Office 365 для разработчиков, приняв участие в [специальной программе](http://dev.office.com/devprogram).
+> Вы можете получить подписку разработчиков приложений для Office 365, приняв участие в [программе для разработчиков приложений для Office 365](http://dev.office.com/devprogram).
 
 Расширения SharePoint Framework позволяют дополнять пользовательский интерфейс SharePoint на современных страницах и в библиотеках документов, используя знакомые библиотеки и средства SharePoint Framework для клиентской разработки. SharePoint Framework включает три новых типа расширений:
 

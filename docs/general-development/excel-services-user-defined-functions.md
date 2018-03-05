@@ -2,7 +2,8 @@
 title: "Пользовательские функции служб Excel (UDF)"
 ms.date: 09/25/2017
 keywords: functions
-f1_keywords: functions
+f1_keywords:
+- functions
 ms.prod: sharepoint
 ms.assetid: 27dd8024-7e00-40de-a688-afc67c880603
 ms.openlocfilehash: f529b60a1e7c6df9d6ee74abf73b52309e5de6b5

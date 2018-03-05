@@ -3,11 +3,11 @@ title: "Настройка клиента Office 365"
 description: "Настройте клиент Office 365, чтобы создавать и развертывать клиентские веб-части, используя SharePoint Framework."
 ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 5981b4eaca349700a78cbbdf39eef376cb6d56e4
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: ca2dc88c013458f79b7e27402f60d53b08261bac
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="set-up-your-office-365-tenant"></a>Настройка клиента Office 365
 
@@ -15,7 +15,7 @@ ms.lasthandoff: 01/10/2018
 
 Если у вас уже есть клиент Office 365, переходите к разделу [Создание сайта каталога приложений](#create-app-catalog-site).
 
-В противном случае создайте пробный клиент или зарегистрируйтесь в [программе для разработчиков Microsoft Office 365](https://dev.office.com/devprogram).  
+Если у вас нет клиента, создайте подписку или зарегистрируйтесь в [программе для разработчиков приложений для Microsoft Office 365](https://dev.office.com/devprogram).  
 
 > [!NOTE] 
 > Перед регистрацией убедитесь, что вы вышли из всех имеющихся клиентов Office 365.
@@ -38,7 +38,7 @@ ms.lasthandoff: 01/10/2018
 
 4. На следующей странице введите следующие сведения:
 
-    - **Название**: введите **Каталог приложений**.
+    - **Название**. Введите **Каталог приложений**.
     - **_Суффикс_ адреса веб-сайта**: введите предпочитаемый суффикс каталога приложений, например **apps**.
     - **Администратор**: введите имя пользователя и нажмите кнопку **Разрешить**, чтобы разрешить его.
 

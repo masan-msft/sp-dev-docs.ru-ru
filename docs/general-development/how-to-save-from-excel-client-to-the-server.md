@@ -2,7 +2,8 @@
 title: "Сохранение на сервере данных из клиента Excel"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto
-f1_keywords: how to,howdoi,howto
+f1_keywords:
+- how to,howdoi,howto
 ms.prod: sharepoint
 ms.assetid: 28716ba5-0774-44df-833b-0034d2c63319
 ms.openlocfilehash: 18868cec79119123cf8262b9b93e9fd7eca1571f

@@ -2,7 +2,8 @@
 title: Step 2 Creating a Managed-Code UDF
 ms.date: 09/25/2017
 keywords: soap
-f1_keywords: soap
+f1_keywords:
+- soap
 ms.prod: sharepoint
 ms.assetid: 3c9edf82-ee2d-41f0-9d66-e88e8dc0cc69
 ms.openlocfilehash: acb89ed685130f98c3dc5963c8839d2f2919ac39

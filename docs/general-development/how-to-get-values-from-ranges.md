@@ -2,7 +2,8 @@
 title: "Получение значений из диапазонов"
 ms.date: 09/25/2017
 keywords: get range,how to,howdoi,howto
-f1_keywords: get range,how to,howdoi,howto
+f1_keywords:
+- get range,how to,howdoi,howto
 ms.prod: sharepoint
 ms.assetid: ab2c0f60-b7df-46a1-9105-eb85ce817431
 ms.openlocfilehash: 38223c877a834ffa49605b33abc616f6f65c4886

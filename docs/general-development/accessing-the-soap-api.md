@@ -2,7 +2,8 @@
 title: "Доступ к API SOAP"
 ms.date: 09/25/2017
 keywords: soap
-f1_keywords: soap
+f1_keywords:
+- soap
 ms.prod: sharepoint
 ms.assetid: 36e8e3d5-83ac-4bd3-b556-1af132add3eb
 ms.openlocfilehash: 41b6656034d9e67fedca44684444bfb73d667e02
@@ -55,7 +56,7 @@ WSDL для конечной точки Веб-службы Excel доступе
     
 
 
-|**URL-адрес элемента**|**Description**|
+|**URL-адрес элемента**|**Описание**|
 |:-----|:-----|
 | _server_ <br/> |Имя сервера, на котором развернут Microsoft SharePoint Server 2010.  <br/> |
 | _customsite_ <br/> |Сайт настраиваемых SharePoint Server 2010, администратор сервера создает.  <br/> |

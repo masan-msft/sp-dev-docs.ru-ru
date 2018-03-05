@@ -2,7 +2,8 @@
 title: "Блоги, форумы и ресурсы для служб Excel"
 ms.date: 09/25/2017
 keywords: blogger
-f1_keywords: blogger
+f1_keywords:
+- blogger
 ms.prod: sharepoint
 ms.assetid: c0b137cd-126d-4c74-a3f7-eb9debe3c35f
 ms.openlocfilehash: c9e7ea6b76fddd51cd5b04333eb57e8c70f27850

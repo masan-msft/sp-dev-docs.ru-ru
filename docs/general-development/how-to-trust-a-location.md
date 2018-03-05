@@ -1,8 +1,9 @@
 ---
-title: "Определение надежных расположений"
+title: "Как сделать расположение доверенным"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto,trusted location
-f1_keywords: how to,howdoi,howto,trusted location
+f1_keywords:
+- how to,howdoi,howto,trusted location
 ms.prod: sharepoint
 ms.assetid: 0f396c0b-f578-4d1a-9e6b-a75f352265ab
 ms.openlocfilehash: 2f22c1aa22fd81890d629c01ccdf8ba9adc50c66
@@ -11,7 +12,7 @@ ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 11/15/2017
 ---
-# <a name="trust-a-location"></a>Определение надежных расположений
+# <a name="trust-a-location"></a>Как сделать расположение доверенным
 
 Workbooks that you want to access must be placed in a trusted location. If they are not, calls to open the workbooks will fail. This example shows you how to trust a location by using the SharePoint Central Administration page. 
   

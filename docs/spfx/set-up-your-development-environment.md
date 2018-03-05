@@ -1,13 +1,13 @@
 ---
 title: "Как настроить среду разработки SharePoint Framework"
 description: "Создавайте решения SharePoint Framework, используя Visual Studio или собственную среду разработки. Можно использовать Mac, ПК с Windows или Linux."
-ms.date: 01/08/2018
+ms.date: 02/15/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 0c849ef4ad13962ecb4e3cfd8dc34aec0baab523
-ms.sourcegitcommit: 2188f21ce207c9d62d7d8af93822bd101058ba2f
+ms.openlocfilehash: d06ca593e9aaed9f3e4e5f1e0c84b6bac602a50a
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="set-up-your-sharepoint-framework-development-environment"></a>Как настроить среду разработки SharePoint Framework
 
@@ -18,28 +18,28 @@ ms.lasthandoff: 01/10/2018
 
 Эти действия также показаны в видео на [канале SharePoint PnP в YouTube](https://www.youtube.com/watch?v=WX9FL0BjE0I&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq).
 
-<a href="https://www.youtube.com/watch?v=WX9FL0BjE0I&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq"> <img src="../images/spfx-youtube-tutorial0.png" alt="Screenshot of the YouTube video player for this tutorial" />
+<a href="https://www.youtube.com/watch?v=-tXf8gxjmOI&list=PLR9nK3mnD-OXvSWvS2zglCzz4iplhVrKq"> <img src="../images/spfx-youtube-tutorial0.png" alt="Screenshot of the YouTube video player for this tutorial" />
 </a>
 
 ## <a name="install-developer-tools"></a>Установка средств разработчика
 
 ### <a name="install-nodejs"></a>Установка NodeJS
 
-Установка [NodeJS версии 6.x](https://nodejs.org/download/release/latest-v6.x/). 
+Установка [LTS-версии NodeJS](https://nodejs.org). 
 
 - Если у вас Windows, используйте установщики msi для простой настройки NodeJS. Эти установщики можно скачать, перейдя по указанной выше ссылке.
 - Если у вас уже установлена библиотека NodeJS, проверьте, последняя ли это версия, используя команду `node -v`. Она должна вернуть текущую [версию LTS](https://nodejs.org/en/download/). 
 - Если у вас компьютер Mac, рекомендуем устанавливать платформу NodeJS и управлять ею с помощью [homebrew](http://brew.sh/). 
 
 > [!NOTE] 
-> Конвейер сборки SharePoint Framework сейчас не поддерживает версию LTS Node.js. Скачайте [Node.js версии 6.11.5](https://nodejs.org/download/release/latest-v6.x/). При этом установится npm 3.10.10. Обратите внимание на то, что вы используете npm версии 5.x. Необходимо перейти на более раннюю версию npm, выполнив команду `npm install -g npm@3`.
+> Текущая LTS-версия NodeJS — 8.9.4. Обратите внимание на то, что версии 9.x сейчас не поддерживаются при разработке на платформе SharePoint Framework.
 
 ### <a name="install-a-code-editor"></a>Установка редактора кода
 
 Для создания веб-частей можно использовать любой редактор кода или интерфейс IDE, поддерживающий клиентскую разработку, например:
 
 - [Visual Studio Code](https://code.visualstudio.com/)
-- [Atom](https://atom.io)
+- [Atom](https://atom.io);
 - [Webstorm](https://www.jetbrains.com/webstorm)
 
 В указаниях и примерах в этой статье используется [Visual Studio Code](https://code.visualstudio.com/), но вы можете использовать любой редактор.

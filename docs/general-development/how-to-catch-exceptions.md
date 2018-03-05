@@ -2,7 +2,8 @@
 title: "Перехват исключений"
 ms.date: 09/25/2017
 keywords: errors,how to,howdoi,howto
-f1_keywords: errors,how to,howdoi,howto
+f1_keywords:
+- errors,how to,howdoi,howto
 ms.prod: sharepoint
 ms.assetid: de5fdb67-201b-4d7a-90a8-99ab7e51ea4e
 ms.openlocfilehash: 6cddc476c859aef2993bfd6192337c9b8df524a1

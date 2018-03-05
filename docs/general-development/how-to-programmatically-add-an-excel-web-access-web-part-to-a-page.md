@@ -2,7 +2,8 @@
 title: "Программный способ добавления веб-части Excel Web Access на страницу"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto,webpart
-f1_keywords: how to,howdoi,howto,webpart
+f1_keywords:
+- how to,howdoi,howto,webpart
 ms.prod: sharepoint
 ms.assetid: 858bb0f6-654a-4f12-ba0b-4776bda5ff6d
 ms.openlocfilehash: 940389dc1ff428ae01e932beb4c7c5d267490760

@@ -3,15 +3,15 @@ title: "Учебник: использование настраиваемых д
 description: "Создание настраиваемого диалогового окна и его использование в контексте расширения ListView Command Set."
 ms.date: 01/24/2018
 ms.prod: sharepoint
-ms.openlocfilehash: f1b5209dcffea4be96c3478e650b3661a4ef8335
-ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
+ms.openlocfilehash: 00e66b3c45e35c2dd83f19799996c42dc8d6b0b5
+ms.sourcegitcommit: 4e65e89f3ad8ef1d953e2fdd04d7ab5c0e7df174
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="use-custom-dialog-boxes-with-sharepoint-framework-extensions"></a>Использование настраиваемых диалоговых окон с расширениями SharePoint Framework
 
-Вы можете использовать настраиваемые диалоговые окна, доступные в пакете **@microsoft/sp-dialog**, в контексте расширений SharePoint Framework или клиентских веб-частей. 
+Вы можете использовать настраиваемые диалоговые окна, доступные в пакете **[@microsoft/sp-dialog](https://www.npmjs.com/package/@microsoft/sp-dialog)**, в контексте расширений SharePoint Framework или клиентских веб-частей. 
 
 В этой статье описываются создание настраиваемого диалогового окна и его использование в контексте расширения ListView Command Set.
 

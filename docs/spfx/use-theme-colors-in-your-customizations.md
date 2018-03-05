@@ -3,11 +3,11 @@ title: "Использование цветов темы в настройках
 description: "Используйте цвета темы, чтобы ваши настройки сочетались с дизайном сайта, с помощью ссылки на цвета темы контекстного сайта в вашем решении SharePoint Framework."
 ms.date: 01/24/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 1fa72a0304eeb3ed93328e5040f9ca1a580a3b82
-ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
+ms.openlocfilehash: 72ae107f75a03d639d8565c59a0f5ac5f189c7c9
+ms.sourcegitcommit: 4e65e89f3ad8ef1d953e2fdd04d7ab5c0e7df174
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="use-theme-colors-in-your-sharepoint-framework-customizations"></a>Использование цветов темы в настройках SharePoint Framework
 
@@ -55,8 +55,7 @@ SharePoint Framework позволяет использовать цвета те
 Маркер|Значение по умолчанию на современном сайте группы с использованием красной палитры|Комментарии
 -----|--------------------------------|-----------
 `backgroundImageUri`|`none`|
-`themeAccent`|`#ee0410`|
-`themeAccentTranslucent10`|`rgba(238, 4, 16, 0.10)`|
+`accent`|`#ee0410`|
 `themeDark`|`#b3030c`|Используется для значков действия на панели команд, а также как цвет при наведении.
 `themeDarkAlt`|`#b3030c`|
 `themeDarker`|`#770208`|
@@ -64,10 +63,9 @@ SharePoint Framework позволяет использовать цвета те
 `themeLightAlt`|`#fd969b`|
 `themeLighter`|`#fecacd`|
 `themeLighterAlt`|`#fecacd`|
-`themePrimary`|`#ee0410`|Основной цвет темы. Используется для значков и стандартных кнопок.
+`themePrimary`|`#ee0410`st|Основной цвет темы. Используется для значков и стандартных кнопок.
 `themeSecondary`|`#fc6169`|
 `themeTertiary`|`#fd969b`|
-`themeTertiaryAlt`|`#fd969b`|
 
 > [!NOTE] 
 > В SharePoint Framework зарегистрировано больше маркеров. Все они имеют указанные значения на классических сайтах, но только упомянутая выше часть имеет значения на современных сайтах SharePoint. Полный список доступных маркеров см. в значении свойства `window.__themeState__.theme` (используйте консоль в средствах разработчика веб-браузера).

@@ -2,7 +2,8 @@
 title: "Обновление данных"
 ms.date: 09/25/2017
 keywords: how to,howdoi,howto
-f1_keywords: how to,howdoi,howto
+f1_keywords:
+- how to,howdoi,howto
 ms.prod: sharepoint
 ms.assetid: 6cfd89ff-846e-486b-8f73-a109016813ab
 ms.openlocfilehash: e20ec7f931b88605f7a8e888f8a1ea30b66ec1bb

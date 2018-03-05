@@ -3,11 +3,11 @@ title: "Уточнение запросов в SharePoint"
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: ec31782e-1bc5-4dc3-8df7-c29cd5f7f05c
-ms.openlocfilehash: 379307fb0cb2867e79a74b4dee9e404243d47ddf
-ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
+ms.openlocfilehash: 06540ee8f250723ed64d0d56b6891a881f30478d
+ms.sourcegitcommit: 4e65e89f3ad8ef1d953e2fdd04d7ab5c0e7df174
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="query-refinement-in-sharepoint"></a>Уточнение запросов в SharePoint
 Узнайте, как программным путем использования функций уточнения запроса SharePoint при работе с запросы и результаты поиска.
@@ -286,7 +286,7 @@ query.Refiners);
 
     if (refinementOptionArray.Length > 0)
     {                         
-        var firstRefinementOption = refinementOptionArray[6];x
+        var firstRefinementOption = refinementOptionArray[6];
         // Construct the refinement filter by concatenation
         var refinementFilter = firstRefinementOption["RefinerName"] + ":" +
             firstRefinementOption["RefinementToken"];
