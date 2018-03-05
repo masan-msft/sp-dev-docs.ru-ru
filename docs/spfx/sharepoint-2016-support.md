@@ -2,11 +2,11 @@
 title: "Разработка для SharePoint Framework с использованием SharePoint 2016 с пакетом дополнительных компонентов 2"
 description: "SharePoint 2016 с пакетом дополнительных компонентов 2 поддерживает клиентские веб-части SharePoint Framework, размещаемые на классических страницах SharePoint."
 ms.date: 02/02/2018
-ms.openlocfilehash: 33a6c86360483cc8b079983342ea3f41f70ed1e9
-ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
+ms.openlocfilehash: 3a720ab16a8bab673ea1edc37968603e63ecb3c4
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="sharepoint-framework-development-with-sharepoint-2016-feature-pack-2"></a>Разработка решений SharePoint Framework для SharePoint 2016 с пакетом дополнительных компонентов 2
 
@@ -35,8 +35,8 @@ SharePoint 2016 с пакетом дополнительных компонен
 
 Развертывание клиентских веб-частей SharePoint Framework в локальной среде делится на два отдельных действия:
 
-- развертывание пакета решения в каталоге приложений SharePoint;
-- централизованное размещение файлов JavaScript.
+- развернуть пакет решения в каталоге приложений SharePoint;
+- разместить файлы JavaScript в централизованном расположении.
 
 Вы можете разместить файлы JavaScript в расположении, которое лучше всего подходит для вашей среды. Например, эти файлы можно разместить в любом из следующих мест:
 

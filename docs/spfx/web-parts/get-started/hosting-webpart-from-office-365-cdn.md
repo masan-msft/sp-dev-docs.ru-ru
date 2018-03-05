@@ -3,11 +3,11 @@ title: "Размещение клиентской веб-части в сети 
 description: "Простое решение для размещения ресурсов прямо в клиенте Office 365. В нем можно разместить любые статические ресурсы, используемые в SharePoint Online."
 ms.date: 01/08/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 3a17c4004724a21857e542bd5eb6fb73d84f2a7d
-ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.openlocfilehash: cfcb12bb5f0edbe8314df595629d71aabf50ed81
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="host-your-client-side-web-part-from-office-365-cdn-hello-world-part-4"></a>Размещение клиентской веб-части в сети доставки содержимого Office 365 (Hello World, часть 4)
 
@@ -125,7 +125,7 @@ ms.lasthandoff: 01/18/2018
 Если *сеть доставки содержимого Office 365* включена, она используется автоматически с параметрами по умолчанию. Если *сеть доставки содержимого Office 365* не включена, ресурсы доставляются из семейства веб-сайтов с каталогом приложений. 
 
 > [!NOTE]
-> Начиная с SharePoint Framework версии 1.4, статические ресурсы по умолчанию упаковываются в SPPKG-файлы. При развертывании пакета в каталоге приложений ресурсы автоматически размещаются в сети CDN Office 365 (если она включена) или по URL-адресу каталога приложений. Вы можете управлять этим поведением с помощью параметра `includeClientSideAssets` в файле `package-solution.json`.
+> Начиная с SharePoint Framework версии 1.4, статические ресурсы по умолчанию упаковываются в SPPKG-файлы. При развертывании пакета в каталоге приложений ресурсы автоматически размещаются в сети CDN Office 365 (если она включена) или по URL-адресу каталога приложений. Эти действия можно изменить с помощью параметра `includeClientSideAssets` в файле `package-solution.json`.
 
 ## <a name="prepare-web-part-assets-to-deploy"></a>Подготовка ресурсов веб-части к развертыванию
 
@@ -173,7 +173,7 @@ ms.lasthandoff: 01/18/2018
   ![Пакет веб-части HelloWorld из общедоступной сети CDN по указанному URL-адресу на вкладке "Источники" в области инструментов разработчика Chrome](../../../images/cdn-web-part-f12-source.png)
 
 > [!NOTE]
-> Если в вашем клиенте не включена сеть CDN, а в файле **package-solution.json** для параметра `includeClientSideAssets` задано значение `true`, то URL-адрес для загрузки ресурсов будет динамически обновляться и указывать непосредственно на папку ClientSideAssets, расположенную в семействе веб-сайтов с каталогом приложений. В данном случае используется URL-адрес `https://sppnp.microsoft.com/sites/apps/ClientSideAssets/`.
+> Если в вашем клиенте не включена сеть CDN, а в файле **package-solution.json** для параметра `includeClientSideAssets` задано значение `true`, то URL-адрес для загрузки ресурсов динамически обновляется и указывает непосредственно на папку ClientSideAssets, расположенную в семействе веб-сайтов с каталогом приложений. В данном случае используется URL-адрес `https://sppnp.microsoft.com/sites/apps/ClientSideAssets/`.
 
 Поздравляем! Вы развернули веб-часть в SharePoint Online, автоматически разместив ее в сети доставки содержимого Office 365.
 

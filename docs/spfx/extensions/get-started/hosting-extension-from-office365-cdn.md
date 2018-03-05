@@ -3,11 +3,11 @@ title: "Размещение расширения из сети доставки
 description: "Разверните настройщик заполнителей SharePoint Framework в сети доставки содержимого Office 365, а затем разверните его в SharePoint для конечных пользователей."
 ms.date: 01/11/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 95bf41477668d5848fccaafa586491fd36f2a7ca
-ms.sourcegitcommit: 6b547679670b719f2222f9709732382739956f90
+ms.openlocfilehash: 998b8ae5688bfbccddb6811e4b0460625204a63d
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="host-extension-from-office-365-cdn-hello-world-part-4"></a>Размещение расширения в сети доставки содержимого Office 365 (Hello World, часть 4)
 
@@ -105,7 +105,7 @@ ms.lasthandoff: 01/18/2018
     gulp package-solution --ship
     ```
     
-6. Добавьте или перетащите новый пакет клиентского решения в каталог приложений в клиенте, а затем нажмите кнопку **Развернуть**.
+6. Добавьте или перетащите новый пакет клиентского решения в каталог приложений в клиенте и нажмите кнопку **Развернуть**.
 
     ![Диалоговое окно подтверждения доверия в каталоге приложений со ссылкой на конечную точку CDN](../../../images/ext-app-approve-cdn-address.png)
 

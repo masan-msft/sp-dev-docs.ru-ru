@@ -3,16 +3,16 @@ title: "Вызов Microsoft Graph с помощью класса GraphHttpClien
 description: "Используйте класс GraphHttpClient для вызова REST API Microsoft Graph с помощью методов get(), post() и fetch()."
 ms.date: 02/02/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 898787fd3a9a2fa758b186a9ca9ae3627c579fa2
-ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
+ms.openlocfilehash: de7ad224089a3305f028478092a4cfd0f3e353f9
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="use-graphhttpclient-to-call-microsoft-graph"></a>Вызов Microsoft Graph с помощью класса GraphHttpClient
 
 > [!IMPORTANT]
-> Класс **GraphHttpClient** находится на этапе тестирования, и в него могут быть внесены изменения. Сейчас он не поддерживается для использования в рабочих средах.
+> Класс **GraphHttpClient** **устарел** и уже не используется. Он был заменен классом [MSGraphClient](use-msgraph.md).
 
 Используйте класс **GraphHttpClient** для вызова REST API Microsoft Graph. Вы можете выполнять запросы GET, POST и PATCH, используя методы **get()**, **post()** и **fetch()**. В этой статье рассказывается, как создать веб-часть на основе класса **GraphHttpClient**, но вы можете использовать класс **GraphHttpClient** в любом клиентском коде в SharePoint Framework.
 
