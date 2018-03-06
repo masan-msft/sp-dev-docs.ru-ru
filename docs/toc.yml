@@ -127,10 +127,17 @@
           href: spfx/web-parts/guidance/connect-to-api-secured-with-aad.md
         - name: Вызов API Microsoft Graph с помощью OAuth
           href: spfx/web-parts/guidance/call-microsoft-graph-from-your-web-part.md
+        - name: 'Подключение к API, защищенным с помощью Azure AD'
+          href: spfx/use-aadhttpclient.md
         - name: Microsoft Graph
-          href: spfx/overview-graphhttpclient.md
+          href: spfx/use-msgraph.md
           items:
             - name: Руководство
+              href: spfx/use-aad-tutorial.md
+        - name: Microsoft GraphHttpClient (нерекомендуемое)
+          href: spfx/overview-graphhttpclient.md
+          items:
+            - name: Руководство (нерекомендуемое)
               href: spfx/call-microsoft-graph-using-graphhttpclient.md
     - name: Настройка и развертывание
       items:
@@ -236,55 +243,29 @@
           href: declarative-customization/site-design-pnp-provisioning.md
 - name: API SharePoint
   items:
-    - name: Создание сайтов для общения
+    - name: Создание сайта для общения
       href: apis/communication-site-creation-rest.md
     - name: API управления жизненным циклом приложений (ALM)
       href: apis/alm-api-for-spfx-add-ins.md
-    - name: REST
-      items:
-        - name: Служба REST в SharePoint
-          href: apis/rest/get-to-know-the-sharepoint-rest-service.md
-        - name: Базовые операции
-          href: apis/rest/complete-basic-operations-using-sharepoint-rest-endpoints.md
-        - name: Списки и элементы списков
-          href: apis/rest/working-with-lists-and-list-items-with-rest.md
-        - name: Папки и файлы
-          href: apis/rest/working-with-folders-and-files-with-rest.md
-        - name: URI конечных точек REST
-          href: apis/rest/determine-sharepoint-rest-service-endpoint-uris.md
-        - name: Операции запросов OData
-          href: apis/rest/use-odata-query-operations-in-sharepoint-rest-requests.md
-        - name: Навигация по структуре данных
-          href: apis/rest/navigate-the-sharepoint-data-structure-represented-in-the-rest-service.md
-        - name: Синхронизация элементов
-          href: apis/rest/synchronize-sharepoint-items-using-the-rest-service.md
-        - name: Отправка файла
-          href: apis/rest/upload-a-file-by-using-the-rest-api-and-jquery.md
-        - name: Управление разрешениями
-          href: apis/rest/set-custom-permissions-on-a-list-by-using-the-rest-interface.md
-        - name: Пакетные запросы
-          href: apis/rest/make-batch-requests-with-the-rest-apis.md
     - name: Веб-перехватчики
+      href: apis/webhooks/overview-sharepoint-webhooks.md
       items:
-        - name: Обзор
-          href: apis/webhooks/overview-sharepoint-webhooks.md
         - name: Начало работы
           href: apis/webhooks/get-started-webhooks.md
         - name: Базовая реализация
           href: apis/webhooks/webhooks-reference-implementation.md
-        - name: Функции Azure и веб-перехватчики SharePoint
+        - name: Использование функций Azure
           href: apis/webhooks/sharepoint-webhooks-using-azure-functions.md
-        - name: Списки SharePoint
+        - name: Перечисление веб-перехватчиков
+          href: apis/webhooks/lists/overview-sharepoint-list-webhooks.md
           items:
-            - name: Обзор
-              href: apis/webhooks/lists/overview-sharepoint-list-webhooks.md
             - name: Создание подписки
               href: apis/webhooks/lists/create-subscription.md
             - name: Обновление подписки
               href: apis/webhooks/lists/update-subscription.md
             - name: Удаление подписки
               href: apis/webhooks/lists/delete-subscription.md
-            - name: Получение подписок
+            - name: Вывод подписки
               href: apis/webhooks/lists/get-subscription.md
 - name: Обзор платформы разработки SharePoint
   href: general-development/sharepoint-development-overview.md
@@ -1096,25 +1077,25 @@
         - name: Знакомство со службой REST в SharePoint
           href: sp-add-ins/get-to-know-the-sharepoint-rest-service.md
           items:
-            - name: Выполнение базовых операций с использованием конечных точек REST SharePoint
+            - name: Завершение основных операций
               href: sp-add-ins/complete-basic-operations-using-sharepoint-rest-endpoints.md
-            - name: Работа со списками и элементами списков в службе REST
+            - name: Работа со списками и элементами списков
               href: sp-add-ins/working-with-lists-and-list-items-with-rest.md
-            - name: Работа с папками и файлами в службе REST
+            - name: Работа с папками и файлами
               href: sp-add-ins/working-with-folders-and-files-with-rest.md
-            - name: Определение URI конечных точек службы REST в SharePoint
+            - name: Определение универсального кода ресурса (URI) для конечных точек
               href: sp-add-ins/determine-sharepoint-rest-service-endpoint-uris.md
-            - name: Использование операций запросов OData в запросах REST SharePoint
+            - name: Использование операций запросов OData
               href: sp-add-ins/use-odata-query-operations-in-sharepoint-rest-requests.md
-            - name: 'Навигация по структуре данных SharePoint, представленной в службе REST'
+            - name: Навигация по структуре данных
               href: sp-add-ins/navigate-the-sharepoint-data-structure-represented-in-the-rest-service.md
-            - name: Синхронизация элементов SharePoint с помощью службы REST
+            - name: Синхронизация элементов
               href: sp-add-ins/synchronize-sharepoint-items-using-the-rest-service.md
-            - name: Отправка файла с помощью API REST и jQuery
+            - name: Отправка файла
               href: sp-add-ins/upload-a-file-by-using-the-rest-api-and-jquery.md
-            - name: Назначение настраиваемых разрешений для списка с помощью интерфейса REST
+            - name: Задание пользовательских разрешений
               href: sp-add-ins/set-custom-permissions-on-a-list-by-using-the-rest-interface.md
-            - name: Отправка пакетных запросов с помощью REST API
+            - name: Создание пакетных запросов
               href: sp-add-ins/make-batch-requests-with-the-rest-apis.md
         - name: Создание компонентов взаимодействия с пользователем в SharePoint
           href: sp-add-ins/create-ux-components-in-sharepoint.md
@@ -1254,8 +1235,6 @@
           href: sp-add-ins/set-up-an-on-premises-development-environment-for-sharepoint-add-ins.md
         - name: Создание надстроек в Visual Studio
           href: sp-add-ins/create-sharepoint-add-ins-in-visual-studio.md
-        - name: 'Инструменты разработчика Office для Visual Studio 2013: новые возможности'
-          href: sp-add-ins/what-s-new-in-office-developer-tools-for-visual-studio.md
 - name: Обзор решений
   href: solution-guidance/Office-365-development-patterns-and-practices-solution-guidance.md
   items:

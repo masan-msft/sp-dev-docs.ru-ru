@@ -1,11 +1,11 @@
 ---
 title: "Разработка для SharePoint"
 ms.date: 09/25/2017
-ms.openlocfilehash: fb8ba77086f45e066361d961293982663471ad25
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 25b3161bfb3df57f8444f120164eb3294f1dd938
+ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="sharepoint-development"></a>Разработка для SharePoint
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 10/13/2017
 
 Работайте с данными SharePoint с помощью любой технологии, поддерживающей веб-запросы REST. Выполняйте операции создания, чтения, обновления и удаления (CRUD) в надстройках, решениях и клиентских приложениях для SharePoint, используя веб-технологии REST и стандартный синтаксис протокола OData (Open Data Protocol).
 
-[Знакомство со службой REST в SharePoint](apis/rest/get-to-know-the-sharepoint-rest-service.md)
+[Знакомство со службой REST в SharePoint](sp-add-ins/get-to-know-the-sharepoint-rest-service.md);
 
 ## <a name="sharepoint-webhooks"></a>Веб-перехватчики SharePoint
 
