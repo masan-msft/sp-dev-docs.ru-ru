@@ -1,11 +1,11 @@
 ---
 title: "Обнаружение несколькими географическая конфигурация для клиента SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: 2893d093131b17e65ecd30d08aff91d49f29de91
-ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
+ms.openlocfilehash: 6b7410867e571742987777d50098fd240dc055bf
+ms.sourcegitcommit: 22c896de11491c32b992d797414ba50421969a2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 02/28/2018
 ---
 # <a name="discover-a-multi-geo-configuration-for-a-sharepoint-tenant"></a>Обнаружение несколькими географическая конфигурация для клиента SharePoint
 
@@ -28,6 +28,19 @@ ms.lasthandoff: 12/07/2017
 - **API -Интерфейс REST SharePoint** - обычно этот интерфейс API используется в контексте URL-адрес сайта, и поэтому ли клиента — ферма с несколькими географически не фактор. Некоторые сценарии API-Интерфейс REST (например, поиска или пользовательского профилей) может потребоваться совершать звонки одного географического расположения.
 
 ## <a name="get-multi-geo-tenant-configuration-information"></a>Получение сведений о конфигурации клиента несколькими географически
+
+### <a name="using-the-csom-api"></a>Использование интерфейса API CSOM
+
+Получение географического расположения клиента можно выполнить с помощью CSOM с помощью `Tenant` класс и `GetTenantInstances` метода, как показано в фрагмент:
+
+```C#
+Tenant tenant = new Tenant(clientContext);
+var tenantInstances = tenant.GetTenantInstances();
+clientContext.Load(tenantInstances);
+clientContext.ExecuteQuery();
+```
+
+### <a name="using-the-microsoft-graph-api"></a>С помощью Microsoft Graph API
 
 Сведения о расположении географически для клиента можно получить с помощью Microsoft Graph. В следующем примере возвращается коллекция с одного объекта одного географического расположения.
 
