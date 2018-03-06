@@ -2,7 +2,8 @@
 title: "Настройка общей среды разработки для SharePoint"
 ms.date: 09/25/2017
 keywords: "установка SharePoint,настройка SharePoint"
-f1_keywords: install SharePoint,set up SharePoint,setup SharePoint
+f1_keywords:
+- install SharePoint,set up SharePoint,setup SharePoint
 ms.prod: sharepoint
 ms.assetid: 08e4e4e1-d960-43fa-85df-f3c279ed6927
 ms.openlocfilehash: 657d7f9a3a7238e8b3d9862e6ba637ccebdb3f79
