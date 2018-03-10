@@ -132,9 +132,9 @@
         - name: Microsoft Graph
           href: spfx/use-msgraph.md
           items:
-            - name: Руководство
+            - name: 'Использование API, защищенных службой Azure AD'
               href: spfx/use-aad-tutorial.md
-        - name: Microsoft GraphHttpClient (нерекомендуемое)
+        - name: Microsoft GraphHttpClient (устарел)
           href: spfx/overview-graphhttpclient.md
           items:
             - name: Руководство (нерекомендуемое)
@@ -1555,9 +1555,11 @@
           href: solution-guidance/create-remote-timer-jobs-in-sharepoint.md
         - name: Начало работы с веб-заданиями ("заданиями таймера")
           href: solution-guidance/Getting-Started-with-building-Azure-WebJobs-for-your-Office365-sites.md
+    - name: PnP Office 365 CLI
+      href: 'https://sharepoint.github.io/office365-cli/?utm_source=msft_docs&utm_medium=page&utm_campaign=Application+Lifecycle+Management+ALM+APIs'
+    - name: Справочные материалы PnP PowerShell
+      href: 'https://docs.microsoft.com/en-us/powershell/sharepoint/sharepoint-pnp/sharepoint-pnp-cmdlets?view=sharepoint-ps'
     - name: Справочные материалы по основному компоненту сайтов PnP
       href: 'https://docs.microsoft.com/en-us/dotnet/api/?term=Officedevpnp'
-    - name: Справочные материалы по основному компоненту сайтов PnP — методы расширения
+    - name: 'Справочные материалы по основному компоненту сайтов PnP: методы расширения'
       href: 'https://docs.microsoft.com/en-us/dotnet/api/?term=microsoft.sharepoint'
-    - name: Справочные материалы по PnP PowerShell
-      href: 'https://docs.microsoft.com/en-us/powershell/sharepoint/sharepoint-pnp/sharepoint-pnp-cmdlets?view=sharepoint-ps'
