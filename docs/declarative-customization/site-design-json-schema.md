@@ -2,16 +2,13 @@
 title: "Схема JSON для макетов сайтов"
 description: "Справочник по схеме JSON для создания макетов сайтов SharePoint."
 ms.date: 12/14/2017
-ms.openlocfilehash: ed952df480601945f1214282658c55d5eb63b5a9
-ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
+ms.openlocfilehash: f8cf39af5a98155d6b8af3cf38251f8198d2a395
+ms.sourcegitcommit: 4e65e89f3ad8ef1d953e2fdd04d7ab5c0e7df174
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="site-design-json-schema"></a>Схема JSON для макетов сайтов
-
-> [!NOTE]
-> Макеты и скрипты сайтов находятся на стадии тестирования и могут меняться. В настоящее время в рабочих средах их можно использовать только в выпуске Targeted.
 
 Макет сайта представляет собой список действий. Сложные действия, например создание списка, также содержат вложенные действия. Каждое действие указывается с помощью значения verb (команды). Действия-команды выполняются в том порядке, в котором они указаны в скрипте JSON. Используйте только указанные здесь действия-команды, иначе при попытке загрузить скрипт сайта возникнет ошибка "не удается обработать действие". Со временем список действий будет расширяться. 
 
@@ -134,7 +131,7 @@ ms.lasthandoff: 01/29/2018
 
 ### <a name="addcontenttype"></a>addContentType
 
-Добавляет тип контента в список.
+Добавляет тип контента в список. В настоящее время доступны только ограниченные типы контента по умолчанию, которые включены в шаблон сайта.
 
 Значение JSON:
 
@@ -175,20 +172,60 @@ ms.lasthandoff: 01/29/2018
 - **fieldDisplayName** — отображаемое имя обрабатываемого поля.
 - **formatterJSON** — объект JSON, используемый в качестве ресурса CustomFormatter для поля.
 
-Пример:
+Пример. В этом примере показано форматирование столбца чисел для его отображения в виде гистограммы
 
 ```json
-{
-   "verb": "setSPFieldCustomFormatter",
-   "fieldDisplayName": "name",
-   "formatterJSON": "json" 
-}
+                {
+                    "verb": "setSPFieldCustomFormatter",
+                    "fieldDisplayName": "Effort (days)",
+                    "formatterJSON":
+                    {
+                        "debugMode": true,
+                        "elmType": "div",
+                        "txtContent": "@currentField",
+                        "attributes": {
+                            "class": "sp-field-dataBars"
+                        },
+                        "style": {
+                            "width": {
+                                "operator": "?",
+                                "operands": [
+                                    {
+                                        "operator": ">",
+                                        "operands": [
+                                            "@currentField",
+                                            "20"
+                                        ]
+                                    },
+                                    "100%",
+                                    {
+                                        "operator": "+",
+                                        "operands": [
+                                            {
+                                                "operator": "toString()",
+                                                "operands": [
+                                                    {
+                                                        "operator": "*",
+                                                        "operands": [
+                                                            "@currentField",
+                                                            5
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            "%"
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
 ```
-<!-- TBD provide an example for formatterJSON in previous example -->
 
 ## <a name="add-a-navigation-link"></a>Добавление ссылки для перехода
 
-Чтобы добавить на сайт ссылку для перехода, используйте команду **addNavLink**.
+Чтобы добавить на сайт ссылку для перехода, используйте команду **addNavLink**. 
 
 Значения JSON:
 
@@ -198,13 +235,23 @@ ms.lasthandoff: 01/29/2018
 
 Пример:
 
+> [!NOTE]
+> При добавлении ссылки на вложенный элемент сайта (например, список) обязательно указывайте путь от корневого сайта. 
+
+
 ```json
 {
    "verb": "addNavLink",
    "url": "/Customer Event Collateral",
    "displayName": "Event Collateral",
    "isWebRelative": true
-}
+},
+{
+   "verb": "addNavLink",
+   "url": "/Lists/Project Activities",
+   "displayName": "Project Activities",
+   "isWebRelative": true
+ }
 ```
 
 ## <a name="apply-a-theme"></a>Применение темы
@@ -278,13 +325,18 @@ Example:
 
 ## <a name="join-a-hub-site"></a>Присоединение к сайту-концентратору
 
-Чтобы присоединить сайт к концентратору, используйте команду **joinHubSite**. <!-- TBD provide link to more information on hubs and how to get the id -->
+Чтобы присоединить сайт к назначенному центральному сайту, используйте команду **joinHubSite**. 
 
 Значение JSON:
 
 - **hubSiteId** — ИД подключаемого сайта-концентратора.
 
 Пример:
+
+<!-- TBD: add link to Dave's hub site documentation -->
+
+> [!NOTE]
+> Центральные сайты представляют собой новые возможности, которые впервые предложены пользователям в выпуске Targeted в марте 2018. 
 
 ```json
 {
@@ -315,5 +367,23 @@ Example:
         "event": "Microsoft Event",
         "product": "SharePoint"
     }
+}
+```
+## <a name="setsiteexternalsharingcapability"></a>setSiteExternalSharingCapability
+
+Действие **setSiteExternalSharingCapability** используется для управления гостевым доступом. Дополнительные сведения об этих параметрах см. на странице: https://support.office.com/ru-ru/article/Manage-external-sharing-for-your-SharePoint-Online-environment-C8A462EB-0723-4B0B-8D0A-70FEAFE4BE85
+
+<!-- update this table matrix -->
+
+Значения JSON:
+
+- **capability** — обязательный параметр, указывающий варианты предоставления доступа для семейства веб-сайтов. Возможно четыре варианта: Disabled, ExistingExternalUserSharingOnly, ExternalUserSharingOnly, ExternalUserAndGuestSharing
+
+Пример:
+
+```json
+{
+   "verb": "setSiteExternalSharingCapability",
+   "capability": "Disabled"
 }
 ```

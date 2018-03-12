@@ -2,25 +2,22 @@
 title: "REST API для работы с макетами сайтов SharePoint"
 description: "Узнайте, как работать с макетами сайтов SharePoint при помощи интерфейса REST для SharePoint, выполняя базовые операции создания, чтения, обновления и удаления (CRUD)."
 ms.date: 12/14/2017
-ms.openlocfilehash: a230c66d55ab60b900ae60a31c37f0cf75f1a789
-ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
+ms.openlocfilehash: 8a0ca7e4c0add061401a7c128fc15c155cf4f637
+ms.sourcegitcommit: 4e65e89f3ad8ef1d953e2fdd04d7ab5c0e7df174
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="site-design-and-site-script-rest-api"></a>REST API для работы с макетами и скриптами сайтов
-
-> [!NOTE]
-> Макеты и скрипты сайтов находятся на стадии тестирования и могут меняться. В настоящее время в рабочих средах их можно использовать только в выпуске Targeted.
 
 При помощи интерфейса REST для SharePoint можно выполнять операции CRUD (создание, чтение, обновление и удаление) с макетами и скриптами сайтов.
 
 Служба REST в SharePoint Online (а также локальной среде SharePoint 2016 или более поздней версии) поддерживает объединение нескольких запросов в один вызов службы с помощью параметра запроса OData $batch. Подробные сведения и ссылки на примеры кода см. в статье [Отправка пакетных запросов с помощью интерфейсов REST API](../sp-add-ins/make-batch-requests-with-the-rest-apis.md).
 
-## <a name="prerequisites"></a>Необходимые условия
+## <a name="prerequisites"></a>Предварительные условия
 Прежде чем приступить к работе, убедитесь, что вы знакомы с понятиями, описанными в следующих статьях:
-- [Знакомство со службой REST в SharePoint](../sp-add-ins/get-to-know-the-sharepoint-rest-service.md); 
-- [Выполнение базовых операций с использованием конечных точек SharePoint REST](../sp-add-ins/complete-basic-operations-using-sharepoint-rest-endpoints.md)
+- [Знакомство со службой REST в SharePoint](../sp-add-ins/get-to-know-the-sharepoint-rest-service.md) 
+- [Выполнение базовых операций с использованием конечных точек REST SharePoint](../sp-add-ins/complete-basic-operations-using-sharepoint-rest-endpoints.md)
 
 ## <a name="rest-commands"></a>Команды REST
 
@@ -32,6 +29,7 @@ ms.lasthandoff: 02/19/2018
 - **UpdateSiteScript** &mdash; обновление скрипта сайта с использованием новых значений.
 - **DeleteSiteScript** &mdash; удаление скрипта сайта.
 - **CreateSiteDesign** &mdash; создание макета сайта.
+- **ApplySiteDesign** &mdash; применение макета сайта к существующему семейству веб-сайтов.
 - **GetSiteDesigns** &mdash; получение списка сведений об имеющихся макетах сайтов.
 - **GetSiteDesignMetadata** &mdash; получение сведений об определенном макете сайта.
 - **UpdateSiteDesign** &mdash; обновление макета сайта с использованием новых значений.
@@ -252,7 +250,8 @@ RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScri
 
 |Параметр  | Описание  |
 |-----------|--------------|
-|Название                 | Отображаемое имя макета сайта. |
+| id         | Идентификатор макета сайта, который требуется применить. |
+|Title                 | Отображаемое имя макета сайта. |
 |WebTemplate           | Указывает, к какому базовому шаблону будет добавлен макет. Значение **64** обозначает шаблон сайта группы, а значение **68** — шаблон сайта для общения. |
 |SiteScripts           | Массив из одного или нескольких скриптов сайта. Каждый из них определяется по идентификатору. Скрипты будут выполняться в указанном порядке. |
 |Description         | (Необязательный.) Отображаемое описание макета сайта. |
@@ -289,6 +288,23 @@ RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScri
   "Id": "614f9b28-3e85-4ec9-a961-5971ea086cca",
   "Version": 1
 }
+```
+
+## <a name="applysitedesign"></a>ApplySiteDesign
+
+Применяет макет сайта к существующему семейству веб-сайтов.
+
+### <a name="parameters"></a>Параметры
+
+|Параметр   | Описание  |
+|------------|--------------|
+| id         | Идентификатор макета сайта, который требуется применить. |
+| webUrl         | URL-адрес семейства веб-сайтов, к которому необходимо применить макет сайта. |
+
+В примере ниже показано применение макета сайта к семейству веб-сайтов ProjectGo.
+
+```javascript
+RestRequest("/_api/Microsoft.Sharepoint.Utilities.WebTemplateExtensions.SiteScriptUtility.ApplySiteDesign", {siteDesignId: "614f9b28-3e85-4ec9-a961-5971ea086cca", "webUrl":"https://contoso.microsoft.com/sites/projectgo"});
 ```
 
 ## <a name="getsitedesigns"></a>GetSiteDesigns

@@ -2,18 +2,18 @@
 title: "Командлеты PowerShell для макетов и скриптов сайтов SharePoint"
 description: "Узнайте, как создавать, получать и удалять макеты и скрипты сайтов с помощью командлетов PowerShell."
 ms.date: 01/08/2018
-ms.openlocfilehash: 24c49a9b7e6ae19cd6118573d11720803adc4c94
-ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
+ms.openlocfilehash: ed87e70844bd68acdef5e52d46c7619b020e85b2
+ms.sourcegitcommit: 4e65e89f3ad8ef1d953e2fdd04d7ab5c0e7df174
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="powershell-cmdlets-for-sharepoint-site-designs-and-site-scripts"></a>Командлеты PowerShell для макетов и скриптов сайтов SharePoint
 
 > [!NOTE]
-> Макеты и скрипты сайтов находятся на стадии тестирования и могут меняться. В настоящее время в рабочих средах их можно использовать только в выпуске Targeted.
+> Макеты и скрипты сайта выпущены в производство и доступны для общего использования. 
 
-Создавайте, получайте, обновляйте и удаляйте макеты и скрипты сайтов, используя командлеты PowerShell.
+Создавайте, получайте, обновляйте и удаляйте макеты и скрипты новых и уже существующих современных сайтов, используя командлеты PowerShell.
 
 ## <a name="getting-started"></a>Начало работы
 
@@ -34,6 +34,7 @@ ms.lasthandoff: 01/29/2018
 - **Get-SPOSiteDesignRights**
 - **Get-SPOSiteScript**
 - **Grant-SPOSiteDesignRights**
+- **Invoke-SPOSiteDesign**
 - **Remove-SPOSiteDesign**
 - **Remove-SPOSiteScript**
 - **Revoke-SPOSiteDesignRights**
@@ -102,7 +103,7 @@ Add-SPOSiteScript
 | -Content     | Значение JSON, описывающее скрипт. Дополнительные сведения см. в [справочнике по JSON](site-design-json-schema.md).|
 | -Description | Описание скрипта. |
 
-Приведенный ниже пример кода добавляет новый сайт из приведенного ниже скрипта в файле.
+Приведенный ниже пример кода добавляет новый логотип сайта из приведенного ниже скрипта в файле.
 
 ```json
 {
@@ -237,6 +238,45 @@ PS C:\> Grant-SPOSiteDesignRights `
          -Rights View
 ```
 
+## <a name="invoke-spositedesign"></a>Invoke-SPOSiteDesign
+
+Применяет опубликованный макет сайта к указанному целевому объекту семейства веб-сайтов. Это позволяет применить макет сайта к существующему семейству веб-сайтов.
+
+```powershell
+Invoke-SPOSiteDesign
+  [-Identity]
+  -WebUrl <string>
+  [<CommonParameters>]
+```
+
+### <a name="parameters"></a>Параметры
+
+|Параметр     | Описание  |
+|--------------|--------------|
+| -Identity       | Идентификатор макета сайта, который требуется применить. |
+| -WebUrl    | URL-адрес семейства веб-сайтов, к которому применяется макет сайта.|
+
+В примере ниже показано применение макета сайта, скрипт которого создает два списка, форматирует несколько столбцов, добавляет списки в структуру навигации веб-сайта, а затем соединяет сайт с существующим центральным сайтом.
+
+```powershell
+C:\> Invoke-SPOSiteDesign -Identity 501z8c32-4147-44d4-8607-26c2f67cae82 -WebUrl "https://contoso.sharepoint.com/sites/projectgo”
+
+Title                                             Outcome
+----------------------------------------------    -------
+Create or update list Project Activities          Success
+Update list description                           Success
+Create column Project Status                      Success
+Create column Effort (days)                       Success
+Set custom formatter for field Project Status     Success
+Set custom formatter for field Effort (days)      Success
+Create or update list Project Collateral          Success
+Create column Due Date                            Success
+Set custom formatter for field Due Date           Success
+Add Project Activities to left nav                Success
+Add Project Collateral to left nav                Success
+Add to Hub Site                                   Success
+```
+
 ## <a name="remove-spositedesign"></a>Remove-SPOSiteDesign
 
 Удаляет макет сайта. Он больше не будет отображаться в пользовательском интерфейсе создания сайта.
@@ -251,7 +291,7 @@ PS C:\> Grant-SPOSiteDesignRights `
 
 |Параметр     | Описание  |
 |--------------|--------------|
-| [-Identity]  | Идентификатор макета сайта, который требуется удалить. |
+| ]  | Идентификатор макета сайта, который требуется удалить. |
 
 Приведенный ниже пример кода удаляет макет сайта.
 

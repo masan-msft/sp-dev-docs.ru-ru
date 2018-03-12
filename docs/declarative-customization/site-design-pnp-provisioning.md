@@ -2,16 +2,13 @@
 title: "Создание полноценного макета сайта SharePoint с помощью модуля подготовки PnP"
 description: "Создание полноценного макета сайта SharePoint с помощью модуля подготовки PnP"
 ms.date: 01/08/2018
-ms.openlocfilehash: a26e587cc274be1b49625e313b3e393e76bdba3f
-ms.sourcegitcommit: 217fdf16ad7359a36c49a56b13278e26a178a11a
+ms.openlocfilehash: 5257881730ea69f0a897962edc125fe065029fe0
+ms.sourcegitcommit: 860b40b91f01c5b781517e3cd4057b971ce90b6e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="calling-the-pnp-provisioning-engine-from-a-site-script"></a>Вызов модуля подготовки PnP из скрипта на сайте
-
-> [!NOTE]
-> Макеты и скрипты сайтов находятся на стадии тестирования и могут меняться. В настоящее время их нельзя использовать в рабочих средах.
 
 Макеты сайтов — удобный способ стандартизации внешнего вида семейств веб-сайтов. Однако они не поддерживают некоторые задачи, например, не позволяют добавить нижний колонтитул на каждую страницу. Вы можете подготовить настройщик заполнителей сайта на основе шаблона, созданного с помощью модуля подготовки PnP. Этот настройщик затем может обновить макет страницы, например, чтобы зарегистрировать нижний колонтитул на каждой странице. 
 
@@ -238,7 +235,7 @@ Invoke-RestMethod -Uri $uri -Method Post -ContentType "application/json" -Body $
 
 ## <a name="create-the-site-design"></a>Создание макета сайта
 
-Откройте PowerShell и убедитесь, что установлена консоль управления Microsoft Office 365.
+Откройте PowerShell и убедитесь, что установлена [консоль управления SharePoint Online](https://www.microsoft.com/en-us/download/details.aspx?id=35588).
 
 Подключитесь к клиенту, используя командлет **Connect-SPOService**.
 

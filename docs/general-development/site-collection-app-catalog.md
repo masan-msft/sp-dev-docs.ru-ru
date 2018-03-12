@@ -3,11 +3,11 @@ title: "Использование каталога приложений в се
 ms.date: 12/14/2017
 ms.prod: sharepoint
 ms.assetid: fdf7ecb1-9951-475b-b058-3285fba77b68
-ms.openlocfilehash: 28d98344b8cab6334b86394aa190eca2cf32cb65
-ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
+ms.openlocfilehash: 52c1eec380752cbf2bee7879b06a420ae66c52be
+ms.sourcegitcommit: 4e65e89f3ad8ef1d953e2fdd04d7ab5c0e7df174
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 02/27/2018
 ---
 # <a name="use-the-site-collection-app-catalog"></a>Использование каталога приложений в семействе веб-сайтов
 
@@ -55,12 +55,14 @@ _**Область применения:** Office 365_
 Вы можете настраивать каталоги приложений для семейств веб-сайтов и управлять ими с помощью командной консоли SharePoint Online.
 
 > [!NOTE]
-> Чтобы управлять каталогами приложений в клиенте, установите [командную консоль SharePoint Online](https://www.microsoft.com/en-us/download/details.aspx?id=35588), выпущенную в ноябре 2017 г., или более поздней версии.
+> Чтобы управлять каталогами приложений в семействе веб-сайтов в клиенте, установите [командную консоль SharePoint Online](https://www.microsoft.com/en-us/download/details.aspx?id=35588), выпущенную в ноябре 2017 г., или более поздней версии.
+
+Вы также можете управлять каталогами приложений в семействе-веб-сайтов в SharePoint с помощью [Office 365 CLI](https://sharepoint.github.io/office365-cli?utm_source=msft_docs&utm_medium=page&utm_campaign=Use+the+site+collection+app+catalog). Office 365 CLI — это межплатформенный интерфейс командной строки, который можно использовать на любой платформе, в том числе Windows, MacOS и Linux.
 
 ### <a name="create-a-site-collection-app-catalog"></a>Создание каталога приложений в семействе веб-сайтов
 
 > [!NOTE]
-> Прежде чем запускать приведенный ниже скрипт, подключитесь к клиенту SharePoint Online с помощью командлета `Connect-SPOService`. Кроме того, убедитесь, что в клиенте создан каталог приложений. В противном случае командлет вернет следующую ошибку:
+> Прежде чем запускать приведенный ниже скрипт, подключитесь к клиенту SharePoint Online, используя командлет `Connect-SPOService` в оболочке PowerShell. Кроме того, убедитесь, что в клиенте создан каталог приложений. В противном случае командлет вернет следующую ошибку:
 > ```text
 > Cannot invoke method or retrieve property from null object. Object returned by the
 > following call stack is null. "TenantAppCatalog
@@ -69,6 +71,8 @@ _**Область применения:** Office 365_
 > new Microsoft.Online.SharePoint.TenantAdministration.Tenant()
 > "
 > ```
+>
+> Если вы используете Office 365 CLI, сначала подключитесь к клиенту с помощью команды `spo connect`.
 
 Чтобы создать каталог приложений в семействе веб-сайтов, используйте командлет `Add-SPOSiteCollectionAppCatalog`, передав имя нужного семейства веб-сайтов в параметре `-Site`.
 
@@ -81,12 +85,18 @@ $site = Get-SPOSite https://contoso.sharepoint.com/sites/marketing
 Add-SPOSiteCollectionAppCatalog -Site $site
 ```
 
+Кроме того, при работе с Office 365 CLI можно использовать команду `spo site appcatalog add`
+
+```shell
+spo site appcatalog add --url https://contoso.sharepoint.com/sites/marketing
+```
+
 После выполнения скрипта в семейство веб-сайтов будет добавлена библиотека **Приложения для SharePoint**, где можно будет развертывать надстройки SharePoint и решения SharePoint Framework.
 
 ### <a name="disable-the-site-collection-app-catalog"></a>Отключение каталога приложений в семействе веб-сайтов
 
 > [!NOTE]
-> Прежде чем запускать приведенный ниже скрипт, подключитесь к клиенту SharePoint Online с помощью командлета `Connect-SPOService`.
+> Прежде чем запускать приведенный ниже скрипт, подключитесь к клиенту SharePoint Online, используя командлет `Connect-SPOService` в оболочке PowerShell, или команду `spo connect` при работе с Office 365 CLI.
 
 Чтобы отключить каталог приложений в семействе веб-сайтов, используйте командлет `Remove-SPOSiteCollectionAppCatalog`, передав имя нужного семейства веб-сайтов в параметре `-Site`. Кроме того, если вы знаете ИД семейства веб-сайтов, можно использовать командлет `Remove-SPOSiteCollectionAppCatalogById`.
 
@@ -100,6 +110,12 @@ $site = Get-SPOSite https://contoso.sharepoint.com/sites/marketing
 
 # disable the site collection app catalog
 Remove-SPOSiteCollectionAppCatalog -Site $site
+```
+
+Кроме того, при работе с Office 365 CLI можно использовать команду `spo site appcatalog remove`
+
+```shell
+spo site appcatalog remove --url https://contoso.sharepoint.com/sites/marketing
 ```
 
 После выполнения этого скрипта библиотека **Приложения для SharePoint** по-прежнему будет видна в семействе веб-сайтов, но в ней будет невозможно развертывать решения и использовать их.
@@ -117,3 +133,5 @@ Remove-SPOSiteCollectionAppCatalog -Site $site
 ## <a name="see-also"></a>См. также
 
 - [Управление каталогом приложений для семейства веб-сайтов](https://support.office.com/ru-RU/article/Manage-the-Site-Collection-App-Catalog-928b9b61-a9de-4563-a7d1-6231aa9d4d19)
+- [Office 365 CLI](https://sharepoint.github.io/office365-cli?utm_source=msft_docs&utm_medium=page&utm_campaign=Use+the+site+collection+app+catalog)
+
