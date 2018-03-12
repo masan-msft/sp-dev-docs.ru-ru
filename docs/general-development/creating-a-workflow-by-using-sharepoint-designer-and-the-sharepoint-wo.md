@@ -3,47 +3,47 @@ title: "Создание рабочего процесса с помощью Sha
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: c05e0127-c6f5-48b8-b8f2-cbcc30149c8b
-ms.openlocfilehash: e2b6cd1985f5965e6b39865a69153abbeb167590
-ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
+ms.openlocfilehash: 93861c7e00849617874a4907d9b45a5ea302cf9d
+ms.sourcegitcommit: 249f0fbce4df81fbe65848f1d26a4ebcad7aa89c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 03/05/2018
 ---
-# <a name="creating-a-workflow-by-using-sharepoint-designer-2013-and-the-sharepoint-workflow-platform"></a><span data-ttu-id="1c552-102">Создание рабочего процесса с помощью SharePoint Designer 2013 и платформы SharePoint Workflow</span><span class="sxs-lookup"><span data-stu-id="1c552-102">Creating a workflow by using SharePoint Designer 2013 and the SharePoint Workflow platform</span></span>
-<span data-ttu-id="1c552-103">Узнайте, как установить, открыть и создать рабочий процесс с помощью SharePoint Designer 2013 и платформы SharePoint Workflow.</span><span class="sxs-lookup"><span data-stu-id="1c552-103">Learn how to install, open, and create a workflow by using SharePoint Designer 2013 and the SharePoint Workflow platform.</span></span> 
+# <a name="creating-a-workflow-by-using-sharepoint-designer-2013-and-the-sharepoint-workflow-platform"></a><span data-ttu-id="30f6a-102">Создание рабочего процесса с помощью SharePoint Designer 2013 и платформы SharePoint Workflow</span><span class="sxs-lookup"><span data-stu-id="30f6a-102">Creating a workflow by using SharePoint Designer 2013 and the SharePoint Workflow platform</span></span>
+<span data-ttu-id="30f6a-103">Узнайте, как установить, открыть и создать рабочий процесс с помощью SharePoint Designer 2013 и платформы SharePoint Workflow.</span><span class="sxs-lookup"><span data-stu-id="30f6a-103">Learn how to install, open, and create a workflow by using SharePoint Designer 2013 and the SharePoint Workflow platform.</span></span> 
    
 
-## <a name="install-sharepoint-designer-2013"></a><span data-ttu-id="1c552-104">Установка SharePoint Designer 2013</span><span class="sxs-lookup"><span data-stu-id="1c552-104">Install SharePoint Designer 2013</span></span>
-<span data-ttu-id="1c552-105"><a name="section1"> </a></span><span class="sxs-lookup"><span data-stu-id="1c552-105"><a name="section1"> </a></span></span>
+## <a name="install-sharepoint-designer-2013"></a><span data-ttu-id="30f6a-104">Установка SharePoint Designer 2013</span><span class="sxs-lookup"><span data-stu-id="30f6a-104">Install SharePoint Designer 2013</span></span>
+<span data-ttu-id="30f6a-105"><a name="section1"> </a></span><span class="sxs-lookup"><span data-stu-id="30f6a-105"><a name="section1"> </a></span></span>
 
-<span data-ttu-id="1c552-p101">SharePoint Designer 2013 можно скачать бесплатно. Чтобы скачать и установить SharePoint Designer 2013, выполните описанные ниже шаги.</span><span class="sxs-lookup"><span data-stu-id="1c552-p101">SharePoint Designer 2013 is a free download. To download and install SharePoint Designer 2013 follow these steps:</span></span> 
+<span data-ttu-id="30f6a-p101">SharePoint Designer 2013 можно скачать бесплатно. Чтобы скачать и установить SharePoint Designer 2013, выполните описанные ниже шаги.</span><span class="sxs-lookup"><span data-stu-id="30f6a-p101">SharePoint Designer 2013 is a free download. To download and install SharePoint Designer 2013 follow these steps:</span></span> 
   
     
     
 
-### <a name="to-install-sharepoint-designer-2013"></a><span data-ttu-id="1c552-108">Чтобы установить SharePoint Designer 2013:</span><span class="sxs-lookup"><span data-stu-id="1c552-108">To install SharePoint Designer 2013</span></span>
+### <a name="to-install-sharepoint-designer-2013"></a><span data-ttu-id="30f6a-108">Чтобы установить SharePoint Designer 2013:</span><span class="sxs-lookup"><span data-stu-id="30f6a-108">To install SharePoint Designer 2013</span></span>
 
 
-1. <span data-ttu-id="1c552-109">Откройте свой веб-браузер и перейдите в Центр загрузки Майкрософт:  [http://www.microsoft.com/download](http://www.microsoft.com/download.aspx).</span><span class="sxs-lookup"><span data-stu-id="1c552-109">Open your web browser and navigate to the Microsoft Download Center:  [http://www.microsoft.com/download](http://www.microsoft.com/download.aspx).</span></span> 
+1. <span data-ttu-id="30f6a-109">Откройте свой веб-браузер и перейдите в Центр загрузки Майкрософт:  [http://www.microsoft.com/download](http://www.microsoft.com/download.aspx).</span><span class="sxs-lookup"><span data-stu-id="30f6a-109">Open your web browser and navigate to the Microsoft Download Center:  [http://www.microsoft.com/download](http://www.microsoft.com/download.aspx).</span></span> 
     
   
-2. <span data-ttu-id="1c552-110">Введите в поле поиска SharePoint Designer 2013.</span><span class="sxs-lookup"><span data-stu-id="1c552-110">Type SharePoint Designer 2013 in the search field.</span></span>
+2. <span data-ttu-id="30f6a-110">Введите в поле поиска SharePoint Designer 2013.</span><span class="sxs-lookup"><span data-stu-id="30f6a-110">Type SharePoint Designer 2013 in the search field.</span></span>
     
   
-3. <span data-ttu-id="1c552-111">Щелкните ссылку "SharePoint Designer 2013".</span><span class="sxs-lookup"><span data-stu-id="1c552-111">Click the link for "SharePoint Designer 2013".</span></span> 
+3. <span data-ttu-id="30f6a-111">Щелкните ссылку "SharePoint Designer 2013".</span><span class="sxs-lookup"><span data-stu-id="30f6a-111">Click the link for "SharePoint Designer 2013".</span></span> 
     
   
-4. <span data-ttu-id="1c552-p102">Ознакомьтесь с обзором, системными требованиями и инструкциями по установке. Убедитесь, что ваша система совместима.</span><span class="sxs-lookup"><span data-stu-id="1c552-p102">Read the overview, system requirements, and installation instructions. Make sure your system is compatible.</span></span> 
+4. <span data-ttu-id="30f6a-p102">Ознакомьтесь с обзором, системными требованиями и инструкциями по установке. Убедитесь, что ваша система совместима.</span><span class="sxs-lookup"><span data-stu-id="30f6a-p102">Read the overview, system requirements, and installation instructions. Make sure your system is compatible.</span></span> 
     
   
-5. <span data-ttu-id="1c552-114">Выберите 64-разрядный ( **x64**) или 32-разрядный ( **x86**) тип платформы, как показано на рисунке.</span><span class="sxs-lookup"><span data-stu-id="1c552-114">Select your platform type: 64-bit ( **x64**) or 32-bit ( **x86**) as shown in the figure.</span></span> 
+5. <span data-ttu-id="30f6a-114">Выберите 64-разрядный ( **x64**) или 32-разрядный ( **x86**) тип платформы, как показано на рисунке.</span><span class="sxs-lookup"><span data-stu-id="30f6a-114">Select your platform type: 64-bit ( **x64**) or 32-bit ( **x86**) as shown in the figure.</span></span> 
     
   
-6. <span data-ttu-id="1c552-115">Следуйте инструкции по установке SharePoint Designer 2013.</span><span class="sxs-lookup"><span data-stu-id="1c552-115">Follow the instructions to install SharePoint Designer 2013.</span></span>
+6. <span data-ttu-id="30f6a-115">Следуйте инструкции по установке SharePoint Designer 2013.</span><span class="sxs-lookup"><span data-stu-id="30f6a-115">Follow the instructions to install SharePoint Designer 2013.</span></span>
     
   
 
-<span data-ttu-id="1c552-116">**Рисунок. Страница загрузки SharePoint Designer 2013**</span><span class="sxs-lookup"><span data-stu-id="1c552-116">**Figure: SharePoint Designer 2013 download page**</span></span>
+<span data-ttu-id="30f6a-116">**Рисунок. Страница загрузки SharePoint Designer 2013**</span><span class="sxs-lookup"><span data-stu-id="30f6a-116">**Figure: SharePoint Designer 2013 download page**</span></span>
 
   
     
@@ -65,63 +65,63 @@ ms.lasthandoff: 12/07/2017
     
     
 
-## <a name="open-sharepoint-designer-2013-and-connect-to-a-sharepoint-site"></a><span data-ttu-id="1c552-118">Открытие SharePoint Designer 2013 и подключение к сайту SharePoint</span><span class="sxs-lookup"><span data-stu-id="1c552-118">Open SharePoint Designer 2013 and connect to a SharePoint site</span></span>
-<span data-ttu-id="1c552-119"><a name="section2"> </a></span><span class="sxs-lookup"><span data-stu-id="1c552-119"><a name="section2"> </a></span></span>
+## <a name="open-sharepoint-designer-2013-and-connect-to-a-sharepoint-site"></a><span data-ttu-id="30f6a-118">Открытие SharePoint Designer 2013 и подключение к сайту SharePoint</span><span class="sxs-lookup"><span data-stu-id="30f6a-118">Open SharePoint Designer 2013 and connect to a SharePoint site</span></span>
+<span data-ttu-id="30f6a-119"><a name="section2"> </a></span><span class="sxs-lookup"><span data-stu-id="30f6a-119"><a name="section2"> </a></span></span>
 
-<span data-ttu-id="1c552-p103">SharePoint Designer 2013 устанавливается как приложение Office 2013. Чтобы открыть SharePoint Designer 2013 и подключиться к сайту SharePoint, выполните описанные ниже шаги.</span><span class="sxs-lookup"><span data-stu-id="1c552-p103">SharePoint Designer 2013 installs as an Office 2013 application. To open SharePoint Designer 2013 and connect to a SharePoint site follow these steps:</span></span> 
+<span data-ttu-id="30f6a-p103">SharePoint Designer 2013 устанавливается как приложение Office 2013. Чтобы открыть SharePoint Designer 2013 и подключиться к сайту SharePoint, выполните описанные ниже шаги.</span><span class="sxs-lookup"><span data-stu-id="30f6a-p103">SharePoint Designer 2013 installs as an Office 2013 application. To open SharePoint Designer 2013 and connect to a SharePoint site follow these steps:</span></span> 
   
     
     
-
-### <a name="to-open-sharepoint-designer-2013-and-connect-to-a-sharepoint-site"></a><span data-ttu-id="1c552-122">Чтобы открыть SharePoint Designer 2013 и подключиться к сайту SharePoint:</span><span class="sxs-lookup"><span data-stu-id="1c552-122">To open SharePoint Designer 2013 and connect to a SharePoint site</span></span>
-
-
-1. <span data-ttu-id="1c552-p104">Откройте SharePoint Designer 2013, выбрав его в меню **Пуск**. Нажмите значок **Пуск**, выберите пункт **Все программы**, а затем  **Microsoft Office 2013** и **SharePoint Designer 2013**.</span><span class="sxs-lookup"><span data-stu-id="1c552-p104">Open SharePoint Designer 2013 by selecting it on the **Start** menu. Click **Start** icon, click **All Programs**, click **Microsoft Office 2013**, and then click **SharePoint Designer 2013**.</span></span> 
-    
-  
-2. <span data-ttu-id="1c552-125">Щелкните **Открыть сайт** на начальной странице SharePoint Designer 2013.</span><span class="sxs-lookup"><span data-stu-id="1c552-125">Click **Open Site** on the SharePoint Designer 2013 start page.</span></span>
-    
-  
-3. <span data-ttu-id="1c552-p105">Введите сайт SharePoint, к которому хотите подключиться. Например, http://www.contoso.com/sites/a-sharepoint-site.</span><span class="sxs-lookup"><span data-stu-id="1c552-p105">Enter the SharePoint site that you want to connect to. For example, http://www.contoso.com/sites/a-sharepoint-site.</span></span>
-    
-  
-4. <span data-ttu-id="1c552-128">Нажмите кнопку **Открыть**, чтобы открыть веб-сайт.</span><span class="sxs-lookup"><span data-stu-id="1c552-128">Click **Open** to open the site.</span></span>
-    
-  
-5. <span data-ttu-id="1c552-p106">При необходимости введите свои учетные данные. (Если с компьютером, с которого вы выполнили вход, не интегрирована система безопасности, далее вам будет предложено ввести учетные данные.) Убедитесь, что вы используете учетные данные с правами доступа на сайт SharePoint.</span><span class="sxs-lookup"><span data-stu-id="1c552-p106">Enter your credentials, if prompted. (If security is not integrated with the computer you signed in on then you are prompted to enter your credentials.) Make sure to use credentials that have access to the SharePoint site.</span></span>
-    
-  
-
-## <a name="create-a-list-workflow-based-on-the-sharepoint-workflow-platform"></a><span data-ttu-id="1c552-131">Создание рабочего процесса списка на основе платформы SharePoint Workflow</span><span class="sxs-lookup"><span data-stu-id="1c552-131">Create a List workflow based on the SharePoint Workflow platform</span></span>
-<span data-ttu-id="1c552-132"><a name="section3"> </a></span><span class="sxs-lookup"><span data-stu-id="1c552-132"><a name="section3"> </a></span></span>
-
-<span data-ttu-id="1c552-p107">SharePoint Designer 2013 можно использовать для многих важных задач. Панель навигации используется для переключения между различными аспектами SharePoint Designer 2013. Чтобы создать новый рабочий процесс списка на основе платформы SharePoint Workflow, выполните описанные ниже шаги.</span><span class="sxs-lookup"><span data-stu-id="1c552-p107">SharePoint Designer 2013 can be used for many important tasks. The navigational pane is used to switch between different aspects of SharePoint Designer 2013. To create a new List workflow based on the SharePoint Workflow platform, follow these steps:</span></span>
-  
-    
-    
-
-### <a name="to-create-a-workflow-based-on-the-sharepoint-workflow-platform"></a><span data-ttu-id="1c552-136">Чтобы создать рабочий процесс на основе платформы SharePoint Workflow:</span><span class="sxs-lookup"><span data-stu-id="1c552-136">To create a workflow based on the SharePoint Workflow platform</span></span>
+<span data-ttu-id="30f6a-122">2013</span><span class="sxs-lookup"><span data-stu-id="30f6a-122">2013</span></span>
+### <a name="to-open-sharepoint-designer-2013-and-connect-to-a-sharepoint-site"></a><span data-ttu-id="30f6a-123">Чтобы открыть SharePoint Designer 2013 и подключиться к сайту SharePoint:</span><span class="sxs-lookup"><span data-stu-id="30f6a-123">To open SharePoint Designer 2013 and connect to a SharePoint site</span></span>
 
 
-1. <span data-ttu-id="1c552-137">Щелкните на панели навигации узел "Рабочие процессы".</span><span class="sxs-lookup"><span data-stu-id="1c552-137">Click the Workflows node in the Navigation pane.</span></span>
+1. <span data-ttu-id="30f6a-p104">Откройте SharePoint Designer 2013, выбрав его в меню **Пуск**. Нажмите значок **Пуск**, выберите пункт **Все программы**, а затем  **Microsoft Office 2013** и **SharePoint Designer 2013**.</span><span class="sxs-lookup"><span data-stu-id="30f6a-p104">Open SharePoint Designer 2013 by selecting it on the **Start** menu. Click **Start** icon, click **All Programs**, click **Microsoft Office 2013**, and then click **SharePoint Designer 2013**.</span></span> 
     
   
-2. <span data-ttu-id="1c552-138">Щелкните выпадающее меню **Рабочий процесс списка** в разделе **Создание** ленты, как показано на рисунке.</span><span class="sxs-lookup"><span data-stu-id="1c552-138">Click the **List Workflow** drop-down in the **New** section of the ribbon, as shown in the figure.</span></span>
+2. <span data-ttu-id="30f6a-126">Щелкните **Открыть сайт** на начальной странице SharePoint Designer 2013.</span><span class="sxs-lookup"><span data-stu-id="30f6a-126">Click **Open Site** on the SharePoint Designer 2013 start page.</span></span>
     
   
-3. <span data-ttu-id="1c552-139">Выберите список, который нужно связать с новым рабочим процессом.</span><span class="sxs-lookup"><span data-stu-id="1c552-139">Select the list that you want to associate with the new workflow.</span></span>
+3. <span data-ttu-id="30f6a-p105">Введите сайт SharePoint, к которому хотите подключиться. Например, http://www.contoso.com/sites/a-sharepoint-site.</span><span class="sxs-lookup"><span data-stu-id="30f6a-p105">Enter the SharePoint site that you want to connect to. For example, http://www.contoso.com/sites/a-sharepoint-site.</span></span>
     
   
-4. <span data-ttu-id="1c552-140">В диалоговом окне **Создание рабочего процесса списка** введите название и описание рабочего процесса, а затем убедитесь, что **Тип платформы** установлен в **SharePoint Workflow**, как показано на рисунке.</span><span class="sxs-lookup"><span data-stu-id="1c552-140">On the **Create List Workflow** dialog box, enter a name and description for the workflow and then make sure that the **Platform Type** is set to **SharePoint Workflow**, as shown in the figure.</span></span>
+4. <span data-ttu-id="30f6a-129">Нажмите кнопку **Открыть**, чтобы открыть веб-сайт.</span><span class="sxs-lookup"><span data-stu-id="30f6a-129">Click **Open** to open the site.</span></span>
+    
+  
+5. <span data-ttu-id="30f6a-p106">При необходимости введите свои учетные данные. (Если с компьютером, с которого вы выполнили вход, не интегрирована система безопасности, далее вам будет предложено ввести учетные данные.) Убедитесь, что вы используете учетные данные с правами доступа на сайт SharePoint.</span><span class="sxs-lookup"><span data-stu-id="30f6a-p106">Enter your credentials, if prompted. (If security is not integrated with the computer you signed in on then you are prompted to enter your credentials.) Make sure to use credentials that have access to the SharePoint site.</span></span>
+    
+  
+
+## <a name="create-a-list-workflow-based-on-the-sharepoint-workflow-platform"></a><span data-ttu-id="30f6a-132">Создание рабочего процесса списка на основе платформы SharePoint Workflow</span><span class="sxs-lookup"><span data-stu-id="30f6a-132">Create a List workflow based on the SharePoint Workflow platform</span></span>
+<span data-ttu-id="30f6a-133"><a name="section3"> </a></span><span class="sxs-lookup"><span data-stu-id="30f6a-133"></span></span>
+
+<span data-ttu-id="30f6a-p107">SharePoint Designer 2013 можно использовать для многих важных задач. Панель навигации используется для переключения между различными аспектами SharePoint Designer 2013. Чтобы создать новый рабочий процесс списка на основе платформы SharePoint Workflow, выполните описанные ниже шаги.</span><span class="sxs-lookup"><span data-stu-id="30f6a-p107">SharePoint Designer 2013 can be used for many important tasks. The navigational pane is used to switch between different aspects of SharePoint Designer 2013. To create a new List workflow based on the SharePoint Workflow platform, follow these steps:</span></span>
+  
+    
+    
+
+### <a name="to-create-a-workflow-based-on-the-sharepoint-workflow-platform"></a><span data-ttu-id="30f6a-137">Чтобы создать рабочий процесс на основе платформы SharePoint Workflow:</span><span class="sxs-lookup"><span data-stu-id="30f6a-137">To create a workflow based on the SharePoint Workflow platform</span></span>
+
+
+1. <span data-ttu-id="30f6a-138">Щелкните на панели навигации узел "Рабочие процессы".</span><span class="sxs-lookup"><span data-stu-id="30f6a-138">Click the Workflows node in the Navigation pane.</span></span>
+    
+  
+2. <span data-ttu-id="30f6a-139">Щелкните выпадающее меню **Рабочий процесс списка** в разделе **Создание** ленты, как показано на рисунке.</span><span class="sxs-lookup"><span data-stu-id="30f6a-139">Click the **List Workflow** drop-down in the **New** section of the ribbon, as shown in the figure.</span></span>
+    
+  
+3. <span data-ttu-id="30f6a-140">Выберите список, который нужно связать с новым рабочим процессом.</span><span class="sxs-lookup"><span data-stu-id="30f6a-140">Select the list that you want to associate with the new workflow.</span></span>
+    
+  
+4. <span data-ttu-id="30f6a-141">В диалоговом окне **Создание рабочего процесса списка** введите название и описание рабочего процесса, а затем убедитесь, что **Тип платформы** установлен в **SharePoint 2013 Workflow**, как показано на рисунке.</span><span class="sxs-lookup"><span data-stu-id="30f6a-141">On the **Create List Workflow** dialog box, enter a name and description for the workflow and then make sure that the **Platform Type** is set to **SharePoint 2013 Workflow**, as shown in the figure.</span></span>
     
     > [!NOTE]
-    > <span data-ttu-id="1c552-141">Если тип платформы "Рабочий процесс SharePoint" недоступен, то Workflow Manager не настроен для работы с фермой SharePoint.</span><span class="sxs-lookup"><span data-stu-id="1c552-141">Note: If you do not see SharePoint Workflow as an available platform type then Workflow Manager is not configured to work with the SharePoint farm.</span></span> 
+    > <span data-ttu-id="30f6a-142">Если тип платформы "Рабочий процесс SharePoint" недоступен, то Workflow Manager не настроен для работы с фермой SharePoint.</span><span class="sxs-lookup"><span data-stu-id="30f6a-142">If you do not see SharePoint Workflow as an available platform type then Workflow Manager is not configured to work with the SharePoint farm.</span></span> <span data-ttu-id="30f6a-143">См. статью [Настройка диспетчера рабочих процессов для работы с фермой SharePoint Server 2013 Farm](https://technet.microsoft.com/library/jj658588.aspx#section5).</span><span class="sxs-lookup"><span data-stu-id="30f6a-143">See [Configure Workflow Manager to work with the SharePoint Server 2013 Farm](https://technet.microsoft.com/library/jj658588.aspx#section5).</span></span> 
 
-5. <span data-ttu-id="1c552-142">Нажмите кнопку **ОК**, чтобы создать рабочий процесс.</span><span class="sxs-lookup"><span data-stu-id="1c552-142">Click **OK** to create the workflow.</span></span>
+5. <span data-ttu-id="30f6a-144">Нажмите кнопку **ОК**, чтобы создать рабочий процесс.</span><span class="sxs-lookup"><span data-stu-id="30f6a-144">Click **OK** to create the workflow.</span></span>
     
   
 
-<span data-ttu-id="1c552-143">**Рисунок. Кнопка на ленте для создания нового рабочего процесса списка**</span><span class="sxs-lookup"><span data-stu-id="1c552-143">**Figure: The ribbon button for creating a new list workflow**</span></span>
+<span data-ttu-id="30f6a-145">**Рисунок. Кнопка на ленте для создания нового рабочего процесса списка**</span><span class="sxs-lookup"><span data-stu-id="30f6a-145">**Figure: The ribbon button for creating a new list workflow**</span></span>
 
   
     
@@ -143,7 +143,7 @@ ms.lasthandoff: 12/07/2017
     
     
 
-<span data-ttu-id="1c552-145">**Рисунок. Диалоговое окно "Создание рабочего процесса списка"**</span><span class="sxs-lookup"><span data-stu-id="1c552-145">**Figure: Create List Workflow dialog box**</span></span>
+<span data-ttu-id="30f6a-147">**Рисунок. Диалоговое окно "Создание рабочего процесса списка"**</span><span class="sxs-lookup"><span data-stu-id="30f6a-147">**Figure: Create List Workflow dialog box**</span></span>
 
   
     
@@ -164,12 +164,12 @@ ms.lasthandoff: 12/07/2017
   
     
     
-<span data-ttu-id="1c552-p108">Теперь, когда рабочий процесс создан, вы можете добавлять к нему нужные действия, условия, стадии, шаги и циклы. Эти компоненты доступны на ленте SharePoint Designer 2013, как показано на рисунке.</span><span class="sxs-lookup"><span data-stu-id="1c552-p108">Now that the workflow is created, you can add Actions, Conditions, Stages, Steps, and Loops to build your workflow. These workflow components are available in the ribbon of SharePoint Designer 2013, as shown in the figure.</span></span> 
+<span data-ttu-id="30f6a-p109">Теперь, когда рабочий процесс создан, вы можете добавлять к нему нужные действия, условия, стадии, шаги и циклы. Эти компоненты доступны на ленте SharePoint Designer 2013, как показано на рисунке.</span><span class="sxs-lookup"><span data-stu-id="30f6a-p109">Now that the workflow is created, you can add Actions, Conditions, Stages, Steps, and Loops to build your workflow. These workflow components are available in the ribbon of SharePoint Designer 2013, as shown in the figure.</span></span> 
   
     
     
 
-<span data-ttu-id="1c552-149">**Рисунок. Элементы рабочего процесса для платформы SharePoint Workflow**</span><span class="sxs-lookup"><span data-stu-id="1c552-149">**Figure: Workflow items for the SharePoint Workflow platform**</span></span>
+<span data-ttu-id="30f6a-151">**Рисунок. Элементы рабочего процесса для платформы SharePoint Workflow**</span><span class="sxs-lookup"><span data-stu-id="30f6a-151">**Figure: Workflow items for the SharePoint Workflow platform**</span></span>
 
   
     
@@ -181,27 +181,27 @@ ms.lasthandoff: 12/07/2017
 ![Элементы рабочего процесса на ленте.](../images/SPD15-install-connect-4.png)
   
 > [!NOTE]
-> <span data-ttu-id="1c552-151">Предыдущая процедура используется для создания рабочего процесса списка.</span><span class="sxs-lookup"><span data-stu-id="1c552-151">Note: The above procedure is used to create a List workflow.</span></span> <span data-ttu-id="1c552-152">Рабочие процессы для повторного использования и сайтов можно создавать с применением одной и той же процедуры с описанным ниже изменением.</span><span class="sxs-lookup"><span data-stu-id="1c552-152">A Reusable workflow or Site workflow can be created using the same procedure with the following modification.</span></span> <span data-ttu-id="1c552-153">Вместо кнопки "Рабочий процесс списка" на ленте нажмите при создании рабочего процесса кнопку **Рабочий процесс для повторного использования** или **Рабочий процесс сайта**.</span><span class="sxs-lookup"><span data-stu-id="1c552-153">Instead of selecting the List Workflow button in the ribbon select the **Reusable Workflow** or **Site Workflow** button when creating the workflow.</span></span>
+> <span data-ttu-id="30f6a-153">Предыдущая процедура используется для создания рабочего процесса списка.</span><span class="sxs-lookup"><span data-stu-id="30f6a-153">The previous procedure is used to create a List workflow.</span></span> <span data-ttu-id="30f6a-154">Рабочие процессы для повторного использования и сайтов можно создавать с применением одной и той же процедуры с описанным ниже изменением.</span><span class="sxs-lookup"><span data-stu-id="30f6a-154">A Reusable workflow or Site workflow can be created using the same procedure with the following modification.</span></span> <span data-ttu-id="30f6a-155">Вместо кнопки "Рабочий процесс списка" на ленте нажмите при создании рабочего процесса кнопку **Рабочий процесс для повторного использования** или **Рабочий процесс сайта**.</span><span class="sxs-lookup"><span data-stu-id="30f6a-155">Instead of selecting the List Workflow button in the ribbon select the **Reusable Workflow** or **Site Workflow** button when creating the workflow.</span></span>
   
     
     
 
-<span data-ttu-id="1c552-154">Дополнительные сведения о доступных компонентах для разработки рабочих процессов см. в статье [Краткий справочник по действиям рабочих процессов (платформа рабочих процессов SharePoint)](workflow-actions-quick-reference-sharepoint-workflow-platform.md).</span><span class="sxs-lookup"><span data-stu-id="1c552-154">To learn more about the available components of workflow development, see  [Workflow actions quick reference (SharePoint Workflow platform)](workflow-actions-quick-reference-sharepoint-workflow-platform.md).</span></span>
+<span data-ttu-id="30f6a-156">Дополнительные сведения о доступных компонентах для разработки рабочих процессов см. в статье [Краткий справочник по действиям рабочих процессов (платформа рабочих процессов SharePoint)](workflow-actions-quick-reference-sharepoint-workflow-platform.md).</span><span class="sxs-lookup"><span data-stu-id="30f6a-156">To learn more about the available components of workflow development, see  [Workflow actions quick reference (SharePoint Workflow platform)](workflow-actions-quick-reference-sharepoint-workflow-platform.md).</span></span>
   
     
     
 
-## <a name="see-also"></a><span data-ttu-id="1c552-155">См. также</span><span class="sxs-lookup"><span data-stu-id="1c552-155">See also</span></span>
-<span data-ttu-id="1c552-156"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="1c552-156"><a name="bk_addresources"> </a></span></span>
+## <a name="see-also"></a><span data-ttu-id="30f6a-157">См. также</span><span class="sxs-lookup"><span data-stu-id="30f6a-157">See also</span></span>
+<span data-ttu-id="30f6a-158"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="30f6a-158"></span></span>
 
 
--  [<span data-ttu-id="1c552-157">Новые возможности рабочих процессов SharePoint</span><span class="sxs-lookup"><span data-stu-id="1c552-157">What's new in workflow in SharePoint</span></span>](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)
+-  [<span data-ttu-id="30f6a-159">Новые возможности рабочих процессов SharePoint</span><span class="sxs-lookup"><span data-stu-id="30f6a-159">What's new in workflow in SharePoint</span></span>](http://msdn.microsoft.com/library/6ab8a28b-fa2f-4530-8b55-a7f663bf15ea.aspx)
     
   
--  [<span data-ttu-id="1c552-158">Начало работы с рабочими процессами SharePoint</span><span class="sxs-lookup"><span data-stu-id="1c552-158">Getting started with SharePoint workflow</span></span>](http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx)
+-  [<span data-ttu-id="30f6a-160">Начало работы с рабочими процессами SharePoint</span><span class="sxs-lookup"><span data-stu-id="30f6a-160">Getting started with SharePoint workflow</span></span>](http://msdn.microsoft.com/library/cc73be76-a329-449f-90ab-86822b1c2ee8.aspx)
     
   
--  [<span data-ttu-id="1c552-159">Разработка рабочих процессов в SharePoint Designer и Visio</span><span class="sxs-lookup"><span data-stu-id="1c552-159">Workflow development in SharePoint Designer and Visio</span></span>](workflow-development-in-sharepoint-designer-and-visio.md)
+-  [<span data-ttu-id="30f6a-161">Разработка рабочих процессов в SharePoint Designer и Visio</span><span class="sxs-lookup"><span data-stu-id="30f6a-161">Workflow development in SharePoint Designer and Visio</span></span>](workflow-development-in-sharepoint-designer-and-visio.md)
     
   
 
