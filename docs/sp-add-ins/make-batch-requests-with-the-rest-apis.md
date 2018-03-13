@@ -1,66 +1,49 @@
 ---
-title: "Отправка пакетных запросов с помощью интерфейсов REST API"
-ms.date: 09/25/2017
+title: "Отправка пакетных запросов с помощью REST API"
+description: "Использование параметра запроса $batch с REST API или OData API."
+ms.date: 12/14/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 68dff5844cfaaa27071ca5f5d870e4be1eeaf7b7
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 2d47912c995614c4ee9e12d6fef7f738287bceb1
+ms.sourcegitcommit: 202dd467c8e5b62c6469808226ad334061f70aa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/15/2017
 ---
-# <a name="make-batch-requests-with-the-rest-apis"></a>Отправка пакетных запросов с помощью интерфейсов REST API
-Узнайте, как использовать параметр запроса `$batch` с интерфейсами REST API и API OData.
+# <a name="make-batch-requests-with-the-rest-apis"></a>Отправка пакетных запросов с использованием REST API
+
+В этой статье описано выполнение пакетных запросов и операций при использовании REST API или OData API для Microsoft SharePoint Online (и локальной среды SharePoint 2016 и более поздних версий), а также при использовании [подмножества файлов и папок](https://msdn.microsoft.com/library) REST API для Office 365. С помощью этой методики вы можете повысить производительность надстройки, совместив множество операций в одном запросе к серверу и одном отклике.
  
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
- 
+## <a name="executive-summary-of-the-batch-option"></a>Краткий обзор параметра $batch
 
-В этой статье описана отправка пакетных запросов и операций в случае REST API или OData API для Microsoft SharePoint Online (а также локальной среды SharePoint 2016 и более поздних версий), а также в случае [подмножества файлов и папок](http://msdn.microsoft.com/ru-RU/office/office365/api/files-rest-operations) REST API для Office 365. С помощью этой методики вы можете повысить производительность надстройки, совместив множество операций в одном запросе к серверу и одном отклике.
- 
+В SharePoint Online (и локальной среде SharePoint 2016 и более поздних версий), а также API Office 365 реализован параметр запроса OData `$batch`, поэтому вы можете следовать указаниям по его использованию из [официальной документации](http://www.odata.org/documentation/odata-version-3-0/batch-processing). Кроме того, вы можете ознакомиться с этой темой в блоге Andrew Connell. Начните с записи [Часть 1. Пакетные запросы REST API в SharePoint](http://www.andrewconnell.com/blog/part-1-sharepoint-rest-api-batching-understanding-batching-requests). 
 
-## <a name="executive-summary-of-the-batch-option"></a>Аннотация к параметру $batch
-
-В SharePoint Online (и локальной среде SharePoint 2016 и более поздних версий), а также API Office 365 реализован параметр запроса OData `$batch`, поэтому вы можете следовать указаниям по его использованию из [официальной документации](http://www.odata.org/documentation/odata-version-3-0/batch-processing). Кроме того, вы можете ознакомиться с этой темой в блоге Эндрю Коннела (Andrew Connell). Начните с записи [Часть 1. Пакетные запросы REST API в SharePoint](http://www.andrewconnell.com/blog/part-1-sharepoint-rest-api-batching-understanding-batching-requests). Напомним о некоторых важных факторах:
- 
-
- 
+Напомним о некоторых важных факторах:
 
 - URL-адрес запроса состоит из корневого URL-адреса службы и параметра `$batch`. Пример: `https://fabrikam.sharepoint.com/_api/$batch` или `https://fabrikam.office365.com/api/v1.0/me/$batch`.
-    
- 
+
 - Тело HTTP-запроса относится к типу MIME *multipart/mixed*.
-    
- 
+
 - Текст запроса делится на части, отделенные друг от друга граничной строкой, которая указывается в заголовке запроса.
-    
- 
+
 - У каждой части этого тела запроса есть команда HTTP и URL-адрес REST, а также внутреннее тело, если это применимо.
+
+- Такая часть может представлять собой операцию чтения (либо вызов функции) или объект ChangeSet из одной или нескольких операций записи (либо вызовов функций). Объект ChangeSet относится к типу MIME *multipart/mixed* с дочерними частями, содержащими операции вставки, обновления или удаления.
     
- 
-- Такая часть может быть операцией чтения (либо вызовом функции) или объектом ChangeSet из одной или нескольких операций записи (либо вызовов функций). Объект ChangeSet относится к типу MIME *multipart/mixed* с дочерними частями, содержащими операции вставки, обновления или удаления.
-    
-     **Важно!** В настоящее время интерфейсы API для SharePoint и Office 365 не поддерживают функции "все или ничего" объектов ChangeSet, содержащих несколько операций. В случае сбоя какой-либо из дочерних операций остальные операции выполняются без отката.
+> [!IMPORTANT] 
+> В настоящее время интерфейсы API для SharePoint и Office 365 не поддерживают функции "все или ничего" объектов ChangeSet, содержащих несколько операций. В случае сбоя какой-либо из дочерних операций остальные операции выполняются без отката.
 
 ## <a name="code-samples"></a>Примеры кода
 
-Примеры кода, в котором используется параметр запроса `$batch` для интерфейсов REST API или OData API в SharePoint:
- 
+Примеры кода, в котором используется параметр запроса `$batch` для интерфейсов REST API или OData API SharePoint:
 
- 
+- **C#:** [OfficeDev/Core.ODataBatch](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.ODataBatch)
 
--  **C#:** [OfficeDev/Core.ODataBatch](https://github.com/OfficeDev/PnP/tree/master/Samples/Core.ODataBatch)
-    
- 
--  **JavaScript:** [andrewconnell/sp-o365-rest](https://github.com/andrewconnell/sp-o365-rest/blob/master/SpRestBatchSample/Scripts/App.js)
-    
- 
-
+- **JavaScript:** [andrewconnell/sp-o365-rest](https://github.com/andrewconnell/sp-o365-rest/blob/master/SpRestBatchSample/Scripts/App.js)
+   
 ## <a name="example-requests-and-responses"></a>Примеры запросов и откликов
 
 Ниже приведен пример необработанного HTTP-запроса, который пакетно обрабатывает две операции GET, которые извлекают названия всех элементов в двух разных списках.
- 
-
- 
 
 ```
 POST https://fabrikam.sharepoint.com/_api/$batch HTTP/1.1
@@ -86,12 +69,9 @@ GET https://fabrikam.sharepoint.com/_api/Web/lists/getbytitle('User%20Informatio
 
 ```
 
+<br/>
+
 Ниже приведен пример текста необработанного HTTP-запроса, который пакетно обрабатывает операцию DELETE для списка и операцию GET для списка списков SharePoint.
- 
-
- 
-
-
 
 ```
 POST https://fabrikam.sharepoint.com/_api/$batch HTTP/1.1
@@ -121,18 +101,19 @@ GET https://fabrikam.sharepoint.com/_api/Web/lists HTTP/1.1
 --batch_7ba8d60b-efce-4a2f-b719-60c27cc0e70e--
 ```
 
+<br/>
 
-## <a name="links-to-helpful-libraries"></a>Ссылки на полезные библиотеки
+## <a name="odata-libraries"></a>Библиотеки OData
 
-Существуют библиотеки OData, поддерживающие пакетные запросы OData для множества языков. Ниже представлены два примера. Более полный список см. на странице [Библиотеки OData](http://www.odata.org/libraries/).
- 
+Библиотеки OData, поддерживающие пакетные запросы OData для множества языков. Ниже приведены два примера. Более полный список см. на странице [Библиотеки OData](http://www.odata.org/libraries/).
 
- 
+- [Библиотека OData .NET](http://msdn.microsoft.com/ru-RU/office/microsoft.data.odata%28v=vs.90%29). Обратите особое внимание на классы **ODataBatch***.
+- [Библиотека datajs](http://datajs.codeplex.com/documentation). Обратите особое внимание на [пакетные операции](http://datajs.codeplex.com/wikipage?title=datajs%20OData%20API&amp;referringTitle=Documentation#Batch).
 
--  [Библиотека OData .NET](http://msdn.microsoft.com/ru-RU/office/microsoft.data.odata%28v=vs.90%29). Обратите особое внимание на классы **ODataBatch***.
-    
- 
--  [Библиотека Data.js](http://datajs.codeplex.com/documentation). Обратите особое внимание на [пакетные операции](http://datajs.codeplex.com/wikipage?title=datajs%20OData%20API&amp;referringTitle=Documentation#Batch).
-    
+## <a name="see-also"></a>См. также
+
+- [Знакомство со службой REST SharePoint](get-to-know-the-sharepoint-rest-service.md)
+- [Разработка надстроек SharePoint](develop-sharepoint-add-ins.md)
+
  
 

@@ -1,33 +1,25 @@
 ---
-title: "Сервер .NET, CSOM, JSOM и индекс REST API для SharePoint"
-ms.date: 09/25/2017
+title: "Индекс API объектных моделей .NET Server, CSOM, JSOM и REST SharePoint"
+description: "Используемые чаще всего типы и объекты, которые реализуются в серверной объектной модели .NET и по крайней мере одной клиентской модели программирования."
+ms.date: 12/13/2017
 ms.prod: sharepoint
-ms.openlocfilehash: c2dc4270954f04c6313e740a2cda96e20fdc4d7c
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: b8f037f4c2701ddd91057d73b1bbbe2f519a2091
+ms.sourcegitcommit: 28690b54f1ef7c811d64393d2eaaff0a8635cc72
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/14/2017
 ---
-# <a name="sharepoint-net-server-csom-jsom-and-rest-api-index"></a>Сервер .NET, CSOM, JSOM и индекс REST API для SharePoint
+# <a name="sharepoint-net-server-csom-jsom-and-rest-api-index"></a>Индекс REST API, SharePoint .NET Server, CSOM, JSOM
 
+Используйте индекс API для поиска многих из наиболее часто используемых типов и объектов, реализуемых в серверной объектной модели .NET и по крайней мере одной клиентской модели программирования (клиентская объектная модель .NET, или CSOM, объектная модель JavaScript, или JSOM, и REST).
+
+В этой таблице перечислены наиболее часто используемые основные API, которые в большинстве случаев базируются на типах реализации сервера .NET. В некоторых случаях типы предназначены для клиентского программирования SharePoint, а эквивалентный тип сервера .NET отсутствует. В других случаях некоторые, но не все возможные, реализации модели клиентского программирования для определенного типа существуют.
+
+> [!NOTE] 
+> Перед использованием URI конечной точки REST, указанного в таблице, замените сокращение `…` на путь к сайту SharePoint (например, `http://<site collection>/<site>/_api/web/lists`).
  
-
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
  
-
-
 ## <a name="sharepoint-api-index"></a>Индекс API SharePoint
-
-Используйте индекс API для поиска наиболее часто используемых типов и объектов, реализованных в серверной объектной модели .NET и, по крайней мере, в одной клиентской модели программирования: клиентская объектная модель .NET, объектная модель JavaScript и REST.
- 
-
- 
-В таблице 1 приведены наиболее часто используемые основные API, которые в большинстве случаев основаны на типах реализации сервера .NET. В некоторых случаях типы являются уникальными для клиентской модели SharePoint без эквивалентного типа серверной модели .NET. Для некоторых типов существуют клиентские реализации модели программирования определенного типа.
- 
-
- 
- *Табл. 1. Часто используемые основные API* 
- 
 
 ||||
 |:-----|:-----|:-----|
@@ -103,21 +95,16 @@ ms.lasthandoff: 10/13/2017
 |**WebTemplate** **SPWebTemplate**| [Объект SP.WebTemplate](http://msdn.microsoft.com/library/cd670582-20a3-30b7-20f5-758be6d838da%28Office.15%29.aspx)| `…/_api/web/GetAvailableWebTemplates(languageid,includecrosslanguage)/getbyname(templatename)`|
 |**WebTemplateCollection** **SPWebTemplateCollection**| [Объект SP.WebTemplateCollection](http://msdn.microsoft.com/library/c6e8b2c8-4f0f-bfda-2626-49c59ef92844%28Office.15%29.aspx)| `…/_api/web/GetAvailableWebTemplates(languageid,includecrosslanguage)`|
 
- **Примечание.** Перед использованием URI конечной точки REST, указанного в таблице, замените сокращение `…` на путь к вашему сайту SharePoint, например `http://<site collection>/<site>/_api/web/lists`.
- 
 
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
+- [Разработка надстроек SharePoint](develop-sharepoint-add-ins.md)
+- [Выполнение базовых операций с использованием кода клиентской библиотеки в SharePoint](complete-basic-operations-using-sharepoint-client-library-code.md)
+- [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint.md)
 
--  [Выполнение базовых операций с использованием кода библиотеки клиента в SharePoint](complete-basic-operations-using-sharepoint-client-library-code.md)
-    
- 
--  [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint.md)
-    
- 
--  [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint.md)
     
  
 

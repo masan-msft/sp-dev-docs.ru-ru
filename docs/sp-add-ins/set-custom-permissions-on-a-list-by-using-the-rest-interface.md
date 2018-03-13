@@ -1,81 +1,54 @@
 ---
 title: "Назначение настраиваемых разрешений для списка с помощью интерфейса REST"
-ms.date: 09/25/2017
+description: "Определение детальных настраиваемых разрешений для списка SharePoint с помощью интерфейса REST и JavaScript."
+ms.date: 12/14/2017
 ms.prod: sharepoint
-ms.openlocfilehash: fd612cffae478e71b620a9e0fb0de6ab8e7480d1
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 241a27bcafa257be429787a5bbe0d9ff63cc1ec2
+ms.sourcegitcommit: 202dd467c8e5b62c6469808226ad334061f70aa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/15/2017
 ---
 # <a name="set-custom-permissions-on-a-list-by-using-the-rest-interface"></a>Назначение настраиваемых разрешений для списка с помощью интерфейса REST
-Узнайте, как определять детальные настраиваемые разрешения для списка SharePoint с помощью интерфейса REST и JavaScript.
- 
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
+Сайты, списки и элементы списков SharePoint представляют собой типы **SecurableObject**. По умолчанию защищаемый объект наследует разрешения от родительского объекта. Чтобы задать настраиваемые разрешения для объекта, необходимо прервать наследование его разрешений от родительского объекта, а затем определить новые разрешения, добавив или удалив назначения ролей.
  
-
-Сайты, списки и элементы списков SharePoint относятся к типу **SecurableObject**. По умолчанию защищаемый объект наследует разрешения от родительского объекта. Чтобы задать настраиваемые разрешения для объекта, необходимо прервать его наследование, чтобы он перестал наследовать разрешения от родительского объекта, а затем определить новые разрешения, добавив или удалив назначения ролей.
+> [!NOTE] 
+> Ссылки на статьи о настройке детальных разрешений см. в разделе [См. также](#bk_addresources).
  
-
- **Примечание.** В разделе [Дополнительные ресурсы](set-custom-permissions-on-a-list-by-using-the-rest-interface.md#bk_addresources) представлены ссылки на статьи, посвященные детальным разрешениям.
- 
-
 Пример кода в этой статье задает настраиваемые разрешения для списка, а затем меняет разрешения группы для него. В примере интерфейс REST используется в следующих целях.
- 
 
 - Чтобы получить идентификатор целевой группы. Пример использует его, чтобы получить текущие привязки ролей для группы в списке и чтобы добавить новую роль в список.
-    
- 
-- Получить идентификатор определения роли, задающего новые разрешения для группы. Этот идентификатор используется для добавления новой роли в список. Пример применяет существующее определение для новой роли, но при необходимости вы можете создать новое определение.
-    
- 
-- Прервите наследование ролей для списка с помощью метода `BreakRoleInheritance`. В этом примере прерывается наследование ролей, но сохраняется их текущий набор. (Вы также можете не копировать назначения ролей и добавить для текущего пользователя уровень разрешений "Управление".)
-    
- 
-- Чтобы удалить текущее назначение ролей группы в списке, отправив запрос DELETE конечной точки назначения роли. (Если вы решили не копировать назначения ролей, пропустите этот шаг.)
-    
- 
-- Добавьте к списку назначение роли для группы с помощью метода `AddRoleAssignment`, который привязывает группу к определению роли и добавляет роль к списку.
-    
- 
 
-## <a name="prerequisites-for-using-the-example-in-this-article"></a>Необходимые условия для использования примера в этой статье
+- Получить идентификатор определения роли, задающего новые разрешения для группы. Этот идентификатор используется для добавления новой роли в список. Пример применяет существующее определение для новой роли, но при необходимости вы можете создать новое определение.
+
+- Прервите наследование ролей для списка с помощью метода `BreakRoleInheritance`. В этом примере прерывается наследование ролей, но сохраняется их текущий набор. (Вы также можете не копировать назначения ролей и добавить для текущего пользователя уровень разрешений "Управление".)
+
+- Чтобы удалить текущее назначение ролей группы в списке, отправив запрос DELETE конечной точки назначения роли. (Если вы решили не копировать назначения ролей, пропустите этот шаг.)
+
+- Добавьте к списку назначение роли для группы с помощью метода `AddRoleAssignment`, который привязывает группу к определению роли и добавляет роль к списку.
+
 <a name="SP15Accessdatafromremoteapp_Prereq"> </a>
 
+## <a name="prerequisites-for-using-the-example-in-this-article"></a>Необходимые условия для использования примеров в этой статье
+
 Чтобы использовать пример из этой статьи, вам потребуется следующее:
- 
 
+- среда разработки SharePoint (для локальных сценариев необходима изоляция приложений);   
  
+- Visual Studio 2012 или Visual Studio 2013 с Инструментами разработчика Office для Visual Studio 2012 или более поздней версии. 
+ 
+Вам также потребуется задать разрешения **Full Control** надстройки в области **Web**. Только пользователи с достаточными разрешениями для изменения разрешений списка (например, владельцы сайта) могут запускать эту надстройку.
 
-- Среда разработки SharePoint (для локальных сценариев необходима изоляция приложений).
-    
- 
-- Visual Studio 2012 или Visual Studio 2013 с Инструментами разработчика Office для Visual Studio 2012 или более поздней версии
-    
- 
-Вам также потребуется задать для надстройки разрешения **Полный доступ** в области **Интернет**. Запускать эту надстройку могут только те пользователи, у которых есть разрешения на изменение разрешений списка (например, владельцы сайта).
- 
-
- 
-
-## <a name="example-set-custom-permissions-on-a-list-by-using-the-rest-interface"></a>Пример: Назначение настраиваемых разрешений для списка с помощью интерфейса REST
 <a name="bk_example1"> </a>
 
+## <a name="examples-set-custom-permissions-on-a-list-by-using-the-rest-interface"></a>Примеры: назначение настраиваемых разрешений для списка с помощью интерфейса REST
+
 В приведенных ниже примерах представлено содержимое файла App.js в надстройке с размещением в SharePoint. В первом примере используется междоменная библиотека JavaScript для создания и отправки HTTP-запросов. Во втором примере используются запросы jQuery AJAX.
- 
 
- 
-Прежде чем запускать код, замените заполнители фактическими значениями. Если вы используете другой язык или другую среду, вам потребуется добавить или изменить некоторые компоненты запросов. Дополнительные сведения см. в статье [Отличия между запросами REST в разных средах](complete-basic-operations-using-sharepoint-rest-endpoints.md#bk_HowRequestsDiffer).
- 
+Прежде чем запускать код, замените заполнители действительными значениями. Если вы используете другой язык или другую среду, вам потребуется добавить или изменить некоторые компоненты запросов. Дополнительные сведения см. в статье [Отличия между запросами REST в разных средах](complete-basic-operations-using-sharepoint-rest-endpoints.md#bk_HowRequestsDiffer).
 
- 
- **Пример 1. Запросы междоменной библиотеки**
- 
-
- 
-
-
+### <a name="example-1-cross-domain-library-requests"></a>Пример 1. Запросы междоменной библиотеки
 
 ```
 'use strict';
@@ -204,12 +177,9 @@ function errorHandler(xhr, ajaxOptions, thrownError) {
 }
 ```
 
- **Пример 2. Запросы jQuery AJAX**
- 
+<br/>
 
- 
-
-
+### <a name="example-2-jquery-ajax-requests"></a>Пример 2. Запросы jQuery AJAX
 
 ```
 // Change placeholder values before you run this code.
@@ -303,42 +273,16 @@ function errorHandler(xhr, ajaxOptions, thrownError) {
 }
 ```
 
+<br/>
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
-
--  [Знакомство со службой REST в SharePoint](get-to-know-the-sharepoint-rest-service.md)
-    
- 
--  [Выполнение базовых операций с использованием конечных точек SharePoint REST](complete-basic-operations-using-sharepoint-rest-endpoints.md)
-    
- 
--  [Работа со списками и элементами списков в интерфейсе REST](working-with-lists-and-list-items-with-rest.md)
-    
- 
-- Ресурсы REST:
-    
-     [Ресурс GroupCollection](http://msdn.microsoft.com/library/users-groups-and-roles-rest-api-reference%28Office.15%29.aspx#bk_GroupCollection)
-    
-     [Ресурс Group](http://msdn.microsoft.com/library/users-groups-and-roles-rest-api-reference%28Office.15%29.aspx#bk_Group)
-    
-     [Ресурс RoleAssignmentCollection](http://msdn.microsoft.com/library/users-groups-and-roles-rest-api-reference%28Office.15%29.aspx#bk_RoleAssignmentCollection)
-    
-     [Ресурс RoleAssignment](http://msdn.microsoft.com/library/users-groups-and-roles-rest-api-reference%28Office.15%29.aspx#bk_RoleAssignment)
-    
-     [Ресурс RoleDefinitionCollection](http://msdn.microsoft.com/library/users-groups-and-roles-rest-api-reference%28Office.15%29.aspx#bk_RoleDefinitionCollection)
-    
-     [Ресурс RoleDefinition](http://msdn.microsoft.com/library/users-groups-and-roles-rest-api-reference%28Office.15%29.aspx#bk_RoleDefinition)
-    
- 
-- Статьи TechNet:
-    
-     [Справочник по детальным разрешениям для SharePoint Server 2013](http://technet.microsoft.com/ru-RU/library/dn169567.aspx)
-    
-     [Рекомендации по использованию детальных разрешений в SharePoint Server 2013](http://technet.microsoft.com/ru-RU/library/gg128955.aspx)
-    
-     [Разрешения пользователей и уровни разрешений в SharePoint](http://technet.microsoft.com/ru-RU/library/cc721640.aspx)
-    
+- [Знакомство со службой REST SharePoint](get-to-know-the-sharepoint-rest-service.md)
+- [Материалы по OData](get-to-know-the-sharepoint-rest-service.md#odata-resources)
+- [Справочник по детальным разрешениям для SharePoint Server 2013](http://technet.microsoft.com/ru-RU/library/dn169567.aspx)
+- [Рекомендации по использованию детальных разрешений в SharePoint Server 2013](http://technet.microsoft.com/ru-RU/library/gg128955.aspx)
+- [Разрешения пользователей и уровни разрешений в SharePoint](http://technet.microsoft.com/ru-RU/library/cc721640.aspx)
+- [Разработка надстроек SharePoint](develop-sharepoint-add-ins.md)    
  
 
