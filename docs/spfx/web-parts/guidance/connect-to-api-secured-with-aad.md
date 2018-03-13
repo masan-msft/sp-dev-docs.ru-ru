@@ -3,17 +3,20 @@ title: "Подключение к API, защищенному с помощью 
 description: "Пошаговое руководство по созданию API, защищенного с помощью Azure AD, и подключению к нему."
 ms.date: 02/02/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 98718f3eff9c1698e7ac8161c7fa4a40ad1a935a
-ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
+ms.openlocfilehash: d24292c529a2b2592f4f89f43626a3f2494c18ae
+ms.sourcegitcommit: 2902476325b74a8727431e18daa4fe85a747beee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="connect-to-api-secured-with-azure-active-directory"></a>Подключение к API, защищенному с помощью Azure Active Directory
 
 При создании решений SharePoint Framework может потребоваться подключиться к пользовательскому API, чтобы получить те или иные данные либо взаимодействовать с бизнес-приложениями. Защита пользовательских API с помощью Microsoft Azure Active Directory (Azure AD) предоставляет множество преимуществ и может быть реализована по-разному. После создания API получить доступ к нему можно несколькими способами. Они отличаются по сложности, и у каждого из них есть особенности, которые следует учитывать. 
 
 В этой статье рассматриваются разные подходы и представлено пошаговое руководство по созданию API, защищенного с помощью Azure AD, и подключению к нему.
+
+> [!IMPORTANT]
+> При подключении к API, защищенным с помощью Azure AD, рекомендуем использовать класс **GraphHttpClient** или **AadHttpClient**. Это новые возможности, которые в настоящий момент доступны в предварительной версии. Их общедоступный выпуск запланирован на весну 2018 г. Дополнительные сведения о рекомендуемых моделях см. в статье [Использование MSGraphClient для подключения к Microsoft Graph](../../use-msgraph.md).
 
 ## <a name="secure-an-api-with-azure-ad"></a>Защита API с помощью Azure AD
 

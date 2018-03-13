@@ -3,11 +3,11 @@ title: "Совместное использование данных клиен�
 description: "Узнайте, какие подходы можно использовать для совместного использования и хранения полученных данных в нескольких веб-частях SharePoint."
 ms.date: 01/10/2018
 ms.prod: sharepoint
-ms.openlocfilehash: a9b423c5bf55ebe14f1b7c77c92b2c532750707e
-ms.sourcegitcommit: 7a40bb847e8753810ab7f907d638f3cac022d444
+ms.openlocfilehash: e556ec482a9721cd759dac3b3fe32a6f266ab149
+ms.sourcegitcommit: 249f0fbce4df81fbe65848f1d26a4ebcad7aa89c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="share-data-between-client-side-web-parts"></a>Совместное использование данных клиентскими веб-частями
 
@@ -315,109 +315,6 @@ export class DocumentsService {
 <br/>
 
 Реализация такой службы очень похожа на использование файлов cookie. Однако следует учитывать один момент: пользователь может отключить хранилище браузера, поэтому нужно всегда проверять его доступность, прежде чем выполнять с ним какие-либо операции. Как и файлы cookie, локальное хранилище остается в веб-браузере, поэтому его не следует использовать для конфиденциальных данных.
-
-## <a name="share-data-through-a-sharepoint-framework-service"></a>Общий доступ к данным через службу SharePoint Framework
-
-Централизованно загружать данные и управлять ими можно через службу SharePoint Framework. Службы SharePoint Framework — это автономные компоненты, создаваемые отдельно от веб-частей и распространяемые как отдельные пакеты Node. Веб-части SharePoint Framework могут ссылаться на службы и использовать их для конкретных операций, поддерживаемых такими службами (например, для загрузки данных).
-
-Имеющуюся службу, продемонстрированную в предыдущих примерах, можно преобразовать в службу SharePoint Framework, внеся лишь несколько изменений.
-
-Во-первых, нужно реализовать интерфейс с операциями и свойствами, которые она поддерживает.
-
-```typescript
-export interface IDocumentsService {
-    getRecentDocument(): Promise<IDocument>;
-    getRecentDocuments(startFrom: number): Promise<IDocument[]>;
-}
-
-export class DocumentsService implements IDocumentsService {
-    // ...
-}
-```
-
-<br/>
-
-Затем нужно указать [ключ службы](https://docs.microsoft.com/ru-RU/javascript/api/sp-core-library/servicekey), необходимый для регистрации службы в SharePoint Framework, и обеспечить его использование из веб-частей.
-
-```typescript
-import { ServiceScope, ServiceKey } from '@microsoft/sp-core-library';
-
-export class DocumentsService implements IDocumentsService {
-    public static readonly serviceKey: ServiceKey<IDocumentsService> = ServiceKey.create<IDocumentsService>('contoso:DocumentsService', DocumentsService);
-    // ...
-
-    constructor(serviceScope: ServiceScope) {
-    }
-
-    // ...
-}
-```
-
-<br/>
-
-В каждой службе SharePoint Framework также должен быть конструктор, принимающий в качестве параметра экземпляр класса [ServiceScope](https://docs.microsoft.com/ru-RU/javascript/api/sp-core-library/servicescope).
-
-Службы SharePoint Framework можно создавать с помощью той же системы создания проектов, что и для клиентских веб-частей SharePoint Framework. Как и для клиентской веб-части, для службы SharePoint Framework предусмотрен манифест. Основное отличие манифеста веб-части заключается в том, что свойству `componentType` присвоено значение `Library`.
-
-```json
-{
-  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
-
-  "id": "69b1aacd-68f2-4147-8433-8efb08eae331",
-  "alias": "DocumentsService",
-  "componentType": "Library",
-  "version": "0.0.1",
-  "manifestVersion": 2
-}
-```
-
-<br/>
-
-Когда все будет готово, вы сможете использовать службу SharePoint Framework в веб-части, ссылаясь на пакет службы и обращаясь к службе по ее ключу.
-
-```typescript
-// ...
-import { DocumentsService, IDocumentsService, IDocument } from 'react-recentdocuments-service';
-import { ServiceScope } from '@microsoft/sp-core-library';
-
-export default class RecentDocumentsWebPart extends BaseClientSideWebPart<IRecentDocumentsWebPartProps> {
-  private documentsService: IDocumentsService;
-
-  protected onInit(): Promise<void> {
-    return new Promise<void>((resolve: () => void, reject: (error: any) => void): void => {
-      const serviceScope: ServiceScope = this.context.serviceScope.getParent();
-      serviceScope.whenFinished((): void => {
-        this.documentsService = serviceScope.consume(DocumentsService.serviceKey as any) as IDocumentsService;
-        resolve();
-      });
-    });
-  }
-
-  public render(): void {
-    this.context.statusRenderer.displayLoadingIndicator(this.domElement, 'documents');
-
-    this.documentsService.getRecentDocuments(this.properties.startFrom)
-      .then((documents: IDocument[]): void => {
-        const element: React.ReactElement<IRecentDocumentsProps> = React.createElement(
-          RecentDocuments,
-          {
-            documents: documents
-          }
-        );
-
-        this.context.statusRenderer.clearLoadingIndicator(this.domElement);
-        ReactDom.render(element, this.domElement);
-      });
-  }
-  // ...
-}
-```
-
-<br/>
-
-Даже если несколько веб-частей на странице ссылается на одну и ту же службу, ее пакет скачивается только один раз, и SharePoint Framework создает только один экземпляр этой службы на странице. Это удобный механизм для централизации обработки и хранения данных на странице. 
-
-Работать со службами SharePoint Framework сложнее, чем применять описанные выше методы, но у этого подхода есть огромное преимущество — изоляция данных от других компонентов на странице и поддержание их целостности.
 
 ## <a name="see-also"></a>См. также
 
