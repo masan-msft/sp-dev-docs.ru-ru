@@ -1,39 +1,29 @@
 ---
 title: "Работа со списками и элементами списков в службе REST"
-ms.date: 09/25/2017
+description: "Выполнение основных операций по созданию, чтению, обновлению и удалению списков и элементов списков с помощью интерфейса REST SharePoint."
+ms.date: 12/13/2017
 ms.prod: sharepoint
-ms.openlocfilehash: a94a8e9863e6173e9036f02fd76696f6f796cfde
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: cb0111e973e6f9e400247280a04dbd358f7c0271
+ms.sourcegitcommit: 202dd467c8e5b62c6469808226ad334061f70aa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/15/2017
 ---
 # <a name="working-with-lists-and-list-items-with-rest"></a>Работа со списками и элементами списков в службе REST
-Узнайте, как выполнять базовые операции CRUD (создание, чтение, обновление и удаление) со списками и элементами списков с помощью интерфейса REST в SharePoint.
- 
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
- 
+> [!TIP] 
+> Служба REST SharePoint Online (а также локальной среды SharePoint 2016 и более поздних версий) поддерживает объединение нескольких запросов в одном вызове службы с помощью параметра запроса OData `$batch`. Дополнительные сведения и ссылки на примеры кода см. в статье [Отправка пакетных запросов с помощью интерфейсов REST API](make-batch-requests-with-the-rest-apis.md).
 
-
- **Совет.** Служба REST в SharePoint Online (а также в локальной среде SharePoint 2016 или более поздней версии) поддерживает объединение нескольких запросов в один вызов с помощью параметра запроса OData `$batch`. Подробные сведения и ссылки на примеры кода см. в статье [Создание пакетного запроса с помощью интерфейсов REST API](make-batch-requests-with-the-rest-apis.md).
- 
-
-
-## <a name="prerequisites"></a>Необходимые условия
+## <a name="prerequisites"></a>Необходимые компоненты
 
 В этой статье предполагается, что вы уже знакомы с темами [Знакомство со службой REST для SharePoint](get-to-know-the-sharepoint-rest-service.md) и [Выполнение базовых операций с использованием конечных точек REST в SharePoint](complete-basic-operations-using-sharepoint-rest-endpoints.md). Здесь фрагменты кода не предоставлены.
  
 
- 
+<a name="RetrieveLists"> </a> 
 
-## <a name="retrieving-lists-and-list-properties-with-rest"></a>Получение списков и их свойств с помощью REST
-<a name="RetrieveLists"> </a>
+## <a name="retrieving-lists-and-list-properties-with-rest"></a>Получение списков и свойств списков с помощью REST
 
-В приведенном ниже примере показано, как **получить** определенный список, если вам известен его GUID.
- 
-
- 
+В следующем примере показано, как **получить** определенный список, если вы знаете его GUID.
 
 ```
 url: http://site url/_api/web/lists(guid'list GUID'),
@@ -45,15 +35,14 @@ Headers:
 ```
 
 
- **Примечание.** Если вы хотите получить ответ в формате JSON, укажите `application/json;odata=verbose` в заголовке `accept`. Если вы хотите получить ответ в формате Atom, укажите `application/atom+xml` в заголовке `accept`.
+> [!NOTE] 
+> Если вы хотите получить отклик в формате JSON, укажите `application/json;odata=verbose` в заголовке `accept`. 
+
+> Если вы хотите получить отклик в формате Atom, укажите `application/atom+xml` в заголовке `accept`.
  
+<br/>
 
 В следующем примере показано, как **получить** определенный список, если вы знаете его название.
- 
-
- 
-
-
 
 ```
 url: http://site url/_api/web/lists/GetByTitle('Test')
@@ -64,12 +53,9 @@ Headers:
 
 ```
 
+<br/>
+
 Ниже показан пример свойств списка, которые возвращаются при запросе типа контента XML.
- 
-
- 
-
-
 
 ```XML
   <content type="application/xml">
@@ -116,17 +102,16 @@ Headers:
 ```
 
 
- **Примечание.** Свойство **ListItemEntityTypeFullName** (в предыдущем примере — **SP.Data.ProjectPolicyItemListItem**) особенно важно, если вы хотите создать и обновить элементы списка. Это значение должно передаваться в виде свойства **type** в тексте HTTP-запроса каждый раз, когда вы создаете и обновляете элементы списка.
+> [!NOTE] 
+> Свойство **ListItemEntityTypeFullName** (в предыдущем примере — **SP.Data.ProjectPolicyItemListItem**) особенно важно, если вы хотите создать и обновить элементы списка. Это значение должно передаваться в виде свойства **type** в тексте HTTP-запроса каждый раз, когда вы создаете и обновляете элементы списка.
  
+<br/>
 
-
-## <a name="working-with-lists-by-using-rest"></a>Работа со списками с помощью REST
 <a name="WorkLists"> </a>
 
-В приведенном ниже примере показано, как **создать** список.
- 
+## <a name="working-with-lists-by-using-rest"></a>Работа со списками с помощью REST
 
- 
+В приведенном ниже примере показано, как **создать** список.
 
 ```
 url: http://site url/_api/web/lists
@@ -141,12 +126,9 @@ Headers:
     content-length:length of post body
 ```
 
-В приведенном ниже примере показано, как **обновить** список с помощью метода **MERGE**.
- 
+<br/>
 
- 
-
-
+В приведенном ниже примере показано, как **обновить** список, используя метод **MERGE**.
 
 ```
 url: http://site url/_api/web/lists(guid'list GUID')
@@ -162,12 +144,9 @@ Headers:
     content-length:length of post body
 ```
 
-В следующем примере показано, как **создать** **настраиваемое поле** для списка.
- 
+<br/>
 
- 
-
-
+В следующем примере показывается, как **создать** **настраиваемое поле** для списка.
 
 ```
 Url: url: http://site url/_api/web/lists(guid'list GUID')/Fields
@@ -180,12 +159,9 @@ Headers:
     content-length:length of post body
 ```
 
-В следующем примере показано, как **удалить** список.
- 
+<br/>
 
- 
-
-
+В приведенном ниже примере показано, как **удалить** список.
 
 ```
 url: http://site url/_api/web/lists(guid'list GUID')
@@ -198,18 +174,16 @@ Headers:
 
 ```
 
+<br/>
 
-## <a name="working-with-list-items-by-using-rest"></a>Работа с элементами списков с помощью REST
 <a name="ListItems"> </a>
+
+## <a name="working-with-list-items-by-using-rest"></a>Работа с элементами списка с помощью REST
 
 В приведенном ниже примере показано, как **получить** все элементы списка.
  
-
- 
-
- **Примечание.** Параметр запроса OData $skip не работает, когда вы запрашиваете элементы списка. Во многих случаях вместо него можно использовать параметр [$skiptoken](http://msdn.microsoft.com/library/4dda9434-c2c5-4577-8e01-7bf9e822d90a.aspx).
- 
-
+> [!NOTE] 
+> Параметр запроса OData $skip не работает при запрашивании элементов списка. Обычно вместо него можно использовать параметр [$skiptoken](http://msdn.microsoft.com/library/4dda9434-c2c5-4577-8e01-7bf9e822d90a.aspx).
 
 ```
 url: http://site url/_api/web/lists/GetByTitle('Test')/items
@@ -220,12 +194,9 @@ headers:
 
 ```
 
-В следующем примере показано, как **получить** определенный элемент списка.
- 
+<br/>
 
- 
-
-
+В приведенном ниже примере показано, как **получить** определенный элемент списка.
 
 ```
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
@@ -236,12 +207,9 @@ headers:
 
 ```
 
+<br/>
+
 Ниже показан пример свойств элементов списка, которые возвращаются при запросе типа контента XML.
- 
-
- 
-
-
 
 ```XML
 <content type="application/xml">
@@ -262,17 +230,13 @@ headers:
 </content>
 ```
 
-В следующем примере показано, как **создать** элемент списка.
+<br/>
+
+В следующем примере показывается, как **создать** элемент списка.
  
-
+> [!NOTE] 
+> [!Примечание] Для выполнения этой операции вам необходимо знать свойство **ListItemEntityTypeFullName** списка и передать его как значение **type** в тексте запроса HTTP.
  
-
- **Примечание.** Чтобы выполнить эту операцию, необходимо знать свойство **ListItemEntityTypeFullName** списка и передать его как значение **type** в тексте HTTP-запроса.
- 
-
-
-
-
 ```
 url: http://site url/_api/web/lists/GetByTitle('Test')/items
 method: POST
@@ -285,16 +249,12 @@ headers:
     content-length:length of post body
 ```
 
-В следующем примере показано, как **обновить** элемент списка.
+<br/>
+
+В следующем примере показывается, как **обновить** элемент списка.
  
-
- 
-
- **Примечание.** Чтобы выполнить эту операцию, необходимо знать свойство **ListItemEntityTypeFullName** списка и передать его как значение **type** в тексте HTTP-запроса.
- 
-
-
-
+> [!NOTE] 
+> [!Примечание] Для выполнения этой операции вам необходимо знать свойство **ListItemEntityTypeFullName** списка и передать его как значение **type** в тексте запроса HTTP.
 
 ```
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
@@ -310,12 +270,9 @@ headers:
     content-length:length of post body
 ```
 
-В следующем примере показано, как **удалить** элемент списка.
- 
+<br/>
 
- 
-
-
+В приведенном ниже примере показано, как **удалить** элемент списка.
 
 ```
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
@@ -328,73 +285,34 @@ headers:
 
 ```
 
+<br/>
 
-## <a name="using-etag-values-to-determine-document-and-list-item-versioning"></a>Использование значений ETag для определения версий документов и элементов списков
 <a name="Etag"> </a>
 
- Служба SharePoint REST, работающая по [стандарту OData](http://www.odata.org/developers/protocols/operations), использует [значения HTML ETag для управления версиями](http://www.odata.org/developers/protocols/operations#ConcurrencycontrolandETags) списков SharePoint и их элементов. Чтобы проверить версию элемента при выполнении запроса **PUT**, **MERGE** или **DELETE**, укажите значение **ETag** в заголовке HTTP-запроса **If-Match**
- 
+## <a name="using-etag-values-to-determine-document-and-list-item-versioning"></a>Использование значений ETag для определения версий документов и элементов списков
 
- 
-Если указанное значение **ETag** не соответствует значению **ETag** документа или элемента списка на сервере, служба REST возвращает исключение 412 согласно спецификации OData.
- 
+Служба SharePoint REST, работающая по [стандарту OData](http://www.odata.org/developers/protocols/operations), использует [значения HTML ETag для управления версиями](http://www.odata.org/developers/protocols/operations#ConcurrencycontrolandETags) списков SharePoint и их элементов. Чтобы проверить версию элемента при выполнении запроса **PUT**, **MERGE** или **DELETE**, укажите значение **ETag** в заголовке HTTP-запроса **If-Match**.
 
- 
+Если **ETag**, который вы указываете в вашем запросе, не соответствует **ETag** документа или элемента списка на сервере, служба REST возвращает исключение 412 с помощью спецификации OData.
 
-- Чтобы перезаписать элемент независимо от версии, установите значение **ETag** **"*"**.
+- Чтобы принудительно переписать элемент независимо от версии, установите значение **ETag** на **"*"**.
     
- 
-- Если вы не укажете значение **ETag**, SharePoint перезапишет элемент независимо от версии.
+- Если не указать **ETag**, SharePoint переписывает элемент независимо от версии.
     
  
 В SharePoint значения ETag применяются только к спискам SharePoint и элементам списков.
  
-
- 
-
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
-
--  [Выполнение базовых операций с использованием конечных точек SharePoint REST](complete-basic-operations-using-sharepoint-rest-endpoints.md)
-    
- 
--  [Работа с папками и файлами в службе REST](working-with-folders-and-files-with-rest.md)
-    
- 
--  [SharePoint-Add-in-REST-OData-BasicDataOperations](https://github.com/OfficeDev/SharePoint-Add-in-REST-OData-BasicDataOperations)
-    
- 
--  [SharePoint: выполнение основных операций доступа к данным в файлах и папках с помощью REST](http://code.msdn.microsoft.com/SharePoint-Perform-ab9c4ae5)
-    
- 
--  [Выполнение вызовов REST при помощи C# и JavaScript для SharePoint](http://www.microsoft.com/resources/msdn/en-us/office/media/video/videol?cid=sdc&amp;from=mscomsdc&amp;VideoID=4e4cc094-ff69-405b-852f-2ac7c41293c5)
-    
- 
--  [Выполнение вызовов REST при помощи C# и JavaScript для демоверсии SharePoint](http://www.microsoft.com/resources/msdn/en-us/office/media/video/videol?cid=sdc&amp;from=mscomsdc&amp;VideoID=b1e7c9c5-0f62-4a78-bb7b-8e283c86145c)
-    
- 
--  [Выполнение базовых операций с использованием кода клиентской библиотеки в SharePoint](complete-basic-operations-using-sharepoint-client-library-code.md)
-    
- 
--  [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint.md)
-    
- 
--  [Разработка надстроек SharePoint](develop-sharepoint-add-ins.md)
-    
- 
--  [Безопасный доступ к данным и клиентские объектные модели для надстроек SharePoint](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
-    
- 
--  [Работа с внешними данными в SharePoint](work-with-external-data-in-sharepoint.md)
-    
- 
--  [Протокол OData](http://www.odata.org/)
-    
- 
--  [OData: формат JSON](http://www.odata.org/documentation/odata-version-2-0/json-format/)
-    
- 
+- [Знакомство со службой REST в SharePoint](get-to-know-the-sharepoint-rest-service.md)
+- [SharePoint-Add-in-REST-OData-BasicDataOperations](https://github.com/OfficeDev/SharePoint-Add-in-REST-OData-BasicDataOperations)
+- [SharePoint: выполнение основных операций доступа к данным в файлах и папках с помощью REST](http://code.msdn.microsoft.com/SharePoint-Perform-ab9c4ae5)
+- [Безопасный доступ к данным и клиентские объектные модели для надстроек SharePoint](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
+- [Работа с внешними данными в SharePoint](work-with-external-data-in-sharepoint.md)
+- [Справочные материалы по REST API и примеры](https://msdn.microsoft.com/library)
+- [Материалы по OData](get-to-know-the-sharepoint-rest-service.md#odata-resources)  
+- [Разработка надстроек SharePoint](develop-sharepoint-add-ins.md) 
 
  
 

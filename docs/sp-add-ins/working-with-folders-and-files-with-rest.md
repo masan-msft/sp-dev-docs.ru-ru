@@ -1,32 +1,25 @@
 ---
 title: "Работа с папками и файлами в службе REST"
-ms.date: 09/25/2017
+description: "Выполнение основных операций по созданию, чтению, обновлению и удалению папок и файлов с помощью интерфейса REST SharePoint."
+ms.date: 12/13/2017
 ms.prod: sharepoint
-ms.openlocfilehash: ec4f299782b5f1ae58c04ba245ae6c10aeb35c60
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: f440fc48cccc5ea573889b4f2a04cfb125ac3b78
+ms.sourcegitcommit: 202dd467c8e5b62c6469808226ad334061f70aa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/15/2017
 ---
 # <a name="working-with-folders-and-files-with-rest"></a>Работа с папками и файлами в службе REST
-Узнайте, как выполнять основные операции по созданию, чтению, обновлению и удалению (CRUD) папок и файлов с помощью интерфейса REST SharePoint.
- 
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
- 
+> [!TIP] 
+> Служба REST SharePoint Online (а также локальной среды SharePoint 2016 и более поздних версий) поддерживает объединение нескольких запросов в одном вызове службы с помощью параметра запроса OData `$batch`. Дополнительные сведения и ссылки на примеры кода см. в статье [Отправка пакетных запросов с помощью интерфейсов REST API](make-batch-requests-with-the-rest-apis.md). 
 
-
- **Совет.** Служба REST в SharePoint Online (а также в локальной среде SharePoint 2016 или более поздней версии) поддерживает объединение нескольких запросов в один вызов с помощью параметра запроса OData `$batch`. Подробные сведения и ссылки на примеры кода см. в статье [Создание пакетного запроса с помощью интерфейсов REST API](make-batch-requests-with-the-rest-apis.md). 
- 
-
-
-## <a name="working-with-folders-by-using-rest"></a>Работа с папками с помощью REST
 <a name="Folders"> </a>
 
-Вы можете получить папку внутри библиотеки документов, если вы знаете ее URL-адрес. Например, вы можете получить корневую папку библиотеки совместно используемых документов с помощью конечной точки, как показано в примере ниже.
- 
+## <a name="working-with-folders-by-using-rest"></a>Работа с папками при помощи REST
 
- 
+Вы можете получить папку внутри библиотеки документов, если вы знаете ее URL-адрес. Например, вы можете получить корневую папку библиотеки совместно используемых документов с помощью конечной точки, как показано в примере ниже.
+
 
 ```
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Shared Documents')
@@ -37,12 +30,9 @@ headers:
 
 ```
 
-Ниже показан пример свойств папки, которые возвращаются при запрашивании типа контента XML.
- 
+<br/>
 
- 
-
-
+Ниже показан пример свойств папки, которые возвращаются при запросе типа контента XML.
 
 ```XML
 <content type="application/xml">
@@ -55,12 +45,9 @@ headers:
 </content>
 ```
 
+<br/>
+
 В следующем примере показано, как **создать** папку.
- 
-
- 
-
-
 
 ```
 url: http://site url/_api/web/folders
@@ -74,12 +61,9 @@ Headers:
     content-length:length of post body
 ```
 
+<br/>
+
 В следующем примере показано, как **обновить** папку, используя метод **MERGE**.
- 
-
- 
-
-
 
 ```
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')
@@ -95,12 +79,9 @@ Headers:
     content-length:length of post body
 ```
 
-В следующем примере показано, как **удалить** папку.
- 
+<br/>
 
- 
-
-
+В приведенном ниже примере показано, как **удалить** папку.
 
 ```
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')
@@ -113,14 +94,13 @@ Headers:
 
 ```
 
+<br/>
 
-## <a name="working-with-files-by-using-rest"></a>Работа с файлами с помощью REST
 <a name="Files"> </a>
 
-В приведенном ниже примере показано, как **получить** все файлы из папки.
- 
+## <a name="working-with-files-by-using-rest"></a>Работа с файлами при помощи REST
 
- 
+В приведенном ниже примере показано, как **получить** все файлы в папке.
 
 ```
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files
@@ -131,12 +111,9 @@ headers:
 
 ```
 
-В приведенном ниже примере показано, как **получить** определенный файл.
- 
+<br/>
 
- 
-
-
+В следующем примере показано, как **получить** конкретный файл.
 
 ```
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files('file name')/$value
@@ -145,12 +122,9 @@ headers:
     Authorization: "Bearer " + accessToken
 ```
 
-Вы также можете **получить** файл, если знаете его URL-адрес, как показано в следующем примере.
- 
+<br/>
 
- 
-
-
+Вы также можете **получить** файл, если вы знаете его URL-адрес, как показано в примере ниже.
 
 ```
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/$value
@@ -159,12 +133,9 @@ headers:
     Authorization: "Bearer " + accessToken
 ```
 
+<br/>
+
 В следующем примере показано, как **создать** файл и добавить его в папку.
- 
-
- 
-
-
 
 ```
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files/add(url='a.txt',overwrite=true)
@@ -176,16 +147,12 @@ Headers:
     content-length:length of post body
 ```
 
+<br/>
+
 В следующем примере показано, как **обновить** файл, используя метод **PUT**.
  
-
- 
-
- **Примечание.** Обновлять файлы можно только с помощью метода **PUT**. Использовать метод **MERGE** запрещено.
- 
-
-
-
+> [!NOTE] 
+> Обновлять файлы можно только с помощью метода **PUT**. Использовать метод **MERGE** запрещено.
 
 ```
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/$value
@@ -198,16 +165,11 @@ Headers:
     content-length:length of post body
 ```
 
-Если вы хотите обновить метаданные файла, необходимо создать конечную точку, которая получает файл как элемент списка. Это возможно, так как каждая папка также является списком, а каждый файл — элементом списка. Создайте такую конечную точку: `https://<site url>/_api/web/lists/getbytitle('Documents')/items(<item id>)`.  В статье [Работа со списками и элементами списков в службе REST](working-with-lists-and-list-items-with-rest.md) описано, как обновить метаданные элемента списка.
- 
+<br/>
 
- 
-Извлеките файл, чтобы никто не смог его изменить, прежде чем вы обновите его. После обновления файл необходимо вернуть, чтобы другие пользователи могли с ним работать. В следующем примере показано, как для **извлечь файл**.
- 
+Если вы хотите обновить метаданные файла, необходимо создать конечную точку, которая получает файл как элемент списка. Это возможно, так как каждая папка также является списком, а каждый файл — элементом списка. Создайте такую конечную точку: `https://<site url>/_api/web/lists/getbytitle('Documents')/items(<item id>)`. Информацию о том, как обновить метаданные элемента списка, см. в статье [Работа со списками и элементами списков в службе REST](working-with-lists-and-list-items-with-rest.md). 
 
- 
-
-
+Извлеките файл, чтобы никто не смог его изменить, прежде чем вы обновите его. После обновления файл необходимо вернуть, чтобы другие пользователи могли с ним работать. В приведенном ниже примере показано, как **извлечь файл**.
 
 ```
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/CheckOut(),
@@ -217,12 +179,9 @@ headers:
     X-RequestDigest: form digest value
 ```
 
-В следующем примере показано, как для **вернуть файл**.
- 
+<br/>
 
- 
-
-
+В приведенном ниже примере показано, как **вернуть файл**.
 
 ```
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')/CheckIn(comment='Comment',checkintype=0)
@@ -232,12 +191,9 @@ headers:
     X-RequestDigest: form digest value
 ```
 
-В следующем примере показано, как **удалить** файл.
- 
+<br/>
 
- 
-
-
+В приведенном ниже примере показано, как **удалить** файл.
 
 ```
 url: http://site url/_api/web/GetFileByServerRelativeUrl('/Folder Name/file name')
@@ -250,18 +206,16 @@ headers:
 
 ```
 
+<br/>
 
-## <a name="working-with-large-files-by-using-rest"></a>Работа с большими файлами с помощью REST
 <a name="LargeFiles"> </a>
 
-Отправить двоичный файл размером более 1,5 МБ можно только с помощью интерфейса REST. Пример кода для отправки двоичного файла размером менее 1,5 МБ с помощью объектной модели Javascript SharePoint см. в статье [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint.md). Максимальный размер двоичного файла, который можно создать с помощью REST, составляет 2 ГБ. В следующем примере показано, как **создать** большой двоичный файл.
- 
+## <a name="working-with-large-files-by-using-rest"></a>Работа с большими файлами при помощи REST
 
+Отправить двоичный файл размером более 1,5 МБ можно только с помощью интерфейса REST. Пример кода для отправки двоичного файла размером менее 1,5 МБ с помощью объектной модели JavaScript SharePoint см. в статье [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint.md). Максимальный размер двоичного файла, который можно создать с помощью REST, составляет 2 ГБ. В приведенном ниже примере показано, как **создать** большой двоичный файл.
  
-
- **Внимание!** Этот способ работает только в Internet Explorer 10 и последних версиях других браузеров.
- 
-
+> [!WARNING] 
+> Этот способ работает только в Internet Explorer 10 и последних версиях других браузеров.
 
 ```
 url: http://site url/_api/web/GetFolderByServerRelativeUrl('/Folder Name')/Files/Add(url='file name', overwrite=true)
@@ -274,12 +228,9 @@ headers:
     content-length:length of post body
 ```
 
-В следующем примере кода показано, как создать файл с помощью этой конечной точки REST и междоменной библиотеки.
- 
+<br/>
 
- 
-
-
+В приведенном ниже примере кода показано, как создать файл с помощью этой конечной точки REST и междоменной библиотеки.
 
 ```
 function uploadFileBinary() {
@@ -310,14 +261,14 @@ ro.executeAsync(info);
 
 ```
 
+<br/>
 
-## <a name="working-with-files-attached-to-list-items-by-using-rest"></a>Работа с файлами, вложенными в элементы списка, с помощью REST
 <a name="FileAttachments"> </a>
 
-В приведенном ниже примере показано, как **получить** все файлы, вложенные в элемент списка.
- 
+## <a name="working-with-files-attached-to-list-items-by-using-rest"></a>Работа со вложенными в элементы списка файлами при помощи REST
 
- 
+
+В приведенном ниже примере показано, как **получить** все файлы, вложенные в элемент списка.
 
 ```
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles/
@@ -328,12 +279,9 @@ headers:
 
 ```
 
-В приведенном ниже примере показано, как **получить** файл, вложенный в элемент списка.
- 
+<br/>
 
- 
-
-
+В следующем примере показано, как **извлечь** файл, подключенный к элементу списка.
 
 ```
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles('file name')/$value
@@ -344,12 +292,9 @@ headers:
 
 ```
 
-В следующем примере показано, как **создать** вложение в элемент списка.
- 
+<br/>
 
- 
-
-
+В следующем примере показано, как **создать** подключение файла к элементу списка.
 
 ```
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles/ add(FileName='file name')
@@ -361,16 +306,12 @@ headers:
     content-length:length of post body
 ```
 
-В следующем примере показано, как **изменить** вложение на элемент списка с помощью метода **PUT**.
+<br/>
+
+В приведенном ниже примере показано, как **заменить** вложенный файл на элемент списка с помощью метода **PUT**.
  
-
- 
-
- **Примечание.** Обновлять файлы можно только с помощью метода **PUT**. Использовать метод **MERGE** запрещено.
- 
-
-
-
+> [!NOTE] 
+> Обновлять файлы можно только с помощью метода **PUT**. Использовать метод **MERGE** запрещено.
 
 ```
 url: http://site url/_api/web/lists/getbytitle('list title')/items(item id)/AttachmentFiles('file name')/$value
@@ -383,56 +324,21 @@ headers:
     content-length:length of post body
 ```
 
+<br/>
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
-
--  [Выполнение базовых операций с использованием конечных точек SharePoint REST](complete-basic-operations-using-sharepoint-rest-endpoints.md)
-    
- 
--  [Справочные материалы по интерфейсу API службы REST для файлов и папок](http://msdn.microsoft.com/library/files-and-folders-rest-api-reference%28Office.15%29.aspx)
-    
- 
--  [Отправка файла с помощью REST API и jQuery](upload-a-file-by-using-the-rest-api-and-jquery.md)
-    
- 
--  [Работа со списками и элементами списков в службе REST](working-with-lists-and-list-items-with-rest.md)
-    
- 
--  [SharePoint-Add-in-REST-OData-BasicDataOperations](https://github.com/OfficeDev/SharePoint-Add-in-REST-OData-BasicDataOperations)
-    
- 
--  [SharePoint: выполнение основных операций доступа к данным в файлах и папках с помощью REST](http://code.msdn.microsoft.com/SharePoint-Perform-ab9c4ae5)
-    
- 
--  [Выполнение вызовов REST при помощи C# и JavaScript для SharePoint](http://www.microsoft.com/resources/msdn/en-us/office/media/video/videol?cid=sdc&amp;from=mscomsdc&amp;VideoID=4e4cc094-ff69-405b-852f-2ac7c41293c5)
-    
- 
--  [Выполнение вызовов REST при помощи C# и JavaScript для демоверсии SharePoint](http://www.microsoft.com/resources/msdn/en-us/office/media/video/videol?cid=sdc&amp;from=mscomsdc&amp;VideoID=b1e7c9c5-0f62-4a78-bb7b-8e283c86145c)
-    
- 
--  [Выполнение базовых операций с использованием кода клиентской библиотеки в SharePoint](complete-basic-operations-using-sharepoint-client-library-code.md)
-    
- 
--  [Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint](complete-basic-operations-using-javascript-library-code-in-sharepoint.md)
-    
- 
--  [Разработка надстроек SharePoint](develop-sharepoint-add-ins.md)
-    
- 
--  [Безопасный доступ к данным и клиентские объектные модели для надстроек SharePoint](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
-    
- 
--  [Работа с внешними данными в SharePoint](work-with-external-data-in-sharepoint.md)
-    
- 
--  [Протокол OData](http://www.odata.org/)
-    
- 
--  [OData: формат нотации объектов JavaScript (JSON)](http://www.odata.org/documentation/odata-version-2-0/JSON-format/)
-    
- 
+- [Знакомство со службой REST в SharePoint](get-to-know-the-sharepoint-rest-service.md)
+- [Выполнение базовых операций с использованием кода клиентской библиотеки в SharePoint](complete-basic-operations-using-sharepoint-client-library-code.md)   
+- [Справочные материалы по REST API и примеры](https://msdn.microsoft.com/library)
+- [Отправка файла с помощью REST API и jQuery](upload-a-file-by-using-the-rest-api-and-jquery.md)
+- [SharePoint-Add-in-REST-OData-BasicDataOperations](https://github.com/OfficeDev/SharePoint-Add-in-REST-OData-BasicDataOperations)
+- [SharePoint: выполнение основных операций доступа к данным в файлах и папках с помощью REST](http://code.msdn.microsoft.com/SharePoint-Perform-ab9c4ae5)
+- [Безопасный доступ к данным и клиентские объектные модели для надстроек SharePoint](secure-data-access-and-client-object-models-for-sharepoint-add-ins.md)
+- [Работа с внешними данными в SharePoint](work-with-external-data-in-sharepoint.md)
+- [Материалы по OData](get-to-know-the-sharepoint-rest-service.md#odata-resources)  
+- [Разработка надстроек SharePoint](develop-sharepoint-add-ins.md)
 
  
 
