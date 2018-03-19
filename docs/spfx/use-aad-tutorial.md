@@ -3,11 +3,11 @@ title: "Использование API, защищенных с помощью A
 description: "В руководстве по использованию класса AadHttpClient или MSGraphClient рассмотрено подключение к API, защищенным службой Azure AD, в решениях SharePoint Framework."
 ms.date: 02/15/2018
 ms.prod: sharepoint
-ms.openlocfilehash: ee57316a47fdb2edc5a8309cc4402534919501fb
-ms.sourcegitcommit: 4e65e89f3ad8ef1d953e2fdd04d7ab5c0e7df174
+ms.openlocfilehash: 833981da9657373ec2c44a15a9cb30851b03bc15
+ms.sourcegitcommit: 249f0fbce4df81fbe65848f1d26a4ebcad7aa89c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="consuming-apis-secured-with-azure-ad-within-the-sharepoint-framework"></a>Использование API, защищенных с помощью Azure AD, в SharePoint Framework
 
@@ -624,6 +624,9 @@ gulp package-solution
 ![Снимок экрана: страница управления WebApiPermission во время утверждения](../images/graphconsumer-webapipermission-approval-approve.png)
 
 Готово!
+
+> [!WARNING]
+> В случае непредвиденного исключения при попытке утвердить разрешение (`[HTTP]:400 -  [CorrelationId]`) обновите атрибут `resource` в **package-solution.json** так, чтобы использовалось значение "*Microsoft.Azure.AgregatorService*", а не "*Microsoft Graph*" (указано ранее в этом руководстве). Отклоните существующий запрос и обновите пакет решения в каталоге приложений, указав значение обновления.
 
 ## <a name="SolutionTesting"></a>Тестирование решения
 Запустите решение с помощью указанной ниже команды gulp.

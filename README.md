@@ -15,6 +15,9 @@ SharePoint Framework (SPFx) — это модель страниц и веб-ч�
 Кроме того, вы можете подписаться на блог [@officedev](https://twitter.com/officedev) или [@officedevpnp](https://twitter.com/officedevpnp) и добавлять там твиты.
 
 ## <a name="sharepoint-framework-releases"></a>Выпуски SharePoint Framework
+* **15 февраля 2018 г.**
+   * **SPFx 1.4.1** [Заметки о выпуске](https://github.com/SharePoint/sp-dev-docs/wiki/Release-Notes-for-SPFx-Package-Version-1.4.1)
+
 * **7 декабря 2017 г.**
    *  **SPFx 1.4**. [Заметки о выпуске](https://github.com/SharePoint/sp-dev-docs/wiki/Release-Notes-for-SPFx-Package-Version-1.4)
 
