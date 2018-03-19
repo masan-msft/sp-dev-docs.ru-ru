@@ -2,11 +2,11 @@
 title: "Специальные возможности при разработке веб-части SharePoint"
 description: "Рекомендации по добавлению в веб-часть специальных возможностей."
 ms.date: 01/23/2018
-ms.openlocfilehash: 0a1b4aa88771b07b9f4060906ddf4062d2281dcd
-ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
+ms.openlocfilehash: dc8abb0b002900328c0ce5a6eea65523d6447362
+ms.sourcegitcommit: 2902476325b74a8727431e18daa4fe85a747beee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 03/08/2018
 ---
 <!--Based on how rough this content is in its current state, i'm going to pull it from this initial release so we can edit and better prepare. -->
 
@@ -17,12 +17,11 @@ ms.lasthandoff: 01/29/2018
 ## <a name="accessibility-guidelines"></a>Рекомендации по специальным возможностям
 
 <!-- Make sure that this is an external resource that folks can access. Original link was to a OneNote file. -->
-Все продукты Майкрософт должны соответствовать требованиям, приведенным в [стандартах Майкрософт, касающихся специальных возможностей](https://microsoft.sharepoint.com/teams/msenable/Pages/MASDetails.aspx
-"Ссылка на стандарты Майкрософт, касающиеся специальных возможностей").  
+Все продукты Майкрософт должны соответствовать требованиям, приведенным в [стандартах Майкрософт, касающихся специальных возможностей](https://docs.microsoft.com/en-us/windows/uwp/design/accessibility/accessibility-checklist).  
 
 <!-- Fabric components are not designed to be accessible already? And, shouldn't components that aren't based on Fabric also be accessible? -->
 
-Если вы создаете диалоговое окно, средство выбора файлов или любой другой компонент [Office UI Fabric](https://developer.microsoft.com/ru-RU/fabric#/components), следуйте инструкциям из этой статьи для обеспечения специальных возможностей в отношении содержимого. 
+Если вы создаете диалоговое окно, средство выбора файлов или любой другой компонент [Office UI Fabric](https://developer.microsoft.com/en-us/fabric#/components), следуйте инструкциям из этой статьи для обеспечения специальных возможностей в отношении содержимого. 
 
 <!-- Not sure why we have that link? It currently goes to the OneNote file. Where is the Common UI Controls content? Is that related to accessibility? [v-licapu] - I agree; we shouldn't be linking to this unless it's live to external audiences; even I can't access it. I moved it to within the comment: 
 [Common UI Controls](https://microsoft.sharepoint.com/teams/STS/_layouts/OneNote.aspx?id=%2Fteams%2FSTS%2FShared%20Documents%2FSP%20Accessibility%2FAccessibility%20Guidance&wd=target%28Accessibility%20101.one%7C0005C142-938C-4411-B543-B9F4199E19B3%2FEverything%20you%20need%20to%20know%20about%20Accessibility%7CE099AFE3-8804-4E1F-BA50-99493AB8A3D0%2F%29 "Link to Common UI Controls") -->
@@ -31,7 +30,7 @@ ms.lasthandoff: 01/29/2018
 
 <!-- FYI, I added links. Can we assume that our target audience uses the Edge browser? -->
 
-Сначала проверьте веб-часть, используя [экранный диктор](https://support.microsoft.com/ru-RU/help/22798/windows-10-narrator-get-started) и Microsoft Edge, затем — при помощи [JAWS](http://www.freedomscientific.com/Products/Blindness/JAWS).
+Сначала проверьте веб-часть, используя [экранный диктор](https://support.microsoft.com/en-us/help/22798/windows-10-narrator-get-started) и Microsoft Edge, затем — при помощи [JAWS](http://www.freedomscientific.com/Products/Blindness/JAWS).
 
 Экранный диктор и Microsoft Edge соответствуют стандартам. Используя эту комбинацию инструментов, вы с большей вероятностью обнаружите проблемы. С ее помощью можно подтвердить, что сайт соответствует стандартам в отношении специальных возможностей. 
 
