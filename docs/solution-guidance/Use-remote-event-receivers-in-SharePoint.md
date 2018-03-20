@@ -1,135 +1,112 @@
 ---
-title: Use remote event receivers in SharePoint
+title: "Использование удаленных приемников событий в SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: 73ad90bdcf96c2ca31e94e76d9c22bb196b69712
-ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
+ms.openlocfilehash: d6c2026aa9ae377601a42662fa5aebbb688011a7
+ms.sourcegitcommit: 895d31071e73aa23e62593c9ffa46b38701ba801
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 03/19/2018
 ---
-# <a name="use-remote-event-receivers-in-sharepoint"></a>Use remote event receivers in SharePoint
+# <a name="use-remote-event-receivers-in-sharepoint"></a>Использование удаленных приемников событий в SharePoint
 
-Use remote event receivers to handle events in the SharePoint add-in model. Use AppInstalled and AppUninstalling events to set up or remove SharePoint objects and other event receivers your add-in needs.
+Использование удаленных приемников событий для обработки событий в объектная модель SharePoint. Используйте для установки или удаления объектов SharePoint и другие приемников событий, добавьте в необходимые события AppInstalled и AppUninstalling.
 
-_**Applies to:** add-ins for SharePoint | SharePoint 2013 | SharePoint Online_
+_**Применимо к:** надстройки для SharePoint | SharePoint 2013 | SharePoint Online_
 
->**Important** As of January 2017 SharePoint Online does support list webhooks which you can use instead of "-ed" remote event receivers. Checkout [Overview of SharePoint webhooks](https://dev.office.com/sharepoint/docs/apis/webhooks/overview-sharepoint-webhooks) to learn more about webhooks. Also note that several webhook samples are available from the [sp-dev-samples](https://github.com/SharePoint/sp-dev-samples/tree/master/Samples) GitHub repository.
+>**Важные** По состоянию на январь 2017 SharePoint Online поддерживает webhooks списка, который можно использовать вместо «-ed» удаленные приемники событий. Извлечение [webhooks Общие сведения о SharePoint](https://dev.office.com/sharepoint/docs/apis/webhooks/overview-sharepoint-webhooks) для получения дополнительных сведений о webhooks. Обратите внимание, что несколько примеров webhook доступны из репозитория репозиториев [sp dev примеры](https://github.com/SharePoint/sp-dev-samples/tree/master/Samples) .
 
-The  [Core.EventReceivers](https://github.com/SharePoint/PnP/tree/master/Samples/Core.EventReceivers) sample shows how to use a provider-hosted add-in with a remote event receiver to handle the AppInstalled and AppUninstalling events. The AppInstalled and AppUninstalling events set up and remove SharePoint objects that the add-in uses when it runs. Additionally, the AppInstalled event handler adds the ItemAdded event handler to a list. Use this solution if you want to:
+Пример [Core.EventReceivers](https://github.com/SharePoint/PnP/tree/master/Samples/Core.EventReceivers) показано, как использовать размещение у поставщика в надстройке с удаленного приемника событий для обработки событий AppInstalled и AppUninstalling. События AppInstalled и AppUninstalling Установка и удаление объектов SharePoint, которые используются надстройки при запуске. Кроме того обработчик событий AppInstalled добавляет обработчик событий ItemAdded со списком. Если вы хотите используйте этого решения:
 
-- Configure your add-in on first run using the AppInstalled event to set up various SharePoint objects or additional event receivers that your add-in works with.
+- Настройка надстройки на, сначала запустите с помощью события AppInstalled для настройки различных объектов SharePoint или приемников событий, надстройка для работы с.
     
-- Replace event receivers implemented using fully trusted code solutions. In fully trusted code solutions, you can run event receivers on the SharePoint server. In the new SharePoint add-in model, because you cannot run the event receiver on the SharePoint server, you need to implement a remote event receiver on a web server.
+- Замените приемников событий создана с использованием решения с полным доверием кодом. В полностью доверенной кода решения можно запустить приемников событий на сервере SharePoint. В новой надстройки модели SharePoint так как не удается запустить приемник событий на сервере SharePoint необходимо реализовать удаленного приемника событий на веб-сервере.
     
-- Receive notifications of changes occuring in SharePoint. For example, when a new item is added to a list, you want to perform a task.
+- Получайте уведомления о отмену изменения в SharePoint. К примеру при добавлении нового элемента в список, которую необходимо выполнить задачи.
 
-- Complement your change log solution. Using the remote event receiver pattern with a change log pattern provides a more reliable architecture for handling all changes made to SharePoint content databases, site collections, sites, or lists. Remote event receivers run immediately, but because they run on a remote server, you might encounter a communication failure. The change log pattern ensures that all changes are available for processing, but the application processing the changes usually runs on a schedule (for example, a timer job). This means that changes are not processed immediately. If you use these two patterns together, ensure you use a mechanism to prevent processing the same change twice. For more information, see [Query SharePoint change log with ChangeQuery and ChangeToken](query-sharepoint-change-log-with-changequery-and-changeToken.md).
+- Дополнение решения журнала изменений. С использованием шаблона приемника удаленных событий с шаблоном журнал изменений содержит более надежная архитектура для обработки всех изменений баз данных контента, семейств веб-сайтов, сайтов или списков SharePoint. Принудительное выполнение удаленных приемников событий, но поскольку они выполняются на удаленном сервере, могут возникать ошибка связи. Шаблон журнала изменений гарантирует, что все изменения, доступны для обработки, но обычно обработки изменений приложение запускается по расписанию (например, задания таймера). Это означает, что изменения не обрабатываются немедленно. При совместном использовании этих двух шаблонов убедитесь, что использовать механизм для предотвращения обработки такое же изменение дважды. Для получения дополнительных сведений см [SharePoint запрос изменения журнала с ChangeQuery и маркер изменения](query-sharepoint-change-log-with-changequery-and-changeToken.md).
 
 > [!NOTE] 
-> SharePoint-hosted add-ins do not support remote event receivers. To use remote event receivers, you need to use a provider-hosted add-in. You should not use remote event receivers for synchronization scenarios, or for long running processes. For more information, see  [How to: Create an add-in event receiver](https://msdn.microsoft.com/library/office/jj220052.aspx).
+> Размещение в SharePoint надстройки не поддерживают удаленных приемников событий. Чтобы использовать удаленные приемники событий, необходимо использовать размещение у поставщика в надстройке. Не следует использовать удаленных приемников событий для синхронизации или долго выполняющихся процессов. Дополнительные сведения можно [как: Создание приемника событий надстройка](https://msdn.microsoft.com/library/office/jj220052.aspx).
 
 ## <a name="before-you-begin"></a>Перед началом работы
 <a name="sectionSection0"> </a>
 
-To get started, download the  [Core.EventReceivers](https://github.com/SharePoint/PnP/tree/master/Samples/Core.EventReceivers) sample add-in from the [Office 365 Developer patterns and practices](https://github.com/SharePoint/PnP/tree/dev) project on GitHub.
+Чтобы начать работу, загрузите пример надстройки [Core.EventReceivers](https://github.com/SharePoint/PnP/tree/master/Samples/Core.EventReceivers) из проекта [разработчика Office 365 шаблоны и рекомендации](https://github.com/SharePoint/PnP/tree/dev) на репозиториев.
 
-Before you run this add-in, do the following:
+Прежде чем запускать эта надстройка, сделайте следующее:
 
-1. In the properties on the Core.EventReceivers project, verify that  **Handle App Installed** and **Handle App Uninstalling** is set to **True**. Setting  **Handle App Installed** and **Handle App Uninstalling** to **True** creates a WCF service that defines the event handler for the **AppInstalled** and **AppUninstalling** event. In Core.EventReceivers, open the shortcut menu (right-click) on AppManifest.xml, and choose **Properties**. The  **InstalledEventEndpoint** and **UninstallingEventEndpoint** point to the remote event receiver that handles the **AppInstalled** and **AppUninstalling** events.
+1. В свойства проекта Core.EventReceivers убедитесь, что **Управление установленными приложениями** и **Обработка удаляемого приложения** имеет значение **True**. Установка **Управление установленными приложениями** и **Обработка удаляемого приложения** **значения True** создает службы WCF, который определяет обработчик событий для события **AppInstalled** и **AppUninstalling** . В Core.EventReceivers откройте контекстное меню (щелкните правой кнопкой мыши) на файл AppManifest.xml и выберите **Свойства**. **InstalledEventEndpoint** и **UninstallingEventEndpoint** указывают на удаленный приемник событий, который обрабатывает события **AppInstalled** и **AppUninstalling** .
     
-2. Attaching a remote event receiver to an object in the host web usually requires  **Manage** permission for that object only. For example, when attaching an event receiver to an existing list, the add-in requires **Manage** permission on the **List** only. This code sample requires **Manage** permissions on the **Web** because it adds a list and activates a feature on the host web. To set manage permissions on the web:
+2. Присоединение удаленного приемника событий для объекта на хост-сайте обычно требуется разрешение **Управление** для только этот объект. Например при присоединении приемника событий в существующий список, надстройки требуется разрешение **Управление** в **список** только. В этом примере кода требуются разрешения **Управление** **Web** , так как он добавляется список и активирует компонент на хост-сайта. Чтобы задать управление разрешениями в Интернете:
     
-    1. Double click Core.EventReceivers\AppManifest.xml.
+    1. Дважды щелкните Core.EventReceivers\AppManifest.xml.
     
-    2. Choose  **Permissions**.
+    2. Выберите **разрешения**.
     
-    3. Verify that  **Scope** is set to **Web**, and  **Permission** is set to **Manage**.
+    3. Убедитесь, что **область** имеет значение **Web**и набор **разрешений** на **Управление**.
     
-3. To run this code sample, you need an Azure subscription. To sign up for a trial, see  [Free one-month trial](http://azure.microsoft.com/en-us/pricing/free-trial/).
+3. Для запуска этого примера кода требуется Azure подписки. Чтобы подписаться на пробную версию, обратитесь к разделу [Бесплатная пробная версия на один месяц](http://azure.microsoft.com/en-us/pricing/free-trial/).
     
-4. Create an Azure Service Bus Namespace with ACS Support.
+4. Создайте пространство имен шины Azure службы.
     
-    1. Install Azure PowerShell. For more information, see  [How to: Install Azure PowerShell](http://azure.microsoft.com/en-us/documentation/articles/powershell-install-configure/#Install).
-    
-    2. Start  **Azure PowerShell**.
-    
-    3. Enter  **Add-AzureAccount**.
-    
-    4. Enter your email address in the  **Sign in to Windows Azure** dialog, and then choose **Continue**.
-    
-    5. Enter your password, and then choose  **Sign in**.
-    
-    6. Create a new service bus namespace using the following PowerShell cmdlet.
-    
-        ```powershell
-        New-AzureSBNamespace NamespaceNameRegion -CreateACSNamespace $true -NamespaceType Messaging
-        
-        ```
-    
-       Где:
-    
-       -  _NamespaceName_ is the name of your Azure Service Bus namespace.
-    
-       -  _Region_ is the region closest to you. For example, you may enter **"West US"**. You must include the region name in double quotes.
-    
-    7. Return to your Azure Management Portal. Choose  **SERVICE BUS**, and then choose the namespace name you entered.
-    
-    8. Choose  **Manage Connection Strings**, and then in  **ACS CONNECTION STRING**, choose the copy button.
-    
-    9. Return to Visual Studio.
-    
-    10. Right-click Core.EventReceivers >  **Properties** > **SharePoint**.
-    
-    11. Select  **Enable debugging via Microsoft Azure Service Bus**.
-    
-    12. In  **Microsoft Azure Service Bus connection string**, paste the ACS Connection String.
-    
-    13. Choose  **Save**.
-    
-5. Run the code sample, and perform the following additional steps:
-    
-    - Click  **Trust It** in the **Grant permissions to the app** window.
-    
-    - Close the  **Grant permissions to the app** window.
-    
-    - When installation of the add-in and WCF service is completed, your browser will open.
-    
-    - Sign in to your Office 365 site. The start page of the Core.EventReceivers add-in is displayed.
+    1. Выполните инструкции в разделе [Создание пространство имен служебной шины](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-create-namespace-portal).
 
-## <a name="use-the-coreeventreceivers-add-in"></a>Use the Core.EventReceivers add-in
+    2. Скопируйте **Основной строку подключения** с только что созданный пространства имен шины обслуживания
+    
+    3. Вернуться в Visual Studio.
+    
+    4. Щелкните правой кнопкой мыши Core.EventReceivers > **Свойства** > **SharePoint**.
+    
+    5. Установите флажок **Включить отладку через шину службы Microsoft Azure**.
+    
+    6. В поле **Строка подключения шины службы Microsoft Azure**вставьте строку подключения.
+    
+    7. Выберите команду **Сохранить**.
+    
+5. Выполнение примера кода и выполните следующие дополнительные действия:
+    
+    - Нажмите кнопку **Доверять** в окне **Предоставление разрешений для приложения** .
+    
+    - Закройте окно **Предоставление разрешений для приложения** .
+    
+    - После завершения установки надстройки и службы WCF, откроется браузер.
+    
+    - Вход на сайт Office 365. Откроется страница start надстройки Core.EventReceivers.
+
+## <a name="use-the-coreeventreceivers-add-in"></a>Использовать надстройки Core.EventReceivers
 <a name="sectionSection1"> </a>
 
-To see a demo of the Core.EventReceivers code sample:
+Чтобы просмотреть демонстрационный пример кода Core.EventReceivers:
 
-1. Run the sample, and on the start page, choose  **Back to Site**.
+1. Запуск образца и на странице "Запуск" выберите **веб-узел**.
     
-2. Choose  **Site Contents**.
+2. Выберите **элементы контент сайта**.
     
-3. Choose  **Remote Event Receiver Jobs**.
+3. Выберите **задания приемника удаленных событий**.
     
-4. Choose  **new item**.
+4. Выберите **новый элемент**.
     
-5. In  **Title**, enter  **Contoso**, and in  **Description** enter **Contoso test**.
+5. В поле **Название**введите **Contoso**и в **поле Описание** введите **Contoso тестирования**.
     
-6. Return to the list and refresh the page.
+6. Вернуться к списку и обновить страницу.
     
-7. Verify that the description of the newly added item was updated to  **Contoso test Updated by ReR 192336**, where  **192336** is a timestamp.
+7. Убедитесь, что описание добавляемого элемента была обновлены для **тестирования Contoso обновлен с ReR 192336**, где **192336** — отметку времени.
     
-In Services/AppEventReceiver.cs,  **AppEventReceiver** implements the **IRemoteEventService** interface. This code sample provides an implementation for the **ProcessEvent** method because it uses synchronous events. If you use asynchronous events, you need to provide an implementation for the **ProcessOneWayEvent** method.
+Services/AppEventReceiver.cs **AppEventReceiver** реализует интерфейс **IRemoteEventService** . В этом примере кода предоставляет реализацию **методе ProcessEvent** , так как они используют синхронные события. Если вы используете асинхронные события, необходимо предоставить реализацию метода **ProcessOneWayEvent** .
 
-The  **ProcessEvent** handles the following **SPRemoteEventType** remote events:
+**ProcessEvent** обрабатывает следующие **SPRemoteEventType** удаленных событий.
 
--  **AppInstalled** events when installing the add-in. When an **AppInstalled** event occurs, **ProcessEvent** calls **HandleAppInstalled**.
+-  События **AppInstalled** при установке надстройки. При возникновении события **AppInstalled** **ProcessEvent** вызовов **HandleAppInstalled**.
     
--  **AppUninstalling** events when uninstalling the add-in. When an **AppUninstalling** event occurs, **ProcessEvent** calls **HandleAppUninstalling**. The  **AppUninstalling** event only runs when a user completely removes the add-in either by deleting the add-in from the site recycle bin (for end users) or by removing the add-in from the **Apps in testing** list (for developers).
+-  События **AppUninstalling** при удалении надстройки. При возникновении события **AppUninstalling** **ProcessEvent** вызовов **HandleAppUninstalling**. Событие **AppUninstalling** выполняется только в том случае, когда пользователь полностью удаляет надстройку, удалив надстройки из корзины сайта (для конечных пользователей) или удаления надстройку из списка **тестирование приложений** (для разработчиков).
     
--  **ItemAdded** events when an item is added to a list. When an **ItemAdded** event occurs, **ProcessEvent** calls **HandleItemAdded**.
-
-> [!NOTE] 
-> In the Core.EventReceiver project properties, only  **Handle App Installed** and **Handle App Uninstalling** properties are available. This code sample shows how you can add the **ItemAdded** event handler to a list on the host web by using the **AppInstalled** event during add-in installation.
+-  Событий **ItemAdded** при добавлении элемента в список. Когда возникает событие **ItemAdded** вызовы **ProcessEvent** **HandleItemAdded**.
 
 > [!NOTE] 
-> The code in this article is provided as-is, without warranty of any kind, either express or implied, including any implied warranties of fitness for a particular purpose, merchantability, or non-infringement.
+> В окне Свойства проекта Core.EventReceiver доступны только свойства, **Управление установленными приложениями** и **Обработка удаляемого приложения** . В этом примере кода показано, как добавить обработчик событий **ItemAdded** для списка на веб-сайт с помощью события **AppInstalled** во время установки надстройки.
+
+> [!NOTE] 
+> Код, приведенный в данной статье предоставляется в качестве-без никаких гарантий, явных или подразумеваемых, включая никаких гарантий соответствие для определенной задачи, окупаемость или не нарушения прав.
 
 ```C#
 public SPRemoteEventResult ProcessEvent(SPRemoteEventProperties properties)
@@ -155,7 +132,7 @@ public SPRemoteEventResult ProcessEvent(SPRemoteEventProperties properties)
         }
 ```
 
-**HandleAppInstalled** calls **RemoteEventReceiverManager.AssociateRemoteEventsToHostWeb** in RemoteEventReceiverManager.cs.
+**HandleAppInstalled** вызывает **RemoteEventReceiverManager.AssociateRemoteEventsToHostWeb** RemoteEventReceiverManager.cs.
 
 ```C#
  private void HandleAppInstalled(SPRemoteEventProperties properties)
@@ -171,19 +148,19 @@ public SPRemoteEventResult ProcessEvent(SPRemoteEventProperties properties)
         }
 ```
 
-**AssociateRemoteEventsToHostWeb** creates or enables various SharePoint objects that the Core.EventReceivers add-in uses. Your requirements might differ. **AssociateRemoteEventsToHostWeb** does the following:
+**AssociateRemoteEventsToHostWeb** создает или позволяет различных объектов SharePoint, используемые надстройкой Core.EventReceivers. Ваши требования могут отличаться. **AssociateRemoteEventsToHostWeb** выполняет следующие действия:
 
-- Enables the Push Notification feature by using  **Web.Features.Add**.
+- Включает Push-уведомлений с помощью **Web.Features.Add**.
     
-- Uses the  **clientContext** object to search for a list. If the list does not exist, **CreateJobsList** creates the list. If the list exists, **List.EventReceivers** is used to search for an existing event receiver whose name is **ItemAddedEvent**.
+- Использует объект **clientContext** для поиска для списка. Если список не существует, **CreateJobsList** создает список. Если список существует, **List.EventReceivers** используется для поиска существующего получателя событий, имя которого является **ItemAddedEvent**.
     
-- If the  **ItemAddedEvent** event receiver does not exist:
+- Если не существует **ItemAddedEvent** приемника событий:
     
-    - Instantiates a new  **EventReceiverDefinitionCreationInformation** object to create the new remote event receiver. The **ItemAdded** event receiver type is added to **EventReceiverDefinitionCreationInformation.EventType**.
+    - Создает новый объект **EventReceiverDefinitionCreationInformation** для создания нового приемника удаленных событий. Тип приемника событий **ItemAdded** добавляется **EventReceiverDefinitionCreationInformation.EventType**.
     
-    - Sets the  **EventReceiverDefinitionCreationInformation.ReceiverURL** to the URL of the **AppInstalled** remote event receiver.
+    - Задает **EventReceiverDefinitionCreationInformation.ReceiverURL** URL-адрес в **AppInstalled** удаленный приемник событий.
     
-    - Adds a new event receiver to the list using  **List.EventReceivers.Add**.
+    - Добавляет новый приемника событий в список с помощью **List.EventReceivers.Add**.
 
 ```C#
 public void AssociateRemoteEventsToHostWeb(ClientContext clientContext)
@@ -250,7 +227,7 @@ public void AssociateRemoteEventsToHostWeb(ClientContext clientContext)
         }
 ```
 
-When an item is added to the  **Remote Event Receiver Jobs** list, **ProcessEvent** in AppEventReceiver.svc.cs handles the **ItemAdded** event, and then calls **HandleItemAdded**.  **HandleItemAdded** calls **RemoteEventReceiverManager.ItemAddedToListEventHandler**.  **ItemAddedToListEventHandler** fetches the list item that was added, and adds the string **Updated by ReR** to the list item's description.
+При добавлении элемента в список **Заданий приемника удаленных событий** **ProcessEvent** в AppEventReceiver.svc.cs обрабатывает событие **ItemAdded** , а затем вызывает **HandleItemAdded**.  **HandleItemAdded** вызывает **RemoteEventReceiverManager.ItemAddedToListEventHandler**.  **ItemAddedToListEventHandler** выбирает элемент списка, который был добавлен и добавляет строку **обновлен с ReR** описание элемента списка.
 
 ```C#
  public void ItemAddedToListEventHandler(ClientContext clientContext, Guid listId, int listItemId)
@@ -278,7 +255,7 @@ When an item is added to the  **Remote Event Receiver Jobs** list, **ProcessEven
 ## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
--  [Office 365 development patterns and practices solution guidance](Office-365-development-patterns-and-practices-solution-guidance.md)
+-  [Шаблоны и рекомендации решений разработки Office 365](Office-365-development-patterns-and-practices-solution-guidance.md)
     
--  [Core.AppEvents.HandlerDelegation ](https://github.com/SharePoint/PnP/tree/master/Samples/Core.AppEvents.HandlerDelegation)
+-  [Core.AppEvents.HandlerDelegation](https://github.com/SharePoint/PnP/tree/master/Samples/Core.AppEvents.HandlerDelegation)
     

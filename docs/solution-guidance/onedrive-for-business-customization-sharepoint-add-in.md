@@ -1,11 +1,11 @@
 ---
 title: "OneDrive для бизнеса настройки в объектная модель SharePoint"
 ms.date: 11/03/2017
-ms.openlocfilehash: 321dd53b1c8040318069edbbc4471bf47c27c7f2
-ms.sourcegitcommit: 65e885f547ca9055617fe0871a13c7fc85086032
+ms.openlocfilehash: ac42f49468f78619ba0b53c82eb711392fa9a35d
+ms.sourcegitcommit: ad9b18a3fc81d9561383413644120e7255d31d61
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 03/17/2018
 ---
 <a name="onedrive-for-business-customization-in-the-sharepoint-add-in-model"></a>OneDrive для бизнеса настройки в объектная модель SharePoint
 ==================================================================
@@ -127,7 +127,7 @@ Office 365 — это не только SharePoint, как вы знаете. М
 
 Здесь более подробное описание расширенные приложения части на основе настроек, в которой кажется необходимые настройки сайтов OD4B типичный подход для применения и управления ими. Исходного кода и Дополнительные сведения об этом решении доступен из [руководство и рекомендации и шаблоны для разработчиков Office 365](http://aka.ms/officedevpnp).
 
-Фактические логической структуры следует подход часть скрытые приложения, упоминалось ранее в [этой записи блога](http://blogs.msdn.com/b/vesku/archive/2013/11/25/office365-apply-automatically-custom-branding-to-personal-site-skydrive-pro.aspx). Это означает, что подразумевается, что централизованного интрасети в среде office 365, где размещен веб-части необходимые приложения и будет, что главная конечных пользователей для этой страницы при открытии их браузера. Чаще всего у каждого браузера компании же домашней страницы, задаются с помощью групповой политики, чтобы конечные пользователи всегда начинается из одного расположения централизованного при открытии их браузера. Это расположение, где находится веб-часть приложения, который может иметь значение размера как 0 пиксель ширины и высоты. Здесь суть использовать контекст конечного пользователя для выполнения веб-части приложения, который содержит страницу из надстройки размещением у поставщика.
+Фактические логической структуры следует подход часть скрытые приложения, упоминалось ранее в [этой записи блога](http://blogs.msdn.com/b/vesku/archive/2013/11/25/office365-apply-automatically-custom-branding-to-personal-site-skydrive-pro.aspx). Это означает, что подразумевается, что централизованного интрасети в среде Office 365, где размещен веб-части необходимые приложения и будет, что главная конечных пользователей для этой страницы при открытии их браузера. Чаще всего у каждого браузера компании же домашней страницы, задаются с помощью групповой политики, чтобы конечные пользователи всегда начинается из одного расположения централизованного при открытии их браузера. Это расположение, где находится веб-часть приложения, который может иметь значение размера как 0 пиксель ширины и высоты. Здесь суть использовать контекст конечного пользователя для выполнения веб-части приложения, который содержит страницу из надстройки размещением у поставщика.
 
 **Рекомендации по оптимизации и обслуживание производительности**
 
@@ -561,9 +561,9 @@ OD4B. Configuration.Async.WebJob OD4B. Проект Configuration.Async.Console.
 <a name="related-links"></a>Ссылки по теме
 =============
 - [Настройка OneDrive для бизнеса фирменного стиля сайтов](Customization-Options-For-OD4B-Sites.md)
-- Руководств по [http://aka.ms/OfficeDevPnPGuidance](http://aka.ms/OfficeDevPnPGuidance "Руководств")
-- Справочные материалы в библиотеке MSDN по [http://aka.ms/OfficeDevPnPMSDN](http://aka.ms/OfficeDevPnPMSDN "Справочные материалы в библиотеке MSDN")
-- Видеозаписи по [http://aka.ms/OfficeDevPnPVideos](http://aka.ms/OfficeDevPnPVideos "видео")
+- Статьи, посвященные в [http://aka.ms/OfficeDevPnPGuidance] (http://aka.ms/OfficeDevPnPGuidance "Руководств")
+- Справочные материалы в библиотеке MSDN по [http://aka.ms/OfficeDevPnPMSDN] (http://aka.ms/OfficeDevPnPMSDN "Справочные материалы в библиотеке MSDN")
+- Видеозаписи по [http://aka.ms/OfficeDevPnPVideos] (http://aka.ms/OfficeDevPnPVideos "видео")
 
 <a name="related-pnp-samples"></a>Примеры связанных с ними PnP
 ===================
@@ -571,7 +571,7 @@ OD4B. Configuration.Async.WebJob OD4B. Проект Configuration.Async.Console.
 - [OD4B. Configuration.Async (O365 PnP образец)](https://github.com/SharePoint/PnP/tree/master/Solutions/OD4B.Configuration.Async)
 - [Provisioning.OneDriveProvisioning (O365 PnP образец)](https://github.com/SharePoint/PnP/tree/master/Samples/Provisioning.OneDriveProvisioning)
 - [Компонент основной PnP Office](https://github.com/SharePoint/PnP-Sites-Core/tree/master/Core)
-- Примеры и содержимое в https://github.com/SharePoint/PnP
+- Примеры и контентhttps://github.com/SharePoint/PnP
 
 <a name="applies-to"></a>Применимо к
 ==========
