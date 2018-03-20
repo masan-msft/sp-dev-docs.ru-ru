@@ -1,20 +1,20 @@
 ---
 title: "Обзор расширений SharePoint Framework (SPFx)"
 description: "Используйте расширения SPFx, чтобы настроить области уведомлений, панели инструментов, представления данных списков и другие аспекты SharePoint."
-ms.date: 01/11/2018
+ms.date: 03/14/2018
 ms.prod: sharepoint
-ms.openlocfilehash: ad06c2cda5bd6b3ad21049164a58b70cc9dbf93d
-ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
+ms.openlocfilehash: 188542a9b75c6e1497494023856e73d960fb64b5
+ms.sourcegitcommit: ad9b18a3fc81d9561383413644120e7255d31d61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="overview-of-sharepoint-framework-extensions"></a>Обзор расширений SharePoint Framework
 
-Используя расширения SharePoint Framework (SPFx), можно сделать SharePoint удобнее для пользователей. Используя расширения SharePoint Framework, можно настроить области уведомлений, панели инструментов, представления данных списков и другие аспекты SharePoint. Расширения SharePoint Framework доступны во всех клиентах Office 365 для использования в рабочей среде. 
+Используя расширения SharePoint Framework (SPFx), можно сделать SharePoint удобнее для пользователей. Используя расширения SharePoint Framework, можно настроить области уведомлений, панели инструментов, представления данных списков и другие аспекты SharePoint. Расширения SharePoint Framework доступны во всех подписках Office 365 для использования в рабочей среде. 
 
 > [!NOTE] 
-> Вы можете получить подписку разработчиков приложений для Office 365, приняв участие в [программе для разработчиков приложений для Office 365](http://dev.office.com/devprogram).
+> Вы можете получить подписку разработчиков приложений для Office 365, приняв участие в [программе для разработчиков приложений для Office 365](https://developer.microsoft.com/ru-RU/office/dev-program). Пошаговые инструкции для принятия участия в этой программе, регистрации и настройки подписки см. в [документации по программе для разработчиков приложений для Office 365](https://docs.microsoft.com/ru-RU/office/developer-program/office-365-developer-program).
 
 Расширения SharePoint Framework позволяют дополнять пользовательский интерфейс SharePoint на современных страницах и в библиотеках документов, используя знакомые библиотеки и средства SharePoint Framework для клиентской разработки. SharePoint Framework включает три новых типа расширений:
 

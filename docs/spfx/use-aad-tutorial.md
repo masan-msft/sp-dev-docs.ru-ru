@@ -3,11 +3,11 @@ title: "Использование API, защищенных с помощью A
 description: "В руководстве по использованию класса AadHttpClient или MSGraphClient рассмотрено подключение к API, защищенным службой Azure AD, в решениях SharePoint Framework."
 ms.date: 02/15/2018
 ms.prod: sharepoint
-ms.openlocfilehash: 833981da9657373ec2c44a15a9cb30851b03bc15
-ms.sourcegitcommit: 249f0fbce4df81fbe65848f1d26a4ebcad7aa89c
+ms.openlocfilehash: 1873d2c866eaede173118dbfd5e8e172c083d35f
+ms.sourcegitcommit: 2a07b35c33f247a4e7764679a7e2b9b90bfc895c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="consuming-apis-secured-with-azure-ad-within-the-sharepoint-framework"></a>Использование API, защищенных с помощью Azure AD, в SharePoint Framework
 
@@ -32,7 +32,7 @@ ms.lasthandoff: 03/05/2018
 Клиентская веб-часть позволяет искать пользователей по имени и показывает всех подходящих пользователей через компонент **DetailsList** из Office UI Fabric. В области свойств веб-части есть параметр для выбора способа доступа к Microsoft Graph. Начиная с SharePoint Framework версии 1.4.1 для доступа к Microsoft Graph можно использовать собственный клиент Graph (**MSGraphClient**) или низкоуровневый тип, используемый для доступа к любому REST API, защищенному с помощью Azure AD (**AadHttpClient**).
 
 > [!NOTE]
-> Исходный код этого решения представлен в репозитории GitHub [spfx-api-scopes-tutorial](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/tutorials/spfx-api-scopes-tutorial).
+> Исходный код этого решения представлен в репозитории GitHub [api-scopes](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/tutorials/api-scopes).
 
 Если вы уже знаете, как создавать решения SharePoint Framework, можете перейти к [настройке запросов на получение разрешений API](#ConfiguringApiPermissions).
 
@@ -653,3 +653,4 @@ https://<your-tenant>.sharepoint.com/_layouts/15/Workbench.aspx
 ## <a name="see-also"></a>См. также
 * [Подключение к API, защищенным службой Azure AD, в решениях SharePoint Framework](use-aadhttpclient.md)
 * [Использование MSGraphClient для подключения к Microsoft Graph](use-msgraph.md)
+* [Применение исходного кода из этого руководства](https://github.com/SharePoint/sp-dev-fx-webparts/tree/master/tutorials/api-scopes)

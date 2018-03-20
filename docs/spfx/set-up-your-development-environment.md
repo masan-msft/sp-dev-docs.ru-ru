@@ -1,13 +1,13 @@
 ---
 title: "Как настроить среду разработки SharePoint Framework"
 description: "Создавайте решения SharePoint Framework, используя Visual Studio или собственную среду разработки. Можно использовать Mac, ПК с Windows или Linux."
-ms.date: 02/15/2018
+ms.date: 03/09/2018
 ms.prod: sharepoint
-ms.openlocfilehash: d06ca593e9aaed9f3e4e5f1e0c84b6bac602a50a
-ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
+ms.openlocfilehash: 9649955bf36bd821d1ff53fcef2a774050919b8c
+ms.sourcegitcommit: ad9b18a3fc81d9561383413644120e7255d31d61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="set-up-your-sharepoint-framework-development-environment"></a>Как настроить среду разработки SharePoint Framework
 
@@ -85,6 +85,8 @@ npm install -g @microsoft/generator-sharepoint
 ```sh
 npm install @microsoft/generator-sharepoint --save-dev
 ```
+
+Дополнительные сведения о генераторе Yeoman SharePoint см. в статье [Скаффолдинг проектов с помощью генератора Yeoman SharePoint](toolchain/scaffolding-projects-using-yeoman-sharepoint-generator.md).
 
 ## <a name="optional-tools"></a>Дополнительные средства
 

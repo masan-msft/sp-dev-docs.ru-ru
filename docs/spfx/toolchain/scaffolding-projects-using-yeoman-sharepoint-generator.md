@@ -3,11 +3,11 @@ title: "Формирование шаблонов проектов с помощ
 description: "Генератор Yeoman для SharePoint позволяет формировать шаблоны новых проектов клиентских решений, чтобы создавать, упаковывать и развертывать решения SharePoint."
 ms.date: 01/12/2018
 ms.prod: sharepoint
-ms.openlocfilehash: ac69ce5030289fefce1563fb03b6b0fb1466d470
-ms.sourcegitcommit: 0ad5aeee2c5efc47eb57e050581e4f411c4be643
+ms.openlocfilehash: 2e881fad07752e8b9dd72ce8bf4acb3a9a8b40cc
+ms.sourcegitcommit: ad9b18a3fc81d9561383413644120e7255d31d61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="scaffold-projects-by-using-yeoman-sharepoint-generator"></a>Формирование шаблонов проектов с помощью генератора Yeoman для SharePoint
 
@@ -119,4 +119,5 @@ yo @microsoft/sharepoint
 
 - [Цепочка инструментов SharePoint Framework](sharepoint-framework-toolchain.md)
 - [Средства разработки и библиотеки платформы SharePoint Framework](../tools-and-libraries.md)
+- [Как настроить среду разработки SharePoint Framework](../set-up-your-development-environment.md)
 - [Обзор SharePoint Framework](../sharepoint-framework-overview.md)
