@@ -1,95 +1,73 @@
 ---
-title: "Отправка файла с помощью REST API и jQuery"
-ms.date: 09/25/2017
+title: Отправка файла с помощью API REST и jQuery
+description: Отправка локального файла в папку SharePoint с помощью API REST и AJAX-запросов jQuery.
+ms.date: 12/14/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 1e43bc768703da811f4168413da258dc1beddbeb
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 61a6b163f684ffd42135f3854ff10d46a029e841
+ms.sourcegitcommit: 202dd467c8e5b62c6469808226ad334061f70aa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/15/2017
 ---
-# <a name="upload-a-file-by-using-the-rest-api-and-jquery"></a>Отправка файла с помощью REST API и jQuery
-Узнайте, как добавить локальный файл в папку SharePoint с помощью REST API и AJAX-запросов jQuery.
- 
+# <a name="upload-a-file-by-using-the-rest-api-and-jquery"></a>Отправка файла с помощью API REST и jQuery
 
- **Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).
- 
-
-В примерах кода в этой статье показано, как с помощью интерфейса REST и AJAX-запросов jQuery добавить локальный файл в библиотеку **Документы**, а затем изменить свойства элемента списка, представляющего отправленный файл.
- 
+В примерах кода в этой статье показано, как с помощью интерфейса REST и AJAX-запросов jQuery добавить локальный файл в библиотеку **Documents** (Документы), а затем изменить свойства элемента списка, представляющего отправленный файл.
 
 Выполните следующие общие действия:
- 
 
-
-1. Преобразуйте локальный файл в буфер массива с помощью API **FileReader** (необходима поддержка HTML5). Функция **jQuery(document).ready** проверяет, поддерживает ли браузер API FileReader.
+1. Преобразование локального файла в буфер массива с помощью **FileReader** API, для чего необходима поддержка HTML5. Функция **jQuery(document).ready** проверяет поддержку FileReader API в браузере.
     
- 
-2. Добавьте файл в папку **Общие документы**, используя метод **Add** для коллекции файлов папки. Буфер массива передается в тексте запроса POST.
+2. Добавление файла в папку **Общие документы** с помощью метода **Add** в коллекции файлов папки. Буфер массива передается в тексте запроса POST.
     
-    В этих примерах для получения коллекции используется конечная точка **getfolderbyserverrelativeurl**, но вы также можете использовать конечную точку списка (пример: `…/_api/web/lists/getbytitle('<list title>')/rootfolder/files/add`).
+    В этих примерах для доступа к коллекции файлов используется конечная точка **getfolderbyserverrelativeurl**, но также можно воспользоваться конечной точкой списка (например,  `…/_api/web/lists/getbytitle('<list title>')/rootfolder/files/add`).
     
- 
-3. Получите элемент списка, соответствующий отправленному файлу, используя свойство **ListItemAllFields** этого файла.
+3. Получение элемента списка, соответствующего загруженному файлу, с помощью свойства **ListItemAllFields** файла.
     
- 
 4. Измените отображаемое имя и заголовок элемента списка с помощью запроса MERGE.
-    
- 
 
-## <a name="running-the-code-examples"></a>Запуск примеров кода
+
 <a name="RunTheExamples"> </a>
 
- В обоих примерах кода в этой статье показано, как с помощью REST API и AJAX-запросов jQuery добавить локальный файл в библиотеку **Общие документы**, а затем изменить свойства элемента списка. В первом примере вызовы выполняются между доменами SharePoint с помощью **SP.AppContextSite**. Аналогичный код используется надстройкой, размещенной в SharePoint, при отправке файлов на хост-сайт. Во втором примере вызовы выполняются в пределах домена. Аналогичный код используется серверным решением и надстройкой, размещенной в SharePoint, и при отправке файлов на сайт.
- 
+## <a name="running-the-code-examples"></a>Выполнение примеров кода
 
- 
+В обоих примерах кода в этой статье показано, как с помощью API REST и AJAX-запросов jQuery отправить файл в библиотеку **Shared Documents** (Общие документы), а затем изменить свойства элемента списка. 
 
- **Примечание.** Размещенные у поставщика надстройки, написанные на JavaScript, для отправки запросов в домен SharePoint должны использовать междоменную библиотеку SP.RequestExecutor. [Пример добавления файла с помощью междоменной библиотеки](http://msdn.microsoft.com/library/files-and-folders-rest-api-reference%28Office.15%29.aspx#bk_FileCollectionAdd)
- 
+В первом примере вызовы выполняются между доменами SharePoint с помощью метода **SP.AppContextSite**. Аналогичный код используется надстройкой, размещенной в SharePoint, при отправке файлов на хост-сайт. 
 
+Во втором примере вызовы выполняются в пределах домена. Аналогичный код используется серверным решением и надстройкой, размещенной в SharePoint, и при отправке файлов на сайт.
+ 
+> [!NOTE] 
+> Размещаемые у поставщика надстройки, написанные на JavaScript, для отправки запросов в домен SharePoint должны использовать междоменную библиотеку SP.RequestExecutor. См. пример [отправки файла с помощью междоменной библиотеки](https://msdn.microsoft.com/ru-RU/library/office/dn450841.aspx).
+ 
 Чтобы воспользоваться примерами, описанными в этой статье, вам потребуется следующее:
- 
 
- 
+- SharePoint Server или SharePoint Online.
 
-- SharePoint Server или SharePoint Online
-    
- 
--  Разрешения на **запись** в библиотеку **Документы** для пользователя, который запускает код. Если вы разрабатываете надстройку SharePoint, то можете указать разрешения на **запись** на уровне **списка**.
-    
- 
+- Разрешения **Write** для библиотеки **Documents** (Документы) у пользователя, который запускает код. Если вы разрабатываете надстройку SharePoint, то можете указать для нее разрешения **Write** в области **List**.
+
 - Поддержка API **FileReader** браузером (HTML5).
-    
- 
+
 - Ссылка на библиотеку jQuery в разметке страницы. Пример:
     
-```HTML
-  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>
-```
-
-- Следующие элементы управления в разметке страницы.
+    ```HTML
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    ```
+- Приведенные ниже элементы управления в разметке страницы.
     
-```HTML
-  <input id="getFile" type="file"/><br />
-<input id="displayName" type="text" value="Enter a unique name" /><br />
-<input id="addFileButton" type="button" value="Upload" onclick="uploadFile()"/>
-```
+    ```HTML
+    <input id="getFile" type="file"/><br />
+    <input id="displayName" type="text" value="Enter a unique name" /><br />
+    <input id="addFileButton" type="button" value="Upload" onclick="uploadFile()"/>
+    ```
 
+<a name="CodeExample1"> </a>
 
-## <a name="code-example-1-upload-a-file-across-sharepoint-domains-by-using-the-rest-api-and-jquery"></a>Пример кода 1. Отправка файла между доменами SharePoint с помощью REST API и jQuery
-<a name="RunTheExamples"> </a>
+## <a name="code-example-1-upload-a-file-across-sharepoint-domains-by-using-the-rest-api-and-jquery"></a>Пример кода 1. Отправка файла между доменами SharePoint с помощью API REST и jQuery
 
- В следующем примере кода показано, как с помощью REST API SharePoint и AJAX-запросов jQuery отправить файл в библиотеку **Документы** и изменить свойства элемента списка, представляющего этот файл. Аналогичный код можно найти в размещенной в SharePoint надстройке, которая отправляет файлы в папку на хост-сайте.
+Следующий пример кода использует API REST SharePoint и запросов jQuery AJAX для загрузки файла в библиотеку **Документы** и изменения свойств элемента списка, представляющего файл. Контекст этого примера размещенное в SharePoint надстройку, которая загружает файл в папку на хост-сервере.
+
+Чтобы воспользоваться этим примером, ваша среда должна соответствовать [этим требованиям](#RunTheExamples).
  
-
- 
-Чтобы воспользоваться этим примером, ваша среда должна соответствовать [этим требованиям](upload-a-file-by-using-the-rest-api-and-jquery.md#RunTheExamples).
- 
-
- 
-
-
 
 ```javascript
 'use strict';
@@ -256,20 +234,15 @@ function getQueryStringParameter(paramToRetrieve) {
 }
 ```
 
+<br/>
 
-## <a name="code-example-2-upload-a-file-in-the-same-domain-by-using-the-rest-api-and-jquery"></a>Пример кода 2. Отправка файла в пределах домена с помощью REST API и jQuery
-<a name="UploadFile"> </a>
+<a name="CodeExample2"> </a>
 
- В следующем примере кода показано, как с помощью REST API SharePoint и AJAX-запросов jQuery отправить файл в библиотеку **Документы** и изменить свойства элемента списка, представляющего этот файл. Аналогичный код можно найти в серверном решении и размещенной в SharePoint надстройке, которая отправляет файлы на сайт.
- 
+## <a name="code-example-2-upload-a-file-in-the-same-domain-by-using-the-rest-api-and-jquery"></a>Пример кода 2. Отправка файла в пределах домена с помощью API REST и jQuery
 
- 
-Чтобы воспользоваться этим примером, ваша среда должна соответствовать [этим требованиям](upload-a-file-by-using-the-rest-api-and-jquery.md#RunTheExamples).
- 
+Следующий пример кода использует API REST SharePoint и запросов jQuery AJAX для загрузки файла в библиотеку **Документы** и изменения свойств элемента списка, представляющего файл. Контекст этого примера решение, работающее на сервере. Код аналогичен коду надстройки с размещением в SharePoint, которое загружает файл на сайт надстройки.
 
- 
-
-
+Чтобы вы могли воспользоваться этим примером, нужно выполнить [эти требования](#RunTheExamples). 
 
 ```javascript
 'use strict';
@@ -408,24 +381,20 @@ function onError(error) {
 }
 ```
 
+<br/>
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="see-also"></a>См. также
 <a name="bk_addresources"> </a>
 
+- [Знакомство со службой REST в SharePoint](get-to-know-the-sharepoint-rest-service.md)
+- [Обращение к данным SharePoint из надстроек с помощью междоменной библиотеки](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md)
+- [Справочные материалы и примеры по API REST](https://msdn.microsoft.com/library)
+- [Материалы по OData](get-to-know-the-sharepoint-rest-service.md#odata-resources)
+- [Разработка надстроек SharePoint](develop-sharepoint-add-ins.md)
 
--  [Знакомство со службой REST в SharePoint](get-to-know-the-sharepoint-rest-service.md)
     
  
--  [Работа с папками и файлами в службе REST](working-with-folders-and-files-with-rest.md)
-    
- 
--  [Работа со списками и элементами списков в службе REST](working-with-lists-and-list-items-with-rest.md)
-    
- 
--  [Справочные материалы по интерфейсу API службы REST и примеры](http://msdn.microsoft.com/library/rest-api-reference-and-samples%28Office.15%29.aspx)
-    
- 
--  [Доступ к данным SharePoint из надстроек с помощью междоменной библиотеки](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md)
+
     
  
 
