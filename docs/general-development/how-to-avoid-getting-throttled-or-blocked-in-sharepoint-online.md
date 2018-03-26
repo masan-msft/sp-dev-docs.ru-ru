@@ -1,13 +1,13 @@
 ---
-title: "Как избежать регулирования или блокировки в SharePoint Online"
+title: Как избежать регулирования или блокировки в SharePoint Online
 ms.date: 09/25/2017
 ms.prod: sharepoint
 ms.assetid: 33ed8106-d850-42b1-8d7f-5ba83901149c
-ms.openlocfilehash: 60c499de684a1ca6d9c6621441390a523312fde3
-ms.sourcegitcommit: 0a94e0c600db24a1b5bf5895e6d3d9681bf7c810
+ms.openlocfilehash: 6f0caad2181e78a2f60ee82bd4434aeb203a5395
+ms.sourcegitcommit: adfe402a7646c7061288aa6669442ae03598175a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 03/23/2018
 ---
 # <a name="avoid-getting-throttled-or-blocked-in-sharepoint-online"></a>Как избежать регулирования или блокировки в SharePoint Online
 Узнайте о регулирования в SharePoint Online и узнайте, как избежать регулирование или заблокирован. Включает пример кода CSOM и REST, которые можно использовать для упрощения задачи.
@@ -130,6 +130,9 @@ For a broader discussion of throttling on the Microsoft Cloud, see  [Throttling 
 
 > [!NOTE]
 > Формат строка агента пользователя ожидается выполните [RFC2616](http://www.ietf.org/rfc/rfc2616.txt), так что произведите выполните копирование выше рекомендации на правом разделителей. Также дает возможность добавлять существующие строка агента пользователя с запрошенные данные.
+
+> [!NOTE]
+> При разработке компонентов переднего плана выполнения в браузере, большинство современных браузеров не разрешать overwritting строка агента пользователя и не требуется реализовать ее.
 
 ### <a name="example-of-decorating-traffic-with-user-agent-when-using-client-side-object-model-csom"></a>Пример оформления трафика с помощью агента пользователя, при использовании модели объектов со стороны клиента (CSOM)
 
