@@ -1,95 +1,73 @@
 ---
-title: "Отправка файла с помощью REST API и jQuery"
-ms.date: 09/25/2017
+title: Отправка файла с помощью API REST и jQuery
+description: Отправка локального файла в папку SharePoint с помощью API REST и AJAX-запросов jQuery.
+ms.date: 12/14/2017
 ms.prod: sharepoint
-ms.openlocfilehash: 1e43bc768703da811f4168413da258dc1beddbeb
-ms.sourcegitcommit: 1cae27d85ee691d976e2c085986466de088f526c
+ms.openlocfilehash: 61a6b163f684ffd42135f3854ff10d46a029e841
+ms.sourcegitcommit: 202dd467c8e5b62c6469808226ad334061f70aa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 12/15/2017
 ---
-# <a name="upload-a-file-by-using-the-rest-api-and-jquery"></a><span data-ttu-id="e0019-102">Отправка файла с помощью REST API и jQuery</span><span class="sxs-lookup"><span data-stu-id="e0019-102">Upload a file by using the REST API and jQuery</span></span>
-<span data-ttu-id="e0019-103">Узнайте, как добавить локальный файл в папку SharePoint с помощью REST API и AJAX-запросов jQuery.</span><span class="sxs-lookup"><span data-stu-id="e0019-103">Learn how to upload a local file to a SharePoint folder by using the REST API and jQuery AJAX requests.</span></span>
- 
+# <a name="upload-a-file-by-using-the-rest-api-and-jquery"></a><span data-ttu-id="a69f0-103">Отправка файла с помощью API REST и jQuery</span><span class="sxs-lookup"><span data-stu-id="a69f0-103">Upload a file by using the REST API and jQuery</span></span>
 
- <span data-ttu-id="e0019-p101">**Примечание.** В настоящее время идет процесс замены названия "приложения для SharePoint" названием "надстройки SharePoint". Во время этого процесса в документации и пользовательском интерфейсе некоторых продуктов SharePoint и средств Visual Studio может по-прежнему использоваться термин "приложения для SharePoint". Дополнительные сведения см. в статье [Новое название приложений для Office и SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).</span><span class="sxs-lookup"><span data-stu-id="e0019-p101">**Note**  The name "apps for SharePoint" is changing to "SharePoint Add-ins". During the transition, the documentation and the UI of some SharePoint products and Visual Studio tools might still use the term "apps for SharePoint". For details, see  [New name for apps for Office and SharePoint](new-name-for-apps-for-sharepoint.md#bk_newname).</span></span>
- 
+<span data-ttu-id="a69f0-104">В примерах кода в этой статье показано, как с помощью интерфейса REST и AJAX-запросов jQuery добавить локальный файл в библиотеку **Documents** (Документы), а затем изменить свойства элемента списка, представляющего отправленный файл.</span><span class="sxs-lookup"><span data-stu-id="a69f0-104">The code examples in this article use the REST interface and jQuery AJAX requests to add a local file to the  **Documents** library and then change properties of the list item that represents the uploaded file.</span></span>
 
-<span data-ttu-id="e0019-107">В примерах кода в этой статье показано, как с помощью интерфейса REST и AJAX-запросов jQuery добавить локальный файл в библиотеку **Документы**, а затем изменить свойства элемента списка, представляющего отправленный файл.</span><span class="sxs-lookup"><span data-stu-id="e0019-107">The code examples in this article use the REST interface and jQuery AJAX requests to add a local file to the  **Documents** library and then change properties of the list item that represents the uploaded file.</span></span>
- 
+<span data-ttu-id="a69f0-105">Выполните следующие общие действия:</span><span class="sxs-lookup"><span data-stu-id="a69f0-105">This process uses the following high-level steps:</span></span>
 
-<span data-ttu-id="e0019-108">Выполните следующие общие действия:</span><span class="sxs-lookup"><span data-stu-id="e0019-108">This process uses the following high-level steps:</span></span>
- 
-
-
-1. <span data-ttu-id="e0019-p102">Преобразуйте локальный файл в буфер массива с помощью API **FileReader** (необходима поддержка HTML5). Функция **jQuery(document).ready** проверяет, поддерживает ли браузер API FileReader.</span><span class="sxs-lookup"><span data-stu-id="e0019-p102">Convert the local file to an array buffer by using the  **FileReader** API, which requires HTML5 support. The **jQuery(document).ready** function checks for FileReader API support in the browser.</span></span>
+1. <span data-ttu-id="a69f0-p101">Преобразование локального файла в буфер массива с помощью **FileReader** API, для чего необходима поддержка HTML5. Функция **jQuery(document).ready** проверяет поддержку FileReader API в браузере.</span><span class="sxs-lookup"><span data-stu-id="a69f0-p101">Convert the local file to an array buffer by using the **FileReader** API, which requires HTML5 support. The **jQuery(document).ready** function checks for FileReader API support in the browser.</span></span>
     
- 
-2. <span data-ttu-id="e0019-p103">Добавьте файл в папку **Общие документы**, используя метод **Add** для коллекции файлов папки. Буфер массива передается в тексте запроса POST.</span><span class="sxs-lookup"><span data-stu-id="e0019-p103">Add the file to the  **Shared Documents** folder by using the **Add** method on the folder's file collection. The array buffer is passed in the body of the POST request.</span></span>
+2. <span data-ttu-id="a69f0-p102">Добавление файла в папку **Общие документы** с помощью метода **Add** в коллекции файлов папки. Буфер массива передается в тексте запроса POST.</span><span class="sxs-lookup"><span data-stu-id="a69f0-p102">Add the file to the **Shared Documents** folder by using the **Add** method on the folder's file collection. The array buffer is passed in the body of the POST request.</span></span>
     
-    <span data-ttu-id="e0019-113">В этих примерах для получения коллекции используется конечная точка **getfolderbyserverrelativeurl**, но вы также можете использовать конечную точку списка (пример: `…/_api/web/lists/getbytitle('<list title>')/rootfolder/files/add`).</span><span class="sxs-lookup"><span data-stu-id="e0019-113">These examples use the  **getfolderbyserverrelativeurl** endpoint to reach the file collection, but you can also use a list endpoint (example: `…/_api/web/lists/getbytitle('<list title>')/rootfolder/files/add`).</span></span>
+    <span data-ttu-id="a69f0-110">В этих примерах для доступа к коллекции файлов используется конечная точка **getfolderbyserverrelativeurl**, но также можно воспользоваться конечной точкой списка (например,  `…/_api/web/lists/getbytitle('<list title>')/rootfolder/files/add`).</span><span class="sxs-lookup"><span data-stu-id="a69f0-110">These examples use the **getfolderbyserverrelativeurl** endpoint to reach the file collection, but you can also use a list endpoint (example: `…/_api/web/lists/getbytitle('<list title>')/rootfolder/files/add`).</span></span>
     
- 
-3. <span data-ttu-id="e0019-114">Получите элемент списка, соответствующий отправленному файлу, используя свойство **ListItemAllFields** этого файла.</span><span class="sxs-lookup"><span data-stu-id="e0019-114">Get the list item that corresponds to the uploaded file by using the  **ListItemAllFields** property of the uploaded file.</span></span>
+3. <span data-ttu-id="a69f0-111">Получение элемента списка, соответствующего загруженному файлу, с помощью свойства **ListItemAllFields** файла.</span><span class="sxs-lookup"><span data-stu-id="a69f0-111">Get the list item that corresponds to the uploaded file by using the **ListItemAllFields** property of the uploaded file.</span></span>
     
+4. <span data-ttu-id="a69f0-112">Измените отображаемое имя и заголовок элемента списка с помощью запроса MERGE.</span><span class="sxs-lookup"><span data-stu-id="a69f0-112">Change the display name and title of the list item by using a MERGE request.</span></span>
+
+
+<span data-ttu-id="a69f0-113"><a name="RunTheExamples"> </a></span><span class="sxs-lookup"><span data-stu-id="a69f0-113"></span></span>
+
+## <a name="running-the-code-examples"></a><span data-ttu-id="a69f0-114">Выполнение примеров кода</span><span class="sxs-lookup"><span data-stu-id="a69f0-114">Running the code examples</span></span>
+
+<span data-ttu-id="a69f0-115">В обоих примерах кода в этой статье показано, как с помощью API REST и AJAX-запросов jQuery отправить файл в библиотеку **Shared Documents** (Общие документы), а затем изменить свойства элемента списка.</span><span class="sxs-lookup"><span data-stu-id="a69f0-115"> Both code examples in this article use the REST API and jQuery AJAX requests to upload a file to the  **Shared Documents** folder and then change list item properties.</span></span> 
+
+<span data-ttu-id="a69f0-116">В первом примере вызовы выполняются между доменами SharePoint с помощью метода **SP.AppContextSite**. Аналогичный код используется надстройкой, размещенной в SharePoint, при отправке файлов на хост-сайт.</span><span class="sxs-lookup"><span data-stu-id="a69f0-116">The first example uses **SP.AppContextSite** to make calls across SharePoint domains, like a SharePoint-hosted add-in would do when uploading files to the host web.</span></span> 
+
+<span data-ttu-id="a69f0-117">Во втором примере вызовы выполняются в пределах домена. Аналогичный код используется серверным решением и надстройкой, размещенной в SharePoint, и при отправке файлов на сайт.</span><span class="sxs-lookup"><span data-stu-id="a69f0-117">The second example makes same-domain calls, like a SharePoint-hosted add-in would do when uploading files to the add-in web, or a solution that's running on the server would do when uploading files.</span></span>
  
-4. <span data-ttu-id="e0019-115">Измените отображаемое имя и заголовок элемента списка с помощью запроса MERGE.</span><span class="sxs-lookup"><span data-stu-id="e0019-115">Change the display name and title of the list item by using a MERGE request.</span></span>
+> [!NOTE] 
+> <span data-ttu-id="a69f0-118">Размещаемые у поставщика надстройки, написанные на JavaScript, для отправки запросов в домен SharePoint должны использовать междоменную библиотеку SP.RequestExecutor.</span><span class="sxs-lookup"><span data-stu-id="a69f0-118">Provider-hosted add-ins written in JavaScript must use the SP.RequestExecutor cross-domain library to send requests to a SharePoint domain.</span></span> <span data-ttu-id="a69f0-119">См. пример [отправки файла с помощью междоменной библиотеки](https://msdn.microsoft.com/ru-RU/library/office/dn450841.aspx).</span><span class="sxs-lookup"><span data-stu-id="a69f0-119">For an example, see  [upload a file by using the cross-domain library](https://msdn.microsoft.com/ru-RU/library/office/dn450841.aspx).</span></span>
+ 
+<span data-ttu-id="a69f0-120">Чтобы воспользоваться примерами, описанными в этой статье, вам потребуется следующее:</span><span class="sxs-lookup"><span data-stu-id="a69f0-120">To use the examples in this article, you'll need the following:</span></span>
+
+- <span data-ttu-id="a69f0-121">SharePoint Server или SharePoint Online.</span><span class="sxs-lookup"><span data-stu-id="a69f0-121">SharePoint Server or SharePoint Online</span></span>
+
+- <span data-ttu-id="a69f0-122">Разрешения **Write** для библиотеки **Documents** (Документы) у пользователя, который запускает код.</span><span class="sxs-lookup"><span data-stu-id="a69f0-122">**Write** permissions to the **Documents** library for the user running the code. If you're developing a spappsing, you can specify Write add-in permissions at the List scope</span></span> <span data-ttu-id="a69f0-123">Если вы разрабатываете надстройку SharePoint, то можете указать для нее разрешения **Write** в области **List**.</span><span class="sxs-lookup"><span data-stu-id="a69f0-123">Write permissions to the Documents library for the user running the code. If you're developing a SharePoint Add-in, you can specify **Write** add-in permissions at the **List** scope</span></span>
+
+- <span data-ttu-id="a69f0-124">Поддержка API **FileReader** браузером (HTML5).</span><span class="sxs-lookup"><span data-stu-id="a69f0-124">Browser support for the  **FileReader** API (HTML5)</span></span>
+
+- <span data-ttu-id="a69f0-p105">Ссылка на библиотеку jQuery в разметке страницы. Пример:</span><span class="sxs-lookup"><span data-stu-id="a69f0-p105">A reference to the jQuery library in your page markup. For example:</span></span>
     
- 
-
-## <a name="running-the-code-examples"></a><span data-ttu-id="e0019-116">Запуск примеров кода</span><span class="sxs-lookup"><span data-stu-id="e0019-116">Running the code examples</span></span>
-<span data-ttu-id="e0019-117"><a name="RunTheExamples"> </a></span><span class="sxs-lookup"><span data-stu-id="e0019-117"></span></span>
-
-<span data-ttu-id="e0019-p104"> В обоих примерах кода в этой статье показано, как с помощью REST API и AJAX-запросов jQuery добавить локальный файл в библиотеку **Общие документы**, а затем изменить свойства элемента списка. В первом примере вызовы выполняются между доменами SharePoint с помощью **SP.AppContextSite**. Аналогичный код используется надстройкой, размещенной в SharePoint, при отправке файлов на хост-сайт. Во втором примере вызовы выполняются в пределах домена. Аналогичный код используется серверным решением и надстройкой, размещенной в SharePoint, и при отправке файлов на сайт.</span><span class="sxs-lookup"><span data-stu-id="e0019-p104">Both code examples in this article use the REST API and jQuery AJAX requests to upload a file to the  **Shared Documents** folder and then change list item properties. The first example uses **SP.AppContextSite** to make calls across SharePoint domains, like a SharePoint-hosted add-in would do when uploading files to the host web. The second example makes same-domain calls, like a SharePoint-hosted add-in would do when uploading files to the add-in web, or a solution that's running on the server would do when uploading files.</span></span>
- 
-
- 
-
- <span data-ttu-id="e0019-p105">**Примечание.** Размещенные у поставщика надстройки, написанные на JavaScript, для отправки запросов в домен SharePoint должны использовать междоменную библиотеку SP.RequestExecutor. [Пример добавления файла с помощью междоменной библиотеки](http://msdn.microsoft.com/library/files-and-folders-rest-api-reference%28Office.15%29.aspx#bk_FileCollectionAdd)</span><span class="sxs-lookup"><span data-stu-id="e0019-p105">**Note**  Provider-hosted add-ins written in JavaScript must use the SP.RequestExecutor cross-domain library to send requests to a SharePoint domain. For an example, see  [upload a file by using the cross-domain library](http://msdn.microsoft.com/library/files-and-folders-rest-api-reference%28Office.15%29.aspx#bk_FileCollectionAdd).</span></span>
- 
-
-<span data-ttu-id="e0019-123">Чтобы воспользоваться примерами, описанными в этой статье, вам потребуется следующее:</span><span class="sxs-lookup"><span data-stu-id="e0019-123">To use the examples in this article, you'll need the following:</span></span>
- 
-
- 
-
-- <span data-ttu-id="e0019-124">SharePoint Server или SharePoint Online</span><span class="sxs-lookup"><span data-stu-id="e0019-124">SharePoint Server or SharePoint Online</span></span>
+    ```HTML
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    ```
+- <span data-ttu-id="a69f0-127">Приведенные ниже элементы управления в разметке страницы.</span><span class="sxs-lookup"><span data-stu-id="a69f0-127">The following controls in your page markup.</span></span>
     
+    ```HTML
+    <input id="getFile" type="file"/><br />
+    <input id="displayName" type="text" value="Enter a unique name" /><br />
+    <input id="addFileButton" type="button" value="Upload" onclick="uploadFile()"/>
+    ```
+
+<span data-ttu-id="a69f0-128"><a name="CodeExample1"> </a></span><span class="sxs-lookup"><span data-stu-id="a69f0-128"></span></span>
+
+## <a name="code-example-1-upload-a-file-across-sharepoint-domains-by-using-the-rest-api-and-jquery"></a><span data-ttu-id="a69f0-129">Пример кода 1. Отправка файла между доменами SharePoint с помощью API REST и jQuery</span><span class="sxs-lookup"><span data-stu-id="a69f0-129">Code example 1: Upload a file across SharePoint domains by using the REST API and jQuery</span></span>
+
+<span data-ttu-id="a69f0-p106">Следующий пример кода использует API REST SharePoint и запросов jQuery AJAX для загрузки файла в библиотеку **Документы** и изменения свойств элемента списка, представляющего файл. Контекст этого примера размещенное в SharePoint надстройку, которая загружает файл в папку на хост-сервере.</span><span class="sxs-lookup"><span data-stu-id="a69f0-p106">The following code example uses the SharePoint REST API and jQuery AJAX requests to upload a file to the **Documents** library and to change properties of the list item that represents the file. The context for this example is a SharePoint-hosted add-in that uploads a file to a folder on the host web.</span></span>
+
+<span data-ttu-id="a69f0-132">Чтобы воспользоваться этим примером, ваша среда должна соответствовать [этим требованиям](#RunTheExamples).</span><span class="sxs-lookup"><span data-stu-id="a69f0-132">You need to meet  [these requirements](#RunTheExamples) to use this example.</span></span>
  
--  <span data-ttu-id="e0019-p106">Разрешения на **запись** в библиотеку **Документы** для пользователя, который запускает код. Если вы разрабатываете надстройку SharePoint, то можете указать разрешения на **запись** на уровне **списка**.</span><span class="sxs-lookup"><span data-stu-id="e0019-p106">**Write** permissions to the **Documents** library for the user running the code. If you're developing a SharePoint Add-in, you can specify **Write** add-in permissions at the **List** scope</span></span>
-    
- 
-- <span data-ttu-id="e0019-127">Поддержка API **FileReader** браузером (HTML5).</span><span class="sxs-lookup"><span data-stu-id="e0019-127">Browser support for the  **FileReader** API (HTML5)</span></span>
-    
- 
-- <span data-ttu-id="e0019-p107">Ссылка на библиотеку jQuery в разметке страницы. Пример:</span><span class="sxs-lookup"><span data-stu-id="e0019-p107">A reference to the jQuery library in your page markup. For example:</span></span>
-    
-```HTML
-  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js" type="text/javascript"></script>
-```
-
-- <span data-ttu-id="e0019-130">Следующие элементы управления в разметке страницы.</span><span class="sxs-lookup"><span data-stu-id="e0019-130">The following controls in your page markup.</span></span>
-    
-```HTML
-  <input id="getFile" type="file"/><br />
-<input id="displayName" type="text" value="Enter a unique name" /><br />
-<input id="addFileButton" type="button" value="Upload" onclick="uploadFile()"/>
-```
-
-
-## <a name="code-example-1-upload-a-file-across-sharepoint-domains-by-using-the-rest-api-and-jquery"></a><span data-ttu-id="e0019-131">Пример кода 1. Отправка файла между доменами SharePoint с помощью REST API и jQuery</span><span class="sxs-lookup"><span data-stu-id="e0019-131">Code example 1: Upload a file across SharePoint domains by using the REST API and jQuery</span></span>
-<span data-ttu-id="e0019-132"><a name="RunTheExamples"> </a></span><span class="sxs-lookup"><span data-stu-id="e0019-132"></span></span>
-
-<span data-ttu-id="e0019-p108"> В следующем примере кода показано, как с помощью REST API SharePoint и AJAX-запросов jQuery отправить файл в библиотеку **Документы** и изменить свойства элемента списка, представляющего этот файл. Аналогичный код можно найти в размещенной в SharePoint надстройке, которая отправляет файлы в папку на хост-сайте.</span><span class="sxs-lookup"><span data-stu-id="e0019-p108">The following code example uses the SharePoint REST API and jQuery AJAX requests to upload a file to the  **Documents** library and to change properties of the list item that represents the file. The context for this example is a SharePoint-hosted add-in that uploads a file to a folder on the host web.</span></span>
- 
-
- 
-<span data-ttu-id="e0019-135">Чтобы воспользоваться этим примером, ваша среда должна соответствовать [этим требованиям](upload-a-file-by-using-the-rest-api-and-jquery.md#RunTheExamples).</span><span class="sxs-lookup"><span data-stu-id="e0019-135">You need to meet  [these requirements](upload-a-file-by-using-the-rest-api-and-jquery.md#RunTheExamples) to use this example.</span></span>
- 
-
- 
-
-
 
 ```javascript
 'use strict';
@@ -256,20 +234,15 @@ function getQueryStringParameter(paramToRetrieve) {
 }
 ```
 
+<br/>
 
-## <a name="code-example-2-upload-a-file-in-the-same-domain-by-using-the-rest-api-and-jquery"></a><span data-ttu-id="e0019-136">Пример кода 2. Отправка файла в пределах домена с помощью REST API и jQuery</span><span class="sxs-lookup"><span data-stu-id="e0019-136">Code example 2: Upload a file in the same domain by using the REST API and jQuery</span></span>
-<span data-ttu-id="e0019-137"><a name="UploadFile"> </a></span><span class="sxs-lookup"><span data-stu-id="e0019-137"></span></span>
+<span data-ttu-id="a69f0-133"><a name="CodeExample2"> </a></span><span class="sxs-lookup"><span data-stu-id="a69f0-133"></span></span>
 
-<span data-ttu-id="e0019-p109"> В следующем примере кода показано, как с помощью REST API SharePoint и AJAX-запросов jQuery отправить файл в библиотеку **Документы** и изменить свойства элемента списка, представляющего этот файл. Аналогичный код можно найти в серверном решении и размещенной в SharePoint надстройке, которая отправляет файлы на сайт.</span><span class="sxs-lookup"><span data-stu-id="e0019-p109">The following code example uses the SharePoint REST API and jQuery AJAX requests to upload a file to the  **Documents** library and to change properties of the list item that represents the file. The context for this example is a solution that's running on the server. The code would be similar in a SharePoint-hosted add-in that uploads files to the add-in web.</span></span>
- 
+## <a name="code-example-2-upload-a-file-in-the-same-domain-by-using-the-rest-api-and-jquery"></a><span data-ttu-id="a69f0-134">Пример кода 2. Отправка файла в пределах домена с помощью API REST и jQuery</span><span class="sxs-lookup"><span data-stu-id="a69f0-134">Code example 2: Upload a file in the same domain by using the REST API and jQuery</span></span>
 
- 
-<span data-ttu-id="e0019-141">Чтобы воспользоваться этим примером, ваша среда должна соответствовать [этим требованиям](upload-a-file-by-using-the-rest-api-and-jquery.md#RunTheExamples).</span><span class="sxs-lookup"><span data-stu-id="e0019-141">You need to meet  [these requirements](upload-a-file-by-using-the-rest-api-and-jquery.md#RunTheExamples) before you can run this example.</span></span>
- 
+<span data-ttu-id="a69f0-p107">Следующий пример кода использует API REST SharePoint и запросов jQuery AJAX для загрузки файла в библиотеку **Документы** и изменения свойств элемента списка, представляющего файл. Контекст этого примера решение, работающее на сервере. Код аналогичен коду надстройки с размещением в SharePoint, которое загружает файл на сайт надстройки.</span><span class="sxs-lookup"><span data-stu-id="a69f0-p107">The following code example uses the SharePoint REST API and jQuery AJAX requests to upload a file to the **Documents** library and to change properties of the list item that represents the file. The context for this example is a solution that's running on the server. The code would be similar in a SharePoint-hosted add-in that uploads files to the add-in web.</span></span>
 
- 
-
-
+<span data-ttu-id="a69f0-138">Чтобы вы могли воспользоваться этим примером, нужно выполнить [эти требования](#RunTheExamples).</span><span class="sxs-lookup"><span data-stu-id="a69f0-138">You need to meet  [these requirements](#RunTheExamples) before you can run this example.</span></span> 
 
 ```javascript
 'use strict';
@@ -408,24 +381,20 @@ function onError(error) {
 }
 ```
 
+<br/>
 
-## <a name="additional-resources"></a><span data-ttu-id="e0019-142">Дополнительные ресурсы</span><span class="sxs-lookup"><span data-stu-id="e0019-142">Additional resources</span></span>
-<span data-ttu-id="e0019-143"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="e0019-143"></span></span>
+## <a name="see-also"></a><span data-ttu-id="a69f0-139">См. также</span><span class="sxs-lookup"><span data-stu-id="a69f0-139">See also</span></span>
+<span data-ttu-id="a69f0-140"><a name="bk_addresources"> </a></span><span class="sxs-lookup"><span data-stu-id="a69f0-140"></span></span>
 
+- [<span data-ttu-id="a69f0-141">Знакомство со службой REST в SharePoint</span><span class="sxs-lookup"><span data-stu-id="a69f0-141">Get to know the SharePoint REST service</span></span>](get-to-know-the-sharepoint-rest-service.md)
+- [<span data-ttu-id="a69f0-142">Обращение к данным SharePoint из надстроек с помощью междоменной библиотеки</span><span class="sxs-lookup"><span data-stu-id="a69f0-142">Access SharePoint data from add-ins using the cross-domain library</span></span>](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md)
+- [<span data-ttu-id="a69f0-143">Справочные материалы и примеры по API REST</span><span class="sxs-lookup"><span data-stu-id="a69f0-143">REST API reference and samples</span></span>](https://msdn.microsoft.com/library)
+- [<span data-ttu-id="a69f0-144">Материалы по OData</span><span class="sxs-lookup"><span data-stu-id="a69f0-144">OData resources</span></span>](get-to-know-the-sharepoint-rest-service.md#odata-resources)
+- [<span data-ttu-id="a69f0-145">Разработка надстроек SharePoint</span><span class="sxs-lookup"><span data-stu-id="a69f0-145">Develop SharePoint Add-ins</span></span>](develop-sharepoint-add-ins.md)
 
--  [<span data-ttu-id="e0019-144">Знакомство со службой REST в SharePoint</span><span class="sxs-lookup"><span data-stu-id="e0019-144">Get to know the SharePoint REST service</span></span>](get-to-know-the-sharepoint-rest-service.md)
     
  
--  [<span data-ttu-id="e0019-145">Работа с папками и файлами в службе REST</span><span class="sxs-lookup"><span data-stu-id="e0019-145">Working with folders and files with REST</span></span>](working-with-folders-and-files-with-rest.md)
-    
- 
--  [<span data-ttu-id="e0019-146">Работа со списками и элементами списков в службе REST</span><span class="sxs-lookup"><span data-stu-id="e0019-146">Working with lists and list items with REST</span></span>](working-with-lists-and-list-items-with-rest.md)
-    
- 
--  [<span data-ttu-id="e0019-147">Справочные материалы по интерфейсу API службы REST и примеры</span><span class="sxs-lookup"><span data-stu-id="e0019-147">REST API reference and samples</span></span>](http://msdn.microsoft.com/library/rest-api-reference-and-samples%28Office.15%29.aspx)
-    
- 
--  [<span data-ttu-id="e0019-148">Доступ к данным SharePoint из надстроек с помощью междоменной библиотеки</span><span class="sxs-lookup"><span data-stu-id="e0019-148">Access SharePoint data from add-ins using the cross-domain library</span></span>](access-sharepoint-data-from-add-ins-using-the-cross-domain-library.md)
+
     
  
 
