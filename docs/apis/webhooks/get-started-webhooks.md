@@ -1,19 +1,19 @@
 ---
-title: "Начало работы с веб-перехватчиками SharePoint"
-description: "Узнайте, как создать приложение, которое добавляет и обрабатывает запросы веб-перехватчиков SharePoint."
-ms.date: 02/08/2018
+title: Начало работы с веб-перехватчиками SharePoint
+description: Узнайте, как создать приложение, которое добавляет и обрабатывает запросы веб-перехватчиков SharePoint.
+ms.date: 03/14/2018
 ms.prod: sharepoint
-ms.openlocfilehash: e0fbe6c5797906c1965cb017270689cbc65bedfc
-ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
+ms.openlocfilehash: 915ce825d017c08f6a1af4ef54e776951b7a5eed
+ms.sourcegitcommit: ad9b18a3fc81d9561383413644120e7255d31d61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="get-started-with-sharepoint-webhooks"></a>Начало работы с веб-перехватчиками SharePoint
 
 В этой статье описывается создание приложения, которое добавляет и обрабатывает запросы веб-перехватчиков SharePoint. Вы научитесь быстро составлять и выполнять запросы веб-перехватчиков SharePoint с помощью [клиента Postman](https://www.getpostman.com/), используя простой веб-API ASP.NET в качестве приемника веб-перехватчиков.
 
-Мы будем использовать простые HTTP-запросы, с помощью которых легко понять принцип работы веб-перехватчиков.  
+Мы будем использовать простые HTTP-запросы, чтобы вам было легче понять принцип работы веб-перехватчиков.  
 
 Чтобы выполнить представленные в этой статье пошаговые инструкции, скачайте и установите следующие средства:
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 02/19/2018
 * [Postman](https://www.getpostman.com/)
 * [Visual Studio Community Edition](https://go.microsoft.com/fwlink/?LinkId=691978&clcid=0x409)
 * [ngrok](https://ngrok.com/) ([файл для скачивания и инструкции по установке](https://ngrok.com/download)).
-* Подписка на Office 365 с SharePoint Online. Если вы только начали работу с Office 365, можете [зарегистрировать учетную запись разработчика Office 365](http://dev.office.com/devprogram).
+* Подписка разработчика Office 365 с SharePoint Online. Если вы только начинаете работу с Office 365, вы также можете [получить подписку по программе для разработчиков Office 365](https://developer.microsoft.com/ru-RU/office/dev-program). Пошаговые инструкции по регистрации и настройке подписки см. в [документации по программе для разработчиков Office 365](https://docs.microsoft.com/ru-RU/office/developer-program/office-365-developer-program).
 
 ## <a name="step-1-register-an-azure-ad-application-for-postman-client"></a>Шаг 1. Регистрация приложения Azure AD для клиента Postman
 

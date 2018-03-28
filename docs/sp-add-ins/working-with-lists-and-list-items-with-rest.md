@@ -1,13 +1,13 @@
 ---
-title: "Работа со списками и элементами списков в службе REST"
-description: "Выполнение основных операций по созданию, чтению, обновлению и удалению списков и элементов списков с помощью интерфейса REST SharePoint."
+title: Работа со списками и элементами списков в службе REST
+description: Выполнение основных операций по созданию, чтению, обновлению и удалению списков и элементов списков с помощью интерфейса REST SharePoint.
 ms.date: 12/13/2017
 ms.prod: sharepoint
-ms.openlocfilehash: ed2f377af03bb1e27173447f01250d7819359387
-ms.sourcegitcommit: bd167bbbcae67b7f1c6a40366183781a80337bc2
+ms.openlocfilehash: 6e61e000e9fc375c14810c6da12e451b286dd8ce
+ms.sourcegitcommit: 895d31071e73aa23e62593c9ffa46b38701ba801
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/19/2018
 ---
 # <a name="working-with-lists-and-list-items-with-rest"></a>Работа со списками и элементами списков с использованием REST
 
@@ -180,7 +180,9 @@ Headers:
 
 ## <a name="working-with-list-items-by-using-rest"></a>Работа с элементами списка с помощью REST
 
-В приведенном ниже примере показано, как **получить** все элементы списка.
+### <a name="retrieve-all-list-items"></a>Получение всех элементов списка
+
+Ниже показано, как **получить** все элементы списка.
  
 > [!NOTE] 
 > Параметр запроса OData $skip не работает при запрашивании элементов списка. Обычно вместо него можно использовать параметр [$skiptoken](http://msdn.microsoft.com/library/4dda9434-c2c5-4577-8e01-7bf9e822d90a.aspx).
@@ -194,9 +196,9 @@ headers:
 
 ```
 
-<br/>
+### <a name="retrieve-specific-list-item"></a>Получение определенного элемента списка
 
-В приведенном ниже примере показано, как **получить** определенный элемент списка.
+Ниже показано, как **получить** определенный элемент списка.
 
 ```
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)
@@ -230,9 +232,9 @@ headers:
 </content>
 ```
 
-<br/>
+### <a name="create-list-item"></a>Создание элемента списка
 
-В следующем примере показывается, как **создать** элемент списка.
+Ниже показано, как **создать** элемент списка.
  
 > [!NOTE] 
 > [!Примечание] Для выполнения этой операции вам необходимо знать свойство **ListItemEntityTypeFullName** списка и передать его как значение **type** в тексте запроса HTTP.
@@ -249,9 +251,84 @@ headers:
     content-length:length of post body
 ```
 
-<br/>
+### <a name="create-list-item-in-a-folder"></a>Создание элемента списка в папке
 
-В следующем примере показывается, как **обновить** элемент списка.
+Создайте элемент списка в папке.
+
+```text
+POST /_api/web/lists/GetByTitle('Test')/AddValidateUpdateItemUsingPath
+```
+
+#### <a name="uri-parameters"></a>Параметры URI
+
+Нет
+
+#### <a name="request-headers"></a>Заголовки запроса
+
+| Заголовок | Значение |
+|--------|-------|
+|Accept|application/json;odata=nometadata|
+|Content-Type|application/json;odata=nometadata|
+|x-requestdigest|Подходящий дайджест для текущего сайта|
+
+#### <a name="request-body"></a>Тело запроса
+
+```json
+{
+    "listItemCreateInfo": {
+        "FolderPath":  { "DecodedUrl": "https://contoso.sharepoint.com/lists/Test/Folder/SubFolder" },
+        "UnderlyingObjectType": 0
+    },
+    "formValues": [
+        {
+            "FieldName": "Title",
+            "FieldValue": "Item"
+        }
+    ],
+    "bNewDocumentUpdate": false
+}
+```
+
+| Свойство | Описание |
+|----------|-------|
+|listItemCreateInfo|Информация о списке и папке, где необходимо создать элемент|
+|listItemCreateInfo.FolderPath.DecodedUrl|Абсолютный URL-адрес папки, где необходимо создать элемент|
+|listItemCreateInfo.UnderlyingObjectType|Тип элемента, который необходимо создать. Дополнительные сведения см. в разделе [https://msdn.microsoft.com/en-us/library/microsoft.sharepoint.client.filesystemobjecttype(v=office.14).aspx](https://msdn.microsoft.com/en-us/library/microsoft.sharepoint.client.filesystemobjecttype(v=office.14).aspx).|
+|formValues|Массив имен полей и значений, которые необходимо присвоить новому элементу|
+|bNewDocumentUpdate|Установите значение `false`, чтобы создать элемент списка|
+
+#### <a name="responses"></a>Ответы
+
+| Имя   | Тип    |Описание|
+|--------|---------|-----------|
+|200 OK  | Boolean |Успешно    |
+
+```json
+{
+  "value": [
+    {
+      "ErrorMessage": null,
+      "FieldName": "Title",
+      "FieldValue": "Item",
+      "HasException": false,
+      "ItemId": 0
+    },
+    {
+      "ErrorMessage": null,
+      "FieldName": "Id",
+      "FieldValue": "1",
+      "HasException": false,
+      "ItemId": 0
+    }
+  ]
+}
+```
+
+Свойство `value` содержит список свойств, заданных при создании элемента списка.
+
+### <a name="update-list-item"></a>Обновление элемента списка
+
+Ниже показано, как **обновить** элемент списка.
  
 > [!NOTE] 
 > [!Примечание] Для выполнения этой операции вам необходимо знать свойство **ListItemEntityTypeFullName** списка и передать его как значение **type** в тексте запроса HTTP.
@@ -270,9 +347,9 @@ headers:
     content-length:length of post body
 ```
 
-<br/>
+### <a name="delete-list-item"></a>Удаление элемента списка
 
-В приведенном ниже примере показано, как **удалить** элемент списка.
+Ниже показано, как **удалить** элемент списка.
 
 ```
 url: http://site url/_api/web/lists/GetByTitle('Test')/items(item id)

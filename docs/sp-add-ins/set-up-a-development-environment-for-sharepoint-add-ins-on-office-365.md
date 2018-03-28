@@ -1,13 +1,13 @@
 ---
-title: "Настройка среды разработки надстроек SharePoint в Office 365"
-description: "Установите Visual Studio и зарегистрируйте сайт разработчика Office 365."
-ms.date: 11/03/2017
+title: Настройка среды разработки надстроек SharePoint в Office 365
+description: Установите Visual Studio и получите подписку разработчика Office 365.
+ms.date: 03/14/2018
 ms.prod: sharepoint
-ms.openlocfilehash: bc66c52d34e5e218d324502413d860c5b8a21ba2
-ms.sourcegitcommit: e157d51378190ddfed6394ba154ce66141c8ca33
+ms.openlocfilehash: 47fa3a86561f77094029995569d0b8f62a89bf89
+ms.sourcegitcommit: ad9b18a3fc81d9561383413644120e7255d31d61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/17/2018
 ---
 # <a name="set-up-a-development-environment-for-sharepoint-add-ins-on-office-365"></a>Настройка среды разработки надстроек SharePoint в Office 365
 
@@ -16,11 +16,14 @@ ms.lasthandoff: 02/19/2018
 Если вы не уверены, какие надстройки SharePoint требуется создавать, см. статью [Надстройки SharePoint](sharepoint-add-ins.md).
  
 <a name="devenv_vs"> </a>
+
 ## <a name="install-visual-studio-and-tools-on-your-computer"></a>Установка Visual Studio и инструментов на компьютере
 
-- Если вы еще не установили **Visual Studio** 2013 или более поздней версии, сделайте это согласно инструкциям из статьи [Установка Visual Studio](https://docs.microsoft.com/ru-RU/visualstudio/install/install-visual-studio). Рекомендуем использовать [последнюю версию из Центра загрузки Майкрософт](https://www.visualstudio.com/downloads/download-visual-studio-vs).
+- Если вы еще не установили **Visual Studio** 2013 или более поздней версии, сделайте это, следуя инструкциям из статьи [Установка Visual Studio](https://docs.microsoft.com/ru-RU/visualstudio/install/install-visual-studio). Рекомендуем использовать [последнюю версию из Центра загрузки Майкрософт](https://www.visualstudio.com/downloads/download-visual-studio-vs).
+ 
+- Visual Studio включает **Инструменты разработчика Microsoft Office для Visual Studio**. Иногда выпуск новой версии этих инструментов не совпадает с выходом обновлений Visual Studio. Чтобы убедиться, что у вас установлена последняя версия этих инструментов, запустите [установщик набора "Инструменты разработчика Office для Visual Studio 2013"](http://aka.ms/OfficeDevToolsForVS2013) или [установщик набора "Инструменты разработчика Office для Visual Studio 2015"](http://aka.ms/OfficeDevToolsForVS2015). 
 
-- В состав Visual Studio входят **Инструменты разработчика Microsoft Office для Visual Studio**, но иногда выход новой версии инструментов не совпадает с выходом обновлений Visual Studio. Чтобы убедиться, что вы используете последнюю версию инструментов, запустите [установщик Инструментов разработчика Office для Visual Studio 2013](http://aka.ms/OfficeDevToolsForVS2013) или [установщик Инструментов разработчика Office для Visual Studio 2015](http://aka.ms/OfficeDevToolsForVS2015). 
+Сверяйтесь с [более ранними версиями Visual Studio](http://msdn.microsoft.com/library/da049020-cfda-40d7-8ff4-7492772b620f.aspx) или другой [документацией по Visual Studio](https://docs.microsoft.com/ru-RU/visualstudio/). 
 
 ### <a name="verbose-logging-in-visual-studio"></a>Подробное ведение журнала в Visual Studio
 
@@ -34,60 +37,32 @@ ms.lasthandoff: 02/19/2018
 
 Путь реестра в будущих версиях Visual Studio изменится.
 
+
 <a name="o365_signup"> </a>
-## <a name="sign-up-for-an-office-365-developer-site"></a>Получение шаблона "Сайт разработчика" для Office 365
+
+## <a name="sign-up-for-an-office-365-developer-subscription"></a>Получение подписки разработчика Office 365
 
 > [!NOTE]
-> Возможно, у вас уже есть доступ к сайту разработчика Office 365. 
-> - **Вы подписчик MSDN?** Visual Studio Enterprise с подпиской MSDN предоставляет льготное право на подписку разработчика приложений для Office 365. [Воспользуйтесь этим преимуществом уже сегодня.](https://msdn.microsoft.com/subscriptions/manage/default.aspx) 
-> - **У вас есть один из указанных ниже планов подписки на Office 365?** В таком случае администратор подписки на Office 365 может создать сайт разработчика с помощью [Центра администрирования Office 365](https://portal.microsoftonline.com/admin/default.aspx). Дополнительные сведения см. в статье [Создание сайта разработчика с использованием имеющейся подписки на Office 365](create-a-developer-site-on-an-existing-office-365-subscription.md). 
+> Возможно, у вас уже есть доступ к подписке разработчика Office 365: 
+> - **У вас есть подписка на Visual Studio (MSDN)?** Подписчики Visual Studio Ultimate и Visual Studio Premium с MSDN получают подписку разработчика Office 365 бесплатно. [Воспользуйтесь этим преимуществом сегодня](https://msdn.microsoft.com/subscriptions/manage/default.aspx). 
+> - **У вас есть один из указанных ниже планов подписки на Office 365?** [Создайте сайт разработчика, используя имеющуюся подписку на Office 365](create-a-developer-site-on-an-existing-office-365-subscription.md). 
+
+Чтобы получить план Office 365: 
+
+- [Зарегистрируйтесь в программе для разработчиков Office 365](https://developer.microsoft.com/ru-RU/office/dev-program).
+
+- Пошаговые инструкции для принятия участия в этой программе, регистрации и настройки подписки см. в [документации по программе для разработчиков приложений для Office 365](https://docs.microsoft.com/ru-RU/office/developer-program/office-365-developer-program). 
+
+### <a name="open-your-developer-site"></a>Открытие сайта разработчика 
  
-
-Получить план Office 365 можно тремя способами:
-
-- Начните с [бесплатной 30-дневной пробной подписки](https://portal.microsoftonline.com/Signup/MainSignUp.aspx?OfferId=6881A1CB-F4EB-4db3-9F18-388898DAF510&amp;DL=DEVELOPERPACK), предусматривающей лицензию для одного пользователя.
-
-- Приобретите [подписку разработчика приложений для Office 365](https://portal.microsoftonline.com/Signup/MainSignUp.aspx?OfferId=C69E7747-2566-4897-8CBA-B998ED3BAB88&amp;DL=DEVELOPERPACK). 
-
-- Зарегистрируйте учетную запись разработчика на один год по специальной программе для разработчиков Office 365. Вы можете [узнать больше](http://dev.office.com/devprogram) или сразу заполнить [регистрационную форму](https://profile.microsoft.com/RegSysProfileCenter/wizardnp.aspx?wizid=14b845d0-938c-45af-b061-f798fbb4d170). После регистрации в программе для разработчиков вы получите электронное сообщение со ссылкой для регистрации учетной записи разработчика. Следуйте приведенным ниже инструкциям.
-
-> [!TIP]
-> Откройте страницы, на которые указывают эти ссылки, в новом окне или на новой вкладке, чтобы работать с ними было удобнее.
-
-1. Первая страница регистрационной формы не требует объяснений. Укажите нужные сведения и нажмите кнопку **Далее**.
+Перейдите по ссылке **Создание надстроек** в левом верхнем углу страницы, чтобы открыть сайт разработчика. Открывшийся сайт должен выглядеть так, как показано на следующем рисунке. Наличие на странице списка **Тестируемые надстройки** подтверждает, что веб-сайт был создан с помощью шаблона "Сайт разработчика" SharePoint. Если вместо этого отображается обычный сайт группы, подождите несколько минут и перезагрузите сайт.
     
-2. На второй странице (рис. 1) укажите ИД пользователя, принадлежащий администратору подписки.
-    
-   *Рис. 1. Доменное имя сайта разработчика Office 365*
+> [!NOTE]
+> Запишите URL-адрес сайта. Он используется при создании проектов надстроек SharePoint в Visual Studio.
 
-   ![Страница 2 формы для регистрации учетной записи Office 365](../images/ff384c69-56bf-4ceb-81c3-8b874e2407f0.png) 
+**Домашняя страница сайта разработчика со списком "Тестируемые надстройки"**
 
-3. Создайте поддомен **.onmicrosoft.com**, например contoso.onmicrosoft.com. 
-    
-    После регистрации вы воспользуетесь полученными учетными данными (в формате *UserID@ваш_домен.onmicrosoft.com*), чтобы войти на сайт портала Office 365, используемого для администрирования учетной записи. Ваш сайт разработчика SharePoint Online будет подготовлен к работе в вашем новом домене: `http://yourdomain.sharepoint.com`.
-
-4. Нажмите кнопку **Далее** и заполните последнюю страницу формы. Если вы хотите указать номер телефона, чтобы получить код подтверждения, можно ввести номер мобильного или стационарного телефона, но *не* номер VoIP.
-
-   > [!NOTE]
-   > Если при попытке зарегистрировать учетную запись разработчика уже выполнен вход в другую учетную запись Майкрософт, может появиться сообщение "К сожалению, указанный вами ИД пользователя не работает. Возможно, он недействителен. Убедитесь, что вы вводите ИД пользователя, назначенный вам организацией. Как правило, ИД пользователя представлен в формате *proverka@example.com* или *proverka@example.onmicrosoft.com*". 
-   
-   > Если появляется это сообщение, выйдите из используемой учетной записи Майкрософт и повторите попытку. Если сообщение продолжает отображаться, очистите кэш браузера или переключитесь в режим **просмотра InPrivate**, а затем заполните форму.
-
-   По завершении регистрации в браузере открывается страница установки Office 365. Щелкните значок **Администратор**, чтобы открыть страницу центра администрирования.
-
-   *Рис. 2. Страница Центра администрирования Office 365*
-
-   ![Снимок экрана с изображением Центра администрирования Office 365.](../images/SP15_Office365AdminInset_border.png)
-
-5. Подождите, пока завершится настройка шаблона "Сайт разработчика". После этого обновите страницу центра администрирования в браузере.
-    
-6. Перейдите по ссылке **Создание надстроек** в левом верхнем углу страницы, чтобы открыть "Сайт разработчика". Открывшийся сайт должен выглядеть так, как показано на рис. 3. Наличие на странице списка **Тестируемые надстройки** подтверждает, что веб-сайт был создан с помощью шаблона "Сайт разработчика" SharePoint. Если вместо этого отображается обычный сайт группы, подождите несколько минут и перезагрузите сайт.
- 
-7. Запишите URL-адрес сайта. Он используется при создании проектов надстроек SharePoint в Visual Studio.
-
-   *Рис. 3. Домашняя страница сайта разработчика со списком "Тестируемые надстройки"*
-
-   ![Снимок экрана с изображением домашней страницы сайта разработчика.](../images/SP15_DeveloperSiteHome_border.png)
+![Снимок экрана: домашняя страница сайта разработчика.](../images/SP15_DeveloperSiteHome_border.png)
  
 
 ## <a name="see-also"></a>См. также
@@ -95,8 +70,7 @@ ms.lasthandoff: 02/19/2018
 
 - [Надстройки SharePoint](sharepoint-add-ins.md)
 - [Знакомство с созданием надстроек SharePoint с размещением у поставщика](get-started-creating-provider-hosted-sharepoint-add-ins.md)
-- [Знакомство с созданием надстроек SharePoint, размещаемых в SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md) 
-- [Документация по Visual Studio](https://docs.microsoft.com/ru-RU/visualstudio/)
-- [Установка более ранних версий Visual Studio](https://msdn.microsoft.com/library/da049020-cfda-40d7-8ff4-7492772b620f.aspx)
+- [Знакомство с созданием надстроек SharePoint с размещением в SharePoint](get-started-creating-sharepoint-hosted-sharepoint-add-ins.md) 
+
     
  
