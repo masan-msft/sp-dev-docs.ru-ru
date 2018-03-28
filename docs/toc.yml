@@ -208,8 +208,39 @@
       href: spfx/roadmap.md
     - name: Известные проблемы и часто задаваемые вопросы
       href: spfx/known-issues-and-common-questions.md
-- name: Декларативная настройка
+- name: Функции
   items:
+    - name: Введение в API SharePoint
+      items:
+        - name: 'Индекс API моделей .NET Server, CSOM, JSOM и REST SharePoint'
+          href: sp-add-ins/sharepoint-net-server-csom-jsom-and-rest-api-index.md
+        - name: Выполнение базовых операций с использованием кода библиотеки клиента в SharePoint
+          href: sp-add-ins/complete-basic-operations-using-sharepoint-client-library-code.md
+        - name: Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint
+          href: sp-add-ins/complete-basic-operations-using-javascript-library-code-in-sharepoint.md
+        - name: Знакомство со службой REST в SharePoint
+          href: sp-add-ins/get-to-know-the-sharepoint-rest-service.md
+          items:
+            - name: Завершение основных операций
+              href: sp-add-ins/complete-basic-operations-using-sharepoint-rest-endpoints.md
+            - name: Работа со списками и элементами списков
+              href: sp-add-ins/working-with-lists-and-list-items-with-rest.md
+            - name: Работа с папками и файлами
+              href: sp-add-ins/working-with-folders-and-files-with-rest.md
+            - name: Определение универсального кода ресурса (URI) для конечных точек
+              href: sp-add-ins/determine-sharepoint-rest-service-endpoint-uris.md
+            - name: Использование операций запросов OData
+              href: sp-add-ins/use-odata-query-operations-in-sharepoint-rest-requests.md
+            - name: Навигация по структуре данных
+              href: sp-add-ins/navigate-the-sharepoint-data-structure-represented-in-the-rest-service.md
+            - name: Синхронизация элементов
+              href: sp-add-ins/synchronize-sharepoint-items-using-the-rest-service.md
+            - name: Отправка файла
+              href: sp-add-ins/upload-a-file-by-using-the-rest-api-and-jquery.md
+            - name: Задание пользовательских разрешений
+              href: sp-add-ins/set-custom-permissions-on-a-list-by-using-the-rest-interface.md
+            - name: Создание пакетных запросов
+              href: sp-add-ins/make-batch-requests-with-the-rest-apis.md
     - name: Настройка темы сайта
       items:
         - name: Обзор
@@ -224,6 +255,10 @@
           href: declarative-customization/site-theming/sharepoint-site-theming-csom.md
     - name: Форматирование столбцов
       href: declarative-customization/column-formatting.md
+    - name: Сайт для общения
+      href: apis/communication-site-creation-rest.md
+    - name: API управления жизненным циклом приложений (ALM)
+      href: apis/alm-api-for-spfx-add-ins.md
     - name: Дизайн сайта
       href: declarative-customization/site-design-overview.md
       items:
@@ -241,12 +276,6 @@
           href: declarative-customization/site-design-rest-api.md
         - name: Модуль подготовки PnP
           href: declarative-customization/site-design-pnp-provisioning.md
-- name: API SharePoint
-  items:
-    - name: Создание сайта для общения
-      href: apis/communication-site-creation-rest.md
-    - name: API управления жизненным циклом приложений (ALM)
-      href: apis/alm-api-for-spfx-add-ins.md
     - name: Веб-перехватчики
       href: apis/webhooks/overview-sharepoint-webhooks.md
       items:
@@ -265,13 +294,13 @@
               href: apis/webhooks/lists/update-subscription.md
             - name: Удаление подписки
               href: apis/webhooks/lists/delete-subscription.md
-            - name: Вывод подписки
+            - name: Получение подписки
               href: apis/webhooks/lists/get-subscription.md
+    - name: Укороченные ссылки
+      href: spfx/shorter-share-link-format.md
 - name: Обзор платформы разработки SharePoint
   href: general-development/sharepoint-development-overview.md
   items:
-    - name: Новые возможности для разработчиков
-      href: general-development/what-s-new-for-developers-in-sharepoint.md
     - name: Ошибка обработчика протоколов в SharePoint 2016
       href: general-development/protocol-handler-error-due-to-deprecated-interface-in-sharepoint-2016.md
     - name: Модели программирования
@@ -1068,35 +1097,6 @@
           items:
             - name: Токены и строки URL-адресов в надстройках
               href: sp-add-ins/url-strings-and-tokens-in-sharepoint-add-ins.md
-        - name: 'Индекс API объектных моделей .NET Server, CSOM, JSOM и REST SharePoint'
-          href: sp-add-ins/sharepoint-net-server-csom-jsom-and-rest-api-index.md
-        - name: Выполнение базовых операций с использованием кода библиотеки клиента в SharePoint
-          href: sp-add-ins/complete-basic-operations-using-sharepoint-client-library-code.md
-        - name: Выполнение базовых операций с использованием кода библиотеки JavaScript в SharePoint
-          href: sp-add-ins/complete-basic-operations-using-javascript-library-code-in-sharepoint.md
-        - name: Знакомство со службой REST в SharePoint
-          href: sp-add-ins/get-to-know-the-sharepoint-rest-service.md
-          items:
-            - name: Завершение основных операций
-              href: sp-add-ins/complete-basic-operations-using-sharepoint-rest-endpoints.md
-            - name: Работа со списками и элементами списков
-              href: sp-add-ins/working-with-lists-and-list-items-with-rest.md
-            - name: Работа с папками и файлами
-              href: sp-add-ins/working-with-folders-and-files-with-rest.md
-            - name: Определение универсального кода ресурса (URI) для конечных точек
-              href: sp-add-ins/determine-sharepoint-rest-service-endpoint-uris.md
-            - name: Использование операций запросов OData
-              href: sp-add-ins/use-odata-query-operations-in-sharepoint-rest-requests.md
-            - name: Навигация по структуре данных
-              href: sp-add-ins/navigate-the-sharepoint-data-structure-represented-in-the-rest-service.md
-            - name: Синхронизация элементов
-              href: sp-add-ins/synchronize-sharepoint-items-using-the-rest-service.md
-            - name: Отправка файла
-              href: sp-add-ins/upload-a-file-by-using-the-rest-api-and-jquery.md
-            - name: Задание пользовательских разрешений
-              href: sp-add-ins/set-custom-permissions-on-a-list-by-using-the-rest-interface.md
-            - name: Создание пакетных запросов
-              href: sp-add-ins/make-batch-requests-with-the-rest-apis.md
         - name: Создание компонентов взаимодействия с пользователем в SharePoint
           href: sp-add-ins/create-ux-components-in-sharepoint.md
           items:
